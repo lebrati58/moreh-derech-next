@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b4a6b">
+<title>מורה דרך LIVE — חידון</title>
+<meta name="description" content="חידון חי למורי דרך">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap&subset=hebrew" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b4a6b'/%3E%3Cpath d='M0 48 L18 28 L30 40 L42 22 L64 48 V64 H0Z' fill='%233f6b35'/%3E%3Crect x='14' y='44' width='36' height='12' rx='3' fill='%23f08a24'/%3E%3C/svg%3E">
+</head>
+<body>
+<div id="banner" class="banner hidden">אין חיבור — מנסה להתחבר מחדש…</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand"><span>מורה דרך</span><span class="live"><span class="dot"></span> LIVE</span></div>
+    <div id="hdr-chip" class="chip hidden"></div>
+  </div>
+  <svg class="land" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 L40 14 L70 24 L110 6 L150 22 L190 12 L230 26 L260 16 L300 28 L340 18 L400 30 V46 H0Z" fill="#3f6b35" opacity=".9"/>
+    <path d="M0 36 Q100 28 200 36 T400 34 V46 H0Z" fill="#f7f1e5"/>
+    <path d="M0 41 H400" stroke="#0b4a6b" stroke-width="1.5" stroke-dasharray="10 8" opacity=".35"/>
+  </svg>
+  <svg class="bus" viewBox="0 0 34 20" aria-hidden="true">
+    <rect x="1" y="2" width="32" height="13" rx="3" fill="#f08a24"/>
+    <rect x="4" y="5" width="6" height="5" rx="1" fill="#e3f3f7"/><rect x="12" y="5" width="6" height="5" rx="1" fill="#e3f3f7"/><rect x="20" y="5" width="6" height="5" rx="1" fill="#e3f3f7"/>
+    <circle cx="8" cy="16" r="3" fill="#102029"/><circle cx="26" cy="16" r="3" fill="#102029"/>
+  </svg>
+</header>
+
+<main id="app">
+  <div class="card center muted">טוען…</div>
+</main>
+
+<nav id="tabs" class="tabs hidden">
+  <button data-view="game" class="active"><span class="i">🚌</span>משחק</button>
+  <button data-view="board"><span class="i">🏆</span>דירוג</button>
+</nav>
+<div id="toast" class="toast hidden"></div>
+
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script>
+(function () {
+  const { rpc, esc, store, SHAPES } = MDL;
+  const KEY = 'mdl_player';
+  const app = document.getElementById('app');
+  const banner = document.getElementById('banner');
+  const tabs = document.getElementById('tabs');
+  const hdrChip = document.getElementById('hdr-chip');
+
+  let me = store.get(KEY);            // { token, name, code }
+  let S = null;                       // dernier état complet reçu du serveur
+  let version = 0;
+  let offset = 0;                     // horloge serveur - horloge locale (ms)
+  let view = 'game';
+  let selected = null, selQ = null;   // choix en cours (avant envoi) et sa question
+  let sent = {};                      // question_id -> choix envoyé (mémoire locale)
+  let sending = false;
+  let pollTimer = null, failures = 0, renderedKey = '';
+
+  const ERR = {
+    no_game: 'אין כרגע משחק פעיל. נסו שוב בעוד רגע.',
+    empty_name: 'נא להקליד שם.',
+    finished: 'המשחק כבר הסתיים.',
+    full: 'המשחק מלא.',
+    bad_code: 'הקוד האישי שגוי.',
+    code_locked: 'יותר מדי ניסיונות. בחרו שם אחר.'
+  };
+
+  function toast(msg, ms = 2600) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.remove('hidden');
+    clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.add('hidden'), ms);
+  }
+
+  // ------------------------------------------------------------ Rejoindre
+  function renderJoin(opts = {}) {
+    tabs.classList.add('hidden'); hdrChip.classList.add('hidden');
+    renderedKey = 'join';
+    app.innerHTML = `
+      <div class="card center" style="padding-top:26px">
+        <div class="trophy">🧭</div>
+        <h1>ברוכים הבאים לחידון מורי הדרך!</h1>
+        <p class="muted">עונים מהר ונכון — וצוברים נקודות לאורך המסלול.</p>
+      </div>
+      <form id="joinf" class="card" autocomplete="off">
+        <label for="nm">מה השם שלך?</label>
+        <input id="nm" type="text" maxlength="24" enterkeyhint="go" value="${esc(opts.name || '')}" placeholder="שם פרטי ושם משפחה" required>
+        <div id="taken" class="${opts.taken ? '' : 'hidden'}" style="margin-top:12px">
+          <div class="explain small">
+            השם <b>${esc(opts.name || '')}</b> כבר בשימוש.<br>
+            אם זה אתם (למשל נכנסתם מדפדפן אחר) — הקלידו את הקוד האישי שלכם.
+          </div>
+          <label for="code">קוד אישי (4 ספרות)</label>
+          <input id="code" type="text" inputmode="numeric" maxlength="4" placeholder="0000">
+          <button type="button" id="asnew" class="btn ghost small" style="margin-top:10px">להצטרף בשם ״${esc(opts.suggestion || '')}״</button>
+        </div>
+        <p id="jerr" class="small" style="color:var(--bad);min-height:1em">${esc(opts.error || '')}</p>
+        <button class="btn sun" id="jbtn">הצטרפות למשחק</button>
+      </form>`;
+    const f = document.getElementById('joinf');
+    f.addEventListener('submit', e => { e.preventDefault(); doJoin({}); });
+    const asnew = document.getElementById('asnew');
+    if (asnew) asnew.addEventListener('click', () => doJoin({ newName: true }));
+    if (!opts.taken) setTimeout(() => document.getElementById('nm').focus(), 50);
+    else document.getElementById('code').focus();
+  }
+
+  async function doJoin({ newName }) {
+    const name = document.getElementById('nm').value.trim();
+    const codeEl = document.getElementById('code');
+    const code = codeEl && codeEl.value.trim() && !newName ? codeEl.value.trim() : null;
+    const btn = document.getElementById('jbtn');
+    if (!name) { document.getElementById('jerr').textContent = ERR.empty_name; return; }
+    btn.disabled = true; btn.textContent = 'מצטרפים…';
+    try {
+      const r = await rpc('join_game', { p_name: name, p_token: null, p_code: code, p_new_name_ok: !!newName });
+      if (r.error === 'name_taken') return renderJoin({ name, taken: true, suggestion: r.suggestion });
+      if (r.error) return renderJoin({ name, taken: r.error === 'bad_code', suggestion: '', error: ERR[r.error] || 'שגיאה' });
+      me = { token: r.token, name: r.name, code: r.code };
+      store.set(KEY, me);
+      version = 0; sent = {};
+      if (r.reconnected) toast('ברוך שובך, ' + r.name + '! הניקוד נשמר.');
+      startPolling(true);
+    } catch (e) {
+      btn.disabled = false; btn.textContent = 'הצטרפות למשחק';
+      document.getElementById('jerr').textContent = 'אין חיבור לאינטרנט. נסו שוב.';
+    }
+  }
+
+  // ------------------------------------------------------------ Boucle d'état
+  function startPolling(now) {
+    clearTimeout(pollTimer);
+    pollTimer = setTimeout(poll, now ? 0 : 1500);
+  }
+
+  async function poll() {
+    if (!me) return;
+    try {
+      const r = await rpc('get_state', { p_token: me.token, p_since: version }, { timeout: 6000 });
+      failures = 0; banner.classList.add('hidden');
+      offset = Date.parse(r.now) - Date.now();
+      if (r.error === 'unknown_player') {   // nouvelle partie ou élève retiré
+        store.del(KEY); me = null; S = null; renderJoin({ error: 'המשחק התחיל מחדש — הצטרפו שוב.' }); return;
+      }
+      if (r.error === 'no_game') { renderNoGame(); }
+      else if (!r.same) { S = r; version = r.v; render(); }
+    } catch (e) {
+      failures++;
+      if (failures >= 2) banner.classList.remove('hidden');
+    }
+    const delay = document.hidden ? 5000 : Math.min(1500 + failures * 700, 5000);
+    clearTimeout(pollTimer); pollTimer = setTimeout(poll, delay);
+  }
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && me) startPolling(true); });
+  window.addEventListener('online', () => { if (me) startPolling(true); });
+
+  function renderNoGame() {
+    renderedKey = 'nogame';
+    app.innerHTML = `<div class="card waiting"><div class="big">אין כרגע משחק פעיל</div><p class="muted">המדריך יפתח את המשחק בקרוב.</p><div class="road"></div></div>`;
+  }
+
+  // ------------------------------------------------------------ Rendu
+  function myLine() {
+    const m = S.me || {};
+    return `<div class="myline"><span>${esc(m.name)}</span><span>מקום <b>${m.rank || '-'}</b>/${m.total || 0}</span><span><b>${m.score || 0}</b> נק׳</span></div>`;
+  }
+
+  function render() {
+    tabs.classList.remove('hidden');
+    const g = S.game, q = S.question;
+    hdrChip.classList.remove('hidden');
+    hdrChip.textContent = (S.me ? S.me.score : 0) + ' נק׳';
+    if (view === 'board') return renderBoard();
+    if (g.status === 'finished') return renderFinal();
+    if (g.paused) { renderedKey = 'pause'; app.innerHTML = myLine() + `<div class="card waiting"><div class="trophy">⏸️</div><div class="big">המשחק מושהה</div><p class="muted">המדריך יחדש את המשחק בקרוב.</p></div>`; return; }
+    if (!q || g.phase === 'waiting') return renderWaiting();
+    if (g.phase === 'open') return renderOpen(q);
+    if (g.phase === 'closed') return renderClosed(q);
+    if (g.phase === 'revealed') return renderRevealed(q);
+  }
+
+  function renderWaiting(extra = '') {
+    renderedKey = 'wait';
+    const m = S.me || {};
+    app.innerHTML = myLine() + extra + `
+      <div class="card waiting">
+        <div style="font-size:44px">🚌</div>
+        <div class="big">מחכים לשאלה הבאה... 🚌</div>
+        <p class="muted">השאלה תופיע כאן אוטומטית — אין צורך לרענן.</p>
+        <div class="road"></div>
+      </div>
+      <p class="center small muted">הקוד האישי שלך: <b>${esc(m.code)}</b> (לחזרה למשחק מטלפון/דפדפן אחר)</p>`;
+  }
+
+  function answered(q) {
+    if (q.my_choice !== null && q.my_choice !== undefined) return q.my_choice;
+    return sent[q.id] !== undefined ? sent[q.id] : null;
+  }
+
+  function renderOpen(q) {
+    const mine = answered(q);
+    const key = 'open:' + q.id + ':' + mine;
+    if (renderedKey === key) return;            // ne pas casser la sélection en cours
+    renderedKey = key;
+    if (selQ !== q.id) { selQ = q.id; selected = null; }
+    const locked = mine !== null;
+    app.innerHTML = `
+      <div class="card">
+        <div class="row" style="align-items:center;justify-content:space-between">
+          <span class="cat">שאלה ${q.seq} · ${esc(q.category)}</span>
+          <span id="tnum" class="timer-num"></span>
+        </div>
+        ${q.closes_at ? '<div class="timer"><div id="tbar" style="width:100%"></div></div>' : '<div style="height:10px"></div>'}
+        <div class="question-text">${esc(q.text)}</div>
+        <div class="answers ${locked ? 'locked' : ''}" id="ans">
+          ${q.options.map((o, i) => `<button class="ans c${i} ${(locked ? mine : selected) === i ? 'selected' : ''}" data-i="${i}" ${locked ? 'disabled' : ''}>
+            <span class="shape">${SHAPES[i]}</span><span>${esc(o)}</span></button>`).join('')}
+        </div>
+        <div style="margin-top:16px">
+          ${locked
+            ? `<div class="result none" style="background:var(--sea)"><div class="big">✔️</div>התשובה נקלטה! ממתינים לתוצאות...</div>`
+            : `<button class="btn ok" id="send" ${selected === null ? 'disabled' : ''}>שליחת תשובה</button>`}
+        </div>
+      </div>`;
+    if (!locked) {
+      document.getElementById('ans').addEventListener('click', e => {
+        const b = e.target.closest('.ans'); if (!b) return;
+        selected = +b.dataset.i;
+        document.querySelectorAll('#ans .ans').forEach(x => x.classList.toggle('selected', +x.dataset.i === selected));
+        document.getElementById('send').disabled = false;
+        if (navigator.vibrate) navigator.vibrate(15);
+      });
+      document.getElementById('send').addEventListener('click', () => send(q));
+    }
+    tickTimer();
+  }
+
+  async function send(q) {
+    if (sending || selected === null) return;
+    sending = true;
+    const btn = document.getElementById('send');
+    if (btn) { btn.disabled = true; btn.textContent = 'שולח…'; }
+    let r = null;
+    for (let attempt = 0; attempt < 4 && !r; attempt++) {   // réessai sûr : le serveur refuse les doublons
+      try { r = await rpc('submit_answer', { p_token: me.token, p_question_id: q.id, p_choice: selected }, { timeout: 5000 }); }
+      catch (e) { await new Promise(res => setTimeout(res, 600 * (attempt + 1))); }
+    }
+    sending = false;
+    if (!r) { toast('השליחה נכשלה — בדקו את החיבור ונסו שוב.'); if (btn) { btn.disabled = false; btn.textContent = 'שליחת תשובה'; } return; }
+    if (r.status === 'ok' || r.status === 'duplicate') {
+      sent[q.id] = r.choice; selected = r.choice;
+      if (navigator.vibrate) navigator.vibrate([20, 40, 20]);
+      renderedKey = ''; render();
+    } else if (r.status === 'late' || r.status === 'closed') {
+      toast('הזמן נגמר — התשובה לא נקלטה.'); version = 0; startPolling(true);
+    } else {
+      toast('לא ניתן לשלוח תשובה כרגע.'); version = 0; startPolling(true);
+    }
+  }
+
+  function tickTimer() {
+    const q = S && S.question;
+    const n = document.getElementById('tnum'), bar = document.getElementById('tbar');
+    if (!q || !q.closes_at || !n) return;
+    const end = Date.parse(q.closes_at), start = Date.parse(q.opened_at);
+    const left = Math.max(0, end - (Date.now() + offset));
+    n.textContent = Math.ceil(left / 1000) + '″';
+    if (bar) bar.style.width = (100 * left / (end - start)) + '%';
+  }
+  setInterval(tickTimer, 250);
+
+  function renderClosed(q) {
+    const mine = answered(q);
+    const key = 'closed:' + q.id + ':' + mine; if (renderedKey === key) return; renderedKey = key;
+    app.innerHTML = myLine() + `
+      <div class="card center">
+        <span class="cat">שאלה ${q.seq}</span>
+        <div class="question-text">${esc(q.text)}</div>
+        <div class="result none"><div class="big">⏱️ השאלה נסגרה</div>
+          ${mine !== null ? 'התשובה שלך נקלטה. ממתינים לחשיפת התשובה…' : 'לא נשלחה תשובה לשאלה הזו.'}</div>
+      </div>`;
+  }
+
+  function renderRevealed(q) {
+    const key = 'rev:' + q.id + ':' + version; if (renderedKey === key) return; renderedKey = key;
+    const mine = q.my_choice;
+    const total = (q.counts || []).reduce((a, b) => a + b, 0) || 1;
+    const cls = mine === null || mine === undefined ? 'none' : q.my_correct ? 'good' : 'wrong';
+    const title = cls === 'none' ? 'לא נשלחה תשובה' : q.my_correct ? 'תשובה נכונה! 🎉' : 'לא הפעם…';
+    app.innerHTML = myLine() + `
+      <div class="result ${cls}">
+        <div class="big">${title}</div>
+        ${cls === 'good' ? `<div style="font-size:20px;font-weight:800">+${q.my_points} נקודות</div>` : ''}
+      </div>
+      <div class="card">
+        <span class="cat">שאלה ${q.seq} · ${esc(q.category)}</span>
+        <div class="question-text">${esc(q.text)}</div>
+        <div class="answers">
+          ${q.options.map((o, i) => `<div class="ans c${i} ${i === q.correct_index ? 'right' : 'dim'}">
+            <span class="shape">${i === q.correct_index ? '✔' : SHAPES[i]}</span><span>${esc(o)}${i === mine ? ' <small>(הבחירה שלך)</small>' : ''}</span>
+            <span class="count">${Math.round(100 * (q.counts[i] || 0) / total)}%</span></div>`).join('')}
+        </div>
+        ${q.explanation ? `<div class="explain"><b>הסבר:</b> ${esc(q.explanation)}</div>` : ''}
+      </div>
+      ${boardCard(5)}`;
+  }
+
+  function boardCard(limit) {
+    const lb = (S.leaderboard || []).slice(0, limit);
+    const myName = S.me && S.me.name;
+    return `<div class="card"><h2>דירוג המשתתפים 🏆</h2>
+      <ul class="lb">${lb.map(r => `<li class="p${r.rank} ${r.name === myName ? 'me' : ''}">
+        <span class="pos">${r.rank}</span><span class="nm">${esc(r.name)}</span>
+        <span class="cr">${r.correct} ✔</span><span class="sc">${r.score}</span></li>`).join('') || '<li class="muted">עוד אין ניקוד</li>'}
+      </ul>
+      ${S.me && S.me.rank > limit ? `<ul class="lb"><li class="me"><span class="pos">${S.me.rank}</span><span class="nm">${esc(S.me.name)}</span><span class="cr">${S.me.correct} ✔</span><span class="sc">${S.me.score}</span></li></ul>` : ''}
+    </div>`;
+  }
+
+  function renderBoard() {
+    renderedKey = 'board:' + version;
+    app.innerHTML = myLine() + boardCard(10) +
+      `<p class="center small muted">הניקוד מתעדכן אחרי חשיפת כל תשובה.</p>`;
+  }
+
+  function podium(lb) {
+    const [a, b, c] = lb;
+    const col = (r, cls, medal) => r ? `<div class="col ${cls}"><div style="font-size:30px">${medal}</div><div class="nm">${esc(r.name)}</div><div class="sc">${r.score} נק׳</div><div class="blk">${r.rank}</div></div>` : '<div class="col"></div>';
+    return `<div class="podium">${col(b, 's', '🥈')}${col(a, 'g', '🥇')}${col(c, 'b', '🥉')}</div>`;
+  }
+
+  function renderFinal() {
+    const key = 'final:' + version; if (renderedKey === key) return; renderedKey = key;
+    const st = S.stats || {};
+    app.innerHTML = `
+      <div class="card center">
+        <div class="trophy">🏆</div>
+        <h1>הזוכים הגדולים!</h1>
+        ${podium(S.leaderboard || [])}
+      </div>
+      ${myLine()}
+      <div class="card"><h2>סטטיסטיקות המשחק</h2>
+        <div class="stats">
+          <div class="stat"><b>${st.players || 0}</b><span>משתתפים</span></div>
+          <div class="stat"><b>${st.questions || 0}</b><span>שאלות</span></div>
+          <div class="stat"><b>${st.correct_pct ?? 0}%</b><span>תשובות נכונות</span></div>
+        </div>
+        ${st.fastest ? `<p class="center" style="margin-top:12px">⚡ התשובה הנכונה המהירה ביותר: <b>${esc(st.fastest.name)}</b> (${(st.fastest.ms / 1000).toFixed(1)} שנ׳)</p>` : ''}
+      </div>
+      ${boardCard(10)}
+      <p class="center muted">תודה שהשתתפתם! 🚌</p>`;
+  }
+
+  tabs.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    view = b.dataset.view;
+    tabs.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+    renderedKey = ''; if (S) render();
+  });
+
+  // ------------------------------------------------------------ Démarrage
+  if (me && me.token) startPolling(true); else renderJoin({});
+})();
+</script>
+</body>
+</html>
