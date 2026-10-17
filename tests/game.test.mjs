@@ -198,3 +198,36 @@ test('égalité : départage stable et documenté', async () => {
   assert.deepEqual(lb.map(r => r.rank), [1, 2]);
   void x; void y;
 });
+
+test('durée par défaut : appliquée aux questions sans durée, désactivable avec 0', async () => {
+  await rpc(c, 'admin_new_game', { p_token: admin });
+  const s = await rpc(c, 'admin_state', { p_token: admin });
+  assert.equal(s.game.default_time_limit_sec, 30);
+  const noLimit = s.questions.find(q => q.time_limit_sec === null);
+  await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: noLimit.id });
+  let cur = (await rpc(c, 'admin_state', { p_token: admin })).current;
+  assert.equal(cur.time_limit_sec, 30);
+  assert.ok(Math.abs(Date.parse(cur.closes_at) - Date.parse(cur.opened_at) - 30000) < 5);
+  await rpc(c, 'admin_reveal', { p_token: admin });
+  // 0 = sans limite ; la valeur est conservée pour la partie suivante
+  await rpc(c, 'admin_settings', { p_token: admin, p_s: { default_time_limit_sec: '0' } });
+  await rpc(c, 'admin_new_game', { p_token: admin });
+  assert.equal((await rpc(c, 'admin_state', { p_token: admin })).game.default_time_limit_sec, 0);
+  await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: noLimit.id });
+  cur = (await rpc(c, 'admin_state', { p_token: admin })).current;
+  assert.equal(cur.closes_at, null);
+  // une durée propre à la question l'emporte toujours
+  await rpc(c, 'admin_reveal', { p_token: admin });
+  const own = s.questions.find(q => q.time_limit_sec === 20);
+  await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: own.id });
+  assert.equal((await rpc(c, 'admin_state', { p_token: admin })).current.time_limit_sec, 20);
+  await rpc(c, 'admin_settings', { p_token: admin, p_s: { default_time_limit_sec: '30' } });
+});
+
+test('installation ré-exécutable sans doublons', async () => {
+  const { readFileSync } = await import('node:fs');
+  const n0 = (await c.query('select count(*)::int n from mdl.questions')).rows[0].n;
+  await c.query(readFileSync(new URL('../supabase/schema.sql', import.meta.url), 'utf8'));
+  await c.query(readFileSync(new URL('../supabase/seed_demo.sql', import.meta.url), 'utf8'));
+  assert.equal((await c.query('select count(*)::int n from mdl.questions')).rows[0].n, n0);
+});

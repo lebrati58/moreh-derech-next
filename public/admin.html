@@ -133,6 +133,13 @@
     tickTimer();
   }
 
+  // Durée effective d'une question : la sienne, sinon celle par défaut de la partie
+  function timeLabel(sec) {
+    if (sec) return sec + ' שנ׳';
+    const d = S && S.game ? S.game.default_time_limit_sec : 30;
+    return d ? d + ' שנ׳ (ברירת מחדל)' : 'ללא הגבלה';
+  }
+
   const unused = () => S.questions.filter(q => !q.used);
   function nextQuestion() {
     const u = unused();
@@ -163,7 +170,7 @@
     const others = unused().filter(q => q.id !== n.id);
     return `<div class="card">
       <div class="row" style="justify-content:space-between;align-items:center"><span class="cat">השאלה הבאה · ${esc(n.category)}</span>
-      <span class="small muted">${n.time_limit_sec ? n.time_limit_sec + ' שנ׳' : 'ללא הגבלת זמן'} · ${DIFF[n.difficulty]}</span></div>
+      <span class="small muted">⏱️ ${timeLabel(n.time_limit_sec)} · ${DIFF[n.difficulty]}</span></div>
       ${n.is_demo ? '<span class="badge demo">הדגמה — לא מאומת</span>' : ''}
       <div class="question-text">${esc(n.text)}</div>
       <ul class="small" style="margin:0 0 12px;padding-inline-start:18px">${n.options.map((o, i) => `<li ${i === n.correct_index ? 'style="color:var(--ok);font-weight:800"' : ''}>${esc(o)} ${i === n.correct_index ? '✔' : ''}</li>`).join('')}</ul>
@@ -206,8 +213,8 @@
 
     if (c && g.phase === 'open') {
       html += `<div class="card">
-        <div class="row" style="justify-content:space-between;align-items:center"><span class="cat">שאלה ${c.seq} · פתוחה</span><span id="tnum" class="timer-num"></span></div>
-        ${c.closes_at ? '<div class="timer"><div id="tbar" style="width:100%"></div></div>' : ''}
+        <div class="qhead"><div class="meta"><span class="cat">שאלה ${c.seq} · פתוחה</span>${c.closes_at ? '' : '<span class="small muted">ללא הגבלת זמן</span>'}</div>
+        ${c.closes_at ? MDL.ringHtml() : ''}</div>
         <div class="question-text">${esc(c.text)}</div>
         <div style="font-size:30px;font-weight:900;text-align:center;color:var(--sea)">${c.answers} / ${S.online} ענו</div>
         ${bars(c, true)}
@@ -248,7 +255,7 @@
         <span class="num">${i + 1}</span>
         <div class="body">
           <div class="txt">${esc(q.text)}</div>
-          <div class="small muted" style="margin-top:4px">${esc(q.category)} · ${DIFF[q.difficulty]} · ${q.time_limit_sec ? q.time_limit_sec + ' שנ׳' : 'ללא זמן'} · ${q.kind === 'tf' ? 'נכון/לא נכון' : q.options.length + ' תשובות'}
+          <div class="small muted" style="margin-top:4px">${esc(q.category)} · ${DIFF[q.difficulty]} · ⏱️ ${timeLabel(q.time_limit_sec)} · ${q.kind === 'tf' ? 'נכון/לא נכון' : q.options.length + ' תשובות'}
             ${q.used ? '<span class="badge used">הוצגה</span>' : ''} ${q.is_demo ? '<span class="badge demo">הדגמה</span>' : ''}</div>
           <div class="small" style="color:var(--ok);font-weight:700;margin-top:2px">✔ ${esc(q.options[q.correct_index])}</div>
           <div class="acts">
@@ -286,7 +293,9 @@
         <div><label>בונוס מהירות מרבי</label><input type="number" name="max_bonus" value="${g.max_bonus}" min="0" max="1000"></div></div>
         <div class="row"><div><label>חלון בונוס (שנ׳)</label><input type="number" name="bonus_window_sec" value="${g.bonus_window_sec}" min="1" max="600"></div>
         <div><label>זמן חסד (שנ׳)</label><input type="number" name="grace_sec" value="${g.grace_sec}" min="0" max="10" step="0.5"></div></div>
-        <p class="small muted">בונוס מלא בתוך זמן החסד, ואז יורד בהדרגה עד 0 בסוף החלון (או בסוף זמן השאלה, אם הוגדר).</p>
+        <label>⏱️ זמן ברירת מחדל לכל שאלה (שנ׳, 0 = ללא הגבלה)</label>
+        <input type="number" name="default_time_limit_sec" value="${g.default_time_limit_sec}" min="0" max="600">
+        <p class="small muted">חל על כל שאלה שלא הוגדר לה זמן משלה. בונוס מלא בתוך זמן החסד, ואז יורד בהדרגה עד 0 בסוף זמן השאלה.</p>
         <button class="btn small">💾 שמירה</button></form>` : ''}
       <div class="card"><h2>ניהול המשחק</h2>
         <button class="btn small" data-a="export" style="margin-bottom:10px">⬇️ ייצוא תוצאות (CSV)</button>
@@ -304,18 +313,15 @@
   }
 
   function tickTimer() {
-    const c = S && S.current, n = document.getElementById('tnum'), bar = document.getElementById('tbar');
-    if (!c || !c.closes_at || !n) return;
-    const end = Date.parse(c.closes_at), start = Date.parse(c.opened_at);
-    const left = Math.max(0, end - (Date.now() + offset));
-    n.textContent = Math.ceil(left / 1000) + '″';
-    if (bar) bar.style.width = (100 * left / (end - start)) + '%';
+    const c = S && S.current;
+    if (!c || !S.game || S.game.phase !== 'open') return;
+    MDL.updateRing(c, offset);
   }
   setInterval(tickTimer, 250);
 
   // ------------------------------------------------------------ Éditeur
   function editor(q) {
-    q = q || { kind: 'mcq', text: '', options: ['', '', '', ''], correct_index: null, explanation: '', category: 'כללי', difficulty: 2, time_limit_sec: 30 };
+    q = q || { kind: 'mcq', text: '', options: ['', '', '', ''], correct_index: null, explanation: '', category: 'כללי', difficulty: 2, time_limit_sec: null };
     const opts = q.kind === 'tf' ? ['', '', '', ''] : [0, 1, 2, 3].map(i => q.options[i] || '');
     const canPublish = S.game && S.game.phase !== 'open' && S.game.status !== 'finished' && !q.used;
     const root = document.getElementById('modal-root');
@@ -343,8 +349,8 @@
         <div><label>קטגוריה</label><input type="text" name="category" list="cats" value="${esc(q.category)}"><datalist id="cats">${CATS.map(c => `<option value="${c}">`).join('')}</datalist></div>
         <div><label>רמת קושי</label><select name="difficulty">${[1, 2, 3].map(d => `<option value="${d}" ${q.difficulty === d ? 'selected' : ''}>${DIFF[d]}</option>`).join('')}</select></div>
       </div>
-      <label>זמן מרבי בשניות (ריק = ללא הגבלה)</label>
-      <input type="number" name="time_limit_sec" min="5" max="600" value="${q.time_limit_sec ?? ''}">
+      <label>⏱️ זמן מרבי בשניות</label>
+      <input type="number" name="time_limit_sec" min="5" max="600" value="${q.time_limit_sec ?? ''}" placeholder="ריק = ברירת המחדל (${timeLabel(null)})">
       <label class="optrow" style="font-weight:600"><input type="checkbox" name="is_demo" ${q.is_demo ? 'checked' : ''} style="width:22px;height:22px"> שאלת הדגמה (לא מאומתת)</label>
       <p id="qerr" class="small" style="color:var(--bad);min-height:1em"></p>
       <button class="btn">💾 שמירה</button>

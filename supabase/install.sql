@@ -1,4 +1,5 @@
 -- INSTALLATION COMPLÈTE (schema.sql + seed_demo.sql). À coller en entier dans Supabase > SQL Editor > Run.
+-- Peut être ré-exécuté sans risque : rien n'est effacé, aucune question n'est dupliquée.
 -- =====================================================================
 --  מורה דרך LIVE — schéma de base de données et logique serveur
 --  Cible : Supabase (PostgreSQL 15+). À exécuter une fois dans le SQL Editor.
@@ -70,6 +71,9 @@ create table if not exists mdl.games (
   created_at        timestamptz not null default clock_timestamp(),
   finished_at       timestamptz
 );
+-- Durée appliquée aux questions qui n'ont pas leur propre durée (0 = sans limite).
+alter table mdl.games add column if not exists default_time_limit_sec int not null default 30;
+
 -- Une seule partie active à la fois : c'est elle que rejoint le lien élèves.
 create unique index if not exists games_one_active on mdl.games (is_active) where is_active;
 
@@ -548,17 +552,18 @@ begin
          status = case when status = 'finished' then status else 'finished' end,
          finished_at = coalesce(finished_at, clock_timestamp())
    where is_active;
-  insert into mdl.games (title, base_points, max_bonus, bonus_window_sec, grace_sec)
+  insert into mdl.games (title, base_points, max_bonus, bonus_window_sec, grace_sec, default_time_limit_sec)
   values (coalesce(nullif(btrim(p_title), ''), 'מורה דרך LIVE'),
           coalesce(old.base_points, 100), coalesce(old.max_bonus, 100),
-          coalesce(old.bonus_window_sec, 20), coalesce(old.grace_sec, 1.5))
+          coalesce(old.bonus_window_sec, 20), coalesce(old.grace_sec, 1.5),
+          coalesce(old.default_time_limit_sec, 30))
   returning id into v_id;
   return jsonb_build_object('id', v_id);
 end $$;
 
 create or replace function public.admin_open_question(p_token text, p_question_id bigint)
 returns jsonb language plpgsql security definer set search_path = mdl, public as $$
-declare g mdl.games; x mdl.questions; v_now timestamptz := clock_timestamp(); v_seq int;
+declare g mdl.games; x mdl.questions; v_now timestamptz := clock_timestamp(); v_seq int; v_limit int;
 begin
   perform mdl.check_admin(p_token);
   g := mdl.active_game();
@@ -576,14 +581,16 @@ begin
   update mdl.game_questions set status = 'revealed', revealed_at = v_now
    where game_id = g.id and status = 'closed';
   select coalesce(max(seq), 0) + 1 into v_seq from mdl.game_questions where game_id = g.id;
+  -- durée propre à la question, sinon durée par défaut de la partie (0 = sans limite)
+  v_limit := coalesce(x.time_limit_sec, nullif(g.default_time_limit_sec, 0));
   insert into mdl.game_questions (game_id, question_id, seq, kind, text, options, correct_index, explanation,
                                   category, time_limit_sec, status, opened_at, closes_at)
   values (g.id, x.id, v_seq, x.kind, x.text, x.options, x.correct_index, x.explanation, x.category,
-          x.time_limit_sec, 'open', v_now,
-          case when x.time_limit_sec is null then null else v_now + make_interval(secs => x.time_limit_sec) end);
+          v_limit, 'open', v_now,
+          case when v_limit is null then null else v_now + make_interval(secs => v_limit) end);
   update mdl.games set status = 'live', phase = 'open', paused = false, current_question = x.id,
-         opened_at = v_now, closes_at = case when x.time_limit_sec is null then null
-                                             else v_now + make_interval(secs => x.time_limit_sec) end,
+         opened_at = v_now, closes_at = case when v_limit is null then null
+                                             else v_now + make_interval(secs => v_limit) end,
          version = version + 1
    where id = g.id;
   return jsonb_build_object('ok', true, 'seq', v_seq);
@@ -659,6 +666,9 @@ begin
     max_bonus        = least(1000, greatest(0, coalesce((p_s->>'max_bonus')::int, max_bonus))),
     bonus_window_sec = least(600, greatest(1, coalesce((p_s->>'bonus_window_sec')::int, bonus_window_sec))),
     grace_sec        = least(10, greatest(0, coalesce((p_s->>'grace_sec')::numeric, grace_sec))),
+    default_time_limit_sec = case when (p_s->>'default_time_limit_sec') is null then default_time_limit_sec
+                                  when (p_s->>'default_time_limit_sec')::int <= 0 then 0
+                                  else least(600, greatest(5, (p_s->>'default_time_limit_sec')::int)) end,
     version          = version + 1
    where is_active;
   return jsonb_build_object('ok', true);
@@ -722,17 +732,21 @@ select 'מורה דרך LIVE' where not exists (select 1 from mdl.games);
 -- Questions de DÉMONSTRATION (optionnel). Elles servent uniquement à tester
 -- le fonctionnement du jeu. Les réponses NE SONT PAS des faits validés :
 -- à vérifier ou remplacer par le guide avant le 21 octobre.
+-- Ajoutées seulement si la banque de questions est vide (ré-exécution sans doublons).
 insert into mdl.questions (kind, text, options, correct_index, explanation, category, difficulty, time_limit_sec, sort_order, is_demo)
-values
+select v.kind, v.text, v.options::jsonb, v.correct_index, v.explanation, v.category, v.difficulty, v.time_limit_sec, v.sort_order, true
+from (values
 ('mcq', '[הדגמה] מימין לאוטובוס אנחנו רואים גבעה. מאיזה סוג סלע היא בנויה?',
  '["גיר","בזלת","גרניט","חול"]', 0,
- 'שאלת הדגמה בלבד — התשובה לא אומתה. יש לעדכן לפני הסיור.', 'גאולוגיה', 2, 30, 1, true),
+ 'שאלת הדגמה בלבד — התשובה לא אומתה. יש לעדכן לפני הסיור.', 'גאולוגיה', 2, 30, 1),
 ('mcq', '[הדגמה] איזה מבצר צלבני נמצא על החוף ליד עתלית?',
  '["מבצר עתלית (שאטו פלרן)","מבצר נמרוד","כוכב הירדן","מבצר יחיעם"]', 0,
- 'שאלת הדגמה בלבד — יש לאמת את התשובה וההסבר.', 'היסטוריה', 2, 30, 2, true),
+ 'שאלת הדגמה בלבד — יש לאמת את התשובה וההסבר.', 'היסטוריה', 2, 30, 2),
 ('tf', '[הדגמה] כביש 2 נקרא גם "כביש החוף".',
  '["נכון","לא נכון"]', 0,
- 'שאלת הדגמה בלבד — יש לאמת.', 'גאוגרפיה', 1, 20, 3, true),
+ 'שאלת הדגמה בלבד — יש לאמת.', 'גאוגרפיה', 1, 20, 3),
 ('mcq', '[הדגמה] איזה רכס נראה משמאל לאוטובוס בנסיעה צפונה לחיפה?',
  '["הכרמל","הגלבוע","החרמון","רמת מנשה"]', 0,
- 'שאלת הדגמה בלבד — יש לאמת.', 'גאוגרפיה', 1, null, 4, true);
+ 'שאלת הדגמה בלבד — יש לאמת.', 'גאוגרפיה', 1, null::int, 4)
+) as v(kind, text, options, correct_index, explanation, category, difficulty, time_limit_sec, sort_order)
+where not exists (select 1 from mdl.questions);

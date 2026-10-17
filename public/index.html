@@ -212,11 +212,10 @@
     const locked = mine !== null;
     app.innerHTML = `
       <div class="card">
-        <div class="row" style="align-items:center;justify-content:space-between">
-          <span class="cat">שאלה ${q.seq} · ${esc(q.category)}</span>
-          <span id="tnum" class="timer-num"></span>
+        <div class="qhead">
+          <div class="meta"><span class="cat">שאלה ${q.seq}</span><span class="small muted">${esc(q.category)}</span></div>
+          ${q.closes_at ? MDL.ringHtml() : ''}
         </div>
-        ${q.closes_at ? '<div class="timer"><div id="tbar" style="width:100%"></div></div>' : '<div style="height:10px"></div>'}
         <div class="question-text">${esc(q.text)}</div>
         <div class="answers ${locked ? 'locked' : ''}" id="ans">
           ${q.options.map((o, i) => `<button class="ans c${i} ${(locked ? mine : selected) === i ? 'selected' : ''}" data-i="${i}" ${locked ? 'disabled' : ''}>
@@ -266,12 +265,10 @@
 
   function tickTimer() {
     const q = S && S.question;
-    const n = document.getElementById('tnum'), bar = document.getElementById('tbar');
-    if (!q || !q.closes_at || !n) return;
-    const end = Date.parse(q.closes_at), start = Date.parse(q.opened_at);
-    const left = Math.max(0, end - (Date.now() + offset));
-    n.textContent = Math.ceil(left / 1000) + '″';
-    if (bar) bar.style.width = (100 * left / (end - start)) + '%';
+    if (!q || !S.game || S.game.phase !== 'open') return;
+    const ring = document.getElementById('ring');
+    if (ring && answered(q) === null) ring.dataset.vibrate = '1';
+    MDL.updateRing(q, offset);
   }
   setInterval(tickTimer, 250);
 
