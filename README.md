@@ -12,7 +12,7 @@ répondent depuis leur téléphone. Interface entièrement en hébreu (RTL), pen
 ## Architecture
 
 ```
-Téléphones (pages statiques, ~25 Ko)  ──HTTPS──►  Supabase (PostgreSQL)
+Téléphones (page élève ~11 Ko compressée)  ──HTTPS──►  Supabase (PostgreSQL)
   index.html  (élèves)                              schéma privé "mdl" : tables
   admin.html  (guide)                               fonctions public.* : seule API autorisée
 ```
