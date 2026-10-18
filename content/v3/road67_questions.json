@@ -1,0 +1,593 @@
+{
+  "bank": "V3",
+  "label": {
+    "he": "כביש 67 — זכרון יעקב → יקנעם",
+    "fr": "Route 67 — Zikhron → Yokneam",
+    "en": "Road 67 — Zikhron to Yokneam",
+    "ru": "Шоссе 67 — Зихрон → Йокнеам"
+  },
+  "destination": "Aroma Yokneam, G Center, HaTamar 2; quiz ends well BEFORE arrival",
+  "photoCount": 0,
+  "geoStatus": "UNVERIFIED",
+  "coordinatePolicy": "Do not activate auto location triggers until verified roadway anchors are approved",
+  "sourceNotes": [
+    [
+      "Guide documents: הדרכת דרך זיכרון יקענם.docx; 20260827 הדרכת דרך.docx"
+    ],
+    [
+      "Sources used for fact-checking: NVIDIA newsroom acquisition completion (27 April 2020); source documents for historical content."
+    ]
+  ],
+  "questions": [
+    {
+      "id": "ROAD67-01",
+      "selection": "MAIN",
+      "topic": "Wadi Milh",
+      "order": 1,
+      "correctIndex": 0,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "מהי חשיבותו הגאוגרפית של מעבר ואדי מילח?",
+          "options": [
+            "מעבר טבעי בין מישור החוף לעמק יזרעאל",
+            "דרך ישירה לים המלח",
+            "הדרך היחידה לחרמון",
+            "מעבר במכתש רמון"
+          ],
+          "explanation": "זהו מעבר טבעי חשוב בין מישור החוף לפנים הארץ.",
+          "script": "המעבר בין הכרמל לרמות מנשה שימש תנועה בין החוף לפנים הארץ לאורך דורות."
+        },
+        "fr": {
+          "question": "Quel est le rôle géographique de Wadi Milh ?",
+          "options": [
+            "Un passage naturel entre le littoral et la vallée de Jezréel",
+            "Un accès direct à la mer Morte",
+            "L'unique route vers l'Hermon",
+            "Un passage au cratère de Ramon"
+          ],
+          "explanation": "זהו מעבר טבעי חשוב בין מישור החוף לפנים הארץ.",
+          "script": "המעבר בין הכרמל לרמות מנשה שימש תנועה בין החוף לפנים הארץ לאורך דורות."
+        },
+        "en": {
+          "question": "What is Wadi Milh's geographic significance?",
+          "options": [
+            "A natural pass between the coast and Jezreel Valley",
+            "A direct road to the Dead Sea",
+            "The only route to Mount Hermon",
+            "A pass through Ramon Crater"
+          ],
+          "explanation": "זהו מעבר טבעי חשוב בין מישור החוף לפנים הארץ.",
+          "script": "המעבר בין הכרמל לרמות מנשה שימש תנועה בין החוף לפנים הארץ לאורך דורות."
+        },
+        "ru": {
+          "question": "В чём географическое значение Вади-Мильх?",
+          "options": [
+            "Естественный проход между побережьем и долиной Изреель",
+            "Прямая дорога к Мёртвому морю",
+            "Единственная дорога к Хермону",
+            "Проход через кратер Рамон"
+          ],
+          "explanation": "זהו מעבר טבעי חשוב בין מישור החוף לפנים הארץ.",
+          "script": "המעבר בין הכרמל לרמות מנשה שימש תנועה בין החוף לפנים הארץ לאורך דורות."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-02",
+      "selection": "MAIN",
+      "topic": "Meir Shfeya",
+      "order": 2,
+      "correctIndex": 1,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "מי הקים בשנת 1904 מוסד חינוכי במאיר שפיה לילדים שנפגעו מפרעות קישינב?",
+          "options": [
+            "דוד בן-גוריון",
+            "ישראל בלקינד",
+            "בנימין זאב הרצל",
+            "מאיר דיזנגוף"
+          ],
+          "explanation": "ישראל בלקינד הקים בשפיה מוסד לילדים לאחר פרעות קישינב.",
+          "script": "כפר הנוער מאיר שפיה משלב זיכרון לעלייה הראשונה עם ראשית החינוך החקלאי לנוער."
+        },
+        "fr": {
+          "question": "Qui a créé en 1904 une institution pour des enfants touchés par les pogroms de Kichinev ?",
+          "options": [
+            "David Ben Gourion",
+            "Israel Belkind",
+            "Theodor Herzl",
+            "Meir Dizengoff"
+          ],
+          "explanation": "ישראל בלקינד הקים בשפיה מוסד לילדים לאחר פרעות קישינב.",
+          "script": "כפר הנוער מאיר שפיה משלב זיכרון לעלייה הראשונה עם ראשית החינוך החקלאי לנוער."
+        },
+        "en": {
+          "question": "Who established an educational institution here in 1904 for children affected by the Kishinev pogroms?",
+          "options": [
+            "David Ben-Gurion",
+            "Israel Belkind",
+            "Theodor Herzl",
+            "Meir Dizengoff"
+          ],
+          "explanation": "ישראל בלקינד הקים בשפיה מוסד לילדים לאחר פרעות קישינב.",
+          "script": "כפר הנוער מאיר שפיה משלב זיכרון לעלייה הראשונה עם ראשית החינוך החקלאי לנוער."
+        },
+        "ru": {
+          "question": "Кто создал здесь в 1904 году учреждение для детей, пострадавших от кишинёвских погромов?",
+          "options": [
+            "Давид Бен-Гурион",
+            "Исраэль Белькинд",
+            "Теодор Герцль",
+            "Меир Дизенгоф"
+          ],
+          "explanation": "ישראל בלקינד הקים בשפיה מוסד לילדים לאחר פרעות קישינב.",
+          "script": "כפר הנוער מאיר שפיה משלב זיכרון לעלייה הראשונה עם ראשית החינוך החקלאי לנוער."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-03",
+      "selection": "MAIN",
+      "topic": "Alona forests",
+      "order": 3,
+      "correctIndex": 1,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "איזה עץ מאפיין את יערות האלונים הטבעיים באזור אלונה?",
+          "options": [
+            "דקל התמר",
+            "אלון התבור",
+            "דקל הקוקוס",
+            "ארז הלבנון"
+          ],
+          "explanation": "באזור אלונה ידוע חורש טבעי של אלוני תבור.",
+          "script": "היער הטבעי שונה מיערות אורנים נטועים. לא כל עץ שנראה באוטובוס הוא אלון תבור."
+        },
+        "fr": {
+          "question": "Quel arbre caractérise les bois naturels d'Alona ?",
+          "options": [
+            "Le palmier-dattier",
+            "Le chêne du Tabor",
+            "Le cocotier",
+            "Le cèdre du Liban"
+          ],
+          "explanation": "באזור אלונה ידוע חורש טבעי של אלוני תבור.",
+          "script": "היער הטבעי שונה מיערות אורנים נטועים. לא כל עץ שנראה באוטובוס הוא אלון תבור."
+        },
+        "en": {
+          "question": "Which tree characterizes Alona's natural woodlands?",
+          "options": [
+            "Date palm",
+            "Tabor oak",
+            "Coconut palm",
+            "Lebanon cedar"
+          ],
+          "explanation": "באזור אלונה ידוע חורש טבעי של אלוני תבור.",
+          "script": "היער הטבעי שונה מיערות אורנים נטועים. לא כל עץ שנראה באוטובוס הוא אלון תבור."
+        },
+        "ru": {
+          "question": "Какое дерево характерно для естественных лесов Алона?",
+          "options": [
+            "Финиковая пальма",
+            "Таворский дуб",
+            "Кокосовая пальма",
+            "Ливанский кедр"
+          ],
+          "explanation": "באזור אלונה ידוע חורש טבעי של אלוני תבור.",
+          "script": "היער הטבעי שונה מיערות אורנים נטועים. לא כל עץ שנראה באוטובוס הוא אלון תבור."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-04",
+      "selection": "MAIN",
+      "topic": "Bat Shlomo",
+      "order": 4,
+      "correctIndex": 0,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "באיזו שנה נוסדה המושבה בת שלמה?",
+          "options": [
+            "1889",
+            "1949",
+            "1917",
+            "1967"
+          ],
+          "explanation": "בת שלמה הוקמה בשנת 1889 כמושבה מתקופת העלייה הראשונה.",
+          "script": "האזור מספר שני סיפורי התיישבות: מושבה ותיקה ולצדה מושב מאוחר יותר."
+        },
+        "fr": {
+          "question": "En quelle année Bat Shlomo a-t-elle été fondée ?",
+          "options": [
+            "1889",
+            "1949",
+            "1917",
+            "1967"
+          ],
+          "explanation": "בת שלמה הוקמה בשנת 1889 כמושבה מתקופת העלייה הראשונה.",
+          "script": "האזור מספר שני סיפורי התיישבות: מושבה ותיקה ולצדה מושב מאוחר יותר."
+        },
+        "en": {
+          "question": "In what year was Bat Shlomo founded?",
+          "options": [
+            "1889",
+            "1949",
+            "1917",
+            "1967"
+          ],
+          "explanation": "בת שלמה הוקמה בשנת 1889 כמושבה מתקופת העלייה הראשונה.",
+          "script": "האזור מספר שני סיפורי התיישבות: מושבה ותיקה ולצדה מושב מאוחר יותר."
+        },
+        "ru": {
+          "question": "В каком году была основана Бат-Шломо?",
+          "options": [
+            "1889",
+            "1949",
+            "1917",
+            "1967"
+          ],
+          "explanation": "בת שלמה הוקמה בשנת 1889 כמושבה מתקופת העלייה הראשונה.",
+          "script": "האזור מספר שני סיפורי התיישבות: מושבה ותיקה ולצדה מושב מאוחר יותר."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-05",
+      "selection": "MAIN",
+      "topic": "Hagit power station",
+      "order": 5,
+      "correctIndex": 2,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "מהו מקור האנרגיה העיקרי של תחנת הכוח חגית?",
+          "options": [
+            "פחם",
+            "רוח",
+            "גז טבעי",
+            "אנרגיה גרעינית"
+          ],
+          "explanation": "תחנת הכוח חגית פועלת בעיקר באמצעות גז טבעי.",
+          "script": "כאן אפשר לדבר על האופן שבו גז טבעי משמש לייצור חשמל. אין להצביע על ארובה מסוימת ללא אימות."
+        },
+        "fr": {
+          "question": "Quelle est la principale source d'énergie de la centrale Hagit ?",
+          "options": [
+            "Charbon",
+            "Vent",
+            "Gaz naturel",
+            "Nucléaire"
+          ],
+          "explanation": "תחנת הכוח חגית פועלת בעיקר באמצעות גז טבעי.",
+          "script": "כאן אפשר לדבר על האופן שבו גז טבעי משמש לייצור חשמל. אין להצביע על ארובה מסוימת ללא אימות."
+        },
+        "en": {
+          "question": "What is the main energy source of the Hagit power station?",
+          "options": [
+            "Coal",
+            "Wind",
+            "Natural gas",
+            "Nuclear"
+          ],
+          "explanation": "תחנת הכוח חגית פועלת בעיקר באמצעות גז טבעי.",
+          "script": "כאן אפשר לדבר על האופן שבו גז טבעי משמש לייצור חשמל. אין להצביע על ארובה מסוימת ללא אימות."
+        },
+        "ru": {
+          "question": "Какой основной источник энергии электростанции Хагит?",
+          "options": [
+            "Уголь",
+            "Ветер",
+            "Природный газ",
+            "Ядерная энергия"
+          ],
+          "explanation": "תחנת הכוח חגית פועלת בעיקר באמצעות גז טבעי.",
+          "script": "כאן אפשר לדבר על האופן שבו גז טבעי משמש לייצור חשמל. אין להצביע על ארובה מסוימת ללא אימות."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-06",
+      "selection": "MAIN",
+      "topic": "Elyakim",
+      "order": 6,
+      "correctIndex": 1,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "איזו קהילת עולים הקימה את מושב אליקים בשנת 1949?",
+          "options": [
+            "עולים מצרפת",
+            "עולים מתימן",
+            "עולים מארגנטינה",
+            "עולים מארצות הברית"
+          ],
+          "explanation": "מושב אליקים הוקם בשנת 1949 בידי עולים מתימן.",
+          "script": "סיפור ההתיישבות באליקים משתלב בעלייה הגדולה ובבניית מושבים חקלאיים אחרי קום המדינה."
+        },
+        "fr": {
+          "question": "Quelle communauté d'immigrants a fondé Elyakim en 1949 ?",
+          "options": [
+            "Des Français",
+            "Des Yéménites",
+            "Des Argentins",
+            "Des Américains"
+          ],
+          "explanation": "מושב אליקים הוקם בשנת 1949 בידי עולים מתימן.",
+          "script": "סיפור ההתיישבות באליקים משתלב בעלייה הגדולה ובבניית מושבים חקלאיים אחרי קום המדינה."
+        },
+        "en": {
+          "question": "Which immigrant community founded Elyakim in 1949?",
+          "options": [
+            "Immigrants from France",
+            "Immigrants from Yemen",
+            "Immigrants from Argentina",
+            "Immigrants from the United States"
+          ],
+          "explanation": "מושב אליקים הוקם בשנת 1949 בידי עולים מתימן.",
+          "script": "סיפור ההתיישבות באליקים משתלב בעלייה הגדולה ובבניית מושבים חקלאיים אחרי קום המדינה."
+        },
+        "ru": {
+          "question": "Какие репатрианты основали Эльяким в 1949 году?",
+          "options": [
+            "Из Франции",
+            "Из Йемена",
+            "Из Аргентины",
+            "Из США"
+          ],
+          "explanation": "מושב אליקים הוקם בשנת 1949 בידי עולים מתימן.",
+          "script": "סיפור ההתיישבות באליקים משתלב בעלייה הגדולה ובבניית מושבים חקלאיים אחרי קום המדינה."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-07",
+      "selection": "MAIN",
+      "topic": "Biblical Yokneam",
+      "order": 7,
+      "correctIndex": 1,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "באיזה ספר בתנ״ך מוזכרת יקנעם ברשימת המלכים שנכבשו?",
+          "options": [
+            "שמות",
+            "יהושע",
+            "אסתר",
+            "רות"
+          ],
+          "explanation": "יקנעם לכרמל נזכרת ברשימת המלכים בספר יהושע.",
+          "script": "הביטוי המקראי הוא ״ומלך יקנעם לכרמל אחד״. אין להסיק מכך שהתל נראה מהכביש."
+        },
+        "fr": {
+          "question": "Dans quel livre biblique Yokneam figure-t-elle parmi les rois vaincus ?",
+          "options": [
+            "Exode",
+            "Josué",
+            "Esther",
+            "Ruth"
+          ],
+          "explanation": "יקנעם לכרמל נזכרת ברשימת המלכים בספר יהושע.",
+          "script": "הביטוי המקראי הוא ״ומלך יקנעם לכרמל אחד״. אין להסיק מכך שהתל נראה מהכביש."
+        },
+        "en": {
+          "question": "In which biblical book is Yokneam listed among the defeated kings?",
+          "options": [
+            "Exodus",
+            "Joshua",
+            "Esther",
+            "Ruth"
+          ],
+          "explanation": "יקנעם לכרמל נזכרת ברשימת המלכים בספר יהושע.",
+          "script": "הביטוי המקראי הוא ״ומלך יקנעם לכרמל אחד״. אין להסיק מכך שהתל נראה מהכביש."
+        },
+        "ru": {
+          "question": "В какой библейской книге Йокнеам упомянут среди побеждённых царей?",
+          "options": [
+            "Исход",
+            "Иисус Навин",
+            "Эсфирь",
+            "Руфь"
+          ],
+          "explanation": "יקנעם לכרמל נזכרת ברשימת המלכים בספר יהושע.",
+          "script": "הביטוי המקראי הוא ״ומלך יקנעם לכרמל אחד״. אין להסיק מכך שהתל נראה מהכביש."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-08",
+      "selection": "MAIN",
+      "topic": "NVIDIA Mellanox",
+      "order": 8,
+      "correctIndex": 0,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "איזו חברה ישראלית שפעלה ביוקנעם נרכשה בידי אנבידיה בשנת 2020?",
+          "options": [
+            "מלנוקס",
+            "מובילאיי",
+            "ווייז",
+            "צ׳ק פוינט"
+          ],
+          "explanation": "אנבידיה השלימה את רכישת מלאנוקס בשנת 2020 תמורת כ-7 מיליארד דולר.",
+          "script": "יוקנעם התפתחה ממעברה ועיירת פיתוח למוקד הייטק. רכישת מלאנוקס בידי אנבידיה ממחישה את השינוי. זו שאלת הסיום, רק אם נותר זמן לפני ארומה."
+        },
+        "fr": {
+          "question": "Quelle entreprise israélienne active à Yokneam a été acquise par NVIDIA en 2020 ?",
+          "options": [
+            "Mellanox",
+            "Mobileye",
+            "Waze",
+            "Check Point"
+          ],
+          "explanation": "אנבידיה השלימה את רכישת מלאנוקס בשנת 2020 תמורת כ-7 מיליארד דולר.",
+          "script": "יוקנעם התפתחה ממעברה ועיירת פיתוח למוקד הייטק. רכישת מלאנוקס בידי אנבידיה ממחישה את השינוי. זו שאלת הסיום, רק אם נותר זמן לפני ארומה."
+        },
+        "en": {
+          "question": "Which Israeli company active in Yokneam was acquired by NVIDIA in 2020?",
+          "options": [
+            "Mellanox",
+            "Mobileye",
+            "Waze",
+            "Check Point"
+          ],
+          "explanation": "אנבידיה השלימה את רכישת מלאנוקס בשנת 2020 תמורת כ-7 מיליארד דולר.",
+          "script": "יוקנעם התפתחה ממעברה ועיירת פיתוח למוקד הייטק. רכישת מלאנוקס בידי אנבידיה ממחישה את השינוי. זו שאלת הסיום, רק אם נותר זמן לפני ארומה."
+        },
+        "ru": {
+          "question": "Какую израильскую компанию, работавшую в Йокнеаме, NVIDIA приобрела в 2020 году?",
+          "options": [
+            "Mellanox",
+            "Mobileye",
+            "Waze",
+            "Check Point"
+          ],
+          "explanation": "אנבידיה השלימה את רכישת מלאנוקס בשנת 2020 תמורת כ-7 מיליארד דולר.",
+          "script": "יוקנעם התפתחה ממעברה ועיירת פיתוח למוקד הייטק. רכישת מלאנוקס בידי אנבידיה ממחישה את השינוי. זו שאלת הסיום, רק אם נותר זמן לפני ארומה."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-09",
+      "selection": "SPARE",
+      "topic": "Ramat Menashe geology",
+      "order": 9,
+      "correctIndex": 0,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "מדוע רבות מהגבעות ברמות מנשה מעוגלות?",
+          "options": [
+            "בליה וסחיפה של סלעים רכים יחסית",
+            "פעילות געשית מהשבוע שעבר",
+            "בנייה מלאכותית",
+            "קרחונים פעילים כיום"
+          ],
+          "explanation": "בליה וסחיפה עיצבו בהדרגה סלעים רכים יחסית.",
+          "script": "חתכי דרך מאפשרים לראות את שכבות הסלע; זיהוי כל שכבה דורש בדיקה גאולוגית."
+        },
+        "fr": {
+          "question": "Pourquoi de nombreuses collines de Ramat Menashe sont-elles arrondies ?",
+          "options": [
+            "Érosion de roches relativement tendres",
+            "Volcanisme la semaine dernière",
+            "Construction artificielle",
+            "Glaciers actifs aujourd'hui"
+          ],
+          "explanation": "בליה וסחיפה עיצבו בהדרגה סלעים רכים יחסית.",
+          "script": "חתכי דרך מאפשרים לראות את שכבות הסלע; זיהוי כל שכבה דורש בדיקה גאולוגית."
+        },
+        "en": {
+          "question": "Why are many Ramat Menashe hills rounded?",
+          "options": [
+            "Weathering and erosion of relatively soft rock",
+            "Volcanic activity last week",
+            "Artificial construction",
+            "Present-day glaciers"
+          ],
+          "explanation": "בליה וסחיפה עיצבו בהדרגה סלעים רכים יחסית.",
+          "script": "חתכי דרך מאפשרים לראות את שכבות הסלע; זיהוי כל שכבה דורש בדיקה גאולוגית."
+        },
+        "ru": {
+          "question": "Почему многие холмы Рамат-Менаше округлые?",
+          "options": [
+            "Выветривание и эрозия сравнительно мягких пород",
+            "Вулканизм прошлой недели",
+            "Искусственное строительство",
+            "Современные ледники"
+          ],
+          "explanation": "בליה וסחיפה עיצבו בהדרגה סלעים רכים יחסית.",
+          "script": "חתכי דרך מאפשרים לראות את שכבות הסלע; זיהוי כל שכבה דורש בדיקה גאולוגית."
+        }
+      }
+    },
+    {
+      "id": "ROAD67-10",
+      "selection": "SPARE",
+      "topic": "Loquat orchards",
+      "order": 10,
+      "correctIndex": 0,
+      "anchor": null,
+      "confidence": "unverified",
+      "side": "unverified",
+      "timeLimitSec": 45,
+      "i18n": {
+        "he": {
+          "question": "למה מכסים לעיתים מטעי שסק ברשתות?",
+          "options": [
+            "להגן על הפרי מפגיעת ציפורים ועטלפים",
+            "כדי לגדל דגים",
+            "ליצור שלג",
+            "לשנות את צבע השמיים"
+          ],
+          "explanation": "רשתות עוזרות להגן על הפרי מפגיעת בעלי חיים.",
+          "script": "במטעים לאורך הדרך מגדלים גם שסק. פרי מתוק מושך גם ציפורים ועטלפים."
+        },
+        "fr": {
+          "question": "Pourquoi couvre-t-on parfois les vergers de nèfles de filets ?",
+          "options": [
+            "Protéger les fruits des oiseaux et chauves-souris",
+            "Élever des poissons",
+            "Produire de la neige",
+            "Changer la couleur du ciel"
+          ],
+          "explanation": "רשתות עוזרות להגן על הפרי מפגיעת בעלי חיים.",
+          "script": "במטעים לאורך הדרך מגדלים גם שסק. פרי מתוק מושך גם ציפורים ועטלפים."
+        },
+        "en": {
+          "question": "Why are loquat orchards sometimes covered with nets?",
+          "options": [
+            "To protect fruit from birds and bats",
+            "To farm fish",
+            "To make snow",
+            "To change the sky's colour"
+          ],
+          "explanation": "רשתות עוזרות להגן על הפרי מפגיעת בעלי חיים.",
+          "script": "במטעים לאורך הדרך מגדלים גם שסק. פרי מתוק מושך גם ציפורים ועטלפים."
+        },
+        "ru": {
+          "question": "Зачем иногда накрывают сетками сады мушмулы?",
+          "options": [
+            "Защищать плоды от птиц и летучих мышей",
+            "Разводить рыбу",
+            "Создавать снег",
+            "Менять цвет неба"
+          ],
+          "explanation": "רשתות עוזרות להגן על הפרי מפגיעת בעלי חיים.",
+          "script": "במטעים לאורך הדרך מגדלים גם שסק. פרי מתוק מושך גם ציפורים ועטלפים."
+        }
+      }
+    }
+  ]
+}
