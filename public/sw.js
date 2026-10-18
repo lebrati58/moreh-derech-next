@@ -1,7 +1,7 @@
 // Hors-ligne : les pages et leurs fichiers sont servis depuis le cache si le réseau tombe.
 // Stratégie "réseau d'abord" : toujours la dernière version quand le réseau est là.
 // Les appels à Supabase (POST, autre domaine) ne passent jamais par ce cache.
-const CACHE = 'mdl-v3';
+const CACHE = 'mdl-v4';
 const FILES = ['./', './index.html', './admin.html', './style.css', './api.js', './config.js'];
 
 self.addEventListener('install', e => {
