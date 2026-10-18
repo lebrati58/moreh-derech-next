@@ -12,7 +12,7 @@ const a = await ctxA.newPage(); a.on('pageerror', e => errors.push(e.message));
 await a.goto(B + '/admin.html'); await a.fill('#pw', 'guide-test-2026'); await a.click('text=כניסה');
 await a.waitForSelector('text=פרסם שאלה');
 const p = await (await br.newContext(ph)).newPage(); p.on('pageerror', e => errors.push(e.message));
-await p.goto(B + '/'); await p.fill('#nm', 'נועה'); await p.click('text=הצטרפות למשחק'); await p.waitForSelector('text=מחכים');
+await p.goto(B + '/'); await p.fill('#nm', 'נועה'); await p.click('#jbtn'); await p.waitForSelector('text=מחכים');
 
 // 1re question du trajet (Nahal Taninim)
 await a.screenshot({ path: OUT + '/g0-next.png', fullPage: true });

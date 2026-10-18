@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero"><div class="hero-inner"><div class="brand"><span>Mise à jour</span><span class="live">V2</span></div></div></header>
+<header class="hero"><div class="hero-inner"><div class="brand"><span>Mise à jour</span><span class="live">V3</span></div></div></header>
 <main id="app">
   <form class="card" id="f">
     <h1>Installer la mise à jour</h1>
@@ -49,9 +49,10 @@
       say('4/4 Vérification…');
       await new Promise(r => setTimeout(r, 2500));          // le temps que Supabase recharge ses fonctions
       const s = await rpc('admin_state', { p_token: token });
-      const v2 = (s.banks || []).find(b => b.code === 'V2');
-      if (!v2) throw new Error('Vérification impossible : réessayez dans 10 secondes.');
-      say(`   ✔ Parcours photographié : ${v2.main} questions + ${v2.spare} de remplacement`);
+      const v2 = (s.banks || []).find(b => b.code === 'V2'), v3 = (s.banks || []).find(b => b.code === 'V3');
+      if (!v2 || !v3) throw new Error('Vérification impossible : réessayez dans 10 secondes.');
+      say(`   ✔ V2 parcours photographié : ${v2.main} questions + ${v2.spare} de remplacement`);
+      say(`   ✔ V3 route 67 : ${v3.main} questions + ${v3.spare} de remplacement (sans photo)`);
       say('\n🎉 TERMINÉ ! Ouvrez la page admin, puis « 🔄 משחק חדש ».');
       store.set('mdl_admin', token);
       btn.textContent = 'Ouvrir la page admin'; btn.disabled = false;

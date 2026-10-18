@@ -11,6 +11,7 @@ const file = p => readFileSync(new URL('../' + p, import.meta.url), 'utf8');
 const DATA = loadV2();
 const SRC = Object.fromEntries(DATA.v2.questions.map(q => [q.id, q]));
 const srcOf = q => SRC[q.ext_key.replace(/^v2:/, '')];
+const noMe = lb => lb.map(({ me, ...r }) => r);
 
 let c, admin;
 // remonte le temps de la question ouverte (évite d'attendre 30 s pour de vrai)
@@ -54,7 +55,7 @@ test('banques séparées : V1 = 34, V2 = 6 principales + 2 alternatives, jamais 
   const times = main.map(q => q.route_meta.routeMarkerTime);
   assert.deepEqual(times, [...times].sort());
   assert.deepEqual(s.questions.slice(0, 6).map(q => q.selection), Array(6).fill('MAIN'));
-  assert.deepEqual(s.banks.map(b => [b.code, b.main, b.spare]), [['V1', 34, 0], ['V2', 6, 2]]);
+  assert.deepEqual(s.banks.map(b => [b.code, b.main, b.spare]), [['V1', 34, 0], ['V2', 6, 2], ['V3', 6, 4]]);
 
   // une question V1 ne peut pas être publiée dans une partie V2 (et inversement)
   assert.equal((await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: v1[0].id })).error, 'wrong_bank');
@@ -169,7 +170,7 @@ test('4 langues : même question, même index, même chrono, même score, même 
     assert.equal(v.my_points, 200, l);
     assert.equal(v.explanation, src.translations[l].studentExplanation);
     assert.deepEqual(v.counts, after.he.question.counts);
-    assert.deepEqual(after[l].leaderboard, after.he.leaderboard, 'un seul classement pour toutes les langues');
+    assert.deepEqual(noMe(after[l].leaderboard), noMe(after.he.leaderboard), 'un seul classement pour toutes les langues');
   }
   assert.equal((await state()).players, 4, 'une seule partie, pas de partie par langue');
   assert.deepEqual((await state()).langs, { he: 1, fr: 1, en: 1, ru: 1 });
@@ -177,9 +178,10 @@ test('4 langues : même question, même index, même chrono, même score, même 
 
 test('changer de langue en cours de partie ne perd ni les points ni le joueur', async () => {
   const s = await state();
-  const p = await rpc(c, 'join_game', { p_name: 'élève-fr', p_token: null, p_code: null });   // nom déjà pris
-  assert.equal(p.error, 'name_taken');
-  const fr = (await c.query(`select token::text, code from mdl.players where name = 'élève-fr' and game_id = $1`, [s.game.id])).rows[0];
+  const p = await rpc(c, 'join_game', { p_name: 'élève-fr', p_token: null, p_code: null });   // homonyme : nouveau joueur
+  assert.equal(p.error, undefined); assert.equal(p.reconnected, false);
+  const fr = (await c.query(`select token::text, code from mdl.players where name = 'élève-fr' and game_id = $1 order by joined_at, id limit 1`, [s.game.id])).rows[0];
+  assert.notEqual(fr.token, p.token);
   const before = await rpc(c, 'get_state', { p_token: fr.token, p_since: 0 });
   assert.equal((await rpc(c, 'set_language', { p_token: fr.token, p_lang: 'ru' })).lang, 'ru');
   assert.equal((await rpc(c, 'set_language', { p_token: fr.token, p_lang: 'de' })).error, 'bad_lang');
@@ -338,6 +340,8 @@ test('simulation : 48 élèves, 4 langues, réseau instable, reconnexions, 6 que
     const langs = i => LANGS[i % 4];
     let players = await Promise.all(Array.from({ length: N }, (_, i) =>
       prpc('join_game', { p_name: `תלמיד ${i + 1}`, p_lang: langs(i) })));
+    const codes = new Map((await c.query('select id, code from mdl.players')).rows.map(r => [+r.id, r.code]));
+    players = players.map(p => ({ ...p, code: codes.get(+p.player_id) }));
     assert.equal(new Set(players.map(p => p.player_id)).size, N);
     const qs = (await state()).questions.filter(q => q.selection === 'MAIN');
     const expected = new Map();                             // points attendus par joueur
@@ -381,7 +385,7 @@ test('simulation : 48 élèves, 4 langues, réseau instable, reconnexions, 6 que
     const finals = await Promise.all(players.map(p => prpc('get_state', { p_token: p.token, p_since: 0 })));
     finals.forEach((f, i) => {
       assert.equal(f.me.score, expected.get(+players[i].player_id) || 0, players[i].name);
-      assert.deepEqual(f.leaderboard, finals[0].leaderboard);
+      assert.deepEqual(noMe(f.leaderboard), noMe(finals[0].leaderboard));
     });
     const s = await state();
     assert.equal(s.players, N); assert.equal(s.stats.questions, 6);

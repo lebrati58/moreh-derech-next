@@ -22,7 +22,7 @@ const st = await (await browser.newContext(phone)).newPage(); watch(st);
 await st.goto(BASE + '/');
 await st.click('.langopt[data-lang=he]');
 await st.screenshot({ path: `${OUT}/p0-join.png` });
-await st.fill('#nm', 'דנה לוי'); await st.click('text=הצטרפות למשחק');
+await st.fill('#nm', 'דנה לוי'); await st.click('#jbtn');
 await st.waitForSelector('text=מחכים לשאלה הבאה');
 await st.screenshot({ path: `${OUT}/p1-wait.png` });
 

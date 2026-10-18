@@ -1,8 +1,11 @@
 // Hors-ligne : les pages et leurs fichiers sont servis depuis le cache si le réseau tombe.
 // Stratégie "réseau d'abord" : toujours la dernière version quand le réseau est là.
-// Les appels à Supabase (POST, autre domaine) ne passent jamais par ce cache.
-const CACHE = 'mdl-v3';
-const FILES = ['./', './index.html', './admin.html', './style.css', './api.js', './config.js'];
+// Pages, scripts, styles et données sont REVALIDÉS auprès du serveur (cache: 'no-cache') : jamais
+// d'ancienne version tant que le réseau répond. Les appels à Supabase (POST, autre domaine) ne
+// passent jamais par ce cache.
+const CACHE = 'mdl-v6';
+const FILES = ['./', './index.html', './admin.html', './style.css', './api.js', './config.js',
+  './gps-engine.js', './admin-nav.js', './v3/road67-route.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
@@ -14,11 +17,12 @@ self.addEventListener('activate', e => {
 });
 self.addEventListener('fetch', e => {
   const req = e.request;
-  if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  const url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== self.location.origin) return;
+  const fresh = req.mode === 'navigate' || /\.(html|js|css|json)$/.test(url.pathname) || url.pathname.endsWith('/');
   e.respondWith(
-    fetch(req).then(res => {
-      const copy = res.clone();
-      caches.open(CACHE).then(c => c.put(req, copy)).catch(() => {});
+    fetch(fresh ? new Request(req, { cache: 'no-cache' }) : req).then(res => {
+      if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)).catch(() => {}); }
       return res;
     }).catch(() => caches.match(req, { ignoreSearch: true }))
   );

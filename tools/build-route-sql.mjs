@@ -3,6 +3,7 @@
 import { writeFileSync, readFileSync, mkdirSync } from 'node:fs';
 import { ROUTE } from '../content/index.mjs';
 import { buildV2Sql } from './build-v2-sql.mjs';
+import { buildV3Sql } from './build-v3-sql.mjs';
 
 const root = new URL('../', import.meta.url);
 const Q = s => {
@@ -47,16 +48,20 @@ writeFileSync(new URL('supabase/questions_route.sql', root), sql);
 
 const v2sql = buildV2Sql();
 writeFileSync(new URL('supabase/questions_v2.sql', root), v2sql);
+const v3sql = buildV3Sql();
+writeFileSync(new URL('supabase/questions_v3.sql', root), v3sql);
 const schema = readFileSync(new URL('supabase/schema.sql', root), 'utf8');
 
 const install = [
   '-- INSTALLATION COMPLÈTE : à coller en entier dans Supabase > SQL Editor > Run ("Run without RLS").',
   '-- Ré-exécutable sans risque : rien n\'est supprimé, aucune question n\'est dupliquée.',
   '-- Contient : schéma + banque V1 (34 questions du trajet avec fiches de guidage) + banque V2 (parcours',
-  '-- photographié : 6 + 2 questions en 4 langues, 32 fiches photo) (+ démo seulement si la banque est vide).',
+  '-- photographié : 6 + 2 questions en 4 langues, 32 fiches photo) + banque V3 (route 67, sans photo,',
+  '-- 4 langues) (+ démo seulement si la banque est vide).',
   schema,
   sql,
   v2sql,
+  v3sql,
   readFileSync(new URL('supabase/seed_demo.sql', root), 'utf8')
 ].join('\n');
 writeFileSync(new URL('supabase/install.sql', root), install);
@@ -70,12 +75,23 @@ const migration = [
   v2sql
 ].join('\n');
 writeFileSync(new URL('supabase/migration_v2.sql', root), migration);
+
+// Mise à jour V3 d'une base déjà installée (avec ou sans V2) : schéma (incrémental) + banque V3 seule.
+// Ne réimporte ni V1 ni V2 ; n'écrase pas les questions V3 modifiées dans l'admin.
+writeFileSync(new URL('supabase/migration_v3.sql', root), [
+  '-- MISE À JOUR V3 d\'une installation existante : coller en entier dans Supabase > SQL Editor > Run.',
+  '-- Ré-exécutable. Ne supprime rien. Ne touche ni aux questions V1/V2, ni aux photos V2, ni aux parties,',
+  '-- joueurs et réponses. Autorise les prénoms identiques (sessions existantes conservées).',
+  schema,
+  v3sql
+].join('\n'));
 // Installation depuis le téléphone (public/update.html) : après un mini-script collé dans Supabase,
 // la page envoie ces deux fichiers via la RPC temporaire mdl_bootstrap, qui s'auto-supprime à la fin.
 mkdirSync(new URL('public/update/', root), { recursive: true });
 writeFileSync(new URL('public/update/1-schema.sql', root), schema);
-writeFileSync(new URL('public/update/2-data.sql', root), v2sql +
+writeFileSync(new URL('public/update/2-data.sql', root), v2sql + v3sql +
   "\n-- fin de l'installation : suppression de la fonction temporaire\ndrop function if exists public.mdl_bootstrap(text, text);\nnotify pgrst, 'reload schema';\n");
 console.log(`V1 : ${ROUTE.length} questions → supabase/questions_route.sql`);
 console.log('V2 : 8 questions + 32 photos → supabase/questions_v2.sql');
-console.log('→ supabase/install.sql (installation complète) + supabase/migration_v2.sql (mise à jour)');
+console.log('V3 : route 67 → supabase/questions_v3.sql');
+console.log('→ supabase/install.sql (installation complète) + supabase/migration_v2.sql + supabase/migration_v3.sql (mises à jour)');
