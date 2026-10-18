@@ -182,6 +182,39 @@ label { display: block; font-weight: 700; margin: 12px 0 6px; }
 .myline { display: flex; justify-content: space-between; align-items: center; gap: 8px; background: #fff; border-radius: 14px; padding: 10px 14px; box-shadow: var(--shadow); margin-bottom: 14px; font-weight: 700; }
 .myline b { color: var(--sea); font-size: 20px; }
 
+/* ---------- Panneau micro (admin, privé) ---------- */
+.guide { position: fixed; inset: 0; z-index: 90; background: #fffdf8; display: flex; flex-direction: column; }
+.guide-top { background: var(--sea); color: #fff; padding: 10px 12px calc(10px) 12px; display: flex; align-items: center; gap: 8px; }
+.guide-top h2 { margin: 0; font-size: 18px; flex: 1; }
+.guide-top .iconbtn { background: rgba(255,255,255,.18); color: #fff; }
+.guide-meta { padding: 10px 14px 0; }
+.guide-q { font-weight: 700; color: var(--muted); font-size: 15px; }
+.guide-ans { display: inline-block; margin-top: 4px; background: #dcefe3; color: var(--ok); font-weight: 800; border-radius: 10px; padding: 4px 10px; }
+.vis { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; border-radius: 999px; padding: 3px 10px; margin: 6px 0 0 6px; }
+.vis.visible { background: #dcefe3; color: var(--ok); }
+.vis.check { background: #fff1d6; color: #9a5b00; }
+.vis.nearby { background: #f3e1e1; color: var(--bad); }
+.vis.topic { background: var(--foam); color: var(--sea); }
+.guide-loc { margin: 8px 0 0; background: #fff6e8; border: 2px dashed #f0b45c; border-radius: 12px; padding: 8px 12px; font-size: 15px; }
+.seg { display: flex; gap: 6px; margin: 10px 14px 0; background: var(--sand-2); border-radius: 12px; padding: 4px; }
+.seg button { flex: 1; border: 0; background: none; border-radius: 9px; padding: 9px 4px; font-weight: 800; font-size: 15px; color: var(--muted); }
+.seg button.on { background: #fff; color: var(--sea); box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.guide-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px 16px 24px; }
+.guide-text { font-size: var(--gfs, 24px); line-height: 1.65; font-weight: 500; color: #111; }
+.guide-text p { margin: 0 0 .8em; }
+.guide-box { margin-top: 16px; border-radius: 14px; padding: 12px 14px; font-size: calc(var(--gfs, 24px) * .72); line-height: 1.55; }
+.guide-box.fact { background: #fff6e8; }
+.guide-box.prac { background: var(--foam); }
+.guide-box b.h { display: block; margin-bottom: 4px; }
+.guide-src { margin-top: 16px; font-size: 14px; }
+.guide-src summary { font-weight: 800; color: var(--sea); cursor: pointer; padding: 6px 0; }
+.guide-src li { margin: 4px 0; word-break: break-word; }
+.guide-bar { display: flex; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: #fff; align-items: center; }
+.guide-bar .iconbtn { min-width: 52px; height: 52px; font-size: 20px; font-weight: 900; }
+.guide-bar .btn { flex: 1; min-height: 52px; padding: 10px; font-size: 18px; }
+.guide.full .guide-meta, .guide.full .guide-top h2 small { display: none; }
+.guide-empty { color: var(--muted); font-size: 18px; }
+
 @media (min-width: 700px) {
   .answers { grid-template-columns: 1fr 1fr; }
   .modal { align-items: center; }

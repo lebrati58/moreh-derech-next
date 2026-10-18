@@ -34,6 +34,7 @@
   <button data-view="settings"><span class="i">⚙️</span>הגדרות</button>
 </nav>
 <div id="modal-root"></div>
+<div id="guide-root"></div>
 <div id="toast" class="toast hidden"></div>
 
 <script src="config.js"></script>
@@ -49,6 +50,17 @@
 
   let token = store.get(KEY);
   let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false;
+  // Panneau micro : état + dernière question pour laquelle il s'est ouvert automatiquement
+  let G = { open: false, qid: null, mode: 'short', live: false };
+  let lastAutoGuide = store.get('mdl_last_auto_guide');
+  const VIS = {
+    visible: '👁️ נראה מהאוטובוס',
+    check: '❓ כנראה נראה — לאמת בנסיעת הכנה',
+    nearby: '📍 אתר בסביבה — לא נראה מהכביש',
+    topic: '💡 נושא כללי'
+  };
+  // Banque de questions : en mémoire, sinon dernière copie sauvegardée sur le téléphone (hors ligne)
+  const bank = () => (S && S.questions) || store.get('mdl_bank') || [];
 
   const CATS = ['גאולוגיה', 'היסטוריה', 'גאוגרפיה', 'ארכאולוגיה', 'טבע', 'בוטניקה', 'זואולוגיה', 'תרבות', 'יישובים', 'כללי'];
   const DIFF = { 1: 'קל', 2: 'בינוני', 3: 'קשה' };
@@ -108,10 +120,13 @@
       const r = await rpc('admin_state', { p_token: token }, { timeout: 7000 });
       failures = 0; banner.classList.add('hidden');
       offset = Date.parse(r.now) - Date.now();
-      S = r; render();
+      S = r;
+      store.set('mdl_bank', r.questions);          // copie locale des fiches pour le hors-ligne
+      render();
     } catch (e) {
       if (e.auth) { store.del(KEY); token = null; return renderLogin('פג תוקף הכניסה.'); }
       if (++failures >= 2) banner.classList.remove('hidden');
+      if (!S && bank().length) renderOfflineBank();
     }
     timer = setTimeout(refresh, document.hidden ? 5000 : 1500);
   }
@@ -122,6 +137,14 @@
     tabs.classList.remove('hidden');
     chip.classList.remove('hidden');
     chip.textContent = `👥 ${S.online}/${S.players}`;
+    // Ouverture automatique du panneau micro à la révélation (une seule fois par question)
+    if (S.game && S.game.phase === 'revealed' && S.current) {
+      const k = S.game.id + ':' + S.current.question_id;
+      if (lastAutoGuide !== k) {
+        lastAutoGuide = k; store.set('mdl_last_auto_guide', k);
+        if (!document.querySelector('.modal')) openGuide(S.current.question_id, { live: true });
+      }
+    }
     if (document.querySelector('.modal')) return;          // ne pas perturber l'édition
     const h = view + JSON.stringify(S.game) + JSON.stringify(S.current) + S.online + S.players +
       JSON.stringify(view === 'live' || view === 'questions' ? S.questions : S.leaderboard) + pickId;
@@ -177,8 +200,10 @@
       <button class="btn sun" data-a="open" data-id="${n.id}" style="font-size:22px">📣 פרסם שאלה</button>
       <div class="row" style="margin-top:10px">
         <button class="btn ghost small" data-a="edit" data-id="${n.id}">✏️ עריכה</button>
-        <button class="btn ghost small" data-a="newq">➕ חדשה</button>
+        <button class="btn ghost small" data-a="guide" data-id="${n.id}">🎤 הדרכה</button>
       </div>
+      ${n.guide_location ? `<div class="guide-loc small"><b>📍</b> ${esc(n.guide_location)}</div>` : ''}
+      <span class="vis ${n.guide_visibility || 'topic'}">${VIS[n.guide_visibility] || VIS.topic}</span>
       ${others.length ? `<label for="pick">או לבחור שאלה אחרת (${others.length} נותרו):</label>
       <select id="pick"><option value="">— בחירה —</option>${others.map(q => `<option value="${q.id}">${esc(q.text.slice(0, 70))}</option>`).join('')}</select>` : ''}
     </div>`;
@@ -235,6 +260,7 @@
         <div class="question-text">${esc(c.text)}</div>
         ${bars(c, true)}
         ${c.explanation ? `<div class="explain"><b>הסבר:</b> ${esc(c.explanation)}</div>` : ''}
+        <button class="btn ok" data-a="guide" data-id="${c.question_id}" style="margin-top:12px">🎤 ההדרכה שלי למיקרופון</button>
       </div>
       <div class="card"><h2>דירוג המשתתפים 🏆</h2>${lbList(S.leaderboard.slice(0, 5))}</div>`;
     }
@@ -262,6 +288,7 @@
             <button class="iconbtn" data-a="up" data-i="${i}" ${i === 0 ? 'disabled' : ''} title="למעלה">▲</button>
             <button class="iconbtn" data-a="down" data-i="${i}" ${i === qs.length - 1 ? 'disabled' : ''} title="למטה">▼</button>
             <button class="iconbtn" data-a="edit" data-id="${q.id}" title="עריכה">✏️</button>
+            <button class="iconbtn" data-a="guide" data-id="${q.id}" title="דף הדרכה">🎤</button>
             <button class="iconbtn" data-a="del" data-id="${q.id}" title="מחיקה">🗑️</button>
             ${!q.used && S.game && S.game.phase !== 'open' && S.game.status !== 'finished' ? `<button class="btn sun small" style="width:auto;flex:none;padding:8px 14px" data-a="open" data-id="${q.id}">📣 פרסם</button>` : ''}
           </div>
@@ -319,6 +346,95 @@
   }
   setInterval(tickTimer, 250);
 
+  // ------------------------------------------------------------ Panneau micro (privé)
+  const paras = t => String(t || '').split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
+    .map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
+  let gfs = +(store.get('mdl_guide_fs') || 24);
+
+  function openGuide(qid, { live = false, mode } = {}) {
+    G = { open: true, qid, live, mode: mode || 'short' };
+    renderGuide();
+  }
+  function closeGuide() {
+    G.open = false;
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    document.getElementById('guide-root').innerHTML = '';
+  }
+  function renderGuide() {
+    const root = document.getElementById('guide-root');
+    if (!G.open) { root.innerHTML = ''; return; }
+    const q = bank().find(x => x.id === G.qid);
+    const cur = S && S.current && S.current.question_id === G.qid ? S.current : null;
+    const src = q || cur;   // question supprimée de la banque : on garde au moins le corrigé
+    if (!src) { closeGuide(); return; }
+    const text = q ? (G.mode === 'long' ? q.guide_long : q.guide_short) : '';
+    const sources = (q && Array.isArray(q.guide_sources)) ? q.guide_sources : [];
+    const vis = (q && q.guide_visibility) || 'topic';
+    const total = cur && cur.counts ? cur.counts.reduce((a, b) => a + b, 0) : 0;
+    const right = cur && cur.counts ? cur.counts[cur.correct_index] : 0;
+    const full = root.firstElementChild && root.firstElementChild.classList.contains('full');
+    root.innerHTML = `<section class="guide ${full ? 'full' : ''}" id="guide" style="--gfs:${gfs}px" dir="rtl" lang="he">
+      <div class="guide-top">
+        <h2>🎤 ההדרכה שלי למיקרופון</h2>
+        <button class="iconbtn" data-g="full" title="מסך מלא">⛶</button>
+        <button class="iconbtn" data-g="close" title="סגירה">✖</button>
+      </div>
+      <div class="guide-meta">
+        <div class="guide-q">${src.seq ? 'שאלה ' + src.seq + ' · ' : ''}${esc(src.text)}</div>
+        <span class="guide-ans">✔ ${esc(src.options[src.correct_index])}</span>
+        ${cur && total ? `<span class="small muted">&nbsp; ${right}/${total} ענו נכון</span>` : ''}
+        <span class="vis ${vis}">${VIS[vis] || VIS.topic}</span>
+        ${q && q.guide_location ? `<div class="guide-loc"><b>📍 מתי ואיפה:</b> ${esc(q.guide_location)}</div>` : ''}
+      </div>
+      <div class="seg" role="tablist">
+        <button data-g="short" class="${G.mode === 'short' ? 'on' : ''}">הסבר קצר · 30 שנ׳</button>
+        <button data-g="long" class="${G.mode === 'long' ? 'on' : ''}">סיפור מורחב · 1–3 דק׳</button>
+      </div>
+      <div class="guide-body" id="guide-body">
+        <div class="guide-text">${text ? paras(text) : '<p class="guide-empty">אין עדיין טקסט הדרכה לשאלה הזו. אפשר להוסיף אותו בעריכת השאלה (✏️).</p>'}</div>
+        ${q && q.guide_fact ? `<div class="guide-box fact"><b class="h">💡 הידעת?</b>${paras(q.guide_fact)}</div>` : ''}
+        ${q && q.guide_practical && G.mode === 'long' ? `<div class="guide-box prac"><b class="h">🧭 מידע מעשי (לבדוק לפני ביקור)</b>${paras(q.guide_practical)}</div>` : ''}
+        ${sources.length ? `<details class="guide-src"><summary>📚 מקורות (${sources.length})</summary><ol>${sources.map(s =>
+          `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title || s.url)}</a>` : esc(s.title)}</li>`).join('')}</ol></details>` : ''}
+      </div>
+      <div class="guide-bar">
+        <button class="iconbtn" data-g="smaller" title="הקטנת טקסט" dir="ltr">A−</button>
+        <button class="iconbtn" data-g="bigger" title="הגדלת טקסט" dir="ltr">A+</button>
+        ${G.live ? '<button class="btn sun" data-g="next">המשך לשאלה הבאה ▶</button>' : '<button class="btn ghost" data-g="close">סגירה</button>'}
+      </div>
+    </section>`;
+  }
+  document.getElementById('guide-root').addEventListener('click', e => {
+    const b = e.target.closest('[data-g]'); if (!b) return;
+    const g = document.getElementById('guide');
+    switch (b.dataset.g) {
+      case 'short': case 'long':
+        G.mode = b.dataset.g; renderGuide(); document.getElementById('guide-body').scrollTop = 0; break;
+      case 'bigger': case 'smaller':
+        gfs = Math.max(16, Math.min(48, gfs + (b.dataset.g === 'bigger' ? 2 : -2)));
+        store.set('mdl_guide_fs', gfs); g.style.setProperty('--gfs', gfs + 'px'); break;
+      case 'full':
+        if (g.classList.toggle('full')) { if (g.requestFullscreen) g.requestFullscreen().catch(() => {}); }
+        else if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+        break;
+      case 'close': closeGuide(); break;
+      case 'next':
+        closeGuide(); view = 'live'; setTab();
+        setTimeout(() => { const n = document.querySelector('[data-a=open]'); if (n) n.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
+        break;
+    }
+  });
+
+  // Hors ligne au démarrage : les fiches restent consultables depuis la copie locale
+  function renderOfflineBank() {
+    tabs.classList.add('hidden');
+    app.innerHTML = `<div class="card" style="background:#fff6e8"><h2>📴 אין חיבור לשרת</h2>
+      <p class="small">המשחק לא זמין כרגע, אבל דפי ההדרכה שמורים בטלפון. מנסה להתחבר מחדש…</p></div>
+      <div class="card">${bank().map((q, i) => `<div class="qitem"><span class="num">${i + 1}</span>
+        <div class="body"><div class="txt">${esc(q.text)}</div>
+        <div class="acts"><button class="btn small ok" style="width:auto" data-a="guide" data-id="${q.id}">🎤 הדרכה</button></div></div></div>`).join('')}</div>`;
+  }
+
   // ------------------------------------------------------------ Éditeur
   function editor(q) {
     q = q || { kind: 'mcq', text: '', options: ['', '', '', ''], correct_index: null, explanation: '', category: 'כללי', difficulty: 2, time_limit_sec: null };
@@ -352,6 +468,23 @@
       <label>⏱️ זמן מרבי בשניות</label>
       <input type="number" name="time_limit_sec" min="5" max="600" value="${q.time_limit_sec ?? ''}" placeholder="ריק = ברירת המחדל (${timeLabel(null)})">
       <label class="optrow" style="font-weight:600"><input type="checkbox" name="is_demo" ${q.is_demo ? 'checked' : ''} style="width:22px;height:22px"> שאלת הדגמה (לא מאומתת)</label>
+      <details ${q.guide_short || q.guide_long ? '' : 'open'} style="margin-top:14px;background:#fff;border-radius:14px;padding:4px 12px 12px">
+        <summary style="font-weight:800;padding:8px 0;cursor:pointer">🎤 דף הדרכה למיקרופון (פרטי — רק למנהל)</summary>
+        <label>נראות מהאוטובוס</label>
+        <select name="guide_visibility">${Object.keys(VIS).map(k => `<option value="${k}" ${(q.guide_visibility || 'topic') === k ? 'selected' : ''}>${VIS[k]}</option>`).join('')}</select>
+        <label>📍 מתי להציג ובאיזה צד (רק אם מאומת)</label>
+        <textarea name="guide_location" rows="2">${esc(q.guide_location || '')}</textarea>
+        <label>הסבר קצר · ~30 שניות</label>
+        <textarea name="guide_short" rows="5">${esc(q.guide_short || '')}</textarea>
+        <label>סיפור מורחב · 1–3 דקות (שורה ריקה = פסקה חדשה)</label>
+        <textarea name="guide_long" rows="10">${esc(q.guide_long || '')}</textarea>
+        <label>💡 הידעת?</label>
+        <textarea name="guide_fact" rows="3">${esc(q.guide_fact || '')}</textarea>
+        <label>🧭 מידע מעשי (שעות, שירותים, גישה לאוטובוס)</label>
+        <textarea name="guide_practical" rows="4">${esc(q.guide_practical || '')}</textarea>
+        <label>📚 מקורות — שורה לכל מקור: כותרת | קישור</label>
+        <textarea name="guide_sources" rows="4" style="direction:rtl">${esc((q.guide_sources || []).map(s => (s.title || '') + (s.url ? ' | ' + s.url : '')).join('\n'))}</textarea>
+      </details>
       <p id="qerr" class="small" style="color:var(--bad);min-height:1em"></p>
       <button class="btn">💾 שמירה</button>
       ${canPublish ? '<button type="button" class="btn sun" id="savepub" style="margin-top:10px">💾 שמירה ופרסום מיד</button>' : ''}
@@ -381,7 +514,14 @@
       const payload = {
         id: q.id || null, kind, text: f.text.value, options, correct_index: correct,
         explanation: f.explanation.value, category: f.category.value, difficulty: +f.difficulty.value,
-        time_limit_sec: f.time_limit_sec.value, is_demo: f.is_demo.checked
+        time_limit_sec: f.time_limit_sec.value, is_demo: f.is_demo.checked,
+        guide_visibility: f.guide_visibility.value, guide_location: f.guide_location.value,
+        guide_short: f.guide_short.value, guide_long: f.guide_long.value,
+        guide_fact: f.guide_fact.value, guide_practical: f.guide_practical.value,
+        guide_sources: f.guide_sources.value.split('\n').map(l => l.trim()).filter(Boolean).map(l => {
+          const i = l.lastIndexOf('|');
+          return i > 0 ? { title: l.slice(0, i).trim(), url: l.slice(i + 1).trim() } : (/^https?:/.test(l) ? { title: l, url: l } : { title: l });
+        })
       };
       try {
         const r = await rpc('admin_save_question', { p_token: token, p_q: payload });
@@ -425,7 +565,10 @@
   app.addEventListener('click', async e => {
     const b = e.target.closest('[data-a]'); if (!b) return;
     const a = b.dataset.a, id = +b.dataset.id;
-    const q = S.questions.find(x => x.id === id);
+    const q = bank().find(x => x.id === id);
+    if (a === 'guide') return openGuide(id, {
+      live: !!(S && S.game && S.game.phase === 'revealed' && S.current && S.current.question_id === id) });
+    if (!S) return;
     switch (a) {
       case 'open':
         await act('admin_open_question', { p_question_id: id }, 'השאלה פורסמה 📣'); pickId = null;
@@ -460,6 +603,7 @@
     }
   });
 
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
   if (token) refresh(); else renderLogin();
 })();
 </script>

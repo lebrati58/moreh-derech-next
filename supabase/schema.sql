@@ -69,6 +69,21 @@ create table if not exists mdl.games (
   created_at        timestamptz not null default clock_timestamp(),
   finished_at       timestamptz
 );
+-- Fiches de guidage oral (PRIVÉES : jamais copiées dans game_questions, donc jamais
+-- envoyées aux élèves ; seules les fonctions admin les lisent).
+alter table mdl.questions add column if not exists guide_short     text  not null default '';
+alter table mdl.questions add column if not exists guide_long      text  not null default '';
+alter table mdl.questions add column if not exists guide_location  text  not null default '';
+alter table mdl.questions add column if not exists guide_practical text  not null default '';
+alter table mdl.questions add column if not exists guide_sources   jsonb not null default '[]'::jsonb;
+alter table mdl.questions add column if not exists guide_fact      text  not null default '';
+-- Identifiant stable des questions importées (permet de réimporter sans doublons)
+alter table mdl.questions add column if not exists ext_key text;
+create unique index if not exists questions_ext_key on mdl.questions (ext_key);
+-- visible = vu depuis le bus (confirmé) · check = probablement visible, à confirmer
+-- nearby = site proche, NON visible · topic = sujet général, pas un lieu
+alter table mdl.questions add column if not exists guide_visibility text not null default 'topic';
+
 -- Durée appliquée aux questions qui n'ont pas leur propre durée (0 = sans limite).
 alter table mdl.games add column if not exists default_time_limit_sec int not null default 30;
 
@@ -508,16 +523,28 @@ begin
       difficulty = coalesce((p_q->>'difficulty')::int, 2),
       time_limit_sec = nullif((p_q->>'time_limit_sec'), '')::int,
       is_demo = coalesce((p_q->>'is_demo')::boolean, is_demo),
+      guide_short     = coalesce(p_q->>'guide_short', guide_short),
+      guide_long      = coalesce(p_q->>'guide_long', guide_long),
+      guide_location  = coalesce(p_q->>'guide_location', guide_location),
+      guide_practical = coalesce(p_q->>'guide_practical', guide_practical),
+      guide_sources   = coalesce(p_q->'guide_sources', guide_sources),
+      guide_fact      = coalesce(p_q->>'guide_fact', guide_fact),
+      guide_visibility = coalesce(p_q->>'guide_visibility', guide_visibility),
       updated_at = clock_timestamp()
      where id = (p_q->>'id')::bigint returning id into v_id;
     if v_id is null then return jsonb_build_object('error', 'not_found'); end if;
   else
-    insert into mdl.questions (kind, text, options, correct_index, explanation, category, difficulty, time_limit_sec, sort_order, is_demo)
+    insert into mdl.questions (kind, text, options, correct_index, explanation, category, difficulty, time_limit_sec, sort_order, is_demo,
+                               guide_short, guide_long, guide_location, guide_practical, guide_sources,
+                               guide_fact, guide_visibility)
     values (v_kind, btrim(p_q->>'text'), v_opts, v_correct, coalesce(p_q->>'explanation', ''),
             coalesce(nullif(btrim(p_q->>'category'), ''), 'כללי'), coalesce((p_q->>'difficulty')::int, 2),
             nullif((p_q->>'time_limit_sec'), '')::int,
             coalesce((p_q->>'sort_order')::int, (select coalesce(max(sort_order), 0) + 1 from mdl.questions)),
-            coalesce((p_q->>'is_demo')::boolean, false))
+            coalesce((p_q->>'is_demo')::boolean, false),
+            coalesce(p_q->>'guide_short', ''), coalesce(p_q->>'guide_long', ''), coalesce(p_q->>'guide_location', ''),
+            coalesce(p_q->>'guide_practical', ''), coalesce(p_q->'guide_sources', '[]'::jsonb),
+            coalesce(p_q->>'guide_fact', ''), coalesce(p_q->>'guide_visibility', 'topic'))
     returning id into v_id;
   end if;
   return jsonb_build_object('id', v_id);

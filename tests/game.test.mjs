@@ -231,3 +231,32 @@ test('installation ré-exécutable sans doublons', async () => {
   await c.query(readFileSync(new URL('../supabase/seed_demo.sql', import.meta.url), 'utf8'));
   assert.equal((await c.query('select count(*)::int n from mdl.questions')).rows[0].n, n0);
 });
+
+test('fiches de guidage : privées, jamais envoyées aux élèves', async () => {
+  await rpc(c, 'admin_new_game', { p_token: admin });
+  const SECRET = 'טקסט-מיקרופון-סודי';
+  const r = await rpc(c, 'admin_save_question', { p_token: admin, p_q: {
+    text: 'שאלת פרטיות', options: ['א', 'ב', 'ג', 'ד'], correct_index: 2,
+    guide_short: SECRET + ' קצר', guide_long: SECRET + ' ארוך', guide_fact: SECRET + ' הידעת',
+    guide_location: SECRET + ' מיקום', guide_practical: SECRET + ' מעשי', guide_visibility: 'nearby',
+    guide_sources: [{ title: SECRET, url: 'https://example.org' }] } });
+  const p = await rpc(c, 'join_game', { p_name: 'בודק פרטיות' });
+  await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: r.id });
+  for (const step of ['open', 'close', 'reveal', 'finish']) {
+    if (step === 'close') await rpc(c, 'admin_close_question', { p_token: admin });
+    if (step === 'reveal') await rpc(c, 'admin_reveal', { p_token: admin });
+    if (step === 'finish') await rpc(c, 'admin_finish', { p_token: admin });
+    const st = await rpc(c, 'get_state', { p_token: p.token, p_since: 0 });
+    assert.ok(!JSON.stringify(st).includes(SECRET), 'fuite à l\'étape ' + step);
+  }
+  // l'admin, lui, les reçoit
+  const q = (await rpc(c, 'admin_state', { p_token: admin })).questions.find(x => x.id === r.id);
+  assert.equal(q.guide_visibility, 'nearby');
+  assert.equal(q.guide_sources[0].url, 'https://example.org');
+  assert.ok(q.guide_long.startsWith(SECRET));
+  // mise à jour partielle : les champs non envoyés sont conservés
+  await rpc(c, 'admin_save_question', { p_token: admin, p_q: { id: r.id, text: 'שאלת פרטיות 2', options: ['א', 'ב'], correct_index: 0 } });
+  const q2 = (await rpc(c, 'admin_state', { p_token: admin })).questions.find(x => x.id === r.id);
+  assert.ok(q2.guide_long.startsWith(SECRET));
+  await rpc(c, 'admin_resume_game', { p_token: admin });
+});

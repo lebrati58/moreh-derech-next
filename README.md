@@ -106,6 +106,32 @@ la veille et le matin du voyage suffit à le garder actif.
 
 ---
 
+## Banque de questions du trajet et fiches micro
+
+`content/` contient les **34 questions du trajet Zikhron Ya'akov → Haïfa** (route côtière, sans
+tunnels), dans l'ordre géographique, avec pour chacune une **fiche de guidage privée** :
+
+- 🎤 **הסבר קצר** (~20–30 s) et **סיפור מורחב** (~1–2 min), prêts à lire au micro ;
+- 💡 **הידעת?** ; 📍 **מתי להציג** (moment du trajet, côté du bus) ;
+- un indicateur de **visibilité** : 👁️ vu depuis le bus (d'après le « סיפור דרך » du cours) ·
+  ❓ à confirmer lors d'un repérage · 📍 site proche non visible · 💡 sujet général ;
+- 🧭 informations pratiques des sites de visite (uniquement ce qui a été vérifié, sinon « à vérifier ») ;
+- 📚 sources consultables (cours Drive + sources publiques).
+
+Les fiches ne sont **jamais** copiées dans les données envoyées aux élèves (test automatique).
+Dans l'admin, le panneau « ההדרכה שלי למיקרופון » s'ouvre automatiquement à la révélation :
+court/long, A+/A−, plein écran, défilement, « המשך לשאלה הבאה ». Il reste consultable hors ligne
+(copie locale + service worker).
+
+Modifier le contenu : éditer `content/*.mjs`, puis `npm run build:sql` (régénère
+`supabase/questions_route.sql` et `supabase/install.sql`), puis réexécuter `install.sql`.
+⚠️ Réexécuter le fichier écrase les modifications faites dans l'admin sur ces 34 questions.
+Les fiches se modifient aussi directement dans l'admin (✏️ → section 🎤).
+
+Corrections apportées aux questions d'origine : Q20 (Garrod a commencé en **1929**, pas 1927) ;
+Q32 reformulée (« que trouve-t-on dans la grotte du Tabun ? ») pour ne pas répéter la réponse de Q19 ;
+Q5 option « מערב » remplacée par « משני הצדדים » (« ouest » était ambigu).
+
 ## Développement et tests
 
 Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défaut ; variables
@@ -113,7 +139,7 @@ Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défau
 
 ```bash
 npm install
-npm test                    # 11 tests de la logique serveur sur un vrai PostgreSQL
+npm test                    # 19 tests : logique serveur, confidentialité des fiches, contrôle des 34 questions
 
 # serveur local qui imite l'API Supabase (rôle "anon" compris)
 createdb mdl_dev && psql -d mdl_dev -f supabase/schema.sql -f supabase/seed_demo.sql \

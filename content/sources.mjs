@@ -1,0 +1,25 @@
+// Sources de référence partagées par les fiches (cours Drive + sources publiques consultées le 18.10.2026)
+export const SRC = {
+  derech:   { title: 'קורס יובל — סיור 2 כרמל, סיפור דרך (21.5.26)', url: 'https://drive.google.com/file/d/1CyzgobiGT9vaCNIrvObS8uGKD6zknNvD/view' },
+  geo:      { title: 'קורס יובל — סיור גיאולוגיה כרמל וחוף, מוטי זיק (2.7.26)', url: 'https://drive.google.com/file/d/1JLdWbSaqfAeOUd8jUi6ajBc2wORmyGY3/view' },
+  haifa:    { title: 'קורס יובל — סיור אתרים חיפה, גלי נחום (25.6.26)', url: 'https://drive.google.com/file/d/1UZYrjBBQEXMFzOvz907hFzvtsSCgL4yB/view' },
+  carmelSum:{ title: 'סיכומי סיורי הכרמל (מסמך אישי)', url: 'https://docs.google.com/document/d/16EmYqkhUG__qSK_Q9iXcS52o6Mcg1ZGUFoE_wj80yMU/edit' },
+  zichron:  { title: 'Wikipedia — Zikhron Ya\'akov', url: 'https://en.wikipedia.org/wiki/Zikhron_Ya%27akov' },
+  chotem:   { title: 'קק"ל — חוטם הכרמל, חומרי לימוד', url: 'https://www.kkl.org.il/education/youth-and-education/study-materials-for-teachers/geography_of_israel/chotem_ha_karmel/' },
+  nadiv:    { title: 'טיולי — רמת הנדיב', url: 'https://www.tiuli.com/tracks/6/%D7%A8%D7%9E%D7%AA-%D7%94%D7%A0%D7%93%D7%99%D7%91' },
+  taninim:  { title: 'רשות הטבע והגנים — עלון שמורת נחל תנינים', url: 'https://static.parks.org.il/wp-content/uploads/2025/04/nachal-Taninim.pdf' },
+  mearot:   { title: 'רשות הטבע והגנים — עלון שמורת נחל מערות', url: 'https://static.parks.org.il/wp-content/uploads/2025/04/mearot.pdf' },
+  tabun:    { title: 'Wikipedia — Tabun Cave', url: 'https://en.wikipedia.org/wiki/Tabun_Cave' },
+  mearotW:  { title: 'Wikipedia — Nahal Me\'arot Nature Reserve', url: 'https://en.wikipedia.org/wiki/Nahal_Me%27arot_Nature_Reserve' },
+  atlitCamp:{ title: 'Wikipedia — Atlit detainee camp', url: 'https://en.wikipedia.org/wiki/Atlit_detainee_camp' },
+  pelerin:  { title: 'Wikipedia — Château Pèlerin', url: 'https://en.wikipedia.org/wiki/Ch%C3%A2teau_P%C3%A8lerin' },
+  atlitYam: { title: 'Wikipedia — Atlit Yam', url: 'https://en.wikipedia.org/wiki/Atlit_Yam' },
+  telDor:   { title: 'Wikipedia — Tel Dor', url: 'https://en.wikipedia.org/wiki/Tel_Dor' },
+  telDorNP: { title: 'טיולי — גן לאומי תל דור', url: 'https://www.tiuli.com/points-of-interest/707' },
+  dorHabonim:{ title: 'טיולי — שמורת טבע חוף דור-הבונים', url: 'https://www.tiuli.com/tracks/28' },
+  orenTrack:{ title: 'טיולי — נחל אורן: ממחצבות קדומים לחניון האגם', url: 'https://www.tiuli.com/tracks/112/%D7%A0%D7%97%D7%9C-%D7%90%D7%95%D7%A8%D7%9F-%D7%9E%D7%9E%D7%97%D7%A6%D7%91%D7%95%D7%AA-%D7%A7%D7%93%D7%95%D7%9E%D7%99%D7%9D-%D7%9C%D7%97%D7%A0%D7%99%D7%95%D7%9F-%D7%94%D7%90%D7%92%D7%9D' },
+  orenPark: { title: 'נגישות ישראל — חניון פתחת נחל אורן, פארק הכרמל (2019)', url: 'https://www.aisrael.org/?CategoryID=3505&ArticleID=63547' },
+  orenMap:  { title: 'עמוד ענן — חניון פתחת נחל אורן', url: 'https://amudanan.co.il/w/P658713' },
+  haifaHist:{ title: 'Wikipedia — History of Haifa', url: 'https://en.wikipedia.org/wiki/History_of_Haifa' },
+  haifaPort:{ title: 'Wikipedia — Port of Haifa', url: 'https://en.wikipedia.org/wiki/Port_of_Haifa' }
+};
