@@ -189,7 +189,7 @@
       offset = Date.parse(r.now) - Date.now();
       S = r;
       store.set('mdl_bank', r.questions);          // copie locale des fiches pour le hors-ligne
-      if (!loadPhotos._busy && (!P || P._game !== (S.game && S.game.id))) loadPhotos();   // une fois par partie
+      if (S.game?.bank === 'V2' && !loadPhotos._busy && (!P || P._game !== (S.game && S.game.id))) loadPhotos();   // une fois par partie
       render();
     } catch (e) {
       if (e.auth) { store.del(KEY); token = null; return renderLogin('פג תוקף הכניסה.'); }
@@ -271,7 +271,7 @@
     const main = S.questions.filter(q => q.selection !== 'SPARE').length;
     const sp = S.questions.filter(q => q.selection === 'SPARE').length;
     return `<div class="row" style="align-items:center;justify-content:space-between;margin-bottom:10px">
-      <span class="bankchip v2">📷 ${main} שאלות${sp ? ` (+${sp} חלופיות)` : ''}</span>
+      <span class="bankchip v2">${b === "V3" ? "🧭" : b === "V2" ? "📷" : "📝"} ${esc(bankLabel(b))} · ${main} שאלות${sp ? ` (+${sp} חלופיות)` : ''}</span>
       <div style="flex:none;min-width:150px">${langSeg()}</div></div>`;
   }
 
@@ -453,6 +453,7 @@
   // ------------------------------------------------------------ Galerie du parcours (fiches privées)
   // Une fiche par photo, dans l'ordre du trajet. On avance de photo en photo SANS rien envoyer aux élèves.
   function renderGallery() {
+    if (S?.game?.bank === 'V3') { app.innerHTML = '<div class="card center"><h2>🧭 כביש 67 — מסלול ללא תמונות</h2><p>אין גלריה בגרסה זו. עברו לשידור חי להפעלת GPS ולהצגת השאלות לפי סדר הנסיעה.</p><p>⚠️ נקודות GPS טרם אומתו. אין להסתמך על מיקום אוטומטי.</p></div>'; return; }
     if (!P || !P.photos) { app.innerHTML = `<div class="card center muted">טוען תמונות…</div>`; if (!loadPhotos._busy) loadPhotos(); return; }
     const ph = P.photos, col = P.collection;
     if (!ph.length) { app.innerHTML = `<div class="card center"><h2>אין תמונות בגלריה</h2></div>`; return; }
@@ -872,7 +873,7 @@
         break;
       case 'anec': showAnec = !showAnec; lastHash = ''; render(); break;
       case 'resume': act('admin_resume_game'); break;
-      case 'newgame': newGameModal(); break;
+      case 'newgame': gpsStop(); newGameModal(); break;
       case 'edit': editor(q); break;
       case 'newq': editor(null); break;
       case 'del': if (confirm('למחוק את השאלה?\n' + q.text)) act('admin_delete_question', { p_id: id }, 'נמחקה'); break;
