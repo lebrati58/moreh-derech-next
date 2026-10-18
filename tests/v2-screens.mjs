@@ -35,6 +35,7 @@ await admin.click('[data-a=newgame]');
 await admin.waitForSelector('#ngf');
 // plus de choix de version : la partie créée est toujours le parcours photographié
 await shot(admin, 'a1-newgame-choice');
+await admin.check('#ngf input[value=V2]');
 await admin.click('#ngf button.sun');
 await admin.waitForSelector('.bankchip.v2');
 await admin.waitForSelector('.ph-row img');

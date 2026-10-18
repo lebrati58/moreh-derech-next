@@ -60,20 +60,18 @@
   // ------------------------------------------------------------ Langues
   // Interface élève en 4 langues. Les QUESTIONS arrivent déjà traduites par le serveur
   // (même identifiant, même ordre des réponses, même chrono et même score pour tous).
-  const LANGS = { he: { name: 'עברית', dir: 'rtl' }, fr: { name: 'Français', dir: 'ltr' },
-                  en: { name: 'English', dir: 'ltr' }, ru: { name: 'Русский', dir: 'ltr' } };
+  const LANGS = { he: { name: 'עברית', flag: '🇮🇱', dir: 'rtl' }, fr: { name: 'Français', flag: '🇫🇷', dir: 'ltr' },
+                  en: { name: 'English', flag: '🇬🇧', dir: 'ltr' }, ru: { name: 'Русский', flag: '🇷🇺', dir: 'ltr' } };
   const T = {
     he: {
       choose_lang: 'בחרו שפה', offline: 'אין חיבור — מנסה להתחבר מחדש…', tab_game: 'משחק', tab_board: 'דירוג',
-      welcome: 'ברוכים הבאים לחידון מורי הדרך!', welcome_sub: 'עונים מהר ונכון — וצוברים נקודות לאורך המסלול.',
-      your_name: 'מה השם שלך?', name_ph: 'שם פרטי ושם משפחה',
-      taken: n => `השם <b>${n}</b> כבר בשימוש.<br>אם זה אתם (למשל נכנסתם מדפדפן אחר) — הקלידו את הקוד האישי שלכם.`,
-      code_label: 'קוד אישי (4 ספרות)', join_as: n => `להצטרף בשם ״${n}״`, join: 'הצטרפות למשחק', joining: 'מצטרפים…',
+      welcome: 'ברוכים הבאים לחידון!', welcome_sub: 'עונים מהר ונכון — וצוברים נקודות לאורך המסלול.',
+      your_name: 'מה השם הפרטי שלכם?', name_ph: 'השם הפרטי',
+      join: 'מתחילים לשחק 🚀', joining: 'מצטרפים…',
       no_net: 'אין חיבור לאינטרנט. נסו שוב.', welcome_back: n => `ברוך שובך, ${n}! הניקוד נשמר.`,
       restarted: 'המשחק התחיל מחדש — הצטרפו שוב.', no_game_t: 'אין כרגע משחק פעיל', no_game_s: 'המדריך יפתח את המשחק בקרוב.',
       rank: 'מקום', pts: 'נק׳', points: 'נקודות', sec: 'שניות', paused: 'המשחק מושהה', paused_s: 'המדריך יחדש את המשחק בקרוב.',
-      waiting: 'מחכים לשאלה הבאה... 🚌', waiting_s: 'השאלה תופיע כאן אוטומטית — אין צורך לרענן.',
-      my_code: c => `הקוד האישי שלך: <b>${c}</b> (לחזרה למשחק מטלפון/דפדפן אחר)`,
+      waiting: 'מחכים לשאלה הבאה... 🚌', waiting_s: 'השאלה תופיע כאן אוטומטית',
       question: n => `שאלה ${n}`, received: 'התשובה נקלטה! ממתינים לתוצאות...', send: 'שליחת תשובה', sending: 'שולח…',
       send_failed: 'השליחה נכשלה — בדקו את החיבור ונסו שוב.', too_late: 'הזמן נגמר — התשובה לא נקלטה.',
       cannot_send: 'לא ניתן לשלוח תשובה כרגע.', closed: '⏱️ השאלה נסגרה',
@@ -84,19 +82,17 @@
       fastest: (n, s) => `⚡ התשובה הנכונה המהירה ביותר: <b>${n}</b> (${s} שנ׳)`, thanks: 'תודה שהשתתפתם! 🚌',
       he_only: 'השאלה הזו זמינה בעברית בלבד.', lang_saved: 'השפה עודכנה — הניקוד נשמר.',
       e_no_game: 'אין כרגע משחק פעיל. נסו שוב בעוד רגע.', e_empty_name: 'נא להקליד שם.', e_finished: 'המשחק כבר הסתיים.',
-      e_full: 'המשחק מלא.', e_bad_code: 'הקוד האישי שגוי.', e_code_locked: 'יותר מדי ניסיונות. בחרו שם אחר.', e_other: 'שגיאה'
+      e_full: 'המשחק מלא.', e_other: 'שגיאה'
     },
     fr: {
       choose_lang: 'Choisissez la langue', offline: 'Pas de connexion — nouvelle tentative…', tab_game: 'Jeu', tab_board: 'Classement',
-      welcome: 'Bienvenue au quiz des guides !', welcome_sub: 'Répondez vite et juste : les points s’accumulent tout au long du trajet.',
-      your_name: 'Votre nom ?', name_ph: 'Prénom et nom',
-      taken: n => `Le nom <b>${n}</b> est déjà utilisé.<br>Si c’est vous (par exemple depuis un autre navigateur), tapez votre code personnel.`,
-      code_label: 'Code personnel (4 chiffres)', join_as: n => `Rejoindre sous le nom « ${n} »`, join: 'Rejoindre la partie', joining: 'Connexion…',
+      welcome: 'Bienvenue au quiz !', welcome_sub: 'Répondez vite et juste : les points s’accumulent tout au long du trajet.',
+      your_name: 'Quel est votre prénom ?', name_ph: 'Votre prénom',
+      join: 'On commence à jouer 🚀', joining: 'Connexion…',
       no_net: 'Pas de connexion Internet. Réessayez.', welcome_back: n => `Bon retour, ${n} ! Vos points sont conservés.`,
       restarted: 'La partie a redémarré : rejoignez-la à nouveau.', no_game_t: 'Aucune partie en cours', no_game_s: 'Le guide va bientôt ouvrir la partie.',
       rank: 'Rang', pts: 'pts', points: 'points', sec: 'secondes', paused: 'Partie en pause', paused_s: 'Le guide va bientôt reprendre la partie.',
-      waiting: 'En attente de la prochaine question… 🚌', waiting_s: 'La question apparaîtra ici automatiquement, inutile de rafraîchir.',
-      my_code: c => `Votre code personnel : <b>${c}</b> (pour revenir depuis un autre téléphone ou navigateur)`,
+      waiting: 'On attend la prochaine question… 🚌', waiting_s: 'La question apparaîtra ici automatiquement',
       question: n => `Question ${n}`, received: 'Réponse enregistrée ! En attente des résultats…', send: 'Envoyer la réponse', sending: 'Envoi…',
       send_failed: 'Échec de l’envoi : vérifiez la connexion et réessayez.', too_late: 'Temps écoulé : la réponse n’a pas été prise en compte.',
       cannot_send: 'Impossible d’envoyer une réponse pour le moment.', closed: '⏱️ Question fermée',
@@ -107,19 +103,17 @@
       fastest: (n, s) => `⚡ Bonne réponse la plus rapide : <b>${n}</b> (${s} s)`, thanks: 'Merci d’avoir participé ! 🚌',
       he_only: 'Cette question n’existe qu’en hébreu.', lang_saved: 'Langue modifiée — vos points sont conservés.',
       e_no_game: 'Aucune partie en cours. Réessayez dans un instant.', e_empty_name: 'Veuillez saisir un nom.', e_finished: 'La partie est terminée.',
-      e_full: 'La partie est complète.', e_bad_code: 'Code personnel incorrect.', e_code_locked: 'Trop d’essais. Choisissez un autre nom.', e_other: 'Erreur'
+      e_full: 'La partie est complète.', e_other: 'Erreur'
     },
     en: {
       choose_lang: 'Choose your language', offline: 'No connection — retrying…', tab_game: 'Game', tab_board: 'Ranking',
-      welcome: 'Welcome to the tour guides’ quiz!', welcome_sub: 'Answer fast and right — and collect points along the route.',
-      your_name: 'What’s your name?', name_ph: 'First and last name',
-      taken: n => `The name <b>${n}</b> is already taken.<br>If it’s you (e.g. from another browser), enter your personal code.`,
-      code_label: 'Personal code (4 digits)', join_as: n => `Join as “${n}”`, join: 'Join the game', joining: 'Joining…',
+      welcome: 'Welcome to the quiz!', welcome_sub: 'Answer fast and right — and collect points along the route.',
+      your_name: 'What’s your first name?', name_ph: 'Your first name',
+      join: 'Let’s play 🚀', joining: 'Joining…',
       no_net: 'No internet connection. Please try again.', welcome_back: n => `Welcome back, ${n}! Your score is saved.`,
       restarted: 'The game restarted — please join again.', no_game_t: 'No game running right now', no_game_s: 'The guide will open the game soon.',
       rank: 'Rank', pts: 'pts', points: 'points', sec: 'seconds', paused: 'Game paused', paused_s: 'The guide will resume the game soon.',
-      waiting: 'Waiting for the next question… 🚌', waiting_s: 'The question will appear here automatically — no need to refresh.',
-      my_code: c => `Your personal code: <b>${c}</b> (to come back from another phone or browser)`,
+      waiting: 'Waiting for the next question… 🚌', waiting_s: 'The question will appear here automatically',
       question: n => `Question ${n}`, received: 'Answer received! Waiting for the results…', send: 'Send answer', sending: 'Sending…',
       send_failed: 'Sending failed — check your connection and try again.', too_late: 'Time’s up — your answer was not received.',
       cannot_send: 'Cannot send an answer right now.', closed: '⏱️ Question closed',
@@ -130,19 +124,17 @@
       fastest: (n, s) => `⚡ Fastest correct answer: <b>${n}</b> (${s} s)`, thanks: 'Thanks for playing! 🚌',
       he_only: 'This question is available in Hebrew only.', lang_saved: 'Language changed — your score is kept.',
       e_no_game: 'No game running right now. Try again in a moment.', e_empty_name: 'Please type a name.', e_finished: 'The game has ended.',
-      e_full: 'The game is full.', e_bad_code: 'Wrong personal code.', e_code_locked: 'Too many attempts. Choose another name.', e_other: 'Error'
+      e_full: 'The game is full.', e_other: 'Error'
     },
     ru: {
       choose_lang: 'Выберите язык', offline: 'Нет связи — пробуем переподключиться…', tab_game: 'Игра', tab_board: 'Рейтинг',
-      welcome: 'Добро пожаловать в викторину гидов!', welcome_sub: 'Отвечайте быстро и правильно — и набирайте очки по ходу маршрута.',
-      your_name: 'Как вас зовут?', name_ph: 'Имя и фамилия',
-      taken: n => `Имя <b>${n}</b> уже занято.<br>Если это вы (например, вошли из другого браузера), введите свой личный код.`,
-      code_label: 'Личный код (4 цифры)', join_as: n => `Войти под именем «${n}»`, join: 'Присоединиться', joining: 'Подключаемся…',
+      welcome: 'Добро пожаловать в викторину!', welcome_sub: 'Отвечайте быстро и правильно — и набирайте очки по ходу маршрута.',
+      your_name: 'Как вас зовут (имя)?', name_ph: 'Ваше имя',
+      join: 'Начинаем играть 🚀', joining: 'Подключаемся…',
       no_net: 'Нет интернета. Попробуйте ещё раз.', welcome_back: n => `С возвращением, ${n}! Очки сохранены.`,
       restarted: 'Игра началась заново — присоединитесь ещё раз.', no_game_t: 'Сейчас нет активной игры', no_game_s: 'Гид скоро откроет игру.',
       rank: 'Место', pts: 'очк.', points: 'очков', sec: 'секунд', paused: 'Игра на паузе', paused_s: 'Гид скоро продолжит игру.',
-      waiting: 'Ждём следующий вопрос… 🚌', waiting_s: 'Вопрос появится здесь автоматически — обновлять не нужно.',
-      my_code: c => `Ваш личный код: <b>${c}</b> (чтобы вернуться с другого телефона или браузера)`,
+      waiting: 'Ждём следующий вопрос… 🚌', waiting_s: 'Вопрос появится здесь автоматически',
       question: n => `Вопрос ${n}`, received: 'Ответ принят! Ждём результатов…', send: 'Отправить ответ', sending: 'Отправка…',
       send_failed: 'Не удалось отправить — проверьте связь и попробуйте снова.', too_late: 'Время вышло — ответ не принят.',
       cannot_send: 'Сейчас нельзя отправить ответ.', closed: '⏱️ Вопрос закрыт',
@@ -153,14 +145,11 @@
       fastest: (n, s) => `⚡ Самый быстрый правильный ответ: <b>${n}</b> (${s} с)`, thanks: 'Спасибо за участие! 🚌',
       he_only: 'Этот вопрос доступен только на иврите.', lang_saved: 'Язык изменён — очки сохранены.',
       e_no_game: 'Сейчас нет активной игры. Попробуйте чуть позже.', e_empty_name: 'Введите имя.', e_finished: 'Игра уже закончилась.',
-      e_full: 'Игра заполнена.', e_bad_code: 'Неверный личный код.', e_code_locked: 'Слишком много попыток. Выберите другое имя.', e_other: 'Ошибка'
+      e_full: 'Игра заполнена.', e_other: 'Ошибка'
     }
   };
-  const guessLang = () => {
-    const n = (navigator.language || 'he').slice(0, 2).toLowerCase();
-    return n === 'iw' ? 'he' : (LANGS[n] ? n : 'he');
-  };
-  let lang = LANGS[store.get(LKEY)] ? store.get(LKEY) : null;   // null = jamais choisie sur ce téléphone
+  // Hébreu par défaut (la majorité des élèves) ; un autre choix est mémorisé sur le téléphone
+  let lang = LANGS[store.get(LKEY)] ? store.get(LKEY) : 'he';
   const t = (k, ...a) => { const v = (T[lang || 'he'][k] ?? T.he[k]); return typeof v === 'function' ? v(...a) : v; };
 
   function applyLang() {
@@ -172,7 +161,7 @@
     document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t(el.dataset.t); });
   }
 
-  let me = store.get(KEY);            // { token, name, code }
+  let me = store.get(KEY);            // { token, name } — jeton de session gardé discrètement sur le téléphone
   let S = null;                       // dernier état complet reçu du serveur
   let version = 0;
   let offset = 0;                     // horloge serveur - horloge locale (ms)
@@ -191,35 +180,30 @@
   }
 
   // ------------------------------------------------------------ Choix de la langue
-  // Affiché au premier passage (avant le nom) et à tout moment via le bouton 🌐.
+  // Sur l'écran d'accueil (hébreu par défaut) et à tout moment via le bouton 🌐 — mêmes points.
   function langButtons(cur) {
-    return `<div class="langgrid">${Object.keys(LANGS).map(l => `<button type="button" class="langopt ${l === cur ? 'on' : ''}" data-lang="${l}" lang="${l}" dir="${LANGS[l].dir}">
-      <b>${LANGS[l].name}</b><small>${T[l].choose_lang}</small></button>`).join('')}</div>`;
-  }
-  function renderLangFirst() {
-    tabs.classList.add('hidden'); hdrChip.classList.add('hidden');
-    renderedKey = 'lang';
-    app.innerHTML = `<div class="card center" style="padding-top:22px">
-      <div class="trophy">🌐</div>
-      <h1 lang="en" dir="ltr" style="margin-bottom:0">Language</h1>
-      ${langButtons(guessLang())}</div>`;
+    return `<div class="langgrid" role="radiogroup">${Object.keys(LANGS).map(l => `<button type="button" role="radio" aria-checked="${l === cur}" class="langopt ${l === cur ? 'on' : ''}" data-lang="${l}" lang="${l}" dir="${LANGS[l].dir}">
+      <span class="flag" aria-hidden="true">${LANGS[l].flag}</span><b>${LANGS[l].name}</b></button>`).join('')}</div>`;
   }
   function openLangSheet() {
     const root = document.getElementById('langsheet-root');
     root.innerHTML = `<div class="modal" id="lsheet"><div class="sheet">
       <div class="row" style="align-items:center"><h2 style="margin:0">🌐 ${esc(t('choose_lang'))}</h2>
       <button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
-      ${langButtons(lang || 'he')}</div></div>`;
+      ${langButtons(lang)}</div></div>`;
   }
   async function setLang(l) {
     if (!LANGS[l]) return;
     const changed = l !== lang;
     lang = l; store.set(LKEY, l); applyLang();
     document.getElementById('langsheet-root').innerHTML = '';
-    if (!me) { if (changed || renderedKey === 'lang') renderJoin({}); return; }
+    if (!me) {                                   // écran d'accueil : on garde le prénom déjà tapé
+      const nm = document.getElementById('nm');
+      return renderJoin({ name: nm ? nm.value : '' });
+    }
     if (!changed) return;
     // le serveur garde la langue du joueur (questions traduites côté serveur) ; points inchangés
-    try { await rpc('set_language', { p_token: me.token, p_lang: l }, { timeout: 5000 }); toast(t('lang_saved')); } catch { /* repris au prochain join */ }
+    try { await rpc('set_language', { p_token: me.token, p_lang: l }, { timeout: 5000 }); toast(t('lang_saved')); } catch { /* repris au prochain état */ }
     version = 0; renderedKey = ''; startPolling(true);
   }
   document.addEventListener('click', e => {
@@ -229,52 +213,38 @@
     if (e.target.closest('#lsheet [data-x]') || e.target.id === 'lsheet') document.getElementById('langsheet-root').innerHTML = '';
   });
 
-  // ------------------------------------------------------------ Rejoindre
+  // ------------------------------------------------------------ Accueil : langue + prénom, c'est tout
   function renderJoin(opts = {}) {
-    if (!lang) return renderLangFirst();
     tabs.classList.add('hidden'); hdrChip.classList.add('hidden');
     renderedKey = 'join';
     app.innerHTML = `
-      <div class="card center" style="padding-top:26px">
-        <div class="trophy">🧭</div>
-        <h1>${esc(t('welcome'))}</h1>
-        <p class="muted">${esc(t('welcome_sub'))}</p>
-      </div>
-      <form id="joinf" class="card" autocomplete="off">
-        <label for="nm">${esc(t('your_name'))}</label>
-        <input id="nm" type="text" maxlength="24" enterkeyhint="go" dir="auto" value="${esc(opts.name || '')}" placeholder="${esc(t('name_ph'))}" required>
-        <div id="taken" class="${opts.taken ? '' : 'hidden'}" style="margin-top:12px">
-          <div class="explain small">${t('taken', esc(opts.name || ''))}</div>
-          <label for="code">${esc(t('code_label'))}</label>
-          <input id="code" type="text" inputmode="numeric" maxlength="4" placeholder="0000" dir="ltr">
-          <button type="button" id="asnew" class="btn ghost small" style="margin-top:10px">${esc(t('join_as', opts.suggestion || ''))}</button>
+      <form id="joinf" class="card join" autocomplete="off">
+        <div class="center">
+          <div class="join-brand" dir="rtl" lang="he">🚌 מורה דרך <span class="live">LIVE</span></div>
+          <h1>${esc(t('welcome'))}</h1>
         </div>
-        <p id="jerr" class="small" style="color:var(--bad);min-height:1em">${esc(opts.error || '')}</p>
-        <button class="btn sun" id="jbtn">${esc(t('join'))}</button>
+        <div class="label">${esc(t('choose_lang'))}</div>
+        ${langButtons(lang)}
+        <label for="nm">${esc(t('your_name'))}</label>
+        <input id="nm" name="nm" type="text" maxlength="24" enterkeyhint="go" dir="auto" autocapitalize="words"
+          value="${esc(opts.name || '')}" placeholder="${esc(t('name_ph'))}" required>
+        <p id="jerr" class="small" style="color:var(--bad);min-height:1em" role="alert">${esc(opts.error || '')}</p>
+        <button class="btn sun big" id="jbtn">${esc(t('join'))}</button>
       </form>`;
-    const f = document.getElementById('joinf');
-    f.addEventListener('submit', e => { e.preventDefault(); doJoin({}); });
-    const asnew = document.getElementById('asnew');
-    if (asnew) asnew.addEventListener('click', () => doJoin({ newName: true }));
-    if (!opts.taken) setTimeout(() => document.getElementById('nm').focus(), 50);
-    else document.getElementById('code').focus();
+    document.getElementById('joinf').addEventListener('submit', e => { e.preventDefault(); doJoin(); });
   }
 
-  async function doJoin({ newName }) {
+  async function doJoin() {
     const name = document.getElementById('nm').value.trim();
-    const codeEl = document.getElementById('code');
-    const code = codeEl && codeEl.value.trim() && !newName ? codeEl.value.trim() : null;
     const btn = document.getElementById('jbtn');
     if (!name) { document.getElementById('jerr').textContent = errMsg('empty_name'); return; }
     btn.disabled = true; btn.textContent = t('joining');
     try {
-      const r = await rpc('join_game', { p_name: name, p_token: null, p_code: code, p_new_name_ok: !!newName, p_lang: lang || 'he' });
-      if (r.error === 'name_taken') return renderJoin({ name, taken: true, suggestion: r.suggestion });
-      if (r.error) return renderJoin({ name, taken: r.error === 'bad_code', suggestion: '', error: errMsg(r.error) });
-      me = { token: r.token, name: r.name, code: r.code };
+      const r = await rpc('join_game', { p_name: name, p_lang: lang });
+      if (r.error) return renderJoin({ name, error: errMsg(r.error) });
+      me = { token: r.token, name: r.name };
       store.set(KEY, me);
       version = 0; sent = {};
-      if (r.reconnected) toast(t('welcome_back', r.name));
       startPolling(true);
     } catch (e) {
       btn.disabled = false; btn.textContent = t('join');
@@ -295,7 +265,8 @@
       failures = 0; banner.classList.add('hidden');
       offset = Date.parse(r.now) - Date.now();
       if (r.error === 'unknown_player') {   // nouvelle partie ou élève retiré
-        store.del(KEY); me = null; S = null; renderJoin({ error: t('restarted') }); return;
+        const nm = me && me.name;
+        store.del(KEY); me = null; S = null; renderJoin({ name: nm || '', error: t('restarted') }); return;
       }
       if (r.error === 'no_game') { renderNoGame(); }
       else if (!r.same) {
@@ -346,16 +317,15 @@
   }
 
   function renderWaiting(extra = '') {
-    renderedKey = 'wait';
-    const m = S.me || {};
+    if (renderedKey === 'wait:' + lang + ':' + version) return;
+    renderedKey = 'wait:' + lang + ':' + version;
     app.innerHTML = myLine() + extra + `
       <div class="card waiting">
         <div style="font-size:44px">🚌</div>
         <div class="big">${esc(t('waiting'))}</div>
         <p class="muted">${esc(t('waiting_s'))}</p>
         <div class="road"></div>
-      </div>
-      <p class="center small muted">${t('my_code', esc(m.code))}</p>`;
+      </div>`;
   }
 
   function answered(q) {
@@ -473,7 +443,7 @@
     const lb = (S.leaderboard || []).slice(0, limit);
     const myName = S.me && S.me.name;
     return `<div class="card"><h2>${esc(t('board'))}</h2>
-      <ul class="lb">${lb.map(r => `<li class="p${r.rank} ${r.name === myName ? 'me' : ''}">
+      <ul class="lb">${lb.map(r => `<li class="p${r.rank} ${r.me || (r.me === undefined && r.name === myName) ? 'me' : ''}">
         <span class="pos">${r.rank}</span><span class="nm" dir="auto">${esc(r.name)}</span>
         <span class="cr">${r.correct} ✔</span><span class="sc">${r.score}</span></li>`).join('') || `<li class="muted">${esc(t('no_score'))}</li>`}
       </ul>
@@ -525,6 +495,7 @@
   // ------------------------------------------------------------ Démarrage
   applyLang();
   if (me && me.token) startPolling(true); else renderJoin({});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 })();
 </script>
 </body>

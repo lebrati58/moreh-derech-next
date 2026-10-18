@@ -31,7 +31,7 @@ for (let i = 1; i <= 3; i++) {
   const p = await (await browser.newContext({ viewport: { width: 390, height: 800 }, isMobile: true })).newPage();
   await p.goto(BASE + '/');
   await p.click('.langopt[data-lang=he]');            // V2 : choix de la langue avant le nom
-  await p.fill('#nm', 'דפדפן ' + i); await p.click('text=הצטרפות למשחק');
+  await p.fill('#nm', 'דפדפן ' + i); await p.click('#jbtn');
   await p.waitForSelector('text=מחכים לשאלה הבאה');
   pages.push(p);
 }
@@ -124,10 +124,10 @@ offline.delete(lost.token);
 const back = await rpc('get_state', { p_token: lost.token, p_since: 0 });
 assert.equal(back.me.score, scoreBefore); assert.equal(back.question.id, q2.id);
 log(`élève reconnecté, score conservé (${scoreBefore}), voit la nouvelle question`);
-// reconnexion depuis un autre navigateur : nom + code personnel
-const again = await rpc('join_game', { p_name: lost.name, p_code: lost.code });
-assert.equal(again.player_id, lost.player_id);
-log('reconnexion depuis un autre navigateur via nom + code personnel OK');
+// reprise par le jeton même si l'élève retape son prénom (aucun doublon créé)
+const again = await rpc('join_game', { p_name: lost.name, p_token: lost.token });
+assert.equal(again.player_id, lost.player_id); assert.equal(again.reconnected, true);
+log('reconnexion par jeton (prénom retapé) : même joueur, aucun doublon');
 // rechargement de page complet : retour direct dans le jeu
 await pages[1].reload(); await pages[1].waitForSelector('.ans');
 log('rechargement complet de la page : retour direct dans la partie');

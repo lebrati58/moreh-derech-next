@@ -1,35 +1,40 @@
-# V3 — Route 67 Zikhron Yaakov → Yokneam, sans photo (état de la branche)
+# V3 — Zikhron Yaakov → Yokneam (route 67), sans photo, GPS assisté
 
-## Fichiers ajoutés
-- `content/v3/road67_questions.json` : 8 questions principales et 2 facultatives, traduction des questions/options dans 4 langues ; anecdote hébraïque préliminaire.
-- `content/v3/road67_unverified.geojson` : points envisagés SANS coordonnées, car la trajectoire du bus n'est pas encore validée.
-- `supabase/migration_v3.sql` : ajoute la banque V3 et 10 questions sans modifier V1/V2.
+## Fichiers
+| Fichier | Rôle |
+|---|---|
+| `content/v3/road67_questions.json` | **Données faisant foi** : 6 questions principales + 4 de remplacement, 4 langues complètes (question, 4 réponses, explication élève, texte micro 20–40 s, anecdote, repère « quand parler », mise en garde), sources, et ce que disent les deux documents de guidage (`docs`). |
+| `public/v3/road67-route.json` | Tracé du trajet, routes, vitesses, lieux (point d'ancrage sur la chaussée + zone avant/après), côtés du bus **non vérifiés**, destination Aroma. Public : ne contient ni question ni réponse. |
+| `public/gps-engine.js` | Moteur partagé GPS réel / simulateur / tests : map matching, distance le long du trajet, vitesse, ETA, 3 niveaux, pannes, fin avant Aroma. **Aucun accès réseau, aucune publication.** |
+| `public/admin-nav.js` | Interface du guide : 🧭 ניווט חכם, 🧪 simulation, 🛰️ enregistrement de trace, carte. |
+| `tools/build-v3-sql.mjs` | Validation + génération de `supabase/questions_v3.sql` (refuse un texte hébreu dans FR/EN/RU, une photo, un ordre incohérent…). |
 
-## Interface
-- `⚙️ → משחק חדש` propose les banques présentes en base et permet de choisir V1/V2/V3.
-- En V3, `שידור חי` propose un GPS sur autorisation explicite. Il n'affiche QUE le statut de votre position et de sa précision, aucune alerte géographique non vérifiée.
-- Aucun affichage de photos pour la V3 ; la galerie V2 reste réservée à V2.
-- Les questions V3 restent publiées **manuellement**.
-- Dernière question : NVIDIA / Mellanox, à poser seulement si le délai avant Aroma le permet.
+## Itinéraire (vérifié par sources publiques, sans accès OSM direct)
+1. **Route 67** vers l'est : échangeur de Zikhron Yaakov (route 2) → carrefour de Fureidis (route 4) → carrefour de Shfeya (route 652) → échangeur de Bat Shlomo → **échangeur d'Ein Tut** (13 km). La route 67 est l'ancien tronçon de la route 70, renumérotée en 2018.
+2. **Route 6 vers le nord**, tronçon **gratuit** Ein Tut → Yokneam (ancienne route 70, élargi en 2022) → échangeur d'Elyakim → **échangeur de Yokneam** (route 722). Ne pas continuer sur la route 6 après Yokneam : section payante.
+3. Sortie vers Yokneam Illit → **Aroma, G Center, HaTamar 2** (fin du guidage, pas une question).
 
-## Mise en service
-1. Ne fusionnez pas avant un test en préproduction.
-2. Vérifiez que V2 est installée dans Supabase. Exécutez ensuite `supabase/migration_v3.sql` dans SQL Editor.
-3. Créez une partie V3 et vérifiez les traductions, le fonctionnement du GPS et la révélation. Le script SQL est rejouable, mais la fusion du code ne l'exécute pas à distance.
-4. Validez le trajet **précis** de l'autocar après l'échangeur Ein Tut vers Aroma G Center HaTamar 2. L'arrivée précise du bus/point de dépose n'est pas confirmée.
-5. Avec un tracé officiel ou OSM vérifié, établissez les repères `on-road` (sur la chaussée), leur visibilité droite/gauche, leur précision. Pas seulement le centre géographique d'un village. Puis implémentez les alertes de progression et le mode simulation.
-6. Jusqu'à cette validation, **aucune alerte GPS 'maintenant' n'est activée**. Cette limitation est voulue.
+Coordonnées publiées (Wikipédia hébreu) : Zikhron 32.58861, 34.92694 · Bat Shlomo 32.59828, 35.00458 · Ein Tut 32.61012, 35.04836 · Elyakim 32.63639, 35.06500 · Yokneam 32.65576, 35.09844. Centrale Hagit 32.6172, 35.0431 (GEM/Wikidata).
 
-## Ce qui reste à développer (et non à prétendre terminé)
-- Polyligne routière vérifiée avec coordonnées de déclenchement fiables.
-- Matching routier, distance le long de l'itinéraire, ETA, alertes en trois niveaux.
-- Simulation GPS et tests de déplacement.
-- Scripts oraux complets de 20–40 secondes traduits dans chaque langue ; le script hébraïque initial est provisoire.
-- Tests PostgreSQL réels et tests navigateur ; aucun test automatisé n'a été exécuté dans cette branche.
+**Limites honnêtes**
+- Les points entre ces échangeurs sont **interpolés** : erreur possible de plusieurs centaines de mètres dans les virages du wadi. Le tracé est donc marqué « משוער » et le couloir de tolérance est large (650 m).
+- La position exacte de G Center / du point de dépose de l'autocar est **estimée (±500 m)** : à confirmer.
+- **Aucun côté du bus n'est présenté comme vérifié** : l'écran affiche « ⚠️ צד האוטובוס לא אומת — לא להצביע » + ce que disent les documents. Les deux documents se contredisent (Hagit, Elyakim : la note de relecture du document de Yossi inverse les côtés ; Meir Shfeya : les coordonnées laissent penser qu'il pourrait être à droite).
+- ➜ **Faire un trajet de repérage** avec « 🛰️ הקלטת המסלול » (enregistre le vrai tracé et le point exact de chaque lieu), puis « 💾 שמירה כמסלול מאומת » : le GPS passe alors sur la route réelle (couloir 120 m). Pour rendre la trace permanente pour tous les téléphones : « ⬇️ ייצוא GeoJSON » puis l'envoyer pour intégration dans `road67-route.json`, en ajoutant `"side": { "verified": true, "value": "left" | "right" }` pour chaque côté constaté.
 
-## Sources d'origine
-- `הדרכת דרך זיכרון יקענם.docx` (Yaïr) transmis par l'utilisateur.
-- `20260827 הדרכת דרך.docx` (Yossi Kahana), transmis par l'utilisateur.
-- Actualités NVIDIA (rachat Mellanox 2020, bureaux à Yokneam) ; ne pas annoncer une visibilité des bâtiments sans preuve.
+## Rythme (mesuré en simulation, mêmes règles que le vrai GPS)
+Trajet ≈ 19–21 km ≈ 13–30 min selon la circulation. Règles : ≥ 2 min entre deux débuts de question, pas d'alerte pendant une question ouverte ni pendant les 40 s de micro, plus aucune question si l'arrivée est à moins de ~2 min 50, NVIDIA toujours en dernier.
 
-**Règle de sécurité :** le GPS et le fait d'être proche d'un point ne doivent jamais publier une question. Toutes les publications restent des actions explicites du guide.
+| Vitesse du bus | Questions suggérées |
+|---|---|
+| lent (≈30 min) | 01 → 02 → 03 → 04 → 05 Elyakim → 06 NVIDIA |
+| normal (≈18 min) | 01 → 02 → 03 → 04 → 06 NVIDIA (Elyakim proposé « à passer ») |
+| rapide (≈13 min) | 01 → 02 → 03 → 04 → 06 NVIDIA |
+
+## Corrections apportées aux documents de guidage
+- « Wadi Milh faisait partie de la Via Maris » → l'un des passages du Carmel ; le grand passage était le Wadi Ara (Nahal Iron).
+- « Les Britanniques ont déformé le nom » / « route du sel » : présentés comme traditions, pas comme faits.
+- Bat Shlomo : question réécrite sur l'origine du nom (Betty, mère du Baron, fille de Salomon Rothschild) — plus marquante que la date seule.
+- Hagit : nouveau nom « David Lévy » et vente de « Hagit Est » non vérifiés → seulement en mise en garde.
+- NVIDIA : rachat finalisé le 27/04/2020 (~6,9 Md$) ; bail d'environ 29 000 m² à Yokneam rapporté en 2026 ; campus de Kiryat Tivon = autre lieu ; ne jamais dire qu'on voit les bureaux depuis le car.
+- Non repris (non vérifiés) : citation de Bialik sur Shfeya, « moshav d'immigrants européens » à Bat Shlomo, liens de Shfeya avec HaShomer.

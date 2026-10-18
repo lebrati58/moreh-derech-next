@@ -122,7 +122,10 @@ create table if not exists mdl.players (
   joined_at     timestamptz not null default clock_timestamp(),
   last_seen_at  timestamptz not null default clock_timestamp()
 );
-create unique index if not exists players_name_per_game on mdl.players (game_id, lower(name));
+-- V3 : deux élèves peuvent porter le même prénom (identifiants internes distincts ;
+-- le classement ajoute un petit numéro d'affichage). L'ancienne contrainte d'unicité est retirée.
+drop index if exists mdl.players_name_per_game;
+create index if not exists players_game_name on mdl.players (game_id, lower(name));
 
 create table if not exists mdl.answers (
   game_id      bigint not null,
@@ -149,8 +152,13 @@ create table if not exists mdl.question_banks (
 );
 insert into mdl.question_banks (code, label, sort) values
   ('V1', '{"he":"V1 — קורס","fr":"V1 — Cours","en":"V1 — Course","ru":"V1 — Курс"}', 1),
-  ('V2', '{"he":"V2 — מסלול התמונות — הלוך","fr":"V2 — Parcours photographié (aller)","en":"V2 — Photographed outbound route","ru":"V2 — Маршрут по фотографиям (туда)"}', 2)
+  ('V2', '{"he":"V2 — מסלול התמונות — הלוך","fr":"V2 — Parcours photographié (aller)","en":"V2 — Photographed outbound route","ru":"V2 — Маршрут по фотографиям (туда)"}', 2),
+  ('V3', '{"he":"V3 — זכרון יעקב → יקנעם, כביש 67","fr":"V3 — Zikhron Yaakov → Yokneam, route 67","en":"V3 — Zikhron Ya''akov → Yokneam, Road 67","ru":"V3 — Зихрон-Яаков → Йокнеам, шоссе 67"}', 3)
 on conflict (code) do update set label = excluded.label, sort = excluded.sort;
+-- Durée de réponse par défaut d'une nouvelle partie de cette banque (null = reprendre la précédente).
+-- Une future V4, V5… s'ajoute par une simple ligne ici + sa propre banque de questions.
+alter table mdl.question_banks add column if not exists default_time_sec int;
+update mdl.question_banks set default_time_sec = 45 where code in ('V2', 'V3') and default_time_sec is null;
 
 alter table mdl.questions add column if not exists bank text not null default 'V1' references mdl.question_banks(code);
 -- Traductions PUBLIQUES (texte, 4 réponses dans le MÊME ordre, explication, catégorie) :
@@ -166,6 +174,8 @@ do $$ begin
   alter table mdl.questions add constraint questions_selection_chk check (selection in ('MAIN','SPARE'));
 exception when duplicate_object then null; end $$;
 create index if not exists questions_bank_sort on mdl.questions (bank, sort_order);
+-- Question modifiée dans l'admin : les réimports (migration V3) ne l'écrasent plus.
+alter table mdl.questions add column if not exists admin_edited boolean not null default false;
 
 -- Une partie = UNE banque, choisie à sa création et jamais modifiée ensuite.
 alter table mdl.games add column if not exists bank text not null default 'V1' references mdl.question_banks(code);
@@ -293,8 +303,12 @@ language sql stable as $$
         on a.player_id = p.id
      where p.game_id = p_game and not p.removed
      group by p.id)
-  select (row_number() over w)::int, id, name, score, correct, answered, correct_ms
-    from s window w as (order by score desc, correct desc, correct_ms asc, joined_at asc, id asc)
+  , d as (   -- homonymes : « David », « David (2) »… dans l'ordre d'arrivée (même affichage pour tous)
+    select s.*, row_number() over (partition by lower(s.name) order by s.joined_at, s.id) as k from s)
+  select (row_number() over w)::int, id,
+         case when k > 1 then name || ' (' || k || ')' else name end,
+         score, correct, answered, correct_ms
+    from d window w as (order by score desc, correct desc, correct_ms asc, joined_at asc, id asc)
    order by 1
 $$;
 
@@ -352,18 +366,23 @@ end $$;
 --  API PARTICIPANT (exposée)
 -- ---------------------------------------------------------------------
 
--- Rejoindre la partie active.
---  * p_token : jeton stocké sur le téléphone → reconnexion transparente.
---  * nom déjà pris : on demande le code personnel (même élève sur un autre
---    navigateur) ou on propose un nom libre ; p_new_name_ok = true l'accepte.
+-- Rejoindre la partie active. L'élève ne donne QUE son prénom (et sa langue).
+--  * p_token : jeton aléatoire gardé sur le téléphone → reconnexion transparente (rechargement,
+--    changement de langue, coupure réseau). C'est la seule « clé » : 122 bits aléatoires, jamais
+--    affichés, impossibles à deviner à partir d'un prénom.
+--  * prénom déjà utilisé : AUCUNE question n'est posée — un nouveau joueur est créé (identifiant
+--    interne distinct) ; le classement ajoute un petit numéro d'affichage aux homonymes.
+--  * p_code (ancien code à 4 chiffres, plus affiché) : accepté pour compatibilité seulement,
+--    avec 8 essais maximum par joueur.
 --  * p_lang : langue d'affichage (he/fr/en/ru) — purement visuelle.
+--  * Rejoindre ne publie JAMAIS de question : seul le guide le fait.
 drop function if exists public.join_game(text, text, text, boolean);   -- ancienne signature (sans langue)
 create or replace function public.join_game(
   p_name text, p_token text default null, p_code text default null, p_new_name_ok boolean default false,
   p_lang text default null)
 returns jsonb language plpgsql security definer set search_path = mdl, public as $$
 declare
-  g mdl.games; p mdl.players; v_name text; v_try text; i int := 2; v_lang text := mdl.valid_lang(p_lang);
+  g mdl.games; p mdl.players; v_name text; v_lang text := mdl.valid_lang(p_lang);
 begin
   g := mdl.active_game();
   if g.id is null then return jsonb_build_object('error', 'no_game'); end if;
@@ -375,55 +394,47 @@ begin
     if found then
       update mdl.players set last_seen_at = clock_timestamp(), lang = coalesce(v_lang, lang)
        where id = p.id returning * into p;
-      return jsonb_build_object('player_id', p.id, 'token', p.token, 'name', p.name, 'code', p.code,
+      return jsonb_build_object('player_id', p.id, 'token', p.token, 'name', p.name,
                                 'lang', p.lang, 'reconnected', true);
     end if;
   end if;
 
-  -- 2) nettoyage du nom (pas de caractères de contrôle, 1 à 24 caractères)
+  -- 2) nettoyage du prénom (pas de caractères de contrôle, 1 à 24 caractères)
   v_name := regexp_replace(coalesce(p_name, ''), '[[:cntrl:]]', '', 'g');
   v_name := btrim(regexp_replace(v_name, '\s+', ' ', 'g'));
   v_name := left(v_name, 24);
   if char_length(v_name) = 0 then return jsonb_build_object('error', 'empty_name'); end if;
 
   if g.status = 'finished' then return jsonb_build_object('error', 'finished'); end if;
+
+  -- 3) compatibilité : ancien retour « prénom + code » (l'interface ne le propose plus)
+  if p_code is not null and btrim(p_code) <> '' then
+    select * into p from mdl.players
+     where game_id = g.id and lower(name) = lower(v_name) and not removed and code = btrim(p_code)
+       and code_failures < 8
+     order by joined_at limit 1;
+    if found then
+      update mdl.players set last_seen_at = clock_timestamp(), code_failures = 0, lang = coalesce(v_lang, lang)
+       where id = p.id returning * into p;
+      return jsonb_build_object('player_id', p.id, 'token', p.token, 'name', p.name,
+                                'lang', p.lang, 'reconnected', true);
+    end if;
+    update mdl.players set code_failures = code_failures + 1
+     where game_id = g.id and lower(name) = lower(v_name) and not removed;
+    if found then return jsonb_build_object('error', 'bad_code'); end if;
+  end if;
+
   if (select count(*) from mdl.players where game_id = g.id) >= 300 then
     return jsonb_build_object('error', 'full');
   end if;
 
-  -- 3) nom déjà utilisé
-  select * into p from mdl.players where game_id = g.id and lower(name) = lower(v_name);
-  if found then
-    if p_code is not null and not p.removed then
-      if p.code_failures >= 8 then return jsonb_build_object('error', 'code_locked'); end if;
-      if p.code = btrim(p_code) then
-        update mdl.players set last_seen_at = clock_timestamp(), code_failures = 0, lang = coalesce(v_lang, lang)
-         where id = p.id returning * into p;
-        return jsonb_build_object('player_id', p.id, 'token', p.token, 'name', p.name, 'code', p.code,
-                                  'lang', p.lang, 'reconnected', true);
-      end if;
-      update mdl.players set code_failures = code_failures + 1 where id = p.id;
-      return jsonb_build_object('error', 'bad_code');
-    end if;
-    loop
-      v_try := v_name || ' ' || i;
-      exit when not exists (select 1 from mdl.players where game_id = g.id and lower(name) = lower(v_try));
-      i := i + 1;
-    end loop;
-    if not p_new_name_ok then
-      return jsonb_build_object('error', 'name_taken', 'suggestion', v_try);
-    end if;
-    v_name := v_try;
-  end if;
-
+  -- 4) nouveau joueur — même si le prénom existe déjà
   insert into mdl.players (game_id, name, code, lang)
   values (g.id, v_name, lpad((floor(random() * 10000))::int::text, 4, '0'), coalesce(v_lang, 'he'))
   returning * into p;
   perform mdl.bump(g.id);
-  return jsonb_build_object('player_id', p.id, 'token', p.token, 'name', p.name, 'code', p.code,
+  return jsonb_build_object('player_id', p.id, 'token', p.token, 'name', p.name,
                             'lang', p.lang, 'reconnected', false);
-exception when unique_violation then
-  return jsonb_build_object('error', 'name_taken', 'suggestion', v_name || ' ' || (i + 1));
 end $$;
 
 -- Changement de langue en cours de partie : le joueur, ses réponses et son score sont inchangés.
@@ -465,7 +476,7 @@ begin
 
   select count(*) into v_total from mdl.players where game_id = g.id and not removed;
   select jsonb_build_object('name', l.name, 'score', l.score, 'correct', l.correct, 'rank', l.rank,
-                            'code', p.code, 'total', v_total, 'lang', p.lang)
+                            'total', v_total, 'lang', p.lang)
     into v_me from mdl.leaderboard(g.id) l where l.player_id = p.id;
 
   if g.current_question is not null then
@@ -498,7 +509,8 @@ begin
     end if;
   end if;
 
-  select coalesce(jsonb_agg(jsonb_build_object('rank', rank, 'name', name, 'score', score, 'correct', correct)
+  select coalesce(jsonb_agg(jsonb_build_object('rank', rank, 'name', name, 'score', score, 'correct', correct,
+                                              'me', player_id = p.id)
                   order by rank), '[]'::jsonb)
     into v_lb from mdl.leaderboard(g.id) where rank <= 10;
   if g.status = 'finished' then v_extra := jsonb_build_object('stats', mdl.final_stats(g.id)); end if;
@@ -662,6 +674,7 @@ begin
       guide_sources   = coalesce(p_q->'guide_sources', guide_sources),
       guide_fact      = coalesce(p_q->>'guide_fact', guide_fact),
       guide_visibility = coalesce(p_q->>'guide_visibility', guide_visibility),
+      admin_edited = true,
       updated_at = clock_timestamp()
      where id = (p_q->>'id')::bigint returning id into v_id;
     if v_id is null then return jsonb_build_object('error', 'not_found'); end if;
@@ -701,7 +714,7 @@ begin
   return jsonb_build_object('ok', true);
 end $$;
 
--- Nouvelle partie : c'est le SEUL moment où l'on choisit la banque (V1 ou V2).
+-- Nouvelle partie : c'est le SEUL moment où l'on choisit la banque (V1, V2, V3…).
 -- Les anciennes parties, leurs joueurs et leurs réponses sont conservés (seulement désactivés).
 drop function if exists public.admin_new_game(text, text);   -- ancienne signature (sans banque)
 create or replace function public.admin_new_game(p_token text, p_title text default null, p_bank text default 'V1')
@@ -713,8 +726,9 @@ begin
   if not found then return jsonb_build_object('error', 'bad_bank'); end if;
   old := mdl.active_game();
   v_min := greatest(30, coalesce(old.min_answer_sec, 30));
-  -- V2 : 45 s par défaut ; V1 : durée précédente, jamais sous le minimum (0 = sans limite)
-  v_time := case when b.code = 'V2' then 45 else coalesce(old.default_time_limit_sec, 30) end;
+  -- V2/V3 : 45 s par défaut (question_banks.default_time_sec) ; V1 : durée précédente,
+  -- jamais sous le minimum (0 = sans limite)
+  v_time := coalesce(b.default_time_sec, old.default_time_limit_sec, 30);
   if v_time > 0 then v_time := greatest(v_time, v_min); end if;
   update mdl.games set is_active = false,
          status = case when status = 'finished' then status else 'finished' end,
@@ -952,6 +966,17 @@ begin
                  from mdl.route_photos p where p.collection = c.code));
 end $$;
 
+-- Lecture d'une banque quelconque (admin) : sert à la SIMULATION de trajet, qui peut se faire
+-- depuis chez soi sans changer la partie en cours. Ne modifie rien et n'envoie rien aux élèves.
+create or replace function public.admin_bank_questions(p_token text, p_bank text)
+returns jsonb language plpgsql security definer set search_path = mdl, public as $$
+begin
+  perform mdl.check_admin(p_token);
+  return jsonb_build_object('bank', p_bank,
+    'questions', (select coalesce(jsonb_agg(to_jsonb(x) order by x.sort_order, x.id), '[]'::jsonb)
+                    from mdl.questions x where x.bank = p_bank));
+end $$;
+
 -- ---------------------------------------------------------------------
 --  Droits : seules les fonctions public.* ci-dessus sont appelables
 -- ---------------------------------------------------------------------
@@ -964,7 +989,7 @@ begin
     'set_language(text,text)',
     'admin_login(text)', 'admin_state(text)', 'admin_save_question(text,jsonb)', 'admin_delete_question(text,bigint)',
     'admin_reorder(text,bigint[])', 'admin_new_game(text,text,text)', 'admin_open_question(text,bigint)',
-    'admin_toggle_spare(text,bigint,boolean)', 'admin_photos(text,text)',
+    'admin_toggle_spare(text,bigint,boolean)', 'admin_photos(text,text)', 'admin_bank_questions(text,text)',
     'admin_close_question(text,boolean)', 'admin_reveal(text,boolean)', 'admin_pause(text,boolean)', 'admin_finish(text,boolean)',
     'admin_resume_game(text)', 'admin_settings(text,jsonb)', 'admin_remove_player(text,bigint)', 'admin_export(text)']
   loop

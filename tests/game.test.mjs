@@ -135,21 +135,28 @@ test('réponse tardive dans la marge réseau acceptée, au-delà refusée', asyn
   await rpc(c, 'admin_reveal', { p_token: admin });
 });
 
-test('noms identiques, code personnel, reconnexion par jeton', async () => {
+test('prénoms identiques autorisés, code facultatif (compat), reconnexion par jeton', async () => {
   const a = await rpc(c, 'join_game', { p_name: '  משה   כהן ' });
   assert.equal(a.name, 'משה כהן');
+  assert.equal(a.code, undefined, 'le code personnel n\'est plus renvoyé');
+  // un deuxième « משה כהן » entre directement, sans code ni question
   const dup = await rpc(c, 'join_game', { p_name: 'משה כהן' });
-  assert.equal(dup.error, 'name_taken'); assert.equal(dup.suggestion, 'משה כהן 2');
-  const forced = await rpc(c, 'join_game', { p_name: 'משה כהן', p_new_name_ok: true });
-  assert.equal(forced.name, 'משה כהן 2');
-  // même élève depuis un autre navigateur : nom + code
+  assert.equal(dup.error, undefined); assert.equal(dup.name, 'משה כהן');
+  assert.notEqual(dup.player_id, a.player_id); assert.notEqual(dup.token, a.token);
+  // compatibilité : ancien retour nom + code (plus proposé par l'interface), 8 essais max
+  const code = (await c.query('select code from mdl.players where id = $1', [a.player_id])).rows[0].code;
   assert.equal((await rpc(c, 'join_game', { p_name: 'משה כהן', p_code: 'zzzz' })).error, 'bad_code');
-  const back = await rpc(c, 'join_game', { p_name: 'משה כהן', p_code: a.code });
+  const back = await rpc(c, 'join_game', { p_name: 'משה כהן', p_code: code });
   assert.equal(back.player_id, a.player_id); assert.equal(back.reconnected, true);
   // reconnexion par jeton
   const again = await rpc(c, 'join_game', { p_name: 'n importe', p_token: a.token });
   assert.equal(again.player_id, a.player_id);
   assert.equal((await rpc(c, 'join_game', { p_name: '   ' })).error, 'empty_name');
+  // classement : les homonymes sont distingués par un petit numéro, dans l'ordre d'arrivée
+  const s = await rpc(c, 'get_state', { p_token: dup.token, p_since: 0 });
+  assert.equal(s.me.name, 'משה כהן (2)'); assert.equal(s.me.code, undefined);
+  const mine = s.leaderboard.filter(r => r.me);
+  assert.ok(mine.length <= 1 && (!mine.length || mine[0].name === 'משה כהן (2)'));
 });
 
 test('version : réponse minimale si rien ne change', async () => {

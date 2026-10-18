@@ -1,10 +1,12 @@
 # מורה דרך LIVE
 
-Quiz en direct pour un guidage en bus (Zikhron Yaakov / Césarée → Haïfa, 21 octobre 2026).
+Quiz en direct pour un guidage en bus. Trois parcours indépendants : **V1** (cours, 34 questions),
+**V2** (parcours photographié, 6+2), **V3** (Zikhron Yaakov → Yokneam par la route 67, 6+4, GPS assisté, sans photo).
 Le guide publie chaque question **à la main**, au moment où le paysage s'y prête ; les élèves
 répondent depuis leur téléphone. Interface entièrement en hébreu (RTL), pensée pour le mobile.
 
-- **Lien élèves** : `https://<hébergement>/` — un seul lien à envoyer sur WhatsApp, seul le nom est demandé.
+- **Lien élèves** : `https://<hébergement>/` — un seul lien à envoyer sur WhatsApp. Écran en hébreu par défaut :
+  langue (🇮🇱 🇫🇷 🇬🇧 🇷🇺) + prénom → « מתחילים לשחק 🚀 ». Rien d'autre (ni compte, ni code, ni téléphone).
 - **Lien guide** : `https://<hébergement>/admin.html` — protégé par mot de passe.
 
 ---
@@ -64,9 +66,11 @@ base de 100. Les questions avec durée maximale acceptent encore 1,5 s après l'
 - Mot de passe admin haché (sha256 + sel) dans la base ; jamais dans le code ni le dépôt.
   10 échecs en 15 min bloquent la connexion. Session admin valable 14 h.
 - Une seule réponse par élève et par question (clé primaire en base, résiste aux envois simultanés).
-- Élèves : un jeton aléatoire stocké sur le téléphone (reconnexion automatique) + un code
-  personnel à 4 chiffres pour revenir depuis un autre navigateur (ex. WhatsApp → Chrome).
-  8 codes faux bloquent ce nom. Noms nettoyés, 24 caractères max, 300 joueurs max par partie.
+- Élèves : un jeton aléatoire (UUID, jamais affiché) stocké sur le téléphone = reconnexion automatique
+  (rechargement, changement de langue, coupure réseau) ; impossible de reprendre la session d'un autre
+  en tapant son prénom. **Prénoms identiques acceptés** (identifiants internes distincts ; le classement
+  affiche « David », « David (2) »…). L'ancien code à 4 chiffres n'est plus affiché (accepté côté serveur
+  pour compatibilité, 8 essais max). Noms nettoyés, 24 caractères max, 300 joueurs max par partie.
 - La « clé anon/publishable » de Supabase dans `config.js` est **publique par conception**.
 
 ---
@@ -208,6 +212,40 @@ Nouvelle installation : `supabase/install.sql` contient tout (schéma + V1 + V2)
 Modifier le contenu V2 : éditer `content/v2/*.json`, puis `npm run build:sql` (le générateur
 refuse des données incohérentes : 6 MAIN + 2 SPARE, 4 langues complètes, 4 réponses, 32 photos…).
 
+## V3 — זכרון יעקב → יקנעם, כביש 67 (GPS assisté, sans photo)
+
+Détails, sources, limites et corrections : **`content/v3/README.md`**.
+
+- **Choix du parcours** : ⚙️ הגדרות → 🔄 משחק חדש → V1 / V2 / V3 (chaque nouvelle partie a son score et son
+  classement ; l'historique est conservé ; une V4 s'ajoute par une ligne dans `mdl.question_banks` + sa banque).
+- **🧭 ניווט חכם — כביש 67** (onglet שידור חי) : « 📍 הפעל GPS » → le téléphone du guide suit le trajet et annonce le
+  prochain lieu : 🟡 בקרוב (~90 s avant), 🟠 מתקרבים (~45–55 s, question + réponse + texte micro), 🟢 עכשיו.
+  Distance et temps calculés **le long du trajet**, avec la vitesse réelle. Le GPS **ne publie jamais** : seul
+  « 📣 פרסם שאלה » envoie la question. ⏭️ דלג, ⏮️ חזרה, 📌 choix manuel dans la liste ; si le GPS est refusé,
+  imprécis, ancien, perdu, hors trajet ou à contresens → « ⚠️ … עבור למצב ידני », le jeu continue.
+- **Fin avant Aroma** : plus aucune question si l'arrivée est à moins de ~2 min 50 ; NVIDIA / Mellanox toujours en
+  dernier ; ensuite « 🏁 סיום ההדרכה — מתקרבים לארומה יקנעם » avec le texte de conclusion.
+- **Ne bouscule pas le guide** : aucune alerte pressante pendant une question ouverte, pendant les 40 s de micro
+  après la révélation, ni moins de 2 min après la question précédente.
+- **Confidentialité** : la position reste sur le téléphone du guide (aucun envoi au serveur, aucun historique).
+- **🧪 סימולציית נסיעה** (onglet 🗺️ מסלול, ou ⚙️ הגדרות) : bus virtuel sur le même moteur, ▶️ ⏸️ ⏩ ⏮️, pannes
+  (GPS imprécis/perdu/ancien, contresens, route parallèle, lieu manqué, arrivée trop rapide). **N'envoie rien
+  aux élèves**, ne touche pas à la partie en cours.
+- **🛰️ הקלטת המסלול** : enregistre le vrai tracé lors d'un trajet de repérage et le point exact de chaque lieu ;
+  « 💾 שמירה כמסלול מאומת » remplace le tracé estimé sur ce téléphone ; export / import GPX ou GeoJSON.
+- ⚠️ Le tracé fourni est **estimé** à partir des coordonnées publiées des échangeurs et **aucun côté du bus n'est
+  vérifié** : l'écran le dit (« ⚠️ צד האוטובוס לא אומת — לא להצביע »). Faire le trajet de repérage avant le jour J.
+- ⚠️ Un navigateur peut suspendre le GPS si l'écran est verrouillé ou l'onglet en arrière-plan : garder l'écran
+  allumé (l'admin le demande au navigateur quand c'est possible).
+
+### Mettre à jour la base de production (Supabase) — à faire une fois, avec votre accord
+1. *SQL Editor* → coller et exécuter **`supabase/migration_v3.sql`**. Ré-exécutable ; ne supprime rien ; ne touche ni
+   à V1 ni à V2 (questions et photos) ni aux parties, joueurs et réponses ; ne réécrit pas une question V3 modifiée
+   dans l'admin ; autorise les prénoms identiques (sessions existantes conservées).
+   *(Base neuve : `supabase/install.sql` contient tout.)*
+2. Publier le dossier `public/` (fusion sur `main` → GitHub Pages).
+3. Admin → ⚙️ → 🧪 סימולציה, puis 🔄 משחק חדש → V3 et partie test avec 2–3 téléphones en langues différentes.
+
 ## Développement et tests
 
 Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défaut ; variables
@@ -215,8 +253,9 @@ Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défau
 
 ```bash
 npm install
-npm test                    # 30 tests : logique serveur, fiches, 34 questions V1, V2 (banques, 30 s, 4 langues,
-                            #   confidentialité, réimport, migration depuis main, simulation 48 élèves)
+npm test                    # 43 tests : logique serveur, fiches, V1, V2, V3 (banques, 45/30 s, 4 langues, homonymes,
+                            #   confidentialité, migrations rejouables) + moteur GPS (map matching, alertes, pannes,
+                            #   simulation complète à 3 vitesses, fin avant Aroma)
 
 # serveur local qui imite l'API Supabase (rôle "anon" compris)
 createdb mdl_dev && psql -d mdl_dev -f supabase/schema.sql -f supabase/seed_demo.sql \
@@ -224,6 +263,7 @@ createdb mdl_dev && psql -d mdl_dev -f supabase/schema.sql -f supabase/seed_demo
 npm run dev                 # http://localhost:8787  et  /admin.html
 npm run scenario            # scénario 35 élèves (32 clients HTTP + 3 vrais navigateurs)
 npm run screens:v2 -- <dossier>   # parcours V2 complet dans 4 navigateurs + captures
+npm run e2e:v3 -- <dossier>       # parcours V3 complet (élèves 4 langues, homonymes, GPS réel/refusé, simulation)
 ```
 
 Le scénario vérifie : arrivée de 35 élèves, publication d'une question de géologie, apparition
@@ -244,6 +284,11 @@ supabase/seed_demo.sql questions de démonstration (non validées)
 supabase/migration_v2.sql  mise à jour V2 d'une base existante (généré)
 supabase/questions_v2.sql  import V2 seul (généré)
 content/v2/            données V2 faisant foi (questions 4 langues, 32 anecdotes, repères du guide)
+content/v3/            données V3 faisant foi (questions 4 langues, textes micro, sources) + README V3
+public/v3/road67-route.json  tracé, lieux, routes, destination (V3)
+public/gps-engine.js   moteur GPS (réel + simulation + tests)
+public/admin-nav.js    navigation du guide V3 (GPS, simulation, enregistrement, carte)
+supabase/migration_v3.sql  mise à jour V3 d'une base existante (généré)
 public/photos/aller-v2/  32 photos recadrées + miniatures
 tools/build-v2-sql.mjs   générateur + validation de l'import V2
 tests/                 tests unitaires, serveur local, scénario 35 élèves, captures

@@ -263,3 +263,49 @@ label { display: block; font-weight: 700; margin: 12px 0 6px; }
   .modal .sheet { border-radius: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ---------- V3 : accueil élève (langue + prénom, un seul écran) ---------- */
+.join { padding-top: 18px; }
+.join h1 { margin: 6px 0 4px; }
+.join .label { font-weight: 800; margin-top: 10px; }
+.join-brand { font-size: 22px; font-weight: 900; color: var(--sea); }
+.join-brand .live { background: var(--bad); color: #fff; border-radius: 8px; padding: 0 6px; font-size: 15px; vertical-align: middle; }
+.langopt { flex-direction: row; justify-content: center; gap: 8px; padding: 12px 6px; min-height: 52px; }
+.langopt .flag { font-size: 24px; line-height: 1; }
+.langopt b { font-size: 18px; }
+.langopt.on { box-shadow: 0 0 0 2px var(--sea) inset; }
+.btn.big { font-size: 22px; padding: 16px; margin-top: 4px; }
+#nm { font-size: 20px; }
+@media (max-width: 340px) { .langopt b { font-size: 16px; } .langopt .flag { font-size: 20px; } }
+
+/* ---------- V3 : navigation GPS du guide ---------- */
+.nav { border: 2px solid var(--sea); }
+.nav h2 { display: flex; align-items: center; gap: 8px; }
+.navstat { font-size: 14px; padding: 8px 10px; border-radius: 10px; background: var(--foam); margin: 8px 0; }
+.navstat.warn { background: #fff1d6; color: #7a4b00; }
+.navstat.bad { background: #ffe1df; color: #8a1c12; }
+.lvl { border-radius: 16px; padding: 12px 14px; margin: 10px 0; border: 3px solid var(--line); background: #fff; }
+.lvl.l1 { border-color: #e9c44a; background: #fffbe8; }
+.lvl.l2 { border-color: #f08a24; background: #fff3e6; }
+.lvl.l3 { border-color: #2e9d52; background: #eaf8ee; }
+.lvl .lvlh { font-size: 22px; font-weight: 900; }
+.lvl.hold { opacity: .85; }
+.navgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; font-size: 15px; margin: 8px 0; }
+.navgrid .full { grid-column: 1 / -1; }
+.sidewarn { background: #fff1d6; border-radius: 10px; padding: 6px 8px; font-weight: 800; color: #7a4b00; }
+.sideok { font-weight: 900; font-size: 18px; }
+.navq { font-size: 19px; font-weight: 800; margin: 6px 0; }
+.navlist { list-style: none; padding: 0; margin: 6px 0 0; }
+.navlist li { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-top: 1px dashed var(--line); font-size: 15px; }
+.navlist li .k { min-width: 64px; color: var(--muted); font-size: 13px; }
+.navlist li.done { opacity: .5; text-decoration: line-through; }
+.navlist li .grow { flex: 1; }
+.navlist li button { width: auto; flex: none; padding: 6px 10px; }
+.simbar { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.simbar button { width: auto; flex: 1 1 auto; padding: 8px 10px; font-size: 15px; }
+.simbar button.on { background: var(--sea); color: #fff; }
+.faults { display: flex; flex-wrap: wrap; gap: 6px; }
+.faults label { display: flex; align-items: center; gap: 4px; font-size: 13px; background: var(--foam); border-radius: 8px; padding: 4px 8px; margin: 0; font-weight: 600; }
+.routemap { width: 100%; height: auto; background: #f4f9fb; border-radius: 12px; margin-top: 8px; }
+.simtag { display: inline-block; background: #6b3fa0; color: #fff; border-radius: 8px; padding: 2px 8px; font-weight: 800; font-size: 13px; }
+.finishcard { border: 3px solid #6b3fa0; background: #f5effc; }

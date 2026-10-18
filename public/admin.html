@@ -30,7 +30,7 @@
 <nav id="tabs" class="tabs hidden">
   <button data-view="live" class="active"><span class="i">📡</span>שידור חי</button>
   <button data-view="questions"><span class="i">📝</span>שאלות</button>
-  <button data-view="gallery"><span class="i">📷</span>מסלול</button>
+  <button data-view="gallery" id="tab-route"><span class="i">📷</span><span>מסלול</span></button>
   <button data-view="board"><span class="i">🏆</span>דירוג</button>
   <button data-view="settings"><span class="i">⚙️</span>הגדרות</button>
 </nav>
@@ -40,6 +40,8 @@
 
 <script src="config.js"></script>
 <script src="api.js"></script>
+<script src="gps-engine.js"></script>
+<script src="admin-nav.js"></script>
 <script>
 (function () {
   const { rpc, esc, store, SHAPES } = MDL;
@@ -50,7 +52,7 @@
   const chip = document.getElementById('hdr-chip');
 
   let token = store.get(KEY);
-  let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false;
+  let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = false, nav = null;
   // Panneau micro : état + dernière question pour laquelle il s'est ouvert automatiquement
   let G = { open: false, qid: null, mode: 'short', live: false };
   let lastAutoGuide = store.get('mdl_last_auto_guide');
@@ -78,6 +80,8 @@
   const dirOf = l => `lang="${l}" dir="${ALANGS[l] ? ALANGS[l].dir : 'auto'}"`;
   const gtr = q => (q && q.guide_i18n && (q.guide_i18n[alang] || q.guide_i18n.he)) || {};
   const gLang = q => q && q.guide_i18n && q.guide_i18n[alang] ? alang : 'he';
+  const knownBank = code => !!(S && (S.banks || []).some(x => x.code === code));
+  const bankIcon = code => ({ V1: '📝', V2: '📷', V3: '🧭' })[code] || '🗂️';
   const bankLabel = code => { const b = S && (S.banks || []).find(x => x.code === code); return b ? (b.label.he || code) : code; };
   const langSeg = () => `<div class="langseg" role="tablist" aria-label="שפת התוכן">${Object.keys(ALANGS).map(l =>
     `<button type="button" data-alang="${l}" class="${l === alang ? 'on' : ''}">${ALANGS[l].n}</button>`).join('')}</div>`;
@@ -88,41 +92,6 @@
     nearby: '📍 אתר בסביבה — לא נראה מהכביש',
     topic: '💡 נושא כללי'
   };
-  // GPS guide assistant: no uploaded/approved waypoints exist yet in the V3 data.
-  // Therefore GPS can display the operator's own position, but NEVER triggers a location
-  // recommendation, auto-publication, or pretends a roadside sight is confirmed.
-  let gpsWatch = null, gpsFix = null, gpsErr = 'GPS כבוי';
-  function gpsStop() { if (gpsWatch !== null) navigator.geolocation.clearWatch(gpsWatch); gpsWatch=null; gpsFix=null; gpsErr='GPS כבוי'; gpsPaint(); }
-  function gpsStart() {
-    if (!navigator.geolocation || !window.isSecureContext) { gpsErr='GPS דורש HTTPS והרשאת מיקום'; gpsPaint(); return; }
-    if (gpsWatch !== null) return;
-    gpsErr='מבקש הרשאת מיקום…'; gpsPaint();
-    gpsWatch=navigator.geolocation.watchPosition(
-      p => { gpsFix={lat:p.coords.latitude,lon:p.coords.longitude,accuracy:p.coords.accuracy,time:p.timestamp}; gpsErr=''; gpsPaint(); },
-      e => { gpsErr=e.code===1?'אין הרשאת מיקום':e.code===2?'אין קליטת GPS':'GPS לא הגיב'; if(e.code===1)gpsStop(); gpsPaint(); },
-      {enableHighAccuracy:true,maximumAge:5000,timeout:15000}
-    );
-  }
-  function gpsHtml() {
-    const isV3=S?.game?.bank==='V3';if(!isV3)return '';
-    return `<div class="card" id="gps-panel" style="border:2px solid #dfae49">
-      <h2>🧭 GPS — כביש 67</h2>
-      <p class="small" id="gps-status">מיקום אינו מאומת. כל השאלות זמינות לפרסום ידני בלבד.</p>
-      <div class="row"><button class="btn sun small" data-a="gps-on">📍 הפעל GPS</button>
-      <button class="btn ghost small" data-a="gps-off">⏹ הפסק GPS</button></div>
-      <p class="small">⚠️ אין עדיין נקודות הפעלה מאומתות על נתיב האוטובוס. המערכת לא תציג התראה 'עכשיו' עד לבדיקה של תוואי הכביש, הצדדים ונקודת ההגעה לארומה. השאירו את המסך פעיל. אפשר להמשיך ידנית.</p>
-      <p class="small">🏁 השאלה האחרונה: אנבידיה/מלאנוקס — רק אם נותר זמן לסיים לפני ארומה יקנעם.</p>
-    </div>`;
-  }
-  function gpsPaint() {
-    const p=document.getElementById('gps-status');if(!p)return;
-    if(!gpsFix) {p.textContent=gpsErr+' · אין הצעות מיקום מאומתות';return;}
-    const age=Math.round((Date.now()-gpsFix.time)/1000);
-    p.textContent=age>15?'⚠️ מיקום מיושן — בחרו שאלה ידנית':gpsFix.accuracy>75?'⚠️ מיקום לא מדויק — בחרו שאלה ידנית':'📍 GPS פעיל — נקודות המסלול טרם אומתו';
-    p.textContent+=' · דיוק משוער '+Math.round(gpsFix.accuracy)+' מ׳ · גיל '+age+' שנ׳';
-  }
-  setInterval(gpsPaint,3000);
-
   // Banque de questions : en mémoire, sinon dernière copie sauvegardée sur le téléphone (hors ligne)
   const bank = () => (S && S.questions) || store.get('mdl_bank') || [];
 
@@ -219,6 +188,8 @@
   // ------------------------------------------------------------ Rendu
   function render() {
     tabs.classList.remove('hidden');
+    const rt = document.querySelector('#tab-route');
+    if (rt) { const v3 = S.game && S.game.bank === 'V3'; rt.querySelector('.i').textContent = v3 ? '🗺️' : '📷'; }
     chip.classList.remove('hidden');
     chip.textContent = `👥 ${S.online}/${S.players}`;
     // Ouverture automatique du panneau micro à la révélation (une seule fois par question)
@@ -266,12 +237,12 @@
   function bankChip() {
     if (!S.game) return '';
     const b = S.game.bank || 'V1';
-    if (!['V1','V2','V3'].includes(b)) return `<div class="card center" style="background:#fff6e8"><h2>המשחק הפעיל הוא מהגרסה הקודמת</h2>
+    if (!knownBank(b)) return `<div class="card center" style="background:#fff6e8"><h2>המשחק הפעיל הוא מהגרסה הקודמת</h2>
       <p class="small">כדי לשחק את מסלול התמונות, צרו משחק חדש.</p><button class="btn sun" data-a="newgame">🔄 משחק חדש</button></div>`;
     const main = S.questions.filter(q => q.selection !== 'SPARE').length;
     const sp = S.questions.filter(q => q.selection === 'SPARE').length;
     return `<div class="row" style="align-items:center;justify-content:space-between;margin-bottom:10px">
-      <span class="bankchip v2">${b === "V3" ? "🧭" : b === "V2" ? "📷" : "📝"} ${esc(bankLabel(b))} · ${main} שאלות${sp ? ` (+${sp} חלופיות)` : ''}</span>
+      <span class="bankchip v2">${bankIcon(b)} ${esc(bankLabel(b))} · ${main} שאלות${sp ? ` (+${sp} חלופיות)` : ''}</span>
       <div style="flex:none;min-width:150px">${langSeg()}</div></div>`;
   }
 
@@ -371,8 +342,8 @@
   function renderLive() {
     const g = S.game, c = S.current;
     if (!g) { app.innerHTML = `<div class="card center"><h2>אין משחק פעיל</h2><button class="btn sun" data-a="newgame">צור משחק חדש</button></div>`; return; }
-    if (!['V1','V2','V3'].includes(g.bank || 'V1')) { app.innerHTML = bankChip(); return; }
-    let html = gpsHtml() + stats();
+    if (!knownBank(g.bank || 'V1')) { app.innerHTML = bankChip(); return; }
+    let html = (g.bank === 'V3' && nav ? nav.liveHtml() : '') + stats();
     if (g.status === 'finished') {
       html += `<div class="card center"><div class="trophy">🏆</div><h1>הזוכים הגדולים!</h1>${podium(S.leaderboard)}
         <p>${S.stats.players} משתתפים · ${S.stats.questions} שאלות · ${S.stats.correct_pct ?? 0}% נכונות</p>
@@ -453,7 +424,8 @@
   // ------------------------------------------------------------ Galerie du parcours (fiches privées)
   // Une fiche par photo, dans l'ordre du trajet. On avance de photo en photo SANS rien envoyer aux élèves.
   function renderGallery() {
-    if (S?.game?.bank === 'V3') { app.innerHTML = '<div class="card center"><h2>🧭 כביש 67 — מסלול ללא תמונות</h2><p>אין גלריה בגרסה זו. עברו לשידור חי להפעלת GPS ולהצגת השאלות לפי סדר הנסיעה.</p><p>⚠️ נקודות GPS טרם אומתו. אין להסתמך על מיקום אוטומטי.</p></div>'; return; }
+    // V3 : pas de photo — carte du trajet, simulation et enregistrement de trace (aussi accessible depuis les réglages)
+    if (S?.game?.bank === 'V3' || routeMode) { app.innerHTML = (S?.game?.bank !== 'V3' ? `<div class="card small">🧪 מצב סימולציה / הכנה של V3 — המשחק הפעיל (${esc(bankLabel(S?.game?.bank || 'V1'))}) לא מושפע. <button class="btn ghost small" data-a="route-exit" style="margin-top:6px">→ חזרה</button></div>` : '') + nav.routeHtml(); return; }
     if (!P || !P.photos) { app.innerHTML = `<div class="card center muted">טוען תמונות…</div>`; if (!loadPhotos._busy) loadPhotos(); return; }
     const ph = P.photos, col = P.collection;
     if (!ph.length) { app.innerHTML = `<div class="card center"><h2>אין תמונות בגלריה</h2></div>`; return; }
@@ -542,6 +514,7 @@
       <div class="card"><h2>ניהול המשחק</h2>
         <label>שפת התוכן במסך המנהל (שאלות, תסריטים, אנקדוטות)</label>${langSeg()}
         <div style="height:12px"></div>
+        <button class="btn ok small" data-a="sim-v3" style="margin-bottom:10px">🧪 סימולציית נסיעה — כביש 67</button>
         <button class="btn small" data-a="export" style="margin-bottom:10px">⬇️ ייצוא תוצאות (CSV)</button>
         ${g.status === 'finished' ? '<button class="btn ghost small" data-a="resume" style="margin-bottom:10px">↩️ המשך משחק שהסתיים</button>'
           : '<button class="btn ghost small" data-a="finish" style="margin-bottom:10px">🏁 סיום המשחק</button>'}
@@ -604,7 +577,7 @@
   function renderGuide() {
     const root = document.getElementById('guide-root');
     if (!G.open) { root.innerHTML = ''; return; }
-    const q = bank().find(x => x.id === G.qid);
+    const q = bank().find(x => x.id === G.qid) || (store.get('mdl_v3_bank') || []).find(x => x.id === G.qid);
     const cur = S && S.current && S.current.question_id === G.qid ? S.current : null;
     const src = q || cur;   // question supprimée de la banque : on garde au moins le corrigé
     if (!src) { closeGuide(); return; }
@@ -634,11 +607,12 @@
         <span class="vis ${vis}">${VIS[vis] || VIS.topic}</span>
         ${q && q.guide_location ? `<div class="guide-loc"><b>📍 מתי ואיפה:</b> ${esc(q.guide_location)}</div>` : ''}
       </div>
-      ${!v2script || hasLong ? `<div class="seg" role="tablist">
+      ${q && q.bank === 'V3' ? '' : !v2script || hasLong ? `<div class="seg" role="tablist">
         <button data-g="short" class="${G.mode === 'short' ? 'on' : ''}">${v2script ? '🎤 מה להגיד באוטובוס · 20–40 שנ׳' : 'הסבר קצר · 30 שנ׳'}</button>
         <button data-g="long" class="${G.mode === 'long' ? 'on' : ''}">סיפור מורחב · 1–3 דק׳</button>
       </div>` : ''}
       <div class="guide-body" id="guide-body">
+        ${q && q.bank === 'V3' ? v3GuideBody(q, sc, sources) : `
         ${v2script && G.mode !== 'long' ? '<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">🎤 מה להגיד באוטובוס · 20–40 שנ׳</div>' : ''}
         <div class="guide-text" ${dirOf(tLang)}>${text ? paras(text) : '<p class="guide-empty">אין עדיין טקסט הדרכה לשאלה הזו. אפשר להוסיף אותו בעריכת השאלה (✏️).</p>'}</div>
         ${q && q.route_meta && q.route_meta.photos ? `<div class="guide-box prac">${routeBlock(q)}</div>` : ''}
@@ -648,7 +622,7 @@
         ${q && q.guide_fact ? `<div class="guide-box fact"><b class="h">💡 הידעת?</b>${paras(q.guide_fact)}</div>` : ''}
         ${q && q.guide_practical && G.mode === 'long' ? `<div class="guide-box prac"><b class="h">🧭 מידע מעשי (לבדוק לפני ביקור)</b>${paras(q.guide_practical)}</div>` : ''}
         ${sources.length ? `<details class="guide-src"><summary>📚 מקורות (${sources.length})</summary><ol>${sources.map(s =>
-          `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title || s.url)}</a>` : esc(s.title)}</li>`).join('')}</ol></details>` : ''}
+          `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title || s.url)}</a>` : esc(s.title)}</li>`).join('')}</ol></details>` : ''}`}
       </div>
       <div class="guide-bar">
         <button class="iconbtn" data-g="smaller" title="הקטנת טקסט" dir="ltr">A−</button>
@@ -656,6 +630,25 @@
         ${G.live ? '<button class="btn sun" data-g="next">המשך לשאלה הבאה ▶</button>' : '<button class="btn ghost" data-g="close">סגירה</button>'}
       </div>
     </section>`;
+  }
+  // V3 : 🎤 texte micro → 💡 הידעת? → 📍 מתי לדבר? → 📚 מידע נוסף (ordre demandé par le guide)
+  function v3GuideBody(q, sc, sources) {
+    const g = gtr(q), l = gLang(q);
+    const stop = nav && nav.P ? nav.P.stops.find(st => 'v3:' + st.question === q.ext_key) : null;
+    const nm = o => o ? (o[alang] || o.he || '') : '';
+    const fin = q.route_meta && q.route_meta.final;
+    return `<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">${fin ? '🎤 סיום ההדרכה' : '🎤 מה להגיד באוטובוס'} · 20–40 שנ׳</div>
+      <div class="guide-text" ${dirOf(l)}>${paras(g.script)}</div>
+      ${g.fact ? `<div class="guide-box fact" ${dirOf(l)}><b class="h">💡 הידעת?</b>${paras(g.fact)}</div>` : ''}
+      <div class="guide-box prac" ${dirOf(l)}><b class="h">📍 מתי לדבר?</b>${paras(g.cue)}
+        ${stop ? `<p>👀 ${esc(nm(stop.look))}</p>
+          ${stop.side && stop.side.verified ? `<p><b>${stop.side.value === 'left' ? '👈 שמאל' : 'ימין 👉'}</b></p>`
+            : `<p class="sidewarn">⚠️ צד האוטובוס לא אומת — לא להצביע</p><p class="small">📄 ${esc(nm(stop.side && stop.side.docs))}</p>`}` : ''}
+        ${g.caution ? `<div class="caution">⚠️ ${esc(g.caution)}</div>` : ''}</div>
+      ${sc.explanation ? `<div class="guide-box fact" ${dirOf(sc.lang)}><b class="h">💬 ההסבר שהמשתתפים רואים</b>${paras(sc.explanation)}</div>` : ''}
+      <details class="guide-src"><summary>📚 מידע נוסף (${sources.length} מקורות)</summary>
+        ${q.guide_practical ? `<p class="small" dir="rtl">📄 מה כתוב במסמכי ההדרכה ומה תוקן: ${esc(q.guide_practical)}</p>` : ''}
+        <ol>${sources.map(s => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title || s.url)}</a>` : esc(s.title)}</li>`).join('')}</ol></details>`;
   }
   document.getElementById('guide-root').addEventListener('click', e => {
     const b = e.target.closest('[data-g]'); if (!b) return;
@@ -690,25 +683,35 @@
   }
 
   // ------------------------------------------------------------ Nouvelle partie : banques indépendantes V1/V2/V3
+  const BANK_INFO = {
+    V1: '34 שאלות הקורס · עברית',
+    V2: '6 שאלות + 2 חלופיות · גלריית תמונות · 4 שפות',
+    V3: '6 שאלות + 4 חלופיות · GPS מסייע · ללא תמונות · 4 שפות'
+  };
   function newGameModal() {
     const root = document.getElementById('modal-root');
-    const available = (S?.banks || []).filter(b => ['V1','V2','V3'].includes(b.code) && Number(b.main || 0) > 0);
+    // toutes les banques installées qui ont des questions (V4, V5… apparaîtront d'elles-mêmes)
+    const available = (S?.banks || []).filter(b => Number(b.main || 0) > 0);
+    const cur = S?.bank || 'V3';
     root.innerHTML = `<div class="modal"><form class="sheet" id="ngf" autocomplete="off">
       <div class="row" style="align-items:center"><h2 style="margin:0">🔄 משחק חדש</h2><button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
-      <p class="small" style="color:var(--bad);font-weight:700">המשחק הפעיל יסתיים וייפתח משחק חדש; היסטוריית התוצאות נשמרת.</p>
-      <label for="newbank">בחירת מסלול</label>
-      <select id="newbank" name="bank" required>${available.map(b => `<option value="${esc(b.code)}" ${b.code === (S?.bank || 'V2') ? 'selected' : ''}>${esc(b.label?.he || b.code)} — ${b.main} שאלות</option>`).join('')}</select>
+      <p class="small" style="color:var(--bad);font-weight:700">המשחק הפעיל יסתיים וייפתח משחק חדש עם ניקוד ודירוג משלו; היסטוריית המשחקים הקודמים נשמרת.</p>
+      <div class="label" style="font-weight:800">בחירת מסלול</div>
+      ${available.map(b => `<label class="optrow" style="align-items:flex-start;background:#fff;border-radius:12px;padding:10px;margin:6px 0">
+        <input type="radio" name="bank" value="${esc(b.code)}" ${b.code === cur ? 'checked' : ''} style="width:22px;height:22px;flex:none">
+        <span><b>${bankIcon(b.code)} ${esc(b.label?.he || b.code)}</b><br><small class="muted">${esc(BANK_INFO[b.code] || (b.main + ' שאלות' + (b.spare ? ' + ' + b.spare + ' חלופיות' : '')))}</small></span></label>`).join('')}
+      ${available.some(b => b.code === 'V3') ? '' : '<p class="small muted">V3 עדיין לא מותקנת במסד הנתונים — הריצו את supabase/migration_v3.sql.</p>'}
       <label>שם המשחק</label>
-      <input type="text" name="title" value="מורה דרך LIVE — מסלול נבחר" required>
+      <input type="text" name="title" value="מורה דרך LIVE" required>
       <button class="btn sun" style="margin-top:14px">✔ יצירת משחק חדש</button></form></div>`;
     root.onclick = e => { if (e.target.closest('[data-x]')) { root.innerHTML = ''; root.onclick = root.onsubmit = null; lastHash = ''; render(); } };
     root.onsubmit = async e => {
       e.preventDefault();
-      const f = e.target, title = f.elements.title.value, code = f.elements.bank.value;
-      if (!available.some(b => b.code === code)) return toast('המסלול עדיין לא הותקן במסד הנתונים');
+      const f = e.target, title = f.elements.title.value, code = (f.querySelector('input[name=bank]:checked') || {}).value;
+      if (!available.some(b => b.code === code)) return toast('בחרו מסלול');
       root.innerHTML = ''; root.onclick = root.onsubmit = null;
       await act('admin_new_game', { p_title: title, p_bank: code }, 'משחק חדש נוצר ✔');
-      pickId = null; P = null; view = 'live'; setTab();
+      pickId = null; P = null; routeMode = false; view = 'live'; setTab();
     };
   }
 
@@ -848,8 +851,6 @@
       live: !!(S && S.game && S.game.phase === 'revealed' && S.current && S.current.question_id === id) });
     if (!S) return;
     switch (a) {
-      case 'gps-on': gpsStart(); break;
-      case 'gps-off': gpsStop(); break;
       case 'open':
         await act('admin_open_question', { p_question_id: id }, 'השאלה פורסמה 📣'); pickId = null;
         if (view !== 'live') { view = 'live'; setTab(); }
@@ -873,7 +874,9 @@
         break;
       case 'anec': showAnec = !showAnec; lastHash = ''; render(); break;
       case 'resume': act('admin_resume_game'); break;
-      case 'newgame': gpsStop(); newGameModal(); break;
+      case 'newgame': newGameModal(); break;
+      case 'sim-v3': routeMode = true; view = 'gallery'; setTab(); break;
+      case 'route-exit': routeMode = false; view = 'settings'; setTab(); break;
       case 'edit': editor(q); break;
       case 'newq': editor(null); break;
       case 'del': if (confirm('למחוק את השאלה?\n' + q.text)) act('admin_delete_question', { p_id: id }, 'נמחקה'); break;
@@ -899,6 +902,14 @@
     lastHash = ''; if (S) render(); if (G.open) renderGuide();
   });
 
+  // Navigation V3 (GPS / simulation / trace) — module séparé, n'a accès qu'aux actions admin habituelles
+  nav = window.MDL_NAV.create({
+    getS: () => S, getAlang: () => alang, act, toast, offset: () => offset,
+    openGuide: id => openGuide(id, { live: !!(S && S.game && S.game.phase === 'revealed' && S.current && S.current.question_id === id) }),
+    rpcBank: b => rpc('admin_bank_questions', { p_token: token, p_bank: b }),
+    isOpenable: () => !!(S && S.game && S.game.phase !== 'open' && S.game.status !== 'finished'),
+    showRoute: () => { routeMode = !(S && S.game && S.game.bank === 'V3'); view = 'gallery'; setTab(); }
+  });
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
   if (token) refresh(); else renderLogin();
 })();
