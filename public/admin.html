@@ -231,10 +231,12 @@
   function bankChip() {
     if (!S.game) return '';
     const b = S.game.bank || 'V1';
+    if (b !== 'V2') return `<div class="card center" style="background:#fff6e8"><h2>המשחק הפעיל הוא מהגרסה הקודמת</h2>
+      <p class="small">כדי לשחק את מסלול התמונות, צרו משחק חדש.</p><button class="btn sun" data-a="newgame">🔄 משחק חדש</button></div>`;
     const main = S.questions.filter(q => q.selection !== 'SPARE').length;
     const sp = S.questions.filter(q => q.selection === 'SPARE').length;
     return `<div class="row" style="align-items:center;justify-content:space-between;margin-bottom:10px">
-      <span class="bankchip ${b === 'V2' ? 'v2' : ''}">${esc(bankLabel(b))} · ${main} שאלות${sp ? ` (+${sp} חלופיות)` : ''}</span>
+      <span class="bankchip v2">📷 ${main} שאלות${sp ? ` (+${sp} חלופיות)` : ''}</span>
       <div style="flex:none;min-width:150px">${langSeg()}</div></div>`;
   }
 
@@ -334,12 +336,13 @@
   function renderLive() {
     const g = S.game, c = S.current;
     if (!g) { app.innerHTML = `<div class="card center"><h2>אין משחק פעיל</h2><button class="btn sun" data-a="newgame">צור משחק חדש</button></div>`; return; }
+    if ((g.bank || 'V1') !== 'V2') { app.innerHTML = bankChip(); return; }   // V1 masquée
     let html = stats();
     if (g.status === 'finished') {
       html += `<div class="card center"><div class="trophy">🏆</div><h1>הזוכים הגדולים!</h1>${podium(S.leaderboard)}
         <p>${S.stats.players} משתתפים · ${S.stats.questions} שאלות · ${S.stats.correct_pct ?? 0}% נכונות</p>
         <div class="row"><button class="btn ghost small" data-a="resume">↩️ המשך משחק</button><button class="btn small" data-a="export">⬇️ ייצוא</button></div>
-        <button class="btn sun small" data-a="newgame" style="margin-top:10px">🔄 משחק חדש (בחירת גרסה V1 / V2)</button></div>
+        <button class="btn sun small" data-a="newgame" style="margin-top:10px">🔄 משחק חדש</button></div>
         <div class="card"><h2>דירוג המשתתפים 🏆</h2>${lbList(S.leaderboard)}</div>`;
       app.innerHTML = html; return;
     }
@@ -387,6 +390,7 @@
   function renderQuestions() {
     const qs = S.questions;
     const usedN = qs.filter(q => q.used).length;
+    if (!S.game || (S.game.bank || 'V1') !== 'V2') { app.innerHTML = bankChip(); return; }   // V1 masquée
     app.innerHTML = bankChip() + `<div class="card">
       <div class="row" style="align-items:center"><h2 style="margin:0">בנק השאלות</h2><span class="muted small" style="text-align:left">${qs.length} שאלות · ${usedN} הוצגו</span></div>
       <button class="btn sun small" data-a="newq" style="margin:12px 0">➕ שאלה חדשה</button>
@@ -453,7 +457,7 @@
             ${!q.used && q.enabled && canOpen ? `<button class="btn sun small" data-a="open" data-id="${q.id}">📣 פרסם שאלה</button>` : ''}
             ${!q.used && !q.enabled ? `<button class="btn ok small" data-a="spare" data-id="${q.id}" data-on="1">▶️ הפעלת החלופית</button>` : ''}
           </div></div>`; }).join('')}
-        ${otherBank ? '<p class="small muted">לתמונה יש שאלה בגרסה V2 — היא זמינה רק במשחק V2.</p>' : ''}
+        ${otherBank ? '<p class="small muted">צרו משחק חדש כדי לפרסם את השאלה של התמונה הזו.</p>' : ''}
         <div class="navrow">
           <button class="btn ghost" data-a="gprev" ${gpos === 0 ? 'disabled' : ''}>→ הקודמת</button>
           <button class="btn" data-a="gnext" ${gpos === ph.length - 1 ? 'disabled' : ''}>הבאה ←</button>
@@ -500,14 +504,12 @@
         <p class="small muted">נאכף בשרת: אי אפשר לסגור או לחשוף שאלה לפני הזמן הזה (מלבד ״סגירת חירום״ עם אישור). אף שאלה לא נסגרת לפני הזמן המינימלי.</p>
         <button class="btn small">💾 שמירה</button></form>` : ''}
       <div class="card"><h2>ניהול המשחק</h2>
-        ${S.game ? `<p>גרסה במשחק הנוכחי: <span class="bankchip ${S.game.bank === 'V2' ? 'v2' : ''}">${esc(bankLabel(S.game.bank))}</span></p>
-        <p class="small muted">את הגרסה בוחרים רק ביצירת משחק חדש — אי אפשר להחליף אותה באמצע משחק.</p>` : ''}
         <label>שפת התוכן במסך המנהל (שאלות, תסריטים, אנקדוטות)</label>${langSeg()}
         <div style="height:12px"></div>
         <button class="btn small" data-a="export" style="margin-bottom:10px">⬇️ ייצוא תוצאות (CSV)</button>
         ${g.status === 'finished' ? '<button class="btn ghost small" data-a="resume" style="margin-bottom:10px">↩️ המשך משחק שהסתיים</button>'
           : '<button class="btn ghost small" data-a="finish" style="margin-bottom:10px">🏁 סיום המשחק</button>'}
-        <button class="btn bad small" data-a="newgame" style="margin-bottom:10px">🔄 משחק חדש — בחירת גרסה V1 / V2 (איפוס משתתפים וניקוד)</button>
+        <button class="btn bad small" data-a="newgame" style="margin-bottom:10px">🔄 משחק חדש (איפוס משתתפים וניקוד)</button>
         <button class="btn ghost small" data-a="logout">יציאה</button>
       </div>`;
     const sf = document.getElementById('sf');
@@ -653,36 +655,20 @@
 
   // ------------------------------------------------------------ Nouvelle partie : choix V1 / V2
   function newGameModal() {
-    const banks = (S && S.banks) || [{ code: 'V1', label: { he: 'V1 — קורס' }, main: 0, spare: 0 }];
-    let pick = (S && S.game && S.game.bank) || 'V1';
+    // Une seule version jouable : le parcours photographié (V2). La V1 reste en base mais n'est plus proposée.
     const root = document.getElementById('modal-root');
-    const draw = () => {
-      root.innerHTML = `<div class="modal"><form class="sheet" id="ngf" autocomplete="off">
-        <div class="row" style="align-items:center"><h2 style="margin:0">🔄 משחק חדש</h2><button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
-        <p class="small" style="color:var(--bad);font-weight:700">המשתתפים והניקוד של המשחק הנוכחי יאופסו (התוצאות הקודמות נשמרות בבסיס הנתונים).</p>
-        <label>איזו גרסה משחקים? (גרסה אחת בלבד למשחק)</label>
-        <div class="bankpick">${banks.map(b => `<button type="button" class="bankopt ${b.code === pick ? 'on' : ''}" data-bank="${esc(b.code)}">
-          <b>${esc(b.label.he || b.code)}</b><span class="small muted">${b.main} שאלות${b.spare ? ` + ${b.spare} חלופיות (כבויות)` : ''}</span></button>`).join('')}</div>
-        <label>שם המשחק</label>
-        <input type="text" name="title" value="${esc(pick === 'V2' ? 'מסלול התמונות — הלוך' : 'מורה דרך LIVE')}">
-        <button class="btn sun" style="margin-top:14px">✔ יצירת משחק חדש</button></form></div>`;
-    };
-    draw();
-    root.onclick = e => {
-      const b = e.target.closest('[data-bank]');
-      if (b) {                                   // pas de redessin : évite de relancer l'animation
-        pick = b.dataset.bank;
-        root.querySelectorAll('[data-bank]').forEach(x => x.classList.toggle('on', x === b));
-        root.querySelector('[name=title]').value = pick === 'V2' ? 'מסלול התמונות — הלוך' : 'מורה דרך LIVE';
-        return;
-      }
-      if (e.target.closest('[data-x]')) { root.innerHTML = ''; root.onclick = null; lastHash = ''; render(); }
-    };
+    root.innerHTML = `<div class="modal"><form class="sheet" id="ngf" autocomplete="off">
+      <div class="row" style="align-items:center"><h2 style="margin:0">🔄 משחק חדש</h2><button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
+      <p class="small" style="color:var(--bad);font-weight:700">המשתתפים והניקוד של המשחק הנוכחי יאופסו (התוצאות הקודמות נשמרות בבסיס הנתונים).</p>
+      <label>שם המשחק</label>
+      <input type="text" name="title" value="מסלול התמונות — הלוך">
+      <button class="btn sun" style="margin-top:14px">✔ יצירת משחק חדש</button></form></div>`;
+    root.onclick = e => { if (e.target.closest('[data-x]')) { root.innerHTML = ''; root.onclick = root.onsubmit = null; lastHash = ''; render(); } };
     root.onsubmit = async e => {
       e.preventDefault();
       const title = e.target.title.value;
       root.innerHTML = ''; root.onclick = root.onsubmit = null;
-      await act('admin_new_game', { p_title: title, p_bank: pick }, 'משחק חדש נוצר ✔ — ' + bankLabel(pick));
+      await act('admin_new_game', { p_title: title, p_bank: 'V2' }, 'משחק חדש נוצר ✔');
       pickId = null; P = null; view = 'live'; setTab();
     };
   }

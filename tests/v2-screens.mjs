@@ -32,15 +32,15 @@ await admin.waitForTimeout(500);
 if (await admin.$('#guide')) await admin.click('#guide [data-g=close]');   // panneau micro auto-ouvert si la partie précédente était révélée
 await admin.click('[data-view=settings]');
 await admin.click('[data-a=newgame]');
-await admin.waitForSelector('.bankpick');
-await admin.click('[data-bank=V2]');
+await admin.waitForSelector('#ngf');
+// plus de choix de version : la partie créée est toujours le parcours photographié
 await shot(admin, 'a1-newgame-choice');
 await admin.click('#ngf button.sun');
 await admin.waitForSelector('.bankchip.v2');
 await admin.waitForSelector('.ph-row img');
 await shot(admin, 'a2-live-v2', true);
 const chip = await admin.textContent('.bankchip');
-assert.match(chip, /V2/); assert.match(chip, /6 שאלות/); assert.match(chip, /\+2 חלופיות/);
+assert.match(chip, /6 שאלות/); assert.match(chip, /\+2 חלופיות/);
 
 // ---------- élèves : choix de la langue AVANT le nom
 const students = {};
