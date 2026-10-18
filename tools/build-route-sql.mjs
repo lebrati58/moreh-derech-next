@@ -1,6 +1,6 @@
 // Génère supabase/questions_route.sql et supabase/install.sql à partir de content/.
 // Usage : node tools/build-route-sql.mjs
-import { writeFileSync, readFileSync } from 'node:fs';
+import { writeFileSync, readFileSync, mkdirSync } from 'node:fs';
 import { ROUTE } from '../content/index.mjs';
 import { buildV2Sql } from './build-v2-sql.mjs';
 
@@ -70,6 +70,12 @@ const migration = [
   v2sql
 ].join('\n');
 writeFileSync(new URL('supabase/migration_v2.sql', root), migration);
+// Installation depuis le téléphone (public/update.html) : après un mini-script collé dans Supabase,
+// la page envoie ces deux fichiers via la RPC temporaire mdl_bootstrap, qui s'auto-supprime à la fin.
+mkdirSync(new URL('public/update/', root), { recursive: true });
+writeFileSync(new URL('public/update/1-schema.sql', root), schema);
+writeFileSync(new URL('public/update/2-data.sql', root), v2sql +
+  "\n-- fin de l'installation : suppression de la fonction temporaire\ndrop function if exists public.mdl_bootstrap(text, text);\nnotify pgrst, 'reload schema';\n");
 console.log(`V1 : ${ROUTE.length} questions → supabase/questions_route.sql`);
 console.log('V2 : 8 questions + 32 photos → supabase/questions_v2.sql');
 console.log('→ supabase/install.sql (installation complète) + supabase/migration_v2.sql (mise à jour)');
