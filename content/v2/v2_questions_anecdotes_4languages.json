@@ -1,0 +1,1291 @@
+{
+  "datasetVersion": "2.0",
+  "id": "PHOTO_ALLER_V2_2026_10_21",
+  "label": {
+    "he": "מסלול התמונות — הלוך",
+    "fr": "V2 — Parcours photographié (aller)",
+    "en": "V2 — Photographed outbound route",
+    "ru": "V2 — Маршрут по фотографиям (туда)"
+  },
+  "sourceRepository": "https://github.com/lebrati58/moreh-dereh-live",
+  "route": "Road 2 northbound, Zikhron Yaakov / Dor area → HaBonim → Atlit → Megadim → approach to Tirat Carmel / Haifa; no toll tunnels",
+  "languages": [
+    "he",
+    "fr",
+    "en",
+    "ru"
+  ],
+  "doNotMergeWithV1": true,
+  "v1Label": "Cours — 34 questions",
+  "v2DefaultActiveMainQuestions": 6,
+  "v2OptionalAlternatives": 2,
+  "timePolicy": {
+    "minimumAnswerSeconds": 30,
+    "defaultAnswerSeconds": 45,
+    "recommendedActualOpeningIntervalSeconds": 120,
+    "adminManualControl": true,
+    "endQuestionBefore30Seconds": false,
+    "maySkipAnyQuestion": true,
+    "noAutoAdvance": true
+  },
+  "studentAndAdmin": {
+    "studentNameOnly": true,
+    "sameQuestionsSameCorrectIndexSameTimerSameLeaderboardAllLanguages": true,
+    "privateAdminScriptsAndPhotoAnecdotes": true,
+    "sameQuestionIdAcrossLanguages": true,
+    "translationsToChooseBeforeJoin": true
+  },
+  "photoCount": 32,
+  "questions": [
+    {
+      "id": "PHOTO-OUT-01",
+      "order": 1,
+      "photo_screenshot": "1000472035.jpg",
+      "photo_local_time": "11:04",
+      "topic": "Exposed coastal layers",
+      "geographic_trigger": "Début de la série, coupe rocheuse proche de Dor/Zikhron",
+      "photo_identification_confidence": "medium",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 1,
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0031018204002408",
+        "https://docs.google.com/document/d/1JLdWbSaqfAeOUd8jUi6ajBc2wORmyGY3/edit"
+      ],
+      "translations": {
+        "he": {
+          "question": "מה אפשר ללמוד מהשכבות הנראות בחשיפת הסלע?",
+          "options": [
+            "שהסלע נוצר ביום אחד",
+            "שהצטברו חומרים בתקופות שונות",
+            "שזה בהכרח סלע געשי",
+            "שהסלע נבנה מבטון"
+          ],
+          "studentExplanation": "השכבות מעידות על שלבי הצטברות ושינוי שונים.",
+          "adminScript": "תסתכלו על המצוק לצד הכביש: אפשר ממש לקרוא בו את ההיסטוריה של הנוף. השכבות נוצרו בשלבים שונים, ולא כולן באותו רגע. כדי לדעת בדיוק מתי נוצרה כל שכבה צריך מחקר גאולוגי, ולא מספיק להסתכל מהחלון."
+        },
+        "fr": {
+          "question": "Que révèlent les couches visibles dans cette coupe rocheuse ?",
+          "options": [
+            "La roche s’est formée en un jour",
+            "Des matériaux se sont accumulés à différentes périodes",
+            "C’est forcément une roche volcanique",
+            "La roche est en béton"
+          ],
+          "studentExplanation": "Les couches indiquent plusieurs phases de dépôt ou de transformation.",
+          "adminScript": "Regardez la paroi au bord de la route : elle permet presque de lire l’histoire du paysage. Ses couches se sont formées à différentes étapes. Mais pour dater chaque couche précisément, il faut une étude géologique : une simple photo ne suffit pas."
+        },
+        "en": {
+          "question": "What do the visible layers in this rock cutting tell us?",
+          "options": [
+            "The rock formed in one day",
+            "Material accumulated in different periods",
+            "It must be volcanic rock",
+            "It was built from concrete"
+          ],
+          "studentExplanation": "Layers record successive phases of deposition or change.",
+          "adminScript": "Look at the roadside cliff. Its layers are like pages in the history of the landscape, built up over different episodes. To establish the exact age of each layer, however, geologists need more than a view from the bus."
+        },
+        "ru": {
+          "question": "О чём говорят видимые слои в этом скальном разрезе?",
+          "options": [
+            "Порода образовалась за один день",
+            "Материал накапливался в разные периоды",
+            "Это обязательно вулканическая порода",
+            "Скала сделана из бетона"
+          ],
+          "studentExplanation": "Слои отражают разные этапы накопления и изменения материала.",
+          "adminScript": "Посмотрите на скальный разрез у дороги: его слои словно страницы истории ландшафта. Они формировались в разные периоды. Однако определить точный возраст каждого слоя только по фотографии нельзя — нужны геологические исследования."
+        }
+      },
+      "rankInVersion": 1,
+      "selection": "MAIN",
+      "routeMarkerTime": "11:04:19",
+      "adminPhotoTriggerHe": "בצד הדרך מופיע חתך סלע; לזהות לפני השאלה",
+      "sideOfBusV2": "right_probable",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": true,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472035.jpg"
+      ]
+    },
+    {
+      "id": "PHOTO-OUT-07",
+      "order": 7,
+      "photo_screenshot": "1000472059.jpg",
+      "photo_local_time": "11:07",
+      "topic": "Ancient Dor harbour",
+      "geographic_trigger": "Secteur Dor/Nahsholim à proximité de la route 2",
+      "photo_identification_confidence": "high",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 0,
+      "sources": [
+        "https://www.parks.org.il/reserve-park/teldor/",
+        "https://shimur.org/mpps/%D7%90%D7%AA%D7%A8%D7%99%D7%9D-%D7%94%D7%9E%D7%92%D7%96%D7%99%D7%9F-%D7%92%D7%99%D7%9C%D7%99%D7%95%D7%9F-10-%D7%93%D7%A6%D7%9E%D7%91%D7%A8-2020/",
+        "https://carmelim.org.il/product/%D7%9E%D7%95%D7%96%D7%99%D7%90%D7%95%D7%9F-%D7%94%D7%9E%D7%96%D7%92%D7%92%D7%94-%D7%91%D7%A7%D7%99%D7%91%D7%95%D7%A5-%D7%A0%D7%97%D7%A9%D7%95%D7%9C%D7%99%D7%9D/"
+      ],
+      "translations": {
+        "he": {
+          "question": "במה הייתה ידועה העיר דור בעת העתיקה?",
+          "options": [
+            "עיר נמל וסחר",
+            "מכרה נחושת במדבר",
+            "עיר בירה של אשור",
+            "אתר סקי"
+          ],
+          "studentExplanation": "דור הייתה עיר נמל חשובה בחוף הכרמל.",
+          "adminScript": "אנחנו עוברים באזור דור ונחשולים. על החוף נמצאת דור, עיר נמל קדומה, ובנחשולים שוכן מוזיאון המזגגה. הברון רוטשילד הקים כאן ב־1891 מפעל לבקבוקי יין. מי ניהל אותו? מאיר דיזנגוף, שלימים היה ראש העיר הראשון של תל אביב! המפעל לא הצליח לאורך זמן, אבל הבניין הפך למוזיאון לארכאולוגיה ימית. האתר נמצא באזור, לא מול החלון."
+        },
+        "fr": {
+          "question": "Pourquoi la ville antique de Dor était-elle connue ?",
+          "options": [
+            "Son port et son commerce",
+            "Une mine de cuivre dans le désert",
+            "Son rôle de capitale assyrienne",
+            "Une station de ski"
+          ],
+          "studentExplanation": "Dor était un important port antique du littoral du Carmel.",
+          "adminScript": "Nous longeons le secteur de Dor, ancien port méditerranéen. À Nahsholim se trouve aussi le musée de la verrerie. En 1891, Rothschild y fit ouvrir une fabrique de bouteilles pour le vin, dirigée par Meir Dizengoff, futur premier maire de Tel-Aviv ! L’usine a fermé après quelques années; son bâtiment est devenu un musée. Le lieu n’est pas forcément visible de la route."
+        },
+        "en": {
+          "question": "What was ancient Dor best known for?",
+          "options": [
+            "Its harbour and trade",
+            "A desert copper mine",
+            "Being the Assyrian capital",
+            "Skiing"
+          ],
+          "studentExplanation": "Dor was an important ancient port on the Carmel coast.",
+          "adminScript": "We are passing the area of Dor, an ancient Mediterranean port. Nahsholim also has a historic glassworks museum. In 1891 Rothschild established a wine-bottle factory here; its manager was Meir Dizengoff, who later became Tel Aviv’s first mayor! The short-lived factory building is now a museum. It is not necessarily visible from the road."
+        },
+        "ru": {
+          "question": "Чем была известна древняя Дор?",
+          "options": [
+            "Морским портом и торговлей",
+            "Медной шахтой в пустыне",
+            "Статусом столицы Ассирии",
+            "Горнолыжным курортом"
+          ],
+          "studentExplanation": "Дор была важным древним портом на побережье Кармеля.",
+          "adminScript": "Мы проезжаем район древнего порта Дор. В Нахшолим находится музей старинной стекольной фабрики. В 1891 году Ротшильд открыл здесь производство винных бутылок, а руководил им Меир Дизенгоф — будущий первый мэр Тель-Авива! Завод скоро закрылся, а здание стало музеем. Сам музей с дороги может быть не виден."
+        }
+      },
+      "rankInVersion": 2,
+      "selection": "MAIN",
+      "routeMarkerTime": "11:07:23",
+      "adminPhotoTriggerHe": "דור/נחשולים — נושא אזורי, לא להבטיח שהתל נראה",
+      "sideOfBusV2": "nearby_not_visible",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": true,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472059.jpg",
+        "1000472061.jpg"
+      ]
+    },
+    {
+      "id": "PHOTO-OUT-08",
+      "order": 8,
+      "photo_screenshot": "1000472069.jpg",
+      "photo_local_time": "11:10",
+      "topic": "Kfarlet origin",
+      "geographic_trigger": "11:10 tour ronde à HaBonim; identification très probable mais photo à confirmer",
+      "photo_identification_confidence": "medium",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 1,
+      "sources": [
+        "https://makom.hamoreshet.org.il/landmark/kafrelt-fortress-habonim/"
+      ],
+      "translations": {
+        "he": {
+          "question": "לאיזו תקופה מתוארכת הקמתו המקורית המשוערת של מבצר כפרלט בהבונים?",
+          "options": [
+            "התקופה הרומית",
+            "התקופה המוסלמית הקדומה, כנראה המאות 8–9",
+            "המנדט הבריטי",
+            "התקופה החשמונאית"
+          ],
+          "studentExplanation": "לפי המחקר, ראשית מבצר כפרלט כנראה בתקופה המוסלמית הקדומה.",
+          "adminScript": "ממערב לכביש נמצא מבצר כפרלט, המכונה גם מבצר הבונים. דווקא כאן יש הפתעה: אף שהצלבנים השתמשו במבצר, הקמתו המקורית מיוחסת בדרך כלל לתקופה המוסלמית הקדומה. המגדלים העגולים שלו מסייעים לחוקרים לזהות את סגנון הבנייה."
+        },
+        "fr": {
+          "question": "À quelle période attribue-t-on probablement l’origine de la forteresse de Kfarlet, à HaBonim ?",
+          "options": [
+            "Période romaine",
+            "Début de la période musulmane, probablement VIIIe–IXe siècles",
+            "Mandat britannique",
+            "Époque hasmonéenne"
+          ],
+          "studentExplanation": "Les chercheurs situent probablement sa construction initiale à l’époque musulmane ancienne.",
+          "adminScript": "À HaBonim se trouvent les vestiges de la forteresse de Kfarlet. Surprise : même si les croisés l’ont utilisée, sa construction initiale est généralement attribuée aux VIIIe–IXe siècles, au début de la période musulmane. Les tours rondes sont un indice architectural important."
+        },
+        "en": {
+          "question": "When was Kfarlet Fortress at HaBonim probably first built?",
+          "options": [
+            "Roman period",
+            "Early Muslim period, likely 8th–9th centuries",
+            "British Mandate",
+            "Hasmonean period"
+          ],
+          "studentExplanation": "Its original construction is generally attributed to the early Muslim period.",
+          "adminScript": "Near HaBonim stands Kfarlet Fortress. Here is the surprise: although the Crusaders later used the site, researchers generally date its first construction to the early Muslim period, probably the eighth or ninth century. Its round towers are an important clue."
+        },
+        "ru": {
+          "question": "К какому периоду, вероятно, относится первоначальная постройка крепости Кфарлет у Ха-Боним?",
+          "options": [
+            "Римский период",
+            "Ранний мусульманский период, вероятно VIII–IX века",
+            "Британский мандат",
+            "Эпоха Хасмонеев"
+          ],
+          "studentExplanation": "Первоначальную постройку крепости обычно относят к раннему мусульманскому периоду.",
+          "adminScript": "Рядом с Ха-Боним сохранилась крепость Кфарлет. Неожиданность в том, что крестоносцы лишь позднее использовали её: первоначальную постройку обычно относят к VIII–IX векам. Важная подсказка для историков — круглые башни."
+        }
+      },
+      "adminCaution": {
+        "he": "לא לאשר זיהוי נקודתי או ראות מהכביש ללא בדיקת שטח.",
+        "fr": "Ne pas affirmer une identification ou une visibilité précise sans vérification sur le terrain.",
+        "en": "Do not assert a precise identification or visibility without on-site confirmation.",
+        "ru": "Не утверждать точную идентификацию или видимость без проверки на месте."
+      },
+      "rankInVersion": 3,
+      "selection": "MAIN",
+      "routeMarkerTime": "11:10:20",
+      "adminPhotoTriggerHe": "מבצר כפרלט — מגדל מצולם; זיהוי פרטני לבדיקה",
+      "sideOfBusV2": "left_from_route_notes",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": true,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472069.jpg"
+      ]
+    },
+    {
+      "id": "PHOTO-OUT-14",
+      "order": 14,
+      "photo_screenshot": "1000472077.jpg",
+      "photo_local_time": "11:13",
+      "topic": "Dorothy Garrod",
+      "geographic_trigger": "11:13 Nahal Me’arot, question de niveau avancé",
+      "photo_identification_confidence": "high",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 1,
+      "sources": [
+        "https://sites.harvard.edu/aspr/2024/01/03/mount-carmel-excavations/",
+        "https://whc.unesco.org/en/list/1393"
+      ],
+      "translations": {
+        "he": {
+          "question": "מי הובילה את החפירות הגדולות במערות הכרמל החל משנת 1929?",
+          "options": [
+            "קתלין קניון",
+            "דורותי גארוד",
+            "ג׳יין גודול",
+            "מרגרט מיד"
+          ],
+          "studentExplanation": "דורותי גארוד הובילה את החפירות המרכזיות במערות בשנים 1929–1934.",
+          "adminScript": "בתקופת המנדט הבריטי החלו חוקרים לבדוק לעומק את מערות הכרמל. דורותי גארוד הובילה כאן משלחות חפירה בשנים 1929 עד 1934. בזכות עבודתה נחשפו ממצאים שהפכו את האזור לאחד מאתרי המפתח בחקר האדם הקדמון."
+        },
+        "fr": {
+          "question": "Qui dirigea les grandes fouilles des grottes du Carmel à partir de 1929 ?",
+          "options": [
+            "Kathleen Kenyon",
+            "Dorothy Garrod",
+            "Jane Goodall",
+            "Margaret Mead"
+          ],
+          "studentExplanation": "Dorothy Garrod dirigea les fouilles majeures de 1929 à 1934.",
+          "adminScript": "Sous le mandat britannique, des chercheurs ont commencé à fouiller systématiquement les grottes du Carmel. Dorothy Garrod a dirigé les grandes campagnes entre 1929 et 1934. Ses travaux ont fait de cette région un site majeur de la recherche sur la préhistoire humaine."
+        },
+        "en": {
+          "question": "Who led the major Carmel caves excavations starting in 1929?",
+          "options": [
+            "Kathleen Kenyon",
+            "Dorothy Garrod",
+            "Jane Goodall",
+            "Margaret Mead"
+          ],
+          "studentExplanation": "Dorothy Garrod led the major excavations between 1929 and 1934.",
+          "adminScript": "During the British Mandate, researchers began systematically studying the Carmel caves. Dorothy Garrod led major excavation seasons from 1929 to 1934. The discoveries helped make this area one of the key places for understanding early human history."
+        },
+        "ru": {
+          "question": "Кто возглавлял крупные раскопки пещер Кармеля с 1929 года?",
+          "options": [
+            "Кэтлин Кеньон",
+            "Дороти Гаррод",
+            "Джейн Гудолл",
+            "Маргарет Мид"
+          ],
+          "studentExplanation": "Дороти Гаррод руководила основными раскопками в 1929–1934 годах.",
+          "adminScript": "Во времена британского мандата начались систематические исследования пещер Кармеля. Дороти Гаррод руководила крупными раскопками с 1929 по 1934 год. Находки сделали этот район одним из ключевых мест изучения древней истории человека."
+        }
+      },
+      "adminCaution": {
+        "he": "לא לאשר זיהוי נקודתי או ראות מהכביש ללא בדיקת שטח.",
+        "fr": "Ne pas affirmer une identification ou une visibilité précise sans vérification sur le terrain.",
+        "en": "Do not assert a precise identification or visibility without on-site confirmation.",
+        "ru": "Не утверждать точную идентификацию или видимость без проверки на месте."
+      },
+      "rankInVersion": 4,
+      "selection": "MAIN",
+      "routeMarkerTime": "11:13:29",
+      "adminPhotoTriggerHe": "נחל מערות — אתר אזורי מימין, המערות לא נראות בהכרח",
+      "sideOfBusV2": "nearby_not_visible",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": true,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472077.jpg"
+      ]
+    },
+    {
+      "id": "PHOTO-OUT-16",
+      "order": 16,
+      "photo_screenshot": "1000472083.jpg",
+      "photo_local_time": "11:16",
+      "topic": "Atlit detention camp",
+      "geographic_trigger": "11:16 panneau brun visible depuis la route",
+      "photo_identification_confidence": "high",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 1,
+      "sources": [
+        "https://shimur.org/sites/atlit-detention-camp/?lang=en"
+      ],
+      "translations": {
+        "he": {
+          "question": "למה שימש מחנה המעפילים בעתלית בתקופת המנדט הבריטי?",
+          "options": [
+            "מחנה צבאי רומי",
+            "מחנה מעצר למעפילים",
+            "מפעל מלח",
+            "נמל מסחרי"
+          ],
+          "studentExplanation": "הבריטים החזיקו במחנה מעפילים שנכנסו לארץ ללא אישור השלטונות.",
+          "adminScript": "אתם יכולים לראות שלט למחנה המעפילים בעתלית. בתקופת המנדט הבריטי נכלאו כאן יהודים שהגיעו לארץ בדרך של העפלה, בניגוד להגבלות העלייה שהטילו הבריטים. כיום המקום הוא אתר מורשת שמספר את סיפורם של המעפילים."
+        },
+        "fr": {
+          "question": "À quoi servait le camp d’Atlit sous le mandat britannique ?",
+          "options": [
+            "À loger une légion romaine",
+            "À détenir des immigrants juifs arrivés clandestinement",
+            "À produire du sel",
+            "De port commercial"
+          ],
+          "studentExplanation": "Les Britanniques y détenaient des immigrants entrés sans autorisation.",
+          "adminScript": "Le panneau indique le camp des immigrants clandestins d’Atlit. Sous le mandat britannique, des Juifs arrivant malgré les restrictions de l’immigration étaient détenus ici. Aujourd’hui, le site est un lieu de mémoire consacré à leur histoire et à celle de l’Aliyah Bet."
+        },
+        "en": {
+          "question": "What was the Atlit camp used for under the British Mandate?",
+          "options": [
+            "Housing Roman soldiers",
+            "Detaining unauthorized Jewish immigrants",
+            "Producing salt",
+            "Operating a commercial port"
+          ],
+          "studentExplanation": "The British detained Jewish immigrants who arrived without official authorization.",
+          "adminScript": "The sign points to the Atlit detention camp. During the British Mandate, Jews arriving despite immigration restrictions could be held there. Today the site is a heritage museum telling the story of those immigrants and the Aliyah Bet movement."
+        },
+        "ru": {
+          "question": "Для чего использовался лагерь Атлит во время британского мандата?",
+          "options": [
+            "Для римских легионеров",
+            "Для содержания еврейских нелегальных иммигрантов",
+            "Для производства соли",
+            "Как торговый порт"
+          ],
+          "studentExplanation": "Британские власти содержали там евреев, прибывших без разрешения.",
+          "adminScript": "На указателе обозначен лагерь Атлит. Во времена британского мандата здесь удерживали евреев, прибывавших вопреки иммиграционным ограничениям. Сегодня это исторический музей, посвящённый их судьбам и движению «Алия Бет»."
+        }
+      },
+      "rankInVersion": 5,
+      "selection": "MAIN",
+      "routeMarkerTime": "11:16:13",
+      "adminPhotoTriggerHe": "שלט מחנה המעפילים על שם משה סנה, עתלית",
+      "sideOfBusV2": "right_probable",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": true,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472083.jpg"
+      ]
+    },
+    {
+      "id": "PHOTO-OUT-20",
+      "order": 20,
+      "photo_screenshot": "1000472097.jpg",
+      "photo_local_time": "11:19",
+      "topic": "Urban Carmel",
+      "geographic_trigger": "11:19 dernier cliché près Tirat Carmel",
+      "photo_identification_confidence": "high",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 1,
+      "sources": [
+        "https://docs.google.com/document/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/edit"
+      ],
+      "translations": {
+        "he": {
+          "question": "איזה רכס מתרומם מאחורי הבניינים באזור טירת כרמל?",
+          "options": [
+            "החרמון",
+            "רכס הכרמל",
+            "הרי אילת",
+            "הר הגלבוע"
+          ],
+          "studentExplanation": "הבניינים נראים למרגלות רכס הכרמל.",
+          "adminScript": "אנחנו מתקרבים למרחב העירוני של טירת כרמל וחיפה. מאחורי הבניינים מתרומם רכס הכרמל, והפער בין אזור החוף למורדות ההר בולט מאוד. הטופוגרפיה הזאת השפיעה על מיקום השכונות, הכבישים והשטחים הפתוחים."
+        },
+        "fr": {
+          "question": "Quel massif s’élève derrière les immeubles du secteur de Tirat Carmel ?",
+          "options": [
+            "Le mont Hermon",
+            "Le massif du Carmel",
+            "Les montagnes d’Eilat",
+            "Le mont Gilboa"
+          ],
+          "studentExplanation": "Les immeubles se trouvent au pied du Carmel.",
+          "adminScript": "Nous approchons du secteur urbain de Tirat Carmel et de Haïfa. Derrière les immeubles se dressent les pentes du Carmel. Ce contraste entre la bande côtière et la montagne explique une grande partie de l’organisation des quartiers, des routes et des espaces naturels."
+        },
+        "en": {
+          "question": "Which mountain range rises behind the buildings near Tirat Carmel?",
+          "options": [
+            "Mount Hermon",
+            "The Carmel range",
+            "The Eilat Mountains",
+            "Mount Gilboa"
+          ],
+          "studentExplanation": "The buildings stand at the foot of the Carmel range.",
+          "adminScript": "We are approaching the urban area of Tirat Carmel and Haifa. Behind the buildings rise the Carmel slopes. The contrast between the coastal strip and the mountains has shaped the location of neighbourhoods, roads and green spaces."
+        },
+        "ru": {
+          "question": "Какие горы поднимаются за домами в районе Тират-Кармель?",
+          "options": [
+            "Хермон",
+            "Горы Кармель",
+            "Горы Эйлата",
+            "Гильбоа"
+          ],
+          "studentExplanation": "Дома расположены у подножия гор Кармель.",
+          "adminScript": "Мы приближаемся к городской зоне Тират-Кармель и Хайфы. За многоэтажными домами поднимаются склоны Кармеля. Контраст между узкой прибрежной полосой и горами определил размещение кварталов, дорог и зелёных зон."
+        }
+      },
+      "rankInVersion": 6,
+      "selection": "MAIN",
+      "routeMarkerTime": "11:19:38",
+      "adminPhotoTriggerHe": "בניינים מול מורדות הכרמל, לקראת טירת כרמל/חיפה",
+      "sideOfBusV2": "right_probable",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": true,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472097.jpg"
+      ]
+    },
+    {
+      "id": "PHOTO-OUT-15",
+      "order": 15,
+      "photo_screenshot": "1000472079.jpg",
+      "photo_local_time": "11:14",
+      "topic": "Banana netting",
+      "geographic_trigger": "11:14 photo de bananiers sous filets",
+      "photo_identification_confidence": "high",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 1,
+      "sources": [
+        "https://docs.google.com/document/d/1CyzgobiGT9vaCNIrvObS8uGKD6zknNvD/edit",
+        "https://www.gov.il/he/pages/calculation-878"
+      ],
+      "translations": {
+        "he": {
+          "question": "איזה גידול נראה מתחת לרשתות באזור חוף הכרמל?",
+          "options": [
+            "תפוחים",
+            "בננות",
+            "קפה",
+            "אורז"
+          ],
+          "studentExplanation": "במישור חוף הכרמל מגדלים בננות, לעיתים בתוך בתי רשת.",
+          "adminScript": "שימו לב לעלים הרחבים שמתחת לרשתות: אלה מטעי בננות. חוף הכרמל הוא אזור גידול מוכר של הפרי הזה. בתי הרשת משמשים לחקלאות מוגנת ועוזרים למגדלים להתמודד עם תנאי הסביבה ולשמור על היבול."
+        },
+        "fr": {
+          "question": "Quelle culture voit-on sous les filets dans le secteur du Carmel ?",
+          "options": [
+            "Pommes",
+            "Bananes",
+            "Café",
+            "Riz"
+          ],
+          "studentExplanation": "La côte du Carmel possède des bananeraies cultivées sous filets.",
+          "adminScript": "Regardez les grandes feuilles sous les filets : ce sont des bananiers. La côte du Carmel est une région bien connue pour cette production. Les filets participent à la protection des cultures face aux conditions extérieures et aident les agriculteurs à préserver leur récolte."
+        },
+        "en": {
+          "question": "Which crop grows under these nets on the Carmel coast?",
+          "options": [
+            "Apples",
+            "Bananas",
+            "Coffee",
+            "Rice"
+          ],
+          "studentExplanation": "Bananas are commonly grown under protective netting on the Carmel coast.",
+          "adminScript": "Look at the broad leaves under the nets: those are banana plants. The Carmel coast is known for this crop. Protective net houses help growers manage environmental conditions and reduce some of the risks facing their harvest."
+        },
+        "ru": {
+          "question": "Какая культура растёт под сетками на побережье Кармеля?",
+          "options": [
+            "Яблоки",
+            "Бананы",
+            "Кофе",
+            "Рис"
+          ],
+          "studentExplanation": "На побережье Кармеля выращивают бананы, часто под защитной сеткой.",
+          "adminScript": "Посмотрите на большие листья под сетками: это банановые плантации. Прибрежная полоса Кармеля известна выращиванием бананов. Защитные сетки помогают регулировать воздействие внешних условий и сохранять урожай."
+        }
+      },
+      "rankInVersion": 7,
+      "selection": "SPARE",
+      "routeMarkerTime": "11:14:31",
+      "adminPhotoTriggerHe": "בננות תחת רשת — חלופה אם דילגת על נחל מערות",
+      "sideOfBusV2": "right_from_route_notes",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": false,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472079.jpg"
+      ]
+    },
+    {
+      "id": "PHOTO-OUT-18",
+      "order": 18,
+      "photo_screenshot": "1000472087.jpg",
+      "photo_local_time": "11:17",
+      "topic": "Red coastal passenger train",
+      "geographic_trigger": "11:17 train rouge sur pont, près Atlit/Megadim",
+      "photo_identification_confidence": "high",
+      "side_of_bus": "à confirmer (aller principalement côté droit)",
+      "correctIndex": 1,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Coastal_railway_line,_Israel"
+      ],
+      "translations": {
+        "he": {
+          "question": "איזה סוג תשתית חוצה את כביש החוף על הגשר המצולם?",
+          "options": [
+            "אמת מים רומית",
+            "מסילת רכבת",
+            "מסלול סקי",
+            "מנהרת רכבת תת־ימית"
+          ],
+          "studentExplanation": "בתמונה נראית רכבת על גשר מעל הכביש.",
+          "adminScript": "מעלינו עוברת רכבת על גשר. הרכבת והכביש הם חלק מאותה מערכת תחבורה שמחברת את ערי החוף. כדי לשמור על זרימת התנועה ועל הבטיחות, מסילות וכבישים מצטלבים לעיתים במפלסים נפרדים."
+        },
+        "fr": {
+          "question": "Quel type d’infrastructure franchit la route sur ce pont ?",
+          "options": [
+            "Un aqueduc romain",
+            "Une voie ferrée",
+            "Une piste de ski",
+            "Un tunnel ferroviaire sous-marin"
+          ],
+          "studentExplanation": "La photo montre un train traversant un pont au-dessus de la route.",
+          "adminScript": "Au-dessus de la chaussée passe un train. La voie ferrée et l’autoroute appartiennent au même grand corridor de transport du littoral. Les faire passer à des niveaux différents permet d’éviter les passages à niveau et de fluidifier les déplacements."
+        },
+        "en": {
+          "question": "What kind of infrastructure crosses above the highway here?",
+          "options": [
+            "A Roman aqueduct",
+            "A railway",
+            "A ski slope",
+            "An underwater rail tunnel"
+          ],
+          "studentExplanation": "The photograph shows a train crossing a bridge over the road.",
+          "adminScript": "A passenger train is crossing above the road. The railway and highway form part of the same coastal transport corridor. Separating their crossing onto different levels helps avoid road–rail conflicts and keeps traffic moving."
+        },
+        "ru": {
+          "question": "Какая инфраструктура проходит над шоссе по этому мосту?",
+          "options": [
+            "Римский акведук",
+            "Железная дорога",
+            "Лыжная трасса",
+            "Подводный железнодорожный тоннель"
+          ],
+          "studentExplanation": "На фотографии поезд идёт по мосту над автодорогой.",
+          "adminScript": "Над шоссе проходит пассажирский поезд. Железная дорога и трасса образуют единый прибрежный транспортный коридор. Разделение потоков по высоте помогает избежать опасных пересечений и ускоряет движение."
+        }
+      },
+      "rankInVersion": 8,
+      "selection": "SPARE",
+      "routeMarkerTime": "11:17:20",
+      "adminPhotoTriggerHe": "רכבת על גשר — חלופה אם דילגת על מחנה המעפילים",
+      "sideOfBusV2": "side_uncertain",
+      "answerTimeSec": 45,
+      "minAnswerTimeSec": 30,
+      "autoPublish": false,
+      "defaultEnabled": false,
+      "questionGroup": "ALLER_PHOTOS_V2",
+      "versionId": "PHOTO_ALLER_V2_2026_10_21",
+      "presenterNotesOnly": false,
+      "photoFiles": [
+        "1000472087.jpg"
+      ]
+    }
+  ],
+  "photoAnecdotes": [
+    {
+      "order": 1,
+      "photo": "1000472035.jpg",
+      "time": "11:04:19",
+      "subject": "Déblai rocheux stratifié",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "כשסוללים כביש דרך גבעה, חותכים בסלע ונחשפות שכבות שבדרך כלל מסתתרות מתחת לצמחייה. ממש חלון קטן להיסטוריה הגאולוגית.",
+        "fr": "Une tranchée routière révèle des couches normalement cachées sous la végétation : un petit livre ouvert sur le passé géologique.",
+        "en": "A road cutting exposes layers usually hidden by vegetation: a small open book of geological history.",
+        "ru": "Дорожная выемка обнажает слои, обычно скрытые растительностью: словно открытая книга геологической истории."
+      }
+    },
+    {
+      "order": 2,
+      "photo": "1000472037.jpg",
+      "time": "11:04:43",
+      "subject": "Pont routier et coupe rocheuse",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "גשר מאפשר להעביר דרך מעל מעבר קיים. לצדו רואים איך המהנדסים חתכו את הגבעה כדי לשמור על תוואי הכביש.",
+        "fr": "Le pont franchit un passage existant, tandis que la colline voisine a été entaillée pour tracer la route.",
+        "en": "The bridge spans an existing passage, while the adjacent hill was cut to make room for the road.",
+        "ru": "Мост пересекает существующий проход, а соседний холм срезали ради строительства дороги."
+      }
+    },
+    {
+      "order": 3,
+      "photo": "1000472039.jpg",
+      "time": "11:04:47",
+      "subject": "Végétation et route au pied des hauteurs",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "במישור החוף גידולים ודרכים נדחקים לשטח שבין הים להרים. כאן רואים את המפגש בין תשתיות, צומח וטופוגרפיה.",
+        "fr": "Sur la plaine littorale, cultures et routes se partagent l’espace entre mer et montagne.",
+        "en": "On this coastal plain, roads and farmland share the narrow space between sea and hills.",
+        "ru": "На прибрежной равнине дороги и поля делят пространство между морем и холмами."
+      }
+    },
+    {
+      "order": 4,
+      "photo": "1000472041.jpg",
+      "time": "11:05:12",
+      "subject": "Petite construction de pierre, bâtiment non identifié",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מבנה האבן שבתמונה מסקרן, אבל בלי זיהוי מדויק אי אפשר לקבוע את גילו או תפקידו. זו גם מיומנות של מורה דרך: לדעת לומר מה לא ידוע.",
+        "fr": "Ce bâtiment en pierre intrigue, mais sans identification précise, impossible d’affirmer son âge ou son usage : un guide doit aussi reconnaître l’incertitude.",
+        "en": "This stone building is intriguing, but its age and function cannot be asserted without identification. Good guides acknowledge uncertainty.",
+        "ru": "Каменное здание любопытно, но без точной идентификации нельзя утверждать его возраст или назначение."
+      }
+    },
+    {
+      "order": 5,
+      "photo": "1000472043.jpg",
+      "time": "11:05:19",
+      "subject": "Plaine agricole et relief du Carmel",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מישור חוף הכרמל נמצא בין הים להר. זה מסביר למה כבישים, מסילות ושטחי חקלאות מתרכזים דווקא במסדרון הזה.",
+        "fr": "Entre la mer et le Carmel, une bande relativement étroite accueille agriculture, routes et voies ferrées.",
+        "en": "Between the sea and Mount Carmel, a relatively narrow strip carries farmland, roads and railway lines.",
+        "ru": "Между морем и Кармелем проходит сравнительно узкая полоса с полями, дорогами и железной дорогой."
+      }
+    },
+    {
+      "order": 6,
+      "photo": "1000472045.jpg",
+      "time": "11:05:32",
+      "subject": "Ligne ferroviaire visible",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הכביש והרכבת מלווים זה את זה במישור החוף. כשאין הרבה שטח מישורי בין ההר לים, רשתות התחבורה נפגשות באותו מסדרון.",
+        "fr": "La route et le rail suivent souvent le même couloir côtier, faute d’espace plat entre la montagne et la mer.",
+        "en": "Road and rail often share the coastal corridor because flat land between mountain and sea is limited.",
+        "ru": "Автодорога и железная дорога часто идут по одному прибрежному коридору: ровной земли здесь мало."
+      }
+    },
+    {
+      "order": 7,
+      "photo": "1000472047.jpg",
+      "time": "11:05:56",
+      "subject": "Champs et collines",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "שינוי קטן בגובה הקרקע משנה את הנוף: בשטח המישורי קל יותר לעבד שדות, ובמדרון נשארים לעיתים שיחים וחורש.",
+        "fr": "Quelques mètres de relief changent le paysage : les champs occupent les surfaces planes, les buissons restent sur les pentes.",
+        "en": "Even modest changes in elevation matter: fields favour flat ground, while scrub often covers slopes.",
+        "ru": "Даже небольшой перепад высот важен: поля занимают равнину, а склоны часто покрыты кустарником."
+      }
+    },
+    {
+      "order": 8,
+      "photo": "1000472049.jpg",
+      "time": "11:06:27",
+      "subject": "Panneaux sombres sur toiture ou structure",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "על גג המבנה נראים לוחות כהים שעשויים להיות סולאריים. כדי לזהות אותם בוודאות צריך מבט קרוב יותר; אור שמש אפשר להמיר לחשמל בתאים פוטו־וולטאיים.",
+        "fr": "Les panneaux sombres pourraient être photovoltaïques, sans certitude sur cette photo. Ces cellules convertissent la lumière en électricité.",
+        "en": "The dark panels may be photovoltaic, though the photo is inconclusive. Such cells convert sunlight into electricity.",
+        "ru": "Тёмные панели могут быть солнечными, но по снимку это не доказано. Фотоэлементы превращают солнечный свет в электричество."
+      }
+    },
+    {
+      "order": 9,
+      "photo": "1000472051.jpg",
+      "time": "11:06:38",
+      "subject": "Long bâtiment à toit clair",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הגג הארוך בולט למרחוק, אך איננו יודעים מה מתרחש במבנה. עדיף להסביר איך מבנים גדולים משנים את הנוף מאשר להמציא לו שימוש.",
+        "fr": "Le long toit attire l’œil, mais la fonction du bâtiment n’est pas établie : mieux vaut observer que deviner.",
+        "en": "The long roof stands out, but the building’s purpose has not been established: observe rather than guess.",
+        "ru": "Длинная крыша заметна издалека, но назначение здания не установлено. Лучше наблюдать, чем гадать."
+      }
+    },
+    {
+      "order": 10,
+      "photo": "1000472053.jpg",
+      "time": "11:06:57",
+      "subject": "Paysage agricole, drapeau au loin",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מטעים, שדות ומבנים קטנים מציינים את העבודה החקלאית באזור. דגל שרואים מרחוק לא מספיק כדי לזהות מוסד או אתר.",
+        "fr": "Les plantations dessinent le paysage agricole. Un drapeau vu de loin ne permet pas d’identifier précisément le bâtiment voisin.",
+        "en": "Plantations shape the rural scenery. A distant flag is not enough to identify a nearby facility.",
+        "ru": "Плантации формируют сельский ландшафт. По далёкому флагу нельзя достоверно определить назначение объекта."
+      }
+    },
+    {
+      "order": 11,
+      "photo": "1000472055.jpg",
+      "time": "11:07:05",
+      "subject": "Ouvrage en béton inachevé ou utilitaire, non identifié",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "את מבנה הבטון אי אפשר לזהות בוודאות מהחלון. אבל הוא מזכיר לנו שכל בנייה משנה את הניקוז ואת השימוש בקרקע.",
+        "fr": "Le béton photographié n’est pas identifié. Il rappelle néanmoins que chaque construction modifie le paysage et l’écoulement des eaux.",
+        "en": "This concrete structure is unidentified. It still illustrates how construction changes land use and drainage.",
+        "ru": "Бетонное сооружение не опознано. Но оно напоминает, как строительство меняет землю и сток воды."
+      }
+    },
+    {
+      "order": 12,
+      "photo": "1000472057.jpg",
+      "time": "11:07:12",
+      "subject": "Inscription peinte sur une structure lointaine",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הכיתוב שעל המבנה אינו ברור דיו לזיהוי. בדרך אפשר להשתמש בו כדי לשאול איך נבדיל בין שם מקום, פרסומת וגרפיטי.",
+        "fr": "L’inscription est trop lointaine pour être identifiée. Elle peut servir à distinguer nom de lieu, publicité et graffiti.",
+        "en": "The writing is too distant to identify reliably. It invites a question about place names, advertising and graffiti.",
+        "ru": "Надпись слишком далека для уверенного чтения. Это повод отличить название места от рекламы и граффити."
+      }
+    },
+    {
+      "order": 13,
+      "photo": "1000472059.jpg",
+      "time": "11:07:23",
+      "subject": "Maison ancienne près de Dor/Nahsholim, non identifiée",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "אנחנו נוסעים באזור דור, עיר נמל עתיקה. יש בו גם מבנים ישנים, אבל הבית שבתמונה לא זוהה ואין לייחס לו סיפור מסוים ללא מקור.",
+        "fr": "On traverse le secteur de Dor, ancien port méditerranéen. Mais cette maison précise n’est pas identifiée.",
+        "en": "We are passing the Dor area, once an ancient Mediterranean port, but this particular house remains unidentified.",
+        "ru": "Мы проезжаем район Дора, древнего средиземноморского порта, но конкретный дом не опознан."
+      }
+    },
+    {
+      "order": 14,
+      "photo": "1000472061.jpg",
+      "time": "11:07:52",
+      "subject": "Ridge de kurkar près de Nahsholim",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "רכסי הכורכר הם דיונות חול קדומות שהתלכדו עם חומר גירי. לכן מוצאים בהם לעיתים שכבות נטויות כמו בדיונה פעילה.",
+        "fr": "Les cordons de kurkar sont d’anciennes dunes cimentées par le calcaire ; leurs couches peuvent encore révéler l’action du vent.",
+        "en": "Kurkar ridges are ancient dunes cemented by lime; their bedding can preserve traces of wind action.",
+        "ru": "Гряды куркара — древние дюны, сцементированные известковым веществом; слои хранят следы ветра."
+      }
+    },
+    {
+      "order": 15,
+      "photo": "1000472063.jpg",
+      "time": "11:08:03",
+      "subject": "Grande coupe stratifiée, secteur Dor",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הפסים במצוק מזכירים שכבות של עוגה. בגאולוגיה קוראים את סדר השכבות כדי לשחזר אירועים קדומים, בלי לקבוע גיל לפי צבע בלבד.",
+        "fr": "La paroi ressemble à un gâteau de couches successives : leur ordre renseigne sur le passé, pas leur couleur à elle seule.",
+        "en": "The cliff resembles a layered cake: the order of layers tells a story, while colour alone cannot date them.",
+        "ru": "Обрыв похож на слоёный пирог: порядок слоёв важен, но по одному цвету их возраст не определяют."
+      }
+    },
+    {
+      "order": 16,
+      "photo": "1000472065.jpg",
+      "time": "11:09:07",
+      "subject": "Découpe rocheuse et sculpture ou silhouette distante non identifiée",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "על הגבעה מופיע פסל או סימן בולט שלא זוהה בוודאות. עובדה שכן רואים: הכביש חושף כאן מצוקי כורכר גבוהים.",
+        "fr": "Une silhouette se détache sur la butte, sans identification fiable. En revanche, la haute coupe rocheuse est bien visible.",
+        "en": "A silhouette stands on the hill but cannot be reliably identified; the tall roadside rock cut is unmistakable.",
+        "ru": "На холме виден силуэт неизвестного объекта. Зато высокий скальный откос у дороги очевиден."
+      }
+    },
+    {
+      "order": 17,
+      "photo": "1000472067.jpg",
+      "time": "11:10:16",
+      "subject": "Bananeraies/cultures sous filets dans le secteur HaBonim",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "בתי רשת בחוף הכרמל עוזרים להגן על גידולים מפני תנאי סביבה. מהכביש רואים רק את המבנה החיצוני, לא תמיד את הגידול שבתוכו.",
+        "fr": "Les filets agricoles protègent les cultures ; depuis la route, on distingue parfois leur couverture mieux que les plantes.",
+        "en": "Agricultural nets protect crops; from the road their roofs can be easier to see than the plants beneath.",
+        "ru": "Сельскохозяйственные сетки защищают посевы; с дороги покрытие иногда видно лучше самих растений."
+      }
+    },
+    {
+      "order": 18,
+      "photo": "1000472069.jpg",
+      "time": "11:10:20",
+      "subject": "Tour ronde en pierre vers HaBonim, possible Kfarlet",
+      "side": "left_from_route_notes",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "המגדל העגול נראה כמו חלק מביצור קדום. באזור הבונים נמצאים שרידי מבצר כפרלט, שנעשה בו שימוש בתקופות שונות; הזיהוי המדויק של המגדל בצילום עוד דורש אימות.",
+        "fr": "Cette tour ronde évoque une fortification. Les ruines de Kfarlet se trouvent dans ce secteur, mais l’identification exacte de la tour reste à confirmer.",
+        "en": "The round tower suggests a fortification. Kfarlet ruins are nearby, but the exact identification of this photographed tower needs confirmation.",
+        "ru": "Круглая башня напоминает укрепление. Рядом находятся руины Кфарлет, однако принадлежность именно этой башни ещё надо проверить."
+      }
+    },
+    {
+      "order": 19,
+      "photo": "1000472071.jpg",
+      "time": "11:10:43",
+      "subject": "Rangées d’arbres cultivés",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "כשעצים נטועים בשורות ישרות, זה בדרך כלל סימן למטע חקלאי ולא לחורש טבעי. גם הנוף יודע לספר על עבודת האדם.",
+        "fr": "Des arbres alignés en rangées régulières signalent généralement un verger cultivé, plutôt qu’une forêt naturelle.",
+        "en": "Trees arranged in regular rows usually indicate a cultivated orchard rather than natural woodland.",
+        "ru": "Деревья ровными рядами обычно говорят о саде, посаженном человеком, а не о естественном лесе."
+      }
+    },
+    {
+      "order": 20,
+      "photo": "1000472073.jpg",
+      "time": "11:10:54",
+      "subject": "Tuyaux et irrigation près des cultures",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הצינורות מזכירים שהחקלאות כאן תלויה בהובלה מדויקת של מים לשדות. חלק מהמים זורמים לצמחים בצינורות במקום בערוצים פתוחים.",
+        "fr": "Les tuyaux montrent combien l’irrigation compte : acheminer l’eau directement aux cultures évite de dépendre uniquement de la pluie.",
+        "en": "The pipes show how much irrigation matters: water can be delivered directly to crops rather than left to rainfall alone.",
+        "ru": "Трубы показывают значение орошения: воду подают к культурам, не полагаясь только на дождь."
+      }
+    },
+    {
+      "order": 21,
+      "photo": "1000472075.jpg",
+      "time": "11:12:00",
+      "subject": "Petite tour cylindrique sombre au sommet, non identifiée",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "המבנה השחור בראש הגבעה נראה חריג, אבל ללא סימון אי אפשר לקבוע אם הוא מגדל תצפית, תשתית או מבנה אחר.",
+        "fr": "Le cylindre sombre au sommet est intriguant. Sans source précise, impossible d’affirmer s’il s’agit d’une tour de guet ou d’une installation technique.",
+        "en": "The dark cylinder on the hill is unusual. Without documentation, it cannot be labelled a watchtower or utility structure.",
+        "ru": "Тёмный цилиндр на холме необычен. Без документов нельзя назвать его наблюдательной башней или техническим объектом."
+      }
+    },
+    {
+      "order": 22,
+      "photo": "1000472077.jpg",
+      "time": "11:13:29",
+      "subject": "Pont et relief près de Nahal Me’arot",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "בסמוך לכאן נמצאת שמורת נחל מערות. במערות הכרמל נמצאו עדויות ארכאולוגיות חשובות לחיי בני אדם קדמונים במשך מאות אלפי שנים.",
+        "fr": "Tout près se trouve Nahal Me’arot : ses grottes conservent des traces remarquables de populations préhistoriques sur une très longue durée.",
+        "en": "Nearby Nahal Me’arot preserves extraordinary evidence of prehistoric populations over a very long span of time.",
+        "ru": "Рядом находится Нахаль-Меарот: его пещеры сохранили свидетельства жизни древних людей за огромный период времени."
+      }
+    },
+    {
+      "order": 23,
+      "photo": "1000472079.jpg",
+      "time": "11:14:31",
+      "subject": "Bananiers sous filets",
+      "side": "right_from_route_notes",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "תראו את העלים הגדולים: אלה בננות, גידול מוכר בחוף הכרמל. הרשתות מסייעות בניהול תנאי הגידול ובהגנה מפני פגעי סביבה.",
+        "fr": "Voici des bananiers sous filet : une culture emblématique de la côte du Carmel. Les filets contribuent à protéger les plants.",
+        "en": "Here are banana plants under netting, a characteristic crop of the Carmel coast. The nets help protect the plants.",
+        "ru": "Вот бананы под сеткой — характерная культура побережья Кармеля. Сетки помогают защищать растения."
+      }
+    },
+    {
+      "order": 24,
+      "photo": "1000472082.jpg",
+      "time": "11:15:06",
+      "subject": "Passage supérieur à Atlit",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "במחלפים גשרים מפרידים בין זרמי התנועה ומשפרים את הבטיחות. כדאי לזהות את הגשר לפני שמגיעים אליו כדי שהקבוצה תספיק להסתכל.",
+        "fr": "Les échangeurs séparent les flux de circulation ; un guide annonce le pont avant son passage pour laisser le temps d’observer.",
+        "en": "Interchanges separate traffic flows; a guide should announce a bridge before reaching it so passengers can look.",
+        "ru": "Развязки разводят транспортные потоки. Гид должен предупредить о мосте заранее, чтобы пассажиры успели посмотреть."
+      }
+    },
+    {
+      "order": 25,
+      "photo": "1000472083.jpg",
+      "time": "11:16:13",
+      "subject": "Panneau vers le camp des immigrants d’Atlit (Moshe Sneh)",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "השלט מפנה למחנה המעפילים בעתלית. הבריטים כלאו שם מעפילים שהגיעו לארץ למרות ההגבלות, וב־1945 שחררו לוחמי הפלמ״ח מאות עצורים.",
+        "fr": "Le panneau indique le camp d’Atlit, où les Britanniques détenaient des immigrants juifs arrivés malgré les restrictions. Le Palmach y mena une opération de libération en 1945.",
+        "en": "The sign points to Atlit’s detention camp, where the British held Jewish immigrants who arrived despite restrictions. The Palmach carried out a liberation operation in 1945.",
+        "ru": "Указатель ведёт к лагерю Атлит, где британцы держали еврейских иммигрантов. В 1945 году Пальмах провёл операцию по их освобождению."
+      }
+    },
+    {
+      "order": 26,
+      "photo": "1000472085.jpg",
+      "time": "11:16:19",
+      "subject": "Palmiers au bord des cultures et du Carmel",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "עצי הדקל בולטים בנוף, אבל התמונה לבדה לא מוכיחה שמדובר בשדרת הדקלים ההיסטורית של עתלית. עד שנאמת, נספר רק על הנוף הנראה.",
+        "fr": "Les palmiers dominent la vue, mais la photo ne suffit pas à les identifier comme l’allée historique d’Atlit.",
+        "en": "The palms stand out, but the photo alone cannot identify them as Atlit’s historic palm avenue.",
+        "ru": "Пальмы заметны издалека, но по фотографии нельзя уверенно назвать их исторической аллеей Атлита."
+      }
+    },
+    {
+      "order": 27,
+      "photo": "1000472087.jpg",
+      "time": "11:17:20",
+      "subject": "Train rouge sur pont",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מעל הכביש נוסעת רכבת. מסילה וכביש במפלסים שונים חוסכים חצייה מסוכנת ומשאירים את שתי התנועות פעילות.",
+        "fr": "Un train traverse le pont : séparer route et rail sur deux niveaux évite les passages à niveau et fluidifie le trafic.",
+        "en": "A train is crossing the bridge: separating road and rail vertically avoids level crossings and keeps traffic flowing.",
+        "ru": "По мосту идёт поезд: разные уровни для дороги и рельсов позволяют избежать опасных переездов."
+      }
+    },
+    {
+      "order": 28,
+      "photo": "1000472089.jpg",
+      "time": "11:17:35",
+      "subject": "Marquage rouge abîmé sur pilier",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הסימון האדום על העמוד אינו קריא דיו כדי לזהותו. זו תזכורת להימנע מפענוח כתובות מטושטשות כאילו הן עובדה.",
+        "fr": "Le panneau rouge est trop effacé pour être lu avec certitude : mieux vaut ne pas inventer une signification.",
+        "en": "The red marking is too worn to read reliably. Better not invent a meaning for it.",
+        "ru": "Красная отметка стёрлась, и её смысл установить нельзя. Не стоит придумывать объяснение."
+      }
+    },
+    {
+      "order": 29,
+      "photo": "1000472091.jpg",
+      "time": "11:17:52",
+      "subject": "Talus rocheux bas près de Megadim",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הגבעה הנמוכה חושפת שוב שכבות משקע. הצמחייה גדלה בעיקר במקום שבו הצטברה מספיק קרקע בין הסלעים.",
+        "fr": "Cette colline laisse voir la roche, tandis que la végétation pousse surtout là où un peu de sol s’est accumulé.",
+        "en": "The low hill exposes the rock; plants grow mainly where enough soil has accumulated between stones.",
+        "ru": "На холме обнажена порода, а растения растут преимущественно там, где накопилась почва."
+      }
+    },
+    {
+      "order": 30,
+      "photo": "1000472093.jpg",
+      "time": "11:18:21",
+      "subject": "Grand talus creusé dans la roche",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "כדי לסלול כאן את כביש החוף חתכו ברכס. במחשוף אפשר לראות מרקם ושכבות, אבל זיהוי סוג האבן דורש בדיקה גאולוגית.",
+        "fr": "Pour tracer la route, il a fallu entailler le relief. Les couches se voient bien, mais la nature exacte de la roche demande une vérification.",
+        "en": "The road required a cutting through the ridge. The layers are clear, but the exact rock type needs testing.",
+        "ru": "Чтобы проложить дорогу, гряду разрезали. Слои хорошо видны, но точный тип породы требует проверки."
+      }
+    },
+    {
+      "order": 31,
+      "photo": "1000472095.jpg",
+      "time": "11:18:51",
+      "subject": "Strates fines / texture des roches",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "פסים דקים בסלע עשויים להעיד על תנאי שקיעה שונים. בלי מדידות לא נקבע אם מדובר בכורכר, גיר או חומר אחר בכל שכבה.",
+        "fr": "Les fines bandes traduisent possiblement des dépôts successifs. Une photo ne suffit pas à déterminer chaque roche.",
+        "en": "Thin bands may record successive deposits. A photograph alone cannot identify every rock layer.",
+        "ru": "Тонкие полосы могут отражать последовательные отложения. По одному снимку нельзя определить каждую породу."
+      }
+    },
+    {
+      "order": 32,
+      "photo": "1000472097.jpg",
+      "time": "11:19:38",
+      "subject": "Bâtiments et collines de Tirat Carmel / Haifa",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מאחורי הבניינים עולים מורדות הכרמל. באזור חיפה, השלוחות והוואדיות עיצבו את הדרך שבה נבנו שכונות ונסללו כבישים.",
+        "fr": "Derrière les immeubles montent les pentes du Carmel : à Haïfa, les vallons et les crêtes ont guidé l’urbanisation.",
+        "en": "Carmel slopes rise behind the buildings. Around Haifa, ridges and wadis strongly shaped urban growth.",
+        "ru": "За зданиями поднимаются склоны Кармеля. В районе Хайфы хребты и долины сильно повлияли на застройку."
+      }
+    }
+  ],
+  "extraRouteNotesFromGuide": [
+    {
+      "he": "קיבוץ נחשולים, דור, מוזיאון המזגגה — צד שמאל",
+      "fr": "Nahsholim, Dor et ancienne verrerie Mizgaga — gauche",
+      "en": "Nahsholim, Dor and Mizgaga glassworks — left",
+      "ru": "Нахшолим, Дор и музей стекольного завода — слева",
+      "photoLink": "1000472059.jpg",
+      "status": "regional_not_guaranteed_visible",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "מבצר הבונים / כפרלט — צד שמאל",
+      "fr": "Fort de HaBonim / Kfarlet — gauche",
+      "en": "HaBonim / Kfarlet Fortress — left",
+      "ru": "Крепость Ха-Боним / Кфарлет — слева",
+      "photoLink": "1000472069.jpg",
+      "status": "probable_photo_identity_needs_confirmation",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "מצפה יער עופר על הכרמל — צד ימין",
+      "fr": "Belvédère de la forêt Ofer sur le Carmel — droite",
+      "en": "Ofer Forest viewpoint on Carmel — right",
+      "ru": "Смотровая площадка леса Офер на Кармеле — справа",
+      "photoLink": null,
+      "status": "reported_by_course_not_yet_verified_visible",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "מטעי בננות — צד ימין",
+      "fr": "Bananeraies — droite",
+      "en": "Banana plantations — right",
+      "ru": "Банановые плантации — справа",
+      "photoLink": "1000472079.jpg",
+      "status": "photographed",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "עתלית ומחנה המעפילים; שדרת דקלי הוושינגטוניה — צד שמאל לפי הסיכום",
+      "fr": "Atlit, camp d’internement et avenue historique de palmiers — gauche selon la note",
+      "en": "Atlit, detention camp and historic palm avenue — left according to note",
+      "ru": "Атлит, лагерь и историческая пальмовая аллея — слева по заметке",
+      "photoLink": "1000472083.jpg",
+      "status": "camp_sign_visible_other_landmarks_not_verified",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "גשר הרכבת מעל כביש החוף",
+      "fr": "Pont ferroviaire au-dessus de la route côtière",
+      "en": "Railway bridge across the coastal highway",
+      "ru": "Железнодорожный мост над прибрежным шоссе",
+      "photoLink": "1000472087.jpg",
+      "status": "photographed",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "כיסא ענק צהוב מימין, צפונית לעתלית — מיקום ומקור לא מאומתים",
+      "fr": "Grande chaise jaune à droite au nord d’Atlit — à vérifier",
+      "en": "Large yellow chair on the right north of Atlit — verify",
+      "ru": "Большой жёлтый стул справа к северу от Атлита — проверить",
+      "photoLink": null,
+      "status": "mentioned_only_unverified",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "מספר פסלים לצד שמאל של הכביש — לא זוהו פרטנית",
+      "fr": "Sculptures le long du côté gauche — non identifiées",
+      "en": "Several sculptures along the left side — not identified",
+      "ru": "Несколько скульптур слева от дороги — не опознаны",
+      "photoLink": "1000472065.jpg",
+      "status": "mentioned_only_unverified",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "פריחת חצבים — רק אם רואים בפועל",
+      "fr": "Floraison des scilles d’automne — seulement si visibles",
+      "en": "Autumn squill flowers — only if actually visible",
+      "ru": "Цветение морского лука — только если растения действительно видны",
+      "photoLink": null,
+      "status": "seasonal_must_confirm_on_day",
+      "withinPhotographedSection": true
+    },
+    {
+      "he": "מת״ם, בתי קברות בכניסה לחיפה, שער העיר",
+      "fr": "MATAM, cimetières à l’entrée de Haïfa, monument « Porte de la ville »",
+      "en": "MATAM, cemeteries at Haifa entrance, “City Gate”",
+      "ru": "МАТАМ, кладбища у въезда в Хайфу, «Городские ворота»",
+      "photoLink": null,
+      "status": "beyond_last_confirmed_photo_or_route_unverified",
+      "withinPhotographedSection": false
+    },
+    {
+      "he": "מסעדת מקסים, הכרמל הצרפתי, טיילת בת גלים, חקר ימים ואגמים, סטלה מאריס, מערת אליהו",
+      "fr": "Restaurant Maxim, Carmel français, Bat Galim, institut océanographique, Stella Maris et grotte d’Élie",
+      "en": "Maxim Restaurant, French Carmel, Bat Galim, Oceanographic Institute, Stella Maris and Elijah’s Cave",
+      "ru": "Ресторан «Максим», Французский Кармель, Бат-Галим, океанографический институт, Стелла Марис и пещера Илии",
+      "photoLink": null,
+      "status": "beyond_last_confirmed_photo_or_route_unverified",
+      "withinPhotographedSection": false
+    }
+  ],
+  "unsafeToAssume": [
+    "Map image snapshots show approximate locations, not EXIF GPS coordinates.",
+    "Do not treat landmarks mentioned in the WhatsApp guide note as photographed.",
+    "Some photos may be from the left even if most were taken on the right.",
+    "Never claim specific buildings, stone towers or abstract sculptures identified unless verified.",
+    "Locations beyond the last photo near Tirat Carmel/Haifa are not automatically in the bus route.",
+    "Do not import optional alternatives into the automatic playable sequence unless activated by the admin."
+  ],
+  "sourceLinks": [
+    "https://www.parks.org.il/reserve-park/teldor/",
+    "https://whc.unesco.org/en/list/1393",
+    "https://www.parks.org.il/reserve-park/%D7%A9%D7%9E%D7%95%D7%A8%D7%AA-%D7%98%D7%91%D7%A2-%D7%97%D7%95%D7%A3-%D7%93%D7%95%D7%A8-%D7%94%D7%91%D7%95%D7%A0%D7%99%D7%9D/",
+    "https://carmelim.org.il/product/%D7%9E%D7%95%D7%96%D7%99%D7%90%D7%95%D7%9F-%D7%94%D7%9E%D7%96%D7%92%D7%92%D7%94-%D7%91%D7%A7%D7%99%D7%91%D7%95%D7%A5-%D7%A0%D7%97%D7%A9%D7%95%D7%9C%D7%99%D7%9D/",
+    "https://docs.google.com/document/d/1CyzgobiGT9vaCNIrvObS8uGKD6zknNvD/edit",
+    "https://docs.google.com/document/d/1JLdWbSaqfAeOUd8jUi6ajBc2wORmyGY3/edit",
+    "https://docs.google.com/document/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/edit"
+  ]
+}

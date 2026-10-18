@@ -43,13 +43,13 @@
 
   // Compte à rebours circulaire : vert → orange (≤ 50 %) → rouge clignotant (≤ 5 s).
   const C = 2 * Math.PI * 44;
-  function ringHtml() {
+  function ringHtml(label) {
     return `<div class="ring" id="ring" aria-live="off">
       <svg viewBox="0 0 100 100" aria-hidden="true">
         <circle class="track" cx="50" cy="50" r="44"/>
         <circle class="prog" id="ring-prog" cx="50" cy="50" r="44" stroke-dasharray="${C}" stroke-dashoffset="0"/>
       </svg>
-      <div class="ring-num"><b id="ring-num"></b><small>שניות</small></div>
+      <div class="ring-num"><b id="ring-num"></b><small>${label || 'שניות'}</small></div>
     </div>`;
   }
   // q = { opened_at, closes_at } ; offset = horloge serveur - horloge locale (ms)

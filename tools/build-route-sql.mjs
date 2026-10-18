@@ -2,6 +2,7 @@
 // Usage : node tools/build-route-sql.mjs
 import { writeFileSync, readFileSync } from 'node:fs';
 import { ROUTE } from '../content/index.mjs';
+import { buildV2Sql } from './build-v2-sql.mjs';
 
 const root = new URL('../', import.meta.url);
 const Q = s => {
@@ -44,13 +45,31 @@ on conflict (ext_key) do update set
 `;
 writeFileSync(new URL('supabase/questions_route.sql', root), sql);
 
+const v2sql = buildV2Sql();
+writeFileSync(new URL('supabase/questions_v2.sql', root), v2sql);
+const schema = readFileSync(new URL('supabase/schema.sql', root), 'utf8');
+
 const install = [
   '-- INSTALLATION COMPLÈTE : à coller en entier dans Supabase > SQL Editor > Run ("Run without RLS").',
   '-- Ré-exécutable sans risque : rien n\'est supprimé, aucune question n\'est dupliquée.',
-  '-- Contient : schéma + 34 questions du trajet avec fiches de guidage (+ démo seulement si la banque est vide).',
-  readFileSync(new URL('supabase/schema.sql', root), 'utf8'),
+  '-- Contient : schéma + banque V1 (34 questions du trajet avec fiches de guidage) + banque V2 (parcours',
+  '-- photographié : 6 + 2 questions en 4 langues, 32 fiches photo) (+ démo seulement si la banque est vide).',
+  schema,
   sql,
+  v2sql,
   readFileSync(new URL('supabase/seed_demo.sql', root), 'utf8')
 ].join('\n');
 writeFileSync(new URL('supabase/install.sql', root), install);
-console.log(`${ROUTE.length} questions → supabase/questions_route.sql + supabase/install.sql`);
+
+// Mise à jour d'une base DÉJÀ installée : schéma (migration incrémentale) + V2 uniquement.
+// Ne réimporte PAS la V1 : les modifications faites dans l'admin sur les 34 questions sont conservées.
+const migration = [
+  '-- MISE À JOUR V2 d\'une installation existante : coller en entier dans Supabase > SQL Editor > Run.',
+  '-- Ré-exécutable. Ne supprime rien, ne touche pas aux 34 questions V1, conserve parties, joueurs et réponses.',
+  schema,
+  v2sql
+].join('\n');
+writeFileSync(new URL('supabase/migration_v2.sql', root), migration);
+console.log(`V1 : ${ROUTE.length} questions → supabase/questions_route.sql`);
+console.log('V2 : 8 questions + 32 photos → supabase/questions_v2.sql');
+console.log('→ supabase/install.sql (installation complète) + supabase/migration_v2.sql (mise à jour)');
