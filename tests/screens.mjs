@@ -1,5 +1,8 @@
 // Parcours visuel rapide (captures d'écran mobile). Usage : node tests/screens.mjs <outdir>
 import { chromium } from 'playwright-core';
+import pg from 'pg';
+const db = new pg.Client({ host: process.env.PGHOST || '/var/tmp', port: process.env.PGPORT || 5433, user: 'postgres', database: 'mdl_dev' });
+await db.connect();
 const OUT = process.argv[2] || '.';
 const BASE = 'http://localhost:8787';
 const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
@@ -17,12 +20,14 @@ await admin.screenshot({ path: `${OUT}/a1-live.png`, fullPage: true });
 
 const st = await (await browser.newContext(phone)).newPage(); watch(st);
 await st.goto(BASE + '/');
+await st.click('.langopt[data-lang=he]');
 await st.screenshot({ path: `${OUT}/p0-join.png` });
 await st.fill('#nm', 'דנה לוי'); await st.click('text=הצטרפות למשחק');
 await st.waitForSelector('text=מחכים לשאלה הבאה');
 await st.screenshot({ path: `${OUT}/p1-wait.png` });
 
 await admin.click('text=📣 פרסם שאלה');
+await db.query("update mdl.games set opened_at = opened_at - interval '31 s' where is_active; update mdl.game_questions gq set opened_at = gq.opened_at - interval '31 s', closes_at = gq.closes_at - interval '31 s' from mdl.games g where g.is_active and gq.game_id = g.id and gq.question_id = g.current_question"); // temps minimal « vieilli » (test)
 await st.waitForSelector('.ans');
 await st.click('.ans.c0');
 await st.screenshot({ path: `${OUT}/p2-question.png` });

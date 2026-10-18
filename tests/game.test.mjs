@@ -2,11 +2,23 @@
 // Lancer : npm test   (nécessite un Postgres local, voir README)
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { freshDb, rpc, sleep } from './helpers.mjs';
+import { freshDb, rpc as rawRpc, sleep } from './helpers.mjs';
+
+// Ces tests vérifient la mécanique d'origine (durées, marge réseau, points) en publiant/fermant
+// immédiatement. Le temps de réponse minimal (30 s depuis la V2, imposé par le serveur) est donc
+// ramené à 0 ICI SEULEMENT, par SQL direct (impossible via l'API admin, qui impose ≥ 30 s).
+// La règle des 30 s elle-même est testée dans tests/v2.test.mjs.
+const noMin = c => c.query('update mdl.games set min_answer_sec = 0 where is_active');
+async function rpc(c, fn, args) {
+  const r = await rawRpc(c, fn, args);
+  if (fn === 'admin_new_game') await noMin(c);
+  return r;
+}
 
 let c, admin, qs;
 before(async () => {
   c = await freshDb('mdl_unit');
+  await noMin(c);
   admin = (await rpc(c, 'admin_login', { p_password: 'test-password-123' })).token;
   qs = (await rpc(c, 'admin_state', { p_token: admin })).questions;
 });

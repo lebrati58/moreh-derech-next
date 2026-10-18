@@ -67,7 +67,8 @@ test('install.sql complet sur une base vierge', async () => {
   const d = await freshDb('mdl_install', { seed: false });
   try {
     await d.query(readFileSync(new URL('../supabase/install.sql', import.meta.url), 'utf8'));
-    const n = (await d.query('select count(*)::int n, count(*) filter (where is_demo)::int demo from mdl.questions')).rows[0];
-    assert.deepEqual(n, { n: 34, demo: 0 });
+    const n = (await d.query(`select count(*) filter (where bank = 'V1')::int v1, count(*) filter (where bank = 'V2')::int v2,
+                                     count(*) filter (where is_demo)::int demo from mdl.questions`)).rows[0];
+    assert.deepEqual(n, { v1: 34, v2: 8, demo: 0 });
   } finally { await d.end(); }
 });

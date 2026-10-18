@@ -30,6 +30,7 @@
 <nav id="tabs" class="tabs hidden">
   <button data-view="live" class="active"><span class="i">📡</span>שידור חי</button>
   <button data-view="questions"><span class="i">📝</span>שאלות</button>
+  <button data-view="gallery"><span class="i">📷</span>מסלול</button>
   <button data-view="board"><span class="i">🏆</span>דירוג</button>
   <button data-view="settings"><span class="i">⚙️</span>הגדרות</button>
 </nav>
@@ -53,6 +54,34 @@
   // Panneau micro : état + dernière question pour laquelle il s'est ouvert automatiquement
   let G = { open: false, qid: null, mode: 'short', live: false };
   let lastAutoGuide = store.get('mdl_last_auto_guide');
+  // V2 : langue d'affichage des CONTENUS dans l'admin (questions, scripts, anecdotes). Hébreu par défaut.
+  const ALANGS = { he: { n: 'עב', dir: 'rtl' }, fr: { n: 'FR', dir: 'ltr' }, en: { n: 'EN', dir: 'ltr' }, ru: { n: 'RU', dir: 'ltr' } };
+  let alang = ALANGS[store.get('mdl_admin_lang')] ? store.get('mdl_admin_lang') : 'he';
+  // Galerie photo (fiches privées) : chargée à la demande via admin_photos, copie locale pour le hors-ligne
+  let P = store.get('mdl_photos') || null, gpos = +(store.get('mdl_gal_pos') || 0), showAnec = false, gcol = null;
+  const SIDE = {
+    right_probable: '➡️ ימין (סביר)', right_from_route_notes: '➡️ ימין (לפי סיכום המסלול)',
+    left_from_route_notes: '⬅️ שמאל (לפי סיכום המסלול)', nearby_not_visible: '📍 בסביבה — לא בהכרח נראה',
+    side_uncertain: '↔️ צד לא ודאי', uncertain: '↔️ צד לא ודאי'
+  };
+  const CONF = { high: 'זיהוי: גבוה', medium: 'זיהוי: בינוני — לאמת', low: 'זיהוי: נמוך — לא לקבוע בוודאות' };
+  const ANEC_LBL = { he: 'מידע נוסף', fr: 'En savoir plus', en: 'More info', ru: 'Подробнее' };
+  const photoDir = col => 'photos/' + String(col || 'ALLER_V2').toLowerCase().replace(/_/g, '-') + '/';
+  const photoUrl = (file, thumb, col) => photoDir(col) + (thumb ? 'thumbs/' : '') + encodeURIComponent(file);
+  // Contenu d'une question dans la langue admin choisie (repli : hébreu)
+  function qt(q) {
+    const tr = alang !== 'he' && q && q.i18n && q.i18n[alang];
+    const ok = tr && Array.isArray(tr.options) && tr.options.length === q.options.length;
+    return ok ? { text: tr.text, options: tr.options, explanation: tr.explanation || '', category: tr.category || q.category, lang: alang }
+              : { text: q.text, options: q.options, explanation: q.explanation, category: q.category, lang: 'he' };
+  }
+  const dirOf = l => `lang="${l}" dir="${ALANGS[l] ? ALANGS[l].dir : 'auto'}"`;
+  const gtr = q => (q && q.guide_i18n && (q.guide_i18n[alang] || q.guide_i18n.he)) || {};
+  const gLang = q => q && q.guide_i18n && q.guide_i18n[alang] ? alang : 'he';
+  const bankLabel = code => { const b = S && (S.banks || []).find(x => x.code === code); return b ? (b.label.he || code) : code; };
+  const langSeg = () => `<div class="langseg" role="tablist" aria-label="שפת התוכן">${Object.keys(ALANGS).map(l =>
+    `<button type="button" data-alang="${l}" class="${l === alang ? 'on' : ''}">${ALANGS[l].n}</button>`).join('')}</div>`;
+  const mmss = ms => { const s = Math.max(0, Math.floor(ms / 1000)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
   const VIS = {
     visible: '👁️ נראה מהאוטובוס',
     check: '❓ כנראה נראה — לאמת בנסיעת הכנה',
@@ -68,7 +97,9 @@
     question_open: 'יש שאלה פתוחה — סגרו אותה קודם.', already_used: 'השאלה כבר הוצגה במשחק הזה.',
     finished: 'המשחק הסתיים. לחצו "המשך משחק" או צרו משחק חדש.', no_game: 'אין משחק פעיל.',
     options: 'צריך בין 2 ל-4 תשובות.', correct_index: 'סמנו את התשובה הנכונה.', text: 'חסר טקסט לשאלה.',
-    not_found: 'השאלה לא נמצאה.'
+    not_found: 'השאלה לא נמצאה.', wrong_bank: 'השאלה שייכת לגרסה אחרת — לא ניתן לפרסם אותה במשחק הזה.',
+    spare_disabled: 'שאלה חלופית — הפעילו אותה קודם (🔁).', not_spare: 'זו אינה שאלה חלופית.', bad_bank: 'גרסה לא קיימת.',
+    too_early: 'עוד לא עברו 30 השניות המינימליות לתשובה.'
   };
 
   function toast(msg, ms = 2600) {
@@ -102,7 +133,8 @@
     if (busy) return; busy = true;
     try {
       const r = await rpc(fn, { p_token: token, ...args });
-      if (r && r.error) toast(ERR[r.error] || r.error);
+      if (r && r.error === 'too_early') toast(`⏳ ${ERR.too_early} עוד ${Math.ceil(r.remaining_ms / 1000)} שנ׳.`);
+      else if (r && r.error) toast(ERR[r.error] || r.error);
       else if (okMsg) toast(okMsg);
       if (navigator.vibrate) navigator.vibrate(20);
       return r;
@@ -122,6 +154,7 @@
       offset = Date.parse(r.now) - Date.now();
       S = r;
       store.set('mdl_bank', r.questions);          // copie locale des fiches pour le hors-ligne
+      if (!loadPhotos._busy && (!P || P._game !== (S.game && S.game.id))) loadPhotos();   // une fois par partie
       render();
     } catch (e) {
       if (e.auth) { store.del(KEY); token = null; return renderLogin('פג תוקף הכניסה.'); }
@@ -131,6 +164,22 @@
     timer = setTimeout(refresh, document.hidden ? 5000 : 1500);
   }
   document.addEventListener('visibilitychange', () => { if (!document.hidden && token) refresh(); });
+
+  // Fiches photo (privées) : une seule requête, pas à chaque rafraîchissement
+  async function loadPhotos(col) {
+    if (loadPhotos._busy) return; loadPhotos._busy = true;
+    try {
+      const r = await rpc('admin_photos', { p_token: token, p_collection: col || gcol || null });
+      const changed = !P || !P.collection || !r.collection || P.collection.code !== r.collection.code;
+      r._game = S && S.game ? S.game.id : null;
+      P = r; store.set('mdl_photos', r);
+      if (changed) { gpos = 0; store.set('mdl_gal_pos', 0); }
+      lastHash = ''; if (S) render();
+    } catch (e) { if (e.auth) { store.del(KEY); token = null; renderLogin('פג תוקף הכניסה.'); } }
+    finally { loadPhotos._busy = false; }
+  }
+  // fiches photo liées à une question (par clé externe)
+  const photosOfQ = q => (P && P.photos && q && q.ext_key) ? P.photos.filter(p => (p.question_keys || []).includes(q.ext_key)) : [];
 
   // ------------------------------------------------------------ Rendu
   function render() {
@@ -147,11 +196,12 @@
     }
     if (document.querySelector('.modal')) return;          // ne pas perturber l'édition
     const h = view + JSON.stringify(S.game) + JSON.stringify(S.current) + S.online + S.players +
-      JSON.stringify(view === 'live' || view === 'questions' ? S.questions : S.leaderboard) + pickId;
+      JSON.stringify(view === 'live' || view === 'questions' || view === 'gallery' ? S.questions : S.leaderboard) + pickId +
+      alang + gpos + showAnec + (P && P.collection ? P.collection.code + P.photos.length : '');
     if (h === lastHash) return tickTimer();
     lastHash = h;
     const y = window.scrollY;
-    ({ live: renderLive, questions: renderQuestions, board: renderBoard, settings: renderSettings })[view]();
+    ({ live: renderLive, questions: renderQuestions, gallery: renderGallery, board: renderBoard, settings: renderSettings })[view]();
     window.scrollTo(0, y);
     tickTimer();
   }
@@ -163,50 +213,108 @@
     return d ? d + ' שנ׳ (ברירת מחדל)' : 'ללא הגבלה';
   }
 
-  const unused = () => S.questions.filter(q => !q.used);
+  // Questions jouables : non utilisées et activées (les alternatives SPARE restent dans leur tiroir)
+  const unused = () => S.questions.filter(q => !q.used && q.enabled !== false);
   function nextQuestion() {
     const u = unused();
-    return u.find(q => q.id === pickId) || u[0] || null;
+    return u.find(q => q.id === pickId) || u.find(q => q.selection !== 'SPARE') || u[0] || null;
   }
 
   function bars(q, showRight) {
     const total = q.counts.reduce((a, b) => a + b, 0) || 1;
-    return q.options.map((o, i) => `<div class="bar c${i} ${showRight && i === q.correct_index ? 'right' : ''}">
+    const c = qt(q);
+    return c.options.map((o, i) => `<div class="bar c${i} ${showRight && i === q.correct_index ? 'right' : ''}">
       <i style="width:${100 * q.counts[i] / total}%"></i>
-      <span><span>${SHAPES[i]} ${esc(o)} ${i === q.correct_index ? '✔' : ''}</span><span>${q.counts[i]}</span></span></div>`).join('');
+      <span><span ${dirOf(c.lang)}>${SHAPES[i]} ${esc(o)} ${i === q.correct_index ? '✔' : ''}</span><span>${q.counts[i]}</span></span></div>`).join('');
+  }
+
+  function bankChip() {
+    if (!S.game) return '';
+    const b = S.game.bank || 'V1';
+    const main = S.questions.filter(q => q.selection !== 'SPARE').length;
+    const sp = S.questions.filter(q => q.selection === 'SPARE').length;
+    return `<div class="row" style="align-items:center;justify-content:space-between;margin-bottom:10px">
+      <span class="bankchip ${b === 'V2' ? 'v2' : ''}">${esc(bankLabel(b))} · ${main} שאלות${sp ? ` (+${sp} חלופיות)` : ''}</span>
+      <div style="flex:none;min-width:150px">${langSeg()}</div></div>`;
   }
 
   function stats() {
     const g = S.game, c = S.current;
     const phase = { waiting: 'ממתין', open: 'שאלה פתוחה', closed: 'שאלה סגורה', revealed: 'תשובה נחשפה' }[g.phase];
-    return `<div class="stats" style="margin-bottom:14px">
+    return bankChip() + `<div class="stats" style="margin-bottom:14px">
       <div class="stat"><b>${S.online}</b><span>מחוברים מ-${S.players}</span></div>
       <div class="stat"><b>${c && g.phase !== 'waiting' ? c.answers : '–'}</b><span>תשובות</span></div>
       <div class="stat"><b style="font-size:17px;line-height:31px">${g.status === 'finished' ? 'הסתיים' : g.paused ? 'מושהה' : phase}</b><span>${S.stats.questions} נחשפו</span></div>
     </div>`;
   }
 
+  // Photo de repérage + métadonnées de trajet d'une question V2 (heure INDICATIVE)
+  function routeBlock(q, { big = false } = {}) {
+    const m = q && q.route_meta; if (!m || !m.photos) return '';
+    const g = gtr(q);
+    const ph = photosOfQ(q);
+    const col = P && P.collection ? P.collection.code : null;
+    const imgs = m.photos.map(f => `<img src="${photoUrl(f, !big, col)}" alt="" loading="lazy" ${big ? 'class="ph"' : ''}>`).join('');
+    return `<div class="${big ? '' : 'ph-row'}">${imgs}<div style="flex:1">
+      <div class="metagrid">
+        <span>🕐 ${esc(m.photoLocalTime || m.routeMarkerTime || '')} <small>(משוער — לא שעת פרסום)</small></span>
+        <span>${SIDE[m.side] || esc(m.side || '')}</span>
+        <span class="conf-${esc(m.confidence)}">${CONF[m.confidence] || ''}</span>
+        ${ph.length ? `<span>📷 ${ph.map(p => '#' + p.ord).join(', ')}</span>` : ''}
+      </div>
+      ${m.triggerHe ? `<div class="small" dir="rtl">📍 ${esc(m.triggerHe)}</div>` : ''}
+      ${m.sectorFr ? `<div class="small muted" dir="ltr" lang="fr">${esc(m.sectorFr)}</div>` : ''}
+    </div></div>
+    ${g.caution ? `<div class="caution" ${dirOf(gLang(q))}>⚠️ ${esc(g.caution)}</div>` : ''}`;
+  }
+
+  // Temps écoulé depuis la dernière publication (objectif : ≥ 2 min entre deux questions — simple repère)
+  function sincePub() {
+    const c = S.current; if (!c || !c.opened_at) return '';
+    return `<p class="timerline" id="sincepub">⏱️ <b>–</b> מאז פרסום השאלה הקודמת · מומלץ 2 דק׳ ומעלה בין שאלות</p>`;
+  }
+
   function nextCard() {
     const n = nextQuestion();
-    if (!n) return `<div class="card center"><h2>אין עוד שאלות</h2><p class="muted">כל השאלות הוצגו. אפשר להוסיף שאלה או לסיים את המשחק.</p>
-      <div class="row"><button class="btn ghost small" data-a="newq">➕ שאלה חדשה</button><button class="btn sun small" data-a="finish">🏁 סיום המשחק</button></div></div>`;
+    if (!n) return `<div class="card center"><h2>אין עוד שאלות</h2><p class="muted">כל השאלות הוצגו. אפשר להפעיל שאלה חלופית, להוסיף שאלה או לסיים את המשחק.</p>
+      <div class="row"><button class="btn ghost small" data-a="newq">➕ שאלה חדשה</button><button class="btn sun small" data-a="finish">🏁 סיום המשחק</button></div></div>${sparesCard()}`;
     const others = unused().filter(q => q.id !== n.id);
+    const c = qt(n);
     return `<div class="card">
-      <div class="row" style="justify-content:space-between;align-items:center"><span class="cat">השאלה הבאה · ${esc(n.category)}</span>
+      <div class="row" style="justify-content:space-between;align-items:center"><span class="cat">השאלה הבאה · <span ${dirOf(c.lang)}>${esc(c.category)}</span>${n.selection === 'SPARE' ? ' · 🔁 חלופית' : ''}</span>
       <span class="small muted">⏱️ ${timeLabel(n.time_limit_sec)} · ${DIFF[n.difficulty]}</span></div>
       ${n.is_demo ? '<span class="badge demo">הדגמה — לא מאומת</span>' : ''}
-      <div class="question-text">${esc(n.text)}</div>
-      <ul class="small" style="margin:0 0 12px;padding-inline-start:18px">${n.options.map((o, i) => `<li ${i === n.correct_index ? 'style="color:var(--ok);font-weight:800"' : ''}>${esc(o)} ${i === n.correct_index ? '✔' : ''}</li>`).join('')}</ul>
+      ${routeBlock(n)}
+      <div class="question-text" ${dirOf(c.lang)}>${esc(c.text)}</div>
+      <ul class="small" style="margin:0 0 12px;padding-inline-start:18px" ${dirOf(c.lang)}>${c.options.map((o, i) => `<li ${i === n.correct_index ? 'style="color:var(--ok);font-weight:800"' : ''}>${esc(o)} ${i === n.correct_index ? '✔' : ''}</li>`).join('')}</ul>
+      ${sincePub()}
       <button class="btn sun" data-a="open" data-id="${n.id}" style="font-size:22px">📣 פרסם שאלה</button>
       <div class="row" style="margin-top:10px">
         <button class="btn ghost small" data-a="edit" data-id="${n.id}">✏️ עריכה</button>
         <button class="btn ghost small" data-a="guide" data-id="${n.id}">🎤 הדרכה</button>
       </div>
-      ${n.guide_location ? `<div class="guide-loc small"><b>📍</b> ${esc(n.guide_location)}</div>` : ''}
+      ${n.guide_location && !n.route_meta?.photos ? `<div class="guide-loc small"><b>📍</b> ${esc(n.guide_location)}</div>` : ''}
       <span class="vis ${n.guide_visibility || 'topic'}">${VIS[n.guide_visibility] || VIS.topic}</span>
       ${others.length ? `<label for="pick">או לבחור שאלה אחרת (${others.length} נותרו):</label>
-      <select id="pick"><option value="">— בחירה —</option>${others.map(q => `<option value="${q.id}">${esc(q.text.slice(0, 70))}</option>`).join('')}</select>` : ''}
-    </div>`;
+      <select id="pick"><option value="">— בחירה —</option>${others.map(q => `<option value="${q.id}">${q.selection === 'SPARE' ? '🔁 ' : ''}${esc(qt(q).text.slice(0, 70))}</option>`).join('')}</select>` : ''}
+    </div>${sparesCard()}`;
+  }
+
+  // Tiroir des questions de remplacement : désactivées par défaut, activables pour CETTE partie
+  function sparesCard() {
+    const sp = S.questions.filter(q => q.selection === 'SPARE');
+    if (!sp.length) return '';
+    return `<details class="spares" ${sp.some(q => q.enabled && !q.used) ? 'open' : ''}><summary>🔁 שאלות חלופיות (${sp.length}) — כבויות כברירת מחדל</summary>
+      ${sp.map(q => { const c = qt(q); return `<div class="spare">
+        ${routeBlock(q)}
+        <div style="font-weight:700" ${dirOf(c.lang)}>${esc(c.text)}</div>
+        <div class="small" style="color:var(--ok);font-weight:700" ${dirOf(c.lang)}>✔ ${esc(c.options[q.correct_index])}</div>
+        <div class="row" style="margin-top:8px">
+          ${q.used ? '<span class="badge used">הוצגה</span>'
+            : `<button class="btn ${q.enabled ? 'ghost' : 'ok'} small" data-a="spare" data-id="${q.id}" data-on="${q.enabled ? 0 : 1}">${q.enabled ? '⏸️ כיבוי' : '▶️ הפעלה למשחק הזה'}</button>`}
+          ${q.enabled && !q.used && S.game.phase !== 'open' && S.game.status !== 'finished' ? `<button class="btn sun small" data-a="open" data-id="${q.id}">📣 פרסם</button>` : ''}
+        </div></div>`; }).join('')}
+    </details>`;
   }
 
   function podium(lb) {
@@ -218,7 +326,7 @@
   function lbList(rows, opts = {}) {
     return `<ul class="lb">${rows.map(r => `<li class="p${r.rank}">
       ${opts.online ? `<span class="off ${r.online ? 'on' : ''}" title="${r.online ? 'מחובר' : 'לא מחובר'}"></span>` : ''}
-      <span class="pos">${r.rank}</span><span class="nm">${esc(r.name)}</span>
+      <span class="pos">${r.rank}</span><span class="nm" dir="auto">${esc(r.name)}</span>
       <span class="cr">${r.correct}/${r.answered} ✔</span><span class="sc">${r.score}</span>
       ${opts.remove ? `<button class="iconbtn" data-a="rm" data-id="${r.player_id}" data-name="${esc(r.name)}" title="הסר">✖</button>` : ''}</li>`).join('') || '<li class="muted">אין עדיין משתתפים</li>'}</ul>`;
   }
@@ -230,26 +338,30 @@
     if (g.status === 'finished') {
       html += `<div class="card center"><div class="trophy">🏆</div><h1>הזוכים הגדולים!</h1>${podium(S.leaderboard)}
         <p>${S.stats.players} משתתפים · ${S.stats.questions} שאלות · ${S.stats.correct_pct ?? 0}% נכונות</p>
-        <div class="row"><button class="btn ghost small" data-a="resume">↩️ המשך משחק</button><button class="btn small" data-a="export">⬇️ ייצוא</button></div></div>
+        <div class="row"><button class="btn ghost small" data-a="resume">↩️ המשך משחק</button><button class="btn small" data-a="export">⬇️ ייצוא</button></div>
+        <button class="btn sun small" data-a="newgame" style="margin-top:10px">🔄 משחק חדש (בחירת גרסה V1 / V2)</button></div>
         <div class="card"><h2>דירוג המשתתפים 🏆</h2>${lbList(S.leaderboard)}</div>`;
       app.innerHTML = html; return;
     }
     if (g.paused) html += `<div class="card center" style="background:#fff6e8"><h2>⏸️ המשחק מושהה</h2><button class="btn ok" data-a="unpause">▶️ המשך</button></div>`;
+    const cc = c ? qt(c) : null;
 
     if (c && g.phase === 'open') {
       html += `<div class="card">
         <div class="qhead"><div class="meta"><span class="cat">שאלה ${c.seq} · פתוחה</span>${c.closes_at ? '' : '<span class="small muted">ללא הגבלת זמן</span>'}</div>
         ${c.closes_at ? MDL.ringHtml() : ''}</div>
-        <div class="question-text">${esc(c.text)}</div>
+        <div class="question-text" ${dirOf(cc.lang)}>${esc(cc.text)}</div>
         <div style="font-size:30px;font-weight:900;text-align:center;color:var(--sea)">${c.answers} / ${S.online} ענו</div>
         ${bars(c, true)}
-        <button class="btn bad" data-a="close" style="margin-top:14px;font-size:22px">⏹️ סגור שאלה</button>
-        <button class="btn ghost small" data-a="reveal" style="margin-top:10px">סגור וחשוף מיד</button>
+        <p class="timerline" id="closewait"></p>
+        <button class="btn bad" data-a="close" id="closebtn" style="margin-top:8px;font-size:22px">⏹️ סגור שאלה</button>
+        <button class="btn ghost small" data-a="reveal" id="revealbtn" style="margin-top:10px">סגור וחשוף מיד</button>
+        <button class="btn ghost small" data-a="force" id="forcebtn" style="margin-top:10px;color:var(--bad)">⚠️ סגירת חירום (לפני הזמן המינימלי)</button>
       </div>`;
     } else if (c && g.phase === 'closed') {
       html += `<div class="card">
         <span class="cat">שאלה ${c.seq} · סגורה</span>
-        <div class="question-text">${esc(c.text)}</div>
+        <div class="question-text" ${dirOf(cc.lang)}>${esc(cc.text)}</div>
         <div style="font-size:22px;font-weight:800;text-align:center">${c.answers} תשובות התקבלו</div>
         ${bars(c, true)}
         <button class="btn ok" data-a="reveal" style="margin-top:14px;font-size:22px">👁️ חשוף תשובה</button>
@@ -257,15 +369,16 @@
     } else if (c && g.phase === 'revealed') {
       html += `<div class="card">
         <span class="cat">שאלה ${c.seq} · נחשפה</span>
-        <div class="question-text">${esc(c.text)}</div>
+        <div class="question-text" ${dirOf(cc.lang)}>${esc(cc.text)}</div>
         ${bars(c, true)}
-        ${c.explanation ? `<div class="explain"><b>הסבר:</b> ${esc(c.explanation)}</div>` : ''}
+        ${cc.explanation ? `<div class="explain" ${dirOf(cc.lang)}><b>הסבר:</b> ${esc(cc.explanation)}</div>` : ''}
+        <p class="timerline" id="revtimer"></p>
         <button class="btn ok" data-a="guide" data-id="${c.question_id}" style="margin-top:12px">🎤 ההדרכה שלי למיקרופון</button>
       </div>
       <div class="card"><h2>דירוג המשתתפים 🏆</h2>${lbList(S.leaderboard.slice(0, 5))}</div>`;
     }
     if (g.phase !== 'open') html += nextCard();
-    if (!g.paused && g.phase !== 'open') html += `<div class="row"><button class="btn ghost small" data-a="pause">⏸️ השהיה</button><button class="btn ghost small" data-a="finish">🏁 סיום המשחק</button></div>`;
+    if (!g.paused && g.phase !== 'open') html += `<div class="row" style="margin-top:12px"><button class="btn ghost small" data-a="pause">⏸️ השהיה</button><button class="btn ghost small" data-a="finish">🏁 סיום המשחק</button></div>`;
     app.innerHTML = html;
     const pick = document.getElementById('pick');
     if (pick) pick.addEventListener('change', () => { pickId = +pick.value || null; lastHash = ''; render(); });
@@ -274,26 +387,85 @@
   function renderQuestions() {
     const qs = S.questions;
     const usedN = qs.filter(q => q.used).length;
-    app.innerHTML = `<div class="card">
+    app.innerHTML = bankChip() + `<div class="card">
       <div class="row" style="align-items:center"><h2 style="margin:0">בנק השאלות</h2><span class="muted small" style="text-align:left">${qs.length} שאלות · ${usedN} הוצגו</span></div>
       <button class="btn sun small" data-a="newq" style="margin:12px 0">➕ שאלה חדשה</button>
       ${qs.map((q, i) => `<div class="qitem ${q.used ? 'used' : ''}">
         <span class="num">${i + 1}</span>
         <div class="body">
-          <div class="txt">${esc(q.text)}</div>
+          <div class="txt" ${dirOf(qt(q).lang)}>${esc(qt(q).text)}</div>
           <div class="small muted" style="margin-top:4px">${esc(q.category)} · ${DIFF[q.difficulty]} · ⏱️ ${timeLabel(q.time_limit_sec)} · ${q.kind === 'tf' ? 'נכון/לא נכון' : q.options.length + ' תשובות'}
-            ${q.used ? '<span class="badge used">הוצגה</span>' : ''} ${q.is_demo ? '<span class="badge demo">הדגמה</span>' : ''}</div>
-          <div class="small" style="color:var(--ok);font-weight:700;margin-top:2px">✔ ${esc(q.options[q.correct_index])}</div>
+            ${q.route_meta && q.route_meta.photoLocalTime ? ' · 🕐 ' + esc(q.route_meta.photoLocalTime) : ''}
+            ${q.used ? '<span class="badge used">הוצגה</span>' : ''} ${q.is_demo ? '<span class="badge demo">הדגמה</span>' : ''}
+            ${q.selection === 'SPARE' ? `<span class="badge demo">🔁 חלופית${q.enabled ? ' · פעילה' : ' · כבויה'}</span>` : ''}</div>
+          <div class="small" style="color:var(--ok);font-weight:700;margin-top:2px" ${dirOf(qt(q).lang)}>✔ ${esc(qt(q).options[q.correct_index])}</div>
           <div class="acts">
             <button class="iconbtn" data-a="up" data-i="${i}" ${i === 0 ? 'disabled' : ''} title="למעלה">▲</button>
             <button class="iconbtn" data-a="down" data-i="${i}" ${i === qs.length - 1 ? 'disabled' : ''} title="למטה">▼</button>
             <button class="iconbtn" data-a="edit" data-id="${q.id}" title="עריכה">✏️</button>
             <button class="iconbtn" data-a="guide" data-id="${q.id}" title="דף הדרכה">🎤</button>
             <button class="iconbtn" data-a="del" data-id="${q.id}" title="מחיקה">🗑️</button>
-            ${!q.used && S.game && S.game.phase !== 'open' && S.game.status !== 'finished' ? `<button class="btn sun small" style="width:auto;flex:none;padding:8px 14px" data-a="open" data-id="${q.id}">📣 פרסם</button>` : ''}
+            ${!q.used && q.enabled !== false && S.game && S.game.phase !== 'open' && S.game.status !== 'finished' ? `<button class="btn sun small" style="width:auto;flex:none;padding:8px 14px" data-a="open" data-id="${q.id}">📣 פרסם</button>` : ''}
           </div>
         </div></div>`).join('')}
     </div>`;
+  }
+
+  // ------------------------------------------------------------ Galerie du parcours (fiches privées)
+  // Une fiche par photo, dans l'ordre du trajet. On avance de photo en photo SANS rien envoyer aux élèves.
+  function renderGallery() {
+    if (!P || !P.photos) { app.innerHTML = `<div class="card center muted">טוען תמונות…</div>`; if (!loadPhotos._busy) loadPhotos(); return; }
+    const ph = P.photos, col = P.collection;
+    if (!ph.length) { app.innerHTML = `<div class="card center"><h2>אין תמונות בגלריה</h2></div>`; return; }
+    gpos = Math.max(0, Math.min(ph.length - 1, gpos));
+    const p = ph[gpos];
+    const lang = p.anecdote && p.anecdote[alang] ? alang : 'he';
+    const qs = (p.question_keys || []).map(k => (S.questions || []).find(q => q.ext_key === k)).filter(Boolean);
+    const otherBank = (p.question_keys || []).length && !qs.length;
+    const canOpen = S.game && S.game.phase !== 'open' && S.game.status !== 'finished';
+    app.innerHTML = `
+      <div class="card">
+        <div class="row" style="align-items:center;justify-content:space-between">
+          <h2 style="margin:0">📷 ${esc(col && col.label ? (col.label.he || col.code) : '')}</h2>
+          <div style="flex:none;min-width:150px">${langSeg()}</div>
+        </div>
+        ${P.collections && P.collections.length > 1 ? `<select id="gcol" style="margin-top:10px">${P.collections.map(x =>
+          `<option value="${esc(x.code)}" ${col && x.code === col.code ? 'selected' : ''}>${esc(x.label.he || x.code)} (${x.count})</option>`).join('')}</select>` : ''}
+        <p class="small muted" style="margin:6px 0 0">דפדוף בין התמונות לא שולח שום דבר למשתתפים. השעות — שעת צילום משוערת (צילומי מסך), לא GPS.</p>
+        <div class="strip" id="strip">${ph.map((x, i) => `<button type="button" data-a="gpos" data-i="${i}" class="${i === gpos ? 'on' : ''}" title="${esc(x.subject)}">
+          <img src="${photoUrl(x.file, true, col && col.code)}" alt="" loading="lazy"><span class="n">${x.ord}</span>${(x.question_keys || []).length ? '<span class="q">❓</span>' : ''}</button>`).join('')}</div>
+      </div>
+      <div class="card">
+        <div class="row" style="align-items:center;justify-content:space-between">
+          <span class="cat">תמונה ${p.ord} / ${ph.length}</span><span class="small muted">🕐 ${esc(p.taken_at)} (משוער)</span>
+        </div>
+        <img class="ph" style="margin-top:10px;aspect-ratio:auto" src="${photoUrl(p.file, false, col && col.code)}" alt="${esc(p.subject)}">
+        <div style="font-weight:800;font-size:18px;margin-top:10px" dir="ltr" lang="fr">${esc(p.subject)}</div>
+        <div class="metagrid"><span>${SIDE[p.side] || esc(p.side)}</span><span class="conf-${esc(p.confidence)}">${CONF[p.confidence] || esc(p.confidence)}</span>
+          ${(p.question_keys || []).length ? '' : '<span>ללא שאלה — דף מידע בלבד</span>'}</div>
+        <button class="btn ${showAnec ? 'ghost' : 'ok'} small" data-a="anec" style="margin-top:6px">ℹ️ ${ANEC_LBL[alang]}</button>
+        ${showAnec ? `<div class="anec" ${dirOf(lang)}>${esc(p.anecdote[lang] || '')}</div>` : ''}
+        ${qs.map(q => { const c = qt(q); return `<div class="spare" style="background:var(--foam)">
+          <div class="small" style="font-weight:800">❓ שאלה קשורה ${q.selection === 'SPARE' ? '(חלופית)' : ''} ${q.used ? '· הוצגה' : ''}</div>
+          <div ${dirOf(c.lang)} style="font-weight:700">${esc(c.text)}</div>
+          <div class="row" style="margin-top:8px">
+            <button class="btn ghost small" data-a="guide" data-id="${q.id}">🎤 הדרכה</button>
+            ${!q.used && q.enabled && canOpen ? `<button class="btn sun small" data-a="open" data-id="${q.id}">📣 פרסם שאלה</button>` : ''}
+            ${!q.used && !q.enabled ? `<button class="btn ok small" data-a="spare" data-id="${q.id}" data-on="1">▶️ הפעלת החלופית</button>` : ''}
+          </div></div>`; }).join('')}
+        ${otherBank ? '<p class="small muted">לתמונה יש שאלה בגרסה V2 — היא זמינה רק במשחק V2.</p>' : ''}
+        <div class="navrow">
+          <button class="btn ghost" data-a="gprev" ${gpos === 0 ? 'disabled' : ''}>→ הקודמת</button>
+          <button class="btn" data-a="gnext" ${gpos === ph.length - 1 ? 'disabled' : ''}>הבאה ←</button>
+        </div>
+      </div>
+      ${col && col.notes && col.notes.length ? `<details class="card"><summary style="font-weight:800;cursor:pointer">🗒️ נקודות ציון נוספות מסיכום המדריך (לא מאומתות)</summary>
+        <ul class="notes small">${col.notes.map(n => `<li ${dirOf(n[alang] ? alang : 'he')}>${esc(n[alang] || n.he)} <span class="muted">· ${esc(n.status || '')}</span></li>`).join('')}</ul>
+        ${col.cautions && col.cautions.length ? `<ul class="small muted" dir="ltr" lang="en">${col.cautions.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+        <p class="small muted">חזור (צד שמאל): ייתווסף כאוסף נפרד כשיהיו תמונות — לא הומצאו תמונות.</p></details>` : ''}`;
+    const sel = document.getElementById('gcol');
+    if (sel) sel.addEventListener('change', () => { gcol = sel.value; loadPhotos(sel.value); });
+    const on = document.querySelector('#strip .on'); if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
   }
 
   function renderBoard() {
@@ -323,12 +495,19 @@
         <label>⏱️ זמן ברירת מחדל לכל שאלה (שנ׳, 0 = ללא הגבלה)</label>
         <input type="number" name="default_time_limit_sec" value="${g.default_time_limit_sec}" min="0" max="600">
         <p class="small muted">חל על כל שאלה שלא הוגדר לה זמן משלה. בונוס מלא בתוך זמן החסד, ואז יורד בהדרגה עד 0 בסוף זמן השאלה.</p>
+        <label>🔒 זמן תשובה מינימלי (שנ׳, לא פחות מ-30)</label>
+        <input type="number" name="min_answer_sec" value="${g.min_answer_sec}" min="30" max="600">
+        <p class="small muted">נאכף בשרת: אי אפשר לסגור או לחשוף שאלה לפני הזמן הזה (מלבד ״סגירת חירום״ עם אישור). אף שאלה לא נסגרת לפני הזמן המינימלי.</p>
         <button class="btn small">💾 שמירה</button></form>` : ''}
       <div class="card"><h2>ניהול המשחק</h2>
+        ${S.game ? `<p>גרסה במשחק הנוכחי: <span class="bankchip ${S.game.bank === 'V2' ? 'v2' : ''}">${esc(bankLabel(S.game.bank))}</span></p>
+        <p class="small muted">את הגרסה בוחרים רק ביצירת משחק חדש — אי אפשר להחליף אותה באמצע משחק.</p>` : ''}
+        <label>שפת התוכן במסך המנהל (שאלות, תסריטים, אנקדוטות)</label>${langSeg()}
+        <div style="height:12px"></div>
         <button class="btn small" data-a="export" style="margin-bottom:10px">⬇️ ייצוא תוצאות (CSV)</button>
         ${g.status === 'finished' ? '<button class="btn ghost small" data-a="resume" style="margin-bottom:10px">↩️ המשך משחק שהסתיים</button>'
           : '<button class="btn ghost small" data-a="finish" style="margin-bottom:10px">🏁 סיום המשחק</button>'}
-        <button class="btn bad small" data-a="newgame" style="margin-bottom:10px">🔄 משחק חדש (איפוס משתתפים וניקוד)</button>
+        <button class="btn bad small" data-a="newgame" style="margin-bottom:10px">🔄 משחק חדש — בחירת גרסה V1 / V2 (איפוס משתתפים וניקוד)</button>
         <button class="btn ghost small" data-a="logout">יציאה</button>
       </div>`;
     const sf = document.getElementById('sf');
@@ -341,8 +520,32 @@
 
   function tickTimer() {
     const c = S && S.current;
-    if (!c || !S.game || S.game.phase !== 'open') return;
+    if (!c || !S.game) return;
+    const now = Date.now() + offset;
+    const sp = document.getElementById('sincepub');
+    if (sp && c.opened_at) {
+      const ms = now - Date.parse(c.opened_at);
+      sp.querySelector('b').textContent = mmss(ms);
+      sp.style.color = ms >= 120000 ? 'var(--ok)' : '';
+    }
+    if (S.game.phase === 'revealed') {
+      const rt = document.getElementById('revtimer');
+      if (rt && c.revealed_at) {
+        const ms = now - Date.parse(c.revealed_at);
+        rt.innerHTML = `🎤 מאז החשיפה: <b>${mmss(ms)}</b> · מיני-הדרכה מומלצת 20–40 שנ׳ — המעבר לשאלה הבאה רק בידיים שלך`;
+      }
+      return;
+    }
+    if (S.game.phase !== 'open') return;
     MDL.updateRing(c, offset);
+    // temps de réponse minimal (imposé aussi par le serveur) : fermeture normale bloquée avant
+    const left = c.can_close_at ? Date.parse(c.can_close_at) - now : 0;
+    const cw = document.getElementById('closewait');
+    if (cw) cw.innerHTML = left > 0 ? `🔒 אפשר לסגור בעוד <b>${Math.ceil(left / 1000)}</b> שנ׳ (מינימום ${S.game.min_answer_sec} שנ׳ לתשובה)` : '';
+    const cb = document.getElementById('closebtn'), rb = document.getElementById('revealbtn'), fb = document.getElementById('forcebtn');
+    if (cb) { cb.disabled = left > 0; cb.style.opacity = left > 0 ? .45 : 1; }
+    if (rb) rb.disabled = left > 0;
+    if (fb) fb.classList.toggle('hidden', !(left > 0));
   }
   setInterval(tickTimer, 250);
 
@@ -367,7 +570,13 @@
     const cur = S && S.current && S.current.question_id === G.qid ? S.current : null;
     const src = q || cur;   // question supprimée de la banque : on garde au moins le corrigé
     if (!src) { closeGuide(); return; }
-    const text = q ? (G.mode === 'long' ? q.guide_long : q.guide_short) : '';
+    // V2 : script micro dans la langue admin choisie ; sinon court / long (V1)
+    const v2script = q && q.guide_i18n && Object.keys(q.guide_i18n).length ? gtr(q).script : '';
+    const hasLong = !!(q && q.guide_long);
+    const text = q ? (v2script && G.mode !== 'long' ? v2script : (G.mode === 'long' ? q.guide_long : q.guide_short)) : '';
+    const tLang = v2script && G.mode !== 'long' ? gLang(q) : 'he';
+    const sc = qt(src);
+    const linked = photosOfQ(q);
     const sources = (q && Array.isArray(q.guide_sources)) ? q.guide_sources : [];
     const vis = (q && q.guide_visibility) || 'topic';
     const total = cur && cur.counts ? cur.counts.reduce((a, b) => a + b, 0) : 0;
@@ -376,22 +585,28 @@
     root.innerHTML = `<section class="guide ${full ? 'full' : ''}" id="guide" style="--gfs:${gfs}px" dir="rtl" lang="he">
       <div class="guide-top">
         <h2>🎤 ההדרכה שלי למיקרופון</h2>
+        <div style="flex:none;min-width:140px">${langSeg()}</div>
         <button class="iconbtn" data-g="full" title="מסך מלא">⛶</button>
         <button class="iconbtn" data-g="close" title="סגירה">✖</button>
       </div>
       <div class="guide-meta">
-        <div class="guide-q">${src.seq ? 'שאלה ' + src.seq + ' · ' : ''}${esc(src.text)}</div>
-        <span class="guide-ans">✔ ${esc(src.options[src.correct_index])}</span>
+        <div class="guide-q" ${dirOf(sc.lang)}>${src.seq ? 'שאלה ' + src.seq + ' · ' : ''}${esc(sc.text)}</div>
+        <span class="guide-ans" ${dirOf(sc.lang)}>✔ ${esc(sc.options[src.correct_index])}</span>
         ${cur && total ? `<span class="small muted">&nbsp; ${right}/${total} ענו נכון</span>` : ''}
         <span class="vis ${vis}">${VIS[vis] || VIS.topic}</span>
         ${q && q.guide_location ? `<div class="guide-loc"><b>📍 מתי ואיפה:</b> ${esc(q.guide_location)}</div>` : ''}
       </div>
-      <div class="seg" role="tablist">
-        <button data-g="short" class="${G.mode === 'short' ? 'on' : ''}">הסבר קצר · 30 שנ׳</button>
+      ${!v2script || hasLong ? `<div class="seg" role="tablist">
+        <button data-g="short" class="${G.mode === 'short' ? 'on' : ''}">${v2script ? '🎤 מה להגיד באוטובוס · 20–40 שנ׳' : 'הסבר קצר · 30 שנ׳'}</button>
         <button data-g="long" class="${G.mode === 'long' ? 'on' : ''}">סיפור מורחב · 1–3 דק׳</button>
-      </div>
+      </div>` : ''}
       <div class="guide-body" id="guide-body">
-        <div class="guide-text">${text ? paras(text) : '<p class="guide-empty">אין עדיין טקסט הדרכה לשאלה הזו. אפשר להוסיף אותו בעריכת השאלה (✏️).</p>'}</div>
+        ${v2script && G.mode !== 'long' ? '<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">🎤 מה להגיד באוטובוס · 20–40 שנ׳</div>' : ''}
+        <div class="guide-text" ${dirOf(tLang)}>${text ? paras(text) : '<p class="guide-empty">אין עדיין טקסט הדרכה לשאלה הזו. אפשר להוסיף אותו בעריכת השאלה (✏️).</p>'}</div>
+        ${q && q.route_meta && q.route_meta.photos ? `<div class="guide-box prac">${routeBlock(q)}</div>` : ''}
+        ${sc.explanation ? `<div class="guide-box fact" ${dirOf(sc.lang)}><b class="h">💬 ההסבר שהמשתתפים רואים</b>${paras(sc.explanation)}</div>` : ''}
+        ${linked.length ? `<button class="btn ${G.anec ? 'ghost' : 'ok'} small" data-g="anec" style="margin-top:14px">ℹ️ ${ANEC_LBL[alang]} (${linked.length})</button>
+          ${G.anec ? linked.map(p => `<div class="anec" ${dirOf(p.anecdote[alang] ? alang : 'he')}><b>📷 #${p.ord}</b> ${esc(p.anecdote[alang] || p.anecdote.he)}</div>`).join('') : ''}` : ''}
         ${q && q.guide_fact ? `<div class="guide-box fact"><b class="h">💡 הידעת?</b>${paras(q.guide_fact)}</div>` : ''}
         ${q && q.guide_practical && G.mode === 'long' ? `<div class="guide-box prac"><b class="h">🧭 מידע מעשי (לבדוק לפני ביקור)</b>${paras(q.guide_practical)}</div>` : ''}
         ${sources.length ? `<details class="guide-src"><summary>📚 מקורות (${sources.length})</summary><ol>${sources.map(s =>
@@ -418,6 +633,7 @@
         else if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
         break;
       case 'close': closeGuide(); break;
+      case 'anec': G.anec = !G.anec; renderGuide(); break;
       case 'next':
         closeGuide(); view = 'live'; setTab();
         setTimeout(() => { const n = document.querySelector('[data-a=open]'); if (n) n.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
@@ -435,12 +651,49 @@
         <div class="acts"><button class="btn small ok" style="width:auto" data-a="guide" data-id="${q.id}">🎤 הדרכה</button></div></div></div>`).join('')}</div>`;
   }
 
+  // ------------------------------------------------------------ Nouvelle partie : choix V1 / V2
+  function newGameModal() {
+    const banks = (S && S.banks) || [{ code: 'V1', label: { he: 'V1 — קורס' }, main: 0, spare: 0 }];
+    let pick = (S && S.game && S.game.bank) || 'V1';
+    const root = document.getElementById('modal-root');
+    const draw = () => {
+      root.innerHTML = `<div class="modal"><form class="sheet" id="ngf" autocomplete="off">
+        <div class="row" style="align-items:center"><h2 style="margin:0">🔄 משחק חדש</h2><button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
+        <p class="small" style="color:var(--bad);font-weight:700">המשתתפים והניקוד של המשחק הנוכחי יאופסו (התוצאות הקודמות נשמרות בבסיס הנתונים).</p>
+        <label>איזו גרסה משחקים? (גרסה אחת בלבד למשחק)</label>
+        <div class="bankpick">${banks.map(b => `<button type="button" class="bankopt ${b.code === pick ? 'on' : ''}" data-bank="${esc(b.code)}">
+          <b>${esc(b.label.he || b.code)}</b><span class="small muted">${b.main} שאלות${b.spare ? ` + ${b.spare} חלופיות (כבויות)` : ''}</span></button>`).join('')}</div>
+        <label>שם המשחק</label>
+        <input type="text" name="title" value="${esc(pick === 'V2' ? 'מסלול התמונות — הלוך' : 'מורה דרך LIVE')}">
+        <button class="btn sun" style="margin-top:14px">✔ יצירת משחק חדש</button></form></div>`;
+    };
+    draw();
+    root.onclick = e => {
+      const b = e.target.closest('[data-bank]');
+      if (b) {                                   // pas de redessin : évite de relancer l'animation
+        pick = b.dataset.bank;
+        root.querySelectorAll('[data-bank]').forEach(x => x.classList.toggle('on', x === b));
+        root.querySelector('[name=title]').value = pick === 'V2' ? 'מסלול התמונות — הלוך' : 'מורה דרך LIVE';
+        return;
+      }
+      if (e.target.closest('[data-x]')) { root.innerHTML = ''; root.onclick = null; lastHash = ''; render(); }
+    };
+    root.onsubmit = async e => {
+      e.preventDefault();
+      const title = e.target.title.value;
+      root.innerHTML = ''; root.onclick = root.onsubmit = null;
+      await act('admin_new_game', { p_title: title, p_bank: pick }, 'משחק חדש נוצר ✔ — ' + bankLabel(pick));
+      pickId = null; P = null; view = 'live'; setTab();
+    };
+  }
+
   // ------------------------------------------------------------ Éditeur
   function editor(q) {
     q = q || { kind: 'mcq', text: '', options: ['', '', '', ''], correct_index: null, explanation: '', category: 'כללי', difficulty: 2, time_limit_sec: null };
     const opts = q.kind === 'tf' ? ['', '', '', ''] : [0, 1, 2, 3].map(i => q.options[i] || '');
     const canPublish = S.game && S.game.phase !== 'open' && S.game.status !== 'finished' && !q.used;
     const root = document.getElementById('modal-root');
+    root.onclick = root.onsubmit = null;           // pas d'écouteurs résiduels du choix de partie
     root.innerHTML = `<div class="modal"><form class="sheet" id="qf" autocomplete="off">
       <div class="row" style="align-items:center"><h2 style="margin:0">${q.id ? 'עריכת שאלה' : 'שאלה חדשה'}</h2>
         <button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
@@ -578,13 +831,22 @@
       case 'reveal': act('admin_reveal'); break;
       case 'pause': act('admin_pause', { p_paused: true }); break;
       case 'unpause': act('admin_pause', { p_paused: false }); break;
-      case 'finish': if (confirm('לסיים את המשחק ולהציג את הזוכים?')) act('admin_finish'); break;
-      case 'resume': act('admin_resume_game'); break;
-      case 'newgame':
-        if (confirm('ליצור משחק חדש? המשתתפים והניקוד הנוכחיים יאופסו (השאלות נשמרות).')) {
-          const t = prompt('שם המשחק:', 'מורה דרך LIVE');
-          if (t !== null) act('admin_new_game', { p_title: t }, 'משחק חדש נוצר ✔');
+      case 'finish':
+        if (confirm('לסיים את המשחק ולהציג את הזוכים?')) {
+          const r = await act('admin_finish');
+          if (r && r.error === 'too_early' && confirm('השאלה פתוחה פחות מהזמן המינימלי. לסיים בכל זאת (חירום)?')) act('admin_finish', { p_force: true });
         } break;
+      case 'force':
+        if (confirm('סגירת חירום: לסגור את השאלה לפני הזמן המינימלי?\nמשתתפים שעוד לא ענו לא יוכלו לענות.')) act('admin_close_question', { p_force: true }, 'השאלה נסגרה (חירום)');
+        break;
+      case 'spare': act('admin_toggle_spare', { p_question_id: id, p_on: b.dataset.on === '1' }, b.dataset.on === '1' ? 'השאלה החלופית הופעלה ✔' : 'השאלה החלופית כובתה'); break;
+      case 'gpos': gpos = +b.dataset.i; showAnec = false; store.set('mdl_gal_pos', gpos); lastHash = ''; render(); window.scrollTo(0, 0); break;
+      case 'gprev': case 'gnext':
+        gpos += a === 'gnext' ? 1 : -1; showAnec = false; store.set('mdl_gal_pos', gpos); lastHash = ''; render();
+        break;
+      case 'anec': showAnec = !showAnec; lastHash = ''; render(); break;
+      case 'resume': act('admin_resume_game'); break;
+      case 'newgame': newGameModal(); break;
       case 'edit': editor(q); break;
       case 'newq': editor(null); break;
       case 'del': if (confirm('למחוק את השאלה?\n' + q.text)) act('admin_delete_question', { p_id: id }, 'נמחקה'); break;
@@ -601,6 +863,13 @@
         break;
       case 'logout': store.del(KEY); token = null; renderLogin(); break;
     }
+  });
+
+  // langue des contenus admin (questions, scripts micro, anecdotes) — boutons présents dans plusieurs écrans
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-alang]'); if (!b) return;
+    alang = b.dataset.alang; store.set('mdl_admin_lang', alang);
+    lastHash = ''; if (S) render(); if (G.open) renderGuide();
   });
 
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});

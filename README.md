@@ -132,6 +132,82 @@ Corrections apportées aux questions d'origine : Q20 (Garrod a commencé en **19
 Q32 reformulée (« que trouve-t-on dans la grotte du Tabun ? ») pour ne pas répéter la réponse de Q19 ;
 Q5 option « מערב » remplacée par « משני הצדדים » (« ouest » était ambigu).
 
+## V2 — « מסלול התמונות — הלוך » (parcours photographié, 4 langues)
+
+Deux **banques de questions indépendantes**, jamais mélangées :
+
+| Banque | Contenu |
+|---|---|
+| **V1 — קורס** | les 34 questions du trajet (inchangées) |
+| **V2 — מסלול התמונות — הלוך** | **6 questions principales** dans l'ordre du trajet + **2 questions de remplacement** (désactivées par défaut), en hébreu / français / anglais / russe, et **32 fiches photo** |
+
+- **Choix de la version** : uniquement en créant une partie (⚙️ הגדרות → « משחק חדש » → V1 ou V2).
+  Impossible de changer de banque en cours de partie ; le serveur refuse de publier une question
+  d'une autre banque (`wrong_bank`). Les parties, joueurs et réponses précédents sont conservés.
+- **Questions de remplacement** : tiroir « 🔁 שאלות חלופיות » sous la question suivante ; il faut
+  les activer pour la partie en cours avant de pouvoir les publier (`spare_disabled` sinon).
+- **Aucune publication automatique** : les heures des photos (11:04 → 11:19, le 18/10/2026) sont
+  des repères de lieu **indicatifs** (captures d'écran, pas de GPS EXIF), jamais des horaires.
+  Une question n'apparaît que si le guide appuie sur « 📣 פרסם שאלה ».
+
+### Temps de réponse
+- **Minimum 30 s réelles**, comptées par le serveur depuis la publication : `admin_close_question`,
+  `admin_reveal` et `admin_finish` renvoient `too_early` avant ce délai. Dans l'admin, le bouton
+  « סגור שאלה » est verrouillé avec un compte à rebours. Seule une **« סגירת חירום »** (confirmation,
+  `p_force`) permet de fermer avant ; elle est tracée (`forced_close`, visible dans l'export).
+- **45 s par défaut** en V2 (réglable, jamais sous le minimum ; le minimum lui-même est réglable ≥ 30 s).
+- Après la révélation, le panneau micro s'ouvre ; un chronomètre « מאז החשיפה » aide à tenir
+  **20–40 s** de mini-guidage, et « מאז פרסום השאלה הקודמת » rappelle l'objectif de **≥ 2 min**
+  entre deux questions. Ce sont des repères : le passage à la suivante reste entièrement manuel.
+
+### Élèves : 4 langues
+- Au premier passage, l'élève **choisit sa langue** (עברית / Français / English / Русский), puis
+  tape son nom. Bouton 🌐 en haut pour changer à tout moment — **même joueur, mêmes points**.
+- Hébreu en RTL, français/anglais/russe en LTR. Les noms restent tels que tapés.
+- **Une seule partie** pour toutes les langues : même identifiant de question, même ordre des
+  réponses (donc même bonne réponse), même chrono, même calcul des points, même classement.
+  Le serveur envoie à chaque élève le texte dans sa langue (traductions déjà dans les données,
+  aucune traduction automatique). Les questions V1, non traduites, s'affichent en hébreu avec une
+  mention « disponible en hébreu seulement ».
+
+### Admin
+- Sélecteur **עב / FR / EN / RU** pour lire les questions, les scripts micro et les anecdotes
+  (hébreu par défaut).
+- Pour chaque question V2 : photo de repérage, heure indicative, secteur, côté du bus (avec degré
+  de certitude), avertissement de prudence, bonne réponse, explication, **🎤 מה להגיד באוטובוס**
+  (20–40 s) et anecdotes des photos liées derrière « ℹ️ מידע נוסף ».
+- Onglet **📷 מסלול** : galerie / timeline des 32 photos dans l'ordre. On avance de photo en
+  photo **sans rien envoyer aux élèves** ; chaque fiche a son numéro, sa miniature, son heure
+  indicative, son côté, sa fiabilité et son anecdote (bouton « מידע נוסף »). 23 photos sur 32 ne
+  sont liées à aucune question (fiches d'information seulement). Les repères facultatifs de la note
+  WhatsApp du guide y sont listés comme **non vérifiés** (`content/v2/reperes_whatsapp_et_securite.md`).
+- **Retour** : la base prévoit des collections séparées (`mdl.route_collections`) ; un futur
+  `RETOUR_V2` s'ajoutera sans toucher à l'aller. Aucune photo du retour n'a été inventée.
+
+### Confidentialité
+- Scripts micro, anecdotes, métadonnées de trajet et photos liées ne sont lus **que** par des RPC
+  admin protégées par jeton (`admin_state`, `admin_photos`). Les tables restent dans le schéma privé.
+- Les traductions copiées dans la question publiée passent par une **liste blanche** (`mdl.pub_i18n` :
+  texte, réponses, explication, catégorie) ; `get_state` ne renvoie ni bonne réponse ni explication
+  avant la révélation, dans aucune langue (tests automatiques).
+- Photos : seules des **versions recadrées** (photo seule, sans la barre d'infos du téléphone, le
+  modèle, le chemin de fichier ni la mini-carte) sont publiées dans `public/photos/aller-v2/`
+  (+ miniatures `thumbs/`, ~ 2,7 Mo au total, chargement différé). Les captures d'origine ne sont
+  **pas** dans le dépôt. Ces images restent des fichiers statiques publics (URL devinable) : elles ne
+  contiennent que du paysage, aucune réponse écrite — à l'exception du panneau d'Atlit (photo 25).
+
+### Mettre à jour une installation existante (Supabase)
+1. *SQL Editor* → coller et exécuter **`supabase/migration_v2.sql`** (schéma + banque V2).
+   Ré-exécutable ; ne supprime rien ; **ne réimporte pas la V1** (vos modifications des 34 questions
+   faites dans l'admin sont conservées) ; parties, joueurs et réponses existants deviennent « V1 ».
+2. Déployer le dossier `public/` (push sur `main` si GitHub Pages ; photos incluses).
+3. Dans l'admin : ⚙️ → « משחק חדש » → **V2** → partie test avec 2–3 téléphones en langues différentes.
+4. Vérifier **sur place** les réponses, les côtés du bus et la visibilité avant la vraie partie.
+
+Nouvelle installation : `supabase/install.sql` contient tout (schéma + V1 + V2).
+Modifier le contenu V2 : éditer `content/v2/*.json`, puis `npm run build:sql` (le générateur
+refuse des données incohérentes : 6 MAIN + 2 SPARE, 4 langues complètes, 4 réponses, 32 photos…).
+
 ## Développement et tests
 
 Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défaut ; variables
@@ -139,13 +215,15 @@ Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défau
 
 ```bash
 npm install
-npm test                    # 19 tests : logique serveur, confidentialité des fiches, contrôle des 34 questions
+npm test                    # 30 tests : logique serveur, fiches, 34 questions V1, V2 (banques, 30 s, 4 langues,
+                            #   confidentialité, réimport, migration depuis main, simulation 48 élèves)
 
 # serveur local qui imite l'API Supabase (rôle "anon" compris)
 createdb mdl_dev && psql -d mdl_dev -f supabase/schema.sql -f supabase/seed_demo.sql \
   -c "select mdl.set_admin_password('guide-test-2026')"
 npm run dev                 # http://localhost:8787  et  /admin.html
 npm run scenario            # scénario 35 élèves (32 clients HTTP + 3 vrais navigateurs)
+npm run screens:v2 -- <dossier>   # parcours V2 complet dans 4 navigateurs + captures
 ```
 
 Le scénario vérifie : arrivée de 35 élèves, publication d'une question de géologie, apparition
@@ -163,5 +241,10 @@ public/api.js          client RPC minimal
 public/config.js       URL + clé publique Supabase
 supabase/schema.sql    tables, règles du jeu, API sécurisée
 supabase/seed_demo.sql questions de démonstration (non validées)
+supabase/migration_v2.sql  mise à jour V2 d'une base existante (généré)
+supabase/questions_v2.sql  import V2 seul (généré)
+content/v2/            données V2 faisant foi (questions 4 langues, 32 anecdotes, repères du guide)
+public/photos/aller-v2/  32 photos recadrées + miniatures
+tools/build-v2-sql.mjs   générateur + validation de l'import V2
 tests/                 tests unitaires, serveur local, scénario 35 élèves, captures
 ```

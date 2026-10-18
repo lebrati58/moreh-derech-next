@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "מורה דרך LIVE — חידון חי לסיור באוטובוס",
   "scripts": {
-    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs",
     "build:sql": "node tools/build-route-sql.mjs",
     "dev": "node tests/dev-server.mjs 8787 mdl_dev",
     "scenario": "node tests/scenario.mjs",
-    "screens": "node tests/screens.mjs"
+    "screens": "node tests/screens.mjs",
+    "screens:v2": "node tests/v2-screens.mjs"
   },
   "license": "UNLICENSED",
   "devDependencies": {

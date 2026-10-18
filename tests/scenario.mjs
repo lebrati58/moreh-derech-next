@@ -3,6 +3,7 @@
 // Prérequis : dev-server lancé sur une base fraîche (voir README, "npm run scenario").
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
+import pg from 'pg';
 
 const BASE = process.env.BASE || 'http://localhost:8787';
 const rpc = async (fn, args) => {
@@ -15,6 +16,10 @@ const log = (...a) => console.log('✔', ...a);
 // --- admin
 const { token: admin } = await rpc('admin_login', { p_password: 'guide-test-2026' });
 await rpc('admin_new_game', { p_token: admin, p_title: 'סימולציה 35' });
+// Ce scénario ferme les questions sans attendre : temps minimal ramené à 0 par SQL direct (test uniquement ;
+// impossible via l'API admin). La règle des 30 s est testée dans tests/v2.test.mjs et tests/v2-screens.mjs.
+{ const db = new pg.Client({ host: process.env.PGHOST || '/var/tmp', port: process.env.PGPORT || 5433, user: 'postgres', database: process.env.DB || 'mdl_dev' });
+  await db.connect(); await db.query('update mdl.games set min_answer_sec = 0 where is_active'); await db.end(); }
 let st = await rpc('admin_state', { p_token: admin });
 const geo = st.questions.find(q => q.category === 'גאולוגיה');
 const q2 = st.questions.find(q => q.id !== geo.id);
@@ -25,6 +30,7 @@ const pages = [];
 for (let i = 1; i <= 3; i++) {
   const p = await (await browser.newContext({ viewport: { width: 390, height: 800 }, isMobile: true })).newPage();
   await p.goto(BASE + '/');
+  await p.click('.langopt[data-lang=he]');            // V2 : choix de la langue avant le nom
   await p.fill('#nm', 'דפדפן ' + i); await p.click('text=הצטרפות למשחק');
   await p.waitForSelector('text=מחכים לשאלה הבאה');
   pages.push(p);

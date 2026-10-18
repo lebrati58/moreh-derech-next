@@ -1,0 +1,518 @@
+{
+  "versionId": "PHOTO_ALLER_V2_2026_10_21",
+  "photoCount": 32,
+  "photoAnecdotes": [
+    {
+      "order": 1,
+      "photo": "1000472035.jpg",
+      "time": "11:04:19",
+      "subject": "Déblai rocheux stratifié",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "כשסוללים כביש דרך גבעה, חותכים בסלע ונחשפות שכבות שבדרך כלל מסתתרות מתחת לצמחייה. ממש חלון קטן להיסטוריה הגאולוגית.",
+        "fr": "Une tranchée routière révèle des couches normalement cachées sous la végétation : un petit livre ouvert sur le passé géologique.",
+        "en": "A road cutting exposes layers usually hidden by vegetation: a small open book of geological history.",
+        "ru": "Дорожная выемка обнажает слои, обычно скрытые растительностью: словно открытая книга геологической истории."
+      }
+    },
+    {
+      "order": 2,
+      "photo": "1000472037.jpg",
+      "time": "11:04:43",
+      "subject": "Pont routier et coupe rocheuse",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "גשר מאפשר להעביר דרך מעל מעבר קיים. לצדו רואים איך המהנדסים חתכו את הגבעה כדי לשמור על תוואי הכביש.",
+        "fr": "Le pont franchit un passage existant, tandis que la colline voisine a été entaillée pour tracer la route.",
+        "en": "The bridge spans an existing passage, while the adjacent hill was cut to make room for the road.",
+        "ru": "Мост пересекает существующий проход, а соседний холм срезали ради строительства дороги."
+      }
+    },
+    {
+      "order": 3,
+      "photo": "1000472039.jpg",
+      "time": "11:04:47",
+      "subject": "Végétation et route au pied des hauteurs",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "במישור החוף גידולים ודרכים נדחקים לשטח שבין הים להרים. כאן רואים את המפגש בין תשתיות, צומח וטופוגרפיה.",
+        "fr": "Sur la plaine littorale, cultures et routes se partagent l’espace entre mer et montagne.",
+        "en": "On this coastal plain, roads and farmland share the narrow space between sea and hills.",
+        "ru": "На прибрежной равнине дороги и поля делят пространство между морем и холмами."
+      }
+    },
+    {
+      "order": 4,
+      "photo": "1000472041.jpg",
+      "time": "11:05:12",
+      "subject": "Petite construction de pierre, bâtiment non identifié",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מבנה האבן שבתמונה מסקרן, אבל בלי זיהוי מדויק אי אפשר לקבוע את גילו או תפקידו. זו גם מיומנות של מורה דרך: לדעת לומר מה לא ידוע.",
+        "fr": "Ce bâtiment en pierre intrigue, mais sans identification précise, impossible d’affirmer son âge ou son usage : un guide doit aussi reconnaître l’incertitude.",
+        "en": "This stone building is intriguing, but its age and function cannot be asserted without identification. Good guides acknowledge uncertainty.",
+        "ru": "Каменное здание любопытно, но без точной идентификации нельзя утверждать его возраст или назначение."
+      }
+    },
+    {
+      "order": 5,
+      "photo": "1000472043.jpg",
+      "time": "11:05:19",
+      "subject": "Plaine agricole et relief du Carmel",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מישור חוף הכרמל נמצא בין הים להר. זה מסביר למה כבישים, מסילות ושטחי חקלאות מתרכזים דווקא במסדרון הזה.",
+        "fr": "Entre la mer et le Carmel, une bande relativement étroite accueille agriculture, routes et voies ferrées.",
+        "en": "Between the sea and Mount Carmel, a relatively narrow strip carries farmland, roads and railway lines.",
+        "ru": "Между морем и Кармелем проходит сравнительно узкая полоса с полями, дорогами и железной дорогой."
+      }
+    },
+    {
+      "order": 6,
+      "photo": "1000472045.jpg",
+      "time": "11:05:32",
+      "subject": "Ligne ferroviaire visible",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הכביש והרכבת מלווים זה את זה במישור החוף. כשאין הרבה שטח מישורי בין ההר לים, רשתות התחבורה נפגשות באותו מסדרון.",
+        "fr": "La route et le rail suivent souvent le même couloir côtier, faute d’espace plat entre la montagne et la mer.",
+        "en": "Road and rail often share the coastal corridor because flat land between mountain and sea is limited.",
+        "ru": "Автодорога и железная дорога часто идут по одному прибрежному коридору: ровной земли здесь мало."
+      }
+    },
+    {
+      "order": 7,
+      "photo": "1000472047.jpg",
+      "time": "11:05:56",
+      "subject": "Champs et collines",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "שינוי קטן בגובה הקרקע משנה את הנוף: בשטח המישורי קל יותר לעבד שדות, ובמדרון נשארים לעיתים שיחים וחורש.",
+        "fr": "Quelques mètres de relief changent le paysage : les champs occupent les surfaces planes, les buissons restent sur les pentes.",
+        "en": "Even modest changes in elevation matter: fields favour flat ground, while scrub often covers slopes.",
+        "ru": "Даже небольшой перепад высот важен: поля занимают равнину, а склоны часто покрыты кустарником."
+      }
+    },
+    {
+      "order": 8,
+      "photo": "1000472049.jpg",
+      "time": "11:06:27",
+      "subject": "Panneaux sombres sur toiture ou structure",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "על גג המבנה נראים לוחות כהים שעשויים להיות סולאריים. כדי לזהות אותם בוודאות צריך מבט קרוב יותר; אור שמש אפשר להמיר לחשמל בתאים פוטו־וולטאיים.",
+        "fr": "Les panneaux sombres pourraient être photovoltaïques, sans certitude sur cette photo. Ces cellules convertissent la lumière en électricité.",
+        "en": "The dark panels may be photovoltaic, though the photo is inconclusive. Such cells convert sunlight into electricity.",
+        "ru": "Тёмные панели могут быть солнечными, но по снимку это не доказано. Фотоэлементы превращают солнечный свет в электричество."
+      }
+    },
+    {
+      "order": 9,
+      "photo": "1000472051.jpg",
+      "time": "11:06:38",
+      "subject": "Long bâtiment à toit clair",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הגג הארוך בולט למרחוק, אך איננו יודעים מה מתרחש במבנה. עדיף להסביר איך מבנים גדולים משנים את הנוף מאשר להמציא לו שימוש.",
+        "fr": "Le long toit attire l’œil, mais la fonction du bâtiment n’est pas établie : mieux vaut observer que deviner.",
+        "en": "The long roof stands out, but the building’s purpose has not been established: observe rather than guess.",
+        "ru": "Длинная крыша заметна издалека, но назначение здания не установлено. Лучше наблюдать, чем гадать."
+      }
+    },
+    {
+      "order": 10,
+      "photo": "1000472053.jpg",
+      "time": "11:06:57",
+      "subject": "Paysage agricole, drapeau au loin",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מטעים, שדות ומבנים קטנים מציינים את העבודה החקלאית באזור. דגל שרואים מרחוק לא מספיק כדי לזהות מוסד או אתר.",
+        "fr": "Les plantations dessinent le paysage agricole. Un drapeau vu de loin ne permet pas d’identifier précisément le bâtiment voisin.",
+        "en": "Plantations shape the rural scenery. A distant flag is not enough to identify a nearby facility.",
+        "ru": "Плантации формируют сельский ландшафт. По далёкому флагу нельзя достоверно определить назначение объекта."
+      }
+    },
+    {
+      "order": 11,
+      "photo": "1000472055.jpg",
+      "time": "11:07:05",
+      "subject": "Ouvrage en béton inachevé ou utilitaire, non identifié",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "את מבנה הבטון אי אפשר לזהות בוודאות מהחלון. אבל הוא מזכיר לנו שכל בנייה משנה את הניקוז ואת השימוש בקרקע.",
+        "fr": "Le béton photographié n’est pas identifié. Il rappelle néanmoins que chaque construction modifie le paysage et l’écoulement des eaux.",
+        "en": "This concrete structure is unidentified. It still illustrates how construction changes land use and drainage.",
+        "ru": "Бетонное сооружение не опознано. Но оно напоминает, как строительство меняет землю и сток воды."
+      }
+    },
+    {
+      "order": 12,
+      "photo": "1000472057.jpg",
+      "time": "11:07:12",
+      "subject": "Inscription peinte sur une structure lointaine",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הכיתוב שעל המבנה אינו ברור דיו לזיהוי. בדרך אפשר להשתמש בו כדי לשאול איך נבדיל בין שם מקום, פרסומת וגרפיטי.",
+        "fr": "L’inscription est trop lointaine pour être identifiée. Elle peut servir à distinguer nom de lieu, publicité et graffiti.",
+        "en": "The writing is too distant to identify reliably. It invites a question about place names, advertising and graffiti.",
+        "ru": "Надпись слишком далека для уверенного чтения. Это повод отличить название места от рекламы и граффити."
+      }
+    },
+    {
+      "order": 13,
+      "photo": "1000472059.jpg",
+      "time": "11:07:23",
+      "subject": "Maison ancienne près de Dor/Nahsholim, non identifiée",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "אנחנו נוסעים באזור דור, עיר נמל עתיקה. יש בו גם מבנים ישנים, אבל הבית שבתמונה לא זוהה ואין לייחס לו סיפור מסוים ללא מקור.",
+        "fr": "On traverse le secteur de Dor, ancien port méditerranéen. Mais cette maison précise n’est pas identifiée.",
+        "en": "We are passing the Dor area, once an ancient Mediterranean port, but this particular house remains unidentified.",
+        "ru": "Мы проезжаем район Дора, древнего средиземноморского порта, но конкретный дом не опознан."
+      }
+    },
+    {
+      "order": 14,
+      "photo": "1000472061.jpg",
+      "time": "11:07:52",
+      "subject": "Ridge de kurkar près de Nahsholim",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "רכסי הכורכר הם דיונות חול קדומות שהתלכדו עם חומר גירי. לכן מוצאים בהם לעיתים שכבות נטויות כמו בדיונה פעילה.",
+        "fr": "Les cordons de kurkar sont d’anciennes dunes cimentées par le calcaire ; leurs couches peuvent encore révéler l’action du vent.",
+        "en": "Kurkar ridges are ancient dunes cemented by lime; their bedding can preserve traces of wind action.",
+        "ru": "Гряды куркара — древние дюны, сцементированные известковым веществом; слои хранят следы ветра."
+      }
+    },
+    {
+      "order": 15,
+      "photo": "1000472063.jpg",
+      "time": "11:08:03",
+      "subject": "Grande coupe stratifiée, secteur Dor",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הפסים במצוק מזכירים שכבות של עוגה. בגאולוגיה קוראים את סדר השכבות כדי לשחזר אירועים קדומים, בלי לקבוע גיל לפי צבע בלבד.",
+        "fr": "La paroi ressemble à un gâteau de couches successives : leur ordre renseigne sur le passé, pas leur couleur à elle seule.",
+        "en": "The cliff resembles a layered cake: the order of layers tells a story, while colour alone cannot date them.",
+        "ru": "Обрыв похож на слоёный пирог: порядок слоёв важен, но по одному цвету их возраст не определяют."
+      }
+    },
+    {
+      "order": 16,
+      "photo": "1000472065.jpg",
+      "time": "11:09:07",
+      "subject": "Découpe rocheuse et sculpture ou silhouette distante non identifiée",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "על הגבעה מופיע פסל או סימן בולט שלא זוהה בוודאות. עובדה שכן רואים: הכביש חושף כאן מצוקי כורכר גבוהים.",
+        "fr": "Une silhouette se détache sur la butte, sans identification fiable. En revanche, la haute coupe rocheuse est bien visible.",
+        "en": "A silhouette stands on the hill but cannot be reliably identified; the tall roadside rock cut is unmistakable.",
+        "ru": "На холме виден силуэт неизвестного объекта. Зато высокий скальный откос у дороги очевиден."
+      }
+    },
+    {
+      "order": 17,
+      "photo": "1000472067.jpg",
+      "time": "11:10:16",
+      "subject": "Bananeraies/cultures sous filets dans le secteur HaBonim",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "בתי רשת בחוף הכרמל עוזרים להגן על גידולים מפני תנאי סביבה. מהכביש רואים רק את המבנה החיצוני, לא תמיד את הגידול שבתוכו.",
+        "fr": "Les filets agricoles protègent les cultures ; depuis la route, on distingue parfois leur couverture mieux que les plantes.",
+        "en": "Agricultural nets protect crops; from the road their roofs can be easier to see than the plants beneath.",
+        "ru": "Сельскохозяйственные сетки защищают посевы; с дороги покрытие иногда видно лучше самих растений."
+      }
+    },
+    {
+      "order": 18,
+      "photo": "1000472069.jpg",
+      "time": "11:10:20",
+      "subject": "Tour ronde en pierre vers HaBonim, possible Kfarlet",
+      "side": "left_from_route_notes",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "המגדל העגול נראה כמו חלק מביצור קדום. באזור הבונים נמצאים שרידי מבצר כפרלט, שנעשה בו שימוש בתקופות שונות; הזיהוי המדויק של המגדל בצילום עוד דורש אימות.",
+        "fr": "Cette tour ronde évoque une fortification. Les ruines de Kfarlet se trouvent dans ce secteur, mais l’identification exacte de la tour reste à confirmer.",
+        "en": "The round tower suggests a fortification. Kfarlet ruins are nearby, but the exact identification of this photographed tower needs confirmation.",
+        "ru": "Круглая башня напоминает укрепление. Рядом находятся руины Кфарлет, однако принадлежность именно этой башни ещё надо проверить."
+      }
+    },
+    {
+      "order": 19,
+      "photo": "1000472071.jpg",
+      "time": "11:10:43",
+      "subject": "Rangées d’arbres cultivés",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "כשעצים נטועים בשורות ישרות, זה בדרך כלל סימן למטע חקלאי ולא לחורש טבעי. גם הנוף יודע לספר על עבודת האדם.",
+        "fr": "Des arbres alignés en rangées régulières signalent généralement un verger cultivé, plutôt qu’une forêt naturelle.",
+        "en": "Trees arranged in regular rows usually indicate a cultivated orchard rather than natural woodland.",
+        "ru": "Деревья ровными рядами обычно говорят о саде, посаженном человеком, а не о естественном лесе."
+      }
+    },
+    {
+      "order": 20,
+      "photo": "1000472073.jpg",
+      "time": "11:10:54",
+      "subject": "Tuyaux et irrigation près des cultures",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הצינורות מזכירים שהחקלאות כאן תלויה בהובלה מדויקת של מים לשדות. חלק מהמים זורמים לצמחים בצינורות במקום בערוצים פתוחים.",
+        "fr": "Les tuyaux montrent combien l’irrigation compte : acheminer l’eau directement aux cultures évite de dépendre uniquement de la pluie.",
+        "en": "The pipes show how much irrigation matters: water can be delivered directly to crops rather than left to rainfall alone.",
+        "ru": "Трубы показывают значение орошения: воду подают к культурам, не полагаясь только на дождь."
+      }
+    },
+    {
+      "order": 21,
+      "photo": "1000472075.jpg",
+      "time": "11:12:00",
+      "subject": "Petite tour cylindrique sombre au sommet, non identifiée",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "המבנה השחור בראש הגבעה נראה חריג, אבל ללא סימון אי אפשר לקבוע אם הוא מגדל תצפית, תשתית או מבנה אחר.",
+        "fr": "Le cylindre sombre au sommet est intriguant. Sans source précise, impossible d’affirmer s’il s’agit d’une tour de guet ou d’une installation technique.",
+        "en": "The dark cylinder on the hill is unusual. Without documentation, it cannot be labelled a watchtower or utility structure.",
+        "ru": "Тёмный цилиндр на холме необычен. Без документов нельзя назвать его наблюдательной башней или техническим объектом."
+      }
+    },
+    {
+      "order": 22,
+      "photo": "1000472077.jpg",
+      "time": "11:13:29",
+      "subject": "Pont et relief près de Nahal Me’arot",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "בסמוך לכאן נמצאת שמורת נחל מערות. במערות הכרמל נמצאו עדויות ארכאולוגיות חשובות לחיי בני אדם קדמונים במשך מאות אלפי שנים.",
+        "fr": "Tout près se trouve Nahal Me’arot : ses grottes conservent des traces remarquables de populations préhistoriques sur une très longue durée.",
+        "en": "Nearby Nahal Me’arot preserves extraordinary evidence of prehistoric populations over a very long span of time.",
+        "ru": "Рядом находится Нахаль-Меарот: его пещеры сохранили свидетельства жизни древних людей за огромный период времени."
+      }
+    },
+    {
+      "order": 23,
+      "photo": "1000472079.jpg",
+      "time": "11:14:31",
+      "subject": "Bananiers sous filets",
+      "side": "right_from_route_notes",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "תראו את העלים הגדולים: אלה בננות, גידול מוכר בחוף הכרמל. הרשתות מסייעות בניהול תנאי הגידול ובהגנה מפני פגעי סביבה.",
+        "fr": "Voici des bananiers sous filet : une culture emblématique de la côte du Carmel. Les filets contribuent à protéger les plants.",
+        "en": "Here are banana plants under netting, a characteristic crop of the Carmel coast. The nets help protect the plants.",
+        "ru": "Вот бананы под сеткой — характерная культура побережья Кармеля. Сетки помогают защищать растения."
+      }
+    },
+    {
+      "order": 24,
+      "photo": "1000472082.jpg",
+      "time": "11:15:06",
+      "subject": "Passage supérieur à Atlit",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "במחלפים גשרים מפרידים בין זרמי התנועה ומשפרים את הבטיחות. כדאי לזהות את הגשר לפני שמגיעים אליו כדי שהקבוצה תספיק להסתכל.",
+        "fr": "Les échangeurs séparent les flux de circulation ; un guide annonce le pont avant son passage pour laisser le temps d’observer.",
+        "en": "Interchanges separate traffic flows; a guide should announce a bridge before reaching it so passengers can look.",
+        "ru": "Развязки разводят транспортные потоки. Гид должен предупредить о мосте заранее, чтобы пассажиры успели посмотреть."
+      }
+    },
+    {
+      "order": 25,
+      "photo": "1000472083.jpg",
+      "time": "11:16:13",
+      "subject": "Panneau vers le camp des immigrants d’Atlit (Moshe Sneh)",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "השלט מפנה למחנה המעפילים בעתלית. הבריטים כלאו שם מעפילים שהגיעו לארץ למרות ההגבלות, וב־1945 שחררו לוחמי הפלמ״ח מאות עצורים.",
+        "fr": "Le panneau indique le camp d’Atlit, où les Britanniques détenaient des immigrants juifs arrivés malgré les restrictions. Le Palmach y mena une opération de libération en 1945.",
+        "en": "The sign points to Atlit’s detention camp, where the British held Jewish immigrants who arrived despite restrictions. The Palmach carried out a liberation operation in 1945.",
+        "ru": "Указатель ведёт к лагерю Атлит, где британцы держали еврейских иммигрантов. В 1945 году Пальмах провёл операцию по их освобождению."
+      }
+    },
+    {
+      "order": 26,
+      "photo": "1000472085.jpg",
+      "time": "11:16:19",
+      "subject": "Palmiers au bord des cultures et du Carmel",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "עצי הדקל בולטים בנוף, אבל התמונה לבדה לא מוכיחה שמדובר בשדרת הדקלים ההיסטורית של עתלית. עד שנאמת, נספר רק על הנוף הנראה.",
+        "fr": "Les palmiers dominent la vue, mais la photo ne suffit pas à les identifier comme l’allée historique d’Atlit.",
+        "en": "The palms stand out, but the photo alone cannot identify them as Atlit’s historic palm avenue.",
+        "ru": "Пальмы заметны издалека, но по фотографии нельзя уверенно назвать их исторической аллеей Атлита."
+      }
+    },
+    {
+      "order": 27,
+      "photo": "1000472087.jpg",
+      "time": "11:17:20",
+      "subject": "Train rouge sur pont",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מעל הכביש נוסעת רכבת. מסילה וכביש במפלסים שונים חוסכים חצייה מסוכנת ומשאירים את שתי התנועות פעילות.",
+        "fr": "Un train traverse le pont : séparer route et rail sur deux niveaux évite les passages à niveau et fluidifie le trafic.",
+        "en": "A train is crossing the bridge: separating road and rail vertically avoids level crossings and keeps traffic flowing.",
+        "ru": "По мосту идёт поезд: разные уровни для дороги и рельсов позволяют избежать опасных переездов."
+      }
+    },
+    {
+      "order": 28,
+      "photo": "1000472089.jpg",
+      "time": "11:17:35",
+      "subject": "Marquage rouge abîmé sur pilier",
+      "side": "uncertain",
+      "photoIdentificationConfidence": "low",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הסימון האדום על העמוד אינו קריא דיו כדי לזהותו. זו תזכורת להימנע מפענוח כתובות מטושטשות כאילו הן עובדה.",
+        "fr": "Le panneau rouge est trop effacé pour être lu avec certitude : mieux vaut ne pas inventer une signification.",
+        "en": "The red marking is too worn to read reliably. Better not invent a meaning for it.",
+        "ru": "Красная отметка стёрлась, и её смысл установить нельзя. Не стоит придумывать объяснение."
+      }
+    },
+    {
+      "order": 29,
+      "photo": "1000472091.jpg",
+      "time": "11:17:52",
+      "subject": "Talus rocheux bas près de Megadim",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "medium",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "הגבעה הנמוכה חושפת שוב שכבות משקע. הצמחייה גדלה בעיקר במקום שבו הצטברה מספיק קרקע בין הסלעים.",
+        "fr": "Cette colline laisse voir la roche, tandis que la végétation pousse surtout là où un peu de sol s’est accumulé.",
+        "en": "The low hill exposes the rock; plants grow mainly where enough soil has accumulated between stones.",
+        "ru": "На холме обнажена порода, а растения растут преимущественно там, где накопилась почва."
+      }
+    },
+    {
+      "order": 30,
+      "photo": "1000472093.jpg",
+      "time": "11:18:21",
+      "subject": "Grand talus creusé dans la roche",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "כדי לסלול כאן את כביש החוף חתכו ברכס. במחשוף אפשר לראות מרקם ושכבות, אבל זיהוי סוג האבן דורש בדיקה גאולוגית.",
+        "fr": "Pour tracer la route, il a fallu entailler le relief. Les couches se voient bien, mais la nature exacte de la roche demande une vérification.",
+        "en": "The road required a cutting through the ridge. The layers are clear, but the exact rock type needs testing.",
+        "ru": "Чтобы проложить дорогу, гряду разрезали. Слои хорошо видны, но точный тип породы требует проверки."
+      }
+    },
+    {
+      "order": 31,
+      "photo": "1000472095.jpg",
+      "time": "11:18:51",
+      "subject": "Strates fines / texture des roches",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "פסים דקים בסלע עשויים להעיד על תנאי שקיעה שונים. בלי מדידות לא נקבע אם מדובר בכורכר, גיר או חומר אחר בכל שכבה.",
+        "fr": "Les fines bandes traduisent possiblement des dépôts successifs. Une photo ne suffit pas à déterminer chaque roche.",
+        "en": "Thin bands may record successive deposits. A photograph alone cannot identify every rock layer.",
+        "ru": "Тонкие полосы могут отражать последовательные отложения. По одному снимку нельзя определить каждую породу."
+      }
+    },
+    {
+      "order": 32,
+      "photo": "1000472097.jpg",
+      "time": "11:19:38",
+      "subject": "Bâtiments et collines de Tirat Carmel / Haifa",
+      "side": "right_probable",
+      "photoIdentificationConfidence": "high",
+      "adminOnly": true,
+      "noteNotAQuestion": true,
+      "anecdote": {
+        "he": "מאחורי הבניינים עולים מורדות הכרמל. באזור חיפה, השלוחות והוואדיות עיצבו את הדרך שבה נבנו שכונות ונסללו כבישים.",
+        "fr": "Derrière les immeubles montent les pentes du Carmel : à Haïfa, les vallons et les crêtes ont guidé l’urbanisation.",
+        "en": "Carmel slopes rise behind the buildings. Around Haifa, ridges and wadis strongly shaped urban growth.",
+        "ru": "За зданиями поднимаются склоны Кармеля. В районе Хайфы хребты и долины сильно повлияли на застройку."
+      }
+    }
+  ]
+}
