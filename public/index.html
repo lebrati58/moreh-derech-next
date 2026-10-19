@@ -60,8 +60,16 @@
   // ------------------------------------------------------------ Langues
   // Interface élève en 4 langues. Les QUESTIONS arrivent déjà traduites par le serveur
   // (même identifiant, même ordre des réponses, même chrono et même score pour tous).
-  const LANGS = { he: { name: 'עברית', flag: '🇮🇱', dir: 'rtl' }, fr: { name: 'Français', flag: '🇫🇷', dir: 'ltr' },
-                  en: { name: 'English', flag: '🇬🇧', dir: 'ltr' }, ru: { name: 'Русский', flag: '🇷🇺', dir: 'ltr' } };
+  // Drapeaux dessinés (SVG) : Windows n'affiche pas les émojis drapeaux (il écrit « IL », « GB »…)
+  const svgFlag = body => `<svg viewBox="0 0 30 20" width="30" height="20" aria-hidden="true" style="border-radius:3px;box-shadow:0 0 0 1px #0002">${body}</svg>`;
+  const FLAGS = {
+    he: svgFlag('<rect width="30" height="20" fill="#fff"/><rect y="2.5" width="30" height="3" fill="#0038b8"/><rect y="14.5" width="30" height="3" fill="#0038b8"/><path d="M15 6.2l3.3 5.7h-6.6zM15 13.8l-3.3-5.7h6.6z" fill="none" stroke="#0038b8" stroke-width="1"/>'),
+    fr: svgFlag('<rect width="10" height="20" fill="#0055a4"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ef4135"/>'),
+    en: svgFlag('<rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.5"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="#c8102e" stroke-width="3.5"/>'),
+    ru: svgFlag('<rect width="30" height="7" fill="#fff"/><rect y="6.7" width="30" height="6.7" fill="#0039a6"/><rect y="13.3" width="30" height="6.7" fill="#d52b1e"/>')
+  };
+  const LANGS = { he: { name: 'עברית', flag: FLAGS.he, dir: 'rtl' }, fr: { name: 'Français', flag: FLAGS.fr, dir: 'ltr' },
+                  en: { name: 'English', flag: FLAGS.en, dir: 'ltr' }, ru: { name: 'Русский', flag: FLAGS.ru, dir: 'ltr' } };
   const T = {
     he: {
       choose_lang: 'בחרו שפה', offline: 'אין חיבור — מנסה להתחבר מחדש…', tab_game: 'משחק', tab_board: 'דירוג',
@@ -81,7 +89,7 @@
       winners: 'הזוכים הגדולים!', stats: 'סטטיסטיקות המשחק', s_players: 'משתתפים', s_questions: 'שאלות', s_correct: 'תשובות נכונות',
       fastest: (n, s) => `⚡ התשובה הנכונה המהירה ביותר: <b>${n}</b> (${s} שנ׳)`, thanks: 'תודה שהשתתפתם! 🚌',
       he_only: 'השאלה הזו זמינה בעברית בלבד.', lang_saved: 'השפה עודכנה — הניקוד נשמר.',
-      e_no_game: 'אין כרגע משחק פעיל. נסו שוב בעוד רגע.', e_empty_name: 'נא להקליד שם.', e_finished: 'המשחק כבר הסתיים.',
+      e_no_game: 'אין כרגע משחק פעיל. נסו שוב בעוד רגע.', e_empty_name: 'נא להקליד שם.', e_finished: 'המשחק הקודם הסתיים — חכו שהמדריך יפתח משחק חדש ונסו שוב.',
       e_full: 'המשחק מלא.', e_other: 'שגיאה'
     },
     fr: {
@@ -102,7 +110,7 @@
       winners: 'Les grands gagnants !', stats: 'Statistiques de la partie', s_players: 'participants', s_questions: 'questions', s_correct: 'bonnes réponses',
       fastest: (n, s) => `⚡ Bonne réponse la plus rapide : <b>${n}</b> (${s} s)`, thanks: 'Merci d’avoir participé ! 🚌',
       he_only: 'Cette question n’existe qu’en hébreu.', lang_saved: 'Langue modifiée — vos points sont conservés.',
-      e_no_game: 'Aucune partie en cours. Réessayez dans un instant.', e_empty_name: 'Veuillez saisir un nom.', e_finished: 'La partie est terminée.',
+      e_no_game: 'Aucune partie en cours. Réessayez dans un instant.', e_empty_name: 'Veuillez saisir un nom.', e_finished: 'La partie précédente est terminée : attendez que le guide en ouvre une nouvelle, puis réessayez.',
       e_full: 'La partie est complète.', e_other: 'Erreur'
     },
     en: {
@@ -123,7 +131,7 @@
       winners: 'The big winners!', stats: 'Game statistics', s_players: 'players', s_questions: 'questions', s_correct: 'correct answers',
       fastest: (n, s) => `⚡ Fastest correct answer: <b>${n}</b> (${s} s)`, thanks: 'Thanks for playing! 🚌',
       he_only: 'This question is available in Hebrew only.', lang_saved: 'Language changed — your score is kept.',
-      e_no_game: 'No game running right now. Try again in a moment.', e_empty_name: 'Please type a name.', e_finished: 'The game has ended.',
+      e_no_game: 'No game running right now. Try again in a moment.', e_empty_name: 'Please type a name.', e_finished: 'The previous game has ended — wait for the guide to open a new one, then try again.',
       e_full: 'The game is full.', e_other: 'Error'
     },
     ru: {
@@ -144,7 +152,7 @@
       winners: 'Главные победители!', stats: 'Статистика игры', s_players: 'участников', s_questions: 'вопросов', s_correct: 'правильных ответов',
       fastest: (n, s) => `⚡ Самый быстрый правильный ответ: <b>${n}</b> (${s} с)`, thanks: 'Спасибо за участие! 🚌',
       he_only: 'Этот вопрос доступен только на иврите.', lang_saved: 'Язык изменён — очки сохранены.',
-      e_no_game: 'Сейчас нет активной игры. Попробуйте чуть позже.', e_empty_name: 'Введите имя.', e_finished: 'Игра уже закончилась.',
+      e_no_game: 'Сейчас нет активной игры. Попробуйте чуть позже.', e_empty_name: 'Введите имя.', e_finished: 'Предыдущая игра закончилась — подождите, пока гид откроет новую, и попробуйте снова.',
       e_full: 'Игра заполнена.', e_other: 'Ошибка'
     }
   };

@@ -271,7 +271,7 @@ label { display: block; font-weight: 700; margin: 12px 0 6px; }
 .join-brand { font-size: 22px; font-weight: 900; color: var(--sea); }
 .join-brand .live { background: var(--bad); color: #fff; border-radius: 8px; padding: 0 6px; font-size: 15px; vertical-align: middle; }
 .langopt { flex-direction: row; justify-content: center; gap: 8px; padding: 12px 6px; min-height: 52px; }
-.langopt .flag { font-size: 24px; line-height: 1; }
+.langopt .flag { line-height: 0; display: inline-flex; }
 .langopt b { font-size: 18px; }
 .langopt.on { box-shadow: 0 0 0 2px var(--sea) inset; }
 .btn.big { font-size: 22px; padding: 16px; margin-top: 4px; }

@@ -92,9 +92,10 @@ async function student(ctxOpts, who, name, langBtn) {
   assert.equal(await p.getAttribute('html', 'dir'), 'rtl');
   assert.equal(await p.getAttribute('html', 'lang'), 'he', 'hébreu par défaut même si le téléphone est en français');
   const txt = await p.textContent('#joinf');
-  for (const s of ['מורה דרך', 'LIVE', 'ברוכים הבאים לחידון!', 'בחרו שפה', '🇮🇱', 'עברית', '🇫🇷', 'Français', '🇬🇧', 'English', '🇷🇺', 'Русский', 'מה השם הפרטי שלכם?', 'מתחילים לשחק 🚀'])
+  for (const s of ['מורה דרך', 'LIVE', 'ברוכים הבאים לחידון!', 'בחרו שפה', 'עברית', 'Français', 'English', 'Русский', 'מה השם הפרטי שלכם?', 'מתחילים לשחק 🚀'])
     assert.ok(txt.includes(s), 'accueil : ' + s);
   assert.equal(await p.getAttribute('#nm', 'placeholder'), 'השם הפרטי');
+  assert.equal(await p.$$eval('.langopt .flag svg', e => e.length), 4, 'drapeaux dessinés (lisibles aussi sous Windows)');
   assert.equal(await p.$$eval('#joinf input', e => e.length), 1, 'un seul champ : le prénom');
   await noHScroll(p, 'accueil 360px');
   await shot(p, 's1-accueil-he');
