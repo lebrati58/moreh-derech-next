@@ -233,13 +233,15 @@ for (let i = 0; i < 2; i++) await gpage.click('[data-nav=sim-speed]');      // �
 const seen = new Set();
 for (let t = 0; t < 120 && seen.size < 3; t++) {
   await gpage.waitForTimeout(500);
-  const h = await gpage.textContent('#navroute .lvl .lvlh').catch(() => '');
+  const h = await gpage.textContent('#navroute .lvl:not(.stage) .lvlh').catch(() => '');
   for (const k of ['🟡', '🟠', '🟢']) if (h.includes(k)) seen.add(k);
   if (h.includes('🟢') && await gpage.$('#navroute [data-nav=simpub]')) { await gpage.click('#navroute [data-nav=simpub]'); }
 }
 assert.deepEqual([...seen].sort(), ['🟠', '🟡', '🟢'].sort(), 'trois niveaux d\'alerte vus en simulation');
+await gpage.waitForSelector('#navroute .lvl .lvlh:has-text("שאלה בסימולציה"), #navroute .lvl .lvlh:has-text("התשובה נחשפה")', { timeout: 20000 });
 await shot(gpage, 'a6-simulation', true);
 // pannes simulées
+await gpage.click('#navroute summary:has-text("אפשרויות ותקלות")');
 await gpage.check('[data-nav=fault][data-k=noisy]'); await gpage.waitForTimeout(2500);
 assert.match(await gpage.textContent('#navroute'), /מיקום לא מדויק/);
 await gpage.uncheck('[data-nav=fault][data-k=noisy]');
