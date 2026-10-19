@@ -271,7 +271,33 @@
     }
 
     // --------------------------------------------------------------- Page « מסלול » : carte, simulation, enregistrement
-    function routeHtml() { return `<div id="navroute">${routePanel()}</div>`; }
+    function routeHtml() { return `<div id="navtrack" class="card track-card"></div><div id="navroute">${routePanel()}</div>`; }
+
+    // Bande « le bus roule » : créée une seule fois, seul le bus se déplace (animation fluide)
+    const BUS = `<svg viewBox="0 0 70 34" width="62" height="30" aria-hidden="true"><g class="tbody">
+      <rect x="2" y="2" width="62" height="24" rx="6" fill="#f08a24"/><rect x="2" y="19" width="62" height="3" fill="#d56f12"/>
+      ${[8, 20, 32, 44].map(x => `<rect x="${x}" y="6" width="9" height="8" rx="2" fill="#e3f3f7"/>`).join('')}
+      <rect x="56" y="6" width="6" height="11" rx="2" fill="#e3f3f7"/></g>
+      ${[16, 52].map(cx => `<g class="twheel" style="transform-origin:${cx}px 27px"><circle cx="${cx}" cy="27" r="6" fill="#102029"/><circle cx="${cx}" cy="27" r="2.4" fill="#9aa"/><rect x="${cx - 0.6}" y="22" width="1.2" height="10" fill="#9aa"/></g>`).join('')}</svg>`;
+    function trackInner() {
+      const D = P.dest.s, used = sim.used;
+      return `<div class="track" dir="ltr">
+        <span class="tl tl-start">🚩 זכרון יעקב</span><span class="tl tl-end">ארומה ☕</span>
+        <div class="troad"></div>
+        ${P.stops.filter(st => st.main).map((st, i) => `<div class="tstop ${i % 2 ? 'low' : ''} ${used.has(st.question) ? 'done' : ''}" style="left:${(100 * st.s / D).toFixed(1)}%"><i></i><small>${esc(nm(st.name).split(' — ')[0].split(' ו')[0])}</small></div>`).join('')}
+        <div class="tbus" id="tbus">${BUS}</div></div>`;
+    }
+    function paintTrack() {
+      const t = document.getElementById('navtrack'); if (!t) return;
+      if (!P || !sim.on) { t.style.display = 'none'; t.innerHTML = ''; t.dataset.k = ''; return; }
+      t.style.display = '';
+      const k = sim.used.size + ':' + lang() + ':' + P.length;
+      if (t.dataset.k !== k) { t.innerHTML = trackInner(); t.dataset.k = k; }
+      const s = sim.trk && sim.trk.s != null ? sim.trk.s : 0;
+      const bus = document.getElementById('tbus');
+      bus.style.left = `calc(${(100 * Math.min(1, s / P.dest.s)).toFixed(2)}% - 31px)`;
+      t.querySelector('.track').classList.toggle('running', sim.run);
+    }
     function routePanel() {
       if (!P) { if (!load._p) load._p = load().then(paint); return '<div class="card">טוען מסלול…</div>'; }
       const pl = sim.on ? G.plan(P, sim.trk, simCtx()) : null;
@@ -387,11 +413,11 @@
         if (pl.status !== 'ok') simLog('GPS: ' + (STATUS[pl.status] ? STATUS[pl.status][0] : pl.status));
       }
       // publication automatique au 🟢 (simulation seulement : rien n'est envoyé)
-      // (on laisse le 🟢 visible ~2,5 s pour que le guide le voie)
       const green = sim.auto && pl.next && pl.next.level === 3 && !pl.hold && !pl.finish && !sim.used.has(pl.next.stop.question);
+      // délai court en temps SIMULÉ (5 s) et au moins 0,8 s à l'écran : ne décale pas le bus en vitesse rapide
       if (!green) sim.greenSince = null;
-      else if (!sim.greenSince) sim.greenSince = Date.now();
-      else if (Date.now() - sim.greenSince >= 2500) { sim.greenSince = null; simPublish(pl.next.stop); }
+      else if (!sim.greenSince) sim.greenSince = { sim: sim.now, real: Date.now() };
+      else if (sim.now - sim.greenSince.sim >= 5000 && Date.now() - sim.greenSince.real >= 800) { sim.greenSince = null; simPublish(pl.next.stop); }
       for (const it of pl.passed) if (it.stop.main && !sim.warned.has(it.stop.id)) { sim.warned.add(it.stop.id); simLog('⚠️ עברנו את ' + nm(it.stop.name) + ' בלי לשאול'); }
       if (sim.eng.done) { sim.run = false; clearInterval(sim.timer); simLog('☕ הגענו לארומה'); }
       paint();
@@ -506,6 +532,7 @@
 
     // --------------------------------------------------------------- Rafraîchissement en place (sans tout redessiner)
     function paint() {
+      paintTrack();
       const a = document.getElementById('navroot');
       const typing = el => el && /^(INPUT|SELECT|TEXTAREA)$/.test(el.tagName) && el.type !== 'checkbox';
       if (a && !(a.contains(document.activeElement) && typing(document.activeElement))) { const o = a.querySelector('details[open]'); a.innerHTML = livePanel(); if (o) keepOpen(a, o); }
