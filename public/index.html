@@ -324,15 +324,39 @@
     if (g.phase === 'revealed') return renderRevealed(q);
   }
 
+  // Petit paysage animé : le bus roule sur la route 67 pendant qu'on attend la question
+  const SCENE = `<svg class="scene" viewBox="0 0 320 130" role="img" aria-label="🚌">
+    <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe6f5"/><stop offset="1" stop-color="#f3fbff"/></linearGradient></defs>
+    <rect width="320" height="130" fill="url(#sky)"/>
+    <g class="sun"><circle cx="270" cy="30" r="14" fill="#ffd34e"/><circle cx="270" cy="30" r="20" fill="#ffd34e" opacity=".25"/></g>
+    <g class="clouds">${[0, 320].map(x => `<g transform="translate(${x} 0)" fill="#fff" opacity=".95"><ellipse cx="60" cy="28" rx="20" ry="8"/><ellipse cx="74" cy="22" rx="13" ry="9"/><ellipse cx="200" cy="42" rx="16" ry="6"/><ellipse cx="210" cy="37" rx="10" ry="7"/></g>`).join('')}</g>
+    <g class="hills-far">${[0, 320].map(x => `<path transform="translate(${x} 0)" d="M0 92 Q40 58 80 80 T160 72 T240 82 T320 92 V130 H0Z" fill="#8fbf7a"/>`).join('')}</g>
+    <g class="hills-near">${[0, 320].map(x => `<g transform="translate(${x} 0)"><path d="M0 100 Q50 78 110 96 T220 92 T320 100 V130 H0Z" fill="#5f9a4c"/>
+      <g fill="#3f6b35"><circle cx="40" cy="90" r="7"/><rect x="39" y="94" width="2" height="7"/><circle cx="150" cy="88" r="8"/><rect x="149" y="93" width="2" height="8"/><circle cx="260" cy="92" r="6"/><rect x="259" y="96" width="2" height="6"/></g></g>`).join('')}</g>
+    <rect y="106" width="320" height="24" fill="#5b6770"/>
+    <g class="dashes">${Array.from({ length: 12 }, (_, i) => `<rect x="${i * 40}" y="117" width="22" height="3" rx="1.5" fill="#f7f1e5"/>`).join('')}</g>
+    <g class="bus">
+      <rect x="128" y="80" width="68" height="28" rx="6" fill="#f08a24"/>
+      <rect x="128" y="98" width="68" height="4" fill="#d56f12"/>
+      <g fill="#e3f3f7">${[134, 148, 162, 176].map(x => `<rect x="${x}" y="85" width="11" height="9" rx="2"/>`).join('')}</g>
+      <rect x="189" y="85" width="6" height="12" rx="2" fill="#e3f3f7"/>
+      <circle cx="196" cy="102" r="2" fill="#fff6a8"/>
+      ${[143, 182].map(cx => `<g class="wheel" style="transform-origin:${cx}px 108px"><circle cx="${cx}" cy="108" r="7" fill="#102029"/><circle cx="${cx}" cy="108" r="3" fill="#9aa"/><rect x="${cx - 0.75}" y="102" width="1.5" height="12" fill="#9aa"/></g>`).join('')}
+    </g>
+    <g class="puff" fill="#c7cfd3"><circle cx="122" cy="104" r="3"/><circle cx="114" cy="101" r="2"/></g>
+  </svg>`;
   function renderWaiting(extra = '') {
-    if (renderedKey === 'wait:' + lang + ':' + version) return;
-    renderedKey = 'wait:' + lang + ':' + version;
+    // déjà affiché : on met juste à jour la ligne score/rang, sans relancer l'animation
+    if (renderedKey === 'wait:' + lang && app.querySelector('.scene')) {
+      const ml = app.querySelector('.myline'); if (ml) ml.outerHTML = myLine();
+      return;
+    }
+    renderedKey = 'wait:' + lang;
     app.innerHTML = myLine() + extra + `
       <div class="card waiting">
-        <div style="font-size:44px">🚌</div>
+        ${SCENE}
         <div class="big">${esc(t('waiting'))}</div>
-        <p class="muted">${esc(t('waiting_s'))}</p>
-        <div class="road"></div>
+        <p class="muted">${esc(t('waiting_s'))}<span class="dots"><i>.</i><i>.</i><i>.</i></span></p>
       </div>`;
   }
 

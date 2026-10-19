@@ -309,3 +309,22 @@ label { display: block; font-weight: 700; margin: 12px 0 6px; }
 .routemap { width: 100%; height: auto; background: #f4f9fb; border-radius: 12px; margin-top: 8px; }
 .simtag { display: inline-block; background: #6b3fa0; color: #fff; border-radius: 8px; padding: 2px 8px; font-weight: 800; font-size: 13px; }
 .finishcard { border: 3px solid #6b3fa0; background: #f5effc; }
+
+/* ---------- Attente : paysage animé ---------- */
+.waiting .scene { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto 8px; border-radius: 16px; overflow: hidden; }
+.scene .clouds { animation: slide 40s linear infinite; }
+.scene .hills-far { animation: slide 26s linear infinite; }
+.scene .hills-near { animation: slide 11s linear infinite; }
+.scene .dashes { animation: dash .5s linear infinite; }
+.scene .bus { animation: bob .45s ease-in-out infinite alternate; }
+.scene .wheel { animation: spin .5s linear infinite; }
+.scene .sun { animation: beat 3s ease-in-out infinite; transform-origin: 270px 30px; }
+.scene .puff { animation: puff 1s ease-out infinite; }
+@keyframes slide { to { transform: translateX(-320px); } }
+@keyframes dash { to { transform: translateX(-40px); } }
+@keyframes bob { from { transform: translateY(0); } to { transform: translateY(-1.5px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes puff { from { opacity: .9; transform: translateX(0); } to { opacity: 0; transform: translateX(-14px); } }
+.dots i { font-style: normal; animation: blink 1.4s infinite both; }
+.dots i:nth-child(2) { animation-delay: .2s; } .dots i:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%, 80%, 100% { opacity: 0; } 40% { opacity: 1; } }
