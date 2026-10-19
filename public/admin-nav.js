@@ -178,7 +178,7 @@
           : '<p class="small muted">השאלה לא נמצאה בבנק V3 (הריצו את migration_v3.sql).</p>'}
         <div class="row" style="margin-top:10px">
           ${canPub ? (simMode
-            ? `<button class="btn sun" data-nav="simpub" data-stop="${st.id}">📣 פרסם שאלה <small>(סימולציה — לא נשלח)</small></button>`
+            ? `<button class="btn ghost" data-nav="simpub" data-stop="${st.id}">🧪 ניסיון בלבד — לא נשלח לתלמידים</button>`
             : `<button class="btn sun" data-nav="publish" data-stop="${st.id}" style="font-size:22px">📣 פרסם שאלה</button>`) : ''}
         </div>
         <div class="row" style="margin-top:8px">
@@ -305,7 +305,7 @@
       const it = route.itinerary || {};
       return `
         <div class="card"><h2>🧪 סימולציית נסיעה — כביש 67</h2>
-          <p class="small muted">אוטובוס וירטואלי נוסע על המסלול. <b>שום דבר לא נשלח לתלמידים.</b></p>
+          <div class="navstat warn"><b>🧪 זו סימולציה — שום דבר לא נשלח לתלמידים.</b><br>כדי לשלוח שאלה אמיתית: ⚙️ → 🔄 משחק חדש → V3, ואז בלשונית 📡 שידור חי ← ״📣 פרסם שאלה״.</div>
           <div class="simbar">
             ${sim.run ? '<button class="btn ghost" data-nav="sim-pause">⏸️ עצור</button>' : '<button class="btn ok" data-nav="sim-play">▶️ הפעל</button>'}
             <button class="btn ghost" data-nav="sim-speed">⏩ ×${sim.mul}</button>
