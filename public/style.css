@@ -389,3 +389,11 @@ body.busmode .toast { bottom: auto; top: 80px; }
 .busrank { background: #fff; border-radius: 14px; padding: 10px 12px; margin-top: 18px; }
 .busrank h3 { margin: 0 0 4px; font-size: 19px; }
 .busrank .lb li { font-size: 17px; }
+
+/* ---------- Écran d'attente : les règles en mode défi ---------- */
+.rules { background: linear-gradient(135deg, #fff8e6, #ffeccc); border: 2px solid #f5c26b; }
+.rules summary { font-size: 19px; font-weight: 900; cursor: pointer; color: #8a4b00; }
+.rules ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+.rules li { background: #fff; border-radius: 12px; padding: 9px 12px; font-size: 16px; line-height: 1.4; }
+.rules li b { color: var(--sea); font-size: 18px; }
+.rules-end { margin: 10px 0 0; text-align: center; font-weight: 800; font-size: 16px; }
