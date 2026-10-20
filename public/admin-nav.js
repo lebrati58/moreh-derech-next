@@ -222,12 +222,15 @@
         <ul class="navlist">${P.stops.map(st => {
           const q = qOf(st), used = ctx.used.has(st.question), sk = ctx.skipped.has(st.id);
           const tag = used ? '✔ נשאלה' : sk ? '⏭️ דילגנו' : passed.has(st.id) ? '⚠️ עברנו' : st.main ? '' : '🔁 חלופית';
-          return `<li class="${used || sk ? 'done' : ''}"><span class="k">ק״מ ${(st.s / 1000).toFixed(1)}</span>
+          return `<li class="${used || sk ? 'done' : ''}"><span class="k">${st.main ? `<b>${numOf(st)}</b> · ` : ''}ק״מ ${(st.s / 1000).toFixed(1)}</span>
             <span class="grow">${esc(nm(st.name))} <small class="muted">${tag}</small></span>
             ${sk ? `<button class="btn ghost small" data-nav="unskip" data-stop="${st.id}">↩️</button>`
               : !used && q ? `<button class="btn ghost small" data-nav="pin" data-stop="${st.id}">📌 בחר</button>` : ''}</li>`;
         }).join('')}</ul></details>`;
     }
+
+    // Numéro affiché d'un lieu (1, 2, 3… dans l'ordre du trajet) — plus lisible que l'identifiant S11, S12…
+    function numOf(st) { return P.stops.filter(x => x.main).sort((a, b) => a.s - b.s).indexOf(st) + 1; }
 
     // --------------------------------------------------------------- Carte SVG du trajet
     function mapSvg(pos) {
@@ -238,15 +241,16 @@
       const X = x => pad + (x - minX) * k, Y = y => H - pad - (y - minY) * k;
       const line = P.pts.map(p => X(p.x).toFixed(1) + ',' + Y(p.y).toFixed(1)).join(' ');
       const dot = s => { const p = G.pointAt(P, s); return [X(p.x), Y(p.y)]; };
-      const stops = P.stops.map((st, i) => { const [x, y] = dot(st.s);
-        return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${st.main ? 7 : 5}" fill="${st.main ? '#0b4a6b' : '#8aa'}"/><text x="${x.toFixed(1)}" y="${(y - 10).toFixed(1)}" font-size="10" text-anchor="middle" fill="#123">${esc(st.id)}</text>`; }).join('');
+      // numéros alternés au-dessus / en dessous du trait pour que les lieux proches ne se chevauchent pas
+      const stops = P.stops.filter(st => st.main).map(st => { const [x, y] = dot(st.s), n = numOf(st);
+        return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="#0b4a6b"/><text x="${x.toFixed(1)}" y="${(n % 2 ? y - 9 : y + 17).toFixed(1)}" font-size="11" font-weight="700" text-anchor="middle" fill="#0b4a6b">${n}</text>`; }).join('');
       const [dx, dy] = dot(P.dest.s);
       let me = '';
       if (pos) { const p = P.proj.fwd(pos.lat, pos.lon); me = `<circle cx="${X(p.x).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="8" fill="#f08a24" stroke="#fff" stroke-width="3"/>`; }
       return `<svg class="routemap" viewBox="0 0 ${W} ${H}" role="img" aria-label="מפת המסלול">
         <polyline points="${line}" fill="none" stroke="${P.verified ? '#2e9d52' : '#0b4a6b'}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" ${P.verified ? '' : 'stroke-dasharray="10 6"'}/>
         ${stops}<text x="${dx.toFixed(1)}" y="${(dy + 4).toFixed(1)}" font-size="18" text-anchor="middle">☕</text>${me}
-        <text x="6" y="${H - 6}" font-size="10" fill="#555">${P.verified ? 'מסלול מוקלט/מאומת' : 'מסלול משוער (קו מקווקו) — לאמת'}</text></svg>`;
+        <text x="${W - 6}" y="${H - 6}" font-size="10" fill="#555" direction="rtl" text-anchor="start">${P.verified ? 'מסלול מוקלט/מאומת' : 'מסלול משוער (קו מקווקו) — לאמת'}</text></svg>`;
     }
     function gmapsLink() {
       if (!route) return '#';
@@ -286,8 +290,9 @@
       return `<div class="track" dir="ltr">
         <span class="tl tl-start">🚩 זכרון יעקב</span><span class="tl tl-end">ארומה ☕</span>
         <div class="troad"></div>
-        ${P.stops.filter(st => st.main).map((st, i) => `<div class="tstop ${i % 2 ? 'low' : ''} ${used.has(st.question) ? 'done' : ''}" style="left:${(100 * st.s / D).toFixed(1)}%"><i></i><small>${esc(nm(st.name).split(' — ')[0].split(' ו')[0])}</small></div>`).join('')}
-        <div class="tbus" id="tbus">${BUS}</div></div>`;
+        ${P.stops.filter(st => st.main).map(st => `<div class="tstop ${used.has(st.question) ? 'done' : ''}" style="left:${(100 * st.s / D).toFixed(1)}%"><i>${numOf(st)}</i></div>`).join('')}
+        <div class="tbus" id="tbus">${BUS}</div></div>
+        <div class="tnext" id="tnext"></div>`;
     }
     function paintTrack() {
       const t = document.getElementById('navtrack'); if (!t) return;
@@ -299,6 +304,10 @@
       const bus = document.getElementById('tbus');
       bus.style.left = `calc(${(100 * Math.min(1, s / P.dest.s)).toFixed(2)}% - 31px)`;
       t.querySelector('.track').classList.toggle('running', sim.run);
+      // un seul nom affiché : le prochain lieu devant le bus (les 14 noms ne tiennent pas sur un téléphone)
+      const nx = P.stops.filter(st => st.main && !sim.used.has(st.question) && st.s >= s - 150).sort((a, b) => a.s - b.s)[0];
+      const txt = nx ? `▶ הבא: ${numOf(nx)} · ${nm(nx.name)}` : '☕ ארומה';
+      const tn = document.getElementById('tnext'); if (tn.textContent !== txt) tn.textContent = txt;
     }
     function routePanel() {
       if (!P) { if (!load._p) load._p = load().then(paint); return '<div class="card">טוען מסלול…</div>'; }
