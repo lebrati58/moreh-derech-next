@@ -19,7 +19,7 @@ Coordonnées publiées (Wikipédia hébreu) : Zikhron 32.58861, 34.92694 · Bat 
 **Limites honnêtes**
 - Les points entre ces échangeurs sont **interpolés** : erreur possible de plusieurs centaines de mètres dans les virages du wadi. Le tracé est donc marqué « משוער » et le couloir de tolérance est large (650 m).
 - La position exacte de G Center / du point de dépose de l'autocar est **estimée (±500 m)** : à confirmer.
-- **Aucun côté du bus n'est présenté comme vérifié** : l'écran affiche « ⚠️ צד האוטובוס לא אומת — לא להצביע » + ce que disent les documents. Les deux documents se contredisent (Hagit, Elyakim : la note de relecture du document de Yossi inverse les côtés ; Meir Shfeya : les coordonnées laissent penser qu'il pourrait être à droite).
+- **Côté du bus** : quand les deux documents (Yaïr et Yossi) sont d'accord, le côté est affiché tel quel (consigne du guide) ; avec un seul document, le côté est affiché avec sa source.
 - ➜ **Faire un trajet de repérage** avec « 🛰️ הקלטת המסלול » (enregistre le vrai tracé et le point exact de chaque lieu), puis « 💾 שמירה כמסלול מאומת » : le GPS passe alors sur la route réelle (couloir 120 m). Pour rendre la trace permanente pour tous les téléphones : « ⬇️ ייצוא GeoJSON » puis l'envoyer pour intégration dans `road67-route.json`, en ajoutant `"side": { "verified": true, "value": "left" | "right" }` pour chaque côté constaté.
 
 ## Rythme (mesuré en simulation, mêmes règles que le vrai GPS)

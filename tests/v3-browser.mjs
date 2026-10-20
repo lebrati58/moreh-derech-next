@@ -201,7 +201,7 @@ await gctx.setGeolocation({ latitude: 32.5945, longitude: 34.9760, accuracy: 10 
 await gpage.waitForTimeout(2500);
 const navTxt = await gpage.textContent('#navroot');
 assert.match(navTxt, /ק״מ \d/);
-assert.match(navTxt, /צד האוטובוס לא אומת — לא להצביע/);
+assert.match(navTxt, /👈 שמאל|ימין 👉/);
 await shot(gpage, 'a5-gps-reel-sur-le-trajet', true);
 assert.equal(await published(), nBefore, 'le GPS ne publie jamais');
 // position imprécise → mode manuel annoncé

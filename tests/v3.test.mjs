@@ -41,7 +41,10 @@ test('contenu V3 : validé, 14 questions principales, 4 langues, aucune photo, N
   assert.ok(main.some(q => q.id === 'ROAD67-06' && q.final), 'question NVIDIA présente');
   const nv = SRC['ROAD67-06'];
   assert.equal(nv.i18n.he.question, 'איזו חברה ישראלית שפעלה ביוקנעם נרכשה על ידי אנבידיה בשנת 2020?');
-  assert.deepEqual(nv.i18n.he.options, ['מלאנוקס', 'מובילאיי', 'ווייז', "צ'ק פוינט"]);
+  assert.deepEqual(nv.i18n.he.options, ['מלאנוקס', 'מובילאיי', 'ווייז', 'אנוביט']);
+  // la bonne réponse n'est pas toujours au même endroit (sinon les élèves le remarquent)
+  const pos = [0, 0, 0, 0]; DATA.v3.questions.forEach(q => pos[q.correctIndex]++);
+  assert.ok(Math.max(...pos) <= 5, 'bonnes réponses trop souvent à la même place : ' + pos);
   assert.equal(nv.correctIndex, 0);
   assert.ok(nv.sources.some(s => s.url.includes('nvidianews.nvidia.com')));
   for (const q of DATA.v3.questions) {
@@ -53,7 +56,9 @@ test('contenu V3 : validé, 14 questions principales, 4 langues, aucune photo, N
         assert.ok(!/[֐-׿]/.test(q.i18n[l][f]), `${q.id} ${l}.${f} contient de l'hébreu`);
     }
   }
-  assert.equal(ROUTE.stops.filter(s => s.side.verified).length, 0, 'aucun côté présenté comme vérifié');
+  // côté « vérifié » seulement quand les deux documents de guidage sont d'accord (consigne du guide)
+  assert.deepEqual(ROUTE.stops.filter(s => s.side.verified).map(s => s.id), ['S12', 'S1', 'S2', 'S7', 'S3', 'S4', 'S5']);
+  for (const s of ROUTE.stops) if (s.side.verified) assert.ok(['left', 'right'].includes(s.side.value), s.id);
   // le générateur refuse une traduction recopiée en hébreu (bug de la première ébauche V3)
   const bad = structuredClone(DATA);
   bad.v3.questions[0].i18n.fr.explanation = bad.v3.questions[0].i18n.he.explanation;
@@ -120,7 +125,7 @@ test('partie V3 en 4 langues : même question, même index, même chrono, points
     assert.equal(v.closes_at, views.he.question.closes_at); assert.equal(v.time_limit, 45);
     const raw = JSON.stringify(views[l]);
     assert.equal(v.correct_index, undefined); assert.equal(v.explanation, undefined);
-    for (const f of ['script', 'fact', 'caution', 'cue']) assert.ok(!raw.includes(src.i18n[l][f].slice(0, 30)), `${f} ${l} divulgué`);
+    for (const f of ['script', 'fact', 'caution', 'cue']) if (src.i18n[l][f]) assert.ok(!raw.includes(src.i18n[l][f].slice(0, 30)), `${f} ${l} divulgué`);
     assert.ok(!raw.includes('guide_') && !raw.includes('route_meta'));
   }
   // le téléphone n'envoie qu'un index : le serveur calcule les points
