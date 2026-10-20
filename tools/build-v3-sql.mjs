@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 const root = new URL('../', import.meta.url);
 const read = p => JSON.parse(readFileSync(new URL(p, root), 'utf8'));
 export const LANGS = ['he', 'fr', 'en', 'ru'];
-const FIELDS = ['question', 'explanation', 'script', 'fact', 'cue', 'caution'];
+const FIELDS = ['question', 'explanation', 'script', 'long', 'fact', 'cue', 'caution'];
 const HEBREW = /[֐-׿]/;
 
 export function loadV3() {
@@ -74,13 +74,13 @@ export function buildV3Sql() {
     for (const l of LANGS) {
       const t = q.i18n[l];
       if (l !== 'he') i18n[l] = { text: t.question, options: t.options, explanation: t.explanation, category: q.category[l] };
-      guide[l] = { script: t.script, fact: t.fact, cue: t.cue, caution: t.caution };
+      guide[l] = { script: t.script, long: t.long, fact: t.fact, cue: t.cue, caution: t.caution };
     }
     const meta = { stop: q.stop, final: !!q.final, topic: q.topic, docs: q.docs };
     return `(${[
       Q('v3:' + q.id), Q('V3'), Q(q.selection), Q('mcq'), Q(he.question), J(he.options), q.correctIndex,
       Q(he.explanation), Q(q.category.he), 2, q.timeLimitSec, q.order,
-      Q(he.script), Q(''), Q(he.cue), Q(q.docs), J(q.sources), Q(he.fact), Q(q.visibility || 'check'),
+      Q(he.script), Q(he.long), Q(he.cue), Q(q.docs), J(q.sources), Q(he.fact), Q(q.visibility || 'check'),
       J(i18n), J(guide), J(meta)
     ].join(', ')})`;
   });

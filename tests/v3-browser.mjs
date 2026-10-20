@@ -262,8 +262,7 @@ assert.equal(await admin.$$eval('#strip button', b => b.length), 32);
 await shot(admin, 'a8-V2-galerie');
 await admin.click('[data-view=settings]'); await admin.click('[data-a=newgame]');
 await admin.check('#ngf input[value=V1]'); await admin.click('#ngf button.sun');
-await admin.waitForSelector('.bankchip');
-assert.match(await admin.textContent('.bankchip'), /34 שאלות/);
+await admin.waitForFunction(() => /34 שאלות/.test(document.querySelector('.bankchip')?.textContent || ''), null, { timeout: 8000 });
 assert.equal(await admin.$('#navroot'), null, 'pas de GPS en V1');
 ok('V2 (6+2, galerie 32 photos) et V1 (34 questions) intacts');
 

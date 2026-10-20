@@ -3,7 +3,7 @@
 // Pages, scripts, styles et données sont REVALIDÉS auprès du serveur (cache: 'no-cache') : jamais
 // d'ancienne version tant que le réseau répond. Les appels à Supabase (POST, autre domaine) ne
 // passent jamais par ce cache.
-const CACHE = 'mdl-v12';
+const CACHE = 'mdl-v13';
 const FILES = ['./', './index.html', './admin.html', './style.css', './api.js', './config.js',
   './gps-engine.js', './admin-nav.js', './v3/road67-route.json'];
 

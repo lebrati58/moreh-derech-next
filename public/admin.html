@@ -637,8 +637,9 @@
     const stop = nav && nav.P ? nav.P.stops.find(st => 'v3:' + st.question === q.ext_key) : null;
     const nm = o => o ? (o[alang] || o.he || '') : '';
     const fin = q.route_meta && q.route_meta.final;
-    return `<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">${fin ? '🎤 סיום ההדרכה' : '🎤 מה להגיד באוטובוס'} · 20–40 שנ׳</div>
+    return `<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">${fin ? '🎤 סיום ההדרכה' : '🎤 מה להגיד באוטובוס'} · משפט אחד</div>
       <div class="guide-text" ${dirOf(l)}>${paras(g.script)}</div>
+      ${g.long ? `<details class="guide-src"><summary>📖 גרסה מורחבת (אם יש זמן)</summary><div ${dirOf(l)}>${paras(g.long)}</div></details>` : ''}
       ${g.fact ? `<div class="guide-box fact" ${dirOf(l)}><b class="h">💡 הידעת?</b>${paras(g.fact)}</div>` : ''}
       <div class="guide-box prac" ${dirOf(l)}><b class="h">📍 מתי לדבר?</b>${paras(g.cue)}
         ${stop ? `<p>👀 ${esc(nm(stop.look))}</p>

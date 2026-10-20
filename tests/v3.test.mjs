@@ -46,9 +46,10 @@ test('contenu V3 : validé, 14 questions principales, 4 langues, aucune photo, N
   assert.ok(nv.sources.some(s => s.url.includes('nvidianews.nvidia.com')));
   for (const q of DATA.v3.questions) {
     for (const l of LANGS) {
-      const words = q.i18n[l].script.split(/\s+/).length;
-      assert.ok(words >= 45 && words <= 110, `script ${q.id} ${l} : ${words} mots (≈20–40 s au micro)`);
-      if (l !== 'he') for (const f of ['question', 'explanation', 'script', 'fact', 'cue', 'caution'])
+      const words = q.i18n[l].script.split(/\s+/).length, longW = q.i18n[l].long.split(/\s+/).length;
+      assert.ok(words <= 30, `script court ${q.id} ${l} : ${words} mots (une phrase au micro)`);
+      assert.ok(longW >= 45 && longW <= 110, `version longue ${q.id} ${l} : ${longW} mots`);
+      if (l !== 'he') for (const f of ['question', 'explanation', 'script', 'long', 'fact', 'cue', 'caution'])
         assert.ok(!/[֐-׿]/.test(q.i18n[l][f]), `${q.id} ${l}.${f} contient de l'hébreu`);
     }
   }
