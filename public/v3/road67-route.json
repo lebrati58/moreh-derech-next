@@ -5,7 +5,10 @@
   "status": "approximate",
   "statusNote": "Géométrie reconstruite à partir des coordonnées publiées des échangeurs (Wikipédia) ; les points intermédiaires sont interpolés. Erreur possible de plusieurs centaines de mètres dans les virages du wadi. À remplacer par une trace enregistrée lors d'un trajet de repérage (mode 🛰️ dans l'admin).",
   "direction": "eastbound",
-  "corridorM": { "approximate": 650, "verified": 120 },
+  "corridorM": {
+    "approximate": 650,
+    "verified": 120
+  },
   "verifiedAt": null,
   "itinerary": {
     "chosen": "Route 67 vers l'est (Zikhron → Ein Tut, 13 km), puis route 6 vers le nord sur le tronçon GRATUIT Ein Tut → Yokneam (ancienne route 70, élargi en 2022), sortie échangeur Yokneam (route 722), G Center.",
@@ -19,24 +22,87 @@
     ]
   },
   "roads": [
-    { "fromVertex": 0, "toVertex": 7, "he": "כביש 67 — ואדי מילק", "fr": "Route 67 — Wadi Milk", "en": "Road 67 — Wadi Milk", "ru": "Шоссе 67 — Вади-Милк", "speedKmh": 60 },
-    { "fromVertex": 7, "toVertex": 11, "he": "כביש 6 צפונה — קטע ללא אגרה עד יקנעם", "fr": "Route 6 nord — section gratuite jusqu'à Yokneam", "en": "Road 6 north — toll-free to Yokneam", "ru": "Шоссе 6 на север — бесплатный участок до Йокнеама", "speedKmh": 80 },
-    { "fromVertex": 11, "toVertex": 12, "he": "יציאה ליקנעם עילית — מתחם G", "fr": "Sortie Yokneam Illit — G Center", "en": "Exit to Yokneam Illit — G Center", "ru": "Съезд на Йокнеам-Илит — центр G", "speedKmh": 25 }
+    {
+      "fromVertex": 0,
+      "toVertex": 7,
+      "he": "כביש 67 — ואדי מילק",
+      "fr": "Route 67 — Wadi Milk",
+      "en": "Road 67 — Wadi Milk",
+      "ru": "Шоссе 67 — Вади-Милк",
+      "speedKmh": 60
+    },
+    {
+      "fromVertex": 7,
+      "toVertex": 11,
+      "he": "כביש 6 צפונה — קטע ללא אגרה עד יקנעם",
+      "fr": "Route 6 nord — section gratuite jusqu'à Yokneam",
+      "en": "Road 6 north — toll-free to Yokneam",
+      "ru": "Шоссе 6 на север — бесплатный участок до Йокнеама",
+      "speedKmh": 80
+    },
+    {
+      "fromVertex": 11,
+      "toVertex": 12,
+      "he": "יציאה ליקנעם עילית — מתחם G",
+      "fr": "Sortie Yokneam Illit — G Center",
+      "en": "Exit to Yokneam Illit — G Center",
+      "ru": "Съезд на Йокнеам-Илит — центр G",
+      "speedKmh": 25
+    }
   ],
   "geometry": [
-    [32.58861, 34.92694],
-    [32.59250, 34.94500],
-    [32.59350, 34.96900],
-    [32.59650, 34.98800],
-    [32.59828, 35.00458],
-    [32.60300, 35.02000],
-    [32.60650, 35.03500],
-    [32.61012, 35.04836],
-    [32.62300, 35.05600],
-    [32.63639, 35.06500],
-    [32.64500, 35.07800],
-    [32.65576, 35.09844],
-    [32.65850, 35.10050]
+    [
+      32.58861,
+      34.92694
+    ],
+    [
+      32.5925,
+      34.945
+    ],
+    [
+      32.5935,
+      34.969
+    ],
+    [
+      32.5965,
+      34.988
+    ],
+    [
+      32.59828,
+      35.00458
+    ],
+    [
+      32.603,
+      35.02
+    ],
+    [
+      32.6065,
+      35.035
+    ],
+    [
+      32.61012,
+      35.04836
+    ],
+    [
+      32.623,
+      35.056
+    ],
+    [
+      32.63639,
+      35.065
+    ],
+    [
+      32.645,
+      35.078
+    ],
+    [
+      32.65576,
+      35.09844
+    ],
+    [
+      32.6585,
+      35.1005
+    ]
   ],
   "geometrySources": [
     "0 מחלף זכרון יעקב 32.58861,34.92694 — he.wikipedia",
@@ -53,91 +119,499 @@
     "12 מתחם G (ארומה) — משוער ±500 מ׳, לאמת"
   ],
   "destination": {
-    "he": "ארומה יקנעם — מתחם G, התמר 2", "fr": "Aroma Yokneam — G Center, HaTamar 2",
-    "en": "Aroma Yokneam — G Center, 2 HaTamar St", "ru": "«Арома» Йокнеам — центр G, ул. ха-Тамар, 2",
-    "point": [32.65850, 35.10050], "verified": false
+    "he": "ארומה יקנעם — מתחם G, התמר 2",
+    "fr": "Aroma Yokneam — G Center, HaTamar 2",
+    "en": "Aroma Yokneam — G Center, 2 HaTamar St",
+    "ru": "«Арома» Йокнеам — центр G, ул. ха-Тамар, 2",
+    "point": [
+      32.6585,
+      35.1005
+    ],
+    "verified": false
   },
-  "finish": { "needSec": 170, "note": "45 s réponse + révélation + 20–40 s micro + marge : ne plus proposer de question si moins de ~2 min 50 avant Aroma." },
+  "finish": {
+    "enabled": false,
+    "needSec": 170,
+    "note": "Règle « finir avant Aroma » désactivée à la demande du guide : les questions peuvent continuer jusqu'à l'arrivée."
+  },
   "stops": [
     {
-      "id": "S1", "question": "ROAD67-01", "main": true,
-      "name": { "he": "ואדי מילק — הכניסה למעבר", "fr": "Wadi Milk — entrée du passage", "en": "Wadi Milk — entering the pass", "ru": "Вади-Милк — вход в проход" },
-      "anchor": [32.59250, 34.94500], "anchorSource": "צומת פוריידיס — משוער",
-      "beforeM": 300, "afterM": 2000,
-      "side": { "verified": false, "docs": { "he": "פוריידיס — שני המסמכים: משמאל; זכרון יעקב — מימין (יוסי)", "fr": "Fureidis : à gauche (les deux documents) ; Zikhron : à droite (Yossi)", "en": "Fureidis: left (both documents); Zikhron: right (Yossi)", "ru": "Фурейдис — слева (оба документа); Зихрон — справа (Йоси)" } },
-      "look": { "he": "הכרמל מצפון, רמות מנשה וזכרון יעקב מדרום, הכביש נכנס לעמק נחל דליה", "fr": "Le Carmel au nord, Menashe et Zikhron au sud ; la route entre dans la vallée du Nahal Dalia", "en": "Carmel to the north, Menashe and Zikhron to the south; the road enters the Nahal Dalia valley", "ru": "Кармель на севере, Менаше и Зихрон на юге; дорога входит в долину ручья Далия" }
+      "id": "S11",
+      "question": "ROAD67-11",
+      "main": true,
+      "name": {
+        "he": "זכרון יעקב",
+        "fr": "Zikhron Yaakov",
+        "en": "Zikhron Ya'akov",
+        "ru": "Зихрон-Яаков"
+      },
+      "anchor": [
+        32.589,
+        34.929
+      ],
+      "anchorSource": "ליד מחלף זכרון יעקב — משוער",
+      "beforeM": 150,
+      "afterM": 450,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "יוסי: זכרון יעקב מימין",
+          "fr": "Yossi : Zikhron à droite",
+          "en": "Yossi: Zikhron on the right",
+          "ru": "Йоси: Зихрон справа"
+        }
+      },
+      "look": {
+        "he": "המושבה על הרכס מדרום, כרמים בעמק",
+        "fr": "La colonie sur la crête au sud, vignes dans la vallée",
+        "en": "The colony on the ridge to the south, vineyards in the valley",
+        "ru": "Колония на хребте к югу, виноградники в долине"
+      },
+      "prio": 2
     },
     {
-      "id": "S2", "question": "ROAD67-02", "main": true,
-      "name": { "he": "מאיר שפיה", "fr": "Meir Shfeya", "en": "Meir Shfeya", "ru": "Меир-Шфея" },
-      "anchor": [32.59350, 34.96900], "anchorSource": "צומת שפיה — משוער",
-      "beforeM": 500, "afterM": 700,
-      "side": { "verified": false, "docs": { "he": "יאיר: משמאל · יוסי: משמאל · קואורדינטות ויקיפדיה: קרוב לציר, אולי מימין", "fr": "Yaïr : gauche · Yossi : gauche · coordonnées Wikipédia : tout près de l'axe, peut-être à droite", "en": "Yair: left · Yossi: left · Wikipedia coordinates: very close to the road, possibly right", "ru": "Яир: слева · Йоси: слева · по Википедии: у самой дороги, возможно справа" } },
-      "look": { "he": "בתי כפר הנוער וכרמים על הגבעה; מחצבת שפיה (קיר לבן) — לפי המסמכים משמאל", "fr": "Bâtiments du village de jeunes et vignes sur la colline ; la carrière de Shfeya (paroi blanche) — à gauche selon les documents", "en": "Youth-village buildings and vineyards on the hill; Shfeya quarry (white wall) — on the left per the documents", "ru": "Здания посёлка и виноградники на холме; карьер Шфея (белая стена) — по документам слева" }
+      "id": "S12",
+      "question": "ROAD67-12",
+      "main": true,
+      "name": {
+        "he": "פוריידיס",
+        "fr": "Fureidis",
+        "en": "Fureidis",
+        "ru": "Фурейдис"
+      },
+      "anchor": [
+        32.5909,
+        34.9373
+      ],
+      "anchorSource": "לפני צומת פוריידיס — משוער",
+      "beforeM": 350,
+      "afterM": 350,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "שני המסמכים: משמאל",
+          "fr": "Les deux documents : à gauche",
+          "en": "Both documents: left",
+          "ru": "Оба документа: слева"
+        }
+      },
+      "look": {
+        "he": "הכפר למרגלות הכרמל, המסגד",
+        "fr": "Le village au pied du Carmel, la mosquée",
+        "en": "The village at the foot of the Carmel, the mosque",
+        "ru": "Деревня у подножия Кармеля, мечеть"
+      },
+      "prio": 2
     },
     {
-      "id": "S7", "question": "ROAD67-07", "main": false,
-      "name": { "he": "יערות אלונה — אלון התבור", "fr": "Bois d'Alona — chênes du Tabor", "en": "Alona woodland — Tabor oaks", "ru": "Леса Алона — таворский дуб" },
-      "anchor": [32.59650, 34.98800], "anchorSource": "אינטרפולציה",
-      "beforeM": 400, "afterM": 600,
-      "side": { "verified": false, "docs": { "he": "שני המסמכים: מימין", "fr": "Les deux documents : à droite", "en": "Both documents: right", "ru": "Оба документа: справа" } },
-      "look": { "he": "חורש פתוח של עצים רחבים ומרווחים על הגבעות", "fr": "Bois clair d'arbres larges et espacés sur les collines", "en": "Open woodland of broad, widely spaced trees on the hills", "ru": "Светлое редколесье из широких, далеко стоящих деревьев" }
+      "id": "S1",
+      "question": "ROAD67-01",
+      "main": true,
+      "name": {
+        "he": "ואדי מילק — הכניסה למעבר",
+        "fr": "Wadi Milk — entrée du passage",
+        "en": "Wadi Milk — entering the pass",
+        "ru": "Вади-Милк — вход в проход"
+      },
+      "anchor": [
+        32.5925,
+        34.945
+      ],
+      "anchorSource": "צומת פוריידיס — משוער",
+      "beforeM": 300,
+      "afterM": 2000,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "פוריידיס — שני המסמכים: משמאל; זכרון יעקב — מימין (יוסי)",
+          "fr": "Fureidis : à gauche (les deux documents) ; Zikhron : à droite (Yossi)",
+          "en": "Fureidis: left (both documents); Zikhron: right (Yossi)",
+          "ru": "Фурейдис — слева (оба документа); Зихрон — справа (Йоси)"
+        }
+      },
+      "look": {
+        "he": "הכרמל מצפון, רמות מנשה וזכרון יעקב מדרום, הכביש נכנס לעמק נחל דליה",
+        "fr": "Le Carmel au nord, Menashe et Zikhron au sud ; la route entre dans la vallée du Nahal Dalia",
+        "en": "Carmel to the north, Menashe and Zikhron to the south; the road enters the Nahal Dalia valley",
+        "ru": "Кармель на севере, Менаше и Зихрон на юге; дорога входит в долину ручья Далия"
+      },
+      "prio": 2
     },
     {
-      "id": "S10", "question": "ROAD67-10", "main": false,
-      "name": { "he": "מטעי שסק ברשתות", "fr": "Vergers de néfliers sous filets", "en": "Netted loquat orchards", "ru": "Сады мушмулы под сетками" },
-      "anchor": [32.59740, 34.99700], "anchorSource": "אינטרפולציה",
-      "beforeM": 300, "afterM": 500,
-      "side": { "verified": false, "docs": { "he": "יוסי: מימין בעמק", "fr": "Yossi : à droite dans la vallée", "en": "Yossi: right, in the valley", "ru": "Йоси: справа в долине" } },
-      "look": { "he": "מטעים מכוסים ברשתות לבנות/ירוקות — רק אם באמת רואים", "fr": "Vergers sous filets blancs ou verts — seulement si on les voit vraiment", "en": "Orchards under white/green nets — only if actually visible", "ru": "Сады под белыми/зелёными сетками — только если их правда видно" }
+      "id": "S2",
+      "question": "ROAD67-02",
+      "main": true,
+      "name": {
+        "he": "מאיר שפיה",
+        "fr": "Meir Shfeya",
+        "en": "Meir Shfeya",
+        "ru": "Меир-Шфея"
+      },
+      "anchor": [
+        32.5935,
+        34.969
+      ],
+      "anchorSource": "צומת שפיה — משוער",
+      "beforeM": 500,
+      "afterM": 700,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "יאיר: משמאל · יוסי: משמאל · קואורדינטות ויקיפדיה: קרוב לציר, אולי מימין",
+          "fr": "Yaïr : gauche · Yossi : gauche · coordonnées Wikipédia : tout près de l'axe, peut-être à droite",
+          "en": "Yair: left · Yossi: left · Wikipedia coordinates: very close to the road, possibly right",
+          "ru": "Яир: слева · Йоси: слева · по Википедии: у самой дороги, возможно справа"
+        }
+      },
+      "look": {
+        "he": "בתי כפר הנוער וכרמים על הגבעה; מחצבת שפיה (קיר לבן) — לפי המסמכים משמאל",
+        "fr": "Bâtiments du village de jeunes et vignes sur la colline ; la carrière de Shfeya (paroi blanche) — à gauche selon les documents",
+        "en": "Youth-village buildings and vineyards on the hill; Shfeya quarry (white wall) — on the left per the documents",
+        "ru": "Здания посёлка и виноградники на холме; карьер Шфея (белая стена) — по документам слева"
+      },
+      "prio": 3
     },
     {
-      "id": "S3", "question": "ROAD67-03", "main": true,
-      "name": { "he": "בת שלמה", "fr": "Bat Shlomo", "en": "Bat Shlomo", "ru": "Бат-Шломо" },
-      "anchor": [32.59828, 35.00458], "anchorSource": "מחלף בת שלמה — ויקיפדיה",
-      "beforeM": 700, "afterM": 500,
-      "side": { "verified": false, "docs": { "he": "יאיר: מימין · יוסי: מימין ומשמאל (המושבה מימין)", "fr": "Yaïr : à droite · Yossi : des deux côtés (la colonie à droite)", "en": "Yair: right · Yossi: both sides (the colony on the right)", "ru": "Яир: справа · Йоси: с обеих сторон (колония справа)" } },
-      "look": { "he": "בתי אבן ישנים, כרמים ומטעים סביב המחלף", "fr": "Vieilles maisons de pierre, vignes et vergers autour de l'échangeur", "en": "Old stone houses, vineyards and orchards around the interchange", "ru": "Старые каменные дома, виноградники и сады у развязки" }
+      "id": "S7",
+      "question": "ROAD67-07",
+      "main": true,
+      "name": {
+        "he": "יערות אלונה — אלון התבור",
+        "fr": "Bois d'Alona — chênes du Tabor",
+        "en": "Alona woodland — Tabor oaks",
+        "ru": "Леса Алона — таворский дуб"
+      },
+      "anchor": [
+        32.5965,
+        34.988
+      ],
+      "anchorSource": "אינטרפולציה",
+      "beforeM": 400,
+      "afterM": 600,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "שני המסמכים: מימין",
+          "fr": "Les deux documents : à droite",
+          "en": "Both documents: right",
+          "ru": "Оба документа: справа"
+        }
+      },
+      "look": {
+        "he": "חורש פתוח של עצים רחבים ומרווחים על הגבעות",
+        "fr": "Bois clair d'arbres larges et espacés sur les collines",
+        "en": "Open woodland of broad, widely spaced trees on the hills",
+        "ru": "Светлое редколесье из широких, далеко стоящих деревьев"
+      },
+      "prio": 1
     },
     {
-      "id": "S9", "question": "ROAD67-09", "main": false,
-      "name": { "he": "גבעות הקירטון ונחל תות", "fr": "Collines de craie et Nahal Tut", "en": "Chalk hills and Nahal Tut", "ru": "Меловые холмы и ручей Тут" },
-      "anchor": [32.60300, 35.02000], "anchorSource": "אינטרפולציה",
-      "beforeM": 500, "afterM": 1500,
-      "side": { "verified": false, "docs": { "he": "יוסי: חתך סלע מימין (אחרי עין תות)", "fr": "Yossi : tranchée à droite (après Ein Tut)", "en": "Yossi: road cut on the right (after Ein Tut)", "ru": "Йоси: выемка справа (после Эйн-Тута)" } },
-      "look": { "he": "גבעות מעוגלות ובהירות; לפעמים פסי צור כהים בחתכי הדרך", "fr": "Collines claires et arrondies ; parfois des bandes de silex sombres dans les tranchées", "en": "Pale rounded hills; sometimes dark flint bands in road cuts", "ru": "Светлые округлые холмы; иногда тёмные полосы кремня в выемках" }
+      "id": "S10",
+      "question": "ROAD67-10",
+      "main": true,
+      "name": {
+        "he": "מטעי שסק ברשתות",
+        "fr": "Vergers de néfliers sous filets",
+        "en": "Netted loquat orchards",
+        "ru": "Сады мушмулы под сетками"
+      },
+      "anchor": [
+        32.5974,
+        34.997
+      ],
+      "anchorSource": "אינטרפולציה",
+      "beforeM": 300,
+      "afterM": 500,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "יוסי: מימין בעמק",
+          "fr": "Yossi : à droite dans la vallée",
+          "en": "Yossi: right, in the valley",
+          "ru": "Йоси: справа в долине"
+        }
+      },
+      "look": {
+        "he": "מטעים מכוסים ברשתות לבנות/ירוקות — רק אם באמת רואים",
+        "fr": "Vergers sous filets blancs ou verts — seulement si on les voit vraiment",
+        "en": "Orchards under white/green nets — only if actually visible",
+        "ru": "Сады под белыми/зелёными сетками — только если их правда видно"
+      },
+      "prio": 1
     },
     {
-      "id": "S4", "question": "ROAD67-04", "main": true,
-      "name": { "he": "מחלף עין תות ותחנת הכוח חגית", "fr": "Échangeur d'Ein Tut et centrale de Hagit", "en": "Ein Tut interchange and Hagit power station", "ru": "Развязка Эйн-Тут и электростанция Хагит" },
-      "anchor": [32.61012, 35.04836], "anchorSource": "מחלף עין תות — ויקיפדיה; התחנה 32.617,35.043 (GEM)",
-      "beforeM": 1000, "afterM": 600,
-      "side": { "verified": false, "docs": { "he": "שני המסמכים: משמאל · הערת הבודק: הארובות מימין · לפי הקואורדינטות: צפון-מערבית למחלף", "fr": "Les deux documents : à gauche · note de relecture : cheminées à droite · coordonnées : au nord-ouest de l'échangeur", "en": "Both documents: left · reviewer's note: chimneys on the right · coordinates: north-west of the interchange", "ru": "Оба документа: слева · пометка проверяющего: трубы справа · по координатам: северо-западнее развязки" } },
-      "look": { "he": "ארובות ומבני תחנת הכוח; שלט מחלף עין תות — כביש 6 צפון", "fr": "Cheminées et bâtiments de la centrale ; panneau échangeur d'Ein Tut — route 6 nord", "en": "Chimneys and plant buildings; Ein Tut interchange sign — Road 6 north", "ru": "Трубы и корпуса станции; указатель развязки Эйн-Тут — шоссе 6 на север" }
+      "id": "S3",
+      "question": "ROAD67-03",
+      "main": true,
+      "name": {
+        "he": "בת שלמה",
+        "fr": "Bat Shlomo",
+        "en": "Bat Shlomo",
+        "ru": "Бат-Шломо"
+      },
+      "anchor": [
+        32.59828,
+        35.00458
+      ],
+      "anchorSource": "מחלף בת שלמה — ויקיפדיה",
+      "beforeM": 700,
+      "afterM": 500,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "יאיר: מימין · יוסי: מימין ומשמאל (המושבה מימין)",
+          "fr": "Yaïr : à droite · Yossi : des deux côtés (la colonie à droite)",
+          "en": "Yair: right · Yossi: both sides (the colony on the right)",
+          "ru": "Яир: справа · Йоси: с обеих сторон (колония справа)"
+        }
+      },
+      "look": {
+        "he": "בתי אבן ישנים, כרמים ומטעים סביב המחלף",
+        "fr": "Vieilles maisons de pierre, vignes et vergers autour de l'échangeur",
+        "en": "Old stone houses, vineyards and orchards around the interchange",
+        "ru": "Старые каменные дома, виноградники и сады у развязки"
+      },
+      "prio": 3
     },
     {
-      "id": "S5", "question": "ROAD67-05", "main": true,
-      "name": { "he": "אליקים", "fr": "Elyakim", "en": "Elyakim", "ru": "Эльяким" },
-      "anchor": [32.63639, 35.06500], "anchorSource": "מחלף אליקים — ויקיפדיה; המושב 32.633,35.066",
-      "beforeM": 1100, "afterM": 200,
-      "side": { "verified": false, "docs": { "he": "שני המסמכים: מימין · הערת הבודק: הבתים משמאל", "fr": "Les deux documents : à droite · note de relecture : maisons à gauche", "en": "Both documents: right · reviewer's note: houses on the left", "ru": "Оба документа: справа · пометка проверяющего: дома слева" } },
-      "look": { "he": "בתי המושב על הרמה; שלט מחלף אליקים (כביש 672)", "fr": "Maisons du moshav sur le plateau ; panneau échangeur d'Elyakim (route 672)", "en": "Moshav houses on the plateau; Elyakim interchange sign (Road 672)", "ru": "Дома мошава на плато; указатель развязки Эльяким (дорога 672)" }
+      "id": "S9",
+      "question": "ROAD67-09",
+      "main": true,
+      "name": {
+        "he": "גבעות הקירטון ונחל תות",
+        "fr": "Collines de craie et Nahal Tut",
+        "en": "Chalk hills and Nahal Tut",
+        "ru": "Меловые холмы и ручей Тут"
+      },
+      "anchor": [
+        32.603,
+        35.02
+      ],
+      "anchorSource": "אינטרפולציה",
+      "beforeM": 500,
+      "afterM": 700,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "יוסי: חתך סלע מימין (אחרי עין תות)",
+          "fr": "Yossi : tranchée à droite (après Ein Tut)",
+          "en": "Yossi: road cut on the right (after Ein Tut)",
+          "ru": "Йоси: выемка справа (после Эйн-Тута)"
+        }
+      },
+      "look": {
+        "he": "גבעות מעוגלות ובהירות; לפעמים פסי צור כהים בחתכי הדרך",
+        "fr": "Collines claires et arrondies ; parfois des bandes de silex sombres dans les tranchées",
+        "en": "Pale rounded hills; sometimes dark flint bands in road cuts",
+        "ru": "Светлые округлые холмы; иногда тёмные полосы кремня в выемках"
+      },
+      "prio": 1
     },
     {
-      "id": "S6", "question": "ROAD67-06", "main": true, "final": true,
-      "name": { "he": "יוקנעם — מלאנוקס ואנבידיה", "fr": "Yokneam — Mellanox et NVIDIA", "en": "Yokneam — Mellanox and NVIDIA", "ru": "Йокнеам — Mellanox и NVIDIA" },
-      "anchor": [32.64500, 35.07800], "anchorSource": "אינטרפולציה בין מחלף אליקים למחלף יקנעם",
-      "beforeM": 700, "afterM": 900,
-      "side": { "verified": false, "docs": { "he": "יאיר: אזור התעשייה משמאל · לא אומת שבנייני אנבידיה נראים", "fr": "Yaïr : zone industrielle à gauche · visibilité des bâtiments NVIDIA non vérifiée", "en": "Yair: industrial zone on the left · NVIDIA buildings' visibility not verified", "ru": "Яир: промзона слева · видимость зданий NVIDIA не проверена" } },
-      "look": { "he": "הירידה אל יקנעם ועמק יזרעאל; לא להצביע על בניין מסוים", "fr": "La descente vers Yokneam et la vallée de Jezréel ; ne désigner aucun bâtiment", "en": "The descent to Yokneam and the Jezreel Valley; don't point at any building", "ru": "Спуск к Йокнеаму и Изреельской долине; не показывать на конкретные здания" }
+      "id": "S14",
+      "question": "ROAD67-14",
+      "main": true,
+      "name": {
+        "he": "הכרמל ורמות מנשה — שמורות ביוספרה",
+        "fr": "Carmel et Menashe — réserves de biosphère",
+        "en": "Carmel and Menashe — biosphere reserves",
+        "ru": "Кармель и Менаше — биосферные заповедники"
+      },
+      "anchor": [
+        32.6065,
+        35.035
+      ],
+      "anchorSource": "אינטרפולציה לפני עין תות",
+      "beforeM": 300,
+      "afterM": 400,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "גאוגרפיה: הכרמל מצפון, מנשה מדרום — לא אומת",
+          "fr": "Géographie : Carmel au nord, Menashe au sud — non vérifié",
+          "en": "Geography: Carmel north, Menashe south — not verified",
+          "ru": "География: Кармель на севере, Менаше на юге — не проверено"
+        }
+      },
+      "look": {
+        "he": "חורש, גבעות ושטחי מרעה משני הצדדים",
+        "fr": "Bois, collines et pâturages des deux côtés",
+        "en": "Woodland, hills and pastures on both sides",
+        "ru": "Леса, холмы и пастбища по обе стороны"
+      },
+      "prio": 1
     },
     {
-      "id": "S8", "question": "ROAD67-08", "main": false,
-      "name": { "he": "יקנעם המקראית", "fr": "Yokneam biblique", "en": "Biblical Yokneam", "ru": "Библейский Йокнеам" },
-      "anchor": [32.65200, 35.09100], "anchorSource": "אינטרפולציה",
-      "beforeM": 400, "afterM": 400,
-      "side": { "verified": false, "docs": { "he": "יוסי: תל יוקנעם מימין (אחרי מחלף יקנעם, בדרך לתשבי) — לא במסלול שלנו", "fr": "Yossi : Tel Yokneam à droite (après l'échangeur, vers HaTishbi) — hors de notre trajet", "en": "Yossi: Tel Yokneam on the right (after the interchange, towards HaTishbi) — not on our route", "ru": "Йоси: Тель-Йокнеам справа (после развязки, к ха-Тишби) — не на нашем маршруте" } },
-      "look": { "he": "יקנעם עילית על המדרון; התל עצמו כנראה לא נראה", "fr": "Yokneam Illit sur la pente ; le tell lui-même probablement invisible", "en": "Yokneam Illit on the slope; the tell itself probably not visible", "ru": "Йокнеам-Илит на склоне; сам тель, вероятно, не виден" }
+      "id": "S4",
+      "question": "ROAD67-04",
+      "main": true,
+      "name": {
+        "he": "מחלף עין תות ותחנת הכוח חגית",
+        "fr": "Échangeur d'Ein Tut et centrale de Hagit",
+        "en": "Ein Tut interchange and Hagit power station",
+        "ru": "Развязка Эйн-Тут и электростанция Хагит"
+      },
+      "anchor": [
+        32.61012,
+        35.04836
+      ],
+      "anchorSource": "מחלף עין תות — ויקיפדיה; התחנה 32.617,35.043 (GEM)",
+      "beforeM": 1000,
+      "afterM": 600,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "שני המסמכים: משמאל · הערת הבודק: הארובות מימין · לפי הקואורדינטות: צפון-מערבית למחלף",
+          "fr": "Les deux documents : à gauche · note de relecture : cheminées à droite · coordonnées : au nord-ouest de l'échangeur",
+          "en": "Both documents: left · reviewer's note: chimneys on the right · coordinates: north-west of the interchange",
+          "ru": "Оба документа: слева · пометка проверяющего: трубы справа · по координатам: северо-западнее развязки"
+        }
+      },
+      "look": {
+        "he": "ארובות ומבני תחנת הכוח; שלט מחלף עין תות — כביש 6 צפון",
+        "fr": "Cheminées et bâtiments de la centrale ; panneau échangeur d'Ein Tut — route 6 nord",
+        "en": "Chimneys and plant buildings; Ein Tut interchange sign — Road 6 north",
+        "ru": "Трубы и корпуса станции; указатель развязки Эйн-Тут — шоссе 6 на север"
+      },
+      "prio": 3
+    },
+    {
+      "id": "S13",
+      "question": "ROAD67-13",
+      "main": true,
+      "name": {
+        "he": "עולים על כביש 6",
+        "fr": "On rejoint la route 6",
+        "en": "Joining Road 6",
+        "ru": "Выезд на шоссе 6"
+      },
+      "anchor": [
+        32.623,
+        35.056
+      ],
+      "anchorSource": "אינטרפולציה אחרי מחלף עין תות",
+      "beforeM": 300,
+      "afterM": 500,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "אין צד — שאלה על הכביש",
+          "fr": "Pas de côté : question sur la route",
+          "en": "No side — question about the road",
+          "ru": "Без стороны — вопрос о дороге"
+        }
+      },
+      "look": {
+        "he": "שלטי כביש 6 צפון, ארבעה נתיבים",
+        "fr": "Panneaux route 6 nord, quatre voies",
+        "en": "Road 6 north signs, four lanes",
+        "ru": "Указатели шоссе 6 на север, четыре полосы"
+      },
+      "prio": 2
+    },
+    {
+      "id": "S5",
+      "question": "ROAD67-05",
+      "main": true,
+      "name": {
+        "he": "אליקים",
+        "fr": "Elyakim",
+        "en": "Elyakim",
+        "ru": "Эльяким"
+      },
+      "anchor": [
+        32.63639,
+        35.065
+      ],
+      "anchorSource": "מחלף אליקים — ויקיפדיה; המושב 32.633,35.066",
+      "beforeM": 1100,
+      "afterM": 200,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "שני המסמכים: מימין · הערת הבודק: הבתים משמאל",
+          "fr": "Les deux documents : à droite · note de relecture : maisons à gauche",
+          "en": "Both documents: right · reviewer's note: houses on the left",
+          "ru": "Оба документа: справа · пометка проверяющего: дома слева"
+        }
+      },
+      "look": {
+        "he": "בתי המושב על הרמה; שלט מחלף אליקים (כביש 672)",
+        "fr": "Maisons du moshav sur le plateau ; panneau échangeur d'Elyakim (route 672)",
+        "en": "Moshav houses on the plateau; Elyakim interchange sign (Road 672)",
+        "ru": "Дома мошава на плато; указатель развязки Эльяким (дорога 672)"
+      },
+      "prio": 2
+    },
+    {
+      "id": "S6",
+      "question": "ROAD67-06",
+      "main": true,
+      "final": true,
+      "name": {
+        "he": "יוקנעם — מלאנוקס ואנבידיה",
+        "fr": "Yokneam — Mellanox et NVIDIA",
+        "en": "Yokneam — Mellanox and NVIDIA",
+        "ru": "Йокнеам — Mellanox и NVIDIA"
+      },
+      "anchor": [
+        32.645,
+        35.078
+      ],
+      "anchorSource": "אינטרפולציה בין מחלף אליקים למחלף יקנעם",
+      "beforeM": 300,
+      "afterM": 900,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "יאיר: אזור התעשייה משמאל · לא אומת שבנייני אנבידיה נראים",
+          "fr": "Yaïr : zone industrielle à gauche · visibilité des bâtiments NVIDIA non vérifiée",
+          "en": "Yair: industrial zone on the left · NVIDIA buildings' visibility not verified",
+          "ru": "Яир: промзона слева · видимость зданий NVIDIA не проверена"
+        }
+      },
+      "look": {
+        "he": "הירידה אל יקנעם ועמק יזרעאל; לא להצביע על בניין מסוים",
+        "fr": "La descente vers Yokneam et la vallée de Jezréel ; ne désigner aucun bâtiment",
+        "en": "The descent to Yokneam and the Jezreel Valley; don't point at any building",
+        "ru": "Спуск к Йокнеаму и Изреельской долине; не показывать на конкретные здания"
+      },
+      "prio": 3
+    },
+    {
+      "id": "S8",
+      "question": "ROAD67-08",
+      "main": true,
+      "name": {
+        "he": "יקנעם המקראית",
+        "fr": "Yokneam biblique",
+        "en": "Biblical Yokneam",
+        "ru": "Библейский Йокнеам"
+      },
+      "anchor": [
+        32.652,
+        35.091
+      ],
+      "anchorSource": "אינטרפולציה בין מחלף אליקים לאנבידיה",
+      "beforeM": 300,
+      "afterM": 600,
+      "side": {
+        "verified": false,
+        "docs": {
+          "he": "יוסי: תל יוקנעם מימין (אחרי מחלף יקנעם, בדרך לתשבי) — לא במסלול שלנו",
+          "fr": "Yossi : Tel Yokneam à droite (après l'échangeur, vers HaTishbi) — hors de notre trajet",
+          "en": "Yossi: Tel Yokneam on the right (after the interchange, towards HaTishbi) — not on our route",
+          "ru": "Йоси: Тель-Йокнеам справа (после развязки, к ха-Тишби) — не на нашем маршруте"
+        }
+      },
+      "look": {
+        "he": "יקנעם עילית על המדרון; התל עצמו כנראה לא נראה",
+        "fr": "Yokneam Illit sur la pente ; le tell lui-même probablement invisible",
+        "en": "Yokneam Illit on the slope; the tell itself probably not visible",
+        "ru": "Йокнеам-Илит на склоне; сам тель, вероятно, не виден"
+      },
+      "prio": 1
     }
-  ]
+  ],
+  "minGapSec": 90
 }

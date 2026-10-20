@@ -92,9 +92,10 @@ async function student(ctxOpts, who, name, langBtn) {
   assert.equal(await p.getAttribute('html', 'dir'), 'rtl');
   assert.equal(await p.getAttribute('html', 'lang'), 'he', 'hébreu par défaut même si le téléphone est en français');
   const txt = await p.textContent('#joinf');
-  for (const s of ['מורה דרך', 'LIVE', 'ברוכים הבאים לחידון!', 'בחרו שפה', '🇮🇱', 'עברית', '🇫🇷', 'Français', '🇬🇧', 'English', '🇷🇺', 'Русский', 'מה השם הפרטי שלכם?', 'מתחילים לשחק 🚀'])
+  for (const s of ['מורה דרך', 'LIVE', 'ברוכים הבאים לחידון!', 'בחרו שפה', 'עברית', 'Français', 'English', 'Русский', 'מה השם הפרטי שלכם?', 'מתחילים לשחק 🚀'])
     assert.ok(txt.includes(s), 'accueil : ' + s);
   assert.equal(await p.getAttribute('#nm', 'placeholder'), 'השם הפרטי');
+  assert.equal(await p.$$eval('.langopt .flag svg', e => e.length), 4, 'drapeaux dessinés (lisibles aussi sous Windows)');
   assert.equal(await p.$$eval('#joinf input', e => e.length), 1, 'un seul champ : le prénom');
   await noHScroll(p, 'accueil 360px');
   await shot(p, 's1-accueil-he');
@@ -127,7 +128,7 @@ ok('élèves : 2 « דוד » acceptés sans code, arrivée directe dans le jeu,
 await admin.waitForFunction(() => /4\/4|👥 4/.test(document.querySelector('#hdr-chip')?.textContent || ''), null, { timeout: 8000 }).catch(() => {});
 await admin.click('#navroot [data-nav=publish]');
 await admin.waitForSelector('#closebtn');
-const q1 = SRC['ROAD67-01'];
+const q1 = SRC[(await one(`select x.ext_key from mdl.games g join mdl.questions x on x.id = g.current_question where g.is_active`)).ext_key.replace('v3:', '')];
 for (const s of students) {
   await s.p.waitForSelector('.question-text', { timeout: 5000 });
   assert.equal((await s.p.textContent('.question-text')).trim(), q1.i18n[s.lang].question, s.who);
@@ -232,20 +233,22 @@ for (let i = 0; i < 2; i++) await gpage.click('[data-nav=sim-speed]');      // �
 const seen = new Set();
 for (let t = 0; t < 120 && seen.size < 3; t++) {
   await gpage.waitForTimeout(500);
-  const h = await gpage.textContent('#navroute .lvl .lvlh').catch(() => '');
+  const h = await gpage.textContent('#navroute .lvl:not(.stage) .lvlh').catch(() => '');
   for (const k of ['🟡', '🟠', '🟢']) if (h.includes(k)) seen.add(k);
   if (h.includes('🟢') && await gpage.$('#navroute [data-nav=simpub]')) { await gpage.click('#navroute [data-nav=simpub]'); }
 }
 assert.deepEqual([...seen].sort(), ['🟠', '🟡', '🟢'].sort(), 'trois niveaux d\'alerte vus en simulation');
+await gpage.waitForSelector('#navroute .lvl .lvlh:has-text("שאלה בסימולציה"), #navroute .lvl .lvlh:has-text("התשובה נחשפה")', { timeout: 20000 });
 await shot(gpage, 'a6-simulation', true);
 // pannes simulées
+await gpage.click('#navroute summary:has-text("אפשרויות ותקלות")');
 await gpage.check('[data-nav=fault][data-k=noisy]'); await gpage.waitForTimeout(2500);
 assert.match(await gpage.textContent('#navroute'), /מיקום לא מדויק/);
 await gpage.uncheck('[data-nav=fault][data-k=noisy]');
 await gpage.check('[data-nav=fault][data-k=lost]'); await gpage.waitForTimeout(2000);
 await gpage.uncheck('[data-nav=fault][data-k=lost]');
 await gpage.check('[data-nav=fault][data-k=rush]');
-await gpage.waitForFunction(() => /סיום ההדרכה — מתקרבים לארומה יקנעם/.test(document.querySelector('#navroute')?.textContent || ''), null, { timeout: 90000 });
+await gpage.waitForFunction(() => /הגענו לארומה יקנעם|סיום ההדרכה — מתקרבים לארומה יקנעם/.test(document.querySelector('#navroute')?.textContent || ''), null, { timeout: 90000 });
 await shot(gpage, 'a7-simulation-fin-aroma', true);
 assert.equal(await published(), nSim, 'la simulation n\'envoie aucune question aux élèves');
 ok('simulation : 3 niveaux, publication simulée sans envoi, pannes GPS, fin « 🏁 » avant Aroma');
@@ -259,8 +262,7 @@ assert.equal(await admin.$$eval('#strip button', b => b.length), 32);
 await shot(admin, 'a8-V2-galerie');
 await admin.click('[data-view=settings]'); await admin.click('[data-a=newgame]');
 await admin.check('#ngf input[value=V1]'); await admin.click('#ngf button.sun');
-await admin.waitForSelector('.bankchip');
-assert.match(await admin.textContent('.bankchip'), /34 שאלות/);
+await admin.waitForFunction(() => /34 שאלות/.test(document.querySelector('.bankchip')?.textContent || ''), null, { timeout: 8000 });
 assert.equal(await admin.$('#navroot'), null, 'pas de GPS en V1');
 ok('V2 (6+2, galerie 32 photos) et V1 (34 questions) intacts');
 

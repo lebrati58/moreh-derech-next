@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 const root = new URL('../', import.meta.url);
 const read = p => JSON.parse(readFileSync(new URL(p, root), 'utf8'));
 export const LANGS = ['he', 'fr', 'en', 'ru'];
-const FIELDS = ['question', 'explanation', 'script', 'fact', 'cue', 'caution'];
+const FIELDS = ['question', 'explanation', 'script', 'long', 'fact', 'cue', 'caution'];
 const HEBREW = /[֐-׿]/;
 
 export function loadV3() {
@@ -20,9 +20,8 @@ export function validateV3({ v3, route }) {
   const qs = v3.questions;
   if (v3.bank !== 'V3') err('bank doit valoir V3');
   if (v3.photoCount !== 0) err('la V3 ne contient aucune photo');
-  const main = qs.filter(q => q.selection === 'MAIN'), spare = qs.filter(q => q.selection === 'SPARE');
-  if (main.length < 5 || main.length > 8) err(`5 à 8 questions MAIN attendues (${main.length})`);
-  if (!spare.length) err('au moins une question SPARE attendue');
+  const main = qs.filter(q => q.selection === 'MAIN');
+  if (main.length < 5 || main.length > 20) err(`5 à 20 questions MAIN attendues (${main.length})`);
   if (new Set(qs.map(q => q.id)).size !== qs.length) err('identifiants en double');
   if (qs.filter(q => q.final).length !== 1) err('exactement une question finale attendue');
   const stops = new Map(route.stops.map(s => [s.id, s]));
@@ -75,13 +74,13 @@ export function buildV3Sql() {
     for (const l of LANGS) {
       const t = q.i18n[l];
       if (l !== 'he') i18n[l] = { text: t.question, options: t.options, explanation: t.explanation, category: q.category[l] };
-      guide[l] = { script: t.script, fact: t.fact, cue: t.cue, caution: t.caution };
+      guide[l] = { script: t.script, long: t.long, fact: t.fact, cue: t.cue, caution: t.caution };
     }
     const meta = { stop: q.stop, final: !!q.final, topic: q.topic, docs: q.docs };
     return `(${[
       Q('v3:' + q.id), Q('V3'), Q(q.selection), Q('mcq'), Q(he.question), J(he.options), q.correctIndex,
       Q(he.explanation), Q(q.category.he), 2, q.timeLimitSec, q.order,
-      Q(he.script), Q(''), Q(he.cue), Q(q.docs), J(q.sources), Q(he.fact), Q(q.visibility || 'check'),
+      Q(he.script), Q(he.long), Q(he.cue), Q(q.docs), J(q.sources), Q(he.fact), Q(q.visibility || 'check'),
       J(i18n), J(guide), J(meta)
     ].join(', ')})`;
   });

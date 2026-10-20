@@ -271,7 +271,7 @@ label { display: block; font-weight: 700; margin: 12px 0 6px; }
 .join-brand { font-size: 22px; font-weight: 900; color: var(--sea); }
 .join-brand .live { background: var(--bad); color: #fff; border-radius: 8px; padding: 0 6px; font-size: 15px; vertical-align: middle; }
 .langopt { flex-direction: row; justify-content: center; gap: 8px; padding: 12px 6px; min-height: 52px; }
-.langopt .flag { font-size: 24px; line-height: 1; }
+.langopt .flag { line-height: 0; display: inline-flex; }
 .langopt b { font-size: 18px; }
 .langopt.on { box-shadow: 0 0 0 2px var(--sea) inset; }
 .btn.big { font-size: 22px; padding: 16px; margin-top: 4px; }
@@ -309,3 +309,39 @@ label { display: block; font-weight: 700; margin: 12px 0 6px; }
 .routemap { width: 100%; height: auto; background: #f4f9fb; border-radius: 12px; margin-top: 8px; }
 .simtag { display: inline-block; background: #6b3fa0; color: #fff; border-radius: 8px; padding: 2px 8px; font-weight: 800; font-size: 13px; }
 .finishcard { border: 3px solid #6b3fa0; background: #f5effc; }
+
+/* ---------- Attente : paysage animé ---------- */
+.waiting .scene { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto 8px; border-radius: 16px; overflow: hidden; }
+.scene .clouds { animation: slide 40s linear infinite; }
+.scene .hills-far { animation: slide 26s linear infinite; }
+.scene .hills-near { animation: slide 11s linear infinite; }
+.scene .dashes { animation: dash .5s linear infinite; }
+.scene .bus { animation: bob .45s ease-in-out infinite alternate; }
+.scene .wheel { animation: spin .5s linear infinite; }
+.scene .sun { animation: beat 3s ease-in-out infinite; transform-origin: 270px 30px; }
+.scene .puff { animation: puff 1s ease-out infinite; }
+@keyframes slide { to { transform: translateX(-320px); } }
+@keyframes dash { to { transform: translateX(-40px); } }
+@keyframes bob { from { transform: translateY(0); } to { transform: translateY(-1.5px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes puff { from { opacity: .9; transform: translateX(0); } to { opacity: 0; transform: translateX(-14px); } }
+.dots i { font-style: normal; animation: blink 1.4s infinite both; }
+.dots i:nth-child(2) { animation-delay: .2s; } .dots i:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%, 80%, 100% { opacity: 0; } 40% { opacity: 1; } }
+
+/* ---------- Simulation : le bus qui roule ---------- */
+.track-card { padding: 12px 14px 8px; }
+.track { position: relative; height: 112px; margin: 0 18px; }
+.track .tl { position: absolute; top: 0; font-size: 13px; font-weight: 800; color: var(--muted); white-space: nowrap; }
+.track .tl-start { left: -18px; } .track .tl-end { right: -18px; }
+.troad { position: absolute; left: -18px; right: -18px; top: 52px; height: 14px; border-radius: 7px; background: #5b6770 repeating-linear-gradient(90deg, transparent 0 14px, #f7f1e5 14px 26px, transparent 26px 40px) 0 6px / 40px 2px no-repeat; background-repeat: repeat-x; }
+.track.running .troad { animation: troad .6s linear infinite; }
+@keyframes troad { to { background-position: -40px 6px; } }
+.tstop { position: absolute; top: 46px; transform: translateX(-50%); text-align: center; width: 70px; }
+.tstop i { display: block; width: 12px; height: 12px; border-radius: 50%; background: #0b4a6b; border: 2px solid #fff; margin: 0 auto; }
+.tstop.done i { background: #2e9d52; }
+.tstop small { display: block; font-size: 11px; line-height: 1.1; margin-top: 18px; color: var(--ink); direction: rtl; white-space: nowrap; }
+.tstop.low small { margin-top: 34px; }
+.tbus { position: absolute; top: 24px; transition: left .5s linear; z-index: 2; }
+.track.running .tbody { animation: bob .3s ease-in-out infinite alternate; }
+.track.running .twheel { animation: spin .4s linear infinite; }

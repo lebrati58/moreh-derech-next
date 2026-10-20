@@ -35,7 +35,7 @@
     const sk0 = store.get('mdl_v3_skip') || {};
     const real = { on: false, trk: null, skipped: new Set(sk0.ids || []), pinned: null, gameId: sk0.gid || null };
     const saveSkip = () => store.set('mdl_v3_skip', { gid: real.gameId, ids: [...real.skipped] });
-    const sim = { on: false, run: false, mul: 4, trk: null, eng: null, now: 0, used: new Set(), skipped: new Set(), pinned: null,
+    const sim = { on: false, run: false, mul: 4, auto: true, cur: null, warned: new Set(), trk: null, eng: null, now: 0, used: new Set(), skipped: new Set(), pinned: null,
                   phase: 'waiting', openAt: null, revAt: null, timer: null, log: [], bankQs: null, lastLevel: '' };
     const rec = { on: false, pts: store.get('mdl_v3_rec') || [], anchors: store.get('mdl_v3_rec_anchors') || {} };
     let paintTimer = null;
@@ -149,7 +149,7 @@
       const hold = pl.hold;
       const holdTxt = !hold ? '' : hold.reason === 'question_open' ? '❓ שאלה פתוחה — ממתינים לסגירה ולחשיפה'
         : hold.reason === 'speaking' ? `🎤 זמן ההדרכה שלך — אין צורך למהר (עוד ${hold.waitSec} שנ׳)`
-        : `⏳ מומלץ לחכות עוד ${hold.waitSec} שנ׳ (2 דק׳ בין תחילת שאלות)`;
+        : `⏳ מומלץ לחכות עוד ${hold.waitSec} שנ׳ (דקה וחצי בין שאלות)`;
       const showQ = lvl >= 2 || !pl.gps;
       // en simulation, seules les « publications » simulées comptent (la vraie partie n'est pas touchée)
       const canPub = !(hold && hold.reason === 'question_open') && q && (simMode ? !sim.used.has(st.question) : !q.used);
@@ -178,7 +178,7 @@
           : '<p class="small muted">השאלה לא נמצאה בבנק V3 (הריצו את migration_v3.sql).</p>'}
         <div class="row" style="margin-top:10px">
           ${canPub ? (simMode
-            ? `<button class="btn sun" data-nav="simpub" data-stop="${st.id}">📣 פרסם שאלה <small>(סימולציה — לא נשלח)</small></button>`
+            ? `<button class="btn ghost" data-nav="simpub" data-stop="${st.id}">🧪 ניסיון בלבד — לא נשלח לתלמידים</button>`
             : `<button class="btn sun" data-nav="publish" data-stop="${st.id}" style="font-size:22px">📣 פרסם שאלה</button>`) : ''}
         </div>
         <div class="row" style="margin-top:8px">
@@ -191,6 +191,8 @@
     function finishCard(pl, simMode) {
       const fin = P.stops.find(s => s.final), q = fin && qOf(fin);
       const said = pl.done;
+      if (pl.arrived) return `<div class="lvl finishcard"><div class="lvlh">☕ הגענו לארומה יקנעם</div>
+        <p class="small">סוף המסלול. אפשר עדיין לפרסם שאלה ידנית מהרשימה.</p>${simMode ? '<span class="simtag">סימולציה</span>' : ''}</div>`;
       return `<div class="lvl finishcard">
         <div class="lvlh">🏁 סיום ההדרכה — מתקרבים לארומה יקנעם</div>
         <p class="small">${said ? 'שאלת הסיום כבר נשאלה. אין שאלות נוספות.' : 'אין מספיק זמן לשאלה נוספת לפני ההגעה. אפשר לקרוא את טקסט הסיום אם הזמן מאפשר.'}
@@ -271,13 +273,58 @@
     }
 
     // --------------------------------------------------------------- Page « מסלול » : carte, simulation, enregistrement
-    function routeHtml() { return `<div id="navroute">${routePanel()}</div>`; }
+    function routeHtml() { return `<div id="navtrack" class="card track-card"></div><div id="navroute">${routePanel()}</div>`; }
+
+    // Bande « le bus roule » : créée une seule fois, seul le bus se déplace (animation fluide)
+    const BUS = `<svg viewBox="0 0 70 34" width="62" height="30" aria-hidden="true"><g class="tbody">
+      <rect x="2" y="2" width="62" height="24" rx="6" fill="#f08a24"/><rect x="2" y="19" width="62" height="3" fill="#d56f12"/>
+      ${[8, 20, 32, 44].map(x => `<rect x="${x}" y="6" width="9" height="8" rx="2" fill="#e3f3f7"/>`).join('')}
+      <rect x="56" y="6" width="6" height="11" rx="2" fill="#e3f3f7"/></g>
+      ${[16, 52].map(cx => `<g class="twheel" style="transform-origin:${cx}px 27px"><circle cx="${cx}" cy="27" r="6" fill="#102029"/><circle cx="${cx}" cy="27" r="2.4" fill="#9aa"/><rect x="${cx - 0.6}" y="22" width="1.2" height="10" fill="#9aa"/></g>`).join('')}</svg>`;
+    function trackInner() {
+      const D = P.dest.s, used = sim.used;
+      return `<div class="track" dir="ltr">
+        <span class="tl tl-start">🚩 זכרון יעקב</span><span class="tl tl-end">ארומה ☕</span>
+        <div class="troad"></div>
+        ${P.stops.filter(st => st.main).map((st, i) => `<div class="tstop ${i % 2 ? 'low' : ''} ${used.has(st.question) ? 'done' : ''}" style="left:${(100 * st.s / D).toFixed(1)}%"><i></i><small>${esc(nm(st.name).split(' — ')[0].split(' ו')[0])}</small></div>`).join('')}
+        <div class="tbus" id="tbus">${BUS}</div></div>`;
+    }
+    function paintTrack() {
+      const t = document.getElementById('navtrack'); if (!t) return;
+      if (!P || !sim.on) { t.style.display = 'none'; t.innerHTML = ''; t.dataset.k = ''; return; }
+      t.style.display = '';
+      const k = sim.used.size + ':' + lang() + ':' + P.length;
+      if (t.dataset.k !== k) { t.innerHTML = trackInner(); t.dataset.k = k; }
+      const s = sim.trk && sim.trk.s != null ? sim.trk.s : 0;
+      const bus = document.getElementById('tbus');
+      bus.style.left = `calc(${(100 * Math.min(1, s / P.dest.s)).toFixed(2)}% - 31px)`;
+      t.querySelector('.track').classList.toggle('running', sim.run);
+    }
     function routePanel() {
       if (!P) { if (!load._p) load._p = load().then(paint); return '<div class="card">טוען מסלול…</div>'; }
       const pl = sim.on ? G.plan(P, sim.trk, simCtx()) : null;
       const pos = sim.on ? sim.lastFix : (real.on && lastFix ? lastFix : null);
       const it = route.itinerary || {};
       return `
+        <div class="card"><h2>🧪 סימולציית נסיעה — כביש 67</h2>
+          <div class="navstat warn"><b>🧪 זו סימולציה — שום דבר לא נשלח לתלמידים.</b><br>כדי לשלוח שאלה אמיתית: ⚙️ → 🔄 משחק חדש → V3, ואז בלשונית 📡 שידור חי ← ״📣 פרסם שאלה״.</div>
+          <div class="simbar">
+            ${sim.run ? '<button class="btn ghost" data-nav="sim-pause">⏸️ עצור</button>' : '<button class="btn ok" data-nav="sim-play">▶️ הפעל</button>'}
+            <button class="btn ghost" data-nav="sim-speed">⏩ ×${sim.mul}</button>
+            <button class="btn ghost" data-nav="sim-reset">⏮️</button>
+          </div>
+          ${sim.on ? statusLine(pl, 'sim') + simStage() + card(pl, 'sim') : '<p class="small">לחצו ▶️ כדי להתחיל.</p>'}
+          <details style="margin-top:8px"><summary class="small" style="font-weight:800;cursor:pointer">⚙️ אפשרויות ותקלות לבדיקה</summary>
+            <label class="optrow" style="font-weight:700"><input type="checkbox" data-nav="sim-auto" ${sim.auto ? 'checked' : ''} style="width:22px;height:22px"> 🤖 לפרסם אוטומטית בכל 🟢 (רק בסימולציה)</label>
+            <div class="faults">${[['noisy', 'GPS לא מדויק'], ['lost', 'GPS אבד'], ['stale', 'מיקום ישן'], ['wrongWay', 'כיוון הפוך'],
+              ['parallel', 'כביש מקביל'], ['rush', 'התקרבות מהירה לארומה']].map(([k, t]) =>
+              `<label><input type="checkbox" data-nav="fault" data-k="${k}" ${sim.faults && sim.faults[k] ? 'checked' : ''}> ${t}</label>`).join('')}</div>
+            <div class="simbar"><button class="btn ghost small" data-nav="sim-jump">⏭️ +1 ק״מ</button>
+              <button class="btn ghost small" data-nav="sim-miss">🦘 החמצת נקודה</button></div>
+          </details>
+          ${sim.on ? list(pl, 'sim') : ''}
+          ${sim.log.length ? `<details><summary class="small" style="cursor:pointer">📜 יומן הסימולציה (${sim.log.length})</summary><ol class="small">${sim.log.map(l => `<li>${esc(l)}</li>`).join('')}</ol></details>` : ''}
+        </div>
         <div class="card"><h2>🗺️ זכרון יעקב → ארומה יקנעם</h2>
           ${mapSvg(pos)}
           <p class="small">אורך משוער: ${(P.dest.s / 1000).toFixed(1)} ק״מ · כביש 67 עד מחלף עין תות, ואז כביש 6 צפונה (קטע ללא אגרה) עד מחלף יקנעם.</p>
@@ -289,21 +336,6 @@
             <ul class="small" dir="ltr" lang="fr">${(it.toConfirm || []).map(a => `<li>${esc(a)}</li>`).join('')}</ul>
             <p class="small" dir="ltr" lang="fr">${esc(route.statusNote || '')}</p>
           </details></div>
-        <div class="card"><h2>🧪 סימולציית נסיעה — כביש 67</h2>
-          <p class="small muted">אוטובוס וירטואלי נוסע על המסלול עם אותה לוגיקה כמו ה-GPS האמיתי. <b>שום שאלה לא נשלחת למשתתפים.</b></p>
-          <div class="simbar">
-            ${sim.run ? '<button class="btn ghost" data-nav="sim-pause">⏸️ עצור</button>' : '<button class="btn ok" data-nav="sim-play">▶️ הפעל</button>'}
-            <button class="btn ghost" data-nav="sim-speed">⏩ מהירות ×${sim.mul}</button>
-            <button class="btn ghost" data-nav="sim-reset">⏮️ חזור להתחלה</button>
-            <button class="btn ghost" data-nav="sim-jump">⏭️ +1 ק״מ</button>
-          </div>
-          <div class="faults">${[['noisy', 'GPS לא מדויק'], ['lost', 'GPS אבד'], ['stale', 'מיקום ישן'], ['wrongWay', 'כיוון הפוך'],
-            ['parallel', 'כביש מקביל'], ['rush', 'התקרבות מהירה לארומה']].map(([k, t]) =>
-            `<label><input type="checkbox" data-nav="fault" data-k="${k}" ${sim.faults && sim.faults[k] ? 'checked' : ''}> ${t}</label>`).join('')}
-            <button class="btn ghost small" data-nav="sim-miss" style="width:auto">🦘 החמצת נקודה (קפיצה 1.5 ק״מ)</button></div>
-          ${sim.on ? statusLine(pl, 'sim') + card(pl, 'sim') + list(pl, 'sim') : '<p class="small">לחצו ▶️ כדי להתחיל.</p>'}
-          ${sim.log.length ? `<details><summary class="small" style="cursor:pointer">📜 יומן הסימולציה (${sim.log.length})</summary><ol class="small">${sim.log.map(l => `<li>${esc(l)}</li>`).join('')}</ol></details>` : ''}
-        </div>
         <div class="card"><h2>🛰️ הקלטת המסלול האמיתי (נסיעת הכנה)</h2>
           <p class="small">בנסיעת הכנה (או בנסיעה עצמה) הטלפון מקליט את התוואי האמיתי. אחר כך ״💾 שמירה כמסלול מאומת״ — וההתראות יתבססו על הכביש האמיתי. אפשר גם לסמן את המיקום המדויק של כל נקודה. ההקלטה נשמרת בטלפון בלבד.</p>
           <p class="small"><b>${rec.pts.length}</b> נקודות מוקלטות · ${Object.keys(rec.anchors).length} נקודות מסומנות ${override ? '· ✅ מסלול מוקלט פעיל' : '· מסלול משוער פעיל'}</p>
@@ -321,6 +353,32 @@
           </div></div>`;
     }
 
+    // Ce que vivent les élèves pendant la simulation : question → 45 s → réponse + texte micro
+    function simStage() {
+      const st = sim.cur; if (!st || sim.phase === 'waiting') return '';
+      const q = qOf(st), qt = qText(q);
+      if (!q) return '';
+      if (sim.phase === 'open') {
+        const left = Math.max(0, 45 - Math.floor((sim.now - sim.openAt) / 1000));
+        return `<div class="lvl l2 stage"><div class="lvlh">📣 שאלה בסימולציה — עונים… ⏱️ ${left} שנ׳</div>
+          <div class="navq" ${dirOf(qt.lang)}>${esc(qt.text)}</div>
+          <ol class="small" ${dirOf(qt.lang)}>${qt.options.map(o => `<li>${esc(o)}</li>`).join('')}</ol>
+          <p class="small muted">(בסימולציה — לא נשלח לתלמידים)</p></div>`;
+      }
+      if (sim.phase === 'revealed' && sim.now - sim.revAt < 60000) {
+        return `<div class="lvl l3 stage"><div class="lvlh">👁️ התשובה נחשפה — עכשיו מדברים במיקרופון</div>
+          <div class="small" style="color:var(--ok);font-weight:800" ${dirOf(qt.lang)}>✔ ${esc(qt.options[q.correct_index] || '')}</div>
+          <div ${dirOf(lang())} style="margin-top:8px;font-size:17px">🎤 ${esc(tr(q, 'script'))}</div>
+          <div class="small" ${dirOf(lang())} style="margin-top:8px">💡 ${esc(tr(q, 'fact'))}</div></div>`;
+      }
+      return '';
+    }
+    function simPublish(stop) {
+      sim.used.add(stop.question); sim.phase = 'open'; sim.openAt = sim.now; sim.pinned = null; sim.cur = stop;
+      simLog('📣 פורסמה (סימולציה, לא נשלחה): ' + nm(stop.name));
+      if (navigator.vibrate) navigator.vibrate(60);
+    }
+
     // --------------------------------------------------------------- Simulation
     async function simEnsureBank() {
       const s = S();
@@ -333,7 +391,7 @@
       if (!P) return;
       if (!sim.on) {
         Object.assign(sim, { on: true, trk: new G.Tracker(P), eng: new G.Simulator(P), now: Date.now(), used: new Set(), skipped: new Set(),
-          pinned: null, phase: 'waiting', openAt: null, revAt: null, log: [], lastFix: null, lastLevel: '' });
+          pinned: null, phase: 'waiting', openAt: null, revAt: null, log: [], lastFix: null, lastLevel: '', cur: null, warned: new Set() });
         sim.faults = sim.eng.faults;
         simEnsureBank().then(paint);
       }
@@ -356,6 +414,13 @@
         else if (pl.next && pl.next.level) simLog(['', '🟡', '🟠', '🟢'][pl.next.level] + ' ' + nm(pl.next.stop.name) + ' · ' + fmtEta(pl.next.etaSec));
         if (pl.status !== 'ok') simLog('GPS: ' + (STATUS[pl.status] ? STATUS[pl.status][0] : pl.status));
       }
+      // publication automatique au 🟢 (simulation seulement : rien n'est envoyé)
+      const green = sim.auto && pl.next && pl.next.level === 3 && !pl.hold && !pl.finish && !sim.used.has(pl.next.stop.question);
+      // délai court en temps SIMULÉ (5 s) et au moins 0,8 s à l'écran : ne décale pas le bus en vitesse rapide
+      if (!green) sim.greenSince = null;
+      else if (!sim.greenSince) sim.greenSince = { sim: sim.now, real: Date.now() };
+      else if (sim.now - sim.greenSince.sim >= 5000 && Date.now() - sim.greenSince.real >= 800) { sim.greenSince = null; simPublish(pl.next.stop); }
+      for (const it of pl.passed) if (it.stop.main && !sim.warned.has(it.stop.id)) { sim.warned.add(it.stop.id); simLog('⚠️ עברנו את ' + nm(it.stop.name) + ' בלי לשאול'); }
       if (sim.eng.done) { sim.run = false; clearInterval(sim.timer); simLog('☕ הגענו לארומה'); }
       paint();
     }
@@ -380,8 +445,9 @@
           real.pinned = null; break;
         }
         case 'simpub':
-          if (stop) { sim.used.add(stop.question); sim.phase = 'open'; sim.openAt = sim.now; sim.pinned = null; simLog('📣 פורסמה (סימולציה, לא נשלחה): ' + nm(stop.name)); }
+          if (stop) simPublish(stop);
           break;
+        case 'sim-auto': sim.auto = el.checked; break;
         case 'skip': {
           const set = sim.on && el.closest('#navroute') ? sim.skipped : real.skipped;
           if (stop) set.add(stop.id);
@@ -468,6 +534,7 @@
 
     // --------------------------------------------------------------- Rafraîchissement en place (sans tout redessiner)
     function paint() {
+      paintTrack();
       const a = document.getElementById('navroot');
       const typing = el => el && /^(INPUT|SELECT|TEXTAREA)$/.test(el.tagName) && el.type !== 'checkbox';
       if (a && !(a.contains(document.activeElement) && typing(document.activeElement))) { const o = a.querySelector('details[open]'); a.innerHTML = livePanel(); if (o) keepOpen(a, o); }

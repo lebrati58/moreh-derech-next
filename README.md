@@ -1,7 +1,7 @@
 # מורה דרך LIVE
 
 Quiz en direct pour un guidage en bus. Trois parcours indépendants : **V1** (cours, 34 questions),
-**V2** (parcours photographié, 6+2), **V3** (Zikhron Yaakov → Yokneam par la route 67, 6+4, GPS assisté, sans photo).
+**V2** (parcours photographié, 6+2), **V3** (Zikhron Yaakov → Yokneam par la route 67, 14 questions, GPS assisté, sans photo).
 Le guide publie chaque question **à la main**, au moment où le paysage s'y prête ; les élèves
 répondent depuis leur téléphone. Interface entièrement en hébreu (RTL), pensée pour le mobile.
 
