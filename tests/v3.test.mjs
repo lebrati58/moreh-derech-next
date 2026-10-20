@@ -53,7 +53,9 @@ test('contenu V3 : validé, 14 questions principales, 4 langues, aucune photo, N
         assert.ok(!/[֐-׿]/.test(q.i18n[l][f]), `${q.id} ${l}.${f} contient de l'hébreu`);
     }
   }
-  assert.equal(ROUTE.stops.filter(s => s.side.verified).length, 0, 'aucun côté présenté comme vérifié');
+  // côté « vérifié » seulement quand les deux documents de guidage sont d'accord (consigne du guide)
+  assert.deepEqual(ROUTE.stops.filter(s => s.side.verified).map(s => s.id), ['S12', 'S1', 'S2', 'S7', 'S3', 'S4', 'S5']);
+  for (const s of ROUTE.stops) if (s.side.verified) assert.ok(['left', 'right'].includes(s.side.value), s.id);
   // le générateur refuse une traduction recopiée en hébreu (bug de la première ébauche V3)
   const bad = structuredClone(DATA);
   bad.v3.questions[0].i18n.fr.explanation = bad.v3.questions[0].i18n.he.explanation;
@@ -120,7 +122,7 @@ test('partie V3 en 4 langues : même question, même index, même chrono, points
     assert.equal(v.closes_at, views.he.question.closes_at); assert.equal(v.time_limit, 45);
     const raw = JSON.stringify(views[l]);
     assert.equal(v.correct_index, undefined); assert.equal(v.explanation, undefined);
-    for (const f of ['script', 'fact', 'caution', 'cue']) assert.ok(!raw.includes(src.i18n[l][f].slice(0, 30)), `${f} ${l} divulgué`);
+    for (const f of ['script', 'fact', 'caution', 'cue']) if (src.i18n[l][f]) assert.ok(!raw.includes(src.i18n[l][f].slice(0, 30)), `${f} ${l} divulgué`);
     assert.ok(!raw.includes('guide_') && !raw.includes('route_meta'));
   }
   // le téléphone n'envoie qu'un index : le serveur calcule les points

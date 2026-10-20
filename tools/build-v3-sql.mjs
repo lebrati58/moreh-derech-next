@@ -38,7 +38,7 @@ export function validateV3({ v3, route }) {
       const t = q.i18n[l];
       if (!t) err(`langue ${l} absente : ${q.id}`);
       for (const f of FIELDS) {
-        if (!String(t[f] || '').trim()) err(`${f} ${l} manquant : ${q.id}`);
+        if (f !== 'caution' && !String(t[f] || '').trim()) err(`${f} ${l} manquant : ${q.id}`);
         // garde-fou : un texte hébreu recopié dans une autre langue = traduction manquante
         if (l !== 'he' && HEBREW.test(t[f])) err(`${f} ${l} contient de l'hébreu (traduction manquante) : ${q.id}`);
       }

@@ -8,7 +8,7 @@
   const ROUTE_URL = 'v3/road67-route.json';
   const L = {
     he: { soon: 'בקרוב', approach: 'מתקרבים — להכין את השאלה', now: 'עכשיו — אפשר לפרסם', next: 'הבא',
-      left: '👈 שמאל', right: 'ימין 👉', unverified: '⚠️ צד האוטובוס לא אומת — לא להצביע' },
+      left: '👈 שמאל', right: 'ימין 👉' },
   };
   const fmtDist = m => m == null ? '–' : (m >= 1000 ? (m / 1000).toFixed(1) + ' ק״מ' : Math.max(0, Math.round(m / 10) * 10) + ' מ׳');
   const fmtEta = s => s == null ? '–' : (s >= 60 ? Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0') + ' דק׳' : s + ' שנ׳');
@@ -31,7 +31,7 @@
     // deps: { getS, getAlang, act, toast, openGuide, rpcBank, isOpenable, offset }
     let route = store.get('mdl_v3_route') || null, P = null, loadErr = '';
     let override = store.get('mdl_v3_override') || null;
-    let watchId = null, wake = null, lastFix = null, gpsErr = '';
+    let watchId = null, wake = null, lastFix = null, gpsErr = '', autoTried = false;
     // liste des 14 lieux : repliée par défaut, et reste comme le guide l'a laissée malgré les rafraîchissements
     const listOpen = { real: false, sim: false };
     document.addEventListener('toggle', e => { const d = e.target; if (d.dataset && d.dataset.navlist) listOpen[d.dataset.navlist] = d.open; }, true);
@@ -139,11 +139,11 @@
 
     // --------------------------------------------------------------- Rendu de la carte « prochain lieu »
     function sideHtml(stop) {
+      // les deux documents d'accord = côté affiché tel quel ; un seul document = côté + sa source
       const sd = stop.side || {};
-      if (sd.verified && (sd.value === 'left' || sd.value === 'right'))
-        return `<span class="sideok">${sd.value === 'left' ? L.he.left : L.he.right}</span>`;
-      return `<div class="sidewarn">${L.he.unverified}</div>
-        ${sd.docs ? `<div class="small muted" ${dirOf(lang())}>📄 ${esc(nm(sd.docs))}</div>` : ''}`;
+      const side = sd.value === 'left' ? L.he.left : sd.value === 'right' ? L.he.right : '';
+      return `${side ? `<span class="sideok">${side}</span>` : ''}
+        ${!sd.verified && sd.docs ? `<span class="small muted" ${dirOf(lang())}>${side ? ' · ' : ''}${esc(nm(sd.docs))}</span>` : ''}`;
     }
     function card(pl, mode) {
       const simMode = mode === 'sim';
@@ -272,16 +272,22 @@
     function livePanel() {
       if (!P) { if (!load._p) load._p = load().then(paint); return '<h2>🧭 ניווט חכם — כביש 67</h2><p class="small">טוען מסלול…</p>'; }
       const pl = G.plan(P, real.on ? real.trk : null, realCtx(Date.now()));
+      // GPS déjà autorisé avant un rechargement de la page : on le relance tout seul
+      if (!real.on && !autoTried && store.get('mdl_gps_on') && !gpsErr) { autoTried = true; real.on = true; real.trk = new G.Tracker(P); startWatch(); }
       return `<h2>🧭 ניווט חכם — כביש 67</h2>
         ${statusLine(pl, 'real')}
-        ${!P.verified ? '<div class="navstat warn small">⚠️ תוואי משוער (טרם הוקלט בנסיעת הכנה): המרחקים וההתראות הם הערכה — ודאו בעיניים. הצד והנראות לא אומתו.</div>' : ''}
-        <div class="row">${real.on
-          ? '<button class="btn ghost small" data-nav="gps-off">⏹ עצור GPS</button>'
-          : '<button class="btn ok small" data-nav="gps-on">📍 הפעל GPS</button>'}
-          <button class="btn ghost small" data-nav="to-sim">🧪 סימולציה</button></div>
+        ${real.on
+          ? '<button class="btn ghost small" data-nav="gps-off" style="margin-top:4px">⏹ עצור GPS</button>'
+          : `<button class="btn ok" data-nav="gps-on" style="font-size:22px">📍 להפעיל GPS</button>
+             <p class="small" style="margin:6px 0 0">הטלפון ישאל <b>״לאפשר גישה למיקום?״</b> ← ללחוץ <b>אפשר / Allow</b>.</p>`}
+        ${gpsErr === 'denied' ? `<div class="navstat bad small">המיקום חסום. לפתוח מחדש:<br>
+            <b>אנדרואיד (Chrome):</b> 🔒 ליד הכתובת ← הרשאות ← מיקום ← לאפשר.<br>
+            <b>אייפון:</b> הגדרות ← פרטיות ← שירותי מיקום ← Safari ← ״בזמן השימוש״, ואז לרענן את הדף.<br>
+            בינתיים הכול עובד ידנית: 📌 בחר ← 📣.</div>` : ''}
         <p class="small muted" style="margin:6px 0 0">🔒 המיקום לא יוצא מהטלפון · 🔆 להשאיר את המסך דלוק · שום דבר לא נשלח בלי ״📣 פרסם שאלה״.</p>
         ${card(pl, 'real')}
-        ${list(pl, 'real')}`;
+        ${list(pl, 'real')}
+        <button class="btn ghost small" data-nav="to-sim" style="margin-top:10px">🧪 סימולציה (ניסיון בלבד)</button>`;
     }
 
     // --------------------------------------------------------------- Page « מסלול » : carte, simulation, enregistrement
@@ -353,8 +359,8 @@
             <ul class="small" dir="ltr" lang="fr">${(it.toConfirm || []).map(a => `<li>${esc(a)}</li>`).join('')}</ul>
             <p class="small" dir="ltr" lang="fr">${esc(route.statusNote || '')}</p>
           </details></div>
-        <div class="card"><h2>🛰️ הקלטת המסלול האמיתי (נסיעת הכנה)</h2>
-          <p class="small">בנסיעת הכנה (או בנסיעה עצמה) הטלפון מקליט את התוואי האמיתי. אחר כך ״💾 שמירה כמסלול מאומת״ — וההתראות יתבססו על הכביש האמיתי. אפשר גם לסמן את המיקום המדויק של כל נקודה. ההקלטה נשמרת בטלפון בלבד.</p>
+        <details class="card"><summary style="font-weight:800;cursor:pointer">🛰️ הקלטת המסלול (לא חובה — לפעם הבאה)</summary>
+          <p class="small">הטלפון מקליט את הכביש האמיתי בזמן הנסיעה. אחר כך ״💾 שמירה כמסלול מאומת״ — והמרחקים יהיו מדויקים יותר בפעם הבאה. נשמר בטלפון בלבד.</p>
           <p class="small"><b>${rec.pts.length}</b> נקודות מוקלטות · ${Object.keys(rec.anchors).length} נקודות מסומנות ${override ? '· ✅ מסלול מוקלט פעיל' : '· מסלול משוער פעיל'}</p>
           <div class="simbar">
             ${rec.on ? '<button class="btn bad" data-nav="rec-stop">⏹ עצור הקלטה</button>' : '<button class="btn ok" data-nav="rec-start">⏺ התחל הקלטה</button>'}
@@ -367,7 +373,7 @@
             <button class="btn ghost" data-nav="rec-export">⬇️ ייצוא GeoJSON</button>
             <label class="btn ghost" style="text-align:center;margin:0">⬆️ ייבוא GPX/GeoJSON<input type="file" accept=".gpx,.json,.geojson,application/json,application/gpx+xml" data-nav="rec-import" hidden></label>
             ${override ? '<button class="btn ghost" data-nav="rec-clear">🗑️ חזרה למסלול המשוער</button>' : ''}
-          </div></div>`;
+          </div></details>`;
     }
 
     // Ce que vivent les élèves pendant la simulation : question → 45 s → réponse + texte micro
@@ -451,8 +457,8 @@
       const a = el.dataset.nav, stopId = el.dataset.stop;
       const stop = P && P.stops.find(s => s.id === stopId);
       switch (a) {
-        case 'gps-on': real.on = true; real.trk = new G.Tracker(P); startWatch(); break;
-        case 'gps-off': real.on = false; if (!needWatch()) stopWatch(); break;
+        case 'gps-on': real.on = true; real.trk = new G.Tracker(P); store.set('mdl_gps_on', 1); startWatch(); break;
+        case 'gps-off': real.on = false; store.del('mdl_gps_on'); if (!needWatch()) stopWatch(); break;
         case 'to-sim': deps.showRoute(); return;
         case 'publish': {
           const q = stop && qOf(stop); if (!q) return;

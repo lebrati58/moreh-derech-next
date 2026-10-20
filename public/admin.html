@@ -89,7 +89,7 @@
   const mmss = ms => { const s = Math.max(0, Math.floor(ms / 1000)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
   const VIS = {
     visible: '👁️ נראה מהאוטובוס',
-    check: '❓ כנראה נראה — לאמת בנסיעת הכנה',
+    check: '👀 אמור להיראות מהחלון',
     nearby: '📍 אתר בסביבה — לא נראה מהכביש',
     topic: '💡 נושא כללי'
   };
@@ -686,8 +686,8 @@
       ${g.fact ? `<div class="guide-box fact" ${dirOf(l)}><b class="h">💡 הידעת?</b>${paras(g.fact)}</div>` : ''}
       <div class="guide-box prac" ${dirOf(l)}><b class="h">📍 מתי לדבר?</b>${paras(g.cue)}
         ${stop ? `<p>👀 ${esc(nm(stop.look))}</p>
-          ${stop.side && stop.side.verified ? `<p><b>${stop.side.value === 'left' ? '👈 שמאל' : 'ימין 👉'}</b></p>`
-            : `<p class="sidewarn">⚠️ צד האוטובוס לא אומת — לא להצביע</p><p class="small">📄 ${esc(nm(stop.side && stop.side.docs))}</p>`}` : ''}
+          ${stop.side && stop.side.value ? `<p><b>${stop.side.value === 'left' ? '👈 שמאל' : 'ימין 👉'}</b></p>` : ''}
+          ${stop.side && !stop.side.verified && stop.side.docs ? `<p class="small">${esc(nm(stop.side.docs))}</p>` : ''}` : ''}
         ${g.caution ? `<div class="caution">⚠️ ${esc(g.caution)}</div>` : ''}</div>
       ${sc.explanation ? `<div class="guide-box fact" ${dirOf(sc.lang)}><b class="h">💬 ההסבר שהמשתתפים רואים</b>${paras(sc.explanation)}</div>` : ''}
       <details class="guide-src"><summary>📚 מידע נוסף (${sources.length} מקורות)</summary>

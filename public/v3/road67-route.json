@@ -154,6 +154,7 @@
       "afterM": 450,
       "side": {
         "verified": false,
+        "value": "right",
         "docs": {
           "he": "יוסי: זכרון יעקב מימין",
           "fr": "Yossi : Zikhron à droite",
@@ -187,13 +188,8 @@
       "beforeM": 350,
       "afterM": 350,
       "side": {
-        "verified": false,
-        "docs": {
-          "he": "שני המסמכים: משמאל",
-          "fr": "Les deux documents : à gauche",
-          "en": "Both documents: left",
-          "ru": "Оба документа: слева"
-        }
+        "verified": true,
+        "value": "left"
       },
       "look": {
         "he": "הכפר למרגלות הכרמל, המסגד",
@@ -221,13 +217,8 @@
       "beforeM": 300,
       "afterM": 2000,
       "side": {
-        "verified": false,
-        "docs": {
-          "he": "פוריידיס — שני המסמכים: משמאל; זכרון יעקב — מימין (יוסי)",
-          "fr": "Fureidis : à gauche (les deux documents) ; Zikhron : à droite (Yossi)",
-          "en": "Fureidis: left (both documents); Zikhron: right (Yossi)",
-          "ru": "Фурейдис — слева (оба документа); Зихрон — справа (Йоси)"
-        }
+        "verified": true,
+        "value": "left"
       },
       "look": {
         "he": "הכרמל מצפון, רמות מנשה וזכרון יעקב מדרום, הכביש נכנס לעמק נחל דליה",
@@ -255,13 +246,8 @@
       "beforeM": 500,
       "afterM": 700,
       "side": {
-        "verified": false,
-        "docs": {
-          "he": "יאיר: משמאל · יוסי: משמאל · קואורדינטות ויקיפדיה: קרוב לציר, אולי מימין",
-          "fr": "Yaïr : gauche · Yossi : gauche · coordonnées Wikipédia : tout près de l'axe, peut-être à droite",
-          "en": "Yair: left · Yossi: left · Wikipedia coordinates: very close to the road, possibly right",
-          "ru": "Яир: слева · Йоси: слева · по Википедии: у самой дороги, возможно справа"
-        }
+        "verified": true,
+        "value": "left"
       },
       "look": {
         "he": "בתי כפר הנוער וכרמים על הגבעה; מחצבת שפיה (קיר לבן) — לפי המסמכים משמאל",
@@ -289,13 +275,8 @@
       "beforeM": 400,
       "afterM": 600,
       "side": {
-        "verified": false,
-        "docs": {
-          "he": "שני המסמכים: מימין",
-          "fr": "Les deux documents : à droite",
-          "en": "Both documents: right",
-          "ru": "Оба документа: справа"
-        }
+        "verified": true,
+        "value": "right"
       },
       "look": {
         "he": "חורש פתוח של עצים רחבים ומרווחים על הגבעות",
@@ -324,6 +305,7 @@
       "afterM": 500,
       "side": {
         "verified": false,
+        "value": "right",
         "docs": {
           "he": "יוסי: מימין בעמק",
           "fr": "Yossi : à droite dans la vallée",
@@ -357,13 +339,8 @@
       "beforeM": 700,
       "afterM": 500,
       "side": {
-        "verified": false,
-        "docs": {
-          "he": "יאיר: מימין · יוסי: מימין ומשמאל (המושבה מימין)",
-          "fr": "Yaïr : à droite · Yossi : des deux côtés (la colonie à droite)",
-          "en": "Yair: right · Yossi: both sides (the colony on the right)",
-          "ru": "Яир: справа · Йоси: с обеих сторон (колония справа)"
-        }
+        "verified": true,
+        "value": "right"
       },
       "look": {
         "he": "בתי אבן ישנים, כרמים ומטעים סביב המחלף",
@@ -392,6 +369,7 @@
       "afterM": 700,
       "side": {
         "verified": false,
+        "value": "right",
         "docs": {
           "he": "יוסי: חתך סלע מימין (אחרי עין תות)",
           "fr": "Yossi : tranchée à droite (après Ein Tut)",
@@ -427,10 +405,10 @@
       "side": {
         "verified": false,
         "docs": {
-          "he": "גאוגרפיה: הכרמל מצפון, מנשה מדרום — לא אומת",
-          "fr": "Géographie : Carmel au nord, Menashe au sud — non vérifié",
-          "en": "Geography: Carmel north, Menashe south — not verified",
-          "ru": "География: Кармель на севере, Менаше на юге — не проверено"
+          "he": "הכרמל משמאל, רמות מנשה מימין",
+          "fr": "Carmel à gauche, Menashe à droite",
+          "en": "Carmel on the left, Menashe on the right",
+          "ru": "Кармель слева, Менаше справа"
         }
       },
       "look": {
@@ -459,13 +437,8 @@
       "beforeM": 1000,
       "afterM": 600,
       "side": {
-        "verified": false,
-        "docs": {
-          "he": "שני המסמכים: משמאל · הערת הבודק: הארובות מימין · לפי הקואורדינטות: צפון-מערבית למחלף",
-          "fr": "Les deux documents : à gauche · note de relecture : cheminées à droite · coordonnées : au nord-ouest de l'échangeur",
-          "en": "Both documents: left · reviewer's note: chimneys on the right · coordinates: north-west of the interchange",
-          "ru": "Оба документа: слева · пометка проверяющего: трубы справа · по координатам: северо-западнее развязки"
-        }
+        "verified": true,
+        "value": "left"
       },
       "look": {
         "he": "ארובות ומבני תחנת הכוח; שלט מחלף עין תות — כביש 6 צפון",
@@ -495,10 +468,10 @@
       "side": {
         "verified": false,
         "docs": {
-          "he": "אין צד — שאלה על הכביש",
-          "fr": "Pas de côté : question sur la route",
-          "en": "No side — question about the road",
-          "ru": "Без стороны — вопрос о дороге"
+          "he": "שאלה על הכביש — אין צד",
+          "fr": "Question sur la route — pas de côté",
+          "en": "Question about the road — no side",
+          "ru": "Вопрос о дороге — без стороны"
         }
       },
       "look": {
@@ -527,13 +500,8 @@
       "beforeM": 1100,
       "afterM": 200,
       "side": {
-        "verified": false,
-        "docs": {
-          "he": "שני המסמכים: מימין · הערת הבודק: הבתים משמאל",
-          "fr": "Les deux documents : à droite · note de relecture : maisons à gauche",
-          "en": "Both documents: right · reviewer's note: houses on the left",
-          "ru": "Оба документа: справа · пометка проверяющего: дома слева"
-        }
+        "verified": true,
+        "value": "right"
       },
       "look": {
         "he": "בתי המושב על הרמה; שלט מחלף אליקים (כביש 672)",
@@ -563,11 +531,12 @@
       "afterM": 900,
       "side": {
         "verified": false,
+        "value": "left",
         "docs": {
-          "he": "יאיר: אזור התעשייה משמאל · לא אומת שבנייני אנבידיה נראים",
-          "fr": "Yaïr : zone industrielle à gauche · visibilité des bâtiments NVIDIA non vérifiée",
-          "en": "Yair: industrial zone on the left · NVIDIA buildings' visibility not verified",
-          "ru": "Яир: промзона слева · видимость зданий NVIDIA не проверена"
+          "he": "יאיר: אזור התעשייה משמאל",
+          "fr": "Yaïr : zone industrielle à gauche",
+          "en": "Yair: industrial zone on the left",
+          "ru": "Яир: промзона слева"
         }
       },
       "look": {
@@ -598,10 +567,10 @@
       "side": {
         "verified": false,
         "docs": {
-          "he": "יוסי: תל יוקנעם מימין (אחרי מחלף יקנעם, בדרך לתשבי) — לא במסלול שלנו",
-          "fr": "Yossi : Tel Yokneam à droite (après l'échangeur, vers HaTishbi) — hors de notre trajet",
-          "en": "Yossi: Tel Yokneam on the right (after the interchange, towards HaTishbi) — not on our route",
-          "ru": "Йоси: Тель-Йокнеам справа (после развязки, к ха-Тишби) — не на нашем маршруте"
+          "he": "תל יקנעם לא נראה מהמסלול שלנו",
+          "fr": "Tel Yokneam n'est pas visible depuis notre trajet",
+          "en": "Tel Yokneam is not visible from our route",
+          "ru": "Тель-Йокнеам не виден с нашего маршрута"
         }
       },
       "look": {
