@@ -284,6 +284,12 @@ await bpage.click('#busact');
 await waitLabel(/לפרסם שאלה/);
 // tout tient sur l'écran : le bouton est visible sans défiler
 assert.ok(await bpage.evaluate(() => { const r = document.querySelector('#busact').getBoundingClientRect(); return r.bottom <= innerHeight && r.top > innerHeight / 2; }));
+assert.ok(await bpage.$$eval('#busrank .lb li', l => l.length) >= 2, 'classement complet en bas de l\'écran');
+await bpage.click('[data-nav=bus-menu]'); await bpage.click('#bussheet [data-nav=bus-rank]');
+await bpage.waitForTimeout(600);
+assert.ok(await bpage.evaluate(() => document.querySelector('#busrank').getBoundingClientRect().top < innerHeight), 'menu → classement visible');
+await shot(bpage, 'b5-bus-classement');
+await bpage.evaluate(() => window.scrollTo(0, 0));
 await bpage.click('[data-nav=bus-menu]');
 await bpage.waitForSelector('#bussheet .sheet');
 await shot(bpage, 'b4-bus-menu');

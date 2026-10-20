@@ -501,6 +501,7 @@
         case 'bus-menu': bus.menu = !bus.menu; bus.pick = false; break;
         case 'bus-pick': bus.pick = true; bus.menu = false; break;
         case 'bus-close': bus.menu = false; bus.pick = false; break;
+        case 'bus-rank': bus.menu = false; paint(); { const r = document.getElementById('busrank'); if (r) r.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return;
         case 'bus-next': { const c = S() && S().current; if (c) bus.seen = c.question_id; break; }
         case 'bus-full': bus.menu = false; deps.setBus(false); return;
         case 'guide': deps.openGuide(+el.dataset.q); return;
@@ -583,6 +584,13 @@
       const lb = (s.leaderboard || []).slice(0, 3);
       return lb.length ? `<div class="bustop3">${lb.map((r, i) => `${['🥇', '🥈', '🥉'][i]} <b dir="auto">${esc(r.name)}</b> ${r.score}`).join(' · ')}</div>` : '';
     }
+    // classement complet, en bas de l'écran (on y descend quand on veut l'annoncer)
+    function rankHtml(s) {
+      const lb = s.leaderboard || [];
+      return `<div class="busrank" id="busrank"><h3>🏆 דירוג (${lb.length})</h3>
+        ${lb.length ? `<ol class="lb">${lb.map(r => `<li><span class="pos">${r.rank}</span><span class="nm" dir="auto">${esc(r.name)}</span>
+          <span class="cr">${r.correct}/${r.answered} ✔</span><span class="sc">${r.score}</span></li>`).join('')}</ol>` : '<p class="small muted">אין עדיין משתתפים</p>'}</div>`;
+    }
     function busView() {
       const s = S(), g = s && s.game, c = s && s.current, now = Date.now(), off = deps.offset();
       if (!P) return { body: `<p class="small">${esc(loadErr || 'טוען מסלול…')}</p>`, label: '…', disabled: true };
@@ -650,6 +658,7 @@
       return `<div class="bussheet"><div class="sheet">
         ${n && g.phase !== 'open' ? `<button type="button" class="btn ghost busli" data-nav="skip" data-stop="${n.stop.id}">⏭️ לדלג על ${esc(nm(n.stop.name))}</button>
           <button type="button" class="btn ghost busli" data-nav="back">⏮️ הנקודה הקודמת</button>` : ''}
+        <button type="button" class="btn ghost busli" data-nav="bus-rank">🏆 הדירוג המלא</button>
         <button type="button" class="btn ghost busli" data-nav="bus-pick">📋 לבחור נקודה מהרשימה</button>
         ${c && (g.phase === 'open' || g.phase === 'revealed') ? `<button type="button" class="btn ghost busli" data-nav="guide" data-q="${c.question_id}">🎤 הדף המלא של השאלה</button>` : ''}
         ${g.phase === 'open' ? '<button type="button" class="btn ghost busli" data-a="force" style="color:var(--bad)">⚠️ סגירת חירום (לפני 30 שנ׳)</button>' : ''}
@@ -662,6 +671,7 @@
     function paintBus() {
       const root = document.getElementById('busroot'); if (!root || bus.touch) return;
       const v = busView();
+      v.body += rankHtml(S());
       if (v.body !== bus.body) { document.getElementById('busbody').innerHTML = v.body; bus.body = v.body; }
       const b = document.getElementById('busact');
       if (b.textContent !== v.label) b.textContent = v.label;
