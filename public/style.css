@@ -386,3 +386,6 @@ body.busmode main, body.busmode #app { padding-bottom: 120px; }
 @media (prefers-reduced-motion: reduce) { .busact.pulse { animation: none; } }
 .busband.cur { background: #dcebf2; color: var(--sea); }
 body.busmode .toast { bottom: auto; top: 80px; }
+.busrank { background: #fff; border-radius: 14px; padding: 10px 12px; margin-top: 18px; }
+.busrank h3 { margin: 0 0 4px; font-size: 19px; }
+.busrank .lb li { font-size: 17px; }
