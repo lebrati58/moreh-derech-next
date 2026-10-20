@@ -37,14 +37,16 @@ const ok = m => console.log('✔ ' + m);
 async function login(p) {
   await p.goto(BASE + '/admin.html');
   await p.fill('#pw', 'guide-test-2026'); await p.click('text=כניסה');
-  await p.waitForSelector('[data-view=settings]');
+  await p.waitForSelector('[data-view=settings]', { state: 'attached' });
   await p.waitForTimeout(300);
   if (await p.$('#guide')) await p.click('#guide [data-g=close]');
 }
+// les scénarios historiques utilisent l'écran complet ; le « mode bus » (défaut en V3) a son propre scénario
+const fullMode = ctx => ctx.addInitScript(() => { try { if (localStorage.getItem('mdl_busmode') === null) localStorage.setItem('mdl_busmode', 'false'); } catch { /* */ } });
 const noHScroll = async (p, who) => assert.ok(await p.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), who + ' : défilement horizontal');
 
 // ------------------------------------------------------------------ Guide : nouvelle partie V3
-const actx = await browser.newContext(iphone);
+const actx = await browser.newContext(iphone); await fullMode(actx);
 const admin = await actx.newPage(); watch(admin, 'admin');
 await admin.goto(BASE + '/admin.html');
 await admin.fill('#pw', 'guide-test-2026'); await admin.click('text=כניסה');
@@ -191,6 +193,7 @@ ok('reconnexion automatique : rechargement (score + langue conservés) et coupur
 
 // ------------------------------------------------------------------ GPS réel : position sur le trajet (Playwright)
 const gctx = await browser.newContext(Object.assign({}, iphone, { geolocation: { latitude: 32.5935, longitude: 34.9690, accuracy: 10 }, permissions: ['geolocation'] }));
+await fullMode(gctx);
 const gpage = await gctx.newPage(); watch(gpage, 'gps');
 await login(gpage);
 await gpage.waitForSelector('#navroot');
@@ -209,7 +212,7 @@ await gctx.setGeolocation({ latitude: 32.5950, longitude: 34.9800, accuracy: 400
 await gpage.waitForFunction(() => /מיקום לא מדויק — עבור למצב ידני/.test(document.querySelector('#navroot')?.textContent || ''), null, { timeout: 8000 });
 ok('GPS réel (autorisé) : position projetée sur le trajet, côté non vérifié signalé, imprécision → mode manuel, aucune publication');
 // GPS refusé
-const dctx = await browser.newContext(iphone);
+const dctx = await browser.newContext(iphone); await fullMode(dctx);
 // sur un vrai téléphone l'utilisateur refuse ; ici on reproduit la réponse du navigateur (code 1 = PERMISSION_DENIED)
 await dctx.addInitScript(() => {
   navigator.geolocation.watchPosition = (ok, err) => { setTimeout(() => err({ code: 1, message: 'User denied Geolocation' }), 200); return 7; };
@@ -253,7 +256,51 @@ await shot(gpage, 'a7-simulation-fin-aroma', true);
 assert.equal(await published(), nSim, 'la simulation n\'envoie aucune question aux élèves');
 ok('simulation : 3 niveaux, publication simulée sans envoi, pannes GPS, fin « 🏁 » avant Aroma');
 
+// ------------------------------------------------------------------ Mode bus : un écran, un bouton, aucun défilement
+const bctx = await browser.newContext(Object.assign({}, iphone, { viewport: { width: 360, height: 740 } }));
+const bpage = await bctx.newPage(); watch(bpage, 'mode-bus');
+await login(bpage);
+await bpage.waitForSelector('#busroot #busact');
+assert.equal(await bpage.isVisible('#tabs'), false, 'barre d\'onglets cachée en mode bus');
+const label = () => bpage.textContent('#busact');
+const waitLabel = re => bpage.waitForFunction(r => new RegExp(r).test(document.querySelector('#busact')?.textContent || ''), re.source, { timeout: 15000 });
+if (/לשאלה הבאה/.test(await label())) await bpage.click('#busact');
+await waitLabel(/לפרסם שאלה/);
+await shot(bpage, 'b1-bus-avant');
+const nBus = await published();
+await bpage.click('#busact');
+await waitLabel(/⏳/);
+assert.equal(await published(), nBus + 1, 'un appui = une question publiée');
+assert.equal(await bpage.isDisabled('#busact'), true, 'pas de révélation avant 30 s');
+await shot(bpage, 'b2-bus-ouverte');
+await ageOpen(31);
+await waitLabel(/לסגור ולחשוף/);
+await bpage.click('#busact');
+await bpage.waitForSelector('#busbody .busscript', { timeout: 15000 });
+assert.equal(await bpage.$('.modal'), null, 'pas de fenêtre : la phrase micro est sur l\'écran');
+await waitLabel(/לשאלה הבאה/);
+await shot(bpage, 'b3-bus-micro');
+await bpage.click('#busact');
+await waitLabel(/לפרסם שאלה/);
+// tout tient sur l'écran : le bouton est visible sans défiler
+assert.ok(await bpage.evaluate(() => { const r = document.querySelector('#busact').getBoundingClientRect(); return r.bottom <= innerHeight && r.top > innerHeight / 2; }));
+await bpage.click('[data-nav=bus-menu]');
+await bpage.waitForSelector('#bussheet .sheet');
+await shot(bpage, 'b4-bus-menu');
+await bpage.click('#bussheet [data-nav=bus-pick]');
+await bpage.waitForSelector('#bussheet [data-nav=pin]');
+const pickName = await bpage.textContent('#bussheet [data-nav=pin] >> nth=-1');
+await bpage.click('#bussheet [data-nav=pin] >> nth=-1');
+await bpage.waitForFunction(n => (document.querySelector('#busbody .busband')?.textContent || '').includes(n), pickName.split(' · ')[1].trim(), { timeout: 8000 });
+await bpage.click('[data-nav=bus-menu]'); await bpage.click('#bussheet [data-nav=bus-full]');
+await bpage.waitForSelector('#navroot'); assert.equal(await bpage.isVisible('#tabs'), true);
+await bpage.click('[data-a=bus-on]'); await bpage.waitForSelector('#busroot');
+await noHScroll(bpage, 'mode bus');
+await bctx.close();
+ok('mode bus : publier → attendre 30 s → révéler → phrase micro → suivante, 1 bouton fixe, menu, choix manuel, retour à l\'écran complet');
+
 // ------------------------------------------------------------------ V2 et V1 toujours fonctionnels
+if (await admin.$('#guide')) await admin.click('#guide [data-g=close]');   // ouvert par la révélation faite en mode bus
 await admin.click('[data-view=settings]'); await admin.click('[data-a=newgame]');
 await admin.check('#ngf input[value=V2]'); await admin.click('#ngf button.sun');
 await admin.waitForSelector('.ph-row img', { timeout: 8000 });

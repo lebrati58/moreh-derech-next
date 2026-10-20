@@ -52,7 +52,8 @@
   const chip = document.getElementById('hdr-chip');
 
   let token = store.get(KEY);
-  let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = false, nav = null, backupOpen = false;
+  let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = false, nav = null, backupOpen = false,
+    busMode = store.get('mdl_busmode') !== false;   // V3 : écran « mode bus » par défaut
   // Panneau micro : état + dernière question pour laquelle il s'est ouvert automatiquement
   let G = { open: false, qid: null, mode: 'short', live: false };
   let lastAutoGuide = store.get('mdl_last_auto_guide');
@@ -188,6 +189,7 @@
   // ------------------------------------------------------------ Rendu
   function render() {
     tabs.classList.remove('hidden');
+    if (view !== 'live') document.body.classList.remove('busmode');
     const rt = document.querySelector('#tab-route');
     if (rt) { const v3 = S.game && S.game.bank === 'V3'; rt.querySelector('.i').textContent = v3 ? '🗺️' : '📷'; }
     chip.classList.remove('hidden');
@@ -197,7 +199,8 @@
       const k = S.game.id + ':' + S.current.question_id;
       if (lastAutoGuide !== k) {
         lastAutoGuide = k; store.set('mdl_last_auto_guide', k);
-        if (!document.querySelector('.modal')) openGuide(S.current.question_id, { live: true });
+        // en mode bus la phrase du micro est déjà sur l'écran principal : pas de fenêtre en plus
+        if (!document.querySelector('.modal') && !(busMode && S.game.bank === 'V3')) openGuide(S.current.question_id, { live: true });
       }
     }
     if (document.querySelector('.modal')) return;          // ne pas perturber l'édition
@@ -344,7 +347,13 @@
     if (!g) { app.innerHTML = `<div class="card center"><h2>אין משחק פעיל</h2><button class="btn sun" data-a="newgame">צור משחק חדש</button></div>`; return; }
     if (!knownBank(g.bank || 'V1')) { app.innerHTML = bankChip(); return; }
     const v3 = g.bank === 'V3' && nav;
-    let html = stats() + (v3 && S.players === 0 && g.status !== 'finished' ? waNudge() : '');
+    if (v3 && busMode && g.status !== 'finished') {
+      document.body.classList.add('busmode');
+      if (!document.getElementById('busroot')) app.innerHTML = nav.busHtml();
+      nav.paint(); return;
+    }
+    document.body.classList.remove('busmode');
+    let html = (v3 ? '<button class="btn ok" data-a="bus-on" style="margin-bottom:12px">🚌 מצב אוטובוס — מסך אחד פשוט</button>' : '') + stats() + (v3 && S.players === 0 && g.status !== 'finished' ? waNudge() : '');
     if (g.status === 'finished') {
       html += `<div class="card center"><div class="trophy">🏆</div><h1>הזוכים הגדולים!</h1>${podium(S.leaderboard)}
         <p>${S.stats.players} משתתפים · ${S.stats.questions} שאלות · ${S.stats.correct_pct ?? 0}% נכונות</p>
@@ -496,6 +505,7 @@
   }
 
   function studentLink() { return new URL('./', location.href).href; }
+  function setBus(on) { busMode = on; store.set('mdl_busmode', on); view = 'live'; setTab(); }
   // le guide envoie le lien dans son groupe WhatsApp
   function waHref() { return 'https://wa.me/?text=' + encodeURIComponent('🚌 חידון מורי הדרך LIVE — הצטרפו כאן: ' + studentLink()); }
   function waNudge() {
@@ -920,6 +930,7 @@
         try { await navigator.clipboard.writeText(studentLink()); toast('הקישור הועתק ✔'); }
         catch { document.getElementById('slink').select(); toast('סמנו והעתיקו ידנית'); }
         break;
+      case 'bus-on': setBus(true); break;
       case 'logout': store.del(KEY); token = null; renderLogin(); break;
     }
   });
@@ -933,7 +944,7 @@
 
   // Navigation V3 (GPS / simulation / trace) — module séparé, n'a accès qu'aux actions admin habituelles
   nav = window.MDL_NAV.create({
-    getS: () => S, getAlang: () => alang, act, toast, offset: () => offset,
+    getS: () => S, getAlang: () => alang, act, toast, offset: () => offset, qt, waHref, setBus,
     openGuide: id => openGuide(id, { live: !!(S && S.game && S.game.phase === 'revealed' && S.current && S.current.question_id === id) }),
     rpcBank: b => rpc('admin_bank_questions', { p_token: token, p_bank: b }),
     isOpenable: () => !!(S && S.game && S.game.phase !== 'open' && S.game.status !== 'finished'),

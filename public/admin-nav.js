@@ -494,7 +494,15 @@
           if (!prev) deps.toast('אין נקודה קודמת לחזור אליה');
           break;
         }
-        case 'pin': if (sim.on && el.closest('#navroute')) sim.pinned = stopId; else real.pinned = stopId; break;
+        case 'pin':
+          if (sim.on && el.closest('#navroute')) sim.pinned = stopId; else real.pinned = stopId;
+          if (el.closest('#busroot')) { bus.pick = false; bus.menu = false; const c = S() && S().current; if (c) bus.seen = c.question_id; }
+          break;
+        case 'bus-menu': bus.menu = !bus.menu; bus.pick = false; break;
+        case 'bus-pick': bus.pick = true; bus.menu = false; break;
+        case 'bus-close': bus.menu = false; bus.pick = false; break;
+        case 'bus-next': { const c = S() && S().current; if (c) bus.seen = c.question_id; break; }
+        case 'bus-full': bus.menu = false; deps.setBus(false); return;
         case 'guide': deps.openGuide(+el.dataset.q); return;
         case 'sim-play': simStart(); break;
         case 'sim-pause': sim.run = false; clearInterval(sim.timer); break;
@@ -555,9 +563,126 @@
       if (el.dataset.nav === 'rec-import') onImport(el); else onAction(el, e);
     });
 
+    // --------------------------------------------------------------- Mode bus : un seul écran, un gros bouton
+    // Le guide parle au micro : pas de défilement, un bouton toujours au même endroit dont le texte suit
+    // l'étape (publier → attendre → révéler → suivante), sa phrase 🎤 en grand, vibration aux moments clés.
+    const bus = { seen: null, menu: false, pick: false, buzz: {}, touch: false, body: '' };
+    const buzz = (k, pattern) => { if (bus.buzz[k]) return; bus.buzz[k] = 1; try { navigator.vibrate && navigator.vibrate(pattern || 200); } catch { /* */ } };
+    const mmss = ms => { const s = Math.max(0, Math.round(ms / 1000)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+    function busHtml() {
+      keepAwake();
+      return `<div id="busroot" class="bus"><div id="busbody"></div>
+        <div class="busbar"><button type="button" class="btn ghost busmore" data-nav="bus-menu" aria-label="עוד">⋯</button><button type="button" id="busact" class="btn busact"></button></div>
+        <div id="bussheet"></div></div>`;
+    }
+    function keepAwake() {
+      if (!wake && 'wakeLock' in navigator && document.visibilityState === 'visible')
+        navigator.wakeLock.request('screen').then(w => { wake = w; w.addEventListener('release', () => { if (wake === w) wake = null; }); }).catch(() => {});
+    }
+    function top3(s) {
+      const lb = (s.leaderboard || []).slice(0, 3);
+      return lb.length ? `<div class="bustop3">${lb.map((r, i) => `${['🥇', '🥈', '🥉'][i]} <b dir="auto">${esc(r.name)}</b> ${r.score}`).join(' · ')}</div>` : '';
+    }
+    function busView() {
+      const s = S(), g = s && s.game, c = s && s.current, now = Date.now(), off = deps.offset();
+      if (!P) return { body: `<p class="small">${esc(loadErr || 'טוען מסלול…')}</p>`, label: '…', disabled: true };
+      const pl = G.plan(P, real.on ? real.trk : null, realCtx(now));
+      const openMs = c && c.opened_at ? now - (Date.parse(c.opened_at) - off) : 0;
+      const head = `<div class="bustop"><span>👥 ${s.online}</span>
+        <span>✍️ ${c && (g.phase === 'open' || g.phase === 'closed') ? c.answers + '/' + s.online : '–'}</span>
+        <span>${g.phase === 'open' ? '⏱ ' + mmss(openMs) : ''}</span>
+        <span class="gpsdot ${real.on ? (pl.status === 'ok' ? 'on' : 'warn') : 'off'}">GPS</span></div>`;
+      // bandeau de couleur : où on en est sur la route (lisible du coin de l'œil)
+      const n = pl.next, lvl = n ? n.level || 0 : 0;
+      const cq = c ? deps.qt(c) : null, bq = c ? questions().find(q => q.id === c.question_id) : null;
+      // pendant une question (ouverte → révélée), le bandeau montre SON lieu, pas le suivant
+      const busy = c && g.phase !== 'waiting' && !(g.phase === 'revealed' && bus.seen === c.question_id);
+      const curStop = busy && bq ? P.stops.find(st => 'v3:' + st.question === bq.ext_key) : null;
+      let band;
+      if (curStop) band = `<div class="busband cur">❓ ${numOf(curStop) || ''} · ${esc(nm(curStop.name))}</div>`;
+      else if (!real.on) band = `<button type="button" class="busband off" data-nav="gps-on">📍 GPS כבוי — לגעת כאן כדי להפעיל${n ? ' · הבא: ' + esc(nm(n.stop.name)) : ''}</button>`;
+      else if (pl.status !== 'ok' && pl.status !== 'searching') band = `<div class="busband bad">${esc(STATUS[pl.status] ? STATUS[pl.status][0] : pl.status)}${n ? ' · ' + esc(nm(n.stop.name)) : ''}</div>`;
+      else if (n) {
+        const sd = n.stop.side || {}, side = sd.value === 'left' ? ' · 👈 שמאל' : sd.value === 'right' ? ' · ימין 👉' : '';
+        band = `<div class="busband l${lvl}">${['⚪', '🟡', '🟠', '🟢'][lvl]} ${esc(nm(n.stop.name))} · ${n.inZone ? 'עכשיו' : fmtDist(n.distM)}${side}</div>`;
+        if (lvl === 3) buzz('green:' + n.stop.id, [200, 100, 200]);
+      } else band = `<div class="busband l0">${pl.finish || pl.arrived ? '☕ סוף המסלול' : 'מחפש מיקום…'}</div>`;
+
+      const right = cq ? `<div class="busok" ${dirOf(cq.lang)}>✔ ${esc(cq.options[c.correct_index] || '')}</div>` : '';
+      if (g.paused) return { body: head + band + '<div class="busq">⏸️ המשחק מושהה</div>', label: '▶️ להמשיך', a: 'unpause', cls: 'go' };
+      if (c && g.phase === 'open') {
+        const minLeft = (g.min_answer_sec || 30) * 1000 - openMs;
+        if (minLeft <= 0) buzz('min:' + c.question_id);
+        if (s.online > 0 && c.answers >= s.online) buzz('all:' + c.question_id, [100, 80, 100, 80, 100]);
+        return { body: head + band + `<div class="busq" ${dirOf(cq.lang)}>${esc(cq.text)}</div>
+            <div class="buscount">${c.answers} / ${s.online} ענו</div>${right}`,
+          label: minLeft > 0 ? `⏳ ${Math.ceil(minLeft / 1000)} שנ׳` : '👁️ לסגור ולחשוף',
+          a: minLeft > 0 ? null : 'reveal', disabled: minLeft > 0, cls: minLeft > 0 ? 'wait' : 'go' };
+      }
+      if (c && g.phase === 'closed')
+        return { body: head + band + `<div class="busq" ${dirOf(cq.lang)}>${esc(cq.text)}</div><div class="buscount">${c.answers} תשובות</div>${right}`,
+          label: '👁️ לחשוף תשובה', a: 'reveal', cls: 'go' };
+      if (c && g.phase === 'revealed' && bus.seen !== c.question_id) {
+        // le moment de parler : la phrase du micro, en grand, sans fenêtre à ouvrir
+        return { body: head + band + right + `<div class="busscript" ${dirOf(lang())}>🎤 ${esc(tr(bq, 'script'))}</div>
+            ${tr(bq, 'fact') ? `<details class="busmore-txt"><summary>💡 אם יש זמן</summary><div ${dirOf(lang())}>${esc(tr(bq, 'fact'))}</div></details>` : ''}${top3(s)}`,
+          label: '➡️ לשאלה הבאה', nav: 'bus-next', cls: 'next' };
+      }
+      if (!n || pl.finish) return { body: head + band + '<div class="busq">אין עוד נקודות מומלצות.</div>', label: '📋 לבחור נקודה', nav: 'bus-pick', cls: 'next' };
+      const q = qOf(n.stop), t = qText(q), hold = pl.hold;
+      const wait = hold && hold.reason !== 'question_open' ? `<div class="bushold">⏳ ${hold.reason === 'speaking' ? 'זמן ההסבר שלך' : 'רווח בין שאלות'} — עוד ${hold.waitSec} שנ׳ (אפשר גם עכשיו)</div>` : '';
+      return { body: head + band + wait + (q ? `<div class="busq" ${dirOf(t.lang)}>${esc(t.text)}</div>
+          <div class="busok" ${dirOf(t.lang)}>✔ ${esc(t.options[q.correct_index] || '')}</div>
+          ${n.stop.look ? `<div class="small muted" ${dirOf(lang())}>👀 ${esc(nm(n.stop.look))}</div>` : ''}` : '<p class="small">השאלה לא נמצאה.</p>'),
+        label: '📣 לפרסם שאלה', nav: q ? 'publish' : null, stop: n.stop.id, disabled: !q, cls: lvl === 3 ? 'go pulse' : 'early' };
+    }
+    function busSheet() {
+      const s = S(), g = s && s.game, pl = P ? G.plan(P, real.on ? real.trk : null, realCtx(Date.now())) : null, n = pl && pl.next;
+      if (bus.pick) {
+        const ctx = realCtx(Date.now());
+        return `<div class="bussheet"><div class="sheet">
+          <h2 style="margin:0 0 8px">📋 לבחור נקודה</h2>
+          ${P.stops.filter(st => st.main && !ctx.used.has(st.question)).map(st => `<button type="button" class="btn ghost busli" data-nav="pin" data-stop="${st.id}">${numOf(st)} · ${esc(nm(st.name))}</button>`).join('') || '<p>כל השאלות נשאלו.</p>'}
+          <button type="button" class="btn ghost" data-nav="bus-close">✖ סגירה</button></div></div>`;
+      }
+      if (!bus.menu) return '';
+      const c = s.current;
+      return `<div class="bussheet"><div class="sheet">
+        ${n && g.phase !== 'open' ? `<button type="button" class="btn ghost busli" data-nav="skip" data-stop="${n.stop.id}">⏭️ לדלג על ${esc(nm(n.stop.name))}</button>
+          <button type="button" class="btn ghost busli" data-nav="back">⏮️ הנקודה הקודמת</button>` : ''}
+        <button type="button" class="btn ghost busli" data-nav="bus-pick">📋 לבחור נקודה מהרשימה</button>
+        ${c && (g.phase === 'open' || g.phase === 'revealed') ? `<button type="button" class="btn ghost busli" data-nav="guide" data-q="${c.question_id}">🎤 הדף המלא של השאלה</button>` : ''}
+        ${g.phase === 'open' ? '<button type="button" class="btn ghost busli" data-a="force" style="color:var(--bad)">⚠️ סגירת חירום (לפני 30 שנ׳)</button>' : ''}
+        ${real.on ? '<button type="button" class="btn ghost busli" data-nav="gps-off">⏹ לכבות GPS</button>' : '<button type="button" class="btn ghost busli" data-nav="gps-on">📍 להפעיל GPS</button>'}
+        <a class="btn ghost busli" target="_blank" rel="noopener" href="${deps.waHref()}">💬 לשלוח את הקישור בוואטסאפ</a>
+        ${g.phase !== 'open' ? '<button type="button" class="btn ghost busli" data-a="pause">⏸️ השהיה</button><button type="button" class="btn ghost busli" data-a="finish">🏁 סיום המשחק והזוכים</button>' : ''}
+        <button type="button" class="btn ghost busli" data-nav="bus-full">🧰 המסך המלא</button>
+        <button type="button" class="btn" data-nav="bus-close">✖ סגירה</button></div></div>`;
+    }
+    function paintBus() {
+      const root = document.getElementById('busroot'); if (!root || bus.touch) return;
+      const v = busView();
+      if (v.body !== bus.body) { document.getElementById('busbody').innerHTML = v.body; bus.body = v.body; }
+      const b = document.getElementById('busact');
+      if (b.textContent !== v.label) b.textContent = v.label;
+      b.className = 'btn busact ' + (v.cls || ''); b.disabled = !!v.disabled;
+      ['a', 'nav', 'stop'].forEach(k => { if (v[k]) b.dataset[k] = v[k]; else delete b.dataset[k]; });
+      const sh = busSheet(), el = document.getElementById('bussheet');
+      if (el._h !== sh) { el.innerHTML = sh; el._h = sh; }
+    }
+    // ne jamais redessiner sous le doigt (un appui ne doit pas tomber dans le vide)
+    document.addEventListener('pointerdown', e => { if (e.target.closest && e.target.closest('#busroot')) bus.touch = true; }, true);
+    document.addEventListener('pointerup', () => { bus.touch = false; }, true);
+    document.addEventListener('pointercancel', () => { bus.touch = false; }, true);
+    // une action du menu ferme le menu
+    document.addEventListener('click', e => {
+      if (e.target.closest('#bussheet [data-a], #bussheet a, #bussheet [data-nav]')) { bus.menu = false; bus.pick = false; setTimeout(paintBus, 0); }
+    }, true);
+
     // --------------------------------------------------------------- Rafraîchissement en place (sans tout redessiner)
     function paint() {
       paintTrack();
+      paintBus();
       const a = document.getElementById('navroot');
       const typing = el => el && /^(INPUT|SELECT|TEXTAREA)$/.test(el.tagName) && el.type !== 'checkbox';
       if (a && !(a.contains(document.activeElement) && typing(document.activeElement))) { const o = a.querySelector('details[open]'); a.innerHTML = livePanel(); if (o) keepOpen(a, o); }
@@ -569,7 +694,7 @@
     paintTimer = setInterval(paint, 1000);
     load().then(paint);
 
-    return { liveHtml, routeHtml, paint, stopAll() { real.on = false; rec.on = false; stopWatch(); },
+    return { liveHtml, routeHtml, busHtml, paint, stopAll() { real.on = false; rec.on = false; stopWatch(); },
       get simOn() { return sim.on; }, get P() { return P; }, _sim: sim, _real: real };
   }
 
