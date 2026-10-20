@@ -119,7 +119,11 @@ const sRu = await student(iphone, 'ru', 'Миша', 'ru');
 assert.match(await sHe.textContent('.waiting'), /מחכים לשאלה הבאה\.\.\. 🚌/);
 assert.match(await sHe.textContent('.waiting'), /השאלה תופיע כאן אוטומטית/);
 assert.match(await sFr.textContent('.waiting'), /On attend la prochaine question/);
-assert.ok(!/קוד|code|код/i.test(await sHe.textContent('#app') + await sFr.textContent('#app')), 'aucun code personnel affiché');
+// règles du défi sur l'écran d'attente : points, bonus de vitesse, une seule réponse
+assert.match(await sHe.textContent('.rules'), /100[\s\S]*\+100[\s\S]*200/);
+assert.match(await sFr.textContent('.rules'), /Bonus de vitesse/);
+assert.equal(await sHe.$eval('.rules', d => d.open), true, 'règles dépliées avant la première question');
+assert.ok(!/(^|[\s:])קוד|\bcode\b|(^|\s)код/i.test(await sHe.textContent('#app') + await sFr.textContent('#app')), 'aucun code personnel affiché');
 assert.equal(+(await one(`select count(*) n from mdl.players p join mdl.games g on g.id = p.game_id and g.is_active where name = 'דוד'`)).n, 2);
 assert.equal(await published(), 0, 'rejoindre ne publie jamais de question');
 await noHScroll(sHe, 'attente 360px');
