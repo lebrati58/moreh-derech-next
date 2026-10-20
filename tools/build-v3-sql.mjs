@@ -20,9 +20,8 @@ export function validateV3({ v3, route }) {
   const qs = v3.questions;
   if (v3.bank !== 'V3') err('bank doit valoir V3');
   if (v3.photoCount !== 0) err('la V3 ne contient aucune photo');
-  const main = qs.filter(q => q.selection === 'MAIN'), spare = qs.filter(q => q.selection === 'SPARE');
-  if (main.length < 5 || main.length > 8) err(`5 à 8 questions MAIN attendues (${main.length})`);
-  if (!spare.length) err('au moins une question SPARE attendue');
+  const main = qs.filter(q => q.selection === 'MAIN');
+  if (main.length < 5 || main.length > 20) err(`5 à 20 questions MAIN attendues (${main.length})`);
   if (new Set(qs.map(q => q.id)).size !== qs.length) err('identifiants en double');
   if (qs.filter(q => q.final).length !== 1) err('exactement une question finale attendue');
   const stops = new Map(route.stops.map(s => [s.id, s]));

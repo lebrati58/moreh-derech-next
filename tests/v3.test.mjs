@@ -33,13 +33,12 @@ before(async () => {
 after(async () => c && c.end());
 
 // ===================================================================== Contenu
-test('contenu V3 : validé, 6 principales + 4 de remplacement, 4 langues, aucune photo, NVIDIA en dernier', () => {
+test('contenu V3 : validé, 14 questions principales, 4 langues, aucune photo, NVIDIA présente', () => {
   assert.equal(validateV3(DATA), true);
   const main = DATA.v3.questions.filter(q => q.selection === 'MAIN').sort((a, b) => a.order - b.order);
-  assert.equal(main.length, 6);
-  assert.equal(DATA.v3.questions.filter(q => q.selection === 'SPARE').length, 4);
-  assert.equal(main[main.length - 1].id, 'ROAD67-06');
-  assert.equal(main[main.length - 1].final, true);
+  assert.equal(main.length, 14);
+  assert.equal(DATA.v3.questions.filter(q => q.selection === 'SPARE').length, 0);
+  assert.ok(main.some(q => q.id === 'ROAD67-06' && q.final), 'question NVIDIA présente');
   const nv = SRC['ROAD67-06'];
   assert.equal(nv.i18n.he.question, 'איזו חברה ישראלית שפעלה ביוקנעם נרכשה על ידי אנבידיה בשנת 2020?');
   assert.deepEqual(nv.i18n.he.options, ['מלאנוקס', 'מובילאיי', 'ווייז', "צ'ק פוינט"]);
@@ -65,19 +64,17 @@ test('contenu V3 : validé, 6 principales + 4 de remplacement, 4 langues, aucune
 // ===================================================================== Base de données
 test('banques séparées V1/V2/V3, V3 à 45 s, jamais mélangées', async () => {
   let s = await state();
-  assert.deepEqual(s.banks.map(b => [b.code, b.main, b.spare]), [['V1', 34, 0], ['V2', 6, 2], ['V3', 6, 4]]);
+  assert.deepEqual(s.banks.map(b => [b.code, b.main, b.spare]), [['V1', 34, 0], ['V2', 6, 2], ['V3', 14, 0]]);
   const v1 = s.questions;
   await newGame('V3');
   s = await state();
   assert.equal(s.game.bank, 'V3'); assert.equal(s.game.default_time_limit_sec, 45); assert.equal(s.game.min_answer_sec, 30);
-  assert.equal(s.questions.length, 10); assert.ok(s.questions.every(q => q.bank === 'V3'));
+  assert.equal(s.questions.length, 14); assert.ok(s.questions.every(q => q.bank === 'V3' && q.enabled));
   assert.ok(s.questions.every(q => !q.route_meta.photos), 'aucune photo en V3');
   assert.equal((await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: v1[0].id })).error, 'wrong_bank');
-  const spare = s.questions.find(q => q.selection === 'SPARE');
-  assert.equal((await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: spare.id })).error, 'spare_disabled');
   // lecture d'une autre banque pour la simulation : admin seulement, ne change rien
   const b = await rpc(c, 'admin_bank_questions', { p_token: admin, p_bank: 'V3' });
-  assert.equal(b.questions.length, 10);
+  assert.equal(b.questions.length, 14);
   await assert.rejects(rpc(c, 'admin_bank_questions', { p_token: 'x', p_bank: 'V3' }), /not_authorized/);
   // V2 et V1 restent jouables
   await newGame('V2'); s = await state(); assert.equal(s.questions.length, 8); assert.ok(s.questions.every(q => q.bank === 'V2'));
@@ -192,7 +189,7 @@ test('migration depuis l\'état V2 (avant V3) : sessions conservées, homonymes 
     const b = await rpc(d, 'join_game', { p_name: 'נועה' });
     assert.equal(b.error, undefined); assert.notEqual(b.player_id, a.player_id);
     const s = await rpc(d, 'admin_state', { p_token: tok });
-    assert.deepEqual(s.banks.map(x => [x.code, x.main]), [['V1', 34], ['V2', 6], ['V3', 6]]);
+    assert.deepEqual(s.banks.map(x => [x.code, x.main]), [['V1', 34], ['V2', 6], ['V3', 14]]);
     assert.equal((await d.query(`select string_agg(id::text, ',' order by id) s from mdl.questions where bank = 'V2'`)).rows[0].s, v2ids, 'V2 intacte');
     assert.equal((await d.query(`select count(*)::int n from mdl.route_photos`)).rows[0].n, 32, 'photos V2 intactes');
   } finally { await d.end(); }
@@ -205,7 +202,8 @@ const fixAt = (s, t, extra = {}) => { const p = GPS.pointAt(P, s); return Object
 test('GPS : distances le long du trajet, dans le bon sens, lieux dans l\'ordre du parcours', () => {
   assert.ok(P.dest.s > 17000 && P.dest.s < 23000, 'trajet ≈ 19–21 km : ' + P.dest.s);
   const main = P.stops.filter(s => s.main).map(s => s.question);
-  assert.deepEqual(main, ['ROAD67-01', 'ROAD67-02', 'ROAD67-03', 'ROAD67-04', 'ROAD67-05', 'ROAD67-06']);
+  assert.deepEqual(main, ['ROAD67-11', 'ROAD67-12', 'ROAD67-01', 'ROAD67-02', 'ROAD67-07', 'ROAD67-10', 'ROAD67-03',
+    'ROAD67-09', 'ROAD67-14', 'ROAD67-04', 'ROAD67-13', 'ROAD67-05', 'ROAD67-06', 'ROAD67-08']);
   assert.ok(P.stops.every(s => s.offRoadM < 50), 'repères sur la chaussée');
   assert.equal(GPS.roadAt(P, 2000).label.he.slice(0, 7), 'כביש 67');
   assert.match(GPS.roadAt(P, 14000).label.he, /כביש 6/);
@@ -245,7 +243,8 @@ test('GPS : 3 niveaux d\'alerte suffisamment tôt, lieux dépassés, aucune publ
   assert.equal(typeof GPS.publish, 'undefined');
   assert.ok(!/rpc|fetch|admin_open|XMLHttpRequest/.test(file('public/gps-engine.js').replace(/\/\/.*$/gm, '')), 'le moteur n\'a aucun accès réseau');
   const T = new GPS.Tracker(P); let t = 0; const firstSeen = {};
-  const used = new Set();
+  // les questions d'avant ont déjà été posées : Bat Shlomo est la prochaine
+  const used = new Set(['ROAD67-11', 'ROAD67-12', 'ROAD67-01', 'ROAD67-02', 'ROAD67-07', 'ROAD67-10']);
   for (let s = 0; s <= P.dest.s; s += 50) {
     T.update(fixAt(s, t += 3000));
     const pl = GPS.plan(P, T, { now: t, used });
@@ -260,27 +259,26 @@ test('GPS : 3 niveaux d\'alerte suffisamment tôt, lieux dépassés, aucune publ
   const T2 = new GPS.Tracker(P); let t2 = 0;
   for (let s = 0; s <= 9000; s += 100) T2.update(fixAt(s, t2 += 6000));
   const pl = GPS.plan(P, T2, { now: t2, used: new Set() });
-  assert.deepEqual(pl.passed.map(i => i.stop.id), ['S1', 'S2', 'S3']);
-  assert.equal(pl.next.stop.id, 'S4');
-  // sauté à la main / choisi à la main
-  const sk = GPS.plan(P, T2, { now: t2, used: new Set(), skipped: new Set(['S4']) });
-  // S5 (Elyakim) — ou, s'il menace la question finale, NVIDIA avec la mention « à passer »
-  assert.ok(sk.next.stop.id === 'S5' || (sk.squeezed && sk.squeezed.id === 'S5' && sk.next.stop.id === 'S6'));
-  assert.equal(GPS.plan(P, T2, { now: t2, used: new Set(), pinned: 'S9', includeSpares: true }).next.stop.id, 'S9');
+  assert.deepEqual(pl.passed.map(i => i.stop.id), ['S11', 'S12', 'S1', 'S2', 'S7', 'S10', 'S3']);
+  assert.equal(pl.next.stop.id, 'S9');
+  // sauté à la main / choisi à la main (même un lieu déjà dépassé)
+  assert.equal(GPS.plan(P, T2, { now: t2, used: new Set(), skipped: new Set(['S9']) }).next.stop.id, 'S14');
+  assert.equal(GPS.plan(P, T2, { now: t2, used: new Set(), pinned: 'S5' }).next.stop.id, 'S5');
 });
 
-test('GPS : ne bouscule pas le guide (question ouverte, micro, 2 min entre questions)', () => {
+test('GPS : ne bouscule pas le guide (question ouverte, micro, 1 min 30 entre questions)', () => {
   const T = new GPS.Tracker(P); let t = 0;
   for (let s = 0; s <= 3600; s += 100) T.update(fixAt(s, t += 6000));
   assert.equal(GPS.plan(P, T, { now: t, phase: 'open' }).hold.reason, 'question_open');
   assert.equal(GPS.plan(P, T, { now: t, phase: 'revealed', revealedAt: t - 10000, lastOpenAt: t - 60000 }).hold.reason, 'speaking');
-  const sp = GPS.plan(P, T, { now: t, phase: 'revealed', revealedAt: t - 50000, lastOpenAt: t - 100000 });
+  const sp = GPS.plan(P, T, { now: t, phase: 'revealed', revealedAt: t - 50000, lastOpenAt: t - 70000 });
   assert.equal(sp.hold.reason, 'spacing'); assert.equal(sp.hold.waitSec, 20);
-  assert.equal(GPS.plan(P, T, { now: t, phase: 'revealed', revealedAt: t - 80000, lastOpenAt: t - 130000 }).hold, null);
+  assert.equal(GPS.plan(P, T, { now: t, phase: 'revealed', revealedAt: t - 60000, lastOpenAt: t - 95000 }).hold, null);
 });
 
-test('GPS : NVIDIA jamais suggérée trop tard, quiz terminé avant Aroma (simulation complète, 3 vitesses)', () => {
-  for (const mul of [0.6, 1, 1.4]) {
+test('GPS : sans la règle Aroma, beaucoup plus de questions, 1 min 30 minimum entre deux (simulation, 3 vitesses)', () => {
+  assert.equal(P.endRule, false); assert.equal(P.minGap, 90);
+  for (const [mul, min] of [[0.6, 10], [1, 8], [1.4, 6]]) {
     const sim = new GPS.Simulator(P), T = new GPS.Tracker(P);
     const ctx = { now: 0, used: new Set(), phase: 'waiting' };
     const log = [];
@@ -291,28 +289,32 @@ test('GPS : NVIDIA jamais suggérée trop tard, quiz terminé avant Aroma (simul
       const pl = GPS.plan(P, T, ctx);
       if (pl.next && pl.next.level === 3 && !pl.hold && !pl.finish) {
         ctx.used.add(pl.next.stop.question); ctx.phase = 'open'; ctx.lastOpenAt = ctx.now;
-        log.push({ q: pl.next.stop.question, destEta: pl.destEtaSec, t: ctx.now });
+        log.push({ q: pl.next.stop.question, t: ctx.now });
       }
     }
     const ids = log.map(l => l.q);
-    assert.ok(ids.length >= 5, `×${mul} : ${ids}`);
-    assert.equal(ids[ids.length - 1], 'ROAD67-06', `×${mul} : NVIDIA en dernier (${ids})`);
-    for (const l of log) assert.ok(l.destEta >= P.needSec, `×${mul} ${l.q} suggérée à ${l.destEta} s d'Aroma`);
-    for (let i = 1; i < log.length; i++) assert.ok(log[i].t - log[i - 1].t >= 120000, `×${mul} : 2 min entre questions`);
-    // fin du quiz (réponse 45 s) avant l'arrivée : temps simulé restant à la dernière publication ≥ besoin
-    assert.ok(log[log.length - 1].destEta >= 45 + 60, 'réponse + révélation avant Aroma');
+    assert.ok(ids.length >= min, `×${mul} : ${ids.length} questions (${ids})`);
+    for (let i = 1; i < log.length; i++) assert.ok(log[i].t - log[i - 1].t >= 90000, `×${mul} : 1 min 30 entre questions`);
+    assert.equal(new Set(ids).size, ids.length, 'jamais deux fois la même');
+    for (const must of ['ROAD67-02', 'ROAD67-03', 'ROAD67-04', 'ROAD67-06']) assert.ok(ids.includes(must), `×${mul} : ${must} manquée (${ids})`);
   }
+  // arrivée à Aroma : carte « הגענו »
+  const T = new GPS.Tracker(P); let t = 0;
+  for (let s = 0; s <= P.dest.s; s += 100) T.update(fixAt(s, t += 4000));
+  const end = GPS.plan(P, T, { now: t, used: new Set() });
+  assert.equal(end.finish, true); assert.equal(end.arrived, true);
 });
 
-test('GPS : approche trop rapide d\'Aroma → plus de nouvelle question, seulement la conclusion', () => {
-  const T = new GPS.Tracker(P); let t = 0;
-  for (let s = 0; s <= P.dest.s - 1500; s += 100) T.update(fixAt(s, t += 4000));
-  const pl = GPS.plan(P, T, { now: t, used: new Set() });
+test('GPS : la règle « finir avant Aroma » reste disponible si on la réactive', () => {
+  const PE = GPS.prepare(Object.assign({}, ROUTE, { finish: { enabled: true, needSec: 170 }, minGapSec: 120 }));
+  assert.equal(PE.endRule, true);
+  const T = new GPS.Tracker(PE); let t = 0;
+  for (let s = 0; s <= PE.dest.s - 1500; s += 100) T.update(fixAt(s, t += 4000));
+  const pl = GPS.plan(PE, T, { now: t, used: new Set() });
   assert.equal(pl.finish, true); assert.ok(!pl.next || pl.next.level === 0);
-  // après la question NVIDIA : terminé, aucune autre suggestion
-  const T2 = new GPS.Tracker(P); let t2 = 0;
+  const T2 = new GPS.Tracker(PE); let t2 = 0;
   for (let s = 0; s <= 12000; s += 100) T2.update(fixAt(s, t2 += 4000));
-  const done = GPS.plan(P, T2, { now: t2, used: new Set(['ROAD67-06']) });
+  const done = GPS.plan(PE, T2, { now: t2, used: new Set(['ROAD67-06']) });
   assert.equal(done.done, true); assert.equal(done.next, null);
 });
 

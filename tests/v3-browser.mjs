@@ -128,7 +128,7 @@ ok('élèves : 2 « דוד » acceptés sans code, arrivée directe dans le jeu,
 await admin.waitForFunction(() => /4\/4|👥 4/.test(document.querySelector('#hdr-chip')?.textContent || ''), null, { timeout: 8000 }).catch(() => {});
 await admin.click('#navroot [data-nav=publish]');
 await admin.waitForSelector('#closebtn');
-const q1 = SRC['ROAD67-01'];
+const q1 = SRC[(await one(`select x.ext_key from mdl.games g join mdl.questions x on x.id = g.current_question where g.is_active`)).ext_key.replace('v3:', '')];
 for (const s of students) {
   await s.p.waitForSelector('.question-text', { timeout: 5000 });
   assert.equal((await s.p.textContent('.question-text')).trim(), q1.i18n[s.lang].question, s.who);
@@ -248,7 +248,7 @@ await gpage.uncheck('[data-nav=fault][data-k=noisy]');
 await gpage.check('[data-nav=fault][data-k=lost]'); await gpage.waitForTimeout(2000);
 await gpage.uncheck('[data-nav=fault][data-k=lost]');
 await gpage.check('[data-nav=fault][data-k=rush]');
-await gpage.waitForFunction(() => /סיום ההדרכה — מתקרבים לארומה יקנעם/.test(document.querySelector('#navroute')?.textContent || ''), null, { timeout: 90000 });
+await gpage.waitForFunction(() => /הגענו לארומה יקנעם|סיום ההדרכה — מתקרבים לארומה יקנעם/.test(document.querySelector('#navroute')?.textContent || ''), null, { timeout: 90000 });
 await shot(gpage, 'a7-simulation-fin-aroma', true);
 assert.equal(await published(), nSim, 'la simulation n\'envoie aucune question aux élèves');
 ok('simulation : 3 niveaux, publication simulée sans envoi, pannes GPS, fin « 🏁 » avant Aroma');

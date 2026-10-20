@@ -3,7 +3,7 @@
 ## Fichiers
 | Fichier | Rôle |
 |---|---|
-| `content/v3/road67_questions.json` | **Données faisant foi** : 6 questions principales + 4 de remplacement, 4 langues complètes (question, 4 réponses, explication élève, texte micro 20–40 s, anecdote, repère « quand parler », mise en garde), sources, et ce que disent les deux documents de guidage (`docs`). |
+| `content/v3/road67_questions.json` | **Données faisant foi** : 14 questions le long du trajet, 4 langues complètes (question, 4 réponses, explication élève, texte micro 20–40 s, anecdote, repère « quand parler », mise en garde), sources, et ce que disent les deux documents de guidage (`docs`). |
 | `public/v3/road67-route.json` | Tracé du trajet, routes, vitesses, lieux (point d'ancrage sur la chaussée + zone avant/après), côtés du bus **non vérifiés**, destination Aroma. Public : ne contient ni question ni réponse. |
 | `public/gps-engine.js` | Moteur partagé GPS réel / simulateur / tests : map matching, distance le long du trajet, vitesse, ETA, 3 niveaux, pannes, fin avant Aroma. **Aucun accès réseau, aucune publication.** |
 | `public/admin-nav.js` | Interface du guide : 🧭 ניווט חכם, 🧪 simulation, 🛰️ enregistrement de trace, carte. |
@@ -23,13 +23,11 @@ Coordonnées publiées (Wikipédia hébreu) : Zikhron 32.58861, 34.92694 · Bat 
 - ➜ **Faire un trajet de repérage** avec « 🛰️ הקלטת המסלול » (enregistre le vrai tracé et le point exact de chaque lieu), puis « 💾 שמירה כמסלול מאומת » : le GPS passe alors sur la route réelle (couloir 120 m). Pour rendre la trace permanente pour tous les téléphones : « ⬇️ ייצוא GeoJSON » puis l'envoyer pour intégration dans `road67-route.json`, en ajoutant `"side": { "verified": true, "value": "left" | "right" }` pour chaque côté constaté.
 
 ## Rythme (mesuré en simulation, mêmes règles que le vrai GPS)
-Trajet ≈ 19–21 km ≈ 13–30 min selon la circulation. Règles : ≥ 2 min entre deux débuts de question, pas d'alerte pendant une question ouverte ni pendant les 40 s de micro, plus aucune question si l'arrivée est à moins de ~2 min 50, NVIDIA toujours en dernier.
-
-| Vitesse du bus | Questions suggérées |
-|---|---|
-| lent (≈30 min) | 01 → 02 → 03 → 04 → 05 Elyakim → 06 NVIDIA |
-| normal (≈18 min) | 01 → 02 → 03 → 04 → 06 NVIDIA (Elyakim proposé « à passer ») |
-| rapide (≈13 min) | 01 → 02 → 03 → 04 → 06 NVIDIA |
+Trajet ≈ 19–21 km. **14 questions** placées le long de la route, toutes principales. À la demande du guide,
+la règle « finir avant Aroma » est **désactivée** (`finish.enabled: false` dans `road67-route.json`, réactivable)
+et l'écart minimal entre deux questions est de **1 min 30** (`minGapSec: 90`). Le GPS propose toujours la
+prochaine question non posée ; une question dont on a dépassé le lieu reste publiable à la main (📌 בחר).
+En simulation : ≈ 8 questions à vitesse normale, 10+ si le bus est lent, 6+ s'il est rapide.
 
 ## Corrections apportées aux documents de guidage
 - « Wadi Milh faisait partie de la Via Maris » → l'un des passages du Carmel ; le grand passage était le Wadi Ara (Nahal Iron).

@@ -103,6 +103,9 @@
     const dest = route.destination && route.destination.point ? at(route.destination.point) : { s, d: 0 };
     P.dest = Object.assign({}, route.destination, { s: dest.s });
     P.needSec = (route.finish && route.finish.needSec) || 170;
+    // règle « finir avant Aroma » (désactivable : finish.enabled = false) et écart minimal entre deux questions
+    P.endRule = !(route.finish && route.finish.enabled === false);
+    P.minGap = route.minGapSec || 120;
     P.stops = (route.stops || []).map(st => {
       const anchor = (override && override.anchors && override.anchors[st.id]) || st.anchor;
       const c = at(anchor);
@@ -231,10 +234,12 @@
       out.destEtaSec = Math.round(travelSec(P, s, P.dest.s, speed));
     }
     // plus aucune nouvelle question si l'arrivée est trop proche
-    if (gps && out.destEtaSec < P.needSec) out.finish = true;
-    // la question finale (NVIDIA) a été posée : c'est la fin du quiz, plus aucune suggestion
     const fin0 = P.stops.find(x => x.final);
-    if (fin0 && used.has(fin0.question)) { out.finish = true; out.done = true; }
+    if (P.endRule) {
+      if (gps && out.destEtaSec < P.needSec) out.finish = true;
+      // la question finale (NVIDIA) a été posée : c'est la fin du quiz, plus aucune suggestion
+      if (fin0 && used.has(fin0.question)) { out.finish = true; out.done = true; }
+    } else if (gps && out.destRemainM < 150) { out.finish = true; out.arrived = true; }
     for (const stp of P.stops) {
       if (!open(stp)) continue;
       if (!stp.main && !ctx.includeSpares && !(ctx.pinned && ctx.pinned === stp.id)) continue;
@@ -246,7 +251,7 @@
         item.etaSec = item.distM > 0 ? Math.round(travelSec(P, s, stp.zoneStart, speed)) : 0;
         item.anchorDistM = Math.round(stp.s - s);
         // assez de temps pour poser la question avant Aroma ?
-        item.fits = out.destEtaSec == null ? true : out.destEtaSec - item.etaSec >= P.needSec;
+        item.fits = !P.endRule || out.destEtaSec == null ? true : out.destEtaSec - item.etaSec >= P.needSec;
       }
       (passed ? out.passed : out.upcoming).push(item);
     }
@@ -254,12 +259,19 @@
     let nx = ctx.pinned ? out.upcoming.find(i => i.stop.id === ctx.pinned) : null;
     if (!nx) {
       nx = out.upcoming.find(i => i.stop.main) || null;
+      // Lieux trop proches : si poser celui-ci fait manquer un lieu plus important (prio 3 > 2 > 1)
+      // — sa zone se termine avant la fin de l'écart minimal — on propose directement le plus important.
+      if (nx && s !== null) for (const o of out.upcoming) {
+        if (o === nx || !o.stop.main || (o.stop.prio || 2) <= (nx.stop.prio || 2)) continue;
+        const reachEnd = travelSec(P, s, o.stop.zoneEnd, speed, true);
+        if (reachEnd - (nx.etaSec || 0) < P.minGap) { nx = o; break; }
+      }
       // Deux lieux trop proches de la fin : si poser celui-ci empêche la question finale
       // (espacement de 2 min + temps nécessaire avant Aroma), on propose de le passer.
       const fin = out.upcoming.find(i => i.stop.final);
       const realEta = s === null ? null : Math.round(travelSec(P, s, P.dest.s, speed, true));
-      if (gps && nx && fin && !nx.stop.final && realEta != null &&
-          realEta - nx.etaSec - MIN_GAP_SEC < P.needSec) {
+      if (P.endRule && gps && nx && fin && !nx.stop.final && realEta != null &&
+          realEta - nx.etaSec - P.minGap < P.needSec) {
         out.squeezed = nx.stop; nx = fin;
       }
     }
@@ -269,7 +281,7 @@
       if (!gps) nx.level = 0;
       else if (out.finish) nx.level = 0;
       else if (nx.inZone) nx.level = 3;
-      else if (nx.stop.final && out.destEtaSec - P.needSec <= 60) nx.level = 3;     // dernière chance avant Aroma
+      else if (P.endRule && nx.stop.final && out.destEtaSec - P.needSec <= 60) nx.level = 3;     // dernière chance avant Aroma
       else if (nx.etaSec <= 55 || nx.distM <= 250) nx.level = 2;
       else if (nx.etaSec <= 95) nx.level = 1;
       else nx.level = 0;
@@ -279,7 +291,7 @@
     // le GPS ne bouscule jamais le guide : question en cours, micro, espacement de 2 minutes
     if (ctx.phase === 'open') out.hold = { reason: 'question_open' };
     else if (ctx.phase === 'revealed' && ctx.revealedAt && now - ctx.revealedAt < SPEAK_SEC * 1000) out.hold = { reason: 'speaking', waitSec: Math.ceil((SPEAK_SEC * 1000 - (now - ctx.revealedAt)) / 1000) };
-    else if (ctx.lastOpenAt && now - ctx.lastOpenAt < MIN_GAP_SEC * 1000) out.hold = { reason: 'spacing', waitSec: Math.ceil((MIN_GAP_SEC * 1000 - (now - ctx.lastOpenAt)) / 1000) };
+    else if (ctx.lastOpenAt && now - ctx.lastOpenAt < P.minGap * 1000) out.hold = { reason: 'spacing', waitSec: Math.ceil((P.minGap * 1000 - (now - ctx.lastOpenAt)) / 1000) };
     return out;
   }
 

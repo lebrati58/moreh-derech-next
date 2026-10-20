@@ -149,7 +149,7 @@
       const hold = pl.hold;
       const holdTxt = !hold ? '' : hold.reason === 'question_open' ? '❓ שאלה פתוחה — ממתינים לסגירה ולחשיפה'
         : hold.reason === 'speaking' ? `🎤 זמן ההדרכה שלך — אין צורך למהר (עוד ${hold.waitSec} שנ׳)`
-        : `⏳ מומלץ לחכות עוד ${hold.waitSec} שנ׳ (2 דק׳ בין תחילת שאלות)`;
+        : `⏳ מומלץ לחכות עוד ${hold.waitSec} שנ׳ (דקה וחצי בין שאלות)`;
       const showQ = lvl >= 2 || !pl.gps;
       // en simulation, seules les « publications » simulées comptent (la vraie partie n'est pas touchée)
       const canPub = !(hold && hold.reason === 'question_open') && q && (simMode ? !sim.used.has(st.question) : !q.used);
@@ -191,6 +191,8 @@
     function finishCard(pl, simMode) {
       const fin = P.stops.find(s => s.final), q = fin && qOf(fin);
       const said = pl.done;
+      if (pl.arrived) return `<div class="lvl finishcard"><div class="lvlh">☕ הגענו לארומה יקנעם</div>
+        <p class="small">סוף המסלול. אפשר עדיין לפרסם שאלה ידנית מהרשימה.</p>${simMode ? '<span class="simtag">סימולציה</span>' : ''}</div>`;
       return `<div class="lvl finishcard">
         <div class="lvlh">🏁 סיום ההדרכה — מתקרבים לארומה יקנעם</div>
         <p class="small">${said ? 'שאלת הסיום כבר נשאלה. אין שאלות נוספות.' : 'אין מספיק זמן לשאלה נוספת לפני ההגעה. אפשר לקרוא את טקסט הסיום אם הזמן מאפשר.'}

@@ -55,7 +55,7 @@ test('banques séparées : V1 = 34, V2 = 6 principales + 2 alternatives, jamais 
   const times = main.map(q => q.route_meta.routeMarkerTime);
   assert.deepEqual(times, [...times].sort());
   assert.deepEqual(s.questions.slice(0, 6).map(q => q.selection), Array(6).fill('MAIN'));
-  assert.deepEqual(s.banks.map(b => [b.code, b.main, b.spare]), [['V1', 34, 0], ['V2', 6, 2], ['V3', 6, 4]]);
+  assert.deepEqual(s.banks.map(b => [b.code, b.main, b.spare]), [['V1', 34, 0], ['V2', 6, 2], ['V3', 14, 0]]);
 
   // une question V1 ne peut pas être publiée dans une partie V2 (et inversement)
   assert.equal((await rpc(c, 'admin_open_question', { p_token: admin, p_question_id: v1[0].id })).error, 'wrong_bank');
