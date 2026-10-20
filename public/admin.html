@@ -40,6 +40,7 @@
 
 <script src="config.js"></script>
 <script src="api.js"></script>
+<script src="vendor/qrcode.js"></script>
 <script src="gps-engine.js"></script>
 <script src="admin-nav.js"></script>
 <script>
@@ -52,7 +53,7 @@
   const chip = document.getElementById('hdr-chip');
 
   let token = store.get(KEY);
-  let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = false, nav = null;
+  let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = false, nav = null, backupOpen = false;
   // Panneau micro : état + dernière question pour laquelle il s'est ouvert automatiquement
   let G = { open: false, qid: null, mode: 'short', live: false };
   let lastAutoGuide = store.get('mdl_last_auto_guide');
@@ -343,7 +344,8 @@
     const g = S.game, c = S.current;
     if (!g) { app.innerHTML = `<div class="card center"><h2>אין משחק פעיל</h2><button class="btn sun" data-a="newgame">צור משחק חדש</button></div>`; return; }
     if (!knownBank(g.bank || 'V1')) { app.innerHTML = bankChip(); return; }
-    let html = (g.bank === 'V3' && nav ? nav.liveHtml() : '') + stats();
+    const v3 = g.bank === 'V3' && nav;
+    let html = stats() + (v3 && S.players === 0 && g.status !== 'finished' ? qrNudge() : '');
     if (g.status === 'finished') {
       html += `<div class="card center"><div class="trophy">🏆</div><h1>הזוכים הגדולים!</h1>${podium(S.leaderboard)}
         <p>${S.stats.players} משתתפים · ${S.stats.questions} שאלות · ${S.stats.correct_pct ?? 0}% נכונות</p>
@@ -386,9 +388,16 @@
       </div>
       <div class="card"><h2>דירוג המשתתפים 🏆</h2>${lbList(S.leaderboard.slice(0, 5))}</div>`;
     }
-    if (g.phase !== 'open') html += nextCard();
+    // V3 : la question en cours (fermer / révéler) d'abord, puis le guidage GPS qui propose la suivante.
+    // La liste classique des questions reste disponible en secours, repliée.
+    if (v3) {
+      html += nav.liveHtml();
+      if (g.phase !== 'open') html += `<details class="spares" id="backup" ${backupOpen ? 'open' : ''}><summary>📝 גיבוי — כל השאלות בלי ניווט</summary>${nextCard()}</details>`;
+    } else if (g.phase !== 'open') html += nextCard();
     if (!g.paused && g.phase !== 'open') html += `<div class="row" style="margin-top:12px"><button class="btn ghost small" data-a="pause">⏸️ השהיה</button><button class="btn ghost small" data-a="finish">🏁 סיום המשחק</button></div>`;
     app.innerHTML = html;
+    const bk = document.getElementById('backup');
+    if (bk) bk.addEventListener('toggle', () => { backupOpen = bk.open; });
     const pick = document.getElementById('pick');
     if (pick) pick.addEventListener('change', () => { pickId = +pick.value || null; lastHash = ''; render(); });
   }
@@ -488,17 +497,51 @@
   }
 
   function studentLink() { return new URL('./', location.href).href; }
+  function qrSvg(text) {
+    if (!window.qrcode) return '';
+    const q = window.qrcode(0, 'M'); q.addData(text); q.make();
+    return q.createSvgTag({ cellSize: 8, margin: 2, scalable: true });
+  }
+  function qrNudge() {
+    return `<button class="btn ok" data-a="qr" style="margin-bottom:12px;font-size:20px">📲 עוד אין משתתפים — להציג QR לתלמידים</button>`;
+  }
+  // QR plein écran : on tend le téléphone, les élèves scannent
+  function showQr() {
+    const root = document.getElementById('modal-root');
+    root.innerHTML = `<div class="modal qrmodal" data-x><div class="sheet center">
+      <h2 style="margin:0 0 6px">📲 סרקו כדי להצטרף</h2>
+      <div class="qrbox">${qrSvg(studentLink())}</div>
+      <p style="direction:ltr;font-weight:800;word-break:break-all;margin:8px 0">${esc(studentLink())}</p>
+      <p class="small muted">בוחרים שפה, כותבים שם פרטי — וזהו.</p>
+      <button class="btn ghost" data-x>✖ סגירה</button></div></div>`;
+    root.onclick = e => { if (e.target.closest('[data-x]') && (e.target.closest('button') || e.target.classList.contains('qrmodal'))) { root.innerHTML = ''; root.onclick = null; } };
+  }
+
+  // Préparation en 3 gestes (V3) : le reste des réglages est replié plus bas
+  function prepCard() {
+    const g = S.game, isV3 = g && g.bank === 'V3';
+    const fresh = isV3 && g.status !== 'finished' && !S.current && !(S.stats && S.stats.questions);
+    return `<div class="card prep"><h2>🚌 הכנה לטיול — 3 צעדים</h2>
+      <div class="prepstep ${fresh ? 'done' : ''}"><b>1</b><span>משחק חדש V3 ${fresh ? '✔ מוכן' : isV3 ? '(יש כבר פעילות — לאפס בבוקר הטיול)' : '— המשחק הפעיל אינו V3'}</span>
+        <button class="btn ${fresh ? 'ghost' : 'sun'} small" data-a="newgame">🔄</button></div>
+      <div class="prepstep"><b>2</b><span>ניסיון בבית (לא נשלח לתלמידים)</span>
+        <button class="btn ghost small" data-a="sim-v3">🧪</button></div>
+      <div class="prepstep"><b>3</b><span>באוטובוס: להראות QR לתלמידים</span>
+        <button class="btn ok small" data-a="qr">📲</button></div>
+      <p class="small muted" style="margin:8px 0 0">${g ? `עכשיו: ${esc(bankLabel(g.bank || 'V1'))} · ${S.players} משתתפים · ${(S.stats && S.stats.questions) || 0} שאלות נחשפו` : 'אין משחק פעיל'}</p>
+      <p class="small" style="margin:6px 0 0">ואז בלשונית 📡 <b>שידור חי</b>: 📍 הפעל GPS ← 🟢 ← 📣 פרסם שאלה.</p></div>`;
+  }
 
   function renderSettings() {
     const g = S.game || {};
-    app.innerHTML = `
+    app.innerHTML = prepCard() + `
       <div class="card"><h2>קישור למשתתפים</h2>
         <input type="text" readonly value="${esc(studentLink())}" id="slink" style="direction:ltr;text-align:left">
         <div class="row" style="margin-top:10px">
           <button class="btn small" data-a="copy">📋 העתקה</button>
           <a class="btn ok small" style="text-align:center;text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent('🚌 חידון מורי הדרך LIVE — הצטרפו כאן: ' + studentLink())}">וואטסאפ</a>
         </div></div>
-      ${S.game ? `<form class="card" id="sf"><h2>ניקוד</h2>
+      ${S.game ? `<details class="card"><summary style="font-weight:800;cursor:pointer">⚙️ ניקוד וזמנים — לא חובה לשנות (45 שנ׳ לשאלה, מינימום 30)</summary><form id="sf">
         <label>שם המשחק</label><input type="text" name="title" value="${esc(g.title)}">
         <div class="row"><div><label>נקודות לתשובה נכונה</label><input type="number" name="base_points" value="${g.base_points}" min="0" max="1000"></div>
         <div><label>בונוס מהירות מרבי</label><input type="number" name="max_bonus" value="${g.max_bonus}" min="0" max="1000"></div></div>
@@ -510,7 +553,7 @@
         <label>🔒 זמן תשובה מינימלי (שנ׳, לא פחות מ-30)</label>
         <input type="number" name="min_answer_sec" value="${g.min_answer_sec}" min="30" max="600">
         <p class="small muted">נאכף בשרת: אי אפשר לסגור או לחשוף שאלה לפני הזמן הזה (מלבד ״סגירת חירום״ עם אישור). אף שאלה לא נסגרת לפני הזמן המינימלי.</p>
-        <button class="btn small">💾 שמירה</button></form>` : ''}
+        <button class="btn small">💾 שמירה</button></form></details>` : ''}
       <div class="card"><h2>ניהול המשחק</h2>
         <label>שפת התוכן במסך המנהל (שאלות, תסריטים, אנקדוטות)</label>${langSeg()}
         <div style="height:12px"></div>
@@ -693,7 +736,7 @@
     const root = document.getElementById('modal-root');
     // toutes les banques installées qui ont des questions (V4, V5… apparaîtront d'elles-mêmes)
     const available = (S?.banks || []).filter(b => Number(b.main || 0) > 0);
-    const cur = S?.bank || 'V3';
+    const cur = available.some(b => b.code === 'V3') ? 'V3' : (S?.bank || 'V1');
     root.innerHTML = `<div class="modal"><form class="sheet" id="ngf" autocomplete="off">
       <div class="row" style="align-items:center"><h2 style="margin:0">🔄 משחק חדש</h2><button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
       <p class="small" style="color:var(--bad);font-weight:700">המשחק הפעיל יסתיים וייפתח משחק חדש עם ניקוד ודירוג משלו; היסטוריית המשחקים הקודמים נשמרת.</p>
@@ -888,6 +931,7 @@
       }
       case 'rm': if (confirm('להסיר את ' + b.dataset.name + ' מהמשחק?')) act('admin_remove_player', { p_player_id: id }); break;
       case 'export': exportCsv(); break;
+      case 'qr': showQr(); break;
       case 'copy':
         try { await navigator.clipboard.writeText(studentLink()); toast('הקישור הועתק ✔'); }
         catch { document.getElementById('slink').select(); toast('סמנו והעתיקו ידנית'); }

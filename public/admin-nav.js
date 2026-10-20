@@ -32,6 +32,9 @@
     let route = store.get('mdl_v3_route') || null, P = null, loadErr = '';
     let override = store.get('mdl_v3_override') || null;
     let watchId = null, wake = null, lastFix = null, gpsErr = '';
+    // liste des 14 lieux : repliée par défaut, et reste comme le guide l'a laissée malgré les rafraîchissements
+    const listOpen = { real: false, sim: false };
+    document.addEventListener('toggle', e => { const d = e.target; if (d.dataset && d.dataset.navlist) listOpen[d.dataset.navlist] = d.open; }, true);
     const sk0 = store.get('mdl_v3_skip') || {};
     const real = { on: false, trk: null, skipped: new Set(sk0.ids || []), pinned: null, gameId: sk0.gid || null };
     const saveSkip = () => store.set('mdl_v3_skip', { gid: real.gameId, ids: [...real.skipped] });
@@ -87,8 +90,13 @@
         paint();
       }, { enableHighAccuracy: true, maximumAge: 3000, timeout: 20000 });
       // garder l'écran allumé : sinon le navigateur suspend le GPS
-      if ('wakeLock' in navigator) navigator.wakeLock.request('screen').then(w => { wake = w; }).catch(() => {});
+      if ('wakeLock' in navigator) navigator.wakeLock.request('screen').then(w => { wake = w; w.addEventListener('release', () => { if (wake === w) wake = null; }); }).catch(() => {});
     }
+    // le navigateur relâche l'écran allumé quand on change d'appli : on le redemande au retour
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && watchId !== null && !wake && 'wakeLock' in navigator)
+        navigator.wakeLock.request('screen').then(w => { wake = w; w.addEventListener('release', () => { if (wake === w) wake = null; }); }).catch(() => {});
+    });
     function stopWatch() {
       if (watchId !== null && navigator.geolocation) navigator.geolocation.clearWatch(watchId);
       watchId = null;
@@ -218,7 +226,7 @@
     function list(pl, mode) {
       const ctx = mode === 'sim' ? simCtx() : realCtx(Date.now());
       const passed = new Set(pl.passed.map(i => i.stop.id));
-      return `<details ${pl.gps ? '' : 'open'}><summary style="font-weight:800;cursor:pointer">📋 כל הנקודות לפי סדר הנסיעה (בחירה ידנית)</summary>
+      return `<details ${listOpen[mode] ? 'open' : ''} data-navlist="${mode}"><summary style="font-weight:800;cursor:pointer">📋 כל ${P.stops.length} הנקודות (בחירה ידנית)</summary>
         <ul class="navlist">${P.stops.map(st => {
           const q = qOf(st), used = ctx.used.has(st.question), sk = ctx.skipped.has(st.id);
           const tag = used ? '✔ נשאלה' : sk ? '⏭️ דילגנו' : passed.has(st.id) ? '⚠️ עברנו' : st.main ? '' : '🔁 חלופית';
@@ -271,7 +279,7 @@
           ? '<button class="btn ghost small" data-nav="gps-off">⏹ עצור GPS</button>'
           : '<button class="btn ok small" data-nav="gps-on">📍 הפעל GPS</button>'}
           <button class="btn ghost small" data-nav="to-sim">🧪 סימולציה</button></div>
-        <p class="small muted" style="margin:6px 0 0">🔒 המיקום נשאר בטלפון שלך בלבד — לא נשלח לשרת ולא למשתתפים. ⚠️ ייתכן שהמיקום ייעצר כשהמסך נעול או כשהדפדפן ברקע — השאירו את המסך דלוק. ה-GPS רק מציע: שאלה נשלחת רק כשלוחצים ״📣 פרסם שאלה״.</p>
+        <p class="small muted" style="margin:6px 0 0">🔒 המיקום לא יוצא מהטלפון · 🔆 להשאיר את המסך דלוק · שום דבר לא נשלח בלי ״📣 פרסם שאלה״.</p>
         ${card(pl, 'real')}
         ${list(pl, 'real')}`;
     }
