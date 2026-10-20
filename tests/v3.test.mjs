@@ -41,7 +41,10 @@ test('contenu V3 : validé, 14 questions principales, 4 langues, aucune photo, N
   assert.ok(main.some(q => q.id === 'ROAD67-06' && q.final), 'question NVIDIA présente');
   const nv = SRC['ROAD67-06'];
   assert.equal(nv.i18n.he.question, 'איזו חברה ישראלית שפעלה ביוקנעם נרכשה על ידי אנבידיה בשנת 2020?');
-  assert.deepEqual(nv.i18n.he.options, ['מלאנוקס', 'מובילאיי', 'ווייז', "צ'ק פוינט"]);
+  assert.deepEqual(nv.i18n.he.options, ['מלאנוקס', 'מובילאיי', 'ווייז', 'אנוביט']);
+  // la bonne réponse n'est pas toujours au même endroit (sinon les élèves le remarquent)
+  const pos = [0, 0, 0, 0]; DATA.v3.questions.forEach(q => pos[q.correctIndex]++);
+  assert.ok(Math.max(...pos) <= 5, 'bonnes réponses trop souvent à la même place : ' + pos);
   assert.equal(nv.correctIndex, 0);
   assert.ok(nv.sources.some(s => s.url.includes('nvidianews.nvidia.com')));
   for (const q of DATA.v3.questions) {

@@ -27,7 +27,7 @@
         "en": "History",
         "ru": "История"
       },
-      "correctIndex": 0,
+      "correctIndex": 2,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יוסי: זכרון יעקב — על שם אביו של הנדיב הידוע (ג'יימס = יעקב), היישוב השני של העלייה הראשונה (טענה זו לא נכללה). אומת: נוסדה ב-1882, נקראה ב-1883 על שם ג'יימס (יעקב) רוטשילד, אביו של הברון אדמונד.",
@@ -41,10 +41,10 @@
         "he": {
           "question": "המושבה זכרון יעקב נקראה על שם —",
           "options": [
-            "אביו של הברון רוטשילד, ג'יימס (יעקב)",
-            "יעקב אבינו",
-            "המייסד הראשון של המושבה",
-            "הנהג הראשון שהגיע אליה"
+            "הברון רוטשילד עצמו",
+            "אחיו של הברון",
+            "אביו של הברון, ג'יימס (יעקב)",
+            "יעקב אבינו"
           ],
           "explanation": "זכרון יעקב נוסדה ב-1882 ונקראה על שם ג'יימס (יעקב) רוטשילד, אביו של הברון אדמונד דה רוטשילד, שתמך במושבה.",
           "script": "נקראה על שם ג׳יימס-יעקב, אביו של הברון רוטשילד. בזכותו — כרמים ויקב.",
@@ -56,10 +56,10 @@
         "fr": {
           "question": "La colonie de Zikhron Yaakov porte le nom…",
           "options": [
-            "du père du baron de Rothschild, James (Yaakov)",
-            "du patriarche Jacob",
-            "du premier fondateur de la colonie",
-            "du premier chauffeur arrivé ici"
+            "Le baron Rothschild lui-même",
+            "Le frère du baron",
+            "Le père du baron, James (Jacob)",
+            "Le patriarche Jacob"
           ],
           "explanation": "Zikhron Yaakov, fondée en 1882, porte le nom de James (Yaakov) de Rothschild, père du baron Edmond de Rothschild qui soutenait la colonie.",
           "script": "Elle porte le nom de James-Yaakov, le père du baron de Rothschild. Grâce à lui : des vignes et une cave.",
@@ -71,10 +71,10 @@
         "en": {
           "question": "The colony of Zikhron Ya'akov is named after —",
           "options": [
-            "Baron Rothschild's father, James (Ya'akov)",
-            "the patriarch Jacob",
-            "the colony's first founder",
-            "the first driver who arrived there"
+            "Baron Rothschild himself",
+            "The baron's brother",
+            "The baron's father, James (Jacob)",
+            "The patriarch Jacob"
           ],
           "explanation": "Zikhron Ya'akov was founded in 1882 and named after James (Ya'akov) de Rothschild, father of Baron Edmond de Rothschild, who supported the colony.",
           "script": "Named after James-Ya'akov, Baron Rothschild's father. Thanks to him: vineyards and a winery.",
@@ -86,10 +86,10 @@
         "ru": {
           "question": "Колония Зихрон-Яаков названа в честь…",
           "options": [
-            "отца барона Ротшильда — Джеймса (Яакова)",
-            "праотца Иакова",
-            "первого основателя колонии",
-            "первого водителя, приехавшего сюда"
+            "Сам барон Ротшильд",
+            "Брат барона",
+            "Отец барона, Джеймс (Яаков)",
+            "Праотец Иаков"
           ],
           "explanation": "Зихрон-Яаков основан в 1882 году и назван в честь Джеймса (Яакова) Ротшильда — отца барона Эдмона де Ротшильда, поддерживавшего колонию.",
           "script": "Названа в честь Джеймса-Яакова, отца барона Ротшильда. Благодаря ему — виноградники и винодельня.",
@@ -112,7 +112,7 @@
         "en": "Names and language",
         "ru": "Названия"
       },
-      "correctIndex": 0,
+      "correctIndex": 3,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: פוריידיס משמאלנו; השם מהמילה הפרסית 'פרדס' — 'גן עדן' (paradise); מרכז מסחרי חדש בכניסה (לא נכלל). יוסי: משמאל; השם = פרדס / גן עדן / הורדוס (הורדוס לא נכלל). אומת: 'פֻרַידִיס' בערבית — 'גן עדן קטן'.",
@@ -126,10 +126,10 @@
         "he": {
           "question": "מה פירוש השם פוריידיס בערבית?",
           "options": [
-            "גן עדן קטן",
-            "מעיין מלוח",
-            "גבעה לבנה",
-            "כפר הדייגים"
+            "כפר קטן",
+            "גבעה קטנה",
+            "מעיין קטן",
+            "גן עדן קטן"
           ],
           "explanation": "פוריידיס פירושו 'גן עדן קטן' — מאותו שורש של המילים 'פרדס' בעברית ו-paradise באנגלית.",
           "script": "בערבית ״גן עדן קטן״. מאותה מילה: פרדס, paradise.",
@@ -141,10 +141,10 @@
         "fr": {
           "question": "Que signifie le nom arabe Fureidis ?",
           "options": [
-            "Petit paradis",
-            "Source salée",
-            "Colline blanche",
-            "Village de pêcheurs"
+            "Petit village",
+            "Petite colline",
+            "Petite source",
+            "Petit paradis"
           ],
           "explanation": "Fureidis signifie « petit paradis » : la même racine que « pardès » en hébreu, « paradis » en français et « paradise » en anglais.",
           "script": "En arabe, « petit paradis ». Le même mot a donné « pardès », « paradise » et « paradis ».",
@@ -156,10 +156,10 @@
         "en": {
           "question": "What does the Arabic name Fureidis mean?",
           "options": [
-            "Little paradise",
-            "Salty spring",
-            "White hill",
-            "Fishermen's village"
+            "Little village",
+            "Little hill",
+            "Little spring",
+            "Little paradise"
           ],
           "explanation": "Fureidis means 'little paradise' — the same root as 'pardes' in Hebrew and 'paradise' in English.",
           "script": "In Arabic, 'little paradise'. The same word gave us 'pardes' and 'paradise'.",
@@ -171,10 +171,10 @@
         "ru": {
           "question": "Что означает арабское название Фурейдис?",
           "options": [
-            "Маленький рай",
-            "Солёный источник",
-            "Белый холм",
-            "Рыбацкая деревня"
+            "Маленькая деревня",
+            "Маленький холм",
+            "Маленький родник",
+            "Маленький рай"
           ],
           "explanation": "Фурейдис означает «маленький рай» — тот же корень, что у ивритского «пардес» и английского «paradise».",
           "script": "По-арабски «маленький рай». От того же слова — «пардес» и «paradise».",
@@ -197,7 +197,7 @@
         "en": "Geography",
         "ru": "География"
       },
-      "correctIndex": 0,
+      "correctIndex": 1,
       "timeLimitSec": 45,
       "visibility": "topic",
       "docs": "יאיר: ואדי מילק = ואדי אל-מילח, מעבר בין מישור החוף לעמק יזרעאל, 'חלק מדרך הים'. יוסי: עולים בנחל דליה; השם שובש בפי האנגלים; 'הובילו מלח'. תיקון: המעבר הראשי של דרך הים היה בוואדי ערה (נחל עירון); ואדי מילח הוא מעבר משני. הסברי 'האנגלים' ו'שיירות המלח' הם מסורות לא מתועדות.",
@@ -215,10 +215,10 @@
         "he": {
           "question": "כביש 67 עובר בוואדי מילק (ואדי אל-מילח). מה חשיבותו של המעבר הזה?",
           "options": [
-            "מעבר טבעי נוח בין מישור החוף לעמק יזרעאל",
-            "הדרך הקצרה מחיפה לים המלח",
-            "תעלת מים שחפרו הרומאים",
-            "הגבול בין ישראל ללבנון"
+            "מעבר בין החוף לגליל העליון",
+            "מעבר בין החוף לעמק יזרעאל",
+            "מעבר בין חיפה לרמת הגולן",
+            "מעבר בין השרון לבקעת הירדן"
           ],
           "explanation": "ואדי מילח עובר בין הכרמל לרמות מנשה ומחבר את מישור החוף לעמק יזרעאל — אחד המעברים הנוחים בצפון הארץ.",
           "script": "מעבר טבעי בין הים לעמק יזרעאל — הכרמל מצפון, רמות מנשה מדרום.",
@@ -230,10 +230,10 @@
         "fr": {
           "question": "La route 67 emprunte le Wadi Milk (Wadi al-Milh). Quel est l'intérêt de ce passage ?",
           "options": [
-            "Un passage naturel commode entre la plaine côtière et la vallée de Jezréel",
-            "Le plus court chemin de Haïfa à la mer Morte",
-            "Un canal creusé par les Romains",
-            "La frontière entre Israël et le Liban"
+            "Un passage entre la côte et la Haute-Galilée",
+            "Un passage entre la côte et la vallée de Jezreel",
+            "Un passage entre Haïfa et le Golan",
+            "Un passage entre le Sharon et la vallée du Jourdain"
           ],
           "explanation": "Le Wadi Milh passe entre le Carmel et les collines de Menashe et relie la plaine côtière à la vallée de Jezréel : l'un des passages les plus faciles du nord du pays.",
           "script": "Un passage naturel entre la mer et la vallée de Jezréel : le Carmel au nord, Menashe au sud.",
@@ -245,10 +245,10 @@
         "en": {
           "question": "Road 67 runs through Wadi Milk (Wadi al-Milh). Why is this pass important?",
           "options": [
-            "An easy natural pass between the coastal plain and the Jezreel Valley",
-            "The shortest road from Haifa to the Dead Sea",
-            "A water channel dug by the Romans",
-            "The border between Israel and Lebanon"
+            "A pass between the coast and Upper Galilee",
+            "A pass between the coast and the Jezreel Valley",
+            "A pass between Haifa and the Golan",
+            "A pass between the Sharon and the Jordan Valley"
           ],
           "explanation": "Wadi Milh runs between Mount Carmel and the Menashe Heights, linking the coastal plain with the Jezreel Valley — one of the easiest passes in northern Israel.",
           "script": "A natural pass from the sea to the Jezreel Valley: the Carmel to the north, Menashe to the south.",
@@ -260,10 +260,10 @@
         "ru": {
           "question": "Шоссе 67 проходит по Вади-Милк (Вади-эль-Мильх). Чем важен этот проход?",
           "options": [
-            "Удобный естественный проход между прибрежной равниной и Изреельской долиной",
-            "Самая короткая дорога из Хайфы к Мёртвому морю",
-            "Канал, вырытый римлянами",
-            "Граница между Израилем и Ливаном"
+            "Проход между побережьем и Верхней Галилеей",
+            "Проход между побережьем и Изреельской долиной",
+            "Проход между Хайфой и Голанами",
+            "Проход между Шароном и Иорданской долиной"
           ],
           "explanation": "Вади-Мильх проходит между Кармелем и возвышенностью Менаше и соединяет прибрежную равнину с Изреельской долиной — один из самых удобных проходов на севере страны.",
           "script": "Естественный проход от моря к Изреельской долине: Кармель на севере, Менаше на юге.",
@@ -286,7 +286,7 @@
         "en": "History",
         "ru": "История"
       },
-      "correctIndex": 1,
+      "correctIndex": 2,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: 'הסתכלו שמאלה'; על שם מאיר רוטשילד, סבו של הברון; בלקינד 1904, יתומי קישינב, כפר הנוער הראשון. יוסי: 'מצד שמאל'; שיר של ביאליק על בנות שפיה (לא אומת — לא נכלל). אזהרה: לפי קואורדינטות ויקיפדיה (32.590, 34.971) הכפר קרוב מאוד לציר — הצד לא אומת.",
@@ -304,10 +304,10 @@
         "he": {
           "question": "מי הקים בשנת 1904 בשפיה מוסד לילדים יתומים שניצלו מפרעות קישינב?",
           "options": [
-            "דוד בן-גוריון",
+            "אליעזר בן-יהודה",
+            "הברון רוטשילד",
             "ישראל בלקינד",
-            "בנימין זאב הרצל",
-            "מאיר דיזנגוף"
+            "מנחם אוסישקין"
           ],
           "explanation": "ישראל בלקינד, ממייסדי ביל״ו, הקים כאן ב-1904 מוסד ליתומי פרעות קישינב — ראשיתו של כפר הנוער מאיר שפיה.",
           "script": "ב-1904 ישראל בלקינד הביא לכאן יתומי פרעות קישינב — כנראה כפר הנוער הראשון בארץ.",
@@ -319,10 +319,10 @@
         "fr": {
           "question": "Qui a fondé à Shfeya, en 1904, une institution pour des orphelins rescapés du pogrom de Kichinev ?",
           "options": [
-            "David Ben Gourion",
-            "Israel Belkind",
-            "Theodor Herzl",
-            "Meir Dizengoff"
+            "Eliezer Ben-Yehuda",
+            "Le baron Rothschild",
+            "Israël Belkind",
+            "Menahem Ussishkin"
           ],
           "explanation": "Israel Belkind, l'un des fondateurs du mouvement Bilou, y a créé en 1904 un foyer pour les orphelins du pogrom de Kichinev : le début du village de jeunes Meir Shfeya.",
           "script": "En 1904, Israel Belkind y accueille des orphelins du pogrom de Kichinev : sans doute le premier village de jeunes du pays.",
@@ -334,10 +334,10 @@
         "en": {
           "question": "Who founded an institution at Shfeya in 1904 for orphans who survived the Kishinev pogrom?",
           "options": [
-            "David Ben-Gurion",
+            "Eliezer Ben-Yehuda",
+            "Baron Rothschild",
             "Israel Belkind",
-            "Theodor Herzl",
-            "Meir Dizengoff"
+            "Menachem Ussishkin"
           ],
           "explanation": "Israel Belkind, one of the founders of the Bilu movement, set up a home here in 1904 for orphans of the Kishinev pogrom — the beginning of the Meir Shfeya youth village.",
           "script": "In 1904 Israel Belkind brought orphans of the Kishinev pogrom here — probably the country's first youth village.",
@@ -349,10 +349,10 @@
         "ru": {
           "question": "Кто основал в Шфее в 1904 году приют для сирот, переживших Кишинёвский погром?",
           "options": [
-            "Давид Бен-Гурион",
+            "Элиэзер Бен-Иегуда",
+            "Барон Ротшильд",
             "Исраэль Белкинд",
-            "Теодор Герцль",
-            "Меир Дизенгоф"
+            "Менахем Усышкин"
           ],
           "explanation": "Исраэль Белкинд, один из основателей движения БИЛУ, открыл здесь в 1904 году приют для сирот Кишинёвского погрома — с него начался молодёжный посёлок Меир-Шфея.",
           "script": "В 1904 году Исраэль Белкинд привёз сюда сирот Кишинёвского погрома — вероятно, первый молодёжный посёлок страны.",
@@ -375,7 +375,7 @@
         "en": "Botany",
         "ru": "Ботаника"
       },
-      "correctIndex": 1,
+      "correctIndex": 0,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: 'מצד ימין — יערות אלונה, יער אלונים טבעי עד הר חורשן'; מפנה צפוני: אלון מצוי ואלה; מפנה דרומי: אלון התבור ולבנה. יוסי: 'מצד ימין', חורש אלון התבור, קרטון ורנדזינה. אחרי אליקים: יערות אורן נטועים של קק״ל (לא טבעיים).",
@@ -389,10 +389,10 @@
         "he": {
           "question": "איזה עץ מאפיין את החורש הטבעי הפתוח של אזור אלונה ורמות מנשה?",
           "options": [
-            "דקל התמר",
             "אלון התבור",
-            "דקל הקוקוס",
-            "ארז הלבנון"
+            "אורן ירושלים",
+            "חרוב",
+            "אקליפטוס"
           ],
           "explanation": "אלון התבור — עץ נשיר-למחצה עם עלים רחבים — יוצר כאן 'יער פארק' פתוח וטבעי.",
           "script": "חורש טבעי של אלוני תבור — עצים רחבים ומרווחים, לא יער נטוע.",
@@ -404,10 +404,10 @@
         "fr": {
           "question": "Quel arbre caractérise les bois naturels clairsemés d'Alona et des collines de Menashe ?",
           "options": [
-            "Le palmier-dattier",
             "Le chêne du Tabor",
-            "Le cocotier",
-            "Le cèdre du Liban"
+            "Le pin d'Alep",
+            "Le caroubier",
+            "L'eucalyptus"
           ],
           "explanation": "Le chêne du Tabor, à feuilles larges et semi-caduques, forme ici une « forêt-parc » naturelle et ouverte.",
           "script": "Un bois naturel de chênes du Tabor : de grands arbres espacés, pas une forêt plantée.",
@@ -419,10 +419,10 @@
         "en": {
           "question": "Which tree characterizes the open natural woodland of Alona and the Menashe Heights?",
           "options": [
-            "Date palm",
             "Tabor oak",
-            "Coconut palm",
-            "Cedar of Lebanon"
+            "Aleppo pine",
+            "Carob",
+            "Eucalyptus"
           ],
           "explanation": "The Tabor oak, broad-leaved and semi-deciduous, forms an open natural 'park forest' here.",
           "script": "Natural Tabor-oak woodland — broad, widely spaced trees, not a planted forest.",
@@ -434,10 +434,10 @@
         "ru": {
           "question": "Какое дерево характерно для естественного редколесья района Алона и возвышенности Менаше?",
           "options": [
-            "Финиковая пальма",
-            "Таворский дуб",
-            "Кокосовая пальма",
-            "Ливанский кедр"
+            "Дуб Табор",
+            "Алеппская сосна",
+            "Рожковое дерево",
+            "Эвкалипт"
           ],
           "explanation": "Таворский дуб — широколиственный, полулистопадный — образует здесь естественный светлый «парковый лес».",
           "script": "Естественная роща таворских дубов — широкие, редко стоящие деревья, а не посаженный лес.",
@@ -460,7 +460,7 @@
         "en": "Agriculture",
         "ru": "Сельское хозяйство"
       },
-      "correctIndex": 0,
+      "correctIndex": 3,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: מטעים — בולטים שסק, אפרסקים, שזיפים ורימונים, כרמים וזיתים. יוסי: 'מצד ימין בעמק מטעי שסק' מכוסים ברשתות בגלל ציפורים ועטלפים. לא אומת איפה בדיוק נראים מטעים מכוסים.",
@@ -474,10 +474,10 @@
         "he": {
           "question": "למה מכסים לעיתים קרובות את מטעי השסק ברשתות?",
           "options": [
-            "כדי להגן על הפרי מציפורים ומעטלפים",
-            "כדי לגדל בהם דגים",
-            "כדי לייצר שלג מלאכותי",
-            "כדי לשנות את צבע הפרי לכחול"
+            "כדי להגן מברד",
+            "כדי לשמור על חום בלילות החורף",
+            "כדי למנוע נשירת פרי ברוח",
+            "כדי להגן מציפורים ומעטלפים"
           ],
           "explanation": "פרי השסק המתוק מושך ציפורים ועטלפי פירות; הרשתות שומרות עליו עד הקטיף.",
           "script": "הרשתות שומרות על הפרי — אחרת הציפורים והעטלפים אוכלים הכול לפנינו.",
@@ -489,10 +489,10 @@
         "fr": {
           "question": "Pourquoi couvre-t-on souvent les vergers de néfliers de filets ?",
           "options": [
-            "Pour protéger les fruits des oiseaux et des chauves-souris",
-            "Pour y élever des poissons",
-            "Pour fabriquer de la neige artificielle",
-            "Pour rendre les fruits bleus"
+            "Pour protéger de la grêle",
+            "Pour garder la chaleur les nuits d'hiver",
+            "Pour éviter que le vent fasse tomber les fruits",
+            "Pour protéger des oiseaux et des chauves-souris"
           ],
           "explanation": "La nèfle sucrée attire les oiseaux et les roussettes ; les filets la protègent jusqu'à la récolte.",
           "script": "Les filets protègent les fruits : sinon les oiseaux et les chauves-souris mangent tout avant nous.",
@@ -504,10 +504,10 @@
         "en": {
           "question": "Why are loquat orchards often covered with nets?",
           "options": [
-            "To protect the fruit from birds and bats",
-            "To farm fish in them",
-            "To make artificial snow",
-            "To turn the fruit blue"
+            "To protect against hail",
+            "To keep warmth in on winter nights",
+            "To stop the wind knocking fruit down",
+            "To protect against birds and bats"
           ],
           "explanation": "Sweet loquats attract birds and fruit bats; the nets protect them until harvest.",
           "script": "The nets protect the fruit — otherwise the birds and bats eat it all before we do.",
@@ -519,10 +519,10 @@
         "ru": {
           "question": "Зачем сады мушмулы часто накрывают сетками?",
           "options": [
-            "Чтобы защитить плоды от птиц и летучих мышей",
-            "Чтобы разводить в них рыбу",
-            "Чтобы делать искусственный снег",
-            "Чтобы плоды стали синими"
+            "Чтобы защитить от града",
+            "Чтобы сохранять тепло зимними ночами",
+            "Чтобы ветер не сбивал плоды",
+            "Чтобы защитить от птиц и летучих мышей"
           ],
           "explanation": "Сладкая мушмула привлекает птиц и крыланов; сетки сохраняют урожай до сбора.",
           "script": "Сетки берегут плоды — иначе птицы и летучие мыши съедят всё раньше нас.",
@@ -545,7 +545,7 @@
         "en": "History",
         "ru": "История"
       },
-      "correctIndex": 0,
+      "correctIndex": 1,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: 'מצד ימין', מושבת ברון מ-1889, 'אחרי קום המדינה הוקם גם מושב של עולי אירופה' (לא אומת — לא נכלל). יוסי: 'מימין ומשמאל — המושבה מימין', על שם בטי, בת שלמה רוטשילד, אמו של הברון; רחוב ראשי בשימור. מחלף בת שלמה: 32.598, 35.005 (ויקיפדיה).",
@@ -563,10 +563,10 @@
         "he": {
           "question": "המושבה בת שלמה (1889) נקראה על שם —",
           "options": [
-            "אמו של הברון רוטשילד, בתו של שלמה רוטשילד",
-            "בתו של המלך שלמה",
-            "אשתו של הרצל",
-            "התינוקת הראשונה שנולדה במושבה"
+            "אשתו של הברון",
+            "אמו של הברון (בתו של שלמה)",
+            "בתו של הברון",
+            "בתו של המלך שלמה"
           ],
           "explanation": "השם מכבד את בטי (בתיה) רוטשילד — אמו של הברון אדמונד דה רוטשילד ובתו של שלמה (סלומון) רוטשילד. המושבה נוסדה ב-1889.",
           "script": "נוסדה ב-1889, על שם אמו של הברון — בתו של שלמה רוטשילד.",
@@ -578,10 +578,10 @@
         "fr": {
           "question": "La colonie de Bat Shlomo (1889) doit son nom à…",
           "options": [
-            "La mère du baron de Rothschild, fille de Salomon de Rothschild",
-            "La fille du roi Salomon",
-            "L'épouse de Herzl",
-            "Le premier bébé né dans la colonie"
+            "La femme du baron",
+            "La mère du baron (fille de Salomon)",
+            "La fille du baron",
+            "La fille du roi Salomon"
           ],
           "explanation": "Le nom honore Betty de Rothschild, mère du baron Edmond de Rothschild et fille de Salomon (Shlomo) de Rothschild. La colonie a été fondée en 1889.",
           "script": "Fondée en 1889, elle porte le nom de la mère du Baron, fille de Salomon de Rothschild.",
@@ -593,10 +593,10 @@
         "en": {
           "question": "The colony of Bat Shlomo (1889) is named after —",
           "options": [
-            "The Baron de Rothschild's mother, daughter of Salomon Rothschild",
-            "King Solomon's daughter",
-            "Herzl's wife",
-            "The first baby born in the colony"
+            "The baron's wife",
+            "The baron's mother (Salomon's daughter)",
+            "The baron's daughter",
+            "King Solomon's daughter"
           ],
           "explanation": "The name honours Betty de Rothschild — mother of Baron Edmond de Rothschild and daughter of Salomon (Shlomo) Rothschild. The colony was founded in 1889.",
           "script": "Founded in 1889 and named after the Baron's mother, Salomon Rothschild's daughter.",
@@ -608,10 +608,10 @@
         "ru": {
           "question": "Колония Бат-Шломо (1889) названа в честь…",
           "options": [
-            "Матери барона Ротшильда, дочери Соломона Ротшильда",
-            "Дочери царя Соломона",
-            "Жены Герцля",
-            "Первого ребёнка, родившегося в колонии"
+            "Жена барона",
+            "Мать барона (дочь Соломона)",
+            "Дочь барона",
+            "Дочь царя Соломона"
           ],
           "explanation": "Название в честь Бетти Ротшильд — матери барона Эдмона де Ротшильда и дочери Соломона (Шломо) Ротшильда. Колония основана в 1889 году.",
           "script": "Основана в 1889 году и названа в честь матери барона — дочери Соломона Ротшильда.",
@@ -634,7 +634,7 @@
         "en": "Geology",
         "ru": "Геология"
       },
-      "correctIndex": 0,
+      "correctIndex": 2,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: גבעות רכות ומעוגלות מקירטון רך, בליה וסחיפה. יוסי: 'צד ימין — שכבות סלע קרטון וצור לחלופין' (חתך דרך אחרי עין תות), פלנקטון בעל שלד גיר (חורריות) ובעל שלד צורן (רדיולריות). לא אומת איזה חתך דרך נראה.",
@@ -648,10 +648,10 @@
         "he": {
           "question": "מדוע הגבעות לאורך הדרך רכות ומעוגלות ולא חדות?",
           "options": [
-            "בליה וסחיפה של סלעי קירטון רכים יחסית",
-            "התפרצות געשית לפני כמה מאות שנים",
-            "חפירות של בני אדם",
-            "קרחונים שעדיין קיימים כאן"
+            "כי הן מבזלת של הר געש",
+            "כי הן מגרניט קשה ועתיק",
+            "כי הן מקירטון רך שנשחק בקלות",
+            "כי הן דיונות חול שנדדו מהים"
           ],
           "explanation": "קירטון הוא סלע גירי רך יחסית; במשך מיליוני שנים הבליה והסחיפה עיגלו את הגבעות.",
           "script": "הגבעות עגולות כי הן מקירטון — סלע רך מקרקעית ים עתיקה.",
@@ -663,10 +663,10 @@
         "fr": {
           "question": "Pourquoi les collines le long de la route sont-elles douces et arrondies plutôt qu'escarpées ?",
           "options": [
-            "L'érosion de roches crayeuses assez tendres",
-            "Une éruption volcanique il y a quelques siècles",
-            "Des fouilles humaines",
-            "Des glaciers encore présents ici"
+            "Parce qu’elles sont en basalte volcanique",
+            "Parce qu’elles sont en granite dur et ancien",
+            "Parce qu’elles sont en craie tendre qui s’érode facilement",
+            "Parce que ce sont des dunes venues de la mer"
           ],
           "explanation": "La craie est une roche calcaire assez tendre : en quelques millions d'années, l'altération et l'érosion ont arrondi les collines.",
           "script": "Les collines sont rondes parce qu'elles sont en craie, une roche tendre née au fond d'une mer ancienne.",
@@ -678,10 +678,10 @@
         "en": {
           "question": "Why are the hills along the road soft and rounded rather than sharp?",
           "options": [
-            "Weathering and erosion of relatively soft chalk",
-            "A volcanic eruption a few centuries ago",
-            "Human digging",
-            "Glaciers that still exist here"
+            "Because they are volcanic basalt",
+            "Because they are hard, ancient granite",
+            "Because they are soft chalk that erodes easily",
+            "Because they are sand dunes from the sea"
           ],
           "explanation": "Chalk is a fairly soft limestone; over millions of years weathering and erosion rounded the hills.",
           "script": "The hills are round because they're chalk — a soft rock from an ancient seabed.",
@@ -693,10 +693,10 @@
         "ru": {
           "question": "Почему холмы вдоль дороги мягкие и округлые, а не острые?",
           "options": [
-            "Выветривание и эрозия сравнительно мягкого мела",
-            "Извержение вулкана несколько веков назад",
-            "Раскопки, сделанные людьми",
-            "Ледники, которые здесь до сих пор есть"
+            "Потому что это вулканический базальт",
+            "Потому что это твёрдый древний гранит",
+            "Потому что это мягкий мел, который легко размывается",
+            "Потому что это песчаные дюны с моря"
           ],
           "explanation": "Мел — довольно мягкая известковая порода; за миллионы лет выветривание и эрозия скруглили холмы.",
           "script": "Холмы круглые, потому что они из мела — мягкой породы со дна древнего моря.",
@@ -738,9 +738,9 @@
           "question": "הכרמל ורמות מנשה, משני צדי הכביש, הוכרזו על ידי אונסק״ו כ…",
           "options": [
             "שמורות ביוספרה",
-            "שמורות מדבר",
-            "פארקים ימיים",
-            "אתרי סקי"
+            "גאופארקים עולמיים",
+            "אתרי מורשת חקלאית עולמית",
+            "שמורות שמיים חשוכים"
           ],
           "explanation": "הכרמל (1996) ורמות מנשה (2011) הם שמורות ביוספרה של אונסק״ו — אזורים שבהם לומדים איך אנשים וטבע חיים יחד.",
           "script": "שתיהן שמורות ביוספרה של אונסק״ו — אנשים וטבע חיים יחד.",
@@ -753,9 +753,9 @@
           "question": "Le Carmel et les collines de Menashe, de part et d'autre de la route, ont été classés par l'UNESCO comme…",
           "options": [
             "Réserves de biosphère",
-            "Réserves désertiques",
-            "Parcs marins",
-            "Stations de ski"
+            "Géoparcs mondiaux",
+            "Sites du patrimoine agricole mondial",
+            "Réserves de ciel étoilé"
           ],
           "explanation": "Le Carmel (1996) et les collines de Menashe (2011) sont des réserves de biosphère de l'UNESCO : des territoires où l'on apprend à faire vivre ensemble l'homme et la nature.",
           "script": "Ce sont deux réserves de biosphère de l'UNESCO : l'homme et la nature y vivent ensemble.",
@@ -768,9 +768,9 @@
           "question": "Mount Carmel and the Menashe Heights, on either side of the road, were designated by UNESCO as…",
           "options": [
             "Biosphere reserves",
-            "Desert reserves",
-            "Marine parks",
-            "Ski resorts"
+            "Global geoparks",
+            "World agricultural heritage sites",
+            "Dark-sky reserves"
           ],
           "explanation": "Mount Carmel (1996) and the Menashe Heights (2011) are UNESCO biosphere reserves — areas where people learn how humans and nature can live together.",
           "script": "Both are UNESCO biosphere reserves — people and nature living together.",
@@ -782,10 +782,10 @@
         "ru": {
           "question": "Кармель и возвышенность Менаше по обе стороны дороги ЮНЕСКО объявила…",
           "options": [
-            "биосферными заповедниками",
-            "пустынными заповедниками",
-            "морскими парками",
-            "горнолыжными курортами"
+            "Биосферные заповедники",
+            "Всемирные геопарки",
+            "Объекты мирового сельскохозяйственного наследия",
+            "Заповедники тёмного неба"
           ],
           "explanation": "Кармель (1996) и Менаше (2011) — биосферные заповедники ЮНЕСКО: территории, где учатся тому, как человеку и природе жить вместе.",
           "script": "Оба района — биосферные заповедники ЮНЕСКО: человек и природа живут вместе.",
@@ -808,7 +808,7 @@
         "en": "Energy",
         "ru": "Энергетика"
       },
-      "correctIndex": 2,
+      "correctIndex": 3,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: 'מצד שמאל', מופעלת בגז, שמה שונה לתחנת הכוח דוד לוי (דצמבר 2024), חגית מזרח נמכרה ונקראת 'אורות פנינה' — לא אומת. יוסי: 'משמאל'; הערת הבודק בסוף המסמך: 'תחנת הכוח — הארובות מימין'. התחנה: 32.617, 35.043 (GEO/Wikidata) — צפון-מערבית למחלף עין תות (32.610, 35.048).",
@@ -827,9 +827,9 @@
           "question": "תחנת הכוח חגית, ליד מחלף עין תות, מייצרת חשמל בעיקר מ…",
           "options": [
             "פחם",
-            "רוח",
-            "גז טבעי",
-            "אנרגיה גרעינית"
+            "אנרגיית רוח",
+            "אנרגיה סולארית",
+            "גז טבעי"
           ],
           "explanation": "חגית היא תחנת כוח שפועלת בעיקר על גז טבעי, עם סולר כגיבוי.",
           "script": "תחנת הכוח עובדת על גז טבעי מהים התיכון. מכאן — כביש 6 בלי אגרה.",
@@ -841,10 +841,10 @@
         "fr": {
           "question": "La centrale électrique de Hagit, près de l'échangeur d'Ein Tut, produit surtout son électricité à partir…",
           "options": [
-            "du charbon",
-            "du vent",
-            "du gaz naturel",
-            "du nucléaire"
+            "Charbon",
+            "Énergie éolienne",
+            "Énergie solaire",
+            "Gaz naturel"
           ],
           "explanation": "Hagit fonctionne principalement au gaz naturel, avec du gazole en secours.",
           "script": "La centrale fonctionne au gaz naturel de la Méditerranée. À partir d'ici : la route 6, sans péage.",
@@ -857,9 +857,9 @@
           "question": "The Hagit power station, near the Ein Tut interchange, makes electricity mainly from…",
           "options": [
             "Coal",
-            "Wind",
-            "Natural gas",
-            "Nuclear power"
+            "Wind power",
+            "Solar energy",
+            "Natural gas"
           ],
           "explanation": "Hagit runs mainly on natural gas, with diesel as a backup.",
           "script": "The power station runs on natural gas from the Mediterranean. From here: Road 6, toll-free.",
@@ -871,10 +871,10 @@
         "ru": {
           "question": "Электростанция Хагит у развязки Эйн-Тут вырабатывает электричество в основном из…",
           "options": [
-            "угля",
-            "ветра",
-            "природного газа",
-            "ядерной энергии"
+            "Уголь",
+            "Энергия ветра",
+            "Солнечная энергия",
+            "Природный газ"
           ],
           "explanation": "Хагит работает в основном на природном газе, дизельное топливо — резервное.",
           "script": "Электростанция работает на природном газе из Средиземного моря. Дальше — шоссе 6 без оплаты.",
@@ -897,7 +897,7 @@
         "en": "Israel today",
         "ru": "Израиль сегодня"
       },
-      "correctIndex": 0,
+      "correctIndex": 1,
       "timeLimitSec": 45,
       "visibility": "topic",
       "docs": "יאיר: מתחברים לכביש 6, כביש יצחק רבין, ראש הממשלה החמישי; מתחיל בצומת שוקת ומסתיים במחלף אלונים. יוסי: כביש אגרה; 'כביש 6 צפון נקרא על שם יצחק שמיר' — לא אומת. אומת: הקטע עין תות–יקנעם ללא אגרה (הורחב ב-2022).",
@@ -915,10 +915,10 @@
         "he": {
           "question": "כביש 6, 'כביש חוצה ישראל', נקרא על שם —",
           "options": [
-            "יצחק רבין",
             "דוד בן-גוריון",
+            "יצחק רבין",
             "מנחם בגין",
-            "גולדה מאיר"
+            "לוי אשכול"
           ],
           "explanation": "כביש 6 נקרא 'דרך יצחק רבין', על שם ראש הממשלה שנרצח ב-1995.",
           "script": "״דרך יצחק רבין״ — הכביש הארוך בישראל, בלי קופות: מצלמות.",
@@ -930,10 +930,10 @@
         "fr": {
           "question": "La route 6, « l'autoroute trans-Israël », porte le nom de…",
           "options": [
+            "David Ben-Gourion",
             "Yitzhak Rabin",
-            "David Ben Gourion",
             "Menahem Begin",
-            "Golda Meir"
+            "Levi Eshkol"
           ],
           "explanation": "La route 6 s'appelle « route Yitzhak-Rabin », du nom du Premier ministre assassiné en 1995.",
           "script": "La « route Yitzhak-Rabin », la plus longue d'Israël, sans péage à barrière : des caméras.",
@@ -945,10 +945,10 @@
         "en": {
           "question": "Road 6, the 'Cross-Israel Highway', is named after —",
           "options": [
-            "Yitzhak Rabin",
             "David Ben-Gurion",
+            "Yitzhak Rabin",
             "Menachem Begin",
-            "Golda Meir"
+            "Levi Eshkol"
           ],
           "explanation": "Road 6 is called the 'Yitzhak Rabin Highway', after the prime minister assassinated in 1995.",
           "script": "The 'Yitzhak Rabin Highway' — Israel's longest road, no toll booths, just cameras.",
@@ -960,10 +960,10 @@
         "ru": {
           "question": "Шоссе 6, «Трансизраильское шоссе», названо в честь…",
           "options": [
-            "Ицхака Рабина",
-            "Давида Бен-Гуриона",
-            "Менахема Бегина",
-            "Голды Меир"
+            "Давид Бен-Гурион",
+            "Ицхак Рабин",
+            "Менахем Бегин",
+            "Леви Эшколь"
           ],
           "explanation": "Шоссе 6 называется «дорогой Ицхака Рабина» — в честь премьер-министра, убитого в 1995 году.",
           "script": "«Дорога Ицхака Рабина» — самая длинная в Израиле, без касс: только камеры.",
@@ -986,7 +986,7 @@
         "en": "Settlement",
         "ru": "Заселение"
       },
-      "correctIndex": 1,
+      "correctIndex": 2,
       "timeLimitSec": 45,
       "visibility": "check",
       "docs": "יאיר: 'מצד ימין', מושב עובדים של יוצאי תימן, 1949, על שם יהויקים מלך יהודה. יוסי: 'מצד ימין', 1949, יושב על קו פרשת המים של רמות מנשה; הערת הבודק: 'הבתים משמאל'. מושב: 32.633, 35.066; מחלף אליקים: 32.636, 35.065 (ויקיפדיה).",
@@ -1008,10 +1008,10 @@
         "he": {
           "question": "מושב אליקים הוקם בשנת 1949 על ידי עולים מ…",
           "options": [
-            "צרפת",
+            "עיראק",
+            "מרוקו",
             "תימן",
-            "ארגנטינה",
-            "ארצות הברית"
+            "רומניה"
           ],
           "explanation": "אליקים הוא מושב עובדים שהקימו עולי תימן ב-1949, בתקופת העלייה הגדולה.",
           "script": "מושב של עולי תימן מ-1949. אליקים — שמו המקורי של המלך יהויקים.",
@@ -1023,10 +1023,10 @@
         "fr": {
           "question": "Le moshav d'Elyakim a été fondé en 1949 par des immigrants venus…",
           "options": [
-            "de France",
-            "du Yémen",
-            "d'Argentine",
-            "des États-Unis"
+            "Irak",
+            "Maroc",
+            "Yémen",
+            "Roumanie"
           ],
           "explanation": "Elyakim est un moshav fondé en 1949 par des immigrants du Yémen, à l'époque de la grande vague d'immigration.",
           "script": "Un moshav d'immigrants du Yémen fondé en 1949. Elyakim était le premier nom du roi Joakim.",
@@ -1038,10 +1038,10 @@
         "en": {
           "question": "Moshav Elyakim was founded in 1949 by immigrants from…",
           "options": [
-            "France",
+            "Iraq",
+            "Morocco",
             "Yemen",
-            "Argentina",
-            "The United States"
+            "Romania"
           ],
           "explanation": "Elyakim is a cooperative moshav founded in 1949 by immigrants from Yemen, during the great wave of immigration.",
           "script": "A moshav of Yemenite immigrants from 1949. Eliakim was King Jehoiakim's original name.",
@@ -1053,10 +1053,10 @@
         "ru": {
           "question": "Мошав Эльяким основали в 1949 году репатрианты из…",
           "options": [
-            "Франции",
+            "Ирака",
+            "Марокко",
             "Йемена",
-            "Аргентины",
-            "США"
+            "Румынии"
           ],
           "explanation": "Эльяким — мошав, основанный в 1949 году выходцами из Йемена в период массовой алии.",
           "script": "Мошав выходцев из Йемена, основан в 1949 году. Эльяким — первое имя царя Иоакима.",
@@ -1109,7 +1109,7 @@
             "מלאנוקס",
             "מובילאיי",
             "ווייז",
-            "צ'ק פוינט"
+            "אנוביט"
           ],
           "explanation": "אנבידיה השלימה ב-2020 את רכישת מלאנוקס, שפיתחה ביוקנעם טכנולוגיות תקשורת מהירות בין מחשבים ושרתים, בכשבעה מיליארד דולר.",
           "script": "מלאנוקס מיקנעם נקנתה ב-2020 בכ-7 מיליארד דולר. התחלנו ברוטשילד — מסיימים בבינה מלאכותית!",
@@ -1124,7 +1124,7 @@
             "Mellanox",
             "Mobileye",
             "Waze",
-            "Check Point"
+            "Anobit"
           ],
           "explanation": "En 2020, NVIDIA a finalisé le rachat de Mellanox, qui développait à Yokneam des technologies de communication ultra-rapide entre ordinateurs et serveurs, pour environ 7 milliards de dollars.",
           "script": "Mellanox, de Yokneam, a été rachetée en 2020 pour environ 7 milliards de dollars. Partis de Rothschild, nous finissons avec l'intelligence artificielle !",
@@ -1139,7 +1139,7 @@
             "Mellanox",
             "Mobileye",
             "Waze",
-            "Check Point"
+            "Anobit"
           ],
           "explanation": "In 2020 NVIDIA completed its acquisition of Mellanox, which developed high-speed networking between computers and servers in Yokneam, for about 7 billion dollars.",
           "script": "Mellanox from Yokneam was bought in 2020 for about 7 billion dollars. We started with Rothschild — and we end with AI!",
@@ -1154,7 +1154,7 @@
             "Mellanox",
             "Mobileye",
             "Waze",
-            "Check Point"
+            "Anobit"
           ],
           "explanation": "В 2020 году NVIDIA завершила покупку Mellanox — компании из Йокнеама, создававшей сверхбыструю связь между компьютерами и серверами, — примерно за 7 миллиардов долларов.",
           "script": "Mellanox из Йокнеама купили в 2020 году примерно за 7 миллиардов долларов. Начали с Ротшильда — заканчиваем искусственным интеллектом!",
@@ -1177,7 +1177,7 @@
         "en": "Bible",
         "ru": "Библия"
       },
-      "correctIndex": 1,
+      "correctIndex": 3,
       "timeLimitSec": 45,
       "visibility": "nearby",
       "docs": "יוסי: 'ומלך יוקנעם לכרמל אחד', מסע תחותמס השלישי ('ענקעם'), תל יוקנעם נחפר בידי עמנון בן-תור. יאיר: יקנעם עילית הוקמה ב-1950 כמעברה, מועצה מקומית 1967, עיר 2006. לא אומת שהתל נראה מהכביש.",
@@ -1195,10 +1195,10 @@
         "he": {
           "question": "באיזה ספר בתנ״ך מופיע הפסוק 'מלך יקנעם לכרמל אחד'?",
           "options": [
-            "שמות",
-            "יהושע",
-            "אסתר",
-            "רות"
+            "שופטים",
+            "מלכים א׳",
+            "שמואל א׳",
+            "יהושע"
           ],
           "explanation": "יקנעם מופיעה ברשימת 31 המלכים שהכה יהושע (יהושע יב, כב).",
           "script": "מוזכרת בספר יהושע: ״מלך יקנעם לכרמל אחד״.",
@@ -1210,10 +1210,10 @@
         "fr": {
           "question": "Dans quel livre de la Bible trouve-t-on le verset « le roi de Yokneam du Carmel, un » ?",
           "options": [
-            "L'Exode",
-            "Josué",
-            "Esther",
-            "Ruth"
+            "Juges",
+            "1 Rois",
+            "1 Samuel",
+            "Josué"
           ],
           "explanation": "Yokneam figure dans la liste des 31 rois vaincus par Josué (Josué 12, 22).",
           "script": "Elle figure dans le livre de Josué : « le roi de Yokneam du Carmel, un ».",
@@ -1225,10 +1225,10 @@
         "en": {
           "question": "In which book of the Bible do we read 'the king of Jokneam in Carmel, one'?",
           "options": [
-            "Exodus",
-            "Joshua",
-            "Esther",
-            "Ruth"
+            "Judges",
+            "1 Kings",
+            "1 Samuel",
+            "Joshua"
           ],
           "explanation": "Yokneam appears in the list of the 31 kings defeated by Joshua (Joshua 12:22).",
           "script": "It appears in the Book of Joshua: 'the king of Jokneam in Carmel, one'.",
@@ -1240,10 +1240,10 @@
         "ru": {
           "question": "В какой книге Библии сказано: «царь Иокнеама при Кармиле — один»?",
           "options": [
-            "Исход",
-            "Иисус Навин",
-            "Есфирь",
-            "Руфь"
+            "Судей",
+            "3-я Царств (1 Царей)",
+            "1-я Царств (1 Самуила)",
+            "Иисуса Навина"
           ],
           "explanation": "Йокнеам входит в список 31 царя, побеждённых Иисусом Навином (Нав. 12:22).",
           "script": "Упоминается в Книге Иисуса Навина: «царь Иокнеама при Кармиле — один».",
