@@ -670,7 +670,7 @@
         ${g.phase === 'open' ? '<button type="button" class="btn ghost busli" data-a="force" style="color:var(--bad)">⚠️ סגירת חירום (לפני 30 שנ׳)</button>' : ''}
         ${real.on ? '<button type="button" class="btn ghost busli" data-nav="gps-off">⏹ לכבות GPS</button>' : '<button type="button" class="btn ghost busli" data-nav="gps-on">📍 להפעיל GPS</button>'}
         <button type="button" class="btn ghost busli" data-nav="bus-qr">📲 QR לתלמידים (לסריקה)</button>
-        <a class="btn ghost busli" target="_blank" rel="noopener" href="${deps.waHref()}">💬 לשלוח את הקישור בוואטסאפ</a>
+        <a class="btn ghost busli" target="_blank" rel="noopener" data-share href="${deps.waHref()}">💬 לשלוח הזמנה + QR בוואטסאפ</a>
         ${g.phase !== 'open' ? '<button type="button" class="btn ghost busli" data-a="pause">⏸️ השהיה</button><button type="button" class="btn ghost busli" data-a="finish">🏁 סיום המשחק והזוכים</button>' : ''}
         <button type="button" class="btn ghost busli" data-nav="bus-full">🧰 המסך המלא</button>
         <button type="button" class="btn" data-nav="bus-close">✖ סגירה</button></div></div>`;
