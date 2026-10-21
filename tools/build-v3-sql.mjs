@@ -48,6 +48,10 @@ export function validateV3({ v3, route }) {
       if (!q.category[l]) err(`catégorie ${l} manquante : ${q.id}`);
     }
     if (!Array.isArray(q.sources) || !q.sources.length) err('sources manquantes : ' + q.id);
+    // « עוד לספר » : quelques phrases courtes en plus pour le micro (hébreu, langue du guide)
+    const more = q.i18n.he.more;
+    if (!Array.isArray(more) || more.length < 1 || more.length > 4) err('1 à 4 phrases « more » attendues : ' + q.id);
+    if (more.some(m => !String(m).trim() || String(m).split(/\s+/).length > 25)) err('phrase « more » vide ou trop longue : ' + q.id);
   }
   // ordre des lieux principaux = ordre du trajet
   const order = route.stops.filter(s => s.main).map(s => s.question);
@@ -74,7 +78,7 @@ export function buildV3Sql() {
     for (const l of LANGS) {
       const t = q.i18n[l];
       if (l !== 'he') i18n[l] = { text: t.question, options: t.options, explanation: t.explanation, category: q.category[l] };
-      guide[l] = { script: t.script, long: t.long, fact: t.fact, cue: t.cue, caution: t.caution };
+      guide[l] = { script: t.script, long: t.long, fact: t.fact, cue: t.cue, caution: t.caution, more: t.more || q.i18n.he.more };
     }
     const meta = { stop: q.stop, final: !!q.final, topic: q.topic, docs: q.docs };
     return `(${[

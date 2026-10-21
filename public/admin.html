@@ -681,6 +681,7 @@
     const fin = q.route_meta && q.route_meta.final;
     return `<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">${fin ? '🎤 סיום ההדרכה' : '🎤 מה להגיד באוטובוס'} · משפט אחד</div>
       <div class="guide-text" ${dirOf(l)}>${paras(g.script)}</div>
+      ${Array.isArray((g.more || (q.guide_i18n && q.guide_i18n.he && q.guide_i18n.he.more))) ? `<ul class="busextra" lang="he" dir="rtl">${(g.more || q.guide_i18n.he.more).map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       ${g.long ? `<details class="guide-src"><summary>📖 גרסה מורחבת (אם יש זמן)</summary><div ${dirOf(l)}>${paras(g.long)}</div></details>` : ''}
       ${g.fact ? `<div class="guide-box fact" ${dirOf(l)}><b class="h">💡 הידעת?</b>${paras(g.fact)}</div>` : ''}
       <div class="guide-box prac" ${dirOf(l)}><b class="h">📍 מתי לדבר?</b>${paras(g.cue)}
