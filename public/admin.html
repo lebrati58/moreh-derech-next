@@ -40,6 +40,7 @@
 
 <script src="config.js"></script>
 <script src="api.js"></script>
+<script src="vendor/qrcode.js"></script>
 <script src="gps-engine.js"></script>
 <script src="admin-nav.js"></script>
 <script>
@@ -512,6 +513,18 @@
     '⚡ מי שעונה מהר ונכון צובר יותר נקודות, והזוכים יוכרזו במיקרופון 🏆',
     '', '👇 *לוחצים על הקישור, כותבים שם פרטי — ומשחקים:*'].join('\n');
   function waHref() { return 'https://wa.me/?text=' + encodeURIComponent(WA_MSG + '\n' + studentLink()); }
+  // QR plein écran pour ceux qui ne sont pas dans le groupe WhatsApp : on tend le téléphone, ils scannent
+  function showQr() {
+    if (!window.qrcode) return toast('QR לא זמין — שלחו את הקישור');
+    const q = window.qrcode(0, 'M'); q.addData(studentLink()); q.make();
+    const root = document.getElementById('modal-root');
+    root.innerHTML = `<div class="modal qrmodal"><div class="sheet center">
+      <h2 style="margin:0 0 6px">📲 סורקים ← כותבים שם פרטי ← משחקים!</h2>
+      <div class="qrbox">${q.createSvgTag({ cellSize: 8, margin: 2, scalable: true })}</div>
+      <p style="direction:ltr;font-weight:800;word-break:break-all;margin:8px 0">${esc(studentLink())}</p>
+      <button type="button" class="btn" data-x>✖ סגירה</button></div></div>`;
+    root.onclick = e => { if (e.target.closest('[data-x]') || e.target.classList.contains('qrmodal')) { root.innerHTML = ''; root.onclick = null; } };
+  }
   function waNudge() {
     return `<a class="btn ok" target="_blank" rel="noopener" href="${waHref()}" style="display:block;text-align:center;text-decoration:none;margin-bottom:12px;font-size:20px">💬 עוד אין משתתפים — לשלוח את הקישור בוואטסאפ</a>`;
   }
@@ -526,7 +539,8 @@
       <div class="prepstep"><b>2</b><span>ניסיון בבית (לא נשלח לתלמידים)</span>
         <button class="btn ghost small" data-a="sim-v3">🧪</button></div>
       <div class="prepstep"><b>3</b><span>לשלוח את הקישור לקבוצת הוואטסאפ</span>
-        <a class="btn ok small" target="_blank" rel="noopener" href="${waHref()}" style="text-decoration:none">💬</a></div>
+        <a class="btn ok small" target="_blank" rel="noopener" href="${waHref()}" style="text-decoration:none">💬</a>
+        <button class="btn ghost small" data-a="qr">📲 QR</button></div>
       <p class="small muted" style="margin:8px 0 0">${g ? `עכשיו: ${esc(bankLabel(g.bank || 'V1'))} · ${S.players} משתתפים · ${(S.stats && S.stats.questions) || 0} שאלות נחשפו` : 'אין משחק פעיל'}</p>
       <p class="small" style="margin:6px 0 0">ואז בלשונית 📡 <b>שידור חי</b>: 📍 הפעל GPS ← 🟢 ← 📣 פרסם שאלה.</p></div>`;
   }
@@ -936,6 +950,7 @@
         catch { document.getElementById('slink').select(); toast('סמנו והעתיקו ידנית'); }
         break;
       case 'bus-on': setBus(true); break;
+      case 'qr': showQr(); break;
       case 'logout': store.del(KEY); token = null; renderLogin(); break;
     }
   });
@@ -949,7 +964,7 @@
 
   // Navigation V3 (GPS / simulation / trace) — module séparé, n'a accès qu'aux actions admin habituelles
   nav = window.MDL_NAV.create({
-    getS: () => S, getAlang: () => alang, act, toast, offset: () => offset, qt, waHref, setBus,
+    getS: () => S, getAlang: () => alang, act, toast, offset: () => offset, qt, waHref, setBus, showQr,
     openGuide: id => openGuide(id, { live: !!(S && S.game && S.game.phase === 'revealed' && S.current && S.current.question_id === id) }),
     rpcBank: b => rpc('admin_bank_questions', { p_token: token, p_bank: b }),
     isOpenable: () => !!(S && S.game && S.game.phase !== 'open' && S.game.status !== 'finished'),

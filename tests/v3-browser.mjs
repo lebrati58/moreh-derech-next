@@ -303,6 +303,11 @@ await bpage.waitForSelector('#bussheet [data-nav=pin]');
 const pickName = await bpage.textContent('#bussheet [data-nav=pin] >> nth=-1');
 await bpage.click('#bussheet [data-nav=pin] >> nth=-1');
 await bpage.waitForFunction(n => (document.querySelector('#busbody .busband')?.textContent || '').includes(n), pickName.split(' · ')[1].trim(), { timeout: 8000 });
+// QR pour ceux qui ne sont pas dans le groupe WhatsApp
+await bpage.click('[data-nav=bus-menu]'); await bpage.click('#bussheet [data-nav=bus-qr]');
+await bpage.waitForSelector('.qrmodal .qrbox svg');
+await shot(bpage, 'b6-bus-qr');
+await bpage.click('.qrmodal [data-x]'); assert.equal(await bpage.$('.qrmodal'), null);
 await bpage.click('[data-nav=bus-menu]'); await bpage.click('#bussheet [data-nav=bus-full]');
 await bpage.waitForSelector('#navroot'); assert.equal(await bpage.isVisible('#tabs'), true);
 await bpage.click('[data-a=bus-on]'); await bpage.waitForSelector('#busroot');

@@ -506,6 +506,7 @@
         case 'bus-menu': bus.menu = !bus.menu; bus.pick = false; break;
         case 'bus-pick': bus.pick = true; bus.menu = false; break;
         case 'bus-close': bus.menu = false; bus.pick = false; break;
+        case 'bus-qr': bus.menu = false; paint(); deps.showQr(); return;
         case 'bus-rank': bus.menu = false; paint(); { const r = document.getElementById('busrank'); if (r) r.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return;
         case 'bus-next': { const c = S() && S().current; if (c) bus.seen = c.question_id; break; }
         case 'bus-full': bus.menu = false; deps.setBus(false); return;
@@ -668,6 +669,7 @@
         ${c && (g.phase === 'open' || g.phase === 'revealed') ? `<button type="button" class="btn ghost busli" data-nav="guide" data-q="${c.question_id}">🎤 הדף המלא של השאלה</button>` : ''}
         ${g.phase === 'open' ? '<button type="button" class="btn ghost busli" data-a="force" style="color:var(--bad)">⚠️ סגירת חירום (לפני 30 שנ׳)</button>' : ''}
         ${real.on ? '<button type="button" class="btn ghost busli" data-nav="gps-off">⏹ לכבות GPS</button>' : '<button type="button" class="btn ghost busli" data-nav="gps-on">📍 להפעיל GPS</button>'}
+        <button type="button" class="btn ghost busli" data-nav="bus-qr">📲 QR לתלמידים (לסריקה)</button>
         <a class="btn ghost busli" target="_blank" rel="noopener" href="${deps.waHref()}">💬 לשלוח את הקישור בוואטסאפ</a>
         ${g.phase !== 'open' ? '<button type="button" class="btn ghost busli" data-a="pause">⏸️ השהיה</button><button type="button" class="btn ghost busli" data-a="finish">🏁 סיום המשחק והזוכים</button>' : ''}
         <button type="button" class="btn ghost busli" data-nav="bus-full">🧰 המסך המלא</button>
