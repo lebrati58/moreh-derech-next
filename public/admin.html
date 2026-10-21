@@ -507,7 +507,11 @@
   function studentLink() { return new URL('./', location.href).href; }
   function setBus(on) { busMode = on; store.set('mdl_busmode', on); view = 'live'; setTab(); }
   // le guide envoie le lien dans son groupe WhatsApp
-  function waHref() { return 'https://wa.me/?text=' + encodeURIComponent('🚌 חידון מורי הדרך LIVE — הצטרפו כאן: ' + studentLink()); }
+  const WA_MSG = ['🚌 *חידון מורה דרך LIVE מתחיל!*',
+    'לאורך הדרך יקפצו שאלות על המקומות שעוברים לידם — תסתכלו מהחלון 👀',
+    '⚡ מי שעונה מהר ונכון צובר יותר נקודות, והזוכים יוכרזו במיקרופון 🏆',
+    '', '👇 *לוחצים על הקישור, כותבים שם פרטי — ומשחקים:*'].join('\n');
+  function waHref() { return 'https://wa.me/?text=' + encodeURIComponent(WA_MSG + '\n' + studentLink()); }
   function waNudge() {
     return `<a class="btn ok" target="_blank" rel="noopener" href="${waHref()}" style="display:block;text-align:center;text-decoration:none;margin-bottom:12px;font-size:20px">💬 עוד אין משתתפים — לשלוח את הקישור בוואטסאפ</a>`;
   }
