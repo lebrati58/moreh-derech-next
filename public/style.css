@@ -399,3 +399,7 @@ body.busmode .toast { bottom: auto; top: 80px; }
 .rules-end { margin: 10px 0 0; text-align: center; font-weight: 800; font-size: 16px; }
 .busextra { margin: 0; padding: 10px 14px 10px 10px; padding-inline-start: 26px; background: #fff; border-radius: 12px; font-size: 19px; line-height: 1.45; display: grid; gap: 6px; }
 .navextra { margin: 6px 0 0; padding-inline-start: 18px; }
+.qrmodal { align-items: center; }
+.qrmodal .sheet { border-radius: 22px; max-width: 440px; }
+.qrbox { background: #fff; border-radius: 16px; padding: 10px; margin: 8px auto; max-width: 360px; }
+.qrbox svg { display: block; width: 100%; height: auto; }
