@@ -7,7 +7,7 @@
 import { chromium } from 'playwright-core';
 import pg from 'pg';
 import assert from 'node:assert/strict';
-import { readFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const OUT = process.argv[2] || 'screens-v3';
 mkdirSync(OUT, { recursive: true });
@@ -262,6 +262,8 @@ ok('simulation : 3 niveaux, publication simulée sans envoi, pannes GPS, fin « 
 
 // ------------------------------------------------------------------ Mode bus : un écran, un bouton, aucun défilement
 const bctx = await browser.newContext(Object.assign({}, iphone, { viewport: { width: 360, height: 740 } }));
+// partage du téléphone simulé : on récupère ce qui serait envoyé à WhatsApp (image du QR + message)
+await bctx.addInitScript(() => { navigator.canShare = () => true; navigator.share = d => { window.__shared = d; return Promise.resolve(); }; });
 const bpage = await bctx.newPage(); watch(bpage, 'mode-bus');
 await login(bpage);
 await bpage.waitForSelector('#busroot #busact');
@@ -303,6 +305,12 @@ await bpage.waitForSelector('#bussheet [data-nav=pin]');
 const pickName = await bpage.textContent('#bussheet [data-nav=pin] >> nth=-1');
 await bpage.click('#bussheet [data-nav=pin] >> nth=-1');
 await bpage.waitForFunction(n => (document.querySelector('#busbody .busband')?.textContent || '').includes(n), pickName.split(' · ')[1].trim(), { timeout: 8000 });
+// invitation WhatsApp : image du QR + message, via le partage du téléphone
+await bpage.click('[data-nav=bus-menu]'); await bpage.click('#bussheet a[data-share]');
+const shared = await bpage.evaluate(async () => { const d = window.__shared; return d && { text: d.text, type: d.files[0].type, size: d.files[0].size, b64: btoa(String.fromCharCode(...new Uint8Array(await d.files[0].arrayBuffer()))) }; });
+assert.ok(shared && shared.type === 'image/png' && shared.size > 2000, 'image du QR jointe');
+assert.match(shared.text, /לוחצים על הקישור[\s\S]*http/);
+writeFileSync(`${OUT}/b7-invitation-qr.png`, Buffer.from(shared.b64, 'base64'));
 // QR pour ceux qui ne sont pas dans le groupe WhatsApp
 await bpage.click('[data-nav=bus-menu]'); await bpage.click('#bussheet [data-nav=bus-qr]');
 await bpage.waitForSelector('.qrmodal .qrbox svg');
