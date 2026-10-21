@@ -281,6 +281,7 @@ await ageOpen(31);
 await waitLabel(/לסגור ולחשוף/);
 await bpage.click('#busact');
 await bpage.waitForSelector('#busbody .busscript', { timeout: 15000 });
+assert.ok(await bpage.$$eval('#busbody .busextra li', l => l.length) >= 2, 'quelques phrases de plus à dire (documents Yaïr / Yossi)');
 assert.equal(await bpage.$('.modal'), null, 'pas de fenêtre : la phrase micro est sur l\'écran');
 await waitLabel(/לשאלה הבאה/);
 await shot(bpage, 'b3-bus-micro');

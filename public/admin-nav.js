@@ -76,6 +76,11 @@
       return t ? { text: t.text, options: t.options, lang: lang() } : { text: q.text, options: q.options, lang: 'he' };
     };
     const nm = o => o ? (o[lang()] || o.he || '') : '';
+    // « עוד לספר » : 2–3 phrases de plus pour le micro (tirées des documents de Yaïr et Yossi)
+    const moreHtml = (q, cls) => {
+      const g = q && q.guide_i18n, m = g && ((g[lang()] || {}).more || (g.he || {}).more);
+      return Array.isArray(m) && m.length ? `<ul class="${cls}" lang="he" dir="rtl">${m.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
+    };
     const dirOf = l => `lang="${l}" dir="${l === 'he' ? 'rtl' : 'ltr'}"`;
 
     // --------------------------------------------------------------- Géolocalisation (réel + enregistrement)
@@ -179,7 +184,7 @@
           <div class="navq" ${dirOf(qt.lang)}>${esc(qt.text)}</div>
           ${showQ ? `<div class="small" style="color:var(--ok);font-weight:800" ${dirOf(qt.lang)}>✔ ${esc(qt.options[q.correct_index] || '')}</div>
             <details ${lvl >= 2 ? 'open' : ''}><summary class="small" style="cursor:pointer;font-weight:800">🎤 מה להגיד · 💡 אנקדוטה</summary>
-              <div class="small" ${dirOf(lang())} style="margin-top:6px">🎤 ${esc(tr(q, 'script'))}</div>
+              <div class="small" ${dirOf(lang())} style="margin-top:6px">🎤 ${esc(tr(q, 'script'))}</div>${moreHtml(q, 'small navextra')}
               <div class="small" ${dirOf(lang())} style="margin-top:6px">💡 ${esc(tr(q, 'fact'))}</div>
               ${tr(q, 'caution') ? `<div class="caution small" ${dirOf(lang())}>⚠️ ${esc(tr(q, 'caution'))}</div>` : ''}
             </details>` : ''}`
@@ -632,7 +637,7 @@
           label: '👁️ לחשוף תשובה', a: 'reveal', cls: 'go' };
       if (c && g.phase === 'revealed' && bus.seen !== c.question_id) {
         // le moment de parler : la phrase du micro, en grand, sans fenêtre à ouvrir
-        return { body: head + band + right + `<div class="busscript" ${dirOf(lang())}>🎤 ${esc(tr(bq, 'script'))}</div>
+        return { body: head + band + right + `<div class="busscript" ${dirOf(lang())}>🎤 ${esc(tr(bq, 'script'))}</div>${moreHtml(bq, 'busextra')}
             ${tr(bq, 'fact') ? `<details class="busmore-txt"><summary>💡 אם יש זמן</summary><div ${dirOf(lang())}>${esc(tr(bq, 'fact'))}</div></details>` : ''}${top3(s)}`,
           label: '➡️ לשאלה הבאה', nav: 'bus-next', cls: 'next' };
       }
