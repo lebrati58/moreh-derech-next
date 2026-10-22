@@ -14,7 +14,7 @@ button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:a
 .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .levels button{background:#202d58;color:#d9e5ff;border:2px solid #44578c;border-radius:12px;padding:12px 4px;font-weight:900;font-size:clamp(12px,3vw,16px)}
 .levels button[aria-pressed=true]{background:#ffe17b;border-color:#fff0a4;color:#222450;box-shadow:0 4px 0 #a87831}
-.filters{display:flex;gap:8px;margin-top:11px}.filters select{flex:1;min-width:0;background:#1a2953;color:#f4f6ff;border:1px solid #6470af;border-radius:12px;padding:13px}.mode{display:flex;gap:6px}.mode button{border:1px solid #6579b1;background:#172750;color:#dee8ff;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:800}.mode button[aria-pressed=true]{background:#6fe9d0;color:#123b48;border-color:#a7fff0}
+.filters{display:flex;gap:8px;margin-top:11px}.filters select{flex:1;min-width:0;background:#1a2953;color:#f4f6ff;border:1px solid #6470af;border-radius:12px;padding:13px;font-size:15px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.mode{display:flex;gap:6px}.mode button{border:1px solid #6579b1;background:#172750;color:#dee8ff;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:800}.mode button[aria-pressed=true]{background:#6fe9d0;color:#123b48;border-color:#a7fff0}
 .metrics{display:flex;justify-content:space-between;gap:9px;align-items:center;margin:23px 0 9px;font-size:14px;font-weight:800;color:#b8c7ef}.metrics strong{color:#ffd477}.track{background:#263662;height:10px;border-radius:30px;overflow:hidden}.track span{display:block;background:linear-gradient(90deg,#33dcbe,#ffe276);height:100%;width:0;transition:width .18s}
 .story{border:1px solid #7673da;background:linear-gradient(140deg,#2d2b6b,#1b2e60);border-radius:18px;padding:16px 19px;margin-top:16px;box-shadow:0 5px 0 #060c25}.story h3{font-size:19px;margin:0 0 9px}.story p{line-height:1.7;margin:0;font-size:15px;color:#e6e7ff}
 #quiz{margin-top:18px}.question{background:#fff;color:#1b2855;border:2px solid #d4daf7;border-radius:25px;padding:20px;box-shadow:0 7px 0 #070b20,0 15px 30px #0006}
@@ -89,12 +89,25 @@ function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון י�
 function syncUrl(){const u=new URL(location.href);if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
   $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode)+(tour!=="all"?"&tour="+tour:"");}
 
+// Descriptions courtes dans le menu Android : détail du circuit et compteur restent
+// dans l'en-tête et la progression, au lieu de surcharger les options.
 function buildOptions(){
-  const sel=$("tour"),byLevel=stats.byLevel[level]||0;sel.innerHTML="";
-  const add=(v,txt)=>{const o=document.createElement("option");o.value=v;o.textContent=txt;sel.appendChild(o);};
-  add("all","🗺️ כל הסיורים — "+byLevel+" שאלות ברמה הזו");
-  for(const t of catalogue.tours){const c=stats.byTour[t.id]||{};add(t.id,"🧭 סיור "+t.id+" — "+t.title+" ("+(c[level]||0)+" שאלות ברמה)"+(t.id==="22"?" · חומר הכנה":""));}
-  if(stats.byTour.road67)add("road67","🛣️ מסלול 67 — זכרון יעקב–יקנעם ("+(stats.byTour.road67[level]||0)+" שאלות ברמה)");
+  const sel=$("tour");sel.innerHTML="";
+  const add=(value,label)=>{const option=document.createElement("option");option.value=value;option.textContent=label;sel.appendChild(option);};
+  const shortNames={
+    "01":"צפון מדבר יהודה","02":"כרמל","03":"נגב צפוני",
+    "04":"מגידו וגלבוע","05":"השפלה","06":"חברון והרודיון",
+    "07":"חיפה","08":"גיאולוגיה","09":"שומרון",
+    "10":"הרי ירושלים","11":"ירושלים · בית ראשון","12":"ירושלים · בית שני א׳",
+    "13":"ירושלים · בית שני ב׳","14":"תצפיות ירושלים",
+    "15":"קיסריה ואפולוניה","16":"ציפורי ובית שערים",
+    "17":"גולן וחרמון","18":"ירושלים · רומית וביזנטית",
+    "19":"בית שאן וכוכב הירדן","20":"ראש פינה והחולה",
+    "21":"עין גדי והר סדום","22":"גליל עליון"
+  };
+  add("all","כל הסיורים");
+  for(const t of catalogue.tours)add(t.id,t.id+" · "+(shortNames[t.id]||t.title));
+  if(stats.byTour.road67)add("road67","67 · זכרון–יקנעם");
   sel.value=tour;
 }
 function heroText(){
