@@ -55,7 +55,8 @@
     "08": { "region": "coast", "themes": ["nature"], "stops": {
       "נחל אורן": ["en:Nahal Oren", "he:נחל אורן"],
       "חורבת רקית": ["he:חורבת רקית"],
-      "סלע, קרקע וצומח": null,
+      "סלע": null,
+      "קרקע וצומח": null,
       "עתלית": ["en:Atlit", "he:עתלית"] } },
     "09": { "region": "center", "themes": ["bible", "faith"], "stops": {
       "הר גריזים": ["en:Mount Gerizim", "he:הר גריזים"],
