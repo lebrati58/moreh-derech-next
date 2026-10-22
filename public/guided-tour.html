@@ -10,6 +10,10 @@
 button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:auto;padding:0 15px 55px}.top{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:15px 0}.home{color:#fff;text-decoration:none;font-size:13px;font-weight:800;padding:9px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a}.mini{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900;letter-spacing:.5px}.mini img{height:47px;width:47px;object-fit:contain;border-radius:13px;background:#fff;box-shadow:0 3px 0 #040717}
 .hero{border-radius:25px;position:relative;overflow:hidden;padding:21px 20px;background:linear-gradient(115deg,#5c50d6,#2277bb);border:1px solid #b3acff80;box-shadow:0 7px 0 #070c26}.eyebrow{font-size:11px;letter-spacing:3px;color:#ffe49b;font-weight:1000}.hero h1{font-size:clamp(28px,7vw,42px);margin:5px 0 4px}.hero p{font-size:14px;line-height:1.5;max-width:550px;margin:4px 0 0;color:#e5e6ff}.hero .art{position:absolute;left:13px;bottom:8px;font-size:64px;opacity:.6}
 .controls{position:sticky;top:0;background:#0b1432f5;backdrop-filter:blur(16px);border-bottom:1px solid #45578d;margin:21px -15px 13px;padding:11px 15px;z-index:10}
+.setup-bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;width:calc(100% + 30px);margin:10px -15px 12px;padding:10px 15px;border:0;border-bottom:1px solid #45578d;background:#0b1432f5;backdrop-filter:blur(16px);color:#eef3ff;font:inherit;font-weight:800;font-size:14px;text-align:start;cursor:pointer}
+.setup-text{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.setup-edit{flex:none;padding:6px 11px;border-radius:999px;background:#1f2b5c;border:1px solid #5a6db0;color:#a6f5e4;font-size:13px}
+body.setup-collapsed #setupPanel,body.setup-collapsed .hero{display:none}
 .controls h2{font-size:12px;letter-spacing:1px;margin:0 0 8px;color:#b5c8ff}
 .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .levels button{background:#202d58;color:#d9e5ff;border:2px solid #44578c;border-radius:12px;padding:12px 4px;font-weight:900;font-size:clamp(12px,3vw,16px)}
@@ -75,7 +79,8 @@ body.tour-open{overflow:hidden}
 <header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home" href="index.html">⌂ משחקים</a></div></header>
 <section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1 id="heroTitle">🧭 סיור מודרך</h1><p id="heroText">טוען את השאלות…</p><div class="art" aria-hidden="true">🚌</div></section>
 
-<div class="controls" role="group" aria-label="בחירת רמה, סיור וצורת לימוד"><h2 id="levelsTitle">⚡ רמת קושי — בוחרים כאן</h2>
+<button type="button" class="setup-bar" id="setupBar" hidden aria-controls="setupPanel" aria-expanded="false"><span class="setup-text" id="setupText"></span><span class="setup-edit">✎ שינוי</span></button>
+<div class="controls" id="setupPanel" role="group" aria-label="בחירת רמה, סיור וצורת לימוד"><h2 id="levelsTitle">⚡ רמת קושי — בוחרים כאן</h2>
 <div class="levels" id="levels"><button type="button" data-level="1" aria-pressed="true">🌱 קל</button><button type="button" data-level="2" aria-pressed="false">⭐ בינוני</button><button type="button" data-level="3" aria-pressed="false">🔥 קשה</button></div>
 <div class="filters"><button type="button" class="tour-trigger" id="tourButton" aria-haspopup="dialog" aria-controls="tourPicker" aria-expanded="false" disabled><span class="tour-trigger-icon" aria-hidden="true">📍</span><span class="tour-trigger-copy"><strong id="tourLabel">בחירת סיור</strong><small id="tourCount">טוען מסלולים…</small></span><span class="tour-trigger-chevron" aria-hidden="true">⌄</span></button>
 <div class="mode"><button type="button" data-mode="tour" aria-pressed="false">🧭 סיור מודרך</button><button type="button" data-mode="quiz" aria-pressed="true">🎮 תרגול</button><button type="button" data-mode="stories" aria-pressed="false">📖 סיפורים</button></div></div></div>
@@ -110,6 +115,10 @@ const pTour=MDTours.normalizeTourParam(qs.get("tour")),pLevel=Number(qs.get("lev
 if(pTour&&pTour!==tour){tour=pTour;index=0;}
 if([1,2,3].includes(pLevel)&&pLevel!==level){level=pLevel;index=0;}
 if(["quiz","tour","stories"].includes(pMode)&&pMode!==mode){mode=pMode;index=0;}
+// Une fois le niveau ou le type choisi, le panneau de réglages se replie en une ligne.
+let collapsed=(tour!=="all"&&([1,2,3].includes(pLevel)||!!pMode))||index>0||Object.keys(answers).length>0;
+function setCollapsed(v){collapsed=v;document.body.classList.toggle("setup-collapsed",v);$("setupBar").hidden=!v;$("setupBar").setAttribute("aria-expanded",String(!v));}
+function setupSummary(){const MD={quiz:"🎮 תרגול",tour:"🧭 סיור מודרך",stories:"📖 סיפורים"};$("setupText").textContent="📍 "+tourLabel(tour)+(mode==="stories"?"":" · "+LV[level])+" · "+MD[mode];}
 function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers}));}catch(e){}}
 function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
 function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
@@ -202,7 +211,7 @@ function render(){
   if(!data)return;
   document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
   document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
-  renderTourPicker();heroText();syncUrl();
+  renderTourPicker();heroText();syncUrl();setupSummary();setCollapsed(collapsed);
   const reading=mode==="stories";
   ["levels","levelsTitle"].forEach(id=>$(id).hidden=reading);
   ["metrics","track","quiz","actions"].forEach(id=>$(id).hidden=reading);
@@ -266,8 +275,9 @@ function finish(){const right=items.filter(q=>currentAnswer(q)===q.options[q.cor
   $("story").hidden=true;$("stepbar").hidden=true;$("actions").hidden=true;
   $("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};
   $("quiz").querySelectorAll("[data-relevel]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.relevel);index=0;render();});}
-document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;render();});
-document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;render();});
+document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
+$("setupBar").addEventListener("click",()=>{setCollapsed(false);window.scrollTo({top:0,behavior:"smooth"});});
 $("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
 Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalog.json"),MDTours.getJSON("places.json").catch(()=>null)]).then(([j,c,p])=>{
   if(!Array.isArray(j.questions)||!Array.isArray(c.tours))throw Error("Invalid data");
