@@ -151,6 +151,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
       <button type="button" data-view="list" aria-pressed="false" aria-label="רשימה" title="רשימה">📋</button>
     </div>
   </div>
+  <div style="padding:6px 15px;text-align:center"><a href="contribute.html" style="color:#111d45;background:#ffd878;border-radius:13px;display:inline-block;padding:9px 15px;text-decoration:none;font-weight:900">➕ הוספת מסמך או מסלול חדש · בלי סיסמה</a></div>
   <div class="search"><label class="sr" for="q">חיפוש</label><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="חפשו אתר, סיור או מספר…"><span class="mag" aria-hidden="true">🔎</span></div>
   <div class="chips" id="chips" role="group" aria-label="סינון"></div>
 </header>
@@ -169,6 +170,9 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 
 <script src="vendor/leaflet/leaflet.js"></script>
 <script src="vendor/leaflet/leaflet.markercluster.js"></script>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script src="community.js"></script>
 <script src="tour-data.js"></script>
 <script>
 (function(){
@@ -197,7 +201,7 @@ function regionColor(r){return 'var(--r-'+(r||'road')+')';}
 function norm(s){return String(s||'').toLowerCase().replace(/[֑-ׇ'"״׳\-–—,.]/g,'').replace(/\s+/g,' ').trim();}
 
 /* ----- données ----- */
-Promise.all([MDTours.getJSON('siyurim-catalog.json'),MDTours.getJSON('places.json'),MDTours.getJSON('guided-quiz.json'),MDTours.getJSON('tour-catalog.json').catch(function(){return null;}),MDTours.getJSON('v3/road67-route.json').catch(function(){return null;})])
+Promise.all([MDTours.getJSON('siyurim-catalog.json'),MDTours.getJSON('places.json'),MDTours.getJSON('guided-quiz.json'),MDTours.getJSON('tour-catalog.json').catch(function(){return null;}),MDTours.getJSON('v3/road67-route.json').catch(function(){return null;}),MDCommunity.list().catch(function(){return {routes:[],documents:[]};})])
 .then(function(r){
   catalog=r[0];places=r[1];counts=MDTours.counts(r[2].questions);road=r[4];
   var docs={};(r[3]&&r[3].tours||[]).forEach(function(t){docs[String(t.number).padStart(2,'0')]=t;});
@@ -211,13 +215,31 @@ Promise.all([MDTours.getJSON('siyurim-catalog.json'),MDTours.getJSON('places.jso
   if(road)tours.push({id:'road67',road:true,title:'מסלול 67 — זכרון יעקב ← יקנעם',region:'coast',themes:['zionism','nature'],
     stops:road.stops.map(function(s){return {name:s.name.he,placed:false,approx:true};}),placed:[],counts:counts.byTour.road67||{1:0,2:0,3:0,total:0},
     search:norm('67 road67 כביש מסלול זכרון יעקב יקנעם ואדי מילק '+road.stops.map(function(s){return s.name.he;}).join(' '))});
+  mergeCommunity(r[5]);
   buildChips();syncTop();initMap();render();renderMode();
+  setInterval(function(){MDCommunity.list().then(function(x){mergeCommunity(x);render(false);if(current){current=find(current.id);if(current)renderSheet();}}).catch(function(){});},60000);
   var want=MDTours.normalizeTourParam(params.get('tour')||(location.hash.match(/t=([\w]+)/)||[])[1]);
   if(want&&want!=='all'&&find(want))openTour(want,{replace:true});
   $('loading').classList.add('gone');
 })
 .catch(function(e){$('loading').innerHTML='<div>⚠️ לא ניתן לטעון את המפה.<br><small>בדקו את החיבור לאינטרנט ונסו שוב.</small><br><br><a class="icon-btn" style="display:inline-grid;width:auto;padding:0 16px" href="index.html">→ חזרה</a></div>';console.error(e);});
 
+function mergeCommunity(data){
+  data=data||{documents:[],routes:[]};
+  var docsBy={};(data.documents||[]).forEach(function(d){(docsBy[d.tour_id]||(docsBy[d.tour_id]=[])).push(d);});
+  tours=tours.filter(function(t){return !t.community;});
+  tours.forEach(function(t){t.communityDocs=docsBy[t.id]||[];});
+  (data.routes||[]).forEach(function(r){
+    var name=r.place_name||r.title;
+    var valid=Number.isFinite(Number(r.lat))&&Number.isFinite(Number(r.lon));
+    var loc=valid?{name:name,lat:Number(r.lat),lon:Number(r.lon),placed:true,he:{
+      title:name,extract:'נקודת ייחוס שסיפק המשתתף (לא מסלול GPS מדויק).',
+      url:'https://www.openstreetmap.org/?mlat='+encodeURIComponent(r.lat)+'&mlon='+encodeURIComponent(r.lon)
+    }}:{name:name,placed:false};
+    tours.push({id:r.id,community:true,title:r.title,region:'center',themes:[],stops:[loc],placed:valid?[loc]:[],
+      communityDocs:docsBy[r.id]||[],counts:{1:0,2:0,3:0,total:0},search:norm(r.title+' '+name+' '+(docsBy[r.id]||[]).map(function(d){return d.title;}).join(' '))});
+  });
+}
 function find(id){for(var i=0;i<tours.length;i++)if(tours[i].id===id)return tours[i];return null;}
 
 /* ----- filtres ----- */
@@ -258,7 +280,7 @@ function drawMarkers(fit){
   cluster.clearLayers();focusLayer.clearLayers();markers=[];
   var vis=visible(),pts=[],rest=[];
   vis.forEach(function(t){t.placed.forEach(function(s){
-    var m=L.marker([s.lat,s.lon],{icon:pinIcon(t,s),title:'סיור '+Number(t.id)+' · '+s.name,keyboard:true,riseOnHover:true});
+    var m=L.marker([s.lat,s.lon],{icon:pinIcon(t,s),title:'סיור '+(t.community?t.title:Number(t.id))+' · '+s.name,keyboard:true,riseOnHover:true});
     m.on('click',function(){openTour(t.id,{stop:s.name});});m._tour=t.id;m._stop=s.name;markers.push(m);pts.push([s.lat,s.lon]);
     // le סיור choisi reste hors des regroupements : toutes ses étapes sont visibles et mises en avant
     if(current&&current.id===t.id){m.setZIndexOffset(1000);focusLayer.addLayer(m);}else rest.push(m);});});
@@ -270,14 +292,14 @@ function drawMarkers(fit){
   if(fit&&pts.length&&!current)map.flyToBounds(L.latLngBounds(pts).pad(.15),{maxZoom:12,duration:.5});
 }
 function pinIcon(t,s){var cls='pin'+(current?(current.id===t.id?' on':' dim'):'')+(openStop&&current&&current.id===t.id&&openStop===s.name?' stop-on':'');
-  return L.divIcon({className:'',html:'<div class="'+cls+'" style="--c:'+regionColor(t.region)+'"><span>'+Number(t.id)+'</span></div>',iconSize:[38,38],iconAnchor:[19,36]});}
+  return L.divIcon({className:'',html:'<div class="'+cls+'" style="--c:'+regionColor(t.region)+'"><span>'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span></div>',iconSize:[38,38],iconAnchor:[19,36]});}
 function restyle(){if(map)drawMarkers(false);}
 
 /* ----- liste ----- */
 function render(fit){
   var vis=visible();
   $('cards').innerHTML=vis.length?vis.map(function(t){
-    var c=t.counts;return '<button type="button" class="tcard" data-tour="'+t.id+'"><span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.road?'67':Number(t.id))+'</span><span class="tbody"><b>'+esc(t.title)+'</b><small>'+esc(t.stops.map(function(s){return s.name;}).join(' · '))+'</small></span><span class="tq"><strong>'+c.total+'</strong>שאלות</span></button>';}).join('')
+    var c=t.counts;return '<button type="button" class="tcard" data-tour="'+t.id+'"><span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><span class="tbody"><b>'+esc(t.title)+'</b><small>'+esc(t.stops.map(function(s){return s.name;}).join(' · '))+'</small></span><span class="tq"><strong>'+c.total+'</strong>שאלות</span></button>';}).join('')
     :'<p class="empty">לא נמצא סיור. נסו מילה אחרת או בטלו את הסינון.</p>';
   if(map)drawMarkers(fit);
 }
@@ -339,6 +361,7 @@ function pickLevel(t){if(!(t.counts[level]>0)){for(var i=1;i<=3;i++)if(t.counts[
 function gt(t,m){return 'guided-tour.html?tour='+t.id+'&level='+level+'&mode='+m;}
 function cta(t){
   var M=MODES[mode],h='';
+  if(t.community)return '<div class="notice">📚 מסלול שנוסף על ידי משתתף. בשלב זה אפשר לקרוא את מסמכיו; עדיין אין לו שאלות מאומתות או מסלול GPS.</div><a class="play" href="community-document.html?id='+encodeURIComponent((t.communityDocs[0]||{}).id||'')+'">📄 פתיחת מסמך הדרך ←</a>';
   if(t.road){
     var dest={guided:gt(t,'tour'),quiz:gt(t,'quiz'),stories:'anecdotes.html',solo:'solo.html',guide:'admin.html?mode=guide',sim:'admin.html?mode=simulation'}[mode];
     if(M.levels)h+=levelButtons(t);
@@ -359,7 +382,7 @@ function cta(t){
 }
 function renderSheet(){
   var t=current,M=MODES[mode];
-  $('sheetHead').innerHTML='<span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.road?'67':Number(t.id))+'</span><div style="min-width:0"><div class="sub">'+(t.road?'מסלול נסיעה · V3':'סיור '+t.id+' · '+esc(places.regions[t.region]||''))+'</div><h2 id="sheetTitle">'+esc(t.title)+'</h2><div class="sub">'+t.counts.total+' שאלות'+(t.road?'':' · '+t.placed.length+'/'+t.stops.length+' תחנות במפה')+'</div></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
+  $('sheetHead').innerHTML='<span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><div style="min-width:0"><div class="sub">'+(t.community?'מסלול משתתפים':(t.road?'מסלול נסיעה · V3':'סיור '+t.id+' · '+esc(places.regions[t.region]||'')))+'</div><h2 id="sheetTitle">'+esc(t.title)+'</h2><div class="sub">'+t.counts.total+' שאלות'+(t.road?'':' · '+t.placed.length+'/'+t.stops.length+' תחנות במפה')+'</div></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
   var h='<div class="cta-zone">'+cta(t)+'</div>';
   if(t.prep)h+='<div class="notice warn">📒 החומר בתיק הזה הוא חוברת הכנה. הוא אינו מאשר שהסיור והתחנות בוצעו בפועל.</div>';
   if(t.road)h+='<div class="notice warn">🛣️ קו המסלול על המפה משוחזר ממחלפים שפורסמו בוויקיפדיה עם נקודות ביניים משוערות — לא הקלטת GPS.</div>';
@@ -377,6 +400,10 @@ function renderSheet(){
     h+='</div>';
     h+='<div class="sec-title">אפשר גם</div><div class="links">'+['guided','quiz','stories'].filter(function(m){return m!==mode;}).map(function(m){return '<a href="'+gt(t,m==='guided'?'tour':m)+'">'+MODES[m].icon+' '+MODES[m].label+'</a>';}).join('')+'</div>';
   }
+  h+='<div class="sec-title">📄 מסמכי המשתתפים · '+(t.communityDocs||[]).length+'</div>';
+  if((t.communityDocs||[]).length)h+='<div class="links">'+t.communityDocs.map(function(d){return '<a href="community-document.html?id='+encodeURIComponent(d.id)+'">📄 '+esc(d.title)+' · '+esc(d.author||'אורח')+'</a>';}).join('')+'</div>';
+  else h+='<div class="notice">עדיין לא נוספו מסמכים למסלול זה.</div>';
+  h+='<div class="links"><a href="contribute.html?tour='+encodeURIComponent(t.id)+'">➕ הוספת מסמך למסלול הזה</a></div>';
   h+='<p class="foot">התקצירים מוויקיפדיה בעברית (CC BY-SA). המיקומים מוויקיפדיה/Wikidata; תחנה בלי נקודה מאומתת אינה מסומנת. השאלות מבוססות על סיכומי הקורס — כדאי לאמת לפני הדרכה מקצועית.</p>';
   $('sheetBody').innerHTML=h;
   $('closeSheet').addEventListener('click',function(){closeSheet();});
