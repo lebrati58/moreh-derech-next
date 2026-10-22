@@ -12570,6 +12570,2922 @@
       "explanation": "האנדרטה (1967) בנויה צינורות נירוסטה במקבצים, המזנקים לעבר ירושלים.",
       "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
       "sourceDoc": "סיור 10 — סיפור דרך"
+    },
+    {
+      "id": "N11-1-01",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מהו המעיין שבזכותו קמה עיר דוד?",
+      "options": [
+        "מעיין הגיחון",
+        "עין רוגל",
+        "עין כרם",
+        "עין פרת"
+      ],
+      "correct": 0,
+      "explanation": "מעיין הגיחון הוא מעיין קרסטי פועם, ומערכות המים של עיר דוד נבנו סביבו.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-1-02",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "איזה מלך, לפי המקרא, חצב את נקבת השילוח?",
+      "options": [
+        "חזקיהו",
+        "שלמה",
+        "דוד",
+        "יאשיהו"
+      ],
+      "correct": 0,
+      "explanation": "\"והוא יחזקיהו סתם את מוצא מימי גיחון העליון\" (דברי הימים ב' ל\"ב).",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-1-03",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "היכן שמורה היום כתובת השילוח?",
+      "options": [
+        "במוזיאון הארכאולוגי באיסטנבול",
+        "במוזיאון ישראל",
+        "בלובר",
+        "בנקבה עצמה"
+      ],
+      "correct": 0,
+      "explanation": "הכתובת נעקרה בתקופה העות'מאנית ונמצאת באיסטנבול.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-1-04",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "על שם מי נקרא \"פיר וורן\"?",
+      "options": [
+        "צ'ארלס וורן, שחפר אותו ב-1867",
+        "מהנדס בריטי מהמנדט",
+        "מלך ירושלים",
+        "חוקר אמריקאי"
+      ],
+      "correct": 0,
+      "explanation": "צ'ארלס וורן חפר את הפיר ב-1867 בחושבו שהוא חלק ממערכת המים.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-1-05",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "כמה מערות קבורה מימי בית ראשון יש בכפר סילואן?",
+      "options": [
+        "מעל 50",
+        "2",
+        "10",
+        "500"
+      ],
+      "correct": 0,
+      "explanation": "בסילואן נחשפו מעל 55 מערות קבורה מימי בית ראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-1-06",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מדוע נקרא אחד הקברים בסילואן \"קבר בת פרעה\"?",
+      "options": [
+        "בגלל הכרכוב המצרי שבראשו",
+        "כי בת פרעה נקברה שם",
+        "כי נמצאה בו מומיה",
+        "בגלל כתובת בהירוגליפים"
+      ],
+      "correct": 0,
+      "explanation": "הקבר נקרא כך בשל הכרכוב המצרי המעטר את חלקו העליון.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-1-07",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "כמה שנים מלך דוד בחברון לפני שעבר לירושלים?",
+      "options": [
+        "שבע",
+        "שלוש",
+        "עשרים",
+        "ארבעים"
+      ],
+      "correct": 0,
+      "explanation": "דוד מלך תחילה שבע שנים בחברון על שבט יהודה.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-1-08",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "איזו קהילה הקימה ב-1882 שכונה בקצה שלוחת סילואן?",
+      "options": [
+        "עולי תימן",
+        "עולי רוסיה",
+        "עולי מרוקו",
+        "עולי גרמניה"
+      ],
+      "correct": 0,
+      "explanation": "כ-200 משפחות מתימן הגיעו לירושלים ונבנתה עבורן שכונה בכפר השילוח.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-1-09",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "כתף הינום",
+      "question": "איזה טקסט מקראי נמצא על גלילי הכסף מכתף הינום?",
+      "options": [
+        "ברכת הכוהנים",
+        "שמע ישראל",
+        "עשרת הדיברות",
+        "שירת הים"
+      ],
+      "correct": 0,
+      "explanation": "בגלילי הכסף נמצאו פסוקים מברכת הכוהנים — הטקסט המקראי הקדום ביותר שנמצא.",
+      "sourceUrl": "https://drive.google.com/file/d/1khNezI5YOBFzoEhoEQrkpd2IzrXYo1d7/view",
+      "sourceDoc": "סיור 11 — כתף הינום"
+    },
+    {
+      "id": "N11-1-10",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "כתף הינום",
+      "question": "מי חפר את מערכות הקבורה בכתף הינום?",
+      "options": [
+        "גבריאל ברקאי",
+        "נחמן אביגד",
+        "אילת מזר",
+        "יגאל שילה"
+      ],
+      "correct": 0,
+      "explanation": "החפירה בוצעה בידי ד\"ר גבריאל ברקאי, בעזרת ילדי חוג ארכאולוגיה.",
+      "sourceUrl": "https://drive.google.com/file/d/1khNezI5YOBFzoEhoEQrkpd2IzrXYo1d7/view",
+      "sourceDoc": "סיור 11 — כתף הינום"
+    },
+    {
+      "id": "N11-1-11",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "כתף הינום",
+      "question": "מי מצא את הכדים השלמים שהובילו לגילוי מערה 6 בכתף הינום?",
+      "options": [
+        "ילד מחוג הארכאולוגיה",
+        "ארכאולוג בכיר",
+        "פועל בניין",
+        "נזיר סקוטי"
+      ],
+      "correct": 0,
+      "explanation": "ילד בשם נתן נשלח לקצה השטח \"כדי שלא יפריע\" — וחזר עם כדים שלמים.",
+      "sourceUrl": "https://drive.google.com/file/d/1khNezI5YOBFzoEhoEQrkpd2IzrXYo1d7/view",
+      "sourceDoc": "סיור 11 — כתף הינום"
+    },
+    {
+      "id": "N11-1-12",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "מה רוחב החומה הרחבה ברובע היהודי?",
+      "options": [
+        "כ-7 מטר",
+        "כ-1 מטר",
+        "כ-20 מטר",
+        "כ-3 מטר"
+      ],
+      "correct": 0,
+      "explanation": "חפירת הצלה חשפה חומה ברוחב 7 מ' מימי בית ראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/1_XxDGftw_HhDVZ6iPumuldAjZz2_d4uc/view",
+      "sourceDoc": "סיור 11 — החומה הרחבה"
+    },
+    {
+      "id": "N11-1-13",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "מי חשף את החומה הרחבה ברובע היהודי?",
+      "options": [
+        "נחמן אביגד",
+        "קתלין קניון",
+        "צ'ארלס וורן",
+        "ריימון וייל"
+      ],
+      "correct": 0,
+      "explanation": "פרופ' נחמן אביגד הופקד על חפירות ההצלה בשיקום הרובע.",
+      "sourceUrl": "https://drive.google.com/file/d/1_XxDGftw_HhDVZ6iPumuldAjZz2_d4uc/view",
+      "sourceDoc": "סיור 11 — החומה הרחבה"
+    },
+    {
+      "id": "N11-1-14",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "מאיזה כיוון, לפי הביטוי, \"תיפתח הרעה\" לירושלים?",
+      "options": [
+        "מצפון",
+        "מדרום",
+        "ממזרח",
+        "ממערב"
+      ],
+      "correct": 0,
+      "explanation": "הצד הצפוני של הגבעה המערבית חסר ערוץ עמוק ולכן חלש — \"מצפון תפתח הרעה\".",
+      "sourceUrl": "https://drive.google.com/file/d/1_XxDGftw_HhDVZ6iPumuldAjZz2_d4uc/view",
+      "sourceDoc": "סיור 11 — החומה הרחבה"
+    },
+    {
+      "id": "N11-1-15",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "איזה ארגון יושב היום בארמון הנציב?",
+      "options": [
+        "מטה משקיפי האו\"ם",
+        "שגרירות בריטניה",
+        "עיריית ירושלים",
+        "בית ספר שדה"
+      ],
+      "correct": 0,
+      "explanation": "בתחילת שנות ה-50 עבר המבנה לידי האו\"ם והפך למטה המשקיפים.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-1-16",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "מה שם הרכס של ארמון הנציב בערבית?",
+      "options": [
+        "ג'בל מוכבר",
+        "ג'בל א-טור",
+        "ג'בל קרנטל",
+        "ג'בל אל-מוכבר א-סע'יר"
+      ],
+      "correct": 0,
+      "explanation": "לפי המסורת, שם קרא המצביא המוסלמי \"אללה אכבר\" כשראה את ירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-1-17",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "איזה מבנה נראה על הר הצופים, שבו הונחה אבן הפינה ב-1925?",
+      "options": [
+        "האוניברסיטה העברית",
+        "הכנסת",
+        "בית החולים שערי צדק",
+        "מוזיאון ישראל"
+      ],
+      "correct": 0,
+      "explanation": "ב-1925 הונחה בהר הצופים אבן הפינה לאוניברסיטה העברית.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-1-18",
+      "tourId": "11",
+      "level": 1,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "מהי כיפת הסלע, לפי ההסבר בתצפית?",
+      "options": [
+        "מבנה מקודש באסלאם, לא מסגד",
+        "מסגד אל-אקצא",
+        "כנסייה",
+        "בית כנסת"
+      ],
+      "correct": 0,
+      "explanation": "הכיפה המוזהבת איננה מסגד אלא מבנה מקודש; אל-אקצא הוא בעל הכיפה הכהה.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-2-01",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה אורכה של נקבת חזקיהו, לפי הסיכום?",
+      "options": [
+        "כ-533 מטר",
+        "כ-53 מטר",
+        "כ-5 ק\"מ",
+        "כ-1,200 מטר"
+      ],
+      "correct": 0,
+      "explanation": "המנהרה המפותלת באורך כ-533 מ' הטתה את מי הגיחון לבריכת השילוח.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-2-02",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה מתארת כתובת השילוח?",
+      "options": [
+        "את רגע המפגש של שתי קבוצות החוצבים",
+        "את שמו של חזקיהו",
+        "את כיבוש ירושלים",
+        "את בניית המקדש"
+      ],
+      "correct": 0,
+      "explanation": "\"ויכו החוצבים איש לקראת רעו גרזן על גרזן\" — הכתובת אינה מזכירה את חזקיהו.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-2-03",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה הייתה מטרת נקבת חזקיהו?",
+      "options": [
+        "להכניס את המים לעיר ולמנוע אותם מהאשורים",
+        "להשקות את גינות המלך",
+        "לנקז מי ביוב",
+        "לחבר את המקדש לנחל"
+      ],
+      "correct": 0,
+      "explanation": "לקראת מצור סנחריב: אספקת מים לנצורים ומניעתם מהצבא שבחוץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-2-04",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה הסיקו רוני רייך ואלי שוקרון לגבי פיר וורן?",
+      "options": [
+        "הפיר נחשף בתקופה הישראלית ולא שימש לשאיבת מים",
+        "הפיר כנעני ושימש לשאיבה",
+        "הפיר רומי",
+        "הפיר מלאכותי לחלוטין"
+      ],
+      "correct": 0,
+      "explanation": "חרסים מהמאה ה-8 בתחתית הפיר הראו שנחשף מאוחר ולא היה חלק ממערכת המים.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-2-05",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה תיארכה אילת מזר כ\"ארמון דוד\", ומה הייתה הביקורת?",
+      "options": [
+        "מבנה ציבורי גדול; פינקלשטיין שייך אותו למאות ה-9–8",
+        "מערה; לא נמצא בה דבר",
+        "מקדש; היה בעצם בית",
+        "חומה; היא הייתה רומית"
+      ],
+      "correct": 0,
+      "explanation": "מזר טענה למאה ה-11; המבקרים שייכו את המבנה לתקופה מאוחרת, וביקרו הצגת דגימה אחת מתוך ארבע.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-2-06",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "כמה בולות נמצאו בארכיון הבולות בעיר דוד?",
+      "options": [
+        "151",
+        "15",
+        "1,500",
+        "5"
+      ],
+      "correct": 0,
+      "explanation": "נחשפו 151 בולות; 49 מהן נושאות שמות, ביניהם גמריהו בן שפן.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-2-07",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מהו \"המילוא\" המקראי לפי פרשנות קניון ושילה?",
+      "options": [
+        "מערכת קירות תמך ומילוי שאפשרה לבנות על המדרון",
+        "בור מים",
+        "שער העיר",
+        "קבר מלכים"
+      ],
+      "correct": 0,
+      "explanation": "\"וייבן דוד סביב מן המילוא\" — מערכת הנדסית לבנייה על המדרון התלול.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-2-08",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה מצא ריימון וייל בדרום עיר דוד מלבד \"קברי בית דוד\"?",
+      "options": [
+        "כתובת תיאודוטוס — בית כנסת מימי בית שני",
+        "כתובת השילוח",
+        "ארון הברית",
+        "מטבעות זהב"
+      ],
+      "correct": 0,
+      "explanation": "הכתובת מעידה על בית כנסת לקריאת תורה ולימוד מצוות, בעוד המקדש פעל.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-2-09",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "איך נקראה עליית התימנים של 1881–1882?",
+      "options": [
+        "\"אעלה בתמר\"",
+        "\"על כנפי נשרים\"",
+        "\"עזרא ונחמיה\"",
+        "\"מבצע משה\""
+      ],
+      "correct": 0,
+      "explanation": "עליית \"אעלה בתמר\" — כ-200 משפחות; תחילה גרו במערות הקבורה של סילואן.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-2-10",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "איזו כתובת קבר מסילואן שמורה בלובר?",
+      "options": [
+        "\"...יהו אשר על הבית\"",
+        "כתובת השילוח",
+        "כתובת תיאודוטוס",
+        "כתובת עוזיהו"
+      ],
+      "correct": 0,
+      "explanation": "\"אין פה כסף וזהב כי אם עצמותיו ועצמות אמתו אתו\" — נחשפה בידי קלרמון־גאנו.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-2-11",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "כתף הינום",
+      "question": "מה מאפיין את מערות הקבורה מימי בית ראשון בכתף הינום?",
+      "options": [
+        "ספסלי הנחה עם \"כריות\" ובור ליקוט עצמות",
+        "ארונות אבן",
+        "גומחות לאפר",
+        "קברי פיר בודדים"
+      ],
+      "correct": 0,
+      "explanation": "משטחי שכיבה עם כריות ראש, ובור (מלקטה) שאליו נאספו העצמות.",
+      "sourceUrl": "https://drive.google.com/file/d/1khNezI5YOBFzoEhoEQrkpd2IzrXYo1d7/view",
+      "sourceDoc": "סיור 11 — כתף הינום"
+    },
+    {
+      "id": "N11-2-12",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "כתף הינום",
+      "question": "מה גרם לקריסת גגות מערות הקבורה בכתף הינום?",
+      "options": [
+        "כלים כבדים בבניית הכנסייה הסקוטית",
+        "רעידת אדמה",
+        "שודדי עתיקות",
+        "חפירה בריטית"
+      ],
+      "correct": 0,
+      "explanation": "בזמן הקמת כנסיית סנט אנדרוס השתמשו בכלים כבדים וגגות המערות קרסו.",
+      "sourceUrl": "https://drive.google.com/file/d/1khNezI5YOBFzoEhoEQrkpd2IzrXYo1d7/view",
+      "sourceDoc": "סיור 11 — כתף הינום"
+    },
+    {
+      "id": "N11-2-13",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "איזה פסוק מישעיהו מאשש את בניית החומה הרחבה?",
+      "options": [
+        "\"ואת בתי ירושלים ספרתם ותתצו הבתים לבצר החומה\"",
+        "\"ירושלים הרים סביב לה\"",
+        "\"ציון במשפט תפדה\"",
+        "\"קומי אורי\""
+      ],
+      "correct": 0,
+      "explanation": "בתים על הגבעה המערבית נהרסו כדי להעביר עליהם את החומה.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-2-14",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "פי כמה גדל שטח ירושלים עם הקפת הגבעה המערבית?",
+      "options": [
+        "מכ-130 לכ-650–700 דונם",
+        "מ-10 ל-20 דונם",
+        "מ-1,000 ל-2,000 דונם",
+        "לא גדל"
+      ],
+      "correct": 0,
+      "explanation": "העיר גדלה מאוד, כנראה בעקבות פליטים מממלכת ישראל שחרבה ב-722 לפנה\"ס.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-2-15",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "אילו ראשי חצים נמצאו ליד מגדל השער ברובע?",
+      "options": [
+        "בבליים ויהודאיים",
+        "רומיים",
+        "צלבניים",
+        "מצריים"
+      ],
+      "correct": 0,
+      "explanation": "ראשי חצים בבליים לצד יהודאיים — עדות לקרב הפריצה בחורבן 586.",
+      "sourceUrl": "https://drive.google.com/file/d/1_XxDGftw_HhDVZ6iPumuldAjZz2_d4uc/view",
+      "sourceDoc": "סיור 11 — החומה הרחבה"
+    },
+    {
+      "id": "N11-2-16",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "מה נחשף לאחרונה מתחת לטיילת ארמון הנציב?",
+      "options": [
+        "שרידי ארמון מלכותי מימי בית ראשון",
+        "קבר רומי",
+        "בית כנסת",
+        "מנזר ביזנטי"
+      ],
+      "correct": 0,
+      "explanation": "יעקב ביליג חשף כותרות פרוטו־איאוליות ומעקות אבן מעוטרים מארמון ממלכתי.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-2-17",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "בעקבות מה עזב הנציב העליון את אוגוסטה ויקטוריה?",
+      "options": [
+        "רעידת האדמה של 1927",
+        "מרד ערבי",
+        "שריפה",
+        "מלחמת העולם"
+      ],
+      "correct": 0,
+      "explanation": "רעידת האדמה ב-1927 סדקה את הבניין, ובמקביל נבנה ארמון הנציב.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-3-01",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה הייתה הפשרה בהתוויית החומה המזרחית של עיר דוד?",
+      "options": [
+        "בין גובה ההר לבין ירידה במדרון כדי לכלול את הגיחון",
+        "בין עלות לבין יופי",
+        "בין מגורים למקדש",
+        "בין רוח לשמש"
+      ],
+      "correct": 0,
+      "explanation": "שיקול אסטרטגי (ראש ההר) מול שיקול המים — לרדת ככל הניתן לכלול את הגיחון.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-3-02",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מדוע הופסקו חפירות יגאל שילה בשטח G?",
+      "options": [
+        "מחאה חרדית בטענה לקברי יהודים",
+        "מלחמת 1967",
+        "חוסר תקציב",
+        "מותו בתאונה"
+      ],
+      "correct": 0,
+      "explanation": "חרדים טענו שמדובר בקברים, התפרעו, ואף התקיימו תפילות נגדו.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-03",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "לאיזו תקופה תיארך יגאל שילה את המבנה המדורג?",
+      "options": [
+        "לתקופה הכנענית — המאה ה-14 לפנה\"ס",
+        "לימי חזקיהו",
+        "לימי הורדוס",
+        "לתקופה הצלבנית"
+      ],
+      "correct": 0,
+      "explanation": "שילה ראה במבנה קיר תמך כנעני למבנה ציבורי שבראש הגבעה.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-04",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה הוכיחה קתלין קניון לגבי המגדלים שמצאו הבריטים בשטח G?",
+      "options": [
+        "שהם מהתקופה החשמונאית ולא מימי דוד",
+        "שהם מימי דוד",
+        "שהם צלבניים",
+        "שהם לא קיימים"
+      ],
+      "correct": 0,
+      "explanation": "הבריטים חשבו שהמגדלים מימי דוד; קניון הוכיחה שהם חשמונאיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-05",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה מראים ה\"אבנים עם חור\" שנמצאו בשטח G?",
+      "options": [
+        "בתי שימוש — עדות לבית עשיר",
+        "משקולות בית בד",
+        "בסיסי עמודים",
+        "אבני קלע"
+      ],
+      "correct": 0,
+      "explanation": "בדיקות מעבדה הראו שאלה אסלות — \"איזהו העשיר? כל שבית הכסא סמוך לשולחנו\".",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-06",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה מצאו בתחתית פיר וורן מלבד חרסים?",
+      "options": [
+        "חפצים של משלחת פרקר שחיפשה את ארון הברית",
+        "ארון הברית",
+        "כתובת עוזיהו",
+        "שלד מלך"
+      ],
+      "correct": 0,
+      "explanation": "משלחת פרקר ברחה מהארץ אחרי ניסיון לחפור בהר הבית והשאירה ציוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-07",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה תפקידה של הנקבה ה\"יבשה\" הכנענית בעיר דוד?",
+      "options": [
+        "הסטת מי הגיחון לבריכה בתוך המתחם המבוצר",
+        "ניקוז שפכים",
+        "מעבר סודי למקדש",
+        "קבורה"
+      ],
+      "correct": 0,
+      "explanation": "הנקבה הכנענית הטתה את המים לבריכת האגירה הפנימית המבוצרת.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-08",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "כמה עמוק היה נחל קדרון בעת העתיקה, לפי מיפויו של קימר?",
+      "options": [
+        "בכ-15 מ' עמוק יותר מהיום",
+        "בכ-1 מ'",
+        "בכ-100 מ'",
+        "כמו היום"
+      ],
+      "correct": 0,
+      "explanation": "הערוץ היה עמוק יותר, ולכן מדרון עיר דוד היה תלול בהרבה.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-3-09",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "בכמה הרחיבו רייך ושוקרון את תחום העיר המבוצר במזרח?",
+      "options": [
+        "בכ-10 דונם",
+        "בכ-100 דונם",
+        "בכ-1 דונם",
+        "לא הורחב"
+      ],
+      "correct": 0,
+      "explanation": "מקטע חומה מזרחי במורד הוסיף כ-10 דונם עוד לפני ההתרחבות לגבעה המערבית.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-3-10",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה מיוחד בכתובת תיאודוטוס מבחינת תולדות הפולחן?",
+      "options": [
+        "היא מעידה על בית כנסת ללימוד תורה בזמן שהמקדש פעל",
+        "היא הכתובת העברית העתיקה ביותר",
+        "היא מזכירה את ישו",
+        "היא מתארת קורבנות"
+      ],
+      "correct": 0,
+      "explanation": "בית כנסת בימי בית שני — מרכז לימוד, לא תחליף לפולחן המקדש.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-11",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "כתף הינום",
+      "question": "מה מיוחד במערכת 6 בכתף הינום לעומת השאר?",
+      "options": [
+        "לא נשדדה — נמצאו בה מאות ממצאים שלמים",
+        "היא רומית",
+        "היא ריקה",
+        "היא כנענית"
+      ],
+      "correct": 0,
+      "explanation": "חמש המערכות הצפוניות היו ריקות; במערכת 6 נמצאו מאות ממצאים וגלילי הכסף.",
+      "sourceUrl": "https://drive.google.com/file/d/1khNezI5YOBFzoEhoEQrkpd2IzrXYo1d7/view",
+      "sourceDoc": "סיור 11 — כתף הינום"
+    },
+    {
+      "id": "N11-3-12",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "איך העריכו את גובה החומה הרחבה?",
+      "options": [
+        "לפי יחס בין רוחב החומה לגובהה — כ-8 מ'",
+        "לפי כתובת",
+        "לפי תצלום ישן",
+        "לפי צל"
+      ],
+      "correct": 0,
+      "explanation": "לפי יחס רוחב־גובה הוערך הגובה בכ-8 מ'.",
+      "sourceUrl": "https://drive.google.com/file/d/1_XxDGftw_HhDVZ6iPumuldAjZz2_d4uc/view",
+      "sourceDoc": "סיור 11 — החומה הרחבה"
+    },
+    {
+      "id": "N11-3-13",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "החומה הרחבה",
+      "question": "מהו נחל הצולב, ומה חשיבותו?",
+      "options": [
+        "ערוץ רדוד בתוואי רחוב דוד — נקודת התורפה הצפונית",
+        "ערוץ עמוק בדרום",
+        "נחל איתן",
+        "אמת מים"
+      ],
+      "correct": 0,
+      "explanation": "בצפון הגבעה המערבית אין ערוץ מצוקי, ולכן הוא דרש ביצורים חזקים.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N11-3-14",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "מדוע, לפי המדריך, לא סביר שאברהם ראה את הר המוריה מארמון הנציב?",
+      "options": [
+        "הדרך העתיקה עברה על פרשת המים, ומשם זה לא מרחק שלושה ימים",
+        "יש עצים שמסתירים",
+        "המקום נבנה מאוחר",
+        "אברהם לא הגיע לירושלים"
+      ],
+      "correct": 0,
+      "explanation": "הדרך עברה כ-800 מ' ממערב; נקודה סבירה יותר היא מצפה בגוש עציון.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-3-15",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "מדוע בחר דוד בירושלים כבירה, לפי ההסבר?",
+      "options": [
+        "היא שכנה על גבול יהודה ובנימין — בירה ניטרלית",
+        "בזכות הים",
+        "כי נולד בה",
+        "כי היה בה מקדש"
+      ],
+      "correct": 0,
+      "explanation": "גיא בן הינום הוא הגבול בין יהודה לבנימין; עיר דוד בנחלת בנימין, צמודה לגבול.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-3-16",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "מה נמצא בהר הזיתים, באזור כנסיית העלייה הרוסית, לפי הסיכום?",
+      "options": [
+        "מצבת העברת עצמות עוזיהו מלך יהודה",
+        "קבר דוד",
+        "ארון הברית",
+        "כתובת השילוח"
+      ],
+      "correct": 0,
+      "explanation": "באזור נמצאה מימי בית שני מצבה על העברת עצמות עוזיהו.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-3-17",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "ארמון הנציב",
+      "question": "מה הסיבה המקורית לבניית כיפות במבנים עתיקים, לפי המדריך?",
+      "options": [
+        "הנדסית — לקרות חלל רחב באבנים הנשענות זו על זו",
+        "אקוסטיקה",
+        "סמליות דתית",
+        "חיסכון במים"
+      ],
+      "correct": 0,
+      "explanation": "לפני הבטון המזוין, קשת וכיפה היו הדרך לקרות חלל רחב; האקוסטיקה היא תוצר לוואי.",
+      "sourceUrl": "https://drive.google.com/file/d/1KCfjDiP7qxfG_-J3afytWZu9qKPTdVb_/view",
+      "sourceDoc": "תצפית מארמון הנציב"
+    },
+    {
+      "id": "N11-2-18",
+      "tourId": "11",
+      "level": 2,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מה מצאה אילת מזר ליד גן דוידסון, צפונית לכביש העוקף?",
+      "options": [
+        "חומה באורך 70 מ' ומגדל כניסה מימי בית ראשון",
+        "בית כנסת",
+        "ארמון רומי",
+        "מקווה"
+      ],
+      "correct": 0,
+      "explanation": "החומה הפרידה בין עיר המגורים (עיר דוד) לבין המתחם המקודש והמלכותי.",
+      "sourceUrl": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view",
+      "sourceDoc": "סיור 11 — עיר דוד"
+    },
+    {
+      "id": "N11-3-18",
+      "tourId": "11",
+      "level": 3,
+      "source": "tour11",
+      "stop": "עיר דוד",
+      "question": "מי מילא תפקיד מרכזי בהקמת כפר השילוח התימני ב-1885?",
+      "options": [
+        "ישראל דב פרומקין, עורך \"החבצלת\"",
+        "הברון רוטשילד",
+        "משה מונטיפיורי",
+        "אליעזר בן יהודה"
+      ],
+      "correct": 0,
+      "explanation": "בסיוע פרומקין ונדיבים נבנו בתי קבע — היישוב התימני המאורגן הראשון בארץ.",
+      "sourceUrl": "https://drive.google.com/file/d/10mmfBo8Z3F-cR0j_uEDoHlJmHqvSeGaK/view",
+      "sourceDoc": "סיור בירושלים — בית ראשון (סיכום)"
+    },
+    {
+      "id": "N12-1-01",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מי חפר את הרובע ההרודיאני אחרי מלחמת ששת הימים?",
+      "options": [
+        "נחמן אביגד",
+        "יגאל ידין",
+        "בנימין מזר",
+        "רוני רייך"
+      ],
+      "correct": 0,
+      "explanation": "פרופ' נחמן אביגד ניהל את חפירות ההצלה בשיקום הרובע היהודי.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-1-02",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מי התגורר בעיר העליונה בימי בית שני?",
+      "options": [
+        "משפחות הכהונה הגדולה, האצולה והעשירים",
+        "עבדים ופועלים",
+        "חיילים רומים בלבד",
+        "עולי רגל"
+      ],
+      "correct": 0,
+      "explanation": "העיר העליונה הייתה רובע המגורים היוקרתי ביותר בעיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-1-03",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מה המינימום של מים במקווה לפי ההלכה?",
+      "options": [
+        "40 סאה",
+        "4 סאה",
+        "100 סאה",
+        "אין מינימום"
+      ],
+      "correct": 0,
+      "explanation": "הטבילה דרשה מים חיים (מי גשמים שלא נשאבו) בנפח מינימלי של 40 סאה.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-1-04",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מה מעידות דיסקיות האבן הממוספרות שנמצאו ברובע?",
+      "options": [
+        "על כרטיסי כניסה לתאטרון",
+        "על מטבעות",
+        "על משחק לוח",
+        "על משקולות"
+      ],
+      "correct": 0,
+      "explanation": "על הדיסקיות חרוטים גוש, שורה וכיסא — לדיירים היה \"מנוי\" לתאטרון.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-1-05",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "הבית השרוף",
+      "question": "איזה שם משפחה נחרט על משקולות האבן שנמצאו בבית השרוף?",
+      "options": [
+        "קתרוס",
+        "ביתוס",
+        "חנין",
+        "פיאכי"
+      ],
+      "correct": 0,
+      "explanation": "המשקולות נושאות את השם קתרוס — משפחת כהונה המוזכרת בתלמוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1X_eZ4M9u2bFn1xJdqfUYWtotZiR7Z8DV/view",
+      "sourceDoc": "סיור 12 — הבית השרוף"
+    },
+    {
+      "id": "N12-1-06",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "הבית השרוף",
+      "question": "מאיזה חורבן שרדו סימני השרפה בבית השרוף?",
+      "options": [
+        "חורבן בית שני, שנת 70",
+        "חורבן בית ראשון",
+        "מרד בר כוכבא",
+        "הכיבוש הפרסי"
+      ],
+      "correct": 0,
+      "explanation": "הבית נשרף בחורבן ירושלים בידי הרומאים.",
+      "sourceUrl": "https://drive.google.com/file/d/1X_eZ4M9u2bFn1xJdqfUYWtotZiR7Z8DV/view",
+      "sourceDoc": "סיור 12 — הבית השרוף"
+    },
+    {
+      "id": "N12-1-07",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "באיזה קנה מידה בנוי דגם ירושלים בימי בית שני?",
+      "options": [
+        "1:50",
+        "1:10",
+        "1:500",
+        "1:1"
+      ],
+      "correct": 0,
+      "explanation": "כל מטר בדגם מייצג 50 מטר במציאות.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-1-08",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "בהנחיית מי נבנה הדגם?",
+      "options": [
+        "פרופ' מיכאל אבי־יונה",
+        "יגאל ידין",
+        "נחמן אביגד",
+        "בנימין מזר"
+      ],
+      "correct": 0,
+      "explanation": "הדגם נבנה בהנחיית אבי־יונה ועודכן לפי ממצאים חדשים.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-1-09",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "איזו שנה מתאר הדגם?",
+      "options": [
+        "66 לספירה — ערב החורבן",
+        "586 לפנה\"ס",
+        "1099",
+        "1948"
+      ],
+      "correct": 0,
+      "explanation": "הדגם מראה את ירושלים בשנת 66, ערב המרד והחורבן.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-1-10",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "איזו מצודה ענקית עמדה צפונית להר הבית?",
+      "options": [
+        "אנטוניה",
+        "מצדה",
+        "הרודיון",
+        "מכוור"
+      ],
+      "correct": 0,
+      "explanation": "מצודת אנטוניה השקיפה על רחבת הר הבית מצפון.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-1-11",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "היכל הספר",
+      "question": "מה מסמלים הכיפה הלבנה והקיר השחור בהיכל הספר?",
+      "options": [
+        "בני אור ובני חושך",
+        "יום ולילה",
+        "חיים ומוות",
+        "יהודה וישראל"
+      ],
+      "correct": 0,
+      "explanation": "המגילות מתארות מאבק בין בני אור לבני חושך; הכיפה לבנה והקיר שחור.",
+      "sourceUrl": "https://drive.google.com/file/d/129a7lGhewWwroRiknTNhQ-wlYD6x-L_3/view",
+      "sourceDoc": "היכל הספר (סיכום)"
+    },
+    {
+      "id": "N12-1-12",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "היכל הספר",
+      "question": "איזו מגילה מקורית מוצגת במרכז היכל הספר?",
+      "options": [
+        "מגילת ישעיהו",
+        "מגילת אסתר",
+        "ספר בראשית",
+        "מגילת רות"
+      ],
+      "correct": 0,
+      "explanation": "מגילת ישעיהו, אחת משבע המגילות הראשונות ממערה 1 בקומראן.",
+      "sourceUrl": "https://drive.google.com/file/d/129a7lGhewWwroRiknTNhQ-wlYD6x-L_3/view",
+      "sourceDoc": "היכל הספר (סיכום)"
+    },
+    {
+      "id": "N12-1-13",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "היכל הספר",
+      "question": "היכן נכתב כתר ארם צובא?",
+      "options": [
+        "בטבריה, במאה ה-10",
+        "בחלב",
+        "בירושלים",
+        "בקהיר"
+      ],
+      "correct": 0,
+      "explanation": "הכתר נכתב בטבריה בידי אהרון בן אשר והתגלגל למצרים ולחלב.",
+      "sourceUrl": "https://drive.google.com/file/d/129a7lGhewWwroRiknTNhQ-wlYD6x-L_3/view",
+      "sourceDoc": "היכל הספר (סיכום)"
+    },
+    {
+      "id": "N12-1-14",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "השילוח",
+      "question": "איך נחשפה בריכת השילוח מימי בית שני?",
+      "options": [
+        "טרקטור פגע במדרגות בזמן תיקון צינור ביוב",
+        "חפירה מתוכננת",
+        "רעידת אדמה",
+        "שיטפון"
+      ],
+      "correct": 0,
+      "explanation": "בתיקון פיצוץ ביוב נפגע מבנה אבן, ואלי שוקרון חשף מדרגות ארוכות.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-1-15",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "דרך עולי הרגל",
+      "question": "לאן הוביל הרחוב המדורג מהשילוח?",
+      "options": [
+        "אל הר הבית",
+        "אל הים",
+        "אל בית לחם",
+        "אל יריחו"
+      ],
+      "correct": 0,
+      "explanation": "עולי הרגל עלו מהשער הדרומי ברחובות מדורגים לכיוון הר הבית.",
+      "sourceUrl": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view",
+      "sourceDoc": "דרך עולי הרגל (סיכום)"
+    },
+    {
+      "id": "N12-1-16",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "דרך עולי הרגל",
+      "question": "מה נמצא בתעלת הניקוז שמתחת לרחוב?",
+      "options": [
+        "סירי בישול שלמים מימי בית שני",
+        "מגילות",
+        "חרבות",
+        "פסלים"
+      ],
+      "correct": 0,
+      "explanation": "בתעלה נמצאו סירי בישול שלמים — עדות למסתתרים בזמן החורבן.",
+      "sourceUrl": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view",
+      "sourceDoc": "דרך עולי הרגל (סיכום)"
+    },
+    {
+      "id": "N12-1-17",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "חניון גבעתי",
+      "question": "כמה מטבעות זהב נמצאו במטמון הביזנטי בחניון גבעתי?",
+      "options": [
+        "264",
+        "26",
+        "2,640",
+        "6"
+      ],
+      "correct": 0,
+      "explanation": "במבנה ביזנטי נמצא מטמון של 264 מטבעות זהב מתחילת המאה ה-7.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-1-18",
+      "tourId": "12",
+      "level": 1,
+      "source": "tour12",
+      "stop": "חניון גבעתי",
+      "question": "מדוע נקרא המקום \"חניון גבעתי\"?",
+      "options": [
+        "לזכר פיגוע בטקס השבעת טירוני גבעתי ב-1986",
+        "כי חיילי גבעתי חנו שם",
+        "על שם משפחת גבעתי",
+        "על שם הגבעה"
+      ],
+      "correct": 0,
+      "explanation": "באוקטובר 1986 נזרקו רימונים על טקס השבעה בכותל; שם המקום שונה בעקבות זאת.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-2-01",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מה תפקיד \"עקבת הרגליים\" שנמצאה בכניסה למקוואות?",
+      "options": [
+        "רחיצת כפות הרגליים לפני הירידה למקווה",
+        "מתקן להחלפת נעליים",
+        "מדרגה אחרונה",
+        "בור לאיסוף מים"
+      ],
+      "correct": 0,
+      "explanation": "אגן אבן עם נקבים לניקוי הרגליים לפני הירידה למים הטהורים.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-2-02",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מה מלמדים הממצאים ברובע על האליטה הירושלמית?",
+      "options": [
+        "שילוב פאר הלניסטי־רומי עם הקפדה על טהרה",
+        "חיים צנועים מאוד",
+        "התבוללות מלאה",
+        "חיים נוודיים"
+      ],
+      "correct": 0,
+      "explanation": "פסיפסים, פרסקו ומותרות — לצד מספר מקוואות בכל בית.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-2-03",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "כמה זמן החזיקה העיר העליונה מעמד אחרי שריפת המקדש?",
+      "options": [
+        "כחודש — עד אלול",
+        "יום אחד",
+        "שנה",
+        "עשר שנים"
+      ],
+      "correct": 0,
+      "explanation": "המקדש נשרף בט' באב, והעיר העליונה נפלה כחודש אחר כך.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-2-04",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "לפסיפסים באילו ארמונות של הורדוס דומים פסיפסי הרובע?",
+      "options": [
+        "מצדה והרודיון",
+        "קיסריה ועכו",
+        "יריחו ושכם",
+        "חברון ובית לחם"
+      ],
+      "correct": 0,
+      "explanation": "הדגמים הגאומטריים מקבילים לפסיפסים מארמונות הורדוס במצדה ובהרודיון.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-2-05",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "הבית השרוף",
+      "question": "אילו ממצאים מזעזעים מימי החורבן נמצאו בבית השרוף?",
+      "options": [
+        "ראש כידון ועצמות זרוע של נערה",
+        "מטבעות זהב",
+        "מגילת תורה",
+        "כלי נגינה"
+      ],
+      "correct": 0,
+      "explanation": "נמצאו ראש כידון ברזל ועצמות זרוע של נערה צעירה.",
+      "sourceUrl": "https://drive.google.com/file/d/1X_eZ4M9u2bFn1xJdqfUYWtotZiR7Z8DV/view",
+      "sourceDoc": "סיור 12 — הבית השרוף"
+    },
+    {
+      "id": "N12-2-06",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "הבית השרוף",
+      "question": "מה אומר התלמוד על בית קתרוס?",
+      "options": [
+        "\"אוי לי מבית קתרוס, אוי לי מקולמוסן\"",
+        "\"אשרי בית קתרוס\"",
+        "\"בית קתרוס בנה את המקדש\"",
+        "אין עליהם אזכור"
+      ],
+      "correct": 0,
+      "explanation": "ברשימת משפחות הכהונה שניצלו את מעמדן לרעה.",
+      "sourceUrl": "https://drive.google.com/file/d/1X_eZ4M9u2bFn1xJdqfUYWtotZiR7Z8DV/view",
+      "sourceDoc": "סיור 12 — הבית השרוף"
+    },
+    {
+      "id": "N12-2-07",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "מי בנה את החומה השלישית של ירושלים?",
+      "options": [
+        "אגריפס — והושלמה בידי הקנאים במרד",
+        "נחמיה",
+        "החשמונאים",
+        "הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "החומה השלישית החלה בידי אגריפס והושלמה במרד הגדול.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-2-08",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "על שם מי נקראו שלושת המגדלים שליד ארמון הורדוס?",
+      "options": [
+        "פצאל, מרים והיפיקוס",
+        "דוד, שלמה וחזקיהו",
+        "אגריפס, אוגוסטוס וקיסר",
+        "אנטיפטר, הורקנוס ואריסטובולוס"
+      ],
+      "correct": 0,
+      "explanation": "פצאל (אחיו), מרים (אשתו) והיפיקוס (חברו).",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-2-09",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "מה תפקיד \"בית התקיעה\" בפינת הסטיו המלכותי?",
+      "options": [
+        "הכוהנים הודיעו בו על כניסת השבת ויציאתה",
+        "מקום הקרבת קורבנות",
+        "בית כנסת",
+        "שער כניסה"
+      ],
+      "correct": 0,
+      "explanation": "בפינה המערבית של הסטיו המלכותי — מקום תקיעת השופר לסימון השבת.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-2-10",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "מדוע הוסר ההיפודרום מהדגם?",
+      "options": [
+        "לא נמצאו לו שרידים בשטח",
+        "הוא נשבר",
+        "מסיבות דתיות",
+        "כי הוא רומי"
+      ],
+      "correct": 0,
+      "explanation": "הדגם מתעדכן לפי ממצאים; ההיפודרום הוסר כי לא נמצאו שרידיו.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-2-11",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "מה מסביר את עיקוף החומה השנייה סביב גבעת הגולגותא?",
+      "options": [
+        "הגבעה הייתה בית קברות, ואסור היה שתהיה בתוך העיר",
+        "שם היה מבצר",
+        "שם היה מעיין",
+        "סיבה צבאית בלבד"
+      ],
+      "correct": 0,
+      "explanation": "בית קברות לא יכול היה להיות בתוך העיר; לפי המסורת הנוצרית שם נצלב ישו.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-2-12",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "היכל הספר",
+      "question": "מדוע מצביעים כלי האבן בהיכל הספר על הקפדה בטהרה?",
+      "options": [
+        "כלי אבן אינם מקבלים טומאה",
+        "הם יקרים",
+        "הם עמידים לאש",
+        "הם קלים לנשיאה"
+      ],
+      "correct": 0,
+      "explanation": "לפי ההלכה, בניגוד לכלי חרס, כלי אבן אינם מקבלים טומאה.",
+      "sourceUrl": "https://drive.google.com/file/d/129a7lGhewWwroRiknTNhQ-wlYD6x-L_3/view",
+      "sourceDoc": "היכל הספר (סיכום)"
+    },
+    {
+      "id": "N12-2-13",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "היכל הספר",
+      "question": "מי רכש את מגילת המקדש?",
+      "options": [
+        "יגאל ידין",
+        "אליעזר סוקניק",
+        "בן גוריון",
+        "רולאן דה וו"
+      ],
+      "correct": 0,
+      "explanation": "ידין רכש אותה מסוחר עתיקות מבית לחם; היא מתארת תוכנית מקדש והלכות מלחמה.",
+      "sourceUrl": "https://drive.google.com/file/d/129a7lGhewWwroRiknTNhQ-wlYD6x-L_3/view",
+      "sourceDoc": "היכל הספר (סיכום)"
+    },
+    {
+      "id": "N12-2-14",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "השילוח",
+      "question": "איזה טקס, לפי סברה אחת, התקיים על מדרגות השילוח?",
+      "options": [
+        "ניסוך המים בסוכות",
+        "קריאת המגילה",
+        "ברית מילה",
+        "הקרבת הפסח"
+      ],
+      "correct": 0,
+      "explanation": "בסוכות שאבו מים מהשילוח והעלו אותם בשירה לניסוך על המזבח.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-2-15",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "השילוח",
+      "question": "לאיזו תקופה תוארכו מדרגות בריכת השילוח לפי המטבעות?",
+      "options": [
+        "מימי אלכסנדר ינאי ועד המרד הגדול",
+        "מימי דוד",
+        "מהתקופה הביזנטית",
+        "מהתקופה הצלבנית"
+      ],
+      "correct": 0,
+      "explanation": "המטבעות תיארכו את המדרגות לימי החשמונאים ועד המרד — ימי בית שני.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-2-16",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דרך עולי הרגל",
+      "question": "באיזו שיטה חדשה נחפר הרחוב המדורג?",
+      "options": [
+        "חפירה אופקית תת־קרקעית (מנהור)",
+        "חפירה מהאוויר",
+        "חפירה מתחת למים",
+        "צילום בלבד"
+      ],
+      "correct": 0,
+      "explanation": "בגלל הבתים שמעל, בוצעה לראשונה בירושלים חפירה אופקית עם תמיכות פלדה.",
+      "sourceUrl": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view",
+      "sourceDoc": "דרך עולי הרגל (סיכום)"
+    },
+    {
+      "id": "N12-2-17",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דרך עולי הרגל",
+      "question": "מתי נבנה הרחוב המדורג, לפי המטבעות שמתחתיו?",
+      "options": [
+        "בשנות ה-20–30 לספירה, בימי פונטיוס פילטוס",
+        "בימי דוד",
+        "בימי חזקיהו",
+        "בתקופה הביזנטית"
+      ],
+      "correct": 0,
+      "explanation": "המטבעות מתחת לריצוף מתארכים את הרחוב לימי פילטוס — והוא שימש כ-40 שנה.",
+      "sourceUrl": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view",
+      "sourceDoc": "דרך עולי הרגל (סיכום)"
+    },
+    {
+      "id": "N12-3-01",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מה מיוחד בדמות המנורה שנחרטה על קיר ברובע ההרודיאני?",
+      "options": [
+        "היא שונה ממנורת שער טיטוס, ואולי מדויקת יותר",
+        "היא זהה לשער טיטוס",
+        "היא בת תשעה קנים",
+        "היא מהתקופה הצלבנית"
+      ],
+      "correct": 0,
+      "explanation": "החריטה, מקרבת המקדש, שונה מהמנורה שבשער טיטוס — אין לדעת איזו מדויקת.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N12-3-02",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "הבית השרוף",
+      "question": "איזה ממצא בבית השרוף מעיד על פעילות כלכלית יוצאת דופן?",
+      "options": [
+        "תבנית להטבעת מטבעות נחושת",
+        "בית בד",
+        "כבשן זכוכית",
+        "נול"
+      ],
+      "correct": 0,
+      "explanation": "בין הממצאים תבנית להטבעת מטבעות נחושת.",
+      "sourceUrl": "https://drive.google.com/file/d/1X_eZ4M9u2bFn1xJdqfUYWtotZiR7Z8DV/view",
+      "sourceDoc": "סיור 12 — הבית השרוף"
+    },
+    {
+      "id": "N12-3-03",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "על אילו מקורות התבסס אבי־יונה בבניית הדגם?",
+      "options": [
+        "יוסף בן מתתיהו, מסכת מידות, איגרת אריסטיאס וחפירות",
+        "ספר מלכים בלבד",
+        "מפת מידבא בלבד",
+        "צילומי אוויר"
+      ],
+      "correct": 0,
+      "explanation": "שילוב מקורות כתובים, ממצאי חפירות והיכרות עם הבנייה הרומית־הלניסטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-04",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "מה העיקרון של \"תיאור מינימליסטי\" בדגם?",
+      "options": [
+        "שינויים נעשים רק בהסכמה רחבה של המחקר",
+        "בונים רק מה שראו בעיניים",
+        "רק המקדש מופיע",
+        "בלי צבעים"
+      ],
+      "correct": 0,
+      "explanation": "הדגם מתאר את ירושלים באופן מינימליסטי ומשתנה רק בהסכמה מחקרית רחבה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-05",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "למה, לפי המינימליסטים, לא הקיפה החומה השנייה את מצודת האנטוניה?",
+      "options": [
+        "אין היגיון בחומה סביב מצודה כה מסיבית",
+        "האנטוניה נבנתה אחרי החומה",
+        "לא הייתה אנטוניה",
+        "החומה נהרסה"
+      ],
+      "correct": 0,
+      "explanation": "המחלוקת על תוואי החומות; לפי המינימליסטים מצודה כזו אינה צריכה חומה סביבה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-06",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "מה הייתה ההנחה בדגם לגבי תעלת הניקוז בגיא, ומה התברר?",
+      "options": [
+        "חשבו שהייתה פתוחה; התברר שהייתה מקורה",
+        "חשבו שאין תעלה; התגלתה",
+        "חשבו שהיא רומית; התברר שהיא ביזנטית",
+        "אין שינוי"
+      ],
+      "correct": 0,
+      "explanation": "בדגם התעלה פתוחה עם גשרים; החפירות הראו שהייתה מקורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-07",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "על איזו קרקע נבנו מוזיאון ישראל ומבני גבעת רם, ומה הסדר הבעלות?",
+      "options": [
+        "קרקע של הכנסייה היוונית־אורתודוקסית; המדינה רכשה את שטחי מבני הציבור",
+        "קרקע של קק\"ל",
+        "קרקע וקף",
+        "קרקע פרטית של רוטשילד"
+      ],
+      "correct": 0,
+      "explanation": "הקרקע נרכשה במאה ה-19 בידי הכנסייה היוונית; בהמשך רכשה המדינה את השטחים של מבני הציבור.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-08",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "היכל הספר",
+      "question": "מדוע נוסח המסורה של ימינו נקבע ממקורות המאה ה-15 ולא מכתר ארם צובא?",
+      "options": [
+        "חלק גדול מהכתר נעלם, וכתב יד לנינגרד לא זכה להכרה דומה",
+        "הכתר מזויף",
+        "הכתר בערבית",
+        "הכתר נכתב אחרי הדפוס"
+      ],
+      "correct": 0,
+      "explanation": "הנוסח שנאסף בעת המעבר לדפוס במאה ה-15 התקבע רשמית.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-09",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "היכל הספר",
+      "question": "איזה חכם אישר את כתר ארם צובא כנוסח המדויק ביותר?",
+      "options": [
+        "הרמב\"ם",
+        "רש\"י",
+        "הרמב\"ן",
+        "ר' יוסף קארו"
+      ],
+      "correct": 0,
+      "explanation": "הרמב\"ם אישר את הכתר כמקור מדויק לתורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-10",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "השילוח",
+      "question": "כיצד זוהה המאגר הגדול כבריכת השילוח מימי בית ראשון?",
+      "options": [
+        "בדיקת פחמן-14 של קש בתוך קיר המאגר",
+        "כתובת עם השם",
+        "מטבע של חזקיהו",
+        "תצלום ישן"
+      ],
+      "correct": 0,
+      "explanation": "בדיקת הקש מתוך הקיר שנחשף תיארכה אותו לימי בית ראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-3-11",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "השילוח",
+      "question": "מה מיוחד בגודל המדרגות של בריכת השילוח?",
+      "options": [
+        "אינן סטנדרטיות — לא נוחות לישיבה וגם לא להליכה",
+        "הן זהב",
+        "הן עשויות עץ",
+        "הן רגילות לגמרי"
+      ],
+      "correct": 0,
+      "explanation": "המדרגות הלא־תקניות עוררו שאלה על ייעודן — אולי לקהל בטקס ניסוך המים.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-3-12",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דרך עולי הרגל",
+      "question": "מה מצאו בחפירות 2023–2024 לגבי תוואי הרחוב המדורג?",
+      "options": [
+        "הרחוב נפרד מתעלת הניקוז ועלה באלכסון לשערי הר הבית",
+        "הרחוב הסתיים בבריכה",
+        "הרחוב היה ביזנטי כולו",
+        "לא היה רחוב"
+      ],
+      "correct": 0,
+      "explanation": "התעלה המשיכה בתחתית הגיא, והרחוב עלה באלכסון לשלוחה הצפון־מערבית.",
+      "sourceUrl": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view",
+      "sourceDoc": "דרך עולי הרגל (סיכום)"
+    },
+    {
+      "id": "N12-3-13",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דרך עולי הרגל",
+      "question": "לפי משנה חגיגה, מי חייב בעלייה לרגל?",
+      "options": [
+        "כל אחד, פרט לקטן שאינו יכול לרכוב על כתפי אביו מהשילוח להר הבית",
+        "רק גברים מעל 20",
+        "רק כוהנים",
+        "רק תושבי ירושלים"
+      ],
+      "correct": 0,
+      "explanation": "כך הפכה העלייה לרגל לאירוע משפחתי — גם תינוק על כתפי אביו.",
+      "sourceUrl": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view",
+      "sourceDoc": "דרך עולי הרגל (סיכום)"
+    },
+    {
+      "id": "N12-3-14",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "דרך עולי הרגל",
+      "question": "מה מעידים הפירים מהתקופה המוסלמית הקדומה מעל תעלת הניקוז?",
+      "options": [
+        "שהתעלה המשיכה לשמש עד המאות ה-8–9",
+        "שנבנה שם מסגד",
+        "שהתעלה נחפרה מחדש בימינו",
+        "שהיא נסתמה בימי הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "התעלה פעלה מהמאה ה-1 לפנה\"ס ועד התקופה המוסלמית הקדומה.",
+      "sourceUrl": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view",
+      "sourceDoc": "דרך עולי הרגל (סיכום)"
+    },
+    {
+      "id": "N12-3-15",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "חניון גבעתי",
+      "question": "איזה ממצא מימי בית ראשון בחניון גבעתי נושא שם מקראי?",
+      "options": [
+        "בולת \"נתנמלך עבד המלך\"",
+        "כתובת השילוח",
+        "מצבת עוזיהו",
+        "כתובת תיאודוטוס"
+      ],
+      "correct": 0,
+      "explanation": "בולות עם שמות מהתנ\"ך, כמו נתנמלך עבד המלך, נמצאו בשכבת החורבן.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-3-16",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "חניון גבעתי",
+      "question": "במה תובל היין בקנקנים מימי בית ראשון בחניון גבעתי?",
+      "options": [
+        "וניל",
+        "קינמון",
+        "דבש",
+        "פלפל"
+      ],
+      "correct": 0,
+      "explanation": "נמצאו קנקני יין מתובל בווניל מתקופת בית ראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-3-17",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "חניון גבעתי",
+      "question": "איזה ממצא מהתקופה הרומית מעיד על הלגיון שחנה בירושלים?",
+      "options": [
+        "חותמות של הלגיון העשירי",
+        "שער טיטוס",
+        "פסל של אדריאנוס",
+        "כתובת של פילטוס"
+      ],
+      "correct": 0,
+      "explanation": "שרידי איליה קפיטולינה וחותמות הלגיון ה-10 נמצאו בחניון.",
+      "sourceUrl": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view",
+      "sourceDoc": "סיור 12 — הגבעה המזרחית"
+    },
+    {
+      "id": "N12-2-18",
+      "tourId": "12",
+      "level": 2,
+      "source": "tour12",
+      "stop": "דגם ירושלים",
+      "question": "מה פירוש השם \"טירופואון\" של הגיא שבין שתי הגבעות?",
+      "options": [
+        "גיא עושי הגבינה",
+        "גיא המלך",
+        "גיא ההריגה",
+        "גיא המים"
+      ],
+      "correct": 0,
+      "explanation": "הגיא שבין הגבעה המזרחית למערבית נקרא ביוונית טירופואון — עמק עושי הגבינה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view",
+      "sourceDoc": "סיור 12 — מוזיאון ישראל, הדגם והיכל הספר"
+    },
+    {
+      "id": "N12-3-18",
+      "tourId": "12",
+      "level": 3,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "איך שולבו העתיקות עם בניית הרובע היהודי מחדש?",
+      "options": [
+        "יציקת עמודים ותקרות בטון מעל האתרים ובנייה מעליהם",
+        "העתיקות כוסו בעפר",
+        "העתיקות הועברו למוזיאון",
+        "הבנייה בוטלה"
+      ],
+      "correct": 0,
+      "explanation": "נבנו עמודים ותקרות בטון מעל השרידים, וכך נוצר מוזיאון תת־קרקעי מתחת לבתים.",
+      "sourceUrl": "https://drive.google.com/file/d/1-bT6YwcMAYGTxjUz-LzQqCqn-l8xc2OO/view",
+      "sourceDoc": "הרובע ההרודיאני (סיכום)"
+    },
+    {
+      "id": "N13-1-01",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מי זיהה במאה ה-19 את בליטת האבנים בכותל המערבי, שנקראה על שמו?",
+      "options": [
+        "אדוארד רובינזון",
+        "צ'ארלס וורן",
+        "צ'ארלס וילסון",
+        "בנימין מזר"
+      ],
+      "correct": 0,
+      "explanation": "רובינזון, אבי הארכאולוגיה המקראית, זיהה את הקשת — ומכאן שמה.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-02",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה נמכר, לפי ההסבר, בחנויות שמתחת לקשת רובינזון?",
+      "options": [
+        "יונים לקורבן והחלפת מטבעות",
+        "נשק",
+        "תכשיטי זהב",
+        "ספרים"
+      ],
+      "correct": 0,
+      "explanation": "בחנויות לאורך הרחוב נמכרו יונים להקרבה והוחלפו מטבעות למחצית השקל.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-03",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "איזו כתובת נמצאה על אבן הפינה שנפלה בפינה הדרום־מערבית?",
+      "options": [
+        "\"לבית התקיעה להב[דיל]\"",
+        "\"שמע ישראל\"",
+        "\"כאן עמד המקדש\"",
+        "\"לאל עליון\""
+      ],
+      "correct": 0,
+      "explanation": "מהמקום הזה תקע הכוהן להכרזת כניסת השבת והחגים.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-04",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה רוחב מדרגות חולדה שבדרום הר הבית?",
+      "options": [
+        "כ-64 מטר",
+        "כ-6 מטר",
+        "כ-640 מטר",
+        "כ-16 מטר"
+      ],
+      "correct": 0,
+      "explanation": "המדרגות משתרעות על רוחב אדיר של כ-64 מ'.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-05",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה השאירו הרומאים ברחוב שלמרגלות קשת רובינזון?",
+      "options": [
+        "ערימת אבני ענק שהופלו מראש החומה",
+        "פסל של טיטוס",
+        "שער ניצחון",
+        "מקדש לצדק"
+      ],
+      "correct": 0,
+      "explanation": "אבני המפולת מחורבן 70 נותרו על הרחוב ההרודיאני.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-06",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מאיזה סוג אבן נחצבו אבני הכותל?",
+      "options": [
+        "גיר טורון קשה ואיכותי",
+        "בזלת",
+        "גרניט",
+        "כורכר"
+      ],
+      "correct": 0,
+      "explanation": "האבנים נחצבו מגיר קשה מתקופת הטורון (\"ירושלים של טורון\").",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-07",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "על שם מי נקראת קשת וילסון?",
+      "options": [
+        "צ'ארלס וילסון, ממייסדי ה-PEF",
+        "הנשיא האמריקאי וילסון",
+        "קצין בריטי ב-1917",
+        "אדריכל הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "צ'ארלס וילסון זיהה את הקשת במאה ה-19, כשירד מתחת לבתי העיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-08",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "כמה שוקלת, לפי הערכה, האבן הגדולה במנהרות הכותל?",
+      "options": [
+        "כ-570 טון",
+        "כ-57 טון",
+        "כ-5 טון",
+        "כ-5,700 טון"
+      ],
+      "correct": 0,
+      "explanation": "האבן הגדולה (\"נדבך רבה\") באורך כ-14 מ' שוקלת כ-570 טון.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-09",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מדוע שער וורן הוא מקום תפילה חשוב?",
+      "options": [
+        "הוא הקרוב ביותר למקום המשוער של קודש הקודשים",
+        "שם נמצא ארון הברית",
+        "שם נקבר דוד",
+        "שם יש מעיין"
+      ],
+      "correct": 0,
+      "explanation": "המנהרה עוברת כאן מול המיקום המשוער של קודש הקודשים.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-10",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "לאיזה רחוב יוצאים בסוף מנהרות הכותל?",
+      "options": [
+        "ויה דולורוזה",
+        "רחוב יפו",
+        "רחוב הגיא",
+        "רחוב חב\"ד"
+      ],
+      "correct": 0,
+      "explanation": "היציאה הצפונית היא לוויה דולורוזה ברובע המוסלמי.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-11",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מה כיסה את חלקו הצפוני של הכותל המערבי והפך אותו לתת־קרקעי?",
+      "options": [
+        "בנייה ממלוכית על מערכת קשתות",
+        "רעידת אדמה",
+        "שיטפון",
+        "חומה עות'מאנית"
+      ],
+      "correct": 0,
+      "explanation": "במאות ה-13–15 נבנו בתים ומדרסות על קשתות בצמוד לכותל.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-1-12",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "לפי המסורת, על שם מי נקרא יד אבשלום?",
+      "options": [
+        "אבשלום בן דוד",
+        "אבשלום הכוהן",
+        "אבשלום החשמונאי",
+        "אבשלום מלך אדום"
+      ],
+      "correct": 0,
+      "explanation": "\"ויקרא לה יד אבשלום עד היום הזה\" (שמואל ב' י\"ח) — אך המבנה מימי בית שני.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-1-13",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "איזה מנהג עממי נהגו תושבי ירושלים ביד אבשלום?",
+      "options": [
+        "רגימת המצבה באבנים עם ילדים סוררים",
+        "הדלקת נרות",
+        "שתילת עצים",
+        "תלייה של פתקים"
+      ],
+      "correct": 0,
+      "explanation": "הביאו ילדים סוררים לרגום את המצבה — מוסר השכל על מרד אבשלום באביו.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-1-14",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "לאיזו משפחה שייך הקבר שעליו כתובת עברית מימי בית שני בנחל קדרון?",
+      "options": [
+        "בני חזיר — משפחת כהונה",
+        "בית דוד",
+        "החשמונאים",
+        "בני הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "\"זה הקבר והנפש של... כהנים מבני חזיר\".",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-1-15",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "איזה גג יש לקבר זכריה?",
+      "options": [
+        "פירמידה",
+        "כיפה",
+        "גג שטוח",
+        "חרוט"
+      ],
+      "correct": 0,
+      "explanation": "קבר זכריה הוא מונולית חצוב, עם כרכוב מצרי וגג פירמידה.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-1-16",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "חניון גבעתי",
+      "question": "כמה תקופות ארכאולוגיות התגלו בחפירות חניון גבעתי?",
+      "options": [
+        "כ-10",
+        "2",
+        "50",
+        "1"
+      ],
+      "correct": 0,
+      "explanation": "בחפירות התגלו שרידים מכ-10 תקופות שונות.",
+      "sourceUrl": "https://drive.google.com/file/d/1l-xNOOULFOEPTDkzZd9ubmR9B17E7QBL/view",
+      "sourceDoc": "סיור 13 — שטח גבעתי"
+    },
+    {
+      "id": "N13-1-17",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "חניון גבעתי",
+      "question": "מה התגלה בבורות האשפה העבאסיים בחניון גבעתי?",
+      "options": [
+        "שרידי דגים, ביצים וזרעי חציל, דלעת וענבים",
+        "מגילות",
+        "חרבות",
+        "מטבעות זהב בלבד"
+      ],
+      "correct": 0,
+      "explanation": "בורות האשפה שמרו שרידי מזון רבים מהתקופה העבאסית.",
+      "sourceUrl": "https://drive.google.com/file/d/1l-xNOOULFOEPTDkzZd9ubmR9B17E7QBL/view",
+      "sourceDoc": "סיור 13 — שטח גבעתי"
+    },
+    {
+      "id": "N13-1-18",
+      "tourId": "13",
+      "level": 1,
+      "source": "tour13",
+      "stop": "חניון גבעתי",
+      "question": "מדוע נחצב מעקף לתעלת הניקוז ההרודיאנית בצמוד להר הבית?",
+      "options": [
+        "התוואי הטבעי שלה עבר מתחת ליסודות רחבת הר הבית",
+        "בגלל מעיין",
+        "בגלל קבר",
+        "בגלל מבצר"
+      ],
+      "correct": 0,
+      "explanation": "המעקף בסלע חשף אף בור מים מימי בית ראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/1l-xNOOULFOEPTDkzZd9ubmR9B17E7QBL/view",
+      "sourceDoc": "סיור 13 — שטח גבעתי"
+    },
+    {
+      "id": "N13-2-01",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה הבינו בחפירות בנימין מזר לגבי קשת רובינזון?",
+      "options": [
+        "זה היה מחלף מדורג שירד דרומה לרחוב, לא גשר",
+        "זה היה גשר ישר לעיר העליונה",
+        "זו הייתה קשת ניצחון",
+        "זה היה שער"
+      ],
+      "correct": 0,
+      "explanation": "רובינזון חשב שזה גשר; מזר גילה מדרגות שירדו מהקשת אל מפלס הרחוב.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-02",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה מראים המטבעות שנמצאו במקוואות שמתחת לכותל?",
+      "options": [
+        "שבניית הכותל נמשכה אחרי מות הורדוס",
+        "שהכותל מימי שלמה",
+        "שהכותל נבנה בתקופה הביזנטית",
+        "שאין קשר לתיארוך"
+      ],
+      "correct": 0,
+      "explanation": "מטבעות מהשנים 15–17 לספירה — אחרי מות הורדוס ב-4 לפנה\"ס.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-03",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מדוע האבנים התחתונות של הכותל אינן מסותתות יפה?",
+      "options": [
+        "הן נועדו להיות מתחת למפלס הרחוב",
+        "נגמר התקציב",
+        "הן מתקופה אחרת",
+        "הן נפגעו באש"
+      ],
+      "correct": 0,
+      "explanation": "הנדבכים התת־קרקעיים לא נועדו להיראות, ולכן נותרו גסים.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-04",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה התפקיד ההנדסי של \"כיפים על גבי כיפים\" מתחת להר הבית?",
+      "options": [
+        "להפחית את הלחץ על הכתלים במקום מילוי עפר",
+        "לאגור מים",
+        "לקבור מתים",
+        "להסתיר אוצרות"
+      ],
+      "correct": 0,
+      "explanation": "מילוי אדמה רגיל היה דוחף את הכתלים; קשתות תת־קרקעיות מפחיתות את העומס.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-05",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "איזו כתובת מישעיהו נחקקה בכותל, ולאיזו תקופה מייחסים אותה?",
+      "options": [
+        "\"וראיתם ושש לבכם\" — ימי יוליאנוס",
+        "\"נחמו נחמו\" — ימי בר כוכבא",
+        "\"קומי אורי\" — ימי הצלבנים",
+        "\"ציון במשפט תפדה\" — ימי הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "יוליאנוס (361–363) התיר ליהודים לנסות לבנות את המקדש מחדש.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-06",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה תפקיד המקצב המשתנה (רחבה־צרה) של מדרגות חולדה?",
+      "options": [
+        "לכפות הליכה איטית ומכובדת אל הקודש",
+        "לחסוך באבן",
+        "לנקז מים",
+        "לצורך הגנה"
+      ],
+      "correct": 0,
+      "explanation": "המקצב מאט את ההליכה ומונע ריצה בדרך אל המקדש.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-07",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "באיזה כיוון נכנס אבל להר הבית, לפי מסכת מידות?",
+      "options": [
+        "נגד כיוון התנועה — כדי שינחמוהו",
+        "יחד עם כולם",
+        "דרך שער מיוחד",
+        "הוא לא נכנס"
+      ],
+      "correct": 0,
+      "explanation": "כולם נכנסו בשער אחד ויצאו בשני; האבל הלך נגדם וזכה לברכת \"המקום ינחמך\".",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-08",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה נבנה מדרום ומערב להר הבית במאות ה-7–8?",
+      "options": [
+        "ארמונות בית אומיה",
+        "כנסיות ביזנטיות",
+        "מצודה צלבנית",
+        "בית קברות עות'מאני"
+      ],
+      "correct": 0,
+      "explanation": "ארמונות אומאיים נבנו גם באבני ענק הרודיאניות שנלקחו מהמפולת.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-09",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מה הם השקעים המרובעים שבאבן הגדולה?",
+      "options": [
+        "חורים מימי הביניים לקורות עץ של מבנים שנשענו על הכותל",
+        "סימני חציבה הרודיאניים",
+        "סימני פגיעת אבני קלע",
+        "גומחות לנרות"
+      ],
+      "correct": 0,
+      "explanation": "השקעים אינם מבית שני — הם נוספו מאוחר לתמיכת תקרות.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-10",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "איזה מבנה רומי נחשף מתחת לקשת וילסון?",
+      "options": [
+        "אודיאון — תאטרון קטן שבנייתו לא הושלמה",
+        "מרחץ",
+        "מקדש ליופיטר",
+        "שער"
+      ],
+      "correct": 0,
+      "explanation": "המבנה מתקופת איליה קפיטולינה נבנה כ-5 מ' מהכותל ולא הושלם.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-11",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מה מוכיחה העובדה שהכותל ההרודיאני חוסם את התעלה החשמונאית?",
+      "options": [
+        "שהתעלה קדומה לבניית הכותל",
+        "שהתעלה רומית",
+        "שהתעלה נבנתה בימינו",
+        "שהכותל עתיק מהתעלה"
+      ],
+      "correct": 0,
+      "explanation": "הורדוס הרחיב את ההר צפונה, והכותל קטע את התעלה הקדומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-12",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "לאיזו בריכה מובילה התעלה החשמונאית?",
+      "options": [
+        "בריכת הסטרותיון",
+        "בריכת השילוח",
+        "בריכת הסולטן",
+        "בריכת ממילא"
+      ],
+      "correct": 0,
+      "explanation": "בריכת הסטרותיון (העפרוני), מקורה בקמרונות, חצויה היום בקיר בטון.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-13",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מה מאפיין את סיתות השוליים ההרודיאני?",
+      "options": [
+        "מסגרת שקועה ומדויקת סביב בוס מרכזי",
+        "פני אבן חלקים לגמרי",
+        "ציורים חקוקים",
+        "חורים קטנים"
+      ],
+      "correct": 0,
+      "explanation": "הסיתות יוצר משחק אור־צל ומראה מאוזן ומרשים.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-2-14",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "מה מראה השילוב של סגנונות ביד אבשלום?",
+      "options": [
+        "סגנון אקלקטי — יווני, רומי ומצרי",
+        "סגנון מוסלמי",
+        "סגנון גותי",
+        "סגנון בבלי"
+      ],
+      "correct": 0,
+      "explanation": "עמודים יוניים, אפריז דורי, כרכוב מצרי ופרח לוטוס בראש.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-2-15",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "מה הקשר בין מערת יהושפט ליד אבשלום?",
+      "options": [
+        "המערה היא ה\"גוף\" והמצבה היא ה\"נפש\"",
+        "הן מתקופות שונות לגמרי",
+        "המערה היא בית כנסת",
+        "אין קשר"
+      ],
+      "correct": 0,
+      "explanation": "ברוח האדריכלות ההלניסטית: המערה לקבורה, והמצבה לזיכרון.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-2-16",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "מה התגלה בין קבר זכריה לבין מערת בני חזיר?",
+      "options": [
+        "מעבר תת־קרקעי חצוב",
+        "קיר בטון",
+        "מעיין",
+        "תעלת ביוב"
+      ],
+      "correct": 0,
+      "explanation": "המעבר מעלה הצעה שקבר זכריה שימש \"נפש\" למערת בני חזיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-2-17",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "חניון גבעתי",
+      "question": "מה התגלה בשטח 10 מעל מבנה בית ראשון בחניון גבעתי?",
+      "options": [
+        "בית מידות הלניסטי עם בולות ותכשיטי זהב",
+        "בית כנסת",
+        "קבר מלכים",
+        "מקדש"
+      ],
+      "correct": 0,
+      "explanation": "הבית ההלניסטי השתמש במתאר המבנה הקדום כיסוד; נמצאו כ-20 בולות ותכשיטים.",
+      "sourceUrl": "https://drive.google.com/file/d/1l-xNOOULFOEPTDkzZd9ubmR9B17E7QBL/view",
+      "sourceDoc": "סיור 13 — שטח גבעתי"
+    },
+    {
+      "id": "N13-3-01",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "כמה פועלים שוחררו, לפי יוסף בן מתתיהו, בסיום הבנייה בהר הבית ב-66 לספירה?",
+      "options": [
+        "כ-18,000",
+        "כ-1,800",
+        "כ-180,000",
+        "כ-180"
+      ],
+      "correct": 0,
+      "explanation": "רק ערב המרד הגדול הסתיים פרויקט הבנייה, ו-18,000 פועלים שוחררו.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-02",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "איך כיוונו ופילסו את אבני הענק בכותל?",
+      "options": [
+        "בעזרת גלילי עופרת רכים בין הנדבכים",
+        "בעזרת מלט",
+        "בעזרת חול רטוב",
+        "בעזרת חבלי פשתן"
+      ],
+      "correct": 0,
+      "explanation": "העופרת אפשרה להחליק ולכוון את האבן לפני שנמעכה תחת המשקל.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-03",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "כיצד ניתקו את סלע המחצבה בחציבת אבני הכותל?",
+      "options": [
+        "החדרת בולי עץ יבשים לשקעים והרטבתם עד שהעץ התנפח",
+        "פיצוץ",
+        "חום ואש",
+        "מסור מתכת ענק"
+      ],
+      "correct": 0,
+      "explanation": "התנפחות העץ סדקה את הסלע והפרידה את האבן.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-04",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה התפקיד ההלכתי של הקשתות התת־קרקעיות בהר הבית?",
+      "options": [
+        "ניתוק טומאה של \"קבר תהום\" אפשרי",
+        "קבורת כוהנים",
+        "אגירת שמן",
+        "הסתרת כלי המקדש"
+      ],
+      "correct": 0,
+      "explanation": "החלל האווירי שבין הקשתות מנתק טומאה ושומר על טהרת העזרות.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-05",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה תפקיד \"מחלקי המשקל\" מעל חללי החנויות בקשת רובינזון?",
+      "options": [
+        "למנוע קריסה של הקשת על תקרת החנויות",
+        "לקישוט",
+        "לניקוז",
+        "לאוורור"
+      ],
+      "correct": 0,
+      "explanation": "אבנים משולשות פיזרו את העומס מעל החנויות.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-06",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה התגלה בחפירות פלג־ברקת וליבנר באופל?",
+      "options": [
+        "מבנה מקוואות מפואר מהמאה ה-1 לשירות עולי הרגל",
+        "ארמון דוד",
+        "בית קברות",
+        "בית הכנסת של תיאודוטוס"
+      ],
+      "correct": 0,
+      "explanation": "מבנה גזית עם שלושה מקוואות, אולי מתחם הכנה וטהרה לעולי הרגל.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-07",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מה המבנה הביזנטי באופל, לפי זיהוי מזר?",
+      "options": [
+        "מנזר הבתולות",
+        "בית החולים של ההוספיטלרים",
+        "כנסיית הקבר",
+        "בית מרחץ"
+      ],
+      "correct": 0,
+      "explanation": "בנימין מזר זיהה את המבנה כמנזר הבתולות.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-08",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מדוע ההצעה לזהות את החקרא בחניון גבעתי איבדה מכוחה?",
+      "options": [
+        "המקום נמוך מדי, והמקורות מתארים מבצר השולט על הר הבית",
+        "לא נמצאו בה חצים",
+        "היא רומית",
+        "היא קבר"
+      ],
+      "correct": 0,
+      "explanation": "חיצים סלווקיים הובילו להצעה, אך האתר נמוך יחסית — והתלהבות החוקרים פחתה.",
+      "sourceUrl": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view",
+      "sourceDoc": "דוידסון — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-09",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מה היו ממדי מתחם הר הבית ההרודיאני, לפי הסיכום?",
+      "options": [
+        "טרפז: כ-485 מ' במערב, 280 בדרום, 460 במזרח, 315 בצפון",
+        "ריבוע של 100×100 מ'",
+        "עיגול בקוטר 300 מ'",
+        "מלבן 50×200 מ'"
+      ],
+      "correct": 0,
+      "explanation": "המתחם המורחב הוא טרפז ענק — מן הגדולים בעולם העתיק.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-10",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מה מתאר את התנהלות הביזנטים כלפי הר הבית?",
+      "options": [
+        "השאירו אותו חרב במכוון, כהוכחה לנבואת החורבן",
+        "בנו עליו כנסייה ענקית",
+        "הפכו אותו לשוק",
+        "בנו עליו מקדש לזאוס"
+      ],
+      "correct": 0,
+      "explanation": "\"לא תישאר אבן על אבן\" — ההר נותר גל חורבות במכוון.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-11",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מה שמו הצלבני של מתחם הר הבית?",
+      "options": [
+        "מקדש שלמה (Templum Salomonis)",
+        "כנסיית הקבר",
+        "מגדל דוד",
+        "שער הרחמים"
+      ],
+      "correct": 0,
+      "explanation": "הצלבנים כינו את המתחם \"מקדש שלמה\", ושם קם מסדר הטמפלרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-12",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "מהיכן אספה התעלה החשמונאית את מימיה?",
+      "options": [
+        "מאזור הטירופואון הצפוני, סמוך לשער שכם",
+        "מהגיחון",
+        "מבריכות שלמה",
+        "מעין כרם"
+      ],
+      "correct": 0,
+      "explanation": "התעלה הזרימה מים מצפון דרומה, לכיוון הר הבית והבירה החשמונאית.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-13",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "לפי המסורת היהודית, של איזה זכריה הוא קבר זכריה?",
+      "options": [
+        "זכריה בן יהוידע הכוהן, שנרגם בחצר בית ה'",
+        "זכריה הנביא מתרי עשר",
+        "אבי יוחנן המטביל",
+        "פטריארך ירושלים"
+      ],
+      "correct": 0,
+      "explanation": "המסורות הנוצריות מייחסות אותו לזכריה אחר — אבי יוחנן או פטריארך.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-3-14",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "מה תיאור העיטור בגמלון מעל מערת יהושפט?",
+      "options": [
+        "פרחים, אשכולות ענבים ופירות",
+        "דמויות אדם",
+        "אריות",
+        "כתובת יוונית"
+      ],
+      "correct": 0,
+      "explanation": "הגמלון המשולש מעוטר בדגמי צמחים; במערה 8 כוכי קבורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-3-15",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "באיזה ספר מקראי מוזכרת משפחת הכוהנים בני חזיר?",
+      "options": [
+        "דברי הימים א' כ\"ד",
+        "ספר שמות",
+        "ספר יחזקאל",
+        "ספר רות"
+      ],
+      "correct": 0,
+      "explanation": "בני חזיר הם אחת ממשמרות הכהונה; הכתובת מעידה על מעמדם בשלהי בית שני.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N13-3-16",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "חניון גבעתי",
+      "question": "מה הייתה, לפי הסיכום, מטרת חפירות ההצלה שהתחילו בחניון גבעתי ב-2006?",
+      "options": [
+        "הקמת מוזיאון עיר דוד",
+        "הרחבת חניון",
+        "סלילת כביש",
+        "בניית בית ספר"
+      ],
+      "correct": 0,
+      "explanation": "חפירות ההצלה נועדו לפנות מקום למוזיאון — והן נמשכות עד היום.",
+      "sourceUrl": "https://drive.google.com/file/d/1l-xNOOULFOEPTDkzZd9ubmR9B17E7QBL/view",
+      "sourceDoc": "סיור 13 — שטח גבעתי"
+    },
+    {
+      "id": "N13-3-17",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "חניון גבעתי",
+      "question": "מה מסמן הסלע החצוב והחומה בשטח 70 בחניון גבעתי?",
+      "options": [
+        "את הגבול המערבי של עיר דוד",
+        "את גבול הר הבית",
+        "את מקום המקדש",
+        "את קבר דוד"
+      ],
+      "correct": 0,
+      "explanation": "הסלע עוצב כחומה כבר בברונזה הקדומה, ולצדו חומה הלניסטית מאוחרת.",
+      "sourceUrl": "https://drive.google.com/file/d/1l-xNOOULFOEPTDkzZd9ubmR9B17E7QBL/view",
+      "sourceDoc": "סיור 13 — שטח גבעתי"
+    },
+    {
+      "id": "N13-2-18",
+      "tourId": "13",
+      "level": 2,
+      "source": "tour13",
+      "stop": "מנהרות הכותל",
+      "question": "על שם מי נקרא שער וורן?",
+      "options": [
+        "צ'ארלס וורן, חוקר ה-PEF במאה ה-19",
+        "מלך ירושלים הצלבני",
+        "מושל בריטי",
+        "אדריכל הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "וורן חקר את סביבת הר הבית בשנות ה-60 של המאה ה-19 וזיהה את השער.",
+      "sourceUrl": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view",
+      "sourceDoc": "מנהרות הכותל — תמליל ערוך"
+    },
+    {
+      "id": "N13-3-18",
+      "tourId": "13",
+      "level": 3,
+      "source": "tour13",
+      "stop": "קברי נחל קדרון",
+      "question": "כמה כוכי קבורה יש במערת יהושפט?",
+      "options": [
+        "8",
+        "2",
+        "20",
+        "40"
+      ],
+      "correct": 0,
+      "explanation": "מאחורי הגמלון המעוטר נחצבו 8 כוכים.",
+      "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
+      "sourceDoc": "קברי נחל קדרון (סיכום)"
     }
   ]
 }
