@@ -1,8 +1,8 @@
 {
-  "version": "2026-10-22",
+  "version": "2026-10-22-22-tours",
   "language": "he",
   "kind": "סיור מודרך — בנק תרגול ממסמכי Drive",
-  "note": "גליל עליון: מקור חוברת הכנה בלבד, אין אישור ליום הסיור. המקורות הם סיכומים ולא תחליף לבדיקה חיצונית.",
+  "note": "22 סיורים: בכל מסלול שאלה אחת לכל רמה לפחות; הסיורים 02,03,22 מבוססים על ספריית השאלות הקודמת. שאר השאלות מבוססות על מסמך בודד מכל תיק. סיור 22 הוא חומר הכנה ולא אישור לקיום ביקור. כל שאלה מקושרת למסמך מקור.",
   "sources": {
     "arad": {
       "label": "תל ערד ובאר שבע",
@@ -23,6 +23,101 @@
       "label": "גליל עליון",
       "url": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
       "kind": "חוברת הכנה; אינה הוכחה להשתתפות בסיור"
+    },
+    "tour01": {
+      "label": "צפון מדבר יהודה — קומראן",
+      "url": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour04": {
+      "label": "תל מגידו",
+      "url": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour05": {
+      "label": "השפלה — תל לכיש",
+      "url": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour06": {
+      "label": "סוסיא-חברון-הרודיון — הרודיון",
+      "url": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour07": {
+      "label": "חיפה — סטלה מאריס",
+      "url": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour08": {
+      "label": "סיור גיאולוגיה בכרמל",
+      "url": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour09": {
+      "label": "שומרון — שילה הקדומה",
+      "url": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour10": {
+      "label": "הרי ירושלים — סטף",
+      "url": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour11": {
+      "label": "ירושלים בית ראשון — עיר דוד",
+      "url": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour12": {
+      "label": "ירושלים בית שני — הרובע ההרודיאני",
+      "url": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour13": {
+      "label": "ירושלים בית שני — גן דוידסון",
+      "url": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour14": {
+      "label": "תצפיות ירושלים — רמת רחל",
+      "url": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour15": {
+      "label": "קיסריה",
+      "url": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour16": {
+      "label": "בית שערים וציפורי — ציפורי",
+      "url": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour17": {
+      "label": "קמפוס גולן — בניאס",
+      "url": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour18": {
+      "label": "ירושלים הרומית והביזנטית — קארדו",
+      "url": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour19": {
+      "label": "בית שאן וכוכב הירדן — כוכב הירדן",
+      "url": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour20": {
+      "label": "ראש פינה, תל חי ועמק החולה — תל חי",
+      "url": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
+    },
+    "tour21": {
+      "label": "עין גדי והר סדום — בית הכנסת העתיק בעין גדי",
+      "url": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit",
+      "kind": "סיכום מהסיור — קובץ בודד מתוך תיק הסיור"
     }
   },
   "questions": [
@@ -347,6 +442,310 @@
       "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit"
     },
     {
+      "id": "TOUR-01-1",
+      "level": 1,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "איזה ממצא מפורסם התגלה במערות קומראן?",
+      "options": [
+        "המגילות הגנוזות",
+        "כתבי הפירמידות",
+        "מגילת הנחושת של תמנע",
+        "כתבי רוזטה"
+      ],
+      "correct": 0,
+      "explanation": "ליד קומראן נמצאו מגילות ובהן כתבי מקרא, חיבורים חיצוניים ופרשנויות.",
+      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit"
+    },
+    {
+      "id": "TOUR-04-1",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "למה נודעה מגידו בעת העתיקה?",
+      "options": [
+        "מיקומה בצומת דרכים חשוב",
+        "שדה תעופה בינלאומי",
+        "נמל ימי טבעי",
+        "מכרה יהלומים"
+      ],
+      "correct": 0,
+      "explanation": "מגידו שלטה על מעבר בין נתיבים המובילים לחוף, לסוריה ולעמק הירדן.",
+      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit"
+    },
+    {
+      "id": "TOUR-05-1",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "איזו אימפריה כבשה את לכיש במסע סנחריב?",
+      "options": [
+        "אשור",
+        "פרס",
+        "יוון",
+        "ביזנטיון"
+      ],
+      "correct": 0,
+      "explanation": "צבא סנחריב מלך אשור כבש את לכיש בסוף המאה ה-8 לפנה\"ס.",
+      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit"
+    },
+    {
+      "id": "TOUR-06-1",
+      "level": 1,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מי יזם את הקמת ארמון ומבצר הרודיון?",
+      "options": [
+        "הורדוס",
+        "שלמה המלך",
+        "ריצ'רד לב הארי",
+        "הסולטן סולימאן"
+      ],
+      "correct": 0,
+      "explanation": "הרודיון נקרא על שם הורדוס, שבנה במקום מכלול ארמון ומבצר.",
+      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit"
+    },
+    {
+      "id": "TOUR-07-1",
+      "level": 1,
+      "source": "tour07",
+      "stop": "חיפה — סטלה מאריס",
+      "question": "לאיזה מסדר נוצרי משתייך מנזר סטלה מאריס?",
+      "options": [
+        "הכרמליתים",
+        "הבנדיקטינים בלבד",
+        "הפרנציסקנים בלבד",
+        "הטמפלרים הגרמנים"
+      ],
+      "correct": 0,
+      "explanation": "סטלה מאריס הוא מנזר של המסדר הכרמליתי המזוהה עם אליהו הנביא והר הכרמל.",
+      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit"
+    },
+    {
+      "id": "TOUR-08-1",
+      "level": 1,
+      "source": "tour08",
+      "stop": "גיאולוגיה בכרמל",
+      "question": "איזה סוג סלע נפוץ בכרמל לפי דפי הסיור?",
+      "options": [
+        "סלעי משקע ימיים",
+        "לבה געשית בלבד",
+        "קרח קבוע",
+        "גרניט מעמקים בלבד"
+      ],
+      "correct": 0,
+      "explanation": "הסיור מתמקד בסלעי משקע כגון גיר, דולומיט וקירטון.",
+      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit"
+    },
+    {
+      "id": "TOUR-09-1",
+      "level": 1,
+      "source": "tour09",
+      "stop": "שילה הקדומה",
+      "question": "לפי ספר יהושע, איזה מוסד פולחני הוקם בשילה?",
+      "options": [
+        "המשכן",
+        "בית המקדש השני",
+        "כיפת הסלע",
+        "הפנתאון הרומי"
+      ],
+      "correct": 0,
+      "explanation": "לפי המסורת המקראית אוהל מועד הוצב בשילה אחרי הכניסה לארץ.",
+      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit"
+    },
+    {
+      "id": "TOUR-10-1",
+      "level": 1,
+      "source": "tour10",
+      "stop": "הסטף",
+      "question": "איזה סוג חקלאות מסורתית מודגם בסטף?",
+      "options": [
+        "חקלאות מדרגות והשקיה ממעיינות",
+        "חקלאות הידרופונית בים",
+        "גידול אורז במים מלוחים",
+        "מטעים על שלג"
+      ],
+      "correct": 0,
+      "explanation": "בסטף שוחזרו טרסות, בריכות ותעלות להשקיית גידולים על מדרונות ההר.",
+      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit"
+    },
+    {
+      "id": "TOUR-11-1",
+      "level": 1,
+      "source": "tour11",
+      "stop": "ירושלים — עיר דוד",
+      "question": "איזה נחל עובר ליד עיר דוד במזרח?",
+      "options": [
+        "נחל קדרון",
+        "נחל לכיש",
+        "נחל הקישון",
+        "נחל אלכסנדר"
+      ],
+      "correct": 0,
+      "explanation": "נחל קדרון עובר לצד המזרחי של ירושלים הקדומה ויוצר גבול טופוגרפי.",
+      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit"
+    },
+    {
+      "id": "TOUR-12-1",
+      "level": 1,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "איזו אוכלוסייה התגוררה באזור העיר העליונה בירושלים של ימי בית שני?",
+      "options": [
+        "משפחות עשירות וכוהנים",
+        "מלחים צלבנים בלבד",
+        "איכרים מן הגולן בלבד",
+        "חיילים בריטים"
+      ],
+      "correct": 0,
+      "explanation": "הרובע ההרודיאני מציג בתי מידות של האליטה הירושלמית.",
+      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit"
+    },
+    {
+      "id": "TOUR-13-1",
+      "level": 1,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "איזה מלך הרחיב משמעותית את רחבת הר הבית בימי בית שני?",
+      "options": [
+        "הורדוס",
+        "חזקיהו",
+        "שאול",
+        "דוד"
+      ],
+      "correct": 0,
+      "explanation": "הורדוס הרחיב את הרחבה בעזרת חומות תמך ומערכות בנייה מרשימות.",
+      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit"
+    },
+    {
+      "id": "TOUR-14-1",
+      "level": 1,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "באיזו שנה הוקם קיבוץ רמת רחל?",
+      "options": [
+        "1926",
+        "1882",
+        "1948",
+        "1967"
+      ],
+      "correct": 0,
+      "explanation": "לפי דף הסיור קיבוץ רמת רחל הוקם בשנת 1926 בידי גדוד העבודה.",
+      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit"
+    },
+    {
+      "id": "TOUR-15-1",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מי יזם את בניית עיר הנמל המפוארת קיסריה?",
+      "options": [
+        "הורדוס",
+        "אוגוסטינוס",
+        "סולימאן המפואר",
+        "אלכסנדר ינאי"
+      ],
+      "correct": 0,
+      "explanation": "הורדוס פיתח במקום עיר רומית גדולה ונמל מלאכותי.",
+      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit"
+    },
+    {
+      "id": "TOUR-16-1",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "איזה סוג יצירות אמנות מפורסם ניתן לראות בציפורי העתיקה?",
+      "options": [
+        "רצפות פסיפס",
+        "פסלי קרח",
+        "כתובות על רכבות",
+        "חלונות זכוכית של גורדי שחקים"
+      ],
+      "correct": 0,
+      "explanation": "בציפורי נתגלו פסיפסים רבים, בין היתר בבית הכנסת ובבתי מידות.",
+      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit"
+    },
+    {
+      "id": "TOUR-17-1",
+      "level": 1,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "לאיזה אל יווני קדום קשור השם פניאס או בניאס?",
+      "options": [
+        "פאן",
+        "זאוס בלבד",
+        "פוסידון בלבד",
+        "אפולו בלבד"
+      ],
+      "correct": 0,
+      "explanation": "מקדש לאל פאן פעל באזור מערת המעיין; ממנו התפתח השם פניאס ובהמשך בניאס.",
+      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit"
+    },
+    {
+      "id": "TOUR-18-1",
+      "level": 1,
+      "source": "tour18",
+      "stop": "הקארדו בירושלים",
+      "question": "מה היה הקארדו בעיר הרומית-ביזנטית?",
+      "options": [
+        "רחוב עירוני מרכזי עם מסחר",
+        "מקדש זורואסטרי",
+        "רציף תעופה",
+        "מגדלור נמל"
+      ],
+      "correct": 0,
+      "explanation": "הקארדו כלל חנויות, מדרכות, עמודים ורצועת תנועה.",
+      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit"
+    },
+    {
+      "id": "TOUR-19-1",
+      "level": 1,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "איזה מסדר צלבני הקים את מבצר כוכב הירדן?",
+      "options": [
+        "ההוספיטלרים",
+        "הטמפלרים הגרמנים בחיפה",
+        "הכרמליתים",
+        "הבנדיקטינים"
+      ],
+      "correct": 0,
+      "explanation": "המסדר ההוספיטלרי פיתח את המבצר לאחר שקנה את האחוזה במאה ה-12.",
+      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit"
+    },
+    {
+      "id": "TOUR-20-1",
+      "level": 1,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "באיזו שנה אירע הקרב המפורסם על תל חי?",
+      "options": [
+        "1920",
+        "1882",
+        "1948",
+        "1967"
+      ],
+      "correct": 0,
+      "explanation": "קרב תל חי אירע בשנת 1920 ונחקק בזיכרון הלאומי.",
+      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit"
+    },
+    {
+      "id": "TOUR-21-1",
+      "level": 1,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "באיזה ספר מקרא מופיע הביטוי 'כרמי עין גדי'?",
+      "options": [
+        "שיר השירים",
+        "מגילת אסתר",
+        "ספר יונה",
+        "רות בלבד"
+      ],
+      "correct": 0,
+      "explanation": "שיר השירים מזכיר את כרמי עין גדי בפסוק 'אשכול הכופר דודי לי'.",
+      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit"
+    },
+    {
       "id": "S021",
       "level": 2,
       "source": "arad",
@@ -667,6 +1066,310 @@
       "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit"
     },
     {
+      "id": "TOUR-01-2",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "למה שימש אגן השיקוע במערכת המים בקומראן?",
+      "options": [
+        "לשקיעת סחף לפני כניסת המים לבורות",
+        "לייבוש מגילות בתנור",
+        "לשחיטת קורבנות",
+        "לזיקוק מלח ים"
+      ],
+      "correct": 0,
+      "explanation": "אגן השיקוע הפחית את כמות המשקעים שהיו עלולים לסתום את בורות האגירה.",
+      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit"
+    },
+    {
+      "id": "TOUR-04-2",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה פרעה מצרי התמודד עם מגידו במאה ה-15 לפנה\"ס?",
+      "options": [
+        "תחותמס השלישי",
+        "רעמסס השני",
+        "תות ענח' אמון",
+        "נכו השני"
+      ],
+      "correct": 0,
+      "explanation": "מסע תחותמס השלישי למגידו מתועד בכתובות מצריות.",
+      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit"
+    },
+    {
+      "id": "TOUR-05-2",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "באיזו שנה בקירוב התרחש מסע סנחריב נגד יהודה?",
+      "options": [
+        "701 לפנה\"ס",
+        "586 לפנה\"ס",
+        "332 לפנה\"ס",
+        "70 לספירה"
+      ],
+      "correct": 0,
+      "explanation": "מסע סנחריב בשנת 701 לפנה\"ס נחשב אירוע מפתח בהיסטוריה של יהודה.",
+      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit"
+    },
+    {
+      "id": "TOUR-06-2",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "אילו שני חלקים עיקריים מרכיבים את מכלול הרודיון?",
+      "options": [
+        "הרודיון עילית והרודיון תחתית",
+        "נמל ומספנה",
+        "שני רכסי חרמון",
+        "שני איים בים המלח"
+      ],
+      "correct": 0,
+      "explanation": "הרודיון עילית כוללת את מבצר הארמון; בתחתית הוקם מכלול מנהלי ובריכה גדולה.",
+      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit"
+    },
+    {
+      "id": "TOUR-07-2",
+      "level": 2,
+      "source": "tour07",
+      "stop": "חיפה — סטלה מאריס",
+      "question": "איזו דמות מקראית מזוהה במיוחד עם המסדר הכרמליתי?",
+      "options": [
+        "אליהו הנביא",
+        "יונה הנביא",
+        "עזרא הסופר",
+        "גדעון השופט"
+      ],
+      "correct": 0,
+      "explanation": "הכרמליתים רואים באליהו הנביא דמות מופת בשל מסורות הקשורות בכרמל.",
+      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit"
+    },
+    {
+      "id": "TOUR-08-2",
+      "level": 2,
+      "source": "tour08",
+      "stop": "גיאולוגיה בכרמל",
+      "question": "מהו קירטון?",
+      "options": [
+        "סלע משקע רך יחסית",
+        "ברזל טהור",
+        "סוג של בזלת שחורה",
+        "סלע מגמטי עמוק"
+      ],
+      "correct": 0,
+      "explanation": "הקירטון נוצר בעיקר משקיעת שרידים של יצורים ימיים זעירים.",
+      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit"
+    },
+    {
+      "id": "TOUR-09-2",
+      "level": 2,
+      "source": "tour09",
+      "stop": "שילה הקדומה",
+      "question": "איזה סוג ממצא תומך בזיהוי שילה כיישוב מתקופת השופטים?",
+      "options": [
+        "שרידים מתקופת הברזל הראשונה",
+        "טילים מימי מלחמת העולם השנייה",
+        "כתובות לטיניות עות'מאניות",
+        "שערים מברזל מודרני"
+      ],
+      "correct": 0,
+      "explanation": "באתר נמצאו שכבות מתקופת הברזל הראשונה, המתאימה בקירוב לימי ההתנחלות.",
+      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit"
+    },
+    {
+      "id": "TOUR-10-2",
+      "level": 2,
+      "source": "tour10",
+      "stop": "הסטף",
+      "question": "איזה נחל נראה מן התצפית בסטף לפי הסיכום?",
+      "options": [
+        "נחל שורק",
+        "נחל הירקון",
+        "נחל הבניאס",
+        "נחל הבשור"
+      ],
+      "correct": 0,
+      "explanation": "בתצפית מהסטף מתואר נחל שורק המתפתל בין הרי ירושלים.",
+      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit"
+    },
+    {
+      "id": "TOUR-11-2",
+      "level": 2,
+      "source": "tour11",
+      "stop": "ירושלים — עיר דוד",
+      "question": "מהו אחד הנושאים המרכזיים בסיור עיר דוד?",
+      "options": [
+        "מערכות אספקת המים הקדומות",
+        "מסילת רכבת לחיפה",
+        "נמל עמוק בים התיכון",
+        "מכרה נחושת ענק"
+      ],
+      "correct": 0,
+      "explanation": "הדרכה בעיר דוד כוללת מפעלי מים, המעיין המבוצר ופיר וורן.",
+      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit"
+    },
+    {
+      "id": "TOUR-12-2",
+      "level": 2,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "איזה סוג מתקן חוזר ונמצא בבתי הרובע ההרודיאני?",
+      "options": [
+        "מקוואות טהרה",
+        "כבשנים להפקת ברזל",
+        "טחנות רוח",
+        "דוכני מסחר ימי"
+      ],
+      "correct": 0,
+      "explanation": "המקוואות הרבים מעידים על חשיבות מנהגי טהרה לתושבי בתי המידות.",
+      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit"
+    },
+    {
+      "id": "TOUR-13-2",
+      "level": 2,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "באיזה צד של הר הבית נמצאים שערי חולדה?",
+      "options": [
+        "בכותל הדרומי",
+        "בכותל הצפוני",
+        "בלב ים המלח",
+        "בחומה החיצונית של צפת"
+      ],
+      "correct": 0,
+      "explanation": "שערי חולדה שימשו אחד מנתיבי הכניסה והיציאה למתחם הר הבית מדרום.",
+      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit"
+    },
+    {
+      "id": "TOUR-14-2",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה כולל פסלו של רן מורין בקיבוץ רמת רחל?",
+      "options": [
+        "שלושה עצי זית על גבי עמודים",
+        "שבעה אריות מאבן",
+        "מגדל רכבת בריטי",
+        "ספינת מפרש"
+      ],
+      "correct": 0,
+      "explanation": "הפסל משלב עצי זית חיים במבנה פיסולי גבוה והוא זכה לפרשנויות שונות.",
+      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit"
+    },
+    {
+      "id": "TOUR-15-2",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מהו יתרונו ההנדסי של הנמל ההרודיאני?",
+      "options": [
+        "יצירת נמל מוגן במקום חסר מעגן טבעי מתאים",
+        "יצירת מעגן בחרמון",
+        "הקמת עיר בלא קשר לים",
+        "ייבוש הכנרת"
+      ],
+      "correct": 0,
+      "explanation": "הנמל המלאכותי נשען על טכנולוגיות בנייה רומיות שאפשרו שוברי גלים.",
+      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit"
+    },
+    {
+      "id": "TOUR-16-2",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "לשם מה הוקמה מערכת אמות ומאגרים בציפורי?",
+      "options": [
+        "לספק ולאגור מים לעיר המתפתחת",
+        "להזרים לבה מן הר געש",
+        "לבנות נמל צבאי",
+        "לייבש את הים התיכון"
+      ],
+      "correct": 0,
+      "explanation": "אמות הביאו מים ממעיינות באזור רכס נצרת אל ציפורי ומאגריה.",
+      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit"
+    },
+    {
+      "id": "TOUR-17-2",
+      "level": 2,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "ליד איזה הר נובעים מעיינות הבניאס?",
+      "options": [
+        "הר החרמון",
+        "הר הכרמל",
+        "הר תבור",
+        "הר ציון"
+      ],
+      "correct": 0,
+      "explanation": "מעיינות הבניאס נובעים למרגלות החרמון ומזינים את נחל חרמון.",
+      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit"
+    },
+    {
+      "id": "TOUR-18-2",
+      "level": 2,
+      "source": "tour18",
+      "stop": "הקארדו בירושלים",
+      "question": "מה רוחב הקארדו באזור שנחפר בירושלים לפי דף הסיור?",
+      "options": [
+        "כ-20 מטר",
+        "כ-2 מטר",
+        "כ-200 מטר",
+        "כ-500 מטר"
+      ],
+      "correct": 0,
+      "explanation": "דף הסיור מתאר מרחב קארדו רחב הכולל מעבר עגלות ושדרות עמודים.",
+      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit"
+    },
+    {
+      "id": "TOUR-19-2",
+      "level": 2,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "באיזו שנה רכש המסדר ההוספיטלרי את אזור כוכב הירדן?",
+      "options": [
+        "1168",
+        "1099",
+        "1291",
+        "1948"
+      ],
+      "correct": 0,
+      "explanation": "לפי דף הסיור משפחת ולאס מכרה למסדר ההוספיטלרי את המקום בשנת 1168.",
+      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit"
+    },
+    {
+      "id": "TOUR-20-2",
+      "level": 2,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "איזה פסל מנציח את נופלי תל חי וכפר גלעדי בבית הקברות?",
+      "options": [
+        "האריה השואג",
+        "מגילת האש",
+        "פסל החירות",
+        "אנדרטת חטיבת הנגב"
+      ],
+      "correct": 0,
+      "explanation": "פסל האריה השואג מעשה אברהם מלניקוב הוצב לזכר ההרוגים.",
+      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit"
+    },
+    {
+      "id": "TOUR-21-2",
+      "level": 2,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "איזו דמות מקראית הסתתרה באזור מצדות עין גדי?",
+      "options": [
+        "דוד",
+        "שלמה",
+        "ישעיהו",
+        "עזרא"
+      ],
+      "correct": 0,
+      "explanation": "בספר שמואל מתואר דוד הנמלט מפני שאול ושוהה במצדות עין גדי.",
+      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit"
+    },
+    {
       "id": "S041",
       "level": 3,
       "source": "arad",
@@ -985,6 +1688,310 @@
       "correct": 0,
       "explanation": "לפי חוברת ההכנה חזית בית הכנסת פונה דרומה, לכיוון ירושלים.",
       "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit"
+    },
+    {
+      "id": "TOUR-01-3",
+      "level": 3,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מדוע יש להיזהר בקביעה שכל מגילות קומראן נכתבו בידי יושבי האתר?",
+      "options": [
+        "כי זהות הכותבים וזיקת המגילות לאתר שנויות במחקר",
+        "כי לא נמצאו מגילות כלל",
+        "כי כל המגילות נכתבו ברומא",
+        "כי האתר הוקם רק בימי הביניים"
+      ],
+      "correct": 0,
+      "explanation": "המסמך מציג פירושים שונים של הארכאולוגים לגבי הקשר בין היישוב למגילות.",
+      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit"
+    },
+    {
+      "id": "TOUR-04-3",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מדוע ניתן למצוא בתל מגידו שכבות יישוב מתקופות רבות?",
+      "options": [
+        "מיקום אסטרטגי הביא להתיישבות חוזרת באותו מקום",
+        "כי כל שכבות התל הונחו ביום אחד",
+        "כי האתר מעולם לא היה מיושב",
+        "כי סלעי המקום נוצרו במפעל מודרני"
+      ],
+      "correct": 0,
+      "explanation": "הדרכים, המעיינות והעורף החקלאי הפכו את מגידו למקום שיישוביו נבנו זה על גבי זה.",
+      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit"
+    },
+    {
+      "id": "TOUR-05-3",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "איזה ממצא מאפשר להכיר את תיאור המצור האשורי על לכיש מנקודת המבט האשורית?",
+      "options": [
+        "תבליטי ארמון סנחריב בנינוה",
+        "רצפת פסיפס ביזנטית",
+        "שטר חוב עות'מאני",
+        "מפת הרכבת הבריטית"
+      ],
+      "correct": 0,
+      "explanation": "התבליטים בנינוה מראים את הלחימה בלכיש, כולל מערך תקיפה וסוללת מצור.",
+      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit"
+    },
+    {
+      "id": "TOUR-06-3",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "למה נדרשו בהרודיון מערכות אגירה והובלת מים מורכבות?",
+      "options": [
+        "להבטיח מים לארמון ולמבצר גם בתקופות מצור",
+        "כי היה באתר נמל עמוק",
+        "לשם קירור ספינות",
+        "מפני שהגבעה הייתה קרחון"
+      ],
+      "correct": 0,
+      "explanation": "המים הובלו מרחוק ונאגרו במאגרים, לרבות בורות ששירתו את המבצר העליון.",
+      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit"
+    },
+    {
+      "id": "TOUR-07-3",
+      "level": 3,
+      "source": "tour07",
+      "stop": "חיפה — סטלה מאריס",
+      "question": "איזו שלישיית נדרים כללית למנזרים קתוליים מוזכרת בסיכום?",
+      "options": [
+        "עוני, פרישות וציות",
+        "מסחר, מלחמה וציד",
+        "שלטון, מסים וביצורים",
+        "קציר, השקיה ומסיק"
+      ],
+      "correct": 0,
+      "explanation": "בסיכום מפורטים נדרי עוני, פרישות וציות, לצד דגשים נוספים במסורת הכרמליתית.",
+      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit"
+    },
+    {
+      "id": "TOUR-08-3",
+      "level": 3,
+      "source": "tour08",
+      "stop": "גיאולוגיה בכרמל",
+      "question": "מהו הקשר שנלמד בין הסלע לצמחייה בסיור הגאולוגי?",
+      "options": [
+        "הסלע משפיע על הקרקע וזו משפיעה על חברת הצומח",
+        "אין שום קשר בין סוג הסלע לצמחים",
+        "כל צמח גדל אך ורק על כורכר",
+        "צמחייה משנה את זמן היממה"
+      ],
+      "correct": 0,
+      "explanation": "תכונות הסלע והקרקע משפיעות על מים ומינרלים הזמינים לצמחים.",
+      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit"
+    },
+    {
+      "id": "TOUR-09-3",
+      "level": 3,
+      "source": "tour09",
+      "stop": "שילה הקדומה",
+      "question": "מהו מצב הזיהוי הארכאולוגי של המיקום המדויק של המשכן?",
+      "options": [
+        "קיימות כמה הצעות אך אין זיהוי חד-משמעי",
+        "נמצא לוח כתוב עם מפת המבנה",
+        "המשכן נמצא מתחת לבית הכנסת החורבה",
+        "המשכן נמצא בתוך קיסריה"
+      ],
+      "correct": 0,
+      "explanation": "המסמך מציג שלוש אפשרויות למיקום המשכן, ולכן יש להבחין בין המסורת לבין ממצא מוכח.",
+      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit"
+    },
+    {
+      "id": "TOUR-10-3",
+      "level": 3,
+      "source": "tour10",
+      "stop": "הסטף",
+      "question": "איך מאפשר חילוף שכבות גיר או דולומיט וחוואר הופעת מעיינות?",
+      "options": [
+        "מים מחלחלים בסלע חדיר ונעצרים בשכבה אטימה",
+        "כל סוגי הסלע מתיכים את המים",
+        "החוואר הופך למנוע שאיבה חשמלי",
+        "מים עולים רק בשל כוח הרוח"
+      ],
+      "correct": 0,
+      "explanation": "בחתך גאולוגי שכבה חדירה ושכבה אטימה יכולות ליצור מפגש שבו מי תהום נובעים החוצה.",
+      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit"
+    },
+    {
+      "id": "TOUR-11-3",
+      "level": 3,
+      "source": "tour11",
+      "stop": "ירושלים — עיר דוד",
+      "question": "מדוע ההפרדה הטופוגרפית בין עיר דוד למתחם המקודש חשובה להבנת העיר?",
+      "options": [
+        "היא מסייעת לפרש את מבנה העיר וחומותיה",
+        "כי מתחם המקדש היה אי מלאכותי בים",
+        "כי ירושלים הוקמה בתוך לוע הר געש",
+        "כי אין כלל עדות לחומות בירושלים"
+      ],
+      "correct": 0,
+      "explanation": "התצפיות והחומות מתקופת בית ראשון מאפשרות לדון ביחסי העיר, הגבעה והמקדש.",
+      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit"
+    },
+    {
+      "id": "TOUR-12-3",
+      "level": 3,
+      "source": "tour12",
+      "stop": "הרובע ההרודיאני",
+      "question": "מהי טכניקת פרסקו שנמצאה בקישוטי הבתים?",
+      "options": [
+        "ציור על טיח רטוב",
+        "סיתות תבליטים בתוך שיש",
+        "צביעת זכוכית מותכת",
+        "יצירת רצפה מחול בלבד"
+      ],
+      "correct": 0,
+      "explanation": "פרסקו הוא ציור על שכבת טיח רטובה; באתר נזכרים גם עיטורי סטוקו.",
+      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit"
+    },
+    {
+      "id": "TOUR-13-3",
+      "level": 3,
+      "source": "tour13",
+      "stop": "גן דוידסון",
+      "question": "מדוע שולבו מערכות קשתות וחללים מתחת לחלק מן הרחבה?",
+      "options": [
+        "כדי לשאת עומסים ולצמצם מילוי עפר כבד",
+        "כדי להטביע את הרחבה מדי חורף",
+        "כדי להציב נמל תת-קרקעי",
+        "כדי ליצור מסלולי גלישה"
+      ],
+      "correct": 0,
+      "explanation": "חללים וקשתות מסייעים לשאת את הרחבה בלי למלא את כל הנפח שמתחתיה בעפר כבד.",
+      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit"
+    },
+    {
+      "id": "TOUR-14-3",
+      "level": 3,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "איזה ממצא מן התקופה הפרסית התגלה באזור רמת רחל?",
+      "options": [
+        "טביעות חותם 'יהד'",
+        "מטבעות של נפוליאון",
+        "תבליטי מלכי אשור מנינוה",
+        "כתובות מן האימפריה האצטקית"
+      ],
+      "correct": 0,
+      "explanation": "טביעות יהד מעידות על פעילות מנהלית באזור בתקופה הפרסית.",
+      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit"
+    },
+    {
+      "id": "TOUR-15-3",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מה ההבדל במבנה בין תאטרון רומי לאמפיתאטרון?",
+      "options": [
+        "תאטרון לרוב חצי-מעגל ואמפיתאטרון סגור סביב זירה",
+        "שניהם בנויים תמיד ככיפה",
+        "תאטרון נועד רק לספינות",
+        "אמפיתאטרון הוא אמת מים"
+      ],
+      "correct": 0,
+      "explanation": "המסמך מדגיש את צורת התאטרון מול המבנה הסגור סביב זירה של אמפיתאטרון.",
+      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit"
+    },
+    {
+      "id": "TOUR-16-3",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה תפקיד בור השיקוע במפעל המים של ציפורי?",
+      "options": [
+        "לאפשר לחלקיקי סחף לשקוע לפני אגירת המים",
+        "להוסיף חול למים בכוונה",
+        "להעלות את טמפרטורת המים עד רתיחה",
+        "להחליף את האמה בצינור קיטור"
+      ],
+      "correct": 0,
+      "explanation": "בור השיקוע מאט את המים כדי ללכוד סחף וחומר מרחף לפני המשך ההולכה.",
+      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit"
+    },
+    {
+      "id": "TOUR-17-3",
+      "level": 3,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מהו תהליך קארסטי הקשור להיווצרות מערת הבניאס?",
+      "options": [
+        "המסת סלעי גיר וקריסת חללים",
+        "התקררות של לבה מותכת",
+        "הצטברות חול במדבר בלבד",
+        "בניית תעלה מבטון מזוין"
+      ],
+      "correct": 0,
+      "explanation": "מערת בניאס היא מערה קארסטית שחלקים מתקרתה קרסו עם הזמן.",
+      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit"
+    },
+    {
+      "id": "TOUR-18-3",
+      "level": 3,
+      "source": "tour18",
+      "stop": "הקארדו בירושלים",
+      "question": "איזו החלטת שימור התקבלה בעקבות חשיפת הקארדו?",
+      "options": [
+        "להותיר חלק חשוף ולשלב חלק תחת הבנייה החדשה",
+        "להרוס את כל השרידים",
+        "למלא את הרחוב במלט בלי תיעוד",
+        "להעביר את האבנים לים"
+      ],
+      "correct": 0,
+      "explanation": "נבחרו צורות הצגה ושימור שונות לצד בנייה חדשה ברובע היהודי.",
+      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit"
+    },
+    {
+      "id": "TOUR-19-3",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "למה שימש החפיר היבש סביב מבצר כוכב הירדן?",
+      "options": [
+        "לעכב ולהקשות על הסתערות תוקפים",
+        "להשקת ספינות מסחר",
+        "לגידול אורז בלבד",
+        "לאגירת מי ים קבועה"
+      ],
+      "correct": 0,
+      "explanation": "החפיר הוא חלק ממערך ההגנה של מבצר צלבני בעל מגדל עוז ומעברי גישה מוגנים.",
+      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit"
+    },
+    {
+      "id": "TOUR-20-3",
+      "level": 3,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "מדוע נקראה קריית שמונה בשם זה?",
+      "options": [
+        "על שם שמונה אנשי תל חי שנפלו בתקופה זו",
+        "על שם שמונה נחלות רומיות",
+        "על שם שמונה מלכי אשור",
+        "על שם שמונה בתי כנסת ביזנטיים"
+      ],
+      "correct": 0,
+      "explanation": "שמה מנציח שמונה חללים: שישה שנהרגו בקרב ואחרים שמתו קודם לכן באזור תל חי.",
+      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit"
+    },
+    {
+      "id": "TOUR-21-3",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מדוע הקשר בין המקדש הכלקוליתי בעין גדי לאוצר נחל משמר אינו ודאי?",
+      "options": [
+        "הקישור נשען על השערה ארכאולוגית ולא על כתובת מזהה",
+        "כי המקדש נבנה במאה ה-20",
+        "כי לא נמצאו כלים בנחל משמר",
+        "כי האוצר שייך בהכרח למקדש בירושלים"
+      ],
+      "correct": 0,
+      "explanation": "המסמך מציין שמעריכים כי אוצר הכלים מנחל משמר קשור למקדש, אך אין זו הוכחה מוחלטת.",
+      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit"
     }
   ]
 }
