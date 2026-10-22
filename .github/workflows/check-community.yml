@@ -1,0 +1,42 @@
+name: Check public contributions
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/community.html'
+      - 'public/community.js'
+      - 'public/contribute.html'
+      - 'public/community-document.html'
+      - 'public/map.html'
+      - 'public/tour-catalog.html'
+      - 'public/sw.js'
+      - '.github/workflows/check-community.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate page scripts and imported module
+        run: |
+          node --check public/community.js
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const vm = require('node:vm');
+          for (const file of ['public/community.html','public/contribute.html','public/community-document.html','public/map.html','public/tour-catalog.html']) {
+            const html = fs.readFileSync(file, 'utf8');
+            let count=0;
+            for (const m of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)) {
+              if (m[1].trim()) { new vm.Script(m[1], {filename:file+' inline #'+(++count)}); }
+            }
+            console.log(file+': '+count+' inline script(s) parsed');
+          }
+          for(const name of ['public/community.js','public/contribute.html','public/community-document.html','supabase/community_documents.sql']){
+            if(!fs.existsSync(name))throw Error('Missing '+name);
+          }
+          NODE
