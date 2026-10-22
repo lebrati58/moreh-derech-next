@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a1430"><title>בונים קטע דרך — MOREH DERECH NEXT</title>
+<meta name="description" content="צרו קטע דרך משלכם ושתפו משחק שאלות, בלי קוד ובלי מנהל">
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-height:100dvh;background:radial-gradient(circle at 0 0,#3b3186,transparent 45%),#08122d;color:#f5f8ff;font:16px/1.5 system-ui,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:#8cf5db}
+.wrap{max-width:810px;margin:auto;padding:15px 15px 60px}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 16px}.nav a{padding:10px 12px;text-decoration:none;color:#fff;border:1px solid #51649d;border-radius:12px;background:#1e2d55;font-size:13px;font-weight:800}.brand{display:flex;gap:9px;align-items:center}.brand img{width:48px;height:48px;object-fit:contain;border-radius:12px;background:#fff}.brand b{font-size:14px}
+.hero{background:linear-gradient(135deg,#5141bd,#1682ab);padding:22px;border:1px solid #898cf4;border-bottom:6px solid #101e4d;border-radius:23px;margin-bottom:16px}.hero h1{margin:0;font-size:clamp(26px,6vw,39px)}.hero p{margin:8px 0 0;max-width:600px;color:#e2eeff}.eyebrow{color:#ffda76;letter-spacing:2px;font-size:11px;font-weight:900}
+.panel{border:1px solid #526aab;border-radius:18px;background:#15254d;padding:19px;margin-top:14px;box-shadow:0 5px 0 #060b1c}.panel h2{font-size:21px;margin:0 0 10px}.muted{font-size:13px;color:#b9c9ef}.line{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-weight:800;font-size:14px;margin-bottom:8px}.field{width:100%;background:#091935;color:#fff;border:1px solid #647eb9;border-radius:12px;padding:13px;min-height:50px}.field:focus{outline:2px solid #8af3dd}textarea.field{min-height:84px;resize:vertical}.subtle{margin:9px 0;color:#aabbe2;font-size:12px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.btn{flex:1;min-width:150px;border:0;border-radius:13px;padding:13px 15px;font-weight:900;min-height:49px;color:#13284b;background:#ffdd80;box-shadow:0 4px 0 #9d712e}.btn.secondary{background:#d6e2ff;box-shadow:0 4px 0 #657da8}.btn.tertiary{color:#f2fbff;background:#273c71;box-shadow:0 4px 0 #111c40;border:1px solid #637bac}.btn:disabled{opacity:.45;cursor:not-allowed}.btn:active:not(:disabled){transform:translateY(3px);box-shadow:none}
+.status{margin-top:14px;padding:12px;border-radius:11px;color:#dcf9ef;background:#244d5a;border:1px solid #4e9c9b}.status.error{background:#603043;color:#fff1f1;border-color:#ff939d}.status[hidden],.panel[hidden],[hidden]{display:none!important}
+.qcard{border:1px solid #465f99;background:#111e3f;border-radius:14px;padding:13px;margin:10px 0}.qhead{display:flex;gap:10px;justify-content:space-between;align-items:center}.qhead small{color:#b7c9f0}.qtitle{font-size:16px;font-weight:900;margin:8px 0}.rowopts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.opt{font-size:13px;color:#e2eafa}.opt input{margin-inline-end:6px}.qedit{margin-top:9px}.qedit .field{margin:4px 0 8px;font-size:14px}.qedit summary{font-size:13px;color:#9debdc;cursor:pointer}.qcheck{display:flex;gap:8px;align-items:center;margin:0}.qcheck input{width:21px;height:21px}.box{padding:11px;border:1px solid #728bc0;border-radius:12px;background:#0c1b3d;color:#e9f1ff;margin-top:9px}.score{text-align:center;font-size:22px;font-weight:900;color:#ffe39c}.answer{display:block;width:100%;border-radius:13px;border:2px solid #6574a5;background:#263765;text-align:right;color:white;margin:8px 0;padding:14px;font-weight:800;min-height:54px}.answer.correct{background:#196c52;border-color:#79f5c0}.answer.wrong{background:#843b4c;border-color:#ffb6af}.answer:disabled{opacity:1}.history-item{display:block;padding:9px;margin:7px 0;border-radius:10px;background:#23386a;border:1px solid #4f6da0;color:#fff;text-decoration:none}
+#linkOutput{direction:ltr;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.notice{margin:15px 0;font-size:13px;color:#c3cdeb;line-height:1.7}
+@media(max-width:580px){.line,.rowopts{grid-template-columns:1fr}.hero{padding:18px}.panel{padding:15px}.btn{min-width:0}.brand b{display:none}.actions{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head>
+<body><main class="wrap">
+<nav class="nav"><a href="index.html">⌂ לכל המשחקים</a><span class="brand"><img src="assets/moreh-derech-next-driver.webp" alt=""><b>MOREH DERECH NEXT</b></span></nav>
+<header class="hero"><div class="eyebrow">🛣️ BUILD · PLAY · SHARE</div><h1>יוצרים קטע דרך משלכם</h1><p>כמו כביש 67: בוחרים מאיפה ולאן, מכינים שאלות ומשתפים את החברים. בלי חשבון מנהל ובלי לכתוב קוד.</p></header>
+<section id="creator" class="panel">
+<h2>1. מאיפה ולאן נוסעים?</h2>
+<div class="line"><div><label for="from">🚩 נקודת התחלה</label><input class="field" id="from" placeholder="למשל: זכרון יעקב" maxlength="100"></div>
+<div><label for="to">🏁 נקודת סיום</label><input class="field" id="to" placeholder="למשל: יקנעם עילית" maxlength="100"></div></div>
+<div style="margin-top:12px"><label for="doc">📄 יש לכם סיכום סיור? צרפו (לא חובה)</label><input class="field" id="doc" type="file" accept=".docx,.pdf,.txt,.md"></div>
+<p class="subtle">יצירה אוטומטית משתמשת במפת OpenStreetMap ובעובדות מוויקיפדיה/ויקינתונים. הכנת השאלות עשויה להשתנות לפי המידע שנמצא, ולכן חשוב לבדוק כל תשובה.</p>
+<div class="actions"><button class="btn" id="generate">✨ בנו שאלות אוטומטית</button><button class="btn secondary" id="manual">✏️ אכין שאלות בעצמי</button></div>
+<div class="status" id="status" role="status" hidden></div>
+</section>
+<section id="review" class="panel" hidden><h2>2. בודקים את השאלות</h2><p class="muted" id="reviewTitle"></p><div id="questionList"></div>
+<div class="actions"><button class="btn tertiary" id="addQuestion">＋ הוספת שאלה</button><button class="btn tertiary" id="startOver">↶ חזרה</button></div>
+<label class="box" style="display:flex;align-items:center;gap:10px;margin-top:16px"><input id="verified" type="checkbox" style="width:21px;height:21px"><span>בדקתי שהשאלות, התשובות והמקורות נכונים ומתאימים לשיתוף.</span></label>
+<div class="actions"><button class="btn" id="share" disabled>🔗 יצירת קישור למשחק</button><button class="btn secondary" id="try">🎮 ניסיון משחק</button></div>
+<div id="sharePanel" hidden><div class="box">הקישור כולל את השאלות שבחרתם. מי שפותח אותו יכול לשחק, בלי להתחבר לאתר.</div>
+<input id="linkOutput" class="field" readonly aria-label="קישור למשחק"><div class="actions"><button class="btn" id="copy">📋 העתק קישור</button><button class="btn secondary" id="send">💬 שיתוף בטלפון</button></div><p class="subtle">קישור אישי, ללא שרת וללא גישה לבסיס LIVE. הוא לא מוסיף את המשחק לרשימת 22 הסיורים הרשמית. הקישור יכול להיות ארוך כי כל השאלות כלולות בו.</p></div></section>
+<section id="player" class="panel" hidden><div class="muted" id="playRoute"></div><h2 id="playTitle"></h2><p class="score" id="playProgress"></p><div id="playOptions"></div><div id="playFeedback" class="box" hidden></div><div class="actions"><button class="btn" id="nextQuestion" hidden>הבא ←</button><button class="btn secondary" id="backToEditor" hidden>↶ חזרה לעריכה</button><button class="btn tertiary" id="newRoute">🛣️ צרו מסלול חדש</button></div></section>
+<section id="savedPanel" class="panel" hidden><h2>📌 המשחקים שלי בדפדפן הזה</h2><div id="savedList"></div></section>
+<p class="notice">🔒 משחקים שנוצרו כאן נשמרים בדפדפן ובקישור האישי בלבד. אין צורך בסיסמת המנהל, אך אין גם סנכרון ציבורי אוטומטי עם Supabase. המשחק המשותף הוא תרגול עצמאי עם מעבר ידני בין השאלות, ולא משחק LIVE עם פרסום שאלות לכל האוטובוס. אין לשתף מסמכים פרטיים או תוכן שאין לכם זכות לפרסם. לנוסעים בלבד — לא משחקים בזמן נהיגה.</p>
+</main>
+<script src="gps-engine.js"></script><script src="auto-engine.js"></script><script src="doc-reader.js"></script>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id),G=window.MDL_GPS,A=window.MDL_AUTO,MAX=25;
+let draft=null,index=0,answers=[],preview=false;
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function status(message,error){const e=$("status");e.hidden=!message;e.className="status"+(error?" error":"");e.textContent=message||"";}
+function show(id){for(const name of ["creator","review","player"])$(name).hidden=name!==id;window.scrollTo({top:0,behavior:"auto"});}
+function current(){if(!draft)throw Error("no draft");return draft.questions.filter(q=>q.on).slice(0,MAX);}
+function cleanQuestion(q){return {t:String(q.t||"").trim().slice(0,240),o:(q.o||[]).map(s=>String(s||"").trim().slice(0,220)).slice(0,4),c:Number(q.c),e:String(q.e||"").trim().slice(0,600),p:String(q.p||"").trim().slice(0,100),s:String(q.s||"").trim().slice(0,500),u:String(q.u||"").trim().slice(0,400)};}
+function valid(payload){return payload&&payload.v===1&&typeof payload.from==="string"&&payload.from.length<=100&&typeof payload.to==="string"&&payload.to.length<=100&&Array.isArray(payload.questions)&&payload.questions.length>0&&payload.questions.length<=MAX&&payload.questions.every(q=>typeof q.t==="string"&&q.t.length>3&&q.t.length<=240&&Array.isArray(q.o)&&q.o.length===4&&q.o.every(s=>typeof s==="string"&&s.length>0&&s.length<=220)&&Number.isInteger(q.c)&&q.c>=0&&q.c<4&&typeof q.e==="string"&&q.e.length<=600&&typeof q.p==="string"&&q.p.length<=100&&typeof q.s==="string"&&q.s.length<=500&&typeof q.u==="string"&&q.u.length<=400);}
+function pack(){const qs=current().map(cleanQuestion);const payload={v:1,from:draft.from,to:draft.to,questions:qs};if(!valid(payload))throw Error("בדקו שלכל שאלה יש נוסח, 4 תשובות וסימון של תשובה נכונה");return payload;}
+function qFromGenerated(res){
+ return (res.questions||[]).slice(0,MAX).map(q=>{
+ const st=(res.route.stops||[]).find(s=>s.id===q.key);
+ const guide=q.guide_i18n&&q.guide_i18n.he||{};
+ return {on:true,t:q.text||"",o:(q.options||[]).map(String),c:q.correct_index,e:q.explanation||"",p:st&&st.name&&st.name.he||"",s:guide.script||q.guide_short||"",u:(q.guide_sources||[]).find(s=>/^https:\/\//.test(s.url||""))?.url||""};
+ });
+}
+function renderReview(){
+ if(!draft)return;show("review");$("sharePanel").hidden=true;
+ $("reviewTitle").textContent=draft.from+" ← "+draft.to+" · "+draft.questions.filter(q=>q.on).length+" שאלות נבחרו (עד "+MAX+")";
+ const list=$("questionList");list.replaceChildren();
+ draft.questions.forEach((q,i)=>{
+ const card=document.createElement("div");card.className="qcard";
+ card.innerHTML='<div class="qhead"><label class="qcheck"><input class="enable" type="checkbox" '+(q.on?'checked':'')+'><span>שאלה '+(i+1)+'</span></label><small>'+esc(q.p||"שאלה חדשה")+'</small></div>'+
+ '<p class="qtitle">'+esc(q.t||"שאלה ללא ניסוח")+'</p>'+
+ '<details class="qedit"><summary>✏️ עריכת השאלה והתשובות</summary><label>שאלה<input class="field qt" maxlength="240" value="'+esc(q.t)+'"></label>'+
+ [0,1,2,3].map(j=>'<label>תשובה '+(j+1)+'<input class="field qo" maxlength="220" value="'+esc(q.o[j]||"")+'"></label>').join('')+
+ '<label>התשובה הנכונה<select class="field qc">'+[0,1,2,3].map(j=>'<option value="'+j+'" '+(q.c===j?'selected':'')+'>'+(j+1)+'</option>').join('')+'</select></label>'+
+ '<label>הסבר<textarea class="field qe" maxlength="600">'+esc(q.e)+'</textarea></label>'+
+ '<label>שם המקום<input class="field qp" maxlength="100" value="'+esc(q.p)+'"></label>'+
+ '<label>מה להגיד בהדרכה (רשות)<textarea class="field qs" maxlength="500">'+esc(q.s)+'</textarea></label>'+
+ '<label>קישור למקור (רשות)<input class="field qu" maxlength="400" value="'+esc(q.u)+'"></label></details>';
+ const enable=card.querySelector(".enable");enable.onchange=()=>{q.on=enable.checked;updateReviewSummary();};
+ card.querySelector(".qt").oninput=e=>{q.t=e.target.value;card.querySelector(".qtitle").textContent=q.t;};
+ card.querySelectorAll(".qo").forEach((e,j)=>e.oninput=()=>{q.o[j]=e.value;});
+ card.querySelector(".qc").onchange=e=>{q.c=Number(e.target.value);};
+ for(const [sel,key] of [[".qe","e"],[".qp","p"],[".qs","s"],[".qu","u"]])card.querySelector(sel).oninput=e=>{q[key]=e.target.value;};
+ list.append(card);
+ });updateReviewSummary();
+}
+function updateReviewSummary(){if(!draft)return;$("reviewTitle").textContent=draft.from+" ← "+draft.to+" · "+current().length+" שאלות נבחרו";$("share").disabled=!$("verified").checked||!current().length;}
+function startManual(){const from=$("from").value.trim(),to=$("to").value.trim();if(!from||!to){status("צריך להזין התחלה וסיום",true);return;}draft={from,to,questions:[emptyQuestion()]};$("verified").checked=false;status("");renderReview();}
+function emptyQuestion(){return {on:true,t:"",o:["","","",""],c:0,e:"",p:"",s:"",u:""};}
+async function generate(){
+ const from=$("from").value.trim(),to=$("to").value.trim();if(!from||!to){status("צריך להזין התחלה וסיום",true);return;}
+ if(!A||!G){status("מנוע המסלולים לא נטען — נסו שוב או צרו שאלות בעצמכם",true);return;}
+ const btn=$("generate");btn.disabled=true;status("🔎 מאתרים מסלול ומחפשים עובדות…");
+ try{const res=await A.generate({G,from,to},stage=>status("📍 מכינים את המסלול… "+stage));
+ if($("doc").files[0]){try{const txt=await window.MDL_DOC.readFile($("doc").files[0],"");A.applyDoc(res,txt);}catch(e){status("לא הצלחנו לקרוא את המסמך. ממשיכים עם המקורות החופשיים.");}}
+ const questions=qFromGenerated(res);
+ if(!questions.length)throw Error("לא נמצאו מספיק עובדות למסלול הזה. נסו נקודות אחרות או הכניסו שאלות בעצמכם.");
+ draft={from,to,questions};$("verified").checked=false;renderReview();
+ }catch(e){status("לא הצלחנו ליצור שאלות אוטומטית. אפשר לנסות שוב או להכין שאלות באופן ידני. "+String(e.message||"").slice(0,100),true);}
+ finally{btn.disabled=false;}}
+function toBytes64(bytes){let str="";for(let i=0;i<bytes.length;i+=8192)str+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(str).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");}
+function fromBytes64(v){if(!/^[A-Za-z0-9_-]+$/.test(v)||v.length>80000)throw Error("bad link");const raw=atob(v.replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(raw,c=>c.charCodeAt(0));}
+async function encode(p){const bytes=new TextEncoder().encode(JSON.stringify(p));if(bytes.length>100000)throw Error("מסלול גדול מדי לשיתוף");if(typeof CompressionStream!=="function")return "j"+toBytes64(bytes);const stream=new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"));return "g"+toBytes64(new Uint8Array(await new Response(stream).arrayBuffer()));}
+async function decode(key){if(!key||key.length>80000)throw Error("bad link");const b=fromBytes64(key.slice(1));if(b.length>60000)throw Error("too large");const bytes=key[0]==="g"?await new Response(new Blob([b]).stream().pipeThrough(new DecompressionStream("gzip"))).arrayBuffer():key[0]==="j"?b:null;if(!bytes||bytes.byteLength>150000)throw Error("too large");const x=JSON.parse(new TextDecoder().decode(bytes));if(!valid(x))throw Error("bad data");return x;}
+function saveLocal(p,url){try{let arr=JSON.parse(localStorage.getItem("mdl_community_routes_v1")||"[]");arr=arr.filter(x=>x.url!==url);arr.unshift({from:p.from,to:p.to,date:new Date().toISOString().slice(0,10),count:p.questions.length,url});localStorage.setItem("mdl_community_routes_v1",JSON.stringify(arr.slice(0,12)));renderSaved();}catch(e){}}
+function renderSaved(){let arr=[];try{arr=JSON.parse(localStorage.getItem("mdl_community_routes_v1")||"[]");}catch(e){}$("savedPanel").hidden=!arr.length;const list=$("savedList");list.replaceChildren();for(const x of arr){const a=document.createElement("a");a.className="history-item";a.href=x.url;a.textContent="🛣️ "+x.from+" ← "+x.to+" · "+x.count+" שאלות";list.append(a);}}
+async function share(){try{
+ const p=pack();const key=await encode(p),url=new URL("community.html",location.href);url.hash="route="+key;
+ $("linkOutput").value=url.href;$("sharePanel").hidden=false;saveLocal(p,url.href);
+ $("linkOutput").scrollIntoView({block:"nearest",behavior:"smooth"});
+ if(url.href.length>12000){$("sharePanel").querySelector(".box").textContent="⚠️ הקישור ארוך. מומלץ לבחור פחות שאלות כדי שיהיה קל לשלוח בוואטסאפ.";}
+ }catch(e){alert("⚠️ "+(e.message||"בדקו את השאלות"));}
+}
+function startGame(p,isPreview){preview=!!isPreview;draft={from:p.from,to:p.to,questions:p.questions.map(q=>Object.assign({on:true},q))};index=0;answers=[];show("player");$("backToEditor").hidden=!preview;renderGame();}
+function renderGame(){const qs=current(),q=qs[index];if(!q){show("creator");return;}$("playRoute").textContent="🚌 "+draft.from+" ← "+draft.to+" · "+(q.p||"תחנה בדרך");
+ $("playTitle").textContent=q.t;$("playProgress").textContent="שאלה "+(index+1)+" / "+qs.length;const area=$("playOptions");area.replaceChildren();const a=answers[index];
+ for(let j=0;j<4;j++){const b=document.createElement("button");b.type="button";b.className="answer"+(a!==undefined?(j===q.c?" correct":j===a?" wrong":""):"");b.textContent=q.o[j];b.disabled=a!==undefined;b.onclick=()=>{answers[index]=j;renderGame();};area.append(b);}
+ const feedback=$("playFeedback");feedback.hidden=a===undefined;if(a!==undefined){feedback.replaceChildren();const strong=document.createElement("strong");strong.textContent=a===q.c?"✅ נכון!":"💡 התשובה הנכונה: "+q.o[q.c];feedback.append(strong);
+ if(q.e){const para=document.createElement("p");para.textContent=q.e;feedback.append(para);}
+ if(q.s){const p=document.createElement("p");p.textContent="🎤 למדריך: "+q.s;feedback.append(p);}
+ if(q.u&&/^https?:\/\//.test(q.u)){const a=document.createElement("a");a.href=q.u;a.target="_blank";a.rel="noopener noreferrer";a.textContent="📄 מקור ↗";feedback.append(a);}}
+ $("nextQuestion").hidden=a===undefined;$("nextQuestion").textContent=index===qs.length-1?"🏆 סיכום":"הבא ←";}
+function result(){const qs=current();const score=qs.reduce((n,q,i)=>n+(answers[i]===q.c?1:0),0);$("playTitle").textContent="🏆 סיימתם!";$("playProgress").textContent=score+" / "+qs.length+" תשובות נכונות";$("playOptions").replaceChildren();$("playFeedback").hidden=false;$("playFeedback").textContent="כל הכבוד! אפשר לשחק שוב או לשלוח את המסלול לחברים.";$("nextQuestion").hidden=false;$("nextQuestion").textContent="↻ משחק מחדש";$("nextQuestion").onclick=()=>{index=0;answers=[];renderGame();$("nextQuestion").onclick=nextStep;};}
+function nextStep(){if(index<current().length-1){index++;renderGame();}else result();}
+function createNew(){preview=false;draft=null;index=0;show("creator");$("verified").checked=false;$("sharePanel").hidden=true;}
+$("generate").onclick=generate;$("manual").onclick=startManual;$("addQuestion").onclick=()=>{if(draft.questions.length>=MAX){alert("עד "+MAX+" שאלות במסלול");return;}draft.questions.push(emptyQuestion());renderReview();};
+$("startOver").onclick=()=>show("creator");$("verified").onchange=updateReviewSummary;$("share").onclick=share;
+$("try").onclick=()=>{try{startGame(pack(),true);}catch(e){alert(e.message);}};
+$("copy").onclick=async()=>{try{await navigator.clipboard.writeText($("linkOutput").value);$("copy").textContent="✔ הועתק";}catch(e){$("linkOutput").focus();$("linkOutput").select();document.execCommand("copy");}};
+$("send").onclick=async()=>{const url=$("linkOutput").value;if(navigator.share){try{await navigator.share({title:"קטע דרך — MOREH DERECH NEXT",url});return;}catch(e){}}location.href="https://wa.me/?text="+encodeURIComponent("🛣️ בואו לשחק במסלול שיצרתי!\n"+url);};
+$("nextQuestion").onclick=nextStep;$("backToEditor").onclick=renderReview;$("newRoute").onclick=createNew;
+(async()=>{renderSaved();const h=location.hash;if(h.startsWith("#route=")){try{const p=await decode(h.slice(7));startGame(p,false);}catch(e){status("⚠️ הקישור לא תקין או לא נתמך בדפדפן הזה.",true);}}})();
+})();
+</script></body></html>
