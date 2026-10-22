@@ -103,7 +103,7 @@ ok((await page.locator('.sheet .notice').first().textContent()).includes('Supaba
 // 8. Jeu : סיור מודרך par étapes
 await page.goto(base + 'guided-tour.html?tour=04&level=1&mode=tour');
 await page.waitForSelector('#story:not([hidden])');
-ok((await page.locator('#tour').inputValue()) === '04', 'jeu : סיור 04 sélectionné depuis le lien');
+ok((await page.locator('#tourButton').textContent()).includes('מגידו'), 'jeu : סיור 04 sélectionné depuis le lien');
 ok((await page.locator('#story .step-k').textContent()).includes('תחנה 1'), 'jeu : étape 1 affichée');
 ok(!(await page.locator('#story').textContent()).includes(quiz.questions.find(q => q.tourId === '04' && q.level === 1).explanation), "jeu : l'explication n'est pas montrée avant la réponse");
 await page.locator('.ans').first().click();
@@ -113,7 +113,7 @@ await shot('07-guided-step');
 // 9. Ancien lien du catalogue (?tour=tour04) — corrigé
 await page.goto(base + 'guided-tour.html?tour=tour04&mode=quiz');
 await page.waitForSelector('.question h2');
-ok((await page.locator('#tour').inputValue()) === '04', 'compatibilité : ?tour=tour04');
+ok((await page.locator('#tourButton').textContent()).includes('מגידו'), 'compatibilité : ?tour=tour04');
 
 // 10. Lecture
 await page.goto(base + 'guided-tour.html?tour=04&mode=stories');
