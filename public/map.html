@@ -49,6 +49,7 @@ a{color:inherit}
 /* ---------- map ---------- */
 #map{position:fixed;inset:0;z-index:1;background:#0b1433}
 .leaflet-container{font-family:inherit;background:#0b1433}
+.osm-dark{filter:invert(1) hue-rotate(200deg) brightness(.95) contrast(.9) saturate(.6)}
 .leaflet-control-attribution{font-size:10px;background:#0b1433cc!important;color:#c0cbea}
 .leaflet-control-attribution a{color:#9fe9da}
 .leaflet-bottom{bottom:var(--sheet-gap,0px);transition:bottom .25s}
@@ -239,10 +240,8 @@ function visible(){return tours.filter(function(t){
 var ISRAEL=[[29.45,34.25],[33.35,35.9]];
 function initMap(){
   map=L.map('map',{zoomControl:false,attributionControl:true,minZoom:6,maxZoom:18,maxBounds:[[28.5,32.5],[34.5,37.5]],tap:true}).fitBounds(ISRAEL,{padding:[10,10]});
-  var errors=0,loaded=false,carto=L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a> · <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>'});
-  carto.on('tileload',function(){loaded=true;});
-  carto.on('tileerror',function(){if(loaded||++errors<4)return;map.removeLayer(carto);L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);});
-  carto.addTo(map);
+  // Tuiles OpenStreetMap standard (gratuites, sans clé), assombries en CSS pour le thème nuit.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,className:'osm-dark',attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>'}).addTo(map);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
   cluster=L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:44,disableClusteringAtZoom:14,
     iconCreateFunction:function(c){return L.divIcon({html:'<div class="cluster">'+c.getChildCount()+'</div>',className:'',iconSize:[46,46]});}});

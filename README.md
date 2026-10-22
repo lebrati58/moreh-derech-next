@@ -2,7 +2,7 @@
 
 Parcours : **choisir le mode → carte → choisir un סיור → difficulté → jouer**.
 
-- Page : `public/map.html` (Leaflet 1.9.4 + MarkerCluster 1.5.3 copiés dans `public/vendor/leaflet/`, fonds CARTO sur données OpenStreetMap, repli automatique sur les tuiles OSM). Recherche, filtres région/thème, vue Carte / Liste, regroupement des pins, fiche coulissante, bouton retour du téléphone qui ferme la fiche.
+- Page : `public/map.html` (Leaflet 1.9.4 + MarkerCluster 1.5.3 copiés dans `public/vendor/leaflet/`, tuiles OpenStreetMap standard (sans clé) assombries en CSS). Recherche, filtres région/thème, vue Carte / Liste, regroupement des pins, fiche coulissante, bouton retour du téléphone qui ferme la fiche.
 - Données : `public/places.json`, **généré** par `tools/build-places.mjs` à partir de `tools/places-sources.json` (titre Wikipédia de chaque étape). Les coordonnées viennent de l'API Wikipédia (Wikidata P625), avec titre, lien et identifiant Wikidata pour vérification. **79 étapes sur 93** sont placées ; les 14 autres (noms génériques comme « כנסיות », lieux ambigus, articles sans coordonnées) ne sont **pas** placées et la fiche le dit. Chaque étape est un point distinct : aucun « centre de circuit » n'est présenté comme un site.
 - Régénérer : Actions → « Coordonnées de la carte (Wikipédia) » → Run workflow, ou `npm run build:places` sur une machine avec Internet. Pour corriger un point : changer le titre Wikipédia dans `tools/places-sources.json`.
 - Résumés d'étapes : 2 phrases de Wikipédia en hébreu, attribuées (CC BY-SA). Les faits de cours viennent des explications de `guided-quiz.json`, avec leur lien source.

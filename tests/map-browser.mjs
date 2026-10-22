@@ -26,7 +26,7 @@ const page = await ctx.newPage();
 const errors = [];
 page.on('pageerror', e => errors.push('pageerror: ' + e.message));
 page.on('console', m => { if (m.type() === 'error' && !/cartocdn|openstreetmap|ERR_|net::/i.test(m.text())) errors.push('console: ' + m.text()); });
-await page.route(/cartocdn|openstreetmap\.org/, r => r.abort());
+await page.route(/openstreetmap\.org/, r => r.abort());
 const ok = (cond, msg) => { if (!cond) { errors.push('ASSERT: ' + msg); console.log('❌', msg); } else console.log('✅', msg); };
 const shot = name => page.screenshot({ path: `${OUT}/${name}.png` });
 
