@@ -1,3 +1,14 @@
+
+## 🎓 Banque des 22 סיורים — Google Drive (22 octobre 2026)
+
+- 22 dossiers numérotés dans `2. סיורים` du dossier de cours : [ouvrir dans Drive](https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f).
+- Catalogue complet : `public/siyurim-catalog.json`. Les arrêts listés viennent des dossiers/fichiers ; ils ne garantissent pas la visite de tous les arrêts.
+- Jeu `public/guided-tour.html` : 183 questions QCM sourcées, 61 questions différentes pour chacune des 3 difficultés (statut au moment de cette mise à jour).
+- Pour chaque circuit, le jeu montre **uniquement les questions vérifiées dont il dispose** : parfois 3, parfois 6, et davantage pour les tours 02/03/22. **20 questions au moins par niveau sont garanties seulement pour « Tous les circuits »**, pas pour chaque dossier individuel.
+- `22 – קמפוס גליל עליון` contient à cette date une **חוברת הכנה**, ce qui ne confirme pas à lui seul une visite terminée.
+- Source : notes de cours et fiches d'étudiants, non expertisées indépendamment ; corriger les faits controversés avant usage professionnel.
+- Les modes Tour guidé/Quiz sont locaux et ne publient rien au serveur LIVE. L'ancien projet n'est pas modifié.
+
 # 🚌 Moreh Derech NEXT — Game Edition
 
 **Une nouvelle interface mobile, indépendante au niveau du code**, pour le quiz de guidage sur les routes d'Israël.
