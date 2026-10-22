@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1130">
+<meta name="description" content="סיפורי הדרך של מורה דרך LIVE — לקרוא, לדפדף ולגלות">
+<title>סיפורי דרך — מורה דרך LIVE</title>
+<link rel="stylesheet" href="style.css">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{background:radial-gradient(ellipse at 25% 0%,#38366f 0,transparent 50%),linear-gradient(160deg,#0b1431,#111332 80%);color:#f5f7ff;min-height:100dvh;font-family:'Heebo',system-ui,-apple-system,Arial,sans-serif}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;max-width:750px;margin:auto;padding:15px 16px}
+.top a{display:inline-flex;align-items:center;gap:5px;color:#e7efff;text-decoration:none;background:#1e2a51;padding:9px 13px;border-radius:13px;border:1px solid #506196;font-weight:900;font-size:14px}
+.top b{font-size:14px;letter-spacing:.6px}
+main.reader{max-width:750px;margin:auto;padding:4px 16px 125px}
+.langbar{display:flex;gap:5px;align-items:center;justify-content:flex-end}
+.langbar button{background:#252d59;border:1px solid #525b91;color:#d7e3ff;border-radius:10px;padding:9px 12px;min-width:43px;font-size:12px;font-weight:900}
+.langbar button[aria-pressed=true]{background:#ffcc71;color:#182247;border-color:#ffdf9f}
+.game-head{background:linear-gradient(120deg,#8746ce,#434ac3 68%,#246bb0);border:1px solid #9a9dea77;border-radius:24px;padding:22px 22px 17px;margin-top:12px;box-shadow:0 7px 0 #080c21,0 20px 35px #0006;position:relative;overflow:hidden}
+.game-head:after{content:'📚';position:absolute;inset-block-start:26px;inset-inline-end:18px;font-size:73px;opacity:.4;transform:rotate(13deg)}
+.eyebrow{color:#fcf0a5;font-size:12px;letter-spacing:2px;font-weight:900}
+.game-head h1{color:#fff;font-size:clamp(28px,6vw,39px);line-height:1.2;margin:6px 0}
+.game-head p{font-size:14px;margin:4px 0;max-width:70%;color:#e6e8ff}
+.progress-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:900;margin:24px 1px 10px}
+.progress-meta span:first-child{color:#bcd0fa;font-size:13px}
+.progress-meta span:last-child{color:#ffe6a4}
+.progress{height:12px;border-radius:100px;background:#28345d;border:2px solid #445489;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#4bf5cb,#fbe173);border-radius:100px;width:7%;transition:width .3s}
+.story{background:#fbfcff;color:#1b2851;border-radius:27px;border:2px solid #d5ddf6;padding:23px;margin-top:20px;box-shadow:0 9px 0 #080c20,0 22px 32px #0006;min-height:350px;position:relative}
+.story-tag{display:inline-flex;border-radius:10px;background:#ede6ff;color:#683bba;padding:6px 12px;font-size:12px;letter-spacing:1px;font-weight:1000}
+.story h2{font-weight:1000;font-size:clamp(26px,6vw,37px);margin:12px 0;color:#222458;line-height:1.2}
+.story-lead{font-size:17px;line-height:1.85;white-space:pre-wrap;margin:16px 0 20px}
+.fact{padding:16px 17px;border-radius:17px;background:#fef0cd;border:2px solid #f4d88b;margin:10px 0 22px;color:#563d1a}
+.fact b{display:block;font-size:15px;margin-bottom:5px}.fact p{margin:0;font-size:16px;line-height:1.6}
+.more-title{margin:19px 0 8px;font-size:15px;color:#6d4da8;font-weight:1000}
+.extra{margin:7px 0 12px;padding-inline-start:22px;line-height:1.8;font-size:15px}
+.extra li{margin:7px 0}
+.sources{margin-top:20px;border-top:1px solid #dce1f6;padding-top:13px}
+.sources summary{font-weight:900;color:#4b5182;cursor:pointer}
+.sources a{color:#283fa1;overflow-wrap:anywhere}
+.control-panel{display:flex;gap:10px;margin:24px 0 10px}
+.control-panel button{display:flex;align-items:center;justify-content:center;border:0;border-radius:16px;font-weight:1000;font-size:17px;padding:17px 12px;flex:1;cursor:pointer}
+.control-panel button:first-child{background:#26345f;border:2px solid #5068b0;color:#fff}
+.control-panel button:last-child{background:linear-gradient(#ffe68d,#ffbe4d);color:#2a2142;box-shadow:0 5px 0 #c58236}
+.control-panel button:disabled{opacity:.38;filter:grayscale(.3);cursor:default}
+.chapter-toggle{width:100%;border:1px solid #5b6ca7;background:#222b56;color:#e5eaff;padding:15px;border-radius:14px;font-weight:900}
+.chapters{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.chapters[hidden]{display:none}
+.chapter{background:#1c2855;color:#d7e4ff;border:1px solid #4a5a91;border-radius:13px;padding:10px 12px;display:flex;align-items:center;gap:8px;text-align:start;min-width:0;cursor:pointer;font-size:13px}
+.chapter strong{min-width:30px;height:30px;display:grid;place-items:center;background:#384c8d;border-radius:9px;color:#fff}
+.chapter span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chapter[aria-current=true]{border-color:#ffcf75;background:#3f3975;color:white}
+.chapter[aria-current=true] strong{background:#ffc65f;color:#252248}
+.message{color:#f9e4a8;padding:20px;text-align:center}
+@media(max-width:460px){.story{padding:17px;min-height:280px}.story-lead{font-size:16px}.chapters{grid-template-columns:1fr}.game-head{padding:17px}.game-head:after{font-size:50px}.control-panel button{font-size:15px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+<a href="modes.html" data-t="back">← לכל המצבים</a>
+<b>📖 MOREH DERECH</b>
+</header>
+<main class="reader">
+<nav class="langbar" aria-label="Language"><button type="button" data-lang="he">עב</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></nav>
+<section class="game-head">
+<div class="eyebrow">✦ DISCOVERY MODE ✦</div>
+<h1 data-t="heading">סיפורי דרך</h1>
+<p data-t="sub">14 סיפורים מהכביש בין זכרון יעקב ליקנעם — בלי שאלות ובלי לחץ.</p>
+</section>
+<section id="reader" aria-live="polite"><p class="message" data-t="loading">טוען את הסיפורים…</p></section>
+</main>
+<script>
+(function(){
+'use strict';
+var L={
+he:{back:'← לכל המצבים',heading:'סיפורי דרך',sub:'סיפורים מהכביש בין זכרון יעקב ליקנעם — בלי שאלות ובלי לחץ.',loading:'טוען את הסיפורים…',error:'לא הצלחנו לטעון את הסיפורים. נסו לפתוח את הדף כשיש חיבור.',chapter:'פרק',fact:'💡 הידעת?',more:'✨ עוד דברים מעניינים',sources:'📚 מקורות',previous:'הקודם',next:'הבא',chapters:'📑 כל הסיפורים',hide:'📑 סגירת הרשימה',progress:'הסיפור'},
+fr:{back:'← Les modes',heading:'Histoires de la route',sub:'Des anecdotes entre Zikhron Yaakov et Yokneam, sans quiz ni chronomètre.',loading:'Chargement des anecdotes…',error:'Impossible de charger les histoires. Réessayez avec une connexion.',chapter:'CHAPITRE',fact:'💡 Le savais-tu ?',more:'✨ Encore à découvrir',sources:'📚 Sources',previous:'Précédent',next:'Suivant',chapters:'📑 Tous les chapitres',hide:'📑 Fermer la liste',progress:'Histoire'},
+en:{back:'← All modes',heading:'Road stories',sub:'Stories from Zikhron Yaakov to Yokneam, without questions or timers.',loading:'Loading stories…',error:'Could not load stories. Try again online.',chapter:'CHAPTER',fact:'💡 Did you know?',more:'✨ Discover more',sources:'📚 Sources',previous:'Previous',next:'Next',chapters:'📑 All chapters',hide:'📑 Close list',progress:'Story'},
+ru:{back:'← Все режимы',heading:'Истории по дороге',sub:'Истории между Зихрон-Яаковом и Йокнеамом без вопросов и таймера.',loading:'Загрузка историй…',error:'Не удалось загрузить истории. Попробуйте с подключением к сети.',chapter:'ГЛАВА',fact:'💡 Знаете ли вы?',more:'✨ Узнайте больше',sources:'📚 Источники',previous:'Назад',next:'Далее',chapters:'📑 Все главы',hide:'📑 Скрыть список',progress:'История'}
+};
+var lang='he',pos=0,data=null,listed=false;
+try{lang=localStorage.getItem('mdl_mode_lang')||localStorage.getItem('mdl_lang')||'he';pos=Number(localStorage.getItem('mdl_story_index'))||0;}catch(e){}
+if(!L[lang])lang='he';
+var root=document.getElementById('reader');
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+function label(o){return o&&(o[lang]||o.he||o.en)||'';}
+function setLang(l){lang=L[l]?l:'he';try{localStorage.setItem('mdl_mode_lang',lang);}catch(e){}render();}
+function common(){
+document.documentElement.lang=lang;document.documentElement.dir=lang==='he'?'rtl':'ltr';
+document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=L[lang][el.dataset.t]||'';});
+document.querySelectorAll('[data-lang]').forEach(function(el){el.setAttribute('aria-pressed',String(el.dataset.lang===lang));});
+}
+function select(i){if(!data||!data.items.length)return;pos=Math.max(0,Math.min(data.items.length-1,i));try{localStorage.setItem('mdl_story_index',String(pos));}catch(e){}render();window.scrollTo({top:0,behavior:'auto'});}
+function render(){
+common();if(!data)return;
+var items=data.items,n=items.length;pos=Math.max(0,Math.min(n-1,pos));
+var item=items[pos],t=item.texts[lang]||item.texts.he||{},fallback=item.texts.he||{};
+var story=t.story||t.fact||fallback.story||fallback.fact||'';
+var fact=t.fact||fallback.fact||'';
+var more=Array.isArray(t.more)&&t.more.length?t.more:(Array.isArray(fallback.more)?fallback.more:[]);
+var links=(item.sources||[]).filter(function(s){try{return new URL(s.url).protocol==='https:';}catch(e){return false;}});
+root.innerHTML='<div class="progress-meta"><span>'+esc(L[lang].progress)+' '+(pos+1)+' / '+n+'</span><span>📖 '+Math.round((pos+1)/n*100)+'%</span></div>'+
+'<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="'+n+'" aria-valuenow="'+(pos+1)+'"><div class="progress-fill" style="width:'+((pos+1)/n*100)+'%"></div></div>'+
+'<article class="story"><span class="story-tag">★ '+esc(L[lang].chapter)+' '+String(pos+1).padStart(2,'0')+'</span>'+
+'<h2>'+esc(label(item.title))+'</h2>'+
+'<p class="story-lead">'+esc(story)+'</p>'+
+(fact&&fact!==story?'<aside class="fact"><b>'+esc(L[lang].fact)+'</b><p>'+esc(fact)+'</p></aside>':'')+
+(more.length?'<h3 class="more-title">'+esc(L[lang].more)+'</h3><ul class="extra">'+more.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':'')+
+(links.length?'<details class="sources"><summary>'+esc(L[lang].sources)+'</summary><ul>'+links.map(function(s){return '<li><a target="_blank" rel="noopener noreferrer" href="'+esc(s.url)+'">'+esc(s.title||s.url)+'</a></li>';}).join('')+'</ul></details>':'')+'</article>'+
+'<div class="control-panel"><button type="button" id="prev" '+(pos===0?'disabled':'')+'>'+esc(L[lang].previous)+'</button><button type="button" id="next" '+(pos===n-1?'disabled':'')+'>'+esc(L[lang].next)+' ↗</button></div>'+
+'<button class="chapter-toggle" id="toggle" aria-expanded="'+listed+'">'+esc(listed?L[lang].hide:L[lang].chapters)+'</button>'+
+'<div class="chapters" id="chapters" '+(listed?'':'hidden')+'>'+items.map(function(x,i){return '<button type="button" class="chapter" data-index="'+i+'" aria-current="'+(i===pos)+'"><strong>'+String(i+1).padStart(2,'0')+'</strong><span>'+esc(label(x.title))+'</span></button>';}).join('')+'</div>';
+document.getElementById('prev').addEventListener('click',function(){select(pos-1);});
+document.getElementById('next').addEventListener('click',function(){select(pos+1);});
+document.getElementById('toggle').addEventListener('click',function(){listed=!listed;render();});
+root.querySelectorAll('[data-index]').forEach(function(el){el.addEventListener('click',function(){listed=false;select(Number(el.dataset.index));});});
+}
+document.querySelectorAll('[data-lang]').forEach(function(el){el.addEventListener('click',function(){setLang(el.dataset.lang);});});
+document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||e.target.closest('button,input,textarea'))return;if(e.key==='ArrowLeft')select(pos+(lang==='he'?1:-1));if(e.key==='ArrowRight')select(pos+(lang==='he'?-1:1));});
+common();
+fetch('anecdotes.json',{cache:'no-cache'}).then(function(res){if(!res.ok)throw Error('HTTP '+res.status);return res.json();}).then(function(json){if(!json||!Array.isArray(json.items)||!json.items.length)throw Error('empty');data=json;render();}).catch(function(){root.innerHTML='<p class="message">'+esc(L[lang].error)+'</p>';});
+})();
+</script>
+</body>
+</html>
