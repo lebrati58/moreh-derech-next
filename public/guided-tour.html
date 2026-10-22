@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1230"><meta name="description" content="סיור מודרך ותרגול 60 שאלות — שלוש רמות וקישורים למקורות הסיור">
+<title>סיור מודרך | MOREH DERECH NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-logo.webp" type="image/webp">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 0 0,#3046a5 0,transparent 48%),radial-gradient(ellipse at 100% 42%,#352b73 0,transparent 43%),#09112b;color:#f7f8ff;font-family:system-ui,'Arial Hebrew',Arial,sans-serif}
+button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:auto;padding:0 15px 55px}.top{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:15px 0}.home{color:#fff;text-decoration:none;font-size:13px;font-weight:800;padding:9px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a}.mini{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900;letter-spacing:.5px}.mini img{height:47px;width:47px;object-fit:contain;border-radius:13px;background:#fff;box-shadow:0 3px 0 #040717}
+.hero{border-radius:25px;position:relative;overflow:hidden;padding:21px 20px;background:linear-gradient(115deg,#5c50d6,#2277bb);border:1px solid #b3acff80;box-shadow:0 7px 0 #070c26}.eyebrow{font-size:11px;letter-spacing:3px;color:#ffe49b;font-weight:1000}.hero h1{font-size:clamp(28px,7vw,42px);margin:5px 0 4px}.hero p{font-size:14px;line-height:1.5;max-width:550px;margin:4px 0 0;color:#e5e6ff}.hero .art{position:absolute;left:13px;bottom:8px;font-size:64px;opacity:.6}
+.controls{position:sticky;top:0;background:#0b1432f5;backdrop-filter:blur(16px);border-bottom:1px solid #45578d;margin:21px -15px 13px;padding:11px 15px;z-index:10}
+.controls h2{font-size:12px;letter-spacing:1px;margin:0 0 8px;color:#b5c8ff}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.levels button{background:#202d58;color:#d9e5ff;border:2px solid #44578c;border-radius:12px;padding:12px 4px;font-weight:900;font-size:clamp(12px,3vw,16px)}
+.levels button[aria-pressed=true]{background:#ffe17b;border-color:#fff0a4;color:#222450;box-shadow:0 4px 0 #a87831}
+.filters{display:flex;gap:8px;margin-top:11px}.filters select{flex:1;min-width:0;background:#1a2953;color:#f4f6ff;border:1px solid #6470af;border-radius:12px;padding:13px}.mode{display:flex;gap:6px}.mode button{border:1px solid #6579b1;background:#172750;color:#dee8ff;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:800}.mode button[aria-pressed=true]{background:#6fe9d0;color:#123b48;border-color:#a7fff0}
+.metrics{display:flex;justify-content:space-between;gap:9px;align-items:center;margin:23px 0 9px;font-size:14px;font-weight:800;color:#b8c7ef}.metrics strong{color:#ffd477}.track{background:#263662;height:10px;border-radius:30px;overflow:hidden}.track span{display:block;background:linear-gradient(90deg,#33dcbe,#ffe276);height:100%;width:0;transition:width .18s}
+.story{border:1px solid #7673da;background:linear-gradient(140deg,#2d2b6b,#1b2e60);border-radius:18px;padding:16px 19px;margin-top:16px;box-shadow:0 5px 0 #060c25}.story h3{font-size:19px;margin:0 0 9px}.story p{line-height:1.7;margin:0;font-size:15px;color:#e6e7ff}
+#quiz{margin-top:18px}.question{background:#fff;color:#1b2855;border:2px solid #d4daf7;border-radius:25px;padding:20px;box-shadow:0 7px 0 #070b20,0 15px 30px #0006}
+.qtag{font-size:12px;display:flex;align-items:center;gap:6px;color:#5e57a8;font-weight:900}.question h2{font-size:clamp(22px,5vw,30px);line-height:1.5;margin:12px 0 20px;font-weight:1000}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.ans{border:2px solid #d6ddf3;background:#eff2fc;box-shadow:0 4px 0 #bac4df;border-radius:15px;padding:16px 12px;text-align:right;font-size:16px;font-weight:850;color:#202c53;min-height:75px}
+.ans:hover:not(:disabled),.ans:focus-visible{border-color:#5b61d9}.ans:disabled{opacity:1;cursor:default}.ans.correct{background:#bffce5;border-color:#18aa7b;box-shadow:0 4px 0 #0b9369}.ans.wrong{background:#ffe1df;border-color:#d85660;box-shadow:0 4px 0 #a23f4d}
+.feedback{background:#f8f2d9;border:2px solid #f6d788;border-radius:15px;padding:15px;margin-top:19px;line-height:1.65;color:#554017}.feedback[hidden]{display:none}.feedback strong{display:block;margin-bottom:4px}.feedback a{color:#403cb0;word-break:break-word;font-weight:800}.source-chip{font-size:12px;font-weight:700;color:#7b78a8;margin-top:13px}
+.actions{display:flex;gap:11px;margin-top:22px}.actions button{flex:1;padding:17px 10px;border-radius:16px;font-size:17px;font-weight:900;border:0}.next{color:#202143;background:#ffda74;box-shadow:0 5px 0 #b77f31}.back{color:#f1f3ff;background:#293866;border:2px solid #546aac}.actions button:disabled{opacity:.4;cursor:default}
+.done{text-align:center;padding:32px 20px;background:#fff;color:#202c60;border-radius:24px;box-shadow:0 8px 0 #050b21}.done strong{display:block;font-size:38px;color:#4a4fc4}.done button{background:#ffda74;border:0;padding:14px 20px;border-radius:13px;font-weight:900}
+.sources-note{font-size:12px;line-height:1.6;color:#a6b7df;margin-top:25px}.sources-note a{color:#a6f5e4}
+@media(max-width:550px){.hero .art{font-size:42px}.hero p{max-width:80%}.filters{flex-wrap:wrap}.filters select{flex-basis:100%}.mode{width:100%}.mode button{flex:1}.question{padding:16px}.answers{grid-template-columns:1fr}.ans{min-height:59px}.controls{padding:10px 15px}.mini span{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body><main class="shell">
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-logo.webp" alt=""><span>MOREH DERECH NEXT</span></div><a class="home" href="index.html">⌂ חזרה למשחקים</a></header>
+<section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1>🧭 סיור מודרך</h1><p>60 שאלות מקוריות ממסמכי הסיורים. בחרו רמה בראש המסך, מסלול וצורת לימוד.</p><div class="art" aria-hidden="true">🚌</div></section>
+<div class="controls" role="group" aria-label="בחירת רמת קושי"><h2>⚡ רמת קושי — בוחרים כאן</h2>
+<div class="levels"><button type="button" data-level="1" aria-pressed="true">🌱 קל</button><button type="button" data-level="2" aria-pressed="false">⭐ בינוני</button><button type="button" data-level="3" aria-pressed="false">🔥 קשה</button></div>
+<div class="filters"><select id="tour" aria-label="בחירת סיור"><option value="all">🗺️ כל הסיורים — 20 שאלות</option><option value="arad">🏜️ תל ערד ובאר שבע</option><option value="carmel">🌿 כרמל וחוף</option><option value="road67">🛣️ זכרון יעקב–יקנעם</option><option value="galil">⛰️ גליל עליון (חומר הכנה)</option></select>
+<div class="mode"><button type="button" data-mode="quiz" aria-pressed="true">🎮 תרגול</button><button type="button" data-mode="tour" aria-pressed="false">🎤 סיור מודרך</button></div></div></div>
+<div class="metrics"><span id="counter">טוען שאלות…</span><strong id="score">0 נקודות</strong></div><div class="track" role="progressbar" aria-label="התקדמות" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="fill"></span></div>
+<section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
+<div class="actions" id="actions" hidden><button type="button" class="back" id="prev">↩ הקודמת</button><button type="button" class="next" id="next">הבאה ←</button></div>
+<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס. המקורות זמינים מתחת לתשובה. חומר הגליל העליון הוא חוברת הכנה ולא אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים ולכן אינו תחליף לבדיקה היסטורית עצמאית. מצב סיור מודרך הוא תרגול מקומי ואינו מפרסם שאלות לתלמידים.</p>
+</main>
+<script>
+(function(){
+"use strict";
+let data=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[];
+const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const sessionKey="mdl_next_guided_v1";
+try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=["all","arad","carmel","road67","galil"].includes(saved.tour)?saved.tour:"all";mode=saved.mode==="tour"?"tour":"quiz";index=Number(saved.index)||0;answers=saved.answers||{};}}catch(e){}
+function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers}));}catch(e){}}
+function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
+function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
+function render(){
+if(!data)return;
+document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
+document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
+$("tour").value=tour;items=data.questions.filter(q=>q.level===level&&(tour==="all"||q.source===tour));index=Math.max(0,Math.min(index,items.length-1));const n=items.length;
+const correct=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length,done=items.filter(q=>currentAnswer(q)!==null).length;
+$("counter").textContent=n?"שאלה "+(index+1)+" מתוך "+n+" · נענו "+done:"אין שאלות למסלול הזה";
+$("score").textContent=(correct*100)+" נקודות";const progress=n?Math.round(done/n*100):0;
+$("fill").style.width=progress+"%";document.querySelector(".track").setAttribute("aria-valuenow",String(progress));
+if(!n){$("quiz").textContent="אין שאלות";$("actions").hidden=true;return;}
+const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source];
+const story=$("story");story.hidden=mode!=="tour";
+if(mode==="tour")story.innerHTML="<h3>📍 "+esc(q.stop)+" — כרטיס למדריך</h3><p>"+esc(q.explanation)+"</p><div class='source-chip'>"+esc(src.label)+" · "+esc(src.kind)+"</div>";
+$("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · רמה '+level+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a></p></aside></article>';
+$("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();}));
+$("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
+}
+function goNext(){if(index>=items.length-1){finish();return;}index++;render();document.querySelector("#quiz").scrollIntoView({block:"nearest"});}
+function finish(){const right=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length;const done=items.filter(q=>currentAnswer(q)!==null).length;
+$("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות שנענו</p><button type="button" id="redo">משחק חדש ↺</button></section>';$("story").hidden=true;$("actions").hidden=true;$("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};}
+document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;render();});
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;render();});
+$("tour").onchange=e=>{tour=e.target.value;index=0;render();};$("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
+fetch("guided-quiz.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}).then(j=>{if(!j.questions||!Array.isArray(j.questions))throw Error("Invalid questions");data=j;render();}).catch(()=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";});
+})();
+</script></body></html>
