@@ -35,17 +35,17 @@ button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:a
 
 <div class="controls" role="group" aria-label="בחירת רמת קושי"><h2>⚡ רמת קושי — בוחרים כאן</h2>
 <div class="levels"><button type="button" data-level="1" aria-pressed="true">🌱 קל</button><button type="button" data-level="2" aria-pressed="false">⭐ בינוני</button><button type="button" data-level="3" aria-pressed="false">🔥 קשה</button></div>
-<div class="filters"><select id="tour" aria-label="בחירת סיור"><option value="all">🗺️ כל המסלולים — 39 שאלות לרמה</option><option value="arad">🏜️ תל ערד ובאר שבע</option><option value="carmel">🌿 כרמל וחוף</option><option value="road67">🛣️ זכרון יעקב–יקנעם</option><option value="galil">⛰️ גליל עליון (חומר הכנה)</option></select>
+<div class="filters"><select id="tour" aria-label="בחירת סיור"><option value="all">🗺️ כל הסיורים — 61 שאלות לרמה</option><option value="road67">🛣️ מסלול 67 — זכרון יעקב–יקנעם (נוסף)</option></select>
 <div class="mode"><button type="button" data-mode="quiz" aria-pressed="true">🎮 תרגול</button><button type="button" data-mode="tour" aria-pressed="false">🎤 סיור מודרך</button></div></div></div>
 <div class="metrics"><span id="counter">טוען שאלות…</span><strong id="score">0 נקודות</strong></div><div class="track" role="progressbar" aria-label="התקדמות" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="fill"></span></div>
 <section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
 <div class="actions" id="actions" hidden><button type="button" class="back" id="prev">↩ הקודמת</button><button type="button" class="next" id="next">הבאה ←</button></div>
-<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס. המקורות זמינים מתחת לתשובה. חומר הגליל העליון הוא חוברת הכנה ולא אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים ולכן אינו תחליף לבדיקה היסטורית עצמאית. מצב סיור מודרך הוא תרגול מקומי ואינו מפרסם שאלות לתלמידים.</p>
+<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס. המקורות זמינים מתחת לתשובה. חומר גליל עליון בסיור 22 הוא חוברת הכנה ולא אישור שהסיור התקיים. בכל סיור נבחר מוצג מספר השאלות שקיימות בו; לפחות 20 שאלות לכל רמה זמינות במצב "כל הסיורים". חלק מהחומר הוא סיכומי תלמידים ולכן אינו תחליף לבדיקה היסטורית עצמאית. מצב סיור מודרך הוא תרגול מקומי ואינו מפרסם שאלות לתלמידים.</p>
 </main>
 <script>
 (function(){
 "use strict";
-let data=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[];
+let data=null,catalogue=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[];
 const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const sessionKey="mdl_next_guided_v1";
 try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=typeof saved.tour==="string"?saved.tour:"all";mode=saved.mode==="tour"?"tour":"quiz";index=Number(saved.index)||0;answers=saved.answers||{};}}catch(e){}
@@ -57,7 +57,7 @@ function render(){
 if(!data)return;
 document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
 document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
-$("tour").value=tour;items=data.questions.filter(q=>q.level===level&&(tour==="all"||q.source===tour));index=Math.max(0,Math.min(index,items.length-1));const n=items.length;
+$("tour").value=tour;items=data.questions.filter(q=>{if(q.level!==level)return false;if(tour==="all")return true;if(tour==="road67")return q.source==="road67";return q.tourId===tour||q.source==="tour"+tour||(tour==="02"&&q.source==="carmel")||(tour==="03"&&q.source==="arad")||(tour==="22"&&q.source==="galil");});index=Math.max(0,Math.min(index,items.length-1));const n=items.length;
 const correct=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length,done=items.filter(q=>currentAnswer(q)!==null).length;
 $("counter").textContent=n?"שאלה "+(index+1)+" מתוך "+n+" · נענו "+done:"אין שאלות למסלול הזה";
 $("score").textContent=(correct*100)+" נקודות";const progress=n?Math.round(done/n*100):0;
@@ -65,7 +65,7 @@ $("fill").style.width=progress+"%";document.querySelector(".track").setAttribute
 if(!n){$("quiz").textContent="אין שאלות";$("actions").hidden=true;return;}
 const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source];
 const story=$("story");story.hidden=mode!=="tour";
-if(mode==="tour")story.innerHTML="<h3>📍 "+esc(q.stop)+" — כרטיס למדריך</h3><p>"+esc(q.explanation)+"</p><div class='source-chip'>"+esc(src.label)+" · "+esc(src.kind)+"</div>";
+if(mode==="tour"){const t=catalogue?.tours.find(x=>x.id===tour);story.innerHTML="<h3>📍 "+esc(q.stop)+" — כרטיס למדריך</h3><p>"+esc(q.explanation)+"</p>"+(t?"<p style='margin-top:12px;font-size:13px'><b>תחנות הסיור:</b> "+t.stops.map(esc).join(" · ")+"</p><p style='margin-top:9px;font-size:12px'><a style='color:#b5ffea' href='"+esc(t.folderUrl)+"' target='_blank' rel='noopener noreferrer'>📁 תיק הסיור בדרייב ↗</a></p>":"")+"<div class='source-chip'>"+esc(src.label)+" · "+esc(src.kind)+"</div>";}
 $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · רמה '+level+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a></p></aside></article>';
 $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();}));
 $("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
@@ -76,6 +76,6 @@ $("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div
 document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;render();});
 document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;render();});
 $("tour").onchange=e=>{tour=e.target.value;index=0;render();};$("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
-fetch("guided-quiz.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}).then(j=>{if(!j.questions||!Array.isArray(j.questions))throw Error("Invalid questions");data=j;const group=document.createElement("optgroup");group.label="📚 סיורים 01–22 (ללא 02,03,22 שכבר ברשימה)";for(const src of Object.keys(j.sources).filter(k=>/^tour\d\d$/.test(k)).sort()){const opt=document.createElement("option");opt.value=src;opt.textContent="🧭 "+j.sources[src].label;group.appendChild(opt);}$("tour").appendChild(group);if(!j.sources[tour]&&tour!=="all")tour="all";render();}).catch(()=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";});
+Promise.all([fetch("guided-quiz.json",{cache:"no-cache"}),fetch("siyurim-catalog.json",{cache:"no-cache"})]).then(async rs=>{for(const r of rs){if(!r.ok)throw Error("HTTP "+r.status);}return Promise.all(rs.map(r=>r.json()));}).then(([j,c])=>{if(!Array.isArray(j.questions)||!Array.isArray(c.tours))throw Error("Invalid data");data=j;catalogue=c;for(const t of c.tours){const opt=document.createElement("option");opt.value=t.id;const count=j.questions.filter(q=>q.level===level&&(q.tourId===t.id||q.source==="tour"+t.id||(t.id==="02"&&q.source==="carmel")||(t.id==="03"&&q.source==="arad")||(t.id==="22"&&q.source==="galil"))).length;opt.textContent="🧭 סיור "+t.id+" — "+t.title+" ("+count+" שאלות/רמה)"+(t.id==="22"?" · חומר הכנה":"");$("tour").appendChild(opt);}tour=({arad:"03",carmel:"02",galil:"22"})[tour]||tour;if(!["all","road67",...c.tours.map(t=>t.id)].includes(tour))tour="all";render();}).catch(e=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";});
 })();
 </script></body></html>
