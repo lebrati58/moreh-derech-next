@@ -20454,6 +20454,978 @@
       "explanation": "האדיקולה עומדת מעל הקבר בתוך הרוטונדה.",
       "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
       "sourceDoc": "סיור 18 — כנסיות"
+    },
+    {
+      "id": "N19-1-01",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "כמה מקומות ישיבה הכיל התאטרון הרומי בבית שאן, לפי הסיכום?",
+      "options": [
+        "כ-7,000",
+        "כ-700",
+        "כ-70,000",
+        "כ-1,500"
+      ],
+      "correct": 0,
+      "explanation": "התאטרון המשומר ביותר בארץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-1-02",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה אמר ריש לקיש על בית שאן?",
+      "options": [
+        "\"אם גן עדן בארץ ישראל הוא — בית שאן פתחו\"",
+        "\"בית שאן עיר חטאים\"",
+        "\"בית שאן שער לגיהנום\"",
+        "\"בית שאן בירת הגליל\""
+      ],
+      "correct": 0,
+      "explanation": "התייחסות לשפע המעיינות בעמק.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-1-03",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה היה עיסוקו של ריש לקיש לפני שחזר בתשובה?",
+      "options": [
+        "גלדיאטור (לודר) וראש ליסטים",
+        "סוחר",
+        "כוהן",
+        "חקלאי"
+      ],
+      "correct": 0,
+      "explanation": "מייחסים אותו לסקיטופוליס, שבה היה אמפיתאטרון.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-1-04",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מהי ה\"לטרינה\" שבבית שאן?",
+      "options": [
+        "בית שימוש ציבורי משותף",
+        "בית מרחץ",
+        "מקדש",
+        "שוק"
+      ],
+      "correct": 0,
+      "explanation": "מים זרמו מתחת למושבים.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-1-05",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "איך נקרא הדקומנוס של בית שאן, על שם תורם לשיפוצו?",
+      "options": [
+        "רחוב סילוואנוס",
+        "רחוב פאלאדיוס",
+        "רחוב אדריאנוס",
+        "רחוב הסיגמה"
+      ],
+      "correct": 0,
+      "explanation": "הקארדו נקרא רחוב פאלאדיוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-1-06",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "איזו משלחת חפרה בתל בית שאן בשנים 1921–1933?",
+      "options": [
+        "משלחת אמריקאית",
+        "משלחת בריטית",
+        "משלחת ישראלית",
+        "משלחת צרפתית"
+      ],
+      "correct": 0,
+      "explanation": "היא חיפשה את התקופה המקראית וסילקה שכבות מאוחרות.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-1-07",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מאיזה נחל קיבלה העיר הרומית את מימיה?",
+      "options": [
+        "נחל האסי",
+        "נחל תבור",
+        "הירדן",
+        "נחל יששכר"
+      ],
+      "correct": 0,
+      "explanation": "העיר נבנתה בשטח נמוך כדי לאפשר זרימה.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-1-08",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מה פירוש השם הצלבני \"בלוואר\"?",
+      "options": [
+        "נוף יפה",
+        "כוכב הרוחות",
+        "מבצר חזק",
+        "מקום קדוש"
+      ],
+      "correct": 0,
+      "explanation": "השם הערבי — כאוכב אל־הווא, \"כוכב הרוחות\".",
+      "sourceUrl": "https://drive.google.com/file/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/view",
+      "sourceDoc": "סיור 19 — כוכב הירדן"
+    },
+    {
+      "id": "N19-1-09",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "גן פסלים של איזה אמן נמצא בכוכב הירדן?",
+      "options": [
+        "יגאל תומרקין",
+        "דני קרוון",
+        "יצחק דנציגר",
+        "מנשה קדישמן"
+      ],
+      "correct": 0,
+      "explanation": "יצירותיו עוסקות במחאה נגד מלחמות.",
+      "sourceUrl": "https://drive.google.com/file/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/view",
+      "sourceDoc": "סיור 19 — כוכב הירדן"
+    },
+    {
+      "id": "N19-1-10",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "באיזה גובה בנוי מבצר כוכב הירדן?",
+      "options": [
+        "312 מ' מעל פני הים",
+        "312 מ' מתחת לפני הים",
+        "1,000 מ'",
+        "50 מ'"
+      ],
+      "correct": 0,
+      "explanation": "יותר מ-500 מ' מעל בקעת הירדן.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-1-11",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "באיזה קרב הובסו הצלבנים ב-4 ביולי 1187?",
+      "options": [
+        "קרני חיטין",
+        "עין ג'אלות",
+        "ארסוף",
+        "מונג'יזאר"
+      ],
+      "correct": 0,
+      "explanation": "כוכב הירדן המשיך לעמוד במצור אחרי הקרב.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-1-12",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מה מטרת \"גן המקלט\" בכוכב הירדן?",
+      "options": [
+        "שימור צמחים בסכנת הכחדה",
+        "גידול ירקות",
+        "גן ילדים",
+        "חיות בר"
+      ],
+      "correct": 0,
+      "explanation": "למשל סחלבים.",
+      "sourceUrl": "https://drive.google.com/file/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/view",
+      "sourceDoc": "סיור 19 — כוכב הירדן"
+    },
+    {
+      "id": "N19-1-13",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "איזה שופט חנה במעיין חרוד מול מחנה מדיין?",
+      "options": [
+        "גדעון",
+        "שמשון",
+        "דבורה",
+        "יפתח"
+      ],
+      "correct": 0,
+      "explanation": "שופטים פרקים ו–ז.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-1-14",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "כמה לוחמים נשארו לגדעון אחרי מבחן המים?",
+      "options": [
+        "300",
+        "10,000",
+        "32,000",
+        "3,000"
+      ],
+      "correct": 0,
+      "explanation": "המלקקים בכף ידם.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-1-15",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "מה הייתה קריאת הקרב של אנשי גדעון?",
+      "options": [
+        "\"חרב לה' ולגדעון\"",
+        "\"שמע ישראל\"",
+        "\"אחריי\"",
+        "\"קומה ה'\""
+      ],
+      "correct": 0,
+      "explanation": "הם ניפצו כדים ותקעו בשופרות.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-1-16",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "מי כונה \"גואל האדמות\"?",
+      "options": [
+        "יהושע חנקין",
+        "הברון רוטשילד",
+        "מנחם אוסישקין",
+        "אהרן אהרנסון"
+      ],
+      "correct": 0,
+      "explanation": "ביתו וקברו מעל מעיין חרוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-1-17",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "איזה פסוק של גדעון הפך לסמל הפיקוד בצה\"ל?",
+      "options": [
+        "\"ממני תראו וכן תעשו\"",
+        "\"חזק ואמץ\"",
+        "\"לא בחיל ולא בכח\"",
+        "\"הנה לא ינום\""
+      ],
+      "correct": 0,
+      "explanation": "שופטים ז', י\"ז.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-1-18",
+      "tourId": "19",
+      "level": 1,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "איזה שיר כתבה דורית צמרת מקיבוץ בית השיטה?",
+      "options": [
+        "\"החיטה צומחת שוב\"",
+        "\"ירושלים של זהב\"",
+        "\"שיר לשלום\"",
+        "\"הרעות\""
+      ],
+      "correct": 0,
+      "explanation": "בעקבות נפילת 11 מבני הקיבוץ ב-1973.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-01",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה פירוש השם \"סקיטופוליס\"?",
+      "options": [
+        "עיר הסקיטים",
+        "עיר השמש",
+        "עיר המים",
+        "עיר האלים"
+      ],
+      "correct": 0,
+      "explanation": "הסקיטים — שבט נוודים; כנראה שם נרדף לנוודים.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-02",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "של איזה פרעה נמצאו אסטלות בתל בית שאן?",
+      "options": [
+        "סתי הראשון",
+        "רעמסס השני",
+        "תחותמס השלישי",
+        "שישק"
+      ],
+      "correct": 0,
+      "explanation": "בתקופת הברונזה המאוחרת שלטו כאן המצרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-03",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה מאפיין את מערכת המים של העיר הרומית?",
+      "options": [
+        "שתי מערכות נפרדות — מים נקיים וביוב",
+        "מערכת אחת",
+        "רק בורות",
+        "רק אמה עילית"
+      ],
+      "correct": 0,
+      "explanation": "השפכים הובלו אל נחל חרוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-04",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מדוע אסרו חכמים לשתות מהברזיות בסקיטופוליס?",
+      "options": [
+        "השתייה מפי פסל נראית כנשיקה לאליל",
+        "המים מלוחים",
+        "המים יקרים",
+        "בגלל מחלות"
+      ],
+      "correct": 0,
+      "explanation": "בקיר — ארבע דמויות שמפיהן זרמו מים.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-05",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "היכן נמצאה הכתובת המפרטת את הפירות האסורים בשביעית בבית שאן?",
+      "options": [
+        "ביישוב רחוב",
+        "בתאטרון בית שאן",
+        "בציפורי",
+        "בקומראן"
+      ],
+      "correct": 0,
+      "explanation": "365 מילים, 29 שורות; מפרטת את שערי בית שאן.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-06",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה טען רשב\"י על המבנים שבנו הרומאים?",
+      "options": [
+        "שכולם נבנו לצורכי עצמם — זונות, תענוגות ומסים",
+        "שהם מבורכים",
+        "שצריך ללמוד מהם",
+        "שהם זמניים"
+      ],
+      "correct": 0,
+      "explanation": "רבי יהודה שיבח; רבי יוסי שתק.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-07",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "למה שימשו הגומחות בין מעברי התאטרון?",
+      "options": [
+        "להצבת כדי ברונזה להגברת הקול",
+        "לפסלים",
+        "לנרות",
+        "לקופות"
+      ],
+      "correct": 0,
+      "explanation": "המערכת מתוארת אצל ויטרוביוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-08",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מהי הסיגמה בבית שאן?",
+      "options": [
+        "רחבה חצי־עגולה מוקפת חנויות",
+        "מקדש",
+        "שער",
+        "בית מרחץ"
+      ],
+      "correct": 0,
+      "explanation": "בפסיפסיה כתובות זימה.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-09",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "איזו אלה מופיעה בפסיפס ליד הסיגמה, עם כתר חומה?",
+      "options": [
+        "טיכה — אלת המזל",
+        "אתנה",
+        "אפרודיטה",
+        "ארטמיס"
+      ],
+      "correct": 0,
+      "explanation": "החומה מסמלת עיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-2-10",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מהו \"מבצר קונצנטרי\"?",
+      "options": [
+        "מבצר בתוך מבצר",
+        "מבצר עגול",
+        "מבצר על אי",
+        "מבצר עץ"
+      ],
+      "correct": 0,
+      "explanation": "אם החומה החיצונית נפרצת — נסוגים לדונז'ון.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-11",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מדוע יכלו המגינים לעמוד במצור של כשנה וחצי?",
+      "options": [
+        "מאגרי מים עצומים ומזון אגור",
+        "תגבורת מעכו",
+        "מעיין בתוך המבצר",
+        "שיירות סודיות"
+      ],
+      "correct": 0,
+      "explanation": "מרזבים ניקזו כל טיפת גשם לבורות.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-12",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "איך הכריע צלאח א־דין את המבצר?",
+      "options": [
+        "חפרים חתרו מתחת למגדל המזרחי והציתו את התמוכות",
+        "בליסטראות",
+        "הרעבה בלבד",
+        "בגידה"
+      ],
+      "correct": 0,
+      "explanation": "המגדל קרס אל המדרון.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-13",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מה תפקיד תווי הסתתים החקוקים באבני המבצר?",
+      "options": [
+        "זיהוי עבודת כל סתת לצורך שכרו",
+        "קישוט",
+        "סימני דת",
+        "מספור קומות"
+      ],
+      "correct": 0,
+      "explanation": "ברחבת המבצר ריכוז אבנים כאלה.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-14",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מה פירוש השם \"חמדיה\"?",
+      "options": [
+        "על שם הסולטן עבדול חמיד השני",
+        "על שם פרח",
+        "על שם מעיין",
+        "על שם שייח'"
+      ],
+      "correct": 0,
+      "explanation": "הסולטן קידם תשתיות, כמו רכבת העמק.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-15",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "באיזו שנה נחנכה רכבת העמק ההיסטורית?",
+      "options": [
+        "1905",
+        "1892",
+        "1920",
+        "1948"
+      ],
+      "correct": 0,
+      "explanation": "חיברה את חיפה לרכבת החיג'אזית בדרעא.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-16",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "מה מיוחד בעץ השיטה המלבינה?",
+      "options": [
+        "עץ בעל זיקה טרופית שחדר דרך בקע ים המלח",
+        "עץ מחטני",
+        "עץ שהובא מאירופה",
+        "עץ פרי"
+      ],
+      "correct": 0,
+      "explanation": "חורשות נדירות גם בעמק האלה ובתל שמרון.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-17",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "באיזה מבחן סינן גדעון את לוחמיו?",
+      "options": [
+        "אופן השתייה מהמעיין",
+        "ריצה",
+        "קליעה",
+        "שאלה בחידות"
+      ],
+      "correct": 0,
+      "explanation": "הכורעים נפסלו; המלקקים נבחרו.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-2-18",
+      "tourId": "19",
+      "level": 2,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "מה ציידו אנשי גדעון למתקפת הלילה?",
+      "options": [
+        "שופרות, כדים ולפידים",
+        "חרבות וחניתות",
+        "סוסים",
+        "קשתות"
+      ],
+      "correct": 0,
+      "explanation": "ניפוץ הכדים יצר בהלה במחנה מדיין.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-01",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מדוע רעידת 749 נקראה \"רעש השביעית\"?",
+      "options": [
+        "היא נקשרת לשנת שמיטה, אף ש-748 היא השמיטה",
+        "היו שבע רעידות",
+        "שבעה ימים",
+        "שבע ערים חרבו"
+      ],
+      "correct": 0,
+      "explanation": "בגניזת קהיר נמצא פיוט לצום כ\"ג בשבט.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-3-02",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה הייתה בית שאן בתקופה הביזנטית?",
+      "options": [
+        "בירת פלסטינה סקונדה",
+        "כפר קטן",
+        "מבצר צלבני",
+        "עיר נטושה"
+      ],
+      "correct": 0,
+      "explanation": "מרכז לכנסיות ומנזרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-3-03",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה החשש בהרמת מטבע שנפל ברחוב בסקיטופוליס?",
+      "options": [
+        "שהכפיפה תיראה כהשתחוות לאליל",
+        "גניבה",
+        "טומאה",
+        "מס"
+      ],
+      "correct": 0,
+      "explanation": "ארנק מותר להרים רק אם איש אינו רואה.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-3-04",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מדוע מצאו את פסל הקיסר במונומנט המרכזי בלי ראש?",
+      "options": [
+        "כנראה החליפו ראשים לפי הקיסר המתחלף",
+        "נשבר ברעידה בלבד",
+        "נבזז",
+        "נעשה כך במכוון כאמנות"
+      ],
+      "correct": 0,
+      "explanation": "תפקיד המונומנט עצמו אינו ברור.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-3-05",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "מה היה לצד רחוב סילוואנוס בתקופה הרומית, והפך למסחרי בתקופה המוסלמית?",
+      "options": [
+        "בריכת שיקוף רדודה",
+        "תאטרון",
+        "מקדש",
+        "שער"
+      ],
+      "correct": 0,
+      "explanation": "השחזור חולק לחלק רומי ולחלק מוסלמי.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-3-06",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "איך מסומן בתאטרון קו השחזור המודרני?",
+      "options": [
+        "שברי חרס משובצים בקירות",
+        "צבע אדום",
+        "שלטים",
+        "אבנים שחורות"
+      ],
+      "correct": 0,
+      "explanation": "הסקנה המרכזית לא שוחזרה כדי להשאיר את הנוף פתוח.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-3-07",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "בית שאן",
+      "question": "איזה היסטוריון ביזנטי מקיסריה עוזר לשייך את סילוואנוס לשומרונים?",
+      "options": [
+        "פרוקופיוס",
+        "יוסף בן מתתיהו",
+        "אוסביוס",
+        "תאופנס"
+      ],
+      "correct": 0,
+      "explanation": "כתובת פסיפס מתארת אותו כמלומד.",
+      "sourceUrl": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view",
+      "sourceDoc": "סיור 19 — בית שאן"
+    },
+    {
+      "id": "N19-3-08",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מה השם שנתנה משפחת ולאס למקום?",
+      "options": [
+        "קוקט — \"חינני\"",
+        "בלוואר",
+        "כוכבא",
+        "מונפור"
+      ],
+      "correct": 0,
+      "explanation": "המשפחה קיבלה את האזור מטנקרד, נסיך הגליל.",
+      "sourceUrl": "https://drive.google.com/file/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/view",
+      "sourceDoc": "סיור 19 — כוכב הירדן"
+    },
+    {
+      "id": "N19-3-09",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "היכן חצה צלאח א־דין את הירדן לפני קרני חיטין?",
+      "options": [
+        "במעבר צנברי, דרומית לכנרת",
+        "בגשר בנות יעקב",
+        "בגשר שמתחת לכוכב הירדן",
+        "בבניאס"
+      ],
+      "correct": 0,
+      "explanation": "הצלבנים העריכו כמה מעברים אפשריים.",
+      "sourceUrl": "https://drive.google.com/file/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/view",
+      "sourceDoc": "סיור 19 — כוכב הירדן"
+    },
+    {
+      "id": "N19-3-10",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מי הורה ב-1220 להרוס את הקומות העליונות של המבצר?",
+      "options": [
+        "אל־מעט'ם עיסא, שליט דמשק",
+        "צלאח א־דין",
+        "בייברס",
+        "פרידריך השני"
+      ],
+      "correct": 0,
+      "explanation": "האבנים שקרסו שימרו את הקומה התחתונה.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-11",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מדוע החפיר בכוכב הירדן היה יבש?",
+      "options": [
+        "האזור צחיח, הסלע מחלחל והמצוק המזרחי פתוח",
+        "מילאו אותו בחול",
+        "המים נגנבו",
+        "הוא נועד לגידול"
+      ],
+      "correct": 0,
+      "explanation": "החפיר חצוב בבזלת.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-12",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מה מבדיל את כוכב הירדן ממבצרים כמו מונפור?",
+      "options": [
+        "נבנה סימטרי על משטח בזלת רחב וישר",
+        "נבנה על סלע צר",
+        "נבנה מעץ",
+        "אין לו חומות"
+      ],
+      "correct": 0,
+      "explanation": "תכנון \"לפי הספר\".",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-13",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "באיזה תאריך פוצץ גשר הרכבת על הירמוך ב\"ליל הגשרים\"?",
+      "options": [
+        "16 ביוני 1946",
+        "29 בנובמבר 1947",
+        "14 במאי 1948",
+        "1 בספטמבר 1939"
+      ],
+      "correct": 0,
+      "explanation": "פעולה של ההגנה.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-14",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "מה שמע גדעון כשירד בלילה למחנה מדיין?",
+      "options": [
+        "חלום על צליל לחם שעורים המנבא את מפלתם",
+        "תוכנית התקפה",
+        "שיר ניצחון",
+        "תפילה"
+      ],
+      "correct": 0,
+      "explanation": "הוא ירד עם נערו פורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-15",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "כמה דונמים גאל יהושע חנקין, לפי הסיכום?",
+      "options": [
+        "למעלה מ-600,000",
+        "כ-6,000",
+        "כ-60,000",
+        "כ-6 מיליון"
+      ],
+      "correct": 0,
+      "explanation": "בעמק יזרעאל, בחפר, בחדרה ובגליל.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-16",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "במה עסקה אולגה חנקין?",
+      "options": [
+        "מיילדת",
+        "מורה",
+        "רופאה",
+        "עיתונאית"
+      ],
+      "correct": 0,
+      "explanation": "הייתה מבוגרת מיהושע ב-12 שנה.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-17",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "מעיין חרוד",
+      "question": "איזה לחן נולד בעקבות השכול בבית השיטה ב-1973?",
+      "options": [
+        "\"ונתנה תוקף\" של יאיר רוזנבלום",
+        "\"הבה נגילה\"",
+        "\"התקווה\"",
+        "\"אלי אלי\""
+      ],
+      "correct": 0,
+      "explanation": "11 מבני הקיבוץ נפלו במלחמה.",
+      "sourceUrl": "https://drive.google.com/file/d/1qHjx96TwDL0PiQVxtGTnuwUgzlAXlzcD/view",
+      "sourceDoc": "מעין חרוד — מדריך הדרכה"
+    },
+    {
+      "id": "N19-3-18",
+      "tourId": "19",
+      "level": 3,
+      "source": "tour19",
+      "stop": "כוכב הירדן",
+      "question": "מה עקרון הפעולה של תחנת האגירה השאובה ליד כוכב הירדן?",
+      "options": [
+        "מים נופלים ממאגר עליון לייצור חשמל בשיא, ונשאבים חזרה בלילה",
+        "טורבינות רוח בלבד",
+        "פאנלים סולאריים",
+        "שריפת גז"
+      ],
+      "correct": 0,
+      "explanation": "הפרש גובה של כ-500 מ' בין המאגרים.",
+      "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
+      "sourceDoc": "כוכב הירדן — מדריך הדרכה"
     }
   ]
 }
