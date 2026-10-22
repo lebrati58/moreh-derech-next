@@ -18492,6 +18492,1968 @@
       "explanation": "האמהות קבעו שהילדים יהיו חברים לעולם.",
       "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
       "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N17-1-01",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מה גובה פסגת החרמון, לפי הסיכום?",
+      "options": [
+        "כ-2,814 מ'",
+        "כ-1,208 מ'",
+        "כ-4,000 מ'",
+        "כ-900 מ'"
+      ],
+      "correct": 0,
+      "explanation": "הפסגה הגבוהה בשטח ישראל נמוכה יותר.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-1-02",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "כמה אחוזים משטח החרמון נמצאים בחזקת ישראל?",
+      "options": [
+        "כ-7%",
+        "כ-50%",
+        "כ-70%",
+        "כ-100%"
+      ],
+      "correct": 0,
+      "explanation": "רוב ההר בסוריה ובלבנון.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-1-03",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "איך נראה האל פאן?",
+      "options": [
+        "חציו אדם וחציו תיש",
+        "חציו אדם וחציו סוס",
+        "כאריה מכונף",
+        "כנחש"
+      ],
+      "correct": 0,
+      "explanation": "אל הרועים — ומראהו המבהיל נתן את המילה \"פאניקה\".",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-1-04",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "איזה כלי נגינה קשור לאל פאן?",
+      "options": [
+        "חליל פאן מקנים",
+        "נבל",
+        "תוף",
+        "חצוצרה"
+      ],
+      "correct": 0,
+      "explanation": "נימפה שנמלטה ממנו הפכה לצמח הקנה.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-1-05",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "לכבוד מי בנה הורדוס מקדש בבניאס?",
+      "options": [
+        "אוגוסטוס",
+        "פאן",
+        "זאוס",
+        "יופיטר"
+      ],
+      "correct": 0,
+      "explanation": "המקדש דחק את פולחן פאן לרחבה שליד המערה.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-1-06",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "איזו מסורת נוצרית נפוצה קשורה לבניאס?",
+      "options": [
+        "מסירת מפתחות השמיים לפטרוס",
+        "הטבילה בירדן",
+        "נס הלחם והדגים",
+        "הצליבה"
+      ],
+      "correct": 0,
+      "explanation": "\"אתה פטרוס ועל הצור הזה אבנה את קהילתי\".",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-1-07",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מי בנה את מבצר נמרוד?",
+      "options": [
+        "שליט דמשק האיובי אל־מלכ אל־מעט'ם עיסא",
+        "הצלבנים",
+        "הורדוס",
+        "העות'מאנים"
+      ],
+      "correct": 0,
+      "explanation": "כתובת בכניסה מציינת את הבונה ואת שנת ההקמה.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-1-08",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מה הייתה מקור המים של אנשי מבצר נמרוד?",
+      "options": [
+        "מאגר מקורה שאסף מי גשמים",
+        "מעיין בתוך המבצר",
+        "אמה מהחרמון",
+        "באר עמוקה"
+      ],
+      "correct": 0,
+      "explanation": "תעלות הובילו את מי הגשמים מכל המצודה למאגר.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-1-09",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מה גרם בסופו של דבר להרס מבצר נמרוד, שמעולם לא נכבש?",
+      "options": [
+        "רעידת אדמה ועצי אלון שצמחו בין האבנים",
+        "הפצצה",
+        "שריפה",
+        "כיבוש מונגולי"
+      ],
+      "correct": 0,
+      "explanation": "רעידת 1759 מוטטה מבנים, והשורשים ערערו את היסודות.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-1-10",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "איזה סופר אמריקאי כתב על המבצר ב\"מסע תענוגות לארץ הקודש\"?",
+      "options": [
+        "מארק טווין",
+        "הרמן מלוויל",
+        "ארנסט המינגווי",
+        "ג'ק לונדון"
+      ],
+      "correct": 0,
+      "explanation": "הוא תיאר אותו כתל חורבות נהדר.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-1-11",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "כמה עצי זית נשתלו במצפה אופיר?",
+      "options": [
+        "16 — כמספר שנותיו של אופיר",
+        "18",
+        "10",
+        "100"
+      ],
+      "correct": 0,
+      "explanation": "המצפה נבנה לזכר אופיר שעל.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-1-12",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מה משקיפים ממצפה אופיר?",
+      "options": [
+        "על הכנרת ובקעת כנרות",
+        "על ים המלח",
+        "על החרמון בלבד",
+        "על הים התיכון"
+      ],
+      "correct": 0,
+      "explanation": "התצפית מעל מצוק רמת הגולן.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-1-13",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מאיזו עיר מקראית בא השם \"גולן\"?",
+      "options": [
+        "גולן בבשן — עיר מקלט",
+        "גולן בגליל",
+        "גולן בגלעד — עיר מלוכה",
+        "גולן בנגב"
+      ],
+      "correct": 0,
+      "explanation": "אחת משלוש ערי המקלט בעבר הירדן המזרחי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-1-14",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "מה פירוש השם \"אום אל־קנאטיר\"?",
+      "options": [
+        "אם הקשתות",
+        "בית המעיין",
+        "עיר העמודים",
+        "גבעת האלונים"
+      ],
+      "correct": 0,
+      "explanation": "הקשתות תומכות בקיר שמאחוריו נובע המעיין.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-1-15",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "מה הרס את בית הכנסת בעין קשתות?",
+      "options": [
+        "רעידת האדמה של 749",
+        "מלחמה",
+        "שריפה",
+        "שיטפון"
+      ],
+      "correct": 0,
+      "explanation": "באותה רעידה נחרב גם בית הכנסת בארבל.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-1-16",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "לאיזה כיוון פונה חזית בית הכנסת בעין קשתות?",
+      "options": [
+        "דרום — לירושלים",
+        "מזרח",
+        "צפון",
+        "מערב"
+      ],
+      "correct": 0,
+      "explanation": "לפני החזית רחבה מוגבהת ושלוש מדרגות.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-1-17",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "תל סאקי",
+      "question": "באיזו מלחמה התרחש הקרב בתל א־סאקי?",
+      "options": [
+        "מלחמת יום הכיפורים",
+        "מלחמת ששת הימים",
+        "מלחמת העצמאות",
+        "מלחמת לבנון"
+      ],
+      "correct": 0,
+      "explanation": "הקרב מתואר בסדרה \"שעת נעילה\".",
+      "sourceUrl": "https://drive.google.com/file/d/1UOpdduOO4vi63N-IsnGIsTfMUkHBjguH/view",
+      "sourceDoc": "סיור 17 — תל א־סאקי"
+    },
+    {
+      "id": "N17-1-18",
+      "tourId": "17",
+      "level": 1,
+      "source": "tour17",
+      "stop": "קצרין",
+      "question": "מה משחזר הכפר העתיק בקצרין?",
+      "options": [
+        "כפר יהודי מימי התלמוד",
+        "מבצר צלבני",
+        "עיר רומית",
+        "יישוב פרהיסטורי"
+      ],
+      "correct": 0,
+      "explanation": "המבקרים מתנסים בטחינה, אפייה, דריכה ובית בד.",
+      "sourceUrl": "https://drive.google.com/file/d/15GmfxTFGw_6C56WSIRdsxwCW1oqFcPob/view",
+      "sourceDoc": "סיור 17 — קצרין"
+    },
+    {
+      "id": "N17-2-01",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "אילו שמות אחרים לחרמון מופיעים במקרא?",
+      "options": [
+        "שריון, שניר ושיאון",
+        "תבור ומירון",
+        "צלמון ועיבל",
+        "בשן וגלעד"
+      ],
+      "correct": 0,
+      "explanation": "שריון בפי הצידונים, שניר בפי האמורי.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-2-02",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מאיזו שלוחה של החרמון יוצאים מעיינות הבניאס?",
+      "options": [
+        "השלוחה הדרומית — שלוחת חרמון",
+        "שלוחת שיאון",
+        "שלוחת שריון",
+        "הפסגה"
+      ],
+      "correct": 0,
+      "explanation": "בין השלוחות יורדים נחל שיאון ונחל גובתה.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-2-03",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מה הכריע קרב פניאס ב-201 לפנה\"ס?",
+      "options": [
+        "מעבר הארץ מהתלמיים לסלווקים",
+        "סוף השלטון הפרסי",
+        "כיבוש רומי",
+        "מרד החשמונאים"
+      ],
+      "correct": 0,
+      "explanation": "לא ידוע אם מקדש פאן כבר עמד אז במקום.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-2-04",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מה מסמלות עצמות הגדיים הרבות שנמצאו במערת המעיין?",
+      "options": [
+        "שנים טובות — גדי שטבע ניבא שנה מוצלחת",
+        "קורבנות כישלון",
+        "שרידי שוק",
+        "טרף זאבים"
+      ],
+      "correct": 0,
+      "explanation": "רועים נתנו גדי לכוהנים להשליך למעיין.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-2-05",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "למי מוקדשת הגומחה של נמסיס ברחבת המקדשים?",
+      "options": [
+        "לאלת הנקמה והצדק",
+        "לאלת הציד",
+        "לאלת הים",
+        "לאלת הפריון"
+      ],
+      "correct": 0,
+      "explanation": "לצדה גומחות לפאן, לזאוס ולהד (אקו).",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-2-06",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מדוע הדרך אל שער המבצר עולה כך שצדו הימני של התוקף פונה למבצר?",
+      "options": [
+        "כך הצד החשוף, ללא מגן, פונה למגינים",
+        "בגלל השיפוע",
+        "כדי לקצר את הדרך",
+        "בגלל הרוח"
+      ],
+      "correct": 0,
+      "explanation": "רוב הלוחמים החזיקו מגן ביד שמאל.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-2-07",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מדוע יוחס המבצר בעבר לצלבנים?",
+      "options": [
+        "בגלל סגנון הבנייה הצלבני — עד שנחשפה כתובת השער",
+        "בגלל צלבים",
+        "בגלל מטבעות",
+        "בגלל מסמכים בוונציה"
+      ],
+      "correct": 0,
+      "explanation": "הכתובת הייתה מכוסה בטיח.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-2-08",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מה מבדיל, לפי התצפית, בין המגדלים האיוביים לממלוכיים?",
+      "options": [
+        "האיוביים מרובעים, הממלוכיים מעוגלים",
+        "האיוביים מעץ",
+        "הממלוכיים מרובעים",
+        "אין הבדל"
+      ],
+      "correct": 0,
+      "explanation": "אפשר לזהות את השלבים מהמגדל הדרומי.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-2-09",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מה סמלו של בייברס בתבליטי המבצר?",
+      "options": [
+        "אריה/ברדלס האוחז חיה",
+        "נשר דו־ראשי",
+        "צלב",
+        "סהר"
+      ],
+      "correct": 0,
+      "explanation": "בייברס מסר את המבצר לסגנו בילבכ ב-1275.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-2-10",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מה השם הקדום של מבצר נמרוד?",
+      "options": [
+        "קלעת א־צובייבה",
+        "קלעת נמרוד",
+        "שאטו בלוואר",
+        "מונפור"
+      ],
+      "correct": 0,
+      "explanation": "השם \"נמרוד\" נפוץ במאה ה-19.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-2-11",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מהי \"הקשת הסורית\"?",
+      "options": [
+        "רצף קמטים בצורת S שהעלה רכסים כמו החרמון",
+        "גשר עתיק",
+        "מסלול צבאי",
+        "קו שבר בכנרת"
+      ],
+      "correct": 0,
+      "explanation": "רמת הגולן נמצאת כעמק בין החרמון להרי גלעד.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-2-12",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מה נוצר כשרמת כורזים חסמה את מעבר הירדן?",
+      "options": [
+        "אגם החולה",
+        "ים המלח",
+        "הכנרת",
+        "מפל הבניאס"
+      ],
+      "correct": 0,
+      "explanation": "הבזלת ניתקה את רמת כורזים מהגולן.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-2-13",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "למה מסוכן אבק געשי למטוסים?",
+      "options": [
+        "הוא מכיל גבישי זכוכית זעירים",
+        "הוא רטוב",
+        "הוא מגנטי",
+        "הוא כבד מאוד"
+      ],
+      "correct": 0,
+      "explanation": "האבק גם מסתיר את השמש ויוצר \"חורף געשי\".",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-2-14",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "איך שוחזר בית הכנסת בעין קשתות?",
+      "options": [
+        "כל אבן נסרקה בלייזר, ותוכנה החזירה אותה למקומה",
+        "נבנה מחדש מאבנים חדשות",
+        "הודפס בתלת־ממד",
+        "הועבר למוזיאון"
+      ],
+      "correct": 0,
+      "explanation": "ישועה דריי הציע להתייחס לאתר כ\"לגו בלי הוראות\".",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-2-15",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "מהי ה\"היכלית\" בבית הכנסת?",
+      "options": [
+        "בימה מוגבהת ומקורה בקיר הפונה לירושלים",
+        "חדר גניזה",
+        "עזרת נשים",
+        "מקווה"
+      ],
+      "correct": 0,
+      "explanation": "זכר להיכל במקדש; המגילות הובאו אליה בזמן התפילה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-2-16",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "מה מציינת האבן המתומנת במרכז רצפת בית הכנסת?",
+      "options": [
+        "את המרכז הפיזי — מקום קריאת התורה",
+        "את מקום הרב",
+        "קבר",
+        "בור מים"
+      ],
+      "correct": 0,
+      "explanation": "סביבה חמישה מעגלים של אריחים טרפזיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-2-17",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "תל סאקי",
+      "question": "כיצד הציל יצחק נגרקר את הלוחמים בבונקר בתל א־סאקי?",
+      "options": [
+        "שכנע את הסורים שהוא היחיד במוצב",
+        "פוצץ את הבונקר",
+        "הזעיק סיוע אווירי",
+        "ברח והביא תגבורת"
+      ],
+      "correct": 0,
+      "explanation": "הסורים חשבו שהוא טייס בגלל סרבל השריונרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1UOpdduOO4vi63N-IsnGIsTfMUkHBjguH/view",
+      "sourceDoc": "סיור 17 — תל א־סאקי"
+    },
+    {
+      "id": "N17-2-18",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "הג'ובה הגדולה",
+      "question": "מהי הג'ובה הגדולה?",
+      "options": [
+        "בור ענק במורדות הר אודם",
+        "מעיין",
+        "מערה קרסטית",
+        "אגם מלאכותי"
+      ],
+      "correct": 0,
+      "explanation": "אחת מ-23 ג'ובות במדרונות הר אודם.",
+      "sourceUrl": "https://drive.google.com/file/d/1GIudjgyEYeMSP-38oVtsCLi24m5Q_Gqs/view",
+      "sourceDoc": "סיור 17 — הג'ובה הגדולה"
+    },
+    {
+      "id": "N17-2-19",
+      "tourId": "17",
+      "level": 2,
+      "source": "tour17",
+      "stop": "הג'ובה הגדולה",
+      "question": "איזה סוג צומח מאפיין את דרום רמת הגולן היבש?",
+      "options": [
+        "בתה — שיחים נמוכים וצמחים חד־שנתיים",
+        "יער מחטני",
+        "חורש ים־תיכוני צפוף",
+        "כר־קוצי"
+      ],
+      "correct": 0,
+      "explanation": "המשקעים עולים מכ-400 מ\"מ בדרום עד כ-1,000 בצפון.",
+      "sourceUrl": "https://drive.google.com/file/d/1GIudjgyEYeMSP-38oVtsCLi24m5Q_Gqs/view",
+      "sourceDoc": "סיור 17 — הג'ובה הגדולה"
+    },
+    {
+      "id": "N17-3-01",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מה קרה למערת הבניאס, לפי הסיכום?",
+      "options": [
+        "גגה קרס פעמיים, והמעיין ירד למערה תחתית",
+        "היא נחצבה בידי אדם",
+        "היא הוצפה בים",
+        "היא נבנתה בידי הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "המתחם יושב בתוך הפער שנוצר.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-3-02",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "באיזה הר אחר, מלבד תבור, ממקמות כנסיות מסוימות את ההשתנות של ישו?",
+      "options": [
+        "החרמון",
+        "הכרמל",
+        "הר הזיתים",
+        "הר סיני"
+      ],
+      "correct": 0,
+      "explanation": "האירוע מתואר שישה ימים אחרי מסירת המפתחות.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-3-03",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מהו גבולו הצפוני של החרמון לפי הסיכום?",
+      "options": [
+        "נחל ברדה היורד לדמשק",
+        "נחל סער",
+        "בקעת הלבנון",
+        "נחל אעוג'"
+      ],
+      "correct": 0,
+      "explanation": "בדרום — נחל סער; במערב — בקעת הלבנון.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-3-04",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "בניאס",
+      "question": "מה מתאר \"מקדש העיזים המרקדות\"?",
+      "options": [
+        "חיות רוקדות לצלילי חליל פאן",
+        "קורבן עיזים",
+        "מרוץ",
+        "ציד"
+      ],
+      "correct": 0,
+      "explanation": "מקדש פולחן לפאן ברחבת המקדשים.",
+      "sourceUrl": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view",
+      "sourceDoc": "סיור 17 — בניאס"
+    },
+    {
+      "id": "N17-3-05",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "ממה חשש בונה המבצר, אל־מעט'ם עיסא?",
+      "options": [
+        "שאחיו אל־כאמל, בברית עם הצלבנים, יכבוש את דמשק",
+        "מהמונגולים",
+        "מהביזנטים",
+        "מרעידת אדמה"
+      ],
+      "correct": 0,
+      "explanation": "המבצר הוקם בשנים 1227/8 והורחב ב-1230.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-3-06",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מי היו הממלוכים במקורם?",
+      "options": [
+        "ילדים טורקים מערבות אסיה שנקנו, הומרו לאסלאם ושירתו",
+        "אצולה ערבית",
+        "שכירי חרב אירופיים",
+        "שבט בדואי"
+      ],
+      "correct": 0,
+      "explanation": "ממלוכ = עבד.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-3-07",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "איך עקפו ממלוכים את האיסור להוריש רכוש לצאצאים?",
+      "options": [
+        "הקדישו אותו כהקדש (וקף) וקבעו את צאצאיהם כמנהליו",
+        "מכרו אותו",
+        "החביאו אותו",
+        "העבירו אותו לסולטן"
+      ],
+      "correct": 0,
+      "explanation": "השושלת הממלוכית התבססה על כישורים ולא על ירושה.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-3-08",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מבצר נמרוד",
+      "question": "מה מאפשר המעבר הנסתר במגדל שער המבצר?",
+      "options": [
+        "יציאה אל החפיר היבש בצד הצפוני",
+        "הגעה למעיין",
+        "גישה למאגר",
+        "מעבר לבניאס"
+      ],
+      "correct": 0,
+      "explanation": "דרכו ניתן לרדת ולצאת מהמצודה.",
+      "sourceUrl": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view",
+      "sourceDoc": "סיור 17 — מבצר נמרוד"
+    },
+    {
+      "id": "N17-3-09",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מהן שלוש תצורות הבזלת של חבורת הבשן?",
+      "options": [
+        "בזלת הכיסוי, אורטל וגולן",
+        "יהודה, הר הצופים ועבדת",
+        "טוף, סקוריה ולבה",
+        "חרמון, גלעד ובשן"
+      ],
+      "correct": 0,
+      "explanation": "מתחתן — גיר יהודה בצפון וקירטון הר הצופים בדרום.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-3-10",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מדוע עמודי בזלת מתקררת נוטים להיות משושים?",
+      "options": [
+        "משושה הוא המצולע הגדול ביותר שמרצף משטח בלי פערים",
+        "בגלל המגנטיות",
+        "בגלל הרוח",
+        "בגלל המים"
+      ],
+      "correct": 0,
+      "explanation": "מעבר לשש צלעות נוצרים פערים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-3-11",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מה מלמדת פלאומגנטיות בבזלת?",
+      "options": [
+        "את כיוון הצפון המגנטי בזמן התגבשות הסלע",
+        "את גיל המים",
+        "את עומק הלבה",
+        "את טמפרטורת האוויר"
+      ],
+      "correct": 0,
+      "explanation": "אפשר להדגים זאת במצפן רגיל.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-3-12",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "מצפה אופיר",
+      "question": "מדוע נוצרו בקעות כמו הכנרת וים המלח לאורך השבר?",
+      "options": [
+        "השבר פונה מערבה ונוצר \"חור\" בין הלוחות",
+        "בגלל קריסת מערות",
+        "בגלל שחיקת נהרות",
+        "בגלל פגיעת מטאוריט"
+      ],
+      "correct": 0,
+      "explanation": "בפניות מזרחה נוצר לחץ מקומי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Wy1EaJl7udmTBpwweR357G_uxuXJaQC1/view",
+      "sourceDoc": "סיור 17 — מצפה אופיר"
+    },
+    {
+      "id": "N17-3-13",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "מי ביקר במקום במאה ה-19 עם גוטליב שומאכר ותיארך את בית הכנסת למאות 1–2?",
+      "options": [
+        "לורנס אוליפנט",
+        "אדוארד רובינזון",
+        "צ'ארלס וורן",
+        "קונדר"
+      ],
+      "correct": 0,
+      "explanation": "סוקניק תיארך אותו ב-1928 למאות 5–6.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-3-14",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "מדוע נשתמרו כמעט כל אבני בית הכנסת בעין קשתות?",
+      "options": [
+        "האתר מרוחק ולא נלקחו ממנו אבנים לשימוש משני",
+        "הן נקברו בחול",
+        "הן היו מוגנות בחומה",
+        "הן היו כבדות מאוד"
+      ],
+      "correct": 0,
+      "explanation": "לכן ניתן היה לשחזר את כולו.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-3-15",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "מהו \"מעיין שכבה\" כמו באום אל־קנאטיר?",
+      "options": [
+        "מים שחלחלו בבזלת נעצרים על קרקע אפויה אטומה ויוצאים בצד",
+        "מעיין חם",
+        "מעיין ארטזי",
+        "מעיין קרסטי"
+      ],
+      "correct": 0,
+      "explanation": "לבה מאוחרת אפתה קרקע ישנה ויצרה שכבה אטומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-3-16",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "עין קשתות",
+      "question": "למה, לפי ההסבר, שימשו הבריכות מתחת לקשתות?",
+      "options": [
+        "להלבנת בדי פשתן במים עם גיר",
+        "לשתיית צאן בלבד",
+        "לטבילה",
+        "לגידול דגים"
+      ],
+      "correct": 0,
+      "explanation": "בקרקעית נמצאה שכבת גיר, אף שאין גיר במים או באזור.",
+      "sourceUrl": "https://drive.google.com/file/d/1vEWa3pdMWDRZZDPty0DG5-h-O8-XoWcL/view",
+      "sourceDoc": "סיור 17 — עין קשתות"
+    },
+    {
+      "id": "N17-3-17",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "הג'ובה הגדולה",
+      "question": "מהי \"גרסת הצ'ולנט\" להיווצרות הג'ובה?",
+      "options": [
+        "מים שפגשו כיס מגמה הפכו לאדים והתפוצצו",
+        "המסה של גיר",
+        "פגיעת מטאוריט",
+        "קריסת מכרה"
+      ],
+      "correct": 0,
+      "explanation": "\"גרסת המרק\" — גזים בלבד ללא עליית מגמה.",
+      "sourceUrl": "https://drive.google.com/file/d/1GIudjgyEYeMSP-38oVtsCLi24m5Q_Gqs/view",
+      "sourceDoc": "סיור 17 — הג'ובה הגדולה"
+    },
+    {
+      "id": "N17-3-18",
+      "tourId": "17",
+      "level": 3,
+      "source": "tour17",
+      "stop": "הג'ובה הגדולה",
+      "question": "איזה מין אלון גדל מעל 1,500 מ', לפי הסיכום?",
+      "options": [
+        "אלון חרמון",
+        "אלון תבור",
+        "אלון מצוי",
+        "אלון תולע"
+      ],
+      "correct": 0,
+      "explanation": "הספלול מכסה כ-2/3 מהפרי.",
+      "sourceUrl": "https://drive.google.com/file/d/1GIudjgyEYeMSP-38oVtsCLi24m5Q_Gqs/view",
+      "sourceDoc": "סיור 17 — הג'ובה הגדולה"
+    },
+    {
+      "id": "N18-1-01",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה השם הערבי של שער שכם?",
+      "options": [
+        "באב אל־עמוד",
+        "באב אל־ח'ליל",
+        "באב א־סאהרה",
+        "באב אל־מע'ארבה"
+      ],
+      "correct": 0,
+      "explanation": "על שם העמוד שעמד ברחבה הפנימית.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-1-02",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מדוע נקרא השער באנגלית Damascus Gate?",
+      "options": [
+        "הדרך ממנו מובילה לדמשק",
+        "הוא נבנה בידי דמשקאים",
+        "הוא דומה לשער בדמשק",
+        "שם של קדוש"
+      ],
+      "correct": 0,
+      "explanation": "בעברית — שער שכם, על שם היעד הקרוב.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-1-03",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "באיזה עמק בנוי שער שכם?",
+      "options": [
+        "עמק הטירופיאון — הגיא",
+        "גיא בן הינום",
+        "נחל קדרון",
+        "עמק רפאים"
+      ],
+      "correct": 0,
+      "explanation": "העמק חוצה את העיר העתיקה עד בריכת השילוח.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-04",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "איזה שליט עות'מאני בנה את חומות העיר ואת שער שכם הנוכחי?",
+      "options": [
+        "סולימאן המפואר",
+        "סלים הראשון",
+        "עבדול חמיד",
+        "מוחמד עלי"
+      ],
+      "correct": 0,
+      "explanation": "החומה נבנתה במאה ה-16.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-05",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "איזה קיסר הקים את איליה קפיטולינה ואת קשת הניצחון בבסיס שער שכם?",
+      "options": [
+        "אדריאנוס",
+        "טיטוס",
+        "אוגוסטוס",
+        "קונסטנטינוס"
+      ],
+      "correct": 0,
+      "explanation": "סביב 135 לספירה.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-06",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה מראה השרידים הרומיים בבסיס שער שכם?",
+      "options": [
+        "קשת צדדית של שער ניצחון משולש",
+        "חומת בית ראשון",
+        "מקדש",
+        "תאטרון"
+      ],
+      "correct": 0,
+      "explanation": "השתמר הפתח המזרחי.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-1-07",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה עמד על העמוד ברחבה שבתוך השער הרומי?",
+      "options": [
+        "פסל הקיסר אדריאנוס",
+        "צלב",
+        "נשר",
+        "פסל יופיטר"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה הביזנטית הוסר הפסל.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-08",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "מערת צדקיהו",
+      "question": "מהי למעשה מערת צדקיהו?",
+      "options": [
+        "מחצבה תת־קרקעית ענקית",
+        "מערת קבורה",
+        "מקדש",
+        "מנהרת מים"
+      ],
+      "correct": 0,
+      "explanation": "אורכה כ-220 מ', נחצבה בעיקר בימי בית שני.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-09",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "מערת צדקיהו",
+      "question": "איך התגלתה מחדש מערת צדקיהו ב-1854?",
+      "options": [
+        "כלבו של ד\"ר ברקלי התחפר בסדק בסלע",
+        "בחפירה מתוכננת",
+        "ברעידת אדמה",
+        "בעבודות ביוב"
+      ],
+      "correct": 0,
+      "explanation": "ג'יימס טרנר ברקלי.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-10",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "מערת צדקיהו",
+      "question": "איזה ארגון מקיים טקסים במערת צדקיהו?",
+      "options": [
+        "הבונים החופשיים",
+        "הטמפלרים",
+        "הצופים",
+        "הפרנציסקנים"
+      ],
+      "correct": 0,
+      "explanation": "בשל שיוך המחצבה לבנאי המקדש הראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-11",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "על שם מי נקראת כנסיית אלכסנדר נייבסקי?",
+      "options": [
+        "נסיך וגיבור רוסי מהמאה ה-13",
+        "קיסר ביזנטי",
+        "פטריארך ירושלים",
+        "צאר רוסי מהמאה ה-19"
+      ],
+      "correct": 0,
+      "explanation": "\"נייבסקי\" — מנהר הנייבה.",
+      "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
+      "sourceDoc": "סיור 18 — כנסיות"
+    },
+    {
+      "id": "N18-1-12",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה נמצא במרכז הרוטונדה בכנסיית הקבר?",
+      "options": [
+        "האדיקולה — היכלית הקבר",
+        "אבן המשיחה",
+        "הגולגותה",
+        "קפלת הלנה"
+      ],
+      "correct": 0,
+      "explanation": "בראש הכיפה פתח לכניסת אור.",
+      "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
+      "sourceDoc": "סיור 18 — כנסיות"
+    },
+    {
+      "id": "N18-1-13",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה מציינת אבן המשיחה בכניסה לכנסיית הקבר?",
+      "options": [
+        "הכנת גופת ישו לקבורה",
+        "מקום הצליבה",
+        "מקום התחייה",
+        "מקום מציאת הצלב"
+      ],
+      "correct": 0,
+      "explanation": "הגולגותה — מימין לכניסה, בקומה השנייה.",
+      "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
+      "sourceDoc": "סיור 18 — כנסיות"
+    },
+    {
+      "id": "N18-1-14",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מי, לפי המסורת, מצאה את הצלב בירושלים?",
+      "options": [
+        "הלנה, אם קונסטנטינוס",
+        "מרים המגדלית",
+        "הקיסרית אודוקיה",
+        "תיאודורה"
+      ],
+      "correct": 0,
+      "explanation": "הגיעה ב-326; קפלה על שמה בכנסיית הקבר.",
+      "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
+      "sourceDoc": "סיור 18 — כנסיות"
+    },
+    {
+      "id": "N18-1-15",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "קארדו",
+      "question": "מי חפר את הקארדו ברובע היהודי אחרי 1967?",
+      "options": [
+        "נחמן אביגד",
+        "בנימין מזר",
+        "יגאל ידין",
+        "קתלין קניון"
+      ],
+      "correct": 0,
+      "explanation": "רוחבו כ-22 מ'.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-16",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "קארדו",
+      "question": "העתק של איזו מפה עתיקה מוצג בקארדו?",
+      "options": [
+        "מפת מידבא",
+        "מפת פויטינגר",
+        "מפת תלמי",
+        "מפת המלך"
+      ],
+      "correct": 0,
+      "explanation": "הפסיפס מירדן מציג את ירושלים הביזנטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-17",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "הר ציון",
+      "question": "מה פירוש השם \"סן פטרוס אין גליקנטו\"?",
+      "options": [
+        "פטרוס וקריאת התרנגול",
+        "פטרוס על הסלע",
+        "פטרוס בכלא",
+        "פטרוס הדייג"
+      ],
+      "correct": 0,
+      "explanation": "בכנסייה דגם של ירושלים הביזנטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-1-18",
+      "tourId": "18",
+      "level": 1,
+      "source": "tour18",
+      "stop": "הר ציון",
+      "question": "איך נראה הר הבית בדגם ירושלים הביזנטית?",
+      "options": [
+        "ריק — כפי שהיה באותה תקופה",
+        "עם מקדש",
+        "עם כנסייה גדולה",
+        "עם כיפת הסלע"
+      ],
+      "correct": 0,
+      "explanation": "הדגם מדגיש את הכנסיות ומשקף את מפת מידבא.",
+      "sourceUrl": "https://drive.google.com/file/d/1b7JusB0UTB6R27Lw7J5eP26Q4630jcI4/view",
+      "sourceDoc": "סיור 18 — דגם העיר הביזנטית"
+    },
+    {
+      "id": "N18-2-01",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה משמעות ראשי התיבות C.A.C.D.D על אבן הראשה?",
+      "options": [
+        "קולוניה איליה קפיטולינה על פי צו הדקוריונים",
+        "קיסר אוגוסטוס קונסטנטינוס",
+        "הלגיון העשירי",
+        "קרדו ודקומנוס"
+      ],
+      "correct": 0,
+      "explanation": "כתובת רשמית של המושבה הרומית.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-02",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מדוע עמד שער הניצחון הרומי בלי חומה?",
+      "options": [
+        "החומה נבנתה רק סביב שנת 300",
+        "החומה נהרסה",
+        "הוא עמד בתוך העיר",
+        "החומה הייתה מעץ"
+      ],
+      "correct": 0,
+      "explanation": "בימי דיוקלטיאנוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-03",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה שינו הצלבנים במבנה השער?",
+      "options": [
+        "הפכו אותו לשער תפנית — כניסה בזווית",
+        "הרחיבו אותו",
+        "סגרו אותו",
+        "הוסיפו לו מגדל פעמונים"
+      ],
+      "correct": 0,
+      "explanation": "התוקף נאלץ לפנות ולחשוף את עצמו.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-2-04",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מהי \"משיקולי\" בשער העות'מאני?",
+      "options": [
+        "מרפסת אבן בולטת עם פתחים לשפיכת נוזלים על התוקפים",
+        "עיטור אבן",
+        "חלון צר",
+        "מדרגות"
+      ],
+      "correct": 0,
+      "explanation": "גם עיטורי מוקרנס ושיניות מעטרים את השער.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-2-05",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "ממה בנוי המגדל הרומי בשער שכם?",
+      "options": [
+        "אבנים רומיות ואבנים מבית שני בשימוש חוזר",
+        "לבנים",
+        "בזלת",
+        "שיש"
+      ],
+      "correct": 0,
+      "explanation": "כולל מדרגות ספירליות לגג.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-06",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה מאפיין את אבן הרכב הישרה בבית הבד שבמגדל, לעומת אבן מעוגלת?",
+      "options": [
+        "שוברת גם את הגלעין — יותר שמן, פחות איכות",
+        "שומרת על הגלעין",
+        "מתאימה לענבים",
+        "אין הבדל"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה ההלניסטית אבני הרכב היו מעוגלות.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-2-07",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה מסמנת האבן עם האותיות ET ו-X בחומה הצפונית־מערבית?",
+      "options": [
+        "את הלגיון העשירי פרטנזיס",
+        "את הקיסר טיטוס",
+        "את מספר השער",
+        "את שנת הבנייה"
+      ],
+      "correct": 0,
+      "explanation": "אבן בשימוש חוזר, שכובה על צדה.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-08",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מדוע נפרץ \"השער החדש\" ב-1889?",
+      "options": [
+        "בלחץ המעצמות, לקשר בין המתחם הצרפתי לרובע הנוצרי",
+        "לרכבת",
+        "למעבר צבא",
+        "לשוק"
+      ],
+      "correct": 0,
+      "explanation": "בשנים 1948–1967 האזור היה שטח הפקר.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-09",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "ויה דולורוזה",
+      "question": "מהי קשת \"אקה הומו\"?",
+      "options": [
+        "הקשת המרכזית של שער ניצחון משולש מימי אדריאנוס",
+        "שער הר הבית",
+        "קשת צלבנית",
+        "שער ממלוכי"
+      ],
+      "correct": 0,
+      "explanation": "קשת צדדית שלה משולבת בכנסיית האחיות ציון.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-10",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "ויה דולורוזה",
+      "question": "לאיזו תקופה מתוארך בפועל ריצוף הליתוסטרוטוס?",
+      "options": [
+        "לאיליה קפיטולינה במאה ה-2",
+        "לימי ישו",
+        "לתקופה הצלבנית",
+        "לתקופה הממלוכית"
+      ],
+      "correct": 0,
+      "explanation": "לכן אינו חצר מצודת אנטוניה, כמסורת.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-11",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "ויה דולורוזה",
+      "question": "מה עשו הרומאים לבריכת הסטרותיון בימי אדריאנוס?",
+      "options": [
+        "קירו אותה בקמרונות ובנו מעליה רחבה",
+        "מילאו אותה",
+        "הרחיבו אותה",
+        "הפכו אותה למקדש"
+      ],
+      "correct": 0,
+      "explanation": "בתקופת בית שני שימשה חפיר למצודת אנטוניה.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-12",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה מראים המדרגות הרחבות במתחם אלכסנדר נייבסקי?",
+      "options": [
+        "את הכניסה המקורית לכנסיית הקבר הביזנטית מהקארדו",
+        "את מדרגות הר הבית",
+        "בית כנסת",
+        "ארמון"
+      ],
+      "correct": 0,
+      "explanation": "יש המייחסים אותן למקדש ונוס של אדריאנוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-13",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מי הרס את כנסיית הקבר כליל ב-1009?",
+      "options": [
+        "החליף אל־חאכם בעמר אללה",
+        "הפרסים",
+        "צלאח א־דין",
+        "הממלוכים"
+      ],
+      "correct": 0,
+      "explanation": "קונסטנטינוס מונומאכוס שיקם חלקית ב-1048.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-14",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה נמצא בקפלת יוסף הרמתי?",
+      "options": [
+        "כוכי קבורה יהודיים מבית שני",
+        "פסיפס",
+        "מזבח צלבני",
+        "ציור ספינה"
+      ],
+      "correct": 0,
+      "explanation": "הקפלה ארמנית, בקיר המערבי של הרוטונדה.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-15",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "קארדו",
+      "question": "איזו כנסייה גדולה בנה יוסטיניאנוס, ששרידיה מתחת לרובע היהודי?",
+      "options": [
+        "הניאה — מרים החדשה",
+        "כנסיית הקבר",
+        "כנסיית העלייה",
+        "הדורמיציון"
+      ],
+      "correct": 0,
+      "explanation": "בבורות המים נחשפה כתובת הקדשה.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-16",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "הר ציון",
+      "question": "מתי הוצא הר ציון אל מחוץ לחומות?",
+      "options": [
+        "בשיקום הפאטימי במאה ה-11",
+        "בימי סולימאן",
+        "בימי הורדוס",
+        "ב-1948"
+      ],
+      "correct": 0,
+      "explanation": "שער ציון העות'מאני מ-1540.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-2-17",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "הר ציון",
+      "question": "איזה מקור עיקרי שימש לבניית דגם ירושלים הביזנטית?",
+      "options": [
+        "מפת מידבא, יחד עם הממצא בשטח",
+        "דגם הולילנד",
+        "כתבי יוסף בן מתתיהו",
+        "מפות צלבניות"
+      ],
+      "correct": 0,
+      "explanation": "הדגם מדגיש את מבני הכנסייה.",
+      "sourceUrl": "https://drive.google.com/file/d/1b7JusB0UTB6R27Lw7J5eP26Q4630jcI4/view",
+      "sourceDoc": "סיור 18 — דגם העיר הביזנטית"
+    },
+    {
+      "id": "N18-3-01",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מהי הדעה המקובלת על מיקום מפקדת הלגיון העשירי בירושלים?",
+      "options": [
+        "אזור מגדל דוד והרובע הארמני",
+        "הר הבית",
+        "הר הזיתים",
+        "עיר דוד"
+      ],
+      "correct": 0,
+      "explanation": "דעות נוספות: הר הבית/קשת רובינזון, והרובע הנוצרי.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-02",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה מקור הכינוי \"פרטנזיס\" של הלגיון העשירי?",
+      "options": [
+        "ניצחון ימי במצר (פרטום)",
+        "שם מפקד",
+        "עיר בגאליה",
+        "האל מרס"
+      ],
+      "correct": 0,
+      "explanation": "הלגיון ישב בירושלים מ-70 ועד ימי דיוקלטיאנוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-03",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "על שם מי נקרא \"מגדל טנקרד\"?",
+      "options": [
+        "מפקד צלבני שהוביל את המתקפה הראשונה עליו, ללא הצלחה",
+        "בונהו הפאטימי",
+        "קיסר ביזנטי",
+        "סולטן ממלוכי"
+      ],
+      "correct": 0,
+      "explanation": "המגדל עצמו פאטימי מהמאה ה-11.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-04",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "לפי האגדה הירושלמית, מדוע מרים מרכיבה את ישו על כתפה בפסל נוטרדאם?",
+      "options": [
+        "כדי שהבניין ייראה גבוה מהמגרש הרוסי",
+        "לפי ציור קדום",
+        "בגלל רעידת אדמה",
+        "בהוראת האפיפיור"
+      ],
+      "correct": 0,
+      "explanation": "אלמנט נדיר באמנות כנסייתית.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-05",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה ההבדל בין כיוון הכניסה בשער הצלבני לשער העות'מאני?",
+      "options": [
+        "הצלבני מקביל לחומה, העות'מאני פונה לחזיתה — שניהם בזווית",
+        "אין הבדל",
+        "העות'מאני ישר",
+        "הצלבני ישר"
+      ],
+      "correct": 0,
+      "explanation": "סולימאן עטף את המגדלים הרומיים בבנייה חדשה.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-3-06",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "האם עמוד אדריאנוס שימש נקודת אפס למדידת מרחקים מירושלים?",
+      "options": [
+        "לא — המדידה נעשתה ממרכז העיר",
+        "כן",
+        "רק בתקופה הביזנטית",
+        "רק לדרך לדמשק"
+      ],
+      "correct": 0,
+      "explanation": "כך מבהירים גם בשילוט באתר.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-07",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "שער שכם",
+      "question": "מה מאפיין את משחק \"אלקרק\" החרוט ברחבה הרומית?",
+      "options": [
+        "לוח 5×5 עם אלכסונים ו-12 כלים לשחקן",
+        "לוח 8×8",
+        "משחק קוביות",
+        "משחק מזל עם עצמות"
+      ],
+      "correct": 0,
+      "explanation": "חוקים דומים לדמקה; השם הרומי אינו ידוע.",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-3-08",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "מערת צדקיהו",
+      "question": "על איזה מקור נשען השם \"מערת צדקיהו\"?",
+      "options": [
+        "סיפור אצל רש\"י על בריחת צדקיהו ליריחו",
+        "כתובת במערה",
+        "יוסף בן מתתיהו",
+        "מפת מידבא"
+      ],
+      "correct": 0,
+      "explanation": "במסורת המוסלמית — מערת סולימאן.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-09",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "מערת צדקיהו",
+      "question": "כיצד ניתקו את גושי האבן במחצבת צדקיהו?",
+      "options": [
+        "חריצת תעלות, החדרת יתדות מתכת והכאה בפטיש",
+        "פיצוץ",
+        "אש ומים",
+        "מסור חשמלי"
+      ],
+      "correct": 0,
+      "explanation": "האבן שימשה לבנייה בימי בית שני.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-10",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "ויה דולורוזה",
+      "question": "מי ייסד את מנזר האחיות ציון?",
+      "options": [
+        "אלפונס רטיסבון",
+        "פרנציסקוס",
+        "ויטנברג",
+        "קונרד שיק"
+      ],
+      "correct": 0,
+      "explanation": "בכנסיית המנזר הקשת הצפונית של שער הניצחון.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-11",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "ויה דולורוזה",
+      "question": "מדוע קנה אריאל שרון דירה בבית ויטנברג?",
+      "options": [
+        "כדי לחייב את המדינה לאבטח את הרחוב",
+        "למגורי קבע",
+        "כמשרד",
+        "להשקעה"
+      ],
+      "correct": 0,
+      "explanation": "בבית פעל בעבר מלון \"מדיטרניאן\".",
+      "sourceUrl": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view",
+      "sourceDoc": "סיור 18 — שער שכם"
+    },
+    {
+      "id": "N18-3-12",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה מראה ציור הפיח בקפלת ורטן הקדוש?",
+      "options": [
+        "ספינה רומית והכתובת Domine Ivimus",
+        "צלב",
+        "דמות ישו",
+        "מפת ירושלים"
+      ],
+      "correct": 0,
+      "explanation": "\"אדוננו, באנו\".",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-13",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה הסדר הנכון של חלקי כנסיית הקבר הביזנטית ממזרח למערב?",
+      "options": [
+        "מדרגות מהקארדו, אטריום, בזיליקה (מרטיריון), אטריום פנימי, רוטונדה",
+        "רוטונדה, בזיליקה, אטריום",
+        "בזיליקה בלבד",
+        "אטריום, רוטונדה, בזיליקה"
+      ],
+      "correct": 0,
+      "explanation": "הכנסייה נחנכה ב-335.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-14",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה פירוש \"אנסטסיס\"?",
+      "options": [
+        "תחייה",
+        "קבר",
+        "צלב",
+        "עלייה"
+      ],
+      "correct": 0,
+      "explanation": "כנסיית הקבר נקראת גם כנסיית התחייה.",
+      "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
+      "sourceDoc": "סיור 18 — כנסיות"
+    },
+    {
+      "id": "N18-3-15",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מה עשו הצלבנים בחצר הפנימית של כנסיית הקבר?",
+      "options": [
+        "קירו אותה בכיפה ואיחדו את המתחם",
+        "הרסו אותה",
+        "הפכו אותה לגן",
+        "הוסיפו מסגד"
+      ],
+      "correct": 0,
+      "explanation": "הם גם קבעו את הכניסה במקומה הנוכחי.",
+      "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
+      "sourceDoc": "סיור 18 — כנסיות"
+    },
+    {
+      "id": "N18-3-16",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "קארדו",
+      "question": "מה אירע ב-28 במאי 1948 ברחבת בתי מחסה?",
+      "options": [
+        "כניעת הקהילה והלוחמים לליגיון הירדני",
+        "פיצוץ החורבה",
+        "שחרור הרובע",
+        "הקמת הישיבה"
+      ],
+      "correct": 0,
+      "explanation": "בתי מחסה נבנו ב-1858 בתרומת משפחת רוטשילד.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-17",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "הר ציון",
+      "question": "מה מסמלות שתי הזרועות המוצלבות בסמל הפרנציסקני?",
+      "options": [
+        "זרוע ישו וזרוע פרנציסקוס, שתיהן עם סימן מסמר",
+        "שני קיסרים",
+        "שני שליחים",
+        "שני מסדרים"
+      ],
+      "correct": 0,
+      "explanation": "מעליהן צלב ירושלים — צלב מרכזי וארבעה קטנים.",
+      "sourceUrl": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view",
+      "sourceDoc": "סיור 18 — סיכום קצר"
+    },
+    {
+      "id": "N18-3-18",
+      "tourId": "18",
+      "level": 3,
+      "source": "tour18",
+      "stop": "הר ציון",
+      "question": "איזו חומה ביזנטית בדגם מקיפה את עיר דוד?",
+      "options": [
+        "חומת אודוקיה",
+        "החומה הראשונה",
+        "חומת סולימאן",
+        "חומת אגריפס"
+      ],
+      "correct": 0,
+      "explanation": "היא עוברת לאורך גיא בן הינום.",
+      "sourceUrl": "https://drive.google.com/file/d/1b7JusB0UTB6R27Lw7J5eP26Q4630jcI4/view",
+      "sourceDoc": "סיור 18 — דגם העיר הביזנטית"
+    },
+    {
+      "id": "N18-2-18",
+      "tourId": "18",
+      "level": 2,
+      "source": "tour18",
+      "stop": "כנסיות",
+      "question": "מהי \"אדיקולה\"?",
+      "options": [
+        "מבנה קטן בתוך מבנה גדול יותר — היכלית",
+        "גומחה מעוגלת",
+        "חצר עמודים",
+        "אולם מרכזי"
+      ],
+      "correct": 0,
+      "explanation": "האדיקולה עומדת מעל הקבר בתוך הרוטונדה.",
+      "sourceUrl": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view",
+      "sourceDoc": "סיור 18 — כנסיות"
     }
   ]
 }
