@@ -2,7 +2,7 @@
   "version": "2026-10-22-drive-v2",
   "language": "he",
   "kind": "סיור מודרך — בנק תרגול ממסמכי Drive",
-  "note": "22 סיורים נסרקו; לכל סיור שאלה חדשה אחת בכל רמה (3 במסלול), נוסף ל-60 שאלות ההתחלתיות. חוברת גליל עליון אינה אישור ביצוע. המקורות דורשים אימות עצמאי לפני הדרכה מקצועית.",
+  "note": "22 סיורים נסרקו. לכל שאלה tourId (01–22, או road67 למסלול 67). הספירות מוצגות במשחק ישירות מהקובץ — אין מספרים קבועים בקוד. חוברת גליל עליון אינה אישור ביצוע. המקורות דורשים אימות עצמאי לפני הדרכה מקצועית.",
   "sources": {
     "arad": {
       "label": "תל ערד ובאר שבע",
@@ -490,7 +490,8 @@
       ],
       "correct": 0,
       "explanation": "ליד קומראן נמצאו מגילות ובהן כתבי מקרא, חיבורים חיצוניים ופרשנויות.",
-      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit",
+      "tourId": "01"
     },
     {
       "id": "TOUR-04-1",
@@ -506,7 +507,8 @@
       ],
       "correct": 0,
       "explanation": "מגידו שלטה על מעבר בין נתיבים המובילים לחוף, לסוריה ולעמק הירדן.",
-      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit",
+      "tourId": "04"
     },
     {
       "id": "TOUR-05-1",
@@ -522,7 +524,8 @@
       ],
       "correct": 0,
       "explanation": "צבא סנחריב מלך אשור כבש את לכיש בסוף המאה ה-8 לפנה\"ס.",
-      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit",
+      "tourId": "05"
     },
     {
       "id": "TOUR-06-1",
@@ -538,7 +541,8 @@
       ],
       "correct": 0,
       "explanation": "הרודיון נקרא על שם הורדוס, שבנה במקום מכלול ארמון ומבצר.",
-      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit",
+      "tourId": "06"
     },
     {
       "id": "TOUR-07-1",
@@ -554,7 +558,8 @@
       ],
       "correct": 0,
       "explanation": "סטלה מאריס הוא מנזר של המסדר הכרמליתי המזוהה עם אליהו הנביא והר הכרמל.",
-      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit",
+      "tourId": "07"
     },
     {
       "id": "TOUR-08-1",
@@ -570,7 +575,8 @@
       ],
       "correct": 0,
       "explanation": "הסיור מתמקד בסלעי משקע כגון גיר, דולומיט וקירטון.",
-      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit"
+      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit",
+      "tourId": "08"
     },
     {
       "id": "TOUR-09-1",
@@ -586,7 +592,8 @@
       ],
       "correct": 0,
       "explanation": "לפי המסורת המקראית אוהל מועד הוצב בשילה אחרי הכניסה לארץ.",
-      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit",
+      "tourId": "09"
     },
     {
       "id": "TOUR-10-1",
@@ -602,7 +609,8 @@
       ],
       "correct": 0,
       "explanation": "בסטף שוחזרו טרסות, בריכות ותעלות להשקיית גידולים על מדרונות ההר.",
-      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit",
+      "tourId": "10"
     },
     {
       "id": "TOUR-11-1",
@@ -618,7 +626,8 @@
       ],
       "correct": 0,
       "explanation": "נחל קדרון עובר לצד המזרחי של ירושלים הקדומה ויוצר גבול טופוגרפי.",
-      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit",
+      "tourId": "11"
     },
     {
       "id": "TOUR-12-1",
@@ -634,7 +643,8 @@
       ],
       "correct": 0,
       "explanation": "הרובע ההרודיאני מציג בתי מידות של האליטה הירושלמית.",
-      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit"
+      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit",
+      "tourId": "12"
     },
     {
       "id": "TOUR-13-1",
@@ -650,7 +660,8 @@
       ],
       "correct": 0,
       "explanation": "הורדוס הרחיב את הרחבה בעזרת חומות תמך ומערכות בנייה מרשימות.",
-      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit"
+      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit",
+      "tourId": "13"
     },
     {
       "id": "TOUR-14-1",
@@ -666,7 +677,8 @@
       ],
       "correct": 0,
       "explanation": "לפי דף הסיור קיבוץ רמת רחל הוקם בשנת 1926 בידי גדוד העבודה.",
-      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit",
+      "tourId": "14"
     },
     {
       "id": "TOUR-15-1",
@@ -682,7 +694,8 @@
       ],
       "correct": 0,
       "explanation": "הורדוס פיתח במקום עיר רומית גדולה ונמל מלאכותי.",
-      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit",
+      "tourId": "15"
     },
     {
       "id": "TOUR-16-1",
@@ -698,7 +711,8 @@
       ],
       "correct": 0,
       "explanation": "בציפורי נתגלו פסיפסים רבים, בין היתר בבית הכנסת ובבתי מידות.",
-      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit",
+      "tourId": "16"
     },
     {
       "id": "TOUR-17-1",
@@ -714,7 +728,8 @@
       ],
       "correct": 0,
       "explanation": "מקדש לאל פאן פעל באזור מערת המעיין; ממנו התפתח השם פניאס ובהמשך בניאס.",
-      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit",
+      "tourId": "17"
     },
     {
       "id": "TOUR-18-1",
@@ -730,7 +745,8 @@
       ],
       "correct": 0,
       "explanation": "הקארדו כלל חנויות, מדרכות, עמודים ורצועת תנועה.",
-      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit",
+      "tourId": "18"
     },
     {
       "id": "TOUR-19-1",
@@ -746,7 +762,8 @@
       ],
       "correct": 0,
       "explanation": "המסדר ההוספיטלרי פיתח את המבצר לאחר שקנה את האחוזה במאה ה-12.",
-      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit"
+      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit",
+      "tourId": "19"
     },
     {
       "id": "TOUR-20-1",
@@ -762,7 +779,8 @@
       ],
       "correct": 0,
       "explanation": "קרב תל חי אירע בשנת 1920 ונחקק בזיכרון הלאומי.",
-      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit",
+      "tourId": "20"
     },
     {
       "id": "TOUR-21-1",
@@ -778,7 +796,8 @@
       ],
       "correct": 0,
       "explanation": "שיר השירים מזכיר את כרמי עין גדי בפסוק 'אשכול הכופר דודי לי'.",
-      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit"
+      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit",
+      "tourId": "21"
     },
     {
       "id": "S021",
@@ -1134,7 +1153,8 @@
       ],
       "correct": 0,
       "explanation": "אגן השיקוע הפחית את כמות המשקעים שהיו עלולים לסתום את בורות האגירה.",
-      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit",
+      "tourId": "01"
     },
     {
       "id": "TOUR-04-2",
@@ -1150,7 +1170,8 @@
       ],
       "correct": 0,
       "explanation": "מסע תחותמס השלישי למגידו מתועד בכתובות מצריות.",
-      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit",
+      "tourId": "04"
     },
     {
       "id": "TOUR-05-2",
@@ -1166,7 +1187,8 @@
       ],
       "correct": 0,
       "explanation": "מסע סנחריב בשנת 701 לפנה\"ס נחשב אירוע מפתח בהיסטוריה של יהודה.",
-      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit",
+      "tourId": "05"
     },
     {
       "id": "TOUR-06-2",
@@ -1182,7 +1204,8 @@
       ],
       "correct": 0,
       "explanation": "הרודיון עילית כוללת את מבצר הארמון; בתחתית הוקם מכלול מנהלי ובריכה גדולה.",
-      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit",
+      "tourId": "06"
     },
     {
       "id": "TOUR-07-2",
@@ -1198,7 +1221,8 @@
       ],
       "correct": 0,
       "explanation": "הכרמליתים רואים באליהו הנביא דמות מופת בשל מסורות הקשורות בכרמל.",
-      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit",
+      "tourId": "07"
     },
     {
       "id": "TOUR-08-2",
@@ -1214,7 +1238,8 @@
       ],
       "correct": 0,
       "explanation": "הקירטון נוצר בעיקר משקיעת שרידים של יצורים ימיים זעירים.",
-      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit"
+      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit",
+      "tourId": "08"
     },
     {
       "id": "TOUR-09-2",
@@ -1230,7 +1255,8 @@
       ],
       "correct": 0,
       "explanation": "באתר נמצאו שכבות מתקופת הברזל הראשונה, המתאימה בקירוב לימי ההתנחלות.",
-      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit",
+      "tourId": "09"
     },
     {
       "id": "TOUR-10-2",
@@ -1246,7 +1272,8 @@
       ],
       "correct": 0,
       "explanation": "בתצפית מהסטף מתואר נחל שורק המתפתל בין הרי ירושלים.",
-      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit",
+      "tourId": "10"
     },
     {
       "id": "TOUR-11-2",
@@ -1262,7 +1289,8 @@
       ],
       "correct": 0,
       "explanation": "הדרכה בעיר דוד כוללת מפעלי מים, המעיין המבוצר ופיר וורן.",
-      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit",
+      "tourId": "11"
     },
     {
       "id": "TOUR-12-2",
@@ -1278,7 +1306,8 @@
       ],
       "correct": 0,
       "explanation": "המקוואות הרבים מעידים על חשיבות מנהגי טהרה לתושבי בתי המידות.",
-      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit"
+      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit",
+      "tourId": "12"
     },
     {
       "id": "TOUR-13-2",
@@ -1294,7 +1323,8 @@
       ],
       "correct": 0,
       "explanation": "שערי חולדה שימשו אחד מנתיבי הכניסה והיציאה למתחם הר הבית מדרום.",
-      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit"
+      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit",
+      "tourId": "13"
     },
     {
       "id": "TOUR-14-2",
@@ -1310,7 +1340,8 @@
       ],
       "correct": 0,
       "explanation": "הפסל משלב עצי זית חיים במבנה פיסולי גבוה והוא זכה לפרשנויות שונות.",
-      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit",
+      "tourId": "14"
     },
     {
       "id": "TOUR-15-2",
@@ -1326,7 +1357,8 @@
       ],
       "correct": 0,
       "explanation": "הנמל המלאכותי נשען על טכנולוגיות בנייה רומיות שאפשרו שוברי גלים.",
-      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit",
+      "tourId": "15"
     },
     {
       "id": "TOUR-16-2",
@@ -1342,7 +1374,8 @@
       ],
       "correct": 0,
       "explanation": "אמות הביאו מים ממעיינות באזור רכס נצרת אל ציפורי ומאגריה.",
-      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit",
+      "tourId": "16"
     },
     {
       "id": "TOUR-17-2",
@@ -1358,7 +1391,8 @@
       ],
       "correct": 0,
       "explanation": "מעיינות הבניאס נובעים למרגלות החרמון ומזינים את נחל חרמון.",
-      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit",
+      "tourId": "17"
     },
     {
       "id": "TOUR-18-2",
@@ -1374,7 +1408,8 @@
       ],
       "correct": 0,
       "explanation": "דף הסיור מתאר מרחב קארדו רחב הכולל מעבר עגלות ושדרות עמודים.",
-      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit",
+      "tourId": "18"
     },
     {
       "id": "TOUR-19-2",
@@ -1390,7 +1425,8 @@
       ],
       "correct": 0,
       "explanation": "לפי דף הסיור משפחת ולאס מכרה למסדר ההוספיטלרי את המקום בשנת 1168.",
-      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit"
+      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit",
+      "tourId": "19"
     },
     {
       "id": "TOUR-20-2",
@@ -1406,7 +1442,8 @@
       ],
       "correct": 0,
       "explanation": "פסל האריה השואג מעשה אברהם מלניקוב הוצב לזכר ההרוגים.",
-      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit",
+      "tourId": "20"
     },
     {
       "id": "TOUR-21-2",
@@ -1422,7 +1459,8 @@
       ],
       "correct": 0,
       "explanation": "בספר שמואל מתואר דוד הנמלט מפני שאול ושוהה במצדות עין גדי.",
-      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit"
+      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit",
+      "tourId": "21"
     },
     {
       "id": "S041",
@@ -1778,7 +1816,8 @@
       ],
       "correct": 0,
       "explanation": "המסמך מציג פירושים שונים של הארכאולוגים לגבי הקשר בין היישוב למגילות.",
-      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit",
+      "tourId": "01"
     },
     {
       "id": "TOUR-04-3",
@@ -1794,7 +1833,8 @@
       ],
       "correct": 0,
       "explanation": "הדרכים, המעיינות והעורף החקלאי הפכו את מגידו למקום שיישוביו נבנו זה על גבי זה.",
-      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit",
+      "tourId": "04"
     },
     {
       "id": "TOUR-05-3",
@@ -1810,7 +1850,8 @@
       ],
       "correct": 0,
       "explanation": "התבליטים בנינוה מראים את הלחימה בלכיש, כולל מערך תקיפה וסוללת מצור.",
-      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit",
+      "tourId": "05"
     },
     {
       "id": "TOUR-06-3",
@@ -1826,7 +1867,8 @@
       ],
       "correct": 0,
       "explanation": "המים הובלו מרחוק ונאגרו במאגרים, לרבות בורות ששירתו את המבצר העליון.",
-      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/edit",
+      "tourId": "06"
     },
     {
       "id": "TOUR-07-3",
@@ -1842,7 +1884,8 @@
       ],
       "correct": 0,
       "explanation": "בסיכום מפורטים נדרי עוני, פרישות וציות, לצד דגשים נוספים במסורת הכרמליתית.",
-      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1X64Xka5J_s5S5erXS2Jo8hBlxEyadJNW/edit",
+      "tourId": "07"
     },
     {
       "id": "TOUR-08-3",
@@ -1858,7 +1901,8 @@
       ],
       "correct": 0,
       "explanation": "תכונות הסלע והקרקע משפיעות על מים ומינרלים הזמינים לצמחים.",
-      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit"
+      "sourceUrl": "https://docs.google.com/document/d/16ckmkVmJFBwPZfSXVzf3L4_EgvCoQYfM/edit",
+      "tourId": "08"
     },
     {
       "id": "TOUR-09-3",
@@ -1874,7 +1918,8 @@
       ],
       "correct": 0,
       "explanation": "המסמך מציג שלוש אפשרויות למיקום המשכן, ולכן יש להבחין בין המסורת לבין ממצא מוכח.",
-      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/edit",
+      "tourId": "09"
     },
     {
       "id": "TOUR-10-3",
@@ -1890,7 +1935,8 @@
       ],
       "correct": 0,
       "explanation": "בחתך גאולוגי שכבה חדירה ושכבה אטימה יכולות ליצור מפגש שבו מי תהום נובעים החוצה.",
-      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit",
+      "tourId": "10"
     },
     {
       "id": "TOUR-11-3",
@@ -1906,7 +1952,8 @@
       ],
       "correct": 0,
       "explanation": "התצפיות והחומות מתקופת בית ראשון מאפשרות לדון ביחסי העיר, הגבעה והמקדש.",
-      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/edit",
+      "tourId": "11"
     },
     {
       "id": "TOUR-12-3",
@@ -1922,7 +1969,8 @@
       ],
       "correct": 0,
       "explanation": "פרסקו הוא ציור על שכבת טיח רטובה; באתר נזכרים גם עיטורי סטוקו.",
-      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit"
+      "sourceUrl": "https://docs.google.com/document/d/14gWnhSEBG0NH2z7Ws3LRHY3bbmkGKIX0/edit",
+      "tourId": "12"
     },
     {
       "id": "TOUR-13-3",
@@ -1938,7 +1986,8 @@
       ],
       "correct": 0,
       "explanation": "חללים וקשתות מסייעים לשאת את הרחבה בלי למלא את כל הנפח שמתחתיה בעפר כבד.",
-      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit"
+      "sourceUrl": "https://docs.google.com/document/d/125UkzqylsXrf3hSBAkmQu53Qo2Qwiksp/edit",
+      "tourId": "13"
     },
     {
       "id": "TOUR-14-3",
@@ -1954,7 +2003,8 @@
       ],
       "correct": 0,
       "explanation": "טביעות יהד מעידות על פעילות מנהלית באזור בתקופה הפרסית.",
-      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit",
+      "tourId": "14"
     },
     {
       "id": "TOUR-15-3",
@@ -1970,7 +2020,8 @@
       ],
       "correct": 0,
       "explanation": "המסמך מדגיש את צורת התאטרון מול המבנה הסגור סביב זירה של אמפיתאטרון.",
-      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit",
+      "tourId": "15"
     },
     {
       "id": "TOUR-16-3",
@@ -1986,7 +2037,8 @@
       ],
       "correct": 0,
       "explanation": "בור השיקוע מאט את המים כדי ללכוד סחף וחומר מרחף לפני המשך ההולכה.",
-      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit",
+      "tourId": "16"
     },
     {
       "id": "TOUR-17-3",
@@ -2002,7 +2054,8 @@
       ],
       "correct": 0,
       "explanation": "מערת בניאס היא מערה קארסטית שחלקים מתקרתה קרסו עם הזמן.",
-      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/edit",
+      "tourId": "17"
     },
     {
       "id": "TOUR-18-3",
@@ -2018,7 +2071,8 @@
       ],
       "correct": 0,
       "explanation": "נבחרו צורות הצגה ושימור שונות לצד בנייה חדשה ברובע היהודי.",
-      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit",
+      "tourId": "18"
     },
     {
       "id": "TOUR-19-3",
@@ -2034,7 +2088,8 @@
       ],
       "correct": 0,
       "explanation": "החפיר הוא חלק ממערך ההגנה של מבצר צלבני בעל מגדל עוז ומעברי גישה מוגנים.",
-      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit"
+      "sourceUrl": "https://docs.google.com/document/d/10QksrSSw8kR7SN0hENOOM1IWJ_HXWVQv/edit",
+      "tourId": "19"
     },
     {
       "id": "TOUR-20-3",
@@ -2050,7 +2105,8 @@
       ],
       "correct": 0,
       "explanation": "שמה מנציח שמונה חללים: שישה שנהרגו בקרב ואחרים שמתו קודם לכן באזור תל חי.",
-      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit"
+      "sourceUrl": "https://docs.google.com/document/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/edit",
+      "tourId": "20"
     },
     {
       "id": "TOUR-21-3",
@@ -2066,7 +2122,8 @@
       ],
       "correct": 0,
       "explanation": "המסמך מציין שמעריכים כי אוצר הכלים מנחל משמר קשור למקדש, אך אין זו הוכחה מוחלטת.",
-      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit"
+      "sourceUrl": "https://docs.google.com/document/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/edit",
+      "tourId": "21"
     },
     {
       "id": "D01-1",

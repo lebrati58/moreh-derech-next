@@ -3,8 +3,8 @@
 // Pages, scripts, styles et données sont REVALIDÉS auprès du serveur (cache: 'no-cache') : jamais
 // d'ancienne version tant que le réseau répond. Les appels à Supabase (POST, autre domaine) ne
 // passent jamais par ce cache.
-const CACHE = 'mdl-next-v8-driver-logo';
-const FILES = ['./', './index.html', './assets/moreh-derech-next-driver.webp', './next-theme.css', './modes.html', './play.html', './anecdotes.html', './anecdotes.json', './guided-tour.html', './guided-quiz.json', './siyurim-catalog.json', './tour-catalog.html', './tour-catalog.json', './admin.html', './style.css', './api.js', './config.js',
+const CACHE = 'mdl-next-v9-map';
+const FILES = ['./', './index.html', './assets/moreh-derech-next-driver.webp', './next-theme.css', './modes.html', './play.html', './anecdotes.html', './anecdotes.json', './guided-tour.html', './guided-quiz.json', './map.html', './places.json', './tour-data.js', './vendor/leaflet/leaflet.js', './vendor/leaflet/leaflet.css', './vendor/leaflet/leaflet.markercluster.js', './vendor/leaflet/MarkerCluster.css', './siyurim-catalog.json', './tour-catalog.html', './tour-catalog.json', './admin.html', './style.css', './api.js', './config.js',
   './gps-engine.js', './auto-engine.js', './create.html', './solo.html', './doc-reader.js', './admin-nav.js', './vendor/qrcode.js', './v3/road67-route.json'];
 
 self.addEventListener('install', e => {

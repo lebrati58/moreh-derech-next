@@ -1,9 +1,22 @@
+## 🗺️ Carte d'Israël (22 octobre 2026)
+
+Parcours : **choisir le mode → carte → choisir un סיור → difficulté → jouer**.
+
+- Page : `public/map.html` (Leaflet 1.9.4 + MarkerCluster 1.5.3 copiés dans `public/vendor/leaflet/`, fonds CARTO sur données OpenStreetMap, repli automatique sur les tuiles OSM). Recherche, filtres région/thème, vue Carte / Liste, regroupement des pins, fiche coulissante, bouton retour du téléphone qui ferme la fiche.
+- Données : `public/places.json`, **généré** par `tools/build-places.mjs` à partir de `tools/places-sources.json` (titre Wikipédia de chaque étape). Les coordonnées viennent de l'API Wikipédia (Wikidata P625), avec titre, lien et identifiant Wikidata pour vérification. **79 étapes sur 93** sont placées ; les 14 autres (noms génériques comme « כנסיות », lieux ambigus, articles sans coordonnées) ne sont **pas** placées et la fiche le dit. Chaque étape est un point distinct : aucun « centre de circuit » n'est présenté comme un site.
+- Régénérer : Actions → « Coordonnées de la carte (Wikipédia) » → Run workflow, ou `npm run build:places` sur une machine avec Internet. Pour corriger un point : changer le titre Wikipédia dans `tools/places-sources.json`.
+- Résumés d'étapes : 2 phrases de Wikipédia en hébreu, attribuées (CC BY-SA). Les faits de cours viennent des explications de `guided-quiz.json`, avec leur lien source.
+- Ce que fait chaque mode depuis la carte :
+  - 🧭 סיור מודרך / 🎮 תרגול / 📖 סיפורים : disponibles pour les 22 סיורים et le parcours 67.
+  - 🎤 Guide LIVE, 🚗 Solo et 🧪 Simulation : **seul le parcours 67 (banque V3 Supabase, GPS)** les supporte aujourd'hui. Pour les 22 סיורים, la fiche l'explique et propose les fiches de préparation ou l'entraînement. Le lien direct « 🎤 ישר למסך המדריך » reste sur l'accueil.
+- Tests : `npm run test:map` (données, sans base) et `npm run e2e:map` (parcours complet sur téléphone simulé 390×844, captures dans `screens-map/`).
+
 
 ## 🎓 Banque des 22 סיורים — Google Drive (22 octobre 2026)
 
 - 22 dossiers numérotés dans `2. סיורים` du dossier de cours : [ouvrir dans Drive](https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f).
 - Catalogue complet : `public/siyurim-catalog.json`. Les arrêts listés viennent des dossiers/fichiers ; ils ne garantissent pas la visite de tous les arrêts.
-- Jeu `public/guided-tour.html` : 183 questions QCM sourcées, 61 questions différentes pour chacune des 3 difficultés (statut au moment de cette mise à jour).
+- Jeu `public/guided-tour.html` : banque QCM sourcée `public/guided-quiz.json`, 3 difficultés. **Les pages calculent les totaux depuis ce fichier** (`public/tour-data.js`) : aucun nombre n'est codé en dur.
 - Pour chaque circuit, le jeu montre **uniquement les questions vérifiées dont il dispose** : parfois 3, parfois 6, et davantage pour les tours 02/03/22. **20 questions au moins par niveau sont garanties seulement pour « Tous les circuits »**, pas pour chaque dossier individuel.
 - `22 – קמפוס גליל עליון` contient à cette date une **חוברת הכנה**, ce qui ne confirme pas à lui seul une visite terminée.
 - Source : notes de cours et fiches d'étudiants, non expertisées indépendamment ; corriger les faits controversés avant usage professionnel.
@@ -17,13 +30,14 @@
 
 | Mode | URL | Fonction |
 | --- | --- | --- |
-| Accueil Arcade | `index.html` | Choisir son mode en hébreu, français, anglais ou russe |
+| Accueil Arcade | `index.html` | Choisir son mode en hébreu, français, anglais ou russe — chaque mode ouvre la carte |
+| 🗺️ Carte d'Israël | `map.html?mode=…` | Choisir un סיור sur la carte, sa difficulté, puis jouer dans le mode choisi |
 | 🎤 Guide | `admin.html?mode=guide` | Lire les fiches au micro du bus, GPS assisté, publier manuellement les questions |
 | 🚗 Solo | `solo.html` | Questions déclenchées sur le téléphone du passager selon le GPS |
 | 📖 Anecdotes | `anecdotes.html` | Lire 14 fiches de la route 67, sans score ni chrono, en 4 langues |
 | 🧪 Simulation | `admin.html?mode=simulation` | Simuler les trajets et les pannes GPS sans publier aux élèves |
 | 👥 Élèves | `play.html` | Page dédiée aux participants du jeu LIVE |
-| 🧭 סיור מודרך | `guided-tour.html` | 60 QCM vérifiés dans les documents de cours (20 par difficulté), quiz et fiches de guide ; entraînement local |
+| 🧭 סיור מודרך | `guided-tour.html?tour=04&level=1&mode=tour` | Étapes du circuit, quiz (`mode=quiz`) ou lecture sans questions (`mode=stories`) ; entraînement local |
 | ✨ Création | `create.html` | Nouveau parcours et relecture des questions |
 
 L'écran principal (`index.html`) est le menu de jeu. **Le lien élèves à partager en bus est maintenant `play.html`**, pas l'accueil.
@@ -40,9 +54,9 @@ L'écran principal (`index.html`) est le menu de jeu. **Le lien élèves à part
 
 ### 🧭 Banque de révision des סיורים
 
-- Banque publique : `public/guided-quiz.json` (60 questions originales en hébreu, 20 de chaque difficulté).
-- Interface : `public/guided-tour.html`, sélecteur de difficulté en haut, filtre par circuit, modes entraînement / סיור מודרך, sources consultables.
-- Document lisible : `docs/guided-tour-60-questions.md` et [Google Doc](https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit).
+- Banque publique : `public/guided-quiz.json`. Chaque question porte un `tourId` (`01`–`22` ou `road67`). Le premier lot était de 60 questions ; le total actuel est celui du fichier.
+- Interface : `public/guided-tour.html`, sélecteur de difficulté en haut, filtre par circuit, modes סיור מודרך (par étapes) / entraînement / lecture, sources consultables.
+- Document lisible du premier lot de 60 questions : `docs/guided-tour-60-questions.md` et [Google Doc](https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit).
 - Sources : comptes rendus תל ערד/תל באר שבע, הכרמל וחוף, route 67 זכרון–יקנעם, et **חוברת הכנה** גליל עליון (support de préparation, pas une preuve de sortie effectuée).
 - Ce module est un entraînement individuel statique, **pas encore la publication multi-joueurs via Supabase**. Les erreurs possibles des notes de cours doivent être vérifiées par le guide avant présentation publique.
 

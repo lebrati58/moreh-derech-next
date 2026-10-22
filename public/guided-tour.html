@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1230"><meta name="description" content="סיור מודרך ותרגול 60 שאלות — שלוש רמות וקישורים למקורות הסיור">
+<meta name="theme-color" content="#0b1230"><meta name="description" content="סיור מודרך, תרגול שאלות וסיפורי תחנות מ-22 תיקי הסיורים — שלוש רמות וקישורים למקורות">
 <title>סיור מודרך | MOREH DERECH NEXT</title>
 <link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
 <style>
@@ -27,55 +27,156 @@ button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:a
 .sources-note{font-size:12px;line-height:1.6;color:#a6b7df;margin-top:25px}.sources-note a{color:#a6f5e4}
 @media(max-width:550px){.hero .art{font-size:42px}.hero p{max-width:80%}.filters{flex-wrap:wrap}.filters select{flex-basis:100%}.mode{width:100%}.mode button{flex:1}.question{padding:16px}.answers{grid-template-columns:1fr}.ans{min-height:59px}.controls{padding:10px 15px}.mini span{display:none}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* NEXT — carte, étapes et lecture */
+[hidden]{display:none!important}
+.top{flex-wrap:wrap}.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
+.mode{flex-wrap:wrap}
+.stepbar{display:flex;gap:5px;margin:16px 0 0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.stepbar::-webkit-scrollbar{display:none}
+.stepbar button{flex:none;border:1px solid #4f62a0;background:#18244f;color:#cdd8ff;border-radius:30px;padding:7px 12px;font-size:13px;font-weight:850}
+.stepbar button[aria-current=step]{background:#6fe9d0;color:#123b48;border-color:#a7fff0}
+.stepbar button.done{border-color:#ffd477}
+.story .step-k{font-size:11px;letter-spacing:2px;color:#ffe49b;font-weight:1000;margin-bottom:5px}
+.story .wiki{margin-top:12px;font-size:14px;line-height:1.7;color:#e6e7ff}.story .attr{display:block;font-size:11.5px;color:#a8b5e2;margin-top:6px}.story .attr a{color:#a6f5e4}
+.story .look{margin-top:10px;font-size:13px;color:#cfd7ff}
+.reader{display:grid;gap:14px;margin-top:18px}
+.rcard{background:linear-gradient(140deg,#2d2b6b,#1b2e60);border:1px solid #7673da;border-radius:20px;padding:17px 18px;box-shadow:0 5px 0 #060c25}
+.rcard h3{margin:0 0 8px;font-size:20px}.rcard .num{font-size:11px;letter-spacing:2px;color:#86f3db;font-weight:900}
+.rcard p{margin:8px 0 0;line-height:1.75;font-size:15px;color:#e6e7ff}.rcard ul{margin:10px 0 0;padding-inline-start:20px;line-height:1.7;color:#f2f0ff}
+.rcard .attr{display:block;font-size:11.5px;color:#a8b5e2;margin-top:8px}.rcard .attr a{color:#a6f5e4}
+.rcard .facts-k{margin-top:12px;font-size:12px;font-weight:900;color:#ffe49b}
+.badge{display:inline-block;margin-top:12px;font-size:15px;font-weight:900;padding:8px 14px;border-radius:30px;background:#fff2c4;color:#6a4a00;border:2px solid #f2c45a}
+.done .again{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}.done .again a,.done .again button{background:#eef1ff;color:#24306b;border:2px solid #c9d1f5;padding:12px 14px;border-radius:13px;font-weight:900;text-decoration:none;font-size:14px}
 </style>
 </head>
 <body><main class="shell">
-<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><a class="home" href="tour-catalog.html">📚 22 סיורים</a><a class="home" href="index.html">⌂ חזרה למשחקים</a></header>
-<section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1>🧭 סיור מודרך</h1><p>117 שאלות מקוריות ממסמכי הסיורים. בחרו רמה בראש המסך, מסלול וצורת לימוד.</p><div class="art" aria-hidden="true">🚌</div></section><div style="margin:12px 0 1px"><a style="display:inline-block;color:#ffe494;background:#202959;border:1px solid #7c89cb;padding:10px 13px;border-radius:11px;text-decoration:none;font-size:13px;font-weight:850" target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 כל השאלות והתשובות ב-Google Drive ↗</a></div>
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home" href="index.html">⌂ משחקים</a></div></header>
+<section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1 id="heroTitle">🧭 סיור מודרך</h1><p id="heroText">טוען את השאלות…</p><div class="art" aria-hidden="true">🚌</div></section>
 
-<div class="controls" role="group" aria-label="בחירת רמת קושי"><h2>⚡ רמת קושי — בוחרים כאן</h2>
-<div class="levels"><button type="button" data-level="1" aria-pressed="true">🌱 קל</button><button type="button" data-level="2" aria-pressed="false">⭐ בינוני</button><button type="button" data-level="3" aria-pressed="false">🔥 קשה</button></div>
-<div class="filters"><select id="tour" aria-label="בחירת סיור"><option value="all">🗺️ כל הסיורים — 61 שאלות לרמה</option><option value="road67">🛣️ מסלול 67 — זכרון יעקב–יקנעם (נוסף)</option></select>
-<div class="mode"><button type="button" data-mode="quiz" aria-pressed="true">🎮 תרגול</button><button type="button" data-mode="tour" aria-pressed="false">🎤 סיור מודרך</button></div></div></div>
-<div class="metrics"><span id="counter">טוען שאלות…</span><strong id="score">0 נקודות</strong></div><div class="track" role="progressbar" aria-label="התקדמות" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="fill"></span></div>
+<div class="controls" role="group" aria-label="בחירת רמה, סיור וצורת לימוד"><h2 id="levelsTitle">⚡ רמת קושי — בוחרים כאן</h2>
+<div class="levels" id="levels"><button type="button" data-level="1" aria-pressed="true">🌱 קל</button><button type="button" data-level="2" aria-pressed="false">⭐ בינוני</button><button type="button" data-level="3" aria-pressed="false">🔥 קשה</button></div>
+<div class="filters"><select id="tour" aria-label="בחירת סיור"></select>
+<div class="mode"><button type="button" data-mode="tour" aria-pressed="false">🧭 סיור מודרך</button><button type="button" data-mode="quiz" aria-pressed="true">🎮 תרגול</button><button type="button" data-mode="stories" aria-pressed="false">📖 סיפורים</button></div></div></div>
+<nav class="stepbar" id="stepbar" aria-label="תחנות" hidden></nav>
+<div class="metrics" id="metrics"><span id="counter">טוען שאלות…</span><strong id="score">0 נקודות</strong></div><div class="track" id="track" role="progressbar" aria-label="התקדמות" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="fill"></span></div>
 <section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
+<section class="reader" id="reader" hidden></section>
 <div class="actions" id="actions" hidden><button type="button" class="back" id="prev">↩ הקודמת</button><button type="button" class="next" id="next">הבאה ←</button></div>
-<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס. המקורות זמינים מתחת לתשובה. חומר גליל עליון בסיור 22 הוא חוברת הכנה ולא אישור שהסיור התקיים. בכל סיור נבחר מוצג מספר השאלות שקיימות בו; לפחות 20 שאלות לכל רמה זמינות במצב "כל הסיורים". חלק מהחומר הוא סיכומי תלמידים ולכן אינו תחליף לבדיקה היסטורית עצמאית. מצב סיור מודרך הוא תרגול מקומי ואינו מפרסם שאלות לתלמידים.</p>
+<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. תיק 22 (גליל עליון) הוא חוברת הכנה ואינו אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a></p>
 </main>
+<script src="tour-data.js"></script>
 <script>
 (function(){
 "use strict";
-let data=null,catalogue=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[];
+let data=null,catalogue=null,places=null,stats=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[],steps=[];
 const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const sessionKey="mdl_next_guided_v1";
-try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=typeof saved.tour==="string"?saved.tour:"all";mode=saved.mode==="tour"?"tour":"quiz";index=Number(saved.index)||0;answers=saved.answers||{};}}catch(e){}
-const requestedTour=new URLSearchParams(location.search).get("tour");if(/^(tour\d\d|arad|carmel|road67|galil)$/.test(requestedTour||"")){tour=requestedTour;index=0;}
+const norm=s=>String(s||"").replace(/[֑-ׇ'"״׳\-–—,.()]/g," ").replace(/\s+/g," ").trim();
+const sessionKey="mdl_next_guided_v1",LV={1:"🌱 קל",2:"⭐ בינוני",3:"🔥 קשה"};
+try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=typeof saved.tour==="string"?saved.tour:"all";mode=["quiz","tour","stories"].includes(saved.mode)?saved.mode:"quiz";index=Number(saved.index)||0;answers=saved.answers||{};}}catch(e){}
+// Paramètres venant de la carte : ?tour=04&level=2&mode=tour (accepte aussi tour04, arad, carmel, galil, road67)
+const qs=new URLSearchParams(location.search);
+const pTour=MDTours.normalizeTourParam(qs.get("tour")),pLevel=Number(qs.get("level")),pMode=qs.get("mode");
+if(pTour&&pTour!==tour){tour=pTour;index=0;}
+if([1,2,3].includes(pLevel)&&pLevel!==level){level=pLevel;index=0;}
+if(["quiz","tour","stories"].includes(pMode)&&pMode!==mode){mode=pMode;index=0;}
 function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers}));}catch(e){}}
 function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
 function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
-function render(){
-if(!data)return;
-document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
-document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
-$("tour").value=tour;items=data.questions.filter(q=>{if(q.level!==level)return false;if(tour==="all")return true;if(tour==="road67")return q.source==="road67";return q.tourId===tour||q.source==="tour"+tour||(tour==="02"&&q.source==="carmel")||(tour==="03"&&q.source==="arad")||(tour==="22"&&q.source==="galil");});index=Math.max(0,Math.min(index,items.length-1));const n=items.length;
-const correct=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length,done=items.filter(q=>currentAnswer(q)!==null).length;
-$("counter").textContent=n?"שאלה "+(index+1)+" מתוך "+n+" · נענו "+done:"אין שאלות למסלול הזה";
-$("score").textContent=(correct*100)+" נקודות";const progress=n?Math.round(done/n*100):0;
-$("fill").style.width=progress+"%";document.querySelector(".track").setAttribute("aria-valuenow",String(progress));
-if(!n){$("quiz").textContent="אין שאלות";$("actions").hidden=true;return;}
-const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source];
-const story=$("story");story.hidden=mode!=="tour";
-if(mode==="tour"){const t=catalogue?.tours.find(x=>x.id===tour);story.innerHTML="<h3>📍 "+esc(q.stop)+" — כרטיס למדריך</h3><p>"+esc(q.explanation)+"</p>"+(t?"<p style='margin-top:12px;font-size:13px'><b>תחנות הסיור:</b> "+t.stops.map(esc).join(" · ")+"</p><p style='margin-top:9px;font-size:12px'><a style='color:#b5ffea' href='"+esc(t.folderUrl)+"' target='_blank' rel='noopener noreferrer'>📁 תיק הסיור בדרייב ↗</a></p>":"")+"<div class='source-chip'>"+esc(src.label)+" · "+esc(src.kind)+"</div>";}
-$("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · רמה '+level+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a></p></aside></article>';
-$("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();}));
-$("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
+const tourOf=q=>MDTours.tourOf(q);
+function placeStops(t){return (places&&places.tours[t]&&places.tours[t].stops)||[];}
+function matchStop(t,name){const n=norm(name);if(!n)return null;return placeStops(t).find(s=>{const a=norm(s.name),b=norm(s.he&&s.he.title);return n.includes(a)||a.includes(n)||(b&&(n.includes(b)||b.includes(n)));})||null;}
+function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
+function syncUrl(){const u=new URL(location.href);if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
+  $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode)+(tour!=="all"?"&tour="+tour:"");}
+
+function buildOptions(){
+  const sel=$("tour"),byLevel=stats.byLevel[level]||0;sel.innerHTML="";
+  const add=(v,txt)=>{const o=document.createElement("option");o.value=v;o.textContent=txt;sel.appendChild(o);};
+  add("all","🗺️ כל הסיורים — "+byLevel+" שאלות ברמה הזו");
+  for(const t of catalogue.tours){const c=stats.byTour[t.id]||{};add(t.id,"🧭 סיור "+t.id+" — "+t.title+" ("+(c[level]||0)+" שאלות ברמה)"+(t.id==="22"?" · חומר הכנה":""));}
+  if(stats.byTour.road67)add("road67","🛣️ מסלול 67 — זכרון יעקב–יקנעם ("+(stats.byTour.road67[level]||0)+" שאלות ברמה)");
+  sel.value=tour;
 }
-function goNext(){if(index>=items.length-1){finish();return;}index++;render();document.querySelector("#quiz").scrollIntoView({block:"nearest"});}
+function heroText(){
+  const c=tour==="all"?stats:{total:(stats.byTour[tour]||{}).total||0};
+  $("heroTitle").textContent=mode==="stories"?"📖 סיפורי הסיור":mode==="tour"?"🧭 סיור מודרך":"🎮 תרגול שאלות";
+  $("heroText").textContent=(tour==="all"?stats.total+" שאלות מקוריות מ-22 תיקי הסיורים":tourTitle(tour)+" · "+c.total+" שאלות")+(mode==="stories"?". קוראים על התחנות — בלי שאלות ובלי ציון.":mode==="tour"?". תחנה אחרי תחנה: מה המקום, שאלה, והסבר.":". בחרו רמה וסיור — ומתחילים.");
+}
+function render(){
+  if(!data)return;
+  document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
+  document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
+  buildOptions();heroText();syncUrl();
+  const reading=mode==="stories";
+  ["levels","levelsTitle"].forEach(id=>$(id).hidden=reading);
+  ["metrics","track","quiz","actions"].forEach(id=>$(id).hidden=reading);
+  $("reader").hidden=!reading;$("story").hidden=true;$("stepbar").hidden=true;
+  if(reading){renderReader();persist();return;}
+  items=data.questions.filter(q=>q.level===level&&(tour==="all"||tourOf(q)===tour));
+  if(mode==="tour")orderByStops();
+  index=Math.max(0,Math.min(index,items.length-1));const n=items.length;
+  const correct=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length,done=items.filter(q=>currentAnswer(q)!==null).length;
+  $("counter").textContent=n?"שאלה "+(index+1)+" מתוך "+n+" · נענו "+done:"אין שאלות ברמה הזו";
+  $("score").textContent=(correct*100)+" נקודות";const progress=n?Math.round(done/n*100):0;
+  $("fill").style.width=progress+"%";$("track").setAttribute("aria-valuenow",String(progress));
+  if(!n){$("quiz").innerHTML='<div class="question">אין עדיין שאלות ברמה הזו לסיור הזה. נסו רמה אחרת או <a href="map.html">בחרו מקום אחר במפה</a>.</div>';$("actions").hidden=true;return;}
+  const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source]||{label:tourTitle(tourOf(q)),kind:""};
+  if(mode==="tour")renderStep(q);
+  $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a></p></aside></article>';
+  $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();}));
+  $("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
+}
+// Mode « סיור מודרך » : questions groupées par étape, dans l'ordre des étapes du catalogue.
+function orderByStops(){
+  const key=q=>{const t=tourOf(q),s=matchStop(t,q.stop),list=placeStops(t);return {t,name:s?s.name:q.stop,pos:s?list.indexOf(s):99,place:s};};
+  const withKey=items.map((q,i)=>({q,i,k:key(q)}));
+  withKey.sort((a,b)=>a.k.t.localeCompare(b.k.t)||a.k.pos-b.k.pos||a.i-b.i);
+  items=withKey.map(x=>x.q);steps=[];
+  withKey.forEach((x,i)=>{const last=steps[steps.length-1];if(!last||last.name!==x.k.name||last.t!==x.k.t)steps.push({name:x.k.name,t:x.k.t,place:x.k.place,first:i,qs:[x.q]});else last.qs.push(x.q);});
+}
+function renderStep(q){
+  const si=steps.findIndex(s=>s.qs.includes(q)),st=steps[si];
+  const bar=$("stepbar");bar.hidden=steps.length<2;
+  bar.innerHTML=steps.map((s,i)=>'<button type="button" data-step="'+i+'"'+(i===si?' aria-current="step"':'')+(s.qs.every(x=>currentAnswer(x)!==null)?' class="done"':'')+'>'+(i+1)+'. '+esc(s.name)+'</button>').join("");
+  bar.querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>{index=steps[Number(b.dataset.step)].first;render();});
+  const cur=bar.querySelector("[aria-current]");if(cur)cur.scrollIntoView({block:"nearest",inline:"center"});
+  const p=st.place,story=$("story");story.hidden=false;
+  story.innerHTML='<div class="step-k">תחנה '+(si+1)+' מתוך '+steps.length+(tour==="all"?' · סיור '+esc(st.t):'')+'</div><h3>📍 '+esc(st.name)+'</h3>'+
+    (p&&p.he?'<div class="wiki">'+esc(p.he.extract)+'<span class="attr">ויקיפדיה: <a href="'+esc(p.he.url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.he.title)+' ↗</a> · CC BY-SA</span></div>':'<div class="look">קראו את השאלה, ענו — ואז ההסבר מתוך חומר הקורס יופיע.</div>')+
+    (p&&p.placed?'<div class="look"><a style="color:#b5ffea;font-weight:800" href="map.html?mode=guided&tour='+esc(st.t)+'#t='+esc(st.t)+'">🗺️ הראו לי במפה</a></div>':'');
+}
+// Mode lecture : fiches par étape, sans question ni score.
+function renderReader(){
+  const r=$("reader");
+  if(tour==="all"){r.innerHTML='<div class="rcard"><h3>בחרו סיור</h3><p>הסיפורים מסודרים לפי סיור. בחרו סיור ברשימה למעלה — או <a style="color:#a6f5e4" href="map.html?mode=stories">על המפה</a>.</p></div>';return;}
+  if(tour==="road67"){r.innerHTML='<div class="rcard"><h3>🛣️ מסלול 67</h3><p>לסיפורי מסלול 67 יש מסך קריאה משלהם, בארבע שפות.</p><p><a class="badge" style="text-decoration:none" href="anecdotes.html">📖 לסיפורי הדרך ←</a></p></div>';return;}
+  const qsT=data.questions.filter(q=>tourOf(q)===tour),groups=new Map();
+  placeStops(tour).forEach(s=>groups.set(s.name,{place:s,facts:[]}));
+  qsT.forEach(q=>{const s=matchStop(tour,q.stop),k=s?s.name:q.stop;if(!groups.has(k))groups.set(k,{place:null,facts:[]});const g=groups.get(k);if(!g.facts.some(f=>f.text===q.explanation))g.facts.push({text:q.explanation,url:q.sourceUrl});});
+  const t=catalogue.tours.find(x=>x.id===tour);let i=0,h='';
+  if(t&&tour==="22")h+='<div class="rcard" style="border-color:#b98a2e"><p>📒 החומר בתיק הזה הוא חוברת הכנה ואינו מאשר שהסיור בוצע.</p></div>';
+  for(const [name,g] of groups){const p=g.place;if(!(p&&p.he)&&!g.facts.length)continue;i++;
+    h+='<article class="rcard"><div class="num">תחנה '+i+'</div><h3>📍 '+esc(name)+'</h3>'+
+      (p&&p.he?'<p>'+esc(p.he.extract)+'</p><span class="attr">ויקיפדיה: <a href="'+esc(p.he.url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.he.title)+' ↗</a> · CC BY-SA</span>':'')+
+      (g.facts.length?'<div class="facts-k">💡 מתוך חומר הקורס</div><ul>'+g.facts.map(f=>'<li>'+esc(f.text)+' <a style="color:#a6f5e4;font-size:12px" href="'+esc(f.url)+'" target="_blank" rel="noopener noreferrer">מקור ↗</a></li>').join("")+'</ul>':'')+'</article>';}
+  h+='<div class="rcard"><h3>🎮 מוכנים לשאלות?</h3><p><button type="button" class="badge" style="cursor:pointer" data-go-mode="tour">🧭 לסיור המודרך עם שאלות ←</button></p></div>';
+  r.innerHTML=h;r.querySelector("[data-go-mode]").onclick=()=>{mode="tour";index=0;render();window.scrollTo({top:0,behavior:"smooth"});};
+}
+function goNext(){if(index>=items.length-1){finish();return;}index++;render();document.querySelector(mode==="tour"?"#story":"#quiz").scrollIntoView({block:"nearest"});}
 function finish(){const right=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length;const done=items.filter(q=>currentAnswer(q)!==null).length;
-$("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות שנענו</p><button type="button" id="redo">משחק חדש ↺</button></section>';$("story").hidden=true;$("actions").hidden=true;$("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};}
+  let badge="";if(tour!=="all"&&items.length>=3&&right===items.length){badge='<div class="badge">🏅 תג מושלם — '+esc(tourTitle(tour))+' · '+LV[level]+'</div>';try{const b=JSON.parse(localStorage.getItem("mdl_next_badges")||"{}");b[tour+"-"+level]=new Date().toISOString().slice(0,10);localStorage.setItem("mdl_next_badges",JSON.stringify(b));}catch(e){}}
+  const other=[1,2,3].filter(l=>l!==level&&(tour==="all"?stats.byLevel[l]:(stats.byTour[tour]||{})[l]));
+  $("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות נענו</p>'+badge+'<div class="again"><button type="button" id="redo">↺ משחק חדש</button>'+other.map(l=>'<button type="button" data-relevel="'+l+'">'+LV[l]+'</button>').join("")+'<a href="'+esc($("mapLink").href)+'">🗺️ חזרה למפה</a></div></section>';
+  $("story").hidden=true;$("stepbar").hidden=true;$("actions").hidden=true;
+  $("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};
+  $("quiz").querySelectorAll("[data-relevel]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.relevel);index=0;render();});}
 document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;render();});
 document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;render();});
 $("tour").onchange=e=>{tour=e.target.value;index=0;render();};$("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
-Promise.all([fetch("guided-quiz.json",{cache:"no-cache"}),fetch("siyurim-catalog.json",{cache:"no-cache"})]).then(async rs=>{for(const r of rs){if(!r.ok)throw Error("HTTP "+r.status);}return Promise.all(rs.map(r=>r.json()));}).then(([j,c])=>{if(!Array.isArray(j.questions)||!Array.isArray(c.tours))throw Error("Invalid data");data=j;catalogue=c;for(const t of c.tours){const opt=document.createElement("option");opt.value=t.id;const count=j.questions.filter(q=>q.level===level&&(q.tourId===t.id||q.source==="tour"+t.id||(t.id==="02"&&q.source==="carmel")||(t.id==="03"&&q.source==="arad")||(t.id==="22"&&q.source==="galil"))).length;opt.textContent="🧭 סיור "+t.id+" — "+t.title+" ("+count+" שאלות/רמה)"+(t.id==="22"?" · חומר הכנה":"");$("tour").appendChild(opt);}tour=({arad:"03",carmel:"02",galil:"22"})[tour]||tour;if(!["all","road67",...c.tours.map(t=>t.id)].includes(tour))tour="all";render();}).catch(e=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";});
+Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalog.json"),MDTours.getJSON("places.json").catch(()=>null)]).then(([j,c,p])=>{
+  if(!Array.isArray(j.questions)||!Array.isArray(c.tours))throw Error("Invalid data");
+  data=j;catalogue=c;places=p;stats=MDTours.counts(j.questions);
+  if(!["all",...c.tours.map(t=>t.id),...(stats.byTour.road67?["road67"]:[])].includes(tour))tour="all";render();
+}).catch(e=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";console.error(e);});
 })();
 </script></body></html>

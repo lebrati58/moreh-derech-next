@@ -1,11 +1,9 @@
 name: Coordonnées de la carte (Wikipédia)
-# Régénère public/places.json depuis Wikipédia/Wikidata et le commit sur la branche qui a lancé le workflow.
+# Régénère public/places.json depuis Wikipédia/Wikidata. Le résultat est commité sur la branche (si les droits
+# d'écriture d'Actions le permettent) et publié aussi en annotations du job (compressé, base64).
 # Lancement manuel : Actions → « Coordonnées de la carte » → Run workflow.
 on:
   workflow_dispatch:
-  push:
-    branches: [places-data]
-    paths: [tools/places-sources.json, tools/build-places.mjs, .github/workflows/places.yml]
 permissions:
   contents: write
 jobs:

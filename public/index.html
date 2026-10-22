@@ -54,6 +54,9 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
 @media(max-width:370px){.mode-grid{grid-template-columns:1fr}.mode-link{min-height:150px}.arcade-art h1{font-size:29px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 .identity{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;font-size:15px;letter-spacing:.3px;font-weight:1000}.identity b{color:#ffdb70}.identity img{width:54px;height:54px;object-fit:contain;background:white;border:2px solid #fff7cc;border-radius:15px;box-shadow:0 4px 0 #070f26;flex-shrink:0}.arcade-art{min-height:242px}.arcade-crest{position:absolute;inset-inline-end:16px;bottom:10px;width:clamp(120px,35%,235px);aspect-ratio:1;border-radius:25px;padding:6px;background:linear-gradient(135deg,#fff,#e4f2ff);border:3px solid #ffde77;box-shadow:0 8px 0 #131b63,0 15px 25px #0007;transform:rotate(5deg)}.arcade-crest img{display:block;width:100%;height:100%;object-fit:contain;border-radius:18px}@media(max-width:630px){.arcade-art{min-height:192px}.arcade-crest{width:clamp(112px,37%,158px);bottom:9px;inset-inline-end:12px;border-radius:18px}.arcade-crest img{border-radius:13px}.identity{font-size:12px}.identity img{width:44px;height:44px}}
+.map-banner{display:flex;align-items:center;gap:14px;margin-top:17px;padding:16px 18px;border-radius:22px;text-decoration:none;color:#fff;background:linear-gradient(110deg,#0f6f7a,#2b3fa8 60%,#5b37b8);border:2px solid #7fe9dc80;box-shadow:0 7px 0 #050b1c,0 14px 30px #0006}
+.map-banner:active{transform:translateY(4px);box-shadow:0 3px 0 #050b1c}
+.mb-ico{font-size:38px;display:grid;place-items:center;width:62px;height:62px;border-radius:18px;background:#ffffff22;flex:none}.map-banner b{display:block;font-size:20px;font-weight:1000}.map-banner small{display:block;color:#d6f9f2;font-size:13px;margin-top:2px}.mb-go{margin-inline-start:auto;font-size:24px;font-weight:1000;background:#ffd66e;color:#1c1f45;border-radius:14px;width:46px;height:46px;display:grid;place-items:center;flex:none;box-shadow:0 4px 0 #b98a2e}
 </style>
 <link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
 </head>
@@ -76,57 +79,61 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
     </div>
   </section>
   <div class="mode-grid">
-    <a class="mode-link" data-label="LIVE" href="admin.html?mode=guide">
+    <a class="mode-link" data-label="LIVE" href="map.html?mode=guide">
       <span class="mode-icon" aria-hidden="true">🎤</span><span class="mode-title" data-t="guide">מדריך — עם מיקרופון</span>
       <span class="mode-detail" data-t="guideDesc">אתם מדברים במיקרופון של האוטובוס, בוחרים שאלה ומפרסמים לתלמידים. GPS מציע מתי.</span>
       <span class="mode-enter" data-t="enter">כניסה ←</span>
     </a>
-    <a class="mode-link" data-label="GPS" href="solo.html">
+    <a class="mode-link" data-label="GPS" href="map.html?mode=solo">
       <span class="mode-icon" aria-hidden="true">🚗</span><span class="mode-title" data-t="solo">משחק עצמאי</span>
       <span class="mode-detail" data-t="soloDesc">משחק אישי לנוסעים: GPS פותח שאלות לאורך הדרך, בלי מדריך ובלי דירוג קבוצתי.</span>
       <span class="mode-enter" data-t="enter">כניסה ←</span>
     </a>
-    <a class="mode-link" data-label="STORIES" href="anecdotes.html">
+    <a class="mode-link" data-label="STORIES" href="map.html?mode=stories">
       <span class="mode-icon" aria-hidden="true">📖</span><span class="mode-title" data-t="stories">רק סיפורי דרך</span>
-      <span class="mode-detail" data-t="storiesDesc">קוראים סיפורים ועובדות מעניינות, בלי שאלות, ציונים או שעון. כרגע מסלול 67.</span>
+      <span class="mode-detail" data-t="storiesDesc">קוראים על תחנות הסיורים ומסלול 67, בלי שאלות, ציונים או שעון.</span>
       <span class="mode-enter" data-t="enter">כניסה ←</span>
     </a>
-    <a class="mode-link" data-label="GUIDED" href="guided-tour.html">
+    <a class="mode-link" data-label="GUIDED" href="map.html?mode=guided">
       <span class="mode-icon" aria-hidden="true">🧭</span><span class="mode-title" data-t="guided">סיור מודרך</span>
-      <span class="mode-detail" data-t="guidedDesc">183 שאלות מתיקי הסיורים. 3 רמות קושי, תרגול אישי וכרטיסי הדרכה לפי אתר.</span>
+      <span class="mode-detail" data-t="guidedDesc">בוחרים מקום על מפת ישראל, רמה — ויוצאים לסיור תחנה אחרי תחנה.</span>
       <span class="mode-enter" data-t="enter">כניסה ←</span>
     </a>
-    <a class="mode-link" data-label="TEST" href="admin.html?mode=simulation">
+    <a class="mode-link" data-label="TEST" href="map.html?mode=sim">
       <span class="mode-icon" aria-hidden="true">🧪</span><span class="mode-title" data-t="sim">סימולציה</span>
       <span class="mode-detail" data-t="simDesc">בודקים נסיעה מדומה, שאלות, תזמון ותקלות GPS. לא מפרסמים שום דבר לתלמידים.</span>
       <span class="mode-enter" data-t="enter">כניסה ←</span>
     </a>
   </div>
+  <a class="map-banner" href="map.html"><span class="mb-ico" aria-hidden="true">🗺️</span><span><b data-t="mapTitle">מפת ישראל</b><small data-t="mapDesc">22 סיורים על המפה</small></span><span class="mb-go" aria-hidden="true">←</span></a>
   <nav class="mode-footer">
     <a href="play.html" data-t="players">🔗 קישור לתלמידים</a>
+    <a href="admin.html?mode=guide" data-t="direct">🎤 ישר למסך המדריך</a>
     <a href="create.html" data-t="create">✨ יצירת מסלול חדש</a>
-    <a href="tour-catalog.html">📚 22 סיורים</a>
+    <a href="tour-catalog.html" data-t="library">📚 ספריית הסיורים</a>
   </nav>
 </main>
 <script>
 (function(){
   'use strict';
   var L={
-    he:{choose:'איך רוצים לשחק?',subtitle:'בחרו מצב. אפשר להחליף בכל רגע.',guide:'מדריך — עם מיקרופון',guideDesc:'אתם מדברים במיקרופון של האוטובוס, בוחרים שאלה ומפרסמים לתלמידים. GPS מציע מתי.',solo:'משחק עצמאי',soloDesc:'משחק אישי לנוסעים: GPS פותח שאלות לאורך הדרך, בלי מדריך ובלי דירוג קבוצתי.',stories:'רק סיפורי דרך',storiesDesc:'קוראים סיפורים ועובדות מעניינות, בלי שאלות, ציונים או שעון. כרגע מסלול 67.',sim:'סימולציה',simDesc:'בודקים נסיעה מדומה, שאלות, תזמון ותקלות GPS. לא מפרסמים שום דבר לתלמידים.',guided:'סיור מודרך',guidedDesc:'183 שאלות מהסיורים, 3 רמות קושי, תרגול וקריאת תוכן להדרכה.',enter:'כניסה ←',players:'🔗 קישור לתלמידים',create:'✨ יצירת מסלול חדש'},
-    fr:{choose:'Choisir un mode',subtitle:'Quatre façons de découvrir le trajet.',guide:'Guide — avec micro',guideDesc:'Vous parlez au micro du bus. Le GPS suggère les questions, que vous publiez manuellement aux élèves.',solo:'Solo',soloDesc:'Jeu individuel pour les passagers : le GPS déclenche les questions, sans guide ni classement commun.',stories:'Lire les anecdotes',storiesDesc:'Des histoires et faits intéressants à lire, sans quiz, points ni chronomètre. Parcours 67 pour commencer.',sim:'Simulation',simDesc:'Tester un trajet virtuel, les questions et les incidents GPS. Rien n’est envoyé aux élèves.',guided:'Visite guidée',guidedDesc:'183 questions issues des sorties, 3 niveaux, mode quiz ou fiches de guide.',enter:'Ouvrir →',players:'🔗 Lien élèves',create:'✨ Créer un parcours'},
-    en:{choose:'Choose a mode',subtitle:'Four ways to discover the route.',guide:'Guide — with microphone',guideDesc:'Speak into the bus microphone. GPS suggests questions; you publish each one manually.',solo:'Solo',soloDesc:'A passenger-only game: GPS triggers questions. No guide or shared leaderboard.',stories:'Read anecdotes',storiesDesc:'Stories and interesting facts, with no quiz, points or timer. Road 67 first.',sim:'Simulation',simDesc:'Test a virtual journey, questions and GPS issues. Nothing is sent to students.',guided:'Guided tour',guidedDesc:'183 questions based on course tours, 3 difficulties, practice or guided notes.',enter:'Open →',players:'🔗 Student link',create:'✨ Create a route'},
-    ru:{choose:'Выберите режим',subtitle:'Четыре способа узнать больше о маршруте.',guide:'Гид — с микрофоном',guideDesc:'Рассказывайте в микрофон автобуса. GPS подсказывает вопросы, а вы отправляете их участникам.',solo:'Самостоятельная игра',soloDesc:'Для пассажиров: GPS открывает вопросы без гида и общего рейтинга.',stories:'Читать истории',storiesDesc:'Истории и интересные факты без вопросов, баллов и таймера. Пока маршрут 67.',sim:'Симуляция',simDesc:'Проверка виртуальной поездки, вопросов и сбоев GPS. Участники ничего не получают.',guided:'Экскурсия с гидом',guidedDesc:'183 вопросов по экскурсиям, 3 уровня, тренировка и материалы для гида.',enter:'Открыть →',players:'🔗 Ссылка участникам',create:'✨ Новый маршрут'}
+    he:{choose:'איך רוצים לשחק?',subtitle:'בחרו מצב. אפשר להחליף בכל רגע.',guide:'מדריך — עם מיקרופון',guideDesc:'אתם מדברים במיקרופון של האוטובוס, בוחרים שאלה ומפרסמים לתלמידים. GPS מציע מתי.',solo:'משחק עצמאי',soloDesc:'משחק אישי לנוסעים: GPS פותח שאלות לאורך הדרך, בלי מדריך ובלי דירוג קבוצתי.',stories:'רק סיפורי דרך',storiesDesc:'קוראים על תחנות הסיורים ומסלול 67, בלי שאלות, ציונים או שעון.',sim:'סימולציה',simDesc:'בודקים נסיעה מדומה, שאלות, תזמון ותקלות GPS. לא מפרסמים שום דבר לתלמידים.',guided:'סיור מודרך',guidedDesc:'בוחרים מקום על מפת ישראל, רמה — ויוצאים לסיור תחנה אחרי תחנה.',enter:'כניסה ←',players:'🔗 קישור לתלמידים',create:'✨ יצירת מסלול חדש',mapTitle:'מפת ישראל',mapDesc:'{tours} סיורים · {q} שאלות · בוחרים מקום ומשחקים',direct:'🎤 ישר למסך המדריך',library:'📚 ספריית הסיורים'},
+    fr:{choose:'Choisir un mode',subtitle:'Quatre façons de découvrir le trajet.',guide:'Guide — avec micro',guideDesc:'Vous parlez au micro du bus. Le GPS suggère les questions, que vous publiez manuellement aux élèves.',solo:'Solo',soloDesc:'Jeu individuel pour les passagers : le GPS déclenche les questions, sans guide ni classement commun.',stories:'Lire les anecdotes',storiesDesc:'Lire les étapes des sorties et du parcours 67, sans quiz, points ni chronomètre.',sim:'Simulation',simDesc:'Tester un trajet virtuel, les questions et les incidents GPS. Rien n’est envoyé aux élèves.',guided:'Visite guidée',guidedDesc:'Choisir un lieu sur la carte d’Israël, un niveau, puis visiter étape par étape.',enter:'Ouvrir →',players:'🔗 Lien élèves',create:'✨ Créer un parcours',mapTitle:'Carte d’Israël',mapDesc:'{tours} sorties · {q} questions · choisir un lieu et jouer',direct:'🎤 Écran guide direct',library:'📚 Bibliothèque des sorties'},
+    en:{choose:'Choose a mode',subtitle:'Four ways to discover the route.',guide:'Guide — with microphone',guideDesc:'Speak into the bus microphone. GPS suggests questions; you publish each one manually.',solo:'Solo',soloDesc:'A passenger-only game: GPS triggers questions. No guide or shared leaderboard.',stories:'Read anecdotes',storiesDesc:'Read about the tour stops and Road 67 — no quiz, points or timer.',sim:'Simulation',simDesc:'Test a virtual journey, questions and GPS issues. Nothing is sent to students.',guided:'Guided tour',guidedDesc:'Pick a place on the map of Israel, a level, then go stop by stop.',enter:'Open →',players:'🔗 Student link',create:'✨ Create a route',mapTitle:'Map of Israel',mapDesc:'{tours} tours · {q} questions · pick a place and play',direct:'🎤 Guide screen',library:'📚 Tour library'},
+    ru:{choose:'Выберите режим',subtitle:'Четыре способа узнать больше о маршруте.',guide:'Гид — с микрофоном',guideDesc:'Рассказывайте в микрофон автобуса. GPS подсказывает вопросы, а вы отправляете их участникам.',solo:'Самостоятельная игра',soloDesc:'Для пассажиров: GPS открывает вопросы без гида и общего рейтинга.',stories:'Читать истории',storiesDesc:'Читайте об остановках экскурсий и маршруте 67 — без вопросов и таймера.',sim:'Симуляция',simDesc:'Проверка виртуальной поездки, вопросов и сбоев GPS. Участники ничего не получают.',guided:'Экскурсия с гидом',guidedDesc:'Выберите место на карте Израиля, уровень — и идите от остановки к остановке.',enter:'Открыть →',players:'🔗 Ссылка участникам',create:'✨ Новый маршрут',mapTitle:'Карта Израиля',mapDesc:'{tours} экскурсий · {q} вопросов · выберите место',direct:'🎤 Экран гида',library:'📚 Библиотека экскурсий'}
   };
+  var stats={tours:'22',q:'…'};
   var lang='he';try{lang=localStorage.getItem('mdl_mode_lang')||localStorage.getItem('mdl_lang')||'he';}catch(e){}
   function render(){
     if(!L[lang])lang='he';
     document.documentElement.lang=lang;
     document.documentElement.dir=lang==='he'?'rtl':'ltr';
-    document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=L[lang][el.dataset.t]||'';});
+    document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=(L[lang][el.dataset.t]||'').replace('{tours}',stats.tours).replace('{q}',stats.q);});
     document.querySelectorAll('[data-lang]').forEach(function(el){el.setAttribute('aria-pressed',String(el.dataset.lang===lang));});
   }
   document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.lang;try{localStorage.setItem('mdl_mode_lang',lang);}catch(e){}render();});});
   render();
+  Promise.all([fetch('guided-quiz.json',{cache:'no-cache'}).then(function(r){return r.json();}),fetch('siyurim-catalog.json',{cache:'no-cache'}).then(function(r){return r.json();})]).then(function(r){stats={tours:String(r[1].tours.length),q:String(r[0].questions.length)};render();}).catch(function(){});
 })();
 </script>
 </body>

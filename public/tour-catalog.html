@@ -15,12 +15,13 @@ nav img{height:54px;width:54px;background:#fff;border-radius:12px;object-fit:cov
 .card h2{margin:4px 0 9px;font-size:19px;line-height:1.5}.small{color:#b9caeb;font-size:13px}.num{font-size:12px;letter-spacing:2px;color:#86f3db;font-weight:900}.notes{font-size:12px;line-height:1.5;color:#dfd0a2}.btns{display:flex;gap:8px;margin-top:auto;padding-top:17px}.btns a{text-decoration:none;display:inline-block;padding:11px 12px;border-radius:11px;font-size:13px;font-weight:800;background:#e9eeff;color:#1b2651}.btns a.quiz{background:#78ecd5;color:#113b41}
 footer{font-size:12px;color:#acbee5;line-height:1.7;margin-top:24px;padding-bottom:20px}
 @media(max-width:670px){.cards{grid-template-columns:1fr}.tools a{width:100%;text-align:center}}
-</style></head><body><div class="wrap"><nav><a href="index.html">⌂ חזרה למשחקים</a><img src="assets/moreh-derech-next-driver.webp" alt="MOREH DERECH NEXT"></nav>
+</style></head><body><div class="wrap"><nav><a href="index.html">⌂ חזרה למשחקים</a><a href="map.html">🗺️ מפה</a><img src="assets/moreh-derech-next-driver.webp" alt="MOREH DERECH NEXT"></nav>
 <header class="hero"><div class="eyebrow">🧭 MOREH DERECH NEXT · THE TOUR LIBRARY</div><h1>22 סיורים • הספרייה שלנו</h1><p>תיקי הסיור מתוך דרייב קורס יובל. כאן בודקים איזה חומר קיים לכל סיור, נכנסים למקור, ובסיורים שכבר יש להם שאלות עוברים לתרגול ברמות קל, בינוני וקשה.</p></header>
-<section class="stats"><div class="stat"><strong>22</strong><span>תיקי סיור</span></div><div class="stat"><strong>232</strong><span>מסמכים ישירים בתיקיות</span></div><div class="stat"><strong>117</strong><span>שאלות שהוכנו עד כה</span></div></section>
-<div class="tools"><input id="filter" type="search" placeholder="🔎 חפשו סיור או אתר…" aria-label="חיפוש סיור"><a href="guided-tour.html">🎮 תרגול 117 שאלות · 3 רמות</a></div>
+<section class="stats"><div class="stat"><strong id="sTours">…</strong><span>תיקי סיור</span></div><div class="stat"><strong id="sDocs">…</strong><span>מסמכים ישירים בתיקיות</span></div><div class="stat"><strong id="sQ">…</strong><span>שאלות שהוכנו עד כה</span></div></section>
+<div class="tools"><input id="filter" type="search" placeholder="🔎 חפשו סיור או אתר…" aria-label="חיפוש סיור"><a href="map.html">🗺️ למפת הסיורים</a><a href="guided-tour.html" id="allQ">🎮 תרגול · 3 רמות</a></div>
 <div id="cards" class="cards" aria-live="polite"><p>טוען 22 סיורים…</p></div>
-<footer>המספר 232 כולל קבצי Word, Google Docs ו-PDF ישירות ב-22 תיקיות הסיור; אינו כולל קבצים בתוך תיקיות משנה (הקלטות וכו׳). הסיורים 01–22 ממוספרים ב-Drive, אך קיום תיקייה אינו מאשר שכל התחנות אכן בוצעו. תיק 22 כולל בעיקר חוברת הכנה. לכל אחד מ-22 התיקים חוברו שאלות בכל שלוש הרמות ממסמך אחד לפחות. סיכומי תלמידים דורשים בדיקה נוספת לפני הדרכה לציבור.</footer></div>
+<footer>מספר המסמכים כולל קבצי Word, Google Docs ו-PDF ישירות ב-22 תיקיות הסיור; אינו כולל קבצים בתוך תיקיות משנה (הקלטות וכו׳). הסיורים 01–22 ממוספרים ב-Drive, אך קיום תיקייה אינו מאשר שכל התחנות אכן בוצעו. תיק 22 כולל בעיקר חוברת הכנה. לכל אחד מ-22 התיקים חוברו שאלות בכל שלוש הרמות ממסמך אחד לפחות. סיכומי תלמידים דורשים בדיקה נוספת לפני הדרכה לציבור.</footer></div>
+<script src="tour-data.js"></script>
 <script>
 (function(){const $=x=>document.getElementById(x);let tours=[];const filter=$("filter"),cards=$("cards");
 const create=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
@@ -28,10 +29,11 @@ function render(){const query=filter.value.trim().toLocaleLowerCase();cards.repl
 if(!matches.length){cards.append(create("p","","לא נמצאו סיורים"));return;}
 for(const t of matches){const card=create("article","card");card.append(create("div","num","TOUR "+String(t.number).padStart(2,"0")),create("h2","",t.title),create("div","small",t.directDocuments+" מסמכי מקור ישירים"));
 if(t.note)card.append(create("p","notes",t.note));
-const buttons=create("div","btns");const link=create("a","","📂 תיקיית Drive ↗");link.href=t.folderUrl;link.target="_blank";link.rel="noopener noreferrer";buttons.append(link);
-if(t.quizSource){const quiz=create("a","quiz","🎮 תרגול שאלות");quiz.href="guided-tour.html?tour="+encodeURIComponent(t.quizSource);buttons.append(quiz);}
+const c=counts&&counts.byTour[String(t.number).padStart(2,"0")];if(c)card.append(create("div","small","🎮 "+c.total+" שאלות · 🌱"+(c[1]||0)+" ⭐"+(c[2]||0)+" 🔥"+(c[3]||0)));const buttons=create("div","btns");const link=create("a","","📂 תיקיית Drive ↗");link.href=t.folderUrl;link.target="_blank";link.rel="noopener noreferrer";buttons.append(link);
+const id=String(t.number).padStart(2,"0");const mp=create("a","quiz","🗺️ במפה");mp.href="map.html?tour="+id;buttons.append(mp);if(c&&c.total){const quiz=create("a","quiz","🎮 תרגול");quiz.href="guided-tour.html?tour="+id;buttons.append(quiz);}
 card.append(buttons);cards.append(card);}}
 filter.addEventListener("input",render);
-fetch("tour-catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(d=>{tours=d.tours;render()}).catch(()=>{cards.replaceChildren(create("p","","לא ניתן לטעון את רשימת הסיורים. בדקו את החיבור לאינטרנט."))});
+let counts=null;MDTours.getJSON("guided-quiz.json").then(q=>{counts=MDTours.counts(q.questions);$("sQ").textContent=counts.total;$("allQ").textContent="🎮 תרגול "+counts.total+" שאלות · 3 רמות";if(tours.length)render();}).catch(()=>{});
+fetch("tour-catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(d=>{tours=d.tours;$("sTours").textContent=tours.length;$("sDocs").textContent=tours.reduce((n,t)=>n+(t.directDocuments||0),0);render()}).catch(()=>{cards.replaceChildren(create("p","","לא ניתן לטעון את רשימת הסיורים. בדקו את החיבור לאינטרנט."))});
 })();
 </script></body></html>
