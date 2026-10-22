@@ -422,3 +422,32 @@ public/photos/aller-v2/  32 photos recadrées + miniatures
 tools/build-v2-sql.mjs   générateur + validation de l'import V2
 tests/                 tests unitaires, serveur local, scénario 35 élèves, captures
 ```
+
+
+## 📄 Contributions de documents et parcours (22 octobre 2026)
+
+Nouvelle page publique : `public/contribute.html` (aucun mot de passe admin).
+Les contributeurs peuvent choisir l'un des 22 סיורים, la route 67 ou un parcours proposé par la communauté,
+ou créer un nouveau parcours en lui associant une position sur la carte. Formats lus : DOCX, PDF non scanné, TXT, MD.
+Le navigateur extrait le **texte** du document ; le binaire original n'est **pas** enregistré.
+Pour permettre de télécharger l'original, le contributeur ajoute un lien HTTPS public (Drive ou autre).
+Le texte stocké est limité à 120 000 caractères ; jusqu'à 15 Mo sont lus localement. Aucun texte
+n'est annoncé comme « validé », ni automatiquement converti en questions.
+
+Un document peut aussi être ajouté dans le créateur libre `community.html` : lors du partage d'un
+tronçon avec un document joint, le texte est enregistré automatiquement comme nouveau parcours,
+avec un point d'ancrage géocodé. **Le jeu de questions reste indépendant dans son lien personnel.**
+
+**Activation obligatoire :** dans le projet Supabase indiqué par `public/config.js`, exécuter
+`supabase/community_documents.sql` via SQL Editor. Le site GitHub Pages ne peut pas appliquer
+cette migration seul. Les pages refusent la soumission si le RPC n'est pas installé,
+et le jeu personnel reste partageable même si la sauvegarde communautaire échoue.
+Le catalogue et la carte interrogent `public.community_catalog` ; la carte rafraîchit la liste
+sans rechargement (60 s). Les documents sont lus via `public.community_document`.
+Le responsable peut retirer une contribution à l'aide de la fonction
+`public.admin_remove_community_document(p_token,p_id)` ; elle exige une session admin valide.
+Ce dépôt ne contient ni clé administrateur Supabase ni mot de passe.
+
+⚠️ Les contributions anonymes sont publiques, non vérifiées et peuvent contenir du contenu abusif.
+Le SQL limite la taille, le nombre d'ajouts par heure et refuse les liens non HTTPS, mais ne constitue
+pas une modération parfaite. Pour un usage grand public, ajouter CAPTCHA, signalement et modération.
