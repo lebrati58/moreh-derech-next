@@ -35,14 +35,15 @@
 <input id="linkOutput" class="field" readonly aria-label="קישור למשחק"><div class="actions"><button class="btn" id="copy">📋 העתק קישור</button><button class="btn secondary" id="send">💬 שיתוף בטלפון</button></div><p class="subtle">קישור אישי, ללא שרת וללא גישה לבסיס LIVE. הוא לא מוסיף את המשחק לרשימת 22 הסיורים הרשמית. הקישור יכול להיות ארוך כי כל השאלות כלולות בו.</p></div></section>
 <section id="player" class="panel" hidden><div class="muted" id="playRoute"></div><h2 id="playTitle"></h2><p class="score" id="playProgress"></p><div id="playOptions"></div><div id="playFeedback" class="box" hidden></div><div class="actions"><button class="btn" id="nextQuestion" hidden>הבא ←</button><button class="btn secondary" id="backToEditor" hidden>↶ חזרה לעריכה</button><button class="btn tertiary" id="newRoute">🛣️ צרו מסלול חדש</button></div></section>
 <section id="savedPanel" class="panel" hidden><h2>📌 המשחקים שלי בדפדפן הזה</h2><div id="savedList"></div></section>
-<p class="notice">🔒 משחקים שנוצרו כאן נשמרים בדפדפן ובקישור האישי בלבד. אין צורך בסיסמת המנהל, אך אין גם סנכרון ציבורי אוטומטי עם Supabase. המשחק המשותף הוא תרגול עצמאי עם מעבר ידני בין השאלות, ולא משחק LIVE עם פרסום שאלות לכל האוטובוס. אין לשתף מסמכים פרטיים או תוכן שאין לכם זכות לפרסם. לנוסעים בלבד — לא משחקים בזמן נהיגה.</p>
+<p class="notice">🔒 משחקי השאלות עצמם נשמרים בקישור האישי. אם מצרפים מסמך בעת יצירת המשחק, הטקסט שלו נשלח לספריית המסלולים המשותפת (כאשר שירות המסמכים פעיל). אין צורך בסיסמת מנהל. המשחק המשותף הוא תרגול עצמאי עם מעבר ידני בין השאלות, ולא משחק LIVE עם פרסום שאלות לכל האוטובוס. אין לשתף מסמכים פרטיים או תוכן שאין לכם זכות לפרסם. לנוסעים בלבד — לא משחקים בזמן נהיגה.</p>
 </main>
+<script src="config.js"></script><script src="api.js"></script><script src="community.js"></script>
 <script src="gps-engine.js"></script><script src="auto-engine.js"></script><script src="doc-reader.js"></script>
 <script>
 (function(){
 "use strict";
 const $=id=>document.getElementById(id),G=window.MDL_GPS,A=window.MDL_AUTO,MAX=25;
-let draft=null,index=0,answers=[],preview=false;
+let draft=null,index=0,answers=[],preview=false,geoPoint=null,sharedTourId=null,attachedText="";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function status(message,error){const e=$("status");e.hidden=!message;e.className="status"+(error?" error":"");e.textContent=message||"";}
 function show(id){for(const name of ["creator","review","player"])$(name).hidden=name!==id;window.scrollTo({top:0,behavior:"auto"});}
@@ -81,14 +82,15 @@ function renderReview(){
  });updateReviewSummary();
 }
 function updateReviewSummary(){if(!draft)return;$("reviewTitle").textContent=draft.from+" ← "+draft.to+" · "+current().length+" שאלות נבחרו";$("share").disabled=!$("verified").checked||!current().length;}
-function startManual(){const from=$("from").value.trim(),to=$("to").value.trim();if(!from||!to){status("צריך להזין התחלה וסיום",true);return;}draft={from,to,questions:[emptyQuestion()]};$("verified").checked=false;status("");renderReview();}
+function startManual(){geoPoint=null;sharedTourId=null;attachedText="";const from=$("from").value.trim(),to=$("to").value.trim();if(!from||!to){status("צריך להזין התחלה וסיום",true);return;}draft={from,to,questions:[emptyQuestion()]};$("verified").checked=false;status("");renderReview();}
 function emptyQuestion(){return {on:true,t:"",o:["","","",""],c:0,e:"",p:"",s:"",u:""};}
 async function generate(){
  const from=$("from").value.trim(),to=$("to").value.trim();if(!from||!to){status("צריך להזין התחלה וסיום",true);return;}
  if(!A||!G){status("מנוע המסלולים לא נטען — נסו שוב או צרו שאלות בעצמכם",true);return;}
  const btn=$("generate");btn.disabled=true;status("🔎 מאתרים מסלול ומחפשים עובדות…");
  try{const res=await A.generate({G,from,to},stage=>status("📍 מכינים את המסלול… "+stage));
- if($("doc").files[0]){try{const txt=await window.MDL_DOC.readFile($("doc").files[0],"");A.applyDoc(res,txt);}catch(e){status("לא הצלחנו לקרוא את המסמך. ממשיכים עם המקורות החופשיים.");}}
+ geoPoint=Array.isArray(res.route.geometry)&&res.route.geometry.length?res.route.geometry[0]:null;sharedTourId=null;attachedText="";
+ if($("doc").files[0]){try{const txt=await window.MDL_DOC.readFile($("doc").files[0],"");attachedText=txt;A.applyDoc(res,txt);}catch(e){status("לא הצלחנו לקרוא את המסמך. ממשיכים עם המקורות החופשיים.");}}
  const questions=qFromGenerated(res);
  if(!questions.length)throw Error("לא נמצאו מספיק עובדות למסלול הזה. נסו נקודות אחרות או הכניסו שאלות בעצמכם.");
  draft={from,to,questions};$("verified").checked=false;renderReview();
@@ -100,11 +102,39 @@ async function encode(p){const bytes=new TextEncoder().encode(JSON.stringify(p))
 async function decode(key){if(!key||key.length>80000)throw Error("bad link");const b=fromBytes64(key.slice(1));if(b.length>60000)throw Error("too large");const bytes=key[0]==="g"?await new Response(new Blob([b]).stream().pipeThrough(new DecompressionStream("gzip"))).arrayBuffer():key[0]==="j"?b:null;if(!bytes||bytes.byteLength>150000)throw Error("too large");const x=JSON.parse(new TextDecoder().decode(bytes));if(!valid(x))throw Error("bad data");return x;}
 function saveLocal(p,url){try{let arr=JSON.parse(localStorage.getItem("mdl_community_routes_v1")||"[]");arr=arr.filter(x=>x.url!==url);arr.unshift({from:p.from,to:p.to,date:new Date().toISOString().slice(0,10),count:p.questions.length,url});localStorage.setItem("mdl_community_routes_v1",JSON.stringify(arr.slice(0,12)));renderSaved();}catch(e){}}
 function renderSaved(){let arr=[];try{arr=JSON.parse(localStorage.getItem("mdl_community_routes_v1")||"[]");}catch(e){}$("savedPanel").hidden=!arr.length;const list=$("savedList");list.replaceChildren();for(const x of arr){const a=document.createElement("a");a.className="history-item";a.href=x.url;a.textContent="🛣️ "+x.from+" ← "+x.to+" · "+x.count+" שאלות";list.append(a);}}
+async function routeLocation(from){
+ if(geoPoint&&geoPoint.length===2)return {lat:Number(geoPoint[0]),lon:Number(geoPoint[1])};
+ const r=await fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=il&q="+encodeURIComponent(from));
+ if(!r.ok)throw Error("מיקום לא נמצא");const j=await r.json();if(!j.length)throw Error("מיקום לא נמצא");
+ return {lat:Number(j[0].lat),lon:Number(j[0].lon)};
+}
 async function share(){try{
  const p=pack();const key=await encode(p),url=new URL("community.html",location.href);url.hash="route="+key;
  $("linkOutput").value=url.href;$("sharePanel").hidden=false;saveLocal(p,url.href);
  $("linkOutput").scrollIntoView({block:"nearest",behavior:"smooth"});
- if(url.href.length>12000){$("sharePanel").querySelector(".box").textContent="⚠️ הקישור ארוך. מומלץ לבחור פחות שאלות כדי שיהיה קל לשלוח בוואטסאפ.";}
+ const notice=$("sharePanel").querySelector(".box");
+ if(url.href.length>12000)notice.textContent="⚠️ הקישור ארוך. מומלץ לבחור פחות שאלות כדי שיהיה קל לשלוח בוואטסאפ.";
+ const file=$("doc").files[0];
+ if(!file){notice.textContent="🔗 משחק אישי מוכן! לא צורף מסמך, ולכן המשחק נשמר בקישור האישי בלבד. אפשר לצרף קטע דרך כדי להוסיף אותו גם לספרייה המשותפת.";return;}
+ if(sharedTourId){notice.textContent="✅ המסמך כבר נשמר בספריית המסלולים. ניתן לשתף את המשחק.";return;}
+ notice.textContent="📄 שומרים את המסמך במסלול חדש בספרייה המשותפת…";
+ try{
+  const body=attachedText||await MDL_DOC.readFile(file,"");
+  if(body.length>120000)throw Error("המסמך ארוך מדי לשמירה אוטומטית (120,000 תווים).");
+  const place=await routeLocation(p.from);
+  const saved=await MDCommunity.submit({
+   p_tour_id:"",p_title:file.name.replace(/\.[^.]+$/,"").slice(0,140)||"קטע דרך",
+   p_author:"אורח",p_body:body,p_file_name:file.name,p_source_url:"",
+   p_new_route_title:(p.from+" ← "+p.to).slice(0,120),
+   p_place_name:p.from.slice(0,120),p_lat:place.lat,p_lon:place.lon
+  });
+  sharedTourId=saved.tour_id;
+  const a=document.createElement("a");a.href="map.html?tour="+encodeURIComponent(saved.tour_id);a.textContent="🗺️ פתחו את המסלול ואת המסמך בספרייה";a.style.display="block";
+  notice.replaceChildren(document.createTextNode("✅ המסמך נשמר במסלול החדש בספרייה המשותפת! "),a);
+ }catch(e){
+  notice.textContent="⚠️ המשחק האישי מוכן, אבל המסמך לא נשמר בספריית המסלולים. "+String(e.message||"שגיאת שמירה").slice(0,100)+" — ניתן להעלות אותו גם דרך ״הוספת מסמך״.";
+  const a=document.createElement("a");a.href="contribute.html";a.textContent="📄 הוספת מסמך לספרייה";a.style.display="block";notice.append(a);
+ }
  }catch(e){alert("⚠️ "+(e.message||"בדקו את השאלות"));}
 }
 function startGame(p,isPreview){preview=!!isPreview;draft={from:p.from,to:p.to,questions:p.questions.map(q=>Object.assign({on:true},q))};index=0;answers=[];show("player");$("backToEditor").hidden=!preview;renderGame();}
@@ -118,7 +148,7 @@ function renderGame(){const qs=current(),q=qs[index];if(!q){show("creator");retu
  $("nextQuestion").hidden=a===undefined;$("nextQuestion").textContent=index===qs.length-1?"🏆 סיכום":"הבא ←";}
 function result(){const qs=current();const score=qs.reduce((n,q,i)=>n+(answers[i]===q.c?1:0),0);$("playTitle").textContent="🏆 סיימתם!";$("playProgress").textContent=score+" / "+qs.length+" תשובות נכונות";$("playOptions").replaceChildren();$("playFeedback").hidden=false;$("playFeedback").textContent="כל הכבוד! אפשר לשחק שוב או לשלוח את המסלול לחברים.";$("nextQuestion").hidden=false;$("nextQuestion").textContent="↻ משחק מחדש";$("nextQuestion").onclick=()=>{index=0;answers=[];renderGame();$("nextQuestion").onclick=nextStep;};}
 function nextStep(){if(index<current().length-1){index++;renderGame();}else result();}
-function createNew(){preview=false;draft=null;index=0;show("creator");$("verified").checked=false;$("sharePanel").hidden=true;}
+function createNew(){preview=false;draft=null;geoPoint=null;sharedTourId=null;attachedText="";index=0;show("creator");$("verified").checked=false;$("sharePanel").hidden=true;}
 $("generate").onclick=generate;$("manual").onclick=startManual;$("addQuestion").onclick=()=>{if(draft.questions.length>=MAX){alert("עד "+MAX+" שאלות במסלול");return;}draft.questions.push(emptyQuestion());renderReview();};
 $("startOver").onclick=()=>show("creator");$("verified").onchange=updateReviewSummary;$("share").onclick=share;
 $("try").onclick=()=>{try{startGame(pack(),true);}catch(e){alert(e.message);}};
