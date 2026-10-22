@@ -10,7 +10,8 @@
     "screens": "node tests/screens.mjs",
     "screens:v2": "node tests/v2-screens.mjs",
     "e2e:v3": "node tests/v3-browser.mjs",
-    "e2e:v4": "node tests/v4-browser.mjs screens-v4"
+    "e2e:v4": "node tests/v4-browser.mjs screens-v4",
+    "e2e:solo": "node tests/solo-browser.mjs screens-solo"
   },
   "license": "UNLICENSED",
   "devDependencies": {

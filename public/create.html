@@ -37,7 +37,7 @@
   const toast = t => { const el = document.getElementById('toast'); el.textContent = t; el.classList.remove('hidden'); clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.add('hidden'), 3500); };
   const STEPS = [['geocode', '📍 מאתרים את נקודות ההתחלה והסיום'], ['route', '🛣️ מחשבים את המסלול'], ['places', '🔎 מחפשים מקומות לאורך הדרך'],
     ['facts', '📚 אוספים עובדות (ויקינתונים)'], ['texts', '🎤 מכינים טקסטים למיקרופון (ויקיפדיה)'], ['build', '❓ בונים את השאלות']];
-  let res = null, keep = new Set(), busy = false;
+  let res = null, keep = new Set(), busy = false, solo = false;
   const form = store.get('mdl_v4_form') || { from: '', to: '' };
 
   if (!token) {
@@ -120,10 +120,13 @@
           ${q.guide_i18n.he.script ? `<div class="small">🎤 ${esc(q.guide_i18n.he.script)}</div>` : '<div class="small muted">🎤 אין טקסט בוויקיפדיה למקום הזה</div>'}
           ${q.guide_sources.map(s => `<a class="small" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}
         </div>`; }).join('')}
+      <div class="card"><label class="optrow" style="align-items:flex-start"><input type="checkbox" id="solo" ${solo ? 'checked' : ''} style="width:24px;height:24px;flex:none">
+        <span><b>🚗 גם משחק עצמאי</b><br><small class="muted">כל מי שיש לו את הקישור יוכל לשחק לבד עם ה-GPS שלו, בלי מדריך. (הקישור חושף את השאלות והתשובות — לא לשלוח אותו לפני משחק עם מדריך.)</small></span></label></div>
       <div class="card" style="position:sticky;bottom:8px">
         <button class="btn sun" id="save" style="font-size:20px" ${keep.size ? '' : 'disabled'}>💾 לשמור ${keep.size} שאלות וליצור משחק חדש</button>
         <button class="btn ghost small" id="again" style="margin-top:8px">↩️ מסלול אחר</button></div>`;
     app.querySelectorAll('input[data-k]').forEach(cb => cb.onchange = () => { if (cb.checked) keep.add(cb.dataset.k); else keep.delete(cb.dataset.k); renderReview(); });
+    document.getElementById('solo').onchange = e => { solo = e.target.checked; };
     document.getElementById('again').onclick = () => { res = null; renderForm(); };
     document.getElementById('save').onclick = save;
   }
@@ -141,7 +144,15 @@
       const g = await rpc('admin_new_game', { p_token: token, p_title: title.he, p_bank: r.code }, { timeout: 10000 });
       if (!g || g.error) throw new Error(g && g.error || 'game');
       toast('נשמר ✔ משחק חדש נוצר');
-      setTimeout(() => { location.href = 'admin.html'; }, 600);
+      if (!solo) { setTimeout(() => { location.href = 'admin.html'; }, 600); return; }
+      await rpc('admin_set_solo', { p_token: token, p_bank: r.code, p_on: true });
+      const link = new URL('solo.html?r=' + r.code, location.href).href;
+      const msg = `🚗 *${title.he}* — משחק עצמאי של מורה דרך LIVE\nפותחים את הקישור, לוחצים ״יוצאים לדרך״ — והשאלות קופצות לבד לפי ה-GPS 👀\n⚠️ רק לנוסעים, לא לנהג/ת!\n${link}`;
+      app.innerHTML = `<div class="card center"><h2>✔ נשמר</h2>
+          <p>קישור למשחק העצמאי:</p><p style="direction:ltr;font-weight:800;word-break:break-all" id="solol">${esc(link)}</p>
+          <a class="btn ok" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(msg)}" style="display:block;text-decoration:none">💬 לשלוח בוואטסאפ</a>
+          <a class="btn ghost small" href="${esc(link)}" target="_blank" rel="noopener" style="display:block;text-decoration:none;margin-top:8px">🚗 לנסות בעצמי</a>
+          <a class="btn sun small" href="admin.html" style="display:block;text-decoration:none;margin-top:8px">→ למשחק עם מדריך (מנהל המשחק)</a></div>`;
     } catch (e) {
       busy = false; btn.disabled = false; btn.textContent = `💾 לשמור ${keep.size} שאלות וליצור משחק חדש`;
       toast(/not_authorized/.test(String(e && e.message)) ? 'פג תוקף הכניסה — היכנסו שוב למנהל המשחק' : 'השמירה נכשלה — ' + (e && e.message || ''));

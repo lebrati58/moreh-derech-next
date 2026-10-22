@@ -75,7 +75,7 @@
       choose_lang: 'בחרו שפה', offline: 'אין חיבור — מנסה להתחבר מחדש…', tab_game: 'משחק', tab_board: 'דירוג',
       welcome: 'ברוכים הבאים לחידון!', welcome_sub: 'עונים מהר ונכון — וצוברים נקודות לאורך המסלול.',
       your_name: 'מה השם הפרטי שלכם?', name_ph: 'השם הפרטי',
-      join: 'מתחילים לשחק 🚀', joining: 'מצטרפים…',
+      join: 'מתחילים לשחק 🚀', joining: 'מצטרפים…', solo_link: '🚗 בלי מדריך? משחק עצמאי עם ה-GPS שלכם',
       no_net: 'אין חיבור לאינטרנט. נסו שוב.', welcome_back: n => `ברוך שובך, ${n}! הניקוד נשמר.`,
       restarted: 'המשחק התחיל מחדש — הצטרפו שוב.', no_game_t: 'אין כרגע משחק פעיל', no_game_s: 'המדריך יפתח את המשחק בקרוב.',
       rank: 'מקום', pts: 'נק׳', points: 'נקודות', sec: 'שניות', paused: 'המשחק מושהה', paused_s: 'המדריך יחדש את המשחק בקרוב.',
@@ -104,7 +104,7 @@
       choose_lang: 'Choisissez la langue', offline: 'Pas de connexion — nouvelle tentative…', tab_game: 'Jeu', tab_board: 'Classement',
       welcome: 'Bienvenue au quiz !', welcome_sub: 'Répondez vite et juste : les points s’accumulent tout au long du trajet.',
       your_name: 'Quel est votre prénom ?', name_ph: 'Votre prénom',
-      join: 'On commence à jouer 🚀', joining: 'Connexion…',
+      join: 'On commence à jouer 🚀', joining: 'Connexion…', solo_link: '🚗 Sans guide ? Jeu en solo avec votre GPS',
       no_net: 'Pas de connexion Internet. Réessayez.', welcome_back: n => `Bon retour, ${n} ! Vos points sont conservés.`,
       restarted: 'La partie a redémarré : rejoignez-la à nouveau.', no_game_t: 'Aucune partie en cours', no_game_s: 'Le guide va bientôt ouvrir la partie.',
       rank: 'Rang', pts: 'pts', points: 'points', sec: 'secondes', paused: 'Partie en pause', paused_s: 'Le guide va bientôt reprendre la partie.',
@@ -133,7 +133,7 @@
       choose_lang: 'Choose your language', offline: 'No connection — retrying…', tab_game: 'Game', tab_board: 'Ranking',
       welcome: 'Welcome to the quiz!', welcome_sub: 'Answer fast and right — and collect points along the route.',
       your_name: 'What’s your first name?', name_ph: 'Your first name',
-      join: 'Let’s play 🚀', joining: 'Joining…',
+      join: 'Let’s play 🚀', joining: 'Joining…', solo_link: '🚗 No guide? Solo game with your own GPS',
       no_net: 'No internet connection. Please try again.', welcome_back: n => `Welcome back, ${n}! Your score is saved.`,
       restarted: 'The game restarted — please join again.', no_game_t: 'No game running right now', no_game_s: 'The guide will open the game soon.',
       rank: 'Rank', pts: 'pts', points: 'points', sec: 'seconds', paused: 'Game paused', paused_s: 'The guide will resume the game soon.',
@@ -162,7 +162,7 @@
       choose_lang: 'Выберите язык', offline: 'Нет связи — пробуем переподключиться…', tab_game: 'Игра', tab_board: 'Рейтинг',
       welcome: 'Добро пожаловать в викторину!', welcome_sub: 'Отвечайте быстро и правильно — и набирайте очки по ходу маршрута.',
       your_name: 'Как вас зовут (имя)?', name_ph: 'Ваше имя',
-      join: 'Начинаем играть 🚀', joining: 'Подключаемся…',
+      join: 'Начинаем играть 🚀', joining: 'Подключаемся…', solo_link: '🚗 Без гида? Игра в одиночку по вашему GPS',
       no_net: 'Нет интернета. Попробуйте ещё раз.', welcome_back: n => `С возвращением, ${n}! Очки сохранены.`,
       restarted: 'Игра началась заново — присоединитесь ещё раз.', no_game_t: 'Сейчас нет активной игры', no_game_s: 'Гид скоро откроет игру.',
       rank: 'Место', pts: 'очк.', points: 'очков', sec: 'секунд', paused: 'Игра на паузе', paused_s: 'Гид скоро продолжит игру.',
@@ -270,7 +270,8 @@
           value="${esc(opts.name || '')}" placeholder="${esc(t('name_ph'))}" required>
         <p id="jerr" class="small" style="color:var(--bad);min-height:1em" role="alert">${esc(opts.error || '')}</p>
         <button class="btn sun big" id="jbtn">${esc(t('join'))}</button>
-      </form>`;
+      </form>
+      <a class="btn ghost small" href="solo.html" style="display:block;text-align:center;text-decoration:none">${esc(t('solo_link'))}</a>`;
     document.getElementById('joinf').addEventListener('submit', e => { e.preventDefault(); doJoin(); });
   }
 
@@ -329,7 +330,8 @@
 
   function renderNoGame() {
     renderedKey = 'nogame';
-    app.innerHTML = `<div class="card waiting"><div class="big">${esc(t('no_game_t'))}</div><p class="muted">${esc(t('no_game_s'))}</p><div class="road"></div></div>`;
+    app.innerHTML = `<div class="card waiting"><div class="big">${esc(t('no_game_t'))}</div><p class="muted">${esc(t('no_game_s'))}</p><div class="road"></div></div>
+      <a class="btn ghost small" href="solo.html" style="display:block;text-align:center;text-decoration:none">${esc(t('solo_link'))}</a>`;
   }
 
   // ------------------------------------------------------------ Rendu
