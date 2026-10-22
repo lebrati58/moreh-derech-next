@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22-drive-v2",
+  "version": "2026-10-22-drive-v3",
   "language": "he",
   "kind": "סיור מודרך — בנק תרגול ממסמכי Drive",
   "note": "22 סיורים נסרקו. לכל שאלה tourId (01–22, או road67 למסלול 67). הספירות מוצגות במשחק ישירות מהקובץ — אין מספרים קבועים בקוד. חוברת גליל עליון אינה אישור ביצוע. המקורות דורשים אימות עצמאי לפני הדרכה מקצועית.",
@@ -3246,6 +3246,3498 @@
       "correct": 0,
       "explanation": "קריסת התקרה הותירה רצועת סלע דמוית קשת.",
       "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit"
+    },
+    {
+      "id": "N01-1-01",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "איזו כת יהודית מזוהה בדרך כלל עם יושבי קומראן?",
+      "options": [
+        "האיסיים",
+        "הצדוקים",
+        "הקנאים",
+        "הפרושים"
+      ],
+      "correct": 0,
+      "explanation": "יוסף בן מתתיהו תיאר שלושה זרמים — פרושים, צדוקים ואיסיים — ויושבי קומראן מזוהים לרוב עם האיסיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-1-02",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מי מצא, לפי הסיפור, את המגילות הראשונות במערה?",
+      "options": [
+        "רועה שזרק אבן למערה",
+        "ארכאולוג בריטי",
+        "נזיר מנזר סמוך",
+        "חייל ירדני"
+      ],
+      "correct": 0,
+      "explanation": "רועה זרק אבן כדי להרחיק עז, שמע קול נפץ, נכנס למערה ומצא רצועות עור.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-1-03",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה נמצא בבית הקברות של קומראן?",
+      "options": [
+        "שרידים של גברים בוגרים בלבד",
+        "קברי משפחות שלמות",
+        "קברי ילדים בלבד",
+        "ארונות זהב"
+      ],
+      "correct": 0,
+      "explanation": "בבית הקברות נמצאו רק שרידים של גברים בוגרים — לא נשים ולא ילדים (לא כל הקברים נחפרו).",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-1-04",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה נמצא ב\"חדר הסופרים\" בקומראן?",
+      "options": [
+        "כלי כתיבה ודיו",
+        "כלי נשק",
+        "תכשיטי זהב",
+        "צלמיות אלים"
+      ],
+      "correct": 0,
+      "explanation": "בחדר נמצאו כלי כתיבה ודיו — כנראה חלק מעיסוקם היה כתיבת ספרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-1-05",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה היה אסור על האיסיים בזמן הארוחה המשותפת?",
+      "options": [
+        "לדבר",
+        "לשבת",
+        "לאכול לחם",
+        "לשתות מים"
+      ],
+      "correct": 0,
+      "explanation": "הארוחות המשותפות התקיימו בשקט — היה איסור דיבור בזמן הארוחה.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-1-06",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "לזכר איזו דמות נקרא המקום נבי מוסא?",
+      "options": [
+        "משה רבנו",
+        "אליהו הנביא",
+        "יוחנן המטביל",
+        "אברהם אבינו"
+      ],
+      "correct": 0,
+      "explanation": "נבי מוסא — \"הנביא משה\" — מקום שהמסורת המוסלמית מקשרת לקבר משה.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-1-07",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "לפי המסורת היהודית, היכן מת משה?",
+      "options": [
+        "בהר נבו, ומקום קבורתו אינו ידוע",
+        "בנבי מוסא",
+        "בירושלים",
+        "במצרים"
+      ],
+      "correct": 0,
+      "explanation": "לפי המסורת היהודית משה מת בהר נבו שבעבר הירדן, ומקום קבורתו לא נודע.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-1-08",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "בין אילו שתי ערים עובר הדרך שלצדה נמצא נבי מוסא?",
+      "options": [
+        "ירושלים ויריחו",
+        "חברון ובאר שבע",
+        "שכם וג'נין",
+        "יפו ורמלה"
+      ],
+      "correct": 0,
+      "explanation": "המבנה הממלוכי נמצא על מדרגת ההעתקים הראשונה לצד הדרך בין ירושלים ליריחו.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-1-09",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "מאיזה ספר נוצרי לקוח משל השומרוני הטוב?",
+      "options": [
+        "הבשורה על פי לוקס",
+        "ספר מעשי השליחים",
+        "חזון יוחנן",
+        "האיגרת אל הרומים"
+      ],
+      "correct": 0,
+      "explanation": "המשל מופיע בבשורה על פי לוקס, בדיון של ישו על השאלה מי הוא ה\"רע\".",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-1-10",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "מי עזר לבסוף לנוסע הפצוע במשל השומרוני הטוב?",
+      "options": [
+        "שומרוני",
+        "כהן",
+        "לוי",
+        "חייל רומי"
+      ],
+      "correct": 0,
+      "explanation": "כהן ולוי עברו ולא עזרו; שומרוני — שנחשב אז נחות — טיפל בפצוע ושילם על הפונדק.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-1-11",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "מהו ההר הקדוש לשומרונים?",
+      "options": [
+        "הר גריזים",
+        "הר הבית",
+        "הר סיני",
+        "הר תבור"
+      ],
+      "correct": 0,
+      "explanation": "הר גריזים הוא ההר הקדוש לשומרונים, ושם הם חוגגים את שלושת הרגלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-1-12",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "מדוע מדבר יהודה הוא מדבר?",
+      "options": [
+        "הוא נמצא בצל גשם של הרי יהודה",
+        "הוא נמצא מתחת לפני הים בלבד",
+        "יש בו הרי געש",
+        "הוא רחוק מהים התיכון ב-1,000 ק\"מ"
+      ],
+      "correct": 0,
+      "explanation": "זהו מדבר צל גשם: העננים מורידים גשם בטיפוס על הרי יהודה, ובירידה מזרחה האוויר מתחמם ולא מוריד משקעים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-1-13",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "לפי המסורת הנוצרית, מה אירע בקאסר אל-יהוד שליד הלידו?",
+      "options": [
+        "יוחנן המטביל הטביל את ישו",
+        "ישו נולד",
+        "ישו נצלב",
+        "פטרוס נקבר"
+      ],
+      "correct": 0,
+      "explanation": "לפי המסורת הנוצרית יוחנן המטביל הטביל שם את ישו בירדן.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-1-14",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "איזו תופעה מסוכנת נוצרת בגלל התייבשות ים המלח?",
+      "options": [
+        "בולענים",
+        "הרי געש",
+        "צונאמי",
+        "סופות חול"
+      ],
+      "correct": 0,
+      "explanation": "ירידת המפלס גורמת למים מתוקים להמיס גבישי מלח בקרקע, והקרקע קורסת לבולענים.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-1-15",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "איזו עיר עתיקה, המוכרת מסיפור נפילת החומות, נמצאת צפון־מערבית ללידו?",
+      "options": [
+        "יריחו",
+        "עי",
+        "לכיש",
+        "חצור"
+      ],
+      "correct": 0,
+      "explanation": "יריחו נמצאת צפון־מערבית למבנה — סיפור המרגלים, המצור ונפילת החומות.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-1-16",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "על שם מי נקרא נמל התעופה הבין־לאומי שליד לוד?",
+      "options": [
+        "דוד בן גוריון",
+        "מנחם בגין",
+        "יצחק רבין",
+        "חיים ויצמן"
+      ],
+      "correct": 0,
+      "explanation": "נמל התעופה, שנבנה בידי הבריטים ליד לוד, נקרא על שם ראש הממשלה הראשון, דוד בן גוריון.",
+      "sourceUrl": "https://drive.google.com/file/d/1JjR_hvpTeMaLCPZnF4MvyDoduTKw_mWF/view",
+      "sourceDoc": "סיור 1 — הדרכת דרך"
+    },
+    {
+      "id": "N01-1-17",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "מה המשמעות של שם העיר רמלה?",
+      "options": [
+        "חול (רמל בערבית)",
+        "גבעה",
+        "מעיין",
+        "שוק"
+      ],
+      "correct": 0,
+      "explanation": "רמלה נבנתה בידי המוסלמים, ושמה נגזר מהמילה הערבית רמל — חול.",
+      "sourceUrl": "https://drive.google.com/file/d/1JjR_hvpTeMaLCPZnF4MvyDoduTKw_mWF/view",
+      "sourceDoc": "סיור 1 — הדרכת דרך"
+    },
+    {
+      "id": "N01-1-18",
+      "tourId": "01",
+      "level": 1,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "מאילת ועד מטולה עובר כביש אחד לאורך הבקע. איזה?",
+      "options": [
+        "כביש 90",
+        "כביש 1",
+        "כביש 6",
+        "כביש 4"
+      ],
+      "correct": 0,
+      "explanation": "בצומת בית הערבה מסתיים כביש 1 ומתחיל המעבר לכביש 90, העובר לאורך הבקע מאילת עד מטולה.",
+      "sourceUrl": "https://drive.google.com/file/d/1JjR_hvpTeMaLCPZnF4MvyDoduTKw_mWF/view",
+      "sourceDoc": "סיור 1 — הדרכת דרך"
+    },
+    {
+      "id": "N01-2-01",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה הגודל המינימלי של מקווה לפי ההלכה, כפי שהוסבר בקומראן?",
+      "options": [
+        "40 סאה",
+        "10 סאה",
+        "100 סאה",
+        "4 סאה"
+      ],
+      "correct": 0,
+      "explanation": "מקווה צריך להכיל לפחות 40 סאה — בערך 331 עד 576 ליטר לפי שיטות שונות.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-02",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה נמצא בחדר שכונה \"חדר הכספים\" בקומראן?",
+      "options": [
+        "ריכוז גדול של מטבעות",
+        "מגילות נחושת",
+        "כדי יין",
+        "כלי נשק"
+      ],
+      "correct": 0,
+      "explanation": "בחדר נמצא ריכוז גדול של מטבעות — כנראה של הכת; ממצא כזה לא נמצא בשאר האתר.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-03",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "כמה זמן חי מועמד לצד הקבוצה לפני שהתקבל לאיסיים?",
+      "options": [
+        "שלוש שנים",
+        "שבוע",
+        "שלושים יום",
+        "עשר שנים"
+      ],
+      "correct": 0,
+      "explanation": "מועמד חי לצד הקבוצה שלוש שנים, ורק אחרי שהוכיח את טהרת חייו התקבל על תנאי.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-04",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה הייתה בבעלות פרטית של כל איסיי?",
+      "options": [
+        "מלבוש אחד ומנעל אחד",
+        "בית וחלקת אדמה",
+        "כבשה אחת",
+        "לא היה דבר מלבד ספר"
+      ],
+      "correct": 0,
+      "explanation": "לחברים לא היה רכוש פרטי: לכל אחד מלבוש ומנעל יחידים, וכל השאר היה של הקבוצה.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-05",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה תכלית ההפרדה במדרגות של מקוואות קומראן?",
+      "options": [
+        "הפרדה בין היורדים הטמאים לעולים הטהורים",
+        "הפרדה בין גברים לנשים",
+        "הפרדה בין כוהנים ללויים",
+        "הפרדה בין קיץ לחורף"
+      ],
+      "correct": 0,
+      "explanation": "המדרגות מפרידות בין היורדים למקווה (עדיין טמאים) לעולים ממנו (טהורים).",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-06",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מי חפר את קומראן בתחילת שנות ה-50, בתקופה הירדנית?",
+      "options": [
+        "רולאן דה וו, כומר דומיניקני",
+        "יגאל ידין",
+        "יצחק מגן",
+        "חנן אשל"
+      ],
+      "correct": 0,
+      "explanation": "קומראן נחפר בתחילת שנות ה-50 בידי האב רולאן דה וו, כומר דומיניקני.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-07",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "באילו שמות נוספים נקראת הכת בכתביה?",
+      "options": [
+        "אנשי היחד, בני אור",
+        "בני חושך",
+        "אנשי הכנסת הגדולה",
+        "חסידי אשכנז"
+      ],
+      "correct": 0,
+      "explanation": "שמות נוספים: אנשי היחד, קהילת היחד ובני אור.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-08",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "לאיזו דמות נוצרית מוקדמת קושרו לעיתים האיסיים?",
+      "options": [
+        "יוחנן המטביל",
+        "פאולוס",
+        "פטרוס",
+        "מריה המגדלית"
+      ],
+      "correct": 0,
+      "explanation": "ייתכן שיוחנן המטביל היה חלק מהקבוצה או ניסה להתקבל אליה.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-2-09",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "לפי מסורת אחת, מדוע יסד צלאח א-דין את ההתכנסות בנבי מוסא?",
+      "options": [
+        "כדי לאזן את ריבוי עולי הרגל הנוצרים בפסחא",
+        "כדי לחגוג ניצחון על המונגולים",
+        "כדי לשמור על בארות המים",
+        "כדי לגבות מס מעוברי דרך"
+      ],
+      "correct": 0,
+      "explanation": "צלאח א-דין חשש מצליינים נוצרים רבים בפסחא, ויסד תהלוכה מוסלמית מנבי מוסא לירושלים בתאריך תואם.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-2-10",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "אילו מאורעות התחילו בהתכנסויות נבי מוסא?",
+      "options": [
+        "מאורעות 1920",
+        "המרד הערבי הגדול 1936",
+        "מלחמת העצמאות",
+        "פרעות 1929 בחברון"
+      ],
+      "correct": 0,
+      "explanation": "מאורעות 1920–1921 התחילו בהתכנסויות אלה.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-2-11",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "מה הסימן הממלוכי בעיטור משקופי הדלתות בנבי מוסא?",
+      "options": [
+        "אבן שחורה ולבנה לסירוגין (אבלק)",
+        "פסיפס זהב",
+        "עמודי שיש",
+        "עיטורי עץ מגולף"
+      ],
+      "correct": 0,
+      "explanation": "משקופים מאבן שחורה ולבנה לסירוגין וסורגים בעלי חיבורים \"תפוחיים\" — סממנים ממלוכיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-2-12",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "ממה מורכבת הכנסייה הביזנטית המשוחזרת באתר השומרוני הטוב?",
+      "options": [
+        "מסדרון ראשי עם אפסיס במזרח ואגפים נמוכים בצדדים",
+        "מבנה עגול עם כיפה",
+        "אולם מרובע ללא חלונות",
+        "מגדל פעמונים בלבד"
+      ],
+      "correct": 0,
+      "explanation": "מסדרון ראשי גבוה, בקצהו המזרחי אפסיס, ומשני צדיו אגפים נמוכים יותר.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-2-13",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "למה שימשה המעגלה שמוצגת באתר?",
+      "options": [
+        "לדחיסה ולתיקון גגות חומר אחרי הגשם",
+        "לטחינת קמח",
+        "להפקת שמן",
+        "לסלילת כבישים"
+      ],
+      "correct": 0,
+      "explanation": "המעגלה שימשה לדחיסת גגות חומר ולסתימת סדקים אחרי הגשמים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-2-14",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "באילו ספרים מכירים השומרונים?",
+      "options": [
+        "בחמשת חומשי התורה בלבד",
+        "בכל התנ\"ך",
+        "בתורה ובתלמוד",
+        "בברית החדשה"
+      ],
+      "correct": 0,
+      "explanation": "השומרונים מכירים בתורה בלבד — בראשית, שמות, ויקרא, במדבר ודברים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-2-15",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "למה שימש מבנה הלידו בתקופה הירדנית?",
+      "options": [
+        "מועדון על שפת ים המלח",
+        "מנזר",
+        "תחנת משטרה",
+        "מפעל מלח"
+      ],
+      "correct": 0,
+      "explanation": "המבנה הנטוש שימש מועדון על שפת הים; כיום הים רחוק ממנו מאוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-2-16",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "מי ייסד את מפעלי האשלג בים המלח בתקופת המנדט?",
+      "options": [
+        "משה נובומייסקי",
+        "פנחס רוטנברג",
+        "אהרון אהרונסון",
+        "הברון רוטשילד"
+      ],
+      "correct": 0,
+      "explanation": "מפעלי ים המלח נוסדו בידי משה נובומייסקי, מהנדס מכרות מסיביר.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-2-17",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "מה מתאר ציור הקיר הגדול על מבנה הלידו?",
+      "options": [
+        "מפה צלבנית",
+        "את קרב יריחו",
+        "את ים המלח מלמעלה",
+        "את בן גוריון"
+      ],
+      "correct": 0,
+      "explanation": "על הקירות מפה צלבנית שצייר גרשון כוכבי, ושוחזרה בידי תלמידי בית ספר מגילות.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-2-18",
+      "tourId": "01",
+      "level": 2,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "היכן שהה בן גוריון בזמן החלטת האו\"מ על החלוקה (כ\"ט בנובמבר)?",
+      "options": [
+        "במלון ליד ים המלח, דרום־מערבית ללידו",
+        "בתל אביב",
+        "בניו יורק",
+        "בסדה בוקר"
+      ],
+      "correct": 0,
+      "explanation": "דרום־מערבית למבנה היה מלון שבו שהו בן גוריון ורעייתו בזמן ההחלטה.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-3-01",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה תפקידו של אגן השיקוע ומה מקור המים שזרמו בתעלה בקומראן?",
+      "options": [
+        "מי שיטפונות ממפל נחל קומראן, ואגן שמונע סחף בבורות",
+        "מעיין קבוע מתחת לאתר, ואגן לחימום",
+        "מי ים המלח, ואגן להפקת מלח",
+        "מי גשם מהגג, ואגן לשתיית בהמות"
+      ],
+      "correct": 0,
+      "explanation": "התעלה הובילה מי שיטפונות מאזור מפל נחל קומראן; אגן השיקוע מנע מסחף לסתום את בורות האגירה.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-3-02",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה ההסבר לכך שלא נמצאו מבני מגורים בקומראן?",
+      "options": [
+        "מגורים ארעיים (סוכות או אוהלים), או שהאתר היה מרכז חברתי ותעשייתי בלבד",
+        "המבנים נשטפו לים המלח",
+        "היושבים גרו בתוך המקוואות",
+        "הירדנים הרסו אותם"
+      ],
+      "correct": 0,
+      "explanation": "האפשרויות: מגורים במבנים ארעיים שלא השאירו שרידים, או שהאתר היה מרכז קהילתי והחברים גרו במקום אחר.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-3-03",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "איך נקראת תערוכת הגרפיטי במחנה הירדני הנטוש ליד הלידו?",
+      "options": [
+        "גלריה ‎-430",
+        "גלריה ים המלח",
+        "גלריה 1948",
+        "גלריה בית הערבה"
+      ],
+      "correct": 0,
+      "explanation": "במחנה הירדני הנטוש יש תערוכת גרפיטי בשם גלריה ‎-430, המתארת את מות ים המלח.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-3-04",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "איזו עמדה מחקרית ייצג יצחק מגן לגבי המגילות?",
+      "options": [
+        "שהמגילות לא נכתבו בידי תושבי קומראן",
+        "שהמגילות זויפו בימינו",
+        "שהמגילות נכתבו בידי נוצרים",
+        "שהמגילות הן מהתקופה הצלבנית"
+      ],
+      "correct": 0,
+      "explanation": "יצחק מגן, שחפר באתר אחרי 1967, חשב שהמגילות לא נכתבו בידי תושבי קומראן.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-3-05",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "לפי תיאור יוסף בן מתתיהו, מי היה \"הדור הראשון\" של האיסיים?",
+      "options": [
+        "נערים שנאספו ממשפחות וחיו בקיבוצים עירוניים",
+        "כוהנים שגורשו מהמקדש",
+        "חיילים חשמונאים",
+        "נזירים נוצרים"
+      ],
+      "correct": 0,
+      "explanation": "דור ראשון — נערים שנאספו ממשפחות; דור שני — גברים שהתבודדו ביישוב עצמאי.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-3-06",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "קומראן",
+      "question": "מה מראים שברי הכלים בחדר האוכל על הארוחה האיסיית?",
+      "options": [
+        "פת לחם אחת ומנת תבשיל אחת לכל אדם",
+        "סעודות בשר גדולות",
+        "צום קבוע",
+        "ארוחה של פירות בלבד"
+      ],
+      "correct": 0,
+      "explanation": "נמצאו חרסים של צלחות וקערות; כל ארוחה כללה פת לחם ומנת תבשיל בודדת.",
+      "sourceUrl": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view",
+      "sourceDoc": "סיור 1 — קומראן"
+    },
+    {
+      "id": "N01-3-07",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "כיצד, לפי המסורת המוסלמית, הצליח מלאך המוות ליטול את נשמת משה?",
+      "options": [
+        "ביקש ממנו לבדוק אם ארון קבורה מתאים, וסגר עליו",
+        "בזמן שינה",
+        "בעת קריעת ים סוף",
+        "במלחמה בעמלק"
+      ],
+      "correct": 0,
+      "explanation": "משה למד תורה בלי הפסקה; מלאך המוות ביקש שיבדוק ארון קבורה, וכשנכנס — סגר עליו.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-3-08",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "על איזו מדרגה גאומורפולוגית בנוי נבי מוסא?",
+      "options": [
+        "מדרגת ההעתקים הראשונה של הבקע",
+        "רכס המים הארצי",
+        "פסגת הר הזיתים",
+        "קרקעית ים המלח"
+      ],
+      "correct": 0,
+      "explanation": "המבנה נמצא על מדרגת ההעתקים הראשונה, לצד הדרך בין ירושלים ליריחו.",
+      "sourceUrl": "https://drive.google.com/file/d/1I0QEBpXzM55U7Lew74XdU3FnRZVrM4n6/view",
+      "sourceDoc": "סיור 1 — נבי מוסא"
+    },
+    {
+      "id": "N01-3-09",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "נבי מוסא",
+      "question": "מהו \"חג'ר נבי מוסא\" שרואים לאורך הדרך?",
+      "options": [
+        "סלע ביטומני שחור",
+        "אבן גיר לבנה",
+        "גבישי מלח",
+        "בזלת"
+      ],
+      "correct": 0,
+      "explanation": "בתיאור המסלע: סלע ביטומני שחור (חג'ר נבי מוסא) וסלע אדום (חואר חמרא).",
+      "sourceUrl": "https://drive.google.com/file/d/1JjR_hvpTeMaLCPZnF4MvyDoduTKw_mWF/view",
+      "sourceDoc": "סיור 1 — הדרכת דרך"
+    },
+    {
+      "id": "N01-3-10",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "איך משתנה כמות המשקעים במדבר יהודה?",
+      "options": [
+        "קטנה ממערב למזרח ומצפון לדרום",
+        "גדלה ממערב למזרח",
+        "קבועה בכל המדבר",
+        "גדלה מצפון לדרום"
+      ],
+      "correct": 0,
+      "explanation": "כ-50 מ\"מ בצפון המדבר וכ-30 מ\"מ בדרומו; הכמות קטנה מזרחה ודרומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-3-11",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "מה מלמד גודל האבנים בפסיפס על איכותו?",
+      "options": [
+        "אבנים קטנות יותר מאפשרות פרטים רבים יותר",
+        "אבנים גדולות הן סימן לעושר",
+        "גודל האבנים מעיד על הגיל בלבד",
+        "אין קשר"
+      ],
+      "correct": 0,
+      "explanation": "ככל שאבני הפסיפס קטנות יותר, אפשר לתאר בו יותר פרטים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-3-12",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "איזה כתב שימרו השומרונים?",
+      "options": [
+        "כתב עברי קדום",
+        "כתב מרובע (אשורי)",
+        "כתב יווני",
+        "כתב ארמי־סורי"
+      ],
+      "correct": 0,
+      "explanation": "השומרונים שמרו על כתב עברי קדום, בעוד היהודים שינו את סגנון הכתיבה לאורך השנים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-3-13",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "מה ייחודי בסוכה השומרונית?",
+      "options": [
+        "גג מפירות הארץ, והסוכה בתוך הבית",
+        "סוכה עגולה",
+        "סוכה ללא גג",
+        "סוכה על גג הבית מאבן"
+      ],
+      "correct": 0,
+      "explanation": "גג הסוכה עשוי פירות הארץ, ואין סוכה חיצונית.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-3-14",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "השומרוני הטוב",
+      "question": "מה מסבירים \"משולשי הנשיאה\" בפסיפסי הכתובות?",
+      "options": [
+        "שריד לימים שבהם כתובות נתלו ונדרש לייצב אותן",
+        "סמל נוצרי לשילוש",
+        "סימן של האמן",
+        "כיוון התפילה"
+      ],
+      "correct": 0,
+      "explanation": "העיצוב עם משולשי נשיאה הוא שריד לכתובות תלויות שהיה צריך לייצב.",
+      "sourceUrl": "https://drive.google.com/file/d/1NkKV_UWi-XyLH5KLBV7mu0K_7x35EhGj/view",
+      "sourceDoc": "סיור 1 — השומרוני הטוב"
+    },
+    {
+      "id": "N01-3-15",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "כיצד נוצרים הבולענים לאורך ים המלח?",
+      "options": [
+        "מים מתוקים ממיסים שכבת מלח בקרקע והקרקע קורסת",
+        "רעידות אדמה פותחות סדקים",
+        "מפעלים חופרים מנהרות",
+        "גלי הים שוחקים את החוף"
+      ],
+      "correct": 0,
+      "explanation": "עם ירידת המפלס, מים מתוקים (קלים מהמלוחים) ממיסים גבישי מלח, והשכבה העליונה קורסת לחללים.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-3-16",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "מה נמצא ברוג'ום אל-באחר, גל האבנים מזרחית ללידו?",
+      "options": [
+        "שרידי עוגני ספינות",
+        "מטבעות זהב",
+        "מזבח כנעני",
+        "שלד לוויתן"
+      ],
+      "correct": 0,
+      "explanation": "בגל האבנים שהיה בתוך ים המלח נמצאו שרידים של עוגני ספינות.",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-3-17",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "מה קרה לבית הערבה ולמפעל הצפוני במלחמת העצמאות?",
+      "options": [
+        "ננטשו ונהרסו",
+        "הורחבו",
+        "עברו לניהול בריטי",
+        "הפכו לבסיס צה\"ל"
+      ],
+      "correct": 0,
+      "explanation": "היישוב והמפעל ננטשו ונהרסו במלחמת העצמאות (לפי הסיכום, בהסכם עם המלך עבדאללה).",
+      "sourceUrl": "https://drive.google.com/file/d/1LJ_-jfqpZSwa5JGNBi_hPUoffX3T0o4L/view",
+      "sourceDoc": "סיור 1 — לידו"
+    },
+    {
+      "id": "N01-3-18",
+      "tourId": "01",
+      "level": 3,
+      "source": "tour01",
+      "stop": "לידו",
+      "question": "מה מסמן \"סלע PEF\" בצפון ים המלח?",
+      "options": [
+        "את גובה פני ים המלח בתחילת המאה ה-20",
+        "את גבול המנדט",
+        "את מקום טבילת ישו",
+        "את מסלול הרכבת"
+      ],
+      "correct": 0,
+      "explanation": "בסלע סומן גובה פני ים המלח בשנים 1900 ו-1917 — עדות לירידת המפלס.",
+      "sourceUrl": "https://drive.google.com/file/d/1JjR_hvpTeMaLCPZnF4MvyDoduTKw_mWF/view",
+      "sourceDoc": "סיור 1 — הדרכת דרך"
+    },
+    {
+      "id": "N02-1-01",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "לפי סיפור המקרא, כמה נביאי בעל התמודדו מול אליהו בכרמל?",
+      "options": [
+        "400",
+        "12",
+        "40",
+        "1,000"
+      ],
+      "correct": 0,
+      "explanation": "400 נביאי הבעל התפללו כל היום שהבעל יצית את האש במזבח — ללא הועיל.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-1-02",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "איזה מסדר נזירים מחזיק את המנזר במוחרקה?",
+      "options": [
+        "הכרמליתים",
+        "הפרנציסקנים",
+        "הבנדיקטינים",
+        "הישועים"
+      ],
+      "correct": 0,
+      "explanation": "מסדר הכרמליתים היחפים — מסדר קתולי מימי הממלכה הצלבנית שמרכזו בכרמל.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-1-03",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "באיזה נחל, לפי המקרא, הרג אליהו את נביאי הבעל?",
+      "options": [
+        "נחל קישון",
+        "נחל אורן",
+        "נחל תנינים",
+        "נחל הירקון"
+      ],
+      "correct": 0,
+      "explanation": "אחרי שהאש ירדה על מזבחו, הרג אליהו את נביאי הבעל בנחל קישון.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-1-04",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "באיזה מנהג פסח זוכרים את אליהו הנביא?",
+      "options": [
+        "מוזגים כוס לאליהו",
+        "אוכלים מצה מיוחדת",
+        "מדליקים נר",
+        "קוראים מגילה"
+      ],
+      "correct": 0,
+      "explanation": "בפסח מוזגים כוס לאליהו הנביא; גם בברית המילה יש \"כיסא אליהו\".",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-1-05",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "מאיזה כיוון מתחילים תצפית, לפי ההנחיה בסיור?",
+      "options": [
+        "מהכיוון שממנו הגענו",
+        "תמיד מהצפון",
+        "מהנקודה הגבוהה ביותר",
+        "מהשמש"
+      ],
+      "correct": 0,
+      "explanation": "התצפית מתחילה מהמקום שממנו הגענו (כאן — הים) וממשיכה במעגל, מרחוק לקרוב.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-1-06",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "לאיזו רשות משמשת היום חוות משמר הכרמל כמרכז?",
+      "options": [
+        "רשות הטבע והגנים",
+        "קרן קיימת לישראל",
+        "משרד החקלאות",
+        "צה\"ל"
+      ],
+      "correct": 0,
+      "explanation": "החווה הולאמה בשנות ה-50 לטובת שמורת טבע, וכיום היא מרכז של רשות הטבע והגנים.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-1-07",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "איזה צד של הר הכרמל תלול יותר?",
+      "options": [
+        "המזרחי",
+        "המערבי",
+        "הצפוני",
+        "שני הצדדים זהים"
+      ],
+      "correct": 0,
+      "explanation": "הכרמל הוא הר א־סימטרי: קו העתק בצד המזרחי הופך אותו לתלול יותר מהמערבי.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-1-08",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "איזה עץ ירוק־עד שולט במדרונות נחל אורן?",
+      "options": [
+        "אלון מצוי",
+        "אקליפטוס",
+        "תאנה",
+        "דקל"
+      ],
+      "correct": 0,
+      "explanation": "במדרונות יער אלונים — אלון מצוי, ירוק־עד בעל עלים נוקשים.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-1-09",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "מהו היישוב הדרוזי הדרומי ביותר?",
+      "options": [
+        "דלית אל-כרמל",
+        "עוספיה",
+        "פקיעין",
+        "מג'דל שמס"
+      ],
+      "correct": 0,
+      "explanation": "דלית אל-כרמל היא היישוב הדרוזי הדרומי ביותר.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-1-10",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "איזה נביא קדוש לדרוזים, וקברו באזור הארבל?",
+      "options": [
+        "נבי שועייב (יתרו)",
+        "נבי סמואל",
+        "נבי מוסא",
+        "נבי יונס"
+      ],
+      "correct": 0,
+      "explanation": "הנביא שועייב, המזוהה עם יתרו, קדוש לדרוזים ועולים לקברו באזור הארבל.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-1-11",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "האם אפשר להצטרף היום לדת הדרוזית?",
+      "options": [
+        "לא — ההצטרפות נסגרה אחרי כ-20 שנה",
+        "כן, בכל זמן",
+        "רק בנישואין",
+        "רק בגיל 18"
+      ],
+      "correct": 0,
+      "explanation": "במשך כ-20 שנה היה אפשר להצטרף; מאז אין אפשרות להמרה לדת הדרוזית.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-1-12",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "משמר הכרמל",
+      "question": "באיזו שנה פרצה שריפת הכרמל הגדולה?",
+      "options": [
+        "2010",
+        "2000",
+        "2016",
+        "1998"
+      ],
+      "correct": 0,
+      "explanation": "השריפה פרצה בדצמבר 2010, בנר שמיני של חנוכה, באזור עוספיה.",
+      "sourceUrl": "https://drive.google.com/file/d/1WlzyunPPME8YF8ukitr-eLyKyyp5LP7G/view",
+      "sourceDoc": "סיור 2 — אנדרטת אסון הכרמל"
+    },
+    {
+      "id": "N02-1-13",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "משמר הכרמל",
+      "question": "כמה בני אדם נספו באסון הכרמל?",
+      "options": [
+        "44",
+        "13",
+        "100",
+        "7"
+      ],
+      "correct": 0,
+      "explanation": "נספו 37 באוטובוס ועוד אנשי המחסום, כבאים והנהג — 44 בסך הכול.",
+      "sourceUrl": "https://drive.google.com/file/d/1WlzyunPPME8YF8ukitr-eLyKyyp5LP7G/view",
+      "sourceDoc": "סיור 2 — אנדרטת אסון הכרמל"
+    },
+    {
+      "id": "N02-1-14",
+      "tourId": "02",
+      "level": 1,
+      "source": "tour02",
+      "stop": "משמר הכרמל",
+      "question": "איזה כלא הוחלט לפנות בשריפת הכרמל?",
+      "options": [
+        "כלא דמון",
+        "כלא מגידו",
+        "כלא רמלה",
+        "כלא עופר"
+      ],
+      "correct": 0,
+      "explanation": "ההחלטה לפנות את כלא דמון הזעיקה כוחות, ביניהם קורס קצינים של שירות בתי הסוהר.",
+      "sourceUrl": "https://drive.google.com/file/d/1WlzyunPPME8YF8ukitr-eLyKyyp5LP7G/view",
+      "sourceDoc": "סיור 2 — אנדרטת אסון הכרמל"
+    },
+    {
+      "id": "N02-2-01",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "באיזו מאה פעל אליהו הנביא, לפי הסיכום?",
+      "options": [
+        "המאה ה-9 לפנה\"ס",
+        "המאה ה-5 לפנה\"ס",
+        "המאה ה-1 לספירה",
+        "המאה ה-12 לפנה\"ס"
+      ],
+      "correct": 0,
+      "explanation": "אליהו פעל בממלכת ישראל בימי אחאב, במאה ה-9 לפנה\"ס.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-2-02",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "איך כינה אחאב את אליהו כשנפגשו אחרי הבצורת?",
+      "options": [
+        "עוכר ישראל",
+        "איש האלוהים",
+        "רועה ישראל",
+        "נביא השקר"
+      ],
+      "correct": 0,
+      "explanation": "אחרי שלוש שנות בצורת פגש אחאב את אליהו וקרא לו \"עוכר ישראל\".",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-2-03",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "למה אליהו שפך מים בתעלה שסביב המזבח?",
+      "options": [
+        "כדי להגדיל את הנס — שהאש תבער למרות המים",
+        "כדי לכבות שריפה",
+        "כדי להשקות את הזבח",
+        "כדי לטהר את המקום"
+      ],
+      "correct": 0,
+      "explanation": "אליהו בנה תעלה סביב המזבח ושפך בה מים, והאש ירדה ובערה בכל זאת.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-2-04",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "לאילו דתות מקודשת מערת אליהו שבחיפה?",
+      "options": [
+        "ליהודים, מוסלמים, נוצרים ודרוזים",
+        "רק ליהודים",
+        "רק לנוצרים",
+        "ליהודים ולשומרונים"
+      ],
+      "correct": 0,
+      "explanation": "מערת אליהו, בקצה הצפוני של הכרמל, מקודשת ליהודים, מוסלמים, נוצרים ודרוזים.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-2-05",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "מה פירוש הראשי תיבות \"תיקו\" בתלמוד, הקשור לאליהו?",
+      "options": [
+        "תשבי יתרץ קושיות ואיבעיות",
+        "תורה יוצאת קודם",
+        "תפילה יחד קבועה",
+        "תשובה יבוא קרוב"
+      ],
+      "correct": 0,
+      "explanation": "\"תיקו\" — תשבי (אליהו) יתרץ קושיות ואיבעיות שלא נפתרו.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-2-06",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "לאילו שלושה חלקים מחולק אזור הכרמל מצפון לדרום?",
+      "options": [
+        "הר הכרמל, רמות מנשה והר אמיר",
+        "גליל, כרמל ושומרון",
+        "כרמל נמוך, גבוה ועליון",
+        "עכו, חיפה ועתלית"
+      ],
+      "correct": 0,
+      "explanation": "הכרמל בנוי משלושה חלקים: הר הכרמל, קער רמות מנשה והר אמיר.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-2-07",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "מדוע יש בכרמל מעט מעיינות?",
+      "options": [
+        "סלע הדולומיט סדוק ואינו נושא מים",
+        "יש בו מעט גשם",
+        "ההר בנוי חול",
+        "המים נשאבים לחיפה"
+      ],
+      "correct": 0,
+      "explanation": "הכרמל בנוי ברובו גיר ודולומיט סדוקים שאינם נושאים מים, ולכן יש בו מעט מעיינות.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-2-08",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "איזו קבוצה הקימה את חוות משמר הכרמל בשנות ה-30?",
+      "options": [
+        "קבוצה יהודית דתית מגרמניה, לכפר נופש",
+        "ההגנה, כבסיס אימונים",
+        "הבריטים, כמחנה צבאי",
+        "קק\"ל, כמשתלה"
+      ],
+      "correct": 0,
+      "explanation": "החווה הוקמה בידי קבוצה יהודית דתית מגרמניה כדי להקים כפר נופש; אחר כך שימשה מחנה אימונים של ההגנה.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-2-09",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "מה נמצא בתחתית ערוץ נחל אורן, לפי סקירת הצומח?",
+      "options": [
+        "הרדוף הנחלים, פטל קדוש וקנה",
+        "אורן ירושלים בלבד",
+        "שיטים",
+        "דקלים"
+      ],
+      "correct": 0,
+      "explanation": "בבסיס הערוץ הרדוף הנחלים (רעיל מאוד), פטל קדוש וקנה.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-2-10",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "איך קוראים הדרוזים לעצמם?",
+      "options": [
+        "אל-מווחידון — המאמינים באל אחד",
+        "אל-מומינון",
+        "אהל א-סונה",
+        "אל-מוהאג'רון"
+      ],
+      "correct": 0,
+      "explanation": "הדרוזים קוראים לעצמם אל-מווחידון, ובני מערוף — אנשי החסד.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-2-11",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "מה מאפיין את התפילה הדרוזית?",
+      "options": [
+        "כל מאמין מתפלל ביחידות, כרצונו ובזמנו",
+        "חמש תפילות במסגד",
+        "תפילה בציבור בשבת",
+        "תפילה רק בחגים"
+      ],
+      "correct": 0,
+      "explanation": "כל מאמין מתפלל ביחידות; אנשי הדת מתכנסים ללימוד בערבי שני ושישי.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-2-12",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "מה תפקידו של בית ה\"ח'לווה\"?",
+      "options": [
+        "בית התפילה, שבו שמורים ספרי הקודש הסודיים",
+        "בית הקברות",
+        "בית הספר",
+        "מקום מועצת הכפר"
+      ],
+      "correct": 0,
+      "explanation": "החילווה נראית כבית רגיל ומכילה את ספרי הקודש הסודיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-2-13",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "משמר הכרמל",
+      "question": "מה מתאר הפסל הגדול באנדרטת אסון הכרמל?",
+      "options": [
+        "את עיקול הכביש ולשון האש העולה במעלה ההר",
+        "את האוטובוס השרוף",
+        "דמויות של כבאים",
+        "עץ אלון בוער"
+      ],
+      "correct": 0,
+      "explanation": "פסל פלדה ענק מתאר את העיקול בכביש ואת לשון האש המתפרצת במעלה ההר.",
+      "sourceUrl": "https://drive.google.com/file/d/1WlzyunPPME8YF8ukitr-eLyKyyp5LP7G/view",
+      "sourceDoc": "סיור 2 — אנדרטת אסון הכרמל"
+    },
+    {
+      "id": "N02-3-01",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "מה מסמל ש\"אליהו עלה השמיימה בסערה\" במסורת?",
+      "options": [
+        "שאין לו מקום קבורה",
+        "שהוא קבור בכרמל",
+        "שהוא נקבר בהר נבו",
+        "שהוא נקבר בחברון"
+      ],
+      "correct": 0,
+      "explanation": "לפי המסורת אליהו עלה השמיימה בסערה — ולכן אין לו מקום קבורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-3-02",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "מה הקשר בין סיפור כרם נבות לנבואת אליהו על בית אחאב?",
+      "options": [
+        "אחאב חזר בתשובה, ולכן הפורענות נדחתה לימי בנו",
+        "אחאב קנה את הכרם בכסף מלא",
+        "נבות ברח לכרמל",
+        "אליהו מחל לאיזבל"
+      ],
+      "correct": 0,
+      "explanation": "אליהו ניבא את סוף אחאב; אחרי חרטתו נדחתה הקללה לימי יורשיו.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-3-03",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "מוחרקה",
+      "question": "מה תפקידו הנוסף של המנזר הכרמליתי בסטלה מאריס?",
+      "options": [
+        "בית הארחה לצליינים",
+        "בית חולים",
+        "בית ספר לנזירים בלבד",
+        "מצודה צבאית"
+      ],
+      "correct": 0,
+      "explanation": "לכרמליתים יש אתר במוחרקה ואתר נוסף בסטלה מאריס, המשמש גם בית הארחה לצליינים.",
+      "sourceUrl": "https://drive.google.com/file/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/view",
+      "sourceDoc": "סיור 2 — מוחרקה"
+    },
+    {
+      "id": "N02-3-04",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "באיזו נפה, מחלוקת שלמה, היה אזור הכרמל?",
+      "options": [
+        "נפת דור",
+        "נפת מגידו",
+        "נפת חצור",
+        "נפת גזר"
+      ],
+      "correct": 0,
+      "explanation": "שלמה חילק את הארץ ל-12 נפות שכלכלו את בית המלך; הכרמל היה חלק מנפת דור.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-3-05",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "כיצד פעלה תחנת הקמח שבנחל אורן?",
+      "options": [
+        "מים מאמה צנחו בפיר על גלגל כפות, וגלגל נוסף המיר את התנועה לאופקית",
+        "רוח סובבה כנפיים",
+        "בהמות הסתובבו סביב ציר",
+        "קיטור הניע בוכנה"
+      ],
+      "correct": 0,
+      "explanation": "אמת מים הובילה לפיר; המים צנחו על גלגל כפות אנכי, וגלגל נוסף המיר את התנועה לאופקית שהניעה את הריחיים.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-3-06",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "באיזה כינוי נקרא מישור חוף הכרמל בתקופה הפרסית?",
+      "options": [
+        "ארצות הדגן העשירות",
+        "ארץ הארגמן",
+        "גן האלוהים",
+        "שער הים"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה הפרסית (המאה ה-5 לפנה\"ס) נקרא מישור חוף הכרמל \"ארצות הדגן העשירות\".",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-3-07",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "מה קורה למישור חוף הכרמל ככל שמתקדמים צפונה?",
+      "options": [
+        "הוא מצטמצם עד שהכרמל נוגע בים בסטלה מאריס",
+        "הוא מתרחב",
+        "רכסי הכורכר מתרבים",
+        "הוא הופך לביצה"
+      ],
+      "correct": 0,
+      "explanation": "בדרום יש שלושה רכסי כורכר; צפונה המישור הולך וצר, עד שהכרמל מגיע לים בסטלה מאריס.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-3-08",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "נחל אורן",
+      "question": "באילו מקומות בכרמל נחשפים סלעי טוף בזלתי?",
+      "options": [
+        "בבקעות המערביות — כרם מהר\"ל ונחל דליה",
+        "בפסגת האוניברסיטה",
+        "בסטלה מאריס",
+        "בעוספיה בלבד"
+      ],
+      "correct": 0,
+      "explanation": "רוב הכרמל גיר ודולומיט, אך בבקעות המערביות (כרם מהר\"ל, נחל דליה) יש מחשופי טוף.",
+      "sourceUrl": "https://drive.google.com/file/d/15U_wrGoMBB5rRoOQAZ05g1nSjhLMLbOJ/view",
+      "sourceDoc": "סיור 2 — חוות משמר הכרמל ונחל אורן"
+    },
+    {
+      "id": "N02-3-09",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "על שם מי נקראים הדרוזים?",
+      "options": [
+        "המטיף מוחמד אבן איסמאעיל א-דרזי (המאה ה-11)",
+        "הר הדרוזים בסוריה",
+        "הנביא שועייב",
+        "השיח' אמין טריף"
+      ],
+      "correct": 0,
+      "explanation": "השם נגזר מהמטיף מהמאה ה-11 מוחמד אבן איסמאעיל א-דרזי.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-3-10",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "מדוע אין בדת הדרוזית מנהגי אבלות מורכבים?",
+      "options": [
+        "מאמינים שהנפש מתגלגלת מיד מנפטר לתינוק שנולד",
+        "כי אין בה חיי עולם הבא",
+        "כי הקבורה נעשית בסוד",
+        "כי האבלות נעשית רק בחגים"
+      ],
+      "correct": 0,
+      "explanation": "לפי הסיכום, הנפש מתגלגלת מדרוזי שמת לדרוזי שנולד, ולכן אין מנהגי אבלות.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-3-11",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "בית הקיץ של מי משמש היום כבית יד לבנים הדרוזי בדלית אל-כרמל?",
+      "options": [
+        "לורנס ואליס אוליפנט",
+        "הברון רוטשילד",
+        "השיח' אמין טריף",
+        "נפתלי הרץ אימבר"
+      ],
+      "correct": 0,
+      "explanation": "הבית היה ביתם של לורנס ואליס אוליפנט; מזכירו של לורנס היה נפתלי הרץ אימבר, מחבר \"התקווה\".",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-3-12",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "משמר הכרמל",
+      "question": "איזה מאפיין של נחל אורן תרם לאסון האוטובוס בשריפת הכרמל?",
+      "options": [
+        "רוחות מערביות מקומיות העלו את האש במעלה הערוץ",
+        "חוסר עצים",
+        "גשם חזק",
+        "כביש רחב מדי"
+      ],
+      "correct": 0,
+      "explanation": "רוחות מזרחיות ליבו את האש, אך בטופוגרפיה של נחל אורן רוחות מערביות העלו אותה במעלה ההר.",
+      "sourceUrl": "https://drive.google.com/file/d/1WlzyunPPME8YF8ukitr-eLyKyyp5LP7G/view",
+      "sourceDoc": "סיור 2 — אנדרטת אסון הכרמל"
+    },
+    {
+      "id": "N02-3-13",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "משמר הכרמל",
+      "question": "מה האגדה מסבירה על שני מיני הלוטם, השעיר והמרווני?",
+      "options": [
+        "מדוע הם גדלים זה ליד זה אך לא יחד",
+        "מדוע הם פורחים בחורף",
+        "מדוע הם רעילים",
+        "מדוע הם גדלים רק בכרמל"
+      ],
+      "correct": 0,
+      "explanation": "באגדה על שני אחים שהאב קילל — הלוטם השעיר (סגלגל) והמרווני (לבן) גדלים בקרבה אך לא יחד.",
+      "sourceUrl": "https://drive.google.com/file/d/1WlzyunPPME8YF8ukitr-eLyKyyp5LP7G/view",
+      "sourceDoc": "סיור 2 — אנדרטת אסון הכרמל"
+    },
+    {
+      "id": "N02-2-14",
+      "tourId": "02",
+      "level": 2,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "מה חובה על גבר דרוזי דתי לגדל, לפי הסיכום?",
+      "options": [
+        "שפם",
+        "זקן ארוך",
+        "פאות",
+        "שיער ארוך"
+      ],
+      "correct": 0,
+      "explanation": "תלבושת הגבר הדתי: תרבוש לבן, שרוואל, חולצה כהה ועבאיה — והוא חייב לגדל שפם.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N02-3-14",
+      "tourId": "02",
+      "level": 3,
+      "source": "tour02",
+      "stop": "הדרוזים",
+      "question": "מאיזה זרם באסלאם התפלגה הדת הדרוזית במאה ה-11?",
+      "options": [
+        "מהזרם השיעי",
+        "מהזרם הסוני",
+        "מהסופיות",
+        "מהזרם החריג'י"
+      ],
+      "correct": 0,
+      "explanation": "ב-1043 התפלגה הכת מהזרם השיעי באסלאם, במצרים, ובעקבות רדיפות התיישבה בהרים מבודדים.",
+      "sourceUrl": "https://drive.google.com/file/d/1o5AlsKGioHZQ93_cZfywIpF4bGWMMQZF/view",
+      "sourceDoc": "סיור 2 — דרוזים"
+    },
+    {
+      "id": "N03-1-01",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "איזה מעמד בין־לאומי יש לתל באר שבע?",
+      "options": [
+        "אתר מורשת עולמית של אונסק\"ו",
+        "פארק לאומי של האו\"ם",
+        "שמורת ביוספרה",
+        "אתר נאט\"ו"
+      ],
+      "correct": 0,
+      "explanation": "תל באר שבע הוא אתר מורשת עולמית של אונסק\"ו, עם שרידי יישוב מתקופת הברזל.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-1-02",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "מה נמצא מחוץ לשער העיר בתל באר שבע?",
+      "options": [
+        "באר מים חפורה",
+        "בית קברות",
+        "שוק רומי",
+        "מקדש"
+      ],
+      "correct": 0,
+      "explanation": "מחוץ לשער באר חפורה — אולי לרווחת יושבי המדבר, שיכלו ליהנות מהמים בלי להיכנס לעיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-1-03",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "מאיזה נחל אספו את מי השיטפונות למפעל המים בתל באר שבע?",
+      "options": [
+        "נחל חברון",
+        "נחל באר שבע",
+        "נחל הבשור",
+        "נחל שקמה"
+      ],
+      "correct": 0,
+      "explanation": "תעלה הובילה מי שיטפונות מנחל חברון לבורות האגירה התת־קרקעיים בתוך העיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-1-04",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "לפי ספר בראשית, בין מי למי נכרתה ברית השבועה בבאר שבע?",
+      "options": [
+        "אברהם ואבימלך",
+        "יעקב ולבן",
+        "דוד ושאול",
+        "משה ופרעה"
+      ],
+      "correct": 0,
+      "explanation": "הבאר שמחוץ לשער מקושרת לבאר השבועה שבין אברהם לאבימלך, או לבארות שחפרו עבדי יצחק.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-1-05",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מי הקים את העיר באר שבע המודרנית בשנת 1900?",
+      "options": [
+        "העות'מאנים",
+        "הבריטים",
+        "הסוכנות היהודית",
+        "הבדואים"
+      ],
+      "correct": 0,
+      "explanation": "העות'מאנים הקימו את באר שבע ב-1900 כמרכז מנהלי במפגש בין שבטים בדואים.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-1-06",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "באיזו שנה כבשו הבריטים את באר שבע?",
+      "options": [
+        "1917",
+        "1948",
+        "1900",
+        "1936"
+      ],
+      "correct": 0,
+      "explanation": "ב-1917 כבשו הבריטים את באר שבע, במה שנודע כקרב הפרשים האחרון בהיסטוריה.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-1-07",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "פסל הראש (פרוטומה) של מי עומד בגן בבאר שבע?",
+      "options": [
+        "הגנרל אלנבי",
+        "בן גוריון",
+        "הרצל",
+        "צ'רצ'יל"
+      ],
+      "correct": 0,
+      "explanation": "בגן אלנבי הוצבה ב-1923 פרוטומה של אלנבי; היא הושחתה במרד הערבי, ופרוטומה חדשה הוצבה ב-2006.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-1-08",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מה מסמן כל קבר בבית הקברות הצבאי הבריטי בבאר שבע?",
+      "options": [
+        "את דתו של החייל — צלב, מגן דוד או סהר",
+        "את דרגתו בלבד",
+        "את עירו",
+        "את יחידתו בלבד"
+      ],
+      "correct": 0,
+      "explanation": "לכל חייל מצוינת דתו: צלב לנוצרים, מגן דוד ליהודים, סהר למוסלמים.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-1-09",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מה מספר הקטר המוצב במתחם הקטר בבאר שבע, ולזכר מה?",
+      "options": [
+        "70414 — לזכר שירו של אריק לביא",
+        "1917 — לזכר הכיבוש",
+        "1948 — לזכר מלחמת העצמאות",
+        "1900 — לזכר הקמת העיר"
+      ],
+      "correct": 0,
+      "explanation": "מספר הקטר הוסב ל-70414 לזכר שירו של אריק לביא.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-1-10",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מה יש היום בבית הספר שהוקם לילדי השייח'ים?",
+      "options": [
+        "פארק מדע",
+        "בית חולים",
+        "מסגד",
+        "בית משפט"
+      ],
+      "correct": 0,
+      "explanation": "המבנה מ-1914 שימש בית ספר, בית חולים ובית חייל — וכיום פארק מדע.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-1-11",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "איזו עיר נבנתה, כמו רמלה, על חולות ומכונה \"עיר הילדים\"?",
+      "options": [
+        "חולון",
+        "בת ים",
+        "אשדוד",
+        "יבנה"
+      ],
+      "correct": 0,
+      "explanation": "חולון נבנתה על חולות ומכונה \"עיר הילדים\" בזכות גני סיפורי ילדים ומוזיאון הילדים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-1-12",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "איזה צמח פולש הביאו הבריטים לעצירת נדידת החולות?",
+      "options": [
+        "שיטה כחלחלה",
+        "אקליפטוס",
+        "צבר",
+        "קזוארינה"
+      ],
+      "correct": 0,
+      "explanation": "השיטה הכחלחלה הובאה בידי הבריטים כדי לעצור את נדידת החולות.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-1-13",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "איזה נחל הוא הגבול הדרומי של מישור החוף הדרומי והכניסה לנגב הצפוני?",
+      "options": [
+        "נחל שקמה",
+        "נחל שורק",
+        "נחל איילון",
+        "נחל הבשור"
+      ],
+      "correct": 0,
+      "explanation": "נחל שקמה הוא הגבול הדרומי של מישור החוף הדרומי — מכאן מתחיל הנגב הצפוני.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-1-14",
+      "tourId": "03",
+      "level": 1,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "איזו אמרה מפורסמת קשורה ליבנה וליוחנן בן זכאי?",
+      "options": [
+        "\"תן לי יבנה וחכמיה\"",
+        "\"לא בחיל ולא בכוח\"",
+        "\"אם תרצו אין זו אגדה\"",
+        "\"שמע ישראל\""
+      ],
+      "correct": 0,
+      "explanation": "יוחנן בן זכאי ביקש \"תן לי יבנה וחכמיה\", וכך נמשכה הסנהדרין אחרי חורבן המקדש.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-2-01",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "כמה שכבות יישוב נמצאו בתל באר שבע, לפי הסיכום?",
+      "options": [
+        "15",
+        "40",
+        "5",
+        "3"
+      ],
+      "correct": 0,
+      "explanation": "15 שכבות: כלקוליתית, 9 שכבות מתקופת הברזל, פרסית, הלניסטית, הרודיאנית ושתיים ערביות קדומות.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-2-02",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "מה מלמד הרוב הגדול של מבני הציבור והמחסנים בתל באר שבע?",
+      "options": [
+        "שהעיר הייתה כנראה מרכז מנהלי",
+        "שהייתה בה אוכלוסייה עצומה",
+        "שהיא הייתה מקדש בלבד",
+        "שהיא הייתה מחנה נוודים"
+      ],
+      "correct": 0,
+      "explanation": "יש בה מעט מבני מגורים ורוב השטח מבני ציבור, מחסנים ומבנים מנהליים — כנראה עיר מנהלית.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-2-03",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "כמה זוגות אומנות יש בשער העיר בתל באר שבע?",
+      "options": [
+        "3",
+        "4",
+        "2",
+        "6"
+      ],
+      "correct": 0,
+      "explanation": "השער בנוי משלושה זוגות אומנות, ולפניו מרחב שבו ישבו זקנים, שופטים וסוחרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-2-04",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "מדוע המבנים הארוכים ליד השער אינם נחשבים אורוות?",
+      "options": [
+        "הרצפה מרוצפת, הם צרים והאבוסים קטנים",
+        "לא נמצאו בהם קירות",
+        "הם בתוך מפעל המים",
+        "הם מהתקופה הערבית"
+      ],
+      "correct": 0,
+      "explanation": "המבנים צרים ומרוצפים ונמצאו בהם כלי אגירה; האבוסים קטנים — שימשו כנראה לפריקת שיירות.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-2-05",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "מה מיוחד בטיח של בורות האגירה בתל באר שבע?",
+      "options": [
+        "רואים בו סימני מריחה בידיים",
+        "הוא עשוי זהב",
+        "הוא בצבע אדום",
+        "הוא מודרני"
+      ],
+      "correct": 0,
+      "explanation": "בורות האגירה מטויחים, ואפשר לראות שהטיוח נעשה בידיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-2-06",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מה מייחד את חלונות המסגד העות'מאני בבאר שבע?",
+      "options": [
+        "חלונות בצורת מפתחות",
+        "חלונות ויטראז' צבעוניים",
+        "חלונות עגולים",
+        "אין חלונות"
+      ],
+      "correct": 0,
+      "explanation": "המסגד מעוטר בחלונות בצורת מפתחות.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-2-07",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מי היה עארף אל-עארף, שביתו נמצא בעיר העתיקה של באר שבע?",
+      "options": [
+        "מושל באר שבע, היסטוריון ועיתונאי",
+        "מהנדס הרכבת",
+        "שייח' בדואי",
+        "קצין בריטי"
+      ],
+      "correct": 0,
+      "explanation": "עארף אל-עארף היה מושל באר שבע, היסטוריון ועיתונאי.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-2-08",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מי הקים את תחנת הרכבת העות'מאנית בבאר שבע ב-1915?",
+      "options": [
+        "מייסנר פאשה, מהנדס גרמני",
+        "אלנבי",
+        "רוטנברג",
+        "עארף אל-עארף"
+      ],
+      "correct": 0,
+      "explanation": "מתחם התחנה הוקם ב-1915 בידי מייסנר פאשה, מהנדס גרמני.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-2-09",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "באיזה תאריך מתקיים טקס הזיכרון השנתי בבית הקברות הבריטי?",
+      "options": [
+        "11 בנובמבר בשעה 11",
+        "1 בנובמבר",
+        "4 ביולי",
+        "9 במאי"
+      ],
+      "correct": 0,
+      "explanation": "ב-11/11 בשעה 11 — יום שביתת הנשק בחזית המערבית במלחמת העולם הראשונה.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-2-10",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "איזו יחידה צבאית ישבה במתחם הקטר אחרי קום המדינה?",
+      "options": [
+        "יחידת האזנה — לימים 8200",
+        "חיל האוויר",
+        "גדוד הנח\"ל",
+        "פיקוד הדרום"
+      ],
+      "correct": 0,
+      "explanation": "לאחר קום המדינה שימש המתחם יחידת האזנה של צה\"ל, לימים 8200.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-2-11",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "איזה תל זוהה בטעות כגת הפלישתית ונתן את שמו לקריית גת?",
+      "options": [
+        "תל עירני",
+        "תל א-צאפי",
+        "תל מקנה",
+        "תל נגילה"
+      ],
+      "correct": 0,
+      "explanation": "תל עירני זוהה בטעות כגת; היום גת מזוהה עם תל א-צאפי (צפית).",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-2-12",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "עם איזו עיר פלישתית מזוהה תל מקנה?",
+      "options": [
+        "עקרון",
+        "אשקלון",
+        "עזה",
+        "אשדוד"
+      ],
+      "correct": 0,
+      "explanation": "תל עקרון (מקנה) מזוהה עם עקרון הפלישתית.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-2-13",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "מה מלמד הגובה הנמוך של החיטה בשדות בקעת ערד?",
+      "options": [
+        "על מיעוט משקעים (חקלאות בעל)",
+        "על אדמה מלוחה",
+        "על זן מיוחד",
+        "על קציר מוקדם"
+      ],
+      "correct": 0,
+      "explanation": "שדה חיטה בחקלאות בעל — גובה החיטים הנמוך מעיד על מיעוט משקעים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-2-14",
+      "tourId": "03",
+      "level": 2,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "מה מסביר את נטייתו של עץ השיטה הבודד מערבה בתל נגילה?",
+      "options": [
+        "רסס הים",
+        "רוח מזרחית",
+        "חוסר אור",
+        "שורשים רדודים"
+      ],
+      "correct": 0,
+      "explanation": "בכל מישור החוף רסס הים גורם לעצים לנטות מערבה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-3-01",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "מה נמצא מפורק במבנה המרתפים בתל באר שבע, ושחזורו מוצב בכניסה?",
+      "options": [
+        "מזבח קרנות",
+        "שער העיר",
+        "פסל אלה",
+        "ארון קבורה"
+      ],
+      "correct": 0,
+      "explanation": "נמצא מזבח קרנות מפורק — כנראה בעקבות רפורמה דתית שריכזה את הפולחן בירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-3-02",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "למה, לפי ההשערה, נחפרה הבאר מחוץ לשער ולא בתוך העיר?",
+      "options": [
+        "כדי שיושבי המדבר ייהנו מהמים בלי להיכנס לעיר",
+        "כי בתוך העיר לא היה מקום",
+        "כדי להרעיל אויבים",
+        "כי שם עבר הנחל"
+      ],
+      "correct": 0,
+      "explanation": "מעשה \"אלטרואיסטי\" — לאפשר לתושבי המדבר ליהנות מהמרכז בלי להיכנס לתוכו.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-3-03",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "מה עולה מהיעדר מקדש בתל באר שבע לצד המזבח המפורק?",
+      "options": [
+        "ייתכן שהפולחן המקומי בוטל ורוכז בירושלים",
+        "שהעיר לא הייתה ישראלית",
+        "שהמקדש נשדד ברעידת אדמה",
+        "שהמזבח הובא מירושלים"
+      ],
+      "correct": 0,
+      "explanation": "המזבח פורק, כנראה בעקבות רפורמה שריכזה את הפולחן בירושלים (חזקיהו או יאשיהו — הדבר נתון לדיון).",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-3-04",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "לפי המסורת הבדואית שסופרה בסיור, ממה ברא האל את הגמל?",
+      "options": [
+        "מענני הגשם",
+        "מהרוח",
+        "מחץ",
+        "מעפר האדמה"
+      ],
+      "correct": 0,
+      "explanation": "באגדה: הבדואי מהרוח, הסוס מחץ, הגמל מענני הגשם, והחמור מעפר.",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-3-05",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל באר שבע",
+      "question": "איזה מנהיג כתב: \"אם לא נעמוד על המדבר — לא תעמוד תל אביב\"?",
+      "options": [
+        "דוד בן גוריון",
+        "לוי אשכול",
+        "מנחם בגין",
+        "יגאל אלון"
+      ],
+      "correct": 0,
+      "explanation": "בן גוריון כתב רבות על המדבר; הציטוט מתוך \"על מה אנו מגינים\".",
+      "sourceUrl": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view",
+      "sourceDoc": "סיור 3 — תל באר שבע"
+    },
+    {
+      "id": "N03-3-06",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מה הייתה המטרה האסטרטגית של המסילה העות'מאנית לבאר שבע?",
+      "options": [
+        "לבלום את ההשפעה הבריטית מאזור תעלת סואץ",
+        "להוביל עולי רגל למכה",
+        "לייצא תפוזים",
+        "לחבר את עכו לבגדד"
+      ],
+      "correct": 0,
+      "explanation": "המסילה הוקמה כחלק מהמאמץ העות'מאני לבלום את התפשטות ההשפעה הבריטית מאזור התעלה.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-3-07",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מה היה רוחב המסילה העות'מאנית בבאר שבע לעומת התקן הבין־לאומי?",
+      "options": [
+        "כ-1.03 מ' לעומת 1.43 מ'",
+        "1.43 מ' לעומת 1.03 מ'",
+        "זהה — 1.43 מ'",
+        "0.60 מ' לעומת 1.00 מ'"
+      ],
+      "correct": 0,
+      "explanation": "לפי הסיכום, המסילות נבנו ברוחב של כ-1.03 מ' לעומת התקן הבין־לאומי של 1.43 מ'.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-3-08",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "מדוע נודע בית החולים שפעל בבית הספר לילדי השייח'ים במלחמת העולם הראשונה לרעה?",
+      "options": [
+        "פצועים וחולים עורבבו יחד והמחלות התפשטו",
+        "לא היו בו רופאים",
+        "הוא הופצץ כל יום",
+        "הוא שימש גם כבית סוהר"
+      ],
+      "correct": 0,
+      "explanation": "ההיגיינה הייתה ירודה — פצועים וחולים עורבבו, ונאמר שמי שנכנס יצא בארון.",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-3-09",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "איזו פשרה נקבעה בנוגע למסגד העות'מאני בבאר שבע?",
+      "options": [
+        "מוזיאון לתרבות האסלאם",
+        "חזרה למסגד פעיל",
+        "בית משפט",
+        "מבנה עירייה"
+      ],
+      "correct": 0,
+      "explanation": "אחרי דרישת הבדואים להחזירו למסגד, פשרה משפטית קבעה שיהיה מוזיאון לתרבות האסלאם (כיום סגור).",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-3-10",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "באר שבע העות'מאנית",
+      "question": "כמה בתי קברות צבאיים בריטיים יש בישראל, לפי הסיכום?",
+      "options": [
+        "4 — חיפה, לוד, ירושלים ובאר שבע",
+        "1 — בבאר שבע בלבד",
+        "10",
+        "2 — ירושלים ובאר שבע"
+      ],
+      "correct": 0,
+      "explanation": "בארץ ארבעה: חיפה, לוד, ירושלים ובאר שבע (ובנוסף אחד בעזה).",
+      "sourceUrl": "https://drive.google.com/file/d/15wwbg3dWrAhYg0LwYat2rNQMNPZ_F6bS/view",
+      "sourceDoc": "סיור 3 — העיר באר שבע"
+    },
+    {
+      "id": "N03-3-11",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "מה מיוחד ביישוב א-דריג'את בבקעת ערד?",
+      "options": [
+        "יישוב חקלאי של פלאחים, יחיד במרחב הבדואי",
+        "יישוב יהודי ותיק",
+        "עיר רומית חרבה",
+        "בסיס צבאי"
+      ],
+      "correct": 0,
+      "explanation": "א-דריג'את הוא יישוב חקלאי של פלאחים ערבים — יחיד במרחב הבדואי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-3-12",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "מה פירוש שם היישוב בית קמה?",
+      "options": [
+        "תבואה (קמה)",
+        "בית תפילה",
+        "בית עליון",
+        "בית המים"
+      ],
+      "correct": 0,
+      "explanation": "בית קמה — מלשון קמה, תבואה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-3-13",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "מהי ההיררכיה החברתית של הבדואים, כפי שהוצגה בסיור?",
+      "options": [
+        "פרט, משפחה, חמולה, שבט, מטה",
+        "שבט, כפר, עיר, מדינה",
+        "פרט, שבט, משפחה, עם",
+        "משפחה, שבט, כנסייה"
+      ],
+      "correct": 0,
+      "explanation": "חלוקה היררכית: פרט, משפחה, חמולה, שבט ומטה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N03-3-14",
+      "tourId": "03",
+      "level": 3,
+      "source": "tour03",
+      "stop": "תל ערד",
+      "question": "מה היה השם המקורי של קיבוץ דבירה ומדוע שונה?",
+      "options": [
+        "דביר — שונה בעקבות לחץ דתי",
+        "דבורה — שונה בגלל טעות",
+        "דברת — שונה אחרי מלחמה",
+        "דובר — שונה בגלל שם כפר"
+      ],
+      "correct": 0,
+      "explanation": "שם הקיבוץ במקור היה דביר, ושונה לדבירה בעקבות לחץ דתי (הדביר — קודש הקודשים).",
+      "sourceUrl": "https://drive.google.com/file/d/1Z0p-5_DotOKbfH5P6JeQH34o8xpBaRME/view",
+      "sourceDoc": "סיור 3 — סיפור דרך"
+    },
+    {
+      "id": "N04-1-01",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "בין אילו שתי אימפריות עתיקות עברה הדרך שעליה ישבה מגידו?",
+      "options": [
+        "מצרים ומסופוטמיה",
+        "רומא ופרס",
+        "יוון ומצרים",
+        "אשור ובבל"
+      ],
+      "correct": 0,
+      "explanation": "מגידו ישבה על הדרך בין מצרים למסופוטמיה — האימפריות החשובות בעת העתיקה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-02",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה שם נוצרי מוכר נגזר מ\"הר מגידו\"?",
+      "options": [
+        "ארמגדון",
+        "גולגותא",
+        "בית לחם",
+        "נצרת"
+      ],
+      "correct": 0,
+      "explanation": "המסורת הנוצרית ממקמת את קרב אחרית הימים מחזון יוחנן בהר מגידו — ארמגדון.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-03",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה מצביא בריטי קיבל את התואר \"וויקונט מגידו\"?",
+      "options": [
+        "אלנבי",
+        "צ'רצ'יל",
+        "לורנס",
+        "וינגייט"
+      ],
+      "correct": 0,
+      "explanation": "אחרי הקרב הגדול נגד העות'מאנים במלחמת העולם הראשונה זכה אלנבי בתואר וויקונט מגידו.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-04",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "באיזו מלחמה התקיים קרב גדול בין הבריטים לעות'מאנים באזור מגידו?",
+      "options": [
+        "מלחמת העולם הראשונה",
+        "מלחמת העולם השנייה",
+        "מלחמת העצמאות",
+        "מלחמת קרים"
+      ],
+      "correct": 0,
+      "explanation": "במלחמת העולם הראשונה ניצחון הבריטים באזור מגידו אפשר את כיבוש כל הארץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-05",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "באיזה עמק יושב תל מגידו?",
+      "options": [
+        "עמק יזרעאל",
+        "עמק החולה",
+        "עמק האלה",
+        "עמק בית שאן"
+      ],
+      "correct": 0,
+      "explanation": "מגידו יושבת בעמק פורה (עמק יזרעאל) עם גב ביטחוני של רמות מנשה ממערב.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-06",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזו אוניברסיטה חפרה במגידו בשנים 1925–1939 במימון רוקפלר?",
+      "options": [
+        "אוניברסיטת שיקגו",
+        "האוניברסיטה העברית",
+        "אוניברסיטת תל אביב",
+        "אוניברסיטת אוקספורד"
+      ],
+      "correct": 0,
+      "explanation": "משלחת אוניברסיטת שיקגו, במימון רוקפלר, קילפה שכבות בתל וחשפה ארמונות, מקדשים, אורוות, שערים ומפעל מים.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-07",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה מתקן במגידו מחייב לבדוק מראש אם יש משתתפים שמתקשים במדרגות?",
+      "options": [
+        "מפעל המים",
+        "שער העיר החיצוני",
+        "מרכז המבקרים",
+        "הארמון הכנעני"
+      ],
+      "correct": 0,
+      "explanation": "במפעל המים יש כ-183 מדרגות ירידה ו-80 מדרגות עלייה, ולכן מתאמים מראש עם ההסעה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-08",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מה נמצא בממגורה (אסם התבואה) החפורה במגידו?",
+      "options": [
+        "שרידי גרעיני חיטה ותבן",
+        "מטבעות כסף",
+        "כלי נשק מברזל",
+        "מגילות קלף"
+      ],
+      "correct": 0,
+      "explanation": "בממגורה החפורה באדמה, עם שני גרמי מדרגות, נמצאו שרידי גרעיני חיטה ותבן.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-1-09",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "יזרעאל שימשה כבירת החורף של איזו ממלכה?",
+      "options": [
+        "ממלכת ישראל",
+        "ממלכת יהודה",
+        "ממלכת אדום",
+        "ממלכת מואב"
+      ],
+      "correct": 0,
+      "explanation": "יזרעאל הייתה בירת החורף של ממלכת ישראל, ושומרון הייתה בירת הממלכה.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-1-10",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "איזה מלך חשק בכרם של נבות היזרעאלי?",
+      "options": [
+        "אחאב",
+        "דוד",
+        "שלמה",
+        "יהוא"
+      ],
+      "correct": 0,
+      "explanation": "אחאב חשק בכרם נבות, ונבות סירב למכור את נחלת אבותיו.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-1-11",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "כמה לוחמים בחר גדעון למלחמה במדיין?",
+      "options": [
+        "300",
+        "30",
+        "3,000",
+        "12"
+      ],
+      "correct": 0,
+      "explanation": "גדעון בחר 300 לוחמים — אלה שלקקו בלשונם מן המים.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-1-12",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "איזה הר מתנשא מדרום לתל יזרעאל?",
+      "options": [
+        "הגלבוע",
+        "הר תבור",
+        "הכרמל",
+        "הר מירון"
+      ],
+      "correct": 0,
+      "explanation": "בתצפית מתל יזרעאל: מדרום הגלבוע, מצפון וממערב עמק יזרעאל וממזרח עמק חרוד.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-1-13",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "מה מתואר בפנל התחתון של פסיפס בית אלפא, ליד הכניסה?",
+      "options": [
+        "עקדת יצחק",
+        "תיבת נח",
+        "מעבר ים סוף",
+        "דוד וגוליית"
+      ],
+      "correct": 0,
+      "explanation": "הפנל התחתון מתאר את עקדת יצחק — אברהם, יצחק, המזבח והאיל הנאחז בסבך.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-1-14",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "מה מופיע בפנל המרכזי של רצפת הפסיפס בבית אלפא?",
+      "options": [
+        "גלגל המזלות",
+        "מפת ירושלים",
+        "ציד אריות",
+        "אוניית סוחר"
+      ],
+      "correct": 0,
+      "explanation": "בפנל המרכזי גלגל המזלות, עם הליוס במרכז ו-12 המזלות סביבו.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-1-15",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "באיזו שנה נחשפה רצפת הפסיפס של בית אלפא?",
+      "options": [
+        "1929",
+        "1948",
+        "1905",
+        "1967"
+      ],
+      "correct": 0,
+      "explanation": "ב-1929, בזמן חפירת תעלת מים לקיבוץ, נחשף הפסיפס במקרה.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-1-16",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "בתחומי איזה קיבוץ נמצא היום בית הכנסת העתיק \"בית אלפא\"?",
+      "options": [
+        "חפציבה",
+        "בית אלפא",
+        "עין חרוד",
+        "גבע"
+      ],
+      "correct": 0,
+      "explanation": "המבנה שוכן בתחומי קיבוץ חפציבה, אך שמר את שם היישוב הקדום בית אילפא.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-1-17",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "הר שאול",
+      "question": "על שם מי נקרא הר שאול בגלבוע?",
+      "options": [
+        "שאול המלך",
+        "שאול טשרניחובסקי",
+        "שאול התרסי",
+        "שאול בן קיש הצעיר"
+      ],
+      "correct": 0,
+      "explanation": "הפסגה נקראת על שם שאול המלך, שמצא את מותו בקרב הגלבוע נגד הפלישתים.",
+      "sourceUrl": "https://drive.google.com/file/d/1CktWKTfEwNw9oL3LCDLwkr3QoV_57Ai4/view",
+      "sourceDoc": "סיור 4 — הר שאול"
+    },
+    {
+      "id": "N04-1-18",
+      "tourId": "04",
+      "level": 1,
+      "source": "tour04",
+      "stop": "הר ברקן",
+      "question": "מאיזה סוג סלע בנוי רוב הגלבוע, כך שהמים מחלחלים דרכו?",
+      "options": [
+        "גיר קשה",
+        "בזלת",
+        "גרניט",
+        "חול"
+      ],
+      "correct": 0,
+      "explanation": "הגלבוע בנוי גיר קשה, המים מחלחלים דרכו ולכן הוא היה מיושב בדלילות לאורך ההיסטוריה.",
+      "sourceUrl": "https://drive.google.com/file/d/1GnFTmYTAFKp7uvISSccE1GrklUbvOkFC/view",
+      "sourceDoc": "סיור 4 — הר ברקן"
+    },
+    {
+      "id": "N04-2-01",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "כמה שכבות ארכאולוגיות נמצאו במגידו?",
+      "options": [
+        "כ-40",
+        "כ-10",
+        "כ-4",
+        "כ-100"
+      ],
+      "correct": 0,
+      "explanation": "במגידו נמצאו 40 שכבות ארכאולוגיות, מהתקופה הנאוליתית ועד התקופה הפרסית.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-02",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "כמה זמן נמשך המצור של תחותמס השלישי על מגידו?",
+      "options": [
+        "7 חודשים",
+        "7 ימים",
+        "7 שנים",
+        "40 יום"
+      ],
+      "correct": 0,
+      "explanation": "לפי הסיפור, לקח לצבא המצרי 7 חודשי מצור עד שמגידו נכנעה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-03",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מדוע הספיקו תושבי מגידו לסגור את שערי העיר מול תחותמס השלישי?",
+      "options": [
+        "חייליו נעצרו לבזוז עגלות כסף וזהב בשדות",
+        "סערה עצרה את הצבא",
+        "הצבא טעה בדרך לעזה",
+        "המלך המצרי נפצע"
+      ],
+      "correct": 0,
+      "explanation": "צבא תחותמס נעצר לשדוד עגלות מלאות כסף וזהב שנשארו בשדות, וכך הספיקו התושבים לסגור את השערים.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-04",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "דרך איזה מעבר צר הגיע צבא תחותמס השלישי למגידו והפתיע אותה?",
+      "options": [
+        "ואדי ערה (עירון)",
+        "מעבר יבנאל",
+        "שער הגיא",
+        "מעלה עקרבים"
+      ],
+      "correct": 0,
+      "explanation": "הצבא עבר בוואדי ערה — מעבר צר שבו הסוסים עברו אחד אחרי השני — והפתיע את מגידו מדרום.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-05",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "באילו מכתבים עתיקים פנה מלך מגידו בירדייה לפרעה בבקשת עזרה?",
+      "options": [
+        "מכתבי אל-עמרנה",
+        "מכתבי לכיש",
+        "מגילות ים המלח",
+        "כתובת השילוח"
+      ],
+      "correct": 0,
+      "explanation": "במכתבי אל-עמרנה (המאה ה-14 לפנה\"ס) יש 7 מכתבים ממגידו, ממלך בשם בירדייה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-06",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "לפי ספר מלכים, עם אילו ערים נזכרת מגידו כעיר שבנה שלמה?",
+      "options": [
+        "חצור וגזר",
+        "לכיש ועזקה",
+        "דן ובאר שבע",
+        "שכם ושילה"
+      ],
+      "correct": 0,
+      "explanation": "מלכים א' ט' מזכיר את מגידו יחד עם חצור וגזר במסגרת מפעלי הבנייה של שלמה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-07",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה מלך יהודה נהרג במגידו מול פרעה נכו?",
+      "options": [
+        "יאשיהו",
+        "חזקיהו",
+        "אחזיהו",
+        "צדקיהו"
+      ],
+      "correct": 0,
+      "explanation": "לפי מלכים ב' כ\"ג, יאשיהו יצא לקראת פרעה נכו במגידו ונהרג שם.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-08",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה חותם מפורסם נמצא ליד השער הצפוני של מגידו?",
+      "options": [
+        "\"לשמע עבד ירבעם\"",
+        "\"למלך חברון\"",
+        "\"ישעיהו נביא\"",
+        "\"חזקיהו בן אחז\""
+      ],
+      "correct": 0,
+      "explanation": "משלחת שיקגו מצאה בארמון שליד השער הצפוני את החותם \"לשמע עבד ירבעם\".",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-09",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה ארכאולוג חפר במגידו בשנים 1960–1971 וניסה לשייך אותה לשלמה המלך?",
+      "options": [
+        "יגאל ידין",
+        "ישראל פינקלשטיין",
+        "גוטליב שומכר",
+        "בנימין מזר"
+      ],
+      "correct": 0,
+      "explanation": "יגאל ידין חפר במגידו בשנים 1960–1971 בניסיון לשייך ממצאים לשלמה המלך.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-10",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "איזה לגיון רומי חנה דרומית לתל מגידו, באזור \"ליג'יו\"?",
+      "options": [
+        "הלגיון השישי (פרטה)",
+        "הלגיון העשירי (פרטנסיס)",
+        "הלגיון השני",
+        "הלגיון החמישי"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה הרומית התיישב הלגיון השישי \"פרטה\" דרומית לתל, באזור המכונה ליג'יו.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-11",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "אילו חפצים יקרים נמצאו בארמון הכנעני הצמוד לשער החיצוני?",
+      "options": [
+        "חפצי שנהב",
+        "כלי זכוכית רומיים",
+        "מטבעות זהב ביזנטיים",
+        "מגילות פפירוס"
+      ],
+      "correct": 0,
+      "explanation": "בארמון הכנעני נמצאו חפצים עשויים שנהב ורצפה מכוסה צדפים.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-2-12",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "מי הייתה אשתו של אחאב, שהביאה למשפט הכוזב נגד נבות?",
+      "options": [
+        "איזבל בת מלך צידון",
+        "מיכל בת שאול",
+        "אסתר",
+        "מרים"
+      ],
+      "correct": 0,
+      "explanation": "איזבל, בת מלך צידון, ארגנה משפט עם שני עדי שקר, ובסופו נבות הוצא להורג בסקילה.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-2-13",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "מה עשה שאול בעין דור ערב הקרב בגלבוע?",
+      "options": [
+        "פנה לבעלת אוב כדי לשמוע את דבר שמואל",
+        "נמשח למלך",
+        "חתם ברית עם הפלישתים",
+        "בנה מזבח"
+      ],
+      "correct": 0,
+      "explanation": "שאול נסע לעין דור לבעלת אוב שתעלה את שמואל המת; שמואל הודיע לו על תבוסתו.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-2-14",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "אילו כוחות נלחמו בקרב עין ג'אלות (עין חרוד) ב-1260?",
+      "options": [
+        "הממלוכים נגד המונגולים",
+        "הצלבנים נגד הממלוכים",
+        "העות'מאנים נגד הבריטים",
+        "הביזנטים נגד הפרסים"
+      ],
+      "correct": 0,
+      "explanation": "ב-1260 ניצחו הממלוכים את המונגולים בעין ג'אלות, ועצרו את התקדמותם לכיוון הים התיכון.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-2-15",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "מי היו האמנים שיצרו את פסיפס בית אלפא, לפי הכתובת היוונית?",
+      "options": [
+        "מריאנוס וחנינא בנו",
+        "בצלאל ואהליאב",
+        "יוסי ויהודה",
+        "פטרוס ופאולוס"
+      ],
+      "correct": 0,
+      "explanation": "הכתובת היוונית מנציחה את האמנים מריאנוס וחנינא — אב ובנו.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-2-16",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "בתקופת שלטונו של איזה קיסר נקבע הפסיפס, לפי הכתובת הארמית?",
+      "options": [
+        "יוסטינוס",
+        "אדריאנוס",
+        "קונסטנטינוס",
+        "אוגוסטוס"
+      ],
+      "correct": 0,
+      "explanation": "הכתובת הארמית מציינת שהפסיפס נקבע בשנות מלכותו של הקיסר יוסטינוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-2-17",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "איזה ארכאולוג חפר את בית הכנסת בבית אלפא מטעם האוניברסיטה העברית?",
+      "options": [
+        "אלעזר ליפא סוקניק",
+        "יגאל ידין",
+        "נחמן אביגד",
+        "יוחנן אהרוני"
+      ],
+      "correct": 0,
+      "explanation": "האתר נחפר בידי פרופ' אלעזר ליפא סוקניק — אביו של יגאל ידין.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-2-18",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "לאיזה כיוון פונה האפסיס של בית הכנסת בבית אלפא?",
+      "options": [
+        "דרום — לכיוון ירושלים",
+        "צפון — לכיוון דמשק",
+        "מזרח — לכיוון הירדן",
+        "מערב — לכיוון הים"
+      ],
+      "correct": 0,
+      "explanation": "בכותל הדרומי, הפונה לירושלים, נבנתה גומחת האפסיס לארון הקודש.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-2-19",
+      "tourId": "04",
+      "level": 2,
+      "source": "tour04",
+      "stop": "הר ברקן",
+      "question": "מה גובהו של הר ברקן מעל פני הים, לפי סיכום הסיור?",
+      "options": [
+        "כ-495 מטר",
+        "כ-286 מטר",
+        "כ-1,200 מטר",
+        "כ-90 מטר"
+      ],
+      "correct": 0,
+      "explanation": "הר ברקן מתנשא לכ-495 מ' מעל פני הים — כ-600 מ' מעל עמק חרוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1GnFTmYTAFKp7uvISSccE1GrklUbvOkFC/view",
+      "sourceDoc": "סיור 4 — הר ברקן"
+    },
+    {
+      "id": "N04-3-01",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "למי מייחס פינקלשטיין את השער המכונה \"שער שלמה\" במגידו?",
+      "options": [
+        "לאחאב",
+        "לדוד",
+        "לירבעם הראשון",
+        "לחזקיהו"
+      ],
+      "correct": 0,
+      "explanation": "השער נקרא \"שער שלמה\", אך פינקלשטיין מייחס אותו לאחאב.",
+      "sourceUrl": "https://drive.google.com/file/d/1pVH7QT7iQk0Mrm_yaSWPoszTkR_E62te/view",
+      "sourceDoc": "תל מגידו — סיכום קצר (איתי)"
+    },
+    {
+      "id": "N04-3-02",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מדוע יש ספק אם מבני ה\"אורוות\" במגידו שימשו באמת לסוסים?",
+      "options": [
+        "הם צרים, מרוצפים ועם אבוסים קטנים — אולי שימשו למסחר",
+        "לא נמצאו בהם קירות כלל",
+        "הם נמצאים בתוך מפעל המים",
+        "הם מהתקופה העות'מאנית"
+      ],
+      "correct": 0,
+      "explanation": "המבנים צרים, מרוצפים ועם אבוסים קטנים, ולכן יש הסבורים שהם שימשו למסחר או לטעינה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pVH7QT7iQk0Mrm_yaSWPoszTkR_E62te/view",
+      "sourceDoc": "תל מגידו — סיכום קצר (איתי)"
+    },
+    {
+      "id": "N04-3-03",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מדוע הוסתר פתח מפעל המים החיצוני במגידו מתחת לקיר ועפר?",
+      "options": [
+        "כדי להסוות את מקור המים מהאויב בזמן מצור",
+        "כדי למנוע הצפות בחורף",
+        "כדי לשמור על קירור",
+        "כדי למנוע כניסת בעלי חיים"
+      ],
+      "correct": 0,
+      "explanation": "במפעל החדש נאטם הפתח החיצוני וכוסה עפר כדי להסוות את מקור המים מפני האויב.",
+      "sourceUrl": "https://drive.google.com/file/d/1pVH7QT7iQk0Mrm_yaSWPoszTkR_E62te/view",
+      "sourceDoc": "תל מגידו — סיכום קצר (איתי)"
+    },
+    {
+      "id": "N04-3-04",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מה לא ידוע לגבי אספקת המים במגידו הכנענית?",
+      "options": [
+        "איך פתרה העיר הכנענית את אספקת המים במצור",
+        "אם היו בה בכלל מעיינות",
+        "אם היא שתתה ממי הכנרת",
+        "אם היא נבנתה ליד נהר"
+      ],
+      "correct": 0,
+      "explanation": "שני מפעלי המים הם ישראליים; לא ידוע איך פתרה העיר הכנענית את סוגיית המים במצור.",
+      "sourceUrl": "https://drive.google.com/file/d/1pVH7QT7iQk0Mrm_yaSWPoszTkR_E62te/view",
+      "sourceDoc": "תל מגידו — סיכום קצר (איתי)"
+    },
+    {
+      "id": "N04-3-05",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מה מסביר את הבריכה הקטנה בקצה מנהרת מפעל המים?",
+      "options": [
+        "מים כלואים בין שכבת אבן סדוקה לשכבה אטומה",
+        "מעיין חם וולקני",
+        "צינור מים מודרני",
+        "מי גשמים שנשאבו מהגג"
+      ],
+      "correct": 0,
+      "explanation": "בקצה המנהרה בריכה בין שכבות אבן מחלחלות לבין שכבה אטומה — \"מי תהום לכודים\".",
+      "sourceUrl": "https://drive.google.com/file/d/1pVH7QT7iQk0Mrm_yaSWPoszTkR_E62te/view",
+      "sourceDoc": "תל מגידו — סיכום קצר (איתי)"
+    },
+    {
+      "id": "N04-3-06",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מה מראה החתך הארכאולוגי של שומכר (1903–1905) במגידו?",
+      "options": [
+        "שהעיר בנויה שכבות־שכבות מתקופות שונות",
+        "שמגידו נבנתה בתקופה אחת",
+        "שהתל הוא גבעה טבעית בלבד",
+        "שהעיר נהרסה ברעידת אדמה אחת"
+      ],
+      "correct": 0,
+      "explanation": "משלחת שומכר חפרה חתך בתל ומצאה שהעיר בנויה ממספר שכבות ותקופות.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-3-07",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "באיזה שם נקראה מגידו בתקופה האשורית, כשהייתה בירת מחוז הגליל והעמקים?",
+      "options": [
+        "מגידידו",
+        "ליג'יו",
+        "אסדראלון",
+        "פטיט זרין"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה האשורית נקראה העיר מגידידו ושימשה בירת מחוז.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-3-08",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מה מאפיין את שיטת הבנייה בשער הישראלי במגידו?",
+      "options": [
+        "שורות מתחלפות של פתין וראש",
+        "לבני בוץ מיובשות בלבד",
+        "עמודי שיש מיובאים",
+        "קשתות רומיות"
+      ],
+      "correct": 0,
+      "explanation": "השער בנוי שורה של פתין-ראש-ראש ומעליה ראש-ראש-פתין; בעל 4 זוגות אומנות ושני מגדלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-3-09",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מה מאפיין את המחקר של פינקלשטיין במגידו מ-1992?",
+      "options": [
+        "שילוב מדעים מדויקים: פחמן-14, DNA וכימיה",
+        "חפירה בדינמיט",
+        "שחזור מבנים בבטון",
+        "חפירה רק בשכבה הרומית"
+      ],
+      "correct": 0,
+      "explanation": "משלחת תל אביב בראשות פינקלשטיין משלבת תיארוך פחמן-14, DNA וכימיה כדי לפתור את תעלומות התל.",
+      "sourceUrl": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view",
+      "sourceDoc": "סיור 4 — תל מגידו (סיכום)"
+    },
+    {
+      "id": "N04-3-10",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "תל מגידו",
+      "question": "מדוע נבנו האסם וה\"אורוות\" במגידו סמוך לשער?",
+      "options": [
+        "לנוחות מסחר, פיקוח ואחסנה בלי ללכלך את העיר",
+        "כדי להגן על השער באש",
+        "כי שם היה המקדש",
+        "כי שם היה המעיין"
+      ],
+      "correct": 0,
+      "explanation": "הסמיכות לשער נוחה למסחר, לפיקוח ולאחסנה, ואינה מפריעה ללב העיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1pVH7QT7iQk0Mrm_yaSWPoszTkR_E62te/view",
+      "sourceDoc": "תל מגידו — סיכום קצר (איתי)"
+    },
+    {
+      "id": "N04-3-11",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "על מה שולט תל יזרעאל מבחינה גאוגרפית?",
+      "options": [
+        "על המעבר בין עמק יזרעאל לעמק חרוד",
+        "על מפרץ חיפה",
+        "על מעבר הירמוך",
+        "על ואדי ערה"
+      ],
+      "correct": 0,
+      "explanation": "יזרעאל יושבת במעבר שבין עמק יזרעאל לעמק חרוד והתל שולט על מעבר זה.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-3-12",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "לאיזו מערכת מעיינות שייך עין יזרעאל?",
+      "options": [
+        "מעיינות השבר הצפון־מזרחי של הגלבוע",
+        "מעיינות הכרמל",
+        "מעיינות הירקון",
+        "מעיינות ים המלח"
+      ],
+      "correct": 0,
+      "explanation": "עין יזרעאל הוא חלק ממעיינות השבר הגאולוגי הצפון־מזרחי של הגלבוע, יחד עם עין חרוד ואחרים.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-3-13",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "עין יזרעאל",
+      "question": "מה עשו אנשי יבש גלעד אחרי מות שאול ובניו בגלבוע?",
+      "options": [
+        "הורידו את הגופות מחומת בית שאן וקברו אותן",
+        "המליכו את יונתן",
+        "נלחמו בדוד",
+        "בנו מזבח בגלבוע"
+      ],
+      "correct": 0,
+      "explanation": "זכרו את הצלתם בידי שאול, הורידו את הגופות מחומת בית שאן והביאו אותן לקבורה.",
+      "sourceUrl": "https://drive.google.com/file/d/14ne7MtK5ayI8wZQDAcGw-eem6KV0yqxA/view",
+      "sourceDoc": "סיור 4 — תל/עין יזרעאל"
+    },
+    {
+      "id": "N04-3-14",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "מה פירוש אמירת רבן גמליאל \"אני לא באתי בגבולה, היא באה בגבולי\" בהקשר בית אלפא?",
+      "options": [
+        "הדימויים הפגאניים נתפסו כקישוט ולא כפולחן",
+        "אסור להיכנס לבית הכנסת",
+        "יש להרוס את הפסיפס",
+        "הליוס הוא אל יהודי"
+      ],
+      "correct": 0,
+      "explanation": "כמו המרחץ של אפרודיטי — השימוש פונקציונלי ולא פולחני; גם הליוס והמזלות נתפסו כקישוט.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-3-15",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "במה התפרסם היישוב הקדום בית אילפא בתקופת בית המקדש?",
+      "options": [
+        "בשמן זית משובח",
+        "ביין לבן",
+        "בתמרים",
+        "בבשמים"
+      ],
+      "correct": 0,
+      "explanation": "השמן של בית אילפא נחשב לאחד השמנים האיכותיים ביותר בארץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-3-16",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "מה מראים המקורות והארכאולוגיה על עזרת נשים בבתי הכנסת העתיקים?",
+      "options": [
+        "אין עדות ברורה להפרדה מובנית",
+        "בכל בית כנסת הייתה עזרת נשים בקומה שנייה",
+        "נשים לא הורשו להיכנס",
+        "נמצאו כתובות \"עזרת נשים\""
+      ],
+      "correct": 0,
+      "explanation": "בכ-140 בתי כנסת עתיקים לא נמצאה הוכחה חותכת לעזרת נשים, וגם המשנה והתלמוד אינם מזכירים אותה.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-3-17",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "בית אלפא",
+      "question": "באיזו תכנית אדריכלית בנוי בית הכנסת בבית אלפא?",
+      "options": [
+        "בזיליקה",
+        "מבנה עגול",
+        "מבנה מרובע ללא עמודים",
+        "כנסייה צלבית"
+      ],
+      "correct": 0,
+      "explanation": "בית הכנסת בנוי בתכנית בזיליקה — אטריום, נרתקס, אולם תווך ושתי סטראות.",
+      "sourceUrl": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view",
+      "sourceDoc": "בית הכנסת בית אלפא (תמליל ערוך)"
+    },
+    {
+      "id": "N04-3-18",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "הר ברקן",
+      "question": "על שם מי נקרא עין סמל שבגלבוע?",
+      "options": [
+        "משה רוזנפלד, סמל משטרת המנדט שנהרג במרדף אחרי עז א-דין אל-קסאם",
+        "סמל צה\"ל שנפל במלחמת ששת הימים",
+        "סמל המלך שאול",
+        "חייל בריטי ממלחמת העולם הראשונה"
+      ],
+      "correct": 0,
+      "explanation": "עין סמל קרוי על שם סמל משטרת המנדט משה רוזנפלד, שנהרג במרדף אחרי עז א-דין אל-קסאם.",
+      "sourceUrl": "https://drive.google.com/file/d/1GnFTmYTAFKp7uvISSccE1GrklUbvOkFC/view",
+      "sourceDoc": "סיור 4 — הר ברקן"
+    },
+    {
+      "id": "N04-3-19",
+      "tourId": "04",
+      "level": 3,
+      "source": "tour04",
+      "stop": "הר שאול",
+      "question": "לאיזה קו ראשי חיברה רכבת העמק את נמל חיפה?",
+      "options": [
+        "הרכבת החיג'אזית",
+        "רכבת המזרח המהיר",
+        "רכבת קהיר–חיפה",
+        "רכבת בגדאד–בצרה"
+      ],
+      "correct": 0,
+      "explanation": "רכבת העמק הייתה שלוחה של הרכבת החיג'אזית מדרעא, דרך צמח ובית שאן ועד חיפה (נחנכה ב-1905).",
+      "sourceUrl": "https://drive.google.com/file/d/1LJVkq-UR58AhJUwg39mROBtbFtnaLJYs/view",
+      "sourceDoc": "רכבת העמק (תמליל ערוך)"
     }
   ]
 }

@@ -14,7 +14,8 @@
     "e2e:solo": "node tests/solo-browser.mjs screens-solo",
     "test:map": "node --test tests/map.test.mjs",
     "e2e:map": "node tests/map-browser.mjs screens-map",
-    "build:places": "node tools/build-places.mjs"
+    "build:places": "node tools/build-places.mjs",
+    "build:questions": "node tools/merge-drive-questions.mjs"
   },
   "license": "UNLICENSED",
   "devDependencies": {
