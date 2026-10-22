@@ -53,7 +53,7 @@
       e_code: 'המסלול המשותף לא נמצא (אולי הקישור כבר לא פעיל).', score: 'נק׳', of: 'מתוך', gps_off: '📍 GPS כבוי — לגעת להפעלה',
       gps_wait: 'מחפש מיקום…', gps_bad: '⚠️ מיקום לא מדויק — אפשר לבחור שאלה מהרשימה', next: 'הבא', now: 'עכשיו!', waiting: 'מחכים למקום הבא… 🚌',
       waiting_s: 'השאלה תקפוץ לבד כשנגיע. אפשר לשים את הטלפון בצד — הוא ירטוט.', send: 'שליחה', right: 'נכון! 🎉', wrong: 'לא הפעם…',
-      timeout: '⏱️ נגמר הזמן', know: '🎤 הידעתם?', cont: 'המשך ➡️', list: '📋 כל השאלות', done_s: '✔', missed: 'לענות עכשיו',
+      timeout: '⏱️ נגמר הזמן', know: '🎤 הידעתם?', cont: 'המשך ➡️', next_now: '⏭️ השאלה הבאה עכשיו', skip: '⏭️ לדלג', skipped: '⏭️ דילגתם', list: '📋 כל השאלות', done_s: '✔', missed: 'לענות עכשיו',
       sim: '🧪 ניסיון בבית (סימולציה)', sim_on: '🧪 סימולציה פועלת', reset: '🔄 משחק חדש', reset_q: 'למחוק את המשחק הזה ולהתחיל חדש?',
       end: '🏁 סוף המסלול!', end_s: (s, c, n) => `${s} נקודות · ${c} תשובות נכונות מתוך ${n}`, share: '💬 לשתף בוואטסאפ',
       share_t: (s, r) => `🚌 השגתי ${s} נקודות במשחק מורה דרך LIVE (${r})!`, rules: 'נכון = 100 · מהר = עד +100 · שגוי = 0', sec: 'שנ׳',
@@ -67,7 +67,7 @@
       e_code: 'Parcours partagé introuvable (lien peut-être désactivé).', score: 'pts', of: 'sur', gps_off: '📍 GPS éteint — touchez pour l’activer',
       gps_wait: 'Recherche de la position…', gps_bad: '⚠️ Position imprécise — choisissez une question dans la liste', next: 'Prochain', now: 'Maintenant !', waiting: 'On attend le prochain lieu… 🚌',
       waiting_s: 'La question apparaîtra toute seule. Le téléphone vibrera.', send: 'Envoyer', right: 'Bonne réponse ! 🎉', wrong: 'Pas cette fois…',
-      timeout: '⏱️ Temps écoulé', know: '🎤 Le saviez-vous ?', cont: 'Continuer ➡️', list: '📋 Toutes les questions', done_s: '✔', missed: 'Répondre maintenant',
+      timeout: '⏱️ Temps écoulé', know: '🎤 Le saviez-vous ?', cont: 'Continuer ➡️', next_now: '⏭️ Question suivante maintenant', skip: '⏭️ Passer', skipped: '⏭️ Question passée', list: '📋 Toutes les questions', done_s: '✔', missed: 'Répondre maintenant',
       sim: '🧪 Essai à la maison (simulation)', sim_on: '🧪 Simulation en cours', reset: '🔄 Nouveau jeu', reset_q: 'Effacer ce jeu et en commencer un nouveau ?',
       end: '🏁 Fin du trajet !', end_s: (s, c, n) => `${s} points · ${c} bonnes réponses sur ${n}`, share: '💬 Partager sur WhatsApp',
       share_t: (s, r) => `🚌 J’ai marqué ${s} points au jeu Moreh Derech LIVE (${r}) !`, rules: 'Juste = 100 · Rapide = jusqu’à +100 · Faux = 0', sec: 's',
@@ -81,7 +81,7 @@
       e_code: 'Shared route not found (the link may be off).', score: 'pts', of: 'of', gps_off: '📍 GPS off — tap to turn on',
       gps_wait: 'Looking for your location…', gps_bad: '⚠️ Inaccurate location — pick a question from the list', next: 'Next', now: 'Now!', waiting: 'Waiting for the next place… 🚌',
       waiting_s: 'The question will pop up by itself. Your phone will vibrate.', send: 'Send', right: 'Correct! 🎉', wrong: 'Not this time…',
-      timeout: '⏱️ Time’s up', know: '🎤 Did you know?', cont: 'Continue ➡️', list: '📋 All questions', done_s: '✔', missed: 'Answer now',
+      timeout: '⏱️ Time’s up', know: '🎤 Did you know?', cont: 'Continue ➡️', next_now: '⏭️ Next question now', skip: '⏭️ Skip', skipped: '⏭️ Skipped', list: '📋 All questions', done_s: '✔', missed: 'Answer now',
       sim: '🧪 Try at home (simulation)', sim_on: '🧪 Simulation running', reset: '🔄 New game', reset_q: 'Delete this game and start a new one?',
       end: '🏁 End of the route!', end_s: (s, c, n) => `${s} points · ${c} correct out of ${n}`, share: '💬 Share on WhatsApp',
       share_t: (s, r) => `🚌 I scored ${s} points in the Moreh Derech LIVE game (${r})!`, rules: 'Correct = 100 · Fast = up to +100 · Wrong = 0', sec: 's',
@@ -95,7 +95,7 @@
       e_code: 'Общий маршрут не найден (ссылка, возможно, отключена).', score: 'очк.', of: 'из', gps_off: '📍 GPS выключен — нажмите, чтобы включить',
       gps_wait: 'Ищем местоположение…', gps_bad: '⚠️ Неточное местоположение — выберите вопрос из списка', next: 'Далее', now: 'Сейчас!', waiting: 'Ждём следующее место… 🚌',
       waiting_s: 'Вопрос появится сам. Телефон завибрирует.', send: 'Отправить', right: 'Правильно! 🎉', wrong: 'Не в этот раз…',
-      timeout: '⏱️ Время вышло', know: '🎤 А вы знали?', cont: 'Дальше ➡️', list: '📋 Все вопросы', done_s: '✔', missed: 'Ответить сейчас',
+      timeout: '⏱️ Время вышло', know: '🎤 А вы знали?', cont: 'Дальше ➡️', next_now: '⏭️ Следующий вопрос сейчас', skip: '⏭️ Пропустить', skipped: '⏭️ Пропущено', list: '📋 Все вопросы', done_s: '✔', missed: 'Ответить сейчас',
       sim: '🧪 Попробовать дома (симуляция)', sim_on: '🧪 Идёт симуляция', reset: '🔄 Новая игра', reset_q: 'Удалить эту игру и начать новую?',
       end: '🏁 Конец маршрута!', end_s: (s, c, n) => `${s} очков · ${c} правильных из ${n}`, share: '💬 Поделиться в WhatsApp',
       share_t: (s, r) => `🚌 Я набрал(а) ${s} очков в игре Moreh Derech LIVE (${r})!`, rules: 'Верно = 100 · Быстро = до +100 · Неверно = 0', sec: 'с',
@@ -173,18 +173,27 @@
     if (auto) buzz();
     render(true);
   }
+  // choice : 0–3, null (temps écoulé) ou 'skip' (le joueur passe la question : 0 point)
   function answer(choice) {
     const c = st.cur; if (!c || c.result) return;
     const q = st.questions.find(x => x.key === c.key);
+    const skipped = choice === 'skip'; if (skipped) choice = null;
     const ms = Date.now() - c.openReal, ok = choice === q.correct_index;
     const pts = choice === null ? 0 : points(ok, ms);
-    st.ans[c.key] = { choice, ok: choice !== null && ok, pts, ms };
+    st.ans[c.key] = { choice, ok: choice !== null && ok, pts, ms, skipped };
     st.score = (st.score || 0) + pts;
     c.result = true; st.lastAt = clock(); save();
     buzz(ok ? 80 : [60, 60, 60]);
     render(true);
   }
   function closeQ() { st.cur = null; save(); render(true); }
+  // « question suivante maintenant » : sans attendre le GPS — le prochain lieu devant nous, sinon le premier restant
+  function nextKey() {
+    const pl = trk && P ? plan() : null, s0 = trk && trk.s != null ? trk.s : 0;
+    if (pl && pl.next && !st.ans[pl.next.stop.question]) return pl.next.stop.question;
+    const left = P.stops.filter(x => !st.ans[x.question]);
+    return ((left.find(x => x.s >= s0) || left[0]) || {}).question || null;
+  }
   function finished() {
     const all = st.questions.every(q => st.ans[q.key]);
     const pl = P && trk && trk.s != null ? plan() : null;
@@ -317,14 +326,16 @@
     paint(`${head()}${band}
       <div class="card waiting" style="padding:16px 10px"><div class="big">${esc(t('waiting'))}</div><p class="muted small">${esc(t('waiting_s'))}</p>
         <div class="soloprog"><i style="width:${prog}%"></i></div></div>
+      ${nextKey() ? `<button class="btn sun" id="nextnow" style="margin-bottom:12px">${esc(t('next_now'))}</button>` : ''}
       <details class="card" id="qlist" ${listOpen ? 'open' : ''}><summary style="font-weight:800;cursor:pointer">${esc(t('list'))}</summary>
         <ul class="navlist">${P.stops.map((s, i) => { const a = st.ans[s.question];
-          return `<li><span class="grow">${i + 1} · ${esc(nm(s.name))}</span>${a ? `<b>${a.ok ? '✔' : '✘'} ${a.pts}</b>` : `<button class="btn ghost small" data-open="${esc(s.question)}">${esc(t('missed'))}</button>`}</li>`; }).join('')}</ul></details>
+          return `<li><span class="grow">${i + 1} · ${esc(nm(s.name))}</span>${a ? `<b>${a.skipped ? '⏭️' : a.ok ? '✔' : '✘'} ${a.pts}</b>` : `<button class="btn ghost small" data-open="${esc(s.question)}">${esc(t('missed'))}</button>`}</li>`; }).join('')}</ul></details>
       ${sim.on ? `<p class="small center muted">${esc(t('sim_on'))}</p>` : ''}
       <button class="btn ghost small" id="reset">${esc(t('reset'))}</button>`, force);
     document.getElementById('qlist').ontoggle = e => { listOpen = e.target.open; };
     const g = document.getElementById('gpson'); if (g) g.onclick = () => { startGps(); render(true); };
     app.querySelectorAll('[data-open]').forEach(b => b.onclick = () => openQ(b.dataset.open, false));
+    const nx = document.getElementById('nextnow'); if (nx) nx.onclick = () => { const k = nextKey(); if (k) openQ(k, false); };
     document.getElementById('reset').onclick = resetGame;
   }
   // 4. Une question
@@ -338,17 +349,19 @@
           <div class="qhead"><div class="meta"><span class="cat">📍 ${esc(nm(stop && stop.name))}</span></div><div class="solotime" id="left">${left} ${esc(t('sec'))}</div></div>
           <div class="question-text" ${dirOf(tq.l)}>${esc(tq.text)}</div>
           <div class="answers" id="ans">${tq.options.map((o, i) => `<button class="ans c${i} ${c.sel === i ? 'selected' : ''}" data-i="${i}"><span class="shape">${SHAPES[i]}</span><span ${dirOf(tq.l)}>${esc(o)}</span></button>`).join('')}</div>
-          <button class="btn ok" id="send" style="margin-top:14px" ${c.sel === null ? 'disabled' : ''}>${esc(t('send'))}</button></div>`;
+          <button class="btn ok" id="send" style="margin-top:14px" ${c.sel === null ? 'disabled' : ''}>${esc(t('send'))}</button>
+          <button class="btn ghost small" id="skipq" style="margin-top:10px">${esc(t('skip'))}</button></div>`;
       if (force || renderQuestion._k !== key) { renderQuestion._k = key; paint(html, true);
         document.getElementById('ans').onclick = e => { const b = e.target.closest('.ans'); if (!b) return; c.sel = +b.dataset.i; render(); };
         document.getElementById('send').onclick = () => answer(c.sel);
+        document.getElementById('skipq').onclick = () => answer('skip');
       } else { const el = document.getElementById('left'); if (el) el.textContent = left + ' ' + t('sec'); }
       return;
     }
     renderQuestion._k = null;
     const g = gText(q), more = Array.isArray(g.more) ? g.more : [];
     paint(`${head()}
-      <div class="result ${a.choice === null ? 'none' : a.ok ? 'good' : 'wrong'}"><div class="big">${esc(a.choice === null ? t('timeout') : a.ok ? t('right') : t('wrong'))}</div>${a.pts ? `+${a.pts} ${esc(t('score'))}` : ''}</div>
+      <div class="result ${a.choice === null ? 'none' : a.ok ? 'good' : 'wrong'}"><div class="big">${esc(a.skipped ? t('skipped') : a.choice === null ? t('timeout') : a.ok ? t('right') : t('wrong'))}</div>${a.pts ? `+${a.pts} ${esc(t('score'))}` : ''}</div>
       <div class="card"><div class="question-text" ${dirOf(tq.l)} style="font-size:19px">${esc(tq.text)}</div>
         <div class="answers locked">${tq.options.map((o, i) => `<div class="ans c${i} ${i === q.correct_index ? 'right' : 'dim'} ${a.choice === i ? 'selected' : ''}"><span class="shape">${SHAPES[i]}</span><span ${dirOf(tq.l)}>${esc(o)} ${i === q.correct_index ? '✔' : ''}</span></div>`).join('')}</div>
         ${tq.explanation ? `<div class="explain" ${dirOf(tq.l)}>${esc(tq.explanation)}</div>` : ''}
