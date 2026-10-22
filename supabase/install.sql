@@ -165,6 +165,11 @@ on conflict (code) do update set label = excluded.label, sort = excluded.sort;
 alter table mdl.question_banks add column if not exists default_time_sec int;
 update mdl.question_banks set default_time_sec = 45 where code in ('V2', 'V3') and default_time_sec is null;
 
+-- Parcours généré automatiquement (V4 : départ/arrivée → lieux le long de la route → questions) :
+-- tracé + lieux au format de public/v3/road67-route.json. Lu par l'admin seulement (admin_state).
+alter table mdl.question_banks add column if not exists route jsonb;
+alter table mdl.question_banks add column if not exists created_at timestamptz not null default clock_timestamp();
+
 alter table mdl.questions add column if not exists bank text not null default 'V1' references mdl.question_banks(code);
 -- Traductions PUBLIQUES (texte, 4 réponses dans le MÊME ordre, explication, catégorie) :
 --   {"fr": {"text", "options", "explanation", "category"}, "en": …, "ru": …}  — l'hébreu reste dans text/options/explanation
@@ -622,6 +627,8 @@ begin
     'now', clock_timestamp(),
     'game', case when g.id is null then null else to_jsonb(g) end,
     'bank', v_bank,
+    -- tracé du parcours généré (banques V4) ; null pour V1/V2/V3 (V3 : fichier statique)
+    'route', (select b.route from mdl.question_banks b where b.code = v_bank),
     'banks', (select coalesce(jsonb_agg(jsonb_build_object('code', b.code, 'label', b.label,
                 'main', (select count(*) from mdl.questions x where x.bank = b.code and x.selection = 'MAIN'),
                 'spare', (select count(*) from mdl.questions x where x.bank = b.code and x.selection = 'SPARE'))
@@ -982,6 +989,49 @@ begin
                     from mdl.questions x where x.bank = p_bank));
 end $$;
 
+-- V4 : enregistre un parcours généré (tracé + questions) comme une NOUVELLE banque.
+-- Une banque par parcours (code A + date) : rien n'est écrasé ni supprimé, les anciennes parties restent intactes.
+create or replace function public.admin_import_route(p_token text, p_label jsonb, p_route jsonb, p_questions jsonb)
+returns jsonb language plpgsql security definer set search_path = mdl, public as $$
+declare v_code text; q jsonb; i int := 0; v_n int;
+begin
+  perform mdl.check_admin(p_token);
+  if jsonb_typeof(p_questions) <> 'array' then return jsonb_build_object('error', 'bad_questions'); end if;
+  v_n := jsonb_array_length(p_questions);
+  if v_n < 1 or v_n > 40 then return jsonb_build_object('error', 'bad_count'); end if;
+  if jsonb_typeof(p_route) <> 'object' or jsonb_typeof(p_route->'geometry') <> 'array'
+     or jsonb_array_length(p_route->'geometry') < 2 or jsonb_array_length(p_route->'geometry') > 3000
+     or pg_column_size(p_route) > 900000 then
+    return jsonb_build_object('error', 'bad_route');
+  end if;
+  for q in select * from jsonb_array_elements(p_questions) loop
+    if jsonb_typeof(q->'options') <> 'array' or jsonb_array_length(q->'options') <> 4
+       or (q->>'correct_index')::int not between 0 and 3
+       or char_length(coalesce(q->>'text', '')) not between 1 and 600
+       or coalesce(q->>'key', '') !~ '^[A-Za-z0-9_-]{1,40}$' then
+      return jsonb_build_object('error', 'bad_question', 'key', q->>'key');
+    end if;
+  end loop;
+  v_code := 'A' || to_char(clock_timestamp(), 'YYMMDDHH24MISS');
+  while exists (select 1 from mdl.question_banks where code = v_code) loop
+    v_code := v_code || '_';
+  end loop;
+  insert into mdl.question_banks (code, label, sort, default_time_sec, route)
+  values (v_code, coalesce(p_label, '{}'::jsonb), 100, 45, p_route || jsonb_build_object('bank', v_code));
+  for q in select * from jsonb_array_elements(p_questions) loop
+    i := i + 1;
+    insert into mdl.questions (ext_key, bank, selection, kind, text, options, correct_index, explanation, category,
+      difficulty, time_limit_sec, sort_order, guide_short, guide_long, guide_location, guide_practical, guide_sources,
+      guide_fact, guide_visibility, i18n, guide_i18n, route_meta)
+    values (lower(v_code) || ':' || (q->>'key'), v_code, 'MAIN', 'mcq', q->>'text', q->'options', (q->>'correct_index')::int,
+      coalesce(q->>'explanation', ''), left(coalesce(nullif(q->>'category', ''), 'מסלול'), 60), 2, 45, i * 10,
+      coalesce(q->>'guide_short', ''), coalesce(q->>'guide_long', ''), coalesce(q->>'guide_location', ''), '',
+      coalesce(q->'guide_sources', '[]'::jsonb), coalesce(q->>'guide_fact', ''), 'nearby',
+      coalesce(q->'i18n', '{}'::jsonb), coalesce(q->'guide_i18n', '{}'::jsonb), coalesce(q->'route_meta', '{}'::jsonb));
+  end loop;
+  return jsonb_build_object('code', v_code, 'questions', v_n);
+end $$;
+
 -- ---------------------------------------------------------------------
 --  Droits : seules les fonctions public.* ci-dessus sont appelables
 -- ---------------------------------------------------------------------
@@ -995,6 +1045,7 @@ begin
     'admin_login(text)', 'admin_state(text)', 'admin_save_question(text,jsonb)', 'admin_delete_question(text,bigint)',
     'admin_reorder(text,bigint[])', 'admin_new_game(text,text,text)', 'admin_open_question(text,bigint)',
     'admin_toggle_spare(text,bigint,boolean)', 'admin_photos(text,text)', 'admin_bank_questions(text,text)',
+    'admin_import_route(text,jsonb,jsonb,jsonb)',
     'admin_close_question(text,boolean)', 'admin_reveal(text,boolean)', 'admin_pause(text,boolean)', 'admin_finish(text,boolean)',
     'admin_resume_game(text)', 'admin_settings(text,jsonb)', 'admin_remove_player(text,bigint)', 'admin_export(text)']
   loop

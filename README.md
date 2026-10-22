@@ -246,6 +246,28 @@ Détails, sources, limites et corrections : **`content/v3/README.md`**.
 2. Publier le dossier `public/` (fusion sur `main` → GitHub Pages).
 3. Admin → ⚙️ → 🧪 סימולציה, puis 🔄 משחק חדש → V3 et partie test avec 2–3 téléphones en langues différentes.
 
+## V4 — parcours automatique (départ + arrivée seulement)
+
+Page **`create.html`** (lien « ✨ מסלול חדש אוטומטי » dans ⚙️) : on tape un départ et une arrivée,
+la page construit tout, **gratuitement et sans clé** :
+
+1. adresses → coordonnées : **Nominatim** (OpenStreetMap) — on peut aussi taper « lat, lon » ;
+2. trajet routier : **OSRM** (serveur public d'OpenStreetMap) ;
+3. lieux à moins de 1,5 km de la route : **Wikipédia** (recherche géographique, hébreu puis anglais) ;
+4. faits : **Wikidata** (date de fondation, « nommé d'après », type de lieu, population) et noms en 4 langues ;
+5. phrase micro et « עוד לספר » : début de l'article Wikipédia de chaque langue ;
+6. questions à 4 réponses fabriquées à partir de ces faits (aucune IA, rien d'inventé ; une question
+   dont la réponse est dans le nom du lieu est écartée), rangées dans l'ordre du trajet ;
+7. **relecture** : le guide décoche ce qui ne convient pas ;
+8. enregistrement : `admin_import_route` crée une **nouvelle banque** (code `A` + date, tracé dans
+   `question_banks.route`) puis une nouvelle partie. Rien n'est écrasé ; V1/V2/V3 ne bougent pas.
+
+Le jeu est le même que la V3 (mode bus, 🟡🟠🟢, publication manuelle), sur le tracé généré.
+Mise à jour de la base : exécuter `supabase/schema.sql` (rejouable).
+Limites : services publics gratuits (usage léger) ; qualité = celle de Wikipédia/Wikidata ;
+questions plus « factuelles » que celles écrites à la main. Moteur : `public/auto-engine.js`,
+tests : `tests/v4.test.mjs` et `tests/v4-browser.mjs` (services simulés avec des données d'exemple).
+
 ## Développement et tests
 
 Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défaut ; variables
