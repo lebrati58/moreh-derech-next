@@ -1,3 +1,12 @@
+## 🛣️ Création libre de קטע דרך — sans admin ni code (22 octobre 2026)
+
+- Entrée publique : `public/community.html` ; liée depuis l'accueil `index.html`, `modes.html` et la carte `map.html`.
+- Toute personne peut saisir départ et arrivée, générer des questions avec `auto-engine.js` (OSM/Wikipédia/Wikidata), joindre facultativement des notes PDF/Word/TXT, ou créer les questions manuellement. Relecture et édition des quatre choix, de la bonne réponse et des explications avant partage.
+- Partage d'une **partie individuelle autonome** par un lien `community.html#route=...` contenant une version compressée du jeu. Aucun mot de passe Supabase, aucune écriture sur le dépôt, pas de compte ni de code manuel. Les parcours déjà créés sont retrouvables localement sur le même navigateur. Ce lien peut être long ; une URL complète n'est pas une simple référence stockée côté serveur.
+- **Limite assumée :** cette fonction ne publie **pas** automatiquement le parcours dans le catalogue public officiel des 22 סיורים ni dans le LIVE Supabase, et ne fournit pas de classement collectif/GPS automatique. Une publication mondiale persistante nécessiterait une base publique sécurisée, un anti-spam et un système de contrôle éditorial — ne surtout pas exposer les RPC administrateur.
+- La génération automatique dépend de services Internet tiers et des faits disponibles ; une alternative manuelle fonctionne sans authentification. Ne pas présenter un parcours auto-généré comme vérifié.
+- Le fichier `public/create.html` reste la création V4 **administrateur** pour les jeux LIVE ; ne pas confondre avec `community.html`.
+
 ## 🗺️ Carte d'Israël (22 octobre 2026)
 
 Parcours : **choisir le mode → carte → choisir un סיור → difficulté → jouer**.
