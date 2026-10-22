@@ -16530,6 +16530,1968 @@
       "explanation": "אורכה כ-5 ק\"מ, רובה חצובה בסלע.",
       "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
       "sourceDoc": "סיור 14 — אמת המים"
+    },
+    {
+      "id": "N15-1-01",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "לכבוד מי הקים הורדוס מקדש בראש נמל קיסריה?",
+      "options": [
+        "אוגוסטוס והאלה רומה",
+        "יופיטר",
+        "אפולו",
+        "האל מיתרה"
+      ],
+      "correct": 0,
+      "explanation": "המקדש הפך לכנסייה, למסגד, שוב לכנסייה — ונהרס בסוף התקופה הצלבנית.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-1-02",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "כמה מקומות ישיבה הכיל התאטרון של הורדוס בקיסריה, לפי הסיכום?",
+      "options": [
+        "כ-7,000",
+        "כ-700",
+        "כ-70,000",
+        "כ-200"
+      ],
+      "correct": 0,
+      "explanation": "התאטרון היה גדול בשליש ממה שנראה היום.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-1-03",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מהו אמפיתאטרון?",
+      "options": [
+        "מבנה בצורת עיגול שלם",
+        "חצי עיגול מקורה וקטן",
+        "מבנה מלבני",
+        "מקדש"
+      ],
+      "correct": 0,
+      "explanation": "תאטרון — חצי עיגול; אודאון — חצי עיגול קטן ומקורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-1-04",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "לאיזו מטרה שימש ההיפוסטדיום של הורדוס?",
+      "options": [
+        "מרוצי סוסים, קרבות גלדיאטורים ואתלטיקה",
+        "תפילה",
+        "מסחר",
+        "מגורים"
+      ],
+      "correct": 0,
+      "explanation": "מבנה רב־תכליתי; ההיפודרום הביזנטי נועד למרוצי סוסים בלבד.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-1-05",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "היכן ממוקם ארמון השונית?",
+      "options": [
+        "בין התאטרון להיפוסטדיום",
+        "בנמל",
+        "ברובע היהודי",
+        "בצפון העיר"
+      ],
+      "correct": 0,
+      "explanation": "הארמון בנוי על שונית הכורכר בשני מפלסים.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-1-06",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מהם שלושת חדרי בית המרחץ הרומי?",
+      "options": [
+        "קלדריום, טפידריום, פריגידריום",
+        "אטריום, טבלינום, טריקלין",
+        "קביאה, סקנה, אורקסטרה",
+        "נרתקס, אספיס, בימה"
+      ],
+      "correct": 0,
+      "explanation": "חם, ביניים וקר.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-1-07",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "באיזה עומק אפשר לצלול היום על שרידי הנמל ההרודיאני?",
+      "options": [
+        "כ-6 מ'",
+        "כ-60 מ'",
+        "כ-1 מ'",
+        "כ-30 מ'"
+      ],
+      "correct": 0,
+      "explanation": "משקל אבני הנמל דחק את הקרקעית והנמל שקע.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-1-08",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "מאילו מעיינות הובילה האמה הראשונה של הורדוס לקיסריה?",
+      "options": [
+        "מעיינות שוני",
+        "עין הגיחון",
+        "מעיינות הירקון",
+        "עין חרוד"
+      ],
+      "correct": 0,
+      "explanation": "האמה, באורך כ-7.5 ק\"מ, יצאה מקצה חוטם הכרמל.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-1-09",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "בימי איזה קיסר נבנתה האמה השנייה לקיסריה?",
+      "options": [
+        "אדריאנוס",
+        "אוגוסטוס",
+        "נירון",
+        "קונסטנטינוס"
+      ],
+      "correct": 0,
+      "explanation": "האמה נבנתה בידי לגיונות רומיים — על כך מעידות כתובות.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-1-10",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "סמל של איזה לגיון חקוק מעל כתובת אדריאנוס באמה?",
+      "options": [
+        "העיט של הלגיון העשירי",
+        "האריה של הלגיון השני",
+        "השור של הלגיון השישי",
+        "הזאב של הלגיון ה-22"
+      ],
+      "correct": 0,
+      "explanation": "מתחת לכתובת — האלה ויקטוריה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-1-11",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "נחל תנינים",
+      "question": "מה חשפו חפירות ההצלה בנחל תנינים אחרי חורף 1991?",
+      "options": [
+        "מערכת סכרים ותעלות של האמה התחתונה",
+        "ספינה טרופה",
+        "בית כנסת",
+        "קברים"
+      ],
+      "correct": 0,
+      "explanation": "החפירות נועדו למנוע הצפה חוזרת של כביש החוף.",
+      "sourceUrl": "https://drive.google.com/file/d/1mDzEvaLwA11s_1loDMxTMZZA4j-ZtqMG/view",
+      "sourceDoc": "סיור 15 — מערכות מים, נחל תנינים"
+    },
+    {
+      "id": "N15-1-12",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "נחל תנינים",
+      "question": "מי הצליח לייבש את ביצות האזור?",
+      "options": [
+        "דב קובלנוב, פועל בעל השכלה בניקוז",
+        "מהנדס בריטי",
+        "הברון רוטשילד בעצמו",
+        "מומחה מהולנד"
+      ],
+      "correct": 0,
+      "explanation": "מומחים מרחבי העולם נכשלו לפניו.",
+      "sourceUrl": "https://drive.google.com/file/d/1mDzEvaLwA11s_1loDMxTMZZA4j-ZtqMG/view",
+      "sourceDoc": "סיור 15 — מערכות מים, נחל תנינים"
+    },
+    {
+      "id": "N15-1-13",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "נחל תנינים",
+      "question": "מדוע שרדו התנינים באזור נחל תנינים זמן רב?",
+      "options": [
+        "מערכת המים ויסתה את הטמפרטורה עבורם",
+        "היה שם מזון רב בלבד",
+        "לא היו בני אדם",
+        "הם הובאו מאפריקה"
+      ],
+      "correct": 0,
+      "explanation": "תנינים הם בעלי דם קר וזקוקים לחום חיצוני.",
+      "sourceUrl": "https://drive.google.com/file/d/1mDzEvaLwA11s_1loDMxTMZZA4j-ZtqMG/view",
+      "sourceDoc": "סיור 15 — מערכות מים, נחל תנינים"
+    },
+    {
+      "id": "N15-1-14",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "על שם איזה אל נקראה ארשף?",
+      "options": [
+        "רשף, אל האש",
+        "בעל",
+        "דגון",
+        "אפולו"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה ההלניסטית נקראה העיר אפולוניה, על שם אפולו.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-1-15",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "אילו יישובים משמרים היום את השם רשף/ארשף?",
+      "options": [
+        "רשפון וארסוף",
+        "רעננה והרצליה",
+        "כפר שמריהו ונתניה",
+        "רמת השרון ותל מונד"
+      ],
+      "correct": 0,
+      "explanation": "רשפון ממזרח, ארסוף מצפון.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-1-16",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מי החריב את ארסוף ב-1265?",
+      "options": [
+        "בייברס הממלוכי",
+        "צלאח א־דין",
+        "ריצ'רד לב הארי",
+        "נפוליאון"
+      ],
+      "correct": 0,
+      "explanation": "העיר ננטשה עד הקמת מצודת סידנא עלי ב-1481.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-1-17",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "באיזה תפקיד התמחו ההוספיטלרים?",
+      "options": [
+        "אירוח ורפואה של עולי הרגל",
+        "בנקאות",
+        "בניית נמלים",
+        "תרגום"
+      ],
+      "correct": 0,
+      "explanation": "הטמפלרים — הגנה על עולי הרגל ושיטת פיקדון קדומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-1-18",
+      "tourId": "15",
+      "level": 1,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "לאיזה כיוון פונה בית התפילה באפולוניה?",
+      "options": [
+        "להר גריזים — בית תפילה שומרוני",
+        "למכה",
+        "לירושלים",
+        "למזרח"
+      ],
+      "correct": 0,
+      "explanation": "כיוון התפילה מסגיר את זהות המתפללים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-2-01",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מה מבין החסרונות הבאים אפיין את אתר קיסריה לפני הקמתה?",
+      "options": [
+        "אין בו מעיינות ואין נמל טבעי",
+        "הוא בראש הר",
+        "יש בו נהר גדול",
+        "הוא בעמק פורה"
+      ],
+      "correct": 0,
+      "explanation": "גם אין חומרי בנייה ואין שליטה על דרך הים.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-02",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "איזה תפקיד ייעד הורדוס לקיסריה ביחס לירושלים?",
+      "options": [
+        "בירה שלטונית פלורליסטית, וירושלים בירה דתית",
+        "בירה דתית",
+        "מבצר צבאי בלבד",
+        "עיר קבורה"
+      ],
+      "correct": 0,
+      "explanation": "הפרדה בין דת לשלטון.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-03",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מדוע לא הקיפה חומה את קיסריה של הורדוס?",
+      "options": [
+        "השלטון הרומי דאג לביטחון הכללי",
+        "לא היה כסף",
+        "היא הייתה על אי",
+        "החומה נהרסה ברעידה"
+      ],
+      "correct": 0,
+      "explanation": "חומה נוספה רק בתקופה הביזנטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-04",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מהי הוולאריום בתאטרון?",
+      "options": [
+        "יריעות בד מעל הקהל להצללה",
+        "מעבר מקורה",
+        "קיר הרקע",
+        "מושב הכבוד"
+      ],
+      "correct": 0,
+      "explanation": "ההצגות התקיימו בצהרי היום.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-05",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "איך נקראים המעברים המקורים לכניסה ויציאה מהתאטרון?",
+      "options": [
+        "וומיטוריום",
+        "קביאה",
+        "סקנה",
+        "אורקסטרה"
+      ],
+      "correct": 0,
+      "explanation": "אזור המושבים נקרא קביאה.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-06",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מדוע הקימו הביזנטים חומה בין העיר לתאטרון?",
+      "options": [
+        "כדי להפריד בין המאמינים לאלילים שהמשיכו ללכת לתאטרון",
+        "להגנה מפני הים",
+        "לגביית דמי כניסה",
+        "לבידוד רעש"
+      ],
+      "correct": 0,
+      "explanation": "התאטרון נתפס כמוסד אלילי.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-07",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מה מעידות הכתובות בבור המים של ארמון השונית?",
+      "options": [
+        "על שימושו המאוחר ככלא לנוצרים נרדפים",
+        "על בניית האמה",
+        "על הורדוס",
+        "על הצלבנים"
+      ],
+      "correct": 0,
+      "explanation": "\"האדון, עזור לפרוקופיה\".",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-08",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "לפי הסיפור הקשור להיפוסטדיום, מה עשו היהודים מול פונטיוס פילטוס?",
+      "options": [
+        "נשכבו והעדיפו למות מאשר להשאיר את הסמלים הצבאיים",
+        "תקפו את חייליו",
+        "שילמו לו כופר",
+        "ברחו לירושלים"
+      ],
+      "correct": 0,
+      "explanation": "פילטוס התרשם והורה להוציא את הסמלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-09",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "איך מנעו את סתימת הנמל ההרודיאני בחול?",
+      "options": [
+        "צינורות יצרו זרם מים שסחף את החול",
+        "חפרו בכל שנה",
+        "בנו קיר חול",
+        "השתמשו בסירות גרירה"
+      ],
+      "correct": 0,
+      "explanation": "זרם המים הנקיים שטף את הקרקעית.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-2-10",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "מה עשו הצלבנים באמה השנייה לשיפור התחזוקה?",
+      "options": [
+        "הניחו בתוכה 3 צינורות חרס",
+        "כיסו אותה בעופרת",
+        "הסיטו אותה לים",
+        "פירקו אותה"
+      ],
+      "correct": 0,
+      "explanation": "הצינורות הקטינו את אובדן המים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-2-11",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "מה מיוחד באמה השלישית, הנמוכה, מהתקופה הביזנטית?",
+      "options": [
+        "סכרים העלו את מפלס מי המעיינות בכ-6 מ'",
+        "היא מנהרה",
+        "היא צינור עופרת",
+        "היא הובילה מי ים"
+      ],
+      "correct": 0,
+      "explanation": "המים, ממעיינות מליחים בשפך נחל תנינים, נבלמו עד הגובה הרצוי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-2-12",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "לפי ויטרוביוס, מה מלמד בישול קטניות שאינן מתרככות במים?",
+      "options": [
+        "שהמים מלוחים מדי",
+        "שהמים רכים",
+        "שהמים חמים",
+        "שהמים נקיים"
+      ],
+      "correct": 0,
+      "explanation": "בדיקה עממית לאיכות מקור מים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-2-13",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "נחל תנינים",
+      "question": "איך מיינה שיטת קובלנוב את מי המעיינות?",
+      "options": [
+        "לפי מליחות: מלוחים לים, מליחים לבריכות דגים, מתוקים לשתייה והשקיה",
+        "לפי טמפרטורה",
+        "לפי צבע",
+        "לפי עומק"
+      ],
+      "correct": 0,
+      "explanation": "המים הובלו בצינורות חרס.",
+      "sourceUrl": "https://drive.google.com/file/d/1mDzEvaLwA11s_1loDMxTMZZA4j-ZtqMG/view",
+      "sourceDoc": "סיור 15 — מערכות מים, נחל תנינים"
+    },
+    {
+      "id": "N15-2-14",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "נחל תנינים",
+      "question": "מה קיבלו אנשי ג'סר א־זרקא תמורת עבודתם בייבוש הביצה?",
+      "options": [
+        "שטח אדמה מפיק\"א ברכס הכורכר",
+        "כסף בלבד",
+        "אזרחות",
+        "בתים בחיפה"
+      ],
+      "correct": 0,
+      "explanation": "כיום משחזרים את הביצה ממזרח לכביש החוף.",
+      "sourceUrl": "https://drive.google.com/file/d/1mDzEvaLwA11s_1loDMxTMZZA4j-ZtqMG/view",
+      "sourceDoc": "סיור 15 — מערכות מים, נחל תנינים"
+    },
+    {
+      "id": "N15-2-15",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מדוע קיבלו הצידונים את אזור ארשף מהפרסים?",
+      "options": [
+        "בתמורה לשירותים ימיים לאימפריה היבשתית",
+        "ככופר",
+        "בירושה",
+        "בכיבוש"
+      ],
+      "correct": 0,
+      "explanation": "הפרסים פיזרו שטחים לצור ולצידון לסירוגין.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-2-16",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מה פירוש הכינוי \"פיניקים\" שנתנו היוונים לצורים ולצידונים?",
+      "options": [
+        "הוורודים — המוכתמים בצבע ארגמן",
+        "יורדי הים",
+        "הסוחרים",
+        "אנשי ההרים"
+      ],
+      "correct": 0,
+      "explanation": "ייצור הארגמן היה ענף מרכזי.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-2-17",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מה היתרון של חלקלקה שנוספה לחומה בתקופה הצלבנית?",
+      "options": [
+        "היא מאפשרת למגינים לראות את התוקפים בתחתית החומה",
+        "היא מקשטת",
+        "היא מנקזת מים",
+        "היא משמשת מדרגות"
+      ],
+      "correct": 0,
+      "explanation": "בחומה ישרה המגינים אינם רואים את בסיסה.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-2-18",
+      "tourId": "15",
+      "level": 2,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מה הייתה תפקידה של הבליסטרה?",
+      "options": [
+        "ירי חצים גדולים בכינון ישיר, למשל לעבר שער",
+        "הטלת אבנים מעל החומה",
+        "ניגוח החומה",
+        "חפירת מנהרות"
+      ],
+      "correct": 0,
+      "explanation": "בליסטראות עם ראש אש הבעירו את העץ שבתוך השער.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-3-01",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מדוע, לפי הסיכום, נשען הורדוס על נמל ולא על תוצרת הארץ?",
+      "options": [
+        "לשמן וליין היו מקורות חלופיים; כוח הארץ במיקומה כארץ מעבר",
+        "הארץ לא ייצרה דבר",
+        "רומא אסרה ייצוא",
+        "בגלל מלחמות"
+      ],
+      "correct": 0,
+      "explanation": "הנמל שירת סחר בחיטה ופשתן — לחם וביגוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-3-02",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "באיזו טכנולוגיה נבנה הנמל ההרודיאני?",
+      "options": [
+        "אפר וולקני שהוטבע בים והתקשה",
+        "קורות עץ",
+        "שקי חול",
+        "בלוקי בטון מודרני"
+      ],
+      "correct": 0,
+      "explanation": "חדשנות הנדסית רומית — בטון ימי.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-3-03",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מה אפשר לעשות באזור האורקסטרה בתאטרון קיסריה?",
+      "options": [
+        "לסגור ולהציף אותו במים",
+        "לגדל צמחים",
+        "להדליק מדורה",
+        "לאחסן סחורה"
+      ],
+      "correct": 0,
+      "explanation": "מאוחר יותר ישבו שם הנגנים — ומכאן השם.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-3-04",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מה מרמזת רצפת הפסיפס הגאומטרית בארמון השונית, לפי הסיכום?",
+      "options": [
+        "על בעלות יהודית",
+        "על בעלות צלבנית",
+        "על מקדש",
+        "על בית מרחץ"
+      ],
+      "correct": 0,
+      "explanation": "העיטורים הגאומטריים, ללא דמויות, נקשרים לבעלים יהודיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-3-05",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מה נמצא בקצה המחסן המקורה ברובע המנהלי?",
+      "options": [
+        "מקדש לאל מיתרה",
+        "כנסייה",
+        "בית כנסת",
+        "קבר"
+      ],
+      "correct": 0,
+      "explanation": "קרן אור חודרת דרך פתח בקמרון ביום הארוך בשנה.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-3-06",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מה מתאר ציור הקיר השחוק בקשת אחת ברובע המנהלי?",
+      "options": [
+        "13 דמויות עם הילה",
+        "קרב ימי",
+        "צייד",
+        "מפה של העיר"
+      ],
+      "correct": 0,
+      "explanation": "השערה: ישו ו-12 השליחים.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-3-07",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "קיסריה",
+      "question": "מהו ההיפוקאוסט בבית המרחץ?",
+      "options": [
+        "חלל מתחת לרצפה שבו זרם חום",
+        "חדר הלבשה",
+        "בריכה קרה",
+        "מחסן עצים"
+      ],
+      "correct": 0,
+      "explanation": "החום הגיע מחדר התנורים — הפרפורניום.",
+      "sourceUrl": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view",
+      "sourceDoc": "סיור 15 — קיסריה"
+    },
+    {
+      "id": "N15-3-08",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "אילו לגיונות השתתפו לפי הסיכום בבניית האמה השנייה?",
+      "options": [
+        "העשירי, השני, השישי ואולי ה-22",
+        "הראשון והשלישי",
+        "השביעי בלבד",
+        "הפרטוריאנים"
+      ],
+      "correct": 0,
+      "explanation": "הלגיון ה-22 נעלם בימי מרד בר כוכבא.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-3-09",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "מה מסבירים בשמה של טבולה אנסטה מחוקה בחוף הקשתות?",
+      "options": [
+        "שנכתבה כנראה בידי הלגיון ה-22 ושמו נמחק אחרי היכחדותו",
+        "שנמחקה בידי הים",
+        "שנכתבה בטעות",
+        "שנמחקה בידי ארכאולוגים"
+      ],
+      "correct": 0,
+      "explanation": "זיכרון הלגיון נמחק.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-3-10",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "מה הבעיה העיקרית של האמה הראשונה של הורדוס?",
+      "options": [
+        "תזוזות קרקע סדקו את התעלה ומים רבים זלגו",
+        "היא הובילה מים מלוחים",
+        "היא הייתה קצרה מדי",
+        "היא נבנתה מעץ"
+      ],
+      "correct": 0,
+      "explanation": "תעלה מטויחת שנסדקה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-3-11",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "בית חנניה",
+      "question": "לפי ויטרוביוס, מה מעידים משקעים בכלי אחרי זמן רב?",
+      "options": [
+        "שהמים קשים ועשירים בסידן",
+        "שהמים חומציים",
+        "שהמים מלוחים",
+        "שהמים טהורים"
+      ],
+      "correct": 0,
+      "explanation": "כתמים בכלי מתכת מעידים על חומציות.",
+      "sourceUrl": "https://drive.google.com/file/d/1Fk1JEe9HooHoQHUgvtdM8ZXyFyoSHx6o/view",
+      "sourceDoc": "סיור 15 — מערכות מים, בית חנניה"
+    },
+    {
+      "id": "N15-3-12",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "נחל תנינים",
+      "question": "איזה סוג טחנה בנחל תנינים מיוחס לתקופה הרומית־ביזנטית?",
+      "options": [
+        "טחנה עם גלגל דליים אנכי",
+        "טחנת ארובה",
+        "טחנת מגלש",
+        "טחנת רוח"
+      ],
+      "correct": 0,
+      "explanation": "ארובה — צלבנית; מגלש — עות'מאנית.",
+      "sourceUrl": "https://drive.google.com/file/d/1mDzEvaLwA11s_1loDMxTMZZA4j-ZtqMG/view",
+      "sourceDoc": "סיור 15 — מערכות מים, נחל תנינים"
+    },
+    {
+      "id": "N15-3-13",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "נחל תנינים",
+      "question": "איך פועלת טחנת ארובה?",
+      "options": [
+        "המים נופלים בארובה על גלגל המניע את אבני הריחיים",
+        "רוח מסובבת כנפיים",
+        "בהמה מסובבת",
+        "גאות ושפל"
+      ],
+      "correct": 0,
+      "explanation": "טחנות הארובה בנחל מיוחסות לצלבנים.",
+      "sourceUrl": "https://drive.google.com/file/d/1mDzEvaLwA11s_1loDMxTMZZA4j-ZtqMG/view",
+      "sourceDoc": "סיור 15 — מערכות מים, נחל תנינים"
+    },
+    {
+      "id": "N15-3-14",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מהי \"וילה מריטימה\"?",
+      "options": [
+        "וילה ימית",
+        "וילה כפרית",
+        "וילה עירונית",
+        "וילה בפרברים"
+      ],
+      "correct": 0,
+      "explanation": "שרידי וילה רומית כזו נמצאים בקצה החומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-3-15",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מה היה שמה הביזנטי של אפולוניה?",
+      "options": [
+        "סוזוסה — עיר הפודה",
+        "ארסור",
+        "יפו",
+        "דור"
+      ],
+      "correct": 0,
+      "explanation": "עיר נוצרית ושומרונית.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-3-16",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "כיצד הסתיים מצור בייברס על המצודה הטמפלרית?",
+      "options": [
+        "אחרי 40 יום הוסכם על כניעה, אך בייברס הפר אותה ומכר את האבירים לעבדות",
+        "האבירים ניצחו",
+        "המצודה נשרפה עם כולם",
+        "האבירים ברחו בים"
+      ],
+      "correct": 0,
+      "explanation": "האבירים הספיקו לטמון במצודה מטמון מטבעות.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-3-17",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מה צורת שער המצודה באפולוניה?",
+      "options": [
+        "צורת L — פנייה ימינה ואחר כך שמאלה",
+        "שער ישר",
+        "שער כפול מקביל",
+        "שער עגול"
+      ],
+      "correct": 0,
+      "explanation": "משני צדי השער מגדלים עגולים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-3-18",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "איך עובדת הטריבושה?",
+      "options": [
+        "זרוע הטלה עם סל וחבל משליכה אבן כמו קלע",
+        "מתח של קשת",
+        "ניגוח",
+        "לחץ אוויר"
+      ],
+      "correct": 0,
+      "explanation": "מטילה אבנים למרחקים גדולים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N15-3-19",
+      "tourId": "15",
+      "level": 3,
+      "source": "tour15",
+      "stop": "אפולוניה",
+      "question": "מי בנה את מצודת העוז בארסוף?",
+      "options": [
+        "אציל מבית איבלין",
+        "בייברס",
+        "המסדר ההוספיטלרי",
+        "צלאח א־דין"
+      ],
+      "correct": 0,
+      "explanation": "בהמשך עברה האחוזה לידי הטמפלרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view",
+      "sourceDoc": "סיור 15 — אפולוניה"
+    },
+    {
+      "id": "N16-1-01",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מי גילה את השרידים הראשונים בבית שערים וכתב על כך לבנימין מזר?",
+      "options": [
+        "אלכסנדר זייד ובנו",
+        "יצחק בן צבי",
+        "יגאל ידין",
+        "אהוד נצר"
+      ],
+      "correct": 0,
+      "explanation": "מזר ובן צבי חפרו במקום וחשפו את הנקרופוליס.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-1-02",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מהו \"נקרופוליס\"?",
+      "options": [
+        "עיר מתים — בית קברות גדול",
+        "שוק",
+        "מבצר",
+        "מקדש"
+      ],
+      "correct": 0,
+      "explanation": "הנקרופוליס של בית שערים חצוב בקירטון רך.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-1-03",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "איזה חכם קבע את מושבו בבית שערים ובחר להיקבר בה?",
+      "options": [
+        "רבי יהודה הנשיא",
+        "רבי עקיבא",
+        "הלל הזקן",
+        "רבי מאיר"
+      ],
+      "correct": 0,
+      "explanation": "לפי המסורת, בית שערים הייתה אחוזתו הפרטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-1-04",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מהם שני ההסברים לשם \"בית שערים\" המובאים בסיכום?",
+      "options": [
+        "ריבוי שערי כניסה, או ריבוי שעורים וחיטה",
+        "שערי גן עדן",
+        "שם של מלך",
+        "שער הירדן"
+      ],
+      "correct": 0,
+      "explanation": "שני הסברים מקבילים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-1-05",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מה מציין השביל שמתחיל ליד הבזיליקה בבית שערים?",
+      "options": [
+        "דרך הסנהדרין",
+        "שביל ישראל",
+        "שביל הגליל",
+        "שביל הכנרת"
+      ],
+      "correct": 0,
+      "explanation": "כ-120 ק\"מ ו-70 תחנות בגליל.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-1-06",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מה מצוי לרוב במערת הארונות בבית שערים?",
+      "options": [
+        "סרקופגים רבים",
+        "מגילות",
+        "פסלי שיש",
+        "כלי נשק"
+      ],
+      "correct": 0,
+      "explanation": "על הסרקופגים שמות בעברית וביוונית.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-1-07",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מה נמצא במרכז מערת המוזיאון?",
+      "options": [
+        "גוש אבן ששימש לייצור זכוכית",
+        "ארון קבורה",
+        "מזבח",
+        "גת"
+      ],
+      "correct": 0,
+      "explanation": "המערה כנראה שימשה בור מים, לא לקבורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-1-08",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "באיזה גובה שוכנת פסגת גבעת ציפורי?",
+      "options": [
+        "289 מ'",
+        "28 מ'",
+        "890 מ'",
+        "1,289 מ'"
+      ],
+      "correct": 0,
+      "explanation": "המצודה עומדת בשיא הגבעה.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-1-09",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה מסביר את השם \"ציפורי\", לפי התצפית מהמצודה?",
+      "options": [
+        "הסביבה פרושה מתחת כמעוף הציפור",
+        "נדידת ציפורים",
+        "צורת הגבעה",
+        "שם של מלך"
+      ],
+      "correct": 0,
+      "explanation": "מהמצודה רואים את בקעות הגליל התחתון.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-1-10",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "איזה תואר קיבלה ציפורי משום שלא הצטרפה למרד הגדול?",
+      "options": [
+        "אירינופוליס — עיר השלום",
+        "דיוקיסריה",
+        "טבריה",
+        "ניאפוליס"
+      ],
+      "correct": 0,
+      "explanation": "תושביה פתחו את השערים לאספסיאנוס.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-1-11",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "איזה מפעל ספרותי נחתם בציפורי?",
+      "options": [
+        "המשנה",
+        "התלמוד הבבלי",
+        "התנ\"ך",
+        "הזוהר"
+      ],
+      "correct": 0,
+      "explanation": "רבי יהודה הנשיא עבר לציפורי והעיר הפכה למרכז הסנהדרין.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-1-12",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה מתואר במרכז פסיפס הטרקלין בבית דיוניסוס?",
+      "options": [
+        "תחרות שתיית יין בין דיוניסוס להרקולס",
+        "קרב ימי",
+        "צייד אריות",
+        "עקדת יצחק"
+      ],
+      "correct": 0,
+      "explanation": "הרקולס הפסיד ושרוע; דיוניסוס מציג כוס ריקה.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-1-13",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "באיזה כינוי ידועה דמות האישה בפסיפס בית דיוניסוס?",
+      "options": [
+        "המונה ליזה של הגליל",
+        "מלכת ציפורי",
+        "גברת הנילוס",
+        "בת הים"
+      ],
+      "correct": 0,
+      "explanation": "מבטה כאילו עוקב אחר הצופה.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-1-14",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה מתאר הפסיפס בבית חג הנילוס?",
+      "options": [
+        "את הצפת הנילוס והבשורה לאלכסנדריה",
+        "את מעבר ים סוף",
+        "את בניית הפירמידות",
+        "את קליאופטרה"
+      ],
+      "correct": 0,
+      "explanation": "בראשו נילומטר המסמן גובה 17.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-1-15",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה הייתה המצודה בציפורי בתקופת המנדט?",
+      "options": [
+        "בית ספר לילדי הכפר ספוריה",
+        "תחנת משטרה",
+        "בית חולים",
+        "מסגד"
+      ],
+      "correct": 0,
+      "explanation": "הכפר ננטש במלחמת העצמאות.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-1-16",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "לפי המסורת הנוצרית, מי התגוררו בציפורי?",
+      "options": [
+        "חנה ויהויכין, הורי מרים",
+        "יוסף ומרים",
+        "פטרוס ואנדראס",
+        "יוחנן המטביל"
+      ],
+      "correct": 0,
+      "explanation": "על כך הוקם מנזר סנטה אנה.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-1-17",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מי חוקר מפעלי המים שהזכירו בהקשר של ציפורי?",
+      "options": [
+        "צביקה צוק",
+        "זאב וייס",
+        "בנימין מזר",
+        "יגאל ידין"
+      ],
+      "correct": 0,
+      "explanation": "מחבר \"מים בקצה המנהרה\".",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-1-18",
+      "tourId": "16",
+      "level": 1,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה מתאר הפסיפס שמחוץ למפעל המים?",
+      "options": [
+        "את מסלול האמות, הגשרים והנקבות",
+        "את עקדת יצחק",
+        "את הנילוס",
+        "את המצודה"
+      ],
+      "correct": 0,
+      "explanation": "לידו מתקן הממחיש את ברז החסימה של המאגר.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-2-01",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "למי ניתנה בית שערים בתקופת בית שני?",
+      "options": [
+        "לברניקי השנייה, בת אגריפס הראשון",
+        "להורדוס",
+        "לפילטוס",
+        "לרבן גמליאל"
+      ],
+      "correct": 0,
+      "explanation": "יוסף בן מתתיהו מספר שהחרים את אסמי התבואה שם.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-2-02",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "לפי המסורת, איזה קיסר נתן את בית שערים לרבי יהודה הנשיא?",
+      "options": [
+        "אנטונינוס",
+        "אדריאנוס",
+        "טיטוס",
+        "קונסטנטינוס"
+      ],
+      "correct": 0,
+      "explanation": "המקום היה רכוש הקיסר.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-2-03",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "ממה מורכב \"בית יהודה הנשיא\" שמחוץ לגן הלאומי?",
+      "options": [
+        "אורוות, בית מגורים נרחב ומבנה תפילה",
+        "ארמון וגן",
+        "מקדש ותאטרון",
+        "מבצר בלבד"
+      ],
+      "correct": 0,
+      "explanation": "המסורות על עושרו תומכות בזיהוי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-2-04",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "למה, לפי ההשערה, שימשו החדרים עם המושבים לאורך ארבעת הקירות ליד הבזיליקה?",
+      "options": [
+        "חדרי כינוס של הסנהדרין",
+        "חדרי מגורים",
+        "מחסנים",
+        "בית ספר"
+      ],
+      "correct": 0,
+      "explanation": "רבי יהודה הנשיא עמד בראש הסנהדרין.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-2-05",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מדוע הנקרופוליס נמצא בצד המערבי של העיר?",
+      "options": [
+        "העמק הפורה ממזרח, וקברים מטמאים",
+        "בגלל הרוח",
+        "בגלל הים",
+        "אין סיבה"
+      ],
+      "correct": 0,
+      "explanation": "הקבורה הורחקה מהשטח החקלאי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-2-06",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "אילו שמות מצוינים במערת רבי יהודה הנשיא?",
+      "options": [
+        "רבי שמעון, רבי אנינא ורבן גמליאל",
+        "הלל ושמאי",
+        "רבי עקיבא ורבי מאיר",
+        "יוחנן ושמעון"
+      ],
+      "correct": 0,
+      "explanation": "שמעון וגמליאל בניו; חנינא תלמידו.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-2-07",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מה מלמד ריבוי הסגנונות על הסרקופגים במערת הארונות?",
+      "options": [
+        "שנקברו שם אנשים בעלי רמת מסורתיות שונה",
+        "שכולם היו כוהנים",
+        "שהמערה נוצרית",
+        "שהם הובאו מרומא"
+      ],
+      "correct": 0,
+      "explanation": "מנורות לצד בעלי חיים ומוטיבים אליליים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-2-08",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מאילו מעיינות הובאו המים לציפורי?",
+      "options": [
+        "ריינה ומשהד",
+        "עין חרוד",
+        "מעיינות הירדן",
+        "עין זיתים"
+      ],
+      "correct": 0,
+      "explanation": "ממרחק של כ-10–12 ק\"מ.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-09",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מדוע הוביל המאגר התת־קרקעי את עודפי החורף?",
+      "options": [
+        "כדי למנוע אידוי בקיץ",
+        "כדי לחמם אותם",
+        "כדי להמליח אותם",
+        "כדי למכור אותם"
+      ],
+      "correct": 0,
+      "explanation": "אמה אחת לבריכות הפתוחות, אחרת למאגר.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-10",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מדוע עקפו האמות את נחל ציפורי בתוואי ארוך?",
+      "options": [
+        "חצייה ישירה הייתה מחייבת סיפונים בלחץ גבוה",
+        "בגלל כפרים",
+        "בגלל מלחמה",
+        "בגלל חוסר בעבודה"
+      ],
+      "correct": 0,
+      "explanation": "התוואי ההיקפי שמר על שיפוע מבוקר.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-11",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מדוע פונה בית הכנסת של ציפורי מזרח–מערב ולא לירושלים?",
+      "options": [
+        "אילוץ טופוגרפי — בנייה על טרסה צרה",
+        "השפעה נוצרית",
+        "טעות בנייה",
+        "כיוון השמש"
+      ],
+      "correct": 0,
+      "explanation": "הסבר של זאב וייס.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-12",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה חסר במרכבת השמש שבפסיפס בית הכנסת?",
+      "options": [
+        "דמות האל הליוס",
+        "הסוסים",
+        "הגלגלים",
+        "הכוכבים"
+      ],
+      "correct": 0,
+      "explanation": "המסר: סובב העולם נתון בידי הבורא.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-13",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "אילו פירות מייצגים את הקיץ בפינות גלגל המזלות?",
+      "options": [
+        "תאנים וענבים",
+        "רימון ותמר",
+        "פרחים וחיטים",
+        "אתרוג ותפוח"
+      ],
+      "correct": 0,
+      "explanation": "הסתיו — רימון, תמר ואתרוג; האביב — פרחים וחיטים.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-2-14",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "אילו שתי סיבות התירו ליהודי להיכנס לתאטרון?",
+      "options": [
+        "פדיון שבויים ועדות להתרת עגונות",
+        "קניית יין וצפייה",
+        "תפילה ולימוד",
+        "מסחר וספורט"
+      ],
+      "correct": 0,
+      "explanation": "\"לצורך הרבים\".",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-15",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מדוע מכונה אזור המגורים שמתחת למצודה \"הרובע היהודי\"?",
+      "options": [
+        "בגלל ריבוי מקוואות — אף שמסתבר שאינו ייחודי לו",
+        "בגלל כתובת",
+        "בגלל בית כנסת",
+        "בגלל קבר"
+      ],
+      "correct": 0,
+      "explanation": "השם נתפס ונשאר.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-2-16",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מי קבור בפועל במבנה הכיפה הכחולה בתחתית גבעת ציפורי?",
+      "options": [
+        "רבי יהודה נשיאה, נכדו של רבי יהודה הנשיא",
+        "רבי יהודה הנשיא",
+        "רבי חנינא",
+        "רבן גמליאל"
+      ],
+      "correct": 0,
+      "explanation": "דמיון השמות יצר מסורת עלייה לרגל.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-17",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מאיזה מקום יצא הצבא הצלבני לקרב קרני חיטין?",
+      "options": [
+        "מציפורי",
+        "מעכו",
+        "מטבריה",
+        "מירושלים"
+      ],
+      "correct": 0,
+      "explanation": "התבוסה הביאה להתמוטטות הממלכה.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-3-01",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "באילו שני שלבים נחרבה בית שערים, לפי הסיכום?",
+      "options": [
+        "מרד גאלוס (353) ורעידת אדמה (363)",
+        "מרד בר כוכבא והכיבוש הערבי",
+        "הפרסים והצלבנים",
+        "רעידת 749 בלבד"
+      ],
+      "correct": 0,
+      "explanation": "העיר ננטשה ונהרסה סופית.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-3-02",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מה ייחודי בקבורת רבי יהודה הנשיא לפי הממצא במערה?",
+      "options": [
+        "קבר כפול חצוב באדמה, לא בארון",
+        "סרקופג שיש",
+        "קבורה בכוך",
+        "גלוסקמה"
+      ],
+      "correct": 0,
+      "explanation": "הוא ביקש להיקבר באדמה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-3-03",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "איך בישר בר קפרא על מות רבי, לפי האגדה?",
+      "options": [
+        "\"אראלים ומצוקים אחזו בארון הקודש... ונשבה ארון הקודש\"",
+        "\"רבי מת\"",
+        "שתק",
+        "קרע את בגדיו"
+      ],
+      "correct": 0,
+      "explanation": "חכמים גזרו שמי שיבשר את מותו — ייהרג.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-3-04",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מה הפסיק את תפילת החכמים ואפשר לרבי למות, לפי האגדה?",
+      "options": [
+        "אמתו זרקה כד מראש הגג",
+        "רעם",
+        "קריאת שופר",
+        "צלצול פעמון"
+      ],
+      "correct": 0,
+      "explanation": "ברגע שקטעה התפילה — נפטר.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-3-05",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "מה מסמלים שלושת צבעי סימון דרך הסנהדרין?",
+      "options": [
+        "ירוק — גליל, אדום — מנהיגים, כחול — כנרת",
+        "ירוק — עצים, אדום — דם, כחול — שמיים",
+        "צבעי הדגל",
+        "שלוש תקופות"
+      ],
+      "correct": 0,
+      "explanation": "כל תחנה מסומנת באבן בזלת.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-3-06",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "על מה נענש רבי ביסורים, לפי האגדה, ומתי פסקו?",
+      "options": [
+        "גירש עגל שברח משחיטה; פסקו כשריחם על גורי עכברים",
+        "על גאווה; פסקו בתענית",
+        "על עושר; פסקו בצדקה",
+        "על שתיקה; פסקו בתפילה"
+      ],
+      "correct": 0,
+      "explanation": "מידת הרחמים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-3-07",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה מסמל ראשי התיבות \"כשסי\"ן תתן\"?",
+      "options": [
+        "רכסים ובקעות הגליל התחתון מצפון לדרום",
+        "שמות המעיינות",
+        "תקופות ציפורי",
+        "שבטי ישראל"
+      ],
+      "correct": 0,
+      "explanation": "בית כרם, שגור, סח'נין, יודפת, נטופה, תורען...",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-08",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "איך ניצלו המהנדסים את הגאולוגיה בחציבת המאגר בציפורי?",
+      "options": [
+        "רוקנו את שכבת הקירטון הרכה במגע עם הגיר, ותקרת נארי נשארה",
+        "חצבו בבזלת",
+        "בנו קירות לבנים",
+        "חפרו בחול"
+      ],
+      "correct": 0,
+      "explanation": "השכבות הוטו לזווית של כמעט 90 מעלות.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-09",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "היכן היה המרכז המקראי באזור, לפני עליית ציפורי?",
+      "options": [
+        "תל חנתון",
+        "תל מגידו",
+        "תל חצור",
+        "תל דן"
+      ],
+      "correct": 0,
+      "explanation": "תופעה דומה: מרשה–בית גוברין, תל דן–בניאס.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-10",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מי ביצר והרחיב את ציפורי בתקופה החשמונאית?",
+      "options": [
+        "אלכסנדר ינאי",
+        "יהודה המכבי",
+        "שמעון",
+        "הורקנוס השני"
+      ],
+      "correct": 0,
+      "explanation": "ב-63 לפנה\"ס נקבעה ציפורי כבירת הגליל.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-11",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה כתוב ביוונית על הסכין בסצנת העקדה בבית הכנסת?",
+      "options": [
+        "\"אל תשלח ידך\"",
+        "\"אברהם\"",
+        "\"הנני\"",
+        "\"יצחק\""
+      ],
+      "correct": 0,
+      "explanation": "העקדה שייכת לחלק \"ההבטחה\".",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-12",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה קשור לדופן סל הביכורים בפסיפס בית הכנסת?",
+      "options": [
+        "שתי יונים",
+        "שני אריות",
+        "שתי מנורות",
+        "שני שופרות"
+      ],
+      "correct": 0,
+      "explanation": "חלק \"המימוש והגאולה\".",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-13",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה מראה הכתובת \"היגיאה\" ליד הטרקלין בבית דיוניסוס?",
+      "options": [
+        "בית כיסא פרטי עם צנרת — סימן עושר",
+        "מקדש לאלת הבריאות",
+        "בית מרחץ ציבורי",
+        "מרפאה"
+      ],
+      "correct": 0,
+      "explanation": "\"איזהו עשיר... כל שיש לו בית כיסא סמוך לשולחנו\".",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-14",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "אילו הסברים הוצעו לבית חג הנילוס, שלא שימש למגורים?",
+      "options": [
+        "אולם תצוגת פסיפסים, בית מסחר או אולם כנסים",
+        "בית כנסת",
+        "מקדש מצרי",
+        "בית מרחץ"
+      ],
+      "correct": 0,
+      "explanation": "יש המציעים וילה של סוחר שעבד מול מצרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-3-15",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה שינו העות'מאנים במצודת ציפורי במאה ה-18?",
+      "options": [
+        "הוסיפו קומה והפכו חרכי ירי לחלונות",
+        "הרסו אותה",
+        "הפכו אותה למסגד",
+        "הוסיפו מגדל שעון"
+      ],
+      "correct": 0,
+      "explanation": "שיקום על בסיס המצודה הצלבנית.",
+      "sourceUrl": "https://drive.google.com/file/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/view",
+      "sourceDoc": "סיור 16 — ציפורי"
+    },
+    {
+      "id": "N16-3-16",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "איזו כתובת נמצאה בשרידי בית הכנסת בחצר מנזר סנטה אנה?",
+      "options": [
+        "\"דכיר לטב רבי יהודן\"",
+        "\"שלום על ישראל\"",
+        "\"אהרון\"",
+        "\"היגיאה\""
+      ],
+      "correct": 0,
+      "explanation": "כתובת עברית מבית כנסת עתיק.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-2-18",
+      "tourId": "16",
+      "level": 2,
+      "source": "tour16",
+      "stop": "ציפורי",
+      "question": "מה הפך את ציפורי לעיר של כנסיות ומנזרים לצד קהילה יהודית?",
+      "options": [
+        "התנצרות האוכלוסייה הפגאנית בתקופה הביזנטית",
+        "הכיבוש הצלבני",
+        "הגירה מאירופה",
+        "גזרת הקיסר הורדוס"
+      ],
+      "correct": 0,
+      "explanation": "העיר דעכה אחרי הכיבוש המוסלמי ורעידת 749.",
+      "sourceUrl": "https://drive.google.com/file/d/14KtZBenDTn2MynjvHMNHDozvrZJijK_D/view",
+      "sourceDoc": "ציפורי — סיכום לימודי"
+    },
+    {
+      "id": "N16-3-17",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "לפי האגדה, למה לא שקעה השמש ביום הלוויית רבי?",
+      "options": [
+        "כדי שכל המלווים יספיקו לחזור לביתם להכנות שבת",
+        "בגלל ליקוי",
+        "בגלל תפילת החכמים",
+        "כדי שייקבר ביום"
+      ],
+      "correct": 0,
+      "explanation": "המסע מציפורי לבית שערים עבר ב-18 בתי כנסת.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
+    },
+    {
+      "id": "N16-3-18",
+      "tourId": "16",
+      "level": 3,
+      "source": "tour16",
+      "stop": "בית שערים",
+      "question": "איך מוסבר באגדה הקשר בין רבי לאנטונינוס?",
+      "options": [
+        "אמותיהם החליפו את התינוקות כדי להציל את רבי הנימול",
+        "היו אחים",
+        "למדו יחד ברומא",
+        "אנטונינוס התגייר"
+      ],
+      "correct": 0,
+      "explanation": "האמהות קבעו שהילדים יהיו חברים לעולם.",
+      "sourceUrl": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view",
+      "sourceDoc": "סיור 16 — בית שערים"
     }
   ]
 }
