@@ -19,7 +19,7 @@ await admin.waitForSelector('text=פרסם שאלה');
 await admin.screenshot({ path: `${OUT}/a1-live.png`, fullPage: true });
 
 const st = await (await browser.newContext(phone)).newPage(); watch(st);
-await st.goto(BASE + '/');
+await st.goto(BASE + '/play.html');
 await st.click('.langopt[data-lang=he]');
 await st.screenshot({ path: `${OUT}/p0-join.png` });
 await st.fill('#nm', 'דנה לוי'); await st.click('#jbtn');
