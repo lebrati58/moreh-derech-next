@@ -6738,6 +6738,2922 @@
       "explanation": "רכבת העמק הייתה שלוחה של הרכבת החיג'אזית מדרעא, דרך צמח ובית שאן ועד חיפה (נחנכה ב-1905).",
       "sourceUrl": "https://drive.google.com/file/d/1LJVkq-UR58AhJUwg39mROBtbFtnaLJYs/view",
       "sourceDoc": "רכבת העמק (תמליל ערוך)"
+    },
+    {
+      "id": "N05-1-01",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל עזקה",
+      "question": "איזה קרב מקראי מפורסם התרחש בעמק האלה, מתחת לתל עזקה?",
+      "options": [
+        "דוד וגוליית",
+        "שמשון והפלישתים",
+        "יהושע ומלכי האמורי",
+        "גדעון ומדיין"
+      ],
+      "correct": 0,
+      "explanation": "לפי שמואל א' י\"ז, הקרב בעמק האלה היה בין עזקה לשוכה — דוד מול גוליית.",
+      "sourceUrl": "https://drive.google.com/file/d/1WsVfd5_cwr_Yohcq8WuABScgBrF6azW_/view",
+      "sourceDoc": "סיור 5 — תל עזקה"
+    },
+    {
+      "id": "N05-1-02",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל עזקה",
+      "question": "באיזה נשק הפיל דוד את גוליית?",
+      "options": [
+        "קלע ואבן",
+        "חרב",
+        "חנית",
+        "קשת"
+      ],
+      "correct": 0,
+      "explanation": "דוד ויתר על השריון של שאול, אסף חלוקי נחל ופגע בגוליית באבן מקלע.",
+      "sourceUrl": "https://drive.google.com/file/d/1WsVfd5_cwr_Yohcq8WuABScgBrF6azW_/view",
+      "sourceDoc": "סיור 5 — תל עזקה"
+    },
+    {
+      "id": "N05-1-03",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל עזקה",
+      "question": "באיזה צבע נצבע תל שוכה בסוף החורף?",
+      "options": [
+        "סגול — מתורמוס ההרים",
+        "אדום — מכלניות",
+        "צהוב — מחרדל",
+        "לבן — מנרקיסים"
+      ],
+      "correct": 0,
+      "explanation": "בסוף החורף תל שוכה נצבע סגול בזכות פריחת תורמוס ההרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1WsVfd5_cwr_Yohcq8WuABScgBrF6azW_/view",
+      "sourceDoc": "סיור 5 — תל עזקה"
+    },
+    {
+      "id": "N05-1-04",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל עזקה",
+      "question": "מה הציע שאול לדוד לפני הקרב, ודוד ויתר?",
+      "options": [
+        "את המדים והשריון שלו",
+        "את בתו",
+        "את כתרו",
+        "את סוסו"
+      ],
+      "correct": 0,
+      "explanation": "שאול נתן לדוד את מדיו ושריונו; דוד ויתר ובחר בקלע ובאבנים.",
+      "sourceUrl": "https://drive.google.com/file/d/1WsVfd5_cwr_Yohcq8WuABScgBrF6azW_/view",
+      "sourceDoc": "סיור 5 — תל עזקה"
+    },
+    {
+      "id": "N05-1-05",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "איזה ארכאולוג חפר את חורבת קייאפה?",
+      "options": [
+        "יוסי גרפינקל",
+        "יגאל ידין",
+        "דוד אוסישקין",
+        "רולאן דה וו"
+      ],
+      "correct": 0,
+      "explanation": "האתר נחפר בידי פרופ' יוסי גרפינקל, יחד עם סער גנור מרשות העתיקות.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-1-06",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "כמה שערים יש בחומת חורבת קייאפה?",
+      "options": [
+        "2",
+        "1",
+        "4",
+        "6"
+      ],
+      "correct": 0,
+      "explanation": "לעיר שני שערים — מערבי ודרומי; יש המזהים אותה עם \"שעריים\" המקראית.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-1-07",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "שרידי איזו חיה לא נמצאו בחורבת קייאפה, ולכן היא משויכת לתרבות יהודאית?",
+      "options": [
+        "חזיר",
+        "כבש",
+        "עז",
+        "בקר"
+      ],
+      "correct": 0,
+      "explanation": "לא נמצאו עצמות חזיר — הדבר משייך את המקום לתרבות יהודאית ולא פלישתית.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-1-08",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מהי \"מערת פעמון\"?",
+      "options": [
+        "מערה שנחצבה מלמעלה למטה לכריית קירטון",
+        "מערה טבעית עם נטיפים",
+        "מערת קבורה רומית",
+        "בור מים עגול מטויח"
+      ],
+      "correct": 0,
+      "explanation": "מערות הפעמון נחצבו מפתח קטן בשכבת הנארי והלכו והתרחבו — כדי לכרות קירטון להפקת סיד.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-1-09",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מה מגדלים, לפי אחת ההשערות, במערת הקולומבריום?",
+      "options": [
+        "יונים",
+        "דבורים",
+        "תולעי משי",
+        "פטריות"
+      ],
+      "correct": 0,
+      "explanation": "בקירות מאות גומחות; ההשערה המקובלת — גידול יונים למאכל, לקורבנות ולזבל.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-1-10",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "איזה מוצר הפיקו במערת בית הבד במרשה?",
+      "options": [
+        "שמן זית",
+        "יין",
+        "סיד",
+        "דבש"
+      ],
+      "correct": 0,
+      "explanation": "במערה מתקני ריסוק ודחיסה של זיתים להפקת שמן.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-1-11",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "איזו דמות מיתולוגית מצוירת בכניסה למערת הקבורה הצידונית?",
+      "options": [
+        "קרברוס — כלב שלושת הראשים",
+        "הרקולס",
+        "מדוזה",
+        "פגסוס"
+      ],
+      "correct": 0,
+      "explanation": "בכניסה ציור של קרברוס, הכלב בעל שלושת הראשים ששמר על השאול.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-1-12",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "בית גוברין",
+      "question": "מה הפיקו מהקירטון שנחצב במערות הפעמון?",
+      "options": [
+        "סיד לבנייה",
+        "זכוכית",
+        "מלח",
+        "צבע"
+      ],
+      "correct": 0,
+      "explanation": "שריפת קירטון יוצרת סיד — חומר בנייה טוב שנסחר מבית גוברין.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-1-13",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מי פיקד, לפי המיצג, על המגינים היהודים בלכיש מול האשורים?",
+      "options": [
+        "נחושתן בן ארוך",
+        "יאוש",
+        "הושעיהו",
+        "אליקים"
+      ],
+      "correct": 0,
+      "explanation": "במיצג מופיעה דמות המפקד נחושתן בן ארוך, שהשיב מלחמה בחצים, אבנים ולפידים.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-1-14",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה הייתה לכיש בממלכת יהודה?",
+      "options": [
+        "העיר השנייה בחשיבותה אחרי ירושלים",
+        "בירת הממלכה",
+        "כפר קטן",
+        "עיר פלישתית"
+      ],
+      "correct": 0,
+      "explanation": "רחבעם ביצר את לכיש, והיא הפכה לעיר השנייה בחשיבותה ביהודה.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-1-15",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה מספרים מכתבי לכיש?",
+      "options": [
+        "חרסים כתובים מהימים שלפני החורבן הבבלי",
+        "מכתבי אהבה רומיים",
+        "חוקים כנעניים",
+        "ספרי תורה"
+      ],
+      "correct": 0,
+      "explanation": "האוסטרקונים נשלחו מהושעיהו אל יאוש, מושל לכיש, בימי הממלכה האחרונים.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-1-16",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "כמה זמן אורך המיצג המרכזי בתל לכיש?",
+      "options": [
+        "פחות מרבע שעה",
+        "שעה וחצי",
+        "כחמש שעות",
+        "דקה אחת"
+      ],
+      "correct": 0,
+      "explanation": "המיצג המרכזי קצר — פחות מרבע שעה — ומגולל את סיפור המצור.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-1-17",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "האם יש פחי אשפה על תל לכיש?",
+      "options": [
+        "לא — כל אחד לוקח את האשפה איתו",
+        "כן, בכל תחנה",
+        "רק ליד הארמון",
+        "רק בשער"
+      ],
+      "correct": 0,
+      "explanation": "אין פחים על התל — מגמה ירוקה של \"קח את האשפה עמך\".",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-1-18",
+      "tourId": "05",
+      "level": 1,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה אמר יהושע, לפי המקרא, בעמק איילון?",
+      "options": [
+        "\"שמש בגבעון דום וירח בעמק איילון\"",
+        "\"לך לך מארצך\"",
+        "\"שמע ישראל\"",
+        "\"הנה מה טוב\""
+      ],
+      "correct": 0,
+      "explanation": "בדרך עוברים בעמק איילון וכפר בן נון — על שם יהושע בן נון.",
+      "sourceUrl": "https://drive.google.com/file/d/1lFVQ2mpOv7W1OBs_ALXc8WQ5iOENSb-g/view",
+      "sourceDoc": "סיור 5 — סיפור דרך"
+    },
+    {
+      "id": "N05-2-01",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל עזקה",
+      "question": "מה גובה תל עזקה, ובין אילו אזורים הוא נמצא?",
+      "options": [
+        "כ-348 מ' — בגבול השפלה הנמוכה והגבוהה",
+        "כ-800 מ' — בהרי יהודה",
+        "כ-50 מ' — במישור החוף",
+        "כ-1,000 מ' — בהר חברון"
+      ],
+      "correct": 0,
+      "explanation": "התל (348 מ') נמצא בגבול בין השפלה הנמוכה (עד 250 מ') לשפלה הגבוהה (עד 450 מ').",
+      "sourceUrl": "https://drive.google.com/file/d/1WsVfd5_cwr_Yohcq8WuABScgBrF6azW_/view",
+      "sourceDoc": "סיור 5 — תל עזקה"
+    },
+    {
+      "id": "N05-2-02",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל עזקה",
+      "question": "לאן ברחו הפלישתים אחרי מות גוליית?",
+      "options": [
+        "דרך שעריים לגת ולעקרון",
+        "לירושלים",
+        "לים",
+        "למדבר"
+      ],
+      "correct": 0,
+      "explanation": "הפלישתים ברחו דרך שעריים (חורבת קייאפה) אל גת ועקרון.",
+      "sourceUrl": "https://drive.google.com/file/d/1WsVfd5_cwr_Yohcq8WuABScgBrF6azW_/view",
+      "sourceDoc": "סיור 5 — תל עזקה"
+    },
+    {
+      "id": "N05-2-03",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל עזקה",
+      "question": "מה נמצא במרכז תל עזקה?",
+      "options": [
+        "מצודה הלניסטית",
+        "כנסייה ביזנטית",
+        "מסגד",
+        "בית כנסת"
+      ],
+      "correct": 0,
+      "explanation": "במרכז התל מצודה הלניסטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1WsVfd5_cwr_Yohcq8WuABScgBrF6azW_/view",
+      "sourceDoc": "סיור 5 — תל עזקה"
+    },
+    {
+      "id": "N05-2-04",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "מה מיוחד בשכבות היישוב בחורבת קייאפה?",
+      "options": [
+        "שכבה אחת בלבד מתקופת הברזל, עד סלע האם",
+        "40 שכבות",
+        "רק שכבה רומית",
+        "אין שום יישוב"
+      ],
+      "correct": 0,
+      "explanation": "החפירות גילו שכבה אחת בלבד מתקופת הברזל, ומתחתיה סלע הבסיס (ועוד מבצר הלניסטי בודד).",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-2-05",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "איזה שם מקראי מופיע על חרס בחורבת קייאפה?",
+      "options": [
+        "אשבעל בן בדע",
+        "דוד בן ישי",
+        "שלמה המלך",
+        "גלית"
+      ],
+      "correct": 0,
+      "explanation": "חרס עם הכתובת \"אשבעל בן בדע\" — שם הזהה לשם בנו של שאול.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-2-06",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "כיצד תוארכו שכבות חורבת קייאפה לימי דוד?",
+      "options": [
+        "גלעינים שנבדקו בפחמן-14",
+        "מטבעות עם שם דוד",
+        "כתובת מלכותית",
+        "לפי סגנון הפסיפס"
+      ],
+      "correct": 0,
+      "explanation": "גלעינים שנבדקו בפחמן-14 תוארכו לשנים כ-1020–980 לפנה\"ס.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-2-07",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "מה מתארים שני \"הארונות\" (דגמי מקדש) שנמצאו בחורבת קייאפה?",
+      "options": [
+        "חזית מקדש — אחד בשני עמודים ואחד במסגרות",
+        "ארונות קבורה",
+        "תיבות נגינה",
+        "מגילות"
+      ],
+      "correct": 0,
+      "explanation": "שני דגמים — מחרס ומאבן גיר — אחד בשני עמודים (מזכיר את יכין ובועז) ואחד במסגרות.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-2-08",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "אילו מילים נקראו באוסטרקון שנמצא בחורבת קייאפה?",
+      "options": [
+        "\"עבד\", \"עשה\", \"מלך\"",
+        "\"ירושלים\", \"דוד\", \"מקדש\"",
+        "\"שלום\", \"ברכה\"",
+        "\"גת\", \"עקרון\""
+      ],
+      "correct": 0,
+      "explanation": "האוסטרקון בכתב עברי קדום כולל את המילים \"עבד\", \"עשה\", \"מלך\" — לפי החופרים עדות לממלכה.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-2-09",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "לפי איזו תוכנית תוכננה העיר מרשה?",
+      "options": [
+        "תוכנית היפודמית — רחובות ישרים ורובעים",
+        "תוכנית עגולה",
+        "מבוך של סמטאות",
+        "מצודה ללא רחובות"
+      ],
+      "correct": 0,
+      "explanation": "תוכנית היפודמית, על שם היפודמוס איש מילטוס: רחובות ישרים ורובעים.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-2-10",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "איזה שליט חשמונאי כבש את מרשה וגייר את תושביה?",
+      "options": [
+        "יוחנן הורקנוס",
+        "יהודה המכבי",
+        "אלכסנדר ינאי",
+        "שמעון החשמונאי"
+      ],
+      "correct": 0,
+      "explanation": "ב-111 לפנה\"ס כבש יוחנן הורקנוס את מרשה וגייר את תושביה.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-2-11",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מי החריב את מרשה בשנת 40 לפנה\"ס?",
+      "options": [
+        "הפרתים",
+        "הרומאים",
+        "הבבלים",
+        "המצרים"
+      ],
+      "correct": 0,
+      "explanation": "בשנת 40 לפנה\"ס נחרבה העיר בידי הפרתים.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-2-12",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מדוע מערות המים במרשה לא טויחו?",
+      "options": [
+        "הקירטון דק־גרגר ואטום למים",
+        "לא היה סיד באזור",
+        "המים היו מלוחים",
+        "הן שימשו רק לאחסון יבש"
+      ],
+      "correct": 0,
+      "explanation": "הקירטון בעל גרגר דק ואטום למים, ולכן הבריכות לא נזקקו לטיח.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-2-13",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מה שמו של השמן הראשון שנוזל מעיסת הזיתים?",
+      "options": [
+        "שמן כתית",
+        "שמן משחה",
+        "שמן עקלים",
+        "שמן קורה"
+      ],
+      "correct": 0,
+      "explanation": "השמן הראשון שנוזל מהעיסה נקרא שמן כתית.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-2-14",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה עשה חזקיהו ב-705 לפנה\"ס, אחרי מות סרגון השני?",
+      "options": [
+        "הצטרף למרד נגד אשור",
+        "כרת ברית עם אשור",
+        "ברח למצרים",
+        "החריב את לכיש"
+      ],
+      "correct": 0,
+      "explanation": "חזקיהו ניצל את טלטלת השלטון באשור והצטרף למרד — ובעקבות זאת יצא סנחריב למסע ב-701.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-2-15",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "אילו ערים מופיעות על טביעות החותם \"למלך\"?",
+      "options": [
+        "חברון, זיף, ממשת ושוכה",
+        "ירושלים, לכיש, גת ועזה",
+        "דן, באר שבע, שילה ושכם",
+        "יריחו, עי, גבעון ובית אל"
+      ],
+      "correct": 0,
+      "explanation": "מתחת למילה \"למלך\" מופיע אחד מארבעה שמות: חברון, זיף, ממשת ושוכה.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-2-16",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה המשפט המפורסם ממכתב לכיש מספר 4?",
+      "options": [
+        "\"אל משאת לכש אנחנ שמרם... כי לא נראה את עזקה\"",
+        "\"שמע ישראל\"",
+        "\"ויהי ביום השלישי\"",
+        "\"ועתה ידעתי\""
+      ],
+      "correct": 0,
+      "explanation": "במכתב 4 כותב הושעיהו שהם שומרים על משואות לכיש, כי את עזקה כבר אינם רואים.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-2-17",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מי חשף את סוללת המצור האשורית בלכיש?",
+      "options": [
+        "ג'יימס סטרקי ודוד אוסישקין",
+        "יגאל ידין",
+        "יוסי גרפינקל",
+        "גוטליב שומכר"
+      ],
+      "correct": 0,
+      "explanation": "סטרקי ואחריו אוסישקין חפרו את הסוללה — היחידה המוכרת בעולם מהתקופה.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-01",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה עשו המגינים מבפנים כדי להתמודד עם הסוללה האשורית?",
+      "options": [
+        "בנו סוללת נגד שהגביהה ועיבתה את החומה",
+        "חפרו מנהרה לאשור",
+        "הציפו את הסוללה במים",
+        "נכנעו מיד"
+      ],
+      "correct": 0,
+      "explanation": "בצד הפנימי נחשפה סוללת נגד שהגביהה ועיבתה את החומה מול איל הניגוח.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-02",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "למה שימשה שרשרת הברזל שנמצאה בסוללת לכיש?",
+      "options": [
+        "ללכידת ראש איל הניגוח והטייתו",
+        "לנעילת השער",
+        "לשליית מים",
+        "לכבילת שבויים"
+      ],
+      "correct": 0,
+      "explanation": "המגינים השתמשו בשרשרת כדי ללכוד ולהטות את ראש איל הניגוח האשורי.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-03",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה הייתה ההשערה לגבי \"האסלה\" שנמצאה בשער לכיש?",
+      "options": [
+        "הונחה כדי לטמא ולבטל במה בשער",
+        "שירותי השומרים",
+        "אבן ריחיים",
+        "אבן מזבח"
+      ],
+      "correct": 0,
+      "explanation": "באבן לא נעשה שימוש; ההשערה — הונחה כדי לטמא ולבטל במה, ברוח רפורמות חזקיהו או יאשיהו.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-04",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "לפי אנקדוטה שהובאה בסיור, איך הועברו אותות בין לכיש לעזקה?",
+      "options": [
+        "דרך תחנת ממסר במרשה, כי מלכיש לא רואים את עזקה",
+        "ישירות — יש קו ראייה",
+        "ביונת דואר",
+        "דרך ירושלים"
+      ],
+      "correct": 0,
+      "explanation": "לפי האנקדוטה, לכיש צפתה אל מרשה, ומרשה צפתה אל עזקה.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-05",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מדוע הקדיש סנחריב חדר שלם בארמונו בנינווה לכיבוש לכיש?",
+      "options": [
+        "כי לא הצליח לכבוש את ירושלים",
+        "כי לכיש הייתה בירת יהודה",
+        "כי נולד בה",
+        "כי שם נפצע"
+      ],
+      "correct": 0,
+      "explanation": "סנחריב לא יכול היה להתפאר בכיבוש ירושלים, ולכן פאר את כיבוש לכיש בחדר התבליט.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-06",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מי חשף בשנת 1842 את חדר התבליט בנינווה?",
+      "options": [
+        "אוסטן הנרי לייארד",
+        "פלינדרס פיטרי",
+        "ג'יימס סטרקי",
+        "רוברט מקאליסטר"
+      ],
+      "correct": 0,
+      "explanation": "הארכאולוג הבריטי לייארד חשף את חדר התבליט בארמון סנחריב.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-07",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מה מסמל מיצג הכיסאות בגבהים שונים ליד הארמון בלכיש?",
+      "options": [
+        "את אורך שנות המלוכה של מלכי יהודה",
+        "את גובה החומות",
+        "את מספר הלוחמים",
+        "את גיל המלכים"
+      ],
+      "correct": 0,
+      "explanation": "גובה כל כיסא ממחיש את אורך מלכותו של מלך — למשל מנשה ועוזיהו ששלטו שנים רבות.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-08",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "מי פענח את מכתבי לכיש בתקופת המנדט?",
+      "options": [
+        "נפתלי הרץ טור־סיני",
+        "אליעזר בן יהודה",
+        "יגאל ידין",
+        "בנימין מזר"
+      ],
+      "correct": 0,
+      "explanation": "האוסטרקונים בכתב עברי קדום פוענחו בידי פרופ' טור־סיני (טורטשינר).",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-09",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "כיצד הוגן מפעל המים של לכיש, שהיה מחוץ לקו החומה?",
+      "options": [
+        "בחומה משנית עבה שחיברה אותו לעיר",
+        "בתעלה מלאת מים",
+        "במגדל עץ",
+        "הוא לא הוגן"
+      ],
+      "correct": 0,
+      "explanation": "בנו חומת הגנה משנית שהקיפה את הבאר וחיברה אותה לעיר בימי חירום.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N05-3-10",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "מה עמדתו של פינקלשטיין לגבי חורבת קייאפה?",
+      "options": [
+        "חולק על השיוך ליהודה ומציע שיוך לכנענים, פלישתים או ממלכת ישראל",
+        "תומך לחלוטין בשיוך לדוד",
+        "טוען שהאתר רומי",
+        "טוען שהאתר מזויף"
+      ],
+      "correct": 0,
+      "explanation": "פינקלשטיין חולק על השיוך לממלכת יהודה בימי דוד ומציע חלופות.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-3-11",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "מדוע מבנה השער בחורבת קייאפה הועלה כטיעון לשיוך לממלכה?",
+      "options": [
+        "שער עם זוגות אומנות דומה לשערי גזר, מגידו וחצור",
+        "השער מצופה זהב",
+        "השער נושא כתובת של דוד",
+        "השער רומי"
+      ],
+      "correct": 0,
+      "explanation": "לפי החופרים, השער (שלושה זוגות אומנות) דומה לשערים שהתנ\"ך מייחס לשלמה.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-3-12",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "חורבת קייאפה",
+      "question": "מהם צמחי המפתח של חבורת הצומח בשפלה, לפי הסיור?",
+      "options": [
+        "חרוב ואלת המסטיק",
+        "אורן ואלון התבור",
+        "שיטה ורותם",
+        "אקליפטוס ושקמה"
+      ],
+      "correct": 0,
+      "explanation": "החבורה מוגדרת בחרוב ובאלת המסטיק; נפוצים גם זית, שקד ואוג.",
+      "sourceUrl": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view",
+      "sourceDoc": "סיור 5 — חורבת קייאפה"
+    },
+    {
+      "id": "N05-3-13",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מה הבעיה בהשערה שהקולומבריום שימש לגידול יונים, ומה התשובה?",
+      "options": [
+        "הגומחות קטנות; בתקופה ההיא גידלו יונים קצרות זנב",
+        "אין אור; היונים היו עיוורות",
+        "אין מים; הביאו מים בכדים",
+        "המערה רטובה; היונים היו ברווזים"
+      ],
+      "correct": 0,
+      "explanation": "הגומחות קטנות ליונים, אך ייתכן שגידלו יונים קצרות זנב שהתאימו להן.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-3-14",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מה מראה הכתובת של אפולופאנס במערה הצידונית?",
+      "options": [
+        "שעמד בראש קהילת הצידונים במרשה 33 שנה",
+        "שהיה מלך אדום",
+        "שבנה את בית הבד",
+        "שהיה כוהן יהודי"
+      ],
+      "correct": 0,
+      "explanation": "אפולופאנס בן ססמאיוס היה ראש קהילת הצידונים במרשה 33 שנים ומת בגיל 74.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-3-15",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "איך משחזרים היום את ציורי המערה הצידונית?",
+      "options": [
+        "לפי תצלומים של פיטרס ותירש מ-1902, לפני שהושחתו",
+        "לפי ציור מימי הביניים",
+        "לפי סריקה בלייזר בלבד",
+        "הם מקוריים ולא שוחזרו"
+      ],
+      "correct": 0,
+      "explanation": "המערה צולמה ב-1902, הושחתה בהמשך, ושוחזרה לפי הצילומים המקוריים.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-3-16",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "בית גוברין",
+      "question": "מהי שכבת \"נארי\" ומה תפקידה בחציבת מערות הפעמון?",
+      "options": [
+        "קרום קשה מעל הקירטון — פורצים בו פתח קטן ומתחתיו מרחיבים",
+        "סלע בזלת",
+        "טיח שמיושם מבפנים",
+        "שכבת חול"
+      ],
+      "correct": 0,
+      "explanation": "הנארי הוא קרום קשה שנוצר מעל הקירטון; פורצים בו פתח צר ומרחיבים את החציבה בעומק.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-2-18",
+      "tourId": "05",
+      "level": 2,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "איזה עם התיישב במרשה אחרי חורבן בית ראשון, כשנכללה באידומיאה?",
+      "options": [
+        "האדומים",
+        "הפלישתים",
+        "השומרונים",
+        "הנבטים"
+      ],
+      "correct": 0,
+      "explanation": "אחרי 586 לפנה\"ס נכללה מרשה באידומיאה והתיישבו בה אדומים; מאוחר יותר שלטו בה צידונים.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-3-17",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "מרשה",
+      "question": "מי, לפי הסיכום, נלחם בזרח הכושי באזור מרשה במאה ה-9 לפנה\"ס?",
+      "options": [
+        "אסא מלך יהודה",
+        "דוד המלך",
+        "רחבעם",
+        "חזקיהו"
+      ],
+      "correct": 0,
+      "explanation": "הקרב בין אסא מלך יהודה לזרח הכושי מיוחס לאזור מרשה.",
+      "sourceUrl": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view",
+      "sourceDoc": "סיור 5 — תל מרשה"
+    },
+    {
+      "id": "N05-3-18",
+      "tourId": "05",
+      "level": 3,
+      "source": "tour05",
+      "stop": "תל לכיש",
+      "question": "כמה מכתבים משליטי לכיש נמצאו בארכיון אל-עמארנה?",
+      "options": [
+        "4",
+        "1",
+        "40",
+        "18"
+      ],
+      "correct": 0,
+      "explanation": "נמצאו 4 מכתבים משליטי לכיש (כמו יבני-אילו וזמרדא) בלשון כניעה לפרעה.",
+      "sourceUrl": "https://drive.google.com/file/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/view",
+      "sourceDoc": "תל לכיש (תמליל ערוך)"
+    },
+    {
+      "id": "N06-1-01",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "באיזה אזור גאוגרפי נמצאת סוסיא?",
+      "options": [
+        "דרום הר חברון, בספר המדבר",
+        "הגליל העליון",
+        "מישור החוף",
+        "רמת הגולן"
+      ],
+      "correct": 0,
+      "explanation": "סוסיא נמצאת על השלוחה הדרום־מזרחית של הר חברון — בגבול מדבר יהודה והנגב.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-1-02",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "באיזו שפה כתובות כל הכתובות שנמצאו בסוסיא?",
+      "options": [
+        "עברית",
+        "יוונית",
+        "לטינית",
+        "ערבית"
+      ],
+      "correct": 0,
+      "explanation": "כל הכתובות בסוסיא בעברית — בלי ארמית, יוונית או לטינית.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-1-03",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "היכן נבנה בית הכנסת של סוסיא?",
+      "options": [
+        "במקום הגבוה ביישוב",
+        "בתחתית העמק",
+        "מחוץ לחומה",
+        "בתוך מערה"
+      ],
+      "correct": 0,
+      "explanation": "בית הכנסת במקום הגבוה, ברוח ההלכה \"אין פותחין אותה אלא בגובהה של עיר\".",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-1-04",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "לאיזה כיוון פונים הספסלים ובמת התפילה בבית הכנסת של סוסיא?",
+      "options": [
+        "צפונה — לירושלים",
+        "דרומה",
+        "מזרחה",
+        "מערבה"
+      ],
+      "correct": 0,
+      "explanation": "הבזיליקה רוחבית: כיוון התפילה בקיר הצפוני, לכיוון ירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-1-05",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "למה שימשו המערות הרבות בסוסיא, לפי הסיכום?",
+      "options": [
+        "למגורים ולתעשייה מפני החום",
+        "לקבורה בלבד",
+        "למחבוא מהרומאים בלבד",
+        "לגידול סוסים"
+      ],
+      "correct": 0,
+      "explanation": "קרינת שמש חזקה וקיץ חם — ולכן מגורים ותעשייה התקיימו במערות.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-1-06",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "מה מגן על פתח מתחם בית הכנסת בסוסיא?",
+      "options": [
+        "אבן גולל כבדה",
+        "שער ברזל",
+        "תעלה עם מים",
+        "מגדל שמירה"
+      ],
+      "correct": 0,
+      "explanation": "בית הכנסת בנוי כמבצר קטן: קירות עבים ואבן גולל כבדה בפתח.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-1-07",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מי חפר את הרודיון ונפטר באתר בתאונה?",
+      "options": [
+        "אהוד נצר",
+        "יגאל ידין",
+        "בנימין מזר",
+        "זאב יבין"
+      ],
+      "correct": 0,
+      "explanation": "אהוד נצר חשף את העיר התחתית, התאטרון והקבר, ונפטר במקום בתאונת עבודה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-1-08",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "היכן נקבר הורדוס?",
+      "options": [
+        "בהרודיון",
+        "ביריחו",
+        "בקיסריה",
+        "בירושלים"
+      ],
+      "correct": 0,
+      "explanation": "הורדוס מת ביריחו ונקבר בהרודיון, אחרי מסע הלוויה מפואר.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-1-09",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מה מיוחד בהרודיון לעומת שאר מבצרי המדבר של הורדוס?",
+      "options": [
+        "זה המבצר היחיד שבנה מאפס",
+        "זה המבצר הקטן ביותר",
+        "זה מבצר חשמונאי",
+        "הוא נבנה אחרי מותו"
+      ],
+      "correct": 0,
+      "explanation": "שאר המבצרים נבנו בימי החשמונאים והורחבו; את הרודיון בנה הורדוס מראשיתו.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-1-10",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "איזה מבנה בידור קטן נבנה במדרון הרודיון?",
+      "options": [
+        "תאטרון רומי",
+        "היפודרום",
+        "אמפיתיאטרון לגלדיאטורים",
+        "אצטדיון"
+      ],
+      "correct": 0,
+      "explanation": "באמצע הגבעה נבנה תאטרון קטן — כ-300 מושבים — עם תא מלכותי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-1-11",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מאיזה מוצא היה הורדוס?",
+      "options": [
+        "משפחה אדומית",
+        "משפחה חשמונאית",
+        "משפחה רומית",
+        "משפחה מצרית"
+      ],
+      "correct": 0,
+      "explanation": "הורדוס היה בן למשפחה אדומית אריסטוקרטית שהשתלבה בשלטון החשמונאי.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-1-12",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "איזו צורה נתן הורדוס לגבעת הרודיון?",
+      "options": [
+        "קונוס — הר מלאכותי",
+        "פירמידה",
+        "מכתש",
+        "רמה שטוחה"
+      ],
+      "correct": 0,
+      "explanation": "הורדוס הגביה את הגבעה בשפך עפר עצום, עד שקיבלה צורת קונוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view",
+      "sourceDoc": "הרודיון (חורחה)"
+    },
+    {
+      "id": "N06-1-13",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "לפי בראשית כ\"ג, ממי קנה אברהם את מערת המכפלה?",
+      "options": [
+        "מעפרון החתי",
+        "מאבימלך",
+        "ממלכיצדק",
+        "מלבן"
+      ],
+      "correct": 0,
+      "explanation": "אברהם קנה את השדה והמערה מעפרון בן צוחר, לעיני בני חת.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-1-14",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "איזה שם מקראי נוסף יש לחברון?",
+      "options": [
+        "קריית ארבע",
+        "קריית יערים",
+        "בית אל",
+        "לוז"
+      ],
+      "correct": 0,
+      "explanation": "\"ותמת שרה בקרית ארבע היא חברון\" (בראשית כ\"ג).",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-1-15",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "בסגנון של איזו תקופה בנויה החומה החיצונית של מערת המכפלה?",
+      "options": [
+        "הורדוסית — ימי בית שני",
+        "צלבנית",
+        "עות'מאנית",
+        "בריטית"
+      ],
+      "correct": 0,
+      "explanation": "אבני גזית ענקיות עם סיתות שוליים ופילסטרים בולטים — סימן ההיכר של בנייה הרודיאנית.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-1-16",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "לאיזה מבנה בירושלים דומה מתחם המכפלה בצורתו?",
+      "options": [
+        "מתחם הר הבית",
+        "מגדל דוד",
+        "כנסיית הקבר",
+        "שער יפו"
+      ],
+      "correct": 0,
+      "explanation": "המכפלה היא מעין דגם מוקטן של מתחם הר הבית — באותו יחס אורך ורוחב.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-1-17",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "עד איזו מדרגה הורשו יהודים לעלות במכפלה מימי הממלוכים ועד 1967?",
+      "options": [
+        "המדרגה השביעית",
+        "המדרגה הראשונה",
+        "המדרגה העשרים",
+        "לא הייתה הגבלה"
+      ],
+      "correct": 0,
+      "explanation": "מהמאה ה-13 ועד 1967 הותר ליהודים להתפלל רק בחוץ, עד המדרגה השביעית.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-1-18",
+      "tourId": "06",
+      "level": 1,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "מה מסמנים הקברים הנראים היום באולמות המכפלה?",
+      "options": [
+        "ציוני קבר בלבד — המערה האמיתית מתחת לרצפה",
+        "את הקברים עצמם",
+        "קברי שומרי האתר",
+        "את קברי הצלבנים"
+      ],
+      "correct": 0,
+      "explanation": "המבנים באולמות הם ציונים (נפשות); המערה האמיתית שוכנת עמוק מתחת לרצפה.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-2-01",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "כמה מקוואות טהרה נמצאו בסוסיא, לפי הסיכום?",
+      "options": [
+        "כ-30",
+        "כ-3",
+        "אף אחד",
+        "כ-300"
+      ],
+      "correct": 0,
+      "explanation": "בסוסיא נמצאו כ-30 מקוואות — יש המציעים שאוכלוסייתה הייתה של כוהנים.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-2-02",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "איזו כתובת בבית הכנסת של סוסיא מחזקת את השערת הכוהנים?",
+      "options": [
+        "\"רבי איסי הכהן\"",
+        "\"יוחנן בן זכאי\"",
+        "\"שמעון בן כוסבא\"",
+        "\"הלל הזקן\""
+      ],
+      "correct": 0,
+      "explanation": "כתובת בבית הכנסת מזכירה את \"רבי איסי הכהן\"; גם ריבוי המנורות והמקוואות מתאים לכך.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-2-03",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "מה הסוג של סלע הקרקע ברוב אזור סוסיא, ומה תוצאתו?",
+      "options": [
+        "קירטון אטום — מעט מים, ולכן מערכות איסוף רבות",
+        "בזלת — מעיינות רבים",
+        "חול — חקלאות שלחין",
+        "גרניט — בנייה קלה"
+      ],
+      "correct": 0,
+      "explanation": "הקירטון אטום למים (אקוויקלוד); לכן נבנו מערכות לאיסוף מי גשם ושיטפונות.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-2-04",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "אילו שלוש קבוצות אוכלוסייה מתוארות בספר המדבר?",
+      "options": [
+        "נוודים, אנשי ספר ועירוניים",
+        "כוהנים, לוויים וישראלים",
+        "סוחרים, חיילים ועבדים",
+        "יהודים, נוצרים ומוסלמים"
+      ],
+      "correct": 0,
+      "explanation": "נוודים, אנשי ספר (חקלאים) ועירוניים — עם תלות הדדית ביניהם.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-2-05",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "באילו מאות פרחה סוסיא, לפי הסיכום?",
+      "options": [
+        "המאות ה-5–6 לספירה (התקופה הביזנטית)",
+        "המאה ה-10 לפנה\"ס",
+        "המאה ה-12 (הצלבנים)",
+        "המאה ה-19"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה הביזנטית (מאות 5–6) הייתה פריחה התיישבותית באזור, וסוסיא נהנתה ממנה.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-2-06",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "מה חסר בפסיפס בית הכנסת של סוסיא, ומה ההשערות לגביו?",
+      "options": [
+        "פנל הרוס — עקדת יצחק או דניאל בגוב האריות",
+        "גלגל המזלות — נגנב",
+        "ארון הקודש — לא היה",
+        "כתובת ההקדשה — לא נכתבה"
+      ],
+      "correct": 0,
+      "explanation": "מהפנל השלישי נשארו האותיות א', ל' ושרידי זנב — עקדת יצחק או דניאל בגוב האריות.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-2-07",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "איזו הקלה הלכתית הייתה בספר המדבר לגבי גידול כלבים?",
+      "options": [
+        "מותר לגדלם קשורים ביום ולשחררם בלילה",
+        "אסור לגדל כלבים כלל",
+        "מותר רק כלבי רועים",
+        "מותר לגדלם רק בתוך הבית"
+      ],
+      "correct": 0,
+      "explanation": "באזור ספר מותר לגדל כלבים, בתנאי שיהיו קשורים ביום ומשוחררים בלילה לשמירה.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-2-08",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "לכבוד ביקורו של מי נבנה התא המלכותי בתאטרון הרודיון?",
+      "options": [
+        "מרכוס אגריפס",
+        "יוליוס קיסר",
+        "קליאופטרה",
+        "אוגוסטוס"
+      ],
+      "correct": 0,
+      "explanation": "לקראת ביקור מרכוס אגריפס, סגנו של הקיסר, נבנה תא מלכותי מעוטר בפרסקו וסטוקו.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-2-09",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "כמה מדרגות שיש לבן מתאר יוסף בן מתתיהו בגרם המדרגות של הרודיון?",
+      "options": [
+        "200",
+        "40",
+        "1,000",
+        "12"
+      ],
+      "correct": 0,
+      "explanation": "יוסף בן מתתיהו מספר על 200 מדרגות של שיש לבן שהובילו למבצר העליון.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-2-10",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מה מיוחד בכיפת בית המרחץ בהרודיון?",
+      "options": [
+        "היא הכיפה הקדומה ביותר בארץ שעומדת בשלמותה",
+        "היא עשויה זהב",
+        "היא מתקופה עות'מאנית",
+        "היא מזכוכית"
+      ],
+      "correct": 0,
+      "explanation": "בבית המרחץ נותרה כיפת החדר הפושר בשלמותה — הכיפה הקדומה ביותר בארץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-2-11",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "למה הוסב הטרקלין בהרודיון בימי המרד הגדול?",
+      "options": [
+        "לבית כנסת",
+        "לאורווה",
+        "לבית קברות",
+        "למחסן נשק"
+      ],
+      "correct": 0,
+      "explanation": "בימי המרד הגדול (66–70) הוסב הטרקלין לבית כנסת ונבנה מקווה בחצר.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-2-12",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מאיפה הובלו המים לבריכה הגדולה בהרודיון התחתית?",
+      "options": [
+        "ממעיינות עיטם ליד בית לחם (בריכות שלמה)",
+        "מנהר הירדן",
+        "מים המלח",
+        "מעין גדי"
+      ],
+      "correct": 0,
+      "explanation": "אמת מים הביאה מים ממעיינות באזור בריכות שלמה ליד בית לחם.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-2-13",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מה עשו לוחמי בר כוכבא במערכת המים של הרודיון?",
+      "options": [
+        "הפכו את הבורות למנהרות מסתור ותקיפה",
+        "הרחיבו את הבריכה",
+        "בנו בה בית כנסת",
+        "סתמו אותה בבטון"
+      ],
+      "correct": 0,
+      "explanation": "הלוחמים חצבו מעברים בין הבורות והפכו אותם למחילות מסתור ומנהרות תקיפה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-2-14",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "כמה שילם אברהם על מערת המכפלה?",
+      "options": [
+        "400 שקל כסף",
+        "50 שקל כסף",
+        "1,000 שקל זהב",
+        "100 קשיטה"
+      ],
+      "correct": 0,
+      "explanation": "עפרון נקב במחיר עצום של 400 שקל כסף, ואברהם שילם מיד, \"עובר לסוחר\".",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-2-15",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "מה הם \"שלושת המקומות שנקנו בכסף מלא\" לפי בראשית רבה?",
+      "options": [
+        "מערת המכפלה, קבר יוסף והר הבית",
+        "ירושלים, חברון וצפת",
+        "הר סיני, הר נבו והר הבית",
+        "בית לחם, חברון ושכם"
+      ],
+      "correct": 0,
+      "explanation": "המכפלה (אברהם), קבר יוסף (יעקב) וגורן ארוונה בהר הבית (דוד).",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-2-16",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "אילו מאפיינים אדריכליים צלבניים יש באולם יצחק?",
+      "options": [
+        "קשתות מחודדות וקמרונות צלב",
+        "כיפות זהב",
+        "עמודי בזלת רומיים",
+        "חלונות ויטראז' מודרניים"
+      ],
+      "correct": 0,
+      "explanation": "באולם יצחק ארכיטקטורה צלבנית: קשתות מחודדות, קמרונות צולבים וכותרות מרפק.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-2-17",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "כמה ימים בשנה פתוח כל מתחם המכפלה לכל קבוצה בלבד, לפי הסדרי ועדת שמגר?",
+      "options": [
+        "10 ימים לכל צד",
+        "ימי שישי בלבד",
+        "חודש שלם",
+        "אף יום"
+      ],
+      "correct": 0,
+      "explanation": "נקבעו 10 ימים בשנה ליהודים בלבד ו-10 ימים למוסלמים בלבד, בחגים שלהם.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-3-01",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "מדוע אין ודאות לגבי שמה של סוסיא בעת העתיקה?",
+      "options": [
+        "היא לא מוזכרת במשנה, בתלמוד, באונומסטיקון או במפת מידבא",
+        "כל הכתובות בה נמחקו",
+        "שמה ידוע ומתועד היטב",
+        "היא נקראה \"חברון\""
+      ],
+      "correct": 0,
+      "explanation": "אין אזכור של סוסיא במקורות התקופה; גם במפת מידבא החלק הרלוונטי הרוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-3-02",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "מה מתיר ההלכה לגבי חפירת מנהרות מתחת לרחוב בספר המדבר?",
+      "options": [
+        "מותר אם התקרה יכולה לשאת עגלה עמוסה אבנים",
+        "מותר בלי הגבלה",
+        "אסור לחלוטין",
+        "מותר רק בשבת"
+      ],
+      "correct": 0,
+      "explanation": "בדרך כלל אסור; בספר המדבר מותר אם התקרה נושאת עגלה עמוסה — ובסוסיא יש מערות גם מתחת לרחובות.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-3-03",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "איזו הקלה בשמירת שבת חלה, לפי הסיכום, בספר המדבר?",
+      "options": [
+        "גם עבירת רכוש נחשבת לסכנת חיים ודוחה שבת",
+        "מותר לעבוד בשדה בשבת",
+        "אין שבת בספר",
+        "מותר לבשל בשבת"
+      ],
+      "correct": 0,
+      "explanation": "בדרך כלל רק פיקוח נפש דוחה שבת; בספר גם פשיעת רכוש מסכנת חיים, ולכן דוחה.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-3-04",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "מה ההבדל בין ממל בית הבד הביזנטי בסוסיא לממל ההלניסטי?",
+      "options": [
+        "הביזנטי שטוח ומרסק גם את הגלעין — יותר שמן, פחות איכות",
+        "הביזנטי עשוי עץ",
+        "ההלניסטי היה חשמלי",
+        "אין הבדל"
+      ],
+      "correct": 0,
+      "explanation": "הממל הביזנטי השטוח שובר גם את הגלעין — יותר שמן באיכות פחותה; ההלניסטי, דמוי עדשה, השאיר את הגלעין.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-3-05",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "באיזה סדר נכנסים לבית הכנסת של סוסיא?",
+      "options": [
+        "אטריום, פרופילאה, נרתקס, סף ובזיליקה",
+        "בזיליקה, אטריום, נרתקס",
+        "נרתקס, אפסיס, אטריום",
+        "חצר, מגדל, אולם"
+      ],
+      "correct": 0,
+      "explanation": "חצר פתוחה (אטריום), מדרגות (פרופילאה), פרוזדור (נרתקס), אבן סף, ואז הבזיליקה.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-3-06",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "סוסיא",
+      "question": "מהי קרקע הרנדזינה האופיינית לסוסיא?",
+      "options": [
+        "קרקע שנוצרה מבליית קירטון",
+        "קרקע בזלתית אדומה",
+        "חול נודד",
+        "אדמת ביצה"
+      ],
+      "correct": 0,
+      "explanation": "רנדזינה היא קרקע שנוצרת מבליית קירטון — אופיינית לספר המדבר בדרום הר חברון.",
+      "sourceUrl": "https://drive.google.com/file/d/1rwhCOZoHywL9qu849U-FNq_fr4nAtbX2/view",
+      "sourceDoc": "סיור 6 — סוסיא"
+    },
+    {
+      "id": "N06-3-07",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מה אירע במקום הרודיון בשנת 40 לפנה\"ס?",
+      "options": [
+        "הורדוס ניצח את תומכי אנטיגונוס בקרב בזמן בריחתו",
+        "הורדוס נפטר",
+        "הרומאים כבשו את ירושלים",
+        "נבנה המקדש"
+      ],
+      "correct": 0,
+      "explanation": "בבריחתו מאנטיגונוס, ניצח הורדוס את רודפיו במקום — ואחר כך הקים בו את הרודיון כמצבת ניצחון.",
+      "sourceUrl": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view",
+      "sourceDoc": "הרודיון (חורחה)"
+    },
+    {
+      "id": "N06-3-08",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "איזה מסמך עתיק מוכיח שהרודיון היה מפקדה של בר כוכבא?",
+      "options": [
+        "שטר חכירה מוואדי מורבעת שנחתם \"במחנה שיושב בהרודיס\"",
+        "כתובת על שער הרודיון",
+        "מטבע של בר כוכבא",
+        "מגילה מקומראן"
+      ],
+      "correct": 0,
+      "explanation": "בפפירוס מוואדי מורבעת (1952) מצוין שנחתם \"במחנה שיושב בהרודיס\".",
+      "sourceUrl": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view",
+      "sourceDoc": "הרודיון (חורחה)"
+    },
+    {
+      "id": "N06-3-09",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מה מעיד הטיח העבה (כ-10 ס\"מ) בבורות התחתונים של הרודיון?",
+      "options": [
+        "על הצורך למנוע חלחול במאגר גדול",
+        "על שריפה במקום",
+        "על שימוש כבית מרחץ",
+        "על תוספת מהתקופה הערבית"
+      ],
+      "correct": 0,
+      "explanation": "בורות הענק טויחו בשכבות עבות של טיח סיד ואפר כדי למנוע חלחול.",
+      "sourceUrl": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view",
+      "sourceDoc": "הרודיון (חורחה)"
+    },
+    {
+      "id": "N06-3-10",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מדוע, לפי יוסף בן מתתיהו, ציווה הורדוס לכלוא את נכבדי יהודה בהיפודרום ביריחו?",
+      "options": [
+        "רצה שהארץ תבכה ביום מותו",
+        "רצה לגייס אותם לצבא",
+        "רצה לגבות מהם מס",
+        "רצה להכתירם"
+      ],
+      "correct": 0,
+      "explanation": "לפי יוסף בן מתתיהו, ציווה להמית אותם עם מותו כדי שכל הארץ תתאבל — והפקודה לא בוצעה.",
+      "sourceUrl": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view",
+      "sourceDoc": "הרודיון (חורחה)"
+    },
+    {
+      "id": "N06-3-11",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מדוע התאטרון בהרודיון השתמר?",
+      "options": [
+        "הוא פורק וכוסה בעפר לפני מות הורדוס",
+        "הוא נבנה מאבן בזלת",
+        "הוא נבנה מחדש בימינו",
+        "הוא היה בתוך מערה"
+      ],
+      "correct": 0,
+      "explanation": "התאטרון פורק לקראת כיסוי התל בעפר, קצת לפני מות הורדוס — וכך השתמר.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-3-12",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "כמה מערכות מים נפרדות היו בהרודיון, לפי הסיכום?",
+      "options": [
+        "3",
+        "1",
+        "7",
+        "10"
+      ],
+      "correct": 0,
+      "explanation": "בור למגדל המזרחי, בורות בבטן ההר, ובריכה בעיר התחתית.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-3-13",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "מה מפתיע במקורות לגבי בניית המבנה ההרודיאני במכפלה?",
+      "options": [
+        "יוסף בן מתתיהו אינו מזכיר אותו",
+        "הורדוס חתום עליו",
+        "התלמוד מתאר את בנייתו",
+        "יש עליו כתובת יוונית"
+      ],
+      "correct": 0,
+      "explanation": "יוסף בן מתתיהו אינו מזכיר את המכפלה; האזכור הקדום הוא של הנוסע מבורדו (333 לספירה).",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-3-14",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "מה פירוש המונח \"אדיקולה\"?",
+      "options": [
+        "מקדשון — מבנה קטן מקורה המגן על קבר או מקום קדוש",
+        "פתח במערה",
+        "מגדל שמירה",
+        "סוג של אבן גזית"
+      ],
+      "correct": 0,
+      "explanation": "אדיקולה (Aedicula) הוא מבנה קטן דמוי מקדש; במכפלה אלה ציוני קברי האבות.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-3-15",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "מי, לפי הסיכום, ירדה ב-1968 דרך פתח צר אל החלל שמתחת למכפלה?",
+      "options": [
+        "מיכל ארבל, בת 12",
+        "גולדה מאיר",
+        "אסתר ראב",
+        "חנה סנש"
+      ],
+      "correct": 0,
+      "explanation": "מיכל, בתו של זאב חסן, הורדה בחבל בפתח ברוחב 28 ס\"מ — בהוראת משה דיין.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-3-16",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "לפי ועדת שמגר, מי אחראי על האבטחה בתוך מבנה המכפלה?",
+      "options": [
+        "משטרת ישראל ומג\"ב, בלי נשק אישי של מתפללים",
+        "צה\"ל",
+        "הווקף",
+        "חברת אבטחה פרטית"
+      ],
+      "correct": 0,
+      "explanation": "הוועדה קבעה שהאבטחה בתוך המבנה תהיה של המשטרה ומג\"ב, ואסרה הכנסת נשק אישי.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-3-17",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "מערת המכפלה",
+      "question": "איזה עיטור הוסיפו הממלוכים במכפלה?",
+      "options": [
+        "אבלק — אבנים בצבעים מתחלפים",
+        "פסיפס זהב",
+        "ציורי קיר",
+        "חלונות ויטראז'"
+      ],
+      "correct": 0,
+      "explanation": "הממלוכים הפכו את האתר למסגד והוסיפו עיטורי אבלק — אבנים בצבעים מתחלפים.",
+      "sourceUrl": "https://drive.google.com/file/d/1NFS8PovdBgD0MQg7Qg2KKX-IjV_5TDvt/view",
+      "sourceDoc": "מערת המכפלה (חורחה)"
+    },
+    {
+      "id": "N06-2-18",
+      "tourId": "06",
+      "level": 2,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מי היה, לפי התכתובות, מפקד הרודיון בימי בר כוכבא?",
+      "options": [
+        "ישוע בן גלגולה",
+        "אלעזר בן יאיר",
+        "יהודה המכבי",
+        "יוחנן מגוש חלב"
+      ],
+      "correct": 0,
+      "explanation": "מהתכתובות עולה שמפקד הרודיון, שנחשב סגנו של בר כוכבא, היה ישוע בן גלגולה.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N06-3-18",
+      "tourId": "06",
+      "level": 3,
+      "source": "tour06",
+      "stop": "הרודיון",
+      "question": "מי חפר בהרודיון בשנים 1956–1962 וחשף את בית המרחץ?",
+      "options": [
+        "האב וירג'יליו קורבו",
+        "אהוד נצר",
+        "רולאן דה וו",
+        "יגאל ידין"
+      ],
+      "correct": 0,
+      "explanation": "האב וירג'יליו קורבו חפר בהרודיון בשנים 1956–1962, ובסיום כיסה מחדש את הממצאים.",
+      "sourceUrl": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view",
+      "sourceDoc": "סיור 6 — הרודיון"
+    },
+    {
+      "id": "N07-1-01",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "לאיזה מסדר צלבני קשורים הטמפלרים הגרמנים של המאה ה-19?",
+      "options": [
+        "לאף מסדר — אין קשר לטמפלרים הצלבנים",
+        "למסדר הטמפלרים מימי הביניים",
+        "להוספיטלרים",
+        "לכרמליתים"
+      ],
+      "correct": 0,
+      "explanation": "יש להדגיש: אין שום קשר בין הטמפלרים הגרמנים לבין מסדר האבירים הצלבני.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-02",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "באיזו שנה בערך הוקמה המושבה הטמפלרית בחיפה?",
+      "options": [
+        "1869",
+        "1948",
+        "1799",
+        "1918"
+      ],
+      "correct": 0,
+      "explanation": "המושבה הטמפלרית הראשונה הוקמה בחיפה ב-1868/1869, מחוץ לחומות העיר התחתית.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-03",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "לאן גירשו הבריטים את רוב הטמפלרים במלחמת העולם השנייה?",
+      "options": [
+        "לאוסטרליה",
+        "לגרמניה",
+        "לקנדה",
+        "לקפריסין"
+      ],
+      "correct": 0,
+      "explanation": "הבריטים ראו בהם גיס חמישי, הפכו את המושבות למחנות הסגר וגירשו את רובם לאוסטרליה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-04",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מה כתוב בגרמנית מעל פתח \"בית העם\" הטמפלרי בחיפה?",
+      "options": [
+        "\"אם אשכחך ירושלים תשכח ימיני\"",
+        "\"שמע ישראל\"",
+        "\"ברוכים הבאים\"",
+        "\"אלוהים עמנו\""
+      ],
+      "correct": 0,
+      "explanation": "מעל הפתח חרוט בגרמנית \"אם אשכחך ירושלים\" — המילים Jerusalem ו-Vergessen בולטות.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-05",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מי קבור במקדש בעל כיפת הזהב בגנים הבהאיים?",
+      "options": [
+        "הבאב",
+        "בהאא' אללה",
+        "עבד אל-בהאא'",
+        "אליהו הנביא"
+      ],
+      "correct": 0,
+      "explanation": "בהאא' אללה הצביע על המקום על הכרמל: \"כאן תקברו את הבאב\".",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-06",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "איזה מעמד בין־לאומי יש לגנים הבהאיים בחיפה?",
+      "options": [
+        "אתר מורשת עולמית של אונסק\"ו",
+        "פארק לאומי של האו\"ם",
+        "שמורת טבע ימית",
+        "גן בוטני לאומי"
+      ],
+      "correct": 0,
+      "explanation": "הגנים, על פני 270 דונם, הוכרזו כאתר מורשת עולמית של אונסק\"ו.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-07",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מהו המקום הקדוש ביותר לבהאים?",
+      "options": [
+        "קבר בהאא' אללה בבהג'ה ליד עכו",
+        "המקדש בחיפה",
+        "מכה",
+        "ירושלים"
+      ],
+      "correct": 0,
+      "explanation": "אחוזת בהג'ה וקבר בהאא' אללה הם המקום הקדוש ביותר וכיוון התפילה הבהאי.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-08",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מה אסור לעשות בגנים הבהאיים?",
+      "options": [
+        "לאכול, לעשן וללעוס מסטיק",
+        "לצלם",
+        "ללכת בזוגות",
+        "לדבר עברית"
+      ],
+      "correct": 0,
+      "explanation": "בגנים אסור לאכול, לעשן וללעוס מסטיק, ונדרש לבוש צנוע.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-09",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "מה פירוש השם \"סטלה מאריס\"?",
+      "options": [
+        "כוכב הים",
+        "מגדל הים",
+        "שער הים",
+        "כנסיית ההר"
+      ],
+      "correct": 0,
+      "explanation": "סטלה מאריס — \"כוכב הים\" — כינוי למריה כמגינת יורדי הים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-10",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "אילו שלוש שבועות מוסיפים הכרמליתים על השבועות הקתוליות הרגילות?",
+      "options": [
+        "שתיקה, התבודדות ותפילה",
+        "עושר, כבוד וגבורה",
+        "צום, נדודים ומלחמה",
+        "לימוד, הוראה וריפוי"
+      ],
+      "correct": 0,
+      "explanation": "מעבר לפרישות, עוני וצייתנות — שתיקה, התבודדות ותפילה; שלושת הכוכבים בסמל המסדר מייצגים אותן.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-11",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "איזה צבא השאיר את פצועיו במנזר הכרמליתי ב-1799?",
+      "options": [
+        "צבא נפוליאון",
+        "הצבא הבריטי",
+        "הצבא העות'מאני",
+        "הצלבנים"
+      ],
+      "correct": 0,
+      "explanation": "אחרי כישלון המצור על עכו השאיר נפוליאון פצועים במנזר; הם נטבחו, ובחזית נבנתה אנדרטת פירמידה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-12",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "מערת אליהו",
+      "question": "לאילו קהילות מקודשת מערת אליהו התחתונה?",
+      "options": [
+        "יהודים, נוצרים, מוסלמים ודרוזים",
+        "יהודים בלבד",
+        "נוצרים בלבד",
+        "בהאים ודרוזים"
+      ],
+      "correct": 0,
+      "explanation": "המערה מקודשת לארבע קהילות שעלו אליה לרגל לאורך הדורות.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-13",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "מערת אליהו",
+      "question": "מה מקור המנהג של \"כיסא אליהו\" בברית מילה, לפי חז\"ל?",
+      "options": [
+        "אליהו טען שבני ישראל עזבו את הברית, ולכן עליו לראות שהם שומרים עליה",
+        "אליהו היה מוהל",
+        "אליהו נולד בברית",
+        "אליהו ישב על כיסא בכרמל"
+      ],
+      "correct": 0,
+      "explanation": "אליהו אמר \"כי עזבו בריתך בני ישראל\"; לכן הוא מגיע לכל ברית לראות שהעם שומר עליה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-14",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "בשלושה מפלסים בנויה חיפה. מהו המפלס התחתון?",
+      "options": [
+        "העיר התחתית — הנמל והמסחר",
+        "הדר הכרמל",
+        "מרכז הכרמל",
+        "האוניברסיטה"
+      ],
+      "correct": 0,
+      "explanation": "העיר התחתית (נמל ומסחר), הדר הכרמל (ביניים), ומרכז הכרמל והשכונות העליונות.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-15",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "איזה מבנה גדול על קו המים בחיפה משמש לאחסון תבואה?",
+      "options": [
+        "ממגורות דגון",
+        "בתי הזיקוק",
+        "קריית הממשלה",
+        "הטכניון הישן"
+      ],
+      "correct": 0,
+      "explanation": "ממגורות דגון — המבנה המסיבי על קו המים — מאחסנות ומשנעות חיטה, שעורה ותירס.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-16",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מהי \"הכרמלית\" של חיפה?",
+      "options": [
+        "רכבת תחתית (פוניקולר)",
+        "גשר תלוי",
+        "רכבל",
+        "חשמלית ברחוב"
+      ],
+      "correct": 0,
+      "explanation": "הכרמלית, שנבנתה בידי חברה צרפתית ונפתחה ב-1959, היא הרכבת התחתית של חיפה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-17",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "איזה חג משותף מציין פסטיבל \"החג של החגים\" בחיפה?",
+      "options": [
+        "חנוכה, כריסמס וחג מוסלמי",
+        "פסח ופסחא",
+        "ראש השנה ונאורוז",
+        "פורים וקרנבל"
+      ],
+      "correct": 0,
+      "explanation": "בדצמבר, כשחנוכה וכריסמס (ולעיתים חג מוסלמי) חלים יחד — בוואדי ניסנאס ובמושבה הגרמנית.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-1-18",
+      "tourId": "07",
+      "level": 1,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מי השליט שבנה את \"חיפה החדשה\" המוקפת חומה ב-1761?",
+      "options": [
+        "דאהר אל-עומר",
+        "אל-ג'זאר",
+        "מוחמד עלי",
+        "נפוליאון"
+      ],
+      "correct": 0,
+      "explanation": "דאהר אל-עומר מחק את כפר הדייגים הישן ובנה עיר מוקפת חומה במקום הצר בין ההר לים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-01",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מה פירוש הכינוי \"הבאב\"?",
+      "options": [
+        "השער",
+        "הנביא",
+        "האור",
+        "המלך"
+      ],
+      "correct": 0,
+      "explanation": "סייד עלי מוחמד שירזי כינה עצמו \"הבאב\" — השער — המבשר על נביא גדול ממנו.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-02",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "כמה חודשים יש בלוח הבהאי?",
+      "options": [
+        "19 חודשים של 19 ימים",
+        "12 חודשים של 30 ימים",
+        "13 חודשים של 28 ימים",
+        "10 חודשים של 36 ימים"
+      ],
+      "correct": 0,
+      "explanation": "הלוח הבדיעי: 19 חודשים × 19 ימים, ועוד ימי חסד כדי שראש השנה ייפול ב-21 במרץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-03",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מדוע אין קהילה בהאית של תושבי קבע בישראל?",
+      "options": [
+        "בהאא' אללה אסר להתגורר כבהאי תושב קבע בארץ ולהמיר ישראלים",
+        "המדינה אוסרת זאת",
+        "הבהאים מעדיפים את איראן",
+        "אין להם אישור עבודה"
+      ],
+      "correct": 0,
+      "explanation": "האיסור דתי פנימי; הבהאים בארץ הם מתנדבים זרים לתקופה קצרה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-04",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מה תפקידו של \"בית הצדק העולמי\" בחיפה?",
+      "options": [
+        "גוף של 9 נבחרים המנהל את הדת הבהאית",
+        "בית משפט ישראלי",
+        "מוזיאון",
+        "בית תפילה"
+      ],
+      "correct": 0,
+      "explanation": "בית הצדק העולמי — 9 חברים נבחרים אחת ל-5 שנים — מנהל את הדת מחיפה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-05",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מה המשמעות הדתית של הפרחים ופסלי הטווסים בגנים הבהאיים?",
+      "options": [
+        "אין להם משמעות דתית — הם לאסתטיקה",
+        "הם מסמלים את 19 התלמידים",
+        "הם מייצגים את הנביאים",
+        "הם מסמלים את גן עדן"
+      ],
+      "correct": 0,
+      "explanation": "לעיצוב אין משמעות דתית; הוא מבטא את הרעיון \"אחדות בתוך מגוון\".",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-06",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מי ייסד את התנועה הטמפלרית?",
+      "options": [
+        "כריסטוף הופמן",
+        "גוטליב שומאכר",
+        "לורנס אוליפנט",
+        "וילהלם השני"
+      ],
+      "correct": 0,
+      "explanation": "התנועה קמה בדרום גרמניה (וירטמברג) בידי כריסטוף הופמן.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-07",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "לזכר איזה ביקור הוקם האובליסק בטיילת לואי?",
+      "options": [
+        "ביקור הקיסר וילהלם השני ב-1898",
+        "ביקור נפוליאון",
+        "ביקור הרצל",
+        "ביקור המלכה ויקטוריה"
+      ],
+      "correct": 0,
+      "explanation": "הטמפלרים בנו את האובליסק בנקודה שבה עמד הקיסר וילהלם השני ב-1898.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-08",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מתי כבשו הבריטים את חיפה?",
+      "options": [
+        "23 בספטמבר 1918",
+        "1917",
+        "1920",
+        "1948"
+      ],
+      "correct": 0,
+      "explanation": "תותח בטיילת מציין את כיבוש חיפה בידי הבריטים ב-23 בספטמבר 1918.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-09",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מה היה המניע העיקרי של הבריטים לפתח את חיפה?",
+      "options": [
+        "נפט — צינור מכירכוכ ובתי זיקוק, ונמל עמוק",
+        "יין",
+        "זיתים",
+        "עלייה לרגל"
+      ],
+      "correct": 0,
+      "explanation": "הבריטים מתחו צינור נפט מכירכוכ לבתי הזיקוק בחיפה ובנו נמל מודרני עמוק.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-10",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "איזה ארכאולוג טמפלרי מחיפה היה הראשון לחפור בתל מגידו?",
+      "options": [
+        "גוטליב שומאכר",
+        "כריסטוף הופמן",
+        "יגאל ידין",
+        "פלינדרס פיטרי"
+      ],
+      "correct": 0,
+      "explanation": "גוטליב שומאכר, בן המושבה, חפר ראשון במגידו וערך סקר ראשון ברמת הגולן.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-11",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מדוע בחיפה לא שוכנו בעלי חיים בקומת הקרקע של הבית הטמפלרי?",
+      "options": [
+        "באקלים החם הדבר היה גורם לזיהום ולריח",
+        "הבריטים אסרו",
+        "לא היו להם בעלי חיים",
+        "קומת הקרקע הייתה חנות"
+      ],
+      "correct": 0,
+      "explanation": "בגרמניה החום של בעלי החיים חימם את הקומה העליונה; בארץ החמה זה לא התאים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-12",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "לאיזה אל הוקדשה כף הרגל הענקית משיש המוצגת במוזיאון סטלה מאריס?",
+      "options": [
+        "הליוס שעל הר הכרמל",
+        "זאוס",
+        "הבעל",
+        "פוסידון"
+      ],
+      "correct": 0,
+      "explanation": "על כף הרגל כתובת המקדישה אותה ל\"הליוס שעל הר הכרמל\".",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-13",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "מדוע מכונה המנזר בחיפה \"הכרמל הצרפתי\"?",
+      "options": [
+        "ממשלת צרפת העניקה לו חסות",
+        "הוא נבנה בידי נפוליאון",
+        "הנזירים מצרפת בלבד",
+        "הוא נמצא ברחוב צרפת"
+      ],
+      "correct": 0,
+      "explanation": "ממשלת צרפת העניקה למנזר חסות רשמית — ומכאן השם.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-14",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "איזה פסוק כתוב על אנדרטת הפירמידה לחיילי נפוליאון?",
+      "options": [
+        "\"איך נפלו גיבורים בתוך המלחמה\"",
+        "\"לא ישא גוי אל גוי חרב\"",
+        "\"עוז והדר לבושה\"",
+        "\"שמע ישראל\""
+      ],
+      "correct": 0,
+      "explanation": "מעל קבר האחים נבנתה פירמידה ועליה הפסוק מקינת דוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-15",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "מי הייתה אדית שטיין שלוח זיכרון לה נמצא בכנסיית סטלה מאריס?",
+      "options": [
+        "פילוסופית יהודייה שהפכה לנזירה כרמליתית ונרצחה באושוויץ",
+        "מלכת צרפת",
+        "מנהלת בית חולים",
+        "מייסדת המסדר"
+      ],
+      "correct": 0,
+      "explanation": "אדית שטיין הפכה לנזירה כרמליתית; הנאצים הגדירו אותה יהודייה והיא נרצחה באושוויץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-16",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "מערת אליהו",
+      "question": "איך מכנים המוסלמים את אליהו הנביא?",
+      "options": [
+        "אל-ח'דר — הנביא הירוק",
+        "נבי שועייב",
+        "נבי מוסא",
+        "אל-מהדי"
+      ],
+      "correct": 0,
+      "explanation": "במסורת המוסלמית אליהו מזוהה עם אל-ח'דר, ואתר המערה נקרא מקאם אל-ח'דר.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-17",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "מערת אליהו",
+      "question": "מה מוחרקה פירושו?",
+      "options": [
+        "חריכה, שרפה",
+        "כרם",
+        "מעיין",
+        "מבצר"
+      ],
+      "correct": 0,
+      "explanation": "המוחרקה — מלשון חריכה — על שם האש שירדה מהשמיים ושרפה את המזבח.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-2-18",
+      "tourId": "07",
+      "level": 2,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מה היה השינוי בשם שדרות הציונות בחיפה ב-1975, ומדוע?",
+      "options": [
+        "מ\"שדרות האו\"ם\" — בתגובה להחלטת האו\"ם שציונות היא גזענות",
+        "מ\"דרך הכרמל\" — לכבוד הרצל",
+        "מ\"רחוב הקיסר\" — אחרי עזיבת הגרמנים",
+        "מ\"שדרות בן גוריון\" — אחרי מותו"
+      ],
+      "correct": 0,
+      "explanation": "הרחוב (במקור \"דרך ההר\") נקרא \"שדרות האו\"ם\" ושונה ב-1975 בעקבות ההחלטה נגד הציונות.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-01",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מדוע 19 הוא מספר קדוש לבהאים?",
+      "options": [
+        "18 התלמידים הראשונים של הבאב ועוד הבאב עצמו",
+        "מספר הנביאים",
+        "גיל הבאב במותו",
+        "מספר המדרגות"
+      ],
+      "correct": 0,
+      "explanation": "לבאב היו 18 תלמידים ראשונים (\"אותיות החי\") — ויחד איתו 19.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-02",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "באיזו שנה הובאה גופת הבאב לחיפה?",
+      "options": [
+        "1909",
+        "1850",
+        "1953",
+        "1892"
+      ],
+      "correct": 0,
+      "explanation": "הבאב הוצא להורג ב-1850; גופתו הוחבאה כ-50 שנה והובאה בחשאי לחיפה ב-1909.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-03",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "מה הכלל המתודי \"אין להם לא מניין ולא בניין\" מתאר אצל הבהאים?",
+      "options": [
+        "אין אנשי דת ואין בתי תפילה קהילתיים קבועים",
+        "אין להם כסף",
+        "אין להם ספרים",
+        "אין להם חגים"
+      ],
+      "correct": 0,
+      "explanation": "אין כמרים או מנהיגים רוחניים, והתפילה נעשית ביחידות בכל מקום.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-04",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "הגנים הבהאיים",
+      "question": "היכן עבר בהאא' אללה את 12 שנותיו האחרונות?",
+      "options": [
+        "באחוזת בהג'ה מצפון לעכו",
+        "בחיפה",
+        "בבגדאד",
+        "בטהרן"
+      ],
+      "correct": 0,
+      "explanation": "אחרי שנתיים בכלא עכו, חי בבהג'ה עד מותו ב-1892.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-05",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מה היה בעסקת חילופי השבויים שבה היו מעורבים טמפלרים מהארץ?",
+      "options": [
+        "טמפלרים נשלחו לגרמניה תמורת יהודים מברגן-בלזן",
+        "טמפלרים הוחלפו בחיילים בריטים",
+        "טמפלרים הוחלפו בשבויים איטלקים",
+        "לא הייתה עסקה כזו"
+      ],
+      "correct": 0,
+      "explanation": "בשנים 1941–1944 נשלחו טמפלרים לגרמניה, ובתמורה שוחררו יהודים מברגן-בלזן והגיעו לארץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-06",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "היכן נמצא הבית היחיד בארץ שנבנה לפי המודל הטמפלרי עם בעלי חיים בקומת הקרקע?",
+      "options": [
+        "באלוני אבא",
+        "בשרונה",
+        "ביפו",
+        "בחיפה"
+      ],
+      "correct": 0,
+      "explanation": "באלוני אבא קיים הבית היחיד שנבנה לפי המודל הגרמני המקורי.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-07",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מה מעטר את חזית בניין בנק אפ\"ק בעיר התחתית?",
+      "options": [
+        "העתקי מטבעות יהודיים מימי בית שני ובר כוכבא",
+        "סמלי המנדט",
+        "פסוקי קוראן",
+        "אריות אשוריים"
+      ],
+      "correct": 0,
+      "explanation": "הבניין של אלכסנדר ברוולד משלב תבליטים של מטבעות יהודיים עתיקים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-08",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מה מפריע, לפי הסיכום, לקשר בין העיר התחתית של חיפה לים?",
+      "options": [
+        "מסילת הרכבת, הכביש הראשי והנמל שנבנו בתקופת המנדט",
+        "מצוקי הכרמל",
+        "ביצות",
+        "חומת דאהר אל-עומר"
+      ],
+      "correct": 0,
+      "explanation": "הבריטים נתנו לחיפה עיר מודרנית אך ניתקו אותה מקו המים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-09",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מדוע לא קראו חיפנים בתורה בציבור, לפי מסכת ברכות?",
+      "options": [
+        "כי החליפו בין א' לע' ובין ה' לח'",
+        "כי היו דייגים",
+        "כי לא ידעו עברית",
+        "כי גרו מחוץ לארץ"
+      ],
+      "correct": 0,
+      "explanation": "חיפנים, טבעונים ובית־שאנים \"עושים אלפין עיינין\" — ולכן לא שימשו חזנים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-10",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "מה מקור השם כבביר?",
+      "options": [
+        "כבשני סיד (קובר) שבהם עסקה חמולת עודה",
+        "שם של שייח'",
+        "מעיין בשם זה",
+        "צמח מקומי"
+      ],
+      "correct": 0,
+      "explanation": "חמולת עודה התיישבה מעל מעיין בנחל שיח ועסקה בייצור סיד בכבשנים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-11",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "איך מפרשים האחמדים את המושג ג'יהאד?",
+      "options": [
+        "מאמץ עצמי, חינוך ותרומה — ושוללים מלחמה וכפייה",
+        "מלחמה דתית",
+        "עלייה לרגל",
+        "צום"
+      ],
+      "correct": 0,
+      "explanation": "הג'יהאד הגדול הוא רפורמה עצמית ותרומה; הם מצטטים \"אין כפייה בדת\".",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-12",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "מה קבע בג\"ץ רופאייזן (\"האח דניאל\")?",
+      "options": [
+        "מי שהמיר את דתו מרצון אינו נחשב יהודי לעניין חוק השבות",
+        "כל יליד אם יהודייה זכאי לשבות",
+        "נזירים אינם זכאים לאזרחות",
+        "גיור רפורמי מוכר"
+      ],
+      "correct": 0,
+      "explanation": "בעקבות הפסיקה תוקן חוק השבות: יהודי הוא מי שנולד לאם יהודייה או התגייר ואינו בן דת אחרת.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-13",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "איך אפשר לזהות שכנסיית סטלה מאריס קתולית ולא אורתודוקסית?",
+      "options": [
+        "פסלים תלת־ממדיים, תאי וידוי ומזבח גלוי בלי איקונוסטזיס",
+        "כיפת זהב",
+        "שעון שמש",
+        "פעמון גדול"
+      ],
+      "correct": 0,
+      "explanation": "בכנסייה קתולית יש פסלים, תאי וידוי, מזבח פתוח ו-14 תחנות ויה דולורוזה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-14",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "מתי נבנה מבנה המנזר הכרמליתי הנוכחי, ובזכות איזה שליט?",
+      "options": [
+        "ב-1831, בתקופת השלטון המצרי של מוחמד עלי",
+        "ב-1799, בימי נפוליאון",
+        "ב-1291, בימי הצלבנים",
+        "ב-1918, בימי הבריטים"
+      ],
+      "correct": 0,
+      "explanation": "השלטון המצרי (מוחמד עלי) העניק זכויות בנייה ללא־מוסלמים, והכרמליתים בנו את המתחם.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-15",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "סטלה מאריס",
+      "question": "מה סמלו של המבשר יוחנן בציורי הכיפה בסטלה מאריס?",
+      "options": [
+        "נשר",
+        "אריה מכונף",
+        "שור",
+        "מלאך"
+      ],
+      "correct": 0,
+      "explanation": "מתי — מלאך/אדם, מרקוס — אריה מכונף, לוקאס — שור, יוחנן — נשר.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-16",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "מערת אליהו",
+      "question": "מה התחליף שמצאו הביזנטים בכרמל לפולחן הליוס?",
+      "options": [
+        "את אליהו הנביא — שגם הוא קשור באש ובמרכבה",
+        "את משה רבנו",
+        "את מריה",
+        "את יוחנן המטביל"
+      ],
+      "correct": 0,
+      "explanation": "הביזנטים חיפשו דמות מקראית של אש ומרכבה שתחליף את הליוס — ומצאו את אליהו.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-17",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "מערת אליהו",
+      "question": "לפי המסורת הכרמליתית, למי שייכת המערה העליונה שבתוך כנסיית סטלה מאריס?",
+      "options": [
+        "לאלישע, תלמיד אליהו",
+        "לאליהו בלבד",
+        "לבאב",
+        "ליונה הנביא"
+      ],
+      "correct": 0,
+      "explanation": "עולי רגל פיתחו מסורת שהמערה התחתונה של אליהו והעליונה של תלמידו אלישע.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N07-3-18",
+      "tourId": "07",
+      "level": 3,
+      "source": "tour07",
+      "stop": "המושבה הגרמנית",
+      "question": "כמה עולים מברית המועצות לשעבר קלטה חיפה בשנות ה-90, לפי הסיכום?",
+      "options": [
+        "כ-80 אלף",
+        "כ-8 אלף",
+        "כ-800 אלף",
+        "כ-1,000"
+      ],
+      "correct": 0,
+      "explanation": "חיפה קלטה כ-80 אלף עולים — הקליטה הגדולה בארץ במספרים מוחלטים; היום בעיר כ-300 אלף תושבים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
+      "sourceDoc": "סיכום סיור חיפה"
     }
   ]
 }
