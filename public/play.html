@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b4a6b">
+<title>מורה דרך LIVE — חידון</title>
+<meta name="description" content="חידון חי למורי דרך">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap&subset=hebrew" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b4a6b'/%3E%3Cpath d='M0 48 L18 28 L30 40 L42 22 L64 48 V64 H0Z' fill='%233f6b35'/%3E%3Crect x='14' y='44' width='36' height='12' rx='3' fill='%23f08a24'/%3E%3C/svg%3E">
+</head>
+<body>
+<div id="banner" class="banner hidden">אין חיבור — מנסה להתחבר מחדש…</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand" dir="rtl"><span>מורה דרך</span><span class="live"><span class="dot"></span> LIVE</span></div>
+    <div class="hdr-right">
+      <div id="hdr-chip" class="chip hidden"></div>
+      <button id="lang-btn" class="chip langbtn" type="button" aria-label="Language">🌐 <span id="lang-code">HE</span></button>
+    </div>
+  </div>
+  <svg class="land" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 L40 14 L70 24 L110 6 L150 22 L190 12 L230 26 L260 16 L300 28 L340 18 L400 30 V46 H0Z" fill="#3f6b35" opacity=".9"/>
+    <path d="M0 36 Q100 28 200 36 T400 34 V46 H0Z" fill="#f7f1e5"/>
+    <path d="M0 41 H400" stroke="#0b4a6b" stroke-width="1.5" stroke-dasharray="10 8" opacity=".35"/>
+  </svg>
+  <svg class="bus" viewBox="0 0 34 20" aria-hidden="true">
+    <rect x="1" y="2" width="32" height="13" rx="3" fill="#f08a24"/>
+    <rect x="4" y="5" width="6" height="5" rx="1" fill="#e3f3f7"/><rect x="12" y="5" width="6" height="5" rx="1" fill="#e3f3f7"/><rect x="20" y="5" width="6" height="5" rx="1" fill="#e3f3f7"/>
+    <circle cx="8" cy="16" r="3" fill="#102029"/><circle cx="26" cy="16" r="3" fill="#102029"/>
+  </svg>
+</header>
+
+<main id="app">
+  <div class="card center muted">…</div>
+</main>
+
+<nav id="tabs" class="tabs hidden">
+  <button data-view="game" class="active"><span class="i">🚌</span><span data-t="tab_game">משחק</span></button>
+  <button data-view="board"><span class="i">🏆</span><span data-t="tab_board">דירוג</span></button>
+</nav>
+<div id="langsheet-root"></div>
+<div id="toast" class="toast hidden"></div>
+
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script>
+(function () {
+  const { rpc, esc, store, SHAPES } = MDL;
+  const KEY = 'mdl_player', LKEY = 'mdl_lang';
+  const app = document.getElementById('app');
+  const banner = document.getElementById('banner');
+  const tabs = document.getElementById('tabs');
+  const hdrChip = document.getElementById('hdr-chip');
+
+  // ------------------------------------------------------------ Langues
+  // Interface élève en 4 langues. Les QUESTIONS arrivent déjà traduites par le serveur
+  // (même identifiant, même ordre des réponses, même chrono et même score pour tous).
+  // Drapeaux dessinés (SVG) : Windows n'affiche pas les émojis drapeaux (il écrit « IL », « GB »…)
+  const svgFlag = body => `<svg viewBox="0 0 30 20" width="30" height="20" aria-hidden="true" style="border-radius:3px;box-shadow:0 0 0 1px #0002">${body}</svg>`;
+  const FLAGS = {
+    he: svgFlag('<rect width="30" height="20" fill="#fff"/><rect y="2.5" width="30" height="3" fill="#0038b8"/><rect y="14.5" width="30" height="3" fill="#0038b8"/><path d="M15 6.2l3.3 5.7h-6.6zM15 13.8l-3.3-5.7h6.6z" fill="none" stroke="#0038b8" stroke-width="1"/>'),
+    fr: svgFlag('<rect width="10" height="20" fill="#0055a4"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ef4135"/>'),
+    en: svgFlag('<rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.5"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="#c8102e" stroke-width="3.5"/>'),
+    ru: svgFlag('<rect width="30" height="7" fill="#fff"/><rect y="6.7" width="30" height="6.7" fill="#0039a6"/><rect y="13.3" width="30" height="6.7" fill="#d52b1e"/>')
+  };
+  const LANGS = { he: { name: 'עברית', flag: FLAGS.he, dir: 'rtl' }, fr: { name: 'Français', flag: FLAGS.fr, dir: 'ltr' },
+                  en: { name: 'English', flag: FLAGS.en, dir: 'ltr' }, ru: { name: 'Русский', flag: FLAGS.ru, dir: 'ltr' } };
+  const T = {
+    he: {
+      choose_lang: 'בחרו שפה', offline: 'אין חיבור — מנסה להתחבר מחדש…', tab_game: 'משחק', tab_board: 'דירוג',
+      welcome: 'ברוכים הבאים לחידון!', welcome_sub: 'עונים מהר ונכון — וצוברים נקודות לאורך המסלול.',
+      your_name: 'מה השם הפרטי שלכם?', name_ph: 'השם הפרטי',
+      join: 'מתחילים לשחק 🚀', joining: 'מצטרפים…', solo_link: '🚗 בלי מדריך? משחק עצמאי עם ה-GPS שלכם',
+      no_net: 'אין חיבור לאינטרנט. נסו שוב.', welcome_back: n => `ברוך שובך, ${n}! הניקוד נשמר.`,
+      restarted: 'המשחק התחיל מחדש — הצטרפו שוב.', no_game_t: 'אין כרגע משחק פעיל', no_game_s: 'המדריך יפתח את המשחק בקרוב.',
+      rank: 'מקום', pts: 'נק׳', points: 'נקודות', sec: 'שניות', paused: 'המשחק מושהה', paused_s: 'המדריך יחדש את המשחק בקרוב.',
+      waiting: 'מחכים לשאלה הבאה... 🚌', waiting_s: 'השאלה תופיע כאן אוטומטית',
+      rules_t: '🏆 האתגר: מי יהיה אלוף המסלול?',
+      rules: ['👀 שאלה קופצת כשעוברים ליד מקום מעניין — תסתכלו מהחלון!',
+        '✅ תשובה נכונה = <b>100</b> נקודות',
+        '⚡ בונוס מהירות: עד <b>+100</b> — מי שעונה מהר מקבל יותר (עד <b>200</b>!)',
+        '❌ תשובה שגויה = 0, אבל לא מפסידים נקודות',
+        '🔒 תשובה אחת בלבד — אין חרטות אחרי השליחה',
+        '🎯 מהר — אבל נכון! לחיצה מהירה ושגויה שווה 0'],
+      rules_end: '🥇🥈🥉 בסוף המסלול — הזוכים מוכרזים במיקרופון!',
+      question: n => `שאלה ${n}`, received: 'התשובה נקלטה! ממתינים לתוצאות...', send: 'שליחת תשובה', sending: 'שולח…',
+      send_failed: 'השליחה נכשלה — בדקו את החיבור ונסו שוב.', too_late: 'הזמן נגמר — התשובה לא נקלטה.',
+      cannot_send: 'לא ניתן לשלוח תשובה כרגע.', closed: '⏱️ השאלה נסגרה',
+      closed_mine: 'התשובה שלך נקלטה. ממתינים לחשיפת התשובה…', closed_none: 'לא נשלחה תשובה לשאלה הזו.',
+      right: 'תשובה נכונה! 🎉', wrong: 'לא הפעם…', none: 'לא נשלחה תשובה', your_choice: '(הבחירה שלך)', explanation: 'הסבר:',
+      board: 'דירוג המשתתפים 🏆', no_score: 'עוד אין ניקוד', board_note: 'הניקוד מתעדכן אחרי חשיפת כל תשובה.',
+      winners: 'הזוכים הגדולים!', stats: 'סטטיסטיקות המשחק', s_players: 'משתתפים', s_questions: 'שאלות', s_correct: 'תשובות נכונות',
+      fastest: (n, s) => `⚡ התשובה הנכונה המהירה ביותר: <b>${n}</b> (${s} שנ׳)`, thanks: 'תודה שהשתתפתם! 🚌',
+      he_only: 'השאלה הזו זמינה בעברית בלבד.', lang_saved: 'השפה עודכנה — הניקוד נשמר.',
+      e_no_game: 'אין כרגע משחק פעיל. נסו שוב בעוד רגע.', e_empty_name: 'נא להקליד שם.', e_finished: 'המשחק הקודם הסתיים — חכו שהמדריך יפתח משחק חדש ונסו שוב.',
+      e_full: 'המשחק מלא.', e_other: 'שגיאה'
+    },
+    fr: {
+      choose_lang: 'Choisissez la langue', offline: 'Pas de connexion — nouvelle tentative…', tab_game: 'Jeu', tab_board: 'Classement',
+      welcome: 'Bienvenue au quiz !', welcome_sub: 'Répondez vite et juste : les points s’accumulent tout au long du trajet.',
+      your_name: 'Quel est votre prénom ?', name_ph: 'Votre prénom',
+      join: 'On commence à jouer 🚀', joining: 'Connexion…', solo_link: '🚗 Sans guide ? Jeu en solo avec votre GPS',
+      no_net: 'Pas de connexion Internet. Réessayez.', welcome_back: n => `Bon retour, ${n} ! Vos points sont conservés.`,
+      restarted: 'La partie a redémarré : rejoignez-la à nouveau.', no_game_t: 'Aucune partie en cours', no_game_s: 'Le guide va bientôt ouvrir la partie.',
+      rank: 'Rang', pts: 'pts', points: 'points', sec: 'secondes', paused: 'Partie en pause', paused_s: 'Le guide va bientôt reprendre la partie.',
+      waiting: 'On attend la prochaine question… 🚌', waiting_s: 'La question apparaîtra ici automatiquement',
+      rules_t: '🏆 Le défi : qui sera le champion du trajet ?',
+      rules: ['👀 Une question apparaît quand on passe près d’un lieu intéressant — regardez par la fenêtre !',
+        '✅ Bonne réponse = <b>100</b> points',
+        '⚡ Bonus de vitesse : jusqu’à <b>+100</b> — plus vous répondez vite, plus vous gagnez (jusqu’à <b>200</b> !)',
+        '❌ Mauvaise réponse = 0, mais on ne perd pas de points',
+        '🔒 Une seule réponse — pas de retour en arrière après l’envoi',
+        '🎯 Vite — mais juste ! Un clic rapide et faux vaut 0'],
+      rules_end: '🥇🥈🥉 À la fin du trajet, les gagnants sont annoncés au micro !',
+      question: n => `Question ${n}`, received: 'Réponse enregistrée ! En attente des résultats…', send: 'Envoyer la réponse', sending: 'Envoi…',
+      send_failed: 'Échec de l’envoi : vérifiez la connexion et réessayez.', too_late: 'Temps écoulé : la réponse n’a pas été prise en compte.',
+      cannot_send: 'Impossible d’envoyer une réponse pour le moment.', closed: '⏱️ Question fermée',
+      closed_mine: 'Votre réponse est enregistrée. En attente de la correction…', closed_none: 'Aucune réponse envoyée pour cette question.',
+      right: 'Bonne réponse ! 🎉', wrong: 'Pas cette fois…', none: 'Aucune réponse envoyée', your_choice: '(votre choix)', explanation: 'Explication :',
+      board: 'Classement 🏆', no_score: 'Pas encore de points', board_note: 'Le classement se met à jour après chaque correction.',
+      winners: 'Les grands gagnants !', stats: 'Statistiques de la partie', s_players: 'participants', s_questions: 'questions', s_correct: 'bonnes réponses',
+      fastest: (n, s) => `⚡ Bonne réponse la plus rapide : <b>${n}</b> (${s} s)`, thanks: 'Merci d’avoir participé ! 🚌',
+      he_only: 'Cette question n’existe qu’en hébreu.', lang_saved: 'Langue modifiée — vos points sont conservés.',
+      e_no_game: 'Aucune partie en cours. Réessayez dans un instant.', e_empty_name: 'Veuillez saisir un nom.', e_finished: 'La partie précédente est terminée : attendez que le guide en ouvre une nouvelle, puis réessayez.',
+      e_full: 'La partie est complète.', e_other: 'Erreur'
+    },
+    en: {
+      choose_lang: 'Choose your language', offline: 'No connection — retrying…', tab_game: 'Game', tab_board: 'Ranking',
+      welcome: 'Welcome to the quiz!', welcome_sub: 'Answer fast and right — and collect points along the route.',
+      your_name: 'What’s your first name?', name_ph: 'Your first name',
+      join: 'Let’s play 🚀', joining: 'Joining…', solo_link: '🚗 No guide? Solo game with your own GPS',
+      no_net: 'No internet connection. Please try again.', welcome_back: n => `Welcome back, ${n}! Your score is saved.`,
+      restarted: 'The game restarted — please join again.', no_game_t: 'No game running right now', no_game_s: 'The guide will open the game soon.',
+      rank: 'Rank', pts: 'pts', points: 'points', sec: 'seconds', paused: 'Game paused', paused_s: 'The guide will resume the game soon.',
+      waiting: 'Waiting for the next question… 🚌', waiting_s: 'The question will appear here automatically',
+      rules_t: '🏆 The challenge: who will be the route champion?',
+      rules: ['👀 A question pops up when we pass an interesting place — look out of the window!',
+        '✅ Correct answer = <b>100</b> points',
+        '⚡ Speed bonus: up to <b>+100</b> — the faster you answer, the more you get (up to <b>200</b>!)',
+        '❌ Wrong answer = 0, but you never lose points',
+        '🔒 One answer only — no changing it after you send',
+        '🎯 Fast — but right! A quick wrong tap is worth 0'],
+      rules_end: '🥇🥈🥉 At the end of the route, the winners are announced on the mic!',
+      question: n => `Question ${n}`, received: 'Answer received! Waiting for the results…', send: 'Send answer', sending: 'Sending…',
+      send_failed: 'Sending failed — check your connection and try again.', too_late: 'Time’s up — your answer was not received.',
+      cannot_send: 'Cannot send an answer right now.', closed: '⏱️ Question closed',
+      closed_mine: 'Your answer was received. Waiting for the reveal…', closed_none: 'No answer was sent for this question.',
+      right: 'Correct! 🎉', wrong: 'Not this time…', none: 'No answer sent', your_choice: '(your choice)', explanation: 'Explanation:',
+      board: 'Leaderboard 🏆', no_score: 'No points yet', board_note: 'Scores update after each answer is revealed.',
+      winners: 'The big winners!', stats: 'Game statistics', s_players: 'players', s_questions: 'questions', s_correct: 'correct answers',
+      fastest: (n, s) => `⚡ Fastest correct answer: <b>${n}</b> (${s} s)`, thanks: 'Thanks for playing! 🚌',
+      he_only: 'This question is available in Hebrew only.', lang_saved: 'Language changed — your score is kept.',
+      e_no_game: 'No game running right now. Try again in a moment.', e_empty_name: 'Please type a name.', e_finished: 'The previous game has ended — wait for the guide to open a new one, then try again.',
+      e_full: 'The game is full.', e_other: 'Error'
+    },
+    ru: {
+      choose_lang: 'Выберите язык', offline: 'Нет связи — пробуем переподключиться…', tab_game: 'Игра', tab_board: 'Рейтинг',
+      welcome: 'Добро пожаловать в викторину!', welcome_sub: 'Отвечайте быстро и правильно — и набирайте очки по ходу маршрута.',
+      your_name: 'Как вас зовут (имя)?', name_ph: 'Ваше имя',
+      join: 'Начинаем играть 🚀', joining: 'Подключаемся…', solo_link: '🚗 Без гида? Игра в одиночку по вашему GPS',
+      no_net: 'Нет интернета. Попробуйте ещё раз.', welcome_back: n => `С возвращением, ${n}! Очки сохранены.`,
+      restarted: 'Игра началась заново — присоединитесь ещё раз.', no_game_t: 'Сейчас нет активной игры', no_game_s: 'Гид скоро откроет игру.',
+      rank: 'Место', pts: 'очк.', points: 'очков', sec: 'секунд', paused: 'Игра на паузе', paused_s: 'Гид скоро продолжит игру.',
+      waiting: 'Ждём следующий вопрос… 🚌', waiting_s: 'Вопрос появится здесь автоматически',
+      rules_t: '🏆 Челлендж: кто станет чемпионом маршрута?',
+      rules: ['👀 Вопрос появляется, когда проезжаем интересное место — смотрите в окно!',
+        '✅ Правильный ответ = <b>100</b> очков',
+        '⚡ Бонус за скорость: до <b>+100</b> — чем быстрее ответ, тем больше очков (до <b>200</b>!)',
+        '❌ Неправильный ответ = 0, но очки не отнимаются',
+        '🔒 Только один ответ — после отправки изменить нельзя',
+        '🎯 Быстро — но правильно! Быстрый неверный ответ = 0'],
+      rules_end: '🥇🥈🥉 В конце маршрута победителей объявят в микрофон!',
+      question: n => `Вопрос ${n}`, received: 'Ответ принят! Ждём результатов…', send: 'Отправить ответ', sending: 'Отправка…',
+      send_failed: 'Не удалось отправить — проверьте связь и попробуйте снова.', too_late: 'Время вышло — ответ не принят.',
+      cannot_send: 'Сейчас нельзя отправить ответ.', closed: '⏱️ Вопрос закрыт',
+      closed_mine: 'Ваш ответ принят. Ждём правильный ответ…', closed_none: 'На этот вопрос ответ не отправлен.',
+      right: 'Правильно! 🎉', wrong: 'В этот раз нет…', none: 'Ответ не отправлен', your_choice: '(ваш выбор)', explanation: 'Пояснение:',
+      board: 'Рейтинг участников 🏆', no_score: 'Пока нет очков', board_note: 'Рейтинг обновляется после каждого правильного ответа.',
+      winners: 'Главные победители!', stats: 'Статистика игры', s_players: 'участников', s_questions: 'вопросов', s_correct: 'правильных ответов',
+      fastest: (n, s) => `⚡ Самый быстрый правильный ответ: <b>${n}</b> (${s} с)`, thanks: 'Спасибо за участие! 🚌',
+      he_only: 'Этот вопрос доступен только на иврите.', lang_saved: 'Язык изменён — очки сохранены.',
+      e_no_game: 'Сейчас нет активной игры. Попробуйте чуть позже.', e_empty_name: 'Введите имя.', e_finished: 'Предыдущая игра закончилась — подождите, пока гид откроет новую, и попробуйте снова.',
+      e_full: 'Игра заполнена.', e_other: 'Ошибка'
+    }
+  };
+  // Hébreu par défaut (la majorité des élèves) ; un autre choix est mémorisé sur le téléphone
+  let lang = LANGS[store.get(LKEY)] ? store.get(LKEY) : 'he';
+  const t = (k, ...a) => { const v = (T[lang || 'he'][k] ?? T.he[k]); return typeof v === 'function' ? v(...a) : v; };
+
+  function applyLang() {
+    const L = lang || 'he';
+    document.documentElement.lang = L;
+    document.documentElement.dir = LANGS[L].dir;
+    document.getElementById('lang-code').textContent = L.toUpperCase();
+    banner.textContent = t('offline');
+    document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t(el.dataset.t); });
+  }
+
+  let me = store.get(KEY);            // { token, name } — jeton de session gardé discrètement sur le téléphone
+  let S = null;                       // dernier état complet reçu du serveur
+  let version = 0;
+  let offset = 0;                     // horloge serveur - horloge locale (ms)
+  let view = 'game';
+  let selected = null, selQ = null;   // choix en cours (avant envoi) et sa question
+  let sent = {};                      // question_id -> choix envoyé (mémoire locale)
+  let sending = false;
+  let pollTimer = null, failures = 0, renderedKey = '';
+
+  const errMsg = e => t('e_' + e) || t('e_other');
+
+  function toast(msg, ms = 2600) {
+    const el = document.getElementById('toast');
+    el.textContent = msg; el.classList.remove('hidden');
+    clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.add('hidden'), ms);
+  }
+
+  // ------------------------------------------------------------ Choix de la langue
+  // Sur l'écran d'accueil (hébreu par défaut) et à tout moment via le bouton 🌐 — mêmes points.
+  function langButtons(cur) {
+    return `<div class="langgrid" role="radiogroup">${Object.keys(LANGS).map(l => `<button type="button" role="radio" aria-checked="${l === cur}" class="langopt ${l === cur ? 'on' : ''}" data-lang="${l}" lang="${l}" dir="${LANGS[l].dir}">
+      <span class="flag" aria-hidden="true">${LANGS[l].flag}</span><b>${LANGS[l].name}</b></button>`).join('')}</div>`;
+  }
+  function openLangSheet() {
+    const root = document.getElementById('langsheet-root');
+    root.innerHTML = `<div class="modal" id="lsheet"><div class="sheet">
+      <div class="row" style="align-items:center"><h2 style="margin:0">🌐 ${esc(t('choose_lang'))}</h2>
+      <button type="button" class="iconbtn" data-x style="flex:none">✖</button></div>
+      ${langButtons(lang)}</div></div>`;
+  }
+  async function setLang(l) {
+    if (!LANGS[l]) return;
+    const changed = l !== lang;
+    lang = l; store.set(LKEY, l); applyLang();
+    document.getElementById('langsheet-root').innerHTML = '';
+    if (!me) {                                   // écran d'accueil : on garde le prénom déjà tapé
+      const nm = document.getElementById('nm');
+      return renderJoin({ name: nm ? nm.value : '' });
+    }
+    if (!changed) return;
+    // le serveur garde la langue du joueur (questions traduites côté serveur) ; points inchangés
+    try { await rpc('set_language', { p_token: me.token, p_lang: l }, { timeout: 5000 }); toast(t('lang_saved')); } catch { /* repris au prochain état */ }
+    version = 0; renderedKey = ''; startPolling(true);
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-lang]');
+    if (b) return setLang(b.dataset.lang);
+    if (e.target.closest('#lang-btn')) return openLangSheet();
+    if (e.target.closest('#lsheet [data-x]') || e.target.id === 'lsheet') document.getElementById('langsheet-root').innerHTML = '';
+  });
+
+  // ------------------------------------------------------------ Accueil : langue + prénom, c'est tout
+  function renderJoin(opts = {}) {
+    tabs.classList.add('hidden'); hdrChip.classList.add('hidden');
+    renderedKey = 'join';
+    app.innerHTML = `
+      <form id="joinf" class="card join" autocomplete="off">
+        <div class="center">
+          <div class="join-brand" dir="rtl" lang="he">🚌 מורה דרך <span class="live">LIVE</span></div>
+          <h1>${esc(t('welcome'))}</h1>
+        </div>
+        <div class="label">${esc(t('choose_lang'))}</div>
+        ${langButtons(lang)}
+        <label for="nm">${esc(t('your_name'))}</label>
+        <input id="nm" name="nm" type="text" maxlength="24" enterkeyhint="go" dir="auto" autocapitalize="words"
+          value="${esc(opts.name || '')}" placeholder="${esc(t('name_ph'))}" required>
+        <p id="jerr" class="small" style="color:var(--bad);min-height:1em" role="alert">${esc(opts.error || '')}</p>
+        <button class="btn sun big" id="jbtn">${esc(t('join'))}</button>
+      </form>
+      <a class="btn ghost small" href="solo.html" style="display:block;text-align:center;text-decoration:none">${esc(t('solo_link'))}</a>`;
+    document.getElementById('joinf').addEventListener('submit', e => { e.preventDefault(); doJoin(); });
+  }
+
+  async function doJoin() {
+    const name = document.getElementById('nm').value.trim();
+    const btn = document.getElementById('jbtn');
+    if (!name) { document.getElementById('jerr').textContent = errMsg('empty_name'); return; }
+    btn.disabled = true; btn.textContent = t('joining');
+    try {
+      const r = await rpc('join_game', { p_name: name, p_lang: lang });
+      if (r.error) return renderJoin({ name, error: errMsg(r.error) });
+      me = { token: r.token, name: r.name };
+      store.set(KEY, me);
+      version = 0; sent = {};
+      startPolling(true);
+    } catch (e) {
+      btn.disabled = false; btn.textContent = t('join');
+      document.getElementById('jerr').textContent = t('no_net');
+    }
+  }
+
+  // ------------------------------------------------------------ Boucle d'état
+  function startPolling(now) {
+    clearTimeout(pollTimer);
+    pollTimer = setTimeout(poll, now ? 0 : 1500);
+  }
+
+  async function poll() {
+    if (!me) return;
+    try {
+      const r = await rpc('get_state', { p_token: me.token, p_since: version }, { timeout: 6000 });
+      failures = 0; banner.classList.add('hidden');
+      offset = Date.parse(r.now) - Date.now();
+      if (r.error === 'unknown_player') {   // nouvelle partie ou élève retiré
+        const nm = me && me.name;
+        store.del(KEY); me = null; S = null; renderJoin({ name: nm || '', error: t('restarted') }); return;
+      }
+      if (r.error === 'no_game') { renderNoGame(); }
+      else if (!r.same) {
+        S = r; version = r.v;
+        // la langue enregistrée côté serveur suit celle du téléphone (ex. changée hors ligne)
+        if (lang && S.me && S.me.lang && S.me.lang !== lang) {
+          rpc('set_language', { p_token: me.token, p_lang: lang }).then(() => { version = 0; startPolling(true); }).catch(() => {});
+        }
+        render();
+      }
+    } catch (e) {
+      failures++;
+      if (failures >= 2) banner.classList.remove('hidden');
+    }
+    const delay = document.hidden ? 5000 : Math.min(1500 + failures * 700, 5000);
+    clearTimeout(pollTimer); pollTimer = setTimeout(poll, delay);
+  }
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && me) startPolling(true); });
+  window.addEventListener('online', () => { if (me) startPolling(true); });
+
+  function renderNoGame() {
+    renderedKey = 'nogame';
+    app.innerHTML = `<div class="card waiting"><div class="big">${esc(t('no_game_t'))}</div><p class="muted">${esc(t('no_game_s'))}</p><div class="road"></div></div>
+      <a class="btn ghost small" href="solo.html" style="display:block;text-align:center;text-decoration:none">${esc(t('solo_link'))}</a>`;
+  }
+
+  // ------------------------------------------------------------ Rendu
+  // Le contenu de la question peut être en hébreu (repli) même si l'interface ne l'est pas.
+  const qAttrs = q => q && q.lang ? `lang="${q.lang}" dir="${LANGS[q.lang] ? LANGS[q.lang].dir : 'auto'}"` : 'dir="auto"';
+  const heOnly = q => q && q.lang === 'he' && lang && lang !== 'he' ? `<p class="small muted">ℹ️ ${esc(t('he_only'))}</p>` : '';
+
+  function myLine() {
+    const m = S.me || {};
+    return `<div class="myline"><span dir="auto">${esc(m.name)}</span><span>${esc(t('rank'))} <b>${m.rank || '-'}</b>/${m.total || 0}</span><span><b>${m.score || 0}</b> ${esc(t('pts'))}</span></div>`;
+  }
+
+  function render() {
+    tabs.classList.remove('hidden');
+    const g = S.game, q = S.question;
+    hdrChip.classList.remove('hidden');
+    hdrChip.textContent = (S.me ? S.me.score : 0) + ' ' + t('pts');
+    if (view === 'board') return renderBoard();
+    if (g.status === 'finished') return renderFinal();
+    if (g.paused) { renderedKey = 'pause'; app.innerHTML = myLine() + `<div class="card waiting"><div class="trophy">⏸️</div><div class="big">${esc(t('paused'))}</div><p class="muted">${esc(t('paused_s'))}</p></div>`; return; }
+    if (!q || g.phase === 'waiting') return renderWaiting();
+    if (g.phase === 'open') return renderOpen(q);
+    if (g.phase === 'closed') return renderClosed(q);
+    if (g.phase === 'revealed') return renderRevealed(q);
+  }
+
+  // Petit paysage animé : le bus roule sur la route 67 pendant qu'on attend la question
+  const SCENE = `<svg class="scene" viewBox="0 0 320 130" role="img" aria-label="🚌">
+    <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe6f5"/><stop offset="1" stop-color="#f3fbff"/></linearGradient></defs>
+    <rect width="320" height="130" fill="url(#sky)"/>
+    <g class="sun"><circle cx="270" cy="30" r="14" fill="#ffd34e"/><circle cx="270" cy="30" r="20" fill="#ffd34e" opacity=".25"/></g>
+    <g class="clouds">${[0, 320].map(x => `<g transform="translate(${x} 0)" fill="#fff" opacity=".95"><ellipse cx="60" cy="28" rx="20" ry="8"/><ellipse cx="74" cy="22" rx="13" ry="9"/><ellipse cx="200" cy="42" rx="16" ry="6"/><ellipse cx="210" cy="37" rx="10" ry="7"/></g>`).join('')}</g>
+    <g class="hills-far">${[0, 320].map(x => `<path transform="translate(${x} 0)" d="M0 92 Q40 58 80 80 T160 72 T240 82 T320 92 V130 H0Z" fill="#8fbf7a"/>`).join('')}</g>
+    <g class="hills-near">${[0, 320].map(x => `<g transform="translate(${x} 0)"><path d="M0 100 Q50 78 110 96 T220 92 T320 100 V130 H0Z" fill="#5f9a4c"/>
+      <g fill="#3f6b35"><circle cx="40" cy="90" r="7"/><rect x="39" y="94" width="2" height="7"/><circle cx="150" cy="88" r="8"/><rect x="149" y="93" width="2" height="8"/><circle cx="260" cy="92" r="6"/><rect x="259" y="96" width="2" height="6"/></g></g>`).join('')}</g>
+    <rect y="106" width="320" height="24" fill="#5b6770"/>
+    <g class="dashes">${Array.from({ length: 12 }, (_, i) => `<rect x="${i * 40}" y="117" width="22" height="3" rx="1.5" fill="#f7f1e5"/>`).join('')}</g>
+    <g class="bus">
+      <rect x="128" y="80" width="68" height="28" rx="6" fill="#f08a24"/>
+      <rect x="128" y="98" width="68" height="4" fill="#d56f12"/>
+      <g fill="#e3f3f7">${[134, 148, 162, 176].map(x => `<rect x="${x}" y="85" width="11" height="9" rx="2"/>`).join('')}</g>
+      <rect x="189" y="85" width="6" height="12" rx="2" fill="#e3f3f7"/>
+      <circle cx="196" cy="102" r="2" fill="#fff6a8"/>
+      ${[143, 182].map(cx => `<g class="wheel" style="transform-origin:${cx}px 108px"><circle cx="${cx}" cy="108" r="7" fill="#102029"/><circle cx="${cx}" cy="108" r="3" fill="#9aa"/><rect x="${cx - 0.75}" y="102" width="1.5" height="12" fill="#9aa"/></g>`).join('')}
+    </g>
+    <g class="puff" fill="#c7cfd3"><circle cx="122" cy="104" r="3"/><circle cx="114" cy="101" r="2"/></g>
+  </svg>`;
+  function renderWaiting(extra = '') {
+    // déjà affiché : on met juste à jour la ligne score/rang, sans relancer l'animation
+    if (renderedKey === 'wait:' + lang && app.querySelector('.scene')) {
+      const ml = app.querySelector('.myline'); if (ml) ml.outerHTML = myLine();
+      return;
+    }
+    renderedKey = 'wait:' + lang;
+    app.innerHTML = myLine() + extra + `
+      <div class="card waiting">
+        ${SCENE}
+        <div class="big">${esc(t('waiting'))}</div>
+        <p class="muted">${esc(t('waiting_s'))}<span class="dots"><i>.</i><i>.</i><i>.</i></span></p>
+      </div>
+      <details class="card rules" ${S.me && S.me.score ? '' : 'open'}><summary>${esc(t('rules_t'))}</summary>
+        <ul>${t('rules').map(r => `<li>${r}</li>`).join('')}</ul>
+        <p class="rules-end">${esc(t('rules_end'))}</p></details>`;
+  }
+
+  function answered(q) {
+    if (q.my_choice !== null && q.my_choice !== undefined) return q.my_choice;
+    return sent[q.id] !== undefined ? sent[q.id] : null;
+  }
+
+  function renderOpen(q) {
+    const mine = answered(q);
+    const key = 'open:' + q.id + ':' + mine + ':' + q.lang + ':' + lang;
+    if (renderedKey === key) return;            // ne pas casser la sélection en cours
+    renderedKey = key;
+    if (selQ !== q.id) { selQ = q.id; selected = null; }
+    const locked = mine !== null;
+    app.innerHTML = `
+      <div class="card">
+        <div class="qhead">
+          <div class="meta"><span class="cat">${esc(t('question', q.seq))}</span><span class="small muted" ${qAttrs(q)}>${esc(q.category)}</span></div>
+          ${q.closes_at ? MDL.ringHtml(esc(t('sec'))) : ''}
+        </div>
+        <div class="question-text" ${qAttrs(q)}>${esc(q.text)}</div>
+        ${heOnly(q)}
+        <div class="answers ${locked ? 'locked' : ''}" id="ans">
+          ${q.options.map((o, i) => `<button class="ans c${i} ${(locked ? mine : selected) === i ? 'selected' : ''}" data-i="${i}" ${locked ? 'disabled' : ''}>
+            <span class="shape">${SHAPES[i]}</span><span ${qAttrs(q)}>${esc(o)}</span></button>`).join('')}
+        </div>
+        <div style="margin-top:16px">
+          ${locked
+            ? `<div class="result none" style="background:var(--sea)"><div class="big">✔️</div>${esc(t('received'))}</div>`
+            : `<button class="btn ok" id="send" ${selected === null ? 'disabled' : ''}>${esc(t('send'))}</button>`}
+        </div>
+      </div>`;
+    if (!locked) {
+      document.getElementById('ans').addEventListener('click', e => {
+        const b = e.target.closest('.ans'); if (!b) return;
+        selected = +b.dataset.i;
+        document.querySelectorAll('#ans .ans').forEach(x => x.classList.toggle('selected', +x.dataset.i === selected));
+        document.getElementById('send').disabled = false;
+        if (navigator.vibrate) navigator.vibrate(15);
+      });
+      document.getElementById('send').addEventListener('click', () => send(q));
+    }
+    tickTimer();
+  }
+
+  async function send(q) {
+    if (sending || selected === null) return;
+    sending = true;
+    const btn = document.getElementById('send');
+    if (btn) { btn.disabled = true; btn.textContent = t('sending'); }
+    let r = null;
+    for (let attempt = 0; attempt < 4 && !r; attempt++) {   // réessai sûr : le serveur refuse les doublons
+      try { r = await rpc('submit_answer', { p_token: me.token, p_question_id: q.id, p_choice: selected }, { timeout: 5000 }); }
+      catch (e) { await new Promise(res => setTimeout(res, 600 * (attempt + 1))); }
+    }
+    sending = false;
+    if (!r) { toast(t('send_failed')); if (btn) { btn.disabled = false; btn.textContent = t('send'); } return; }
+    if (r.status === 'ok' || r.status === 'duplicate') {
+      sent[q.id] = r.choice; selected = r.choice;
+      if (navigator.vibrate) navigator.vibrate([20, 40, 20]);
+      renderedKey = ''; render();
+    } else if (r.status === 'late' || r.status === 'closed') {
+      toast(t('too_late')); version = 0; startPolling(true);
+    } else {
+      toast(t('cannot_send')); version = 0; startPolling(true);
+    }
+  }
+
+  function tickTimer() {
+    const q = S && S.question;
+    if (!q || !S.game || S.game.phase !== 'open') return;
+    const ring = document.getElementById('ring');
+    if (ring && answered(q) === null) ring.dataset.vibrate = '1';
+    MDL.updateRing(q, offset);
+  }
+  setInterval(tickTimer, 250);
+
+  function renderClosed(q) {
+    const mine = answered(q);
+    const key = 'closed:' + q.id + ':' + mine + ':' + q.lang + ':' + lang; if (renderedKey === key) return; renderedKey = key;
+    app.innerHTML = myLine() + `
+      <div class="card center">
+        <span class="cat">${esc(t('question', q.seq))}</span>
+        <div class="question-text" ${qAttrs(q)}>${esc(q.text)}</div>
+        <div class="result none"><div class="big">${esc(t('closed'))}</div>
+          ${esc(mine !== null ? t('closed_mine') : t('closed_none'))}</div>
+      </div>`;
+  }
+
+  function renderRevealed(q) {
+    const key = 'rev:' + q.id + ':' + version + ':' + lang; if (renderedKey === key) return; renderedKey = key;
+    const mine = q.my_choice;
+    const total = (q.counts || []).reduce((a, b) => a + b, 0) || 1;
+    const cls = mine === null || mine === undefined ? 'none' : q.my_correct ? 'good' : 'wrong';
+    const title = cls === 'none' ? t('none') : q.my_correct ? t('right') : t('wrong');
+    app.innerHTML = myLine() + `
+      <div class="result ${cls}">
+        <div class="big">${esc(title)}</div>
+        ${cls === 'good' ? `<div style="font-size:20px;font-weight:800">+${q.my_points} ${esc(t('points'))}</div>` : ''}
+      </div>
+      <div class="card">
+        <span class="cat">${esc(t('question', q.seq))} · <span ${qAttrs(q)}>${esc(q.category)}</span></span>
+        <div class="question-text" ${qAttrs(q)}>${esc(q.text)}</div>
+        <div class="answers">
+          ${q.options.map((o, i) => `<div class="ans c${i} ${i === q.correct_index ? 'right' : 'dim'}">
+            <span class="shape">${i === q.correct_index ? '✔' : SHAPES[i]}</span><span><span ${qAttrs(q)}>${esc(o)}</span>${i === mine ? ' <small>' + esc(t('your_choice')) + '</small>' : ''}</span>
+            <span class="count">${Math.round(100 * (q.counts[i] || 0) / total)}%</span></div>`).join('')}
+        </div>
+        ${q.explanation ? `<div class="explain"><b>${esc(t('explanation'))}</b> <span ${qAttrs(q)}>${esc(q.explanation)}</span></div>` : ''}
+      </div>
+      ${boardCard(5)}`;
+  }
+
+  function boardCard(limit) {
+    const lb = (S.leaderboard || []).slice(0, limit);
+    const myName = S.me && S.me.name;
+    return `<div class="card"><h2>${esc(t('board'))}</h2>
+      <ul class="lb">${lb.map(r => `<li class="p${r.rank} ${r.me || (r.me === undefined && r.name === myName) ? 'me' : ''}">
+        <span class="pos">${r.rank}</span><span class="nm" dir="auto">${esc(r.name)}</span>
+        <span class="cr">${r.correct} ✔</span><span class="sc">${r.score}</span></li>`).join('') || `<li class="muted">${esc(t('no_score'))}</li>`}
+      </ul>
+      ${S.me && S.me.rank > limit ? `<ul class="lb"><li class="me"><span class="pos">${S.me.rank}</span><span class="nm" dir="auto">${esc(S.me.name)}</span><span class="cr">${S.me.correct} ✔</span><span class="sc">${S.me.score}</span></li></ul>` : ''}
+    </div>`;
+  }
+
+  function renderBoard() {
+    renderedKey = 'board:' + version + ':' + lang;
+    app.innerHTML = myLine() + boardCard(10) +
+      `<p class="center small muted">${esc(t('board_note'))}</p>`;
+  }
+
+  function podium(lb) {
+    const [a, b, c] = lb;
+    const col = (r, cls, medal) => r ? `<div class="col ${cls}"><div style="font-size:30px">${medal}</div><div class="nm" dir="auto">${esc(r.name)}</div><div class="sc">${r.score} ${esc(t('pts'))}</div><div class="blk">${r.rank}</div></div>` : '<div class="col"></div>';
+    return `<div class="podium">${col(b, 's', '🥈')}${col(a, 'g', '🥇')}${col(c, 'b', '🥉')}</div>`;
+  }
+
+  function renderFinal() {
+    const key = 'final:' + version + ':' + lang; if (renderedKey === key) return; renderedKey = key;
+    const st = S.stats || {};
+    app.innerHTML = `
+      <div class="card center">
+        <div class="trophy">🏆</div>
+        <h1>${esc(t('winners'))}</h1>
+        ${podium(S.leaderboard || [])}
+      </div>
+      ${myLine()}
+      <div class="card"><h2>${esc(t('stats'))}</h2>
+        <div class="stats">
+          <div class="stat"><b>${st.players || 0}</b><span>${esc(t('s_players'))}</span></div>
+          <div class="stat"><b>${st.questions || 0}</b><span>${esc(t('s_questions'))}</span></div>
+          <div class="stat"><b>${st.correct_pct ?? 0}%</b><span>${esc(t('s_correct'))}</span></div>
+        </div>
+        ${st.fastest ? `<p class="center" style="margin-top:12px">${t('fastest', esc(st.fastest.name), (st.fastest.ms / 1000).toFixed(1))}</p>` : ''}
+      </div>
+      ${boardCard(10)}
+      <p class="center muted">${esc(t('thanks'))}</p>`;
+  }
+
+  tabs.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    view = b.dataset.view;
+    tabs.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+    renderedKey = ''; if (S) render();
+  });
+
+  // ------------------------------------------------------------ Démarrage
+  applyLang();
+  if (me && me.token) startPolling(true); else renderJoin({});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+})();
+</script>
+</body>
+</html>
