@@ -12,6 +12,7 @@
 | 📖 Anecdotes | `anecdotes.html` | Lire 14 fiches de la route 67, sans score ni chrono, en 4 langues |
 | 🧪 Simulation | `admin.html?mode=simulation` | Simuler les trajets et les pannes GPS sans publier aux élèves |
 | 👥 Élèves | `play.html` | Page dédiée aux participants du jeu LIVE |
+| 🧭 סיור מודרך | `guided-tour.html` | 60 QCM vérifiés dans les documents de cours (20 par difficulté), quiz et fiches de guide ; entraînement local |
 | ✨ Création | `create.html` | Nouveau parcours et relecture des questions |
 
 L'écran principal (`index.html`) est le menu de jeu. **Le lien élèves à partager en bus est maintenant `play.html`**, pas l'accueil.
@@ -24,6 +25,15 @@ L'écran principal (`index.html`) est le menu de jeu. **Le lien élèves à part
 - Pas d'API payante requise pour les parcours basés sur les services cartographiques publics.
 - Anecdotes : `public/anecdotes.json` est un fichier **public** construit à partir des fiches V3. Ne jamais y ajouter de notes privées.
 - Le mode « avec micro » signifie que le guide lit un texte dans le microphone **du bus** ; l'application n'a pas besoin d'accéder au micro du téléphone.
+
+
+### 🧭 Banque de révision des סיורים
+
+- Banque publique : `public/guided-quiz.json` (60 questions originales en hébreu, 20 de chaque difficulté).
+- Interface : `public/guided-tour.html`, sélecteur de difficulté en haut, filtre par circuit, modes entraînement / סיור מודרך, sources consultables.
+- Document lisible : `docs/guided-tour-60-questions.md` et [Google Doc](https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit).
+- Sources : comptes rendus תל ערד/תל באר שבע, הכרמל וחוף, route 67 זכרון–יקנעם, et **חוברת הכנה** גליל עליון (support de préparation, pas une preuve de sortie effectuée).
+- Ce module est un entraînement individuel statique, **pas encore la publication multi-joueurs via Supabase**. Les erreurs possibles des notes de cours doivent être vérifiées par le guide avant présentation publique.
 
 ### 🚀 Déploiement
 
