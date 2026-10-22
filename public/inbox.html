@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1230">
+<title>הודעות מהתלמידים — Moreh Derech NEXT</title>
+<style>
+:root{--bg:#0b1230;--card:#151f4a;--line:#3d5190;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif}
+.wrap{max-width:780px;margin:auto;padding:16px 16px 60px}
+nav{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:14px}
+nav a,.btn{color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;padding:9px 13px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a;cursor:pointer;font-family:inherit}
+h1{font-size:22px;margin:4px 0 4px}.sub{color:var(--soft);margin:0 0 14px;font-size:14px}
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{flex:1;min-width:90px;padding:10px;border-radius:12px;border:1px solid var(--line);background:#16224a;color:var(--ink);font:800 14px inherit;font-family:inherit;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--gold);color:#111d45;border-color:var(--gold)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.card.done{opacity:.6}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--soft);margin-bottom:8px}
+.tag{padding:3px 9px;border-radius:999px;background:#22306a;color:var(--ink);font-weight:800}
+.msg{white-space:pre-wrap;line-height:1.55;font-size:15.5px;margin:0 0 10px}
+.ctx{font-size:12.5px;color:var(--soft);margin:0 0 10px}.ctx a{color:var(--mint)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.ok{background:#1f5e52;border-color:var(--mint)}
+form.card label{display:block;font-weight:800;margin:0 0 6px}
+input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#0b1232;color:#fff;font:16px inherit;font-family:inherit;margin-bottom:10px}
+.err{color:#ffb4b4;min-height:1.2em;margin:0 0 8px}
+.empty{text-align:center;color:var(--soft);padding:30px 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a href="index.html">⌂ משחקים</a><a href="admin.html">🎤 מסך המדריך</a></nav>
+  <h1>📨 הודעות מהתלמידים</h1>
+  <p class="sub">רעיונות, תקלות וטעויות בשאלות שנשלחו מהכפתור 💡 באפליקציה.</p>
+  <div id="app"></div>
+</div>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script>
+(function(){
+  'use strict';
+  const { rpc, esc, store } = window.MDL;
+  const KEY = 'mdl_admin'; // même session que l'écran du guide
+  const KIND = { idea:'💡 רעיון', bug:'🐞 תקלה', question:'❓ טעות בשאלה', other:'💬 אחר' };
+  let token = store.get(KEY), filter = 'new';
+  const app = document.getElementById('app');
+
+  function login(err){
+    app.innerHTML = `<form class="card" id="lf"><label for="pw">סיסמת מנהל</label>
+      <input id="pw" type="password" autocomplete="current-password" required>
+      <p class="err">${esc(err||'')}</p><button class="btn">כניסה</button></form>`;
+    document.getElementById('pw').focus();
+    document.getElementById('lf').addEventListener('submit', async e => {
+      e.preventDefault();
+      try {
+        const r = await rpc('admin_login', { p_password: document.getElementById('pw').value });
+        if (r.error) return login({ bad_password:'סיסמה שגויה.', too_many_attempts:'יותר מדי ניסיונות. נסו שוב בעוד 15 דקות.' }[r.error] || r.error);
+        token = r.token; store.set(KEY, token); load();
+      } catch { login('אין חיבור לשרת.'); }
+    });
+  }
+  function when(iso){ try { return new Date(iso).toLocaleString('he-IL',{dateStyle:'short',timeStyle:'short'}); } catch { return iso; } }
+  function ctxHtml(f){
+    const c = f.context || {}, parts = [];
+    if (c.tour) parts.push('סיור ' + esc(c.tour));
+    if (c.level) parts.push('רמה ' + esc(c.level));
+    if (c.mode) parts.push(esc(c.mode));
+    if (c.question) parts.push('שאלה <b>' + esc(c.question) + '</b>');
+    if (c.stop) parts.push(esc(c.stop));
+    const page = f.page ? `<a href="${esc(f.page)}" target="_blank" rel="noopener">${esc(f.page.split('?')[0])}</a>` : '';
+    return (page || parts.length) ? `<p class="ctx">📍 ${[page].concat(parts).filter(Boolean).join(' · ')}</p>` : '';
+  }
+  async function load(){
+    if (!token) return login();
+    try {
+      const r = await rpc('admin_feedback_list', { p_token: token, p_status: filter === 'all' ? 'all' : filter }, { timeout: 12000 });
+      const c = r.counts || {};
+      app.innerHTML = `<div class="tabs" role="group" aria-label="סינון">
+          <button type="button" data-f="new" aria-pressed="${filter==='new'}">חדשות (${c.new||0})</button>
+          <button type="button" data-f="done" aria-pressed="${filter==='done'}">טופלו (${c.done||0})</button>
+          <button type="button" data-f="all" aria-pressed="${filter==='all'}">הכול</button>
+          <button type="button" data-f="refresh">↻ רענון</button></div>` +
+        ((r.items||[]).length ? r.items.map(f => `<article class="card ${f.status==='done'?'done':''}">
+          <div class="meta"><span class="tag">${KIND[f.kind]||esc(f.kind)}</span><span>${esc(f.author||'ללא שם')}</span><span>· ${when(f.created_at)}</span></div>
+          <p class="msg">${esc(f.message)}</p>${ctxHtml(f)}
+          <div class="row">${f.status==='done'
+            ? `<button class="btn" data-st="new" data-id="${esc(f.id)}">↩ להחזיר לחדשות</button>`
+            : `<button class="btn ok" data-st="done" data-id="${esc(f.id)}">✓ טופל</button>`}</div></article>`).join('')
+          : `<div class="empty">${filter==='new'?'אין הודעות חדשות 🎉':'אין הודעות כאן.'}</div>`);
+    } catch (e) {
+      if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); }
+      app.innerHTML = `<div class="card"><p>לא ניתן לטעון את ההודעות.</p><p class="sub">אם זו הפעם הראשונה: יש להריץ פעם אחת את הקובץ <b>supabase/feedback.sql</b> ב-Supabase › SQL Editor.</p><button class="btn" data-f="refresh">↻ לנסות שוב</button></div>`;
+    }
+  }
+  app.addEventListener('click', async e => {
+    const f = e.target.closest('[data-f]');
+    if (f) { if (f.dataset.f !== 'refresh') filter = f.dataset.f; return load(); }
+    const b = e.target.closest('[data-st]');
+    if (b) {
+      b.disabled = true;
+      try { await rpc('admin_feedback_set_status', { p_token: token, p_id: b.dataset.id, p_status: b.dataset.st }); }
+      catch (err) { if (err.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } }
+      load();
+    }
+  });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && token) load(); });
+  load();
+})();
+</script>
+</body>
+</html>

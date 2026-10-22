@@ -147,6 +147,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
     <a class="icon-btn" href="index.html" aria-label="חזרה לבחירת מצב" title="חזרה">→</a>
     <button type="button" class="mode-chip" id="modeChip" aria-haspopup="dialog"><span class="mi" id="modeIcon">🧭</span><span class="ml"><span class="mc">מצב משחק</span><br><span id="modeLabel">סיור מודרך</span></span><span aria-hidden="true">▾</span></button>
     <a class="icon-btn" href="community.html" aria-label="צרו קטע דרך משלכם ללא מנהל" title="הוספת קטע דרך">＋</a>
+    <button type="button" class="icon-btn" data-feedback aria-label="רעיון, בעיה או טעות? כתבו לנו" title="רעיון או בעיה">💡</button>
     <div class="seg" role="group" aria-label="תצוגה">
       <button type="button" data-view="map" aria-pressed="true" aria-label="מפה" title="מפה">🗺️</button>
       <button type="button" data-view="list" aria-pressed="false" aria-label="רשימה" title="רשימה">📋</button>
@@ -441,5 +442,6 @@ window.addEventListener('resize',function(){syncTop();if(current){measure();setS
 syncTop();
 })();
 </script>
+<script src="feedback.js" data-float="0"></script>
 </body>
 </html>

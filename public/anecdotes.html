@@ -126,5 +126,7 @@ common();
 fetch('anecdotes.json',{cache:'no-cache'}).then(function(res){if(!res.ok)throw Error('HTTP '+res.status);return res.json();}).then(function(json){if(!json||!Array.isArray(json.items)||!json.items.length)throw Error('empty');data=json;render();}).catch(function(){root.innerHTML='<p class="message">'+esc(L[lang].error)+'</p>';});
 })();
 </script>
+<script src="config.js"></script>
+<script src="feedback.js"></script>
 </body>
 </html>

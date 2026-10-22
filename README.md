@@ -464,3 +464,10 @@ Ce dépôt ne contient ni clé administrateur Supabase ni mot de passe.
 ⚠️ Les contributions anonymes sont publiques, non vérifiées et peuvent contenir du contenu abusif.
 Le SQL limite la taille, le nombre d'ajouts par heure et refuse les liens non HTTPS, mais ne constitue
 pas une modération parfaite. Pour un usage grand public, ajouter CAPTCHA, signalement et modération.
+
+## 💡 Idées et signalements des élèves
+
+- Sur les pages élèves : tuile **« רעיון, בעיה או טעות? »** (accueil), bouton 💡 (carte, jeu) ou bouton flottant (catalogue, récits). Après chaque réponse du jeu : **🚩 טעות בשאלה?** qui joint le סיור, le niveau et l'identifiant de la question.
+- Aucun GPS envoyé ; le nom est facultatif ; le brouillon reste sur le téléphone si l'envoi échoue.
+- Lecture : **`inbox.html`** (même mot de passe que l'écran du guide ; icône 📨 dans l'écran du guide). Bouton « טופל ».
+- Installation : exécuter **une fois** `supabase/feedback.sql` dans Supabase › SQL Editor (après `install.sql`). Ne modifie aucune banque existante.

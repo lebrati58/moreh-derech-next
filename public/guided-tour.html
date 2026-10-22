@@ -34,7 +34,7 @@ body.setup-collapsed #setupPanel,body.setup-collapsed .hero{display:none}
 
 /* NEXT — carte, étapes et lecture */
 [hidden]{display:none!important}
-.top{flex-wrap:wrap}.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
+.report-q{margin-inline-start:8px;border:1px solid #c9a650;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:800}.fb-link{cursor:pointer}.top{flex-wrap:wrap}.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
 .mode{flex-wrap:wrap}
 .stepbar{display:flex;gap:5px;margin:16px 0 0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.stepbar::-webkit-scrollbar{display:none}
 .stepbar button{flex:none;border:1px solid #4f62a0;background:#18244f;color:#cdd8ff;border-radius:30px;padding:7px 12px;font-size:13px;font-weight:850}
@@ -76,7 +76,7 @@ body.tour-open{overflow:hidden}
 </style>
 </head>
 <body><main class="shell">
-<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home" href="index.html">⌂ משחקים</a></div></header>
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
 <section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1 id="heroTitle">🧭 סיור מודרך</h1><p id="heroText">טוען את השאלות…</p><div class="art" aria-hidden="true">🚌</div></section>
 
 <button type="button" class="setup-bar" id="setupBar" hidden aria-controls="setupPanel" aria-expanded="false"><span class="setup-text" id="setupText"></span><span class="setup-edit">✎ שינוי</span></button>
@@ -123,6 +123,7 @@ function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,t
 function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
 function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
 const tourOf=q=>MDTours.tourOf(q);
+window.MDL_FEEDBACK_CTX=()=>{const q=mode!=="stories"&&items[index];return {tour,level,mode,question:q?q.id:"",stop:q?(q.stop||""):""};};
 function placeStops(t){return (places&&places.tours[t]&&places.tours[t].stops)||[];}
 function matchStop(t,name){const n=norm(name);if(!n)return null;return placeStops(t).find(s=>{const a=norm(s.name),b=norm(s.he&&s.he.title);return n.includes(a)||a.includes(n)||(b&&(n.includes(b)||b.includes(n)));})||null;}
 function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
@@ -227,7 +228,7 @@ function render(){
   if(!n){$("quiz").innerHTML='<div class="question">אין עדיין שאלות ברמה הזו לסיור הזה. נסו רמה אחרת או <a href="map.html">בחרו מקום אחר במפה</a>.</div>';$("actions").hidden=true;return;}
   const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source]||{label:tourTitle(tourOf(q)),kind:""};
   if(mode==="tour")renderStep(q);
-  $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a></p></aside></article>';
+  $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a> <button type="button" class="report-q" data-feedback="question">🚩 טעות בשאלה?</button></p></aside></article>';
   $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();}));
   $("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
 }
@@ -285,4 +286,6 @@ Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalo
   if(!["all",...c.tours.map(t=>t.id),...(stats.byTour.road67?["road67"]:[])].includes(tour))tour="all";render();
 }).catch(e=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";console.error(e);});
 })();
-</script></body></html>
+</script><script src="config.js"></script>
+<script src="feedback.js" data-float="0"></script>
+</body></html>

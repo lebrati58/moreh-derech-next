@@ -46,4 +46,5 @@ Promise.all([fetch("tour-catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)thr
   $("sDocs").textContent=d.tours.reduce((n,t)=>n+(t.directDocuments||0),0)+community.documents.length;render();
 }).catch(()=>{cards.replaceChildren(create("p","","לא ניתן לטעון את רשימת הסיורים. בדקו את החיבור לאינטרנט."))});
 })();
-</script></body></html>
+</script><script src="feedback.js"></script>
+</body></html>
