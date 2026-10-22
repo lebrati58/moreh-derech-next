@@ -3,9 +3,9 @@
 // Pages, scripts, styles et données sont REVALIDÉS auprès du serveur (cache: 'no-cache') : jamais
 // d'ancienne version tant que le réseau répond. Les appels à Supabase (POST, autre domaine) ne
 // passent jamais par ce cache.
-const CACHE = 'mdl-v25';
+const CACHE = 'mdl-v26';
 const FILES = ['./', './index.html', './admin.html', './style.css', './api.js', './config.js',
-  './gps-engine.js', './auto-engine.js', './create.html', './admin-nav.js', './vendor/qrcode.js', './v3/road67-route.json'];
+  './gps-engine.js', './auto-engine.js', './create.html', './solo.html', './admin-nav.js', './vendor/qrcode.js', './v3/road67-route.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));

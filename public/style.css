@@ -413,3 +413,8 @@ body.busmode .toast { bottom: auto; top: 80px; }
 .steps li.done::before { content: '✔ '; }
 .rq.off { opacity: .45; }
 .rq a { word-break: break-all; }
+
+/* ---------- Mode solo ---------- */
+.soloprog { height: 10px; background: #e3e9ec; border-radius: 99px; overflow: hidden; margin-top: 10px; }
+.soloprog i { display: block; height: 100%; background: linear-gradient(90deg, var(--sea-2), var(--ok)); transition: width .8s; }
+.solotime { font-size: 22px; font-weight: 900; color: var(--sea); }

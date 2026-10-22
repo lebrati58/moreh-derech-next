@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b4a6b">
+<title>משחק עצמאי — מורה דרך LIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap&subset=hebrew" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand" dir="rtl" lang="he"><span>מורה דרך</span><span class="live"><span class="dot"></span> SOLO</span></div>
+    <div class="hdr-right" id="langs"></div>
+  </div>
+  <svg class="land" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 L40 14 L70 24 L110 6 L150 22 L190 12 L230 26 L260 16 L300 28 L340 18 L400 30 V46 H0Z" fill="#3f6b35" opacity=".9"/>
+    <path d="M0 36 Q100 28 200 36 T400 34 V46 H0Z" fill="#f7f1e5"/>
+  </svg>
+</header>
+<main id="app"></main>
+<div id="toast" class="toast hidden"></div>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script src="gps-engine.js"></script>
+<script src="auto-engine.js"></script>
+<script>
+// Mode SOLO : chacun joue seul, avec SON GPS, sans admin ni serveur de jeu.
+//  * Le parcours vient soit d'un lien partagé par le créateur (solo.html?r=CODE, lu par solo_route),
+//    soit d'une génération sur le téléphone (départ = ma position, arrivée tapée) : auto-engine.js.
+//  * La question s'ouvre toute seule quand on arrive dans la zone d'un lieu (moteur gps-engine.js).
+//  * La position, les réponses et le score restent dans le téléphone (localStorage) : rien n'est envoyé.
+(function () {
+  const { rpc, esc, store, SHAPES } = window.MDL;
+  const G = window.MDL_GPS, A = window.MDL_AUTO;
+  const app = document.getElementById('app');
+  const SKEY = 'mdl_solo';
+  const TIME_MS = 45000, GRACE_MS = 1500;              // mêmes règles que le jeu en groupe
+  const points = (ok, ms) => ok ? 100 + Math.round(100 * Math.max(0, Math.min(1, 1 - (ms - GRACE_MS) / (TIME_MS - GRACE_MS)))) : 0;
+
+  // ------------------------------------------------------------ Langues de l'interface
+  const L = {
+    he: { dir: 'rtl', name: 'עב', title: '🚗 משחק עצמאי', sub: 'השאלות קופצות לבד לפי ה-GPS שלכם — בלי מדריך.',
+      driver: '⚠️ רק לנוסעים — לא לנהג/ת!', to: '🏁 לאן נוסעים?', to_ph: 'למשל: יקנעם עילית', from: '🚩 מאיפה?', here: '📍 המיקום שלי עכשיו',
+      me: 'המיקום שלי', qs: n => `${n} שאלות לאורך הדרך`, from_ph: 'או להקליד מקום', make: '✨ להכין את המשחק', shared: n => `מסלול משותף · ${n} שאלות`, go: 'יוצאים לדרך 🚀',
+      steps: ['📍 מאתרים את הנקודות', '🛣️ מחשבים את המסלול', '🔎 מחפשים מקומות בדרך', '📚 אוספים עובדות', '🎤 מכינים טקסטים', '❓ בונים שאלות'],
+      e_pos: 'לא קיבלנו מיקום. אשרו גישה למיקום או הקלידו את נקודת ההתחלה.', e_nf: x => `לא מצאנו את ״${x}״ במפה. נסו שם מלא יותר.`,
+      e_route: 'לא נמצא מסלול נסיעה.', e_net: 'שירות חיצוני לא ענה. נסו שוב בעוד רגע.', e_few: 'לא נמצאו מספיק מקומות לאורך המסלול.',
+      e_code: 'המסלול המשותף לא נמצא (אולי הקישור כבר לא פעיל).', score: 'נק׳', of: 'מתוך', gps_off: '📍 GPS כבוי — לגעת להפעלה',
+      gps_wait: 'מחפש מיקום…', gps_bad: '⚠️ מיקום לא מדויק — אפשר לבחור שאלה מהרשימה', next: 'הבא', now: 'עכשיו!', waiting: 'מחכים למקום הבא… 🚌',
+      waiting_s: 'השאלה תקפוץ לבד כשנגיע. אפשר לשים את הטלפון בצד — הוא ירטוט.', send: 'שליחה', right: 'נכון! 🎉', wrong: 'לא הפעם…',
+      timeout: '⏱️ נגמר הזמן', know: '🎤 הידעתם?', cont: 'המשך ➡️', list: '📋 כל השאלות', done_s: '✔', missed: 'לענות עכשיו',
+      sim: '🧪 ניסיון בבית (סימולציה)', sim_on: '🧪 סימולציה פועלת', reset: '🔄 משחק חדש', reset_q: 'למחוק את המשחק הזה ולהתחיל חדש?',
+      end: '🏁 סוף המסלול!', end_s: (s, c, n) => `${s} נקודות · ${c} תשובות נכונות מתוך ${n}`, share: '💬 לשתף בוואטסאפ',
+      share_t: (s, r) => `🚌 השגתי ${s} נקודות במשחק מורה דרך LIVE (${r})!`, rules: 'נכון = 100 · מהר = עד +100 · שגוי = 0', sec: 'שנ׳',
+      privacy: '🔒 המיקום נשאר בטלפון שלכם בלבד.' },
+    fr: { dir: 'ltr', name: 'FR', title: '🚗 Jeu en solo', sub: 'Les questions apparaissent toutes seules grâce à votre GPS — sans guide.',
+      driver: '⚠️ Pour les passagers seulement — pas pour le conducteur !', to: '🏁 Où allez-vous ?', to_ph: 'ex. : Yokneam Illit', from: '🚩 D’où partez-vous ?', here: '📍 Ma position actuelle',
+      me: 'Ma position', qs: n => `${n} questions le long du trajet`, from_ph: 'ou tapez un lieu', make: '✨ Préparer le jeu', shared: n => `Parcours partagé · ${n} questions`, go: 'C’est parti 🚀',
+      steps: ['📍 Points de départ et d’arrivée', '🛣️ Calcul du trajet', '🔎 Lieux le long de la route', '📚 Faits', '🎤 Textes', '❓ Questions'],
+      e_pos: 'Position introuvable. Autorisez la localisation ou tapez le départ.', e_nf: x => `« ${x} » introuvable sur la carte. Essayez un nom plus complet.`,
+      e_route: 'Aucun trajet trouvé.', e_net: 'Un service en ligne n’a pas répondu. Réessayez dans un instant.', e_few: 'Pas assez de lieux le long du trajet.',
+      e_code: 'Parcours partagé introuvable (lien peut-être désactivé).', score: 'pts', of: 'sur', gps_off: '📍 GPS éteint — touchez pour l’activer',
+      gps_wait: 'Recherche de la position…', gps_bad: '⚠️ Position imprécise — choisissez une question dans la liste', next: 'Prochain', now: 'Maintenant !', waiting: 'On attend le prochain lieu… 🚌',
+      waiting_s: 'La question apparaîtra toute seule. Le téléphone vibrera.', send: 'Envoyer', right: 'Bonne réponse ! 🎉', wrong: 'Pas cette fois…',
+      timeout: '⏱️ Temps écoulé', know: '🎤 Le saviez-vous ?', cont: 'Continuer ➡️', list: '📋 Toutes les questions', done_s: '✔', missed: 'Répondre maintenant',
+      sim: '🧪 Essai à la maison (simulation)', sim_on: '🧪 Simulation en cours', reset: '🔄 Nouveau jeu', reset_q: 'Effacer ce jeu et en commencer un nouveau ?',
+      end: '🏁 Fin du trajet !', end_s: (s, c, n) => `${s} points · ${c} bonnes réponses sur ${n}`, share: '💬 Partager sur WhatsApp',
+      share_t: (s, r) => `🚌 J’ai marqué ${s} points au jeu Moreh Derech LIVE (${r}) !`, rules: 'Juste = 100 · Rapide = jusqu’à +100 · Faux = 0', sec: 's',
+      privacy: '🔒 Votre position reste sur votre téléphone.' },
+    en: { dir: 'ltr', name: 'EN', title: '🚗 Solo game', sub: 'Questions pop up by themselves using your GPS — no guide needed.',
+      driver: '⚠️ Passengers only — not for the driver!', to: '🏁 Where are you going?', to_ph: 'e.g. Yokneam Illit', from: '🚩 Starting from?', here: '📍 My current location',
+      me: 'My location', qs: n => `${n} questions along the way`, from_ph: 'or type a place', make: '✨ Prepare the game', shared: n => `Shared route · ${n} questions`, go: 'Let’s go 🚀',
+      steps: ['📍 Finding start and end', '🛣️ Computing the route', '🔎 Places along the way', '📚 Facts', '🎤 Texts', '❓ Questions'],
+      e_pos: 'No location. Allow location access or type the start.', e_nf: x => `“${x}” not found on the map. Try a fuller name.`,
+      e_route: 'No driving route found.', e_net: 'An online service did not answer. Try again in a moment.', e_few: 'Not enough places along the route.',
+      e_code: 'Shared route not found (the link may be off).', score: 'pts', of: 'of', gps_off: '📍 GPS off — tap to turn on',
+      gps_wait: 'Looking for your location…', gps_bad: '⚠️ Inaccurate location — pick a question from the list', next: 'Next', now: 'Now!', waiting: 'Waiting for the next place… 🚌',
+      waiting_s: 'The question will pop up by itself. Your phone will vibrate.', send: 'Send', right: 'Correct! 🎉', wrong: 'Not this time…',
+      timeout: '⏱️ Time’s up', know: '🎤 Did you know?', cont: 'Continue ➡️', list: '📋 All questions', done_s: '✔', missed: 'Answer now',
+      sim: '🧪 Try at home (simulation)', sim_on: '🧪 Simulation running', reset: '🔄 New game', reset_q: 'Delete this game and start a new one?',
+      end: '🏁 End of the route!', end_s: (s, c, n) => `${s} points · ${c} correct out of ${n}`, share: '💬 Share on WhatsApp',
+      share_t: (s, r) => `🚌 I scored ${s} points in the Moreh Derech LIVE game (${r})!`, rules: 'Correct = 100 · Fast = up to +100 · Wrong = 0', sec: 's',
+      privacy: '🔒 Your location stays on your phone.' },
+    ru: { dir: 'ltr', name: 'RU', title: '🚗 Игра в одиночку', sub: 'Вопросы появляются сами по вашему GPS — без гида.',
+      driver: '⚠️ Только для пассажиров — не для водителя!', to: '🏁 Куда едем?', to_ph: 'напр.: Йокнеам-Илит', from: '🚩 Откуда?', here: '📍 Моё местоположение',
+      me: 'Моё местоположение', qs: n => `${n} вопросов по пути`, from_ph: 'или введите место', make: '✨ Подготовить игру', shared: n => `Общий маршрут · ${n} вопросов`, go: 'Поехали 🚀',
+      steps: ['📍 Начало и конец', '🛣️ Расчёт маршрута', '🔎 Места по пути', '📚 Факты', '🎤 Тексты', '❓ Вопросы'],
+      e_pos: 'Нет местоположения. Разрешите доступ или введите начало.', e_nf: x => `«${x}» не найдено на карте. Попробуйте полнее.`,
+      e_route: 'Маршрут не найден.', e_net: 'Онлайн-сервис не ответил. Попробуйте чуть позже.', e_few: 'Слишком мало мест по маршруту.',
+      e_code: 'Общий маршрут не найден (ссылка, возможно, отключена).', score: 'очк.', of: 'из', gps_off: '📍 GPS выключен — нажмите, чтобы включить',
+      gps_wait: 'Ищем местоположение…', gps_bad: '⚠️ Неточное местоположение — выберите вопрос из списка', next: 'Далее', now: 'Сейчас!', waiting: 'Ждём следующее место… 🚌',
+      waiting_s: 'Вопрос появится сам. Телефон завибрирует.', send: 'Отправить', right: 'Правильно! 🎉', wrong: 'Не в этот раз…',
+      timeout: '⏱️ Время вышло', know: '🎤 А вы знали?', cont: 'Дальше ➡️', list: '📋 Все вопросы', done_s: '✔', missed: 'Ответить сейчас',
+      sim: '🧪 Попробовать дома (симуляция)', sim_on: '🧪 Идёт симуляция', reset: '🔄 Новая игра', reset_q: 'Удалить эту игру и начать новую?',
+      end: '🏁 Конец маршрута!', end_s: (s, c, n) => `${s} очков · ${c} правильных из ${n}`, share: '💬 Поделиться в WhatsApp',
+      share_t: (s, r) => `🚌 Я набрал(а) ${s} очков в игре Moreh Derech LIVE (${r})!`, rules: 'Верно = 100 · Быстро = до +100 · Неверно = 0', sec: 'с',
+      privacy: '🔒 Местоположение остаётся в вашем телефоне.' }
+  };
+  let st = store.get(SKEY) || null;                   // partie en cours (survit au rechargement)
+  let lang = (st && st.lang) || store.get('mdl_lang') || 'he';
+  const t = (k, ...a) => { const v = (L[lang] || L.he)[k]; return typeof v === 'function' ? v(...a) : v; };
+  const save = () => { if (st) { st.lang = lang; store.set(SKEY, st); } };
+  const toast = m => { const el = document.getElementById('toast'); el.textContent = m; el.classList.remove('hidden'); clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.add('hidden'), 3500); };
+  const buzz = p => { try { navigator.vibrate && navigator.vibrate(p || [200, 100, 200]); } catch { /* */ } };
+  function setLang(l) {
+    lang = l; store.set('mdl_lang', l); save();
+    document.documentElement.lang = l; document.documentElement.dir = L[l].dir;
+    document.getElementById('langs').innerHTML = Object.keys(L).map(k => `<button class="chip" data-l="${k}" style="${k === l ? 'background:#fff;color:var(--sea)' : ''}">${L[k].name}</button>`).join('');
+    render(true);
+  }
+  document.getElementById('langs').addEventListener('click', e => { const b = e.target.closest('[data-l]'); if (b) setLang(b.dataset.l); });
+
+  // ------------------------------------------------------------ Contenu d'une question dans la langue choisie
+  const qText = q => (lang !== 'he' && q.i18n && q.i18n[lang] && q.i18n[lang].options && q.i18n[lang].options.length === 4)
+    ? { text: q.i18n[lang].text, options: q.i18n[lang].options, explanation: q.i18n[lang].explanation || '', l: lang }
+    : { text: q.text, options: q.options, explanation: q.explanation || '', l: 'he' };
+  const gText = q => (q.guide_i18n && (q.guide_i18n[lang] || q.guide_i18n.he)) || {};
+  const dirOf = l => `lang="${l}" dir="${L[l] ? L[l].dir : 'auto'}"`;
+  const nm = o => o ? (o[lang] || o.he || '') : '';
+
+  // ------------------------------------------------------------ Moteur (GPS réel ou simulation)
+  let P = null, trk = null, watchId = null, wake = null, lastFix = null, gpsErr = '';
+  const sim = { on: false, eng: null, now: 0, timer: null };
+  const clock = () => sim.on ? sim.now : Date.now();
+  function prepare() {
+    P = G.prepare(st.route); trk = new G.Tracker(P);
+  }
+  function keepAwake() {
+    if (!wake && 'wakeLock' in navigator && document.visibilityState === 'visible')
+      navigator.wakeLock.request('screen').then(w => { wake = w; w.addEventListener('release', () => { if (wake === w) wake = null; }); }).catch(() => {});
+  }
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && st && st.started) keepAwake(); });
+  function startGps() {
+    if (watchId !== null || sim.on) return;
+    if (!navigator.geolocation) { gpsErr = 'denied'; return render(); }
+    watchId = navigator.geolocation.watchPosition(p => {
+      lastFix = { lat: p.coords.latitude, lon: p.coords.longitude, accuracy: p.coords.accuracy, speed: p.coords.speed, heading: p.coords.heading, timestamp: p.timestamp || Date.now() };
+      gpsErr = ''; trk.update(lastFix); tick();
+    }, e => { gpsErr = e.code === 1 ? 'denied' : 'nosignal'; render(); }, { enableHighAccuracy: true, maximumAge: 3000, timeout: 20000 });
+    keepAwake();
+  }
+  function startSim() {
+    if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
+    sim.on = true; sim.now = Date.now(); sim.eng = new G.Simulator(P); trk = new G.Tracker(P);
+    clearInterval(sim.timer);
+    sim.timer = setInterval(() => {
+      const dt = 0.5 * 8; sim.now += dt * 1000;
+      const f = sim.eng.step(dt, sim.now); if (f) { lastFix = f; trk.update(f); }
+      if (sim.eng.done) clearInterval(sim.timer);
+      tick();
+    }, 500);
+    render(true);
+  }
+
+  // ------------------------------------------------------------ Déroulé : la question s'ouvre seule dans la zone du lieu
+  const answered = () => new Set(Object.keys(st.ans || {}));
+  function ctx() {
+    const now = clock();
+    return { now, used: answered(), skipped: new Set(), pinned: null, includeSpares: false,
+      phase: st.cur ? 'open' : (st.lastAt && now - st.lastAt < 40000 ? 'revealed' : 'waiting'),
+      lastOpenAt: st.lastOpenAt || null, revealedAt: st.lastAt || null };
+  }
+  function plan() { return G.plan(P, trk, ctx()); }
+  function openQ(key, auto) {
+    if (st.cur || st.ans[key]) return;
+    st.cur = { key, openReal: Date.now(), sel: null };
+    st.lastOpenAt = clock(); save();
+    if (auto) buzz();
+    render(true);
+  }
+  function answer(choice) {
+    const c = st.cur; if (!c || c.result) return;
+    const q = st.questions.find(x => x.key === c.key);
+    const ms = Date.now() - c.openReal, ok = choice === q.correct_index;
+    const pts = choice === null ? 0 : points(ok, ms);
+    st.ans[c.key] = { choice, ok: choice !== null && ok, pts, ms };
+    st.score = (st.score || 0) + pts;
+    c.result = true; st.lastAt = clock(); save();
+    buzz(ok ? 80 : [60, 60, 60]);
+    render(true);
+  }
+  function closeQ() { st.cur = null; save(); render(true); }
+  function finished() {
+    const all = st.questions.every(q => st.ans[q.key]);
+    const pl = P && trk && trk.s != null ? plan() : null;
+    return all || !!(pl && pl.arrived) || !!(sim.on && sim.eng && sim.eng.done && !st.cur);
+  }
+  function tick() {
+    if (!st || !st.started || !P) return;
+    if (st.cur && !st.cur.result && Date.now() - st.cur.openReal > TIME_MS) answer(null);
+    if (!st.cur) {
+      const pl = plan(), n = pl.next;
+      if (n && n.level === 3 && !pl.hold && !st.ans[n.stop.question]) return openQ(n.stop.question, true);
+    }
+    render();
+  }
+  setInterval(() => { if (st && st.started && st.cur && !st.cur.result) tick(); }, 1000);
+
+  // ------------------------------------------------------------ Écrans
+  let lastHtml = '', listOpen = false;
+  function paint(html, force) { if (force || html !== lastHtml) { app.innerHTML = html; lastHtml = html; } }
+  function render(force) {
+    if (!st || !st.questions) return renderSetup();
+    if (!st.started) return renderReady(force);
+    if (st.cur) return renderQuestion(force);
+    if (finished()) return renderEnd(force);
+    return renderWait(force);
+  }
+
+  // 1. Préparation : parcours partagé (lien) ou génération sur le téléphone
+  let form = { here: true, from: '', to: '' }, steps = null, err = '', busy = false;
+  function renderSetup() {
+    const ids = ['geocode', 'route', 'places', 'facts', 'texts', 'build'];
+    paint(`<div class="card">
+        <h2>${esc(t('title'))}</h2><p class="small">${esc(t('sub'))}</p>
+        <div class="navstat bad" style="font-weight:800">${esc(t('driver'))}</div>
+        <form id="sf" autocomplete="off">
+          <label for="to">${esc(t('to'))}</label>
+          <input type="text" id="to" required placeholder="${esc(t('to_ph'))}" value="${esc(form.to)}">
+          <label>${esc(t('from'))}</label>
+          <label class="optrow"><input type="checkbox" id="here" ${form.here ? 'checked' : ''} style="width:22px;height:22px"> ${esc(t('here'))}</label>
+          <input type="text" id="from" placeholder="${esc(t('from_ph'))}" value="${esc(form.from)}" ${form.here ? 'hidden' : ''}>
+          <button class="btn sun" style="margin-top:12px;font-size:20px" ${busy ? 'disabled' : ''}>${esc(t('make'))}</button>
+        </form>
+        <p class="small muted">${esc(t('privacy'))}</p></div>
+      ${steps ? `<div class="card"><ul class="steps">${ids.map((k, i) => `<li class="${steps.includes(k) ? (busy && steps[steps.length - 1] === k ? 'cur' : 'done') : ''}">${esc(t('steps')[i])}</li>`).join('')}</ul></div>` : ''}
+      ${err ? `<div class="card navstat bad">${esc(err)}</div>` : ''}`, true);
+    const f = document.getElementById('sf');
+    document.getElementById('here').onchange = e => { form.here = e.target.checked; document.getElementById('from').hidden = form.here; };
+    f.onsubmit = e => { e.preventDefault(); generate(); };
+  }
+  function myPosition() {
+    return new Promise((ok, ko) => navigator.geolocation ? navigator.geolocation.getCurrentPosition(
+      p => ok(p.coords.latitude.toFixed(5) + ', ' + p.coords.longitude.toFixed(5)), ko, { enableHighAccuracy: true, timeout: 20000 }) : ko());
+  }
+  async function generate() {
+    if (busy) return;
+    form.to = document.getElementById('to').value.trim(); form.from = document.getElementById('from').value.trim();
+    if (!form.to) return;
+    busy = true; steps = []; err = ''; renderSetup();
+    try {
+      let from = form.from;
+      if (form.here || !from) { try { from = await myPosition(); } catch { throw new Error('pos'); } }
+      const r = await A.generate({ G, from, to: form.to }, k => { if (!steps.includes(k)) steps.push(k); renderSetup(); });
+      busy = false;
+      if (!r.questions.length) { err = t('e_few'); return renderSetup(); }
+      // départ = ma position : titre « Ma position → arrivée » plutôt que des coordonnées
+      if (form.here || !form.from) r.route.title = Object.fromEntries(Object.keys(L).map(k => [k, `${L[k].me} → ${form.to}`]));
+      st = { v: 1, route: r.route, questions: r.questions, ans: {}, score: 0, started: false, label: r.route.title.he, lang };
+      save(); render(true);
+    } catch (e) {
+      busy = false;
+      const m = String(e && e.message || e);
+      err = m === 'pos' ? t('e_pos') : /^not_found:/.test(m) ? t('e_nf', m.slice(10)) : /no_route/.test(m) ? t('e_route') : t('e_net');
+      renderSetup();
+    }
+  }
+
+  // 2. Prêt à partir
+  function renderReady(force) {
+    paint(`<div class="card center">
+        <h2>${esc(nm(st.route.title) || st.label || '')}</h2>
+        <p>${esc(t(st.code ? 'shared' : 'qs', st.questions.length))} · ${(st.route.lengthM ? (st.route.lengthM / 1000).toFixed(1) + ' km' : '')}</p>
+        <div class="navstat bad" style="font-weight:800">${esc(t('driver'))}</div>
+        <p class="small">${esc(t('rules'))}</p>
+        <button class="btn sun big" id="go">${esc(t('go'))}</button>
+        <button class="btn ghost small" id="simgo" style="margin-top:10px">${esc(t('sim'))}</button>
+        <button class="btn ghost small" id="reset" style="margin-top:8px">${esc(t('reset'))}</button>
+        <p class="small muted">${esc(t('privacy'))}</p></div>`, force);
+    document.getElementById('go').onclick = () => { st.started = true; save(); prepare(); startGps(); render(true); };
+    document.getElementById('simgo').onclick = () => { st.started = true; save(); prepare(); startSim(); };
+    document.getElementById('reset').onclick = resetGame;
+  }
+  function resetGame() {
+    if (!confirm(t('reset_q'))) return;
+    st = null; store.del(SKEY); clearInterval(sim.timer); sim.on = false;
+    if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
+    if (wake) { wake.release().catch(() => {}); wake = null; }
+    history.replaceState(null, '', location.pathname);
+    render(true);
+  }
+  function head() {
+    const n = st.questions.length, done = Object.keys(st.ans).length;
+    const gps = sim.on ? 'on' : watchId === null ? 'off' : (lastFix && lastFix.accuracy <= 100 ? 'on' : 'warn');
+    return `<div class="bustop"><span>⭐ ${st.score || 0} ${esc(t('score'))}</span><span>✅ ${done}/${n}</span>
+      <span class="gpsdot ${gps}">${sim.on ? '🧪' : 'GPS'}</span></div>`;
+  }
+  // 3. En route : on attend le prochain lieu
+  function renderWait(force) {
+    if (!P) prepare();
+    let band;
+    const pl = plan(), n = pl.next;
+    if (watchId === null && !sim.on) band = `<button class="busband off" id="gpson">${esc(t('gps_off'))}</button>`;
+    else if (pl.status !== 'ok' && pl.status !== 'searching') band = `<div class="busband bad">${esc(t('gps_bad'))}</div>`;
+    else if (!lastFix) band = `<div class="busband l0">${esc(t('gps_wait'))}</div>`;
+    else if (n) band = `<div class="busband l${n.level || 0}">${['⚪', '🟡', '🟠', '🟢'][n.level || 0]} ${esc(t('next'))}: ${esc(nm(n.stop.name))} · ${n.inZone ? esc(t('now')) : (n.distM >= 1000 ? (n.distM / 1000).toFixed(1) + ' km' : Math.round(n.distM / 10) * 10 + ' m')}</div>`;
+    else band = `<div class="busband l0">☕</div>`;
+    const prog = P.length ? Math.min(100, Math.round(100 * (trk.s || 0) / P.length)) : 0;
+    paint(`${head()}${band}
+      <div class="card waiting" style="padding:16px 10px"><div class="big">${esc(t('waiting'))}</div><p class="muted small">${esc(t('waiting_s'))}</p>
+        <div class="soloprog"><i style="width:${prog}%"></i></div></div>
+      <details class="card" id="qlist" ${listOpen ? 'open' : ''}><summary style="font-weight:800;cursor:pointer">${esc(t('list'))}</summary>
+        <ul class="navlist">${P.stops.map((s, i) => { const a = st.ans[s.question];
+          return `<li><span class="grow">${i + 1} · ${esc(nm(s.name))}</span>${a ? `<b>${a.ok ? '✔' : '✘'} ${a.pts}</b>` : `<button class="btn ghost small" data-open="${esc(s.question)}">${esc(t('missed'))}</button>`}</li>`; }).join('')}</ul></details>
+      ${sim.on ? `<p class="small center muted">${esc(t('sim_on'))}</p>` : ''}
+      <button class="btn ghost small" id="reset">${esc(t('reset'))}</button>`, force);
+    document.getElementById('qlist').ontoggle = e => { listOpen = e.target.open; };
+    const g = document.getElementById('gpson'); if (g) g.onclick = () => { startGps(); render(true); };
+    app.querySelectorAll('[data-open]').forEach(b => b.onclick = () => openQ(b.dataset.open, false));
+    document.getElementById('reset').onclick = resetGame;
+  }
+  // 4. Une question
+  function renderQuestion(force) {
+    const c = st.cur, q = st.questions.find(x => x.key === c.key), tq = qText(q), a = st.ans[c.key];
+    const stop = st.route.stops.find(s => s.question === c.key);
+    if (!a) {
+      const left = Math.max(0, Math.ceil((TIME_MS - (Date.now() - c.openReal)) / 1000));
+      const key = 'q:' + c.key + ':' + c.sel + ':' + lang;
+      const html = `${head()}<div class="card">
+          <div class="qhead"><div class="meta"><span class="cat">📍 ${esc(nm(stop && stop.name))}</span></div><div class="solotime" id="left">${left} ${esc(t('sec'))}</div></div>
+          <div class="question-text" ${dirOf(tq.l)}>${esc(tq.text)}</div>
+          <div class="answers" id="ans">${tq.options.map((o, i) => `<button class="ans c${i} ${c.sel === i ? 'selected' : ''}" data-i="${i}"><span class="shape">${SHAPES[i]}</span><span ${dirOf(tq.l)}>${esc(o)}</span></button>`).join('')}</div>
+          <button class="btn ok" id="send" style="margin-top:14px" ${c.sel === null ? 'disabled' : ''}>${esc(t('send'))}</button></div>`;
+      if (force || renderQuestion._k !== key) { renderQuestion._k = key; paint(html, true);
+        document.getElementById('ans').onclick = e => { const b = e.target.closest('.ans'); if (!b) return; c.sel = +b.dataset.i; render(); };
+        document.getElementById('send').onclick = () => answer(c.sel);
+      } else { const el = document.getElementById('left'); if (el) el.textContent = left + ' ' + t('sec'); }
+      return;
+    }
+    renderQuestion._k = null;
+    const g = gText(q), more = Array.isArray(g.more) ? g.more : [];
+    paint(`${head()}
+      <div class="result ${a.choice === null ? 'none' : a.ok ? 'good' : 'wrong'}"><div class="big">${esc(a.choice === null ? t('timeout') : a.ok ? t('right') : t('wrong'))}</div>${a.pts ? `+${a.pts} ${esc(t('score'))}` : ''}</div>
+      <div class="card"><div class="question-text" ${dirOf(tq.l)} style="font-size:19px">${esc(tq.text)}</div>
+        <div class="answers locked">${tq.options.map((o, i) => `<div class="ans c${i} ${i === q.correct_index ? 'right' : 'dim'} ${a.choice === i ? 'selected' : ''}"><span class="shape">${SHAPES[i]}</span><span ${dirOf(tq.l)}>${esc(o)} ${i === q.correct_index ? '✔' : ''}</span></div>`).join('')}</div>
+        ${tq.explanation ? `<div class="explain" ${dirOf(tq.l)}>${esc(tq.explanation)}</div>` : ''}
+        ${g.script ? `<div class="explain" ${dirOf(g === (q.guide_i18n || {})[lang] ? lang : 'he')}><b>${esc(t('know'))}</b> ${esc(g.script)}${more.length ? `<ul style="margin:6px 0 0;padding-inline-start:18px">${more.map(m => `<li>${esc(m)}</li>`).join('')}</ul>` : ''}</div>` : ''}
+        <button class="btn sun" id="cont" style="margin-top:14px">${esc(t('cont'))}</button></div>`, force);
+    document.getElementById('cont').onclick = closeQ;
+  }
+  // 5. Arrivée
+  function renderEnd(force) {
+    const n = st.questions.length, ok = Object.values(st.ans).filter(a => a.ok).length;
+    const title = nm(st.route.title) || st.label || '';
+    const link = st.code ? new URL('solo.html?r=' + st.code, location.href).href : new URL('solo.html', location.href).href;
+    const msg = t('share_t', st.score || 0, title) + '\n' + link;
+    paint(`<div class="card center"><div class="trophy">🏆</div><h1>${esc(t('end'))}</h1>
+        <p style="font-size:20px;font-weight:800">${esc(t('end_s', st.score || 0, ok, n))}</p>
+        <a class="btn ok" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(msg)}" style="display:block;text-decoration:none">${esc(t('share'))}</a>
+        <button class="btn ghost small" id="reset" style="margin-top:10px">${esc(t('reset'))}</button></div>`, force);
+    document.getElementById('reset').onclick = resetGame;
+    if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
+    clearInterval(sim.timer);
+  }
+
+  // ------------------------------------------------------------ Démarrage : lien partagé ?
+  async function boot() {
+    const code = new URLSearchParams(location.search).get('r');
+    if (code && !(st && st.code === code.toUpperCase())) {
+      paint('<div class="card center muted">…</div>', true);
+      try {
+        const r = await rpc('solo_route', { p_code: code });
+        if (!r || r.error) throw new Error('code');
+        st = { v: 1, code: r.code, route: r.route, questions: r.questions, ans: {}, score: 0, started: false, label: (r.label && r.label.he) || '', lang };
+        save();
+      } catch { err = t('e_code'); st = null; }
+    }
+    if (st && st.started) { prepare(); startGps(); }
+    setLang(lang);
+  }
+  boot();
+})();
+</script>
+</body>
+</html>

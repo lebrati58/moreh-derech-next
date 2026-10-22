@@ -544,6 +544,22 @@
   }, true);
   buildInvite();
 
+  // Mode solo : partager le parcours V4 de la partie pour que chacun joue seul avec son GPS
+  async function soloShare() {
+    const code = S && S.game && S.game.bank;
+    if (!confirm('הקישור חושף את השאלות והתשובות של המסלול.\nלשלוח אותו רק אחרי המשחק עם מדריך (או במקומו). להמשיך?')) return;
+    const r = await act('admin_set_solo', { p_bank: code, p_on: true });
+    if (!r || r.error) return;
+    const link = new URL('solo.html?r=' + code, location.href).href;
+    const msg = `🚗 *${bankLabel(code)}* — משחק עצמאי של מורה דרך LIVE\nפותחים את הקישור, לוחצים ״יוצאים לדרך״ — והשאלות קופצות לבד לפי ה-GPS 👀\n⚠️ רק לנוסעים, לא לנהג/ת!\n${link}`;
+    const root = document.getElementById('modal-root');
+    root.innerHTML = `<div class="modal qrmodal"><div class="sheet center"><h2 style="margin:0 0 8px">🚗 משחק עצמאי</h2>
+      <p style="direction:ltr;font-weight:800;word-break:break-all">${esc(link)}</p>
+      <a class="btn ok" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(msg)}" style="display:block;text-decoration:none">💬 לשלוח בוואטסאפ</a>
+      <button type="button" class="btn ghost small" data-x style="margin-top:8px">✖ סגירה</button></div></div>`;
+    root.onclick = e => { if (e.target.closest('[data-x]') || e.target.classList.contains('qrmodal')) { root.innerHTML = ''; root.onclick = null; } };
+  }
+
   // QR plein écran pour ceux qui ne sont pas dans le groupe WhatsApp : on tend le téléphone, ils scannent
   function showQr() {
     if (!window.qrcode) return toast('QR לא זמין — שלחו את הקישור');
@@ -574,7 +590,8 @@
         <button class="btn ghost small" data-a="qr">📲 QR</button></div>
       <p class="small muted" style="margin:8px 0 0">${g ? `עכשיו: ${esc(bankLabel(g.bank || 'V1'))} · ${S.players} משתתפים · ${(S.stats && S.stats.questions) || 0} שאלות נחשפו` : 'אין משחק פעיל'}</p>
       <p class="small" style="margin:6px 0 0">ואז בלשונית 📡 <b>שידור חי</b>: 📍 הפעל GPS ← 🟢 ← 📣 פרסם שאלה.</p>
-      <a class="btn ghost small" href="create.html" style="display:block;text-align:center;text-decoration:none;margin-top:10px">✨ מסלול חדש אוטומטי — רק נקודת התחלה וסוף</a></div>`;
+      <a class="btn ghost small" href="create.html" style="display:block;text-align:center;text-decoration:none;margin-top:10px">✨ מסלול חדש אוטומטי — רק נקודת התחלה וסוף</a>
+      ${g && /^A\d/.test(g.bank || '') ? '<button class="btn ghost small" data-a="solo-share" style="margin-top:8px">🚗 קישור למשחק עצמאי של המסלול הזה</button>' : ''}</div>`;
   }
 
   function renderSettings() {
@@ -983,6 +1000,7 @@
         break;
       case 'bus-on': setBus(true); break;
       case 'qr': showQr(); break;
+      case 'solo-share': soloShare(); break;
       case 'logout': store.del(KEY); token = null; renderLogin(); break;
     }
   });

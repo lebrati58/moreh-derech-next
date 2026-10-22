@@ -268,6 +268,21 @@ Limites : services publics gratuits (usage léger) ; qualité = celle de Wikipé
 questions plus « factuelles » que celles écrites à la main. Moteur : `public/auto-engine.js`,
 tests : `tests/v4.test.mjs` et `tests/v4-browser.mjs` (services simulés avec des données d'exemple).
 
+## Mode solo — chacun avec son GPS, sans admin (`solo.html`)
+
+Lien « 🚗 משחק עצמאי » sur l'accueil élève. Deux façons d'avoir un parcours :
+- **le générer sur le téléphone** : départ = ma position (ou un lieu tapé), arrivée tapée → même moteur que la V4 ;
+- **un lien partagé** `solo.html?r=CODE` : le créateur coche « 🚗 גם משחק עצמאי » dans `create.html`
+  (ou ⚙️ → « קישור למשחק עצמאי »). `admin_set_solo` l'autorise, `solo_route` le lit. Jamais par défaut :
+  le lien révèle les questions ET les réponses.
+
+Pendant le trajet, le GPS du téléphone fait avancer le jeu : la question s'ouvre seule (vibration) en
+arrivant dans la zone du lieu, 45 s, score = mêmes règles (100 + bonus de vitesse jusqu'à 100). Liste des
+questions pour répondre à la main si le GPS est imprécis. Écran de fin + partage WhatsApp.
+**La position, les réponses et le score restent dans le téléphone** (localStorage) : rien n'est envoyé.
+« 🧪 ניסיון בבית » : simulation du trajet pour essayer chez soi. Avertissement : passagers seulement.
+Pas de classement commun (pas d'arbitre) : pour un groupe, garder le jeu avec guide.
+
 ## Développement et tests
 
 Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défaut ; variables

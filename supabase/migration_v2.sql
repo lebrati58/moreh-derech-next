@@ -166,6 +166,9 @@ update mdl.question_banks set default_time_sec = 45 where code in ('V2', 'V3') a
 -- tracé + lieux au format de public/v3/road67-route.json. Lu par l'admin seulement (admin_state).
 alter table mdl.question_banks add column if not exists route jsonb;
 alter table mdl.question_banks add column if not exists created_at timestamptz not null default clock_timestamp();
+-- Mode SOLO : le créateur peut partager un parcours V4 pour que chacun joue seul, avec son propre GPS.
+-- Partager = rendre lisibles (par lien) les questions ET leurs réponses : jamais par défaut.
+alter table mdl.question_banks add column if not exists solo boolean not null default false;
 
 alter table mdl.questions add column if not exists bank text not null default 'V1' references mdl.question_banks(code);
 -- Traductions PUBLIQUES (texte, 4 réponses dans le MÊME ordre, explication, catégorie) :
@@ -1029,6 +1032,31 @@ begin
   return jsonb_build_object('code', v_code, 'questions', v_n);
 end $$;
 
+-- Solo : le créateur autorise (ou retire) le jeu individuel de ce parcours.
+create or replace function public.admin_set_solo(p_token text, p_bank text, p_on boolean)
+returns jsonb language plpgsql security definer set search_path = mdl, public as $$
+begin
+  perform mdl.check_admin(p_token);
+  update mdl.question_banks set solo = coalesce(p_on, false) where code = p_bank and route is not null;
+  if not found then return jsonb_build_object('error', 'not_found'); end if;
+  return jsonb_build_object('code', p_bank, 'solo', coalesce(p_on, false));
+end $$;
+
+-- Solo : n'importe qui avec le lien lit le parcours partagé (tracé + questions + réponses + textes).
+-- Aucune écriture, aucune donnée de joueur, et seulement les parcours que le créateur a partagés.
+create or replace function public.solo_route(p_code text)
+returns jsonb language plpgsql stable security definer set search_path = mdl, public as $$
+declare b mdl.question_banks;
+begin
+  select * into b from mdl.question_banks where code = upper(btrim(coalesce(p_code, ''))) and solo and route is not null;
+  if not found then return jsonb_build_object('error', 'not_found'); end if;
+  return jsonb_build_object('code', b.code, 'label', b.label, 'route', b.route,
+    'questions', (select coalesce(jsonb_agg(jsonb_build_object(
+        'key', split_part(x.ext_key, ':', 2), 'text', x.text, 'options', x.options, 'correct_index', x.correct_index,
+        'explanation', x.explanation, 'i18n', x.i18n, 'guide_i18n', x.guide_i18n) order by x.sort_order, x.id), '[]'::jsonb)
+      from mdl.questions x where x.bank = b.code));
+end $$;
+
 -- ---------------------------------------------------------------------
 --  Droits : seules les fonctions public.* ci-dessus sont appelables
 -- ---------------------------------------------------------------------
@@ -1042,7 +1070,7 @@ begin
     'admin_login(text)', 'admin_state(text)', 'admin_save_question(text,jsonb)', 'admin_delete_question(text,bigint)',
     'admin_reorder(text,bigint[])', 'admin_new_game(text,text,text)', 'admin_open_question(text,bigint)',
     'admin_toggle_spare(text,bigint,boolean)', 'admin_photos(text,text)', 'admin_bank_questions(text,text)',
-    'admin_import_route(text,jsonb,jsonb,jsonb)',
+    'admin_import_route(text,jsonb,jsonb,jsonb)', 'admin_set_solo(text,text,boolean)', 'solo_route(text)',
     'admin_close_question(text,boolean)', 'admin_reveal(text,boolean)', 'admin_pause(text,boolean)', 'admin_finish(text,boolean)',
     'admin_resume_game(text)', 'admin_settings(text,jsonb)', 'admin_remove_player(text,bigint)', 'admin_export(text)']
   loop

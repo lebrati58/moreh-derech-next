@@ -136,3 +136,19 @@ test('enregistrement : refus des données invalides et sans jeton', async () => 
   assert.equal((await bad(built.questions, { geometry: [[1, 2]] })).error, 'bad_route');
   await assert.rejects(rpc(c, 'admin_import_route', { p_token: 'nope', p_label: {}, p_route: built.route, p_questions: JSON.stringify(built.questions) }));
 });
+
+test('solo : un parcours n\'est lisible par lien que si le créateur le partage', async () => {
+  const r = await rpc(c, 'admin_import_route', { p_token: admin, p_label: { he: 'סולו' }, p_route: built.route, p_questions: JSON.stringify(built.questions) });
+  assert.equal((await rpc(c, 'solo_route', { p_code: r.code })).error, 'not_found', 'pas partagé par défaut');
+  assert.equal((await rpc(c, 'admin_set_solo', { p_token: admin, p_bank: r.code, p_on: true })).solo, true);
+  const s = await rpc(c, 'solo_route', { p_code: r.code.toLowerCase() + ' ' });
+  assert.equal(s.code, r.code); assert.equal(s.route.stops.length, built.questions.length);
+  assert.deepEqual(s.questions.map(q => q.key), built.questions.map(q => q.key), 'clés = lieux du tracé');
+  assert.equal(s.questions[0].correct_index, built.questions[0].correct_index);
+  assert.ok(!JSON.stringify(s).includes('token'), 'aucune donnée de session');
+  await rpc(c, 'admin_set_solo', { p_token: admin, p_bank: r.code, p_on: false });
+  assert.equal((await rpc(c, 'solo_route', { p_code: r.code })).error, 'not_found', 'partage retiré');
+  assert.equal((await rpc(c, 'admin_set_solo', { p_token: admin, p_bank: 'V3', p_on: true })).error, 'not_found', 'V3 jamais exposée');
+  assert.equal((await rpc(c, 'solo_route', { p_code: 'V3' })).error, 'not_found');
+  await assert.rejects(rpc(c, 'admin_set_solo', { p_token: 'x', p_bank: r.code, p_on: true }));
+});
