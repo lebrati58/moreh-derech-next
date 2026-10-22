@@ -47,7 +47,7 @@ assert.match(chip, /6 שאלות/); assert.match(chip, /\+2 חלופיות/);
 const students = {};
 for (const [lang, name] of [['fr', 'Camille'], ['ru', 'Ольга'], ['he', 'דנה']]) {
   const p = await (await browser.newContext(phone)).newPage(); watch(p, 'élève-' + lang);
-  await p.goto(BASE + '/');
+  await p.goto(BASE + '/play.html');
   await p.waitForSelector('.langgrid');
   if (lang === 'fr') await shot(p, 'p0-lang-picker');
   await p.click(`.langopt[data-lang=${lang}]`);
