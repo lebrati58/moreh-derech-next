@@ -22398,6 +22398,978 @@
       "explanation": "מטרתו להשיב לעמק צמחי מים שנכחדו.",
       "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
       "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N21-1-01",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "אילו שני נחלים מרכזיים עוברים בשמורת עין גדי?",
+      "options": [
+        "נחל דוד ונחל ערוגות",
+        "נחל חבר ונחל משמר",
+        "נחל צאלים ונחל בוקק",
+        "נחל קדרון ונחל פרת"
+      ],
+      "correct": 0,
+      "explanation": "ביניהם נמצא בית הכנסת העתיק.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-1-02",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "אילו שני יונקים הם סיפור הצלחה בשמורת עין גדי?",
+      "options": [
+        "היעל הנובי ושפן הסלע",
+        "הצבי והאייל",
+        "הנמר והזאב",
+        "הצבוע והתן"
+      ],
+      "correct": 0,
+      "explanation": "\"הרים הגבוהים ליעלים, סלעים מחסה לשפנים\".",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-1-03",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "איך אפשר לדעת את גילו של יעל זכר?",
+      "options": [
+        "לפי מספר בליטות הגדילה בקרניו",
+        "לפי צבע הפרווה",
+        "לפי אורך הזנב",
+        "לפי השיניים בלבד"
+      ],
+      "correct": 0,
+      "explanation": "הקרניים משוכות לאחור.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-1-04",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "מתי עונת הייחום של היעלים?",
+      "options": [
+        "ספטמבר–אוקטובר",
+        "ינואר",
+        "מאי",
+        "יולי"
+      ],
+      "correct": 0,
+      "explanation": "אז מתנהלים קרבות בין הזכרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-1-05",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "באיזה שם נוסף נקראת עין גדי במקרא?",
+      "options": [
+        "חצצון תמר",
+        "עיר התמרים",
+        "עין משפט",
+        "צוער"
+      ],
+      "correct": 0,
+      "explanation": "\"והנם בחצצון תמר, היא עין גדי\".",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-1-06",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "באיזה צמח בושם יקר נודעה עין גדי?",
+      "options": [
+        "האפרסמון (הבלסם)",
+        "הוורד",
+        "הלבונה",
+        "הזעפרן"
+      ],
+      "correct": 0,
+      "explanation": "בושם יקר מזהב.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-1-07",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "באיזו שנה הוקם קיבוץ עין גדי?",
+      "options": [
+        "1956",
+        "1949",
+        "1967",
+        "1936"
+      ],
+      "correct": 0,
+      "explanation": "קודם לכן — היאחזות נח\"ל ב-1953.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-1-08",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "מה מעטר את מרכז רצפת הפסיפס בבית הכנסת של עין גדי?",
+      "options": [
+        "טווסים וברווזים",
+        "גלגל מזלות עם הליוס",
+        "עקדת יצחק",
+        "אריות"
+      ],
+      "correct": 0,
+      "explanation": "סביבם דגמים גאומטריים.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-1-09",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "מה התגלה בקלף השרוף מבית הכנסת, שפוענח בטכנולוגיה מתקדמת?",
+      "options": [
+        "ספר ויקרא",
+        "ספר בראשית",
+        "מגילת אסתר",
+        "תהילים"
+      ],
+      "correct": 0,
+      "explanation": "הקלף נמצא בסמוך לבימה.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-1-10",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "איזה \"סוד\" אסור היה לגלות לפי כתובת בית הכנסת?",
+      "options": [
+        "סוד העיר — כנראה סוד הפקת האפרסמון",
+        "מקום האוצר",
+        "שם האל",
+        "דרך במדבר"
+      ],
+      "correct": 0,
+      "explanation": "הכתובת מקללת את המגלה.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-1-11",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מה מיוחד בים המלח מבחינת גובה?",
+      "options": [
+        "המקום היבש הנמוך ביותר בכדור הארץ",
+        "הים העמוק בעולם",
+        "האגם הגבוה בעולם",
+        "הים הקר בעולם"
+      ],
+      "correct": 0,
+      "explanation": "קרקעית האוקיינוסים נמוכה ממנו.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-1-12",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מה סימלו שני הדגים שבמפת מידבא בכניסת הירדן לים המלח?",
+      "options": [
+        "אחד שוחה פנימה ואחד בורח — אין חיים בים",
+        "שפע דגים",
+        "דיג",
+        "נמל"
+      ],
+      "correct": 0,
+      "explanation": "סמל למליחות הים.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-1-13",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מה יוצר את הבולענים לאורך חוף ים המלח?",
+      "options": [
+        "מי תהום ממיסים שכבות מלח שנחשפו בנסיגת הים",
+        "רעידות אדמה",
+        "פעילות געשית",
+        "חפירות"
+      ],
+      "correct": 0,
+      "explanation": "הקרקע קורסת מעל החללים.",
+      "sourceUrl": "https://drive.google.com/file/d/10PAkoyaHI0oSYVfyPKACYBgonYh0XBkW/view",
+      "sourceDoc": "סיור 21 — בדרך"
+    },
+    {
+      "id": "N21-1-14",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "עם איזו כת מזוהה האתר בקומראן?",
+      "options": [
+        "האיסיים",
+        "הצדוקים",
+        "הקנאים",
+        "השומרונים"
+      ],
+      "correct": 0,
+      "explanation": "במערות הסמוכות נמצאו מגילות מדבר יהודה.",
+      "sourceUrl": "https://drive.google.com/file/d/10PAkoyaHI0oSYVfyPKACYBgonYh0XBkW/view",
+      "sourceDoc": "סיור 21 — בדרך"
+    },
+    {
+      "id": "N21-1-15",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "מהי מערת המלח הארוכה בישראל?",
+      "options": [
+        "מערת מלח\"ם בהר סדום",
+        "מערת הנטיפים",
+        "מערת קשת",
+        "מערת צדקיהו"
+      ],
+      "correct": 0,
+      "explanation": "אורכה כ-5.5 ק\"מ.",
+      "sourceUrl": "https://drive.google.com/file/d/1E0C2LVMOm-xmyMaV5xH0jV6Np_JWMX-R/view",
+      "sourceDoc": "סיור 21 — הר סדום"
+    },
+    {
+      "id": "N21-1-16",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "איזה גוש סלע בהר סדום מכונה בפי העם על שם דמות מקראית?",
+      "options": [
+        "אשת לוט",
+        "אבן יעקב",
+        "כיסא אליהו",
+        "עמוד שמשון"
+      ],
+      "correct": 0,
+      "explanation": "שהביטה אחורה ונהפכה לנציב מלח.",
+      "sourceUrl": "https://drive.google.com/file/d/1pqeGCRGAwTKctoLBj6kSYIaHeRN4549T/view",
+      "sourceDoc": "הר סדום — סיכום הדרכה"
+    },
+    {
+      "id": "N21-1-17",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "אילו ערים מקראיות מזוהות במסורת עם אזור הר סדום?",
+      "options": [
+        "סדום ועמורה",
+        "יריחו ועי",
+        "צוער ובלע",
+        "באר שבע וערד"
+      ],
+      "correct": 0,
+      "explanation": "\"גפרית ואש\".",
+      "sourceUrl": "https://drive.google.com/file/d/1pqeGCRGAwTKctoLBj6kSYIaHeRN4549T/view",
+      "sourceDoc": "הר סדום — סיכום הדרכה"
+    },
+    {
+      "id": "N21-1-18",
+      "tourId": "21",
+      "level": 1,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "מה הפיקו מפעלי ים המלח ממי הים?",
+      "options": [
+        "אשלג, ברום ומגנזיום",
+        "זהב",
+        "נפט",
+        "אורניום"
+      ],
+      "correct": 0,
+      "explanation": "ראשית התעשייה — יזמים כמשה נובומייסקי.",
+      "sourceUrl": "https://drive.google.com/file/d/1pqeGCRGAwTKctoLBj6kSYIaHeRN4549T/view",
+      "sourceDoc": "הר סדום — סיכום הדרכה"
+    },
+    {
+      "id": "N21-2-01",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "מדוע נובעים מעיינות בעין גדי?",
+      "options": [
+        "מי גשמים מחלחלים בגיר ובדולומיט ונעצרים בחוואר אטום",
+        "מעיינות חמים געשיים",
+        "מי ים מסוננים",
+        "שלג מהחרמון"
+      ],
+      "correct": 0,
+      "explanation": "ארבעה מעיינות: דוד, שולמית, עין גדי וערוגות.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-2-02",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "לאיזה אזור צמחייה שייכת פתילת המדבר (תפוח סדום)?",
+      "options": [
+        "סודני (טרופי)",
+        "ים־תיכוני",
+        "איראנו־טוראני",
+        "אירופי"
+      ],
+      "correct": 0,
+      "explanation": "בעין גדי נפגשים ארבעה אזורי צומח.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-2-03",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "איזה צמח ים־תיכוני גדל באזור המפלים בעין גדי?",
+      "options": [
+        "שרות שולמית (שרך)",
+        "שיטה",
+        "סלבדורה",
+        "זקום"
+      ],
+      "correct": 0,
+      "explanation": "גם סב מצוי.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-2-04",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה מספר יוסף בן מתתיהו על אנשי מצדה ועין גדי במרד הגדול?",
+      "options": [
+        "הסיקריים יצאו ממצדה והרגו כ-700 מתושבי עין גדי",
+        "הם כרתו ברית",
+        "עין גדי סייעה למצדה",
+        "תושבי עין גדי ברחו למצדה"
+      ],
+      "correct": 0,
+      "explanation": "מקור ב\"מלחמות היהודים\".",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-05",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "על מה התלונן שמעון בר כוסבא באיגרתו לאנשי עין גדי?",
+      "options": [
+        "שהם יושבים בטוב ואינם דואגים לאחיהם",
+        "שהם מסרו נשק",
+        "שהם בגדו",
+        "שהם לא שילמו מס"
+      ],
+      "correct": 0,
+      "explanation": "\"בטוב אתם יושבין, אוכלין ושותין...\"",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-06",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה נמצא במערת האגרות בנחל חבר הקשור לעין גדי?",
+      "options": [
+        "ארכיון של בבתא בת שמעון",
+        "ספר תורה",
+        "אוצר זהב",
+        "מקדש"
+      ],
+      "correct": 0,
+      "explanation": "ארכיון הרכוש של אישה מעין גדי.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-07",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "איך מתוארת עין גדי במפת מידבא?",
+      "options": [
+        "יישוב עם גגות אדומים, תמרים ומעגן סירות",
+        "כתל חרב",
+        "כמבצר",
+        "כמנזר"
+      ],
+      "correct": 0,
+      "explanation": "מעיד על גודלה ועל היותה נמל.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-08",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה מקור המידע על עין גדי ככפר יהודי גדול בתקופה הביזנטית?",
+      "options": [
+        "האונומסטיקון של אוסביוס",
+        "התלמוד הבבלי",
+        "כתבי פליניוס",
+        "התנ\"ך"
+      ],
+      "correct": 0,
+      "explanation": "בחפירות נחשפו בתים ומקוואות.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-2-09",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "מי חפרו את בית הכנסת העתיק בעין גדי?",
+      "options": [
+        "דן ברעם ואהוד נצר",
+        "יגאל ידין",
+        "בנימין מזר",
+        "נחמן אביגד"
+      ],
+      "correct": 0,
+      "explanation": "לפחות שני שלבי בנייה.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-2-10",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "במה שונה רשימת המזלות בבית הכנסת של עין גדי מבתי כנסת אחרים?",
+      "options": [
+        "כתובה כרשימה ולא מצוירת כגלגל",
+        "אינה כוללת חודשים",
+        "כתובה ביוונית",
+        "מצוירת עם הליוס"
+      ],
+      "correct": 0,
+      "explanation": "לצדה רשימת השמות מאדם עד נח.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-11",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "כמה מטבעות נמצאו באוצר בית הכנסת?",
+      "options": [
+        "כ-5,000",
+        "כ-50",
+        "כ-500,000",
+        "כ-5"
+      ],
+      "correct": 0,
+      "explanation": "מטבעות ברונזה וזהב.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-12",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מדוע נקרא ים המלח בתקופה הרומית \"אגם האספלט\"?",
+      "options": [
+        "בגלל גושי הזפת הנפלטים ממנו",
+        "בגלל צבעו",
+        "בגלל דרך סלולה",
+        "בגלל מכרות"
+      ],
+      "correct": 0,
+      "explanation": "גם \"ים המוות\" — כי אין בו חיים.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-13",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מה פירוש השם \"ימת הלשון\"?",
+      "options": [
+        "על שם חצי האי בצורת לשון החודר לים",
+        "על שם טעמו",
+        "על שם שפה עתיקה",
+        "על שם גלים"
+      ],
+      "correct": 0,
+      "explanation": "בין החלק הצפוני העמוק לדרומי הרדוד.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-2-14",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "למה שימש המלח בעולם העתיק, לפי הסיכום?",
+      "options": [
+        "שימור מזון, איטום ספינות ותמרוקים",
+        "בנייה",
+        "דלק",
+        "מטבע בלבד"
+      ],
+      "correct": 0,
+      "explanation": "מצד בוקק שמר על דרך המלח.",
+      "sourceUrl": "https://drive.google.com/file/d/1pqeGCRGAwTKctoLBj6kSYIaHeRN4549T/view",
+      "sourceDoc": "הר סדום — סיכום הדרכה"
+    },
+    {
+      "id": "N21-2-15",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "מה מיוחד בהר סדום בהשוואה לדיאפירים אחרים בעולם?",
+      "options": [
+        "אחד המופעים הבודדים באזור יובשני",
+        "הגבוה בעולם",
+        "היחיד בעולם",
+        "עשוי גיר"
+      ],
+      "correct": 0,
+      "explanation": "דיאפירים נוספים: איראן, יוטה, קנדה, גרמניה, מפרץ מקסיקו.",
+      "sourceUrl": "https://drive.google.com/file/d/1E0C2LVMOm-xmyMaV5xH0jV6Np_JWMX-R/view",
+      "sourceDoc": "סיור 21 — הר סדום"
+    },
+    {
+      "id": "N21-2-16",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "מה מידות גוש המלח של הר סדום, לפי הסיכום?",
+      "options": [
+        "כ-10–11 ק\"מ אורך וכ-1.5 ק\"מ רוחב",
+        "כ-1 ק\"מ אורך",
+        "כ-50 ק\"מ אורך",
+        "כ-100 מ' אורך"
+      ],
+      "correct": 0,
+      "explanation": "המלח נדחק כלפי מעלה תחת לחץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1pqeGCRGAwTKctoLBj6kSYIaHeRN4549T/view",
+      "sourceDoc": "הר סדום — סיכום הדרכה"
+    },
+    {
+      "id": "N21-2-17",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "מהו \"פקק הלשון\"?",
+      "options": [
+        "עליית מלח בצד המזרחי של השבר, מקבילה להר סדום",
+        "סכר",
+        "מפרץ",
+        "מעיין"
+      ],
+      "correct": 0,
+      "explanation": "המלח עולה משני צדי הטרנספורם.",
+      "sourceUrl": "https://drive.google.com/file/d/1E0C2LVMOm-xmyMaV5xH0jV6Np_JWMX-R/view",
+      "sourceDoc": "סיור 21 — הר סדום"
+    },
+    {
+      "id": "N21-3-01",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "נחל דוד",
+      "question": "לאיזה אזור צומח שייכת הערבה המחודדת?",
+      "options": [
+        "איראנו־טוראני",
+        "סודני",
+        "ים־תיכוני",
+        "סהרו־ערבי"
+      ],
+      "correct": 0,
+      "explanation": "זוגן השיח ויפרוק המדבר — סהרו־ערביים.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-3-02",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה קרה בעין גדי בתקופת ההתקפה הפרסית והחזרה הביזנטית (614–628)?",
+      "options": [
+        "היישוב נהרס",
+        "שגשג",
+        "הפך לנוצרי",
+        "הפך לבירה"
+      ],
+      "correct": 0,
+      "explanation": "הביזנטים חזרו ופגעו ביהודים שתמכו בפרסים.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-03",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה כתב פליניוס הזקן על עין גדי?",
+      "options": [
+        "שנייה רק לירושלים בפוריותה, וכעת כמוה תל של אפר",
+        "עיר נמל גדולה",
+        "מקום קבורה",
+        "עיר האיסיים"
+      ],
+      "correct": 0,
+      "explanation": "הוא מציין שהיא שכנה מתחת ליישוב האיסיים.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-04",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה נחשף בתל גורן שבפתח נחל ערוגות?",
+      "options": [
+        "התיישבות מימי הבית הראשון (מאות 9–7 לפנה\"ס)",
+        "מקדש כלקוליתי",
+        "כנסייה",
+        "מבצר צלבני"
+      ],
+      "correct": 0,
+      "explanation": "אחד ממוקדי עין גדי הקדומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-3-05",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "באיזה מבצע נכבש אזור עין גדי במלחמת העצמאות?",
+      "options": [
+        "מבצע ייצוב (מרץ 1949)",
+        "מבצע עובדה",
+        "מבצע חורב",
+        "מבצע יואב"
+      ],
+      "correct": 0,
+      "explanation": "ב-1953 הוקמה במקום היאחזות נח\"ל.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-06",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "באיזה יישוב בצפון ים המלח משחזרים את תעשיית בושם הבלסם?",
+      "options": [
+        "אלמוג",
+        "קליה",
+        "עין גדי",
+        "נווה זוהר"
+      ],
+      "correct": 0,
+      "explanation": "שם משחזרים גם את הצומח העתיק.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-07",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה מקשר בין עין גדי ל\"עין עגלים\" בספר יחזקאל?",
+      "options": [
+        "חזון דייגים לאורך ים המלח באחרית הימים",
+        "מלחמה",
+        "מסחר מלח",
+        "נחלת שבט"
+      ],
+      "correct": 0,
+      "explanation": "\"משטוח לחרמים יהיו\".",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-08",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "מי מהחוקרים מפרש את \"סוד הקריה\" כסוד הפקת האפרסמון?",
+      "options": [
+        "זוהר עמאר",
+        "יגאל ידין",
+        "אהוד נצר",
+        "יוסף נוה"
+      ],
+      "correct": 0,
+      "explanation": "זו דעת רוב החוקרים לפי הסיכום.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-3-09",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "לאיזו מאה מתוארכת רצפת הפסיפס הקדומה בבית הכנסת?",
+      "options": [
+        "המאה ה-3",
+        "המאה ה-1",
+        "המאה ה-8",
+        "המאה ה-12"
+      ],
+      "correct": 0,
+      "explanation": "השלב המאוחר — מאות 5–6.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-3-10",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "בית הכנסת העתיק בעין גדי",
+      "question": "מה עוד אוסרת הכתובת, מלבד גילוי הסוד?",
+      "options": [
+        "גרימת מחלוקת בין אדם לחברו",
+        "שבירת שבת",
+        "אכילת חזיר",
+        "מכירת קרקע"
+      ],
+      "correct": 0,
+      "explanation": "\"כל מאן דאפריש בין חד לחבריה...\" — לצד אזהרת גילוי הסוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1KuXFVuvj7blXPatgDnc7VczU5d5WE_Yl/view",
+      "sourceDoc": "שמורת עין גדי ובית הכנסת — סיכום"
+    },
+    {
+      "id": "N21-3-11",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "על שם מי נקרא כף קוסטיגן בלשון?",
+      "options": [
+        "חוקר אירי שמת מהתייבשות",
+        "קצין בריטי",
+        "שייח' מקומי",
+        "נזיר"
+      ],
+      "correct": 0,
+      "explanation": "כף מולינה — על שם חוקר בריטי.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-12",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "איזה שם נתנו צליינים נוצרים לים המלח בגלל ריח הגופרית?",
+      "options": [
+        "פתח הגיהנום",
+        "ים הזהב",
+        "ים השקט",
+        "ים הנבואה"
+      ],
+      "correct": 0,
+      "explanation": "המוסלמים כינו אותו בחר לוט.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-13",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מה קרה למיצר לינץ' בעשורים האחרונים?",
+      "options": [
+        "התייבש לחלוטין",
+        "הועמק",
+        "הפך לנמל",
+        "הוצף"
+      ],
+      "correct": 0,
+      "explanation": "הים נסוג בקצב של כמטר בשנה.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-14",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מאיזה ספר מקראי בא השם \"ים הערבה\"?",
+      "options": [
+        "יהושע ודברים",
+        "בראשית",
+        "יחזקאל",
+        "רות"
+      ],
+      "correct": 0,
+      "explanation": "\"הים הקדמוני\" — ביחזקאל ובזכריה.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-15",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "היכן נמצאת מערת המלח הארוכה בעולם, לפי הסיכום?",
+      "options": [
+        "באיראן",
+        "ביוטה",
+        "בגרמניה",
+        "בקנדה"
+      ],
+      "correct": 0,
+      "explanation": "אורכה כ-6.4 ק\"מ.",
+      "sourceUrl": "https://drive.google.com/file/d/1E0C2LVMOm-xmyMaV5xH0jV6Np_JWMX-R/view",
+      "sourceDoc": "סיור 21 — הר סדום"
+    },
+    {
+      "id": "N21-3-16",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "מי עומד בראש המרכז לחקר מערות (מלח\"ם) שחקר את מערות הר סדום?",
+      "options": [
+        "פרופ' עמוס פרומקין",
+        "פרופ' יגאל ידין",
+        "פרופ' אהוד נצר",
+        "פרופ' זוהר עמאר"
+      ],
+      "correct": 0,
+      "explanation": "הכניסה למערות אסורה ללא ליווי מקצועי.",
+      "sourceUrl": "https://drive.google.com/file/d/1pqeGCRGAwTKctoLBj6kSYIaHeRN4549T/view",
+      "sourceDoc": "הר סדום — סיכום הדרכה"
+    },
+    {
+      "id": "N21-3-17",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "הר סדום",
+      "question": "מה מסבירים על מקור המילה \"סלרי\" (שכר)?",
+      "options": [
+        "היא קשורה למלח בלטינית",
+        "לשמש",
+        "לחיטה",
+        "לכסף"
+      ],
+      "correct": 0,
+      "explanation": "כך מובא בסיכום על חשיבות המלח.",
+      "sourceUrl": "https://drive.google.com/file/d/1pqeGCRGAwTKctoLBj6kSYIaHeRN4549T/view",
+      "sourceDoc": "הר סדום — סיכום הדרכה"
+    },
+    {
+      "id": "N21-2-18",
+      "tourId": "21",
+      "level": 2,
+      "source": "tour21",
+      "stop": "ים המלח",
+      "question": "מה גילו הנבטים בים המלח, לפי הסיכום?",
+      "options": [
+        "את כושר הציפה, שאפשר להעביר משאות גדולים",
+        "מכרות זהב",
+        "מעיינות מתוקים",
+        "נתיב יבשתי"
+      ],
+      "correct": 0,
+      "explanation": "פליניוס מספר שאפילו פרים וגמלים צפים בו.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N21-3-18",
+      "tourId": "21",
+      "level": 3,
+      "source": "tour21",
+      "stop": "עין גדי",
+      "question": "מה היה מצבה של עין גדי בתקופה העות'מאנית?",
+      "options": [
+        "ננטשה לחלוטין; רק נוודים עברו בה",
+        "כפר גדול",
+        "עיר נמל",
+        "מבצר"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה הממלוכית הייתה יישוב חקלאי דליל.",
+      "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
+      "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
     }
   ]
 }
