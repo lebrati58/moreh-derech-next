@@ -15486,6 +15486,1050 @@
       "explanation": "מאחורי הגמלון המעוטר נחצבו 8 כוכים.",
       "sourceUrl": "https://drive.google.com/file/d/1BMzwIPM2QbmUyNnmmWcA_NHGwMyPOSjS/view",
       "sourceDoc": "קברי נחל קדרון (סיכום)"
+    },
+    {
+      "id": "N14-1-01",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "איזה גוף הקים את קיבוץ רמת רחל?",
+      "options": [
+        "גדוד העבודה ע\"ש יוסף טרומפלדור",
+        "השומר הצעיר",
+        "ההגנה",
+        "הקרן הקיימת"
+      ],
+      "correct": 0,
+      "explanation": "הקיבוץ הוקם ב-1926 בידי גדוד העבודה.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-1-02",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה קרה לקיבוץ רמת רחל במאורעות 1929?",
+      "options": [
+        "פורעים ערבים הרסו אותו, והוא הוקם מחדש",
+        "הוא ננטש לתמיד",
+        "הוא הועבר לגליל",
+        "לא קרה דבר"
+      ],
+      "correct": 0,
+      "explanation": "אחרי המאורעות הקיבוץ הוקם מחדש.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-1-03",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה מתארים שלושת עצי הזית שבפסל של רן מורין?",
+      "options": [
+        "עצי זית מעל עמודים גבוהים",
+        "עצי זית שתולים בגיגית",
+        "עצי זית מברונזה בתוך מזרקה",
+        "עצי זית חקוקים בסלע"
+      ],
+      "correct": 0,
+      "explanation": "בקצה הקיבוץ: 3 עצי זית חיים, מורמים על עמודים.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-1-04",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מי חפר בתל הצמוד לרמת רחל לאחר הקמת הקיבוץ מחדש ב-1951?",
+      "options": [
+        "יוחנן אהרוני",
+        "יגאל ידין",
+        "בנימין מזר",
+        "נחמן אביגד"
+      ],
+      "correct": 0,
+      "explanation": "אהרוני חשף שכבות מבית ראשון ועד התקופה הביזנטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-1-05",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "עם קברו של איזה נביא מזוהה נבי סמואל?",
+      "options": [
+        "שמואל",
+        "אליהו",
+        "ירמיהו",
+        "נתן"
+      ],
+      "correct": 0,
+      "explanation": "באתר שני ציונים לקבר שמואל — יהודי ומוסלמי.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-1-06",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "היכן נמצא הציון היהודי לקבר שמואל?",
+      "options": [
+        "במרתף המבצר הצלבני",
+        "על הגג",
+        "במערה מחוץ לאתר",
+        "בקומת הקרקע"
+      ],
+      "correct": 0,
+      "explanation": "הציון היהודי במרתף; הציון המוסלמי בקומת הקרקע.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-1-07",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "באיזה גובה בערך נמצא נבי סמואל?",
+      "options": [
+        "כ-908 מ' מעל פני הים",
+        "כ-400 מ'",
+        "כ-1,200 מ'",
+        "כ-90 מ'"
+      ],
+      "correct": 0,
+      "explanation": "הגובה מאפשר תצפית רחבה על ירושלים וסביבתה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-1-08",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "מי החזיק בנבי סמואל במלחמת העצמאות?",
+      "options": [
+        "הלגיון הירדני",
+        "הצבא המצרי",
+        "הצבא הבריטי",
+        "הפלמ\"ח"
+      ],
+      "correct": 0,
+      "explanation": "התקפת הראל־פלמ\"ח על המקום הסתיימה בכישלון.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-1-09",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "איזה שיר של שלישיית גשר הירקון מזכיר את נבי סמואל?",
+      "options": [
+        "\"קרב הראל\"",
+        "\"באב אל וואד\"",
+        "\"הרעות\"",
+        "\"גבעת התחמושת\""
+      ],
+      "correct": 0,
+      "explanation": "\"שלושים בנבי סמואל, שבעה עשר על הקסטל...\"",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-1-10",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "מה הוקם בהר גילה ב-1969 בידי יהורם בן מאיר?",
+      "options": [
+        "בית ספר שדה",
+        "קיבוץ",
+        "מנזר",
+        "מצודה"
+      ],
+      "correct": 0,
+      "explanation": "בית הספר השדה הפך בהמשך לשכונה, ואחר כך נפתחה במקום מכינה קדם־צבאית.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-1-11",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "איזו דמות מקראית מכונה \"הגילוני\"?",
+      "options": [
+        "אחיטופל",
+        "חושי",
+        "יואב",
+        "נתן"
+      ],
+      "correct": 0,
+      "explanation": "אחיטופל הגילוני היה יועצו של אבשלום במרדו בדוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-1-12",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "איזה מתקנים מרוכזים בגן הארכאולוגי בהר גילה?",
+      "options": [
+        "מתקנים להפקת שמן זית",
+        "מזבחות",
+        "מקוואות",
+        "כבשני סיד"
+      ],
+      "correct": 0,
+      "explanation": "ממל, מתקני סחיטה בקורה ובבורג — ועוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-1-13",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "איזה נחל עובר בין הר גילה לירושלים, ובו עברה רכבת יפו–ירושלים?",
+      "options": [
+        "נחל רפאים",
+        "נחל קדרון",
+        "נחל שורק",
+        "נחל פרת"
+      ],
+      "correct": 0,
+      "explanation": "מסילת יפו–ירושלים עולה לאורך נחל רפאים.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-1-14",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "לפי האמרה המובאת, מה מאפיין כל דת בהר הזיתים?",
+      "options": [
+        "המוסלמים לבנייה, הנוצרים לתפילה, היהודים לקבורה",
+        "כולם לקבורה",
+        "כולם לתפילה",
+        "היהודים לבנייה, המוסלמים לקבורה"
+      ],
+      "correct": 0,
+      "explanation": "הר הזיתים מקודש לשלוש הדתות המונותאיסטיות.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-1-15",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "איזה ראש ממשלה קבור בהר הזיתים?",
+      "options": [
+        "מנחם בגין",
+        "דוד בן־גוריון",
+        "יצחק רבין",
+        "גולדה מאיר"
+      ],
+      "correct": 0,
+      "explanation": "בגין ואשתו עליזה קבורים בהר הזיתים.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-1-16",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "באיזו כנסייה בהר הזיתים בולטים \"הבצלים\" המוזהבים?",
+      "options": [
+        "מריה מגדלנה",
+        "כל העמים",
+        "דומינוס פלוויט",
+        "פאטר נוסטר"
+      ],
+      "correct": 0,
+      "explanation": "כנסיית מריה מגדלנה הרוסית בולטת בכיפותיה המוזהבות.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-1-17",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מדוע נזקק המקדש לכמויות גדולות של מים?",
+      "options": [
+        "לניקוי מדם הקורבנות ולסניטריה, וגם לעולי הרגל",
+        "להשקיית גנים",
+        "להפעלת טחנות",
+        "לבריכות שחייה"
+      ],
+      "correct": 0,
+      "explanation": "עבודת הקורבנות דרשה שטיפה מתמדת, ולעיר הגיעו עשרות אלפי עולי רגל.",
+      "sourceUrl": "https://drive.google.com/file/d/1sOQinZKuENKGSehWyUy1rKaIgbOGkRw5/view",
+      "sourceDoc": "אמת המים — תמליל ארוך"
+    },
+    {
+      "id": "N14-1-18",
+      "tourId": "14",
+      "level": 1,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מדוע הכינוי \"בריכות שלמה\" שגוי?",
+      "options": [
+        "הבריכות נבנו בימי בית שני, לא בימי שלמה",
+        "הן אינן בריכות",
+        "שלמה בנה אותן במקום אחר",
+        "הן נבנו במאה ה-20"
+      ],
+      "correct": 0,
+      "explanation": "השם נקשר לבריכות בגלל שיר השירים; הן מימי הורדוס ואילך.",
+      "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
+      "sourceDoc": "סיור 14 — אמת המים"
+    },
+    {
+      "id": "N14-2-01",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה קרה ב\"שבת השחורה\" ב-1946 לחברי רמת רחל?",
+      "options": [
+        "כ-70 חברים נעצרו ונכלאו ברפיח",
+        "הקיבוץ הופצץ",
+        "הקיבוץ פונה",
+        "חברים גורשו לקפריסין"
+      ],
+      "correct": 0,
+      "explanation": "במבצע בריטי נגד היישוב נעצרו חברי הקיבוץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-2-02",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה מאפיין את גורל רמת רחל במלחמת העצמאות?",
+      "options": [
+        "השטח עבר מיד ליד כמה פעמים",
+        "הקיבוץ לא נפגע",
+        "הקיבוץ נכנע מיד",
+        "הקיבוץ פונה מראש"
+      ],
+      "correct": 0,
+      "explanation": "הלגיון הירדני, ההגנה והאצ\"ל, הצבא המצרי וצה\"ל — שוב ושוב.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-2-03",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה אירע ב-1956 בכנס הארכאולוגי ברמת רחל?",
+      "options": [
+        "חיילים ירדנים ירו מכיוון מנזר מר אליאס, 4 נהרגו",
+        "רעידת אדמה",
+        "שריפה",
+        "הכנס בוטל"
+      ],
+      "correct": 0,
+      "explanation": "נתן אלתרמן כתב בעקבות זאת את \"החייל המשוגע\".",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-2-04",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "לאיזה מקום מקראי מזוהה תל רמת רחל, לפי הסיכום?",
+      "options": [
+        "בית הכרם — מקום משואות",
+        "בית לחם",
+        "גבעת שאול",
+        "מצפה"
+      ],
+      "correct": 0,
+      "explanation": "\"ועל בית הכרם שאו משאת\" — מקום הדלקת משואות.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-2-05",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "איזה סוג חומה הקיפה את מצודת מלכי יהודה ברמת רחל?",
+      "options": [
+        "חומת סוגרים",
+        "חומת סוללה",
+        "חומה מלבנים",
+        "חומת עץ"
+      ],
+      "correct": 0,
+      "explanation": "המצודה מהמאות ה-8–7 לפנה\"ס הוקפה בחומת סוגרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-2-06",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה מיוחד בגינה של הארמון הפרסי ברמת רחל?",
+      "options": [
+        "אדמת חמרה שהובאה ממישור החוף",
+        "מזרקות שיש",
+        "עצי תמר בלבד",
+        "גינה על הגג"
+      ],
+      "correct": 0,
+      "explanation": "באדמה נמצאו שרידי ארז, אגוז מלך ואתרוג.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-2-07",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "איזו יחידה רומית הוצבה ברמת רחל לאחר החורבן?",
+      "options": [
+        "הלגיון העשירי",
+        "הלגיון השישי",
+        "המשמר הפרטוריאני",
+        "הצי הרומי"
+      ],
+      "correct": 0,
+      "explanation": "שרידי בית רחצה וטביעות הלגיון מהמאה ה-3.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-2-08",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "מה נמצא בקצה הרחוב ההלניסטי בנבי סמואל?",
+      "options": [
+        "שרידי חומה ומבצר צלבני",
+        "תיאטרון רומי",
+        "בית כנסת",
+        "מקדש פרסי"
+      ],
+      "correct": 0,
+      "explanation": "המבצר הצלבני נבנה מאבן שנחצבה במחצבה שסביבו.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-2-09",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "מה היה התפקיד הכפול של המחצבה סביב המבצר הצלבני?",
+      "options": [
+        "מקור אבן לבנייה ויצירת חפיר הגנה",
+        "קבורה ותפילה",
+        "אגירת מים וגידול צאן",
+        "מקלט ומטבח"
+      ],
+      "correct": 0,
+      "explanation": "המחצבה מקיפה את המבצר ממערב, מצפון וממזרח.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-2-10",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "מה שמו הצרפתי של נבי סמואל בימי מסע הצלב?",
+      "options": [
+        "הר השמחה (Montjoie)",
+        "הר הנביא",
+        "הר הקבר",
+        "הר המלך"
+      ],
+      "correct": 0,
+      "explanation": "ב-1099 זה המקום הראשון שממנו ראו הצלבנים את ירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-2-11",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "אילו שני זיהויים מקראיים מוצעים לנבי סמואל?",
+      "options": [
+        "מצפה או רמה",
+        "שילה או בית אל",
+        "גבעון או ענתות",
+        "נוב או קרית יערים"
+      ],
+      "correct": 0,
+      "explanation": "שכונת רמות שמצפון נקראת על שם רמה המקראית.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-2-12",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "מה נמצא בהר גילה, שמקור שמו במאוסולוס מהליקרנסוס?",
+      "options": [
+        "מאוזוליאום רומי",
+        "מקדש יווני",
+        "תיאטרון",
+        "אמה"
+      ],
+      "correct": 0,
+      "explanation": "קבר מאוסולוס נחשב לאחד מפלאי עולם.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-2-13",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "מה הקימו הבריטים בהר גילה ב-1930?",
+      "options": [
+        "תחנת ממסר תקשורת",
+        "בסיס חיל אוויר",
+        "בית חולים",
+        "בית ספר"
+      ],
+      "correct": 0,
+      "explanation": "תחנה נוספת הוקמה בהר אדר לחיבור ירושלים לרשת הבריטית.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-2-14",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "מדוע הר הזיתים מתאים לחציבת קברים?",
+      "options": [
+        "הוא בנוי מקירטון רך",
+        "הוא בנוי מבזלת",
+        "הוא בנוי מגרניט",
+        "הוא בנוי מחול"
+      ],
+      "correct": 0,
+      "explanation": "בשונה מהגיר הקשה של הר הבית, שמתאים לאבני בנייה.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-2-15",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "מדוע מבקשים להיקבר בהר הזיתים, לפי פרשנות לנבואת זכריה?",
+      "options": [
+        "הקבורים בו יהיו הראשונים לקום בתחיית המתים",
+        "הוא קרוב לים",
+        "הוא הנמוך בירושלים",
+        "בגלל עצי הזית"
+      ],
+      "correct": 0,
+      "explanation": "\"ונבקע הר הזיתים\" — פורש כמעבר המתים בתחייה.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-2-16",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "איזה טקס טהרה נערך בהר הזיתים מול המקדש?",
+      "options": [
+        "שריפת הפרה האדומה",
+        "ניסוך המים",
+        "הקפת ערבה",
+        "הבאת הביכורים"
+      ],
+      "correct": 0,
+      "explanation": "אפר הפרה האדומה שימש לטיהור טמאי מת.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-2-17",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מאיזה אזור יצאה האמה התחתונה החשמונאית?",
+      "options": [
+        "מעיינות עיטם",
+        "מעיין הגיחון",
+        "עין כרם",
+        "עין פרת"
+      ],
+      "correct": 0,
+      "explanation": "האמה הובילה מים ממעיינות עיטם אל מתחם הר הבית.",
+      "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
+      "sourceDoc": "סיור 14 — אמת המים"
+    },
+    {
+      "id": "N14-2-18",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "באילו שני קטעים עוברת האמה התחתונה במנהרה?",
+      "options": [
+        "בית לחם וג'בל מוכבר",
+        "הר הזיתים והר ציון",
+        "רמת רחל ונבי סמואל",
+        "חברון והרודיון"
+      ],
+      "correct": 0,
+      "explanation": "המנהרה מתחת לג'בל מוכבר יוצאת סמוך לארמון הנציב.",
+      "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
+      "sourceDoc": "סיור 14 — אמת המים"
+    },
+    {
+      "id": "N14-2-19",
+      "tourId": "14",
+      "level": 2,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "לאן הובילה האמה העליונה של הורדוס?",
+      "options": [
+        "לעיר העליונה — ארמון הורדוס",
+        "להר הבית",
+        "לעיר דוד",
+        "להר הזיתים"
+      ],
+      "correct": 0,
+      "explanation": "המים הגיעו לבריכת המגדלים, ליד שער יפו של היום.",
+      "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
+      "sourceDoc": "סיור 14 — אמת המים"
+    },
+    {
+      "id": "N14-3-01",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה מציעה גבי ברקאי לגבי זהות רמת רחל, על סמך חותמות \"למלך\"?",
+      "options": [
+        "ממשת — אחת מארבע הערים שבחותמות",
+        "חברון",
+        "זיף",
+        "שוכה"
+      ],
+      "correct": 0,
+      "explanation": "חותמות \"למלך\" נושאות ארבעה שמות; ממשת לא זוהתה בוודאות.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-3-02",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "כמה כותרות פרוטו־איאוליות נמצאו ברמת רחל?",
+      "options": [
+        "5",
+        "1",
+        "15",
+        "50"
+      ],
+      "correct": 0,
+      "explanation": "כותרות אלה אופייניות לבנייה המלכותית של בית ראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-3-03",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "לאיזה מקום מסורת נוצרי מקשרים את הכנסייה הביזנטית בסביבת רמת רחל?",
+      "options": [
+        "הקתיסמה — מנוחת מרים בדרכה לבית לחם",
+        "קבר ישו",
+        "מקום ההטבלה",
+        "מקום הדרשה על ההר"
+      ],
+      "correct": 0,
+      "explanation": "הזיהוי מופיע בסיכום בסימן שאלה.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-3-04",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה מציינים פסלי רן מורין בתחום הגן הארכאולוגי?",
+      "options": [
+        "את הגבולות הדרומי והצפון־מערבי של הארמון הפרסי",
+        "את קבר רחל",
+        "את מסלול האמה",
+        "את גבול הקיבוץ"
+      ],
+      "correct": 0,
+      "explanation": "הפסלים מסמנים את היקף הארמון.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-3-05",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "רמת רחל",
+      "question": "מה מאפיין את רצף השכבות בתל רמת רחל?",
+      "options": [
+        "ממלכת יהודה, פרס, הרומאים, ביזנטיון ואחר כך כפר עבאסי",
+        "רק בית ראשון",
+        "רק ביזנטי",
+        "פרהיסטוריה בלבד"
+      ],
+      "correct": 0,
+      "explanation": "מעל הכפר הביזנטי הוקם כפר מהתקופה העבאסית.",
+      "sourceUrl": "https://drive.google.com/file/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/view",
+      "sourceDoc": "סיור 14 — רמת רחל"
+    },
+    {
+      "id": "N14-3-06",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "מה מאפיין את בית החצר ההלניסטי שברחוב בנבי סמואל?",
+      "options": [
+        "חלקו חצוב וחלקו בנוי, עם בור מים וקולומבריום",
+        "בנוי כולו מעץ",
+        "בנוי מלבני בוץ",
+        "מערה טבעית"
+      ],
+      "correct": 0,
+      "explanation": "לאורך הרחוב גם תעלת ניקוז ובראשו תנורי חרס עבאסיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-3-07",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "מה ייחד את מפקד הפלוגה חיים פוזננסקי (\"פוזה\") בהתקפה על נבי סמואל?",
+      "options": [
+        "ניתק את הקשר והחליט לתקוף למרות פקודת נסיגה",
+        "נכנע",
+        "הוביל משא ומתן",
+        "פיקד מרחוק"
+      ],
+      "correct": 0,
+      "explanation": "גם כוחות החילוץ נפלו למארב וספגו אבדות כבדות.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-3-08",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "איזה סיפור מסופר על כניעת ירושלים ב-1917 סמוך לנבי סמואל?",
+      "options": [
+        "העיר נכנעה כמה פעמים עד שהטקס נערך בפני אלנבי",
+        "העיר לא נכנעה",
+        "הכניעה נחתמה בלונדון",
+        "הכניעה נעשתה בידי הטורקים בעצמם"
+      ],
+      "correct": 0,
+      "explanation": "טבחים בריטים שחיפשו אוכל נתקלו במשלחת הנכבדים.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-3-09",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "נבי סמואל",
+      "question": "מה מזוהה בתל אל־פול הנראה מנבי סמואל?",
+      "options": [
+        "גבעת שאול המקראית",
+        "מצפה",
+        "בית אל",
+        "עי"
+      ],
+      "correct": 0,
+      "explanation": "בראש התל — ארמון המלך חוסיין.",
+      "sourceUrl": "https://drive.google.com/file/d/1iAgmngdNJ8rfUi3woNOyx3ULb-sMDECL/view",
+      "sourceDoc": "סיור 14 — נבי סמואל"
+    },
+    {
+      "id": "N14-3-10",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "מה הוקם בהר גילה ב-1860?",
+      "options": [
+        "בית הארחה של נזירות יווניות־אורתודוקסיות",
+        "מסגד",
+        "מצודה טורקית",
+        "בית ספר יהודי"
+      ],
+      "correct": 0,
+      "explanation": "אחרי מות הנזירות ננטש המקום עד הקמת בית הספר השדה.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-3-11",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "מהו הרכס הגבוה בהרי חברון הנראה מהר גילה?",
+      "options": [
+        "רכס חלחול",
+        "רכס אורה–עמינדב",
+        "רכס הר הצופים",
+        "רכס ג'בל מוכבר"
+      ],
+      "correct": 0,
+      "explanation": "גובהו כ-1,026 מ'.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-3-12",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "הר גילה",
+      "question": "באילו שתי שיטות סחטו זיתים במתקנים בהר גילה?",
+      "options": [
+        "קורה עם משקולות ולחץ בבורג",
+        "דריכה ברגליים וגלגל מים",
+        "אבן ריחיים בלבד",
+        "לחץ הידראולי"
+      ],
+      "correct": 0,
+      "explanation": "ממל ריסק את הזיתים; הסחיטה בקורה (בד) או בבורג.",
+      "sourceUrl": "https://drive.google.com/file/d/1D6LMWcR2f02zYfFhEuKDM5Sb3NzrDFmU/view",
+      "sourceDoc": "סיור 14 — הר גילה"
+    },
+    {
+      "id": "N14-3-13",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "לפי המדרש, עד מתי נשארה השכינה בהר הזיתים אחרי החורבן?",
+      "options": [
+        "עד סיום המרד ונפילת מצדה",
+        "עד מרד בר כוכבא",
+        "עד הכיבוש הערבי",
+        "עד היום"
+      ],
+      "correct": 0,
+      "explanation": "השכינה המתינה לחזרה בתשובה של העם.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-3-14",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "מדוע נבנה הגשר משער הרחמים להר הזיתים על קשתות?",
+      "options": [
+        "כדי לנתק טומאת קברים מהכוהנים בטקס הפרה האדומה",
+        "כדי לחסוך באבן",
+        "בגלל שיטפונות",
+        "לקישוט"
+      ],
+      "correct": 0,
+      "explanation": "\"כיפין על גבי כיפין\" — חלל מנתק טומאה.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-3-15",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "הר הזיתים",
+      "question": "על פי המסורת המוסלמית, מה יוקם באחרית הימים בין הר הזיתים להר הבית?",
+      "options": [
+        "גשר דק כשערה שעליו יעברו הנשמות",
+        "מסגד ענק",
+        "חומה",
+        "מעיין"
+      ],
+      "correct": 0,
+      "explanation": "הצדיקים יעברו לגן עדן, הרשעים ייפלו לגיהינום.",
+      "sourceUrl": "https://drive.google.com/file/d/1RWWwM8gt3Im77IKu9AwN8EwXzKnn9Moz/view",
+      "sourceDoc": "סיור 14 — הר הזיתים"
+    },
+    {
+      "id": "N14-3-16",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "באיזה מרווח נחפרו הפירים באמה התת־קרקעית, וכמה חצבו מכל פיר?",
+      "options": [
+        "כל 40 מ', ו-20 מ' לכל כיוון",
+        "כל 400 מ', ו-200 מ' לכל כיוון",
+        "כל 4 מ'",
+        "כל 10 מ', ו-5 מ' לכל כיוון"
+      ],
+      "correct": 0,
+      "explanation": "הפירים שימשו לפינוי חומר החציבה, לניקוי ולאוורור.",
+      "sourceUrl": "https://drive.google.com/file/d/1sOQinZKuENKGSehWyUy1rKaIgbOGkRw5/view",
+      "sourceDoc": "אמת המים — תמליל ארוך"
+    },
+    {
+      "id": "N14-3-17",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מה אורך אמת הערוב (המיוחסת לפונטיוס פילטוס) לעומת המרחק האווירי?",
+      "options": [
+        "כ-40 ק\"מ זרימה לעומת כ-10 ק\"מ אווירי",
+        "כ-10 ק\"מ לעומת 10",
+        "כ-100 ק\"מ לעומת 50",
+        "כ-5 ק\"מ לעומת 4"
+      ],
+      "correct": 0,
+      "explanation": "פיתולים רבים לאורך קווי הגובה.",
+      "sourceUrl": "https://drive.google.com/file/d/1sOQinZKuENKGSehWyUy1rKaIgbOGkRw5/view",
+      "sourceDoc": "אמת המים — תמליל ארוך"
+    },
+    {
+      "id": "N14-3-18",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מדוע התנגדו היהודים לאמה שבנה הנציב הרומי?",
+      "options": [
+        "הכסף נלקח מאוצרות המקדש",
+        "היא הרסה קברים",
+        "היא הוליכה מים לצבא בלבד",
+        "היא עברה בהר הבית"
+      ],
+      "correct": 0,
+      "explanation": "לפי יוסף בן מתתיהו — שימוש בכספי הקדש.",
+      "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
+      "sourceDoc": "סיור 14 — אמת המים"
+    },
+    {
+      "id": "N14-3-19",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מה העונש שקבעה כתובת סילנטריוס למי שנוטע או זורע ליד האמה?",
+      "options": [
+        "מוות והחרמת רכוש",
+        "קנס כספי",
+        "גירוש מהעיר",
+        "מלקות"
+      ],
+      "correct": 0,
+      "explanation": "בכתובת אף שורטטה מידת הרגל — כדי שאיש לא יפרש את המרחק לטובתו.",
+      "sourceUrl": "https://drive.google.com/file/d/1sOQinZKuENKGSehWyUy1rKaIgbOGkRw5/view",
+      "sourceDoc": "אמת המים — תמליל ארוך"
+    },
+    {
+      "id": "N14-3-20",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מה הוכנס לתוואי האמה בתקופה העות'מאנית ובמנדט הבריטי?",
+      "options": [
+        "צינורות חרס, ואחר כך צינורות מתכת",
+        "כבלי חשמל",
+        "מסילת רכבת",
+        "כלום — היא נעזבה"
+      ],
+      "correct": 0,
+      "explanation": "האמות פעלו מבית שני ועד ימי המנדט.",
+      "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
+      "sourceDoc": "סיור 14 — אמת המים"
+    },
+    {
+      "id": "N14-3-21",
+      "tourId": "14",
+      "level": 3,
+      "source": "tour14",
+      "stop": "אמת המים",
+      "question": "מה ייחודי בחציבת אמת הביאר ביחס למפלס מי התהום?",
+      "options": [
+        "נחצבה בגובה מי התהום, ומים נוספים חלחלו מקירותיה",
+        "עברה מעל גשרים בלבד",
+        "הייתה צינור עופרת",
+        "נבנתה על חומה"
+      ],
+      "correct": 0,
+      "explanation": "אורכה כ-5 ק\"מ, רובה חצובה בסלע.",
+      "sourceUrl": "https://drive.google.com/file/d/10WADocNAzAmjMapSpvN3B69_L7OIkLO0/view",
+      "sourceDoc": "סיור 14 — אמת המים"
     }
   ]
 }
