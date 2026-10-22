@@ -29,7 +29,7 @@ const browser = await chromium.launch({ executablePath: process.env.CHROME || '/
 const pages = [];
 for (let i = 1; i <= 3; i++) {
   const p = await (await browser.newContext({ viewport: { width: 390, height: 800 }, isMobile: true })).newPage();
-  await p.goto(BASE + '/');
+  await p.goto(BASE + '/play.html');
   await p.click('.langopt[data-lang=he]');            // V2 : choix de la langue avant le nom
   await p.fill('#nm', 'דפדפן ' + i); await p.click('#jbtn');
   await p.waitForSelector('text=מחכים לשאלה הבאה');
