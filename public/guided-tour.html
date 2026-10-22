@@ -47,6 +47,28 @@ button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:a
 .rcard .facts-k{margin-top:12px;font-size:12px;font-weight:900;color:#ffe49b}
 .badge{display:inline-block;margin-top:12px;font-size:15px;font-weight:900;padding:8px 14px;border-radius:30px;background:#fff2c4;color:#6a4a00;border:2px solid #f2c45a}
 .done .again{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}.done .again a,.done .again button{background:#eef1ff;color:#24306b;border:2px solid #c9d1f5;padding:12px 14px;border-radius:13px;font-weight:900;text-decoration:none;font-size:14px}
+/* Sélecteur compact de circuit : panneau mobile recherchable, sans liste native Android. */
+.tour-trigger{flex:1;min-width:0;display:flex;align-items:center;gap:10px;text-align:right;color:#f4f8ff;background:#1a2953;border:1px solid #7d8ec4;border-radius:13px;padding:9px 12px;min-height:58px}
+.tour-trigger:not(:disabled):hover,.tour-trigger:not(:disabled):focus-visible{border-color:#b8ffe9;outline-offset:2px}
+.tour-trigger:disabled{opacity:.65;cursor:default}
+.tour-trigger-icon{font-size:25px}.tour-trigger-copy{display:flex;min-width:0;flex:1;flex-direction:column;gap:2px}.tour-trigger-copy strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tour-trigger-copy small{font-size:11.5px;color:#b6c9f2}.tour-trigger-chevron{font-size:23px;color:#92ffe5}
+body.tour-open{overflow:hidden}
+.tour-overlay{position:fixed;inset:0;z-index:1000}
+.tour-backdrop{position:absolute;inset:0;width:100%;background:#040918c7;border:0;border-radius:0}
+.tour-sheet{position:absolute;bottom:0;inset-inline:0;max-width:720px;max-height:min(81dvh,700px);margin:0 auto;display:flex;flex-direction:column;background:#111d40;color:#fff;border:1px solid #788dce;border-bottom:0;border-radius:24px 24px 0 0;box-shadow:0 -16px 55px #0009;padding:15px 14px max(15px,env(safe-area-inset-bottom))}
+.tour-sheet:before{content:"";height:4px;width:46px;background:#6c81bd;border-radius:9px;align-self:center;margin:-6px 0 10px}
+.tour-sheet-head{display:flex;justify-content:space-between;align-items:center;gap:14px}.tour-sheet-head h2{margin:0;font-size:22px}.tour-sheet-head p{font-size:13px;color:#b4c7f0;margin:4px 0 0}
+.tour-close{width:44px;height:44px;flex:none;border:1px solid #7082b1;border-radius:13px;background:#26355f;color:#fff;font-size:21px}
+.tour-search-wrap{display:flex;align-items:center;gap:10px;margin:13px 0;background:#1a2a54;border:1px solid #667dae;border-radius:13px;padding:0 12px}.tour-search-wrap:focus-within{border-color:#6fe9d0}.tour-search-wrap input{width:100%;min-width:0;min-height:48px;background:transparent;border:0;outline:0;color:#fff;font:inherit;font-size:16px}.tour-search-wrap input::placeholder{color:#abbadf}
+.tour-results{overflow-y:auto;overscroll-behavior:contain;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-content:start;min-height:80px;padding:0 1px 12px;scrollbar-color:#7186bc transparent}
+.tour-option{display:flex;align-items:center;gap:8px;text-align:right;min-width:0;min-height:58px;padding:9px 11px;border-radius:12px;border:1px solid #41598b;background:#1c2b53;color:#f5f7ff}
+.tour-option:hover,.tour-option:focus-visible{border-color:#83eddb}.tour-option[aria-pressed=true]{border-color:#6fe9d0;background:#214968}
+.tour-option .number{flex:none;min-width:27px;color:#ffdc81;font-size:13px;font-weight:900}.tour-option .label{min-width:0;flex:1;font-size:13px;font-weight:800;line-height:1.3}.tour-option .meta{flex:none;color:#b2c6ef;font-size:11px}.tour-option[aria-pressed=true] .meta{color:#92ffdc}
+.tour-option.all{grid-column:1 / -1;background:#293c78;border-color:#768ed4;min-height:52px}.tour-option.all .label{font-size:15px}
+.tour-empty{grid-column:1/-1;text-align:center;padding:26px 8px;color:#bfd0f1}
+.tour-sheet-hint{margin:4px 0 0;font-size:12px;color:#b6c5e8;text-align:center}
+@media(max-width:550px){.filters .tour-trigger{flex-basis:100%}.tour-sheet{max-height:86dvh}.tour-results{gap:7px}.tour-option{padding:9px 8px}.tour-option .label{font-size:12.5px}}
+@media(max-width:360px){.tour-results{grid-template-columns:1fr}}
 </style>
 </head>
 <body><main class="shell">
@@ -55,8 +77,17 @@ button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:a
 
 <div class="controls" role="group" aria-label="בחירת רמה, סיור וצורת לימוד"><h2 id="levelsTitle">⚡ רמת קושי — בוחרים כאן</h2>
 <div class="levels" id="levels"><button type="button" data-level="1" aria-pressed="true">🌱 קל</button><button type="button" data-level="2" aria-pressed="false">⭐ בינוני</button><button type="button" data-level="3" aria-pressed="false">🔥 קשה</button></div>
-<div class="filters"><select id="tour" aria-label="בחירת סיור"></select>
+<div class="filters"><button type="button" class="tour-trigger" id="tourButton" aria-haspopup="dialog" aria-controls="tourPicker" aria-expanded="false" disabled><span class="tour-trigger-icon" aria-hidden="true">📍</span><span class="tour-trigger-copy"><strong id="tourLabel">בחירת סיור</strong><small id="tourCount">טוען מסלולים…</small></span><span class="tour-trigger-chevron" aria-hidden="true">⌄</span></button>
 <div class="mode"><button type="button" data-mode="tour" aria-pressed="false">🧭 סיור מודרך</button><button type="button" data-mode="quiz" aria-pressed="true">🎮 תרגול</button><button type="button" data-mode="stories" aria-pressed="false">📖 סיפורים</button></div></div></div>
+<div class="tour-overlay" id="tourPicker" hidden>
+  <button type="button" class="tour-backdrop" id="tourBackdrop" aria-label="סגירת רשימת הסיורים"></button>
+  <section class="tour-sheet" role="dialog" aria-modal="true" aria-labelledby="tourPickerTitle">
+    <header class="tour-sheet-head"><div><h2 id="tourPickerTitle">🧭 בוחרים סיור</h2><p>חפשו לפי שם, מקום או מספר הסיור</p></div><button type="button" class="tour-close" id="tourClose" aria-label="סגור">✕</button></header>
+    <div class="tour-search-wrap"><span aria-hidden="true">🔎</span><input id="tourSearch" type="search" inputmode="search" placeholder="למשל: מגידו, ירושלים, 04" aria-label="חיפוש סיור" autocomplete="off"></div>
+    <div class="tour-results" id="tourResults" role="group" aria-label="רשימת הסיורים"></div>
+    <p class="tour-sheet-hint">אפשר לבחור מהרשימה או לחזור למפה לבחירה לפי מיקום.</p>
+  </section>
+</div>
 <nav class="stepbar" id="stepbar" aria-label="תחנות" hidden></nav>
 <div class="metrics" id="metrics"><span id="counter">טוען שאלות…</span><strong id="score">0 נקודות</strong></div><div class="track" id="track" role="progressbar" aria-label="התקדמות" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="fill"></span></div>
 <section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
@@ -89,27 +120,79 @@ function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון י�
 function syncUrl(){const u=new URL(location.href);if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
   $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode)+(tour!=="all"?"&tour="+tour:"");}
 
-// Descriptions courtes dans le menu Android : détail du circuit et compteur restent
-// dans l'en-tête et la progression, au lieu de surcharger les options.
-function buildOptions(){
-  const sel=$("tour");sel.innerHTML="";
-  const add=(value,label)=>{const option=document.createElement("option");option.value=value;option.textContent=label;sel.appendChild(option);};
-  const shortNames={
-    "01":"צפון מדבר יהודה","02":"כרמל","03":"נגב צפוני",
-    "04":"מגידו וגלבוע","05":"השפלה","06":"חברון והרודיון",
-    "07":"חיפה","08":"גיאולוגיה","09":"שומרון",
-    "10":"הרי ירושלים","11":"ירושלים · בית ראשון","12":"ירושלים · בית שני א׳",
-    "13":"ירושלים · בית שני ב׳","14":"תצפיות ירושלים",
-    "15":"קיסריה ואפולוניה","16":"ציפורי ובית שערים",
-    "17":"גולן וחרמון","18":"ירושלים · רומית וביזנטית",
-    "19":"בית שאן וכוכב הירדן","20":"ראש פינה והחולה",
-    "21":"עין גדי והר סדום","22":"גליל עליון"
-  };
-  add("all","כל הסיורים");
-  for(const t of catalogue.tours)add(t.id,t.id+" · "+(shortNames[t.id]||t.title));
-  if(stats.byTour.road67)add("road67","67 · זכרון–יקנעם");
-  sel.value=tour;
+// Sélecteur de סיור sans liste déroulante système : 22 choix en grille compacte + recherche.
+const shortNames={
+  "01":"צפון מדבר יהודה","02":"כרמל","03":"נגב צפוני",
+  "04":"מגידו וגלבוע","05":"השפלה","06":"חברון והרודיון",
+  "07":"חיפה","08":"גיאולוגיה","09":"שומרון",
+  "10":"הרי ירושלים","11":"ירושלים · בית ראשון","12":"ירושלים · בית שני א׳",
+  "13":"ירושלים · בית שני ב׳","14":"תצפיות ירושלים",
+  "15":"קיסריה ואפולוניה","16":"ציפורי ובית שערים",
+  "17":"גולן וחרמון","18":"ירושלים · רומית וביזנטית",
+  "19":"בית שאן וכוכב הירדן","20":"ראש פינה והחולה",
+  "21":"עין גדי והר סדום","22":"גליל עליון"
+};
+function tourLabel(id){
+  if(id==="all")return "כל הסיורים";
+  if(id==="road67")return "כביש 67 · זכרון–יקנעם";
+  const t=catalogue&&catalogue.tours.find(t=>t.id===id);
+  return (t?t.id+" · ":"")+((t&&shortNames[t.id])||(t&&t.title)||id);
 }
+function questionCount(id){return id==="all"?(stats.byLevel[level]||0):((stats.byTour[id]||{})[level]||0);}
+function renderTourPicker(){
+  $("tourButton").disabled=false;
+  $("tourLabel").textContent=tourLabel(tour);
+  $("tourCount").textContent=questionCount(tour)+" שאלות ברמה הנבחרת · שינוי סיור";
+  if(!$("tourPicker").hidden)fillTourRows($("tourSearch").value);
+}
+function fillTourRows(query){
+  const term=norm(query).toLocaleLowerCase("he");
+  const options=[{id:"all",title:"כל הסיורים",stops:[]},...catalogue.tours.map(t=>({id:t.id,title:shortNames[t.id]||t.title,full:t.title,stops:t.stops||[]}))];
+  if(stats.byTour.road67)options.push({id:"road67",title:"כביש 67 · זכרון–יקנעם",stops:[]});
+  const list=$("tourResults");list.replaceChildren();
+  let matches=0;
+  for(const item of options){
+    const haystack=norm([item.id,item.title,item.full||"",...(item.stops||[])].join(" ")).toLocaleLowerCase("he");
+    if(term&&!haystack.includes(term))continue;
+    matches++;
+    const btn=document.createElement("button");btn.type="button";btn.className="tour-option"+(item.id==="all"?" all":"");
+    btn.setAttribute("aria-pressed",String(tour===item.id));
+    const num=document.createElement("span");num.className="number";num.textContent=item.id==="all"?"🗺️":item.id==="road67"?"67":item.id;
+    const label=document.createElement("span");label.className="label";label.textContent=item.title;
+    const meta=document.createElement("span");meta.className="meta";meta.textContent=tour===item.id?"✓":questionCount(item.id)+" שאלות";
+    btn.append(num,label,meta);
+    btn.addEventListener("click",()=>{tour=item.id;index=0;closeTourPicker();render();});
+    list.append(btn);
+  }
+  if(!matches){const no=document.createElement("p");no.className="tour-empty";no.textContent="לא נמצאו סיורים — נסו שם או מספר אחר";list.append(no);}
+  list.scrollTop=0;
+}
+function openTourPicker(){
+  if(!catalogue||!stats)return;
+  $("tourSearch").value="";
+  $("tourPicker").hidden=false;$("tourButton").setAttribute("aria-expanded","true");
+  document.body.classList.add("tour-open");
+  fillTourRows("");
+  // Focus on close control, not search: avoid opening the phone keyboard unnecessarily.
+  $("tourClose").focus({preventScroll:true});
+}
+function closeTourPicker(){
+  $("tourPicker").hidden=true;$("tourButton").setAttribute("aria-expanded","false");
+  document.body.classList.remove("tour-open");$("tourButton").focus({preventScroll:true});
+}
+$("tourButton").addEventListener("click",openTourPicker);
+$("tourBackdrop").addEventListener("click",closeTourPicker);
+$("tourClose").addEventListener("click",closeTourPicker);
+$("tourSearch").addEventListener("input",e=>fillTourRows(e.target.value));
+document.addEventListener("keydown",e=>{
+  if($("tourPicker").hidden)return;
+  if(e.key==="Escape"){e.preventDefault();closeTourPicker();return;}
+  if(e.key!=="Tab")return;
+  const focusables=Array.from($("tourPicker").querySelectorAll("input,button:not(:disabled)")).filter(el=>el.getClientRects().length&&el!==$("tourBackdrop"));
+  if(!focusables.length)return;
+  if(e.shiftKey&&document.activeElement===focusables[0]){e.preventDefault();focusables[focusables.length-1].focus();}
+  else if(!e.shiftKey&&document.activeElement===focusables[focusables.length-1]){e.preventDefault();focusables[0].focus();}
+});
 function heroText(){
   const c=tour==="all"?stats:{total:(stats.byTour[tour]||{}).total||0};
   $("heroTitle").textContent=mode==="stories"?"📖 סיפורי הסיור":mode==="tour"?"🧭 סיור מודרך":"🎮 תרגול שאלות";
@@ -119,7 +202,7 @@ function render(){
   if(!data)return;
   document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
   document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
-  buildOptions();heroText();syncUrl();
+  renderTourPicker();heroText();syncUrl();
   const reading=mode==="stories";
   ["levels","levelsTitle"].forEach(id=>$(id).hidden=reading);
   ["metrics","track","quiz","actions"].forEach(id=>$(id).hidden=reading);
@@ -185,7 +268,7 @@ function finish(){const right=items.filter(q=>currentAnswer(q)===q.options[q.cor
   $("quiz").querySelectorAll("[data-relevel]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.relevel);index=0;render();});}
 document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;render();});
 document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;render();});
-$("tour").onchange=e=>{tour=e.target.value;index=0;render();};$("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
+$("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
 Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalog.json"),MDTours.getJSON("places.json").catch(()=>null)]).then(([j,c,p])=>{
   if(!Array.isArray(j.questions)||!Array.isArray(c.tours))throw Error("Invalid data");
   data=j;catalogue=c;places=p;stats=MDTours.counts(j.questions);
