@@ -97,3 +97,54 @@ revoke all on function public.admin_feedback_set_status(text,uuid,text) from pub
 grant execute on function public.feedback_submit(text,text,text,text,jsonb,text) to anon, authenticated;
 grant execute on function public.admin_feedback_list(text,text) to anon, authenticated;
 grant execute on function public.admin_feedback_set_status(text,uuid,text) to anon, authenticated;
+
+-- ---------------------------------------------------------------------------
+-- Export automatique vers le dépôt GitHub PRIVÉ moreh-derech-inbox (une issue par message).
+-- Clé « robot » : choisie par l'admin, stockée ici seulement sous forme hachée, et en clair
+-- uniquement dans les secrets GitHub du dépôt privé. Activer une fois dans SQL Editor :
+--   select mdl.set_feedback_bot_key('<la clé>');
+-- Le robot ne reçoit jamais le nom de l'élève.
+alter table mdl.feedback add column if not exists exported_at timestamptz;
+create table if not exists mdl.feedback_bot (
+  id int primary key default 1 check (id = 1),
+  key_hash text not null,
+  salt text not null
+);
+revoke all on mdl.feedback_bot from public, anon, authenticated;
+
+create or replace function mdl.set_feedback_bot_key(p_key text) returns text
+language plpgsql security definer set search_path = '' as $$
+declare v_salt text := md5(random()::text || clock_timestamp()::text);
+begin
+  if char_length(coalesce(p_key,'')) < 24 then raise exception 'clé trop courte (24 caractères minimum)'; end if;
+  insert into mdl.feedback_bot(id, key_hash, salt)
+  values (1, encode(sha256(convert_to(v_salt || p_key,'UTF8')),'hex'), v_salt)
+  on conflict (id) do update set key_hash = excluded.key_hash, salt = excluded.salt;
+  return 'ok';
+end $$;
+revoke all on function mdl.set_feedback_bot_key(text) from public, anon, authenticated;
+
+create or replace function public.feedback_export(p_key text)
+returns jsonb language plpgsql volatile security definer
+set search_path = ''
+as $$
+declare b mdl.feedback_bot; v jsonb;
+begin
+  select * into b from mdl.feedback_bot where id = 1;
+  if b.key_hash is null or p_key is null
+     or encode(sha256(convert_to(b.salt || p_key,'UTF8')),'hex') <> b.key_hash
+  then raise exception 'not_authorized' using errcode = '42501'; end if;
+  with picked as (
+    select id from mdl.feedback where exported_at is null order by created_at limit 50 for update
+  ), upd as (
+    update mdl.feedback f set exported_at = now() from picked where f.id = picked.id
+    returning f.id, f.kind, f.message, f.page, f.context, f.created_at
+  )
+  select coalesce(jsonb_agg(jsonb_build_object('id',id,'kind',kind,'message',message,'page',page,
+           'context',context,'created_at',created_at) order by created_at), '[]'::jsonb)
+    into v from upd;
+  return jsonb_build_object('items', v);
+end;
+$$;
+revoke all on function public.feedback_export(text) from public;
+grant execute on function public.feedback_export(text) to anon, authenticated;

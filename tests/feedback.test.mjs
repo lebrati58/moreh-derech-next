@@ -6,8 +6,8 @@ const read = p => readFile(new URL('../' + p, import.meta.url), 'utf8');
 test('feedback SQL keeps the table private and never stores coordinates', async () => {
   const sql = await read('supabase/feedback.sql');
   assert.match(sql, /revoke all on mdl\.feedback from public, anon, authenticated;/);
-  assert.equal((sql.match(/security definer/g) || []).length, 3);
-  assert.equal((sql.match(/set search_path = ''/g) || []).length, 3);
+  assert.equal((sql.match(/security definer/g) || []).length, 5);
+  assert.equal((sql.match(/set search_path = ''/g) || []).length, 5);
   assert.match(sql, /key in \('tour','level','mode','question','stop','lang'\)/);
   assert.doesNotMatch(sql, /\b(lat|lon|latitude|longitude)\b/);
   assert.match(sql, /perform mdl\.check_admin\(p_token\)/);

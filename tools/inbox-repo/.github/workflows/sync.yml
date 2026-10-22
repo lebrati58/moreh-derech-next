@@ -1,0 +1,41 @@
+# Recopie chaque heure les nouveaux messages des élèves (Supabase → issues de CE dépôt privé).
+# Secret requis dans ce dépôt : FEEDBACK_BOT_KEY (la même clé que dans mdl.set_feedback_bot_key).
+name: Messages des élèves
+on:
+  schedule: [{ cron: '17 * * * *' }]
+  workflow_dispatch:
+permissions:
+  issues: write
+  contents: read
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Importer les nouveaux messages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          BOT_KEY: ${{ secrets.FEEDBACK_BOT_KEY }}
+          SB_URL: https://evvutvnfmbhdxeyzmknv.supabase.co
+          SB_ANON: sb_publishable_m-hcX-D0rBmO1fLkV09mIg_YmICREKv
+          SITE: https://lebrati58.github.io/moreh-derech-next/
+        run: |
+          set -euo pipefail
+          if [ -z "${BOT_KEY}" ]; then echo "::error::Secret FEEDBACK_BOT_KEY manquant"; exit 1; fi
+          for l in "idea:2ea44f" "bug:d73a4a" "question:fbca04" "other:c5def5" "fait:0e8a16" "a-valider:5319e7"; do
+            gh label create "${l%%:*}" --color "${l##*:}" --force >/dev/null
+          done
+          curl -sf -X POST "$SB_URL/rest/v1/rpc/feedback_export" \
+            -H "apikey: $SB_ANON" -H "Content-Type: application/json" \
+            -d "$(jq -n --arg k "$BOT_KEY" '{p_key:$k}')" > out.json
+          n=$(jq '.items | length' out.json); echo "$n nouveau(x) message(s)"
+          jq -c '.items[]' out.json | while read -r it; do
+            kind=$(jq -r .kind <<<"$it")
+            case "$kind" in idea) k='💡 רעיון';; bug) k='🐞 תקלה';; question) k='❓ טעות בשאלה';; *) k='💬 אחר';; esac
+            msg=$(jq -r .message <<<"$it")
+            title="$k — $(printf '%s' "$msg" | tr '\n' ' ' | cut -c1-70)"
+            page=$(jq -r .page <<<"$it")
+            body=$(printf '%s\n\n---\n- Page : %s%s\n- Contexte : `%s`\n- Reçu : %s\n- id : %s\n' \
+              "$msg" "$SITE" "$page" "$(jq -c .context <<<"$it")" "$(jq -r .created_at <<<"$it")" "$(jq -r .id <<<"$it")")
+            gh issue create --title "$title" --body "$body" --label "$kind" >/dev/null
+          done

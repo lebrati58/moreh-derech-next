@@ -471,3 +471,4 @@ pas une modération parfaite. Pour un usage grand public, ajouter CAPTCHA, signa
 - Aucun GPS envoyé ; le nom est facultatif ; le brouillon reste sur le téléphone si l'envoi échoue.
 - Lecture : **`inbox.html`** (même mot de passe que l'écran du guide ; icône 📨 dans l'écran du guide). Bouton « טופל ».
 - Installation : exécuter **une fois** `supabase/feedback.sql` dans Supabase › SQL Editor (après `install.sql`). Ne modifie aucune banque existante.
+- Export vers Claude : `tools/inbox-repo/` contient le contenu du dépôt **privé** `moreh-derech-inbox` (workflow horaire qui transforme chaque nouveau message en issue, sans le nom de l'élève). Activer avec `select mdl.set_feedback_bot_key('<clé>');` et le secret `FEEDBACK_BOT_KEY` dans ce dépôt privé.
