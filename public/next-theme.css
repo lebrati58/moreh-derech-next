@@ -1,0 +1,40 @@
+/* Moreh Derech NEXT — arcade-inspired styling for existing Guide, Student, Solo & Creator UI.
+   Non-destructive: original layouts and accessibility stay intact. */
+:root{
+  --sea:#353aa4;--sea-2:#555bd8;--foam:#eef0ff;
+  --sand:#e9eafa;--sand-2:#d9def5;--ink:#182149;--muted:#556080;
+  --sun:#ffbd54;--carmel:#287c75;--ok:#178e75;--bad:#cb4166;
+  --line:#d4d9f4;--radius:21px;--shadow:0 8px 0 #20296718,0 16px 28px #20265416;
+  --a0:#ed506c;--a1:#4e66dc;--a2:#de9834;--a3:#249e79;
+}
+body{
+  background:
+    radial-gradient(ellipse at 5% 0%,#d4cfff 0,transparent 38%),
+    radial-gradient(ellipse at 98% 55%,#d0edff 0,transparent 44%),
+    #e9eafa;
+}
+.hero{
+  background:linear-gradient(120deg,#343ab4 0%,#6753db 63%,#8754c7 100%);
+  border-bottom:3px solid #5e66c0;
+}
+.hero .land{opacity:.7}
+.brand{letter-spacing:-.4px}
+.brand .live{background:linear-gradient(135deg,#ffc963,#f8915e);color:#221f45;box-shadow:0 3px 0 #a95a3a}
+.card{border:1px solid #d9ddf7;border-bottom:3px solid #c3cbf0;box-shadow:var(--shadow)}
+.btn{
+  background:linear-gradient(160deg,#525be0,#3539a8);
+  box-shadow:0 5px 0 #242b78;
+  border-radius:15px;
+}
+.btn.sun{background:linear-gradient(160deg,#ffd777,#f5a844);color:#25234a;box-shadow:0 5px 0 #c47c2a}
+.btn.ok{background:linear-gradient(160deg,#32c8a8,#1a927c);box-shadow:0 5px 0 #16705e}
+.btn.ghost{color:#3639a6;border-color:#626bd4;background:#fff;box-shadow:none}
+.btn:active{box-shadow:0 2px 0 #242b78}
+.ans{border-radius:17px;box-shadow:0 5px 0 #131b4455;transition:filter .12s,transform .12s}
+.ans:focus-visible,.btn:focus-visible,a:focus-visible,.iconbtn:focus-visible{outline:3px solid #f7b34c;outline-offset:3px}
+.ans:active{filter:brightness(1.08);transform:translateY(2px)}
+.stat{background:#eff0ff;border:1px solid #d8dcfb}
+.chip{background:#191d6880;border:1px solid #c4c8ff44}
+.tab,.tabs{box-shadow:0 -6px 22px #1d265829}
+.waiting .big{color:#3b3cb1}
+@media(prefers-reduced-motion:reduce){.ans,.btn{transition:none!important}}
