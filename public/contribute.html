@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>הוספת מסמך למסלול — Moreh Derech NEXT</title><meta name="theme-color" content="#171f49">
+<link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
+<style>
+*{box-sizing:border-box}body{margin:0;font:16px system-ui,Arial,sans-serif;color:#f3f6ff;background:radial-gradient(ellipse at top,#363cac,#091229 75%);min-height:100dvh}
+main{max-width:720px;margin:auto;padding:16px 16px 75px}.nav{display:flex;align-items:center;gap:12px;margin-bottom:18px}.nav img{width:58px;height:58px;border-radius:14px}.nav a{color:#fff;text-decoration:none}.nav b{font-size:20px}
+.card{background:#fff;color:#19284e;border-radius:23px;padding:23px 21px;margin-top:15px;box-shadow:0 8px 0 #060e27}
+h1{font-size:clamp(25px,6vw,38px);margin:0 0 9px}.intro{color:#cfd9ff;line-height:1.7}
+label{display:block;font-size:14px;font-weight:850;margin:17px 0 6px}
+input,select,textarea{width:100%;font:inherit;border:2px solid #c5d0ec;border-radius:13px;padding:13px;color:#17264e;background:#fff;min-height:51px}
+textarea{min-height:110px;resize:vertical}input:focus,select:focus,textarea:focus{outline:3px solid #5bbfe966;border-color:#4e66cb}
+.small{font-size:13px;color:#596d8e;line-height:1.6}.notice{padding:14px;background:#e9f6ff;border-radius:13px;color:#254469;margin:14px 0}
+button,.button{border:0;background:#2f4ad5;color:#fff;font-size:17px;font-weight:900;border-radius:14px;padding:16px;min-height:50px;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+button:disabled{opacity:.5;cursor:wait}.primary{display:block;width:100%;font-size:19px;background:linear-gradient(100deg,#4d5cdf,#2538a9);margin-top:22px}
+.hidden{display:none!important}.error{color:#b51e47;font-weight:750}.success{background:#defcef;border-radius:15px;padding:19px;color:#154d3c}.row{display:flex;gap:10px;align-items:center}.row>*{flex:1}.row button{flex:none;font-size:14px}
+footer{margin-top:20px;font-size:12px;color:#c3c8ec;line-height:1.7}
+</style></head><body>
+<main><div class="nav"><a href="index.html"><img src="assets/moreh-derech-next-driver.webp" alt="Moreh Derech NEXT"></a><a href="index.html"><b>Moreh Derech NEXT</b><div>← חזרה למשחקים</div></a></div>
+<h1>📄 מוסיפים מסמך למסלול</h1>
+<p class="intro">כל חבר יכול להוסיף סיכום, קטע דרך או קישור למסמך — בלי סיסמת מנהל. בוחרים מסלול קיים או פותחים מסלול חדש, והמסמך נשמר בספרייה המשותפת.</p>
+<div id="status" class="notice">מתחברים לספרייה…</div>
+<form class="card" id="form" hidden>
+<label for="tour">🗺️ לאיזה מסלול שייך המסמך?</label><select id="tour" required><option value="">טוען מסלולים…</option></select>
+<div id="newfields" class="hidden">
+<label for="newtitle">שם המסלול החדש</label><input id="newtitle" maxlength="120" placeholder="למשל: כביש 67 — זכרון יעקב עד יקנעם">
+<label for="place">נקודת ייחוס אחת על המפה</label><div class="row"><input id="place" maxlength="120" placeholder="למשל: יקנעם עילית"><button id="findplace" type="button">📍 אתר</button></div>
+<p class="small" id="placeStatus">נמקם את המסלול בנקודה אחת על המפה. מסלול נסיעה מדויק ושאלות GPS דורשים הכנה נפרדת.</p>
+</div>
+<label for="title">שם המסמך / קטע הדרך</label><input id="title" maxlength="140" required placeholder="למשל: הסבר גאולוגי לוואדי מילק">
+<label for="author">שם הכותב/ת</label><input id="author" maxlength="80" placeholder="לא חובה — יוצג בתור אורח">
+<label for="file">📎 העלאת Word, PDF או טקסט</label><input id="file" type="file" accept=".docx,.pdf,.txt,.md">
+<p class="small">עד 15 MB לקריאה בדפדפן. המערכת שומרת את <b>הטקסט שחולץ</b> ואת פרטי המסמך, לא את קובץ ה-PDF/Word המקורי. מסמך סרוק ללא טקסט לא נתמך.</p>
+<label for="link">🔗 קישור לקובץ המקורי (רשות)</label><input id="link" type="url" maxlength="1500" placeholder="https://drive.google.com/...">
+<p class="small">אפשר להוסיף רק קישור למסמך ציבורי ללא קובץ. כדי שאחרים יורידו את המקור, הדביקו קישור עם הרשאת צפייה.</p>
+<label for="body">📝 או הדבקת הטקסט ישירות</label><textarea id="body" maxlength="120000" placeholder="אפשר גם להדביק כאן את הקטע או ההסבר…"></textarea>
+<div class="notice">⚠️ התוכן יופיע כתרומה של משתמש. הוא לא יהפוך אוטומטית לעובדה מאומתת או לשאלה במשחק.</div>
+<p class="error hidden" id="error" role="alert"></p><button id="save" class="primary" type="submit">💾 שמירה במסלולים</button>
+</form>
+<div id="result" class="card hidden" role="status"></div>
+<footer>בבקשה שתפו רק חומרים שיש לכם רשות לפרסם. אין לפרסם מידע אישי רגיש או חומר מוגן בזכויות יוצרים ללא אישור.</footer>
+</main><script src="config.js"></script><script src="api.js"></script><script src="doc-reader.js"></script><script src="community.js"></script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+let coords=null,ready=false,loading=false;
+const eMessage=e=>{const m=String(e&&e.message||e);return ({invalid_document:'יש להוסיף טקסט של לפחות 40 תווים או קישור לקובץ, וכותרת תקינה.',invalid_link:'יש להשתמש בקישור https:// תקין.',invalid_tour:'המסלול שבחרתם אינו קיים.',invalid_location:'צריך לאתר מקום בישראל עבור מסלול חדש.',busy_retry_later:'יותר מדי מסמכים נוספו לאחרונה, נסו מאוחר יותר.',old_doc:'פורמט Word ישן לא נתמך, שמרו כ-DOCX.',empty:'לא נמצא טקסט במסמך — אפשר לצרף קישור לקובץ המקורי.',too_big:'קובץ גדול מ-15MB.',bad_type:'פורמט קובץ לא נתמך.'})[m]||m};
+function err(s){$('error').textContent=s;$('error').classList.toggle('hidden',!s);}
+function toggleNew(){const v=$('tour').value;$('newfields').classList.toggle('hidden',v!=='new');$('newtitle').required=v==='new';$('place').required=v==='new';}
+$('tour').addEventListener('change',toggleNew);
+$('place').addEventListener('input',()=>{coords=null;$('placeStatus').textContent='לחצו על ״אתר״ לאישור המיקום במפה.';});
+$('findplace').addEventListener('click',async()=>{
+ const q=$('place').value.trim();if(!q)return;
+ $('findplace').disabled=true;$('placeStatus').textContent='מחפשים במפה…';coords=null;
+ try{
+  const u='https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=il&q='+encodeURIComponent(q);
+  const r=await fetch(u);if(!r.ok)throw Error('HTTP '+r.status);const a=await r.json();
+  if(!a.length)throw Error('לא נמצא מקום. נסו שם מדויק יותר.');
+  coords={lat:Number(a[0].lat),lon:Number(a[0].lon)};
+  $('placeStatus').textContent='✔ מיקום שנמצא: '+a[0].display_name.slice(0,120);
+ }catch(e){$('placeStatus').textContent='❌ '+eMessage(e);}
+ finally{$('findplace').disabled=false;}
+});
+async function init(){
+ try{
+ const [catalog,community]=await Promise.all([
+   fetch('siyurim-catalog.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('catalog');return r.json();}),
+   MDCommunity.list()
+ ]);
+ const opts=[{id:'',title:'בחרו מסלול…'},...catalog.tours.map(t=>({id:t.id,title:t.id+' — '+t.title})),
+    {id:'road67',title:'🛣️ מסלול 67 — זכרון יעקב ← יקנעם'},
+    ...community.routes.map(r=>({id:r.id,title:'📚 '+r.title})),
+    {id:'new',title:'➕ יצירת מסלול חדש'}];
+ $('tour').replaceChildren(...opts.map(o=>{const el=document.createElement('option');el.value=o.id;el.textContent=o.title;return el;}));
+ const target=params.get('tour');if(opts.some(o=>o.id===target))$('tour').value=target;toggleNew();
+ $('status').textContent='✔ הספרייה מחוברת. ניתן להוסיף מסמכים בלי סיסמת מנהל.';
+ $('form').hidden=false;ready=true;
+ }catch(e){$('status').textContent='⚠️ מערכת ההוספה עדיין לא הופעלה בבסיס הנתונים. צריך להתקין את supabase/community_documents.sql בפרויקט Supabase לפני שאפשר לשמור.';}
+}
+$('form').addEventListener('submit',async e=>{
+ e.preventDefault();if(!ready||loading)return;err('');
+ let text=$('body').value.trim(),file=$('file').files[0],url=$('link').value.trim(),name=file?file.name:'';
+ const isNew=$('tour').value==='new';
+ if(isNew&&!coords){err('לחצו על ״אתר״ כדי למקם את המסלול החדש על המפה.');return;}
+ if(file){
+ try{const extracted=await MDL_DOC.readFile(file,'');text=[text,extracted].filter(Boolean).join('\n\n');}
+ catch(ex){if(!url){err('לא ניתן לקרוא את הקובץ: '+eMessage(ex)+' — נסו קובץ אחר או קישור ל-Drive.');return;}}
+ }
+ if(text.length>120000){err('הטקסט ארוך מדי (מעל 120,000 תווים). הוסיפו קישור למקור או חלקו לכמה מסמכים.');return;}
+ if(text.length<40&&!url){err('צריך לפחות 40 תווים של תוכן או קישור למסמך.');return;}
+ const data={
+   p_tour_id:isNew?'':$('tour').value,
+   p_title:$('title').value.trim(),p_author:$('author').value.trim()||'אורח',
+   p_body:text,p_source_url:url,p_file_name:name,
+   p_new_route_title:isNew?$('newtitle').value.trim():'',
+   p_place_name:isNew?$('place').value.trim():'',
+   p_lat:isNew?coords.lat:null,p_lon:isNew?coords.lon:null
+ };
+ loading=true;$('save').disabled=true;$('save').textContent='שומרים בספרייה…';
+ try{
+  const r=await MDCommunity.submit(data);
+  $('form').hidden=true;$('status').classList.add('hidden');
+  $('result').classList.remove('hidden');
+  const h=document.createElement('h2');h.textContent='✅ המסמך נשמר במסלול!';
+  const p=document.createElement('p');p.textContent='המסמך נוסף לספרייה המשותפת. עכשיו אפשר לקרוא אותו מתוך המסלול.';
+  const a=document.createElement('a');a.className='button';a.href='map.html?tour='+encodeURIComponent(r.tour_id);a.textContent='🗺️ הצגת המסלול במפה';
+  const d=document.createElement('p');const link=document.createElement('a');link.href='community-document.html?id='+encodeURIComponent(r.id);link.textContent='📄 פתיחת המסמך';d.append(link);
+  $('result').replaceChildren(h,p,a,d);
+ }catch(ex){err('השמירה נכשלה: '+eMessage(ex));}
+ finally{loading=false;$('save').disabled=false;$('save').textContent='💾 שמירה במסלולים';}
+});
+init();
+})();
+</script></body></html>
