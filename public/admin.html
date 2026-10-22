@@ -16,7 +16,7 @@
 <div id="banner" class="banner hidden">אין חיבור — מנסה להתחבר מחדש…</div>
 <header class="hero">
   <div class="hero-inner">
-    <div class="brand"><span>מנהל המשחק</span><span class="live"><span class="dot"></span> LIVE</span></div>
+    <div class="brand"><a href="index.html" title="כל המצבים" style="color:#fff;text-decoration:none;font-size:19px;margin-inline-end:9px">⌂</a><span>מנהל המשחק</span><span class="live"><span class="dot"></span> LIVE</span></div>
     <div id="hdr-chip" class="chip hidden"></div>
   </div>
   <svg class="land" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true">
@@ -25,6 +25,7 @@
   </svg>
 </header>
 
+<aside style="background:#ffeed9;color:#6d320e;border-bottom:2px solid #e7ae59;padding:9px 14px;font-size:14px;font-weight:700;text-align:center" id="next-backend-warning">⚠️ NEXT משתמש כרגע באותו שרת משחק של הגרסה הישנה. מצב סימולציה בטוח; פרסום שאלות במצב מדריך ישפיע על המשחק המשותף עד להגדרת Supabase נפרד.</aside>
 <main id="app"><div class="card center muted">טוען…</div></main>
 
 <nav id="tabs" class="tabs hidden">
@@ -53,8 +54,10 @@
   const chip = document.getElementById('hdr-chip');
 
   let token = store.get(KEY);
-  let S = null, offset = 0, view = 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = false, nav = null, backupOpen = false,
-    busMode = store.get('mdl_busmode') !== false;   // V3 : écran « mode bus » par défaut
+  const launchMode = new URLSearchParams(location.search).get('mode');
+  const simulationLaunch = launchMode === 'simulation';
+  let S = null, offset = 0, view = simulationLaunch ? 'gallery' : 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = simulationLaunch, nav = null, backupOpen = false,
+    busMode = !simulationLaunch && store.get('mdl_busmode') !== false;   // V3 : écran « mode bus » par défaut
   // Panneau micro : état + dernière question pour laquelle il s'est ouvert automatiquement
   let G = { open: false, qid: null, mode: 'short', live: false };
   let lastAutoGuide = store.get('mdl_last_auto_guide');
@@ -507,7 +510,7 @@
       ${lbList(S.leaderboard, { online: true, remove: true })}</div>`;
   }
 
-  function studentLink() { return new URL('./', location.href).href; }
+  function studentLink() { return new URL('play.html', location.href).href; }
   function setBus(on) { busMode = on; store.set('mdl_busmode', on); view = 'live'; setTab(); }
   // le guide envoie le lien dans son groupe WhatsApp
   const WA_MSG = ['🚌 *חידון מורה דרך LIVE מתחיל!*',
