@@ -23370,6 +23370,762 @@
       "explanation": "בתקופה הממלוכית הייתה יישוב חקלאי דליל.",
       "sourceUrl": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view",
       "sourceDoc": "סיור 21 — בית הכנסת העתיק בעין גדי"
+    },
+    {
+      "id": "N22-1-01",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "שיירת יחיעם",
+      "question": "מאיזו עיר יצאה שיירת יחיעם?",
+      "options": [
+        "נהריה",
+        "עכו",
+        "חיפה",
+        "צפת"
+      ],
+      "correct": 0,
+      "explanation": "הקיבוץ היה נצור, והאספקה הגיעה בשיירות ממוגנות.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-02",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "שיירת יחיעם",
+      "question": "מהו משוריין \"סנדוויץ'\"?",
+      "options": [
+        "רכב ממוגן בלוחות ברזל ועץ ביניהם",
+        "טנק בריטי",
+        "משאית פתוחה",
+        "רכבת משוריינת"
+      ],
+      "correct": 0,
+      "explanation": "מיגון מאולתר שהכביד על המנוע והגביל את הראות.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-03",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "יד לי\"ד",
+      "question": "על שם מי נקרא קיבוץ יחיעם?",
+      "options": [
+        "יחיעם ויץ, שנפצע בליל הגשרים ומת מפצעיו",
+        "מפקד השיירה",
+        "מייסד הפלמ\"ח",
+        "רב העיר"
+      ],
+      "correct": 0,
+      "explanation": "בסך הכול נפלו באכזיב 14 לוחמים — י\"ד.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-04",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "יד לי\"ד",
+      "question": "איזה ארגון ביצע את מבצע ליל הגשרים?",
+      "options": [
+        "הפלמ\"ח",
+        "האצ\"ל לבדו",
+        "הצבא הבריטי",
+        "הלגיון הערבי"
+      ],
+      "correct": 0,
+      "explanation": "במסגרת תנועת המרי העברי.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-05",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "ראש הנקרה",
+      "question": "מאיזה סלע עשוי מצוק ראש הנקרה?",
+      "options": [
+        "גיר וקירטון לבן",
+        "בזלת",
+        "גרניט",
+        "חול"
+      ],
+      "correct": 0,
+      "explanation": "רכס הסולם, מתקופת הקרטיקון העליון.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-06",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "ראש הנקרה",
+      "question": "איזו דרך עתיקה עברה בראש הנקרה?",
+      "options": [
+        "דרך הים (Via Maris)",
+        "דרך המלך",
+        "דרך האבות",
+        "דרך הבשמים"
+      ],
+      "correct": 0,
+      "explanation": "חיברה בין מצרים לצור, לצידון וללבנון.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-07",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "מערת קשת",
+      "question": "מה נותר ממערת קשת אחרי קריסת התקרה?",
+      "options": [
+        "קשת סלע צרה תלויה מעל התהום",
+        "מערה סגורה",
+        "בור מים",
+        "מנהרה"
+      ],
+      "correct": 0,
+      "explanation": "המערה נמצאת ברכס אדמית.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-08",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "פקיעין",
+      "question": "איזו משפחה שומרת על המורשת היהודית בפקיעין?",
+      "options": [
+        "משפחת זינאתי",
+        "משפחת רוקח",
+        "משפחת שוורץ",
+        "משפחת חנקין"
+      ],
+      "correct": 0,
+      "explanation": "עדות לרצף יישוב יהודי בגליל.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-09",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "פקיעין",
+      "question": "מי, לפי המסורת, הסתתר במערה בפקיעין?",
+      "options": [
+        "רבי שמעון בר יוחאי ובנו",
+        "רבי עקיבא",
+        "רבי יהודה הנשיא",
+        "הלל הזקן"
+      ],
+      "correct": 0,
+      "explanation": "מסכת שבת ל\"ג ע\"ב.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-10",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "פקיעין",
+      "question": "מה הזין את רשב\"י ובנו במערה, לפי המסורת?",
+      "options": [
+        "עץ חרוב ומעיין",
+        "דבש וחלב",
+        "לחם מן השמיים",
+        "תמרים"
+      ],
+      "correct": 0,
+      "explanation": "הם שהו במערה 13 שנה.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-11",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "ברעם",
+      "question": "לאיזה כיוון פונה חזית בית הכנסת העתיק בברעם?",
+      "options": [
+        "דרומה — לירושלים",
+        "מזרחה",
+        "צפונה",
+        "מערבה"
+      ],
+      "correct": 0,
+      "explanation": "בחזית שלושה פתחים מעוטרים.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-12",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "ברעם",
+      "question": "לאיזו עדה השתייכו תושבי הכפר בירעם?",
+      "options": [
+        "נוצרים מרונים",
+        "דרוזים",
+        "צ'רקסים",
+        "מוסלמים סונים"
+      ],
+      "correct": 0,
+      "explanation": "הכנסייה המרונית פעילה עד היום.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-13",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "מירון",
+      "question": "באיזה חג נערכת הילולת רשב\"י במירון?",
+      "options": [
+        "ל\"ג בעומר",
+        "פורים",
+        "שבועות",
+        "ט\"ו בשבט"
+      ],
+      "correct": 0,
+      "explanation": "מדורות, שירה ומנהג החלאקה.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-1-14",
+      "tourId": "22",
+      "level": 1,
+      "source": "tour22",
+      "stop": "ריחאניה",
+      "question": "מאיזה אזור מוצאם של הצ'רקסים?",
+      "options": [
+        "הרי הקווקז",
+        "חצי האי ערב",
+        "צפון אפריקה",
+        "הבלקן"
+      ],
+      "correct": 0,
+      "explanation": "הם מכנים עצמם אדיגים.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-01",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "שיירת יחיעם",
+      "question": "מי פיקד על שיירת יחיעם, לפי החוברת?",
+      "options": [
+        "איתן זייץ",
+        "נחמיה שיין",
+        "יגאל אלון",
+        "משה כרמל"
+      ],
+      "correct": 0,
+      "explanation": "השיירה כללה 5 משוריינים ומשאיות ממוגנות.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-02",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "שיירת יחיעם",
+      "question": "לאיזה שלב של מלחמת העצמאות שייך קרב השיירה?",
+      "options": [
+        "מלחמת הדרכים — השלב הראשון",
+        "הפלישה הערבית",
+        "מבצעי ההפוגה",
+        "מבצע חירם"
+      ],
+      "correct": 0,
+      "explanation": "הדרכים לישובים מבודדים נחסמו.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-03",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "יד לי\"ד",
+      "question": "מי תכנן את אנדרטת יד לי\"ד?",
+      "options": [
+        "האדריכל אשר חירם",
+        "יגאל תומרקין",
+        "דני קרוון",
+        "נתן רפפורט"
+      ],
+      "correct": 0,
+      "explanation": "האנדרטה ליד גשרי אכזיב.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-04",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "יד לי\"ד",
+      "question": "כמה גשרים יעד מבצע ליל הגשרים לשתק?",
+      "options": [
+        "11",
+        "3",
+        "25",
+        "1"
+      ],
+      "correct": 0,
+      "explanation": "גשרים שחיברו את הארץ למדינות השכנות.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-05",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "יד לי\"ד",
+      "question": "אילו ארגונים שיתפו פעולה בתנועת המרי העברי?",
+      "options": [
+        "ההגנה, האצ\"ל והלח\"י",
+        "ההגנה והצבא הבריטי",
+        "הפלמ\"ח והלגיון",
+        "השומר והניל\"י"
+      ],
+      "correct": 0,
+      "explanation": "התנועה פורקה לאחר פיצוץ מלון המלך דוד.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-06",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "ראש הנקרה",
+      "question": "אילו יחידות חצבו את מנהרות הרכבת בראש הנקרה?",
+      "options": [
+        "חיל ההנדסה הדרום־אפריקאי והאוסטרלי בצבא הבריטי",
+        "מהנדסים טורקים",
+        "צה\"ל",
+        "חברה צרפתית"
+      ],
+      "correct": 0,
+      "explanation": "לחיבור מצרים עם טורקיה ואירופה.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-07",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "ראש הנקרה",
+      "question": "מה עשו לוחמי כרמלי במנהרת הרכבת ב-1948?",
+      "options": [
+        "פוצצו את הגשר שבמנהרה כדי למנוע פלישה מלבנון",
+        "הסתתרו בה",
+        "הפעילו רכבת",
+        "פתחו בה מעבר גבול"
+      ],
+      "correct": 0,
+      "explanation": "הקו לא חודש מאז.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-08",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "מערת קשת",
+      "question": "על אילו נחלים משקיפים ממערת קשת?",
+      "options": [
+        "נחל בצת ונחל כזיב",
+        "נחל עמוד ונחל דישון",
+        "נחל תבור ונחל יששכר",
+        "נחל שורק ונחל איילון"
+      ],
+      "correct": 0,
+      "explanation": "גם רכס יחיעם והים התיכון.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-09",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "פקיעין",
+      "question": "אילו ארבע עדות חיות בפקיעין?",
+      "options": [
+        "דרוזים, נוצרים, מוסלמים ויהודים",
+        "דרוזים בלבד",
+        "צ'רקסים ומרונים",
+        "בדואים ויהודים"
+      ],
+      "correct": 0,
+      "explanation": "הדרוזים הם הרוב.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-10",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "פקיעין",
+      "question": "מה משובץ בבית הכנסת של פקיעין, לפי המסורת?",
+      "options": [
+        "שתי אבנים עתיקות עם תבליטי מנורה וכלי מקדש",
+        "ספר תורה עתיק",
+        "פסיפס",
+        "עמודי שיש"
+      ],
+      "correct": 0,
+      "explanation": "לפי המסורת הובאו מירושלים בידי פליטי החורבן.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-11",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "ברעם",
+      "question": "מה כתוב על המשקוף בבית הכנסת בברעם?",
+      "options": [
+        "\"יהי שלום במקום הזה ובכל מקומות ישראל\"",
+        "\"שמע ישראל\"",
+        "\"דכיר לטב\"",
+        "\"ברוך הבא בשם ה'\""
+      ],
+      "correct": 0,
+      "explanation": "\"יוסה הלוי בן לוי עשה השקוף הזה\".",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-12",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "ברעם",
+      "question": "מה הייתה שפת התפילה ההיסטורית של העדה המרונית?",
+      "options": [
+        "ארמית־סורית",
+        "יוונית",
+        "לטינית",
+        "ערבית"
+      ],
+      "correct": 0,
+      "explanation": "עדה קתולית מזרחית שמרכזה בלבנון.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-13",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "ריחאניה",
+      "question": "באיזו שנה הוקמה ריחאניה?",
+      "options": [
+        "1880",
+        "1948",
+        "1700",
+        "1920"
+      ],
+      "correct": 0,
+      "explanation": "במתכונת כפר חומה צ'רקסי.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-2-14",
+      "tourId": "22",
+      "level": 2,
+      "source": "tour22",
+      "stop": "מירון",
+      "question": "מה אומרת המסורת על המשקוף הסדוק של בית הכנסת במירון?",
+      "options": [
+        "כשייפול — יבוא המשיח",
+        "מי שנוגע בו יתעשר",
+        "הוא נשבר בידי רשב\"י",
+        "הוא הובא מירושלים"
+      ],
+      "correct": 0,
+      "explanation": "המשקוף נסדק ברעידות אדמה.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-01",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "יד לי\"ד",
+      "question": "מי פיקד על הכוח בגשרי אכזיב ונהרג בפיצוץ?",
+      "options": [
+        "נחמיה שיין",
+        "איתן זייץ",
+        "יחיעם ויץ",
+        "יצחק שדה"
+      ],
+      "correct": 0,
+      "explanation": "כדור או רסיס פגעו בחומר הנפץ וגרמו להתפוצצות מוקדמת.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-02",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "יד לי\"ד",
+      "question": "מה היה השם הרשמי של מבצע ליל הגשרים?",
+      "options": [
+        "\"מרכולת\"",
+        "\"נחשון\"",
+        "\"יפתח\"",
+        "\"עובדה\""
+      ],
+      "correct": 0,
+      "explanation": "16–17 ביוני 1946.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-03",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "ראש הנקרה",
+      "question": "מהו \"הקו הכחול\" בגבול לבנון?",
+      "options": [
+        "קו שסימן האו\"ם ב-2000",
+        "קו שביתת הנשק 1949",
+        "גבול המנדט 1923",
+        "קו הרכבת"
+      ],
+      "correct": 0,
+      "explanation": "לעומת הקו הירוק מ-1949.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-04",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "ראש הנקרה",
+      "question": "מה הייתה מטרת מסילת חיפה–ביירות–טריפולי במלחמת העולם השנייה?",
+      "options": [
+        "לחבר בין מצרים לטורקיה ולאירופה",
+        "להוביל נפט מעיראק",
+        "לשרת צליינים",
+        "לחבר את דמשק לים"
+      ],
+      "correct": 0,
+      "explanation": "הנחתה ב-1942.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-05",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "מערת קשת",
+      "question": "מאיזה סלע עשוי רכס אדמית, שבו מערת קשת?",
+      "options": [
+        "גיר קשה מתקופת הטורון",
+        "בזלת",
+        "קירטון רך",
+        "כורכר"
+      ],
+      "correct": 0,
+      "explanation": "מים תת־קרקעיים המיסו את הסלע ויצרו חלל ענק.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-06",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "פקיעין",
+      "question": "מי שיקם את בית הכנסת בפקיעין ב-1873?",
+      "options": [
+        "רבי רפאל הלוי",
+        "רבי אלעזר רוקח",
+        "רבי יוסף קארו",
+        "הרב קוק"
+      ],
+      "correct": 0,
+      "explanation": "בבית הכנסת אבנים עתיקות משובצות.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-07",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "מירון",
+      "question": "מה גובה המשקעים בהר מירון, לפי החוברת?",
+      "options": [
+        "כ-900–1,000 מ\"מ בשנה",
+        "כ-100 מ\"מ",
+        "כ-300 מ\"מ",
+        "כ-2,000 מ\"מ"
+      ],
+      "correct": 0,
+      "explanation": "חורש ים־תיכוני צפוף.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-08",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "מירון",
+      "question": "אילו העתקים תוחמים את גוש מירון?",
+      "options": [
+        "העתק מירון והעתק ראמה",
+        "העתק הכרמל",
+        "העתק ים המלח",
+        "העתק הגלבוע"
+      ],
+      "correct": 0,
+      "explanation": "הגוש הוא הורסט מורם.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-09",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "מירון",
+      "question": "איזה עץ בחורש מירון מוכר בגזעו האדום?",
+      "options": [
+        "קטלב מצוי",
+        "אלון תולע",
+        "אלה ארץ־ישראלית",
+        "אגס סורי"
+      ],
+      "correct": 0,
+      "explanation": "החורש כולל גם אלון מצוי.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-10",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "מירון",
+      "question": "מי העניקו דחיפה משמעותית לעלייה לרגל לקבר רשב\"י במאה ה-16?",
+      "options": [
+        "מקובלי צפת — האר\"י ותלמידיו",
+        "הצלבנים",
+        "חסידי הבעש\"ט",
+        "הממלוכים"
+      ],
+      "correct": 0,
+      "explanation": "העלייה לרגל החלה להתפתח כבר בתקופה הממלוכית.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-11",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "מירון",
+      "question": "מהו מנהג ה\"חלאקה\" בל\"ג בעומר?",
+      "options": [
+        "תספורת ראשונה לבנים בגיל 3",
+        "הדלקת נר",
+        "ברית מילה",
+        "קריאת תורה"
+      ],
+      "correct": 0,
+      "explanation": "חלק ממנהגי ההילולה במירון.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-12",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "ריחאניה",
+      "question": "מדוע יישבה האימפריה העות'מאנית צ'רקסים בארץ ישראל?",
+      "options": [
+        "לחיזוק הביטחון באזורי ספר מול שבטים בדואים",
+        "לעבודה בנמלים",
+        "להקמת ערים",
+        "לגביית מסים"
+      ],
+      "correct": 0,
+      "explanation": "אחרי גירושם מהקווקז בידי רוסיה ב-1864.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-13",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "ריחאניה",
+      "question": "מהי \"חאבזה\"?",
+      "options": [
+        "קוד ההתנהגות הצ'רקסי",
+        "מאכל",
+        "ריקוד",
+        "כלי נשק"
+      ],
+      "correct": 0,
+      "explanation": "השפה הצ'רקסית נכתבת באותיות קיריליות.",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
+    },
+    {
+      "id": "N22-3-14",
+      "tourId": "22",
+      "level": 3,
+      "source": "tour22",
+      "stop": "ברעם",
+      "question": "מה מאפיין את התוכנית הפנימית של בית הכנסת בברעם?",
+      "options": [
+        "אולם מרכזי עם טורי עמודים בצורת U",
+        "מבנה עגול",
+        "חדר אחד ללא עמודים",
+        "חצר פתוחה"
+      ],
+      "correct": 0,
+      "explanation": "טיפוס \"בית הכנסת הגלילי\".",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "sourceDoc": "חוברת הכנה לקמפוס גליל עליון (חומר הכנה — לא תיעוד ביקור)"
     }
   ]
 }
