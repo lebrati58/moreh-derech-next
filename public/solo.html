@@ -27,6 +27,7 @@
 <script src="api.js"></script>
 <script src="gps-engine.js"></script>
 <script src="auto-engine.js"></script>
+<script src="doc-reader.js"></script>
 <script>
 // Mode SOLO : chacun joue seul, avec SON GPS, sans admin ni serveur de jeu.
 //  * Le parcours vient soit d'un lien partagé par le créateur (solo.html?r=CODE, lu par solo_route),
@@ -45,7 +46,7 @@
   const L = {
     he: { dir: 'rtl', name: 'עב', title: '🚗 משחק עצמאי', sub: 'השאלות קופצות לבד לפי ה-GPS שלכם — בלי מדריך.',
       driver: '⚠️ רק לנוסעים — לא לנהג/ת!', to: '🏁 לאן נוסעים?', to_ph: 'למשל: יקנעם עילית', from: '🚩 מאיפה?', here: '📍 המיקום שלי עכשיו',
-      me: 'המיקום שלי', qs: n => `${n} שאלות לאורך הדרך`, from_ph: 'או להקליד מקום', make: '✨ להכין את המשחק', shared: n => `מסלול משותף · ${n} שאלות`, go: 'יוצאים לדרך 🚀',
+      me: 'המיקום שלי', doc: '📄 יש לכם מסמך על הדרך? (לא חובה)', doc_s: 'Word, PDF או טקסט. המקומות שמופיעים בו יקבלו את המשפטים שלכם, ושנים יהפכו לשאלות. המסמך נקרא רק בטלפון.', doc_used: (m, q) => `📄 מהמסמך: ${m} מקומות · ${q} שאלות`, e_doc: 'לא הצלחנו לקרוא את המסמך (רק Word ‎.docx, PDF או טקסט). ממשיכים בלעדיו.', qs: n => `${n} שאלות לאורך הדרך`, from_ph: 'או להקליד מקום', make: '✨ להכין את המשחק', shared: n => `מסלול משותף · ${n} שאלות`, go: 'יוצאים לדרך 🚀',
       steps: ['📍 מאתרים את הנקודות', '🛣️ מחשבים את המסלול', '🔎 מחפשים מקומות בדרך', '📚 אוספים עובדות', '🎤 מכינים טקסטים', '❓ בונים שאלות'],
       e_pos: 'לא קיבלנו מיקום. אשרו גישה למיקום או הקלידו את נקודת ההתחלה.', e_nf: x => `לא מצאנו את ״${x}״ במפה. נסו שם מלא יותר.`,
       e_route: 'לא נמצא מסלול נסיעה.', e_net: 'שירות חיצוני לא ענה. נסו שוב בעוד רגע.', e_few: 'לא נמצאו מספיק מקומות לאורך המסלול.',
@@ -59,7 +60,7 @@
       privacy: '🔒 המיקום נשאר בטלפון שלכם בלבד.' },
     fr: { dir: 'ltr', name: 'FR', title: '🚗 Jeu en solo', sub: 'Les questions apparaissent toutes seules grâce à votre GPS — sans guide.',
       driver: '⚠️ Pour les passagers seulement — pas pour le conducteur !', to: '🏁 Où allez-vous ?', to_ph: 'ex. : Yokneam Illit', from: '🚩 D’où partez-vous ?', here: '📍 Ma position actuelle',
-      me: 'Ma position', qs: n => `${n} questions le long du trajet`, from_ph: 'ou tapez un lieu', make: '✨ Préparer le jeu', shared: n => `Parcours partagé · ${n} questions`, go: 'C’est parti 🚀',
+      me: 'Ma position', doc: '📄 Un document sur le trajet ? (facultatif)', doc_s: 'Word, PDF ou texte. Les lieux qu’il cite reprennent vos phrases, et les années deviennent des questions. Lu seulement sur le téléphone.', doc_used: (m, q) => `📄 Depuis le document : ${m} lieux · ${q} questions`, e_doc: 'Document illisible (Word .docx, PDF ou texte seulement). On continue sans.', qs: n => `${n} questions le long du trajet`, from_ph: 'ou tapez un lieu', make: '✨ Préparer le jeu', shared: n => `Parcours partagé · ${n} questions`, go: 'C’est parti 🚀',
       steps: ['📍 Points de départ et d’arrivée', '🛣️ Calcul du trajet', '🔎 Lieux le long de la route', '📚 Faits', '🎤 Textes', '❓ Questions'],
       e_pos: 'Position introuvable. Autorisez la localisation ou tapez le départ.', e_nf: x => `« ${x} » introuvable sur la carte. Essayez un nom plus complet.`,
       e_route: 'Aucun trajet trouvé.', e_net: 'Un service en ligne n’a pas répondu. Réessayez dans un instant.', e_few: 'Pas assez de lieux le long du trajet.',
@@ -73,7 +74,7 @@
       privacy: '🔒 Votre position reste sur votre téléphone.' },
     en: { dir: 'ltr', name: 'EN', title: '🚗 Solo game', sub: 'Questions pop up by themselves using your GPS — no guide needed.',
       driver: '⚠️ Passengers only — not for the driver!', to: '🏁 Where are you going?', to_ph: 'e.g. Yokneam Illit', from: '🚩 Starting from?', here: '📍 My current location',
-      me: 'My location', qs: n => `${n} questions along the way`, from_ph: 'or type a place', make: '✨ Prepare the game', shared: n => `Shared route · ${n} questions`, go: 'Let’s go 🚀',
+      me: 'My location', doc: '📄 Have a document about the route? (optional)', doc_s: 'Word, PDF or text. Places it mentions get your sentences, and years become questions. Read only on your phone.', doc_used: (m, q) => `📄 From your document: ${m} places · ${q} questions`, e_doc: 'Could not read the document (Word .docx, PDF or text only). Continuing without it.', qs: n => `${n} questions along the way`, from_ph: 'or type a place', make: '✨ Prepare the game', shared: n => `Shared route · ${n} questions`, go: 'Let’s go 🚀',
       steps: ['📍 Finding start and end', '🛣️ Computing the route', '🔎 Places along the way', '📚 Facts', '🎤 Texts', '❓ Questions'],
       e_pos: 'No location. Allow location access or type the start.', e_nf: x => `“${x}” not found on the map. Try a fuller name.`,
       e_route: 'No driving route found.', e_net: 'An online service did not answer. Try again in a moment.', e_few: 'Not enough places along the route.',
@@ -87,7 +88,7 @@
       privacy: '🔒 Your location stays on your phone.' },
     ru: { dir: 'ltr', name: 'RU', title: '🚗 Игра в одиночку', sub: 'Вопросы появляются сами по вашему GPS — без гида.',
       driver: '⚠️ Только для пассажиров — не для водителя!', to: '🏁 Куда едем?', to_ph: 'напр.: Йокнеам-Илит', from: '🚩 Откуда?', here: '📍 Моё местоположение',
-      me: 'Моё местоположение', qs: n => `${n} вопросов по пути`, from_ph: 'или введите место', make: '✨ Подготовить игру', shared: n => `Общий маршрут · ${n} вопросов`, go: 'Поехали 🚀',
+      me: 'Моё местоположение', doc: '📄 Есть документ о маршруте? (необязательно)', doc_s: 'Word, PDF или текст. Места из него получат ваши фразы, а годы станут вопросами. Читается только в телефоне.', doc_used: (m, q) => `📄 Из документа: мест ${m} · вопросов ${q}`, e_doc: 'Не удалось прочитать документ (только Word .docx, PDF или текст). Продолжаем без него.', qs: n => `${n} вопросов по пути`, from_ph: 'или введите место', make: '✨ Подготовить игру', shared: n => `Общий маршрут · ${n} вопросов`, go: 'Поехали 🚀',
       steps: ['📍 Начало и конец', '🛣️ Расчёт маршрута', '🔎 Места по пути', '📚 Факты', '🎤 Тексты', '❓ Вопросы'],
       e_pos: 'Нет местоположения. Разрешите доступ или введите начало.', e_nf: x => `«${x}» не найдено на карте. Попробуйте полнее.`,
       e_route: 'Маршрут не найден.', e_net: 'Онлайн-сервис не ответил. Попробуйте чуть позже.', e_few: 'Слишком мало мест по маршруту.',
@@ -212,7 +213,7 @@
   }
 
   // 1. Préparation : parcours partagé (lien) ou génération sur le téléphone
-  let form = { here: true, from: '', to: '' }, steps = null, err = '', busy = false;
+  let form = { here: true, from: '', to: '' }, steps = null, err = '', busy = false, docFile = null;
   function renderSetup() {
     const ids = ['geocode', 'route', 'places', 'facts', 'texts', 'build'];
     paint(`<div class="card">
@@ -224,12 +225,20 @@
           <label>${esc(t('from'))}</label>
           <label class="optrow"><input type="checkbox" id="here" ${form.here ? 'checked' : ''} style="width:22px;height:22px"> ${esc(t('here'))}</label>
           <input type="text" id="from" placeholder="${esc(t('from_ph'))}" value="${esc(form.from)}" ${form.here ? 'hidden' : ''}>
+          <label for="doc">${esc(t('doc'))}</label>
+          <input type="file" id="doc" accept=".docx,.pdf,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain">
+          <p class="small muted" style="margin:4px 0 0">${esc(docFile ? '✔ ' + docFile.name : t('doc_s'))}</p>
           <button class="btn sun" style="margin-top:12px;font-size:20px" ${busy ? 'disabled' : ''}>${esc(t('make'))}</button>
         </form>
         <p class="small muted">${esc(t('privacy'))}</p></div>
       ${steps ? `<div class="card"><ul class="steps">${ids.map((k, i) => `<li class="${steps.includes(k) ? (busy && steps[steps.length - 1] === k ? 'cur' : 'done') : ''}">${esc(t('steps')[i])}</li>`).join('')}</ul></div>` : ''}
       ${err ? `<div class="card navstat bad">${esc(err)}</div>` : ''}`, true);
     const f = document.getElementById('sf');
+    document.getElementById('doc').onchange = e => {
+      docFile = e.target.files[0] || null;
+      form.to = document.getElementById('to').value; form.from = document.getElementById('from').value;   // ne pas perdre la saisie
+      renderSetup();
+    };
     document.getElementById('here').onchange = e => { form.here = e.target.checked; document.getElementById('from').hidden = form.here; };
     f.onsubmit = e => { e.preventDefault(); generate(); };
   }
@@ -246,11 +255,15 @@
       let from = form.from;
       if (form.here || !from) { try { from = await myPosition(); } catch { throw new Error('pos'); } }
       const r = await A.generate({ G, from, to: form.to }, k => { if (!steps.includes(k)) steps.push(k); renderSetup(); });
+      // document facultatif : lu sur le téléphone, ses phrases et ses années enrichissent le parcours
+      if (docFile && r.questions.length) {
+        try { A.applyDoc(r, await window.MDL_DOC.readFile(docFile, '')); } catch { toast(t('e_doc')); }
+      }
       busy = false;
       if (!r.questions.length) { err = t('e_few'); return renderSetup(); }
       // départ = ma position : titre « Ma position → arrivée » plutôt que des coordonnées
       if (form.here || !form.from) r.route.title = Object.fromEntries(Object.keys(L).map(k => [k, `${L[k].me} → ${form.to}`]));
-      st = { v: 1, route: r.route, questions: r.questions, ans: {}, score: 0, started: false, label: r.route.title.he, lang };
+      st = { v: 1, route: r.route, questions: r.questions, ans: {}, score: 0, started: false, label: r.route.title.he, lang, doc: r.stats.docMatched != null ? [r.stats.docMatched, r.stats.docQuestions] : null };
       save(); render(true);
     } catch (e) {
       busy = false;
@@ -265,6 +278,7 @@
     paint(`<div class="card center">
         <h2>${esc(nm(st.route.title) || st.label || '')}</h2>
         <p>${esc(t(st.code ? 'shared' : 'qs', st.questions.length))} · ${(st.route.lengthM ? (st.route.lengthM / 1000).toFixed(1) + ' km' : '')}</p>
+        ${st.doc ? `<p class="small" style="font-weight:700">${esc(t('doc_used', st.doc[0], st.doc[1]))}</p>` : ''}
         <div class="navstat bad" style="font-weight:800">${esc(t('driver'))}</div>
         <p class="small">${esc(t('rules'))}</p>
         <button class="btn sun big" id="go">${esc(t('go'))}</button>

@@ -283,6 +283,13 @@ questions pour répondre à la main si le GPS est imprécis. Écran de fin + par
 « 🧪 ניסיון בבית » : simulation du trajet pour essayer chez soi. Avertissement : passagers seulement.
 Pas de classement commun (pas d'arbitre) : pour un groupe, garder le jeu avec guide.
 
+### Document facultatif (solo et création)
+On peut ajouter un Word (.docx), un PDF ou un texte. Il est lu **dans le téléphone** (`public/doc-reader.js` :
+.docx ouvert avec le décompresseur natif, PDF avec pdf.js embarqué dans `public/vendor/pdfjs`, Apache-2.0).
+`MDL_AUTO.applyDoc` cherche le nom de chaque lieu du parcours dans le document : ses phrases deviennent le
+texte « 🎤 », et une phrase qui contient une année devient une question « השלימו את השנה » (aucune IA,
+phrases recopiées telles quelles). Sans document, rien ne change.
+
 ## Développement et tests
 
 Prérequis : Node 18+, PostgreSQL local (port 5433, socket `/var/tmp` par défaut ; variables
