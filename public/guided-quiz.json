@@ -9654,6 +9654,2922 @@
       "explanation": "חיפה קלטה כ-80 אלף עולים — הקליטה הגדולה בארץ במספרים מוחלטים; היום בעיר כ-300 אלף תושבים.",
       "sourceUrl": "https://drive.google.com/file/d/1pYeoQ39mjYQKREK59NG1uhSuUW_Zvs79/view",
       "sourceDoc": "סיכום סיור חיפה"
+    },
+    {
+      "id": "N08-1-01",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "באיזה חומר בודקים אם סלע מכיל קלציט?",
+      "options": [
+        "חומצה מלחית",
+        "מים מזוקקים",
+        "שמן",
+        "מלח"
+      ],
+      "correct": 0,
+      "explanation": "חומצה מלחית מגיבה עם קלציט — רואים תסיסה ושחרור גז.",
+      "sourceUrl": "https://drive.google.com/file/d/1AKy_nP1He_51JwdCZWmTDC4U6k9Uil4p/view",
+      "sourceDoc": "סיור 8 — הגדרות סלע, קרקע וצומח"
+    },
+    {
+      "id": "N08-1-02",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "איזה סלע אפשר לחרוץ בציפורן?",
+      "options": [
+        "קירטון",
+        "גיר",
+        "דולומיט",
+        "צור"
+      ],
+      "correct": 0,
+      "explanation": "בתחנה 1: סלע אחיד שנחרץ בציפורן ותוסס הרבה — קירטון.",
+      "sourceUrl": "https://drive.google.com/file/d/1AKy_nP1He_51JwdCZWmTDC4U6k9Uil4p/view",
+      "sourceDoc": "סיור 8 — הגדרות סלע, קרקע וצומח"
+    },
+    {
+      "id": "N08-1-03",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מהי קרקע, לפי הגדרות הסיור?",
+      "options": [
+        "תוצר בליה של הסלע",
+        "סלע שנוצר מלבה",
+        "שכבת מים תת־קרקעית",
+        "צמחים מתים בלבד"
+      ],
+      "correct": 0,
+      "explanation": "סלע הוא צירוף מלוכד של מינרלים; הקרקע היא תוצר הבליה שלו.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-1-04",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מהו כוח הבליה הדומיננטי ביותר בטבע?",
+      "options": [
+        "המים",
+        "הרוח",
+        "השמש",
+        "בעלי החיים"
+      ],
+      "correct": 0,
+      "explanation": "המים הם כוח הבליה החשוב ביותר; הרוח כשלעצמה אינה משנה את הסלע.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-1-05",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "איזה סלע נוצר מלבה שזרמה על פני השטח והתקררה לאט?",
+      "options": [
+        "בזלת",
+        "גיר",
+        "קירטון",
+        "כורכר"
+      ],
+      "correct": 0,
+      "explanation": "בזלת נוצרת מקילוח לבה בלחץ גזים נמוך — סלע קשה וכהה ללא חורים.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-1-06",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מאיזה מינרל בנויה המולקולה החשובה בכלורופיל?",
+      "options": [
+        "מגנזיום",
+        "ברזל",
+        "נתרן",
+        "אשלגן"
+      ],
+      "correct": 0,
+      "explanation": "בלי מגנזיום אין כלורופיל, אין פוטוסינתזה ואין צמחים.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-07",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "איזה מפנה בנחל אורן מכוסה בצמחייה עשירה יותר?",
+      "options": [
+        "המפנה הצפוני",
+        "המפנה הדרומי",
+        "שניהם זהים",
+        "אף אחד"
+      ],
+      "correct": 0,
+      "explanation": "המפנה הצפוני פחות חשוף לשמש — פחות התאדות, ולכן צמחייה צפופה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-08",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מהי חזזית?",
+      "options": [
+        "שיתוף חיים בין אצה לפטרייה",
+        "סוג של טחב",
+        "חרק",
+        "סלע געשי"
+      ],
+      "correct": 0,
+      "explanation": "חזזית היא סימביוזה: האצה מייצרת סוכרים, והפטרייה מפרקת את הסלע ומגינה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-09",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מדוע קק\"ל מונעת התחדשות של עצי אורן אחרי השריפה בכרמל?",
+      "options": [
+        "השרף שלהם דליק ומגביר שריפות",
+        "הם לא מקומיים בכלל",
+        "הם רעילים לבעלי חיים",
+        "הם מייבשים מעיינות"
+      ],
+      "correct": 0,
+      "explanation": "האורן מכיל שרף דליק המגביר שריפות, ולכן מעדיפים לאפשר לצמחייה מקומית אחרת להתפתח.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-10",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "מה הופק בבית הבד שבחורבת רקית?",
+      "options": [
+        "שמן זית",
+        "יין",
+        "דבש",
+        "סיד"
+      ],
+      "correct": 0,
+      "explanation": "משקולות אבן, בור עם שפה וקיר עם מגרעת — מתקן לסחיטת זיתים.",
+      "sourceUrl": "https://drive.google.com/file/d/1ErSKQMRU7gf_nkIik3lhMd86suQWmiA3/view",
+      "sourceDoc": "סיור 8 — חורבת רקית"
+    },
+    {
+      "id": "N08-1-11",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "מה זהות המבנה הציבורי בחורבת רקית, לפי הכתובת \"האל האחד והיחיד\"?",
+      "options": [
+        "בית כנסת שומרוני",
+        "מסגד",
+        "כנסייה",
+        "מקדש אלילי"
+      ],
+      "correct": 0,
+      "explanation": "הכתובת אופיינית לבתי כנסת שומרוניים.",
+      "sourceUrl": "https://drive.google.com/file/d/1ErSKQMRU7gf_nkIik3lhMd86suQWmiA3/view",
+      "sourceDoc": "סיור 8 — חורבת רקית"
+    },
+    {
+      "id": "N08-1-12",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "מה מייצרים בשלב הראשון בהפקת שמן זית?",
+      "options": [
+        "ריסוק הזיתים",
+        "סינון השמן",
+        "בישול הזיתים",
+        "ייבוש הזיתים"
+      ],
+      "correct": 0,
+      "explanation": "את הזית קשה לסחוט ישירות; קודם מרסקים אותו במתקן ה\"ים והממל\".",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-13",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "ממה מורכב רוב חול הים בחופי ישראל?",
+      "options": [
+        "גרגירי קוורץ",
+        "שברי צדפות",
+        "בזלת",
+        "מלח"
+      ],
+      "correct": 0,
+      "explanation": "כ-90% גרגירי קוורץ, 7–8% שברי שלדים (קלציט) ו-2–3% מינרלים כהים.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-14",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "מאיזה נהר מגיע רוב החול בחופי ישראל?",
+      "options": [
+        "הנילוס",
+        "הירדן",
+        "הפרת",
+        "הירמוך"
+      ],
+      "correct": 0,
+      "explanation": "החול הוסע מהדלתא של הנילוס והתקדם צפונה לאורך החוף.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-15",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "מה היה רכס הכורכר במקור, לפני שהתאבן?",
+      "options": [
+        "דיונת חול יבשתית",
+        "שונית אלמוגים",
+        "זרם לבה",
+        "מצוק גיר ימי"
+      ],
+      "correct": 0,
+      "explanation": "הכורכר נוצר מדיונת חול יבשתית שגרגריה הודבקו בקלציט — דיונה מאובנת.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-16",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "איך נקראת הרוח הדרומית־מערבית הדומיננטית שיוצרת גלים בחופינו?",
+      "options": [
+        "דראנית",
+        "שרב",
+        "חמסין",
+        "מיסטרל"
+      ],
+      "correct": 0,
+      "explanation": "הרוח הדרומית־מערבית (\"דראנית\") נושבת מהים ומייצרת גלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-17",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "נחל אורן",
+      "question": "לאיזה כיוון מצביע הפס הלבן בסימון שביל ישראל?",
+      "options": [
+        "צפונה, לחרמון",
+        "דרומה, למדבר",
+        "מזרחה",
+        "מערבה"
+      ],
+      "correct": 0,
+      "explanation": "הפס הלבן (למעלה) מכוון צפונה לחרמון המושלג, הכתום — דרומה למדבר.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-1-18",
+      "tourId": "08",
+      "level": 1,
+      "source": "tour08",
+      "stop": "נחל אורן",
+      "question": "האם צבע סימון השביל מעיד על דרגת הקושי שלו?",
+      "options": [
+        "לא",
+        "כן — אדום הוא קשה",
+        "כן — שחור הוא קל",
+        "רק בכרמל"
+      ],
+      "correct": 0,
+      "explanation": "אין קשר בין צבע הסימון לדרגת הקושי (בניגוד למסלולי סקי).",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-01",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "באיזה עומק ים נוצר סלע הקירטון?",
+      "options": [
+        "בים הפתוח, מעומק 100 מטר ומטה",
+        "בחוף הרדוד",
+        "בלגונה",
+        "על היבשה"
+      ],
+      "correct": 0,
+      "explanation": "הקירטון נוצר בים הפתוח, מעבר למדף היבשת, ממאובני פורמיניפרה מיקרוסקופיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-02",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "ממה מורכב סלע הצור?",
+      "options": [
+        "רדיולריות — סיליקה",
+        "פורמיניפרה — קלציט",
+        "צדפות — קלציט",
+        "חול קוורץ"
+      ],
+      "correct": 0,
+      "explanation": "הצור עשוי סיליקה מרדיולריות, והוא הקשה מבין ארבעת סלעי המשקע הימיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-2-03",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מה מבדיל את הדולומיט מהגיר?",
+      "options": [
+        "הוא מכיל גם מגנזיום, ונוצר בלגונות",
+        "הוא נוצר מלבה",
+        "אין בו קלציט כלל",
+        "הוא נוצר בים עמוק"
+      ],
+      "correct": 0,
+      "explanation": "דולומיט = קלציט + מגנזיום, נוצר בלגונות; לכן הוא תוסס מעט בחומצה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-2-04",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "איזה סלע מגיב בתסיסה מועטה ונחרץ רק במסמר?",
+      "options": [
+        "דולומיט",
+        "קירטון",
+        "כורכר",
+        "חוואר"
+      ],
+      "correct": 0,
+      "explanation": "בתחנה 4: תסיסה מועטה, נחרץ במסמר — דולומיט.",
+      "sourceUrl": "https://drive.google.com/file/d/1AKy_nP1He_51JwdCZWmTDC4U6k9Uil4p/view",
+      "sourceDoc": "סיור 8 — הגדרות סלע, קרקע וצומח"
+    },
+    {
+      "id": "N08-2-05",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מה קובע את קושי הסלע?",
+      "options": [
+        "ההרכב הכימי והחומר המלכד",
+        "העומק שבו נמצא",
+        "גילו בלבד",
+        "צבעו"
+      ],
+      "correct": 0,
+      "explanation": "הקושי נקבע לפי ההרכב הכימי והחומר המלכד — לא לפי המיקום בחתך.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-2-06",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "איזו קרקע אדומה מתפתחת על גיר ודולומיט?",
+      "options": [
+        "טרה רוסה",
+        "רנדזינה",
+        "לס",
+        "חמרה"
+      ],
+      "correct": 0,
+      "explanation": "על גיר ודולומיט מתפתחת טרה רוסה; על קירטון — רנדזינה כהה ואבנית.",
+      "sourceUrl": "https://drive.google.com/file/d/1AKy_nP1He_51JwdCZWmTDC4U6k9Uil4p/view",
+      "sourceDoc": "סיור 8 — הגדרות סלע, קרקע וצומח"
+    },
+    {
+      "id": "N08-2-07",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "איזה עץ מעיד על שכבת חוואר מתחתיו כשהוא גדל ברצועה?",
+      "options": [
+        "קטלב",
+        "אורן",
+        "חרוב",
+        "אלון"
+      ],
+      "correct": 0,
+      "explanation": "שורת עצי קטלב בקו גובה אחד מסמנת שכבת חוואר.",
+      "sourceUrl": "https://drive.google.com/file/d/1AKy_nP1He_51JwdCZWmTDC4U6k9Uil4p/view",
+      "sourceDoc": "סיור 8 — הגדרות סלע, קרקע וצומח"
+    },
+    {
+      "id": "N08-2-08",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "אילו צמחים שולטים במפנה הדרומי היבש בנחל אורן?",
+      "options": [
+        "חרוב ואלת המסטיק",
+        "אלון מצוי ואלה ארץ־ישראלית",
+        "אורן ולוטם",
+        "קנה והרדוף"
+      ],
+      "correct": 0,
+      "explanation": "במפנה הדרומי, החשוף לשמש — חרוב ואלת המסטיק.",
+      "sourceUrl": "https://drive.google.com/file/d/1AKy_nP1He_51JwdCZWmTDC4U6k9Uil4p/view",
+      "sourceDoc": "סיור 8 — הגדרות סלע, קרקע וצומח"
+    },
+    {
+      "id": "N08-2-09",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "למה הצמח צריך מים, לפי הסיור?",
+      "options": [
+        "לפוטוסינתזה, להמסת מינרלים ולהסעתם",
+        "רק כדי לא להתייבש",
+        "רק לצמיחת שורשים",
+        "רק לפריחה"
+      ],
+      "correct": 0,
+      "explanation": "שלושה תפקידים: פוטוסינתזה, המסת המינרלים והסעתם.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-10",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מהו ה\"צניר\" שרואים במדרונות הכרמל?",
+      "options": [
+        "שקע דמוי חצי צינור שנוצר מהמסה קרסטית",
+        "תעלת מים חצובה",
+        "עקבות גלי ים",
+        "פיתול נחל"
+      ],
+      "correct": 0,
+      "explanation": "צנירים נוצרים מהבדלי עמידות בין שכבות להמסה — לא מגלי ים ולא מפיתולי נחל.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-11",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "איך מתחילה היווצרות קרקע על סלע חשוף?",
+      "options": [
+        "חזזיות מפרקות את הסלע ויוצרות גממיות",
+        "רוח מביאה אבק",
+        "שריפות מפוררות את הסלע",
+        "תולעים חופרות בו"
+      ],
+      "correct": 0,
+      "explanation": "הפטרייה בחזזית יוצרת שקעים זעירים (גממיות), מים מגבירים את ההמסה ונוצרים סדקים.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-12",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "מדוע הקירות הפנימיים בבית האחוזה ברקית נבנו מקירטון?",
+      "options": [
+        "הם מוגנים ממזג האוויר, וקירטון קל לעיבוד",
+        "קירטון חזק יותר מגיר",
+        "לא היה גיר באזור",
+        "לקישוט בלבד"
+      ],
+      "correct": 0,
+      "explanation": "קירות חיצוניים מגיר/דולומיט עמידים; הפנימיים מוגנים ולכן מקירטון הרך.",
+      "sourceUrl": "https://drive.google.com/file/d/1ErSKQMRU7gf_nkIik3lhMd86suQWmiA3/view",
+      "sourceDoc": "סיור 8 — חורבת רקית"
+    },
+    {
+      "id": "N08-2-13",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "מהי \"טבולה אנסטה\" בכניסה לקבר מרינוס?",
+      "options": [
+        "לוח כתובת עם ידיות נשיאה",
+        "אבן גולל",
+        "פסל של המת",
+        "מזבח"
+      ],
+      "correct": 0,
+      "explanation": "העיטור עם ידיות נשיאה — שריד ללוחות שנתלו על הקיר.",
+      "sourceUrl": "https://drive.google.com/file/d/1ErSKQMRU7gf_nkIik3lhMd86suQWmiA3/view",
+      "sourceDoc": "סיור 8 — חורבת רקית"
+    },
+    {
+      "id": "N08-2-14",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "מדוע הקירטון מתאים לחציבת בורות מים?",
+      "options": [
+        "הוא רך לחציבה ואטום למים",
+        "הוא קשה מאוד",
+        "הוא סופג מים",
+        "הוא שקוף"
+      ],
+      "correct": 0,
+      "explanation": "הקירטון רך וקל לחציבה ואינו מחלחל — לכן יישובים קמו על מחשופי קירטון.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-15",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "איך מנעו זיהום של בורות שתייה בעבר?",
+      "options": [
+        "בור שיקוע לפני הבור, ושיחי סירה כמסננת",
+        "כלור",
+        "רשתות מתכת",
+        "הרתחת המים"
+      ],
+      "correct": 0,
+      "explanation": "חצבו בור ביניים לשיקוע הלכלוך, והניחו בפתחו שיחי סירה קוצנית כמסננת.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-16",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "מה מסביר את מבנה ה\"שיכוב הצולב\" בכורכר?",
+      "options": [
+        "הסלע נוצר מדיונות יבשתיות ולא בים",
+        "רעידות אדמה",
+        "זרמי לבה",
+        "קרחונים"
+      ],
+      "correct": 0,
+      "explanation": "שכבות דקות בזוויות משתנות מעידות שהסלע היה דיונה יבשתית שהתאבנה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-17",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "מאיפה מגיעים הגרגרים השחורים בחול החוף?",
+      "options": [
+        "מבזלת באתיופיה, דרך הנילוס הכחול",
+        "מהכרמל",
+        "מהגולן",
+        "מים המלח"
+      ],
+      "correct": 0,
+      "explanation": "הנילוס הכחול יוצא מאגם טאנה באתיופיה ומסיע פירורי בזלת.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-01",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מהו \"חוק הסופרפוזיציה\"?",
+      "options": [
+        "השכבות התחתונות עתיקות מהעליונות",
+        "השכבות העליונות עתיקות יותר",
+        "כל השכבות באותו גיל",
+        "שכבות קשות עתיקות יותר"
+      ],
+      "correct": 0,
+      "explanation": "ברוב המקרים השכבות התחתונות הן העתיקות, כי סלעי משקע שוקעים מלמעלה.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-3-02",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מהו קצב שקיעת הבוצה הממוצע בים, לפי הסיכום?",
+      "options": [
+        "כ-3 ס\"מ לכל 1,000 שנה",
+        "כ-3 מטר בשנה",
+        "כ-1 ס\"מ בשנה",
+        "כ-1 מטר למאה"
+      ],
+      "correct": 0,
+      "explanation": "קצב השקיעה הממוצע כ-3 ס\"מ לאלף שנה — ומכאן הזמנים הארוכים של סלעי המשקע.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-3-03",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מדוע נכון יותר לומר \"טרנספורם ים המלח\" מאשר \"השבר הסורי־אפריקני\"?",
+      "options": [
+        "מסיני עד טורקיה זה שבר תזוזה אופקית, ובאפריקה בקע — אין שבר אחד רצוף",
+        "כי השבר מתחיל ביוון",
+        "כי אין שבר באזור",
+        "כי זה הר געש"
+      ],
+      "correct": 0,
+      "explanation": "באפריקה ובים סוף מדובר בבקע (פתיחה); מסיני לטורקיה — שבר טרנספורם.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-3-04",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "איך נוצר רכס החרמון לפי הסיכום?",
+      "options": [
+        "רכס לחיצה — לוח ערב נלחץ אל לוח סיני־ישראל",
+        "הר געש",
+        "שונית אלמוגים",
+        "דיונה מאובנת"
+      ],
+      "correct": 0,
+      "explanation": "בצפון סוטה השבר מזרחה; תנועת לוח ערב צפונה גורמת ללחיצה והרמה — החרמון.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-3-05",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מהי \"תצורת הלשון\" שבמצדה ובנחל פרצים?",
+      "options": [
+        "שכבות דקות כהות ובהירות שהשקיעו אגמים קדומים",
+        "שכבת בזלת",
+        "גבישי מלח",
+        "שונית מאובנת"
+      ],
+      "correct": 0,
+      "explanation": "השכבות הכהות (חורף, סחף) והבהירות (קיץ, קלציט) שקעו באגמים שקדמו לים המלח.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-3-06",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מה פירוש המונח \"גרבן\"?",
+      "options": [
+        "גוש סלע שירד בין שני שברים",
+        "גוש שהורם בין שברים",
+        "קמר",
+        "הר געש מגן"
+      ],
+      "correct": 0,
+      "explanation": "גרבן הוא גוש מורד בין שני שברים — נראה כבקעה, אך נוצר בתהליך טקטוני.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-3-07",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מה \"הגורם המגביל\" שמסביר את הבדל הצומח בין המפנים בנחל אורן?",
+      "options": [
+        "המים — התאדות מוגברת במפנה הדרומי",
+        "סוג הסלע",
+        "גובה פני הים",
+        "כמות הגשם"
+      ],
+      "correct": 0,
+      "explanation": "הסלע, הגובה והגשם זהים; במפנה הדרומי ההתאדות גבוהה — והמים הם הגורם המגביל.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-08",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מדוע אין מעיין מעל שכבת החוואר בכרמל, בניגוד לסטף?",
+      "options": [
+        "מעל החוואר יש קירטון אטום, ולכן אין חלחול מלמעלה",
+        "אין גשם בכרמל",
+        "החוואר מחלחל",
+        "המים נשאבו"
+      ],
+      "correct": 0,
+      "explanation": "בסטף גיר סדוק מעל חוואר יוצר מעיין שכבה; בכרמל מעל החוואר קירטון אטום.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-09",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מה מראה תסיסה חזקה מאוד של רנדזינה בחומצה?",
+      "options": [
+        "כמות גדולה של קלציט בקרקע",
+        "אין בה מינרלים",
+        "שהיא חומצית",
+        "שהיא חולית"
+      ],
+      "correct": 0,
+      "explanation": "הרנדזינה, שהתפתחה מקירטון, עשירה בקלציט ותוססת בחוזקה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-10",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "קרקע וצומח",
+      "question": "מה מרכיבי הקרקע לפי מודל \"עוגת הפאי\"?",
+      "options": [
+        "כ-50% מינרלים, 0–10% חומר אורגני, ושאר מים ואוויר",
+        "100% מינרלים",
+        "50% מים ו-50% אוויר",
+        "בעיקר חומר אורגני"
+      ],
+      "correct": 0,
+      "explanation": "מינרלים מסלע האם, מעט חומר אורגני, ומים ואוויר בחללים שבין הגרגרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-11",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "כיצד שללו שהמבנה הציבורי ברקית הוא כנסייה?",
+      "options": [
+        "לא נמצאו עצמות חזיר בין עצמות בעלי החיים",
+        "לא היה בו צלב",
+        "הוא פונה מערבה",
+        "לא היו בו עמודים"
+      ],
+      "correct": 0,
+      "explanation": "נמצאו עצמות רבות אך לא של חזיר — עדות לתזונה כשרה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-12",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "חורבת רקית",
+      "question": "למה סחטו את הזיתים בסלים קלועים מזמורות גפן?",
+      "options": [
+        "המרווחים בקליעה מאפשרים לשמן לזרום החוצה",
+        "כדי לתת טעם",
+        "כי הם עמידים באש",
+        "כדי לסנן אבנים"
+      ],
+      "correct": 0,
+      "explanation": "הזמורות משאירות מרווחים — השמן זורם החוצה והעיסה נשארת בסל.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-13",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "מה תפקיד מפרץ חיפה בתנועת החול לאורך החוף?",
+      "options": [
+        "הוא \"מלכודת\" שעוצרת את החול הנע צפונה",
+        "הוא מקור החול",
+        "הוא מעביר חול ללבנון",
+        "אין לו השפעה"
+      ],
+      "correct": 0,
+      "explanation": "החול שוקע במפרץ; מצפון לו אין חול קוורצי אלא זיפזיף מקומי.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-14",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "כיצד נע החול לאורך החוף מדרום לצפון?",
+      "options": [
+        "בזרם חופי — הגל עולה בזווית וחוזר בניצב (זיגזג)",
+        "בזרם עמוק בים",
+        "ברוח מזרחית",
+        "בגאות ושפל"
+      ],
+      "correct": 0,
+      "explanation": "הגל מגיע בזווית בשל הרוח הדרומית־מערבית וחוזר בניצב — תנועת זיגזג צפונה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-15",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "כמה ירד מפלס הים התיכון בשיא תקופת הקרח האחרונה, לפי הסיור?",
+      "options": [
+        "כ-120 מטר",
+        "כ-12 מטר",
+        "כ-1,200 מטר",
+        "לא ירד"
+      ],
+      "correct": 0,
+      "explanation": "לפני כ-20–30 אלף שנה ירד המפלס בכ-120 מ' והחוף נסוג כ-20 ק\"מ מערבה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-16",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "כיצד הופכת דיונה לסלע כורכר?",
+      "options": [
+        "הקלציט נמס בחורף ומתגבש בקיץ כמלט סביב הקוורץ",
+        "הלחץ של הים",
+        "חום של לבה",
+        "קרחונים דוחסים אותה"
+      ],
+      "correct": 0,
+      "explanation": "גשמי החורף ממיסים שברי צדפות; בקיץ הקלציט שוקע ומדביק את גרגרי הקוורץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-3-17",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "עתלית",
+      "question": "מהי \"סלטציה\" בתנועת חול?",
+      "options": [
+        "הקפצת גרגרים לגובה 20–30 ס\"מ",
+        "ריחוף אבק",
+        "זרימה במים",
+        "התגלגלות אבנים"
+      ],
+      "correct": 0,
+      "explanation": "גרגר קופץ, נופל ומקפיץ גרגר אחר; מכשול קטן עוצר אותו ונוצרת דיונה.",
+      "sourceUrl": "https://drive.google.com/file/d/1CqwBm9kCbAfa85LeyI1_1DUez9PvBuJj/view",
+      "sourceDoc": "סיור גאולוגיה — כרמל וחוף (חורחה)"
+    },
+    {
+      "id": "N08-2-18",
+      "tourId": "08",
+      "level": 2,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מהו \"אקוויפר\"?",
+      "options": [
+        "שכבת סלע המעבירה ונושאת מים",
+        "שכבה אטומה",
+        "מעיין חם",
+        "בור מים חצוב"
+      ],
+      "correct": 0,
+      "explanation": "אקוויפר הוא שכבת סלע חדירה הנושאת מים — בישראל בעיקר גיר ודולומיט.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N08-3-18",
+      "tourId": "08",
+      "level": 3,
+      "source": "tour08",
+      "stop": "סלע",
+      "question": "מה גורם להמלחת בארות באקוויפר החוף?",
+      "options": [
+        "שאיבת יתר שגורמת לפן הביני לסגת לתוך היבשה",
+        "גשם חומצי",
+        "רעידות אדמה",
+        "מי ים המלח"
+      ],
+      "correct": 0,
+      "explanation": "שאיבת יתר מזיזה את אזור המגע בין מים מתוקים למלוחים פנימה, והבארות שואבות מי ים.",
+      "sourceUrl": "https://drive.google.com/file/d/1iyMm1BWQrqUrM_9nAEmm5VhZ2EmNOjtg/view",
+      "sourceDoc": "מושגים בגאולוגיה (ענבר)"
+    },
+    {
+      "id": "N09-1-01",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מה עשה יהושע בשילה לפי ספר יהושע?",
+      "options": [
+        "העמיד את אוהל מועד והגריל את נחלות השבטים",
+        "בנה את בית המקדש",
+        "נלחם בפלישתים",
+        "נקבר שם"
+      ],
+      "correct": 0,
+      "explanation": "יהושע כינס את השבטים בשילה, העמיד את המשכן והגריל את הנחלות.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-1-02",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מי התפללה בשילה לבן ונולד לה שמואל?",
+      "options": [
+        "חנה",
+        "שרה",
+        "רחל",
+        "דבורה"
+      ],
+      "correct": 0,
+      "explanation": "חנה, אשת אלקנה, התפללה בשילה; עלי חשב שהיא שיכורה, ובסוף נולד לה שמואל.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-1-03",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מי היה הכוהן בשילה בימי ילדותו של שמואל?",
+      "options": [
+        "עלי",
+        "פנחס",
+        "אהרון",
+        "צדוק"
+      ],
+      "correct": 0,
+      "explanation": "עלי הכוהן הזקן — שמואל גדל אצלו והפך לנביא.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-1-04",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מה השם הערבי שמשמר את שם שילה?",
+      "options": [
+        "חירבת סיילון",
+        "תל בלטה",
+        "סבסטיה",
+        "נבלוס"
+      ],
+      "correct": 0,
+      "explanation": "אחד מעמודי הזיהוי הוא שימור השם: חירבת סיילון.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-1-05",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "לאן נלקח ארון הברית משילה בסוף ימי עלי?",
+      "options": [
+        "לקרב מול הפלישתים באבן העזר",
+        "לירושלים",
+        "למצרים",
+        "להר גריזים"
+      ],
+      "correct": 0,
+      "explanation": "הארון נלקח לקרב באבן העזר, ישראל הובסו והארון נשבה לארץ פלישתים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-1-06",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "כמה שומרונים חיים היום, בקירוב?",
+      "options": [
+        "כ-850",
+        "כ-85,000",
+        "כ-8,500",
+        "כ-150"
+      ],
+      "correct": 0,
+      "explanation": "העדה מונה כ-850 נפשות — חציה בהר גריזים וחציה בחולון.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-1-07",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "באילו שני מקומות חיות קהילות השומרונים?",
+      "options": [
+        "הר גריזים וחולון",
+        "שכם וירושלים",
+        "חיפה ועכו",
+        "יפו ורמלה"
+      ],
+      "correct": 0,
+      "explanation": "שתי הקהילות — הר גריזים (שכם) וחולון — קשורות ביניהן.",
+      "sourceUrl": "https://drive.google.com/file/d/1qcSMIwp5zsziPLHKsGiJxUnQ2qDX0V97/view",
+      "sourceDoc": "סיור 9 — הר גריזים"
+    },
+    {
+      "id": "N09-1-08",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מי צם ביום כיפור אצל השומרונים?",
+      "options": [
+        "כל העדה — גם ילדים ותינוקות",
+        "רק גברים",
+        "רק מבוגרים",
+        "רק הכוהנים"
+      ],
+      "correct": 0,
+      "explanation": "\"ועניתם את נפשותיכם\" כפשוטו — כולם צמים (למעט תינוקות יונקים).",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-1-09",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "היכן בונים השומרונים את הסוכה?",
+      "options": [
+        "בתוך הבית",
+        "על הגג",
+        "בחצר",
+        "בבית הכנסת"
+      ],
+      "correct": 0,
+      "explanation": "הסוכה נבנית בתוך הבית, ותקרתה מכוסה פירות וענפים.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-1-10",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "איזה זבח מקיימים השומרונים עד היום?",
+      "options": [
+        "זבח הפסח",
+        "קורבן תודה",
+        "קורבן עולה יומי",
+        "זבח שבועות"
+      ],
+      "correct": 0,
+      "explanation": "בכל פסח שוחטים כבשים בין הערביים, צולים אותם בכבשנים ואוכלים בחצות.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-1-11",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "איך כותבים השומרונים את המזוזה?",
+      "options": [
+        "חוקקים את הפסוקים ישירות על משקוף הבית",
+        "בקלף מגולגל בבית מזוזה",
+        "אין להם מזוזה",
+        "על דף בתוך הבית"
+      ],
+      "correct": 0,
+      "explanation": "\"וכתבתם על מזוזות ביתך\" כפשוטו — הפסוקים כתובים בגדול על הפתח.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-1-12",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "על איזו עיר צופים ממצפה יוסף?",
+      "options": [
+        "שכם",
+        "ירושלים",
+        "ג'נין",
+        "רמאללה"
+      ],
+      "correct": 0,
+      "explanation": "מצפה יוסף על הר גריזים צופה על שכם, תל בלטה וקבר יוסף.",
+      "sourceUrl": "https://drive.google.com/file/d/1BbBLxPjUtf0v9J9ooAVpZ-_sucApGixn/view",
+      "sourceDoc": "סיור 9 — מצפה יוסף"
+    },
+    {
+      "id": "N09-1-13",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "מה פירוש השם הרומי \"ניאפוליס\" שממנו נגזר \"נבלוס\"?",
+      "options": [
+        "העיר החדשה",
+        "עיר ההר",
+        "עיר המים",
+        "העיר הקדושה"
+      ],
+      "correct": 0,
+      "explanation": "ניאפוליס — העיר החדשה — השתבשה בערבית לנבלוס.",
+      "sourceUrl": "https://drive.google.com/file/d/1BbBLxPjUtf0v9J9ooAVpZ-_sucApGixn/view",
+      "sourceDoc": "סיור 9 — מצפה יוסף"
+    },
+    {
+      "id": "N09-1-14",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "לפי הבשורה על פי יוחנן, ממי ביקש ישו מים ליד שכם?",
+      "options": [
+        "מאישה שומרונית",
+        "מיוחנן המטביל",
+        "מכוהן",
+        "מחייל רומי"
+      ],
+      "correct": 0,
+      "explanation": "ליד באר יעקב ביקש ישו מים מאישה שומרונית.",
+      "sourceUrl": "https://drive.google.com/file/d/1BbBLxPjUtf0v9J9ooAVpZ-_sucApGixn/view",
+      "sourceDoc": "סיור 9 — מצפה יוסף"
+    },
+    {
+      "id": "N09-1-15",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "איזה מבנה בעל כיפה תכלת נראה מזרחית לשכם העתיקה?",
+      "options": [
+        "קבר יוסף",
+        "קבר רחל",
+        "באר יעקב",
+        "מסגד השייח'"
+      ],
+      "correct": 0,
+      "explanation": "המבנה עם הכיפה התכלת מזוהה במסורת כקבר יוסף.",
+      "sourceUrl": "https://drive.google.com/file/d/1BbBLxPjUtf0v9J9ooAVpZ-_sucApGixn/view",
+      "sourceDoc": "סיור 9 — מצפה יוסף"
+    },
+    {
+      "id": "N09-1-16",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "אלון מורה",
+      "question": "באיזה מקום ניסה הגרעין שהקים את אלון מורה להתיישב שוב ושוב בשנות ה-70?",
+      "options": [
+        "בתחנת הרכבת בסבסטיה",
+        "בירושלים",
+        "בחברון",
+        "בעמק יזרעאל"
+      ],
+      "correct": 0,
+      "explanation": "הקבוצה עלתה שמונה פעמים ונעצרה בתחנת הרכבת בסבסטיה.",
+      "sourceUrl": "https://drive.google.com/file/d/1ih8Jg6whOHsoZ6zFINcnA81v71SvfUZ1/view",
+      "sourceDoc": "סיור 9 — אלון מורה והר כביר"
+    },
+    {
+      "id": "N09-1-17",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "השומרון",
+      "question": "איזה גידול חקלאי שולט במדרונות השומרון כיום?",
+      "options": [
+        "הזית",
+        "התפוז",
+        "הבננה",
+        "הכותנה"
+      ],
+      "correct": 0,
+      "explanation": "הגידול הדומיננטי הוא הזית, נטוע בכרמים מסודרים.",
+      "sourceUrl": "https://drive.google.com/file/d/1vkO-HfvDL17Xjn_NbaXV1MCywaZnEpMo/view",
+      "sourceDoc": "השומרון — מבוא גאוגרפי"
+    },
+    {
+      "id": "N09-1-18",
+      "tourId": "09",
+      "level": 1,
+      "source": "tour09",
+      "stop": "השומרון",
+      "question": "על איזו דרך היסטורית מבוסס כביש 60?",
+      "options": [
+        "דרך גב ההר (דרך האבות)",
+        "דרך הים",
+        "דרך המלך",
+        "דרך הבשמים"
+      ],
+      "correct": 0,
+      "explanation": "כביש 60 מבוסס על דרך גב ההר שחרזה את יישובי ההר מבאר שבע עד ג'נין.",
+      "sourceUrl": "https://drive.google.com/file/d/1vkO-HfvDL17Xjn_NbaXV1MCywaZnEpMo/view",
+      "sourceDoc": "השומרון — מבוא גאוגרפי"
+    },
+    {
+      "id": "N09-2-01",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "על שלושה \"רגליים\" נסמך זיהוי שילה. מה הן?",
+      "options": [
+        "ארכאולוגיה, התיאור המקראי ושימור השם",
+        "מטבעות, כתובות ופסלים",
+        "מסורת נוצרית, מוסלמית ויהודית",
+        "מפות, תצלומים וסקרים"
+      ],
+      "correct": 0,
+      "explanation": "ממצאי ברזל 1, התיאור בשופטים כ\"א (צפונית לבית אל) ושימור השם חירבת סיילון.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-2-02",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מה נמצא בקנקנים הגדולים בשכבת החורבן של שילה?",
+      "options": [
+        "זיתים, חיטים וצימוקים",
+        "מטבעות",
+        "מגילות",
+        "נשק"
+      ],
+      "correct": 0,
+      "explanation": "כ-20 קנקני ענק עם שפת צווארון, מלאים בזיתים, חיטים וצימוקים, תוארכו לכ-1050 לפנה\"ס.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-2-03",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "איזו משלחת ערכה את החפירות הראשונות בשילה (1926–1932)?",
+      "options": [
+        "משלחת דנית",
+        "משלחת בריטית",
+        "משלחת אמריקאית",
+        "משלחת ירדנית"
+      ],
+      "correct": 0,
+      "explanation": "המשלחת הדנית מצאה כבר אז ממצאים מתקופת הברזל 1.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-2-04",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מה כתוב בפסיפס הכנסייה הביזנטית מהמאה ה-4 בשילה?",
+      "options": [
+        "\"אלוהים, רחם על תושבי שילה, אמן\"",
+        "\"כאן עמד המשכן\"",
+        "\"שלום על ישראל\"",
+        "\"ברוך הבא בשם ה'\""
+      ],
+      "correct": 0,
+      "explanation": "הפסיפס קורא לרחמים על תושבי שילה — עדות לשימור השם.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-2-05",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מהו \"מסגד היתום\" בשילה?",
+      "options": [
+        "מסגד מהמאה ה-10 שנבנה מעל כנסיות ביזנטיות",
+        "מסגד חדש",
+        "מבנה צלבני",
+        "בית כנסת"
+      ],
+      "correct": 0,
+      "explanation": "ג'אמע אל-יתים נבנה מעל כנסייה מהמאה ה-5, ומתחתיה כנסייה מהמאה ה-4.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-2-06",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "איזה נביא הזכיר את חורבן שילה כאזהרה לירושלים?",
+      "options": [
+        "ירמיהו",
+        "ישעיהו",
+        "יחזקאל",
+        "עמוס"
+      ],
+      "correct": 0,
+      "explanation": "ירמיהו (פרק ז') הזהיר שגורל שילה צפוי גם לירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-2-07",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מה ההבדל המרכזי בין תורת השומרונים לחומש היהודי?",
+      "options": [
+        "\"המקום אשר בחר\" — ומפורש: הר גריזים",
+        "אין להם ספר בראשית",
+        "הם קוראים מימין לשמאל",
+        "יש להם 10 חומשים"
+      ],
+      "correct": 0,
+      "explanation": "בכל מקום שכתוב \"המקום אשר יבחר\", בתורה השומרונית כתוב בחר — הר גריזים.",
+      "sourceUrl": "https://drive.google.com/file/d/1qcSMIwp5zsziPLHKsGiJxUnQ2qDX0V97/view",
+      "sourceDoc": "סיור 9 — הר גריזים"
+    },
+    {
+      "id": "N09-2-08",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "איזו כנסייה עמדה בראש הר גריזים בתקופה הביזנטית?",
+      "options": [
+        "כנסייה מתומנת",
+        "כנסייה עגולה קטנה",
+        "בזיליקה ענקית",
+        "קפלה צלבנית"
+      ],
+      "correct": 0,
+      "explanation": "כנסייה מתומנת נבנתה בראש ההר אחרי הרס המתחם השומרוני.",
+      "sourceUrl": "https://drive.google.com/file/d/1qcSMIwp5zsziPLHKsGiJxUnQ2qDX0V97/view",
+      "sourceDoc": "סיור 9 — הר גריזים"
+    },
+    {
+      "id": "N09-2-09",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "איזה שליט חשמונאי החריב את המקדש השומרוני בהר גריזים?",
+      "options": [
+        "יוחנן הורקנוס",
+        "יהודה המכבי",
+        "אלכסנדר ינאי",
+        "שמעון"
+      ],
+      "correct": 0,
+      "explanation": "המקדש פעל יותר מ-300 שנה עד שנחרב בידי יוחנן הורקנוס.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-2-10",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מה נמצא בחפירות מזרחית למדרגות המונומנטליות בהר גריזים?",
+      "options": [
+        "כ-30,000 מטבעות וכתובות הקדשה \"לאדוני\"",
+        "פסלי אלים",
+        "מגילות",
+        "קברי כוהנים"
+      ],
+      "correct": 0,
+      "explanation": "המטבעות והכתובות מעידים על מקדש לאלוהי ישראל ולא מקדש אלילי.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-2-11",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מדוע אין לשומרונים שמות חודשים כמו ניסן ותשרי?",
+      "options": [
+        "השמות הובאו מגלות בבל, והשומרונים לא היו שם",
+        "הם משתמשים בשמות רומיים",
+        "הם לא סופרים חודשים",
+        "השמות אסורים עליהם"
+      ],
+      "correct": 0,
+      "explanation": "החודשים נקראים \"החודש הראשון\", \"השביעי\" וכו'; ראש השנה שלהם בחודש הראשון.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-2-12",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מעץ מה עשויים השיפודים בזבח הפסח השומרוני?",
+      "options": [
+        "עץ רימון",
+        "עץ זית",
+        "עץ אלון",
+        "ברזל"
+      ],
+      "correct": 0,
+      "explanation": "הכבשים נתלים על שיפודים מעץ רימון — כמתואר במשנה על קורבן הפסח.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-2-13",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "איזה מלך שכם מופיע פעמים רבות במכתבי אל-עמרנה?",
+      "options": [
+        "לבאיה",
+        "בירדייה",
+        "יבני-אילו",
+        "עבדי-חבה"
+      ],
+      "correct": 0,
+      "explanation": "לבאיה, מלך שכם, מופיע בעיקר בתלונות של שליטים שכנים לפרעה.",
+      "sourceUrl": "https://drive.google.com/file/d/1BbBLxPjUtf0v9J9ooAVpZ-_sucApGixn/view",
+      "sourceDoc": "סיור 9 — מצפה יוסף"
+    },
+    {
+      "id": "N09-2-14",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "לפי המסורת השומרונית, היכן עצרה העגלה שנשאה את אוהל מועד?",
+      "options": [
+        "על הר גריזים",
+        "בשילה",
+        "בירושלים",
+        "בבית אל"
+      ],
+      "correct": 0,
+      "explanation": "שתי עגלות: זו עם גופת יוסף נעצרה בשדה יעקב, וזו עם אוהל מועד — בהר גריזים.",
+      "sourceUrl": "https://drive.google.com/file/d/1BbBLxPjUtf0v9J9ooAVpZ-_sucApGixn/view",
+      "sourceDoc": "סיור 9 — מצפה יוסף"
+    },
+    {
+      "id": "N09-2-15",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "אלון מורה",
+      "question": "בין אילו ארבעה הרים יושבת שכם?",
+      "options": [
+        "גריזים, עיבל, ג'בל א-ג'דע והר כביר",
+        "תבור, גלבוע, כרמל ומירון",
+        "הזיתים, ציון, הצופים והבית",
+        "חרמון, אביטל, בנטל ופרס"
+      ],
+      "correct": 0,
+      "explanation": "גריזים ועיבל ממערב, ג'בל א-ג'דע והר כביר ממזרח.",
+      "sourceUrl": "https://drive.google.com/file/d/1ih8Jg6whOHsoZ6zFINcnA81v71SvfUZ1/view",
+      "sourceDoc": "סיור 9 — אלון מורה והר כביר"
+    },
+    {
+      "id": "N09-2-16",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "אלון מורה",
+      "question": "מה מצא אדם זרטל על הר עיבל?",
+      "options": [
+        "מבנה אבן עם כבש, שזיהה כמזבח יהושע",
+        "בית כנסת שומרוני",
+        "מקדש רומי",
+        "קבר מלכים"
+      ],
+      "correct": 0,
+      "explanation": "זרטל זיהה את מבנה האבן עם הכבש כמזבח יהושע; נמצאו בו עצמות חיות כשרות לזבח.",
+      "sourceUrl": "https://drive.google.com/file/d/1ih8Jg6whOHsoZ6zFINcnA81v71SvfUZ1/view",
+      "sourceDoc": "סיור 9 — אלון מורה והר כביר"
+    },
+    {
+      "id": "N09-2-17",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "השומרון",
+      "question": "כמה משקעים יורדים בממוצע בגב ההר בשומרון?",
+      "options": [
+        "כ-600 מ\"מ",
+        "כ-100 מ\"מ",
+        "כ-1,500 מ\"מ",
+        "כ-50 מ\"מ"
+      ],
+      "correct": 0,
+      "explanation": "בגב ההר יורדים כ-600 מ\"מ בשנה, ובזכות הגיר יש מעיינות רבים.",
+      "sourceUrl": "https://drive.google.com/file/d/1vkO-HfvDL17Xjn_NbaXV1MCywaZnEpMo/view",
+      "sourceDoc": "השומרון — מבוא גאוגרפי"
+    },
+    {
+      "id": "N09-3-01",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "איזו אפשרות למיקום המשכן נתמכת בגודל רחבה צפונית לתל?",
+      "options": [
+        "רחבה של כ-25×100 מ' המתאימה למידות 50×100 אמה",
+        "ראש התל בלבד",
+        "מתחת לבית הכנסת המודרני",
+        "בתוך מערה"
+      ],
+      "correct": 0,
+      "explanation": "המשכן תואר במידות 100×50 אמה (כ-50×25 מ'), והרחבה הצפונית מתאימה לכך.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-3-02",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מה מסמל המעבר מעלי לשמואל לפי הסיכום?",
+      "options": [
+        "מעבר מהזקנים לנביאים, ומסטטיות לתנועה",
+        "מעבר ממלכים לשופטים",
+        "מעבר מכוהנים ללוויים",
+        "מעבר ממצרים לכנען"
+      ],
+      "correct": 0,
+      "explanation": "עלי הזקן ישב בשילה; שמואל הנביא סבב בארץ — חילופי דורות בשלשלת המסורה.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-3-03",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מה נמצא, לפי החפירות, לגבי שילה בתקופת הברונזה המאוחרת?",
+      "options": [
+        "היא ננטשה וחודשה בברזל 1",
+        "היא הייתה בשיא גודלה",
+        "היא הייתה עיר מצרית",
+        "היא נבנתה לראשונה"
+      ],
+      "correct": 0,
+      "explanation": "שילה יושבה בברונזה התיכונה, ננטשה בברונזה המאוחרת וחודשה בתקופת ההתנחלות.",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-3-04",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "שילה",
+      "question": "מה מספר רבי יהושע בן קרחה על שילה, לפי המסורת?",
+      "options": [
+        "זקן הריח ריח קטורת בין כותליה",
+        "מצאו בה את ארון הברית",
+        "ראו בה אור גדול",
+        "שמעו בה קול שופר"
+      ],
+      "correct": 0,
+      "explanation": "\"פעם אחת הלכתי לשילה והרחתי ריח קטורת מבין כותליה\".",
+      "sourceUrl": "https://drive.google.com/file/d/1pYCyL4JhMvncF9j_oe6etX93l2jgZxVX/view",
+      "sourceDoc": "סיור 9 — שילה הקדומה"
+    },
+    {
+      "id": "N09-3-05",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "לפי יוסף בן מתתיהו, מי בנה את המקדש בהר גריזים ולמי?",
+      "options": [
+        "סנבלט, לחתנו מנשה אחי הכוהן הגדול",
+        "יוחנן הורקנוס, לשומרונים",
+        "הורדוס, לאדומים",
+        "עזרא, לגולים"
+      ],
+      "correct": 0,
+      "explanation": "סנבלט בנה מקדש כדוגמת ירושלים ומינה את חתנו מנשה לכוהן גדול; ספר נחמיה מאשש את השמות.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-3-06",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "לפי המסורת השומרונית, מה גרם לפילוג ולהעברת המשכן לשילה?",
+      "options": [
+        "עלי סירב לפנות את הכהונה לעוזי ועבר לשילה",
+        "מלחמה בפלישתים",
+        "רעידת אדמה",
+        "גזרת מלך אשור"
+      ],
+      "correct": 0,
+      "explanation": "עלי מילא את מקום הכוהן הגדול הצעיר עוזי, סירב לוותר ולקח את המשכן לשילה.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-3-07",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "כמה אנשים הגלה מלך אשור משומרון לפי הכתובות האשוריות?",
+      "options": [
+        "כ-27,000–29,000",
+        "כ-2,700",
+        "כ-270,000",
+        "את כולם"
+      ],
+      "correct": 0,
+      "explanation": "המספר הנמוך תומך בגרסה משולבת: האליטות הוגלו, ותושבים פשוטים נשארו והתערבבו בגולים.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-3-08",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מה המשמעות של אמרת רבן שמעון בן גמליאל על הכותים?",
+      "options": [
+        "\"כל מצווה שהחזיקו בה — מדקדקים בה יותר מישראל\"",
+        "שאסור לאכול עמם",
+        "שהם גויים לכל דבר",
+        "שהם צאצאי משה"
+      ],
+      "correct": 0,
+      "explanation": "חז\"ל נעו בין קרבה (רשב\"ג) להרחקה (\"האוכל פת כותים כאוכל בשר חזיר\").",
+      "sourceUrl": "https://drive.google.com/file/d/1qcSMIwp5zsziPLHKsGiJxUnQ2qDX0V97/view",
+      "sourceDoc": "סיור 9 — הר גריזים"
+    },
+    {
+      "id": "N09-3-09",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מתי הגיעה הקהילה השומרונית לשיאה, לפי הסיכום?",
+      "options": [
+        "בתקופה הרומית — עד כ-1.5 מיליון מאמינים",
+        "בתקופה הצלבנית",
+        "בתקופה העות'מאנית",
+        "במאה ה-20"
+      ],
+      "correct": 0,
+      "explanation": "בתקופה הרומית פרחה הקהילה; בתי כנסת שומרוניים נמצאו מבית שאן ועד אפולוניה.",
+      "sourceUrl": "https://drive.google.com/file/d/1qcSMIwp5zsziPLHKsGiJxUnQ2qDX0V97/view",
+      "sourceDoc": "סיור 9 — הר גריזים"
+    },
+    {
+      "id": "N09-3-10",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מה גרם לירידה הדרמטית במספר השומרונים בתקופה הביזנטית?",
+      "options": [
+        "רדיפה דתית ושורת מרידות שדוכאו (484–556)",
+        "מגפת דבר בלבד",
+        "הגירה לאירופה",
+        "רעידת אדמה"
+      ],
+      "correct": 0,
+      "explanation": "נאסרו פולחן ומילה, והמרידות שדוכאו הביאו להרג, להמרות ולבריחה.",
+      "sourceUrl": "https://drive.google.com/file/d/1qcSMIwp5zsziPLHKsGiJxUnQ2qDX0V97/view",
+      "sourceDoc": "סיור 9 — הר גריזים"
+    },
+    {
+      "id": "N09-3-11",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "הר גריזים",
+      "question": "מה נדרש מאישה שמבקשת להצטרף לעדה השומרונית?",
+      "options": [
+        "לחיות בקהילה שלוש שנים, ללמוד את המנהגים ולעבור שיחה עם הכוהן הגדול",
+        "גיור אורתודוקסי",
+        "תשלום",
+        "אין אפשרות"
+      ],
+      "correct": 0,
+      "explanation": "העדה מקבלת נשים מבחוץ אחרי שלוש שנות חיים בקהילה ומבחן אצל הכוהן הגדול; גברים לא מתקבלים.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-3-12",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "מה מאפיין את האקוסטיקה בעמק שבין גריזים לעיבל, הקשורה למעמד הברכה והקללה?",
+      "options": [
+        "אפשר לשמוע בבירור קולות מהעמק בראש ההר",
+        "אין שום הד",
+        "רק רוח נשמעת",
+        "יש הד כפול מכל צד"
+      ],
+      "correct": 0,
+      "explanation": "שישה שבטים על כל הר והכוהנים בעמק; עד היום שומעים בבירור את קולות העמק.",
+      "sourceUrl": "https://drive.google.com/file/d/170ATlynQlx43qBNgIamHEOI3_HgF_Bpm/view",
+      "sourceDoc": "השומרונים (תמליל ערוך)"
+    },
+    {
+      "id": "N09-3-13",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "מצפה יוסף",
+      "question": "בכמה שלבים נבנתה הכנסייה בבאר יעקב לאורך הדורות?",
+      "options": [
+        "ביזנטית, צלבנית ויוונית־אורתודוקסית מתחילת המאה ה-20",
+        "רומית בלבד",
+        "מודרנית בלבד",
+        "ממלוכית ועות'מאנית"
+      ],
+      "correct": 0,
+      "explanation": "כנסייה ביזנטית מהמאה ה-4, מעליה צלבנית שנהרסה, ומעליה כנסייה יוונית־אורתודוקסית.",
+      "sourceUrl": "https://drive.google.com/file/d/1BbBLxPjUtf0v9J9ooAVpZ-_sucApGixn/view",
+      "sourceDoc": "סיור 9 — מצפה יוסף"
+    },
+    {
+      "id": "N09-3-14",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "אלון מורה",
+      "question": "מה קרה לטוביה קושניר, שחיפש את אירוס השומרון מתחת להר כביר?",
+      "options": [
+        "נחשד בריגול בידי הבריטים, ומאוחר יותר נהרג בשיירת הל\"ה",
+        "גילה מעיין חדש",
+        "הפך לבוטנאי מפורסם באנגליה",
+        "הקים קיבוץ"
+      ],
+      "correct": 0,
+      "explanation": "קושניר נעצר ונחקר כחשוד בריגול; ב-1948 נהרג בקרב הל\"ה.",
+      "sourceUrl": "https://drive.google.com/file/d/1ih8Jg6whOHsoZ6zFINcnA81v71SvfUZ1/view",
+      "sourceDoc": "סיור 9 — אלון מורה והר כביר"
+    },
+    {
+      "id": "N09-3-15",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "אלון מורה",
+      "question": "מה מאפיין את המתלול שמעל נחל תרצה?",
+      "options": [
+        "הפרש גובה של כ-500 מ' בתוך ק\"מ אחד",
+        "מצוק ים",
+        "מכתש",
+        "קניון בזלת"
+      ],
+      "correct": 0,
+      "explanation": "הנחל זורם עמוק מתחת להר כביר — הפרש של כ-500 מ' על פני ק\"מ.",
+      "sourceUrl": "https://drive.google.com/file/d/1ih8Jg6whOHsoZ6zFINcnA81v71SvfUZ1/view",
+      "sourceDoc": "סיור 9 — אלון מורה והר כביר"
+    },
+    {
+      "id": "N09-3-16",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "השומרון",
+      "question": "מה ההצעה שנתן יהושע לבני יוסף שהתלוננו על נחלה קטנה?",
+      "options": [
+        "\"עלה לך היערה וברא לך שם\"",
+        "לעבור לעבר הירדן",
+        "לכבוש את הגליל",
+        "לגור בערים פלישתיות"
+      ],
+      "correct": 0,
+      "explanation": "יהושע הציע להם לברא את היער בהר אפרים (יהושע י\"ז).",
+      "sourceUrl": "https://drive.google.com/file/d/1lAC0uXm9VeU8MF-0ZwKHjrg4HGxMzuNP/view",
+      "sourceDoc": "סיור 9 — מעלה לבונה"
+    },
+    {
+      "id": "N09-3-17",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "השומרון",
+      "question": "מדוע ירד גידול הגפן בשומרון למרות הגתות הרבות?",
+      "options": [
+        "איסור אלכוהול באסלאם, ומזיק הפילוקסרה עם זנים אירופיים",
+        "בצורת",
+        "רעידת אדמה",
+        "חוק בריטי"
+      ],
+      "correct": 0,
+      "explanation": "האיסור על אלכוהול צמצם את הגפן, והפילוקסרה שהגיעה עם זנים מאירופה מוטטה את הכרמים.",
+      "sourceUrl": "https://drive.google.com/file/d/1lAC0uXm9VeU8MF-0ZwKHjrg4HGxMzuNP/view",
+      "sourceDoc": "סיור 9 — מעלה לבונה"
+    },
+    {
+      "id": "N09-3-18",
+      "tourId": "09",
+      "level": 3,
+      "source": "tour09",
+      "stop": "השומרון",
+      "question": "היכן ישבו באופן מסורתי הכפרים בשומרון?",
+      "options": [
+        "על קו התפר בין המדרון לעמק",
+        "בראש ההר",
+        "בתוך העמק",
+        "על חוף הים"
+      ],
+      "correct": 0,
+      "explanation": "לא בראש ההר החשוף ולא בעמק הפורה — כדי לא לבזבז אדמה חקלאית.",
+      "sourceUrl": "https://drive.google.com/file/d/1vkO-HfvDL17Xjn_NbaXV1MCywaZnEpMo/view",
+      "sourceDoc": "השומרון — מבוא גאוגרפי"
+    },
+    {
+      "id": "N09-2-18",
+      "tourId": "09",
+      "level": 2,
+      "source": "tour09",
+      "stop": "השומרון",
+      "question": "מה ההבדל הטופוגרפי העיקרי בין השומרון להר יהודה?",
+      "options": [
+        "השומרון מבותר בקמרים, קערים ושברים, והר יהודה הוא קמר אחד רציף",
+        "השומרון שטוח והר יהודה מבותר",
+        "אין הבדל",
+        "השומרון בנוי בזלת"
+      ],
+      "correct": 0,
+      "explanation": "הר יהודה הוא קמר רציף (קמר חברון) שקל לנוע עליו; השומרון מבותר ועמקיו מתרחבים צפונה.",
+      "sourceUrl": "https://drive.google.com/file/d/1vkO-HfvDL17Xjn_NbaXV1MCywaZnEpMo/view",
+      "sourceDoc": "השומרון — מבוא גאוגרפי"
+    },
+    {
+      "id": "N10-1-01",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "אילו שני מעיינות נמצאים בכפר סטף?",
+      "options": [
+        "עין סטף ועין ביכרה",
+        "עין כרם ועין חמד",
+        "עין גדי ועין בוקק",
+        "עין חרוד ועין יזרעאל"
+      ],
+      "correct": 0,
+      "explanation": "חילופי השכבות בסטף חשפו שני מעיינות: עין סטף ועין ביכרה.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-1-02",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מה מקור הביטוי \"קנה מידה\", לפי ההסבר בסטף?",
+      "options": [
+        "מדידת גובה המים בבריכה בעזרת קנה",
+        "מכירת קנים בשוק",
+        "מדידת שדות בחבל",
+        "שקילת תבואה"
+      ],
+      "correct": 0,
+      "explanation": "את גובה המים בבריכת האגירה מדדו בקנה — ומכאן הביטוי.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-1-03",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "איזה ארגון משחזר מאז שנות ה-80 את החקלאות ההררית בסטף?",
+      "options": [
+        "קק\"ל",
+        "רשות העתיקות",
+        "צה\"ל",
+        "עיריית ירושלים"
+      ],
+      "correct": 0,
+      "explanation": "קק\"ל שחזרה נקבות, בריכות ותעלות, ומשכירה חלקות לגינות לתושבי ירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-1-04",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "איזה נחל מתפתל מתחת לתצפית בסטף?",
+      "options": [
+        "נחל שורק",
+        "נחל כסלון",
+        "נחל איילון",
+        "נחל קדרון"
+      ],
+      "correct": 0,
+      "explanation": "נחל שורק מתפתל בין ההרים — בניגוד לנחלי ההר שיורדים ישר לשפלה.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-1-05",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "בצורת מה בנוי יד קנדי שנראה מהתצפית בסטף?",
+      "options": [
+        "גזע עץ גדוע",
+        "כוכב",
+        "יונה",
+        "כיפה"
+      ],
+      "correct": 0,
+      "explanation": "יד קנדי בנוי כגדם עץ, זכר לרצח הנשיא קנדי.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-1-06",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "איזו יחידה צבאית התאמנה בחורבות הסטף בשנות ה-50?",
+      "options": [
+        "יחידה 101",
+        "גולני",
+        "הנח\"ל",
+        "שייטת 13"
+      ],
+      "correct": 0,
+      "explanation": "יחידה 101 שהקים אריאל שרון התאמנה בחורבות הכפר.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-1-07",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "אילו גידולים מושקים מתחת למעיין, לפי חלוקת המדרון בסטף?",
+      "options": [
+        "חקלאות שלחין",
+        "חקלאות בעל",
+        "רק עצי יער",
+        "רק חיטה"
+      ],
+      "correct": 0,
+      "explanation": "מעל המעיין — בעל; ליד המעיין — מגורים; מתחתיו — שלחין מושקה.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-1-08",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "יד השמונה",
+      "question": "לזכר מי נקרא היישוב יד השמונה?",
+      "options": [
+        "שמונה יהודים שהסגירה פינלנד לנאצים",
+        "שמונה לוחמי פלמ\"ח",
+        "שמונה ימי חנוכה",
+        "שמונה מייסדי הקיבוץ"
+      ],
+      "correct": 0,
+      "explanation": "נוצרים פינים הקימו את היישוב לזכר 8 היהודים שהוסגרו לנאצים.",
+      "sourceUrl": "https://drive.google.com/file/d/1T6pQumdXdEksZ2QBVSf-KGjOYiC_Kvb1/view",
+      "sourceDoc": "סיור 10 — יד השמונה"
+    },
+    {
+      "id": "N10-1-09",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "יד השמונה",
+      "question": "מה אפשר לראות בגן הארכאולוגי־תנ\"כי ביד השמונה?",
+      "options": [
+        "שחזור גת, בית בד ובית כנסת שהועבר מצפון הכנרת",
+        "חפירות של עיר כנענית",
+        "מוזיאון שואה",
+        "שרידי מבצר צלבני"
+      ],
+      "correct": 0,
+      "explanation": "מתקנים חקלאיים תנ\"כיים משוחזרים ובית כנסת שהועבר מצפון הכנרת.",
+      "sourceUrl": "https://drive.google.com/file/d/1T6pQumdXdEksZ2QBVSf-KGjOYiC_Kvb1/view",
+      "sourceDoc": "סיור 10 — יד השמונה"
+    },
+    {
+      "id": "N10-1-10",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "באיזו שנה הוקם הפלמ\"ח?",
+      "options": [
+        "1941",
+        "1948",
+        "1920",
+        "1936"
+      ],
+      "correct": 0,
+      "explanation": "הפלמ\"ח הוקם ב-1941 בשיתוף עם הבריטים, נגד תוכניות פלישה נאציות.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-1-11",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מי הקים את חטיבת הראל של הפלמ\"ח?",
+      "options": [
+        "יצחק רבין",
+        "משה דיין",
+        "יגאל אלון",
+        "אריאל שרון"
+      ],
+      "correct": 0,
+      "explanation": "יצחק רבין הקים את החטיבה ופיקד עליה כחודש וחצי.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-1-12",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "בצורת איזו אות בנויה אנדרטת חטיבת הראל?",
+      "options": [
+        "ח'",
+        "ה'",
+        "ש'",
+        "מ'"
+      ],
+      "correct": 0,
+      "explanation": "האנדרטה בצורת האות ח' ובראשה מרפסת תצפית.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-1-13",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מדוע נקראת \"גבעת הרדאר\" בשם זה?",
+      "options": [
+        "חשבו בטעות שהתחנה הבריטית היא תחנת רדאר",
+        "היה בה רדאר של צה\"ל",
+        "על שם קצין בשם רדאר",
+        "על שם צמח מקומי"
+      ],
+      "correct": 0,
+      "explanation": "הבריטים בנו תחנת ממסר תקשורת, ובטעות חשבו שזו תחנת רדאר.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-1-14",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "מי הפסל שיצר את אנדרטת גווילי האש?",
+      "options": [
+        "נתן רפפורט",
+        "יגאל תומרקין",
+        "דני קרוון",
+        "מנשה קדישמן"
+      ],
+      "correct": 0,
+      "explanation": "נתן רפפורט, יליד ורשה, שעיצב גם את אנדרטת גטו ורשה.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-1-15",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "מה מנציח יער הקדושים שבו עומדת אנדרטת גווילי האש?",
+      "options": [
+        "את קורבנות השואה",
+        "את חללי מלחמת העצמאות",
+        "את עולי תימן",
+        "את לוחמי הפלמ\"ח"
+      ],
+      "correct": 0,
+      "explanation": "היער מנציח את 6 מיליון היהודים, ובהם 1.5 מיליון ילדים, שנרצחו בשואה.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-1-16",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "מה מתאר החלק הצפוני של גווילי האש, ומה הדרומי?",
+      "options": [
+        "שואה — ותקומה",
+        "בית ראשון — ובית שני",
+        "מצרים — וכנען",
+        "מלחמה — ושלום עולמי"
+      ],
+      "correct": 0,
+      "explanation": "סובבים נגד כיוון השעון: הצד הצפוני מוקדש לשואה, הדרומי לתקומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-1-17",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "שמורת המסרק",
+      "question": "על שם מי נקרא מושב בית מאיר?",
+      "options": [
+        "מאיר בר־אילן",
+        "מאיר דיזנגוף",
+        "מאיר הר ציון",
+        "גולדה מאיר"
+      ],
+      "correct": 0,
+      "explanation": "בית מאיר נקרא על שם מאיר בר־אילן, ממנהיגי תנועת המזרחי.",
+      "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
+      "sourceDoc": "סיור 10 — סיפור דרך"
+    },
+    {
+      "id": "N10-1-18",
+      "tourId": "10",
+      "level": 1,
+      "source": "tour10",
+      "stop": "שמורת המסרק",
+      "question": "כמה מיני סחלבים, לפי סיפור הדרך, יש בשמורת הר הטייסים?",
+      "options": [
+        "14",
+        "1",
+        "31",
+        "100"
+      ],
+      "correct": 0,
+      "explanation": "בישראל 31 מיני סחלבים, ובשמורה 14 מהם.",
+      "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
+      "sourceDoc": "סיור 10 — סיפור דרך"
+    },
+    {
+      "id": "N10-2-01",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מהי התצורה הגאולוגית של סטף, ומה מאפיין אותה?",
+      "options": [
+        "תצורת שורק — חילופי גיר/דולומיט וחוואר",
+        "תצורת בזלת",
+        "חולות כורכר",
+        "קירטון בלבד"
+      ],
+      "correct": 0,
+      "explanation": "תצורת שורק: שכבות גיר/דולומיט (אקוויפר) מתחלפות עם חוואר (אקוויקלוד).",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-2-02",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "איך יוצרים חילופי השכבות בסטף \"טרסות טבעיות\"?",
+      "options": [
+        "החוואר הרך נשחק והגיר הקשה נשאר כמדרגות",
+        "הרוח בונה מדרגות",
+        "המים מערימים אבנים",
+        "בני אדם חצבו את כולן"
+      ],
+      "correct": 0,
+      "explanation": "חוואר רך מתחלף בגיר קשה — וכך נוצרות מדרגות טבעיות קלות לעיבוד.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-2-03",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מדוע עזבו תושבי סטף את כפרם ב-1948?",
+      "options": [
+        "בעקבות נפילת הכפר צובה",
+        "בגלל רעידת אדמה",
+        "בגלל מגפה",
+        "בגלל בצורת"
+      ],
+      "correct": 0,
+      "explanation": "אחרי נפילת צובה נטשו תושבי הסטף את הכפר.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-2-04",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מי התיישבו בסטף אחרי קום המדינה וקראו לו \"ביכרה\"?",
+      "options": [
+        "יוצאי לח\"י",
+        "יוצאי הפלמ\"ח",
+        "עולי תימן",
+        "נזירים"
+      ],
+      "correct": 0,
+      "explanation": "יוצאי לח\"י התיישבו בשרידי הכפר וגורשו בעקבות חשד שאגרו נשק.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-2-05",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "איזה פסוק מדברים מתאר את ההבדל בין חקלאות מצרים לחקלאות ההר?",
+      "options": [
+        "\"למטר השמים תשתה מים\"",
+        "\"ארץ זבת חלב ודבש\"",
+        "\"והארץ לא תימכר לצמיתות\"",
+        "\"ושבתה הארץ\""
+      ],
+      "correct": 0,
+      "explanation": "במצרים \"השקית ברגלך\", ובארץ ההר — \"למטר השמים תשתה מים\" (דברים י\"א).",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-2-06",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מדוע נטעו עץ מיש דרומי בכפרים?",
+      "options": [
+        "האמינו שהוא מביא מזל ומרחיק שדים",
+        "בגלל פירותיו",
+        "לבנייה",
+        "לצבע"
+      ],
+      "correct": 0,
+      "explanation": "המיש אינו עץ פרי; הוא נחשב מביא מזל ומרחיק שדים.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-2-07",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מה מתאר הפסוק \"אוסרי לגפן עירה\" מברכת יעקב?",
+      "options": [
+        "את פוריות הרי יהודה",
+        "את מלחמות יהודה",
+        "את המדבר",
+        "את הים"
+      ],
+      "correct": 0,
+      "explanation": "הגפן חזקה עד שאפשר לקשור אליה עייר — ביטוי לפוריות נחלת יהודה.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-2-08",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "יד השמונה",
+      "question": "מי מתגוררים ביד השמונה היום?",
+      "options": [
+        "יהודים משיחיים",
+        "נוצרים פינים בלבד",
+        "קיבוצניקים חילונים",
+        "נזירים"
+      ],
+      "correct": 0,
+      "explanation": "בהדרגה עזבו הפינים, וכיום גרים ביישוב יהודים משיחיים.",
+      "sourceUrl": "https://drive.google.com/file/d/1T6pQumdXdEksZ2QBVSf-KGjOYiC_Kvb1/view",
+      "sourceDoc": "סיור 10 — יד השמונה"
+    },
+    {
+      "id": "N10-2-09",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "יד השמונה",
+      "question": "מה הבעייתיות במתקנים העתיקים שבגן של יד השמונה?",
+      "options": [
+        "הם הועברו ממקומם המקורי",
+        "הם מזויפים",
+        "הם מחוץ לישראל",
+        "הם סגורים לקהל"
+      ],
+      "correct": 0,
+      "explanation": "המתקנים ובית הכנסת נתרמו ממקומות אחרים — ולכן אינם בהקשרם המקורי.",
+      "sourceUrl": "https://drive.google.com/file/d/1T6pQumdXdEksZ2QBVSf-KGjOYiC_Kvb1/view",
+      "sourceDoc": "סיור 10 — יד השמונה"
+    },
+    {
+      "id": "N10-2-10",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מה היה אחוז הלוחמות בחטיבת הראל, לפי הסיכום?",
+      "options": [
+        "כ-40%",
+        "כ-4%",
+        "כ-90%",
+        "אף לא אחת"
+      ],
+      "correct": 0,
+      "explanation": "בחטיבה היו כ-40% לוחמות — מעבירות נשק, חובשות ולוחמות.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-2-11",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מי היה מפקד המוצב בגבעת הרדאר שנפל בחיפוי על נסיגת חייליו ב-1948?",
+      "options": [
+        "עמיאל רודז'נסקי",
+        "דוד מרכוס",
+        "יוסף טבנקין",
+        "אורי בן ארי"
+      ],
+      "correct": 0,
+      "explanation": "עמיאל רודז'נסקי נהרג מול הלגיון הירדני; גופתו נמצאה רק אחרי מלחמת ששת הימים.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-2-12",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מי פיקד על חטיבת הראל שכבשה מחדש את גבעת הרדאר ב-1967?",
+      "options": [
+        "אורי בן ארי",
+        "יצחק רבין",
+        "עוזי נרקיס",
+        "מוטה גור"
+      ],
+      "correct": 0,
+      "explanation": "אורי בן ארי, לשעבר מ\"פ בפלמ\"ח הראל — וכך נסגר מעגל של 19 שנה.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-2-13",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מה מופיע בסמל חטיבת הראל?",
+      "options": [
+        "שיבולים וחרב, ומסביב אשכולות ענבים",
+        "אריה",
+        "מגן דוד בלבד",
+        "עץ זית"
+      ],
+      "correct": 0,
+      "explanation": "הסמל מזכיר את סמל הפלמ\"ח (שיבולים וחרב), מוקף אשכולות ענבים (קריית ענבים).",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-2-14",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "מה המספר שיוצרים שני הגווילים יחד באנדרטה?",
+      "options": [
+        "8 — סמל אינסוף",
+        "6",
+        "1",
+        "12"
+      ],
+      "correct": 0,
+      "explanation": "שני דפים מגוללים יוצרים את הספרה 8 — סמל האינסוף.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-2-15",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "איזה אירוע היסטורי הוסיף אלמנטים לאנדרטה בזמן יצירתה?",
+      "options": [
+        "מלחמת ששת הימים",
+        "מלחמת יום כיפור",
+        "מבצע סיני",
+        "הסכם השלום עם מצרים"
+      ],
+      "correct": 0,
+      "explanation": "בעקבות 1967 נוספו המנורה הנישאת, הכותל ותקיעת השופר.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-2-16",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "היכן נוצקה אנדרטת גווילי האש?",
+      "options": [
+        "באיטליה",
+        "בישראל",
+        "בפולין",
+        "בארה\"ב"
+      ],
+      "correct": 0,
+      "explanation": "האנדרטה עוצבה בארה\"ב, נוצקה באיטליה ונבנתה בארץ.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-2-17",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "איזה מקום שימש לטקס יום השואה המרכזי בשנות ה-50, לפני יד ושם?",
+      "options": [
+        "מערת בני ברית (קדושים) ביער",
+        "הכנסת",
+        "הר הרצל",
+        "כיכר מלכי ישראל"
+      ],
+      "correct": 0,
+      "explanation": "המערה הקרסטית ביער הקדושים שימשה לטקס המרכזי עד שעבר ליד ושם.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-2-18",
+      "tourId": "10",
+      "level": 2,
+      "source": "tour10",
+      "stop": "שמורת המסרק",
+      "question": "איזה מים הוביל קו המשאבות הבריטי מ-1936 לירושלים?",
+      "options": [
+        "מי הירקון",
+        "מי הכנרת",
+        "מי עין פרת",
+        "מי עין גדי"
+      ],
+      "correct": 0,
+      "explanation": "הבריטים בנו קו משאבות שמשך מים ממקורות הירקון לירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
+      "sourceDoc": "סיור 10 — סיפור דרך"
+    },
+    {
+      "id": "N10-3-01",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מהי ההשערה להתפתלות נחל שורק בין ההרים?",
+      "options": [
+        "הוא נחל קדום שקדם לקימוט שהרים את הרי יהודה",
+        "בני אדם הטו אותו",
+        "רעידת אדמה הסיטה אותו",
+        "הוא נחל מלאכותי"
+      ],
+      "correct": 0,
+      "explanation": "השערה: נחל שורק היה קיים לפני הקימוט, ושמר על תוואי מפותל כשההר התרומם.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-3-02",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מה מסביר את ריבוי בורות המים בכפר בית מחסייר?",
+      "options": [
+        "תצורה דומה לסטף, אך ללא מעיינות",
+        "שפע גשם",
+        "קרבה לנחל",
+        "הוראת הבריטים"
+      ],
+      "correct": 0,
+      "explanation": "באזור בית מאיר אין מעיינות, ולכן נחצבו בורות רבים לאיסוף מי גשם.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-3-03",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מה מיוחד בהאבקת עץ המיש הדרומי?",
+      "options": [
+        "הפריחה הנקבית מקדימה את הזכרית, וההאבקה ברוח",
+        "מואבק בציפורים",
+        "מאביק את עצמו",
+        "מואבק בדבורים בלבד"
+      ],
+      "correct": 0,
+      "explanation": "כך נמנעת האבקה עצמית; ההאבקה נעשית ברוח.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-3-04",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מהן ה\"שומרות\" בסטף?",
+      "options": [
+        "מגדלי אבן למגורים בעונת החקלאות",
+        "בורות מים",
+        "שומרי שדה",
+        "גדרות אבן"
+      ],
+      "correct": 0,
+      "explanation": "מסלול השומרות עובר דרך מגדלי אבן ששימשו למגורים בעונה החקלאית.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-3-05",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "סטף",
+      "question": "מה מסמלים 53 עמודי הבטון של יד קנדי?",
+      "options": [
+        "50 מדינות, מחוז קולומביה ושני עמודים לקק\"ל",
+        "53 שנות חייו",
+        "53 ימי כהונתו",
+        "53 תורמים"
+      ],
+      "correct": 0,
+      "explanation": "50 מדינות ארה\"ב, וושינגטון הבירה, ושני עמודים עם סמלי קק\"ל.",
+      "sourceUrl": "https://drive.google.com/file/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/view",
+      "sourceDoc": "סיור 10 — סטף"
+    },
+    {
+      "id": "N10-3-06",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "יד השמונה",
+      "question": "באיזה קיבוץ נטוש התיישבו לראשונה הנוצרים הפינים ב-1974?",
+      "options": [
+        "נווה אילן",
+        "קריית ענבים",
+        "מעלה החמישה",
+        "צובה"
+      ],
+      "correct": 0,
+      "explanation": "הם התיישבו בנווה אילן ואחר כך עברו לגבעה סמוכה — יד השמונה.",
+      "sourceUrl": "https://drive.google.com/file/d/1T6pQumdXdEksZ2QBVSf-KGjOYiC_Kvb1/view",
+      "sourceDoc": "סיור 10 — יד השמונה"
+    },
+    {
+      "id": "N10-3-07",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מה היה ההבדל בין אנשי הפלמ\"ח לשאר כוחות ההגנה?",
+      "options": [
+        "הם גויסו לשנתיים שירות מלא",
+        "הם קיבלו שכר גבוה",
+        "הם היו בריטים",
+        "הם שירתו רק בלילה"
+      ],
+      "correct": 0,
+      "explanation": "אנשי הפלמ\"ח שירתו שנתיים מלאות ואחר כך עברו לרזרבה.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-3-08",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "מדוע ננטשה גבעת הרדאר אחרי כיבושה במבצע מכבי (מאי 1948)?",
+      "options": [
+        "הפלמ\"ח כבש, והשמירה הועברה לחי\"ש — והלגיון כבש מחדש",
+        "הבריטים חזרו אליה",
+        "היא נהרסה כליל",
+        "הוחלט לוותר עליה בהסכם"
+      ],
+      "correct": 0,
+      "explanation": "\"הפלמ\"ח כובשים, החי\"ש שומרים\" — וב-26 במאי כבש אותה הלגיון הירדני.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-3-09",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "עם איזה מקום מקראי מזוהה תל אל-פול שנראה מגבעת הרדאר?",
+      "options": [
+        "גבעת שאול",
+        "גבעון",
+        "כפירה",
+        "קריית יערים"
+      ],
+      "correct": 0,
+      "explanation": "תל אל-פול מזוהה כגבעה המקראית, ביתו של שאול המלך.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-3-10",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "אנדרטת הראל",
+      "question": "אילו ארבע ערים היו \"ערי הגבעונים\"?",
+      "options": [
+        "גבעון, כפירה, בארות וקריית יערים",
+        "ירושלים, יריחו, עי ובית אל",
+        "לכיש, עזקה, מרשה וגת",
+        "שכם, שילה, בית אל ומצפה"
+      ],
+      "correct": 0,
+      "explanation": "הכפר קטנה סמוך לתל כפירה — אחת מארבע ערי גבעון.",
+      "sourceUrl": "https://drive.google.com/file/d/1O6EZYtUJ4ABrKBBMw-xoa7sFDQuVlZNe/view",
+      "sourceDoc": "סיור 10 — אנדרטת חטיבת הראל"
+    },
+    {
+      "id": "N10-3-11",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "מדוע מוקמה אנדרטת גווילי האש בקצה הר?",
+      "options": [
+        "זכר לעקדת יצחק בקצה הר המוריה",
+        "בגלל הנוף בלבד",
+        "כי שם נפל רפפורט",
+        "כי זה הגבול"
+      ],
+      "correct": 0,
+      "explanation": "המיקום בקצה ההר מרמז לעקדת יצחק שנעשתה על הר המוריה.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-3-12",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "איזו דמות מקראית מחברת בין גוויל השואה לגוויל התקומה?",
+      "options": [
+        "הנביא יחזקאל",
+        "משה רבנו",
+        "דוד המלך",
+        "אברהם"
+      ],
+      "correct": 0,
+      "explanation": "בסוף הגוויל הראשון דמות יחזקאל; בפנים פסוק מחזון העצמות היבשות.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-3-13",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "באיזו שיטה נוצקו חלקי האנדרטה?",
+      "options": [
+        "שעווה אבודה — תבנית גבס, שעווה, חימר ויציקת ברונזה",
+        "הדפסה תלת־ממדית",
+        "ריתוך פלדה",
+        "חציבה באבן"
+      ],
+      "correct": 0,
+      "explanation": "רפפורט מילא תבניות בשעווה, כיסה בחימר, המיס את השעווה ויצק ברונזה.",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-3-14",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "גווילי האש",
+      "question": "מה ביקשה הילדה דוניה רוזן, שמילותיה קשורות לאנדרטה?",
+      "options": [
+        "יד שלא מאבן או משיש אלא ממעשים טובים",
+        "שישמרו את שמה",
+        "שיבנו בית ספר",
+        "שיטעו יער"
+      ],
+      "correct": 0,
+      "explanation": "\"רוצה אני שתקימו יד לנו... לא מאבן או שיש אלא ממעשים טובים\".",
+      "sourceUrl": "https://drive.google.com/file/d/1zQwCubWNBseiHQaqCDsn30aVbA2PaoY4/view",
+      "sourceDoc": "סיור 10 — אנדרטת גווילי האש"
+    },
+    {
+      "id": "N10-3-15",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "שמורת המסרק",
+      "question": "מה קרה למטס ההפצצה הראשון של חיל האוויר שתוכנן לבית מחסיר?",
+      "options": [
+        "המטוס נפגע וששת אנשי הצוות נהרגו",
+        "ההפצצה הצליחה",
+        "המטס בוטל מראש",
+        "המטוס נחת בשלום בירושלים"
+      ],
+      "correct": 0,
+      "explanation": "אחרי שלוש הקפות נותק הקשר; ששת אנשי הצוות נהרגו ונקברו בהמשך בקריית ענבים.",
+      "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
+      "sourceDoc": "סיור 10 — סיפור דרך"
+    },
+    {
+      "id": "N10-3-16",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "שמורת המסרק",
+      "question": "איך שרדה ירושלים את ניתוק קו המים ב-1948?",
+      "options": [
+        "בורות המים הפרטיים מולאו מראש והוקצבו מים",
+        "צינור חדש מהכנרת",
+        "מי גשם בלבד",
+        "אספקה מהירדן"
+      ],
+      "correct": 0,
+      "explanation": "בזכות הכנה מוקדמת מולאו הבורות, ובהקצבה חמורה עברה העיר את התקופה עד קו השילוח.",
+      "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
+      "sourceDoc": "סיור 10 — סיפור דרך"
+    },
+    {
+      "id": "N10-3-17",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "שמורת המסרק",
+      "question": "מדוע שונה שם היישוב \"הר הדר\" ל\"הר אדר\"?",
+      "options": [
+        "בגלל משמעות פוליטית של המילה \"הדר\" הקשורה לבית\"ר",
+        "בגלל טעות כתיב",
+        "לכבוד אדם בשם אדר",
+        "בגלל החודש אדר"
+      ],
+      "correct": 0,
+      "explanation": "השם המקורי כפירה שונה להר הדר, ובשל המשמעות הפוליטית של \"הדר\" נקבע לבסוף הר אדר.",
+      "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
+      "sourceDoc": "סיור 10 — סיפור דרך"
+    },
+    {
+      "id": "N10-3-18",
+      "tourId": "10",
+      "level": 3,
+      "source": "tour10",
+      "stop": "שמורת המסרק",
+      "question": "מה מסמלת אנדרטת פורצי הדרך של נעמי הנריק בשער הגיא?",
+      "options": [
+        "צינורות נירוסטה המזנקים לכיוון ירושלים",
+        "שריונית שרופה",
+        "יונת שלום",
+        "עמוד אש"
+      ],
+      "correct": 0,
+      "explanation": "האנדרטה (1967) בנויה צינורות נירוסטה במקבצים, המזנקים לעבר ירושלים.",
+      "sourceUrl": "https://drive.google.com/file/d/1gLJX1Co0KbWjadbIxYog5uc5chjukVnP/view",
+      "sourceDoc": "סיור 10 — סיפור דרך"
     }
   ]
 }
