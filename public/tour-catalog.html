@@ -33,7 +33,7 @@ const c=counts&&!t.isCommunity&&counts.byTour[String(t.number).padStart(2,"0")];
 const id=t.isCommunity?t.id:String(t.number).padStart(2,"0");const mp=create("a","quiz","🗺️ במפה");mp.href="map.html?tour="+id;buttons.append(mp);if(c&&c.total){const quiz=create("a","quiz","🎮 תרגול");quiz.href="guided-tour.html?tour="+id;buttons.append(quiz);}
 if(t.docList&&t.docList.length){const label=create("p","notes","📄 מסמכים שהוסיפו משתתפים:");card.append(label);for(const doc of t.docList){const dl=create("a","", "📄 "+doc.title+" · "+(doc.author||"אורח"));dl.href="community-document.html?id="+encodeURIComponent(doc.id);dl.style.cssText="font-size:14px;color:#87f5de;margin:4px 0;text-decoration:underline";card.append(dl);}}
 const add=create("a","","➕ הוסף מסמך");add.href="contribute.html?tour="+encodeURIComponent(id);buttons.append(add);
-card.append(buttons);cards.append(card);}}}
+card.append(buttons);cards.append(card);}}
 filter.addEventListener("input",render);
 let counts=null;MDTours.getJSON("guided-quiz.json").then(q=>{counts=MDTours.counts(q.questions);$("sQ").textContent=counts.total;$("allQ").textContent="🎮 תרגול "+counts.total+" שאלות · 3 רמות";if(tours.length)render();}).catch(()=>{});
 Promise.all([fetch("tour-catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}),MDCommunity.list().catch(()=>({routes:[],documents:[]}))])
