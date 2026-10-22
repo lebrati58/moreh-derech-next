@@ -3,8 +3,8 @@
 // Pages, scripts, styles et données sont REVALIDÉS auprès du serveur (cache: 'no-cache') : jamais
 // d'ancienne version tant que le réseau répond. Les appels à Supabase (POST, autre domaine) ne
 // passent jamais par ce cache.
-const CACHE = 'mdl-next-v1';
-const FILES = ['./', './index.html', './modes.html', './play.html', './anecdotes.html', './anecdotes.json', './admin.html', './style.css', './api.js', './config.js',
+const CACHE = 'mdl-next-v2';
+const FILES = ['./', './index.html', './next-theme.css', './modes.html', './play.html', './anecdotes.html', './anecdotes.json', './admin.html', './style.css', './api.js', './config.js',
   './gps-engine.js', './auto-engine.js', './create.html', './solo.html', './doc-reader.js', './admin-nav.js', './vendor/qrcode.js', './v3/road67-route.json'];
 
 self.addEventListener('install', e => {
