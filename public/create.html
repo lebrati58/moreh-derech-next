@@ -26,6 +26,7 @@
 <script src="api.js"></script>
 <script src="gps-engine.js"></script>
 <script src="auto-engine.js"></script>
+<script src="doc-reader.js"></script>
 <script>
 // Création d'un parcours V4 : départ + arrivée → questions générées (OpenStreetMap, Wikipédia, Wikidata)
 // → relecture par le guide → enregistrement (nouvelle banque) → nouvelle partie.
@@ -37,7 +38,7 @@
   const toast = t => { const el = document.getElementById('toast'); el.textContent = t; el.classList.remove('hidden'); clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.add('hidden'), 3500); };
   const STEPS = [['geocode', '📍 מאתרים את נקודות ההתחלה והסיום'], ['route', '🛣️ מחשבים את המסלול'], ['places', '🔎 מחפשים מקומות לאורך הדרך'],
     ['facts', '📚 אוספים עובדות (ויקינתונים)'], ['texts', '🎤 מכינים טקסטים למיקרופון (ויקיפדיה)'], ['build', '❓ בונים את השאלות']];
-  let res = null, keep = new Set(), busy = false, solo = false;
+  let res = null, keep = new Set(), busy = false, solo = false, docFile = null;
   const form = store.get('mdl_v4_form') || { from: '', to: '' };
 
   if (!token) {
@@ -55,10 +56,18 @@
           <button type="button" class="btn ghost small" id="here" style="flex:none;width:auto" title="המיקום שלי">📍</button></div>
         <label for="to">🏁 נקודת סיום</label>
         <input type="text" id="to" required placeholder="למשל: יקנעם עילית" value="${esc(form.to)}">
+        <label for="doc">📄 מסמך הדרכה (לא חובה)</label>
+        <input type="file" id="doc" accept=".docx,.pdf,.txt">
+        <p class="small muted" style="margin:4px 0 0">${esc(docFile ? '✔ ' + docFile.name : 'Word, PDF או טקסט — המקומות שמופיעים בו יקבלו את המשפטים שלכם לתסריט, ושנים יהפכו לשאלות.')}</p>
         <button class="btn sun" style="margin-top:14px;font-size:20px" ${busy ? 'disabled' : ''}>✨ ליצור את השאלות</button>
       </form>
       ${stepsDone ? `<div class="card"><ul class="steps">${STEPS.map(([k, t]) => `<li class="${stepsDone.includes(k) ? (stepsDone[stepsDone.length - 1] === k && busy ? 'cur' : 'done') : ''}">${t}</li>`).join('')}</ul></div>` : ''}
       ${err ? `<div class="card navstat bad">${err}</div>` : ''}`;
+    document.getElementById('doc').onchange = e => {
+      docFile = e.target.files[0] || null;
+      form.from = document.getElementById('from').value; form.to = document.getElementById('to').value;   // ne pas perdre la saisie
+      renderForm(stepsDone, err);
+    };
     document.getElementById('cf').onsubmit = e => { e.preventDefault(); go(); };
     document.getElementById('here').onclick = () => {
       if (!navigator.geolocation) return toast('אין GPS בדפדפן הזה');
@@ -83,6 +92,9 @@
     renderForm(done);
     try {
       res = await A.generate({ G, from: form.from, to: form.to }, k => { if (!done.includes(k)) done.push(k); renderForm(done); });
+      if (docFile && res.questions.length) {
+        try { A.applyDoc(res, await window.MDL_DOC.readFile(docFile, '')); } catch { toast('לא הצלחנו לקרוא את המסמך (Word ‎.docx, PDF או טקסט) — ממשיכים בלעדיו.'); }
+      }
       busy = false;
       if (!res.questions.length) return renderForm(done, 'לא נמצאו מספיק מקומות עם עובדות לאורך המסלול. נסו מסלול אחר או ארוך יותר.');
       keep = new Set(res.questions.map(q => q.key));
@@ -106,8 +118,9 @@
 
   function renderReview() {
     const r = res.route, qs = res.questions;
-    const KIND = { named: 'על שם מי', year: 'שנת ייסוד', pop: 'מספר תושבים', type: 'מה זה' };
+    const KIND = { named: 'על שם מי', year: 'שנת ייסוד', pop: 'מספר תושבים', type: 'מה זה', doc: '📄 מהמסמך' };
     app.innerHTML = `<div class="card"><h2>${esc(r.title.he)}</h2>
+        ${res.stats.docMatched != null ? `<p class="small" style="font-weight:700">📄 מהמסמך: ${res.stats.docMatched} מקומות · ${res.stats.docQuestions} שאלות</p>` : ''}
         <p class="small">${(r.lengthM / 1000).toFixed(1)} ק״מ · כ-${Math.round(r.durationSec / 60)} דק׳ נסיעה · נמצאו ${res.stats.places} מקומות, נבחרו <b>${qs.length}</b> שאלות</p>
         ${mapSvg()}
         <p class="small muted">עברו על השאלות ובטלו את הסימון של מה שלא מתאים. הכול מבוסס על ויקיפדיה וויקינתונים — כדאי לבדוק בעין.</p></div>

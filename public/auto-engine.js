@@ -391,5 +391,68 @@
     return build({ G, geometry, from, to, durationSec: rt.durationSec, places: placesOut, refs }, opts.build);
   }
 
-  return { build, generate, geocode, routeBetween, facts, sentences, makeQuestion, LANGS, T };
+  // ------------------------------------------------------------------ Document du joueur (facultatif)
+  // Pour chaque lieu du parcours on cherche son nom dans le texte (dans les 4 langues) :
+  //  * les phrases trouvées deviennent le texte « 🎤 » (à la place de Wikipédia) ;
+  //  * une phrase qui contient une année devient une question « complétez l'année » tirée du document.
+  // Aucune IA : seulement les phrases du document, recopiées telles quelles.
+  const CLOZE = {
+    he: c => `השלימו את השנה: ״${c}״`, fr: c => `Complétez l’année : « ${c} »`,
+    en: c => `Fill in the year: “${c}”`, ru: c => `Вставьте год: «${c}»`
+  };
+  const YEAR = /(^|[^\d])(1[5-9]\d\d|20[0-2]\d)(?!\d)/;
+  function docLang(text) {
+    const he = (text.match(/[\u0590-\u05FF]/g) || []).length, ru = (text.match(/[\u0400-\u04FF]/g) || []).length;
+    const lat = (text.match(/[a-zà-ÿ]/gi) || []).length;
+    if (he >= ru && he >= lat) return 'he';
+    if (ru >= lat) return 'ru';
+    return /\b(le|la|les|des|est|une|du)\b/i.test(text) ? 'fr' : 'en';
+  }
+  // noms à chercher : le nom du lieu dans chaque langue, et sans le mot générique (« מושב », « kibbutz »…)
+  function namesOf(stop) {
+    const out = new Set();
+    for (const l of LANGS) {
+      const n = clean((stop.name || {})[l] || '');
+      if (n.length >= 3) out.add(n);
+      const short = n.replace(/^(מושב|קיבוץ|כפר|נחל|הר|תל|moshav|kibbutz|kibboutz|mochav|tel|mount|mont|кибуц|мошав|гора)\s+/i, '');
+      if (short !== n && short.length >= 3) out.add(short);
+    }
+    return [...out];
+  }
+  function applyDoc(res, text) {
+    const lang = docLang(text);
+    const sents = String(text).split(/\n+/).flatMap(sentences).filter(x => words(x) >= 4 && words(x) <= 60);
+    const used = new Set();
+    let matched = 0, made = 0;
+    res.questions.forEach((q, qi) => {
+      const st = res.route.stops.find(s => s.id === q.key); if (!st) return;
+      const names = namesOf(st);
+      const hits = sents.filter(x => !used.has(x) && names.some(n => (lang === 'he' ? x.includes(n) : x.toLowerCase().includes(n.toLowerCase())))).slice(0, 4);
+      if (!hits.length) return;
+      matched++;
+      hits.forEach(h => used.add(h));
+      const nmL = st.name[lang] || st.name.he;
+      q.guide_i18n[lang] = Object.assign({}, q.guide_i18n[lang], { script: hits[0], more: hits.slice(1), src: 'doc' });
+      if (lang === 'he') q.guide_short = hits[0];
+      // une phrase du document avec une année → question à trous
+      const ys = hits.find(h => YEAR.test(h) && words(h) >= 6 && words(h) <= 35);
+      if (!ys) return;
+      const y = +YEAR.exec(ys)[2];
+      const wrong = yearDistractors(y, 'doc:' + q.key + ':' + y);
+      if (!wrong) return;
+      const pos = (qi * 3 + 1) % 4, vals = wrong.slice(); vals.splice(pos, 0, y);
+      const cloze = ys.replace(YEAR, (m, a) => a + '____');
+      const opts = vals.map(String);
+      const loc = l => ({ text: CLOZE[l](cloze), options: opts, explanation: ys, category: CATEGORY[l] });
+      Object.assign(q, { kind: 'doc', correct_index: pos, text: loc('he').text, options: opts, explanation: ys,
+        i18n: { fr: loc('fr'), en: loc('en'), ru: loc('ru') } });
+      q.route_meta = Object.assign({}, q.route_meta, { doc: true, docLang: lang });
+      q.guide_sources = [{ title: '📄 ' + nmL + ' — מהמסמך' }].concat(q.guide_sources || []);
+      made++;
+    });
+    res.stats = Object.assign({}, res.stats, { docLang: lang, docMatched: matched, docQuestions: made });
+    return res;
+  }
+
+  return { build, generate, applyDoc, geocode, routeBetween, facts, sentences, makeQuestion, LANGS, T };
 });

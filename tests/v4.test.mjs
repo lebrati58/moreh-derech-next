@@ -152,3 +152,37 @@ test('solo : un parcours n\'est lisible par lien que si le créateur le partage'
   assert.equal((await rpc(c, 'solo_route', { p_code: 'V3' })).error, 'not_found');
   await assert.rejects(rpc(c, 'admin_set_solo', { p_token: 'x', p_bank: r.code, p_on: true }));
 });
+
+// ------------------------------------------------------------------ Document du joueur (facultatif, sans IA)
+const D = umd('public/doc-reader.js');
+test('document Word lu dans le navigateur (sans bibliothèque) : paragraphes, entités, tabulations', async () => {
+  const buf = readFileSync(new URL('./sample-guide.docx', import.meta.url));
+  const text = await D.readDocx(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
+  const lines = text.split('\n');
+  assert.equal(lines.length, 3);
+  assert.equal(lines[1], 'מצד ימין המושבה בת שלמה, שנוסדה ב-1889 על שם אמו של הברון. הרחוב הראשי שמור.');
+  assert.match(lines[2], /המושבה הוותיקה & התפתחה/);
+  await assert.rejects(D.readFile({ name: 'x.doc', size: 10, arrayBuffer: async () => new ArrayBuffer(10) }), /old_doc/);
+  await assert.rejects(D.readFile({ name: 'x.txt', size: 3, arrayBuffer: async () => new TextEncoder().encode('abc').buffer }), /empty/);
+});
+
+test('document : les phrases du guide remplacent Wikipédia au micro, une année devient une question', async () => {
+  const buf = readFileSync(new URL('./sample-guide.docx', import.meta.url));
+  const text = await D.readDocx(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
+  const res = A.applyDoc(structuredClone(built), text);
+  assert.equal(res.stats.docLang, 'he'); assert.ok(res.stats.docMatched >= 2); assert.equal(res.stats.docQuestions, 1);
+  const bat = res.questions.find(q => res.route.stops.find(s => s.id === q.key).name.he === 'בת שלמה');
+  assert.equal(bat.kind, 'doc');
+  assert.equal(bat.options[bat.correct_index], '1889');
+  assert.match(bat.text, /השלימו את השנה: ״.*שנוסדה ב-____ על שם אמו של הברון\./);
+  assert.equal(new Set(bat.options).size, 4);
+  assert.match(bat.i18n.fr.text, /^Complétez l’année/); assert.equal(bat.i18n.fr.options[bat.correct_index], '1889');
+  assert.equal(bat.guide_i18n.he.src, 'doc'); assert.match(bat.guide_i18n.he.script, /^מצד ימין המושבה בת שלמה/);
+  const yok = res.questions.find(q => res.route.stops.find(s => s.id === q.key).name.he === 'יקנעם עילית');
+  assert.ok(yok.guide_i18n.he.script.includes('הייטק'), 'texte micro tiré du document');
+  assert.notEqual(yok.kind, 'doc', 'pas d\'année dans la phrase : la question Wikidata reste');
+  const untouched = res.questions.find(q => res.route.stops.find(s => s.id === q.key).name.he === 'אליקים');
+  assert.equal(untouched.guide_i18n.he.src, undefined, 'lieu absent du document : rien ne change');
+  // sans document, rien ne change
+  assert.deepEqual(A.applyDoc(structuredClone(built), 'Un texte sans aucun lieu du parcours, juste pour voir.').questions, built.questions);
+});

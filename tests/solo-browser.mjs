@@ -38,8 +38,11 @@ ok('accueil élève : lien « משחק עצמאי » → page solo, avertissemen
 
 // ------------------------------------------------------------------ Génération : départ = ma position
 await p.fill('#to', 'יקנעם');
+await p.setInputFiles('#doc', new URL('./sample-guide.docx', import.meta.url).pathname);   // document facultatif
+assert.equal(await p.inputValue('#to'), 'יקנעם', 'choisir un fichier ne vide pas la destination');
 await p.click('#sf button.sun');
 await p.waitForSelector('#go', { timeout: 30000 });
+assert.match(await p.textContent('#app'), /📄 מהמסמך: 2 מקומות · 1 שאלות/, 'le document a enrichi le parcours');
 assert.ok(!ext.some(u => /nominatim/.test(u) && /32\.6/.test(decodeURIComponent(u))), 'ma position n\'est pas envoyée à Nominatim (coordonnées utilisées telles quelles)');
 assert.ok(!ext.some(u => /supabase|rest\/v1/.test(u)), 'aucun appel au serveur de jeu');
 await p.screenshot({ path: `${OUT}/s2-pret.png` });
@@ -48,11 +51,12 @@ ok('génération sur le téléphone : départ = position GPS, aucune donnée env
 // ------------------------------------------------------------------ Trajet simulé : les questions sortent toutes seules
 await p.click('[data-l=fr]'); await p.click('[data-l=he]');
 await p.click('#simgo');
-let answered = 0, shot = false;
+let answered = 0, shot = false, sawDoc = false;
 for (let i = 0; i < 400; i++) {
   if (await p.$('.trophy')) break;
   if (await p.$('#ans')) {
     if (!shot) { await p.screenshot({ path: `${OUT}/s3-question.png` }); shot = true; }
+    if (/השלימו את השנה/.test(await p.textContent('#app'))) { sawDoc = true; await p.screenshot({ path: `${OUT}/s3b-question-document.png` }); }
     await p.click('#ans .ans >> nth=0'); await p.click('#send'); answered++;
     await p.waitForSelector('#cont');
     if (answered === 1) await p.screenshot({ path: `${OUT}/s4-resultat.png` });
@@ -61,6 +65,7 @@ for (let i = 0; i < 400; i++) {
   await p.waitForTimeout(500);
 }
 assert.ok(answered >= 3, 'questions déclenchées par la position : ' + answered);
+assert.ok(sawDoc, 'la question tirée du document est apparue pendant le trajet');
 await p.waitForSelector('.trophy', { timeout: 60000 });
 const end = await p.textContent('#app');
 assert.match(end, /סוף המסלול/);

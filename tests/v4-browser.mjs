@@ -42,9 +42,12 @@ await p.click('a[href="create.html"]');
 await p.waitForSelector('#cf');
 await p.screenshot({ path: `${OUT}/c1-formulaire.png` });
 await p.fill('#from', 'זכרון יעקב'); await p.fill('#to', 'יקנעם');
+await p.setInputFiles('#doc', new URL('./sample-guide.pdf', import.meta.url).pathname);    // PDF facultatif (lu par pdf.js embarqué)
+assert.equal(await p.inputValue('#from'), 'זכרון יעקב');
 await p.click('#cf button.sun');
 await p.waitForSelector('.rq', { timeout: 30000 });
 const n = await p.$$eval('.rq', l => l.length);
+assert.match(await p.textContent('#app'), /📄 מהמסמך: 0 מקומות · 0 שאלות/, 'PDF lu (aucun lieu du parcours dedans)');
 assert.ok(n >= 4, 'questions générées : ' + n);
 assert.match(await p.textContent('#app'), /בת שלמה/);
 await p.screenshot({ path: `${OUT}/c2-relecture.png`, fullPage: true });
