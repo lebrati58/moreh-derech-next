@@ -355,5 +355,11 @@
     return [].concat(...lines).map(([lon, lat]) => [lat, lon]);
   }
 
-  return { prepare, Tracker, plan, Simulator, pointAt, roadAt, travelSec, sideOf, parseTrack, simplify, MIN_GAP_SEC, SPEAK_SEC };
+  // Position d'un lieu par rapport au tracé : abscisse le long du trajet, écart et côté (V4 : lieux trouvés automatiquement)
+  function locate(P, ll) {
+    const c = nearest(P, P.proj.fwd(ll[0], ll[1]));
+    return { s: c.s, d: Math.round(c.d), side: c.side > 0 ? 'right' : 'left' };
+  }
+
+  return { prepare, Tracker, plan, Simulator, pointAt, roadAt, travelSec, sideOf, locate, parseTrack, simplify, MIN_GAP_SEC, SPEAK_SEC };
 });

@@ -83,7 +83,9 @@
   const gtr = q => (q && q.guide_i18n && (q.guide_i18n[alang] || q.guide_i18n.he)) || {};
   const gLang = q => q && q.guide_i18n && q.guide_i18n[alang] ? alang : 'he';
   const knownBank = code => !!(S && (S.banks || []).some(x => x.code === code));
-  const bankIcon = code => ({ V1: '📝', V2: '📷', V3: '🧭' })[code] || '🗂️';
+  // banque « parcours » : V3 (route 67) ou un parcours V4 généré automatiquement (code A + date)
+  const routeBank = code => code === 'V3' || /^A\d/.test(code || '');
+  const bankIcon = code => ({ V1: '📝', V2: '📷', V3: '🧭' })[code] || (/^A\d/.test(code || '') ? '✨' : '🗂️');
   const bankLabel = code => { const b = S && (S.banks || []).find(x => x.code === code); return b ? (b.label.he || code) : code; };
   const langSeg = () => `<div class="langseg" role="tablist" aria-label="שפת התוכן">${Object.keys(ALANGS).map(l =>
     `<button type="button" data-alang="${l}" class="${l === alang ? 'on' : ''}">${ALANGS[l].n}</button>`).join('')}</div>`;
@@ -192,7 +194,7 @@
     tabs.classList.remove('hidden');
     if (view !== 'live') document.body.classList.remove('busmode');
     const rt = document.querySelector('#tab-route');
-    if (rt) { const v3 = S.game && S.game.bank === 'V3'; rt.querySelector('.i').textContent = v3 ? '🗺️' : '📷'; }
+    if (rt) { const v3 = S.game && routeBank(S.game.bank); rt.querySelector('.i').textContent = v3 ? '🗺️' : '📷'; }
     chip.classList.remove('hidden');
     chip.textContent = `👥 ${S.online}/${S.players}`;
     // Ouverture automatique du panneau micro à la révélation (une seule fois par question)
@@ -201,7 +203,7 @@
       if (lastAutoGuide !== k) {
         lastAutoGuide = k; store.set('mdl_last_auto_guide', k);
         // en mode bus la phrase du micro est déjà sur l'écran principal : pas de fenêtre en plus
-        if (!document.querySelector('.modal') && !(busMode && S.game.bank === 'V3')) openGuide(S.current.question_id, { live: true });
+        if (!document.querySelector('.modal') && !(busMode && routeBank(S.game.bank))) openGuide(S.current.question_id, { live: true });
       }
     }
     if (document.querySelector('.modal')) return;          // ne pas perturber l'édition
@@ -347,7 +349,7 @@
     const g = S.game, c = S.current;
     if (!g) { app.innerHTML = `<div class="card center"><h2>אין משחק פעיל</h2><button class="btn sun" data-a="newgame">צור משחק חדש</button></div>`; return; }
     if (!knownBank(g.bank || 'V1')) { app.innerHTML = bankChip(); return; }
-    const v3 = g.bank === 'V3' && nav;
+    const v3 = routeBank(g.bank) && nav;
     if (v3 && busMode && g.status !== 'finished') {
       document.body.classList.add('busmode');
       if (!document.getElementById('busroot')) app.innerHTML = nav.busHtml();
@@ -443,7 +445,7 @@
   // Une fiche par photo, dans l'ordre du trajet. On avance de photo en photo SANS rien envoyer aux élèves.
   function renderGallery() {
     // V3 : pas de photo — carte du trajet, simulation et enregistrement de trace (aussi accessible depuis les réglages)
-    if (S?.game?.bank === 'V3' || routeMode) { app.innerHTML = (S?.game?.bank !== 'V3' ? `<div class="card small">🧪 מצב סימולציה / הכנה של V3 — המשחק הפעיל (${esc(bankLabel(S?.game?.bank || 'V1'))}) לא מושפע. <button class="btn ghost small" data-a="route-exit" style="margin-top:6px">→ חזרה</button></div>` : '') + nav.routeHtml(); return; }
+    if (routeBank(S?.game?.bank) || routeMode) { app.innerHTML = (!routeBank(S?.game?.bank) ? `<div class="card small">🧪 מצב סימולציה / הכנה של V3 — המשחק הפעיל (${esc(bankLabel(S?.game?.bank || 'V1'))}) לא מושפע. <button class="btn ghost small" data-a="route-exit" style="margin-top:6px">→ חזרה</button></div>` : '') + nav.routeHtml(); return; }
     if (!P || !P.photos) { app.innerHTML = `<div class="card center muted">טוען תמונות…</div>`; if (!loadPhotos._busy) loadPhotos(); return; }
     const ph = P.photos, col = P.collection;
     if (!ph.length) { app.innerHTML = `<div class="card center"><h2>אין תמונות בגלריה</h2></div>`; return; }
@@ -560,10 +562,10 @@
 
   // Préparation en 3 gestes (V3) : le reste des réglages est replié plus bas
   function prepCard() {
-    const g = S.game, isV3 = g && g.bank === 'V3';
+    const g = S.game, isV3 = g && routeBank(g.bank);
     const fresh = isV3 && g.status !== 'finished' && !S.current && !(S.stats && S.stats.questions);
     return `<div class="card prep"><h2>🚌 הכנה לטיול — 3 צעדים</h2>
-      <div class="prepstep ${fresh ? 'done' : ''}"><b>1</b><span>משחק חדש V3 ${fresh ? '✔ מוכן' : isV3 ? '(יש כבר פעילות — לאפס בבוקר הטיול)' : '— המשחק הפעיל אינו V3'}</span>
+      <div class="prepstep ${fresh ? 'done' : ''}"><b>1</b><span>משחק חדש ${fresh ? '✔ מוכן' : isV3 ? '(יש כבר פעילות — לאפס בבוקר הטיול)' : '— המשחק הפעיל אינו מסלול GPS'}</span>
         <button class="btn ${fresh ? 'ghost' : 'sun'} small" data-a="newgame">🔄</button></div>
       <div class="prepstep"><b>2</b><span>ניסיון בבית (לא נשלח לתלמידים)</span>
         <button class="btn ghost small" data-a="sim-v3">🧪</button></div>
@@ -571,7 +573,8 @@
         <a class="btn ok small" target="_blank" rel="noopener" data-share href="${waHref()}" style="text-decoration:none">💬</a>
         <button class="btn ghost small" data-a="qr">📲 QR</button></div>
       <p class="small muted" style="margin:8px 0 0">${g ? `עכשיו: ${esc(bankLabel(g.bank || 'V1'))} · ${S.players} משתתפים · ${(S.stats && S.stats.questions) || 0} שאלות נחשפו` : 'אין משחק פעיל'}</p>
-      <p class="small" style="margin:6px 0 0">ואז בלשונית 📡 <b>שידור חי</b>: 📍 הפעל GPS ← 🟢 ← 📣 פרסם שאלה.</p></div>`;
+      <p class="small" style="margin:6px 0 0">ואז בלשונית 📡 <b>שידור חי</b>: 📍 הפעל GPS ← 🟢 ← 📣 פרסם שאלה.</p>
+      <a class="btn ghost small" href="create.html" style="display:block;text-align:center;text-decoration:none;margin-top:10px">✨ מסלול חדש אוטומטי — רק נקודת התחלה וסוף</a></div>`;
   }
 
   function renderSettings() {
@@ -692,12 +695,12 @@
         <span class="vis ${vis}">${VIS[vis] || VIS.topic}</span>
         ${q && q.guide_location ? `<div class="guide-loc"><b>📍 מתי ואיפה:</b> ${esc(q.guide_location)}</div>` : ''}
       </div>
-      ${q && q.bank === 'V3' ? '' : !v2script || hasLong ? `<div class="seg" role="tablist">
+      ${q && routeBank(q.bank) ? '' : !v2script || hasLong ? `<div class="seg" role="tablist">
         <button data-g="short" class="${G.mode === 'short' ? 'on' : ''}">${v2script ? '🎤 מה להגיד באוטובוס · 20–40 שנ׳' : 'הסבר קצר · 30 שנ׳'}</button>
         <button data-g="long" class="${G.mode === 'long' ? 'on' : ''}">סיפור מורחב · 1–3 דק׳</button>
       </div>` : ''}
       <div class="guide-body" id="guide-body">
-        ${q && q.bank === 'V3' ? v3GuideBody(q, sc, sources) : `
+        ${q && routeBank(q.bank) ? v3GuideBody(q, sc, sources) : `
         ${v2script && G.mode !== 'long' ? '<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">🎤 מה להגיד באוטובוס · 20–40 שנ׳</div>' : ''}
         <div class="guide-text" ${dirOf(tLang)}>${text ? paras(text) : '<p class="guide-empty">אין עדיין טקסט הדרכה לשאלה הזו. אפשר להוסיף אותו בעריכת השאלה (✏️).</p>'}</div>
         ${q && q.route_meta && q.route_meta.photos ? `<div class="guide-box prac">${routeBlock(q)}</div>` : ''}
@@ -719,7 +722,7 @@
   // V3 : 🎤 texte micro → 💡 הידעת? → 📍 מתי לדבר? → 📚 מידע נוסף (ordre demandé par le guide)
   function v3GuideBody(q, sc, sources) {
     const g = gtr(q), l = gLang(q);
-    const stop = nav && nav.P ? nav.P.stops.find(st => 'v3:' + st.question === q.ext_key) : null;
+    const stop = nav && nav.P ? nav.P.stops.find(st => String(q.ext_key || '').split(':').pop() === st.question) : null;
     const nm = o => o ? (o[alang] || o.he || '') : '';
     const fin = q.route_meta && q.route_meta.final;
     return `<div class="small" style="font-weight:800;color:var(--sea);margin-bottom:6px">${fin ? '🎤 סיום ההדרכה' : '🎤 מה להגיד באוטובוס'} · משפט אחד</div>
@@ -997,7 +1000,7 @@
     openGuide: id => openGuide(id, { live: !!(S && S.game && S.game.phase === 'revealed' && S.current && S.current.question_id === id) }),
     rpcBank: b => rpc('admin_bank_questions', { p_token: token, p_bank: b }),
     isOpenable: () => !!(S && S.game && S.game.phase !== 'open' && S.game.status !== 'finished'),
-    showRoute: () => { routeMode = !(S && S.game && S.game.bank === 'V3'); view = 'gallery'; setTab(); }
+    showRoute: () => { routeMode = !(S && S.game && routeBank(S.game.bank)); view = 'gallery'; setTab(); }
   });
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
   if (token) refresh(); else renderLogin();

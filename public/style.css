@@ -403,3 +403,13 @@ body.busmode .toast { bottom: auto; top: 80px; }
 .qrmodal .sheet { border-radius: 22px; max-width: 440px; }
 .qrbox { background: #fff; border-radius: 16px; padding: 10px; margin: 8px auto; max-width: 360px; }
 .qrbox svg { display: block; width: 100%; height: auto; }
+
+/* ---------- V4 : création d'un parcours automatique ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.steps li { padding: 8px 12px; border-radius: 10px; background: #f1f4f6; color: var(--muted); font-weight: 700; }
+.steps li.cur { background: #fff6e8; color: #8a4b00; }
+.steps li.cur::after { content: ' …'; }
+.steps li.done { background: #e6f5ec; color: var(--ok); }
+.steps li.done::before { content: '✔ '; }
+.rq.off { opacity: .45; }
+.rq a { word-break: break-all; }

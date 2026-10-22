@@ -25,7 +25,9 @@ const server = http.createServer(async (req, res) => {
     const args = body ? JSON.parse(body) : {};
     const keys = Object.keys(args).filter(k => /^p_[a-z_]+$/.test(k));
     const sql = `select public.${m[1]}(${keys.map((k, i) => `${k} => $${i + 1}`).join(', ')}) as r`;
-    const vals = keys.map(k => (args[k] !== null && typeof args[k] === 'object' && !Array.isArray(args[k])) ? JSON.stringify(args[k]) : args[k]);
+    // comme PostgREST : objets et tableaux d'objets → jsonb ; tableaux de nombres → tableau SQL (bigint[])
+    const vals = keys.map(k => { const v = args[k];
+      return v !== null && typeof v === 'object' && (!Array.isArray(v) || v.some(x => x !== null && typeof x === 'object')) ? JSON.stringify(v) : v; });
     const c = await pool.connect();
     try {
       await c.query('set role anon');     // mêmes droits que la clé publique Supabase
