@@ -51,7 +51,7 @@ ok('génération sur le téléphone : départ = position GPS, aucune donnée env
 // ------------------------------------------------------------------ Trajet simulé : les questions sortent toutes seules
 await p.click('[data-l=fr]'); await p.click('[data-l=he]');
 await p.click('#simgo');
-let answered = 0, shot = false, sawDoc = false;
+let answered = 0, shot = false, sawDoc = false, skippedOnce = false;
 for (let i = 0; i < 400; i++) {
   if (await p.$('.trophy')) break;
   if (await p.$('#ans')) {
@@ -62,8 +62,20 @@ for (let i = 0; i < 400; i++) {
     if (answered === 1) await p.screenshot({ path: `${OUT}/s4-resultat.png` });
     await p.click('#cont');
   }
+  // « question suivante maintenant » puis « passer » : sans attendre le GPS, 0 point
+  if (!skippedOnce && answered >= 1 && await p.$('#nextnow')) {
+    skippedOnce = true;
+    const before = await p.evaluate(() => JSON.parse(localStorage.getItem('mdl_solo')).score);
+    await p.click('#nextnow'); await p.waitForSelector('#skipq');
+    if (/השלימו את השנה/.test(await p.textContent('#app'))) sawDoc = true;
+    await p.click('#skipq'); await p.waitForSelector('#cont');
+    assert.match(await p.textContent('.result'), /דילגתם/);
+    assert.equal(await p.evaluate(() => JSON.parse(localStorage.getItem('mdl_solo')).score), before, 'passer = 0 point');
+    await p.click('#cont');
+  }
   await p.waitForTimeout(500);
 }
+assert.ok(skippedOnce, 'bouton « השאלה הבאה עכשיו » proposé en attente');
 assert.ok(answered >= 3, 'questions déclenchées par la position : ' + answered);
 assert.ok(sawDoc, 'la question tirée du document est apparue pendant le trajet');
 await p.waitForSelector('.trophy', { timeout: 60000 });
