@@ -1,0 +1,24 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מסמך דרך — Moreh Derech NEXT</title><meta name="theme-color" content="#151d42"><link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
+<style>*{box-sizing:border-box}body{margin:0;font:16px system-ui,Arial,sans-serif;background:radial-gradient(ellipse at top,#393da6,#09132a 65%);color:#eef4ff;min-height:100dvh}main{max-width:820px;margin:auto;padding:19px 15px 60px}
+a{color:#80f2df}.top{display:flex;align-items:center;gap:13px;margin-bottom:22px}.top img{width:60px;height:60px;border-radius:14px}.top a{font-weight:800;text-decoration:none}.paper{padding:27px 22px;border-radius:25px;background:#fff;color:#20315e;box-shadow:0 8px 0 #080e2b}h1{font-size:clamp(24px,5.6vw,37px);line-height:1.4}.meta{color:#647198;font-size:14px}.body{font-size:16px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;unicode-bidi:plaintext;margin-top:22px}.warn{border-radius:13px;background:#fff2d8;padding:12px 14px;color:#695020;font-size:13px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.actions a{padding:13px;border-radius:12px;background:#233b9b;color:#fff;text-decoration:none;font-weight:800}</style></head>
+<body><main><div class="top"><img src="assets/moreh-derech-next-driver.webp" alt=""><a href="map.html">← חזרה למפת המסלולים</a></div>
+<article class="paper" id="paper"><p>טוען מסמך…</p></article></main>
+<script src="config.js"></script><script src="api.js"></script><script src="community.js"></script>
+<script>
+(async function(){
+ const box=document.getElementById('paper'),id=new URLSearchParams(location.search).get('id');
+ if(!id){box.textContent='חסר מזהה מסמך.';return;}
+ try{
+  const d=await MDCommunity.read(id);
+  const h=document.createElement('h1');h.textContent='📄 '+d.title;
+  const m=document.createElement('div');m.className='meta';m.textContent='מאת '+(d.author||'אורח')+' · '+new Date(d.created_at).toLocaleDateString('he-IL')+(d.file_name?' · '+d.file_name:'');
+  const warn=document.createElement('p');warn.className='warn';warn.textContent='מסמך שהועלה על ידי משתתף; התוכן עדיין לא נבדק עובדתית.';
+  const b=document.createElement('div');b.className='body';b.textContent=d.body||'הטקסט אינו מאוחסן כאן. המקור נמצא בקישור למטה.';
+  const a=document.createElement('div');a.className='actions';
+  const back=document.createElement('a');back.href='map.html?tour='+encodeURIComponent(d.tour_id);back.textContent='🗺️ למסלול';a.append(back);
+  if(d.source_url&&/^https:\/\//i.test(d.source_url)){const url=document.createElement('a');url.href=d.source_url;url.target='_blank';url.rel='noopener noreferrer';url.textContent='🔗 למסמך המקורי';a.append(url);}
+  box.replaceChildren(h,m,warn,b,a);
+ }catch(e){box.textContent='לא ניתן לטעון את המסמך. נסו שוב מאוחר יותר.';}
+})();
+</script></body></html>
