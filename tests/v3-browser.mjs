@@ -77,7 +77,7 @@ const students = [];
 async function student(ctxOpts, who, name, langBtn) {
   const ctx = await browser.newContext(ctxOpts);
   const p = await ctx.newPage(); watch(p, who);
-  await p.goto(BASE + '/');
+  await p.goto(BASE + '/play.html');
   await p.waitForSelector('#joinf');
   if (langBtn) await p.click(`[data-lang=${langBtn}]`);
   await p.fill('#nm', name);
@@ -89,7 +89,7 @@ async function student(ctxOpts, who, name, langBtn) {
 {
   const ctx = await browser.newContext(android);
   const p = await ctx.newPage(); watch(p, 'accueil');
-  await p.goto(BASE + '/');
+  await p.goto(BASE + '/play.html');
   await p.waitForSelector('#joinf');
   assert.equal(await p.getAttribute('html', 'dir'), 'rtl');
   assert.equal(await p.getAttribute('html', 'lang'), 'he', 'hébreu par défaut même si le téléphone est en français');
