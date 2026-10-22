@@ -30,7 +30,7 @@ button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:a
 </style>
 </head>
 <body><main class="shell">
-<header class="top"><div class="mini"><img src="assets/moreh-derech-next-logo.webp" alt=""><span>MOREH DERECH NEXT</span></div><a class="home" href="index.html">⌂ חזרה למשחקים</a></header>
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-logo.webp" alt=""><span>MOREH DERECH NEXT</span></div><a class="home" href="tour-catalog.html">📚 22 סיורים</a><a class="home" href="index.html">⌂ חזרה למשחקים</a></header>
 <section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1>🧭 סיור מודרך</h1><p>60 שאלות מקוריות ממסמכי הסיורים. בחרו רמה בראש המסך, מסלול וצורת לימוד.</p><div class="art" aria-hidden="true">🚌</div></section><div style="margin:12px 0 1px"><a style="display:inline-block;color:#ffe494;background:#202959;border:1px solid #7c89cb;padding:10px 13px;border-radius:11px;text-decoration:none;font-size:13px;font-weight:850" target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 כל השאלות והתשובות ב-Google Drive ↗</a></div>
 
 <div class="controls" role="group" aria-label="בחירת רמת קושי"><h2>⚡ רמת קושי — בוחרים כאן</h2>
@@ -49,6 +49,7 @@ let data=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[];
 const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const sessionKey="mdl_next_guided_v1";
 try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=["all","arad","carmel","road67","galil"].includes(saved.tour)?saved.tour:"all";mode=saved.mode==="tour"?"tour":"quiz";index=Number(saved.index)||0;answers=saved.answers||{};}}catch(e){}
+const requestedTour=new URLSearchParams(location.search).get("tour");if(["arad","carmel","road67","galil"].includes(requestedTour)){tour=requestedTour;index=0;}
 function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers}));}catch(e){}}
 function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
 function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
