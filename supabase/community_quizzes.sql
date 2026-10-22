@@ -36,7 +36,7 @@ revoke all on mdl.community_quizzes, mdl.community_quiz_reports from public,anon
 
 create or replace function public.community_publish_quiz(p_payload jsonb, p_owner_token text)
 returns jsonb language plpgsql volatile security definer
-set search_path = pg_catalog, public, mdl
+set search_path = ''
 as $$
 declare
   v_owner text;
@@ -128,7 +128,7 @@ $$;
 
 create or replace function public.community_list_quizzes(p_search text default '', p_limit int default 24, p_offset int default 0)
 returns jsonb language sql stable security definer
-set search_path = pg_catalog, public, mdl
+set search_path = ''
 as $$
  select jsonb_build_object(
   'items', coalesce((
@@ -156,7 +156,7 @@ $$;
 
 create or replace function public.community_get_quiz(p_id uuid)
 returns jsonb language sql stable security definer
-set search_path = pg_catalog, public, mdl
+set search_path = ''
 as $$
  select coalesce(
   (select q.payload from mdl.community_quizzes q
@@ -167,7 +167,7 @@ $$;
 
 create or replace function public.community_delete_quiz(p_id uuid,p_owner_token text)
 returns jsonb language plpgsql volatile security definer
-set search_path = pg_catalog, public, mdl
+set search_path = ''
 as $$
 begin
   if p_owner_token is null or
@@ -183,7 +183,7 @@ $$;
 
 create or replace function public.community_report_quiz(p_id uuid,p_reporter_token text)
 returns jsonb language plpgsql volatile security definer
-set search_path = pg_catalog, public, mdl
+set search_path = ''
 as $$
 declare
   v_hash text;
