@@ -21426,6 +21426,978 @@
       "explanation": "הפרש גובה של כ-500 מ' בין המאגרים.",
       "sourceUrl": "https://drive.google.com/file/d/19z7RSN4IJhCjn6n1kZfFjba43RR-OFqF/view",
       "sourceDoc": "כוכב הירדן — מדריך הדרכה"
+    },
+    {
+      "id": "N20-1-01",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מאיזו קהילה יצאו מייסדי גיא אוני ב-1878?",
+      "options": [
+        "היישוב הישן של צפת",
+        "יהודי רומניה",
+        "יהודי ירושלים",
+        "חובבי ציון מרוסיה"
+      ],
+      "correct": 0,
+      "explanation": "בהובלת ר' אלעזר רוקח, 17 משפחות.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-1-02",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "איזה ברון קיבל אחריות על ראש פינה אחרי חרפת הרעב ב-1883?",
+      "options": [
+        "הברון רוטשילד",
+        "הברון הירש",
+        "הברון מונטיפיורי",
+        "הברון גינצבורג"
+      ],
+      "correct": 0,
+      "explanation": "הברון הירש הציע להם לעבור לארגנטינה.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-1-03",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "ממה עשויה, לפי הסיפור, תקרת בית הכנסת העתיק בראש פינה?",
+      "options": [
+        "מסירות שלא נעשה בהן שימוש",
+        "מקורות ארזים",
+        "מפח",
+        "מבד"
+      ],
+      "correct": 0,
+      "explanation": "דוד שוב ראה סערה וחשב שבמקום מים רבים.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-1-04",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "אילו גידולים קבעה פקידות הברון לראש פינה?",
+      "options": [
+        "תות למשי, טבק ויין",
+        "חיטה ושעורה",
+        "תפוזים",
+        "כותנה"
+      ],
+      "correct": 0,
+      "explanation": "גידולים שדרשו זמן והון — והמתיישבים נשארו תלויים.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-1-05",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "איזה ספר כתבה שולמית לפיד על ראשית ראש פינה?",
+      "options": [
+        "\"גיא אוני\"",
+        "\"תמול שלשום\"",
+        "\"ראש פינה\"",
+        "\"החולה\""
+      ],
+      "correct": 0,
+      "explanation": "הרומן מתאר את חיי המתיישבים הראשונים.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-1-06",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "איזה זמר כתב את \"השביל הזה יוצא מכאן\" בהשראת השביל מראש פינה לצפת?",
+      "options": [
+        "אהוד בנאי",
+        "שלום חנוך",
+        "מאיר אריאל",
+        "אריק איינשטיין"
+      ],
+      "correct": 0,
+      "explanation": "הושפע משיחה עם נחמן פרקש.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-1-07",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "איזה מצביא ישראלי היה נכדו של אלטר שוורץ?",
+      "options": [
+        "יגאל אלון",
+        "משה דיין",
+        "יצחק רבין",
+        "אריאל שרון"
+      ],
+      "correct": 0,
+      "explanation": "מלון שוורץ שימש מפקדה במלחמת העצמאות.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-1-08",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "מי פיקד על מגיני תל חי?",
+      "options": [
+        "יוסף טרומפלדור",
+        "יגאל אלון",
+        "זאב ז'בוטינסקי",
+        "יצחק שדה"
+      ],
+      "correct": 0,
+      "explanation": "\"טוב למות בעד ארצנו\".",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-1-09",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "איזו תפילה כתב ברל כצנלסון בעקבות קרב תל חי?",
+      "options": [
+        "\"יזכור\"",
+        "\"אל מלא רחמים\"",
+        "\"התקווה\"",
+        "\"קדיש\""
+      ],
+      "correct": 0,
+      "explanation": "\"יזכור עם ישראל את בניו ובנותיו...\"",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-1-10",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "איזה מכתב שלח שר החוץ הבריטי לברון רוטשילד?",
+      "options": [
+        "הצהרת בלפור",
+        "הספר הלבן",
+        "הסכם סייקס־פיקו",
+        "מכתבי מקמהון"
+      ],
+      "correct": 0,
+      "explanation": "תמיכה בשאיפות הלאומיות היהודיות.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-1-11",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "איזה עוף הוא מוקד המשיכה העיקרי באגמון החולה?",
+      "options": [
+        "העגור",
+        "הפלמינגו",
+        "הנשר",
+        "היען"
+      ],
+      "correct": 0,
+      "explanation": "מאכילים אותם כדי שלא יפגעו בחקלאות.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-1-12",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "מהי \"עגלת המסתור\" באגמון?",
+      "options": [
+        "עגלה נגררת בטרקטור שמאפשרת להתקרב לעגורים",
+        "מחבוא לציפורים",
+        "סירה",
+        "מגדל"
+      ],
+      "correct": 0,
+      "explanation": "העגורים רגילים לטרקטורים שמחלקים מזון.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-1-13",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "איזה דו־חי שהוכרז נכחד נמצא שוב באגמון?",
+      "options": [
+        "העגולשון שחור־הגרון",
+        "הסלמנדרה",
+        "הקרפדה הירוקה",
+        "הטריטון"
+      ],
+      "correct": 0,
+      "explanation": "אחרי כ-50 שנות היעדרות.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-1-14",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מהם מקורות הירדן הידועים בראשי התיבות חב\"ד?",
+      "options": [
+        "חצבני, בניאס, דן",
+        "חרמון, בניאס, דישון",
+        "חולה, בניאס, דן",
+        "חצבני, ברעם, דן"
+      ],
+      "correct": 0,
+      "explanation": "נחלים נוספים יורדים מהרי נפתלי ומהגולן.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-1-15",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "איזה ארגון נוסד מתוך המאבק לשמירת חלק מביצת החולה?",
+      "options": [
+        "החברה להגנת הטבע",
+        "קק\"ל",
+        "רשות המים",
+        "הכשרת היישוב"
+      ],
+      "correct": 0,
+      "explanation": "עמוס זהבי ופעילים יצאו למאבק ב-1953.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-1-16",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מדוע פורשים הקורמורנים את כנפיהם אחרי הצלילה?",
+      "options": [
+        "אין להם בלוטות שומן, והם מייבשים את הנוצות",
+        "כדי לאיים",
+        "כדי לחזר",
+        "כדי להתקרר"
+      ],
+      "correct": 0,
+      "explanation": "בניגוד לברווזים.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-1-17",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "באיזו צורה עפות להקות השקנאים?",
+      "options": [
+        "ראש חץ, עם מוביל מתחלף",
+        "עיגול",
+        "קו ישר",
+        "ענן מפוזר"
+      ],
+      "correct": 0,
+      "explanation": "המוביל עובד קשה יותר ולכן מתחלפים.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-1-18",
+      "tourId": "20",
+      "level": 1,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "איזה עוף משמש להדברה טבעית של נברנים?",
+      "options": [
+        "התנשמת",
+        "השחף",
+        "העגור",
+        "השקנאי"
+      ],
+      "correct": 0,
+      "explanation": "תנשמת טורפת 30–60 נברנים בלילה.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-2-01",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה משמעות השם \"גיא אוני\"?",
+      "options": [
+        "עמק כוחי — ושומר את צליל ג'עוני",
+        "עמק העוני",
+        "גיא הצער",
+        "גבעת הכוח"
+      ],
+      "correct": 0,
+      "explanation": "השם נשען על הכפר הסמוך ג'עוני.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-2-02",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה קרה לאנשי גאלאץ שהפליגו באונייה טטיס?",
+      "options": [
+        "המשיכו לחיפה והקימו את זכרון יעקב (זמרין)",
+        "הצטרפו לראש פינה",
+        "חזרו לרומניה",
+        "הקימו את מטולה"
+      ],
+      "correct": 0,
+      "explanation": "אנשי ואסלוי וברלאד ירדו בביירות והגיעו לגיא אוני.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-2-03",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה תפקדה הבימה האדומה בקדמת בית הכנסת העתיק?",
+      "options": [
+        "מושב פקידי הברון שהשגיחו על המתפללים",
+        "בימת קריאת התורה",
+        "ארון הקודש",
+        "עזרת נשים"
+      ],
+      "correct": 0,
+      "explanation": "ב-1900 הופסקה הפקידות והבימה שימשה את כולם.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-2-04",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה עשה הרב קוק בדרשתו בראש פינה ב-1913?",
+      "options": [
+        "עבר מיידיש לעברית לבקשת הצעירים",
+        "סירב לדרוש",
+        "דרש בצרפתית",
+        "עזב באמצע"
+      ],
+      "correct": 0,
+      "explanation": "בעיצומה של מלחמת השפות — לתשואות הקהל.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-2-05",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה כונו המדרגות לפני בית הפקידות?",
+      "options": [
+        "מדרגות הדמעות",
+        "מדרגות הברון",
+        "מדרגות הזהב",
+        "מדרגות הכבוד"
+      ],
+      "correct": 0,
+      "explanation": "שם המתינו המתיישבים להחלטות הפקידים.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-2-06",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מי פיתח בבית הספר בראש פינה את שיטת ההוראה בעברית?",
+      "options": [
+        "אפרים אפשטיין, ואחריו וילקומיץ",
+        "אליעזר בן יהודה",
+        "דוד ילין",
+        "ביאליק"
+      ],
+      "correct": 0,
+      "explanation": "תוכנית וילקומיץ אומצה בידי התנועה הציונית.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-2-07",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה גילה ד\"ר גדעון מר לגבי מחלת המלריה?",
+      "options": [
+        "שמקורה בעקיצת יתושה ולא ב\"אוויר רע\"",
+        "שמקורה במים",
+        "שמקורה במזון",
+        "שאין לה טיפול"
+      ],
+      "correct": 0,
+      "explanation": "השם עצמו בא מאיטלקית: mala aria.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-2-08",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "מה אירע בחדר בקומה השנייה שפתח את קרב תל חי?",
+      "options": [
+        "ניסיון לקחת נשק מדבורה דרכלר, ונפלט כדור",
+        "שריפה",
+        "פיצוץ",
+        "חטיפת ילד"
+      ],
+      "correct": 0,
+      "explanation": "הכוח הערבי חיפש חיילים צרפתים.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-2-09",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "אילו יישובים נכללו בשטח המנדט הבריטי בשינוי הגבול ב-1920?",
+      "options": [
+        "מטולה, כפר גלעדי ותל חי",
+        "נהריה וחניתה",
+        "צפת וראש פינה",
+        "דגניה וכנרת"
+      ],
+      "correct": 0,
+      "explanation": "הצרפתים לא שלטו בגליל, והבריטים רצו את מקורות המים.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-2-10",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "מה הייתה עמדת ז'בוטינסקי לגבי החזקת תל חי?",
+      "options": [
+        "שחיי אדם קודמים לאדמה",
+        "שיש להחזיק בכל מחיר",
+        "שיש להוסיף כוחות",
+        "שיש לעבור לצפת"
+      ],
+      "correct": 0,
+      "explanation": "בן־גוריון וכצנלסון דרשו לשמור על הקרקע.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-2-11",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "איזה אמן יצר את פסל האריה השואג ב-1934?",
+      "options": [
+        "אברהם מלניקוב",
+        "יצחק דנציגר",
+        "נתן רפפורט",
+        "בוריס שץ"
+      ],
+      "correct": 0,
+      "explanation": "תחתיו קבורים שמונת הרוגי תל חי.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-2-12",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "מה תפקיד \"גשר הפקק\" בייבוש החולה?",
+      "options": [
+        "קיר בטון שהעלה את מפלס המים לחפירת התעלות",
+        "גשר לרכבת",
+        "סכר לחשמל",
+        "מעבר לטנקים"
+      ],
+      "correct": 0,
+      "explanation": "ב-1957 פוצץ, והמים התנקזו.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-2-13",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "מדוע הורחקה התעלה המזרחית ממורדות הגולן?",
+      "options": [
+        "כדי לא לנקז את נביעות המים המתוקים במגע בזלת־גיר",
+        "בגלל מוקשים",
+        "בגלל כביש",
+        "בגלל אדמה רכה"
+      ],
+      "correct": 0,
+      "explanation": "את המים המתוקים שואבים לשימוש.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-2-14",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "מה חשוב לדעת על שטח האגמון כיום?",
+      "options": [
+        "מעולם לא היה חלק מהאגם המקורי — הוא היה ביצה",
+        "הוא האגם המקורי",
+        "הוא נבנה על כפר",
+        "הוא מאגר מלח"
+      ],
+      "correct": 0,
+      "explanation": "העצים סביבו נטיעות חדשות.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-2-15",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "איך מגן השקשק על קינו?",
+      "options": [
+        "מזייף פציעה ותוקף בדורבן שתחת כנפו",
+        "מסתתר",
+        "עף לגובה",
+        "שר בקול"
+      ],
+      "correct": 0,
+      "explanation": "עוף המקנן על הקרקע.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-2-16",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מה יצר את אגם החולה לפני כ-1.2 מיליון שנה?",
+      "options": [
+        "קילוח בזלת שחסם את הירדן ויצר את רמת כורזים",
+        "רעידת אדמה",
+        "קרחון",
+        "סכר מלאכותי"
+      ],
+      "correct": 0,
+      "explanation": "מאוחר יותר פרץ הירדן חריץ בבזלת.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-2-17",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מה הסכנה המשמעותית ביותר בייבוש אדמת הכבול?",
+      "options": [
+        "שריפות תת־קרקעיות",
+        "שיטפונות",
+        "רעידות",
+        "המלחה"
+      ],
+      "correct": 0,
+      "explanation": "גם סחף אדמה ברוח.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-2-18",
+      "tourId": "20",
+      "level": 2,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "כיצד מושכים השחפיות תולעים מהבוץ?",
+      "options": [
+        "רוקעות ברגליהן ומדמות רעש גשם",
+        "חופרות במקור",
+        "שוחות",
+        "ממתינות"
+      ],
+      "correct": 0,
+      "explanation": "התולעים יוצאות לפני הקרקע.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-3-01",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "איזו רפורמה עות'מאנית עודדה את אנשי ג'עוני למכור קרקעות?",
+      "options": [
+        "מעבר למס על בעלות במקום מס על תוצרת",
+        "גיוס חובה",
+        "איסור מסחר",
+        "מס על בהמות"
+      ],
+      "correct": 0,
+      "explanation": "הם גם עזרו למתיישבים ללמוד חקלאות.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-3-02",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "כמה משפחות נותרו בגיא אוני ב-1882?",
+      "options": [
+        "3",
+        "17",
+        "30",
+        "1"
+      ],
+      "correct": 0,
+      "explanation": "שוורץ, פרידמן וקלר.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-3-03",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מי היה דוד שוב?",
+      "options": [
+        "נציג קהילות רומניה ששכנע אותן להתיישב בגיא אוני",
+        "פקיד הברון",
+        "רב צפת",
+        "מורה מרוסיה"
+      ],
+      "correct": 0,
+      "explanation": "האגם וההרים הזכירו לו את ארץ מוצאו.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-3-04",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה קרה בראש פינה ב-6 ביוני 1948?",
+      "options": [
+        "הפגזה סורית שבה נהרגו 8 לוחמים בתעלה",
+        "כיבוש המושבה",
+        "פינוי המושבה",
+        "שריפת בית הכנסת"
+      ],
+      "correct": 0,
+      "explanation": "המתקפה נכשלה; תושבי ג'עוני לא חזרו.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-3-05",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מה קיבל אלטר שוורץ ב-1900 כשהפסיק הברון את תמיכתו הישירה?",
+      "options": [
+        "את הבית והלוואה של 5,000 פרנק",
+        "מענק אדמה",
+        "פנסיה",
+        "כרם"
+      ],
+      "correct": 0,
+      "explanation": "בכסף הוסיף קומה והפך את הבית למלון.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-3-06",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "ראש פינה",
+      "question": "מי הקים את המושבה מחניים, שלא שרדה?",
+      "options": [
+        "ראובן פייקוביץ, חתנו של שוורץ",
+        "אלטר שוורץ",
+        "דוד שוב",
+        "ר' אלעזר רוקח"
+      ],
+      "correct": 0,
+      "explanation": "אביו של יגאל אלון.",
+      "sourceUrl": "https://drive.google.com/file/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/view",
+      "sourceDoc": "סיור 20 — ראש פינה"
+    },
+    {
+      "id": "N20-3-07",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "אילו שלוש התחייבויות סותרות נתנו הבריטים במלחמת העולם הראשונה?",
+      "options": [
+        "לחוסיין (שלטון ערבי), לצרפת (סייקס־פיקו) וליהודים (בלפור)",
+        "לרוסיה, לגרמניה ולטורקיה",
+        "למצרים, לפרס ולהודו",
+        "ליוון, לאיטליה ולבולגריה"
+      ],
+      "correct": 0,
+      "explanation": "הסתירות עיצבו את גבולות האזור.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-3-08",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "מה עלה בגורל האמיר פייסל אחרי שהוכרז כמלך בדמשק?",
+      "options": [
+        "הצרפתים גירשו אותו והבריטים נתנו לו את עיראק",
+        "שלט בסוריה עד מותו",
+        "נהרג בקרב",
+        "קיבל את עבר הירדן"
+      ],
+      "correct": 0,
+      "explanation": "אחיו עבדאללה קיבל את עבר הירדן.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-3-09",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "כמה הרוגים היו לכל צד בקרב תל חי, לפי הסיכום?",
+      "options": [
+        "6 מאנשי תל חי ו-5 מהכוח הערבי",
+        "8 ו-8",
+        "20 ו-2",
+        "1 ו-30"
+      ],
+      "correct": 0,
+      "explanation": "עם שני נופלים מהחודשים הקודמים — שמונה.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-3-10",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "תל חי",
+      "question": "מה ידוע על השייח' כאמל אפנדי, מנהיג הכוח בתל חי, בהמשך חייו?",
+      "options": [
+        "היה לידיד והגנה שיתפה איתו פעולה",
+        "נהרג בקרב",
+        "ברח לסוריה",
+        "נאסר בידי הבריטים"
+      ],
+      "correct": 0,
+      "explanation": "גם במרד הגדול ובמלחמת העצמאות.",
+      "sourceUrl": "https://drive.google.com/file/d/1v94WQNSib1X1Df6LKvUQzDPW84GHwOsI/view",
+      "sourceDoc": "סיור 20 — חצר תל חי"
+    },
+    {
+      "id": "N20-3-11",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "מדוע הייבוש התגלה כטעות?",
+      "options": [
+        "פגיעה אקולוגית, שריפות כבול וזרימת רעלנים לכנרת",
+        "חוסר אדמה",
+        "רעידות",
+        "עלויות בלבד"
+      ],
+      "correct": 0,
+      "explanation": "בשנות ה-80 החלו לתכנן הצפה חלקית.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-3-12",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "איזו הכרה בינלאומית קיבל האגמון ב-2009?",
+      "options": [
+        "נבחר בין עשר תצפיות בעלי החיים החשובות בעולם (BBC Wildlife)",
+        "אתר מורשת עולמית",
+        "פארק לאומי",
+        "פרס נובל"
+      ],
+      "correct": 0,
+      "explanation": "עד 500 מיליון ציפורים חולפות באזור בעונת הנדידה.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
+    },
+    {
+      "id": "N20-3-13",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מה מסמן את החולה כגבול תפוצה בין יבשות?",
+      "options": [
+        "השפמנון האפריקאי בצפון תפוצתו והאמנון האירופי בדרומה",
+        "הצבי",
+        "הנמר",
+        "היען"
+      ],
+      "correct": 0,
+      "explanation": "החפף והגלסה הגיעו מאסיה.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-3-14",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מהי \"שביית נחלים\" באזור החולה?",
+      "options": [
+        "נחל דישון שינה מסלולו מהים התיכון אל החולה",
+        "סכירת נחל",
+        "הטיית הירדן",
+        "ייבוש נחל"
+      ],
+      "correct": 0,
+      "explanation": "הבקע יצר מסלול נמוך ונוח יותר.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-3-15",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מדוע הוקפה שמורת החולה בסוללות?",
+      "options": [
+        "השמורה גבוהה ב-10–15 מ' מסביבתה המיובשת",
+        "כדי למנוע ציד",
+        "בגלל כביש",
+        "להגן מפני חזירים"
+      ],
+      "correct": 0,
+      "explanation": "בלי סוללות המים היו בורחים דרומה.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-3-16",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "איך מנקה שמורת החולה את מימיה?",
+      "options": [
+        "צמחי קרנן הגדלים בקיץ ומסננים",
+        "מסננים מכניים",
+        "כלור",
+        "דגים"
+      ],
+      "correct": 0,
+      "explanation": "בשמורה עומק מים אחיד.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-3-17",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "שמורת החולה",
+      "question": "מה מיוחד בציד של שלדג \"פרפור עקוד\"?",
+      "options": [
+        "מרחף במקום מעל הטרף וצולל",
+        "צד בלילה",
+        "צד ביבשה",
+        "צד בלהקות"
+      ],
+      "correct": 0,
+      "explanation": "צלילה מהירה יוצרת גל הדף שמשתק את הדג.",
+      "sourceUrl": "https://drive.google.com/file/d/1upiRAXXyLso-8aWI4g1fNuUK1D9mM__s/view",
+      "sourceDoc": "שמורת החולה — סיכום"
+    },
+    {
+      "id": "N20-3-18",
+      "tourId": "20",
+      "level": 3,
+      "source": "tour20",
+      "stop": "אגמון החולה",
+      "question": "מה גודל הגן הבוטני שהוקם במתחם האגמון?",
+      "options": [
+        "כ-14 דונם",
+        "כ-140 דונם",
+        "כ-1,400 דונם",
+        "כ-1 דונם"
+      ],
+      "correct": 0,
+      "explanation": "מטרתו להשיב לעמק צמחי מים שנכחדו.",
+      "sourceUrl": "https://drive.google.com/file/d/1NnssjfDOXM1s847f-vrcoBCpq9Xxq2D_/view",
+      "sourceDoc": "אגמון החולה — סיכום"
     }
   ]
 }
