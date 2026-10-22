@@ -19,7 +19,7 @@ L'écran principal (`index.html`) est le menu de jeu. **Le lien élèves à part
 ### 🛡️ Isolation et précautions
 
 - Ce dépôt est une copie **du code** de `moreh-dereh-live`, destinée à être modifiée indépendamment.
-- **Attention :** `public/config.js` reprend actuellement les paramètres publics Supabase de l'ancien projet. Tant qu'une instance Supabase de développement distincte n'est pas installée, les modes Guide et Élèves de NEXT utilisent le **même serveur et les mêmes parties** que l'ancien site. Éviter les publications réelles pendant les essais ; privilégier Simulation ou Anecdotes.
+- **Base séparée :** `public/config.js` pointe désormais vers le projet Supabase indépendant de NEXT (`evvutvnfmbhdxeyzmknv`). L'ancien jeu utilise un autre projet (`xonvxicfamjzezsmboan`). Les banques V1, V2 et V3 ont été installées dans NEXT. Définir un mot de passe administrateur NEXT distinct et tester les RPC avant une partie réelle.
 - Le GPS du mode Guide ne publie aucune question automatiquement. La Simulation n'envoie aucune question.
 - Pas d'API payante requise pour les parcours basés sur les services cartographiques publics.
 - Anecdotes : `public/anecdotes.json` est un fichier **public** construit à partir des fiches V3. Ne jamais y ajouter de notes privées.
