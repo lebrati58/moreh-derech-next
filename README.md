@@ -1,3 +1,44 @@
+# 🚌 Moreh Derech NEXT — Game Edition
+
+**Une nouvelle interface mobile, indépendante au niveau du code**, pour le quiz de guidage sur les routes d'Israël.
+
+## 🎮 Les 4 modes
+
+| Mode | URL | Fonction |
+| --- | --- | --- |
+| Accueil Arcade | `index.html` | Choisir son mode en hébreu, français, anglais ou russe |
+| 🎤 Guide | `admin.html?mode=guide` | Lire les fiches au micro du bus, GPS assisté, publier manuellement les questions |
+| 🚗 Solo | `solo.html` | Questions déclenchées sur le téléphone du passager selon le GPS |
+| 📖 Anecdotes | `anecdotes.html` | Lire 14 fiches de la route 67, sans score ni chrono, en 4 langues |
+| 🧪 Simulation | `admin.html?mode=simulation` | Simuler les trajets et les pannes GPS sans publier aux élèves |
+| 👥 Élèves | `play.html` | Page dédiée aux participants du jeu LIVE |
+| ✨ Création | `create.html` | Nouveau parcours et relecture des questions |
+
+L'écran principal (`index.html`) est le menu de jeu. **Le lien élèves à partager en bus est maintenant `play.html`**, pas l'accueil.
+
+### 🛡️ Isolation et précautions
+
+- Ce dépôt est une copie **du code** de `moreh-dereh-live`, destinée à être modifiée indépendamment.
+- **Attention :** `public/config.js` reprend actuellement les paramètres publics Supabase de l'ancien projet. Tant qu'une instance Supabase de développement distincte n'est pas installée, les modes Guide et Élèves de NEXT utilisent le **même serveur et les mêmes parties** que l'ancien site. Éviter les publications réelles pendant les essais ; privilégier Simulation ou Anecdotes.
+- Le GPS du mode Guide ne publie aucune question automatiquement. La Simulation n'envoie aucune question.
+- Pas d'API payante requise pour les parcours basés sur les services cartographiques publics.
+- Anecdotes : `public/anecdotes.json` est un fichier **public** construit à partir des fiches V3. Ne jamais y ajouter de notes privées.
+- Le mode « avec micro » signifie que le guide lit un texte dans le microphone **du bus** ; l'application n'a pas besoin d'accéder au micro du téléphone.
+
+### 🚀 Déploiement
+
+GitHub Pages : **Settings → Pages → Source = GitHub Actions**. Le workflow `.github/workflows/pages.yml` publie `public/` lors des pushs sur `main`. L'existence du workflow ne prouve pas que GitHub Pages soit déjà activé.
+
+Site attendu une fois Pages activé : `https://lebrati58.github.io/moreh-derech-next/`.
+
+### 🧪 Vérifications
+
+Les liens de navigation ont été inspectés ; les quatre modes partagent les fichiers JS originaux. Aucun essai réel sur bus/téléphone ni validation du déploiement Pages n'a encore été effectué. Vérifier le guide en simulation et tester le lien `play.html` avant une utilisation avec les élèves.
+
+---
+
+## Documentation historique du projet d'origine
+
 # מורה דרך LIVE
 
 Quiz en direct pour un guidage en bus. Trois parcours indépendants : **V1** (cours, 34 questions),
