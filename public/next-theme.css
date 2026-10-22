@@ -38,3 +38,6 @@ body{
 .tab,.tabs{box-shadow:0 -6px 22px #1d265829}
 .waiting .big{color:#3b3cb1}
 @media(prefers-reduced-motion:reduce){.ans,.btn{transition:none!important}}
+
+/* Logo Moreh Derech NEXT */
+.brand{min-width:0}.brand-home{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:44px;height:44px;text-decoration:none;border-radius:11px}.brand-mark{display:block;width:44px;height:44px;object-fit:contain;background:#fff;border:2px solid #ffe19c;border-radius:11px;box-shadow:0 3px 0 #10144b;transition:transform .15s ease}.brand-home:hover .brand-mark{transform:translateY(-2px)}.brand-home:focus-visible{outline:3px solid #f5bd57;outline-offset:3px}@media(max-width:440px){.brand{font-size:18px;gap:6px}.brand-home,.brand-mark{width:38px;height:38px}.brand .live{font-size:11px}}
