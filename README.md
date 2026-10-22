@@ -1,3 +1,16 @@
+## 🌍 Bibliothèque communautaire de קטעי דרך (22 octobre 2026)
+
+**Fonctionnalité développée, activation Supabase requise une seule fois.**
+
+- **Création publique :** `public/community.html` : départ/arrivée, questions générées ou saisies manuellement, vérification, puis bouton **« 🌍 פרסום המשחק לכולם »**. Les créations individuelles existantes continuent à fonctionner avec un lien contenant le quiz sans base de données.
+- **Bibliothèque publique :** `public/community-library.html` : recherche par origine/destination, jeu individuel, partage d'URL courtes du type `community.html?id=UUID`. Liens depuis l'accueil et la carte.
+- **SQL serveur :** `supabase/community_quizzes.sql` : à copier **une seule fois** dans le SQL Editor du projet Supabase **NEXT** (project ref `evvutvnfmbhdxeyzmknv`). Exécuter tout le script et tester une création + une lecture + un signalement. Le SQL n'a **pas été exécuté par cet assistant** : seul GitHub a été modifié. Une fois installé, aucune intervention de l'administrateur n'est nécessaire pour les contributeurs.
+- Le SQL crée les tables privées `mdl.community_quizzes` et `mdl.community_quiz_reports`, plus les RPC `community_publish_quiz`, `community_list_quizzes`, `community_get_quiz`, `community_report_quiz`, `community_delete_quiz`. Aucun accès direct à la base, mot de passe admin ou token du guide n'est accordé aux visiteurs. Le propriétaire peut dépublier avec un secret local au navigateur.
+- **Sécurité et limites :** validation côté serveur, taille ≤45kB, 1–25 questions par jeu, plafond 3 publications/heure et 10/jour par clé d'auteur, plafond global 40/heure, 5 signalements distincts masquent automatiquement une fiche. Des clés anonymes peuvent être renouvelées : **ces limites ne constituent pas une protection robuste contre les abus ni les faux signalements**. Avant une diffusion à grande échelle, ajouter un CAPTCHA vérifié côté serveur, un système d'appel/modération et des contrôles de débit au niveau réseau.
+- Le contenu publié n'a **pas** été vérifié historiquement. Il est affiché comme contenu de la communauté, séparé du catalogue des 22 סיורים et des banques LIVE. Aucune question communautaire n'est injectée dans les parties LIVE, et la bibliothèque ne fournit pas encore une géolocalisation GPS des nouveaux circuits.
+- Les documents de parcours sont gérés **séparément** par `supabase/community_documents.sql` et `public/contribute.html`; vérifier que cette migration indépendante a également été exécutée si l'on souhaite l'ajout de documents.
+- **Tests effectués :** inspection des pages et vérification de la syntaxe JavaScript des scripts modifiés ; **aucun test SQL exécuté sur la base NEXT**, ni validation de publication publique de bout en bout avant l'installation de la migration.
+
 ## 🛣️ Création libre de קטע דרך — sans admin ni code (22 octobre 2026)
 
 - Entrée publique : `public/community.html` ; liée depuis l'accueil `index.html`, `modes.html` et la carte `map.html`.
