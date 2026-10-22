@@ -20,7 +20,7 @@ jobs:
           node <<'NODE'
           const fs = require('node:fs');
           const vm = require('node:vm');
-          const sandbox = {window:{}};
+          const sandbox = {window:{},location:{hostname:'lebrati58.github.io'}};
           vm.runInNewContext(fs.readFileSync('public/config.js','utf8'),sandbox);
           const cfg = sandbox.window.MDL_CONFIG;
           if(!cfg?.url || !cfg?.anonKey)throw Error('Missing application Supabase configuration');
