@@ -25,6 +25,7 @@ a{color:inherit}
 /* ---------- top bar ---------- */
 .top{position:fixed;inset:0 0 auto 0;z-index:1100;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px;background:linear-gradient(180deg,#081027 0%,#081027f2 70%,#08102700);pointer-events:none}
 .top>*{pointer-events:auto}
+.cta-row{display:flex;gap:7px;margin-top:8px}.cta-row a{flex:1;min-width:0;text-align:center;text-decoration:none;font-weight:900;font-size:12.5px;border-radius:11px;padding:7px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cta-add{color:#111d45;background:#ffd878}.cta-lib{color:#a4ffe8;background:#163b61;border:1px solid #5fcca9}
 .row{display:flex;align-items:center;gap:8px}
 .icon-btn{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:15px;background:var(--panel-2);border:1px solid var(--line);box-shadow:0 3px 0 #040919;text-decoration:none;font-size:20px}
 .brand{flex:none;width:46px;height:46px;border-radius:14px;background:#fff;border:2px solid #ffe7a1;box-shadow:0 3px 0 #040919;overflow:hidden}
@@ -151,8 +152,10 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
       <button type="button" data-view="list" aria-pressed="false" aria-label="רשימה" title="רשימה">📋</button>
     </div>
   </div>
-  <div style="padding:6px 15px;text-align:center"><a href="contribute.html" style="color:#111d45;background:#ffd878;border-radius:13px;display:inline-block;padding:9px 15px;text-decoration:none;font-weight:900">➕ הוספת מסמך או מסלול חדש · בלי סיסמה</a></div>
-  <div style="padding:0 15px 7px;text-align:center"><a href="community-library.html" style="display:block;text-decoration:none;color:#a4ffe8;background:#163b61;border:1px solid #5fcca9;border-radius:11px;padding:9px 13px;font-size:13px;font-weight:900">🌍 קטעי הדרך של חברי הקהילה — משחקים ויוצרים</a></div>
+  <div class="cta-row">
+    <a class="cta-add" href="contribute.html">➕ הוספת מסמך/מסלול</a>
+    <a class="cta-lib" href="community-library.html">🌍 קטעי הקהילה</a>
+  </div>
   <div class="search"><label class="sr" for="q">חיפוש</label><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="חפשו אתר, סיור או מספר…"><span class="mag" aria-hidden="true">🔎</span></div>
   <div class="chips" id="chips" role="group" aria-label="סינון"></div>
 </header>
@@ -262,8 +265,11 @@ function visible(){return tours.filter(function(t){
 
 /* ----- carte ----- */
 var ISRAEL=[[29.45,34.25],[33.35,35.9]];
+// marge haute = hauteur réelle du bandeau, pour que le pays ne soit pas caché dessous
+function viewPad(extra){return Object.assign({paddingTopLeft:[12,($('top').offsetHeight||140)+12],paddingBottomRight:[12,56]},extra||{});}
 function initMap(){
-  map=L.map('map',{zoomControl:false,attributionControl:true,minZoom:6,maxZoom:18,maxBounds:[[28.5,32.5],[34.5,37.5]],tap:true}).fitBounds(ISRAEL,{padding:[10,10]});
+  map=L.map('map',{zoomControl:false,attributionControl:true,minZoom:5,maxZoom:18,maxBounds:[[24,26],[40,46]],maxBoundsViscosity:0.6,bounceAtZoomLimits:false,tap:true});
+  map.fitBounds(ISRAEL,viewPad());
   // Tuiles OpenStreetMap standard (gratuites, sans clé), assombries en CSS pour le thème nuit.
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,className:'osm-dark',attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>'}).addTo(map);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
@@ -274,7 +280,7 @@ function initMap(){
     L.polyline(road.geometry,{color:'#050a1f',weight:11,opacity:.8,interactive:false}),
     L.polyline(road.geometry,{color:'#ffffff',weight:6,dashArray:'2 10',lineCap:'round'}).on('click',function(){openTour('road67');}),
     L.marker(road.geometry[Math.floor(road.geometry.length/2)],{icon:L.divIcon({className:'',html:'<div class="road-label">🛣️ 67</div>',iconSize:[60,26],iconAnchor:[30,13]}),title:'מסלול 67',keyboard:true}).on('click',function(){openTour('road67');})]);}
-  $('fit').addEventListener('click',function(){closeSheet();map.flyToBounds(ISRAEL,{padding:[10,10],duration:.6});});
+  $('fit').addEventListener('click',function(){closeSheet();map.flyToBounds(ISRAEL,viewPad({duration:.6}));});
   map.on('click',function(){if(current)setSheet('peek');else if(sheetState!=='closed')setSheet('closed');});
 }
 function drawMarkers(fit){
@@ -290,7 +296,7 @@ function drawMarkers(fit){
   if(roadLayer){if(showRoad)roadLayer.addTo(map);else map.removeLayer(roadLayer);if(showRoad)road.geometry.forEach(function(p){pts.push(p);});}
   var placedStops=vis.reduce(function(n,t){return n+t.placed.length;},0);
   $('countPill').textContent=vis.length+' סיורים · '+placedStops+' נקודות';
-  if(fit&&pts.length&&!current)map.flyToBounds(L.latLngBounds(pts).pad(.15),{maxZoom:12,duration:.5});
+  if(fit&&pts.length&&!current)map.flyToBounds(L.latLngBounds(pts).pad(.08),viewPad({maxZoom:12,duration:.5}));
 }
 function pinIcon(t,s){var cls='pin'+(current?(current.id===t.id?' on':' dim'):'')+(openStop&&current&&current.id===t.id&&openStop===s.name?' stop-on':'');
   return L.divIcon({className:'',html:'<div class="'+cls+'" style="--c:'+regionColor(t.region)+'"><span>'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span></div>',iconSize:[38,38],iconAnchor:[19,36]});}
