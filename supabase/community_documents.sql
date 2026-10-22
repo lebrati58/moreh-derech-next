@@ -116,5 +116,5 @@ revoke all on function public.community_submit_document(text,text,text,text,text
 revoke all on function public.admin_remove_community_document(text,uuid) from public;
 grant execute on function public.community_catalog() to anon, authenticated;
 grant execute on function public.community_document(uuid) to anon, authenticated;
-grant execute on function public.community_submit_document(text,text,text,text,text,text,text,text,text,double precision,double precision) to anon, authenticated;
+grant execute on function public.community_submit_document(text,text,text,text,text,text,text,text,double precision,double precision) to anon, authenticated;
 grant execute on function public.admin_remove_community_document(text,uuid) to anon, authenticated;
