@@ -24,6 +24,7 @@ body.setup-collapsed #setupPanel,body.setup-collapsed .hero{display:none}
 #quiz{margin-top:18px}.question{background:#fff;color:#1b2855;border:2px solid #d4daf7;border-radius:25px;padding:20px;box-shadow:0 7px 0 #070b20,0 15px 30px #0006}
 .qtag{font-size:12px;display:flex;align-items:center;gap:6px;color:#5e57a8;font-weight:900}.question h2{font-size:clamp(22px,5vw,30px);line-height:1.5;margin:12px 0 20px;font-weight:1000}
 .answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.ans{border:2px solid #d6ddf3;background:#eff2fc;box-shadow:0 4px 0 #bac4df;border-radius:15px;padding:16px 12px;text-align:right;font-size:16px;font-weight:850;color:#202c53;min-height:75px}
+.fx-layer{position:fixed;inset:0;pointer-events:none;z-index:3000;overflow:hidden}.fx-layer i{position:fixed;display:block}.fx-plus{position:fixed;direction:ltr;unicode-bidi:isolate;font-size:22px;font-weight:900;color:#ffd878;text-shadow:0 2px 0 #3a2a00,0 0 12px #ffd87899}.fx-streak{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:3001;pointer-events:none;background:linear-gradient(120deg,#ff8a3d,#ffd878);color:#2a1300;font-weight:900;font-size:17px;padding:11px 20px;border-radius:999px;box-shadow:0 10px 26px #0008;white-space:nowrap}
 .ans:hover:not(:disabled),.ans:focus-visible{border-color:#5b61d9}.ans:disabled{opacity:1;cursor:default}.ans.correct{background:#bffce5;border-color:#18aa7b;box-shadow:0 4px 0 #0b9369}.ans.wrong{background:#ffe1df;border-color:#d85660;box-shadow:0 4px 0 #a23f4d}
 .feedback{background:#f8f2d9;border:2px solid #f6d788;border-radius:15px;padding:15px;margin-top:19px;line-height:1.65;color:#554017}.feedback[hidden]{display:none}.feedback strong{display:block;margin-bottom:4px}.feedback a{color:#403cb0;word-break:break-word;font-weight:800}.source-chip{font-size:12px;font-weight:700;color:#7b78a8;margin-top:13px}
 .actions{display:flex;gap:11px;margin-top:22px}.actions button{flex:1;padding:17px 10px;border-radius:16px;font-size:17px;font-weight:900;border:0}.next{color:#202143;background:#ffda74;box-shadow:0 5px 0 #b77f31}.back{color:#f1f3ff;background:#293866;border:2px solid #546aac}.actions button:disabled{opacity:.4;cursor:default}
@@ -121,6 +122,42 @@ function setCollapsed(v){collapsed=v;document.body.classList.toggle("setup-colla
 function setupSummary(){const MD={quiz:"🎮 תרגול",tour:"🧭 סיור מודרך",stories:"📖 סיפורים"};$("setupText").textContent="📍 "+tourLabel(tour)+(mode==="stories"?"":" · "+LV[level])+" · "+MD[mode];}
 function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers}));}catch(e){}}
 function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
+// Petite fête quand la réponse est juste : confettis depuis le bouton, « +100 » vers le score, série de bonnes réponses.
+let streak=0;
+const reduceMotion=()=>window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+const CHEERS=["✅ כל הכבוד!","🎉 מעולה!","⭐ בול!","👏 יפה מאוד!","🚀 מדויק!","💪 אלופים!"];
+function cheer(ok){
+  const card=$("quiz").querySelector(".question");if(!card)return;
+  if(!ok){streak=0;if(!reduceMotion())card.animate([{transform:"translateX(0)"},{transform:"translateX(-7px)"},{transform:"translateX(6px)"},{transform:"translateX(-4px)"},{transform:"translateX(0)"}],{duration:380,easing:"ease-out"});return;}
+  streak++;
+  const head=card.querySelector(".feedback strong");if(head)head.textContent=CHEERS[Math.floor(Math.random()*CHEERS.length)];
+  if(navigator.vibrate)try{navigator.vibrate(18);}catch(e){}
+  const btn=card.querySelector(".ans.correct");
+  if(reduceMotion()||!btn){if(streak>=3)streakBadge();return;}
+  btn.animate([{transform:"scale(1)"},{transform:"scale(1.05)"},{transform:"scale(1)"}],{duration:420,easing:"cubic-bezier(.3,1.6,.5,1)"});
+  const r=btn.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+  const colors=["#ffd878","#6ee9cf","#ff8fb1","#8fa8ff","#ffffff","#ffb347"],layer=document.createElement("div");
+  layer.className="fx-layer";document.body.appendChild(layer);
+  const n=streak>=5?46:30;
+  for(let i=0;i<n;i++){
+    const p=document.createElement("i"),a=Math.random()*Math.PI*2,d=70+Math.random()*130,sz=6+Math.random()*7;
+    p.style.cssText="left:"+cx+"px;top:"+cy+"px;width:"+sz+"px;height:"+(sz*(Math.random()<.5?1:.45))+"px;background:"+colors[i%colors.length]+";border-radius:"+(Math.random()<.4?"50%":"2px");
+    layer.appendChild(p);
+    p.animate([{transform:"translate(-50%,-50%) rotate(0)",opacity:1},{transform:"translate(calc(-50% + "+(Math.cos(a)*d)+"px),calc(-50% + "+(Math.sin(a)*d-40)+"px)) rotate("+(Math.random()*540-270)+"deg)",opacity:1,offset:.6},{transform:"translate(calc(-50% + "+(Math.cos(a)*d*1.15)+"px),calc(-50% + "+(Math.sin(a)*d+90)+"px)) rotate("+(Math.random()*720)+"deg)",opacity:0}],{duration:900+Math.random()*500,easing:"cubic-bezier(.2,.7,.4,1)",fill:"forwards"});
+  }
+  const plus=document.createElement("b");plus.className="fx-plus";plus.textContent="+100";plus.style.left=cx+"px";plus.style.top=(r.top-6)+"px";layer.appendChild(plus);
+  plus.animate([{transform:"translate(-50%,0) scale(.6)",opacity:0},{transform:"translate(-50%,-18px) scale(1.15)",opacity:1,offset:.25},{transform:"translate(-50%,-70px) scale(1)",opacity:0}],{duration:1100,easing:"ease-out",fill:"forwards"});
+  $("score").animate([{transform:"scale(1)"},{transform:"scale(1.3)",color:"#ffd878"},{transform:"scale(1)"}],{duration:520,delay:250,easing:"ease-out"});
+  if(streak>=3)streakBadge();
+  setTimeout(()=>layer.remove(),1700);
+}
+function streakBadge(){
+  const t=document.createElement("div");t.className="fx-streak";t.setAttribute("role","status");
+  t.textContent=streak>=10?"🏆 "+streak+" ברצף! מורה דרך אמיתי":streak>=5?"🔥 "+streak+" ברצף! לא עוצרים":"🔥 "+streak+" ברצף!";
+  document.body.appendChild(t);
+  if(!reduceMotion())t.animate([{transform:"translate(-50%,20px) scale(.8)",opacity:0},{transform:"translate(-50%,0) scale(1.05)",opacity:1,offset:.18},{transform:"translate(-50%,0) scale(1)",opacity:1,offset:.8},{transform:"translate(-50%,-10px)",opacity:0}],{duration:1900,easing:"ease-out",fill:"forwards"});
+  setTimeout(()=>t.remove(),1950);
+}
 function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
 const tourOf=q=>MDTours.tourOf(q);
 window.MDL_FEEDBACK_CTX=()=>{const q=mode!=="stories"&&items[index];return {tour,level,mode,question:q?q.id:"",stop:q?(q.stop||""):""};};
@@ -229,7 +266,7 @@ function render(){
   const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source]||{label:tourTitle(tourOf(q)),kind:""};
   if(mode==="tour")renderStep(q);
   $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a> <button type="button" class="report-q" data-feedback="question">🚩 טעות בשאלה?</button></p></aside></article>';
-  $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();}));
+  $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();cheer(b.dataset.option===q.options[q.correct]);}));
   $("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
 }
 // Mode « סיור מודרך » : questions groupées par étape, dans l'ordre des étapes du catalogue.
