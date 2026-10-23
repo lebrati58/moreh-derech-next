@@ -90,12 +90,18 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
             ? `<button class="btn" data-st="new" data-id="${esc(f.id)}">↩ להחזיר לחדשות</button>`
             : `<button class="btn ok" data-st="done" data-id="${esc(f.id)}">✓ טופל</button>`}</div></article>`).join('')
           : `<div class="empty">${filter==='new'?'אין הודעות חדשות 🎉':'אין הודעות כאן.'}</div>`);
+      app.insertAdjacentHTML('beforeend','<div class="card" style="margin-top:22px"><b>🏆 טבלת תחרות הכיתה</b><p class="sub" style="margin:6px 0 10px">התחלת עונה חדשה מוחקת את כל הניקוד המפורסם (ההתקדמות בטלפונים של התלמידים נשארת, והם יופיעו שוב כשימשיכו לשחק).</p><a class="btn" href="class.html">👀 לטבלה</a> <button class="btn" type="button" id="resetBoard">🔄 איפוס הטבלה</button></div>');
     } catch (e) {
       if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); }
       app.innerHTML = `<div class="card"><p>לא ניתן לטעון את ההודעות.</p><p class="sub">אם זו הפעם הראשונה: יש להריץ פעם אחת את הקובץ <b>supabase/feedback.sql</b> ב-Supabase › SQL Editor.</p><button class="btn" data-f="refresh">↻ לנסות שוב</button></div>`;
     }
   }
   app.addEventListener('click', async e => {
+    if (e.target.closest('#resetBoard')) {
+      if (!confirm('למחוק את כל הניקוד בטבלת הכיתה?')) return;
+      try { await rpc('admin_class_reset', { p_token: token }); alert('הטבלה אופסה.'); } catch (err) { if (err.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } alert('האיפוס לא הצליח — האם הותקן supabase/class_contest.sql?'); }
+      return;
+    }
     const f = e.target.closest('[data-f]');
     if (f) { if (f.dataset.f !== 'refresh') filter = f.dataset.f; return load(); }
     const b = e.target.closest('[data-st]');

@@ -35,7 +35,7 @@ body.setup-collapsed #setupPanel,body.setup-collapsed .hero{display:none}
 
 /* NEXT — carte, étapes et lecture */
 [hidden]{display:none!important}
-.report-q{margin-inline-start:8px;border:1px solid #c9a650;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:800}.fb-link{cursor:pointer}.top{flex-wrap:wrap}.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
+.me-chip{white-space:nowrap;background:linear-gradient(120deg,#6a4a00,#3a2f99);border-color:#ffd878}.stars-line{font-size:15px;margin:8px 0 2px}.stars-line b{color:#ffd878;letter-spacing:2px}.report-q{margin-inline-start:8px;border:1px solid #c9a650;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:800}.fb-link{cursor:pointer}.top{flex-wrap:wrap}.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
 .mode{flex-wrap:wrap}
 .stepbar{display:flex;gap:5px;margin:16px 0 0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.stepbar::-webkit-scrollbar{display:none}
 .stepbar button{flex:none;border:1px solid #4f62a0;background:#18244f;color:#cdd8ff;border-radius:30px;padding:7px 12px;font-size:13px;font-weight:850}
@@ -77,7 +77,7 @@ body.tour-open{overflow:hidden}
 </style>
 </head>
 <body><main class="shell">
-<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home me-chip" id="meChip" href="class.html">🏆 תחרות</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
 <section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1 id="heroTitle">🧭 סיור מודרך</h1><p id="heroText">טוען את השאלות…</p><div class="art" aria-hidden="true">🚌</div></section>
 
 <button type="button" class="setup-bar" id="setupBar" hidden aria-controls="setupPanel" aria-expanded="false"><span class="setup-text" id="setupText"></span><span class="setup-edit">✎ שינוי</span></button>
@@ -157,6 +157,19 @@ function streakBadge(){
   document.body.appendChild(t);
   if(!reduceMotion())t.animate([{transform:"translate(-50%,20px) scale(.8)",opacity:0},{transform:"translate(-50%,0) scale(1.05)",opacity:1,offset:.18},{transform:"translate(-50%,0) scale(1)",opacity:1,offset:.8},{transform:"translate(-50%,-10px)",opacity:0}],{duration:1900,easing:"ease-out",fill:"forwards"});
   setTimeout(()=>t.remove(),1950);
+}
+// Progression durable (« à la Zelda ») et concours de la classe : voir progress.js.
+function recordProgress(q,ok){
+  if(!window.MDProgress)return;
+  const t=tourOf(q);MDProgress.mark(q.id,ok);
+  MDProgress.saveLevel(t,q.level,data.questions.filter(x=>x.level===q.level&&tourOf(x)===t).map(x=>x.id));
+  if(!MDProgress.player().asked)setTimeout(()=>MDProgress.askName({onClose:updateMe}),1600);
+  updateMe();
+}
+function updateMe(){
+  if(!window.MDProgress||!$("meChip"))return;
+  const p=MDProgress.player(),t=MDProgress.totals();
+  $("meChip").textContent="🏆 "+t.points.toLocaleString("he-IL")+" ⭐"+t.stars;$("meChip").title=(p.name||"")+" — תחרות הכיתה";
 }
 function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
 const tourOf=q=>MDTours.tourOf(q);
@@ -249,7 +262,7 @@ function render(){
   if(!data)return;
   document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
   document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
-  renderTourPicker();heroText();syncUrl();setupSummary();setCollapsed(collapsed);
+  renderTourPicker();heroText();syncUrl();setupSummary();setCollapsed(collapsed);updateMe();
   const reading=mode==="stories";
   ["levels","levelsTitle"].forEach(id=>$(id).hidden=reading);
   ["metrics","track","quiz","actions"].forEach(id=>$(id).hidden=reading);
@@ -266,7 +279,7 @@ function render(){
   const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source]||{label:tourTitle(tourOf(q)),kind:""};
   if(mode==="tour")renderStep(q);
   $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a> <button type="button" class="report-q" data-feedback="question">🚩 טעות בשאלה?</button></p></aside></article>';
-  $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;persist();render();cheer(b.dataset.option===q.options[q.correct]);}));
+  $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;const ok=b.dataset.option===q.options[q.correct];recordProgress(q,ok);persist();render();cheer(ok);}));
   $("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
 }
 // Mode « סיור מודרך » : questions groupées par étape, dans l'ordre des étapes du catalogue.
@@ -309,7 +322,7 @@ function goNext(){if(index>=items.length-1){finish();return;}index++;render();do
 function finish(){const right=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length;const done=items.filter(q=>currentAnswer(q)!==null).length;
   let badge="";if(tour!=="all"&&items.length>=3&&right===items.length){badge='<div class="badge">🏅 תג מושלם — '+esc(tourTitle(tour))+' · '+LV[level]+'</div>';try{const b=JSON.parse(localStorage.getItem("mdl_next_badges")||"{}");b[tour+"-"+level]=new Date().toISOString().slice(0,10);localStorage.setItem("mdl_next_badges",JSON.stringify(b));}catch(e){}}
   const other=[1,2,3].filter(l=>l!==level&&(tour==="all"?stats.byLevel[l]:(stats.byTour[tour]||{})[l]));
-  $("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות נענו</p>'+badge+'<div class="again"><button type="button" id="redo">↺ משחק חדש</button>'+other.map(l=>'<button type="button" data-relevel="'+l+'">'+LV[l]+'</button>').join("")+'<a href="'+esc($("mapLink").href)+'">🗺️ חזרה למפה</a></div></section>';
+  $("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות נענו</p>'+badge+(tour!=="all"&&window.MDProgress?'<p class="stars-line">'+(MDProgress.star(tour,level)?'⭐ קיבלתם כוכב על הרמה הזו!':'⭐ כוכב מקבלים כשעונים נכון על 60% ומעלה — נסו שוב!')+' · בסיור הזה: <b>'+MDProgress.starText(MDProgress.stars(tour))+'</b></p>':'')+'<div class="again"><a href="class.html">🏆 טבלת הכיתה</a><button type="button" id="redo">↺ משחק חדש</button>'+other.map(l=>'<button type="button" data-relevel="'+l+'">'+LV[l]+'</button>').join("")+'<a href="'+esc($("mapLink").href)+'">🗺️ חזרה למפה</a></div></section>';
   $("story").hidden=true;$("stepbar").hidden=true;$("actions").hidden=true;
   $("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};
   $("quiz").querySelectorAll("[data-relevel]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.relevel);index=0;render();});}
@@ -324,5 +337,6 @@ Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalo
 }).catch(e=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";console.error(e);});
 })();
 </script><script src="config.js"></script>
+<script src="progress.js"></script>
 <script src="feedback.js" data-float="0"></script>
 </body></html>

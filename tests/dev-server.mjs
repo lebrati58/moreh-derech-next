@@ -11,7 +11,7 @@ const DB = process.argv[3] || 'mdl_dev';
 const ROOT = new URL('../public/', import.meta.url).pathname;
 const pool = new pg.Pool({ host: process.env.PGHOST || '/var/tmp', port: process.env.PGPORT || 5433, user: 'postgres', database: DB, max: 20 });
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json', '.jpg': 'image/jpeg' };
-const ALLOWED = /^(join_game|get_state|submit_answer|set_language|mdl_bootstrap|solo_route|feedback_submit|admin_[a-z_]+)$/;
+const ALLOWED = /^(join_game|get_state|submit_answer|set_language|mdl_bootstrap|solo_route|feedback_submit|class_score_submit|class_score_delete|class_leaderboard|admin_[a-z_]+)$/;
 
 export const stats = { rpc: 0 };
 

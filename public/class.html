@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="תחרות הכיתה — טבלת הניקוד של מורי הדרך">
+<title>🏆 תחרות הכיתה — Moreh Derech NEXT</title>
+<style>
+:root{--bg:#0b1230;--card:#151f4a;--line:#3d5190;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(120% 60% at 50% 0,#2b2a7a 0,var(--bg) 60%) fixed,var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;min-height:100vh}
+.wrap{max-width:640px;margin:auto;padding:14px 16px 70px}
+nav{display:flex;gap:8px;justify-content:space-between;margin-bottom:10px}
+nav a,.btn{color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;padding:9px 13px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a;cursor:pointer;font-family:inherit}
+h1{text-align:center;font-size:27px;margin:8px 0 2px}.lead{text-align:center;color:var(--soft);margin:0 0 18px;font-size:14.5px}
+.me{background:linear-gradient(135deg,#2b2466,#17204d);border:1px solid var(--gold);border-radius:18px;padding:14px;margin-bottom:18px}
+.me-top{display:flex;align-items:center;gap:10px}.me-top b{font-size:18px;flex:1}
+.me-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;text-align:center}
+.me-stats div{background:#0f1840;border-radius:13px;padding:9px 4px}.me-stats strong{display:block;font-size:21px;color:var(--gold)}.me-stats span{font-size:12px;color:var(--soft)}
+.me p{margin:10px 0 0;font-size:13px;color:var(--soft)}
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;align-items:end;gap:8px;margin:6px 0 16px}
+.pod{text-align:center;border-radius:16px 16px 8px 8px;padding:10px 6px;background:#1a2459;border:1px solid var(--line)}
+.pod .m{font-size:30px}.pod b{display:block;font-size:15px;margin:2px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pod small{color:var(--gold);font-weight:900}
+.pod.p1{min-height:150px;background:linear-gradient(180deg,#5b4500,#2a2466);border-color:var(--gold)}.pod.p2{min-height:125px}.pod.p3{min-height:110px}
+ol{list-style:none;margin:0;padding:0}
+li{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:14px;background:var(--card);border:1px solid var(--line);margin-bottom:7px}
+li .r{width:28px;text-align:center;font-weight:900;color:var(--soft)}li .n{flex:1;font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+li .s{color:var(--gold);font-weight:900;direction:ltr}li .st{font-size:12.5px;color:var(--soft);white-space:nowrap}
+li.mine{border-color:var(--mint);background:#123a44}
+.empty,.note{text-align:center;color:var(--soft);padding:22px 10px}
+.rules{margin-top:22px;font-size:13px;color:var(--soft);line-height:1.6;background:#111a42;border-radius:14px;padding:12px 14px}
+.rules b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a href="index.html">⌂ משחקים</a><a href="map.html?mode=quiz">🗺️ למפה ולשחק</a></nav>
+  <h1>🏆 תחרות הכיתה</h1>
+  <p class="lead">כל תשובה נכונה מקדמת אותך. מי יצבע ראשון את כל המפה בזהב?</p>
+  <section class="me" id="me"></section>
+  <div id="board"><p class="note">טוען את הטבלה…</p></div>
+  <div class="rules">
+    <b>איך צוברים?</b> כל שאלה שעניתם עליה נכון: קל = 100, בינוני = 200, קשה = 300 נקודות (פעם אחת לכל שאלה).<br>
+    <b>⭐ כוכב</b> = סיימתם רמה בסיור עם 60% תשובות נכונות ומעלה. <b>👑 סיור זהב</b> = 3 כוכבים — והסיור נצבע בזהב על המפה.<br>
+    רק מי שהסכים/ה מופיע/ה בטבלה, ורק בשם פרטי. ההתקדמות נשמרת בטלפון שלכם.
+  </div>
+</div>
+<script src="config.js"></script>
+<script src="progress.js"></script>
+<script>
+(function(){
+  'use strict';
+  const P = window.MDProgress, $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+  const fmt = n => Number(n || 0).toLocaleString('he-IL');
+  function me(){
+    const p = P.player(), t = P.totals();
+    $('me').innerHTML = `<div class="me-top"><b>👤 ${p.name ? esc(p.name) : 'אורח/ת'}</b><button class="btn" id="edit" type="button">${p.name ? '✎ שינוי' : 'הצטרפות לתחרות'}</button></div>
+      <div class="me-stats"><div><strong>${fmt(t.points)}</strong><span>נקודות</span></div><div><strong>⭐ ${t.stars}</strong><span>כוכבים</span></div><div><strong>👑 ${t.gold}</strong><span>סיורי זהב</span></div></div>
+      <p>${p.consent && p.name ? '✅ מופיע/ה בטבלת הכיתה' : '🔒 הניקוד שלך נשמר רק אצלך — לא מופיע בטבלה'}</p>`;
+    $('edit').onclick = () => P.askName({ onClose(){ me(); setTimeout(load, 900); } });
+  }
+  async function load(){
+    try {
+      const r = await P.leaderboard(), items = r.items || [], p = P.player(), t = P.totals();
+      const mineIdx = p.consent && p.name ? items.findIndex(x => x.name === p.name && x.points === t.points) : -1;
+      if (!items.length) { $('board').innerHTML = '<p class="empty">עוד אין אף אחד בטבלה — היו הראשונים! 🚀</p>'; return; }
+      const medal = ['🥇','🥈','🥉'], top = items.slice(0, 3);
+      const order = [1, 0, 2].filter(i => top[i]);
+      let h = '<div class="podium">' + order.map(i => `<div class="pod p${i+1}"><div class="m">${medal[i]}</div><b>${esc(top[i].name)}</b><small>${fmt(top[i].points)}</small><div style="font-size:12px;color:#b5c3ee">⭐${top[i].stars}${top[i].gold ? ' · 👑' + top[i].gold : ''}</div></div>`).join('') + '</div>';
+      h += '<ol>' + items.map((x, i) => `<li class="${i === mineIdx ? 'mine' : ''}"><span class="r">${i < 3 ? medal[i] : i + 1}</span><span class="n">${esc(x.name)}${i === mineIdx ? ' (את/ה)' : ''}</span><span class="st">⭐${x.stars}${x.gold ? ' · 👑' + x.gold : ''}</span><span class="s">${fmt(x.points)}</span></li>`).join('') + '</ol>';
+      $('board').innerHTML = h;
+    } catch (e) {
+      $('board').innerHTML = '<p class="note">הטבלה עוד לא פעילה או שאין חיבור. הניקוד שלך נשמר בטלפון ויישלח ברגע שאפשר.</p>';
+    }
+  }
+  me(); P.submit().finally(load);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) load(); });
+})();
+</script>
+</body>
+</html>

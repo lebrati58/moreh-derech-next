@@ -472,3 +472,10 @@ pas une modération parfaite. Pour un usage grand public, ajouter CAPTCHA, signa
 - Lecture : **`inbox.html`** (même mot de passe que l'écran du guide ; icône 📨 dans l'écran du guide). Bouton « טופל ».
 - Installation : exécuter **une fois** `supabase/feedback.sql` dans Supabase › SQL Editor (après `install.sql`). Ne modifie aucune banque existante.
 - Export vers Claude : `tools/inbox-repo/` contient le contenu du dépôt **privé** `moreh-derech-inbox` (workflow horaire qui transforme chaque nouveau message en issue, sans le nom de l'élève). Activer avec `select mdl.set_feedback_bot_key('<clé>');` et le secret `FEEDBACK_BOT_KEY` dans ce dépôt privé.
+
+## 🏆 Progression et concours de la classe
+
+- `progress.js` : meilleur résultat par question et résumé par סיור/niveau, **sur le téléphone**. ⭐ = niveau terminé avec ≥ 60 % de bonnes réponses ; 3 ⭐ = סיור **en or** sur la carte (👑, anneau turquoise = commencé). Points : קל 100, בינוני 200, קשה 300 par question juste (une fois).
+- Au premier essai, l'élève indique son **prénom** et coche (ou non) **« d'accord pour publier mon score »**. Sans accord, rien n'est envoyé ; retirer l'accord efface sa ligne.
+- `class.html` : podium et classement. Remise à zéro depuis `inbox.html` (admin).
+- Installation : exécuter **une fois** `supabase/class_contest.sql` dans Supabase › SQL Editor (après `install.sql`).

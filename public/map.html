@@ -25,7 +25,7 @@ a{color:inherit}
 /* ---------- top bar ---------- */
 .top{position:fixed;inset:0 0 auto 0;z-index:1100;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px;background:linear-gradient(180deg,#081027 0%,#081027f2 70%,#08102700);pointer-events:none}
 .top>*{pointer-events:auto}
-.cta-row{display:flex;gap:7px;margin-top:8px}.cta-row a{flex:1;min-width:0;text-align:center;text-decoration:none;font-weight:900;font-size:12.5px;border-radius:11px;padding:7px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cta-add{color:#111d45;background:#ffd878}.cta-lib{color:#a4ffe8;background:#163b61;border:1px solid #5fcca9}
+.cta-row{display:flex;gap:7px;margin-top:8px}.cta-row a{flex:1;min-width:0;text-align:center;text-decoration:none;font-weight:900;font-size:12.5px;border-radius:11px;padding:7px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cta-add{color:#111d45;background:#ffd878}.cta-lib{color:#a4ffe8;background:#163b61;border:1px solid #5fcca9}.cta-class{flex:.75!important;color:#2a1300;background:linear-gradient(120deg,#ff9a4d,#ffd878)}
 .row{display:flex;align-items:center;gap:8px}
 .icon-btn{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:15px;background:var(--panel-2);border:1px solid var(--line);box-shadow:0 3px 0 #040919;text-decoration:none;font-size:20px}
 .brand{flex:none;width:46px;height:46px;border-radius:14px;background:#fff;border:2px solid #ffe7a1;box-shadow:0 3px 0 #040919;overflow:hidden}
@@ -57,6 +57,13 @@ a{color:inherit}
 .pin{--c:#fff;width:38px;height:38px;border-radius:50% 50% 50% 8px;transform:rotate(-45deg);background:radial-gradient(circle at 35% 30%,#ffffff70,transparent 45%),var(--c);border:3px solid #0a1230;box-shadow:0 4px 0 #050a1f,0 0 0 2px #ffffff55;display:grid;place-items:center;transition:transform .15s,opacity .2s,filter .2s}
 .pin span{transform:rotate(45deg);font-weight:1000;font-size:13px;color:#0a1435;letter-spacing:-.5px}
 .pin.dim{opacity:.33;filter:saturate(.4)}
+.pinwrap{position:relative;width:38px;height:38px}
+.tstars{font-style:normal;color:#ffd878;letter-spacing:1px;font-size:.85em}.lvl.got{border-color:#ffd878!important}
+.pin.gold{box-shadow:0 4px 0 #050a1f,0 0 0 3px #fff3b8,0 0 20px #ffd24acc}
+.pin.started{box-shadow:0 4px 0 #050a1f,0 0 0 2px #0a1230,0 0 0 4px #6ee9cf}
+.pbadge{position:absolute;top:-9px;right:-12px;min-width:22px;height:20px;padding:0 5px;border-radius:999px;background:#1b2552;color:#ffd878;border:2px solid #ffd878;font:900 11px/16px system-ui,sans-serif;text-align:center;box-shadow:0 2px 0 #050a1f;pointer-events:none;direction:ltr}
+.cluster.has-gold{box-shadow:0 4px 0 #050a1f,0 0 0 3px #ffd24a,0 0 18px #ffd24aaa}
+.pbadge.g{background:#ffd24a;border-color:#fff3b8;font-size:12px}
 .pin.on{transform:rotate(-45deg) scale(1.22);box-shadow:0 5px 0 #050a1f,0 0 0 3px #fff,0 0 22px var(--c)}
 .pin.stop-on{box-shadow:0 5px 0 #050a1f,0 0 0 4px var(--gold),0 0 26px var(--gold)}
 .cluster{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#ffffff 0 42%,transparent 43%),conic-gradient(var(--teal),var(--violet),var(--gold),var(--teal));box-shadow:0 4px 0 #050a1f,0 0 16px #6ff0d455;color:#141c45;font-weight:1000;font-size:15px}
@@ -156,6 +163,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
   <div class="cta-row">
     <a class="cta-add" href="contribute.html">➕ הוספת מסמך/מסלול</a>
     <a class="cta-lib" href="community-library.html">🌍 קטעי הקהילה</a>
+    <a class="cta-class" href="class.html">🏆 תחרות</a>
   </div>
   <div class="search"><label class="sr" for="q">חיפוש</label><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="חפשו אתר, סיור או מספר…"><span class="mag" aria-hidden="true">🔎</span></div>
   <div class="chips" id="chips" role="group" aria-label="סינון"></div>
@@ -179,6 +187,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 <script src="api.js"></script>
 <script src="community.js"></script>
 <script src="tour-data.js"></script>
+<script src="progress.js"></script>
 <script>
 (function(){
 'use strict';
@@ -275,7 +284,8 @@ function initMap(){
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,className:'osm-dark',attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>'}).addTo(map);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
   cluster=L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:44,disableClusteringAtZoom:14,
-    iconCreateFunction:function(c){return L.divIcon({html:'<div class="cluster">'+c.getChildCount()+'</div>',className:'',iconSize:[46,46]});}});
+    iconCreateFunction:function(c){var ids={},g=0;c.getAllChildMarkers().forEach(function(m){ids[m._tour]=1;});Object.keys(ids).forEach(function(id){var t=tours.filter(function(x){return x.id===id;})[0];if(t&&prog(t).stars===3)g++;});
+      return L.divIcon({html:'<div class="pinwrap" style="width:46px;height:46px"><div class="cluster'+(g?' has-gold':'')+'">'+c.getChildCount()+'</div>'+(g?'<b class="pbadge g">👑'+(g>1?g:'')+'</b>':'')+'</div>',className:'',iconSize:[46,46]});}});
   map.addLayer(cluster);focusLayer=L.layerGroup().addTo(map);
   if(road&&road.geometry){roadLayer=L.layerGroup([
     L.polyline(road.geometry,{color:'#050a1f',weight:11,opacity:.8,interactive:false}),
@@ -299,15 +309,18 @@ function drawMarkers(fit){
   $('countPill').textContent=vis.length+' סיורים · '+placedStops+' נקודות';
   if(fit&&pts.length&&!current)map.flyToBounds(L.latLngBounds(pts).pad(.08),viewPad({maxZoom:12,duration:.5}));
 }
-function pinIcon(t,s){var cls='pin'+(current?(current.id===t.id?' on':' dim'):'')+(openStop&&current&&current.id===t.id&&openStop===s.name?' stop-on':'');
-  return L.divIcon({className:'',html:'<div class="'+cls+'" style="--c:'+regionColor(t.region)+'"><span>'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span></div>',iconSize:[38,38],iconAnchor:[19,36]});}
+// progression de l'élève (progress.js) : 3 ⭐ = סיור en or, 1–2 ⭐ = badge, commencé = anneau
+function prog(t){var P=window.MDProgress;if(!P||t.community||t.road)return {stars:0,started:false};return {stars:P.stars(t.id),started:P.started(t.id)};}
+function pinIcon(t,s){var g=prog(t),cls='pin'+(current?(current.id===t.id?' on':' dim'):'')+(openStop&&current&&current.id===t.id&&openStop===s.name?' stop-on':'')+(g.stars===3?' gold':g.started?' started':'');
+  var badge=g.stars?'<b class="pbadge'+(g.stars===3?' g':'')+'">'+(g.stars===3?'👑':'★'+g.stars)+'</b>':'';
+  return L.divIcon({className:'',html:'<div class="pinwrap"><div class="'+cls+'" style="--c:'+(g.stars===3?'#ffd24a':regionColor(t.region))+'"><span>'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span></div>'+badge+'</div>',iconSize:[38,38],iconAnchor:[19,36]});}
 function restyle(){if(map)drawMarkers(false);}
 
 /* ----- liste ----- */
 function render(fit){
   var vis=visible();
   $('cards').innerHTML=vis.length?vis.map(function(t){
-    var c=t.counts;return '<button type="button" class="tcard" data-tour="'+t.id+'"><span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><span class="tbody"><b>'+esc(t.title)+'</b><small>'+esc(t.stops.map(function(s){return s.name;}).join(' · '))+'</small></span><span class="tq"><strong>'+c.total+'</strong>שאלות</span></button>';}).join('')
+    var c=t.counts;return '<button type="button" class="tcard" data-tour="'+t.id+'"><span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><span class="tbody"><b>'+esc(t.title)+(prog(t).stars?' <em class="tstars">'+MDProgress.starText(prog(t).stars)+'</em>':'')+'</b><small>'+esc(t.stops.map(function(s){return s.name;}).join(' · '))+'</small></span><span class="tq"><strong>'+c.total+'</strong>שאלות</span></button>';}).join('')
     :'<p class="empty">לא נמצא סיור. נסו מילה אחרת או בטלו את הסינון.</p>';
   if(map)drawMarkers(fit);
 }
@@ -363,7 +376,8 @@ $('scrim').addEventListener('click',function(){if(current)setSheet('peek');else 
 
 function levelButtons(t){
   return '<div class="levels" role="group" aria-label="רמת קושי">'+LEVELS.map(function(l){var n=t.counts[l.n]||0;
-    return '<button type="button" class="lvl" data-level="'+l.n+'" aria-pressed="'+(level===l.n)+'"'+(n?'':' disabled')+'>'+l.icon+' '+l.label+'<small>'+n+' שאלות</small></button>';}).join('')+'</div>';
+    var P=window.MDProgress,sm=P&&!t.community&&!t.road?P.level(t.id,l.n):null,got=P&&sm&&P.star(t.id,l.n);
+    return '<button type="button" class="lvl'+(got?' got':'')+'" data-level="'+l.n+'" aria-pressed="'+(level===l.n)+'"'+(n?'':' disabled')+'>'+(got?'✅ ':'')+l.icon+' '+l.label+'<small>'+(sm&&sm.answered?sm.correct+'/'+n+' נכונות':n+' שאלות')+'</small></button>';}).join('')+'</div>';
 }
 function pickLevel(t){if(!(t.counts[level]>0)){for(var i=1;i<=3;i++)if(t.counts[i]>0){level=i;break;}}}
 function gt(t,m){return 'guided-tour.html?tour='+t.id+'&level='+level+'&mode='+m;}
@@ -438,6 +452,7 @@ $('modeChip').addEventListener('click',function(){
 });
 
 function syncTop(){document.documentElement.style.setProperty('--top-h',$('top').offsetHeight+'px');}
+window.addEventListener('pageshow',function(e){if(e.persisted&&tours)render(false);});
 window.addEventListener('resize',function(){syncTop();if(current){measure();setSheet(sheetState);}});
 syncTop();
 })();
