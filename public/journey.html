@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="המסע שלי — ההתקדמות האישית במשחק מורה דרך: אתגר יומי, טעויות לתיקון ומפת הכוכבים של 22 הסיורים">
+<title>📈 המסע שלי — Moreh Derech NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<style>
+:root{--bg:#0b1230;--card:#151f4a;--line:#3d5190;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf;--red:#ff8f8f}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(120% 60% at 50% 0,#2b2a7a 0,var(--bg) 60%) fixed,var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;min-height:100vh}
+a{color:inherit}
+.wrap{max-width:640px;margin:auto;padding:14px 16px 70px}
+nav{display:flex;gap:8px;justify-content:space-between;margin-bottom:10px}
+nav a,.btn{color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;padding:9px 13px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a;cursor:pointer;font-family:inherit}
+h1{text-align:center;font-size:28px;margin:6px 0 2px}
+.lead{text-align:center;color:var(--soft);margin:0 0 16px;font-size:14.5px}
+h2{font-size:16px;margin:24px 0 10px;color:#dfe6ff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stats div{background:#0f1840;border:1px solid var(--line);border-radius:14px;padding:10px 4px;text-align:center}
+.stats strong{display:block;font-size:21px;color:var(--gold);direction:ltr}
+.stats span{font-size:12px;color:var(--soft)}
+.cta{display:flex;align-items:center;gap:13px;margin-top:12px;padding:15px 16px;border-radius:20px;text-decoration:none;color:#fff;border:2px solid transparent;box-shadow:0 6px 0 #050b1c}
+.cta:active{transform:translateY(3px);box-shadow:0 3px 0 #050b1c}
+.cta .ico{font-size:34px;width:56px;height:56px;flex:none;display:grid;place-items:center;border-radius:16px;background:#ffffff22}
+.cta b{display:block;font-size:18px}.cta small{display:block;font-size:13px;color:#e3e9ff;margin-top:2px}
+.cta .go{margin-inline-start:auto;flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;font-weight:900;background:var(--gold);color:#1c1f45}
+.daily{background:linear-gradient(115deg,#c2621b,#7a3fc0);border-color:#ffd87880}
+.daily.done-today{background:linear-gradient(115deg,#1f6a55,#2b3fa8)}
+.review{background:linear-gradient(115deg,#8a2a4a,#2b3fa8);border-color:#ff8fb180}
+.review.clean{background:linear-gradient(115deg,#1d3a5c,#22306a);border-color:#6ee9cf60}
+.next{background:linear-gradient(115deg,#0f6f7a,#2b3fa8);border-color:#7fe9dc80}
+.chart{display:flex;align-items:flex-end;gap:5px;height:96px;padding:10px 10px 0;background:#0f1840;border:1px solid var(--line);border-radius:16px}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:3px}
+.bar i{display:block;width:100%;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--mint),#2a8fb0);min-height:3px}
+.bar i.zero{background:#2a3769}
+.bar.today i{background:linear-gradient(180deg,var(--gold),#ff9a4d)}
+.bar span{font-size:10px;color:var(--soft);height:14px}
+.chart-note{font-size:12.5px;color:var(--soft);margin:7px 2px 0}
+.overall{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:800;color:var(--soft)}
+.overall .track{flex:1;height:12px;border-radius:20px;background:#263662;overflow:hidden}
+.overall .track span{display:block;height:100%;background:linear-gradient(90deg,#33dcbe,#ffe276)}
+.tours{display:grid;gap:7px;margin-top:10px}
+.tour{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.tour.gold{border-color:var(--gold);background:linear-gradient(120deg,#3d3200,#1a2459)}
+.tour .num{flex:none;width:30px;text-align:center;font-weight:900;color:var(--gold);font-size:14px}
+.tour .name{flex:1;min-width:0;font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lv{display:flex;gap:5px;flex:none}
+.lv a{position:relative;overflow:hidden;width:46px;height:40px;border-radius:11px;border:1px solid #4c5e9a;background:#0f1840;display:grid;place-items:center;text-decoration:none;font-size:12px;font-weight:900;color:var(--soft)}
+.lv a .fill{position:absolute;inset:auto 0 0 0;background:#2f8fa066}
+.lv a b{position:relative}
+.lv a.star{background:linear-gradient(140deg,#ffe58a,#ffb648);border-color:#fff0a4;color:#3a2600;font-size:18px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--soft);margin-top:8px}
+.note{font-size:12.5px;color:var(--soft);line-height:1.6;background:#111a42;border-radius:14px;padding:12px 14px;margin-top:22px}
+@media(max-width:420px){.stats{grid-template-columns:repeat(2,1fr)}.lv a{width:40px}.tour .name{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a href="index.html">⌂ משחקים</a><a href="class.html">🏆 תחרות הכיתה</a></nav>
+  <h1>📈 המסע שלי</h1>
+  <p class="lead" id="hello">טוען…</p>
+
+  <section class="stats" id="stats" aria-label="סיכום"></section>
+
+  <a class="cta daily" id="daily" href="guided-tour.html?mode=daily&new=1"></a>
+  <a class="cta review" id="review" href="guided-tour.html?mode=review&new=1"></a>
+  <a class="cta next" id="next" href="map.html?mode=quiz"></a>
+
+  <h2>📅 14 הימים האחרונים</h2>
+  <div class="chart" id="chart" role="img" aria-label="מספר השאלות שנענו בכל יום"></div>
+  <p class="chart-note" id="chartNote"></p>
+
+  <h2>🗺️ הכוכבים שלי ב-22 הסיורים</h2>
+  <div class="overall"><span id="overallTxt"></span><div class="track"><span id="overallBar"></span></div></div>
+  <div class="legend"><span>🌱 קל · ⭐ בינוני · 🔥 קשה</span><span>★ = 60% נכון ומעלה</span><span>👑 = 3 כוכבים</span></div>
+  <div class="tours" id="tours"><p class="lead">טוען את הסיורים…</p></div>
+
+  <p class="note">🔒 כל ההתקדמות נשמרת רק בטלפון הזה. לטבלת הכיתה נשלחים רק שם פרטי וניקוד — ורק אם הסכמתם (אפשר לשנות במסך <a href="class.html">תחרות הכיתה</a>). אתגר היום זהה לכל הכיתה ומתחלף בחצות.</p>
+</div>
+<script src="tour-data.js"></script>
+<script src="config.js"></script>
+<script src="progress.js"></script>
+<script src="feedback.js" data-float="1"></script>
+<script>
+(function(){
+  'use strict';
+  const P = window.MDProgress, $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+  const fmt = n => Number(n || 0).toLocaleString('he-IL');
+  const LV = { 1: '🌱', 2: '⭐', 3: '🔥' }, LVN = { 1: 'קל', 2: 'בינוני', 3: 'קשה' };
+  const DAYS = ['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
+
+  function header(){
+    const p = P.player(), t = P.totals(), ds = P.dayStreak();
+    $('hello').textContent = (p.name ? 'שלום ' + p.name + '! ' : '') + (ds > 1 ? '🔥 ' + ds + ' ימים ברצף — לא לשבור את הרצף!' : t.answered ? 'כל יום קצת — וכל המפה נצבעת בזהב.' : 'מתחילים? אתגר היום לוקח שתי דקות.');
+    $('stats').innerHTML = `<div><strong>${fmt(t.points)}</strong><span>נקודות</span></div><div><strong>⭐ ${t.stars}</strong><span>כוכבים</span></div><div><strong>🔥 ${ds}</strong><span>ימים ברצף</span></div><div><strong>${P.accuracy()}%</strong><span>דיוק</span></div>`;
+  }
+  function daily(){
+    const r = P.dailyResult(), s = P.dailyStreak(), el = $('daily');
+    el.classList.toggle('done-today', !!r);
+    el.innerHTML = r
+      ? `<span class="ico" aria-hidden="true">✅</span><span><b>אתגר היום: ${r.right}/${r.total}</b><small>${s > 1 ? '🔥 ' + s + ' אתגרים ברצף · ' : ''}אפשר לתרגל שוב — אתגר חדש מחר</small></span><span class="go" aria-hidden="true">←</span>`
+      : `<span class="ico" aria-hidden="true">☀️</span><span><b>אתגר היום — 5 שאלות</b><small>אותן שאלות לכל הכיתה${s ? ' · 🔥 ' + s + ' ברצף, אל תשברו!' : ' · שתי דקות'}</small></span><span class="go" aria-hidden="true">←</span>`;
+  }
+  function review(n){
+    const el = $('review');
+    el.classList.toggle('clean', !n);
+    el.innerHTML = n
+      ? `<span class="ico" aria-hidden="true">🔁</span><span><b>${n} טעויות לתיקון</b><small>השאלות שטעיתם בהן חוזרות. כל תיקון נספר.</small></span><span class="go" aria-hidden="true">←</span>`
+      : `<span class="ico" aria-hidden="true">🎯</span><span><b>אין טעויות פתוחות</b><small>כל שאלה שתטעו בה תחכה לכם כאן לתיקון</small></span><span class="go" aria-hidden="true">←</span>`;
+  }
+  function chart(){
+    const h = P.history(14), max = Math.max(5, ...h.map(d => d.a)), t = P.today();
+    $('chart').innerHTML = h.map(d => {
+      const [y, m, dd] = d.day.split('-').map(Number), wd = DAYS[new Date(y, m - 1, dd).getDay()];
+      return `<div class="bar${d.day === t ? ' today' : ''}" title="${d.day}: ${d.a} שאלות, ${d.c} נכונות"><i class="${d.a ? '' : 'zero'}" style="height:${Math.max(3, Math.round(d.a / max * 70))}px"></i><span>${d.day === t ? 'היום' : wd}</span></div>`;
+    }).join('');
+    const sum = h.reduce((n, d) => n + d.a, 0), ok = h.reduce((n, d) => n + d.c, 0), active = h.filter(d => d.a).length;
+    $('chartNote').textContent = sum ? `${sum} שאלות ב-${active} ימים · ${Math.round(ok / sum * 100)}% נכונות` : 'עוד לא שיחקתם בשבועיים האחרונים — אתגר היום הוא התחלה מצוינת.';
+  }
+  function tours(data, catalogue){
+    const stats = MDTours.counts(data.questions), names = MDTours.shortNames || {};
+    const ids = catalogue.tours.map(t => t.id).concat(stats.byTour.road67 ? ['road67'] : []);
+    let starsDone = 0, levelsTotal = 0, next = null;
+    const rows = ids.map(id => {
+      const st = P.stars(id), cells = [1, 2, 3].map(l => {
+        const total = (stats.byTour[id] || {})[l] || 0; if (!total) return `<a aria-disabled="true" style="opacity:.35" href="#" onclick="return false"><b>–</b></a>`;
+        levelsTotal++;
+        const s = P.level(id, l), star = P.star(id, l); if (star) starsDone++;
+        const answered = s ? Math.min(s.answered, total) : 0, pct = Math.round(answered / total * 100);
+        if (!star && !next && (answered > 0)) next = { id, l, pct };
+        const label = `${names[id] || id} · ${LVN[l]} · ${star ? 'כוכב' : pct + '% נענו'}`;
+        return `<a class="${star ? 'star' : ''}" href="guided-tour.html?tour=${esc(id)}&level=${l}&mode=quiz" aria-label="${esc(label)}">${star ? '<b>★</b>' : `<span class="fill" style="height:${pct}%"></span><b>${pct ? pct + '%' : LV[l]}</b>`}</a>`;
+      }).join('');
+      return `<div class="tour${st === 3 ? ' gold' : ''}"><span class="num">${st === 3 ? '👑' : id === 'road67' ? '67' : esc(id)}</span><span class="name">${esc(names[id] || id)}</span><span class="lv">${cells}</span></div>`;
+    });
+    $('tours').innerHTML = rows.join('');
+    $('overallTxt').textContent = `${starsDone}/${levelsTotal} ★`;
+    $('overallBar').style.width = (levelsTotal ? Math.round(starsDone / levelsTotal * 100) : 0) + '%';
+    // Suggestion : reprendre le niveau commencé, sinon le premier niveau jamais ouvert.
+    if (!next) for (const id of ids) { const l = [1, 2, 3].find(l => ((stats.byTour[id] || {})[l]) && !P.star(id, l)); if (l) { next = { id, l, pct: 0 }; break; } }
+    const el = $('next');
+    if (next) { el.href = `guided-tour.html?tour=${encodeURIComponent(next.id)}&level=${next.l}&mode=quiz`;
+      el.innerHTML = `<span class="ico" aria-hidden="true">🧭</span><span><b>${next.pct ? 'להמשיך' : 'הכוכב הבא'}: ${esc(names[next.id] || next.id)}</b><small>${LV[next.l]} ${LVN[next.l]}${next.pct ? ' · ' + next.pct + '% כבר נענו' : ' · 20 שאלות, כוכב מ-60%'}</small></span><span class="go" aria-hidden="true">←</span>`; }
+    else el.innerHTML = `<span class="ico" aria-hidden="true">👑</span><span><b>כל המפה בזהב!</b><small>מורה דרך אמיתי. אפשר לשפר דיוק בתרגול חוזר</small></span><span class="go" aria-hidden="true">←</span>`;
+  }
+
+  header(); daily(); chart();
+  Promise.all([MDTours.getJSON('guided-quiz.json'), MDTours.getJSON('siyurim-catalog.json')]).then(([data, catalogue]) => {
+    const known = new Set(data.questions.map(q => q.id));
+    review(P.mistakes().filter(id => known.has(id)).length);
+    tours(data, catalogue);
+  }).catch(() => { review(P.mistakes().length); $('tours').innerHTML = '<p class="lead">⚠️ לא ניתן לטעון את רשימת הסיורים. נסו שוב עם חיבור.</p>'; $('next').hidden = true; });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { header(); daily(); chart(); } });
+})();
+</script>
+</body>
+</html>

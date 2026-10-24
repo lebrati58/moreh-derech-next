@@ -41,5 +41,14 @@
     });
   }
 
-  global.MDTours = { tourOf: tourOf, normalizeTourParam: normalizeTourParam, counts: counts, getJSON: getJSON };
+  // Noms courts des 22 סיורים (affichage compact : sélecteur, page « המסע שלי »).
+  var SHORT = {
+    '01': 'צפון מדבר יהודה', '02': 'כרמל', '03': 'נגב צפוני', '04': 'מגידו וגלבוע', '05': 'השפלה',
+    '06': 'חברון והרודיון', '07': 'חיפה', '08': 'גיאולוגיה', '09': 'שומרון', '10': 'הרי ירושלים',
+    '11': 'ירושלים · בית ראשון', '12': 'ירושלים · בית שני א׳', '13': 'ירושלים · בית שני ב׳', '14': 'תצפיות ירושלים',
+    '15': 'קיסריה ואפולוניה', '16': 'ציפורי ובית שערים', '17': 'גולן וחרמון', '18': 'ירושלים · רומית וביזנטית',
+    '19': 'בית שאן וכוכב הירדן', '20': 'ראש פינה והחולה', '21': 'עין גדי והר סדום', '22': 'גליל עליון', road67: 'כביש 67 · זכרון–יקנעם'
+  };
+
+  global.MDTours = { tourOf: tourOf, normalizeTourParam: normalizeTourParam, counts: counts, getJSON: getJSON, shortNames: SHORT };
 })(window);

@@ -22,8 +22,50 @@
   function setPlayer(patch) { const p = Object.assign(player(), patch, { asked: true }); ls.set(PKEY, p); submitSoon(); return p; }
   function data() { const g = ls.get(GKEY, {}); g.q = g.q || {}; g.lv = g.lv || {}; return g; }
 
-  // Enregistre le meilleur résultat d'une question (une bonne réponse n'est jamais perdue).
-  function mark(qid, ok) { const g = data(); if (!g.q[qid]) g.q[qid] = ok ? 1 : -1; else if (ok) g.q[qid] = 1; ls.set(GKEY, g); }
+  // Date locale du téléphone (AAAA-MM-JJ) : le « jour » du joueur, pas celui de UTC.
+  function today(d) { d = d || new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  function addDays(key, n) { const [y, m, dd] = key.split('-').map(Number); return today(new Date(y, m - 1, dd + n)); }
+
+  // Enregistre le meilleur résultat d'une question (une bonne réponse n'est jamais perdue)
+  // et l'activité du jour (pour la série de jours et le graphique des 14 derniers jours).
+  function mark(qid, ok) {
+    const g = data(); if (!g.q[qid]) g.q[qid] = ok ? 1 : -1; else if (ok) g.q[qid] = 1;
+    g.days = g.days || {}; const k = today(), d = g.days[k] || (g.days[k] = { a: 0, c: 0 });
+    d.a++; if (ok) d.c++;
+    const keys = Object.keys(g.days).sort(); while (keys.length > 120) delete g.days[keys.shift()];
+    ls.set(GKEY, g);
+  }
+  // Suivi : questions ratées et jamais corrigées (à revoir), série de jours joués, historique.
+  function mistakes() { const g = data(); return Object.keys(g.q).filter(id => g.q[id] === -1); }
+  function result(qid) { return data().q[qid] || 0; }
+  function history(n) { const g = data(), days = g.days || {}, out = []; let k = today();
+    for (let i = 0; i < (n || 14); i++) { out.unshift(Object.assign({ day: k }, days[k] || { a: 0, c: 0 })); k = addDays(k, -1); } return out; }
+  function dayStreak() {
+    const days = data().days || {}; let k = today(); if (!days[k]) k = addDays(k, -1);
+    let n = 0; while (days[k] && days[k].a > 0) { n++; k = addDays(k, -1); } return n;
+  }
+  function accuracy() { const v = Object.values(data().q); return v.length ? Math.round(v.filter(x => x === 1).length / v.length * 100) : 0; }
+
+  // Défi du jour : 5 questions tirées selon la date, identiques pour toute la classe
+  // (2 קל, 2 בינוני, 1 קשה), parmi les questions des 22 סיורים.
+  function seedOf(str) { let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+  function dailyPick(questions, day) {
+    day = day || today(); let seed = seedOf('mdl-daily-' + day);
+    const rnd = () => { seed = (Math.imul(1664525, seed) + 1013904223) >>> 0; return seed / 4294967296; };
+    const out = [], used = new Set();
+    [1, 1, 2, 2, 3].forEach(lv => {
+      const pool = (questions || []).filter(q => q.level === lv && !used.has(q.id) && q.tourId !== 'road67');
+      if (!pool.length) return; const q = pool[Math.floor(rnd() * pool.length)]; used.add(q.id); out.push(q);
+    });
+    return out;
+  }
+  function dailyResult(day) { return (data().daily || {})[day || today()] || null; }
+  function saveDaily(right, total) { const g = data(); g.daily = g.daily || {}; const k = today();
+    if (!g.daily[k]) g.daily[k] = { right, total }; // le premier essai du jour compte, les suivants sont de l'entraînement
+    const keys = Object.keys(g.daily).sort(); while (keys.length > 120) delete g.daily[keys.shift()];
+    ls.set(GKEY, g); return g.daily[k]; }
+  function dailyStreak() { const d = data().daily || {}; let k = today(); if (!d[k]) k = addDays(k, -1);
+    let n = 0; while (d[k]) { n++; k = addDays(k, -1); } return n; }
   // Résumé d'un niveau de סיור, calculé à partir de la liste des questions de ce niveau.
   function saveLevel(tour, level, ids) {
     const g = data(); let answered = 0, correct = 0;
@@ -116,5 +158,6 @@
     setTimeout(() => w.querySelector('#pgName').focus(), 60);
   }
 
-  window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, askName, PASS };
+  window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, askName, PASS,
+    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak };
 })();

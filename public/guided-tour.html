@@ -77,7 +77,7 @@ body.tour-open{overflow:hidden}
 </style>
 </head>
 <body><main class="shell">
-<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home me-chip" id="meChip" href="class.html">🏆 תחרות</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home me-chip" id="meChip" href="journey.html">📈 המסע שלי</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
 <section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1 id="heroTitle">🧭 סיור מודרך</h1><p id="heroText">טוען את השאלות…</p><div class="art" aria-hidden="true">🚌</div></section>
 
 <button type="button" class="setup-bar" id="setupBar" hidden aria-controls="setupPanel" aria-expanded="false"><span class="setup-text" id="setupText"></span><span class="setup-edit">✎ שינוי</span></button>
@@ -105,22 +105,23 @@ body.tour-open{overflow:hidden}
 <script>
 (function(){
 "use strict";
-let data=null,catalogue=null,places=null,stats=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[],steps=[];
+let data=null,catalogue=null,places=null,stats=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[],steps=[],special=null,enterSpecial=false;
 const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=s=>String(s||"").replace(/[֑-ׇ'"״׳\-–—,.()]/g," ").replace(/\s+/g," ").trim();
 const sessionKey="mdl_next_guided_v1",LV={1:"🌱 קל",2:"⭐ בינוני",3:"🔥 קשה"};
-try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=typeof saved.tour==="string"?saved.tour:"all";mode=["quiz","tour","stories"].includes(saved.mode)?saved.mode:"quiz";index=Number(saved.index)||0;answers=saved.answers||{};}}catch(e){}
+try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=typeof saved.tour==="string"?saved.tour:"all";mode=["quiz","tour","stories","review","daily"].includes(saved.mode)?saved.mode:"quiz";index=Number(saved.index)||0;answers=saved.answers||{};special=Array.isArray(saved.special)?saved.special:null;}}catch(e){}
 // Paramètres venant de la carte : ?tour=04&level=2&mode=tour (accepte aussi tour04, arad, carmel, galil, road67)
 const qs=new URLSearchParams(location.search);
 const pTour=MDTours.normalizeTourParam(qs.get("tour")),pLevel=Number(qs.get("level")),pMode=qs.get("mode");
 if(pTour&&pTour!==tour){tour=pTour;index=0;}
 if([1,2,3].includes(pLevel)&&pLevel!==level){level=pLevel;index=0;}
-if(["quiz","tour","stories"].includes(pMode)&&pMode!==mode){mode=pMode;index=0;}
+if(["quiz","tour","stories","review","daily"].includes(pMode)&&(pMode!==mode||!special&&(pMode==="review"||pMode==="daily"))){mode=pMode;index=0;enterSpecial=pMode==="review"||pMode==="daily";}
+if(qs.get("new")&&(mode==="review"||mode==="daily")){enterSpecial=true;index=0;}
 // Une fois le niveau ou le type choisi, le panneau de réglages se replie en une ligne.
-let collapsed=(tour!=="all"&&([1,2,3].includes(pLevel)||!!pMode))||index>0||Object.keys(answers).length>0;
+let collapsed=(tour!=="all"&&([1,2,3].includes(pLevel)||!!pMode))||index>0||Object.keys(answers).length>0||mode==="review"||mode==="daily";
 function setCollapsed(v){collapsed=v;document.body.classList.toggle("setup-collapsed",v);$("setupBar").hidden=!v;$("setupBar").setAttribute("aria-expanded",String(!v));}
-function setupSummary(){const MD={quiz:"🎮 תרגול",tour:"🧭 סיור מודרך",stories:"📖 סיפורים"};$("setupText").textContent="📍 "+tourLabel(tour)+(mode==="stories"?"":" · "+LV[level])+" · "+MD[mode];}
-function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers}));}catch(e){}}
+function setupSummary(){const MD={quiz:"🎮 תרגול",tour:"🧭 סיור מודרך",stories:"📖 סיפורים",review:"🔁 חזרה על טעויות",daily:"☀️ אתגר היום"};$("setupText").textContent=mode==="daily"?MD.daily+" · 5 שאלות מכל הסיורים":"📍 "+tourLabel(tour)+(mode==="stories"||mode==="review"?"":" · "+LV[level])+" · "+MD[mode];}
+function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers,special}));}catch(e){}}
 function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
 // Petite fête quand la réponse est juste : confettis depuis le bouton, « +100 » vers le score, série de bonnes réponses.
 let streak=0;
@@ -169,7 +170,7 @@ function recordProgress(q,ok){
 function updateMe(){
   if(!window.MDProgress||!$("meChip"))return;
   const p=MDProgress.player(),t=MDProgress.totals();
-  $("meChip").textContent="🏆 "+t.points.toLocaleString("he-IL")+" ⭐"+t.stars;$("meChip").title=(p.name||"")+" — תחרות הכיתה";
+  const ds=MDProgress.dayStreak();$("meChip").textContent="📈 "+t.points.toLocaleString("he-IL")+" ⭐"+t.stars+(ds>1?" 🔥"+ds:"");$("meChip").title=(p.name||"")+" — המסע שלי";
 }
 function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
 const tourOf=q=>MDTours.tourOf(q);
@@ -177,8 +178,8 @@ window.MDL_FEEDBACK_CTX=()=>{const q=mode!=="stories"&&items[index];return {tour
 function placeStops(t){return (places&&places.tours[t]&&places.tours[t].stops)||[];}
 function matchStop(t,name){const n=norm(name);if(!n)return null;return placeStops(t).find(s=>{const a=norm(s.name),b=norm(s.he&&s.he.title);return n.includes(a)||a.includes(n)||(b&&(n.includes(b)||b.includes(n)));})||null;}
 function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
-function syncUrl(){const u=new URL(location.href);if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
-  $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode)+(tour!=="all"?"&tour="+tour:"");}
+function syncUrl(){const u=new URL(location.href);u.searchParams.delete("new");if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
+  $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode==="review"||mode==="daily"?"quiz":mode)+(tour!=="all"?"&tour="+tour:"");}
 
 // Sélecteur de סיור sans liste déroulante système : 22 choix en grille compacte + recherche.
 const shortNames={
@@ -255,7 +256,9 @@ document.addEventListener("keydown",e=>{
 });
 function heroText(){
   const c=tour==="all"?stats:{total:(stats.byTour[tour]||{}).total||0};
-  $("heroTitle").textContent=mode==="stories"?"📖 סיפורי הסיור":mode==="tour"?"🧭 סיור מודרך":"🎮 תרגול שאלות";
+  $("heroTitle").textContent=mode==="stories"?"📖 סיפורי הסיור":mode==="tour"?"🧭 סיור מודרך":mode==="review"?"🔁 חזרה על טעויות":mode==="daily"?"☀️ אתגר היום":"🎮 תרגול שאלות";
+  if(mode==="daily"){$("heroText").textContent="5 שאלות מכל הסיורים — אותן שאלות לכל הכיתה היום. הניסיון הראשון נספר!";return;}
+  if(mode==="review"){$("heroText").textContent="השאלות שטעיתם בהן חוזרות — כל תיקון נשמר במסע שלכם.";return;}
   $("heroText").textContent=(tour==="all"?stats.total+" שאלות מקוריות מ-22 תיקי הסיורים":tourTitle(tour)+" · "+c.total+" שאלות")+(mode==="stories"?". קוראים על התחנות — בלי שאלות ובלי ציון.":mode==="tour"?". תחנה אחרי תחנה: מה המקום, שאלה, והסבר.":". בחרו רמה וסיור — ומתחילים.");
 }
 function render(){
@@ -264,21 +267,30 @@ function render(){
   document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
   renderTourPicker();heroText();syncUrl();setupSummary();setCollapsed(collapsed);updateMe();
   const reading=mode==="stories";
-  ["levels","levelsTitle"].forEach(id=>$(id).hidden=reading);
+  const fixed=mode==="review"||mode==="daily";
+  ["levels","levelsTitle"].forEach(id=>$(id).hidden=reading||fixed);$("tourButton").hidden=mode==="daily";
   ["metrics","track","quiz","actions"].forEach(id=>$(id).hidden=reading);
   $("reader").hidden=!reading;$("story").hidden=true;$("stepbar").hidden=true;
   if(reading){renderReader();persist();return;}
-  items=data.questions.filter(q=>q.level===level&&(tour==="all"||tourOf(q)===tour));
+  if(fixed){
+    if(enterSpecial||!special){const pick=mode==="daily"?(window.MDProgress?MDProgress.dailyPick(data.questions):[]):(window.MDProgress?MDProgress.mistakes():[]);
+      const ids=new Set(pick.map(x=>typeof x==="string"?x:x.id));
+      special=data.questions.filter(q=>ids.has(q.id)&&(mode==="daily"||tour==="all"||tourOf(q)===tour)).map(q=>q.id);
+      if(mode==="daily")special=pick.map(q=>q.id).filter(id=>special.includes(id));
+      special.forEach(id=>delete answers[id]);index=0;enterSpecial=false;}
+    const byId=new Map(data.questions.map(q=>[q.id,q]));items=special.map(id=>byId.get(id)).filter(Boolean);
+  }else{special=null;items=data.questions.filter(q=>q.level===level&&(tour==="all"||tourOf(q)===tour));}
   if(mode==="tour")orderByStops();
   index=Math.max(0,Math.min(index,items.length-1));const n=items.length;
   const correct=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length,done=items.filter(q=>currentAnswer(q)!==null).length;
   $("counter").textContent=n?"שאלה "+(index+1)+" מתוך "+n+" · נענו "+done:"אין שאלות ברמה הזו";
-  $("score").textContent=(correct*100)+" נקודות";const progress=n?Math.round(done/n*100):0;
+  $("score").textContent=fixed?correct+" נכונות":(correct*100)+" נקודות";const progress=n?Math.round(done/n*100):0;
   $("fill").style.width=progress+"%";$("track").setAttribute("aria-valuenow",String(progress));
+  if(!n&&mode==="review"){$("quiz").innerHTML='<section class="done"><div style="font-size:55px">🎉</div><h2>אין טעויות לתיקון!</h2><p>'+(tour==="all"?"כל מה שעניתם — נכון. ":"בסיור הזה הכול נכון. ")+'אפשר להמשיך לשאלות חדשות.</p><div class="again"><a href="journey.html">📈 המסע שלי</a><a href="guided-tour.html?mode=daily">☀️ אתגר היום</a><a href="map.html?mode=quiz">🗺️ למפה</a></div></section>';$("actions").hidden=true;$("counter").textContent="0 טעויות";persist();return;}
   if(!n){$("quiz").innerHTML='<div class="question">אין עדיין שאלות ברמה הזו לסיור הזה. נסו רמה אחרת או <a href="map.html">בחרו מקום אחר במפה</a>.</div>';$("actions").hidden=true;return;}
   const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source]||{label:tourTitle(tourOf(q)),kind:""};
   if(mode==="tour")renderStep(q);
-  $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a> <button type="button" class="report-q" data-feedback="question">🚩 טעות בשאלה?</button></p></aside></article>';
+  $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[q.level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a> <button type="button" class="report-q" data-feedback="question">🚩 טעות בשאלה?</button></p></aside></article>';
   $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;const ok=b.dataset.option===q.options[q.correct];recordProgress(q,ok);persist();render();cheer(ok);}));
   $("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
 }
@@ -318,16 +330,39 @@ function renderReader(){
   h+='<div class="rcard"><h3>🎮 מוכנים לשאלות?</h3><p><button type="button" class="badge" style="cursor:pointer" data-go-mode="tour">🧭 לסיור המודרך עם שאלות ←</button></p></div>';
   r.innerHTML=h;r.querySelector("[data-go-mode]").onclick=()=>{mode="tour";index=0;render();window.scrollTo({top:0,behavior:"smooth"});};
 }
+function endScreen(html){$("quiz").innerHTML=html;$("story").hidden=true;$("stepbar").hidden=true;$("actions").hidden=true;window.scrollTo({top:0,behavior:"smooth"});}
+function finishDaily(right){
+  const P=window.MDProgress,first=P?P.dailyResult():null,res=P?P.saveDaily(right,items.length):{right,total:items.length};
+  const grid=items.map(q=>currentAnswer(q)===q.options[q.correct]?"🟩":"🟥").join(""),streak=P?P.dailyStreak():1;
+  const msg=right===items.length?"🏆 מושלם!":right>=4?"🎉 מצוין!":right>=3?"👏 יפה!":"💪 מחר עוד ניסיון!";
+  const share="☀️ אתגר מורה דרך — "+(P?P.today():"")+"\n"+grid+" "+res.right+"/"+res.total+"\n🔥 "+streak+" ימים ברצף";
+  endScreen('<section class="done"><div style="font-size:55px">☀️</div><h2>'+msg+'</h2><div style="font-size:30px;letter-spacing:4px;margin:6px 0">'+grid+'</div><strong>'+right+' / '+items.length+'</strong>'+
+    (first?'<p>זה היה תרגול — התוצאה של היום נשמרה כבר: '+first.right+'/'+first.total+'</p>':'<p>התוצאה של היום נשמרה.</p>')+
+    '<div class="badge">🔥 '+streak+' '+(streak===1?"יום":"ימים")+' ברצף של אתגרים</div><p style="font-size:14px">אתגר חדש מחכה מחר.</p>'+
+    '<div class="again"><button type="button" id="shareDaily">📤 שיתוף בקבוצה</button><a href="journey.html">📈 המסע שלי</a><button type="button" id="redo">↺ תרגול חוזר</button></div></section>');
+  $("shareDaily").onclick=async()=>{try{if(navigator.share){await navigator.share({text:share+"\n"+location.origin+location.pathname+"?mode=daily"});return;}}catch(e){if(e&&e.name==="AbortError")return;}
+    try{await navigator.clipboard.writeText(share);$("shareDaily").textContent="✅ הועתק — הדביקו בוואטסאפ";}catch(e){location.href="https://wa.me/?text="+encodeURIComponent(share);}};
+  $("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};
+}
+function finishReview(right){
+  const left=window.MDProgress?MDProgress.mistakes().length:0;
+  endScreen('<section class="done"><div style="font-size:55px">'+(right===items.length?"🎯":"🔁")+'</div><h2>'+(right===items.length?"כל הטעויות תוקנו!":"סבב תיקונים הסתיים")+'</h2><strong>'+right+' / '+items.length+'</strong><p>תוקנו בסבב הזה</p>'+
+    (left?'<div class="badge">נשארו '+left+' טעויות לתיקון</div>':'<div class="badge">🎉 אין יותר טעויות פתוחות</div>')+
+    '<div class="again">'+(left?'<button type="button" id="again">🔁 עוד סבב</button>':'')+'<a href="journey.html">📈 המסע שלי</a><a href="map.html?mode=quiz">🗺️ שאלות חדשות</a></div></section>');
+  if(left)$("again").onclick=()=>{enterSpecial=true;render();};
+}
 function goNext(){if(index>=items.length-1){finish();return;}index++;render();document.querySelector(mode==="tour"?"#story":"#quiz").scrollIntoView({block:"nearest"});}
 function finish(){const right=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length;const done=items.filter(q=>currentAnswer(q)!==null).length;
+  if(mode==="daily"){finishDaily(right);return;}if(mode==="review"){finishReview(right);return;}
+  const missed=items.filter(q=>currentAnswer(q)!==null&&currentAnswer(q)!==q.options[q.correct]).length;
   let badge="";if(tour!=="all"&&items.length>=3&&right===items.length){badge='<div class="badge">🏅 תג מושלם — '+esc(tourTitle(tour))+' · '+LV[level]+'</div>';try{const b=JSON.parse(localStorage.getItem("mdl_next_badges")||"{}");b[tour+"-"+level]=new Date().toISOString().slice(0,10);localStorage.setItem("mdl_next_badges",JSON.stringify(b));}catch(e){}}
   const other=[1,2,3].filter(l=>l!==level&&(tour==="all"?stats.byLevel[l]:(stats.byTour[tour]||{})[l]));
-  $("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות נענו</p>'+badge+(tour!=="all"&&window.MDProgress?'<p class="stars-line">'+(MDProgress.star(tour,level)?'⭐ קיבלתם כוכב על הרמה הזו!':'⭐ כוכב מקבלים כשעונים נכון על 60% ומעלה — נסו שוב!')+' · בסיור הזה: <b>'+MDProgress.starText(MDProgress.stars(tour))+'</b></p>':'')+'<div class="again"><a href="class.html">🏆 טבלת הכיתה</a><button type="button" id="redo">↺ משחק חדש</button>'+other.map(l=>'<button type="button" data-relevel="'+l+'">'+LV[l]+'</button>').join("")+'<a href="'+esc($("mapLink").href)+'">🗺️ חזרה למפה</a></div></section>';
+  $("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות נענו</p>'+badge+(tour!=="all"&&window.MDProgress?'<p class="stars-line">'+(MDProgress.star(tour,level)?'⭐ קיבלתם כוכב על הרמה הזו!':'⭐ כוכב מקבלים כשעונים נכון על 60% ומעלה — נסו שוב!')+' · בסיור הזה: <b>'+MDProgress.starText(MDProgress.stars(tour))+'</b></p>':'')+'<div class="again">'+(missed?'<a href="guided-tour.html?mode=review'+(tour!=="all"?'&tour='+esc(tour):'')+'">🔁 לתקן '+missed+' טעויות</a>':'')+'<a href="journey.html">📈 המסע שלי</a><a href="class.html">🏆 טבלת הכיתה</a><button type="button" id="redo">↺ משחק חדש</button>'+other.map(l=>'<button type="button" data-relevel="'+l+'">'+LV[l]+'</button>').join("")+'<a href="'+esc($("mapLink").href)+'">🗺️ חזרה למפה</a></div></section>';
   $("story").hidden=true;$("stepbar").hidden=true;$("actions").hidden=true;
   $("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};
   $("quiz").querySelectorAll("[data-relevel]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.relevel);index=0;render();});}
-document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
-document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
+document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;if(mode==="review"||mode==="daily"){mode="quiz";special=null;}collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;special=null;collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
 $("setupBar").addEventListener("click",()=>{setCollapsed(false);window.scrollTo({top:0,behavior:"smooth"});});
 $("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
 Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalog.json"),MDTours.getJSON("places.json").catch(()=>null)]).then(([j,c,p])=>{

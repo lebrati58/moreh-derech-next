@@ -1,3 +1,5 @@
+> 📋 **Journal de suivi du projet : [SUIVI.md](SUIVI.md)** — état actuel, sessions, prochaines étapes.
+
 ## 🌍 Bibliothèque communautaire de קטעי דרך (22 octobre 2026)
 
 **Fonctionnalité développée, activation Supabase requise une seule fois.**
