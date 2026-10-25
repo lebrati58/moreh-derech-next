@@ -676,6 +676,11 @@
      "kind": "online",
      "label": "Western Wall (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Western_Wall"
+    },
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
     }
    ],
    "questions": [],
@@ -706,12 +711,7 @@
    "certainty": "reconstruction",
    "anchor": "dome_of_the_rock",
    "shape": {
-    "type": "block",
-    "w": 100,
-    "d": 100,
-    "h": 100,
-    "unit": "cubit",
-    "alignTo": "temple_mount"
+    "type": "temple"
    },
    "name": {
     "he": "בית המקדש השני",
@@ -740,6 +740,11 @@
      "kind": "primary",
      "label": "יוסף בן מתתיהו, מלחמת היהודים 5.184–247",
      "url": "https://lexundria.com/j_bj/5.184-5.247/wst"
+    },
+    {
+     "kind": "primary",
+     "label": "משנה, מסכת מידות",
+     "url": "https://www.sefaria.org/Mishnah_Middot.1"
     }
    ],
    "questions": [],
@@ -761,6 +766,12 @@
     "fr": "Son emplacement exact sur l'esplanade est débattu. Le volume est simplifié : un cube de 100 coudées, sans détails.",
     "en": "Its exact position on the platform is debated. The volume is simplified: a 100-cubit cube, no details.",
     "ru": "Точное место на площади спорно. Объём упрощён: куб 100 локтей без деталей."
+   },
+   "placementNote": {
+    "he": "מרכז בית קודש הקודשים הוצב במרכז כיפת הסלע — זו אחת ההשערות (יש מיקומים חלופיים). התוכנית לפי מסכת מידות ויוסף בן מתתיהו, ביחידת אמה של 0.5 מ׳; פרטי העיטור משוחזרים.",
+    "fr": "Le Saint des Saints est placé au centre du Dôme du Rocher — c’est une hypothèse parmi d’autres. Plan d’après le traité Middot et Josèphe, coudée de 0,5 m ; décor reconstitué.",
+    "en": "The Holy of Holies is placed at the centre of the Dome of the Rock — one hypothesis among others. Plan after tractate Middot and Josephus, 0.5 m cubit; decoration reconstructed.",
+    "ru": "Святая святых помещена в центр Купола Скалы — это одна из гипотез. План по трактату Мидот и Иосифу Флавию, локоть 0,5 м; декор реконструирован."
    }
   },
   {
@@ -770,11 +781,7 @@
    "certainty": "reconstruction",
    "anchor": null,
    "shape": {
-    "type": "edge",
-    "match": "Temple Mount",
-    "side": "south",
-    "h": 15,
-    "w": 12
+    "type": "royalstoa"
    },
    "name": {
     "he": "הסטיו המלכותי",
@@ -793,15 +800,30 @@
      "kind": "drive",
      "label": "דגם ירושלים בית שני (סיור 12)",
      "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.184–247",
+     "url": "https://lexundria.com/j_bj/5.184-5.247/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Wikipedia — Royal Stoa (Jerusalem)",
+     "url": "https://en.wikipedia.org/wiki/Royal_Stoa_(Jerusalem)"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, קדמוניות היהודים 15.410–420",
+     "url": "https://lexundria.com/j_aj/15.410-15.420/wst"
     }
    ],
    "questions": [],
    "quiz3d": null,
    "placementNote": {
-    "he": "רוחב וגובה הסימון אינם מתועדים במסמכי הקורס.",
-    "fr": "Largeur et hauteur du repère non documentées dans le cours.",
-    "en": "Width and height of the marker are not documented in the course.",
-    "ru": "Ширина и высота метки в курсе не указаны."
+    "he": "לאורך הצלע הדרומית של רחבת הר הבית (OpenStreetMap). המידות לפי יוסף בן מתתיהו (קדמוניות 15.411–416): 162 עמודים בארבע שורות, אולם מרכזי גבוה; העיטור משוחזר.",
+    "fr": "Le long du côté sud réel de l’esplanade (OpenStreetMap). Dimensions d’après Josèphe (Antiquités 15.411–416) : 162 colonnes en quatre rangées, nef centrale haute ; décor reconstitué.",
+    "en": "Along the real southern side of the esplanade (OpenStreetMap). Dimensions after Josephus (Antiquities 15.411–416): 162 columns in four rows, tall central nave; decoration reconstructed.",
+    "ru": "Вдоль реальной южной стороны площади (OpenStreetMap). Размеры по Иосифу Флавию (Древности 15.411–416): 162 колонны в четыре ряда, высокий центральный неф; декор реконструирован."
    }
   },
   {
@@ -811,7 +833,7 @@
    "certainty": "attested",
    "anchor": "hulda_gates",
    "shape": {
-    "type": "marker"
+    "type": "hulda"
    },
    "name": {
     "he": "שערי חולדה",
@@ -830,6 +852,16 @@
      "kind": "drive",
      "label": "דגם ירושלים בית שני (סיור 12)",
      "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דוידסון סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view"
+    },
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
     }
    ],
    "questions": [],
@@ -842,7 +874,7 @@
    "certainty": "attested",
    "anchor": "southern_steps",
    "shape": {
-    "type": "marker"
+    "type": "steps"
    },
    "name": {
     "he": "המדרגות הדרומיות",
@@ -861,6 +893,11 @@
      "kind": "drive",
      "label": "דגם ירושלים בית שני (סיור 12)",
      "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דוידסון סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view"
     }
    ],
    "questions": [],
@@ -879,7 +916,7 @@
    "certainty": "attested",
    "anchor": "robinsons_arch",
    "shape": {
-    "type": "marker"
+    "type": "robinson"
    },
    "name": {
     "he": "קשת רובינסון",
@@ -898,10 +935,135 @@
      "kind": "drive",
      "label": "דגם ירושלים בית שני (סיור 12)",
      "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דוידסון סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view"
+    },
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
+    },
+    {
+     "kind": "online",
+     "label": "Wikipedia — Robinson's Arch",
+     "url": "https://en.wikipedia.org/wiki/Robinson%27s_Arch"
     }
    ],
    "questions": [],
    "quiz3d": null
+  },
+  {
+   "id": "jerusalem_wilsons_arch",
+   "from": 5,
+   "to": 11,
+   "certainty": "attested",
+   "anchor": "wilsons_arch",
+   "shape": {
+    "type": "wilson"
+   },
+   "name": {
+    "he": "קשת וילסון",
+    "fr": "Arc de Wilson",
+    "en": "Wilson's Arch",
+    "ru": "Арка Уилсона"
+   },
+   "text": {
+    "he": "גשר ענקי על סדרת קשתות שחיבר בין העיר העליונה להר הבית; כיום חלק מאולם התפילה המקורה ליד הכותל. נקרא על שם צ'ארלס וילסון (PEF).",
+    "fr": "Pont géant sur une série d’arches qui reliait la ville haute au mont du Temple ; aujourd’hui partie de la salle de prière couverte du Mur occidental. Nommé d’après Charles Wilson (PEF).",
+    "en": "A huge bridge on a series of arches linking the Upper City to the Temple Mount; today part of the covered prayer hall by the Western Wall. Named after Charles Wilson (PEF).",
+    "ru": "Огромный мост на арках, соединявший Верхний город с Храмовой горой; сегодня часть крытого молитвенного зала у Западной стены. Назван в честь Чарльза Уилсона (PEF)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
+    },
+    {
+     "kind": "online",
+     "label": "Weizmann Institute — When was Wilson's Arch built? (2020)",
+     "url": "https://wis-wander.weizmann.ac.il/node/10785"
+    },
+    {
+     "kind": "online",
+     "label": "Madain Project — Wilson's Arch",
+     "url": "https://madainproject.com/wilsons_arch"
+    }
+   ],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 7.5 מ׳ ואחר כך 15 מ׳; מפתח הקשת כ-13 מ׳",
+    "fr": "Largeur 7,5 m puis 15 m ; portée de l’arc ≈ 13 m",
+    "en": "Width 7.5 m, later 15 m; arch span ≈ 13 m",
+    "ru": "Ширина 7,5 м, затем 15 м; пролёт ≈ 13 м"
+   },
+   "remains": {
+    "he": "הקשת נראית באולם התפילה הצפוני של הכותל.",
+    "fr": "L’arc est visible dans la salle de prière nord du Mur.",
+    "en": "The arch is visible in the northern prayer hall of the Wall.",
+    "ru": "Арка видна в северном молитвенном зале у Стены."
+   },
+   "debate": {
+    "he": "תיארוך: בדיקות פחמן במכון ויצמן (2020) הראו שני שלבים מימי הבית השני; חוקרים אחרים תיארכו אותה בעבר לתקופה האומאית.",
+    "fr": "Datation : les analyses au carbone de l’Institut Weizmann (2020) montrent deux phases du Second Temple ; d’autres chercheurs l’avaient datée de l’époque omeyyade.",
+    "en": "Dating: radiocarbon analyses by the Weizmann Institute (2020) show two Second Temple phases; other scholars had dated it to the Umayyad period.",
+    "ru": "Датировка: радиоуглеродный анализ Института Вейцмана (2020) показал две фазы эпохи Второго Храма; другие исследователи относили её к омейядскому периоду."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. אורך הגשר ומספר הקשתות בדגם — סכמטיים.",
+    "fr": "Position : Wikidata. Longueur du pont et nombre d’arches dans le modèle : schématiques.",
+    "en": "Position: Wikidata. Bridge length and number of arches in the model are schematic.",
+    "ru": "Положение: Wikidata. Длина моста и число арок в модели схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_porticoes",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "shape": {
+    "type": "porticoes"
+   },
+   "name": {
+    "he": "סטווים כפולים סביב הר הבית",
+    "fr": "Portiques doubles de l’esplanade",
+    "en": "Double porticoes of the esplanade",
+    "ru": "Двойные портики площади"
+   },
+   "text": {
+    "he": "לפי יוסף בן מתתיהו הקיפו את רחבת הר הבית סטווים כפולים: שתי שורות עמודים, רוחב 30 אמה, עמודים בגובה 25 אמה, תקרת ארז. בצד הדרומי עמד הסטיו המלכותי.",
+    "fr": "Selon Josèphe, l’esplanade était entourée de portiques doubles : deux rangées de colonnes, 30 coudées de large, colonnes de 25 coudées, plafond de cèdre. Au sud se dressait le Portique royal.",
+    "en": "According to Josephus the esplanade was surrounded by double porticoes: two rows of columns, 30 cubits wide, columns 25 cubits high, cedar ceilings. The Royal Stoa stood on the south side.",
+    "ru": "По Иосифу Флавию, площадь окружали двойные портики: два ряда колонн, ширина 30 локтей, колонны высотой 25 локтей, кедровые потолки. На юге стоял Царский портик."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.184–247",
+     "url": "https://lexundria.com/j_bj/5.184-5.247/wst"
+    },
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    }
+   ],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 30 אמה, עמודים 25 אמה (יוסף, מלחמת היהודים 5.190–192)",
+    "fr": "Largeur 30 coudées, colonnes 25 coudées (Josèphe, Guerre 5.190–192)",
+    "en": "Width 30 cubits, columns 25 cubits (Josephus, War 5.190–192)",
+    "ru": "Ширина 30 локтей, колонны 25 локтей (Война 5.190–192)"
+   },
+   "placementNote": {
+    "he": "מוצבים לאורך הצלעות האמיתיות של הרחבה (OpenStreetMap); מרווח העמודים משוער.",
+    "fr": "Placés le long des côtés réels de l’esplanade (OpenStreetMap) ; l’entraxe des colonnes est estimé.",
+    "en": "Placed along the real sides of the esplanade (OpenStreetMap); column spacing is estimated.",
+    "ru": "Размещены вдоль реальных сторон площади (OpenStreetMap); шаг колонн оценочный."
+   }
   },
   {
    "id": "jerusalem_antonia",
@@ -910,12 +1072,7 @@
    "certainty": "reconstruction",
    "anchor": "antonia",
    "shape": {
-    "type": "fortress",
-    "w": 40,
-    "d": 112,
-    "h": 40,
-    "unit": "m_cubit",
-    "alignTo": "temple_mount"
+    "type": "antonia"
    },
    "name": {
     "he": "מצודת אנטוניה",
@@ -959,6 +1116,12 @@
     "fr": "Forme et taille débattues (Netzer contre Murphy-O'Connor). Le dallage des Sœurs de Sion date d'Hadrien et n'appartient pas à l'Antonia.",
     "en": "Its shape and size are debated (Netzer vs Murphy-O'Connor). The pavement at the Sisters of Zion is Hadrianic, not part of the Antonia.",
     "ru": "Форма и размер спорны (Нецер против Мёрфи-О'Коннора). Мостовая монастыря Сестёр Сиона — времён Адриана, не часть Антонии."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata, מוסט צפונה כך שהמבצר צמוד לצלע הצפונית של הרחבה ואינו חופף לה. הנפחים סכמטיים.",
+    "fr": "Position : Wikidata, décalée vers le nord pour que la forteresse jouxte le côté nord de l’esplanade sans le recouvrir. Volumes schématiques.",
+    "en": "Position: Wikidata, shifted north so the fortress adjoins the northern side of the esplanade without overlapping it. Volumes are schematic.",
+    "ru": "Положение: Wikidata, смещено к северу, чтобы крепость примыкала к северной стороне площади, не перекрывая её. Объёмы схематичны."
    }
   },
   {
@@ -968,11 +1131,7 @@
    "certainty": "attested",
    "anchor": "tower_of_david",
    "shape": {
-    "type": "tower",
-    "w": 40,
-    "d": 40,
-    "h": 90,
-    "unit": "cubit"
+    "type": "phasael"
    },
    "name": {
     "he": "מגדל פצאל (או היפיקוס)",
@@ -1103,12 +1262,7 @@
    "certainty": "reconstruction",
    "anchor": "kishle",
    "shape": {
-    "type": "platform",
-    "w": 55,
-    "d": 300,
-    "h": 5,
-    "fromAnchor": "tower_of_david",
-    "towards": "south"
+    "type": "palace"
    },
    "name": {
     "he": "ארמון הורדוס",
@@ -1332,11 +1486,7 @@
    "certainty": "attested",
    "anchor": "holy_sepulchre",
    "shape": {
-    "type": "block",
-    "w": 40,
-    "d": 130,
-    "h": 18,
-    "unit": "m"
+    "type": "sepulchre_byz"
    },
    "name": {
     "he": "כנסיית הקבר הביזנטית",
@@ -1384,7 +1534,13 @@
    "certainty": "attested",
    "anchor": "cardo",
    "shape": {
-    "type": "marker"
+    "type": "cardo",
+    "via": [
+     "a:damascus_gate",
+     "a:alexander_nevsky",
+     "a:hurva",
+     "a:nea_church"
+    ]
    },
    "name": {
     "he": "הקארדו",
@@ -1426,7 +1582,7 @@
    "certainty": "attested",
    "anchor": "nea_church",
    "shape": {
-    "type": "marker"
+    "type": "nea"
    },
    "name": {
     "he": "כנסיית הנאה (מרים החדשה)",
@@ -1510,10 +1666,8 @@
    "certainty": "attested",
    "anchor": "dome_of_the_rock",
    "shape": {
-    "type": "dome",
-    "match": "Dome of the Rock",
-    "r": 26,
-    "h": 35
+    "type": "domerock",
+    "h": 34
    },
    "name": {
     "he": "כיפת הסלע",
@@ -1561,9 +1715,7 @@
    "certainty": "attested",
    "anchor": "al_aqsa",
    "shape": {
-    "type": "osmfoot",
-    "match": "Al-Aqsa Mosque",
-    "h": 12
+    "type": "aqsa"
    },
    "name": {
     "he": "מסגד אל-אקצא",
@@ -1600,9 +1752,7 @@
    "certainty": "attested",
    "anchor": "holy_sepulchre",
    "shape": {
-    "type": "osmfoot",
-    "match": "Church of the Holy Sepulchre",
-    "h": 22
+    "type": "sepulchre"
    },
    "name": {
     "he": "כנסיית הקבר הצלבנית",

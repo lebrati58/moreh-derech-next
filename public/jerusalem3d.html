@@ -7,7 +7,7 @@
 <meta name="description" content="ירושלים — העיר העתיקה בתלת-ממד: אתרים מתועדים, שחזורים והשערות, לפי תקופות, עם מקורות">
 <title>ירושלים בתלת-ממד — Moreh Derech NEXT</title>
 <link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
-<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js"}}</script>
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/jsm/"}}</script>
 <style>
 :root{--bg:#0b1230;--panel:#121b45f2;--line:#4a5c99;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf;--att:#3fbf8a;--rec:#f0b44c;--hyp:#e0607e}
 *{box-sizing:border-box}
@@ -35,7 +35,7 @@ body.mode2d #plan2d{display:block}body.mode2d #stage{display:none}
 .legend.full{flex-direction:column;gap:4px}.legend.full em,.legend.full .more{display:inline}
 @media(min-width:760px){.legend{flex-direction:column;gap:4px}.legend em,.legend .more{display:inline}}
 .legend span{display:flex;align-items:center;gap:7px}.legend i{width:12px;height:12px;border-radius:4px;display:inline-block}
-.legend .old i{background:#c9ccd6}.legend .today i{background:transparent;border:2px dashed #fff}
+.legend .old i{background:#bdb5a6}.legend .today i{background:transparent;border:2px dashed #fff}
 /* frise des périodes */
 .periods{position:fixed;z-index:20;inset-inline:0;bottom:0;padding:8px 0 calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(#0b123000,#0b1230f5 35%)}
 .pnow{display:flex;align-items:baseline;gap:8px;padding:0 14px 6px;font-weight:900}
@@ -52,7 +52,7 @@ body.mode2d #plan2d{display:block}body.mode2d #stage{display:none}
 .lb.sel{background:var(--c);color:#111}
 /* fiche */
 .sheet{position:fixed;z-index:40;inset-inline:0;bottom:0;max-height:72dvh;overflow-y:auto;overscroll-behavior:contain;background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .22s ease;max-width:720px;margin:0 auto}
-.sheet.open{transform:none}
+.sheet:not(.open){visibility:hidden;transition:transform .22s ease,visibility 0s .22s}.sheet.open{transform:none}
 .sheet h2{margin:0 0 4px;font-size:21px;padding-inline-end:44px}
 .sheet .x{position:absolute;top:12px;inset-inline-end:12px;width:40px;height:40px;border-radius:12px;background:#26355f;border:1px solid var(--line);font-size:18px}
 .badges{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px}
@@ -78,6 +78,18 @@ body.compare .legend{display:none}.list small{display:block;color:var(--soft);fo
 #msg{position:fixed;inset:0;display:grid;place-items:center;z-index:5;color:var(--soft);font-weight:800;text-align:center;padding:30px}
 @media(min-width:760px){.sheet{inset-inline-start:auto;inset-inline-end:14px;bottom:130px;border-radius:20px;border-bottom:1px solid var(--line);max-height:calc(100dvh - 220px);width:420px}}
 @media(prefers-reduced-motion:reduce){.sheet{transition:none}}
+/* mode cinéma : interface masquée, sous-titres, fondu */
+#fade{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:30}
+#caption{position:fixed;z-index:31;inset-inline:0;bottom:7vh;text-align:center;pointer-events:none;opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s;text-shadow:0 2px 14px #000c}
+#caption.on{opacity:1;transform:none}
+#caption b{display:block;font-size:clamp(28px,4.4vw,64px);font-weight:900;color:#fff}
+#caption small{display:block;margin-top:6px;font-size:clamp(15px,2vw,32px);font-weight:700;color:var(--gold)}
+#cineStop{display:none;position:fixed;z-index:32;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-end:12px;padding:10px 16px;border-radius:14px;border:1px solid #fff6;background:#0008;color:#fff;font-weight:900;font-size:15px}
+body.cinema #cineStop{display:block}
+body.cinema .top,body.cinema .tools,body.cinema .legend,body.cinema .periods,body.cinema #labels,body.cinema #sheet{display:none!important}
+body.cinema:not(:hover) #cineStop{opacity:.35}
+.tools{flex-wrap:wrap;max-height:calc(100dvh - 64px - 150px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));align-content:flex-start}
+@media(max-height:760px){.tools button{width:42px;height:42px;font-size:17px}.tools{gap:5px}}
 </style>
 </head>
 <body>
@@ -85,6 +97,7 @@ body.compare .legend{display:none}.list small{display:block;color:var(--soft);fo
 <div id="stage" aria-label="ירושלים בתלת-ממד"></div>
 <svg id="plan2d" role="img" aria-label="מפת ירושלים"></svg>
 <div id="labels"></div>
+<div id="fade"></div><div id="caption"></div><button type="button" id="cineStop">✕</button>
 
 <header class="top">
   <a href="map.html" id="back">→ <span data-t="map">מפה</span></a>
@@ -98,6 +111,10 @@ body.compare .legend{display:none}.list small{display:block;color:var(--soft);fo
   <button type="button" id="bToday" aria-pressed="true" title="">〰️</button>
   <button type="button" id="bList" title="">📋</button>
   <button type="button" id="bHome" title="">🎯</button>
+  <button type="button" id="bCine" title="">🎬</button>
+  <button type="button" id="bRec" aria-pressed="false" title="">⏺️</button>
+  <button type="button" id="bColors" aria-pressed="false" title="">🎨</button>
+  <button type="button" id="bQual" title="" style="font-size:13px;font-weight:900">HD</button>
 </div>
 <div class="legend" id="legend"></div>
 <section class="periods" aria-label="תקופות">

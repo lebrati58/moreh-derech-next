@@ -21,15 +21,18 @@ const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbo
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'he-IL' });
 await ctx.route(/supabase\.co/, r => r.abort());
 const page = await ctx.newPage();
+page.setDefaultTimeout(180000); // rendu logiciel lent dans l'environnement de test
 const errors = [];
 page.on('pageerror', e => errors.push('pageerror: ' + e.message));
 page.on('console', m => { if (m.type() === 'error' && !/supabase|ERR_|net::|Failed to load resource/i.test(m.text())) errors.push('console: ' + m.text()); });
 const ok = (c, msg) => { if (!c) { errors.push('ASSERT: ' + msg); console.log('❌', msg); } else console.log('✅', msg); };
-const shot = n => page.screenshot({ path: `${OUT}/${n}.png` });
+// Rendu logiciel (SwiftShader) très lent : on fige la boucle, on force une image, puis on capture.
+const shot = async n => { await page.evaluate(() => { const A = window.MDJerusalem3D; if (A && document.querySelector('#stage canvas') && !document.body.classList.contains('mode2d')) { A.pause(true); A.snapshot(); } }); await page.screenshot({ path: `${OUT}/${n}.png`, timeout: 300000 }); await page.evaluate(() => window.MDJerusalem3D && window.MDJerusalem3D.pause(false)); };
 
 await page.goto(base + 'jerusalem3d.html?period=5');
 await page.waitForSelector('#strip [data-p]');
-await page.waitForTimeout(2500);
+await page.waitForFunction(() => document.body.dataset.ready === '1' || document.body.classList.contains('mode2d'), null, { timeout: 400000 });
+await page.waitForTimeout(500);
 ok(await page.locator('#strip [data-p]').count() === 11, '11 périodes dans la frise');
 ok((await page.textContent('#pName')).includes('הורדוסית'), 'période hérodienne active');
 const has3d = await page.evaluate(() => !!document.querySelector('#stage canvas'));
@@ -71,6 +74,29 @@ await page.click('#sClose'); await page.waitForTimeout(1200);
 ok((await page.locator('.lb.wl').count()) >= 6, 'comparaison : étiquettes des murailles');
 await shot('06b-comparaison');
 await page.click('#bCompare'); await page.waitForTimeout(500);
+
+// modèles détaillés de la période hérodienne
+await page.click('#strip [data-p="5"]'); await page.waitForTimeout(800);
+const placedIds = await page.evaluate(() => ['jerusalem_second_temple', 'jerusalem_royal_stoa', 'jerusalem_porticoes', 'jerusalem_robinsons_arch', 'jerusalem_wilsons_arch', 'jerusalem_antonia', 'jerusalem_phasael', 'jerusalem_herod_palace'].filter(id => { const b = window.MDJerusalem3D._bounds(id); return b[1][1] > b[0][1]; }));
+ok(placedIds.length === 8, 'Temple, portiques, Portique royal, arcs, Antonia, Phasaël, palais construits en 3D (' + placedIds.length + '/8)');
+const tm = await page.evaluate(() => { const A = window.MDJerusalem3D, t = A._tm(), w = A._bounds('jerusalem_wilsons_arch'); return Math.abs(w[1][1] - t.top); });
+ok(tm < 2, 'arc de Wilson au niveau du parvis');
+await page.evaluate(() => window.MDJerusalem3D.viewAt('jerusalem_second_temple')); await shot('08-temple');
+// couleurs de certitude
+await page.click('#bColors'); await page.waitForTimeout(500);
+ok(await page.getAttribute('#bColors', 'aria-pressed') === 'true', 'bouton couleurs de certitude');
+await shot('09-temple-certitude'); await page.click('#bColors'); await page.waitForTimeout(300);
+// mode cinéma (survol + sous-titres) puis arrêt
+await page.click('#bCine'); await page.waitForTimeout(1500);
+ok(await page.evaluate(() => document.body.classList.contains('cinema')), 'mode cinéma : interface masquée');
+ok((await page.textContent('#caption')).length > 3, 'mode cinéma : sous-titre');
+await shot('10-cinema');
+await page.click('#cineStop'); await page.waitForTimeout(400);
+ok(!(await page.evaluate(() => document.body.classList.contains('cinema'))), 'mode cinéma : arrêt');
+// enregistrement vidéo : téléchargement d'un .webm à l'arrêt
+const dl = page.waitForEvent('download', { timeout: 120000 }).catch(() => null);
+await page.click('#bRec'); await page.waitForTimeout(4000); await page.click('#cineStop');
+const file = await dl; ok(file && /\.webm$/.test(file.suggestedFilename()), 'enregistrement : fichier vidéo ' + (file ? file.suggestedFilename() : 'absent'));
 
 // plan 2D
 await page.click('#b2d'); await page.waitForTimeout(500);

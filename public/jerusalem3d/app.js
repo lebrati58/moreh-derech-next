@@ -4,19 +4,27 @@
 // Wikidata ou sur un tracé OpenStreetMap ; un objet sans repère reste dans la liste, sans position dans la scène.
 // Quiz 3D : préparés (API window.MDJerusalem3D) mais NON affichés tant que monuments.quiz3dEnabled === false.
 import * as THREE from 'three';
-import { OrbitControls } from '../vendor/three/OrbitControls.js';
-import { mergeGeometries } from '../vendor/three/BufferGeometryUtils.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { Sky } from 'three/addons/objects/Sky.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
+import * as MD from './models.js';
+import { stone, lead, flat, groundMaterial } from './materials.js';
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const store = { get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : v; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
-const EXAG = 1.5; // relief exagéré ×1,5 pour la lisibilité (indiqué dans la légende)
+const EXAG = 1; // relief réel (SRTM), sans exagération
 
 const UI = {
-  he: { compare: 'השוואת חומות', compareHint: 'כל החומות של כל התקופות. לחיצה על קו פותחת את הכרטיס; אפשר להסתיר חומות.', basemap: 'מפת רקע (OpenStreetMap)', city: 'העיר של היום (בניינים מ-OpenStreetMap)', walls: 'חומות', showAll: 'הצג הכול', hideAll: 'הסתר הכול', map: 'מפה', title: 'ירושלים · העיר העתיקה', sub: 'שחזור לפי מקורות — לא עיר דמיונית', old: 'שרידים מתקופה קודמת', today: 'קו החומה של היום', exag: 'גובה הקרקע ×1.5', sites: 'אתרים', all: 'כל האתרים בתקופה', noPos: 'ללא מיקום בסצנה', dims: 'ממדים מתועדים', remains: 'מה נשאר היום', debate: 'מחלוקת', other: 'מקורות אחרים', note: 'על הסימון בסצנה', sources: 'מקורות', show: '📍 הראו בסצנה', drive: 'מסמך קורס', primary: 'מקור קדום', online: 'מקור מקוון', period: 'תקופה', list2d: 'מפה דו-ממדית', loadErr: 'לא ניתן לטעון את הנתונים. נסו שוב עם חיבור.', geoMissing: 'נתוני המפה עוד לא נוצרו (geo.json).', noWebgl: 'הטלפון לא תומך בתלת-ממד — מוצגת מפה דו-ממדית.', toggleToday: 'קו החומה של היום', toggle2d: 'דו-ממד / תלת-ממד', home: 'חזרה למבט הכללי', list: 'רשימת האתרים', attr: 'מיקומים: ויקינתונים · תוואים: © תורמי OpenStreetMap · גבהים: ' },
-  fr: { compare: 'Comparer les murailles', compareHint: 'Toutes les murailles de toutes les époques. Touchez une ligne pour sa fiche ; vous pouvez en masquer.', basemap: 'Carte de fond (OpenStreetMap)', city: 'La ville d’aujourd’hui (bâtiments OpenStreetMap)', walls: 'Murailles', showAll: 'Tout afficher', hideAll: 'Tout masquer', map: 'Carte', title: 'Jérusalem · Vieille Ville', sub: 'Reconstitution sourcée — pas une ville imaginaire', old: 'Vestiges d’une période antérieure', today: 'Tracé actuel des murailles', exag: 'Relief ×1,5', sites: 'sites', all: 'Tous les sites de la période', noPos: 'Sans position dans la scène', dims: 'Dimensions documentées', remains: 'Ce qui reste aujourd’hui', debate: 'Débat', other: 'Autre avis', note: 'À propos du repère', sources: 'Sources', show: '📍 Montrer dans la scène', drive: 'Document du cours', primary: 'Source antique', online: 'Source en ligne', period: 'Période', list2d: 'Plan 2D', loadErr: 'Impossible de charger les données. Réessayez avec une connexion.', geoMissing: 'Les données géographiques (geo.json) ne sont pas encore générées.', noWebgl: 'Ce téléphone ne gère pas la 3D — plan 2D affiché.', toggleToday: 'Tracé actuel', toggle2d: '2D / 3D', home: 'Vue d’ensemble', list: 'Liste des sites', attr: 'Positions : Wikidata · Tracés : © contributeurs OpenStreetMap · Relief : ' },
-  en: { compare: 'Compare the walls', compareHint: 'All walls of all periods. Tap a line for its card; you can hide some.', basemap: 'Base map (OpenStreetMap)', city: 'Today’s city (OpenStreetMap buildings)', walls: 'Walls', showAll: 'Show all', hideAll: 'Hide all', map: 'Map', title: 'Jerusalem · Old City', sub: 'Source-based reconstruction — not an imaginary city', old: 'Remains from an earlier period', today: 'Today’s wall line', exag: 'Relief ×1.5', sites: 'sites', all: 'All sites in this period', noPos: 'No position in the scene', dims: 'Documented dimensions', remains: 'What remains today', debate: 'Debate', other: 'Other view', note: 'About the marker', sources: 'Sources', show: '📍 Show in scene', drive: 'Course document', primary: 'Ancient source', online: 'Online source', period: 'Period', list2d: '2D plan', loadErr: 'Could not load the data. Try again online.', geoMissing: 'Geographic data (geo.json) not generated yet.', noWebgl: 'This phone does not support 3D — showing the 2D plan.', toggleToday: 'Today’s walls', toggle2d: '2D / 3D', home: 'Overview', list: 'Site list', attr: 'Positions: Wikidata · Lines: © OpenStreetMap contributors · Relief: ' },
-  ru: { compare: 'Сравнить стены', compareHint: 'Все стены всех эпох. Нажмите на линию, чтобы открыть карточку; можно скрыть.', basemap: 'Подложка (OpenStreetMap)', city: 'Современный город (здания OpenStreetMap)', walls: 'Стены', showAll: 'Показать все', hideAll: 'Скрыть все', map: 'Карта', title: 'Иерусалим · Старый город', sub: 'Реконструкция по источникам — не вымышленный город', old: 'Остатки более раннего периода', today: 'Нынешняя линия стен', exag: 'Рельеф ×1,5', sites: 'объектов', all: 'Все объекты периода', noPos: 'Без места в сцене', dims: 'Документированные размеры', remains: 'Что сохранилось', debate: 'Спор', other: 'Другое мнение', note: 'О метке', sources: 'Источники', show: '📍 Показать в сцене', drive: 'Документ курса', primary: 'Древний источник', online: 'Онлайн-источник', period: 'Период', list2d: 'План 2D', loadErr: 'Не удалось загрузить данные.', geoMissing: 'Географические данные (geo.json) ещё не созданы.', noWebgl: 'Телефон не поддерживает 3D — показан план 2D.', toggleToday: 'Нынешние стены', toggle2d: '2D / 3D', home: 'Общий вид', list: 'Список объектов', attr: 'Координаты: Wikidata · Линии: © участники OpenStreetMap · Рельеф: ' }
+  he: { cinema: 'סיור מצולם (מצב הצגה)', record: 'הקלטת וידאו של הסיור', quality: 'איכות תצוגה: גבוהה / חסכונית', colors: 'צבעים לפי ודאות / חומרים מציאותיים', noRec: 'הדפדפן הזה לא תומך בהקלטה. אפשר להקליט מסך.', stop: 'עצירה', schem: 'מידות לפי המקורות; פרטים משוחזרים',  compare: 'השוואת חומות', compareHint: 'כל החומות של כל התקופות. לחיצה על קו פותחת את הכרטיס; אפשר להסתיר חומות.', basemap: 'מפת רקע (OpenStreetMap)', city: 'העיר של היום (בניינים מ-OpenStreetMap)', walls: 'חומות', showAll: 'הצג הכול', hideAll: 'הסתר הכול', map: 'מפה', title: 'ירושלים · העיר העתיקה', sub: 'שחזור לפי מקורות — לא עיר דמיונית', old: 'שרידים מתקופה קודמת', today: 'קו החומה של היום', exag: 'תבליט אמיתי (SRTM 30 מ׳)', sites: 'אתרים', all: 'כל האתרים בתקופה', noPos: 'ללא מיקום בסצנה', dims: 'ממדים מתועדים', remains: 'מה נשאר היום', debate: 'מחלוקת', other: 'מקורות אחרים', note: 'על הסימון בסצנה', sources: 'מקורות', show: '📍 הראו בסצנה', drive: 'מסמך קורס', primary: 'מקור קדום', online: 'מקור מקוון', period: 'תקופה', list2d: 'מפה דו-ממדית', loadErr: 'לא ניתן לטעון את הנתונים. נסו שוב עם חיבור.', geoMissing: 'נתוני המפה עוד לא נוצרו (geo.json).', noWebgl: 'הטלפון לא תומך בתלת-ממד — מוצגת מפה דו-ממדית.', toggleToday: 'קו החומה של היום', toggle2d: 'דו-ממד / תלת-ממד', home: 'חזרה למבט הכללי', list: 'רשימת האתרים', attr: 'מיקומים: ויקינתונים · תוואים: © תורמי OpenStreetMap · גבהים: ' },
+  fr: { cinema: 'Survol filmé (mode présentation)', record: 'Enregistrer le survol en vidéo', quality: 'Qualité : haute / économe', colors: 'Couleurs de certitude / matériaux réalistes', noRec: 'Ce navigateur ne sait pas enregistrer. Utilisez la capture d’écran.', stop: 'Arrêter', schem: 'Dimensions d’après les sources ; détails reconstitués',  compare: 'Comparer les murailles', compareHint: 'Toutes les murailles de toutes les époques. Touchez une ligne pour sa fiche ; vous pouvez en masquer.', basemap: 'Carte de fond (OpenStreetMap)', city: 'La ville d’aujourd’hui (bâtiments OpenStreetMap)', walls: 'Murailles', showAll: 'Tout afficher', hideAll: 'Tout masquer', map: 'Carte', title: 'Jérusalem · Vieille Ville', sub: 'Reconstitution sourcée — pas une ville imaginaire', old: 'Vestiges d’une période antérieure', today: 'Tracé actuel des murailles', exag: 'Relief réel (SRTM 30 m)', sites: 'sites', all: 'Tous les sites de la période', noPos: 'Sans position dans la scène', dims: 'Dimensions documentées', remains: 'Ce qui reste aujourd’hui', debate: 'Débat', other: 'Autre avis', note: 'À propos du repère', sources: 'Sources', show: '📍 Montrer dans la scène', drive: 'Document du cours', primary: 'Source antique', online: 'Source en ligne', period: 'Période', list2d: 'Plan 2D', loadErr: 'Impossible de charger les données. Réessayez avec une connexion.', geoMissing: 'Les données géographiques (geo.json) ne sont pas encore générées.', noWebgl: 'Ce téléphone ne gère pas la 3D — plan 2D affiché.', toggleToday: 'Tracé actuel', toggle2d: '2D / 3D', home: 'Vue d’ensemble', list: 'Liste des sites', attr: 'Positions : Wikidata · Tracés : © contributeurs OpenStreetMap · Relief : ' },
+  en: { cinema: 'Filmed fly-through (presentation mode)', record: 'Record the fly-through as video', quality: 'Quality: high / light', colors: 'Certainty colours / realistic materials', noRec: 'This browser cannot record. Use screen capture.', stop: 'Stop', schem: 'Dimensions from the sources; details reconstructed',  compare: 'Compare the walls', compareHint: 'All walls of all periods. Tap a line for its card; you can hide some.', basemap: 'Base map (OpenStreetMap)', city: 'Today’s city (OpenStreetMap buildings)', walls: 'Walls', showAll: 'Show all', hideAll: 'Hide all', map: 'Map', title: 'Jerusalem · Old City', sub: 'Source-based reconstruction — not an imaginary city', old: 'Remains from an earlier period', today: 'Today’s wall line', exag: 'True relief (SRTM 30 m)', sites: 'sites', all: 'All sites in this period', noPos: 'No position in the scene', dims: 'Documented dimensions', remains: 'What remains today', debate: 'Debate', other: 'Other view', note: 'About the marker', sources: 'Sources', show: '📍 Show in scene', drive: 'Course document', primary: 'Ancient source', online: 'Online source', period: 'Period', list2d: '2D plan', loadErr: 'Could not load the data. Try again online.', geoMissing: 'Geographic data (geo.json) not generated yet.', noWebgl: 'This phone does not support 3D — showing the 2D plan.', toggleToday: 'Today’s walls', toggle2d: '2D / 3D', home: 'Overview', list: 'Site list', attr: 'Positions: Wikidata · Lines: © OpenStreetMap contributors · Relief: ' },
+  ru: { cinema: 'Облёт (режим показа)', record: 'Записать облёт на видео', quality: 'Качество: высокое / экономное', colors: 'Цвета достоверности / реальные материалы', noRec: 'Этот браузер не умеет записывать. Используйте запись экрана.', stop: 'Стоп', schem: 'Размеры по источникам; детали реконструированы',  compare: 'Сравнить стены', compareHint: 'Все стены всех эпох. Нажмите на линию, чтобы открыть карточку; можно скрыть.', basemap: 'Подложка (OpenStreetMap)', city: 'Современный город (здания OpenStreetMap)', walls: 'Стены', showAll: 'Показать все', hideAll: 'Скрыть все', map: 'Карта', title: 'Иерусалим · Старый город', sub: 'Реконструкция по источникам — не вымышленный город', old: 'Остатки более раннего периода', today: 'Нынешняя линия стен', exag: 'Реальный рельеф (SRTM 30 м)', sites: 'объектов', all: 'Все объекты периода', noPos: 'Без места в сцене', dims: 'Документированные размеры', remains: 'Что сохранилось', debate: 'Спор', other: 'Другое мнение', note: 'О метке', sources: 'Источники', show: '📍 Показать в сцене', drive: 'Документ курса', primary: 'Древний источник', online: 'Онлайн-источник', period: 'Период', list2d: 'План 2D', loadErr: 'Не удалось загрузить данные.', geoMissing: 'Географические данные (geo.json) ещё не созданы.', noWebgl: 'Телефон не поддерживает 3D — показан план 2D.', toggleToday: 'Нынешние стены', toggle2d: '2D / 3D', home: 'Общий вид', list: 'Список объектов', attr: 'Координаты: Wikidata · Линии: © участники OpenStreetMap · Рельеф: ' }
 };
 let lang = store.get('mdl_mode_lang', store.get('mdl_lang', 'he')); if (!UI[lang]) lang = 'he';
 const t = k => UI[lang][k] || UI.he[k] || k;
@@ -88,6 +96,8 @@ function applyUI() {
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   $('bCompare').title = t('compare'); $('bCompare').setAttribute('aria-label', t('compare')); $('bBase').title = t('basemap'); $('bBase').setAttribute('aria-label', t('basemap'));
   $('bToday').title = t('toggleToday'); $('b2d').title = t('toggle2d'); $('bHome').title = t('home'); $('bList').title = t('list');
+  for (const [b, k] of [['bCine', 'cinema'], ['bRec', 'record'], ['bQual', 'quality'], ['bColors', 'colors']]) { $(b).title = t(k); $(b).setAttribute('aria-label', t(k)); }
+  $('bQual').textContent = quality === 'high' ? 'HD' : 'SD'; $('bColors').setAttribute('aria-pressed', String(!realistic)); $('cineStop').textContent = '✕ ' + t('stop');
   $('bToday').setAttribute('aria-label', t('toggleToday')); $('b2d').setAttribute('aria-label', t('toggle2d')); $('bHome').setAttribute('aria-label', t('home')); $('bList').setAttribute('aria-label', t('list'));
   if (!DATA) return;
   const C = DATA.certainty;
@@ -117,7 +127,7 @@ function openSheet(id) {
   const sec = (k, v, cls) => v ? (cls ? `<div class="box ${cls}"><b>${esc(t(k))}:</b> ${esc(tx(v))}</div>` : `<div class="k">${esc(t(k))}</div><p>${esc(tx(v))}</p>`) : '';
   $('sBody').innerHTML = `<h2 id="sTitle">${esc(tx(m.name))}</h2>
     <div class="badges"><span class="badge c" style="--c:${C.color}">${esc(tx(C.name))}</span><span class="badge">${esc(t('period'))}: ${esc(tx(p.name))} · ${esc(tx(p.dates))}</span></div>
-    <p>${esc(tx(m.text))}</p>${sec('dims', m.dims)}${sec('remains', m.remains)}${sec('debate', m.debate, 'debate')}${sec('other', m.otherView, 'other')}${sec('note', m.placementNote, 'note')}
+    <p>${esc(tx(m.text))}</p>${sec('dims', m.dims)}${sec('remains', m.remains)}${sec('debate', m.debate, 'debate')}${sec('other', m.otherView, 'other')}${sec('note', m.placementNote, 'note')}${SCHEMATIC.has((m.shape || {}).type) ? `<div class="box note">📐 ${esc(t('schem'))}</div>` : ''}
     <div class="k">${esc(t('sources'))}</div><ul>${m.sources.map(s => `<li>${srcIcon(s.kind)} <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a> <small style="color:var(--soft)">(${esc(t(s.kind))})</small></li>`).join('')}</ul>
     ${placed.has(id) ? `<div class="acts"><button type="button" id="sShow">${esc(t('show'))}</button></div>` : `<div class="box note">${esc(t('noPos'))}</div>`}`;
   $('sheet').classList.add('open');
@@ -127,7 +137,7 @@ function openSheet(id) {
 function openList() {
   const items = DATA.monuments.filter(inPeriod), C = DATA.certainty;
   selected = null;
-  const row = m => `<button type="button" data-id="${m.id}"><i style="background:${isNow(m) ? C[m.certainty].color : '#c9ccd6'}"></i><span>${esc(tx(m.name))}<small>${esc(tx(C[m.certainty].name))}${placed.has(m.id) ? '' : ' · ' + esc(t('noPos'))}</small></span></button>`;
+  const row = m => `<button type="button" data-id="${m.id}"><i style="background:${isNow(m) ? C[m.certainty].color : '#bdb5a6'}"></i><span>${esc(tx(m.name))}<small>${esc(tx(C[m.certainty].name))}${placed.has(m.id) ? '' : ' · ' + esc(t('noPos'))}</small></span></button>`;
   $('sBody').innerHTML = `<h2 id="sTitle">${esc(t('all'))}</h2><div class="list">${items.filter(isNow).map(row).join('')}${items.filter(m => !isNow(m)).length ? `<div class="k">${esc(t('old'))}</div>` + items.filter(m => !isNow(m)).map(row).join('') : ''}</div>`;
   $('sheet').classList.add('open');
   $('sBody').querySelectorAll('[data-id]').forEach(b => b.onclick = () => openSheet(b.dataset.id));
@@ -141,6 +151,12 @@ $('bHome').onclick = () => { if (!mode2d) homeView(true); };
 $('b2d').onclick = () => setMode2d(!mode2d);
 $('bCompare').onclick = () => { compare = !compare; $('bCompare').setAttribute('aria-pressed', String(compare)); document.body.classList.toggle('compare', compare); if (compare) openCompare(); else $('sheet').classList.remove('open'); renderPeriod(); if (!mode2d && camera) homeView(true); };
 $('bBase').onclick = () => { basemap = !basemap; store.set('mdl_j3d_base', basemap ? '1' : '0'); $('bBase').setAttribute('aria-pressed', String(basemap)); applyBasemap(); };
+$('bCine').onclick = () => { if (cine) stopCinema(); else startCinema(false); };
+$('bRec').onclick = () => { if (cine) stopCinema(); else startCinema(true); };
+$('cineStop').onclick = () => stopCinema();
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && cine) stopCinema(); });
+$('bQual').onclick = () => { store.set('mdl_j3d_q', quality === 'high' ? 'low' : 'high'); location.reload(); };
+$('bColors').onclick = () => { realistic = !realistic; store.set('mdl_j3d_real', realistic ? '1' : '0'); $('bColors').setAttribute('aria-pressed', String(!realistic)); renderPeriod(); };
 function openCompare() {
   const W = DATA.monuments.filter(m => m.wall), C = DATA.certainty;
   $('sBody').innerHTML = `<h2 id="sTitle">🧱 ${esc(t('compare'))}</h2><p style="color:var(--soft);font-size:14px">${esc(t('compareHint'))}</p>
@@ -155,67 +171,88 @@ function openCompare() {
 document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => { lang = b.dataset.lang; store.set('mdl_mode_lang', lang); applyUI(); });
 
 // ---------- scène 3D ----------
-let sun, terrainMesh, terrainMatPlain, terrainMatMap, cityMesh = null, renderer, scene, camera, controls, world, labelsEl = $('labels'), labels = [], pickables = [], placed = new Set(), raf = 0;
+// Qualité : « high » (ordinateur, télévision : occlusion ambiante GTAO + anticrénelage SMAA + ombres 4096) ou « low » (téléphone).
+let quality = new URLSearchParams(location.search).get('q') || store.get('mdl_j3d_q', (window.matchMedia && matchMedia('(pointer:coarse)').matches) ? 'low' : 'high');
+let realistic = store.get('mdl_j3d_real', '1') === '1'; // matériaux réalistes ; sinon couleurs de certitude
+let sun, sky, terrainMesh, terrainMatPlain, terrainMatMap, cityMesh = null, renderer, composer = null, scene, camera, controls, world, labelsEl = $('labels'), labels = [], pickables = [], placed = new Set(), raf = 0, hlBox = null;
 const MAT = {};
-function mat(color, opts) { const k = color + JSON.stringify(opts || {}); return MAT[k] || (MAT[k] = new THREE.MeshLambertMaterial(Object.assign({ color }, opts || {}))); }
+function mat(color, opts) { const k = color + JSON.stringify(opts || {}); return MAT[k] || (MAT[k] = new THREE.MeshStandardMaterial(Object.assign({ color, roughness: 0.8 }, opts || {}))); }
 function webglOK() { try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch (e) { return false; } }
+const SUN = { elevation: 34, azimuth: 235 }; // soleil d'après-midi au sud-ouest : ombres longues sur les murailles
 function init3d() {
-  renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  const hi = quality === 'high';
+  renderer = new THREE.WebGLRenderer({ antialias: !hi, powerPreference: hi ? 'high-performance' : 'low-power', preserveDrawingBuffer: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, hi ? 2 : 1.5));
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+  renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.62;
   $('stage').appendChild(renderer.domElement);
-  scene = new THREE.Scene(); scene.background = skyTexture(); scene.fog = new THREE.Fog('#c9dcec', 2200, 5200);
-  camera = new THREE.PerspectiveCamera(45, 1, 2, 9000);
-  scene.add(new THREE.HemisphereLight('#eaf3ff', '#7a6446', 1.25));
-  // soleil d'après-midi venant du sud-ouest : ombres longues qui font ressortir murailles et vallées
-  sun = new THREE.DirectionalLight('#fff1d6', 2.1); sun.position.set(-900, 1100, 700); sun.castShadow = true;
-  sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -1500, right: 1500, top: 1500, bottom: -1500, near: 100, far: 4000 }); sun.shadow.bias = -0.0005; sun.shadow.normalBias = 1.5;
-  scene.add(sun, sun.target);
+  scene = new THREE.Scene(); scene.fog = new THREE.Fog('#d9dfe2', 2200, 9000);
+  camera = new THREE.PerspectiveCamera(45, 1, 2, 30000);
+  // ciel physique (diffusion de Rayleigh/Mie) et éclairage d'environnement tiré du même ciel
+  sky = new Sky(); sky.scale.setScalar(25000); scene.add(sky);
+  const u = sky.material.uniforms; u.turbidity.value = 5.5; u.rayleigh.value = 1.4; u.mieCoefficient.value = 0.004; u.mieDirectionalG.value = 0.82;
+  const sp = new THREE.Vector3().setFromSphericalCoords(1, THREE.MathUtils.degToRad(90 - SUN.elevation), THREE.MathUtils.degToRad(SUN.azimuth)); u.sunPosition.value.copy(sp);
+  const pm = new THREE.PMREMGenerator(renderer), envScene = new THREE.Scene(), sky2 = new Sky(); sky2.scale.setScalar(1000); Object.keys(u).forEach(k => sky2.material.uniforms[k].value = u[k].value); envScene.add(sky2);
+  scene.environment = pm.fromScene(envScene).texture; scene.environmentIntensity = 0.55;
+  scene.add(new THREE.HemisphereLight('#eef4ff', '#8a7356', 0.35));
+  sun = new THREE.DirectionalLight('#fff0d8', 3.2); sun.position.copy(sp).multiplyScalar(2500); sun.castShadow = true;
+  const sm = hi ? 4096 : 2048; sun.shadow.mapSize.set(sm, sm); Object.assign(sun.shadow.camera, { left: -1300, right: 1300, top: 1300, bottom: -1300, near: 200, far: 6000 });
+  sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.8; scene.add(sun, sun.target);
   controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.46; controls.minDistance = 60; controls.maxDistance = 3500; controls.screenSpacePanning = false;
+  controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.47; controls.minDistance = 25; controls.maxDistance = 4000; controls.screenSpacePanning = false;
   controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
+  if (hi) {
+    composer = new EffectComposer(renderer); composer.addPass(new RenderPass(scene, camera));
+    const ao = new GTAOPass(scene, camera, innerWidth, innerHeight); ao.output = GTAOPass.OUTPUT.Default; ao.blendIntensity = 0.85;
+    ao.updateGtaoMaterial({ radius: 6, distanceExponent: 1.6, thickness: 3, scale: 1, samples: 16 }); ao.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 16 });
+    composer.addPass(ao); composer.addPass(new OutputPass()); composer.addPass(new SMAAPass(innerWidth * renderer.getPixelRatio(), innerHeight * renderer.getPixelRatio()));
+  }
   buildTerrain();
   world = new THREE.Group(); scene.add(world);
-  // sélection par toucher
   const ray = new THREE.Raycaster(), v = new THREE.Vector2(); let down = null;
   renderer.domElement.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
   renderer.domElement.addEventListener('pointerup', e => {
-    if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 8) return;
+    if (cine || !down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 8) return;
     const r = renderer.domElement.getBoundingClientRect(); v.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
-    ray.setFromCamera(v, camera); const hit = ray.intersectObjects(pickables, false)[0];
-    if (hit && hit.object.userData.id) { document.dispatchEvent(new CustomEvent('mdj3d-pick', { detail: hit.object.userData.id })); if (!pickMode) openSheet(hit.object.userData.id); }
+    ray.setFromCamera(v, camera); const hit = ray.intersectObject(world, true).find(h => idOf(h.object));
+    if (hit) { const id = idOf(hit.object); document.dispatchEvent(new CustomEvent('mdj3d-pick', { detail: id })); if (!pickMode) openSheet(id); }
   });
   window.addEventListener('resize', resize); resize(); homeView(false); loop(); loadCity();
 }
-function resize() { if (!renderer) return; const w = innerWidth, h = innerHeight; renderer.setSize(w, h); camera.aspect = w / h; camera.fov = w / h < 1 ? 62 : 45; camera.updateProjectionMatrix(); }
+function idOf(o) { while (o) { if (o.userData && o.userData.id) return o.userData.id; o = o.parent; } return null; }
+function resize() { if (!renderer) return; const w = innerWidth, h = innerHeight; renderer.setSize(w, h); if (composer) composer.setSize(w, h); camera.aspect = w / h; camera.fov = w / h < 1 ? 60 : 42; camera.updateProjectionMatrix(); }
 function buildTerrain() {
-  const d = GEO.dem, g = new THREE.BufferGeometry(), pos = [], col = [], idx = [];
-  // Relief : grille SRTM sur-échantillonnée ×2 (interpolation bilinéaire, aucune information ajoutée) pour un rendu plus doux.
-  const hmax = Math.max(...demH.filter(v => v != null)), lo = new THREE.Color('#7f6d4f'), mid = new THREE.Color('#c2ab7f'), hi = new THREE.Color('#eadcbc'), c = new THREE.Color(), uv = [];
-  const S = 2, rows = (d.rows - 1) * S + 1, cols = (d.cols - 1) * S + 1, E = d.west + (d.cols - 1) * d.stepLon, Sth = d.north - (d.rows - 1) * d.stepLat;
+  // Relief SRTM sur-échantillonné ×3 (interpolation bilinéaire : aucune information ajoutée), ombré, texturé.
+  const d = GEO.dem, g = new THREE.BufferGeometry(), pos = [], col = [], idx = [], uv = [];
+  const hmax = Math.max(...demH.filter(v => v != null)), lo = new THREE.Color('#a39478'), mid = new THREE.Color('#cdbf9f'), hi = new THREE.Color('#e8dfca'), c = new THREE.Color();
+  const S = 3, E = d.west + (d.cols - 1) * d.stepLon, Sth = d.north - (d.rows - 1) * d.stepLat;
   const my = la => Math.log(Math.tan(Math.PI / 4 + la * Math.PI / 360)), myN = my(d.north), myS = my(Sth);
+  // bordure : au-delà de la zone mesurée, le relief est prolongé à plat (hauteur du bord) jusqu'à l'horizon — pas de « table »
+  const PAD = [150, 400, 900, 1800, 3500, 7000], dLat = m => m / KZ, dLon = m => m / KX;
+  const LATS = [...PAD.slice().reverse().map(p => d.north + dLat(p)), ...Array.from({ length: (d.rows - 1) * S + 1 }, (_, r) => d.north - r * d.stepLat / S), ...PAD.map(p => Sth - dLat(p))];
+  const LONS = [...PAD.slice().reverse().map(p => d.west - dLon(p)), ...Array.from({ length: (d.cols - 1) * S + 1 }, (_, k) => d.west + k * d.stepLon / S), ...PAD.map(p => E + dLon(p))];
+  const rows = LATS.length, cols = LONS.length;
+  let edgeMean = 0, en = 0; for (let k = 0; k < d.cols; k++) for (const rr of [0, d.rows - 1]) { const v = demH[rr * d.cols + k]; if (v != null) { edgeMean += (v - demMin) * EXAG; en++; } } edgeMean /= Math.max(1, en);
   for (let r = 0; r < rows; r++) for (let k = 0; k < cols; k++) {
-    const lat = d.north - r * d.stepLat / S, lon = d.west + k * d.stepLon / S, [x, z] = toXZ(lat, lon), y = ground(x, z), f = y / EXAG / Math.max(1, hmax - demMin);
-    pos.push(x, y, z); uv.push((lon - d.west) / (E - d.west), (my(lat) - myS) / (myN - myS));
-    if (f < 0.5) c.copy(lo).lerp(mid, f * 2); else c.copy(mid).lerp(hi, (f - 0.5) * 2); col.push(c.r, c.g, c.b);
+    const lat = LATS[r], lon = LONS[k], [x, z] = toXZ(lat, lon), pad = Math.max(r < PAD.length ? PAD.length - r : r >= rows - PAD.length ? r - rows + PAD.length + 1 : 0, k < PAD.length ? PAD.length - k : k >= cols - PAD.length ? k - cols + PAD.length + 1 : 0);
+    const fade = Math.min(1, pad / 3), y = ground(x, z) * (1 - fade) + edgeMean * fade, f = (pad ? 0.5 : y / EXAG / Math.max(1, hmax - demMin));
+    pos.push(x, y, z); uv.push(Math.min(1, Math.max(0, (lon - d.west) / (E - d.west))), Math.min(1, Math.max(0, (my(lat) - myS) / (myN - myS))));
+    if (f < 0.5) c.copy(lo).lerp(mid, f * 2); else c.copy(mid).lerp(hi, (f - 0.5) * 2);
+    // variation lente de teinte (casse la répétition de la texture vue de loin) — purement visuelle
+    const nz = Math.sin(x * 0.011 + 1.3) * Math.sin(z * 0.014 + 0.7) + 0.5 * Math.sin(x * 0.037 - z * 0.029 + 2.1); c.multiplyScalar(1 + 0.055 * nz); col.push(c.r, c.g, c.b);
   }
   for (let r = 0; r < rows - 1; r++) for (let k = 0; k < cols - 1; k++) { const a = r * cols + k, b = a + 1, cc = a + cols, dd = cc + 1; idx.push(a, cc, b, b, cc, dd); }
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeVertexNormals();
-  // ombrage du relief (hillshade) mélangé aux couleurs d'altitude
-  const n = g.attributes.normal, L = new THREE.Vector3(-0.6, 0.7, 0.4).normalize();
-  for (let i = 0; i < n.count; i++) { const sh = 0.62 + 0.5 * Math.max(0, n.getX(i) * L.x + n.getY(i) * L.y + n.getZ(i) * L.z) - 0.12; col[i * 3] *= sh; col[i * 3 + 1] *= sh; col[i * 3 + 2] *= sh; }
+  // pentes raides = roche plus claire, fonds de vallée = terre plus sombre
+  const n = g.attributes.normal;
+  for (let i = 0; i < n.count; i++) { const slope = 1 - n.getY(i), k = 1 + slope * 0.6; col[i * 3] = Math.min(1, col[i * 3] * k); col[i * 3 + 1] = Math.min(1, col[i * 3 + 1] * k); col[i * 3 + 2] = Math.min(1, col[i * 3 + 2] * (k + 0.05)); }
   g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
-  terrainMatPlain = new THREE.MeshLambertMaterial({ vertexColors: true });
+  terrainMatPlain = groundMaterial();
   terrainMesh = new THREE.Mesh(g, terrainMatPlain); terrainMesh.receiveShadow = true; scene.add(terrainMesh);
+  // grand sol au-delà de la zone, pour un horizon propre
   if (basemap) applyBasemap();
 }
-function skyTexture() {
-  const c = document.createElement('canvas'); c.width = 2; c.height = 256; const g = c.getContext('2d'), gr = g.createLinearGradient(0, 0, 0, 256);
-  gr.addColorStop(0, '#5f8fc4'); gr.addColorStop(0.55, '#a9c8e6'); gr.addColorStop(1, '#e6eef5'); g.fillStyle = gr; g.fillRect(0, 0, 2, 256);
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
-}
-// Carte de fond OpenStreetMap drapée sur le relief (tuiles z16 assemblées ; attribution affichée).
+// Carte de fond OpenStreetMap drapée sur le relief (tuiles z16 ; attribution dans la légende).
 let baseTex = null, baseLoading = false;
 function applyBasemap() {
   if (!terrainMesh) return;
@@ -223,22 +260,20 @@ function applyBasemap() {
   if (terrainMatMap) { terrainMesh.material = terrainMatMap; return; }
   if (baseLoading) return; baseLoading = true;
   const d = GEO.dem, z = 16, E = d.west + (d.cols - 1) * d.stepLon, Sth = d.north - (d.rows - 1) * d.stepLat;
-  const tx = lon => (lon + 180) / 360 * 2 ** z, ty = lat => (1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * 2 ** z;
-  const x0 = Math.floor(tx(d.west)), x1 = Math.floor(tx(E)), y0 = Math.floor(ty(d.north)), y1 = Math.floor(ty(Sth));
-  const cv = document.createElement('canvas'); cv.width = (x1 - x0 + 1) * 256; cv.height = (y1 - y0 + 1) * 256; const g = cv.getContext('2d');
-  const jobs = [];
+  const tX = lon => (lon + 180) / 360 * 2 ** z, tY = lat => (1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * 2 ** z;
+  const x0 = Math.floor(tX(d.west)), x1 = Math.floor(tX(E)), y0 = Math.floor(tY(d.north)), y1 = Math.floor(tY(Sth));
+  const cv = document.createElement('canvas'); cv.width = (x1 - x0 + 1) * 256; cv.height = (y1 - y0 + 1) * 256; const g = cv.getContext('2d'), jobs = [];
   for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) jobs.push(new Promise(res => { const im = new Image(); im.crossOrigin = 'anonymous'; im.onload = () => { g.drawImage(im, (x - x0) * 256, (y - y0) * 256); res(true); }; im.onerror = () => res(false); im.src = `https://tile.openstreetmap.org/${z}/${x}/${y}.png`; }));
   Promise.all(jobs).then(ok => {
     baseLoading = false; if (!ok.some(Boolean)) { basemap = false; $('bBase').setAttribute('aria-pressed', 'false'); return; }
-    // recadrage exact sur l'emprise du relief
-    const px = lon => (tx(lon) - x0) * 256, py = lat => (ty(lat) - y0) * 256, out = document.createElement('canvas');
+    const px = lon => (tX(lon) - x0) * 256, py = lat => (tY(lat) - y0) * 256, out = document.createElement('canvas');
     out.width = Math.round(px(E) - px(d.west)); out.height = Math.round(py(Sth) - py(d.north));
     out.getContext('2d').drawImage(cv, px(d.west), py(d.north), out.width, out.height, 0, 0, out.width, out.height);
-    baseTex = new THREE.CanvasTexture(out); baseTex.colorSpace = THREE.SRGBColorSpace; baseTex.anisotropy = 4;
-    terrainMatMap = new THREE.MeshLambertMaterial({ map: baseTex }); if (basemap) terrainMesh.material = terrainMatMap;
+    baseTex = new THREE.CanvasTexture(out); baseTex.colorSpace = THREE.SRGBColorSpace; baseTex.anisotropy = 8;
+    terrainMatMap = new THREE.MeshStandardMaterial({ map: baseTex, roughness: 1 }); if (basemap) terrainMesh.material = terrainMatMap;
   });
 }
-// Bâtiments ACTUELS (OpenStreetMap), facultatifs : contexte « la ville d'aujourd'hui », jamais présentés comme anciens.
+// Bâtiments ACTUELS (OpenStreetMap, récupérés au déploiement) : contexte « ville d'aujourd'hui », jamais présentés comme anciens.
 function loadCity() {
   fetch('jerusalem3d/buildings.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(B => {
     if (!B || !B.b || !scene) return;
@@ -247,160 +282,302 @@ function loadCity() {
       const h = b[0], P = []; for (let i = 1; i < b.length; i += 2) P.push(toXZ(B.lat0 + b[i] / 1e6, B.lon0 + b[i + 1] / 1e6));
       if (P.length < 3) continue;
       const gy = Math.min(...P.map(([x, z]) => ground(x, z)));
-      const g = new THREE.ExtrudeGeometry(new THREE.Shape(P.map(([x, z]) => new THREE.Vector2(x, -z))), { depth: h, bevelEnabled: false });
-      g.rotateX(-Math.PI / 2); g.translate(0, gy, 0); geos.push(g.toNonIndexed ? g.toNonIndexed() : g);
+      const g = new THREE.ExtrudeGeometry(new THREE.Shape(P.map(([x, z]) => new THREE.Vector2(x, -z))), { depth: h + 1.5, bevelEnabled: false });
+      g.rotateX(-Math.PI / 2); g.translate(0, gy - 1.5, 0); geos.push(g.toNonIndexed());
     }
     if (!geos.length) return;
-    cityMesh = new THREE.Mesh(mergeGeometries(geos, false), new THREE.MeshLambertMaterial({ color: '#efe6d2', transparent: true, opacity: 0.9 }));
-    cityMesh.castShadow = true; cityMesh.receiveShadow = true; cityMesh.userData.count = geos.length; scene.add(cityMesh); styleCity();
-    $('legend').dataset.city = '1'; applyUI();
+    cityMesh = new THREE.Mesh(mergeGeometries(geos, false), stone('plaster', { tint: '#f3ece0' }));
+    cityMesh.castShadow = true; cityMesh.receiveShadow = true; scene.add(cityMesh);
+    cityGhost = new THREE.MeshStandardMaterial({ color: '#ffffff', transparent: true, opacity: 0.13, depthWrite: false });
+    styleCity(); $('legend').dataset.city = '1'; applyUI();
   }).catch(() => {});
 }
+let cityGhost = null;
 function styleCity() {
   if (!cityMesh) return;
-  const show = showToday && !compare; cityMesh.visible = show;
-  // époque ottomane : ville actuelle opaque ; autres époques : simple fantôme pour se repérer
-  const ghost = period !== 11; cityMesh.material.opacity = ghost ? 0.16 : 0.95; cityMesh.material.depthWrite = !ghost; cityMesh.castShadow = !ghost;
+  cityMesh.visible = showToday && !compare && !(cine && period !== 11);
+  const ghost = period !== 11; cityMesh.material = ghost ? cityGhost : stone('plaster', { tint: '#f3ece0' }); cityMesh.castShadow = !ghost;
 }
-// Muraille en volume qui suit le relief : segments subdivisés tous les ~8 m, en une seule InstancedMesh.
-function wallMesh(lines, h, thick, color, opts) {
+// Muraille en volume qui suit le relief (segments de ~8 m, une seule InstancedMesh).
+function wallMesh(lines, h, thick, material) {
   const segs = [];
   lines.forEach(L => { for (let i = 1; i < L.length; i++) { const [x1, z1] = L[i - 1], [x2, z2] = L[i], n = Math.max(1, Math.ceil(Math.hypot(x2 - x1, z2 - z1) / 8));
     for (let k = 0; k < n; k++) segs.push([x1 + (x2 - x1) * k / n, z1 + (z2 - z1) * k / n, x1 + (x2 - x1) * (k + 1) / n, z1 + (z2 - z1) * (k + 1) / n]); } });
-  const im = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), mat(color, opts), segs.length), M4 = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0);
+  const im = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), material, segs.length), M4 = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0);
   segs.forEach(([x1, z1, x2, z2], i) => { const len = Math.hypot(x2 - x1, z2 - z1), mx = (x1 + x2) / 2, mz = (z1 + z2) / 2, gy = Math.min(ground(x1, z1), ground(x2, z2), ground(mx, mz)) - 2;
     q.setFromAxisAngle(up, -Math.atan2(z2 - z1, x2 - x1)); M4.compose(new THREE.Vector3(mx, gy + (h + 2) / 2, mz), q, new THREE.Vector3(len + 0.6, h + 2, thick)); im.setMatrixAt(i, M4); });
   im.castShadow = true; im.receiveShadow = true; return im;
 }
+function wallTop(x, z) { return ground(x, z); }
 function lineMid(lines) { let best = null, bl = -1; lines.forEach(L => { let l = 0; for (let i = 1; i < L.length; i++) l += Math.hypot(L[i][0] - L[i - 1][0], L[i][1] - L[i - 1][1]); if (l > bl) { bl = l; best = L; } }); return best ? best[Math.floor(best.length / 2)] : null; }
 function homeView(anim) {
-  // Cadrage sur les sites de la période affichée (repères Wikidata) ; sinon centre de la Vieille Ville.
   const pts = compare ? DATA.monuments.filter(m => m.wall).flatMap(m => wallLines(m).flat()) : DATA.monuments.filter(m => isNow(m) && m.anchor && anchorXZ(m.anchor)).map(m => anchorXZ(m.anchor));
   if (!compare) DATA.monuments.filter(m => isNow(m) && m.wall).forEach(m => { const c = lineMid(wallLines(m)); if (c) pts.push(c); });
   const a = anchorXZ('jaffa_gate'), b = anchorXZ('lions_gate');
   if (pts.length < 2 && a && b) pts.push(a, b);
   const c = pts.length ? [pts.reduce((s, p) => s + p[0], 0) / pts.length, pts.reduce((s, p) => s + p[1], 0) / pts.length] : [0, 0];
   const spread = Math.max(150, ...pts.map(p => Math.hypot(p[0] - c[0], p[1] - c[1])));
-  const dist = Math.max(650, Math.min(2100, spread * 3.2)), gy = ground(c[0], c[1]);
-  const target = new THREE.Vector3(c[0], gy, c[1] + 40), eye = new THREE.Vector3(c[0] - dist * 0.08, gy + dist * 0.68, c[1] + dist * 0.72);
+  const dist = Math.max(600, Math.min(2000, spread * 2.9)), gy = ground(c[0], c[1]);
+  const target = new THREE.Vector3(c[0], gy, c[1] + 30), eye = new THREE.Vector3(c[0] - dist * 0.32, gy + dist * 0.55, c[1] + dist * 0.78);
   if (anim) tween(eye, target); else { camera.position.copy(eye); controls.target.copy(target); controls.update(); }
 }
 let tw = null;
-function tween(eye, target) { tw = { t0: performance.now(), dur: 900, e0: camera.position.clone(), t0v: controls.target.clone(), e1: eye, t1: target }; }
+function tween(eye, target, dur = 1100) { tw = { t0: performance.now(), dur, e0: camera.position.clone(), t0v: controls.target.clone(), e1: eye, t1: target }; }
+function objectsOf(id) { const out = []; world.traverse(o => { if (o.userData && o.userData.id === id && o.parent === world) out.push(o); }); return out; }
+function boundsOf(id) { const b = new THREE.Box3(); objectsOf(id).forEach(o => b.expandByObject(o)); return b; }
 function flyTo(id) {
-  const o = pickables.find(p => p.userData.id === id); if (!o || mode2d) return;
-  const b = new THREE.Box3().setFromObject(o), c = b.getCenter(new THREE.Vector3()), s = Math.max(60, b.getSize(new THREE.Vector3()).length());
-  tween(new THREE.Vector3(c.x - s * 1.4, c.y + s * 1.3, c.z + s * 1.6), c); highlight(id);
+  if (mode2d) return; const b = boundsOf(id); if (b.isEmpty()) return;
+  const c = b.getCenter(new THREE.Vector3()), s = Math.max(70, b.getSize(new THREE.Vector3()).length());
+  tween(new THREE.Vector3(c.x - s * 0.9, c.y + s * 0.75, c.z + s * 1.15), c); highlight(id);
 }
-let hl = null;
 function highlight(id) {
-  if (hl) { hl.forEach(o => { o.material = o.userData.baseMat; }); hl = null; }
-  if (!id) return; hl = pickables.filter(p => p.userData.id === id);
-  hl.forEach(o => { o.material = mat('#ffffff', { emissive: '#ffd878', emissiveIntensity: 0.6 }); });
-  selected = id; updateLabelSel();
+  if (hlBox) { scene.remove(hlBox); hlBox = null; }
+  if (!id) return; const b = boundsOf(id); if (b.isEmpty()) return;
+  hlBox = new THREE.Box3Helper(b, new THREE.Color('#ffd24a')); scene.add(hlBox); selected = id; updateLabelSel();
 }
-function clearWorld() { while (world.children.length) { const o = world.children.pop(); o.geometry && o.geometry.dispose && o.geometry.dispose(); if (o.isInstancedMesh) o.dispose(); } pickables = []; placed = new Set(); labels.forEach(l => l.el.remove()); labels = []; hl = null; }
-function add(mesh, m, now) { mesh.castShadow = true; mesh.receiveShadow = true; mesh.userData = { id: m.id, baseMat: mesh.material }; world.add(mesh); pickables.push(mesh); placed.add(m.id); return mesh; }
+function disposeTree(o) { o.traverse(c => { if (c.geometry) c.geometry.dispose(); if (c.isInstancedMesh) c.dispose(); }); }
+function clearWorld() { while (world.children.length) { const o = world.children.pop(); disposeTree(o); } pickables = []; placed = new Set(); labels.forEach(l => l.el.remove()); labels = []; if (hlBox) { scene.remove(hlBox); hlBox = null; } }
+// Ajoute un objet (maillage ou groupe) lié à une fiche. En mode « couleurs de certitude », remplace les matériaux.
+function add(obj, m, now, certColor) {
+  obj.userData.id = m.id; obj.traverse(c => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
+  // Mode réaliste : un édifice encore debout garde ses vrais matériaux (le Dôme du Rocher reste doré à l'époque ottomane) ;
+  // l'étiquette grise et la fiche indiquent la période d'origine. Seuls les repères simples passent en pierre grise.
+  if (realistic && !now && certColor === 'plain') { const gm = stone('ashlar', { tint: '#bdb5a6' }); obj.traverse(c => { if (c.isMesh) c.material = gm; }); }
+  else if (realistic && !now) { /* matériaux réels */ }
+  else if (!realistic || !now && certColor !== false) {
+    const col = now ? DATA.certainty[m.certainty].color : '#bdb5a6', fm = flat(col, m.certainty === 'hypothesis' && now ? { transparent: true, opacity: 0.6 } : {});
+    obj.traverse(c => { if (c.isMesh) c.material = fm; });
+  } else if (m.certainty === 'hypothesis') {
+    // hypothèse : rendu réaliste mais translucide, pour ne jamais la confondre avec un vestige attesté
+    obj.traverse(c => { if (c.isMesh) { const mm = c.material.clone(); mm.transparent = true; mm.opacity = 0.55; mm.depthWrite = false; c.material = mm; } });
+  }
+  world.add(obj); placed.add(m.id); return obj;
+}
 function label(m, x, y, z, now, stack, color) {
   const el = document.createElement('div'); el.className = 'lb' + (now ? '' : ' old') + (m.wall ? ' wl' : ''); el.textContent = (m.wall ? '▬ ' : '') + tx(m.name);
-  el.style.setProperty('--c', color || (now ? DATA.certainty[m.certainty].color : '#c9ccd6')); el.onclick = () => openSheet(m.id); labelsEl.appendChild(el);
-  labels.push({ el, p: new THREE.Vector3(x, y, z), id: m.id, dy: stack * 24 });
+  el.style.setProperty('--c', color || (now ? DATA.certainty[m.certainty].color : '#bdb5a6')); el.onclick = () => openSheet(m.id); labelsEl.appendChild(el);
+  labels.push({ el, p: new THREE.Vector3(x, y, z), id: m.id, dy: stack * 24, pr: (now ? 0 : 2) + (m.wall ? 1 : 0) });
 }
 function updateLabelSel() { labels.forEach(l => l.el.classList.toggle('sel', l.id === selected)); }
-// sommet de l'esplanade : même calcul que le volume « osm » du mont du Temple (h = 12 → +4,8)
-const tmTop = f => ground(f.cx, f.cz) + 12 * 0.4;
+// Repère de l'esplanade : centre, axes est et sud, niveau du dallage.
+let TM = null;
+function tmFrame() {
+  const tm = shapeByName('Temple Mount'); if (!tm) return null;
+  const f = frameOf(tm), east = [f.uz, -f.ux], south = [f.ux, f.uz];
+  return Object.assign(f, { east, south, yaw: -Math.atan2(east[1], east[0]), top: ground(f.cx, f.cz) + 4.8, pts: tm.pts.map(p => toXZ(p[0], p[1])) });
+}
+const tmTop = f => (TM ? TM.top : ground(f.cx, f.cz) + 4.8);
 function cub(v, unit) { return unit === 'cubit' ? v * DATA.cubitMeters : v; }
 function box(w, h, d, color, x, y, z, rotY, opts) { const g = new THREE.BoxGeometry(w, h, d); const o = new THREE.Mesh(g, mat(color, opts)); o.position.set(x, y + h / 2, z); if (rotY) o.rotation.y = rotY; return o; }
+function place(g, x, y, z, yaw) { g.position.set(x, y, z); g.rotation.y = yaw || 0; return g; }
+function outlinePts(name) { // le plus grand contour de ce nom (ex. Dôme du Rocher : l'octogone de 52 m, pas le tambour de 24 m)
+  const area = s => { const P = s.pts.map(p => toXZ(p[0], p[1])), xs = P.map(p => p[0]), zs = P.map(p => p[1]); return (Math.max(...xs) - Math.min(...xs)) * (Math.max(...zs) - Math.min(...zs)); };
+  const s = (GEO.shapes || []).filter(x => x.kind === 'outline' && x.name === name).sort((a, b) => area(b) - area(a))[0]; if (!s) return null; const P = s.pts.map(p => toXZ(p[0], p[1])); if (P.length > 2 && Math.hypot(P[0][0] - P.at(-1)[0], P[0][1] - P.at(-1)[1]) < 0.5) P.pop(); return P; }
+function nearestOnTM(p) { let best = p, bd = Infinity; const P = TM.pts; for (let i = 1; i < P.length; i++) { const [x1, z1] = P[i - 1], [x2, z2] = P[i], L2 = (x2 - x1) ** 2 + (z2 - z1) ** 2 || 1, t = Math.max(0, Math.min(1, ((p[0] - x1) * (x2 - x1) + (p[1] - z1) * (z2 - z1)) / L2)), q = [x1 + t * (x2 - x1), z1 + t * (z2 - z1)], d = Math.hypot(q[0] - p[0], q[1] - p[1]); if (d < bd) { bd = d; best = q; } } return best; }
+function centroid(P) { return [P.reduce((s, p) => s + p[0], 0) / P.length, P.reduce((s, p) => s + p[1], 0) / P.length]; }
+// bords de l'esplanade, avec normale intérieure et orientation (sud = Portique royal)
+function tmEdges() {
+  const P = TM.pts, out = [];
+  for (let i = 1; i < P.length; i++) { const [x1, z1] = P[i - 1], [x2, z2] = P[i], L = Math.hypot(x2 - x1, z2 - z1); if (L < 25) continue;
+    let nx = -(z2 - z1) / L, nz = (x2 - x1) / L; const mx = (x1 + x2) / 2, mz = (z1 + z2) / 2; if (nx * (TM.cx - mx) + nz * (TM.cz - mz) < 0) { nx = -nx; nz = -nz; }
+    out.push({ x1, z1, x2, z2, L, inward: [nx, nz], south: -(nx * TM.south[0] + nz * TM.south[1]) > 0.7, north: (nx * TM.south[0] + nz * TM.south[1]) > 0.7 }); }
+  return out;
+}
+const SCHEMATIC = new Set(['temple', 'porticoes', 'royalstoa', 'antonia', 'palace', 'sepulchre_byz', 'nea', 'phasael', 'wilson']);
+const PERIOD_STONE = { 1: ['ashlar', '#cfbb93'], 2: ['ashlar', '#d6c39b'], 3: ['ashlar', '#d6c39b'], 4: ['herodian', '#efe3cb'], 5: ['herodian', '#f2e8d5'], 6: ['ashlar', '#e3d6bb'], 7: ['ashlar', '#e8dcc2'], 8: ['ashlar', '#e2d3b4'], 9: ['ashlar', '#e2d3b4'], 11: ['ottoman', '#ffffff'] };
+// Construit un monument « réaliste » selon son type ; renvoie [objet, point d'étiquette] ou null.
+function buildModel(m, sh, now) {
+  const C = DATA.cubitMeters, at = m.anchor ? anchorXZ(m.anchor) : null;
+  switch (sh.type) {
+    case 'osm': { if (!TM) return null;
+      const sp = new THREE.Shape(TM.pts.map(([x, z]) => new THREE.Vector2(x, -z))), base = Math.min(...TM.pts.map(([x, z]) => ground(x, z))) - 2;
+      const g = new THREE.ExtrudeGeometry(sp, { depth: TM.top - base, bevelEnabled: false }); g.rotateX(-Math.PI / 2); g.translate(0, base, 0);
+      const o = new THREE.Mesh(g, [stone('paving', { tint: '#efe6d4' }), stone(period >= 11 ? 'ashlar' : 'herodian', { tint: '#f1e7d3' })]);
+      return [o, [TM.cx, TM.top + 10, TM.cz]]; }
+    case 'temple': { if (!TM) return null; const P = outlinePts('Dome of the Rock'), c = P ? centroid(P) : at; if (!c) return null;
+      const g = MD.temple(C); place(g, c[0], TM.top, c[1], TM.yaw); return [g, [c[0], TM.top + 58, c[1]]]; }
+    case 'porticoes': { if (!TM) return null; const g = new THREE.Group();
+      tmEdges().filter(e => !e.south).forEach(e => g.add(MD.portico(e.x1, e.z1, e.x2, e.z2, e.inward, TM.top, C)));
+      const e = tmEdges().find(e => e.north) || tmEdges()[0]; return [g, [(e.x1 + e.x2) / 2, TM.top + 20, (e.z1 + e.z2) / 2]]; }
+    case 'royalstoa': { if (!TM) return null; const e = tmEdges().filter(e => e.south).sort((a, b) => b.L - a.L)[0]; if (!e) return null;
+      const g = MD.royalStoa(e.x1, e.z1, e.x2, e.z2, e.inward, TM.top); return [g, [(e.x1 + e.x2) / 2 + e.inward[0] * 18, TM.top + 38, (e.z1 + e.z2) / 2 + e.inward[1] * 18]]; }
+    case 'robinson': { if (!TM) return null; const sw = tmCorner('SW'); if (!sw) return null; const n = [-TM.south[0], -TM.south[1]];
+      const x = sw[0] + n[0] * 19.6, z = sw[1] + n[1] * 19.6, street = ground(x - TM.east[0] * 12, z - TM.east[1] * 12);
+      // après 70 : seul le départ de l'arc subsiste (vestige visible aujourd'hui)
+      const g = now ? MD.robinsonArch(0, Math.max(10, TM.top - street)) : MD.box(3, 2.5, 15.2, stone('herodian'), -1.5, Math.max(10, TM.top - street) - 6, 0); place(g, x, street, z, TM.yaw); return [g, [x - TM.east[0] * 10, TM.top + 8, z]]; }
+    case 'wilson': { if (!TM || !at) return null; const w0 = nearestOnTM(at), street = ground(w0[0] - TM.east[0] * 25, w0[1] - TM.east[1] * 25);
+      const g = MD.wilsonBridge(TM.top - street, 0, 40); place(g, w0[0], street, w0[1], TM.yaw); return [g, [at[0] - TM.east[0] * 20, TM.top + 8, at[1] - TM.east[1] * 20]]; }
+    case 'hulda': case 'steps': { if (!TM || !at) return null; const e = tmEdges().filter(e => e.south).sort((a, b) => b.L - a.L)[0]; if (!e) return null;
+      const ux = (e.x2 - e.x1) / e.L, uz = (e.z2 - e.z1) / e.L, sgn = ux * TM.east[0] + uz * TM.east[1] > 0 ? 1 : -1, ex = ux * sgn, ez = uz * sgn;
+      const s = (at[0] - e.x1) * ux + (at[1] - e.z1) * uz, px = e.x1 + ux * s - e.inward[0] * 0.6, pz = e.z1 + uz * s - e.inward[1] * 0.6, yaw = -Math.atan2(ez, ex);
+      if (sh.type === 'hulda') { const g = MD.huldaGates(ground(px, pz), 70); place(g, px, 0, pz, yaw); return [g, [px, ground(px, pz) + 18, pz]]; }
+      const dx = px - ex * 35, dz = pz - ez * 35, g = MD.southernSteps(64, 20, 6); place(g, dx, ground(dx, dz) - 1, dz, yaw); return [g, [dx, ground(dx, dz) + 10, dz - e.inward[1] * 10]]; }
+    case 'antonia': { if (!at || !TM) return null;
+      // repère Wikidata, puis recul vers le nord jusqu'au bord nord de l'esplanade (la forteresse la jouxtait sans la recouvrir)
+      const e = tmEdges().filter(e => e.north).sort((a, b) => b.L - a.L)[0]; let c = at;
+      if (e) { const d = (at[0] - e.x1) * e.inward[0] + (at[1] - e.z1) * e.inward[1]; if (d > -21) c = [at[0] - e.inward[0] * (d + 21), at[1] - e.inward[1] * (d + 21)]; }
+      const g = MD.antonia(C, 112, 40); place(g, c[0], ground(c[0], c[1]), c[1], TM.yaw); return [g, [c[0], ground(...c) + 42, c[1]]]; }
+    case 'phasael': { if (!at) return null; const g = now ? MD.phasael(C) : MD.box(40 * C, 20, 40 * C, stone('herodian')); place(g, at[0], ground(at[0], at[1]) - 1, at[1], TM ? TM.yaw : 0); return [g, [at[0], ground(...at) + 52, at[1]]]; }
+    case 'palace': { const t0 = anchorXZ('tower_of_david'); if (!t0) return null; const s = TM ? TM.south : [0, 1], cx = t0[0] + s[0] * 165, cz = t0[1] + s[1] * 165;
+      const g = MD.herodPalace(300, 55, 5); place(g, cx, ground(cx, cz) - 1, cz, TM ? TM.yaw : 0); return [g, [cx, ground(cx, cz) + 26, cz]]; }
+    case 'sepulchre_byz': { const P = outlinePts('Church of the Holy Sepulchre'); const c = P ? centroid(P) : at; if (!c) return null; const e = TM ? TM.east : [1, 0], yaw = TM ? TM.yaw : 0, g = new THREE.Group();
+      const rot = MD.rotunda(35, 14); rot.position.set(-30, 0, 0); g.add(rot);
+      const bas = MD.basilica(58, 40, 20, { apse: false }); bas.position.set(35, 0, 0); g.add(bas);
+      g.add(MD.box(22, 0.3, 40, stone('paving'), 4, 0, 0)); g.add(MD.box(26, 0.3, 40, stone('paving'), 77, 0, 0)); // cour à portiques et atrium (schématiques)
+      place(g, c[0], ground(c[0], c[1]) - 0.5, c[1], yaw); return [g, [c[0], ground(...c) + 30, c[1]]]; }
+    case 'sepulchre': { const P = outlinePts('Church of the Holy Sepulchre'); if (!P) return null; const c = centroid(P), e = TM ? TM.east : [1, 0];
+      const rel = P.map(([x, z]) => [x - c[0], z - c[1]]);
+      const g = MD.footprintBuilding(rel, 17, 'ashlar', [{ x: -e[0] * 24, z: -e[1] * 24, r: 10.5, mat: lead(), drum: 6, squash: 0.95 }, { x: e[0] * 6, z: e[1] * 6, r: 5.5, mat: lead(), drum: 6 }]);
+      place(g, c[0], Math.min(...P.map(p => ground(...p))) - 0.5, c[1], 0); return [g, [c[0], ground(...c) + 40, c[1]]]; }
+    case 'nea': { if (!at) return null; const g = MD.basilica(100, 52, 24, { apse: true, atrium: 30 }); place(g, at[0], ground(at[0], at[1]) - 0.5, at[1], TM ? TM.yaw : 0); return [g, [at[0], ground(...at) + 34, at[1]]]; }
+    case 'cardo': { const pts = (sh.via || []).map(wpt).filter(Boolean); if (pts.length < 2) return null; const g = now ? MD.cardo(pts, ground) : MD.cardo(pts, ground, { paveOnly: true }); const c = pts[Math.floor(pts.length / 2)]; return [g, [c[0], ground(...c) + 16, c[1]]]; }
+    case 'domerock': { const P = outlinePts('Dome of the Rock'); if (!P || !TM) return null; const g = MD.domeOfRock(P, sh.h || 34, period >= 11); g.position.y = TM.top; const c = centroid(P); return [g, [c[0], TM.top + 44, c[1]]]; }
+    case 'aqsa': { const P = outlinePts('Al-Aqsa Mosque'); if (!P || !TM) return null; const c = centroid(P), rel = P.map(([x, z]) => [x - c[0], z - c[1]]), s = TM.south;
+      const ext = Math.max(...rel.map(([x, z]) => x * s[0] + z * s[1])), dd = ext - 14; // coupole près de l'extrémité sud (côté qibla)
+      const g = MD.footprintBuilding(rel, 12, 'ashlar', [{ x: s[0] * dd, z: s[1] * dd, r: 7.5, mat: lead(), drum: 5 }], { roof: lead(), tint: '#efe4cc' }); place(g, c[0], TM.top, c[1], 0); return [g, [c[0], TM.top + 32, c[1]]]; }
+  }
+  return null;
+}
 function rebuildScene() {
-  if (!world) return; clearWorld(); styleCity();
+  if (!world) return; clearWorld(); TM = tmFrame(); styleCity();
   const C = DATA.certainty, stackAt = {};
+  const lab = (m, top, now, color) => { const k = top.map(v => Math.round(v / 25)).join(','); stackAt[k] = (stackAt[k] || 0) + 1; label(m, top[0], top[1], top[2], now, stackAt[k] - 1, color); };
   if (compare) {
-    // Toutes les murailles de toutes les époques, chacune avec sa couleur, légèrement décalées en hauteur pour rester lisibles.
-    const tmS = shapeByName('Temple Mount'); if (tmS) { const f = frameOf(tmS), sp = new THREE.Shape(f.P.map(([x, z]) => new THREE.Vector2(x, -z))), g = new THREE.ExtrudeGeometry(sp, { depth: 3, bevelEnabled: false }); g.rotateX(-Math.PI / 2); g.translate(0, ground(f.cx, f.cz), 0); const o = new THREE.Mesh(g, mat('#d9c9a3')); o.receiveShadow = true; world.add(o); }
-    DATA.monuments.filter(m => m.wall && !hiddenWalls.has(m.id)).forEach((m, i) => {
+    if (TM) { const sp = new THREE.Shape(TM.pts.map(([x, z]) => new THREE.Vector2(x, -z))), g = new THREE.ExtrudeGeometry(sp, { depth: 3, bevelEnabled: false }); g.rotateX(-Math.PI / 2); g.translate(0, TM.top - 3, 0); const o = new THREE.Mesh(g, stone('paving')); o.receiveShadow = true; world.add(o); }
+    DATA.monuments.filter(m => m.wall && !hiddenWalls.has(m.id)).forEach(m => {
       const lines = wallLines(m); if (!lines.length) return;
-      const op = m.certainty === 'hypothesis' ? { transparent: true, opacity: 0.75 } : null;
-      add(wallMesh(lines, 4 + m.from * 0.9, 5, m.shape.color, op), m, true);
-      const c = lineMid(lines); if (c) { const k = c.map(v => Math.round(v / 40)).join(','); stackAt[k] = (stackAt[k] || 0) + 1; label(m, c[0], ground(c[0], c[1]) + 14 + m.from, c[1], true, stackAt[k] - 1, m.shape.color); }
+      add(wallMesh(lines, 4 + m.from * 0.9, 5, flat(m.shape.color, m.certainty === 'hypothesis' ? { transparent: true, opacity: 0.8 } : {})), m, true, false);
+      const c = lineMid(lines); if (c) lab(m, [c[0], ground(c[0], c[1]) + 14 + m.from, c[1]], true, m.shape.color);
     });
     updateLabelSel(); return;
   }
-  // tracé actuel des murailles (référence, en pointillé)
-  const walls = (GEO.shapes || []).filter(s => s.kind === 'wall');
   if (showToday && !DATA.monuments.some(m => inPeriod(m) && m.wall && (m.shape.parts || []).some(p => p.osm))) {
-    const pts = []; walls.forEach(s => { for (let i = 1; i < s.pts.length; i++) { const [x1, z1] = toXZ(...s.pts[i - 1]), [x2, z2] = toXZ(...s.pts[i]); pts.push(x1, ground(x1, z1) + 3, z1, x2, ground(x2, z2) + 3, z2); } });
+    const pts = []; (GEO.shapes || []).filter(s => s.kind === 'wall').forEach(s => { for (let i = 1; i < s.pts.length; i++) { const [x1, z1] = toXZ(...s.pts[i - 1]), [x2, z2] = toXZ(...s.pts[i]); pts.push(x1, ground(x1, z1) + 1.5, z1, x2, ground(x2, z2) + 1.5, z2); } });
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
-    const l = new THREE.LineSegments(g, new THREE.LineDashedMaterial({ color: '#ffffff', dashSize: 8, gapSize: 6 })); l.computeLineDistances(); world.add(l);
+    const l = new THREE.LineSegments(g, new THREE.LineDashedMaterial({ color: '#ffffff', dashSize: 8, gapSize: 6, transparent: true, opacity: 0.85 })); l.computeLineDistances(); world.add(l);
   }
-  const tm = shapeByName('Temple Mount'), TMF = tm ? frameOf(tm) : null;
   for (const m of DATA.monuments.filter(inPeriod)) {
-    const now = isNow(m), color = now ? C[m.certainty].color : '#c9ccd6', glass = { transparent: m.certainty !== 'attested', opacity: m.certainty === 'hypothesis' ? 0.55 : 0.8 };
+    const now = isNow(m), color = now ? C[m.certainty].color : '#bdb5a6';
     let sh = m.shape || {}, at = m.anchor ? anchorXZ(m.anchor) : null, top = null;
     if (sh.type === 'none') continue;
     if (sh.type === 'wallline') {
       const lines = wallLines(m); if (!lines.length) continue;
-      const op = m.certainty === 'hypothesis' ? { transparent: true, opacity: 0.6 } : m.certainty === 'reconstruction' ? { transparent: true, opacity: 0.88 } : null;
-      add(wallMesh(lines, sh.h || 10, m.certainty === 'attested' ? 3.5 : 4.5, now ? sh.color : '#c9ccd6', op), m, now);
-      const c = lineMid(lines); if (c) top = [c[0], ground(c[0], c[1]) + (sh.h || 10) + 10, c[1]];
-      if (top) { const k = top.map(v => Math.round(v / 25)).join(','); stackAt[k] = (stackAt[k] || 0) + 1; label(m, top[0], top[1], top[2], now, stackAt[k] - 1, now ? sh.color : null); }
+      const [kind, tint] = PERIOD_STONE[m.from] || ['ashlar', '#e5d8bd'], ott = m.from >= 11, thick = ott ? 2.6 : m.from === 2 ? 7 : 4.2, h = sh.h || 10;
+      const g = new THREE.Group(); g.add(wallMesh(lines, h, thick, stone(kind, { tint })));
+      if (ott || m.from >= 4) g.add(MD.crenels(lines, (x1, z1, x2, z2) => Math.min(ground(x1, z1), ground(x2, z2), ground((x1 + x2) / 2, (z1 + z2) / 2)) + h, stone(kind, { tint }), { d: Math.min(thick, 2.6) }));
+      add(g, m, now);
+      const c = lineMid(lines); if (c) lab(m, [c[0], ground(c[0], c[1]) + h + 10, c[1]], now, now ? sh.color : null);
       continue;
     }
-    if (sh.type === 'osm' && tm) {
-      const f = TMF, s = new THREE.Shape(f.P.map(([x, z]) => new THREE.Vector2(x, -z)));
-      const base = Math.min(...f.P.map(([x, z]) => ground(x, z))), topY = ground(f.cx, f.cz) + sh.h * 0.4;
-      const g = new THREE.ExtrudeGeometry(s, { depth: Math.max(4, topY - base), bevelEnabled: false }); g.rotateX(-Math.PI / 2); g.translate(0, base, 0);
-      add(new THREE.Mesh(g, mat(now ? '#d9c9a3' : '#cfc7b4')), m, now); top = [f.cx, topY + 8, f.cz];
-      if (now) { const e = new THREE.LineSegments(new THREE.EdgesGeometry(g, 30), new THREE.LineBasicMaterial({ color })); world.add(e); }
-    } else if (sh.type === 'osmwalls') {
-      const inst = []; walls.forEach(s => { for (let i = 1; i < s.pts.length; i++) inst.push([toXZ(...s.pts[i - 1]), toXZ(...s.pts[i])]); });
-      const im = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), mat(color), inst.length), M4 = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0);
-      inst.forEach(([[x1, z1], [x2, z2]], i) => { const len = Math.hypot(x2 - x1, z2 - z1), mx = (x1 + x2) / 2, mz = (z1 + z2) / 2, gy = Math.min(ground(x1, z1), ground(x2, z2));
-        q.setFromAxisAngle(up, -Math.atan2(z2 - z1, x2 - x1)); M4.compose(new THREE.Vector3(mx, gy + sh.h / 2, mz), q, new THREE.Vector3(len + 1.5, sh.h, 3.5)); im.setMatrixAt(i, M4); });
-      add(im, m, now);
-      const jg = anchorXZ('jaffa_gate'); if (jg) top = [jg[0], ground(...jg) + 30, jg[1] + 40];
-    } else if (sh.type === 'osmfoot' && shapeByName(sh.match)) {
-      const f = frameOf(shapeByName(sh.match)), sp = new THREE.Shape(f.P.map(([x, z]) => new THREE.Vector2(x, -z)));
-      const y = TMF && sh.match !== 'Church of the Holy Sepulchre' ? tmTop(TMF) : Math.min(...f.P.map(([x, z]) => ground(x, z)));
-      const g = new THREE.ExtrudeGeometry(sp, { depth: sh.h, bevelEnabled: false }); g.rotateX(-Math.PI / 2); g.translate(0, y, 0);
-      add(new THREE.Mesh(g, mat(color)), m, now); top = [f.cx, y + sh.h + 8, f.cz];
-    } else if (sh.type === 'edge' && TMF) {
-      const f = TMF, len = f.vmax - f.vmin, cx = f.cx + f.ux * (f.umax - sh.w / 2) + f.vx * (f.vmin + f.vmax) / 2, cz = f.cz + f.uz * (f.umax - sh.w / 2) + f.vz * (f.vmin + f.vmax) / 2;
-      const y = ground(f.cx, f.cz) + 4, o = box(len * 0.92, sh.h, sh.w, color, cx, y, cz, f.rotY + Math.PI / 2, glass); add(o, m, now); top = [cx, y + sh.h + 6, cz];
-    } else if (at) {
-      let [x, z] = at; const gy = ground(x, z), rot = (sh.alignTo && TMF) ? TMF.rotY : 0;
-      if (sh.type === 'marker' || sh.type === 'osmfoot') { const o = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 22, 10), mat(color)); o.position.set(x, gy + 11, z); add(o, m, now); const s = new THREE.Mesh(new THREE.SphereGeometry(6, 14, 10), mat(color)); s.position.set(x, gy + 25, z); add(s, m, now); top = [x, gy + 32, z]; }
-      else if (sh.type === 'gate') { add(box(14, 13, 14, color, x, gy, z), m, now); top = [x, gy + 20, z]; }
+    const built = buildModel(m, sh, now);
+    if (built) { add(built[0], m, now); top = built[1]; }
+    else if (at) {
+      const [x, z] = at, gy = ground(x, z);
+      if (sh.type === 'gate') { const g = new THREE.Group(), st = stone('ottoman'); g.add(MD.box(16, 14, 10, st)); g.add(MD.box(4.5, 7, 10.4, flat('#1b140d'), 0, 0, 0)); g.add(MD.merlons(-8, -5, 8, -5, 14, st)); g.add(MD.merlons(-8, 5, 8, 5, 14, st)); add(place(g, x, gy - 0.5, z, nearestWallYaw(x, z)), m, now); top = [x, gy + 22, z]; }
       else if (sh.type === 'tower' || sh.type === 'block' || sh.type === 'fortress') {
-        const w = cub(sh.w, sh.unit), d = cub(sh.d, sh.unit), h = sh.unit === 'm_cubit' ? sh.h * DATA.cubitMeters : cub(sh.h, sh.unit);
-        const y = sh.alignTo === 'temple_mount' && TMF ? tmTop(TMF) : gy;
-        add(box(w, h, d, color, x, y, z, rot, m.certainty === 'attested' ? null : glass), m, now); top = [x, y + h + 6, z];
-      } else if (sh.type === 'wall') { add(box(sh.len, sh.h, sh.w, color, x, gy, z, 0), m, now); top = [x, gy + sh.h + 8, z]; }
-      else if (sh.type === 'platform') {
-        const from = anchorXZ(sh.fromAnchor) || at, cx = from[0], cz = from[1] + sh.d / 2 + 15;
-        add(box(sh.w, sh.h, sh.d, color, cx, ground(cx, cz), cz, 0, glass), m, now); top = [cx, ground(cx, cz) + sh.h + 10, cz];
-      } else if (sh.type === 'dome') {
-        const dsh = sh.match && shapeByName(sh.match); if (dsh) { const f = frameOf(dsh); x = f.cx; z = f.cz; sh = Object.assign({}, sh, { r: Math.max(f.umax - f.umin, f.vmax - f.vmin) / 2 }); }
-        const y = TMF ? tmTop(TMF) : gy, o = new THREE.Mesh(new THREE.CylinderGeometry(sh.r, sh.r, sh.h * 0.45, 8), mat(color)); o.position.set(x, y + sh.h * 0.225, z); add(o, m, now);
-        const dm = new THREE.Mesh(new THREE.SphereGeometry(sh.r * 0.42, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), mat(now ? '#e8c45a' : '#c9ccd6')); dm.position.set(x, y + sh.h * 0.45 + sh.h * 0.12, z); dm.scale.y = 1.3; add(dm, m, now);
-        const dr = new THREE.Mesh(new THREE.CylinderGeometry(sh.r * 0.42, sh.r * 0.42, sh.h * 0.12, 16), mat(color)); dr.position.set(x, y + sh.h * 0.51, z); add(dr, m, now); top = [x, y + sh.h + 8, z];
+        const w = cub(sh.w, sh.unit), d = cub(sh.d, sh.unit), h = sh.unit === 'm_cubit' ? sh.h * C : cub(sh.h, sh.unit);
+        add(MD.box(w, h, d, stone('limestone'), x, gy, z), m, now, 'plain'); top = [x, gy + h + 6, z];
+      } else if (sh.type === 'wall') { const o = MD.box(sh.len, sh.h, sh.w, stone('ashlar', { tint: '#d6c39b' }), x, gy - 1, z); add(o, m, now, 'plain'); top = [x, gy + sh.h + 8, z]; }
+      else { // repère : borne fine de la couleur de certitude
+        const g = new THREE.Group(); g.add(new THREE.Mesh(new THREE.CylinderGeometry(0.9, 1.4, 16, 10), flat(color))); g.children[0].position.y = 8;
+        const s = new THREE.Mesh(new THREE.SphereGeometry(3, 16, 12), flat(color, { emissive: color, emissiveIntensity: 0.25 })); s.position.y = 18; g.add(s);
+        add(place(g, x, gy, z), m, now, false); top = [x, gy + 24, z];
       }
     }
-    if (top) { const k = top.map(v => Math.round(v / 25)).join(','); stackAt[k] = (stackAt[k] || 0) + 1; label(m, top[0], top[1], top[2], now, stackAt[k] - 1); }
+    if (top) lab(m, top, now);
   }
   updateLabelSel();
 }
+function nearestWallYaw(x, z) { let best = 0, bd = Infinity; (GEO.shapes || []).filter(s => s.kind === 'wall').forEach(s => { for (let i = 1; i < s.pts.length; i++) { const [x1, z1] = toXZ(...s.pts[i - 1]), [x2, z2] = toXZ(...s.pts[i]), d = Math.hypot((x1 + x2) / 2 - x, (z1 + z2) / 2 - z); if (d < bd) { bd = d; best = -Math.atan2(z2 - z1, x2 - x1); } } }); return best; }
+
+// ---------- mode cinéma : survol guidé + enregistrement vidéo ----------
+// Plans : vue d'ensemble, puis orbite lente autour de chaque monument modélisé de la période, avec sous-titre.
+const CINE_ORDER = ['jerusalem_second_temple', 'jerusalem_temple_mount', 'jerusalem_royal_stoa', 'jerusalem_porticoes', 'jerusalem_robinsons_arch', 'jerusalem_wilsons_arch', 'jerusalem_antonia', 'jerusalem_phasael', 'jerusalem_herod_palace', 'jerusalem_dome_of_the_rock', 'jerusalem_al_aqsa', 'jerusalem_holy_sepulchre_byz', 'jerusalem_holy_sepulchre_crusader', 'jerusalem_nea', 'jerusalem_cardo', 'jerusalem_hadrian_arch', 'jerusalem_damascus_gate', 'jerusalem_broad_wall', 'jerusalem_gihon_fortress', 'jerusalem_siloam_pool'];
+let cine = null, rec = null;
+function startCinema(record) {
+  if (mode2d) setMode2d(false); $('sheet').classList.remove('open');
+  // monuments modélisés visibles à cette période (y compris ceux bâtis plus tôt et encore debout), puis portes et murailles de l'époque
+  const ids = CINE_ORDER.filter(id => { const m = DATA.monuments.find(x => x.id === id); return m && inPeriod(m) && !boundsOf(id).isEmpty(); });
+  DATA.monuments.filter(m => isNow(m) && (m.shape || {}).type === 'gate').slice(0, 2).forEach(m => ids.push(m.id));
+  DATA.monuments.filter(m => isNow(m) && m.wall).slice(0, 1).forEach(m => ids.push(m.id));
+  const shots = [{ type: 'wide', dur: 7000 }, ...ids.slice(0, 9).map(id => ({ type: 'orbit', id, dur: 7500 }))];
+  cine = { shots, i: -1, t0: 0 }; document.body.classList.add('cinema'); styleCity(); nextShot();
+  if (record) startRecording();
+}
+function stopCinema() { if (!cine) return; cine = null; document.body.classList.remove('cinema'); $('caption').classList.remove('on'); styleCity(); if (rec) stopRecording(); homeView(true); }
+function nextShot() {
+  if (!cine) return; cine.i++; if (cine.i >= cine.shots.length) { stopCinema(); return; }
+  const s = cine.shots[cine.i], p = DATA.periods.find(x => x.n === period); cine.t0 = performance.now(); tw = null;
+  if (s.type === 'wide') { s.c = controls.target.clone(); homeView(false); s.c = controls.target.clone(); s.r = camera.position.distanceTo(s.c); s.a0 = Math.atan2(camera.position.z - s.c.z, camera.position.x - s.c.x); s.h = camera.position.y - s.c.y; setCaption(t('title'), tx(p.name) + ' · ' + tx(p.dates)); }
+  else { const m = DATA.monuments.find(x => x.id === s.id), b = boundsOf(s.id), size = b.getSize(new THREE.Vector3()); s.c = b.getCenter(new THREE.Vector3()); s.c.y = b.min.y + size.y * 0.35;
+    s.r = Math.max(70, Math.max(size.x, size.z) * 1.25 + size.y); s.h = Math.max(30, s.r * 0.42); s.a0 = Math.PI * 0.55 + cine.i * 0.9;
+    setCaption(tx(m.name), tx(DATA.periods.find(x => x.n === m.from).dates) + ' · ' + tx(DATA.certainty[m.certainty].name)); }
+}
+function setCaption(a, b) { const c = $('caption'); c.innerHTML = `<b>${esc(a)}</b><small>${esc(b)}</small>`; c.classList.remove('on'); void c.offsetWidth; c.classList.add('on'); cine && (cine.capA = a, cine.capB = b); }
+function cineFrame(now) {
+  const s = cine.shots[cine.i], k = Math.min(1, (now - cine.t0) / s.dur), ease = k * k * (3 - 2 * k);
+  const a = s.a0 + (s.type === 'wide' ? 0.35 : 0.75) * ease, r = s.r * (s.type === 'wide' ? 1 - 0.12 * ease : 1 - 0.18 * ease);
+  camera.position.set(s.c.x + Math.cos(a) * r * (s.type === 'wide' ? 1 : 1), s.c.y + s.h * (1 - 0.15 * ease), s.c.z + Math.sin(a) * r); controls.target.copy(s.c); camera.lookAt(s.c);
+  $('fade').style.opacity = k < 0.08 ? String(1 - k / 0.08) : k > 0.93 ? String((k - 0.93) / 0.07) : '0';
+  if (k >= 1) nextShot();
+}
+// Enregistrement : composition (image 3D + sous-titres) dans un canvas 2D, capturé en WebM.
+let recCanvas = null, recCtx = null;
+function startRecording() {
+  if (!window.MediaRecorder || !HTMLCanvasElement.prototype.captureStream) { alert(t('noRec')); return; }
+  const src = renderer.domElement; recCanvas = document.createElement('canvas'); recCanvas.width = src.width; recCanvas.height = src.height; recCtx = recCanvas.getContext('2d');
+  const stream = recCanvas.captureStream(30), types = ['video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'], type = types.find(x => MediaRecorder.isTypeSupported(x)) || '';
+  const chunks = []; rec = new MediaRecorder(stream, { mimeType: type, videoBitsPerSecond: 16e6 });
+  rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+  rec.onstop = () => { const blob = new Blob(chunks, { type: 'video/webm' }), a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'jerusalem-' + (DATA.periods.find(x => x.n === period).id) + '.webm'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000); };
+  rec.start(500); $('bRec').setAttribute('aria-pressed', 'true');
+}
+function stopRecording() { if (rec && rec.state !== 'inactive') rec.stop(); rec = null; $('bRec').setAttribute('aria-pressed', 'false'); }
+function drawRecFrame() {
+  if (!recCtx) return; const W = recCanvas.width, H = recCanvas.height; recCtx.drawImage(renderer.domElement, 0, 0, W, H);
+  const f = Number($('fade').style.opacity || 0); if (f > 0) { recCtx.fillStyle = `rgba(0,0,0,${f})`; recCtx.fillRect(0, 0, W, H); }
+  if (cine && cine.capA) { const s = H / 1080; recCtx.save(); recCtx.direction = lang === 'he' ? 'rtl' : 'ltr'; recCtx.textAlign = 'center';
+    const g = recCtx.createLinearGradient(0, H * 0.72, 0, H); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,0.65)'); recCtx.fillStyle = g; recCtx.fillRect(0, H * 0.72, W, H * 0.28);
+    recCtx.fillStyle = '#fff'; recCtx.font = `800 ${Math.round(64 * s)}px system-ui, 'Arial Hebrew', Arial`; recCtx.fillText(cine.capA, W / 2, H * 0.88);
+    recCtx.fillStyle = '#ffd878'; recCtx.font = `600 ${Math.round(34 * s)}px system-ui, 'Arial Hebrew', Arial`; recCtx.fillText(cine.capB, W / 2, H * 0.94); recCtx.restore(); }
+}
+
 const vtmp = new THREE.Vector3();
+let paused = false;
+function frame() { if (composer) composer.render(); else renderer.render(scene, camera); }
+// Image fixe (pour une capture d'écran HD ou une diapositive) : rendu immédiat puis lecture du canevas.
+function snapshot() { if (!renderer || mode2d) return null; controls.update(); followSun(); frame(); return renderer.domElement.toDataURL('image/png'); }
+function followSun() {
+  const tg = controls.target; sun.target.position.copy(tg); sun.position.copy(tg).add(sky.material.uniforms.sunPosition.value.clone().multiplyScalar(2500)); sun.target.updateMatrixWorld();
+  const span = THREE.MathUtils.clamp(camera.position.distanceTo(tg) * 0.9, 250, 1400), sc = sun.shadow.camera; if (Math.abs(sc.right - span) > 20) { sc.left = -span; sc.right = span; sc.top = span; sc.bottom = -span; sc.updateProjectionMatrix(); }
+}
 function loop() {
   raf = requestAnimationFrame(loop);
-  if (tw) { const k = Math.min(1, (performance.now() - tw.t0) / tw.dur), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2; camera.position.lerpVectors(tw.e0, tw.e1, e); controls.target.lerpVectors(tw.t0v, tw.t1, e); if (k >= 1) tw = null; }
+  if (paused) return;
+  const now = performance.now();
+  if (cine) cineFrame(now);
+  else if (tw) { const k = Math.min(1, (now - tw.t0) / tw.dur), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2; camera.position.lerpVectors(tw.e0, tw.e1, e); controls.target.lerpVectors(tw.t0v, tw.t1, e); if (k >= 1) tw = null; }
   if (mode2d) return;
-  controls.update(); renderer.render(scene, camera);
-  const w = innerWidth, h = innerHeight;
-  for (const l of labels) {
+  if (!cine) controls.update();
+  followSun(); // l'ombre suit la zone regardée (cadrage serré = ombres nettes)
+  frame();
+  if (!document.body.dataset.ready) document.body.dataset.ready = '1'; // première image affichée (shaders compilés)
+  if (rec) drawRecFrame();
+  // brume proportionnée au cadrage : nette de près, profondeur de champ atmosphérique de loin
+  const cd = camera.position.distanceTo(controls.target); scene.fog.near = Math.max(900, cd * 1.3); scene.fog.far = Math.max(5000, cd * 5);
+  const w = innerWidth, h = innerHeight, taken = [];
+  // étiquettes sans chevauchement : priorité à la sélection, puis aux sites de la période, puis aux murailles, puis aux vestiges
+  const order = labels.slice().sort((a, b) => (b.id === selected) - (a.id === selected) || a.pr - b.pr);
+  for (const l of order) {
+    if (cine) { l.el.style.display = 'none'; continue; }
     vtmp.copy(l.p).project(camera);
-    const vis = vtmp.z < 1 && vtmp.x > -1.1 && vtmp.x < 1.1 && vtmp.y > -1.1 && vtmp.y < 1.1;
+    let vis = vtmp.z < 1 && vtmp.x > -1.1 && vtmp.x < 1.1 && vtmp.y > -1.1 && vtmp.y < 1.1;
+    const sx = (vtmp.x + 1) / 2 * w, sy = (1 - vtmp.y) / 2 * h - l.dy;
+    if (vis) { if (!l.w) { l.w = l.el.offsetWidth || 120; l.h = l.el.offsetHeight || 26; }
+      const r = [sx - l.w / 2 - 3, sy - l.h - 2, sx + l.w / 2 + 3, sy + 2];
+      if (l.id !== selected && taken.some(t => r[0] < t[2] && r[2] > t[0] && r[1] < t[3] && r[3] > t[1])) vis = false; else taken.push(r); }
     l.el.style.display = vis ? '' : 'none';
-    if (vis) l.el.style.transform = `translate(-50%,-100%) translate(${((vtmp.x + 1) / 2 * w).toFixed(1)}px,${((1 - vtmp.y) / 2 * h - l.dy).toFixed(1)}px)`, l.el.style.left = '0', l.el.style.top = '0';
+    if (vis) l.el.style.transform = `translate(-50%,-100%) translate(${sx.toFixed(1)}px,${sy.toFixed(1)}px)`, l.el.style.left = '0', l.el.style.top = '0';
   }
 }
 
@@ -429,16 +606,17 @@ function draw2d() {
     svg.innerHTML = P.join(''); return;
   }
   for (const m of DATA.monuments.filter(inPeriod)) {
-    const now = isNow(m), col = now ? C[m.certainty].color : '#c9ccd6', sh = m.shape || {};
+    const now = isNow(m), col = now ? C[m.certainty].color : '#bdb5a6', sh = m.shape || {};
     if (sh.type === 'wallline') { const lines = wallLines(m); if (!lines.length) continue; placed.add(m.id);
-      P.push(`<g data-id="${m.id}">${lines.map(L => pl(L, `stroke="${now ? sh.color : '#c9ccd6'}" stroke-width="${sw * 1.2}" stroke-linejoin="round" ${m.certainty === 'hypothesis' ? 'stroke-dasharray="18 10"' : ''}`)).join('')}</g>`);
+      P.push(`<g data-id="${m.id}">${lines.map(L => pl(L, `stroke="${now ? sh.color : '#bdb5a6'}" stroke-width="${sw * 1.2}" stroke-linejoin="round" ${m.certainty === 'hypothesis' ? 'stroke-dasharray="18 10"' : ''}`)).join('')}</g>`);
       const c = lineMid(lines); if (c && now) P.push(`<text data-id="${m.id}" x="${c[0].toFixed(1)}" y="${(c[1] - 14).toFixed(1)}" text-anchor="middle" font-size="${fs}" font-weight="800" fill="${sh.color}" stroke="#0b1230" stroke-width="${fs / 4.5}" paint-order="stroke">▬ ${esc(tx(m.name))}</text>`);
       continue; }
-    const foot = (sh.type === 'osmfoot' || sh.type === 'dome') && sh.match && shapeByName(sh.match);
+    const FOOT = { domerock: 'Dome of the Rock', aqsa: 'Al-Aqsa Mosque', sepulchre: 'Church of the Holy Sepulchre', sepulchre_byz: 'Church of the Holy Sepulchre' };
+    const foot = ((sh.type === 'osmfoot' || sh.type === 'dome') && sh.match && shapeByName(sh.match)) || (FOOT[sh.type] && shapeByName(FOOT[sh.type]));
     if (foot) P.push(`<g data-id="${m.id}">${poly(foot, `fill="${col}" fill-opacity=".8" stroke="#0b1230" stroke-width="2"`)}</g>`);
     if (sh.type === 'osm' && tm) { P.push(`<g data-id="${m.id}">${poly(tm, `fill="${now ? '#d9c9a3' : '#8f8a7c'}" stroke="${col}" stroke-width="3"`)}</g>`); continue; }
-    const at = sh.type === 'platform' ? (() => { const f = anchorXZ(sh.fromAnchor); return f ? [f[0], f[1] + sh.d / 2 + 15] : null; })() : (m.anchor ? anchorXZ(m.anchor) : (sh.type === 'edge' && tm ? (() => { const f = frameOf(tm); return [f.cx + f.ux * f.umax, f.cz + f.uz * f.umax]; })() : null));
-    if (!at || sh.type === 'none' || sh.type === 'osmwalls') continue;
+    const at = sh.type === 'platform' ? (() => { const f = anchorXZ(sh.fromAnchor); return f ? [f[0], f[1] + sh.d / 2 + 15] : null; })() : (m.anchor ? anchorXZ(m.anchor) : ((sh.type === 'edge' || sh.type === 'royalstoa') && tm ? (() => { const f = frameOf(tm); return [f.cx + f.ux * f.umax, f.cz + f.uz * f.umax]; })() : null));
+    if (!at || sh.type === 'none' || sh.type === 'osmwalls' || sh.type === 'porticoes') continue;
     placed.add(m.id);
     P.push(sh.type === 'platform' ? `<rect data-id="${m.id}" x="${at[0] - sh.w / 2}" y="${at[1] - sh.d / 2}" width="${sh.w}" height="${sh.d}" fill="${col}" fill-opacity=".45" stroke="${col}" stroke-width="2"/>`
       : `<circle data-id="${m.id}" cx="${at[0].toFixed(1)}" cy="${at[1].toFixed(1)}" r="${fs * 0.45}" fill="${col}" stroke="#0b1230" stroke-width="${fs / 7}"/>`);
@@ -468,7 +646,14 @@ $('plan2d').addEventListener('click', e => { const g = e.target.closest('[data-i
 window.MDJerusalem3D = {
   get quizEnabled() { return !!(DATA && DATA.quiz3dEnabled === true); },
   setPeriod(n) { period = n; renderPeriod(); },
-  flyTo, highlight, openSheet,
+  flyTo, highlight, openSheet, snapshot,
+  _bounds: id => { const b = boundsOf(id); return [b.min.toArray().map(Math.round), b.max.toArray().map(Math.round)]; }, _tm: () => TM && { top: TM.top, cx: TM.cx, cz: TM.cz, east: TM.east, south: TM.south },
+  // pause du rendu continu (captures sur machines lentes) ; viewAt place la caméra sans animation
+  pause(v) { paused = v !== false; },
+  // rotation de la caméra autour de la cible (degrés) — pour composer une vue (ex. façade est du Temple)
+  orbit(deg) { const t = controls.target, v = camera.position.clone().sub(t); v.applyAxisAngle(new THREE.Vector3(0, 1, 0), deg * Math.PI / 180); camera.position.copy(t).add(v); controls.update(); },
+  zoom(k) { const t = controls.target, v = camera.position.clone().sub(t).multiplyScalar(k); camera.position.copy(t).add(v); controls.update(); },
+  viewAt(id) { flyTo(id); if (tw) { camera.position.copy(tw.e1); controls.target.copy(tw.t1); tw = null; controls.update(); } highlight(null); },
   monument: id => DATA && DATA.monuments.find(m => m.id === id),
   // Pour une question « localisation » : appelle cb(id) au prochain toucher d'un monument.
   pickOnce(cb) { pickMode = true; const h = e => { pickMode = false; document.removeEventListener('mdj3d-pick', h); cb(e.detail); }; document.addEventListener('mdj3d-pick', h); }

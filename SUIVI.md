@@ -21,7 +21,7 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | Guide LIVE (micro + bus) | 🟡 | `admin.html` ; seul le parcours 67 est branché sur Supabase |
 | Idées / signalements élèves | ⛔ | exécuter `supabase/feedback.sql` une fois |
 | Bibliothèque communautaire | ⛔ | exécuter `supabase/community_quizzes.sql` et `community_documents.sql` |
-| **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 49 fiches, plan 2D, quiz 3D éteints (phase 2) |
+| **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 58 fiches, monuments modélisés en détail, mode cinéma + vidéo, plan 2D, quiz 3D éteints (phase 2) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
@@ -52,6 +52,18 @@ Objectif : rendre le jeu plus motivant et donner un vrai suivi de progression.
 - ✅ **Mode « 🧱 השוואת חומות »** : toutes les murailles de toutes les époques ensemble, en 3D et en 2D, avec cases pour en masquer.
 - ✅ Rendu 3D : murailles en volume qui suivent le relief, ombres portées, relief ombré et lissé, ciel en dégradé, bouton 🗺️ carte de fond OpenStreetMap drapée (non vérifiable dans l'environnement de test : tuiles bloquées), bâtiments actuels OSM récupérés au déploiement (`tools/build-jerusalem3d-buildings.mjs`), en fantôme pour les périodes anciennes.
 - ⏳ Reste : porte des Esséniens sans coordonnée propre ; tracé exact entre les points (plans publiés à géoréférencer) ; vérifier sur un vrai téléphone la carte de fond et les bâtiments.
+
+### 25 octobre 2026 (soir) — Jérusalem 3D « qualité télévision »
+Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants en 3D, rendu présentable à la télévision.
+- ✅ **Bibliothèque de modèles** `jerusalem3d/models.js` (dimensions tirées des sources, notées dans le code) : Second Temple d'après le traité Middot et Josèphe (cours, portes, porte de Nicanor, autel 32 coudées, sanctuaire 100 × 100 × 100, façade dorée, épis du toit) ; portiques doubles (Josèphe 5.190) ; Portique royal (Ant. 15.410–420) ; arc de Robinson ; arc de Wilson (15 m de large, Weizmann 2020) ; portes de Houlda et escaliers du sud (64 m, document « דוידסון ») ; Antonia ; Phasaël ; palais d'Hérode (schématique) ; rotonde + basilique byzantines du Saint-Sépulcre ; Néa ; Cardo ; Dôme du Rocher (octogone OSM réel, coupole dorée, faïence ottomane) ; al-Aqsa et Saint-Sépulcre actuel (emprises OSM réelles).
+- ✅ **Matériaux** `jerusalem3d/materials.js` : pierre hérodienne à marges ciselées, appareil ottoman, marbre, dallage, sol calcaire — textures générées dans la page, à l'échelle réelle (m).
+- ✅ **Rendu** : ciel physique + éclairage d'environnement, ombres 4096, occlusion ambiante (GTAO), anticrénelage (SMAA), relief réel (×1, plus d'exagération), horizon prolongé, brume selon le cadrage, étiquettes sans chevauchement. Bouton **HD/SD** (HD par défaut sur ordinateur, SD sur téléphone).
+- ✅ **🎬 Mode cinéma** : survol automatique de la période (vue d'ensemble puis orbite autour de chaque monument), sous-titres nom + dates + certitude, interface masquée. **⏺️ Enregistrement** : le même survol téléchargé en vidéo WebM (sous-titres incrustés).
+- ✅ **🎨** bascule matériaux réalistes / couleurs de certitude. Les hypothèses restent translucides. Fiches des modèles reconstitués : mention « 📐 dimensions d'après les sources ; détails reconstitués ».
+- ✅ Fiches nouvelles : portiques doubles, arc de Wilson (avec débat de datation). Antonia décalée pour jouxter l'esplanade sans la recouvrir (noté dans la fiche).
+- ✅ Tests : `tests/jerusalem3d.test.mjs` (7, dont résolution de tous les modules + cache hors ligne) ; `tests/jerusalem3d-browser.mjs` (22 vérifications sur téléphone, dont cinéma et vidéo). Captures HD 1920×1080 faites en rendu logiciel.
+- ⚠️ Non vérifiable ici : fluidité sur une vraie carte graphique / un vrai téléphone (l'environnement de test est un rendu logiciel lent), carte de fond et bâtiments OSM. **À tester sur l'ordinateur qui servira à l'émission** (HD) et sur un téléphone (SD).
+- ⏳ Reste : maisons de la ville ancienne non représentées (aucune donnée fiable — volontaire) ; Hippicus et Mariamne sans position ; phase 2 (quiz 3D) toujours interdite sans accord.
 
 ## 3. À faire / idées (par priorité)
 

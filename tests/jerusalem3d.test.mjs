@@ -79,3 +79,35 @@ test('wall lines per period: every waypoint is a known anchor, an esplanade corn
     }
   }
 });
+
+test('3D engine: every module import resolves to a vendored file that is also cached offline', async () => {
+  const { existsSync } = await import('node:fs');
+  const { resolve, dirname, relative } = await import('node:path');
+  const pub = new URL('../public/', import.meta.url).pathname, sw = await read('public/sw.js'), seen = new Set();
+  const html = await read('public/jerusalem3d.html');
+  assert.match(html, /"three\/addons\/":"\.\/vendor\/three\/jsm\/"/, 'import map : three/addons');
+  const walk = async f => {
+    if (seen.has(f)) return; seen.add(f);
+    assert.ok(existsSync(f), 'fichier manquant : ' + relative(pub, f));
+    assert.ok(sw.includes("'./" + relative(pub, f) + "'"), 'absent du cache hors ligne : ' + relative(pub, f));
+    const src = await readFile(f, 'utf8');
+    for (const m of src.matchAll(/from\s+['"]([^'"]+)['"]/g)) {
+      if (m[1] === 'three') continue;
+      await walk(m[1].startsWith('three/addons/') ? resolve(pub, 'vendor/three/jsm', m[1].slice(13)) : resolve(dirname(f), m[1]));
+    }
+  };
+  await walk(resolve(pub, 'jerusalem3d/app.js'));
+  assert.ok(seen.size >= 10);
+});
+
+test('detailed models are only used for sourced monuments and flagged as schematic where proportions are reconstructed', async () => {
+  const d = JSON.parse(await read('public/jerusalem3d/monuments.json'));
+  const app = await read('public/jerusalem3d/app.js');
+  const MODEL = ['temple', 'porticoes', 'royalstoa', 'robinson', 'wilson', 'hulda', 'steps', 'antonia', 'phasael', 'palace', 'sepulchre_byz', 'sepulchre', 'nea', 'cardo', 'domerock', 'aqsa'];
+  for (const t of MODEL) assert.ok(app.includes(`case '${t}'`), 'type de modèle non géré : ' + t);
+  for (const m of d.monuments.filter(m => MODEL.includes(m.shape.type))) {
+    assert.ok(m.sources.some(s => s.kind === 'drive' || s.kind === 'primary'), m.id + ' : modèle détaillé sans source Drive ni source antique');
+  }
+  assert.match(app, /SCHEMATIC = new Set\(\[/);
+  assert.ok(d.monuments.find(m => m.id === 'jerusalem_wilsons_arch').debate, 'arc de Wilson : datation débattue');
+});
