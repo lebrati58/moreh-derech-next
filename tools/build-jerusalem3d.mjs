@@ -59,6 +59,10 @@ way["historic"="citywalls"](${bb});
 way["barrier"="city_wall"](${bb});
 way["name:en"~"^(Temple Mount|Dome of the Rock|Church of the Holy Sepulchre|Al-Aqsa Mosque|Tower of David)$"](${bb});
 relation["name:en"~"^(Temple Mount|Church of the Holy Sepulchre|Al-Aqsa Mosque|Tower of David)$"](${bb});
+way["name:he"~"הר הבית"](${bb});
+relation["name:he"~"הר הבית"](${bb});
+way["name:en"~"Temple Mount|Haram|Noble Sanctuary|Al-Aqsa compound",i](${bb});
+relation["name:en"~"Temple Mount|Haram|Noble Sanctuary|Al-Aqsa compound",i](${bb});
 );out geom tags;`;
 let osm = null;
 for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']) {
@@ -76,7 +80,8 @@ const shapes = [];
 for (const el of (osm && osm.elements) || []) {
   const t = el.tags || {};
   const kind = (t.historic === 'citywalls' || t.barrier === 'city_wall') ? 'wall' : 'outline';
-  const name = t['name:en'] || t.name || '';
+  let name = t['name:en'] || t.name || '';
+  if (/הר הבית/.test(t['name:he'] || '') || /Temple Mount|Haram|Noble Sanctuary/i.test(t['name:en'] || '')) name = 'Temple Mount';
   if (el.type === 'way' && el.geometry) shapes.push({ kind, name, osm: 'way/' + el.id, pts: el.geometry.map(g => [round(g.lat), round(g.lon)]) });
   if (el.type === 'relation' && el.members) el.members.filter(m => m.role === 'outer' && m.geometry).forEach(m =>
     shapes.push({ kind, name, osm: 'relation/' + el.id, pts: m.geometry.map(g => [round(g.lat), round(g.lon)]) }));
