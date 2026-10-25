@@ -87,6 +87,7 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ⚠️ Le modèle représente **vers 30 apr. J.-C.** (pas 66) ; différences mineures sur l'esplanade. Leur relief n'est pas repris : petites différences possibles au pied des murs.
 - ⏳ Étapes suivantes proposées : C (fiches A/B/C/D détaillées en hébreu), D (trois tours, palais, villes haute et basse, à modéliser nous-mêmes), E (quiz — sur autorisation), F (optimisation, mesure sur Android réel).
 - ✅ **Accès plus facile à la 3D** : grande bannière dorée « 🏛️ ירושלים בתלת‑ממד » en haut de l'accueil (4 langues, avant les modes de jeu), bouton « 🏛️ תלת‑ממד » dans l'en-tête des parcours de Jérusalem (סיורים 11, 12, 13, 14, 18) ; en plus du panneau sur la carte. Testé sur téléphone simulé (accueil → 3D, parcours 12 → 3D, pas de bouton sur le parcours 04) ; test du suivi joueur toujours OK.
+- ✅ **Ville d'aujourd'hui en transparence** (demande de Lionel, anachronisme assumé et signalé dans la légende) : bâtiments OpenStreetMap à 36 % d'opacité dans toutes les périodes anciennes, pleins aux périodes ottomane et « aujourd'hui » ; les bâtiments de l'esplanade sont retirés de la ville fantôme. Corrigé au passage : un commentaire mal placé (audit du 25/10) avait désactivé la transparence. Vérifié avec des bâtiments d'essai (le vrai fichier n'est créé qu'au déploiement).
 
 ## 3. À faire / idées (par priorité)
 
