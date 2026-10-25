@@ -123,6 +123,25 @@ for (const el of (osm && osm.elements) || []) {
   if (el.type === 'relation' && el.members) el.members.filter(m => (m.role === 'outer' || m.role === '') && m.type === 'way' && m.geometry).forEach(m =>
     shapes.push({ kind, name, osm: 'relation/' + el.id, pts: m.geometry.map(g => [round(g.lat), round(g.lon)]) }));
 }
+// 2b. Vallées et cours d'eau (OSM : natural=valley = ligne de fond de vallée ; waterway = écoulement). Zone élargie.
+{
+  const bw = `${BOX.s - 0.01},${BOX.w - 0.01},${BOX.n + 0.01},${BOX.e + 0.01}`;
+  const qw = `[out:json][timeout:90];(way["natural"="valley"](${bw});relation["natural"="valley"](${bw});way["waterway"](${bw});way["natural"="spring"](${bw});node["natural"="spring"](${bw}););out geom tags;`;
+  let wj = null;
+  for (let round = 0; round < 3 && !wj; round++) for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']) {
+    try { const r = await fetch(ep + '?data=' + encodeURIComponent(qw), { headers: { 'User-Agent': UA, Accept: 'application/json' } }); if (!r.ok) { log('EAU HTTP', r.status, ep); await sleep(4000); continue; } wj = await r.json(); log('EAU', ep, 'OK', (wj.elements || []).length, 'éléments'); break; }
+    catch (e) { log('EAU erreur', ep, e.message); }
+  }
+  for (const el of (wj && wj.elements) || []) {
+    const t = el.tags || {}, kind = t.natural === 'valley' ? 'valley' : t.waterway ? 'waterway' : 'spring';
+    const name = t['name:en'] || t.name || '', he = t['name:he'] || '';
+    log('EAUEL', el.type + '/' + el.id, kind, t.waterway || '', name, he, t.intermittent || '', t.tunnel || '');
+    const meta = { kind, name, he, osm: el.type + '/' + el.id, waterway: t.waterway || null, intermittent: t.intermittent || null, tunnel: t.tunnel || null };
+    if (el.type === 'node') shapes.push(Object.assign(meta, { pts: [[round(el.lat), round(el.lon)]] }));
+    if (el.type === 'way' && el.geometry) shapes.push(Object.assign(meta, { pts: el.geometry.map(g => [round(g.lat), round(g.lon)]) }));
+    if (el.type === 'relation' && el.members) el.members.filter(m => m.type === 'way' && m.geometry).forEach(m => shapes.push(Object.assign({}, meta, { pts: m.geometry.map(g => [round(g.lat), round(g.lon)]) })));
+  }
+}
 (osm && osm.elements || []).filter(e => !(e.tags && (e.tags.historic === 'citywalls' || e.tags.barrier === 'city_wall'))).forEach(e => log('OSMEL', e.type + '/' + e.id, (e.tags && (e.tags['name:en'] || e.tags.name)) || '', (e.tags && (e.tags.landuse || e.tags.amenity || e.tags.building || e.tags.historic)) || ''));
 log('OSM :', shapes.filter(s => s.kind === 'wall').length, 'segments de muraille,', shapes.filter(s => s.kind === 'outline').length, 'contours');
 
