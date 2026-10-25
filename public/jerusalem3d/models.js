@@ -34,10 +34,13 @@ export function merlons(x1, z1, x2, z2, y, mat, { w = 1.1, gap = 0.9, h = 1.4, d
   im.castShadow = true; return im;
 }
 // Arc plein cintre extrudé : largeur totale w, ouverture `span`, hauteur sous clé h, épaisseur d (le long de z).
-export function archWall(w, h, span, d, mat, top = 0) {
-  const s = new THREE.Shape(); const H = h + span / 2 + top;
+export function archWall(w, h, span, d, mat, top = 0, { pointed = false, x0 = 0 } = {}) {
+  const s = new THREE.Shape(); const H = h + span / 2 + top + (pointed ? span * 0.2 : 0);
   s.moveTo(-w / 2, 0); s.lineTo(w / 2, 0); s.lineTo(w / 2, H); s.lineTo(-w / 2, H); s.lineTo(-w / 2, 0);
-  const hole = new THREE.Path(); hole.moveTo(-span / 2, 0); hole.lineTo(-span / 2, h); hole.absarc(0, h, span / 2, Math.PI, 0, true); hole.lineTo(span / 2, 0); hole.lineTo(-span / 2, 0);
+  const hole = new THREE.Path(), a = x0 - span / 2, b = x0 + span / 2; hole.moveTo(a, 0); hole.lineTo(a, h);
+  if (pointed) { hole.quadraticCurveTo(a, h + span * 0.5, x0, h + span * 0.7); hole.quadraticCurveTo(b, h + span * 0.5, b, h); } // arc brisé (portes ottomanes)
+  else hole.absarc(x0, h, span / 2, Math.PI, 0, true);
+  hole.lineTo(b, 0); hole.lineTo(a, 0);
   s.holes.push(hole);
   const g = new THREE.ExtrudeGeometry(s, { depth: d, bevelEnabled: false, curveSegments: 16 }); g.translate(0, 0, -d / 2);
   return mesh(g, mat);
@@ -223,19 +226,26 @@ export function basilica(L, W, H, { apse = true, atrium = 0 } = {}) {
 }
 // CARDO byzantin : rue de 20 m (document du cours) bordée de colonnades couvertes, le long d'une polyligne.
 export function cardo(points, groundAt, { paveOnly = false } = {}) {
-  const g = new THREE.Group(), cols = [], roofs = [];
-  const P = [points[0]]; // tronçons de ≤ 15 m pour suivre le relief
+  // Drive (סיור 18 — קארדו) : « 20 m de large avec l'espace des boutiques, la colonnade, le trottoir des piétons et la rue des chariots ».
+  // Coupe adoptée : chaussée 10 m, colonnades à ±5 m, trottoirs couverts jusqu'à ±8 m, boutiques jusqu'à ±10 m.
+  const g = new THREE.Group(), cols = [], P = [points[0]];
   for (let i = 1; i < points.length; i++) { const [a, b] = [points[i - 1], points[i]], n = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / 15)); for (let k = 1; k <= n; k++) P.push([a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n]); }
-  points = P;
-  for (let i = 1; i < points.length; i++) {
-    const [x1, z1] = points[i - 1], [x2, z2] = points[i], L = Math.hypot(x2 - x1, z2 - z1), ux = (x2 - x1) / L, uz = (z2 - z1) / L, nx = -uz, nz = ux;
-    for (let s = 2; s < L; s += 4.5) for (const o of [-6, 6]) { const x = x1 + ux * s + nx * o, z = z1 + uz * s + nz * o; cols.push([x, z, groundAt(x, z)]); }
-    for (const o of [-8, 8]) roofs.push([x1 + ux * L / 2 + nx * o, z1 + uz * L / 2 + nz * o, L, -Math.atan2(uz, ux), groundAt(x1 + ux * L / 2, z1 + uz * L / 2)]);
-    const p = box(L, 0.3, 12, stone('paving')); p.position.set((x1 + x2) / 2, groundAt((x1 + x2) / 2, (z1 + z2) / 2) + 0.1, (z1 + z2) / 2); p.rotation.y = -Math.atan2(uz, ux); g.add(p);
+  const pave = stone('paving', { tint: '#e2d8c4' }), side = stone('paving', { tint: '#f0e8d8' }), shopM = stone('ashlar', { tint: '#e7dcc6' }), tile = stone('ashlar', { tint: '#b4704c' });
+  const seg = (x1, z1, x2, z2, o, w, h, mat, y = 0, tiltZ = 0) => { const L = Math.hypot(x2 - x1, z2 - z1), ux = (x2 - x1) / L, uz = (z2 - z1) / L, nx = -uz, nz = ux, cx = (x1 + x2) / 2 + nx * o, cz = (z1 + z2) / 2 + nz * o;
+    const b = box(L + 0.4, h, w, mat); b.position.set(cx, groundAt(cx, cz) + y + h / 2, cz); b.rotation.set(0, -Math.atan2(uz, ux), 0); if (tiltZ) b.rotateX(tiltZ); g.add(b); return b; };
+  for (let i = 1; i < P.length; i++) {
+    const [x1, z1] = P[i - 1], [x2, z2] = P[i], L = Math.hypot(x2 - x1, z2 - z1), ux = (x2 - x1) / L, uz = (z2 - z1) / L, nx = -uz, nz = ux;
+    seg(x1, z1, x2, z2, 0, 10, 0.3, pave, -0.2);
+    for (const s of [-1, 1]) {
+      seg(x1, z1, x2, z2, s * 6.5, 3, 0.5, side, -0.2);                          // trottoir surélevé
+      if (paveOnly) continue;
+      for (let t = 2; t < L; t += 4.5) { const x = x1 + ux * t + nx * s * 5, z = z1 + uz * t + nz * s * 5; cols.push([x, z, groundAt(x, z) + 0.3]); }
+      seg(x1, z1, x2, z2, s * 9, 2, 5.5, shopM);                                  // rangée de boutiques
+      seg(x1, z1, x2, z2, s * 7.1, 5.2, 0.35, tile, 6.3, s * 0.18);               // toit en appentis tuilé au-dessus du trottoir
+    }
   }
-  if (paveOnly) return g; // époques suivantes : la rue reste, la colonnade a disparu (vestiges fouillés au sud)
-  g.add(columns(cols, 6.2, 0.35, stone('marble', { rough: 0.45 })));
-  roofs.forEach(([x, z, L, r, y]) => { const b = box(L, 0.6, 5, stone('ashlar', { tint: '#b98260' })); b.position.set(x, y + 6.4, z); b.rotation.y = r; g.add(b); });
+  if (paveOnly) return g; // époques suivantes : la rue reste, la colonnade a disparu (partie fouillée au sud, rue actuelle au nord)
+  g.add(columns(cols, 6, 0.33, stone('marble', { rough: 0.45 })));
   return g;
 }
 // DÔME DU ROCHER : octogone (contour OpenStreetMap), tambour, coupole dorée jusqu'à la hauteur OSM (34 m).
@@ -273,4 +283,65 @@ export function crenels(lines, segTop, mat, { w = 0.9, gap = 0.8, h = 1.3, d = 2
   const im = new THREE.InstancedMesh(new THREE.BoxGeometry(w, h, d), mat, P.length), M = new THREE.Matrix4(), q = new THREE.Quaternion(), up = V(0, 1, 0), one = V(1, 1, 1);
   P.forEach(([x, y, z, r], i) => { q.setFromAxisAngle(up, r); M.compose(V(x, y + h / 2, z), q, one); im.setMatrixAt(i, M); });
   im.castShadow = true; im.receiveShadow = true; return im;
+}
+
+// =====================================================================================
+// TOURS D'HÉRODE (Josèphe, Guerre 5.161–175) : Hippicus 25 × 25 coudées, plein sur 30, réservoir de 20, maison à deux étages
+// de 25, tourelles et créneaux : 80 coudées en tout. Mariamne 20 × 20, pleine sur 20, 50 coudées en tout, étages plus ornés.
+export function hippicus(C) {
+  const g = new THREE.Group(), m = stone('herodian', { tint: '#f2e9d8' }), B = 25 * C, H = 75 * C;
+  g.add(box(B, H, B, m));
+  g.add(box(B + 0.6, 0.6, B + 0.6, stone('ashlar'), 0, 30 * C, 0)); g.add(box(B + 0.6, 0.6, B + 0.6, stone('ashlar'), 0, 50 * C, 0)); // repères : plein / réservoir / maison
+  windows(g, B, B, 50 * C + 2.5, 2, 3, 25 * C / 2);
+  for (const [a, b, c, d] of [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]]) g.add(merlons(a * B / 2, b * B / 2, c * B / 2, d * B / 2, H, m, { h: 5 * C * 0.6 }));
+  for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) g.add(box(2.4, 2 * C + 1.5, 2.4, m, sx * (B / 2 - 1.2), H, sz * (B / 2 - 1.2))); // tourelles d'angle (2 coudées)
+  return g;
+}
+export function mariamne(C) {
+  const g = new THREE.Group(), m = stone('herodian', { tint: '#f4ecde' }), B = 20 * C, H = 47 * C;
+  g.add(box(B, H, B, m)); g.add(box(B + 0.6, 0.6, B + 0.6, stone('marble'), 0, 20 * C, 0));
+  windows(g, B, B, 20 * C + 2.2, 3, 2, 3.6);
+  g.add(box(B + 0.4, 1, B + 0.4, stone('marble', { rough: 0.4 }), 0, H - 1, 0)); // corniche : « plus ornée » (Josèphe 5.171)
+  for (const [a, b, c, d] of [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]]) g.add(merlons(a * B / 2, b * B / 2, c * B / 2, d * B / 2, H, m, { h: 3 * C * 0.8 }));
+  return g;
+}
+// fenêtres sur les 4 faces : n par face et par étage, `rows` étages espacés de `dy`
+function windows(g, W, D, y0, n, rows, dy) {
+  const P = [], dark = new THREE.MeshStandardMaterial({ color: '#1e160e', roughness: 1 });
+  for (let r = 0; r < rows; r++) for (let i = 0; i < n; i++) { const t = (i + 0.5) / n - 0.5, y = y0 + r * dy;
+    P.push([t * W, y, D / 2 + 0.05, 0], [t * W, y, -D / 2 - 0.05, 0], [W / 2 + 0.05, y, t * D, 1], [-W / 2 - 0.05, y, t * D, 1]); }
+  const im = new THREE.InstancedMesh(new THREE.BoxGeometry(1.3, 2.4, 0.2), dark, P.length), M = new THREE.Matrix4(), q = new THREE.Quaternion();
+  P.forEach(([x, y, z, r], i) => { q.setFromAxisAngle(V(0, 1, 0), r ? Math.PI / 2 : 0); M.compose(V(x, y, z), q, V(1, 1, 1)); im.setMatrixAt(i, M); }); g.add(im);
+}
+
+// PORTES OTTOMANES (1537–1541) : tour-porte à passage en arc brisé, mâchicoulis au-dessus du passage, créneaux.
+// Local : x le long de la muraille, z à travers. Proportions schématiques (pas de relevé dans les sources du cours).
+export function ottomanGate({ w = 16, d = 12, h = 13, span = 4.6, openH = 6.5, kind = 'plain' } = {}) {
+  const g = new THREE.Group(), m = stone('ottoman'), trim = stone('ashlar', { tint: '#e9dcc0' });
+  if (kind === 'golden') { // porte Dorée : double passage muré, deux coupoles
+    g.add(archWall(w, openH, span, d, m, h - openH - span / 2, { x0: -w / 4 })); g.add(box(w / 2, h, d, m, w / 4, 0, 0));
+    for (const x of [-w / 4, w / 4]) { g.add(box(span, openH + span * 0.45, 0.6, trim, x, 0, d / 2 - 0.3)); g.add(box(span, openH + span * 0.45, 0.6, trim, x, 0, -d / 2 + 0.3)); // passages murés
+      const c = cyl(3.2, 1.2, m, x, h, 0, 24); g.add(c); const dm = dome(3.4, stone('plaster', { tint: '#d8ccb4' }), { squash: 0.8 }); dm.position.set(x, h + 1.2, 0); g.add(dm); }
+    return g;
+  }
+  g.add(archWall(w, openH, span, d, m, h - openH - span / 2 - span * 0.2, { pointed: true }));
+  for (const s of [-1, 1]) g.add(box(span + 1.6, 0.8, 0.5, trim, 0, openH + span * 0.75, s * (d / 2 + 0.2))); // linteau décoré
+  const mach = new THREE.Group(); mach.add(box(span + 1.2, 2.2, 1.4, m, 0, 0, 0)); for (const x of [-span / 2, 0, span / 2]) mach.add(box(0.5, 1, 1.2, m, x, -1, 0));
+  mach.position.set(0, h - 3.4, d / 2 + 0.7); g.add(mach); // mâchicoulis (Drive : « מרפסת אבן » au-dessus du passage)
+  for (const [a, b, c, e] of [[-w / 2, -d / 2, w / 2, -d / 2], [-w / 2, d / 2, w / 2, d / 2], [-w / 2, -d / 2, -w / 2, d / 2], [w / 2, -d / 2, w / 2, d / 2]]) g.add(merlons(a, b, c, e, h, m, { w: 0.9, gap: 0.8, h: 1.3, d: 0.9 }));
+  if (kind === 'damascus') { // la plus ornée : deux tours latérales (anciennes tours romaines enveloppées), créneaux en pointe, mâchicoulis sur les tours
+    for (const s of [-1, 1]) { const t = new THREE.Group(); t.add(box(9, h + 3, d + 4, m)); t.add(merlons(-4.5, (d + 4) / 2, 4.5, (d + 4) / 2, h + 3, m, { w: 0.8, gap: 0.7, h: 1.8, d: 0.9 })); t.add(merlons(-4.5, -(d + 4) / 2, 4.5, -(d + 4) / 2, h + 3, m, { w: 0.8, gap: 0.7, h: 1.8, d: 0.9 }));
+      const mc = box(3, 2.2, 1.2, m, 0, h - 1.5, (d + 4) / 2 + 0.6); t.add(mc); t.position.x = s * (w / 2 + 4.5); g.add(t); }
+  }
+  return g;
+}
+// ARC D'HADRIEN (porte nord d'Aelia Capitolina, 130 apr. J.-C.) : arc de triomphe à trois baies entre deux tours (Drive, סיור 18).
+// Seule la baie est subsiste avec son inscription ; hauteurs et largeurs schématiques.
+export function hadrianArch() {
+  const g = new THREE.Group(), m = stone('ashlar', { tint: '#eadfc8' }), W = 24, D = 6;
+  g.add(archWall(W, 7.5, 6, D, m, 3.5));                         // baie centrale
+  for (const s of [-1, 1]) { const side = archWall(6, 4, 3, D + 0.01, m, 1.5); side.position.x = s * 7.6; g.add(side); }
+  g.add(box(W + 1, 1, D + 0.8, stone('marble'), 0, 7.5 + 3 + 3.5, 0)); // corniche / attique de l'inscription
+  for (const s of [-1, 1]) { const t = box(9, 16, 9, stone('herodian', { tint: '#e6dac2' }), s * (W / 2 + 4.5), 0, 0); g.add(t); g.add(merlons(s * (W / 2) , 4.5, s * (W / 2 + 9), 4.5, 16, m)); g.add(merlons(s * (W / 2), -4.5, s * (W / 2 + 9), -4.5, 16, m)); }
+  return g;
 }

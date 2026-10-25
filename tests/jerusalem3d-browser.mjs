@@ -77,11 +77,13 @@ await page.click('#bCompare'); await page.waitForTimeout(500);
 
 // modèles détaillés de la période hérodienne
 await page.click('#strip [data-p="5"]'); await page.waitForTimeout(800);
-const placedIds = await page.evaluate(() => ['jerusalem_second_temple', 'jerusalem_royal_stoa', 'jerusalem_porticoes', 'jerusalem_robinsons_arch', 'jerusalem_wilsons_arch', 'jerusalem_antonia', 'jerusalem_phasael', 'jerusalem_herod_palace'].filter(id => { const b = window.MDJerusalem3D._bounds(id); return b[1][1] > b[0][1]; }));
-ok(placedIds.length === 8, 'Temple, portiques, Portique royal, arcs, Antonia, Phasaël, palais construits en 3D (' + placedIds.length + '/8)');
+const placedIds = await page.evaluate(() => ['jerusalem_second_temple', 'jerusalem_royal_stoa', 'jerusalem_porticoes', 'jerusalem_robinsons_arch', 'jerusalem_wilsons_arch', 'jerusalem_antonia', 'jerusalem_phasael', 'jerusalem_hippicus', 'jerusalem_mariamne', 'jerusalem_herod_palace'].filter(id => { const b = window.MDJerusalem3D._bounds(id); return b[1][1] > b[0][1]; }));
+ok(placedIds.length === 10, 'Temple, portiques, Portique royal, arcs, Antonia, Phasaël, Hippicus, Mariamne, palais construits en 3D (' + placedIds.length + '/10)');
 const tm = await page.evaluate(() => { const A = window.MDJerusalem3D, t = A._tm(), w = A._bounds('jerusalem_wilsons_arch'); return Math.abs(w[1][1] - t.top); });
 ok(tm < 2, 'arc de Wilson au niveau du parvis');
 await page.evaluate(() => window.MDJerusalem3D.viewAt('jerusalem_second_temple')); await shot('08-temple');
+// murailles : constructeur et date sur l'étiquette, hauteur ×2 signalée
+ok(await page.evaluate(() => [...document.querySelectorAll('.lb.wl small')].some(s => s.textContent.length > 3)), 'murailles : constructeur et date sur l’étiquette');
 // couleurs de certitude
 await page.click('#bColors'); await page.waitForTimeout(500);
 ok(await page.getAttribute('#bColors', 'aria-pressed') === 'true', 'bouton couleurs de certitude');

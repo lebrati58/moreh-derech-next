@@ -103,7 +103,7 @@ test('3D engine: every module import resolves to a vendored file that is also ca
 test('detailed models are only used for sourced monuments and flagged as schematic where proportions are reconstructed', async () => {
   const d = JSON.parse(await read('public/jerusalem3d/monuments.json'));
   const app = await read('public/jerusalem3d/app.js');
-  const MODEL = ['temple', 'porticoes', 'royalstoa', 'robinson', 'wilson', 'hulda', 'steps', 'antonia', 'phasael', 'palace', 'sepulchre_byz', 'sepulchre', 'nea', 'cardo', 'domerock', 'aqsa'];
+  const MODEL = ['hippicus', 'mariamne', 'hadrian', 'temple', 'porticoes', 'royalstoa', 'robinson', 'wilson', 'hulda', 'steps', 'antonia', 'phasael', 'palace', 'sepulchre_byz', 'sepulchre', 'nea', 'cardo', 'domerock', 'aqsa'];
   for (const t of MODEL) assert.ok(app.includes(`case '${t}'`), 'type de modèle non géré : ' + t);
   for (const m of d.monuments.filter(m => MODEL.includes(m.shape.type))) {
     assert.ok(m.sources.some(s => s.kind === 'drive' || s.kind === 'primary'), m.id + ' : modèle détaillé sans source Drive ni source antique');

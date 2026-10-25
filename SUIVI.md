@@ -65,6 +65,13 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ⚠️ Non vérifiable ici : fluidité sur une vraie carte graphique / un vrai téléphone (l'environnement de test est un rendu logiciel lent), carte de fond et bâtiments OSM. **À tester sur l'ordinateur qui servira à l'émission** (HD) et sur un téléphone (SD).
 - ⏳ Reste : maisons de la ville ancienne non représentées (aucune donnée fiable — volontaire) ; Hippicus et Mariamne sans position ; phase 2 (quiz 3D) toujours interdite sans accord.
 
+### 25 octobre 2026 (fin d'après-midi) — Tours d'Hérode, portes, Cardo, murailles plus lisibles
+- ✅ **Hippicus et Mariamne** dessinées d'après Josèphe (Guerre 5.161–175) : Hippicus 25 × 25 coudées, 80 de haut (plein, réservoir, maison à deux étages, tourelles) ; Mariamne 20 × 20, 50 de haut, étages plus ornés. Josèphe dit seulement qu'elles étaient « tout près » de Phasaël sur la première muraille et que celle-ci « commençait à Hippicus » : **placement schématique** (Hippicus ~36 m à l'ouest, Mariamne ~32 m à l'est), restent en **hypothèse** (translucides), noté dans les fiches.
+- ✅ **Portes ottomanes** : tour-porte à arc brisé, mâchicoulis, créneaux (d'après le document du cours sur la porte de Damas) ; porte de Damas avec deux tours ; porte Dorée à double passage muré et deux coupoles. Proportions schématiques, notées.
+- ✅ **Arc d'Hadrien** (période romaine–byzantine) : arc à trois baies entre deux tours, d'après le cours (סיור 18).
+- ✅ **Cardo** refait selon le cours : 20 m — boutiques, colonnade, trottoir couvert, chaussée. Le cardo oriental (rue HaGai) n'est pas encore représenté.
+- ✅ **Murailles** : hauteur ×2 par défaut pour la lisibilité (bouton « ↕ » dans la légende pour revenir à la hauteur réelle), bandeau de la couleur de l'époque au sommet, et **constructeur + date** sur chaque étiquette, dans la fiche (« 🏗️ Bâtie par »), dans la comparaison et dans le mode cinéma.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.

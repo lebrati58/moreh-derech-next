@@ -1190,7 +1190,7 @@
    "certainty": "hypothesis",
    "anchor": null,
    "shape": {
-    "type": "none"
+    "type": "hippicus"
    },
    "name": {
     "he": "מגדל היפיקוס",
@@ -1217,7 +1217,19 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "dims": {
+    "he": "25 × 25 אמה; אטום עד 30 אמה, מעליו בריכה בעומק 20 אמה, בית בן שתי קומות בגובה 25 אמה, צריחים ומעקה — 80 אמה בסך הכול (מלחמת היהודים 5.163–165)",
+    "fr": "25 × 25 coudées ; plein sur 30, réservoir de 20, maison à deux étages de 25, tourelles et créneaux — 80 coudées en tout (Guerre 5.163–165)",
+    "en": "25 × 25 cubits; solid to 30, a 20-cubit reservoir, a two-storey house of 25, turrets and battlements — 80 cubits in all (War 5.163–165)",
+    "ru": "25 × 25 локтей; сплошная до 30, резервуар 20, двухэтажный дом 25, башенки и зубцы — всего 80 локтей (Война 5.163–165)"
+   },
+   "placementNote": {
+    "he": "יוסף: החומה הראשונה ״התחילה במגדל היפיקוס״ והמגדלים עמדו ״סמוכים״ זה לזה, צפונית לארמון. המיקום המדויק אינו ידוע: המגדל מוצב באופן סכמטי כ-36 מ׳ מערבית למצודת דוד, על קו החומה.",
+    "fr": "Josèphe : la première muraille « commençait à la tour Hippicus » et les tours étaient « toutes proches », au nord du palais. Position exacte inconnue : tour placée schématiquement à ~36 m à l’ouest de la tour de David, sur la muraille.",
+    "en": "Josephus: the first wall 'began at the tower Hippicus' and the towers stood 'hard by' each other, north of the palace. Exact position unknown: placed schematically ~36 m west of the Tower of David, on the wall.",
+    "ru": "Иосиф: первая стена «начиналась у башни Гиппик», башни стояли «рядом», к северу от дворца. Точное место неизвестно: башня условно поставлена ~36 м к западу от башни Давида, на линии стены."
+   }
   },
   {
    "id": "jerusalem_mariamne",
@@ -1226,7 +1238,7 @@
    "certainty": "hypothesis",
    "anchor": null,
    "shape": {
-    "type": "none"
+    "type": "mariamne"
    },
    "name": {
     "he": "מגדל מרים",
@@ -1253,7 +1265,19 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "dims": {
+    "he": "20 × 20 אמה; אטום עד 20 אמה, גובה כולל 50 אמה; הקומות העליונות מפוארות מאלו של שאר המגדלים (מלחמת היהודים 5.170–171)",
+    "fr": "20 × 20 coudées ; pleine sur 20, 50 coudées en tout ; étages plus richement ornés que ceux des autres tours (Guerre 5.170–171)",
+    "en": "20 × 20 cubits; solid to 20, 50 cubits in all; upper rooms more richly adorned than in the other towers (War 5.170–171)",
+    "ru": "20 × 20 локтей; сплошная до 20, всего 50 локтей; верхние покои богаче, чем в других башнях (Война 5.170–171)"
+   },
+   "placementNote": {
+    "he": "יוסף אינו מציין את סדר המגדלים לאורך החומה. מוצב באופן סכמטי כ-32 מ׳ מזרחית למצודת דוד, על קו החומה הראשונה.",
+    "fr": "Josèphe ne donne pas l’ordre des tours le long de la muraille. Placée schématiquement à ~32 m à l’est de la tour de David, sur la première muraille.",
+    "en": "Josephus does not give the order of the towers along the wall. Placed schematically ~32 m east of the Tower of David, on the first wall.",
+    "ru": "Иосиф не указывает порядок башен вдоль стены. Условно поставлена ~32 м к востоку от башни Давида, на первой стене."
+   }
   },
   {
    "id": "jerusalem_herod_palace",
@@ -1414,7 +1438,7 @@
    "certainty": "attested",
    "anchor": "damascus_gate",
    "shape": {
-    "type": "marker"
+    "type": "hadrian"
    },
    "name": {
     "he": "קשת הניצחון של אדריאנוס",
@@ -1441,7 +1465,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata (שער שכם). קשת בת שלושה פתחים בין שני מגדלים, לפי מסמך הקורס; המידות סכמטיות. מוצגת עד התקופה הצלבנית, שבה שונה השער.",
+    "fr": "Position : Wikidata (porte de Damas). Arc à trois baies entre deux tours, d’après le cours ; dimensions schématiques. Affiché jusqu’à l’époque croisée, qui transforma la porte.",
+    "en": "Position: Wikidata (Damascus Gate). Three-bay arch between two towers, per the course; dimensions schematic. Shown until the Crusader period, which rebuilt the gate.",
+    "ru": "Положение: Wikidata (Дамасские ворота). Трёхпролётная арка между двумя башнями, по курсу; размеры схематичны. Показана до эпохи крестоносцев, перестроивших ворота."
+   }
   },
   {
    "id": "jerusalem_legio_x",
@@ -1573,6 +1603,12 @@
     "fr": "largeur 20 m",
     "en": "20 m wide",
     "ru": "ширина 20 м"
+   },
+   "placementNote": {
+    "he": "התוואי עובר בין שער שכם, כנסיית אלכסנדר נייבסקי, החורבה וכנסיית הנאה (נקודות Wikidata), בקווים ישרים. החתך לפי מסמך הקורס: 20 מ׳ — חנויות, שדרת עמודים, מדרכה ורחוב עגלות. הקארדו המזרחי (רחוב הגיא) אינו מוצג.",
+    "fr": "Tracé en lignes droites entre la porte de Damas, Alexandre-Nevski, la Hourva et la Néa (repères Wikidata). Coupe d’après le cours : 20 m — boutiques, colonnade, trottoir, chaussée. Le cardo oriental (rue HaGai) n’est pas représenté.",
+    "en": "Route in straight lines between Damascus Gate, Alexander Nevsky, the Hurva and the Nea (Wikidata points). Cross-section per the course: 20 m — shops, colonnade, sidewalk, carriageway. The eastern cardo (HaGai Street) is not shown.",
+    "ru": "Трасса прямыми отрезками между Дамасскими воротами, Александром Невским, Хурвой и Неа (точки Wikidata). Сечение по курсу: 20 м — лавки, колоннада, тротуар, проезжая часть. Восточное кардо (ул. ха-Гай) не показано."
    }
   },
   {
@@ -1931,6 +1967,12 @@
     "fr": "Date : 1561 dans le texte de guidage d'un élève ; 1537 selon d'autres sources.",
     "en": "Date: 1561 in a student's guiding text; 1537 according to other sources.",
     "ru": "Дата: 1561 в тексте ученика; 1537 по другим источникам."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
    }
   },
   {
@@ -1962,7 +2004,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
   },
   {
    "id": "jerusalem_zion_gate",
@@ -1993,7 +2041,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
   },
   {
    "id": "jerusalem_dung_gate",
@@ -2024,7 +2078,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
   },
   {
    "id": "jerusalem_lions_gate",
@@ -2055,7 +2115,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
   },
   {
    "id": "jerusalem_herods_gate",
@@ -2086,7 +2152,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
   },
   {
    "id": "jerusalem_golden_gate",
@@ -2117,7 +2189,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
   },
   {
    "id": "jerusalem_new_gate",
@@ -2148,7 +2226,13 @@
     }
    ],
    "questions": [],
-   "quiz3d": null
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
   },
   {
    "id": "jerusalem_wall_canaanite",
@@ -2211,6 +2295,12 @@
     "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu.",
     "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown.",
     "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна."
+   },
+   "builder": {
+    "he": "הכנענים · ברונזה תיכונה",
+    "fr": "Les Cananéens · Bronze moyen",
+    "en": "The Canaanites · Middle Bronze Age",
+    "ru": "Ханаанеи · средний бронзовый век"
    }
   },
   {
@@ -2300,6 +2390,12 @@
     "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu. La porte des Esséniens est placée au cimetière protestant du mont Sion, où elle a été fouillée.",
     "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown. The Gate of the Essenes is placed at the Protestant cemetery on Mount Zion, where it was excavated.",
     "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна. Ворота ессеев помещены на протестантском кладбище на Сионе, где их раскопали."
+   },
+   "builder": {
+    "he": "מלכי יהודה (חזקיהו) · סוף המאה ה-8 לפנה״ס",
+    "fr": "Rois de Juda (Ézéchias) · fin du VIIIe s. av. J.-C.",
+    "en": "Kings of Judah (Hezekiah) · late 8th c. BCE",
+    "ru": "Цари Иудеи (Езекия) · конец VIII в. до н. э."
    }
   },
   {
@@ -2363,6 +2459,12 @@
     "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu.",
     "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown.",
     "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна."
+   },
+   "builder": {
+    "he": "נחמיה (לפי אילת מזר) · המאה ה-5 לפנה״ס",
+    "fr": "Néhémie (selon E. Mazar) · Ve s. av. J.-C.",
+    "en": "Nehemiah (per E. Mazar) · 5th c. BCE",
+    "ru": "Неемия (по Э. Мазар) · V в. до н. э."
    }
   },
   {
@@ -2461,6 +2563,12 @@
     "fr": "Tracé schématique entre les tronçons fouillés : tour « pi » près de la tour israélite, 40 m au Kishle, porte des Esséniens, pente du mont Sion, tour hellénistique de l'aire G. La porte des Esséniens est placée au cimetière protestant du mont Sion, où elle a été fouillée.",
     "en": "Schematic line between excavated sections: the 'pi' tower by the Israelite Tower, 40 m in the Kishle, the Gate of the Essenes, Mount Zion slope, the Hellenistic tower in Area G. The Gate of the Essenes is placed at the Protestant cemetery on Mount Zion, where it was excavated.",
     "ru": "Схема между раскопанными участками: башня «пи» у Израильской башни, 40 м в Кишле, ворота ессеев, склон Сиона, эллинистическая башня в зоне G. Ворота ессеев помещены на протестантском кладбище на Сионе, где их раскопали."
+   },
+   "builder": {
+    "he": "החשמונאים · סוף המאה ה-2 – ראשית המאה ה-1 לפנה״ס",
+    "fr": "Les Hasmonéens · fin IIe – début Ier s. av. J.-C.",
+    "en": "The Hasmoneans · late 2nd – early 1st c. BCE",
+    "ru": "Хасмонеи · конец II – начало I в. до н. э."
    }
   },
   {
@@ -2523,6 +2631,12 @@
     "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu.",
     "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown.",
     "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна."
+   },
+   "builder": {
+    "he": "מיוחסת להורדוס (יוסף אינו מציין) · המאה ה-1 לפנה״ס",
+    "fr": "Attribuée à Hérode (Josèphe ne le dit pas) · Ier s. av. J.-C.",
+    "en": "Attributed to Herod (Josephus does not say) · 1st c. BCE",
+    "ru": "Приписывается Ироду (Иосиф не указывает) · I в. до н. э."
    }
   },
   {
@@ -2658,6 +2772,12 @@
     "fr": "Points nord : coordonnées ITM publiées (Spiezer 2023) converties en WGS84 ; l'angle nord-est est une estimation de l'auteur. Contrôle : l'Institut Albright (Wikidata) est à ~100 m du coude calculé — cohérent avec la description (porte près de l'Institut).",
     "en": "Northern points: published ITM coordinates (Spiezer 2023) converted to WGS84; the north-east corner is the author's estimate. Check: the Albright Institute (Wikidata) lies ~100 m from the computed turn — consistent with the description (gate near the Institute).",
     "ru": "Северные точки: опубликованные координаты ITM (Шпицер 2023), переведённые в WGS84; северо-восточный угол — оценка автора. Проверка: Институт Олбрайта (Wikidata) в ~100 м от вычисленного поворота — согласуется с описанием (ворота у Института)."
+   },
+   "builder": {
+    "he": "אגריפס הראשון, הושלמה בידי המורדים · 41–44 / 66 לסה״נ",
+    "fr": "Agrippa Ier, achevée par les insurgés · 41–44 / 66 apr. J.-C.",
+    "en": "Agrippa I, completed by the rebels · 41–44 / 66 CE",
+    "ru": "Агриппа I, достроена повстанцами · 41–44 / 66 н. э."
    }
   },
   {
@@ -2714,6 +2834,12 @@
     "fr": "La ligne passe par les portes du mur nord actuel — approximation.",
     "en": "The line runs through today's northern gates — an approximation.",
     "ru": "Линия проходит через нынешние северные ворота — приближение."
+   },
+   "builder": {
+    "he": "אגריפס הראשון, הושלמה בידי המורדים · 41–44 / 66 לסה״נ",
+    "fr": "Agrippa Ier, achevée par les insurgés · 41–44 / 66 apr. J.-C.",
+    "en": "Agrippa I, completed by the rebels · 41–44 / 66 CE",
+    "ru": "Агриппа I, достроена повстанцами · 41–44 / 66 н. э."
    }
   },
   {
@@ -2764,6 +2890,12 @@
     "fr": "Autre source : une muraille fut probablement bâtie sous Dioclétien (289–vers 300). Tracé exact inconnu ; la ligne actuelle sert d'approximation.",
     "en": "Other source: a wall was probably built under Diocletian (289–c. 300). Exact course unknown; today's line is shown as an approximation.",
     "ru": "Другой источник: стена, вероятно, построена при Диоклетиане (289–ок. 300). Точная трасса неизвестна; показана нынешняя линия как приближение."
+   },
+   "builder": {
+    "he": "אדריאנוס ייסד את איליה בלי חומה · תוואי משוער",
+    "fr": "Hadrien fonde Aelia sans muraille · tracé hypothétique",
+    "en": "Hadrian founded Aelia without a wall · hypothetical line",
+    "ru": "Адриан основал Элию без стены · гипотетическая линия"
    }
   },
   {
@@ -2842,6 +2974,12 @@
     "fr": "Le tronçon sud est schématique entre points connus ; le reste suit la muraille actuelle, par approximation. La porte des Esséniens est placée au cimetière protestant du mont Sion, où elle a été fouillée.",
     "en": "The southern section is schematic between known points; the rest follows today's wall as an approximation. The Gate of the Essenes is placed at the Protestant cemetery on Mount Zion, where it was excavated.",
     "ru": "Южный участок схематичен; остальное — по нынешней стене как приближение. Ворота ессеев помещены на протестантском кладбище на Сионе, где их раскопали."
+   },
+   "builder": {
+    "he": "הקיסרית אודוקיה · המאה ה-5",
+    "fr": "L’impératrice Eudocie · Ve s.",
+    "en": "Empress Eudocia · 5th c.",
+    "ru": "Императрица Евдокия · V в."
    }
   },
   {
@@ -2898,6 +3036,12 @@
     "fr": "La ligne actuelle, bâtie sur ce tracé, est affichée.",
     "en": "Today's line, built on this course, is shown.",
     "ru": "Показана нынешняя линия, построенная по этой трассе."
+   },
+   "builder": {
+    "he": "הפאטימים, ואחריהם האיובים · המאה ה-11",
+    "fr": "Les Fatimides, puis les Ayyoubides · XIe s.",
+    "en": "The Fatimids, then the Ayyubids · 11th c.",
+    "ru": "Фатимиды, затем Айюбиды · XI в."
    }
   },
   {
@@ -2959,6 +3103,12 @@
     "fr": "Tracé OpenStreetMap.",
     "en": "Line from OpenStreetMap.",
     "ru": "Линия по OpenStreetMap."
+   },
+   "builder": {
+    "he": "סולימאן המפואר · המאה ה-16",
+    "fr": "Soliman le Magnifique · XVIe s.",
+    "en": "Suleiman the Magnificent · 16th c.",
+    "ru": "Сулейман Великолепный · XVI в."
    }
   }
  ],
