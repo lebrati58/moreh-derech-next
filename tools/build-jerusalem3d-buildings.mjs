@@ -15,7 +15,7 @@ for (let round = 0; round < 4 && !j; round++) for (const ep of ['https://overpas
     const t = await r.json(); if ((t.elements || []).length) { j = t; console.log('OK', ep, t.elements.length); break; }
   } catch (e) { console.log(ep, e.message); await sleep(5000); }
 }
-if (!j) { console.log('Bâtiments indisponibles — la page fonctionnera sans.'); process.exit(0); }
+if (!j) { console.log('::notice title=buildings::indisponibles — la page fonctionnera sans'); process.exit(0); }
 const lat0 = (BOX.s + BOX.n) / 2, lon0 = (BOX.w + BOX.e) / 2, out = [];
 for (const el of j.elements) {
   if (!el.geometry || el.geometry.length < 4) continue;
@@ -28,4 +28,4 @@ for (const el of j.elements) {
 }
 await mkdir(new URL('../public/jerusalem3d/', import.meta.url), { recursive: true });
 await writeFile(new URL('../public/jerusalem3d/buildings.json', import.meta.url), JSON.stringify({ generatedAt: new Date().toISOString(), license: '© OpenStreetMap contributors, ODbL', note: 'Bâtiments actuels — contexte, pas une reconstitution.', lat0, lon0, b: out }));
-console.log('buildings.json :', out.length, 'bâtiments');
+console.log('::notice title=buildings::buildings.json ' + out.length + ' bâtiments');
