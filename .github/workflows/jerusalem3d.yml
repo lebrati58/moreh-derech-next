@@ -24,7 +24,7 @@ jobs:
       - name: Publish result as annotations (part 3)
         run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '19,27p' | while IFS= read -r line; do echo "::notice title=geo-chunk::$line"; done
       - name: Build log summary
-        run: grep -E '^(✓|✗|OSM|Relief|Écrit|  hors)' tools/jerusalem3d-build.log | head -9 | while IFS= read -r line; do echo "::notice title=geo-log::$line"; done
+        run: grep -E '^(✗|OSM|Relief|Overpass|  hors)' tools/jerusalem3d-build.log | head -9 | while IFS= read -r line; do echo "::notice title=geo-log::$line"; done
       - name: Commit
         continue-on-error: true
         run: |

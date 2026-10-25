@@ -26,8 +26,9 @@
       "en:Western Wall"
     ],
     "robinsons_arch": [
+      "en:Robinson's Arch",
       "he:קשת רובינסון",
-      "en:Robinson's Arch"
+      "en:Southern Wall"
     ],
     "wilsons_arch": [
       "he:קשת וילסון",
@@ -39,7 +40,8 @@
     ],
     "southern_steps": [
       "en:Southern Steps",
-      "he:המדרגות הדרומיות"
+      "en:Southern Wall",
+      "he:הכותל הדרומי"
     ],
     "antonia": [
       "he:מצודת אנטוניה",
@@ -82,6 +84,8 @@
       "en:Church of the Holy Sepulchre"
     ],
     "cardo": [
+      "he:הקרדו (ירושלים)",
+      "en:Cardo Maximus (Jerusalem)",
       "en:Cardo (Jerusalem)",
       "he:הקרדו"
     ],

@@ -61,9 +61,15 @@ way["name:en"~"^(Temple Mount|Dome of the Rock|Church of the Holy Sepulchre|Al-A
 relation["name:en"~"^(Temple Mount|Church of the Holy Sepulchre|Al-Aqsa Mosque|Tower of David)$"](${bb});
 );out geom tags;`;
 let osm = null;
-for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter']) {
-  try { osm = await getJSON(ep, { method: 'POST', body: 'data=' + encodeURIComponent(q), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }, 2); break; }
-  catch (e) { log('Overpass', ep, e.message); }
+for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']) {
+  try {
+    const r = await fetch(ep + '?data=' + encodeURIComponent(q), { headers: { 'User-Agent': UA, Accept: 'application/json' } });
+    const txt = await r.text();
+    if (!r.ok) { log('Overpass', ep, 'HTTP', r.status, txt.slice(0, 120).replace(/\s+/g, ' ')); continue; }
+    osm = JSON.parse(txt); log('Overpass', ep, 'OK', (osm.elements || []).length, 'éléments');
+    if ((osm.elements || []).length) break;
+  } catch (e) { log('Overpass', ep, e.message); }
+  await sleep(3000);
 }
 const round = v => Math.round(v * 1e6) / 1e6;
 const shapes = [];
