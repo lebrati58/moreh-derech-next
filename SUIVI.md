@@ -91,6 +91,7 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ **Vallées et eau (💧, menu ☰)** : Nahal Kidron (tracé OpenStreetMap), גיא בן הינום et גיא הטירופיאון calculés sur le relief SRTM (comblement des cuvettes + écoulement D8 ; écart médian avec le Kidron d'OSM 14–18 m pour une grille de 40 m) ; partie sud du Tyropéon (comblée) d'après le cours, plus transparente ; petits ravins du réseau en trait léger ; source du Gihon. Fiches en 4 langues (texte du cours « דגם ירושלים בית שני »), aussi sur le plan 2D. `geo.json` régénéré avec vallées et cours d'eau OSM.
 - ✅ **Arches et vieille ville** : arc de l'Ecce Homo (Hadrien, 135 ; cours סיור 18 — מנזר האחיות מציון) ; cardo occidental et cardo oriental d'Aelia ; à la période « aujourd'hui », tronçon restauré du Cardo avec colonnade (quartier juif), et vestiges visibles aujourd'hui (Maison brûlée, quartier hérodien, muraille large, puits de Warren, piscine de Siloé).
 - ✅ Tests : 7 unitaires, 30 vérifications navigateur.
+- ✅ **L'eau en bleu** : Cédron, Hinnom et Tyropéon dessinés en ruban bleu vif, plus large, avec un courant animé ; ravins secondaires en bleu clair ; l'eau reste bleue même en mode « couleurs de certitude » ; bassins (Siloé, piscines du modèle du mont du Temple) en bleu. Précision : ce sont des **vallées** (oueds), à sec la plupart de l'année, pas des rivières permanentes ; seule la source du Gihon coule toute l'année.
 
 ## 3. À faire / idées (par priorité)
 

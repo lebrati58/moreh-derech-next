@@ -511,7 +511,7 @@ function rebuildScene() {
     const D = drainage(), seenC = new Set(), lines = [];
     const hasUp = new Uint8Array(D.R * D.C); for (let j = 0; j < D.R * D.C; j++) if (D.to[j] >= 0 && D.km2(j) >= D.T) hasUp[D.to[j]] = 1;
     for (let h = 0; h < D.R * D.C; h++) { if (D.km2(h) < D.T || hasUp[h]) continue; const L = []; let i = h; while (i >= 0 && D.km2(i) >= D.T) { L.push(D.xz(i)); if (seenC.has(i)) break; seenC.add(i); i = D.to[i]; } if (L.length > 1) lines.push(L); }
-    world.add(waterRibbon(lines, 4, '#6aa6d6', 0.35));
+    world.add(waterRibbon(lines, 6, '#cfe8ff', 0.6));
   }
   if (compare) {
     if (TM) { const sp = new THREE.Shape(TM.pts.map(([x, z]) => new THREE.Vector2(x, -z))), g = new THREE.ExtrudeGeometry(sp, { depth: 3, bevelEnabled: false }); g.rotateX(-Math.PI / 2); g.translate(0, TM.top - 3, 0); const o = new THREE.Mesh(g, stone('paving')); o.receiveShadow = true; world.add(o); }
@@ -538,8 +538,8 @@ function rebuildScene() {
     if (sh.type === 'valley') {
       if (!showWater) continue;
       const lines = valleyLines(sh); if (!lines.length || !lines[0].length) continue;
-      const g = new THREE.Group(); g.add(waterRibbon([lines[0]], sh.w || 9, '#3f86c8', 0.8)); if (lines[1]) g.add(waterRibbon([lines[1]], sh.w || 9, '#3f86c8', 0.4));
-      add(g, m, true, false); const c = lines[0][Math.floor(lines[0].length * (sh.labelAt || 0.5))]; lab(m, [c[0], ground(c[0], c[1]) + 14, c[1]], true, '#5fb0ff');
+      const g = new THREE.Group(); g.add(waterRibbon([lines[0]], (sh.w || 9) * 1.4, '#ffffff', 0.95)); if (lines[1]) g.add(waterRibbon([lines[1]], (sh.w || 9) * 1.2, '#ffffff', 0.5));
+      g.userData.id = m.id; world.add(g); placed.add(m.id); const c = lines[0][Math.floor(lines[0].length * (sh.labelAt || 0.5))]; lab(m, [c[0], ground(c[0], c[1]) + 14, c[1]], true, '#4fb4ff'); // l'eau reste bleue dans tous les modes
       continue;
     }
     if (sh.type === 'wallline') {
@@ -602,6 +602,7 @@ function loadMuseum() {
       }
       const m = o.material; if (done.has(m)) return; done.add(m);
       if (m.map) m.map.anisotropy = 8;
+      if (/water/.test(m.name)) { m.color.set('#3c9be6'); m.emissive = new THREE.Color('#0e4f8f'); m.emissiveIntensity = 0.3; m.roughness = 0.1; return; } // eau bien bleue
       if (m.metalness > 0.5) { m.roughness = 0.28; m.envMapIntensity = 1.4; } // or, bronze : conducteurs
       else { m.color.multiplyScalar(0.8); m.envMapIntensity = 0.7; } // pierre calcaire : ton réel sous notre soleil
     });
@@ -657,14 +658,26 @@ function valleyLines(sh) {
   const out = [L]; if (sh.then) { const S = [L.at(-1), ...sh.then.map(wpt).filter(Boolean)]; if (S.length > 1) out.push(S); }
   return out;
 }
-// ruban d'eau posé sur le relief (largeur en m), un peu transparent
+// ruban d'eau posé sur le relief (largeur en m) : bleu vif, reflets, courant animé dans le sens de l'écoulement
+let flowTex = null;
+function flowTexture() {
+  if (flowTex) return flowTex;
+  const c = document.createElement('canvas'); c.width = 256; c.height = 32; const g = c.getContext('2d');
+  const gr = g.createLinearGradient(0, 0, 0, 32); gr.addColorStop(0, '#1f6fb8'); gr.addColorStop(0.5, '#4fb4ff'); gr.addColorStop(1, '#1f6fb8'); g.fillStyle = gr; g.fillRect(0, 0, 256, 32);
+  for (let k = 0; k < 9; k++) { const x = (k * 29 + 7) % 256, y = 6 + (k * 11) % 20; g.fillStyle = 'rgba(220,245,255,0.55)'; g.beginPath(); g.ellipse(x, y, 16, 1.6, 0, 0, 7); g.fill(); }
+  flowTex = new THREE.CanvasTexture(c); flowTex.wrapS = THREE.RepeatWrapping; flowTex.wrapT = THREE.ClampToEdgeWrapping; flowTex.colorSpace = THREE.SRGBColorSpace; return flowTex;
+}
 function waterRibbon(lines, width, color, opacity) {
-  const pos = [], idx = []; let n = 0;
-  for (const L0 of lines) { const L = []; for (let i = 1; i < L0.length; i++) { const [x1, z1] = L0[i - 1], [x2, z2] = L0[i], k = Math.max(1, Math.ceil(Math.hypot(x2 - x1, z2 - z1) / 10)); for (let s = 0; s < k; s++) L.push([x1 + (x2 - x1) * s / k, z1 + (z2 - z1) * s / k]); } if (L0.length) L.push(L0.at(-1));
-    for (let i = 0; i < L.length; i++) { const p = L[Math.max(0, i - 1)], q = L[Math.min(L.length - 1, i + 1)], dl = Math.hypot(q[0] - p[0], q[1] - p[1]) || 1, nx = -(q[1] - p[1]) / dl * width / 2, nz = (q[0] - p[0]) / dl * width / 2, [x, z] = L[i];
-      pos.push(x + nx, ground(x + nx, z + nz) + 1.2, z + nz, x - nx, ground(x - nx, z - nz) + 1.2, z - nz); if (i) idx.push(n - 2, n, n - 1, n - 1, n, n + 1); n += 2; } }
-  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
-  return new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.25, metalness: 0.1, transparent: true, opacity, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, side: THREE.DoubleSide }));
+  const pos = [], uv = [], idx = []; let n = 0;
+  for (const L0 of lines) { const L = []; for (let i = 1; i < L0.length; i++) { const [x1, z1] = L0[i - 1], [x2, z2] = L0[i], k = Math.max(1, Math.ceil(Math.hypot(x2 - x1, z2 - z1) / 8)); for (let s = 0; s < k; s++) L.push([x1 + (x2 - x1) * s / k, z1 + (z2 - z1) * s / k]); } if (L0.length) L.push(L0.at(-1));
+    let along = 0;
+    for (let i = 0; i < L.length; i++) { if (i) along += Math.hypot(L[i][0] - L[i - 1][0], L[i][1] - L[i - 1][1]);
+      const p = L[Math.max(0, i - 1)], q = L[Math.min(L.length - 1, i + 1)], dl = Math.hypot(q[0] - p[0], q[1] - p[1]) || 1, nx = -(q[1] - p[1]) / dl * width / 2, nz = (q[0] - p[0]) / dl * width / 2, [x, z] = L[i];
+      pos.push(x + nx, ground(x + nx, z + nz) + 1.6, z + nz, x - nx, ground(x - nx, z - nz) + 1.6, z - nz); uv.push(along / 40, 0, along / 40, 1);
+      if (i) idx.push(n - 2, n, n - 1, n - 1, n, n + 1); n += 2; } }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeVertexNormals();
+  const m = new THREE.MeshStandardMaterial({ color, map: flowTexture(), emissive: '#1a6fd0', emissiveIntensity: 0.35, roughness: 0.15, metalness: 0.15, transparent: true, opacity, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, side: THREE.DoubleSide });
+  const mesh = new THREE.Mesh(g, m); mesh.renderOrder = 3; mesh.receiveShadow = false; return mesh;
 }
 
 // ---------- mode cinéma : survol guidé + enregistrement vidéo ----------
@@ -736,6 +749,7 @@ function loop() {
   else if (tw) { const k = Math.min(1, (now - tw.t0) / tw.dur), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2; camera.position.lerpVectors(tw.e0, tw.e1, e); controls.target.lerpVectors(tw.t0v, tw.t1, e); if (k >= 1) tw = null; }
   if (mode2d) return;
   if (!cine) controls.update();
+  if (flowTex) flowTex.offset.x = -(now / 1000) * 0.25; // le courant descend la vallée
   followSun(); // l'ombre suit la zone regardée (cadrage serré = ombres nettes)
   frame();
   if (!document.body.dataset.ready) { document.body.dataset.ready = '1'; $('msg').style.display = 'none'; } // première image affichée (shaders compilés)

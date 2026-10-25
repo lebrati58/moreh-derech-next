@@ -363,7 +363,7 @@ export function pilgrimRoad(points, groundAt) {
 // BASSIN DE SILOÉ (Second Temple) : 69 m de large (Wikipedia, fouilles Reich–Shukron), trois volées de cinq marches séparées
 // par deux paliers (Drive, סיור 12 « הגבעה המזרחית »). Côtés nord et est seulement (fouillés) ; longueur et profondeur schématiques.
 export function siloamPool(W = 69, D = 45) {
-  const g = new THREE.Group(), st = stone('paving', { tint: '#eadfca' }), water = new THREE.MeshStandardMaterial({ color: '#3f7f8f', roughness: 0.15, metalness: 0.1, transparent: true, opacity: 0.85 });
+  const g = new THREE.Group(), st = stone('paving', { tint: '#eadfca' }), water = new THREE.MeshStandardMaterial({ color: '#3c9be6', emissive: '#0e4f8f', emissiveIntensity: 0.3, roughness: 0.1, metalness: 0.1, transparent: true, opacity: 0.92 });
   // bassin construit au-dessus du sol du modèle (le relief SRTM masquerait un creux) : marches pleines jusqu'au fond
   const step = 0.3, tread = 0.5, land = 1.6, F = -(15 + 2) * step - 0.4; let off = 0, y = 0;
   const put = (w, d, x, z, top) => g.add(box(w, top - F, d, st, x, F, z));
