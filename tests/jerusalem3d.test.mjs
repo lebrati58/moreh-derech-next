@@ -15,15 +15,15 @@ test('phase 2 locked: 3D quizzes disabled and hidden', async () => {
 
 test('every monument is sourced, translated and classified', async () => {
   const d = JSON.parse(await read('public/jerusalem3d/monuments.json'));
-  assert.equal(d.periods.length, 11);
+  assert.equal(d.periods.length, 12); // 11 périodes + « aujourd'hui »
   const ids = new Set();
   for (const m of d.monuments) {
     assert.match(m.id, /^jerusalem_[a-z0-9_]+$/, m.id);
     assert.ok(!ids.has(m.id), 'identifiant en double ' + m.id); ids.add(m.id);
     assert.ok(['attested', 'reconstruction', 'hypothesis'].includes(m.certainty), m.id);
-    assert.ok(m.from >= 1 && m.to <= 11 && m.from <= m.to, m.id + ' période');
+    assert.ok(m.from >= 1 && m.to <= 12 && m.from <= m.to, m.id + ' période');
     for (const k of ['name', 'text']) for (const l of LANGS) assert.ok(m[k] && m[k][l] && m[k][l].length > 1, `${m.id}.${k}.${l}`);
-    for (const k of ['dims', 'remains', 'debate', 'otherView', 'placementNote']) if (m[k]) for (const l of LANGS) assert.ok(m[k][l], `${m.id}.${k}.${l}`);
+    for (const k of ['dims', 'remains', 'debate', 'otherView', 'placementNote', 'builder', 'function', 'events']) if (m[k]) for (const l of LANGS) assert.ok(m[k][l], `${m.id}.${k}.${l}`);
     assert.ok(m.sources.length >= 1, m.id + ' sans source');
     m.sources.forEach(s => { assert.ok(['drive', 'primary', 'online'].includes(s.kind)); assert.match(s.url, /^https:\/\//); });
     // Une hypothèse ne reçoit que des questions de type « archéologie » (phase 2).
@@ -60,7 +60,7 @@ test('wall lines per period: every waypoint is a known anchor, an esplanade corn
   const walls = d.monuments.filter(m => m.wall);
   assert.ok(walls.length >= 10, 'au moins 10 tracés');
   const periods = new Set(); walls.forEach(w => { for (let p = w.from; p <= w.to; p++) periods.add(p); });
-  for (const p of [1, 2, 3, 4, 5, 6, 7, 8, 9, 11]) assert.ok(periods.has(p), 'période sans muraille : ' + p);
+  for (const p of [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]) assert.ok(periods.has(p), 'période sans muraille : ' + p);
   assert.ok(!periods.has(10), 'période 10 : murailles rasées (1219), aucune ligne');
   for (const w of walls) {
     assert.equal(w.shape.type, 'wallline'); assert.match(w.shape.color, /^#[0-9a-f]{6}$/);
@@ -73,6 +73,7 @@ test('wall lines per period: every waypoint is a known anchor, an esplanade corn
         const [k, v] = tok.split(/:(.*)/);
         if (k === 'a') assert.ok(anchors[v], w.id + ' : repère inconnu ' + v);
         else if (k === 'tm') assert.match(v, /^(NE|NW|SE|SW)$/);
+        else if (k === 'herod') assert.match(v, /^(hippicus|mariamne)$/);
         else if (k === 'mid') v.split(',').forEach(a => assert.ok(anchors[a], w.id + ' : ' + a));
         else assert.fail(w.id + ' : jeton inconnu ' + tok);
       }

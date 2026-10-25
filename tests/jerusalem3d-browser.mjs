@@ -27,13 +27,14 @@ page.on('pageerror', e => errors.push('pageerror: ' + e.message));
 page.on('console', m => { if (m.type() === 'error' && !/supabase|ERR_|net::|Failed to load resource/i.test(m.text())) errors.push('console: ' + m.text()); });
 const ok = (c, msg) => { if (!c) { errors.push('ASSERT: ' + msg); console.log('❌', msg); } else console.log('✅', msg); };
 // Rendu logiciel (SwiftShader) très lent : on fige la boucle, on force une image, puis on capture.
+const tool = async id => { await page.click('#bMenu'); await page.click(id); };
 const shot = async n => { await page.evaluate(() => { const A = window.MDJerusalem3D; if (A && document.querySelector('#stage canvas') && !document.body.classList.contains('mode2d')) { A.pause(true); A.snapshot(); } }); await page.screenshot({ path: `${OUT}/${n}.png`, timeout: 300000 }); await page.evaluate(() => window.MDJerusalem3D && window.MDJerusalem3D.pause(false)); };
 
 await page.goto(base + 'jerusalem3d.html?period=5');
 await page.waitForSelector('#strip [data-p]');
 await page.waitForFunction(() => document.body.dataset.ready === '1' || document.body.classList.contains('mode2d'), null, { timeout: 400000 });
 await page.waitForTimeout(500);
-ok(await page.locator('#strip [data-p]').count() === 11, '11 périodes dans la frise');
+ok(await page.locator('#strip [data-p]').count() === 12, '12 périodes dans la frise (dont « aujourd’hui »)');
 ok((await page.textContent('#pName')).includes('הורדוסית'), 'période hérodienne active');
 const has3d = await page.evaluate(() => !!document.querySelector('#stage canvas'));
 console.log('   ↳ WebGL :', has3d ? 'oui (3D)' : 'non (plan 2D)');
@@ -68,12 +69,12 @@ ok(await page.evaluate(() => document.documentElement.dir === 'ltr'), 'français
 await page.click('[data-lang="he"]');
 
 // comparaison des murailles
-await page.click('#bCompare'); await page.waitForSelector('.sheet.open .wrow');
+await tool('#bCompare'); await page.waitForSelector('.sheet.open .wrow');
 ok((await page.locator('.wrow').count()) >= 10, 'comparaison : liste des murailles de toutes les époques');
 await page.click('#sClose'); await page.waitForTimeout(1200);
 ok((await page.locator('.lb.wl').count()) >= 6, 'comparaison : étiquettes des murailles');
 await shot('06b-comparaison');
-await page.click('#bCompare'); await page.waitForTimeout(500);
+await tool('#bCompare'); await page.waitForTimeout(500);
 
 // modèles détaillés de la période hérodienne
 await page.click('#strip [data-p="5"]'); await page.waitForTimeout(800);
@@ -84,10 +85,18 @@ ok(tm < 2, 'arc de Wilson au niveau du parvis');
 await page.evaluate(() => window.MDJerusalem3D.viewAt('jerusalem_second_temple')); await shot('08-temple');
 // murailles : constructeur et date sur l'étiquette, hauteur ×2 signalée
 ok(await page.evaluate(() => [...document.querySelectorAll('.lb.wl small')].some(s => s.textContent.length > 3)), 'murailles : constructeur et date sur l’étiquette');
+// comparer avec aujourd'hui puis revenir
+await page.evaluate(() => window.MDJerusalem3D.openSheet('jerusalem_robinsons_arch')); await page.waitForSelector('#sToday');
+ok((await page.textContent('#sBody .altname')).length > 2, 'fiche : nom dans une deuxième langue');
+await page.click('#sToday'); await page.waitForTimeout(600);
+ok((await page.textContent('#pName')).includes('היום'), 'comparer avec aujourd’hui : période actuelle');
+await page.click('#backChip'); await page.waitForTimeout(600);
+ok((await page.textContent('#pName')).includes('הורדוסית'), 'retour à la période d’origine');
+ok(await page.locator('#toolsMenu .tl').first().textContent().then(s => s.length > 2), 'menu Outils : boutons avec libellés');
 // couleurs de certitude
-await page.click('#bColors'); await page.waitForTimeout(500);
+await tool('#bColors'); await page.waitForTimeout(500);
 ok(await page.getAttribute('#bColors', 'aria-pressed') === 'true', 'bouton couleurs de certitude');
-await shot('09-temple-certitude'); await page.click('#bColors'); await page.waitForTimeout(300);
+await shot('09-temple-certitude'); await tool('#bColors'); await page.waitForTimeout(300);
 // mode cinéma (survol + sous-titres) puis arrêt
 await page.click('#bCine'); await page.waitForTimeout(1500);
 ok(await page.evaluate(() => document.body.classList.contains('cinema')), 'mode cinéma : interface masquée');
@@ -97,11 +106,11 @@ await page.click('#cineStop'); await page.waitForTimeout(400);
 ok(!(await page.evaluate(() => document.body.classList.contains('cinema'))), 'mode cinéma : arrêt');
 // enregistrement vidéo : téléchargement d'un .webm à l'arrêt
 const dl = page.waitForEvent('download', { timeout: 120000 }).catch(() => null);
-await page.click('#bRec'); await page.waitForTimeout(4000); await page.click('#cineStop');
+await tool('#bRec'); await page.waitForTimeout(4000); await page.click('#cineStop');
 const file = await dl; ok(file && /\.webm$/.test(file.suggestedFilename()), 'enregistrement : fichier vidéo ' + (file ? file.suggestedFilename() : 'absent'));
 
 // plan 2D
-await page.click('#b2d'); await page.waitForTimeout(500);
+await tool('#b2d'); await page.waitForTimeout(500);
 ok(await page.isVisible('#plan2d'), 'plan 2D affiché');
 ok((await page.locator('#plan2d [data-id]').count()) > 3, 'monuments sur le plan 2D');
 await page.click('#strip [data-p="5"]'); await page.waitForTimeout(400);

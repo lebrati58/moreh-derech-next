@@ -21,10 +21,10 @@ const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ==
 const EXAG = 1; // relief réel (SRTM), sans exagération
 
 const UI = {
-  he: { builtBy: 'נבנתה בידי', wallX2: 'חומות: גובה ×2 (להבלטה) — לחצו לגובה האמיתי', wallX1: 'חומות: גובה אמיתי — לחצו להגדלה ×2', cinema: 'סיור מצולם (מצב הצגה)', record: 'הקלטת וידאו של הסיור', quality: 'איכות תצוגה: גבוהה / חסכונית', colors: 'צבעים לפי ודאות / חומרים מציאותיים', noRec: 'הדפדפן הזה לא תומך בהקלטה. אפשר להקליט מסך.', stop: 'עצירה', schem: 'מידות לפי המקורות; פרטים משוחזרים',  compare: 'השוואת חומות', compareHint: 'כל החומות של כל התקופות. לחיצה על קו פותחת את הכרטיס; אפשר להסתיר חומות.', basemap: 'מפת רקע (OpenStreetMap)', city: 'העיר של היום (בניינים מ-OpenStreetMap)', walls: 'חומות', showAll: 'הצג הכול', hideAll: 'הסתר הכול', map: 'מפה', title: 'ירושלים · העיר העתיקה', sub: 'שחזור לפי מקורות — לא עיר דמיונית', old: 'שרידים מתקופה קודמת', today: 'קו החומה של היום', exag: 'תבליט אמיתי (SRTM 30 מ׳)', sites: 'אתרים', all: 'כל האתרים בתקופה', noPos: 'ללא מיקום בסצנה', dims: 'ממדים מתועדים', remains: 'מה נשאר היום', debate: 'מחלוקת', other: 'מקורות אחרים', note: 'על הסימון בסצנה', sources: 'מקורות', show: '📍 הראו בסצנה', drive: 'מסמך קורס', primary: 'מקור קדום', online: 'מקור מקוון', period: 'תקופה', list2d: 'מפה דו-ממדית', loadErr: 'לא ניתן לטעון את הנתונים. נסו שוב עם חיבור.', geoMissing: 'נתוני המפה עוד לא נוצרו (geo.json).', noWebgl: 'הטלפון לא תומך בתלת-ממד — מוצגת מפה דו-ממדית.', toggleToday: 'קו החומה של היום', toggle2d: 'דו-ממד / תלת-ממד', home: 'חזרה למבט הכללי', list: 'רשימת האתרים', attr: 'מיקומים: ויקינתונים · תוואים: © תורמי OpenStreetMap · גבהים: ' },
-  fr: { builtBy: 'Bâtie par', wallX2: 'Murailles : hauteur ×2 (lisibilité) — toucher pour la hauteur réelle', wallX1: 'Murailles : hauteur réelle — toucher pour ×2', cinema: 'Survol filmé (mode présentation)', record: 'Enregistrer le survol en vidéo', quality: 'Qualité : haute / économe', colors: 'Couleurs de certitude / matériaux réalistes', noRec: 'Ce navigateur ne sait pas enregistrer. Utilisez la capture d’écran.', stop: 'Arrêter', schem: 'Dimensions d’après les sources ; détails reconstitués',  compare: 'Comparer les murailles', compareHint: 'Toutes les murailles de toutes les époques. Touchez une ligne pour sa fiche ; vous pouvez en masquer.', basemap: 'Carte de fond (OpenStreetMap)', city: 'La ville d’aujourd’hui (bâtiments OpenStreetMap)', walls: 'Murailles', showAll: 'Tout afficher', hideAll: 'Tout masquer', map: 'Carte', title: 'Jérusalem · Vieille Ville', sub: 'Reconstitution sourcée — pas une ville imaginaire', old: 'Vestiges d’une période antérieure', today: 'Tracé actuel des murailles', exag: 'Relief réel (SRTM 30 m)', sites: 'sites', all: 'Tous les sites de la période', noPos: 'Sans position dans la scène', dims: 'Dimensions documentées', remains: 'Ce qui reste aujourd’hui', debate: 'Débat', other: 'Autre avis', note: 'À propos du repère', sources: 'Sources', show: '📍 Montrer dans la scène', drive: 'Document du cours', primary: 'Source antique', online: 'Source en ligne', period: 'Période', list2d: 'Plan 2D', loadErr: 'Impossible de charger les données. Réessayez avec une connexion.', geoMissing: 'Les données géographiques (geo.json) ne sont pas encore générées.', noWebgl: 'Ce téléphone ne gère pas la 3D — plan 2D affiché.', toggleToday: 'Tracé actuel', toggle2d: '2D / 3D', home: 'Vue d’ensemble', list: 'Liste des sites', attr: 'Positions : Wikidata · Tracés : © contributeurs OpenStreetMap · Relief : ' },
-  en: { builtBy: 'Built by', wallX2: 'Walls: height ×2 (for legibility) — tap for true height', wallX1: 'Walls: true height — tap for ×2', cinema: 'Filmed fly-through (presentation mode)', record: 'Record the fly-through as video', quality: 'Quality: high / light', colors: 'Certainty colours / realistic materials', noRec: 'This browser cannot record. Use screen capture.', stop: 'Stop', schem: 'Dimensions from the sources; details reconstructed',  compare: 'Compare the walls', compareHint: 'All walls of all periods. Tap a line for its card; you can hide some.', basemap: 'Base map (OpenStreetMap)', city: 'Today’s city (OpenStreetMap buildings)', walls: 'Walls', showAll: 'Show all', hideAll: 'Hide all', map: 'Map', title: 'Jerusalem · Old City', sub: 'Source-based reconstruction — not an imaginary city', old: 'Remains from an earlier period', today: 'Today’s wall line', exag: 'True relief (SRTM 30 m)', sites: 'sites', all: 'All sites in this period', noPos: 'No position in the scene', dims: 'Documented dimensions', remains: 'What remains today', debate: 'Debate', other: 'Other view', note: 'About the marker', sources: 'Sources', show: '📍 Show in scene', drive: 'Course document', primary: 'Ancient source', online: 'Online source', period: 'Period', list2d: '2D plan', loadErr: 'Could not load the data. Try again online.', geoMissing: 'Geographic data (geo.json) not generated yet.', noWebgl: 'This phone does not support 3D — showing the 2D plan.', toggleToday: 'Today’s walls', toggle2d: '2D / 3D', home: 'Overview', list: 'Site list', attr: 'Positions: Wikidata · Lines: © OpenStreetMap contributors · Relief: ' },
-  ru: { builtBy: 'Построена', wallX2: 'Стены: высота ×2 (для наглядности) — нажмите для реальной', wallX1: 'Стены: реальная высота — нажмите для ×2', cinema: 'Облёт (режим показа)', record: 'Записать облёт на видео', quality: 'Качество: высокое / экономное', colors: 'Цвета достоверности / реальные материалы', noRec: 'Этот браузер не умеет записывать. Используйте запись экрана.', stop: 'Стоп', schem: 'Размеры по источникам; детали реконструированы',  compare: 'Сравнить стены', compareHint: 'Все стены всех эпох. Нажмите на линию, чтобы открыть карточку; можно скрыть.', basemap: 'Подложка (OpenStreetMap)', city: 'Современный город (здания OpenStreetMap)', walls: 'Стены', showAll: 'Показать все', hideAll: 'Скрыть все', map: 'Карта', title: 'Иерусалим · Старый город', sub: 'Реконструкция по источникам — не вымышленный город', old: 'Остатки более раннего периода', today: 'Нынешняя линия стен', exag: 'Реальный рельеф (SRTM 30 м)', sites: 'объектов', all: 'Все объекты периода', noPos: 'Без места в сцене', dims: 'Документированные размеры', remains: 'Что сохранилось', debate: 'Спор', other: 'Другое мнение', note: 'О метке', sources: 'Источники', show: '📍 Показать в сцене', drive: 'Документ курса', primary: 'Древний источник', online: 'Онлайн-источник', period: 'Период', list2d: 'План 2D', loadErr: 'Не удалось загрузить данные.', geoMissing: 'Географические данные (geo.json) ещё не созданы.', noWebgl: 'Телефон не поддерживает 3D — показан план 2D.', toggleToday: 'Нынешние стены', toggle2d: '2D / 3D', home: 'Общий вид', list: 'Список объектов', attr: 'Координаты: Wikidata · Линии: © участники OpenStreetMap · Рельеф: ' }
+  he: { function: 'תפקיד', events: 'אירועים', cmpToday: 'להשוות להיום', tools: 'כלים', preparing: 'מכין את התלת-ממד…', builtBy: 'נבנתה בידי', wallX2: 'חומות: גובה ×2 (להבלטה) — לחצו לגובה האמיתי', wallX1: 'חומות: גובה אמיתי — לחצו להגדלה ×2', cinema: 'סיור מצולם (מצב הצגה)', record: 'הקלטת וידאו של הסיור', quality: 'איכות תצוגה: גבוהה / חסכונית', colors: 'צבעים לפי ודאות / חומרים מציאותיים', noRec: 'הדפדפן הזה לא תומך בהקלטה. אפשר להקליט מסך.', stop: 'עצירה', schem: 'מידות לפי המקורות; פרטים משוחזרים',  compare: 'השוואת חומות', compareHint: 'כל החומות של כל התקופות. לחיצה על קו פותחת את הכרטיס; אפשר להסתיר חומות.', basemap: 'מפת רקע (OpenStreetMap)', city: 'העיר של היום (בניינים מ-OpenStreetMap)', walls: 'חומות', showAll: 'הצג הכול', hideAll: 'הסתר הכול', map: 'מפה', title: 'ירושלים · העיר העתיקה', sub: 'שחזור לפי מקורות — לא עיר דמיונית', old: 'שרידים מתקופה קודמת', today: 'קו החומה של היום', exag: 'תבליט אמיתי (SRTM 30 מ׳)', sites: 'אתרים', all: 'כל האתרים בתקופה', noPos: 'ללא מיקום בסצנה', dims: 'ממדים מתועדים', remains: 'מה נשאר היום', debate: 'מחלוקת', other: 'מקורות אחרים', note: 'על הסימון בסצנה', sources: 'מקורות', show: '📍 הראו בסצנה', drive: 'מסמך קורס', primary: 'מקור קדום', online: 'מקור מקוון', period: 'תקופה', list2d: 'מפה דו-ממדית', loadErr: 'לא ניתן לטעון את הנתונים. נסו שוב עם חיבור.', geoMissing: 'נתוני המפה עוד לא נוצרו (geo.json).', noWebgl: 'הטלפון לא תומך בתלת-ממד — מוצגת מפה דו-ממדית.', toggleToday: 'קו החומה של היום', toggle2d: 'דו-ממד / תלת-ממד', home: 'חזרה למבט הכללי', list: 'רשימת האתרים', attr: 'מיקומים: ויקינתונים · תוואים: © תורמי OpenStreetMap · גבהים: ' },
+  fr: { function: 'Fonction', events: 'Événements', cmpToday: 'Comparer avec aujourd’hui', tools: 'Outils', preparing: 'Préparation de la 3D…', builtBy: 'Bâtie par', wallX2: 'Murailles : hauteur ×2 (lisibilité) — toucher pour la hauteur réelle', wallX1: 'Murailles : hauteur réelle — toucher pour ×2', cinema: 'Survol filmé (mode présentation)', record: 'Enregistrer le survol en vidéo', quality: 'Qualité : haute / économe', colors: 'Couleurs de certitude / matériaux réalistes', noRec: 'Ce navigateur ne sait pas enregistrer. Utilisez la capture d’écran.', stop: 'Arrêter', schem: 'Dimensions d’après les sources ; détails reconstitués',  compare: 'Comparer les murailles', compareHint: 'Toutes les murailles de toutes les époques. Touchez une ligne pour sa fiche ; vous pouvez en masquer.', basemap: 'Carte de fond (OpenStreetMap)', city: 'La ville d’aujourd’hui (bâtiments OpenStreetMap)', walls: 'Murailles', showAll: 'Tout afficher', hideAll: 'Tout masquer', map: 'Carte', title: 'Jérusalem · Vieille Ville', sub: 'Reconstitution sourcée — pas une ville imaginaire', old: 'Vestiges d’une période antérieure', today: 'Tracé actuel des murailles', exag: 'Relief réel (SRTM 30 m)', sites: 'sites', all: 'Tous les sites de la période', noPos: 'Sans position dans la scène', dims: 'Dimensions documentées', remains: 'Ce qui reste aujourd’hui', debate: 'Débat', other: 'Autre avis', note: 'À propos du repère', sources: 'Sources', show: '📍 Montrer dans la scène', drive: 'Document du cours', primary: 'Source antique', online: 'Source en ligne', period: 'Période', list2d: 'Plan 2D', loadErr: 'Impossible de charger les données. Réessayez avec une connexion.', geoMissing: 'Les données géographiques (geo.json) ne sont pas encore générées.', noWebgl: 'Ce téléphone ne gère pas la 3D — plan 2D affiché.', toggleToday: 'Tracé actuel', toggle2d: '2D / 3D', home: 'Vue d’ensemble', list: 'Liste des sites', attr: 'Positions : Wikidata · Tracés : © contributeurs OpenStreetMap · Relief : ' },
+  en: { function: 'Function', events: 'Events', cmpToday: 'Compare with today', tools: 'Tools', preparing: 'Preparing the 3D view…', builtBy: 'Built by', wallX2: 'Walls: height ×2 (for legibility) — tap for true height', wallX1: 'Walls: true height — tap for ×2', cinema: 'Filmed fly-through (presentation mode)', record: 'Record the fly-through as video', quality: 'Quality: high / light', colors: 'Certainty colours / realistic materials', noRec: 'This browser cannot record. Use screen capture.', stop: 'Stop', schem: 'Dimensions from the sources; details reconstructed',  compare: 'Compare the walls', compareHint: 'All walls of all periods. Tap a line for its card; you can hide some.', basemap: 'Base map (OpenStreetMap)', city: 'Today’s city (OpenStreetMap buildings)', walls: 'Walls', showAll: 'Show all', hideAll: 'Hide all', map: 'Map', title: 'Jerusalem · Old City', sub: 'Source-based reconstruction — not an imaginary city', old: 'Remains from an earlier period', today: 'Today’s wall line', exag: 'True relief (SRTM 30 m)', sites: 'sites', all: 'All sites in this period', noPos: 'No position in the scene', dims: 'Documented dimensions', remains: 'What remains today', debate: 'Debate', other: 'Other view', note: 'About the marker', sources: 'Sources', show: '📍 Show in scene', drive: 'Course document', primary: 'Ancient source', online: 'Online source', period: 'Period', list2d: '2D plan', loadErr: 'Could not load the data. Try again online.', geoMissing: 'Geographic data (geo.json) not generated yet.', noWebgl: 'This phone does not support 3D — showing the 2D plan.', toggleToday: 'Today’s walls', toggle2d: '2D / 3D', home: 'Overview', list: 'Site list', attr: 'Positions: Wikidata · Lines: © OpenStreetMap contributors · Relief: ' },
+  ru: { function: 'Назначение', events: 'События', cmpToday: 'Сравнить с сегодняшним днём', tools: 'Инструменты', preparing: 'Подготовка 3D…', builtBy: 'Построена', wallX2: 'Стены: высота ×2 (для наглядности) — нажмите для реальной', wallX1: 'Стены: реальная высота — нажмите для ×2', cinema: 'Облёт (режим показа)', record: 'Записать облёт на видео', quality: 'Качество: высокое / экономное', colors: 'Цвета достоверности / реальные материалы', noRec: 'Этот браузер не умеет записывать. Используйте запись экрана.', stop: 'Стоп', schem: 'Размеры по источникам; детали реконструированы',  compare: 'Сравнить стены', compareHint: 'Все стены всех эпох. Нажмите на линию, чтобы открыть карточку; можно скрыть.', basemap: 'Подложка (OpenStreetMap)', city: 'Современный город (здания OpenStreetMap)', walls: 'Стены', showAll: 'Показать все', hideAll: 'Скрыть все', map: 'Карта', title: 'Иерусалим · Старый город', sub: 'Реконструкция по источникам — не вымышленный город', old: 'Остатки более раннего периода', today: 'Нынешняя линия стен', exag: 'Реальный рельеф (SRTM 30 м)', sites: 'объектов', all: 'Все объекты периода', noPos: 'Без места в сцене', dims: 'Документированные размеры', remains: 'Что сохранилось', debate: 'Спор', other: 'Другое мнение', note: 'О метке', sources: 'Источники', show: '📍 Показать в сцене', drive: 'Документ курса', primary: 'Древний источник', online: 'Онлайн-источник', period: 'Период', list2d: 'План 2D', loadErr: 'Не удалось загрузить данные.', geoMissing: 'Географические данные (geo.json) ещё не созданы.', noWebgl: 'Телефон не поддерживает 3D — показан план 2D.', toggleToday: 'Нынешние стены', toggle2d: '2D / 3D', home: 'Общий вид', list: 'Список объектов', attr: 'Координаты: Wikidata · Линии: © участники OpenStreetMap · Рельеф: ' }
 };
 let lang = store.get('mdl_mode_lang', store.get('mdl_lang', 'he')); if (!UI[lang]) lang = 'he';
 const t = k => UI[lang][k] || UI.he[k] || k;
@@ -77,6 +77,7 @@ function wpt(tok) {
   if (typeof tok !== 'string') return null;
   if (tok.startsWith('a:')) return anchorXZ(tok.slice(2));
   if (tok.startsWith('tm:')) return tmCorner(tok.slice(3));
+  if (tok.startsWith('herod:')) return herodTowerPos(tok.slice(6)); // tour d'Hérode (Hippicus : début de la 1re muraille, Josèphe 5.144)
   if (tok.startsWith('mid:')) { const [a, b] = tok.slice(4).split(',').map(anchorXZ); return a && b ? [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2] : null; }
   return null;
 }
@@ -96,8 +97,11 @@ function applyUI() {
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   $('bCompare').title = t('compare'); $('bCompare').setAttribute('aria-label', t('compare')); $('bBase').title = t('basemap'); $('bBase').setAttribute('aria-label', t('basemap'));
   $('bToday').title = t('toggleToday'); $('b2d').title = t('toggle2d'); $('bHome').title = t('home'); $('bList').title = t('list');
-  for (const [b, k] of [['bCine', 'cinema'], ['bRec', 'record'], ['bQual', 'quality'], ['bColors', 'colors']]) { $(b).title = t(k); $(b).setAttribute('aria-label', t(k)); }
-  $('bQual').textContent = quality === 'high' ? 'HD' : 'SD'; $('bColors').setAttribute('aria-pressed', String(!realistic)); $('cineStop').textContent = '✕ ' + t('stop');
+  for (const [b, k] of [['bCine', 'cinema'], ['bRec', 'record'], ['bQual', 'quality'], ['bColors', 'colors'], ['bMenu', 'tools']]) { $(b).title = t(k); $(b).setAttribute('aria-label', t(k)); }
+  // libellés visibles du menu Outils
+  for (const [b, k] of [['bCompare', 'compare'], ['b2d', 'toggle2d'], ['bBase', 'basemap'], ['bToday', 'toggleToday'], ['bRec', 'record'], ['bColors', 'colors'], ['bQual', 'quality'], ['bWallX2', wallX > 1 ? 'wallX2' : 'wallX1']]) { const el = $(b) && $(b).querySelector('.tl'); if (el) el.textContent = t(k); }
+  $('bWallX2').onclick = () => { wallX = wallX > 1 ? 1 : 2; store.set('mdl_j3d_wallx', String(wallX)); applyUI(); };
+  $('bQual').querySelector('.ti').textContent = quality === 'high' ? 'HD' : 'SD'; $('bColors').setAttribute('aria-pressed', String(!realistic)); $('cineStop').textContent = '✕ ' + t('stop');
   $('bToday').setAttribute('aria-label', t('toggleToday')); $('b2d').setAttribute('aria-label', t('toggle2d')); $('bHome').setAttribute('aria-label', t('home')); $('bList').setAttribute('aria-label', t('list'));
   if (!DATA) return;
   const C = DATA.certainty;
@@ -126,14 +130,27 @@ function openSheet(id) {
   const m = DATA.monuments.find(x => x.id === id); if (!m) return;
   selected = id; const C = DATA.certainty[m.certainty], p = DATA.periods.find(x => x.n === m.from);
   const sec = (k, v, cls) => v ? (cls ? `<div class="box ${cls}"><b>${esc(t(k))}:</b> ${esc(tx(v))}</div>` : `<div class="k">${esc(t(k))}</div><p>${esc(tx(v))}</p>`) : '';
-  $('sBody').innerHTML = `<h2 id="sTitle">${esc(tx(m.name))}</h2>
+  const alt = lang === 'he' ? m.name.fr : m.name.he;
+  $('sBody').innerHTML = `<h2 id="sTitle">${esc(tx(m.name))}</h2><div class="altname" lang="${lang === 'he' ? 'fr' : 'he'}" dir="${lang === 'he' ? 'ltr' : 'rtl'}">${esc(alt)}</div>
     <div class="badges"><span class="badge c" style="--c:${C.color}">${esc(tx(C.name))}</span><span class="badge">${esc(t('period'))}: ${esc(tx(p.name))} · ${esc(tx(p.dates))}</span></div>
-    ${m.builder ? `<div class="box built">🏗️ <b>${esc(t('builtBy'))}:</b> ${esc(tx(m.builder))}</div>` : ''}<p>${esc(tx(m.text))}</p>${sec('dims', m.dims)}${sec('remains', m.remains)}${sec('debate', m.debate, 'debate')}${sec('other', m.otherView, 'other')}${sec('note', m.placementNote, 'note')}${SCHEMATIC.has((m.shape || {}).type) ? `<div class="box note">📐 ${esc(t('schem'))}</div>` : ''}
+    ${m.builder ? `<div class="box built">🏗️ <b>${esc(t('builtBy'))}:</b> ${esc(tx(m.builder))}</div>` : ''}<p>${esc(tx(m.text))}</p>${sec('function', m.function)}${sec('events', m.events)}${sec('dims', m.dims)}${sec('remains', m.remains)}${sec('debate', m.debate, 'debate')}${sec('other', m.otherView, 'other')}${sec('note', m.placementNote, 'note')}${SCHEMATIC.has((m.shape || {}).type) ? `<div class="box note">📐 ${esc(t('schem'))}</div>` : ''}
     <div class="k">${esc(t('sources'))}</div><ul>${m.sources.map(s => `<li>${srcIcon(s.kind)} <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a> <small style="color:var(--soft)">(${esc(t(s.kind))})</small></li>`).join('')}</ul>
-    ${placed.has(id) ? `<div class="acts"><button type="button" id="sShow">${esc(t('show'))}</button></div>` : `<div class="box note">${esc(t('noPos'))}</div>`}`;
+    ${placed.has(id) ? `<div class="acts"><button type="button" id="sShow">${esc(t('show'))}</button>${period !== 12 && !compare ? `<button type="button" id="sToday" class="ghostbtn">🔄 ${esc(t('cmpToday'))}</button>` : ''}</div>` : `<div class="box note">${esc(t('noPos'))}</div>`}`;
   $('sheet').classList.add('open');
   const b = $('sShow'); if (b) b.onclick = () => { $('sheet').classList.remove('open'); flyTo(id); };
+  const bt = $('sToday'); if (bt) bt.onclick = () => compareToday(id);
   updateLabelSel();
+}
+// « Comparer avec aujourd'hui » : même cadrage, période actuelle ; une pastille ramène à la période d'origine.
+let backTo = null;
+function compareToday(id) {
+  $('sheet').classList.remove('open'); if (mode2d) setMode2d(false);
+  const keep = camera ? [camera.position.clone(), controls.target.clone()] : null; backTo = period;
+  period = 12; store.set('mdl_j3d_period', '12'); renderPeriod();
+  if (keep) { camera.position.copy(keep[0]); controls.target.copy(keep[1]); controls.update(); }
+  if (placed.has(id)) highlight(id);
+  const p = DATA.periods.find(x => x.n === backTo), c = $('backChip'); c.textContent = '↩ ' + tx(p.name); c.hidden = false;
+  c.onclick = () => { const k = [camera.position.clone(), controls.target.clone()]; period = backTo; backTo = null; c.hidden = true; store.set('mdl_j3d_period', String(period)); renderPeriod(); camera.position.copy(k[0]); controls.target.copy(k[1]); controls.update(); if (placed.has(id)) highlight(id); };
 }
 function openList() {
   const items = DATA.monuments.filter(inPeriod), C = DATA.certainty;
@@ -144,7 +161,7 @@ function openList() {
   $('sBody').querySelectorAll('[data-id]').forEach(b => b.onclick = () => openSheet(b.dataset.id));
 }
 $('sClose').onclick = () => { $('sheet').classList.remove('open'); selected = null; updateLabelSel(); };
-$('strip').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (!b) return; if (compare) { compare = false; $('bCompare').setAttribute('aria-pressed', 'false'); document.body.classList.remove('compare'); } period = Number(b.dataset.p); store.set('mdl_j3d_period', String(period)); $('sheet').classList.remove('open'); selected = null; renderPeriod(); if (!mode2d && camera) homeView(true); });
+$('strip').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (!b) return; if (compare) { compare = false; $('bCompare').setAttribute('aria-pressed', 'false'); document.body.classList.remove('compare'); } period = Number(b.dataset.p); store.set('mdl_j3d_period', String(period)); backTo = null; $('backChip').hidden = true; $('sheet').classList.remove('open'); selected = null; renderPeriod(); if (!mode2d && camera) homeView(true); });
 $('pCount').onclick = openList; $('bList').onclick = openList;
 $('bToday').onclick = () => { showToday = !showToday; store.set('mdl_j3d_today', showToday ? '1' : '0'); renderPeriod(); };
 $('legend').onclick = () => $('legend').classList.toggle('full');
@@ -152,6 +169,9 @@ $('bHome').onclick = () => { if (!mode2d) homeView(true); };
 $('b2d').onclick = () => setMode2d(!mode2d);
 $('bCompare').onclick = () => { compare = !compare; $('bCompare').setAttribute('aria-pressed', String(compare)); document.body.classList.toggle('compare', compare); if (compare) openCompare(); else $('sheet').classList.remove('open'); renderPeriod(); if (!mode2d && camera) homeView(true); };
 $('bBase').onclick = () => { basemap = !basemap; store.set('mdl_j3d_base', basemap ? '1' : '0'); $('bBase').setAttribute('aria-pressed', String(basemap)); applyBasemap(); };
+$('bMenu').onclick = e => { e.stopPropagation(); const o = !$('toolsMenu').classList.contains('open'); $('toolsMenu').classList.toggle('open', o); $('bMenu').setAttribute('aria-expanded', String(o)); };
+$('toolsMenu').addEventListener('click', e => { if (e.target.closest('button')) setTimeout(() => { $('toolsMenu').classList.remove('open'); $('bMenu').setAttribute('aria-expanded', 'false'); }, 150); });
+document.addEventListener('click', e => { if (!e.target.closest('#toolsMenu,#bMenu')) $('toolsMenu').classList.remove('open'); });
 $('bCine').onclick = () => { if (cine) stopCinema(); else startCinema(false); };
 $('bRec').onclick = () => { if (cine) stopCinema(); else startCinema(true); };
 $('cineStop').onclick = () => stopCinema();
@@ -297,8 +317,8 @@ function loadCity() {
 let cityGhost = null;
 function styleCity() {
   if (!cityMesh) return;
-  cityMesh.visible = showToday && !compare && !(cine && period !== 11);
-  const ghost = period !== 11; cityMesh.material = ghost ? cityGhost : stone('plaster', { tint: '#f3ece0' }); cityMesh.castShadow = !ghost;
+  cityMesh.visible = showToday && !compare && !(cine && period !== 12);
+  const ghost = period !== 12; // la ville actuelle n'est pleine qu'à la période « aujourd'hui » cityMesh.material = ghost ? cityGhost : stone('plaster', { tint: '#f3ece0' }); cityMesh.castShadow = !ghost;
 }
 // Muraille en volume qui suit le relief (segments de ~8 m, une seule InstancedMesh).
 function wallMesh(lines, h, thick, material, lift = 0) {
@@ -378,7 +398,7 @@ function outlinePts(name) { // le plus grand contour de ce nom (ex. Dôme du Roc
   const s = (GEO.shapes || []).filter(x => x.kind === 'outline' && x.name === name).sort((a, b) => area(b) - area(a))[0]; if (!s) return null; const P = s.pts.map(p => toXZ(p[0], p[1])); if (P.length > 2 && Math.hypot(P[0][0] - P.at(-1)[0], P[0][1] - P.at(-1)[1]) < 0.5) P.pop(); return P; }
 // Hippicus et Mariamne : Josèphe dit seulement qu'elles se dressaient « tout près » de Phasaël, sur la première muraille, au nord du palais,
 // et que la muraille commençait à Hippicus (5.144). Placement schématique le long de la muraille : Hippicus à l'ouest, Mariamne à l'est.
-function herodTowerPos(type) { const t = anchorXZ('tower_of_david'), e = anchorXZ('israelite_tower'); if (!t || !e) return null; const L = Math.hypot(e[0] - t[0], e[1] - t[1]), u = [(e[0] - t[0]) / L, (e[1] - t[1]) / L], d = type === 'hippicus' ? -36 : 32; return [t[0] + u[0] * d, t[1] + u[1] * d]; }
+function herodTowerPos(type) { const t = anchorXZ('herodian_tower') || anchorXZ('tower_of_david'), e = anchorXZ('israelite_tower'); if (!t || !e) return null; const L = Math.hypot(e[0] - t[0], e[1] - t[1]), u = [(e[0] - t[0]) / L, (e[1] - t[1]) / L], d = type === 'hippicus' ? -36 : 32; return [t[0] + u[0] * d, t[1] + u[1] * d]; }
 function nearestOnTM(p) { let best = p, bd = Infinity; const P = TM.pts; for (let i = 1; i < P.length; i++) { const [x1, z1] = P[i - 1], [x2, z2] = P[i], L2 = (x2 - x1) ** 2 + (z2 - z1) ** 2 || 1, t = Math.max(0, Math.min(1, ((p[0] - x1) * (x2 - x1) + (p[1] - z1) * (z2 - z1)) / L2)), q = [x1 + t * (x2 - x1), z1 + t * (z2 - z1)], d = Math.hypot(q[0] - p[0], q[1] - p[1]); if (d < bd) { bd = d; best = q; } } return best; }
 function centroid(P) { return [P.reduce((s, p) => s + p[0], 0) / P.length, P.reduce((s, p) => s + p[1], 0) / P.length]; }
 // bords de l'esplanade, avec normale intérieure et orientation (sud = Portique royal)
@@ -390,7 +410,7 @@ function tmEdges() {
   return out;
 }
 const SCHEMATIC = new Set(['pilgrimroad', 'siloam', 'hippicus', 'mariamne', 'gate', 'hadrian', 'cardo', 'temple', 'porticoes', 'royalstoa', 'antonia', 'palace', 'sepulchre_byz', 'nea', 'phasael', 'wilson']);
-const PERIOD_STONE = { 1: ['ashlar', '#cfbb93'], 2: ['ashlar', '#d6c39b'], 3: ['ashlar', '#d6c39b'], 4: ['herodian', '#efe3cb'], 5: ['herodian', '#f2e8d5'], 6: ['ashlar', '#e3d6bb'], 7: ['ashlar', '#e8dcc2'], 8: ['ashlar', '#e2d3b4'], 9: ['ashlar', '#e2d3b4'], 11: ['ottoman', '#ffffff'] };
+const PERIOD_STONE = { 12: ['ottoman', '#ffffff'], 1: ['ashlar', '#cfbb93'], 2: ['ashlar', '#d6c39b'], 3: ['ashlar', '#d6c39b'], 4: ['herodian', '#efe3cb'], 5: ['herodian', '#f2e8d5'], 6: ['ashlar', '#e3d6bb'], 7: ['ashlar', '#e8dcc2'], 8: ['ashlar', '#e2d3b4'], 9: ['ashlar', '#e2d3b4'], 11: ['ottoman', '#ffffff'] };
 // Construit un monument « réaliste » selon son type ; renvoie [objet, point d'étiquette] ou null.
 function buildModel(m, sh, now) {
   const C = DATA.cubitMeters, at = m.anchor ? anchorXZ(m.anchor) : null;
@@ -433,7 +453,7 @@ function buildModel(m, sh, now) {
     case 'pilgrimroad': { const pts = (sh.via || []).map(wpt).filter(Boolean); if (pts.length < 2) return null; const g = MD.pilgrimRoad(pts, ground); const c = pts[1]; return [g, [c[0], ground(...c) + 14, c[1]]]; }
     case 'siloam': { if (!at) return null; const g = MD.siloamPool(), gy = ground(at[0], at[1]); g.position.set(at[0], gy - 0.3 + g.position.y, at[1]); return [g, [at[0], ground(...at) + 12, at[1]]]; }
     case 'phasael': { if (!at) return null; const g = now ? MD.phasael(C) : MD.box(40 * C, 20, 40 * C, stone('herodian')); place(g, at[0], ground(at[0], at[1]) - 1, at[1], TM ? TM.yaw : 0); return [g, [at[0], ground(...at) + 52, at[1]]]; }
-    case 'palace': { const t0 = anchorXZ('tower_of_david'); if (!t0) return null; const s = TM ? TM.south : [0, 1], cx = t0[0] + s[0] * 165, cz = t0[1] + s[1] * 165;
+    case 'palace': { const t0 = anchorXZ('herodian_tower') || anchorXZ('tower_of_david'); if (!t0) return null; const s = TM ? TM.south : [0, 1], cx = t0[0] + s[0] * 165, cz = t0[1] + s[1] * 165;
       const g = MD.herodPalace(300, 55, 5); place(g, cx, ground(cx, cz) - 1, cz, TM ? TM.yaw : 0); return [g, [cx, ground(cx, cz) + 26, cz]]; }
     case 'sepulchre_byz': { const P = outlinePts('Church of the Holy Sepulchre'); const c = P ? centroid(P) : at; if (!c) return null; const e = TM ? TM.east : [1, 0], yaw = TM ? TM.yaw : 0, g = new THREE.Group();
       const rot = MD.rotunda(35, 14); rot.position.set(-30, 0, 0); g.add(rot);
@@ -576,7 +596,7 @@ function loop() {
   if (!cine) controls.update();
   followSun(); // l'ombre suit la zone regardée (cadrage serré = ombres nettes)
   frame();
-  if (!document.body.dataset.ready) document.body.dataset.ready = '1'; // première image affichée (shaders compilés)
+  if (!document.body.dataset.ready) { document.body.dataset.ready = '1'; $('msg').style.display = 'none'; } // première image affichée (shaders compilés)
   if (rec) drawRecFrame();
   // brume proportionnée au cadrage : nette de près, profondeur de champ atmosphérique de loin
   const cd = camera.position.distanceTo(controls.target); scene.fog.near = Math.max(900, cd * 1.3); scene.fog.far = Math.max(5000, cd * 5);
@@ -609,7 +629,7 @@ function draw2d() {
   if (!vb) { const xs = all.map(p => p[0]), zs = all.map(p => p[1]); const x0 = Math.min(...xs) - 120, z0 = Math.min(...zs) - 160, x1 = Math.max(...xs) + 120, z1 = Math.max(...zs) + 320; vb = [x0, z0, x1 - x0, z1 - z0]; }
   svg.setAttribute('viewBox', vb.join(' '));
   const poly = (s, st) => `<polyline points="${s.pts.map(p => toXZ(...p).map(v => v.toFixed(1)).join(',')).join(' ')}" ${st}/>`;
-  (GEO.shapes || []).filter(s => s.kind === 'wall').forEach(s => P.push(poly(s, `fill="none" stroke="${period === 11 ? C.attested.color : '#ffffff'}" stroke-width="${period === 11 ? 6 : 2}" ${period === 11 || !showToday ? '' : 'stroke-dasharray="8 6"'} opacity="${period === 11 || showToday ? 1 : 0}"`)));
+  (GEO.shapes || []).filter(s => s.kind === 'wall').forEach(s => P.push(poly(s, `fill="none" stroke="${period >= 11 ? C.attested.color : '#ffffff'}" stroke-width="${period >= 11 ? 6 : 2}" ${period >= 11 || !showToday ? '' : 'stroke-dasharray="8 6"'} opacity="${period >= 11 || showToday ? 1 : 0}"`)));
   const tm = shapeByName('Temple Mount');
   const fs = Math.max(22, Math.min(60, vb[2] / 34)), sw = fs / 3.2; // tailles lisibles quel que soit le zoom
   const pl = (L, st) => `<polyline points="${L.map(p => p.map(v => v.toFixed(1)).join(',')).join(' ')}" fill="none" ${st}/>`;
@@ -678,16 +698,16 @@ window.MDJerusalem3D = {
 Promise.all([fetch('jerusalem3d/monuments.json', { cache: 'no-cache' }).then(r => r.json()), fetch('jerusalem3d/geo.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)])
   .then(([d, g]) => {
     DATA = d; GEO = g;
-    const q = new URLSearchParams(location.search), qp = Number(q.get('period')); if (qp >= 1 && qp <= 11) period = qp;
+    const q = new URLSearchParams(location.search), qp = Number(q.get('period')); if (qp >= 1 && qp <= 12) period = qp;
     if (!DATA.periods.some(p => p.n === period)) period = 5;
     if (!GEO || !GEO.dem) { $('msg').textContent = t('geoMissing'); applyUI(); return; }
     LAT0 = (GEO.box.n + GEO.box.s) / 2; LON0 = (GEO.box.e + GEO.box.w) / 2; KX = 111320 * Math.cos(LAT0 * Math.PI / 180);
     demH = GEO.dem.heights; demMin = Math.min(...demH.filter(v => v != null));
-    $('msg').style.display = 'none';
+    $('msg').textContent = t('preparing');
     const want2d = q.get('view') === '2d' || !webglOK();
     if (!want2d) init3d();
     applyUI();
-    if (want2d) { setMode2d(true); if (!webglOK()) { $('msg').style.display = ''; $('msg').textContent = t('noWebgl'); setTimeout(() => $('msg').style.display = 'none', 2500); } }
+    if (want2d) { $('msg').style.display = 'none'; setMode2d(true); if (!webglOK()) { $('msg').style.display = ''; $('msg').textContent = t('noWebgl'); setTimeout(() => $('msg').style.display = 'none', 2500); } }
     const id = q.get('site'); if (id) setTimeout(() => { openSheet(id); flyTo(id); }, 400);
   })
   .catch(e => { console.error(e); $('msg').textContent = t('loadErr'); });

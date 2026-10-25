@@ -117,13 +117,13 @@ export function portico(x1, z1, x2, z2, inward, y, C) {
   const back = box(L, colH + 3, 2.5, stone('herodian')); back.position.set(x1 + ux * L / 2 - ix * 1.2, y + (colH + 3) / 2, z1 + uz * L / 2 - iz * 1.2); back.rotation.y = -Math.atan2(uz, ux); g.add(back);
   return g;
 }
-// PORTIQUE ROYAL (Josèphe, Ant. 15.410–420 ; archéologie : 4 rangées de 40 colonnes, nefs de 9,9 / 14,8 / 9,9 m).
+// PORTIQUE ROYAL (Josèphe, Ant. 15.410–420 : 162 colonnes en 4 rangées, la 4e engagée dans le mur sud ; archéologie : 4 rangées de 40 colonnes, nefs de 9,9 / 14,8 / 9,9 m).
 export function royalStoa(x1, z1, x2, z2, inward, y) {
   const g = new THREE.Group(), L = Math.hypot(x2 - x1, z2 - z1), ux = (x2 - x1) / L, uz = (z2 - z1) / L, [ix, iz] = inward, rot = -Math.atan2(uz, ux);
   const aisle = 9.9, nave = 14.8, D = aisle * 2 + nave, colH = 9.9, sideH = 15.2, naveH = 30.5;
   const at = (s, o, yy = y) => [x1 + ux * s + ix * o, yy, z1 + uz * s + iz * o];
   const rowOff = [aisle, aisle + nave, D, 0.8], pts = [];
-  for (const o of rowOff.slice(0, 3)) for (let i = 0; i < 40; i++) { const s = 4 + i * (L - 8) / 39; const [x, , z] = at(s, o); pts.push([x, z]); }
+  for (const o of rowOff) for (let i = 0; i < 40; i++) { const s = 4 + i * (L - 8) / 39; const [x, , z] = at(s, o); pts.push([x, z]); }
   g.add(columns(pts, colH, 0.75, stone('marble', { rough: 0.4 }), y));
   const put = (m, s, o, yy) => { const [x, , z] = at(s, o); m.position.set(x, yy, z); m.rotation.y = rot; g.add(m); return m; };
   put(box(L, sideH, 2.5, stone('herodian')), L / 2, -1.25, y);                          // mur sud

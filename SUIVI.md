@@ -73,6 +73,12 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ **Murailles** : hauteur ×2 par défaut pour la lisibilité (bouton « ↕ » dans la légende pour revenir à la hauteur réelle), bandeau de la couleur de l'époque au sommet, et **constructeur + date** sur chaque étiquette, dans la fiche (« 🏗️ Bâtie par »), dans la comparaison et dans le mode cinéma.
 - ✅ **Cité de David (ville basse), période hérodienne** : rue à degrés des pèlerins (8–10 m, paliers, bordures, « bema » de 4 marches ; vers 20/30 apr. J.-C., d'après le document « דרך עולי הרגל ») de Siloé jusqu'au secteur de l'arc de Robinson (tracé schématique par Givati) ; bassin de Siloé (69 m de large, trois volées de 5 marches, côtés nord et est). Les maisons de la ville basse ne sont pas dessinées (pas de plan fiable).
 
+### 25 octobre 2026 (soir) — Audit Jérusalem 3D et corrections prioritaires
+- ✅ Audit complet (accès réels, 19 anomalies) : `docs/AUDIT_jerusalem3d.md` (copie dans le projet Claude).
+- ✅ Décision de Lionel : **11 périodes + « Jérusalem aujourd'hui »**. Quiz 3D / mode examen : **toujours éteints** (pas d'autorisation explicite).
+- ✅ Corrections : repère hérodien (tour nord-est, pas la Citadelle entière), mention « tour de David » ≠ tours d'Hérode, 1re muraille depuis Hippicus, cardos d'Aelia, 4e rangée du Portique royal, période « aujourd'hui » et bouton « Comparer avec aujourd'hui », fiches enrichies (fonction, événements, constructeur, vestiges) depuis le Drive, nom en 2 langues, menu ☰ Outils avec libellés, message de préparation, accès depuis tout parcours de la Vieille Ville.
+- ✅ Tests : 7 tests unitaires ; 27 vérifications navigateur sur téléphone simulé.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.

@@ -408,6 +408,9 @@ function renderSheet(){
   var h='<div class="cta-zone">'+cta(t)+'</div>';
   // Jérusalem — Vieille Ville en 3D (סיורים 11, 12, 13, 18) : ouvre la scène sur la période du סיור.
   var J3D={'11':2,'12':5,'13':5,'18':7};
+  // tout parcours dont une étape est dans la Vieille Ville ou ses abords (zone du modèle) ouvre aussi la 3D
+  var inOld=function(s){return s.placed&&s.lat>31.765&&s.lat<31.792&&s.lon>35.219&&s.lon<35.244;};
+  if(!J3D[t.id]&&(t.stops||[]).some(inOld))J3D[t.id]=5;
   if(J3D[t.id])h+='<a class="play alt j3d" href="jerusalem3d.html?period='+J3D[t.id]+'">🏛️ העיר העתיקה בתלת-ממד ←</a>';
   if(t.prep)h+='<div class="notice warn">📒 החומר בתיק הזה הוא חוברת הכנה. הוא אינו מאשר שהסיור והתחנות בוצעו בפועל.</div>';
   if(t.road)h+='<div class="notice warn">🛣️ קו המסלול על המפה משוחזר ממחלפים שפורסמו בוויקיפדיה עם נקודות ביניים משוערות — לא הקלטת GPS.</div>';

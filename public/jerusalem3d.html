@@ -93,6 +93,17 @@ body.cinema .top,body.cinema .tools,body.cinema .legend,body.cinema .periods,bod
 body.cinema:not(:hover) #cineStop{opacity:.35}
 .tools{flex-wrap:wrap;max-height:calc(100dvh - 64px - 150px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));align-content:flex-start}
 @media(max-height:760px){.tools button{width:42px;height:42px;font-size:17px}.tools{gap:5px}}
+.toolsmenu{position:fixed;z-index:35;inset-inline-end:66px;top:calc(64px + env(safe-area-inset-top,0px));display:none;flex-direction:column;gap:6px;padding:8px;min-width:230px;max-width:calc(100vw - 90px);max-height:calc(100dvh - 230px);overflow-y:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(8px)}
+.toolsmenu.open{display:flex}
+.toolsmenu button{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 10px;border-radius:12px;border:1px solid transparent;background:#1d2a56;text-align:start;font-size:14px;font-weight:800}
+.toolsmenu button .ti{width:28px;text-align:center;font-size:18px;flex:none}
+.toolsmenu button[aria-pressed=true]{background:var(--gold);color:#1c1f45}
+#backChip{position:fixed;z-index:30;left:50%;transform:translateX(-50%);bottom:calc(150px + env(safe-area-inset-bottom,0px));padding:10px 16px;border-radius:999px;border:1px solid #fff0a4;background:var(--gold);color:#1c1f45;font-weight:900;font-size:15px;box-shadow:0 6px 18px #0008}
+#backChip[hidden]{display:none}
+.sheet .altname{color:var(--soft);font-size:14px;font-weight:700;margin:-2px 0 6px}
+html[dir=rtl] .sheet .altname{text-align:right;padding-left:52px}html[dir=ltr] .sheet .altname{text-align:left;padding-right:52px}
+.sheet .acts .ghostbtn{background:#26355f;color:#fff;border:1px solid var(--line)}
+body.cinema .toolsmenu,body.cinema #backChip{display:none!important}
 </style>
 </head>
 <body>
@@ -108,17 +119,22 @@ body.cinema:not(:hover) #cineStop{opacity:.35}
   <div class="langs" role="group" aria-label="Language"><button data-lang="he">עב</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="ru">RU</button></div>
 </header>
 <div class="tools">
-  <button type="button" id="bCompare" aria-pressed="false" title="">🧱</button>
-  <button type="button" id="b2d" aria-pressed="false" title="2D / 3D" style="font-size:14px;font-weight:900">2D</button>
-  <button type="button" id="bBase" aria-pressed="false" title="">🗺️</button>
-  <button type="button" id="bToday" aria-pressed="true" title="">〰️</button>
-  <button type="button" id="bList" title="">📋</button>
   <button type="button" id="bHome" title="">🎯</button>
+  <button type="button" id="bList" title="">📋</button>
   <button type="button" id="bCine" title="">🎬</button>
-  <button type="button" id="bRec" aria-pressed="false" title="">⏺️</button>
-  <button type="button" id="bColors" aria-pressed="false" title="">🎨</button>
-  <button type="button" id="bQual" title="" style="font-size:13px;font-weight:900">HD</button>
+  <button type="button" id="bMenu" title="" aria-expanded="false" aria-controls="toolsMenu">☰</button>
 </div>
+<div class="toolsmenu" id="toolsMenu" role="menu">
+  <button type="button" id="bCompare" aria-pressed="false"><span class="ti">🧱</span><span class="tl"></span></button>
+  <button type="button" id="b2d" aria-pressed="false"><span class="ti" style="font-size:13px;font-weight:900">2D</span><span class="tl"></span></button>
+  <button type="button" id="bBase" aria-pressed="false"><span class="ti">🗺️</span><span class="tl"></span></button>
+  <button type="button" id="bToday" aria-pressed="true"><span class="ti">〰️</span><span class="tl"></span></button>
+  <button type="button" id="bWallX2"><span class="ti">↕</span><span class="tl"></span></button>
+  <button type="button" id="bColors" aria-pressed="false"><span class="ti">🎨</span><span class="tl"></span></button>
+  <button type="button" id="bRec" aria-pressed="false"><span class="ti">⏺️</span><span class="tl"></span></button>
+  <button type="button" id="bQual"><span class="ti" style="font-size:13px;font-weight:900">HD</span><span class="tl"></span></button>
+</div>
+<button type="button" id="backChip" hidden></button>
 <div class="legend" id="legend"></div>
 <section class="periods" aria-label="תקופות">
   <div class="pnow"><b id="pName"></b><small id="pDates"></small><button type="button" class="count" id="pCount"></button></div>
