@@ -104,6 +104,13 @@ body.cinema:not(:hover) #cineStop{opacity:.35}
 html[dir=rtl] .sheet .altname{text-align:right;padding-left:52px}html[dir=ltr] .sheet .altname{text-align:left;padding-right:52px}
 .sheet .acts .ghostbtn{background:#26355f;color:#fff;border:1px solid var(--line)}
 body.cinema .toolsmenu,body.cinema #backChip{display:none!important}
+#museumChip{position:fixed;z-index:30;left:50%;transform:translateX(-50%);top:calc(70px + env(safe-area-inset-top,0px));padding:8px 14px;border-radius:999px;background:#0b1230e6;border:1px solid var(--line);color:var(--ink);font-weight:800;font-size:13px}
+#museumChip[hidden]{display:none}
+.sheet ul.cls{list-style:none;padding:0;margin:4px 0}.sheet ul.cls li{display:flex;gap:8px;align-items:flex-start;margin:5px 0;font-size:14px;line-height:1.45}
+.cb{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;font-weight:900;font-size:12px;color:#0b1230}
+.cb.cA{background:#3fbf8a}.cb.cB{background:#9ad36a}.cb.cC{background:#f0b44c}.cb.cD{background:#e0607e}
+.sheet .clslegend{font-size:12px;color:var(--soft)}.sheet .clslegend .cb{width:18px;height:18px;font-size:11px}
+body.cinema #museumChip{display:none!important}
 </style>
 </head>
 <body>
@@ -135,6 +142,7 @@ body.cinema .toolsmenu,body.cinema #backChip{display:none!important}
   <button type="button" id="bQual"><span class="ti" style="font-size:13px;font-weight:900">HD</span><span class="tl"></span></button>
 </div>
 <button type="button" id="backChip" hidden></button>
+<div id="museumChip" hidden role="status" aria-live="polite"></div>
 <div class="legend" id="legend"></div>
 <section class="periods" aria-label="תקופות">
   <div class="pnow"><b id="pName"></b><small id="pDates"></small><button type="button" class="count" id="pCount"></button></div>

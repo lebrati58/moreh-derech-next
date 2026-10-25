@@ -12,6 +12,8 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import * as MD from './models.js';
 import { stone, lead, flat, groundMaterial } from './materials.js';
 
@@ -21,10 +23,10 @@ const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ==
 const EXAG = 1; // relief réel (SRTM), sans exagération
 
 const UI = {
-  he: { function: 'תפקיד', events: 'אירועים', cmpToday: 'להשוות להיום', tools: 'כלים', preparing: 'מכין את התלת-ממד…', builtBy: 'נבנתה בידי', wallX2: 'חומות: גובה ×2 (להבלטה) — לחצו לגובה האמיתי', wallX1: 'חומות: גובה אמיתי — לחצו להגדלה ×2', cinema: 'סיור מצולם (מצב הצגה)', record: 'הקלטת וידאו של הסיור', quality: 'איכות תצוגה: גבוהה / חסכונית', colors: 'צבעים לפי ודאות / חומרים מציאותיים', noRec: 'הדפדפן הזה לא תומך בהקלטה. אפשר להקליט מסך.', stop: 'עצירה', schem: 'מידות לפי המקורות; פרטים משוחזרים',  compare: 'השוואת חומות', compareHint: 'כל החומות של כל התקופות. לחיצה על קו פותחת את הכרטיס; אפשר להסתיר חומות.', basemap: 'מפת רקע (OpenStreetMap)', city: 'העיר של היום (בניינים מ-OpenStreetMap)', walls: 'חומות', showAll: 'הצג הכול', hideAll: 'הסתר הכול', map: 'מפה', title: 'ירושלים · העיר העתיקה', sub: 'שחזור לפי מקורות — לא עיר דמיונית', old: 'שרידים מתקופה קודמת', today: 'קו החומה של היום', exag: 'תבליט אמיתי (SRTM 30 מ׳)', sites: 'אתרים', all: 'כל האתרים בתקופה', noPos: 'ללא מיקום בסצנה', dims: 'ממדים מתועדים', remains: 'מה נשאר היום', debate: 'מחלוקת', other: 'מקורות אחרים', note: 'על הסימון בסצנה', sources: 'מקורות', show: '📍 הראו בסצנה', drive: 'מסמך קורס', primary: 'מקור קדום', online: 'מקור מקוון', period: 'תקופה', list2d: 'מפה דו-ממדית', loadErr: 'לא ניתן לטעון את הנתונים. נסו שוב עם חיבור.', geoMissing: 'נתוני המפה עוד לא נוצרו (geo.json).', noWebgl: 'הטלפון לא תומך בתלת-ממד — מוצגת מפה דו-ממדית.', toggleToday: 'קו החומה של היום', toggle2d: 'דו-ממד / תלת-ממד', home: 'חזרה למבט הכללי', list: 'רשימת האתרים', attr: 'מיקומים: ויקינתונים · תוואים: © תורמי OpenStreetMap · גבהים: ' },
-  fr: { function: 'Fonction', events: 'Événements', cmpToday: 'Comparer avec aujourd’hui', tools: 'Outils', preparing: 'Préparation de la 3D…', builtBy: 'Bâtie par', wallX2: 'Murailles : hauteur ×2 (lisibilité) — toucher pour la hauteur réelle', wallX1: 'Murailles : hauteur réelle — toucher pour ×2', cinema: 'Survol filmé (mode présentation)', record: 'Enregistrer le survol en vidéo', quality: 'Qualité : haute / économe', colors: 'Couleurs de certitude / matériaux réalistes', noRec: 'Ce navigateur ne sait pas enregistrer. Utilisez la capture d’écran.', stop: 'Arrêter', schem: 'Dimensions d’après les sources ; détails reconstitués',  compare: 'Comparer les murailles', compareHint: 'Toutes les murailles de toutes les époques. Touchez une ligne pour sa fiche ; vous pouvez en masquer.', basemap: 'Carte de fond (OpenStreetMap)', city: 'La ville d’aujourd’hui (bâtiments OpenStreetMap)', walls: 'Murailles', showAll: 'Tout afficher', hideAll: 'Tout masquer', map: 'Carte', title: 'Jérusalem · Vieille Ville', sub: 'Reconstitution sourcée — pas une ville imaginaire', old: 'Vestiges d’une période antérieure', today: 'Tracé actuel des murailles', exag: 'Relief réel (SRTM 30 m)', sites: 'sites', all: 'Tous les sites de la période', noPos: 'Sans position dans la scène', dims: 'Dimensions documentées', remains: 'Ce qui reste aujourd’hui', debate: 'Débat', other: 'Autre avis', note: 'À propos du repère', sources: 'Sources', show: '📍 Montrer dans la scène', drive: 'Document du cours', primary: 'Source antique', online: 'Source en ligne', period: 'Période', list2d: 'Plan 2D', loadErr: 'Impossible de charger les données. Réessayez avec une connexion.', geoMissing: 'Les données géographiques (geo.json) ne sont pas encore générées.', noWebgl: 'Ce téléphone ne gère pas la 3D — plan 2D affiché.', toggleToday: 'Tracé actuel', toggle2d: '2D / 3D', home: 'Vue d’ensemble', list: 'Liste des sites', attr: 'Positions : Wikidata · Tracés : © contributeurs OpenStreetMap · Relief : ' },
-  en: { function: 'Function', events: 'Events', cmpToday: 'Compare with today', tools: 'Tools', preparing: 'Preparing the 3D view…', builtBy: 'Built by', wallX2: 'Walls: height ×2 (for legibility) — tap for true height', wallX1: 'Walls: true height — tap for ×2', cinema: 'Filmed fly-through (presentation mode)', record: 'Record the fly-through as video', quality: 'Quality: high / light', colors: 'Certainty colours / realistic materials', noRec: 'This browser cannot record. Use screen capture.', stop: 'Stop', schem: 'Dimensions from the sources; details reconstructed',  compare: 'Compare the walls', compareHint: 'All walls of all periods. Tap a line for its card; you can hide some.', basemap: 'Base map (OpenStreetMap)', city: 'Today’s city (OpenStreetMap buildings)', walls: 'Walls', showAll: 'Show all', hideAll: 'Hide all', map: 'Map', title: 'Jerusalem · Old City', sub: 'Source-based reconstruction — not an imaginary city', old: 'Remains from an earlier period', today: 'Today’s wall line', exag: 'True relief (SRTM 30 m)', sites: 'sites', all: 'All sites in this period', noPos: 'No position in the scene', dims: 'Documented dimensions', remains: 'What remains today', debate: 'Debate', other: 'Other view', note: 'About the marker', sources: 'Sources', show: '📍 Show in scene', drive: 'Course document', primary: 'Ancient source', online: 'Online source', period: 'Period', list2d: '2D plan', loadErr: 'Could not load the data. Try again online.', geoMissing: 'Geographic data (geo.json) not generated yet.', noWebgl: 'This phone does not support 3D — showing the 2D plan.', toggleToday: 'Today’s walls', toggle2d: '2D / 3D', home: 'Overview', list: 'Site list', attr: 'Positions: Wikidata · Lines: © OpenStreetMap contributors · Relief: ' },
-  ru: { function: 'Назначение', events: 'События', cmpToday: 'Сравнить с сегодняшним днём', tools: 'Инструменты', preparing: 'Подготовка 3D…', builtBy: 'Построена', wallX2: 'Стены: высота ×2 (для наглядности) — нажмите для реальной', wallX1: 'Стены: реальная высота — нажмите для ×2', cinema: 'Облёт (режим показа)', record: 'Записать облёт на видео', quality: 'Качество: высокое / экономное', colors: 'Цвета достоверности / реальные материалы', noRec: 'Этот браузер не умеет записывать. Используйте запись экрана.', stop: 'Стоп', schem: 'Размеры по источникам; детали реконструированы',  compare: 'Сравнить стены', compareHint: 'Все стены всех эпох. Нажмите на линию, чтобы открыть карточку; можно скрыть.', basemap: 'Подложка (OpenStreetMap)', city: 'Современный город (здания OpenStreetMap)', walls: 'Стены', showAll: 'Показать все', hideAll: 'Скрыть все', map: 'Карта', title: 'Иерусалим · Старый город', sub: 'Реконструкция по источникам — не вымышленный город', old: 'Остатки более раннего периода', today: 'Нынешняя линия стен', exag: 'Реальный рельеф (SRTM 30 м)', sites: 'объектов', all: 'Все объекты периода', noPos: 'Без места в сцене', dims: 'Документированные размеры', remains: 'Что сохранилось', debate: 'Спор', other: 'Другое мнение', note: 'О метке', sources: 'Источники', show: '📍 Показать в сцене', drive: 'Документ курса', primary: 'Древний источник', online: 'Онлайн-источник', period: 'Период', list2d: 'План 2D', loadErr: 'Не удалось загрузить данные.', geoMissing: 'Географические данные (geo.json) ещё не созданы.', noWebgl: 'Телефон не поддерживает 3D — показан план 2D.', toggleToday: 'Нынешние стены', toggle2d: '2D / 3D', home: 'Общий вид', list: 'Список объектов', attr: 'Координаты: Wikidata · Линии: © участники OpenStreetMap · Рельеф: ' }
+  he: { museumLoading: 'טוען את מודל הר הבית…', museumFailed: 'מודל הר הבית לא נטען — מוצגת גרסה פשוטה', modelParts: 'רכיבי המודל ומידת הוודאות', modelCredit: 'מודל תלת-ממד של הר הבית (כ-30 לסה״נ, לפי מידות, יוסף בן מתתיהו והחפירות):', function: 'תפקיד', events: 'אירועים', cmpToday: 'להשוות להיום', tools: 'כלים', preparing: 'מכין את התלת-ממד…', builtBy: 'נבנתה בידי', wallX2: 'חומות: גובה ×2 (להבלטה) — לחצו לגובה האמיתי', wallX1: 'חומות: גובה אמיתי — לחצו להגדלה ×2', cinema: 'סיור מצולם (מצב הצגה)', record: 'הקלטת וידאו של הסיור', quality: 'איכות תצוגה: גבוהה / חסכונית', colors: 'צבעים לפי ודאות / חומרים מציאותיים', noRec: 'הדפדפן הזה לא תומך בהקלטה. אפשר להקליט מסך.', stop: 'עצירה', schem: 'מידות לפי המקורות; פרטים משוחזרים',  compare: 'השוואת חומות', compareHint: 'כל החומות של כל התקופות. לחיצה על קו פותחת את הכרטיס; אפשר להסתיר חומות.', basemap: 'מפת רקע (OpenStreetMap)', city: 'העיר של היום (בניינים מ-OpenStreetMap)', walls: 'חומות', showAll: 'הצג הכול', hideAll: 'הסתר הכול', map: 'מפה', title: 'ירושלים · העיר העתיקה', sub: 'שחזור לפי מקורות — לא עיר דמיונית', old: 'שרידים מתקופה קודמת', today: 'קו החומה של היום', exag: 'תבליט אמיתי (SRTM 30 מ׳)', sites: 'אתרים', all: 'כל האתרים בתקופה', noPos: 'ללא מיקום בסצנה', dims: 'ממדים מתועדים', remains: 'מה נשאר היום', debate: 'מחלוקת', other: 'מקורות אחרים', note: 'על הסימון בסצנה', sources: 'מקורות', show: '📍 הראו בסצנה', drive: 'מסמך קורס', primary: 'מקור קדום', online: 'מקור מקוון', period: 'תקופה', list2d: 'מפה דו-ממדית', loadErr: 'לא ניתן לטעון את הנתונים. נסו שוב עם חיבור.', geoMissing: 'נתוני המפה עוד לא נוצרו (geo.json).', noWebgl: 'הטלפון לא תומך בתלת-ממד — מוצגת מפה דו-ממדית.', toggleToday: 'קו החומה של היום', toggle2d: 'דו-ממד / תלת-ממד', home: 'חזרה למבט הכללי', list: 'רשימת האתרים', attr: 'מיקומים: ויקינתונים · תוואים: © תורמי OpenStreetMap · גבהים: ' },
+  fr: { museumLoading: 'Chargement du modèle du mont du Temple…', museumFailed: 'Modèle du mont du Temple indisponible — version simplifiée affichée', modelParts: 'Éléments du modèle et degré de certitude', modelCredit: 'Modèle 3D du mont du Temple (vers 30 apr. J.-C., d’après Middot, Josèphe et les fouilles) :', function: 'Fonction', events: 'Événements', cmpToday: 'Comparer avec aujourd’hui', tools: 'Outils', preparing: 'Préparation de la 3D…', builtBy: 'Bâtie par', wallX2: 'Murailles : hauteur ×2 (lisibilité) — toucher pour la hauteur réelle', wallX1: 'Murailles : hauteur réelle — toucher pour ×2', cinema: 'Survol filmé (mode présentation)', record: 'Enregistrer le survol en vidéo', quality: 'Qualité : haute / économe', colors: 'Couleurs de certitude / matériaux réalistes', noRec: 'Ce navigateur ne sait pas enregistrer. Utilisez la capture d’écran.', stop: 'Arrêter', schem: 'Dimensions d’après les sources ; détails reconstitués',  compare: 'Comparer les murailles', compareHint: 'Toutes les murailles de toutes les époques. Touchez une ligne pour sa fiche ; vous pouvez en masquer.', basemap: 'Carte de fond (OpenStreetMap)', city: 'La ville d’aujourd’hui (bâtiments OpenStreetMap)', walls: 'Murailles', showAll: 'Tout afficher', hideAll: 'Tout masquer', map: 'Carte', title: 'Jérusalem · Vieille Ville', sub: 'Reconstitution sourcée — pas une ville imaginaire', old: 'Vestiges d’une période antérieure', today: 'Tracé actuel des murailles', exag: 'Relief réel (SRTM 30 m)', sites: 'sites', all: 'Tous les sites de la période', noPos: 'Sans position dans la scène', dims: 'Dimensions documentées', remains: 'Ce qui reste aujourd’hui', debate: 'Débat', other: 'Autre avis', note: 'À propos du repère', sources: 'Sources', show: '📍 Montrer dans la scène', drive: 'Document du cours', primary: 'Source antique', online: 'Source en ligne', period: 'Période', list2d: 'Plan 2D', loadErr: 'Impossible de charger les données. Réessayez avec une connexion.', geoMissing: 'Les données géographiques (geo.json) ne sont pas encore générées.', noWebgl: 'Ce téléphone ne gère pas la 3D — plan 2D affiché.', toggleToday: 'Tracé actuel', toggle2d: '2D / 3D', home: 'Vue d’ensemble', list: 'Liste des sites', attr: 'Positions : Wikidata · Tracés : © contributeurs OpenStreetMap · Relief : ' },
+  en: { museumLoading: 'Loading the Temple Mount model…', museumFailed: 'Temple Mount model unavailable — simplified version shown', modelParts: 'Model elements and certainty', modelCredit: '3D model of the Temple Mount (c. 30 CE, after Middot, Josephus and the excavations):', function: 'Function', events: 'Events', cmpToday: 'Compare with today', tools: 'Tools', preparing: 'Preparing the 3D view…', builtBy: 'Built by', wallX2: 'Walls: height ×2 (for legibility) — tap for true height', wallX1: 'Walls: true height — tap for ×2', cinema: 'Filmed fly-through (presentation mode)', record: 'Record the fly-through as video', quality: 'Quality: high / light', colors: 'Certainty colours / realistic materials', noRec: 'This browser cannot record. Use screen capture.', stop: 'Stop', schem: 'Dimensions from the sources; details reconstructed',  compare: 'Compare the walls', compareHint: 'All walls of all periods. Tap a line for its card; you can hide some.', basemap: 'Base map (OpenStreetMap)', city: 'Today’s city (OpenStreetMap buildings)', walls: 'Walls', showAll: 'Show all', hideAll: 'Hide all', map: 'Map', title: 'Jerusalem · Old City', sub: 'Source-based reconstruction — not an imaginary city', old: 'Remains from an earlier period', today: 'Today’s wall line', exag: 'True relief (SRTM 30 m)', sites: 'sites', all: 'All sites in this period', noPos: 'No position in the scene', dims: 'Documented dimensions', remains: 'What remains today', debate: 'Debate', other: 'Other view', note: 'About the marker', sources: 'Sources', show: '📍 Show in scene', drive: 'Course document', primary: 'Ancient source', online: 'Online source', period: 'Period', list2d: '2D plan', loadErr: 'Could not load the data. Try again online.', geoMissing: 'Geographic data (geo.json) not generated yet.', noWebgl: 'This phone does not support 3D — showing the 2D plan.', toggleToday: 'Today’s walls', toggle2d: '2D / 3D', home: 'Overview', list: 'Site list', attr: 'Positions: Wikidata · Lines: © OpenStreetMap contributors · Relief: ' },
+  ru: { museumLoading: 'Загрузка модели Храмовой горы…', museumFailed: 'Модель Храмовой горы недоступна — показана упрощённая версия', modelParts: 'Элементы модели и степень достоверности', modelCredit: '3D-модель Храмовой горы (ок. 30 г. н. э., по Мидот, Иосифу и раскопкам):', function: 'Назначение', events: 'События', cmpToday: 'Сравнить с сегодняшним днём', tools: 'Инструменты', preparing: 'Подготовка 3D…', builtBy: 'Построена', wallX2: 'Стены: высота ×2 (для наглядности) — нажмите для реальной', wallX1: 'Стены: реальная высота — нажмите для ×2', cinema: 'Облёт (режим показа)', record: 'Записать облёт на видео', quality: 'Качество: высокое / экономное', colors: 'Цвета достоверности / реальные материалы', noRec: 'Этот браузер не умеет записывать. Используйте запись экрана.', stop: 'Стоп', schem: 'Размеры по источникам; детали реконструированы',  compare: 'Сравнить стены', compareHint: 'Все стены всех эпох. Нажмите на линию, чтобы открыть карточку; можно скрыть.', basemap: 'Подложка (OpenStreetMap)', city: 'Современный город (здания OpenStreetMap)', walls: 'Стены', showAll: 'Показать все', hideAll: 'Скрыть все', map: 'Карта', title: 'Иерусалим · Старый город', sub: 'Реконструкция по источникам — не вымышленный город', old: 'Остатки более раннего периода', today: 'Нынешняя линия стен', exag: 'Реальный рельеф (SRTM 30 м)', sites: 'объектов', all: 'Все объекты периода', noPos: 'Без места в сцене', dims: 'Документированные размеры', remains: 'Что сохранилось', debate: 'Спор', other: 'Другое мнение', note: 'О метке', sources: 'Источники', show: '📍 Показать в сцене', drive: 'Документ курса', primary: 'Древний источник', online: 'Онлайн-источник', period: 'Период', list2d: 'План 2D', loadErr: 'Не удалось загрузить данные.', geoMissing: 'Географические данные (geo.json) ещё не созданы.', noWebgl: 'Телефон не поддерживает 3D — показан план 2D.', toggleToday: 'Нынешние стены', toggle2d: '2D / 3D', home: 'Общий вид', list: 'Список объектов', attr: 'Координаты: Wikidata · Линии: © участники OpenStreetMap · Рельеф: ' }
 };
 let lang = store.get('mdl_mode_lang', store.get('mdl_lang', 'he')); if (!UI[lang]) lang = 'he';
 const t = k => UI[lang][k] || UI.he[k] || k;
@@ -106,7 +108,7 @@ function applyUI() {
   if (!DATA) return;
   const C = DATA.certainty;
   $('legend').innerHTML = Object.keys(C).map(k => `<span><i style="background:${C[k].color}"></i><em>${esc(tx(C[k].name))}</em></span>`).join('') +
-    `<span class="old"><i></i><em>${esc(t('old'))}</em></span><span class="today"><i></i><em>${esc(t('today'))}</em></span><span class="more">${esc(t('exag'))}</span><button type="button" class="more wallx" id="bWallX">↕ ${esc(wallX > 1 ? t('wallX2') : t('wallX1'))}</button><span class="more attrl">${esc(t('attr') + ((GEO && GEO.dem && GEO.dem.source) || '—'))}${cityMesh ? ' · ' + esc(t('city')) : ''}</span>`;
+    `<span class="old"><i></i><em>${esc(t('old'))}</em></span><span class="today"><i></i><em>${esc(t('today'))}</em></span><span class="more">${esc(t('exag'))}</span><button type="button" class="more wallx" id="bWallX">↕ ${esc(wallX > 1 ? t('wallX2') : t('wallX1'))}</button><span class="more attrl">${esc(t('attr') + ((GEO && GEO.dem && GEO.dem.source) || '—'))}${cityMesh ? ' · ' + esc(t('city')) : ''}${period === 5 && MUSEUM.group ? ' · 🏛️ OpenBible.info (MIT)' : ''}</span>`;
   const bw = $('bWallX'); if (bw) bw.onclick = e => { e.stopPropagation(); wallX = wallX > 1 ? 1 : 2; store.set('mdl_j3d_wallx', String(wallX)); applyUI(); };
   renderStrip(); renderPeriod(); if (selected) openSheet(selected);
 }
@@ -125,6 +127,14 @@ function renderPeriod() {
   $('pName').textContent = compare ? '🧱 ' + t('compare') : tx(p.name); if (compare) { $('pDates').textContent = DATA.monuments.filter(m => m.wall).length + ' ' + t('walls'); }
   if (mode2d) draw2d(); else rebuildScene();
 }
+function museumSheet(id) {
+  if (period !== 5 || !MUSEUM.meta) return '';
+  const P = MUSEUM.meta.parts.filter(p => p.monument === id && p.label); if (!P.length) return '';
+  const C = MUSEUM.meta.classes;
+  return `<div class="k">${esc(t('modelParts'))}</div><ul class="cls">${P.map(p => `<li><span class="cb c${p.cls}" title="${esc(tx(C[p.cls]))}">${p.cls}</span> ${esc(tx(p.label))}</li>`).join('')}</ul>
+    <p class="clslegend">${['A', 'B', 'C', 'D'].map(k => `<span class="cb c${k}">${k}</span> ${esc(tx(C[k]))}`).join(' · ')}</p>
+    <div class="box note">🏛️ ${esc(t('modelCredit'))} <a href="${esc(MUSEUM.meta.source)}" target="_blank" rel="noopener noreferrer">OpenBible.info — Herod's Temple Mount</a> (MIT)</div>`;
+}
 function srcIcon(k) { return k === 'drive' ? '📄' : k === 'primary' ? '📜' : '🌐'; }
 function openSheet(id) {
   const m = DATA.monuments.find(x => x.id === id); if (!m) return;
@@ -134,6 +144,7 @@ function openSheet(id) {
   $('sBody').innerHTML = `<h2 id="sTitle">${esc(tx(m.name))}</h2><div class="altname" lang="${lang === 'he' ? 'fr' : 'he'}" dir="${lang === 'he' ? 'ltr' : 'rtl'}">${esc(alt)}</div>
     <div class="badges"><span class="badge c" style="--c:${C.color}">${esc(tx(C.name))}</span><span class="badge">${esc(t('period'))}: ${esc(tx(p.name))} · ${esc(tx(p.dates))}</span></div>
     ${m.builder ? `<div class="box built">🏗️ <b>${esc(t('builtBy'))}:</b> ${esc(tx(m.builder))}</div>` : ''}<p>${esc(tx(m.text))}</p>${sec('function', m.function)}${sec('events', m.events)}${sec('dims', m.dims)}${sec('remains', m.remains)}${sec('debate', m.debate, 'debate')}${sec('other', m.otherView, 'other')}${sec('note', m.placementNote, 'note')}${SCHEMATIC.has((m.shape || {}).type) ? `<div class="box note">📐 ${esc(t('schem'))}</div>` : ''}
+    ${museumSheet(id)}
     <div class="k">${esc(t('sources'))}</div><ul>${m.sources.map(s => `<li>${srcIcon(s.kind)} <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a> <small style="color:var(--soft)">(${esc(t(s.kind))})</small></li>`).join('')}</ul>
     ${placed.has(id) ? `<div class="acts"><button type="button" id="sShow">${esc(t('show'))}</button>${period !== 12 && !compare ? `<button type="button" id="sToday" class="ghostbtn">🔄 ${esc(t('cmpToday'))}</button>` : ''}</div>` : `<div class="box note">${esc(t('noPos'))}</div>`}`;
   $('sheet').classList.add('open');
@@ -236,11 +247,14 @@ function init3d() {
   renderer.domElement.addEventListener('pointerup', e => {
     if (cine || !down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 8) return;
     const r = renderer.domElement.getBoundingClientRect(); v.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
-    ray.setFromCamera(v, camera); const hit = ray.intersectObject(world, true).find(h => idOf(h.object));
-    if (hit) { const id = idOf(hit.object); document.dispatchEvent(new CustomEvent('mdj3d-pick', { detail: id })); if (!pickMode) openSheet(id); }
+    ray.setFromCamera(v, camera);
+    const targets = museumActive() ? [world, MUSEUM.group] : [world];
+    const hit = ray.intersectObjects(targets, true).find(h => idOf(h.object) || (MUSEUM.group && h.object.parent && isMuseum(h.object)));
+    if (hit) { const id = idOf(hit.object) || museumPick(hit.point); document.dispatchEvent(new CustomEvent('mdj3d-pick', { detail: id })); if (!pickMode) openSheet(id); }
   });
   window.addEventListener('resize', resize); resize(); homeView(false); loop(); loadCity();
 }
+function isMuseum(o) { while (o) { if (o === MUSEUM.group) return true; o = o.parent; } return false; }
 function idOf(o) { while (o) { if (o.userData && o.userData.id) return o.userData.id; o = o.parent; } return null; }
 function resize() { if (!renderer) return; const w = innerWidth, h = innerHeight; renderer.setSize(w, h); if (composer) composer.setSize(w, h); camera.aspect = w / h; camera.fov = w / h < 1 ? 60 : 42; camera.updateProjectionMatrix(); }
 function buildTerrain() {
@@ -346,7 +360,7 @@ function homeView(anim) {
 let tw = null;
 function tween(eye, target, dur = 1100) { tw = { t0: performance.now(), dur, e0: camera.position.clone(), t0v: controls.target.clone(), e1: eye, t1: target }; }
 function objectsOf(id) { const out = []; world.traverse(o => { if (o.userData && o.userData.id === id && o.parent === world) out.push(o); }); return out; }
-function boundsOf(id) { const b = new THREE.Box3(); objectsOf(id).forEach(o => b.expandByObject(o)); return b; }
+function boundsOf(id) { if (museumActive() && MUSEUM.bounds[id]) return MUSEUM.bounds[id].clone(); const b = new THREE.Box3(); objectsOf(id).forEach(o => b.expandByObject(o)); return b; }
 function flyTo(id) {
   if (mode2d) return; const b = boundsOf(id); if (b.isEmpty()) return;
   const c = b.getCenter(new THREE.Vector3()), s = Math.max(70, b.getSize(new THREE.Vector3()).length());
@@ -475,6 +489,8 @@ function buildModel(m, sh, now) {
 }
 function rebuildScene() {
   if (!world) return; clearWorld(); TM = tmFrame(); styleCity();
+  if (period === 5 && realistic && MUSEUM.state === 'idle') loadMuseum();
+  if (MUSEUM.group) { if (TM) placeMuseum(); MUSEUM.group.visible = museumActive(); }
   const C = DATA.certainty, stackAt = {};
   const lab = (m, top, now, color) => { const k = top.map(v => Math.round(v / 25)).join(','); stackAt[k] = (stackAt[k] || 0) + 1; label(m, top[0], top[1], top[2], now, stackAt[k] - 1, color); };
   if (compare) {
@@ -495,6 +511,10 @@ function rebuildScene() {
     const now = isNow(m), color = now ? C[m.certainty].color : '#bdb5a6';
     let sh = m.shape || {}, at = m.anchor ? anchorXZ(m.anchor) : null, top = null;
     if (sh.type === 'none') continue;
+    if (museumActive() && MUSEUM.ids.has(m.id)) { // dessiné par le modèle du mont du Temple
+      const b = MUSEUM.bounds[m.id], c = b.getCenter(new THREE.Vector3()); placed.add(m.id);
+      lab(m, [c.x, b.max.y + 6, c.z], now); continue;
+    }
     if (sh.type === 'wallline') {
       const lines = wallLines(m); if (!lines.length) continue;
       const [kind, tint] = PERIOD_STONE[m.from] || ['ashlar', '#e5d8bd'], ott = m.from >= 11, thick = (ott ? 2.6 : m.from === 2 ? 7 : 4.2) * (wallX > 1 ? 1.4 : 1), h = (sh.h || 10) * wallX;
@@ -524,6 +544,60 @@ function rebuildScene() {
   updateLabelSel();
 }
 function nearestWallYaw(x, z) { let best = 0, bd = Infinity; (GEO.shapes || []).filter(s => s.kind === 'wall').forEach(s => { for (let i = 1; i < s.pts.length; i++) { const [x1, z1] = toXZ(...s.pts[i - 1]), [x2, z2] = toXZ(...s.pts[i]), d = Math.hypot((x1 + x2) / 2 - x, (z1 + z2) / 2 - z); if (d < bd) { bd = d; best = -Math.atan2(z2 - z1, x2 - x1); } } }); return best; }
+
+// ---------- mont du Temple « musée » : modèle OpenBible.info (MIT), recalé sur le contour OSM réel ----------
+// Période hérodienne seulement, matériaux réalistes. Le modèle est remplaçable : les fiches restent dans monuments.json,
+// la correspondance structure → fiche et la classe A/B/C/D de chaque élément sont dans models/temple-mount-30ce.json.
+const MUSEUM = { meta: null, group: null, state: 'idle', bounds: {}, ids: new Set(), fit: null };
+function museumActive() { return period === 5 && realistic && !compare && !!MUSEUM.group; }
+function museumFit() {
+  // rotation + translation (sans mise à l'échelle) qui superpose les 4 angles du plan OpenBible aux angles OSM
+  const P = MUSEUM.meta.plat, A = [P.NW, P.NE, P.SE, P.SW], B = ['NW', 'NE', 'SE', 'SW'].map(tmCorner);
+  if (B.some(p => !p)) return null;
+  const ca = [0, 1].map(k => A.reduce((s, p) => s + p[k], 0) / 4), cb = [0, 1].map(k => B.reduce((s, p) => s + p[k], 0) / 4);
+  let sxx = 0, sxy = 0; A.forEach((p, i) => { const u = [p[0] - ca[0], p[1] - ca[1]], v = [B[i][0] - cb[0], B[i][1] - cb[1]]; sxx += u[0] * v[0] + u[1] * v[1]; sxy += u[0] * v[1] - u[1] * v[0]; });
+  const th = Math.atan2(sxy, sxx), c = Math.cos(th), s = Math.sin(th), R = p => [c * p[0] - s * p[1], s * p[0] + c * p[1]];
+  const rc = R(ca), err = A.map((p, i) => { const q = R(p); return Math.hypot(q[0] - rc[0] + cb[0] - B[i][0], q[1] - rc[1] + cb[1] - B[i][1]); });
+  return { th, pos: [cb[0] - rc[0], cb[1] - rc[1]], err };
+}
+function loadMuseum() {
+  if (MUSEUM.state !== 'idle') return; MUSEUM.state = 'loading'; museumChip(t('museumLoading'));
+  fetch('jerusalem3d/models/temple-mount-30ce.json').then(r => r.json()).then(meta => {
+    MUSEUM.meta = meta;
+    const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
+    return new Promise((res, rej) => loader.load(meta.glb, res, ev => { if (ev.total) museumChip(t('museumLoading') + ' ' + Math.round(ev.loaded / ev.total * 100) + '%'); }, rej));
+  }).then(gltf => {
+    const g = gltf.scene, done = new Set();
+    g.traverse(o => {
+      if (!o.isMesh) return; o.castShadow = true; o.receiveShadow = true;
+      if (/~hyp/.test(o.name)) { // hypothèse illustrative : translucide, comme partout ailleurs dans la scène
+        const m = o.material.clone(); m.transparent = true; m.opacity = 0.45; m.depthWrite = false; o.material = m; o.castShadow = false; o.userData.hyp = true;
+      }
+      const m = o.material; if (done.has(m)) return; done.add(m);
+      if (m.map) m.map.anisotropy = 8;
+      if (m.metalness > 0.5) { m.roughness = 0.28; m.envMapIntensity = 1.4; } // or, bronze : conducteurs
+      else { m.color.multiplyScalar(0.8); m.envMapIntensity = 0.7; } // pierre calcaire : ton réel sous notre soleil
+    });
+    MUSEUM.group = g; MUSEUM.state = 'ready'; scene.add(g); placeMuseum(); museumChip(null); rebuildScene();
+  }).catch(e => { console.warn('modèle du mont du Temple indisponible', e); MUSEUM.state = 'failed'; museumChip(t('museumFailed')); setTimeout(() => museumChip(null), 4000); });
+}
+function placeMuseum() {
+  const f = museumFit(); if (!f || !TM) { MUSEUM.group.visible = false; return; }
+  MUSEUM.fit = f; const g = MUSEUM.group; g.rotation.set(0, -f.th, 0); g.position.set(f.pos[0], TM.top, f.pos[1]); g.updateMatrixWorld(true);
+  MUSEUM.bounds = {}; MUSEUM.ids = new Set(); const v = new THREE.Vector3();
+  for (const p of MUSEUM.meta.parts) {
+    const b = MUSEUM.bounds[p.monument] || (MUSEUM.bounds[p.monument] = new THREE.Box3());
+    for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1]) b.expandByPoint(v.set(p.center[0] + sx * p.size[0] / 2, p.center[1] + sy * p.size[1] / 2, p.center[2] + sz * p.size[2] / 2).applyMatrix4(g.matrixWorld));
+    MUSEUM.ids.add(p.monument);
+  }
+}
+// structure touchée → fiche : la plus petite boîte de structure qui contient le point
+function museumPick(point) {
+  const l = MUSEUM.group.worldToLocal(point.clone()); let best = null, bv = Infinity;
+  for (const p of MUSEUM.meta.parts) { const inside = [0, 1, 2].every(k => Math.abs(l.getComponent(k) - p.center[k]) <= p.size[k] / 2 + 1.5); const vol = p.size[0] * Math.max(1, p.size[1]) * p.size[2]; if (inside && vol < bv) { bv = vol; best = p; } }
+  return best ? best.monument : 'jerusalem_temple_mount';
+}
+function museumChip(text) { const c = $('museumChip'); if (!c) return; c.hidden = !text; if (text) c.textContent = text; }
 
 // ---------- mode cinéma : survol guidé + enregistrement vidéo ----------
 // Plans : vue d'ensemble, puis orbite lente autour de chaque monument modélisé de la période, avec sous-titre.

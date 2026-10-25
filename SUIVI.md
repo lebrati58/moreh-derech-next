@@ -80,6 +80,13 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ Tests : 7 tests unitaires ; 27 vérifications navigateur sur téléphone simulé.
 - ✅ **Carte d'Israël** : panneau doré « 🏛️ ירושלים 3D » posé sur le mont du Temple (coordonnée Wikidata lue dans `geo.json`), hors des grappes, toujours visible ; un toucher ouvre la 3D (testé : navigation vers `jerusalem3d.html?period=5`, aucune erreur). « 3D » isolé en sens gauche-droite pour ne pas être coupé par l'hébreu.
 
+### 25 octobre 2026 (nuit) — « Museum Edition », étape B : vrai modèle du mont du Temple
+- ✅ Audit + inventaire des modèles 3D : `docs/PROPOSITION_musee_jerusalem3d.md` (copie dans le projet). Retenu : **OpenBible.info « Herod's Temple Mount », licence MIT**, sources Middot / Josèphe / fouilles, ~30 contrôles géométriques exécutés (tous OK). Écartés : modèle CGTrader (payant, aucune source), maquette du Musée d'Israël (protégée).
+- ✅ Lionel valide l'intégration directe. Conversion en GLB (`tools/templemount/`), 6,6 Mo, recalé sur le contour OSM réel (écart des angles ≤ 1,9 m), affiché à la période hérodienne en mode réaliste ; nos volumes simplifiés restent en secours (échec de chargement, mode couleurs de certitude, autres périodes).
+- ✅ Chaque élément du modèle est classé **A/B/C/D** et relié à une fiche (`models/temple-mount-30ce.json`) ; la fiche affiche la liste et le crédit OpenBible (MIT). Hypothèses illustratives (chaussée vers le mont des Oliviers, piscine d'Israël) translucides.
+- ⚠️ Le modèle représente **vers 30 apr. J.-C.** (pas 66) ; différences mineures sur l'esplanade. Leur relief n'est pas repris : petites différences possibles au pied des murs.
+- ⏳ Étapes suivantes proposées : C (fiches A/B/C/D détaillées en hébreu), D (trois tours, palais, villes haute et basse, à modéliser nous-mêmes), E (quiz — sur autorisation), F (optimisation, mesure sur Android réel).
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.

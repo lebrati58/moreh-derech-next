@@ -92,7 +92,7 @@ test('3D engine: every module import resolves to a vendored file that is also ca
     assert.ok(existsSync(f), 'fichier manquant : ' + relative(pub, f));
     assert.ok(sw.includes("'./" + relative(pub, f) + "'"), 'absent du cache hors ligne : ' + relative(pub, f));
     const src = await readFile(f, 'utf8');
-    for (const m of src.matchAll(/from\s+['"]([^'"]+)['"]/g)) {
+    for (const m of src.matchAll(/(?:^|\n)\s*(?:import|export)\s[^;]*?from\s+['"]([^'"]+)['"]/g)) { // vrais imports seulement (pas les exemples en commentaire)
       if (m[1] === 'three') continue;
       await walk(m[1].startsWith('three/addons/') ? resolve(pub, 'vendor/three/jsm', m[1].slice(13)) : resolve(dirname(f), m[1]));
     }
