@@ -37,6 +37,8 @@ Objectif : rendre le jeu plus motivant et donner un vrai suivi de progression.
 
 ## 3. À faire / idées (par priorité)
 
+0. ⏳ **Jérusalem 3D (העיר העתיקה)** — audit historique et technique rédigé le 25/10/2026 (document Claude « Audit — Jérusalem 3D »). **En attente de validation** des 6 décisions avant tout code. Quiz 3D = phase 2, interdite sans accord explicite.
+
 1. ⛔ **Supabase NEXT** : exécuter une fois `class_contest.sql`, `feedback.sql`, `community_quizzes.sql`, `community_documents.sql` (SQL Editor). Sans cela, le classement de la classe et les signalements ne fonctionnent pas.
 2. ⏳ Essai réel avec 2–3 élèves sur téléphone (défi du jour + partage WhatsApp) et retour d'expérience.
 3. ⏳ Examiner les 3 tests base de données en échec.
