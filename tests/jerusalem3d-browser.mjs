@@ -64,6 +64,14 @@ ok((await page.textContent('#pName')).includes('Byzantine'), 'interface en fran�
 ok(await page.evaluate(() => document.documentElement.dir === 'ltr'), 'français en LTR');
 await page.click('[data-lang="he"]');
 
+// comparaison des murailles
+await page.click('#bCompare'); await page.waitForSelector('.sheet.open .wrow');
+ok((await page.locator('.wrow').count()) >= 10, 'comparaison : liste des murailles de toutes les époques');
+await page.click('#sClose'); await page.waitForTimeout(1200);
+ok((await page.locator('.lb.wl').count()) >= 6, 'comparaison : étiquettes des murailles');
+await shot('06b-comparaison');
+await page.click('#bCompare'); await page.waitForTimeout(500);
+
 // plan 2D
 await page.click('#b2d'); await page.waitForTimeout(500);
 ok(await page.isVisible('#plan2d'), 'plan 2D affiché');

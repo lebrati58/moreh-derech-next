@@ -68,7 +68,11 @@ body.mode2d #plan2d{display:block}body.mode2d #stage{display:none}
 .sheet a{color:var(--mint);font-weight:800}
 .sheet .acts{display:flex;gap:8px;margin-top:12px}.sheet .acts button{flex:1;min-height:46px;border-radius:13px;border:0;background:var(--gold);color:#1c1f45;font-weight:900}
 .list{display:grid;gap:7px;margin-top:6px}.list button{display:flex;gap:9px;align-items:center;text-align:start;padding:10px 12px;border-radius:13px;border:1px solid var(--line);background:#16224a;font-weight:800;font-size:14px}
-.list i{width:11px;height:11px;border-radius:4px;flex:none}.list small{display:block;color:var(--soft);font-weight:700;font-size:12px}
+.list i{width:11px;height:11px;border-radius:4px;flex:none}
+.wrow{display:flex;gap:9px;align-items:center;padding:9px 11px;border-radius:13px;border:1px solid var(--line);background:#16224a;font-weight:800;font-size:14px}
+.wrow input{width:20px;height:20px;flex:none;accent-color:var(--gold)}.wrow i{width:22px!important;height:8px!important;border-radius:3px}.wrow span{flex:1;min-width:0}.wrow small{display:block;color:var(--soft);font-weight:700;font-size:11.5px}.wrow button{flex:none;border:1px solid var(--line);background:#26355f;border-radius:10px;width:36px;height:36px}
+.lb.wl{font-size:11.5px;background:#0b1230e6}
+body.compare .legend{display:none}.list small{display:block;color:var(--soft);font-weight:700;font-size:12px}
 .attr{position:fixed;z-index:12;inset-inline-start:8px;bottom:calc(118px + env(safe-area-inset-bottom,0px));font-size:10px;color:#c7d0f0b0;max-width:70%}
 .attr a{color:inherit}
 #msg{position:fixed;inset:0;display:grid;place-items:center;z-index:5;color:var(--soft);font-weight:800;text-align:center;padding:30px}
@@ -88,7 +92,9 @@ body.mode2d #plan2d{display:block}body.mode2d #stage{display:none}
   <div class="langs" role="group" aria-label="Language"><button data-lang="he">עב</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="ru">RU</button></div>
 </header>
 <div class="tools">
-  <button type="button" id="b2d" aria-pressed="false" title="2D / 3D">🗺️</button>
+  <button type="button" id="bCompare" aria-pressed="false" title="">🧱</button>
+  <button type="button" id="b2d" aria-pressed="false" title="2D / 3D" style="font-size:14px;font-weight:900">2D</button>
+  <button type="button" id="bBase" aria-pressed="false" title="">🗺️</button>
   <button type="button" id="bToday" aria-pressed="true" title="">〰️</button>
   <button type="button" id="bList" title="">📋</button>
   <button type="button" id="bHome" title="">🎯</button>

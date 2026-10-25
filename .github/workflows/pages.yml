@@ -18,6 +18,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Bâtiments actuels pour Jérusalem 3D (OpenStreetMap)
+        continue-on-error: true
+        timeout-minutes: 6
+        run: node tools/build-jerusalem3d-buildings.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

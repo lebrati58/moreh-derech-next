@@ -46,6 +46,13 @@ Objectif : rendre le jeu plus motivant et donner un vrai suivi de progression.
 - ⚠️ Contradictions Drive ↔ en ligne affichées dans les fiches : Gihon (datation), porte de Damas (1561 / 1537), carte de Madaba (croisée / VIe s.). Omar « 3e calife » : non repris dans les fiches.
 - ⏳ Reste : tracés des murailles antiques (plans géoréférencés à obtenir), repère du Cardo (aucune coordonnée Wikidata), éviter le chevauchement d'étiquettes dans la Cité de David, administration des fiches (table Supabase), phase 2 (quiz 3D) **interdite sans accord**.
 
+### 25 octobre 2026 (après-midi) — Murailles par époque + rendu 3D
+- ✅ **11 tracés de murailles** (`wallline` dans `monuments.json`), chacun avec sa couleur, son niveau de certitude et ses sources : cananéenne, Premier Temple (Ézéchias), Néhémie, première muraille hasmonéenne, deuxième muraille, troisième muraille (ligne nord maximaliste **et** variante minimaliste), Aelia, Eudocie, fatimide, Soliman. Période ayyoubide : aucune muraille (rasée en 1219).
+- Méthode : texte du Drive d'abord ; points de passage = repères Wikidata (tour de David, Kishle, tour israélite, muraille large, cimetière protestant/porte des Esséniens, Siloé, Gihon, structure à degrés, Ophel, Muristan, Alexander Nevsky…), angles réels de l'esplanade (OSM), et **coordonnées ITM publiées par Spiezer 2023** pour la troisième muraille (converties avec pyproj ; contrôle : l'Institut Albright tombe à ~100 m du coude). Chaque fiche dit que le tracé entre deux points est schématique.
+- ✅ **Mode « 🧱 השוואת חומות »** : toutes les murailles de toutes les époques ensemble, en 3D et en 2D, avec cases pour en masquer.
+- ✅ Rendu 3D : murailles en volume qui suivent le relief, ombres portées, relief ombré et lissé, ciel en dégradé, bouton 🗺️ carte de fond OpenStreetMap drapée (non vérifiable dans l'environnement de test : tuiles bloquées), bâtiments actuels OSM récupérés au déploiement (`tools/build-jerusalem3d-buildings.mjs`), en fantôme pour les périodes anciennes.
+- ⏳ Reste : porte des Esséniens sans coordonnée propre ; tracé exact entre les points (plans publiés à géoréférencer) ; vérifier sur un vrai téléphone la carte de fond et les bâtiments.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.

@@ -53,3 +53,29 @@ test('entry points and offline cache', async () => {
   const html = await read('public/jerusalem3d.html');
   assert.match(html, /"three":"\.\/vendor\/three\/three\.module\.min\.js"/);
 });
+
+test('wall lines per period: every waypoint is a known anchor, an esplanade corner or a published coordinate', async () => {
+  const d = JSON.parse(await read('public/jerusalem3d/monuments.json'));
+  const anchors = JSON.parse(await read('tools/jerusalem3d-anchors.json')).anchors;
+  const walls = d.monuments.filter(m => m.wall);
+  assert.ok(walls.length >= 10, 'au moins 10 tracés');
+  const periods = new Set(); walls.forEach(w => { for (let p = w.from; p <= w.to; p++) periods.add(p); });
+  for (const p of [1, 2, 3, 4, 5, 6, 7, 8, 9, 11]) assert.ok(periods.has(p), 'période sans muraille : ' + p);
+  assert.ok(!periods.has(10), 'période 10 : murailles rasées (1219), aucune ligne');
+  for (const w of walls) {
+    assert.equal(w.shape.type, 'wallline'); assert.match(w.shape.color, /^#[0-9a-f]{6}$/);
+    assert.ok(w.placementNote || w.shape.parts.every(p => p.osm), w.id + ' : note sur le caractère schématique');
+    for (const part of w.shape.parts) {
+      if (part.osm) continue;
+      assert.ok(part.via.length >= 2, w.id);
+      for (const tok of part.via) {
+        if (typeof tok === 'object') { assert.ok(tok.itm && tok.ll && /Spiezer/.test(tok.src), w.id + ' : coordonnée publiée sourcée'); continue; }
+        const [k, v] = tok.split(/:(.*)/);
+        if (k === 'a') assert.ok(anchors[v], w.id + ' : repère inconnu ' + v);
+        else if (k === 'tm') assert.match(v, /^(NE|NW|SE|SW)$/);
+        else if (k === 'mid') v.split(',').forEach(a => assert.ok(anchors[a], w.id + ' : ' + a));
+        else assert.fail(w.id + ' : jeton inconnu ' + tok);
+      }
+    }
+  }
+});
