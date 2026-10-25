@@ -78,6 +78,13 @@ for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.k
   } catch (e) { log('Overpass', ep, e.message); }
   await sleep(3000);
 }
+// Zones qui CONTIENNENT le Dôme du Rocher (l'esplanade du mont du Temple y figure si elle est cartographiée).
+try {
+  const qi = '[out:json][timeout:60];is_in(31.77806,35.23528)->.a;(way(pivot.a);relation(pivot.a););out geom tags;';
+  const r = await fetch('https://overpass.kumi.systems/api/interpreter?data=' + encodeURIComponent(qi), { headers: { 'User-Agent': UA, Accept: 'application/json' } });
+  if (r.ok) { const j = await r.json(); (j.elements || []).forEach(e => { e._enclosing = true; (osm = osm || { elements: [] }).elements.push(e); log('ENCL', e.type + '/' + e.id, (e.tags && (e.tags['name:en'] || e.tags.name)) || '', JSON.stringify(e.tags || {}).slice(0, 160)); }); }
+  else log('ENCL HTTP', r.status);
+} catch (e) { log('ENCL erreur', e.message); }
 const round = v => Math.round(v * 1e6) / 1e6;
 const shapes = [];
 for (const el of (osm && osm.elements) || []) {
@@ -85,6 +92,14 @@ for (const el of (osm && osm.elements) || []) {
   const kind = (t.historic === 'citywalls' || t.barrier === 'city_wall') ? 'wall' : 'outline';
   let name = t['name:en'] || t.name || '';
   if (/הר הבית/.test(t['name:he'] || '') || /Temple Mount|Haram|Noble Sanctuary/i.test(t['name:en'] || '')) name = 'Temple Mount';
+  if (el._enclosing) {
+    const g = el.type === 'way' ? el.geometry : ((el.members || []).find(m => m.geometry && (m.role === 'outer' || m.role === '')) || {}).geometry;
+    if (!g) continue;
+    const la = g.map(p => p.lat), lo = g.map(p => p.lon), ns = (Math.max(...la) - Math.min(...la)) * 110574, ew = (Math.max(...lo) - Math.min(...lo)) * 94600;
+    log('ENCL taille', el.type + '/' + el.id, Math.round(ns), 'x', Math.round(ew));
+    if (ns < 250 || ns > 650 || ew < 200 || ew > 450) continue; // seule une zone de la taille de l'esplanade est retenue
+    name = 'Temple Mount';
+  }
   if (el.type === 'way' && el.geometry) shapes.push({ kind, name, osm: 'way/' + el.id, pts: el.geometry.map(g => [round(g.lat), round(g.lon)]) });
   if (el.type === 'relation' && el.members) el.members.filter(m => (m.role === 'outer' || m.role === '') && m.type === 'way' && m.geometry).forEach(m =>
     shapes.push({ kind, name, osm: 'relation/' + el.id, pts: m.geometry.map(g => [round(g.lat), round(g.lon)]) }));
