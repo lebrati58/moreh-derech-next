@@ -74,10 +74,11 @@ body.tour-open{overflow:hidden}
 .tour-sheet-hint{margin:4px 0 0;font-size:12px;color:#b6c5e8;text-align:center}
 @media(max-width:550px){.filters .tour-trigger{flex-basis:100%}.tour-sheet{max-height:86dvh}.tour-results{gap:7px}.tour-option{padding:9px 8px}.tour-option .label{font-size:12.5px}}
 @media(max-width:360px){.tour-results{grid-template-columns:1fr}}
+.home.j3d{background:#ffd878;color:#1c1f45;border-color:#fff0a4}.home[hidden]{display:none}
 </style>
 </head>
 <body><main class="shell">
-<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home me-chip" id="meChip" href="journey.html">📈 המסע שלי</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home j3d" id="j3dLink" href="jerusalem3d.html" hidden>🏛️ תלת‑ממד</a><a class="home me-chip" id="meChip" href="journey.html">📈 המסע שלי</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
 <section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1 id="heroTitle">🧭 סיור מודרך</h1><p id="heroText">טוען את השאלות…</p><div class="art" aria-hidden="true">🚌</div></section>
 
 <button type="button" class="setup-bar" id="setupBar" hidden aria-controls="setupPanel" aria-expanded="false"><span class="setup-text" id="setupText"></span><span class="setup-edit">✎ שינוי</span></button>
@@ -179,6 +180,7 @@ function placeStops(t){return (places&&places.tours[t]&&places.tours[t].stops)||
 function matchStop(t,name){const n=norm(name);if(!n)return null;return placeStops(t).find(s=>{const a=norm(s.name),b=norm(s.he&&s.he.title);return n.includes(a)||a.includes(n)||(b&&(n.includes(b)||b.includes(n)));})||null;}
 function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
 function syncUrl(){const u=new URL(location.href);u.searchParams.delete("new");if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
+  {const J3D={11:2,12:5,13:5,14:5,18:7},jp=J3D[Number(tour)],jl=$("j3dLink");if(jl){jl.hidden=!jp;if(jp)jl.href="jerusalem3d.html?period="+jp;}} // parcours de Jérusalem : accès direct à la 3D
   $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode==="review"||mode==="daily"?"quiz":mode)+(tour!=="all"?"&tour="+tour:"");}
 
 // Sélecteur de סיור sans liste déroulante système : 22 choix en grille compacte + recherche.

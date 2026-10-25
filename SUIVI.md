@@ -86,6 +86,7 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ Chaque élément du modèle est classé **A/B/C/D** et relié à une fiche (`models/temple-mount-30ce.json`) ; la fiche affiche la liste et le crédit OpenBible (MIT). Hypothèses illustratives (chaussée vers le mont des Oliviers, piscine d'Israël) translucides.
 - ⚠️ Le modèle représente **vers 30 apr. J.-C.** (pas 66) ; différences mineures sur l'esplanade. Leur relief n'est pas repris : petites différences possibles au pied des murs.
 - ⏳ Étapes suivantes proposées : C (fiches A/B/C/D détaillées en hébreu), D (trois tours, palais, villes haute et basse, à modéliser nous-mêmes), E (quiz — sur autorisation), F (optimisation, mesure sur Android réel).
+- ✅ **Accès plus facile à la 3D** : grande bannière dorée « 🏛️ ירושלים בתלת‑ממד » en haut de l'accueil (4 langues, avant les modes de jeu), bouton « 🏛️ תלת‑ממד » dans l'en-tête des parcours de Jérusalem (סיורים 11, 12, 13, 14, 18) ; en plus du panneau sur la carte. Testé sur téléphone simulé (accueil → 3D, parcours 12 → 3D, pas de bouton sur le parcours 04) ; test du suivi joueur toujours OK.
 
 ## 3. À faire / idées (par priorité)
 
