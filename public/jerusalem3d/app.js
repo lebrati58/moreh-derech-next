@@ -80,6 +80,7 @@ function wpt(tok) {
   if (tok.startsWith('a:')) return anchorXZ(tok.slice(2));
   if (tok.startsWith('tm:')) return tmCorner(tok.slice(3));
   if (tok.startsWith('herod:')) return herodTowerPos(tok.slice(6)); // tour d'Hérode (Hippicus : début de la 1re muraille, Josèphe 5.144)
+  if (tok.startsWith('off:')) { const [id, dx, dz] = tok.slice(4).split(','), a = anchorXZ(id); return a ? [a[0] + +dx, a[1] + +dz] : null; } // repère décalé de dx m vers l'est, dz m vers le sud
   if (tok.startsWith('mid:')) { const [a, b] = tok.slice(4).split(',').map(anchorXZ); return a && b ? [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2] : null; }
   return null;
 }

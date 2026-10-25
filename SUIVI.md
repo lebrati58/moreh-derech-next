@@ -92,6 +92,7 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ **Arches et vieille ville** : arc de l'Ecce Homo (Hadrien, 135 ; cours סיור 18 — מנזר האחיות מציון) ; cardo occidental et cardo oriental d'Aelia ; à la période « aujourd'hui », tronçon restauré du Cardo avec colonnade (quartier juif), et vestiges visibles aujourd'hui (Maison brûlée, quartier hérodien, muraille large, puits de Warren, piscine de Siloé).
 - ✅ Tests : 7 unitaires, 30 vérifications navigateur.
 - ✅ **L'eau en bleu** : Cédron, Hinnom et Tyropéon dessinés en ruban bleu vif, plus large, avec un courant animé ; ravins secondaires en bleu clair ; l'eau reste bleue même en mode « couleurs de certitude » ; bassins (Siloé, piscines du modèle du mont du Temple) en bleu. Précision : ce sont des **vallées** (oueds), à sec la plupart de l'année, pas des rivières permanentes ; seule la source du Gihon coule toute l'année.
+- ✅ **Muraille à Siloé** : la 1re muraille (et celle d'Eudocie) passait au milieu du bassin de Siloé ; elle passe maintenant au sud du bassin, qui est à l'intérieur de la ville, comme le dit le document du cours « השילוח » (« חומת העיר מבית שני עברה מדרום למאגר »). La rue à degrés part du bord nord du bassin. Les autres tracés n'ont pas changé depuis le début (vérifié : mêmes repères, mêmes points), sauf le départ à Hippicus.
 
 ## 3. À faire / idées (par priorité)
 

@@ -75,6 +75,7 @@ test('wall lines per period: every waypoint is a known anchor, an esplanade corn
         else if (k === 'tm') assert.match(v, /^(NE|NW|SE|SW)$/);
         else if (k === 'herod') assert.match(v, /^(hippicus|mariamne)$/);
         else if (k === 'mid') v.split(',').forEach(a => assert.ok(anchors[a], w.id + ' : ' + a));
+        else if (k === 'off') { const [a, dx, dz] = v.split(','); assert.ok(anchors[a], w.id + ' : ' + a); assert.ok(Math.hypot(+dx, +dz) <= 80, w.id + ' : décalage limité à 80 m'); }
         else assert.fail(w.id + ' : jeton inconnu ' + tok);
       }
     }

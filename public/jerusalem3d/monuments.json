@@ -1746,6 +1746,11 @@
    "sources": [
     {
      "kind": "drive",
+     "label": "השילוח — הדרכה בשטח (החומה מבית שני עברה מדרום למאגר)",
+     "url": "https://drive.google.com/file/d/1ysX_Lz_CvPZytNXnRvp1V5AKNo3665ee/view"
+    },
+    {
+     "kind": "drive",
      "label": "דגם ירושלים בית שני (סיור 12)",
      "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
     },
@@ -1796,7 +1801,7 @@
    "shape": {
     "type": "pilgrimroad",
     "via": [
-     "a:siloam_pool",
+     "off:siloam_pool,0,-26",
      "a:givati",
      "a:robinsons_arch"
     ]
@@ -3133,7 +3138,8 @@
        "a:kishle",
        "a:bishop_gobat",
        "a:protestant_cemetery",
-       "a:siloam_pool",
+       "off:siloam_pool,-44,32",
+       "off:siloam_pool,44,32",
        "a:hezekiah_tunnel",
        "a:gihon_spring",
        "a:stepped_stone",
@@ -3158,6 +3164,11 @@
     "ru": "По Иосифу: от башни Гиппика через Ксист и здание совета к западному портику Храма; в другую сторону — через Бетсо к воротам ессеев, на юг над Силоамом, на восток к пруду Соломона, к Офелу и восточному портику. Хасмонейская, частично по линии Езекии; её эллинистическая башня видна в Городе Давида."
    },
    "sources": [
+    {
+     "kind": "drive",
+     "label": "השילוח — הדרכה בשטח (החומה מבית שני עברה מדרום למאגר)",
+     "url": "https://drive.google.com/file/d/1ysX_Lz_CvPZytNXnRvp1V5AKNo3665ee/view"
+    },
     {
      "kind": "drive",
      "label": "דגם ירושלים בית שני (סיור 12)",
@@ -3556,7 +3567,8 @@
        "a:zion_gate",
        "a:bishop_gobat",
        "a:protestant_cemetery",
-       "a:siloam_pool",
+       "off:siloam_pool,-44,32",
+       "off:siloam_pool,44,32",
        "a:hezekiah_tunnel",
        "a:gihon_spring",
        "a:ophel",
