@@ -68,16 +68,17 @@ relation["landuse"="religious"](${bb});
 way["historic"="archaeological_site"]["name:en"~"Temple",i](${bb});
 );out geom tags;`;
 let osm = null;
-for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']) {
+for (let round = 0; round < 4 && !(osm && (osm.elements || []).length); round++) for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']) {
+  if (osm && (osm.elements || []).length) break;
   try {
     const r = await fetch(ep + '?data=' + encodeURIComponent(q), { headers: { 'User-Agent': UA, Accept: 'application/json' } });
     const txt = await r.text();
     if (!r.ok) { log('Overpass', ep, 'HTTP', r.status, txt.slice(0, 120).replace(/\s+/g, ' ')); continue; }
     osm = JSON.parse(txt); log('Overpass', ep, 'OK', (osm.elements || []).length, 'éléments');
-    if ((osm.elements || []).length) break;
   } catch (e) { log('Overpass', ep, e.message); }
-  await sleep(3000);
+  await sleep(5000);
 }
+if (!(osm && (osm.elements || []).length)) throw new Error('Overpass : aucun élément — on arrête pour ne pas publier des tracés vides');
 // Zones qui CONTIENNENT le Dôme du Rocher (l'esplanade du mont du Temple y figure si elle est cartographiée).
 {
   const qi = '[out:json][timeout:60];is_in(31.77806,35.23528)->.a;(way(pivot.a);relation(pivot.a););out geom tags;';
