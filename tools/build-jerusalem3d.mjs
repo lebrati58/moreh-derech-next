@@ -79,12 +79,19 @@ for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.k
   await sleep(3000);
 }
 // Zones qui CONTIENNENT le Dôme du Rocher (l'esplanade du mont du Temple y figure si elle est cartographiée).
-try {
+{
   const qi = '[out:json][timeout:60];is_in(31.77806,35.23528)->.a;(way(pivot.a);relation(pivot.a););out geom tags;';
-  const r = await fetch('https://overpass.kumi.systems/api/interpreter?data=' + encodeURIComponent(qi), { headers: { 'User-Agent': UA, Accept: 'application/json' } });
-  if (r.ok) { const j = await r.json(); (j.elements || []).forEach(e => { e._enclosing = true; (osm = osm || { elements: [] }).elements.push(e); log('ENCL', e.type + '/' + e.id, (e.tags && (e.tags['name:en'] || e.tags.name)) || '', JSON.stringify(e.tags || {}).slice(0, 160)); }); }
-  else log('ENCL HTTP', r.status);
-} catch (e) { log('ENCL erreur', e.message); }
+  let done = false;
+  for (let round = 0; round < 3 && !done; round++) for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']) {
+    try {
+      const r = await fetch(ep + '?data=' + encodeURIComponent(qi), { headers: { 'User-Agent': UA, Accept: 'application/json' } });
+      if (!r.ok) { log('ENCL HTTP', r.status, ep); await sleep(4000); continue; }
+      const j = await r.json();
+      (j.elements || []).forEach(e => { e._enclosing = true; (osm = osm || { elements: [] }).elements.push(e); log('ENCL', e.type + '/' + e.id, (e.tags && (e.tags['name:en'] || e.tags.name)) || '', JSON.stringify(e.tags || {}).slice(0, 140)); });
+      done = true; break;
+    } catch (e) { log('ENCL erreur', ep, e.message); }
+  }
+}
 const round = v => Math.round(v * 1e6) / 1e6;
 const shapes = [];
 for (const el of (osm && osm.elements) || []) {
