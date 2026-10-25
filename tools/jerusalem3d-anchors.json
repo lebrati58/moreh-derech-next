@@ -1,210 +1,213 @@
 {
-  "_note": "Repères de la scène 3D : pour chaque identifiant, articles Wikipédia candidats (he: d'abord). Seules les coordonnées publiées (Wikidata P625) sont utilisées. Corriger un point = changer le titre ici, puis relancer le workflow « Jérusalem 3D — géographie ».",
-  "anchors": {
-    "tower_of_david": [
-      "he:מגדל דוד",
-      "en:Tower of David"
-    ],
-    "kishle": [
-      "en:Kishle",
-      "he:קישלה"
-    ],
-    "temple_mount": [
-      "he:הר הבית",
-      "en:Temple Mount"
-    ],
-    "dome_of_the_rock": [
-      "he:כיפת הסלע",
-      "en:Dome of the Rock"
-    ],
-    "al_aqsa": [
-      "he:מסגד אל-אקצא",
-      "en:Al-Aqsa Mosque"
-    ],
-    "western_wall": [
-      "he:הכותל המערבי",
-      "en:Western Wall"
-    ],
-    "robinsons_arch": [
-      "en:Robinson's Arch",
-      "he:קשת רובינסון",
-      "en:Southern Wall"
-    ],
-    "wilsons_arch": [
-      "he:קשת וילסון",
-      "en:Wilson's Arch (Jerusalem)"
-    ],
-    "hulda_gates": [
-      "he:שערי חולדה",
-      "en:Huldah Gates"
-    ],
-    "southern_steps": [
-      "en:Southern Steps",
-      "en:Southern Wall",
-      "he:הכותל הדרומי"
-    ],
-    "antonia": [
-      "he:מצודת אנטוניה",
-      "en:Antonia Fortress"
-    ],
-    "golden_gate": [
-      "he:שער הרחמים",
-      "en:Golden Gate (Jerusalem)"
-    ],
-    "damascus_gate": [
-      "he:שער שכם",
-      "en:Damascus Gate"
-    ],
-    "jaffa_gate": [
-      "he:שער יפו",
-      "en:Jaffa Gate"
-    ],
-    "zion_gate": [
-      "he:שער ציון",
-      "en:Zion Gate"
-    ],
-    "dung_gate": [
-      "he:שער האשפות",
-      "en:Dung Gate"
-    ],
-    "lions_gate": [
-      "he:שער האריות",
-      "en:Lions' Gate"
-    ],
-    "herods_gate": [
-      "he:שער הפרחים",
-      "en:Herod's Gate"
-    ],
-    "new_gate": [
-      "he:השער החדש",
-      "en:New Gate"
-    ],
-    "holy_sepulchre": [
-      "he:כנסיית הקבר",
-      "en:Church of the Holy Sepulchre"
-    ],
-    "cardo": [
-      "he:הקרדו (ירושלים)",
-      "en:Cardo Maximus (Jerusalem)",
-      "en:Cardo (Jerusalem)",
-      "he:הקרדו"
-    ],
-    "nea_church": [
-      "en:Nea Church",
-      "he:כנסיית הנאה"
-    ],
-    "burnt_house": [
-      "he:הבית השרוף",
-      "en:Burnt House"
-    ],
-    "herodian_quarter": [
-      "he:הרובע ההרודיאני",
-      "en:Herodian Quarter"
-    ],
-    "broad_wall": [
-      "he:החומה הרחבה",
-      "en:Broad Wall (Jerusalem)"
-    ],
-    "city_of_david": [
-      "he:עיר דוד",
-      "en:City of David"
-    ],
-    "gihon_spring": [
-      "he:מעיין הגיחון",
-      "en:Gihon Spring"
-    ],
-    "warren_shaft": [
-      "he:פיר וורן",
-      "en:Warren's Shaft"
-    ],
-    "hezekiah_tunnel": [
-      "he:נקבת השילוח",
-      "en:Siloam tunnel"
-    ],
-    "siloam_pool": [
-      "he:בריכת השילוח",
-      "en:Pool of Siloam"
-    ],
-    "tancreds_tower": [
-      "en:Tancred's Tower",
-      "he:מגדל טנקרד"
-    ],
-    "zedekiahs_cave": [
-      "he:מערת צדקיהו",
-      "en:Zedekiah's Cave"
-    ],
-    "ecce_homo": [
-      "en:Ecce Homo Arch",
-      "he:קשת אקה הומו"
-    ],
-    "sisters_of_zion": [
-      "en:Convent of the Sisters of Zion",
-      "he:מנזר האחיות מציון"
-    ],
-    "hurva": [
-      "he:בית הכנסת החורבה",
-      "en:Hurva Synagogue"
-    ],
-    "ophel": [
-      "he:העופל",
-      "en:Ophel"
-    ],
-    "israelite_tower": [
-      "en:Israelite Tower",
-      "he:המגדל הישראלי"
-    ],
-    "gate_essenes": [
-      "en:Gate of the Essenes",
-      "en:Essene Gate",
-      "he:שער האיסיים"
-    ],
-    "bishop_gobat": [
-      "en:Bishop Gobat School",
-      "en:Jerusalem University College"
-    ],
-    "protestant_cemetery": [
-      "en:Protestant Cemetery, Mount Zion",
-      "en:Mount Zion Cemetery"
-    ],
-    "dormition": [
-      "he:כנסיית הדורמיציון",
-      "en:Church of the Dormition"
-    ],
-    "mount_zion": [
-      "he:הר ציון",
-      "en:Mount Zion"
-    ],
-    "stepped_stone": [
-      "en:Stepped Stone Structure",
-      "en:Large Stone Structure",
-      "he:המבנה המדורג"
-    ],
-    "givati": [
-      "en:Givati Parking Lot",
-      "he:חניון גבעתי"
-    ],
-    "muristan": [
-      "en:Muristan",
-      "he:מוריסטן"
-    ],
-    "alexander_nevsky": [
-      "en:Alexander Nevsky Church (Jerusalem)",
-      "en:Church of St. Alexander Nevsky, Jerusalem",
-      "en:Alexander Nevsky Church, Jerusalem",
-      "en:Alexander Compound",
-      "he:כנסיית אלכסנדר נייבסקי"
-    ],
-    "russian_compound": [
-      "he:מגרש הרוסים",
-      "en:Russian Compound"
-    ],
-    "tombs_of_kings": [
-      "he:קברי המלכים",
-      "en:Tombs of the Kings (Jerusalem)"
-    ],
-    "albright": [
-      "en:W. F. Albright Institute of Archaeological Research",
-      "en:Albright Institute of Archaeological Research"
-    ]
-  }
+ "_note": "Repères de la scène 3D : pour chaque identifiant, articles Wikipédia candidats (he: d'abord). Seules les coordonnées publiées (Wikidata P625) sont utilisées. Corriger un point = changer le titre ici, puis relancer le workflow « Jérusalem 3D — géographie ».",
+ "anchors": {
+  "tower_of_david": [
+   "he:מגדל דוד",
+   "en:Tower of David"
+  ],
+  "kishle": [
+   "en:Kishle",
+   "he:קישלה"
+  ],
+  "temple_mount": [
+   "he:הר הבית",
+   "en:Temple Mount"
+  ],
+  "dome_of_the_rock": [
+   "he:כיפת הסלע",
+   "en:Dome of the Rock"
+  ],
+  "al_aqsa": [
+   "he:מסגד אל-אקצא",
+   "en:Al-Aqsa Mosque"
+  ],
+  "western_wall": [
+   "he:הכותל המערבי",
+   "en:Western Wall"
+  ],
+  "robinsons_arch": [
+   "en:Robinson's Arch",
+   "he:קשת רובינסון",
+   "en:Southern Wall"
+  ],
+  "wilsons_arch": [
+   "he:קשת וילסון",
+   "en:Wilson's Arch (Jerusalem)"
+  ],
+  "hulda_gates": [
+   "he:שערי חולדה",
+   "en:Huldah Gates"
+  ],
+  "southern_steps": [
+   "en:Southern Steps",
+   "en:Southern Wall",
+   "he:הכותל הדרומי"
+  ],
+  "antonia": [
+   "he:מצודת אנטוניה",
+   "en:Antonia Fortress"
+  ],
+  "golden_gate": [
+   "he:שער הרחמים",
+   "en:Golden Gate (Jerusalem)"
+  ],
+  "damascus_gate": [
+   "he:שער שכם",
+   "en:Damascus Gate"
+  ],
+  "jaffa_gate": [
+   "he:שער יפו",
+   "en:Jaffa Gate"
+  ],
+  "zion_gate": [
+   "he:שער ציון",
+   "en:Zion Gate"
+  ],
+  "dung_gate": [
+   "he:שער האשפות",
+   "en:Dung Gate"
+  ],
+  "lions_gate": [
+   "he:שער האריות",
+   "en:Lions' Gate"
+  ],
+  "herods_gate": [
+   "he:שער הפרחים",
+   "en:Herod's Gate"
+  ],
+  "new_gate": [
+   "he:השער החדש",
+   "en:New Gate"
+  ],
+  "holy_sepulchre": [
+   "he:כנסיית הקבר",
+   "en:Church of the Holy Sepulchre"
+  ],
+  "cardo": [
+   "he:הקרדו (ירושלים)",
+   "en:Cardo Maximus (Jerusalem)",
+   "en:Cardo (Jerusalem)",
+   "he:הקרדו"
+  ],
+  "nea_church": [
+   "en:Nea Church",
+   "he:כנסיית הנאה"
+  ],
+  "burnt_house": [
+   "he:הבית השרוף",
+   "en:Burnt House"
+  ],
+  "herodian_quarter": [
+   "he:הרובע ההרודיאני",
+   "en:Herodian Quarter"
+  ],
+  "broad_wall": [
+   "he:החומה הרחבה",
+   "en:Broad Wall (Jerusalem)"
+  ],
+  "city_of_david": [
+   "he:עיר דוד",
+   "en:City of David"
+  ],
+  "gihon_spring": [
+   "he:מעיין הגיחון",
+   "en:Gihon Spring"
+  ],
+  "warren_shaft": [
+   "he:פיר וורן",
+   "en:Warren's Shaft"
+  ],
+  "hezekiah_tunnel": [
+   "he:נקבת השילוח",
+   "en:Siloam tunnel"
+  ],
+  "siloam_pool": [
+   "he:בריכת השילוח",
+   "en:Pool of Siloam"
+  ],
+  "tancreds_tower": [
+   "en:Tancred's Tower",
+   "he:מגדל טנקרד"
+  ],
+  "zedekiahs_cave": [
+   "he:מערת צדקיהו",
+   "en:Zedekiah's Cave"
+  ],
+  "ecce_homo": [
+   "en:Ecce Homo Arch",
+   "he:קשת אקה הומו"
+  ],
+  "sisters_of_zion": [
+   "en:Convent of the Sisters of Zion",
+   "he:מנזר האחיות מציון"
+  ],
+  "hurva": [
+   "he:בית הכנסת החורבה",
+   "en:Hurva Synagogue"
+  ],
+  "ophel": [
+   "he:העופל",
+   "en:Ophel"
+  ],
+  "israelite_tower": [
+   "en:Israelite Tower",
+   "he:המגדל הישראלי"
+  ],
+  "gate_essenes": [
+   "en:Gate of the Essenes",
+   "en:Essene Gate",
+   "he:שער האיסיים"
+  ],
+  "bishop_gobat": [
+   "en:Bishop Gobat School",
+   "en:Jerusalem University College"
+  ],
+  "protestant_cemetery": [
+   "en:Protestant Cemetery, Mount Zion",
+   "en:Mount Zion Cemetery"
+  ],
+  "dormition": [
+   "he:כנסיית הדורמיציון",
+   "en:Church of the Dormition"
+  ],
+  "mount_zion": [
+   "he:הר ציון",
+   "en:Mount Zion"
+  ],
+  "stepped_stone": [
+   "en:Stepped Stone Structure",
+   "en:Large Stone Structure",
+   "he:המבנה המדורג"
+  ],
+  "givati": [
+   "en:Givati Parking Lot",
+   "he:חניון גבעתי"
+  ],
+  "muristan": [
+   "en:Muristan",
+   "he:מוריסטן"
+  ],
+  "alexander_nevsky": [
+   "en:Alexander Nevsky Church (Jerusalem)",
+   "en:Church of St. Alexander Nevsky, Jerusalem",
+   "en:Alexander Nevsky Church, Jerusalem",
+   "en:Alexander Compound",
+   "he:כנסיית אלכסנדר נייבסקי"
+  ],
+  "russian_compound": [
+   "he:מגרש הרוסים",
+   "en:Russian Compound"
+  ],
+  "tombs_of_kings": [
+   "he:קברי המלכים",
+   "en:Tombs of the Kings (Jerusalem)"
+  ],
+  "albright": [
+   "en:W. F. Albright Institute of Archaeological Research",
+   "en:Albright Institute of Archaeological Research"
+  ],
+  "herodian_tower": [
+   "en:Tower of David (northeast tower)"
+  ]
+ }
 }
