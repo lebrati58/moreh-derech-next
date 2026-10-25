@@ -155,6 +155,7 @@
     ],
     "gate_essenes": [
       "en:Gate of the Essenes",
+      "en:Essene Gate",
       "he:שער האיסיים"
     ],
     "bishop_gobat": [
@@ -175,6 +176,7 @@
     ],
     "stepped_stone": [
       "en:Stepped Stone Structure",
+      "en:Large Stone Structure",
       "he:המבנה המדורג"
     ],
     "givati": [
@@ -188,7 +190,9 @@
     "alexander_nevsky": [
       "en:Alexander Nevsky Church (Jerusalem)",
       "en:Church of St. Alexander Nevsky, Jerusalem",
-      "en:Alexander Nevsky Church, Jerusalem"
+      "en:Alexander Nevsky Church, Jerusalem",
+      "en:Alexander Compound",
+      "he:כנסיית אלכסנדר נייבסקי"
     ],
     "russian_compound": [
       "he:מגרש הרוסים",

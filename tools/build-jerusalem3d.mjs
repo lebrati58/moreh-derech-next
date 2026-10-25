@@ -32,7 +32,18 @@ async function wikiCoord(cand) {
   const p = j.query && j.query.pages && j.query.pages[0];
   if (!p || p.missing || p.invalid) return null;
   const c = (p.coordinates || []).find(x => x.primary) || (p.coordinates || [])[0];
-  if (!c) return { title: p.title, url: p.fullurl, qid: p.pageprops && p.pageprops.wikibase_item, coord: null };
+  if (!c) {
+    // repli : coordonnée Wikidata (P625) de l'élément lié à l'article
+    const qid = p.pageprops && p.pageprops.wikibase_item;
+    if (qid) {
+      try {
+        const w = await getJSON(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`, {}, 2), e = w.entities && w.entities[qid];
+        const v = e && e.claims && e.claims.P625 && e.claims.P625[0].mainsnak.datavalue && e.claims.P625[0].mainsnak.datavalue.value;
+        if (v) return { title: p.title, url: p.fullurl, qid, coord: { lat: v.latitude, lon: v.longitude } };
+      } catch (err) { log('  Wikidata', qid, err.message); }
+    }
+    return { title: p.title, url: p.fullurl, qid: qid || null, coord: null };
+  }
   return { title: p.title, url: p.fullurl, qid: p.pageprops && p.pageprops.wikibase_item, coord: { lat: c.lat, lon: c.lon } };
 }
 
