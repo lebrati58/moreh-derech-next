@@ -148,6 +148,59 @@
     "ophel": [
       "he:העופל",
       "en:Ophel"
+    ],
+    "israelite_tower": [
+      "en:Israelite Tower",
+      "he:המגדל הישראלי"
+    ],
+    "gate_essenes": [
+      "en:Gate of the Essenes",
+      "he:שער האיסיים"
+    ],
+    "bishop_gobat": [
+      "en:Bishop Gobat School",
+      "en:Jerusalem University College"
+    ],
+    "protestant_cemetery": [
+      "en:Protestant Cemetery, Mount Zion",
+      "en:Mount Zion Cemetery"
+    ],
+    "dormition": [
+      "he:כנסיית הדורמיציון",
+      "en:Church of the Dormition"
+    ],
+    "mount_zion": [
+      "he:הר ציון",
+      "en:Mount Zion"
+    ],
+    "stepped_stone": [
+      "en:Stepped Stone Structure",
+      "he:המבנה המדורג"
+    ],
+    "givati": [
+      "en:Givati Parking Lot",
+      "he:חניון גבעתי"
+    ],
+    "muristan": [
+      "en:Muristan",
+      "he:מוריסטן"
+    ],
+    "alexander_nevsky": [
+      "en:Alexander Nevsky Church (Jerusalem)",
+      "en:Church of St. Alexander Nevsky, Jerusalem",
+      "en:Alexander Nevsky Church, Jerusalem"
+    ],
+    "russian_compound": [
+      "he:מגרש הרוסים",
+      "en:Russian Compound"
+    ],
+    "tombs_of_kings": [
+      "he:קברי המלכים",
+      "en:Tombs of the Kings (Jerusalem)"
+    ],
+    "albright": [
+      "en:W. F. Albright Institute of Archaeological Research",
+      "en:Albright Institute of Archaeological Research"
     ]
   }
 }

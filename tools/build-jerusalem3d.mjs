@@ -9,7 +9,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 const ROOT = new URL('..', import.meta.url);
 const UA = 'MorehDerechNext/1.0 (https://github.com/lebrati58/moreh-derech-next)';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const BOX = { s: 31.7650, n: 31.7860, w: 35.2210, e: 35.2430 };
+const BOX = { s: 31.7650, n: 31.7920, w: 35.2190, e: 35.2440 }; // jusqu'au tracé nord de la 3e muraille
 const log = (...a) => console.log(...a);
 
 async function getJSON(url, opts = {}, tries = 4) {
