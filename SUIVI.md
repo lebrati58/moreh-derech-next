@@ -78,6 +78,7 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ Décision de Lionel : **11 périodes + « Jérusalem aujourd'hui »**. Quiz 3D / mode examen : **toujours éteints** (pas d'autorisation explicite).
 - ✅ Corrections : repère hérodien (tour nord-est, pas la Citadelle entière), mention « tour de David » ≠ tours d'Hérode, 1re muraille depuis Hippicus, cardos d'Aelia, 4e rangée du Portique royal, période « aujourd'hui » et bouton « Comparer avec aujourd'hui », fiches enrichies (fonction, événements, constructeur, vestiges) depuis le Drive, nom en 2 langues, menu ☰ Outils avec libellés, message de préparation, accès depuis tout parcours de la Vieille Ville.
 - ✅ Tests : 7 tests unitaires ; 27 vérifications navigateur sur téléphone simulé.
+- ✅ **Carte d'Israël** : panneau doré « 🏛️ ירושלים 3D » posé sur le mont du Temple (coordonnée Wikidata lue dans `geo.json`), hors des grappes, toujours visible ; un toucher ouvre la 3D (testé : navigation vers `jerusalem3d.html?period=5`, aucune erreur). « 3D » isolé en sens gauche-droite pour ne pas être coupé par l'hébreu.
 
 ## 3. À faire / idées (par priorité)
 

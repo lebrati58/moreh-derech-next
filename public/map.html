@@ -144,6 +144,11 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 @keyframes bob{50%{transform:translateY(-8px) rotate(-3deg)}}
 @media(min-width:900px){.sheet{inset-inline-start:16px;inset-inline-end:auto;margin:0;width:420px;bottom:16px;border-radius:26px;border-bottom:1px solid #5f6fc0;max-height:calc(100dvh - 190px)}.sheet.peek{transform:translateY(calc(100% + 16px - var(--peek,250px)))}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+.j3d-sign{display:flex;align-items:center;gap:8px;width:184px;height:48px;padding:0 12px 0 8px;border-radius:16px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:2px solid #fff6c9;box-shadow:0 6px 18px #000a;font-family:inherit;position:relative;animation:j3dpulse 2.4s ease-in-out infinite}
+.j3d-sign::after{content:'';position:absolute;left:50%;bottom:-10px;margin-left:-8px;border:8px solid transparent;border-top-color:#f0b44c;border-bottom:0}
+.j3d-sign b,.j3d-sign small{color:#1c1f45!important}.j3d-ico{font-size:24px;line-height:1}.j3d-txt{display:flex;flex-direction:column;line-height:1.1;min-width:0}.j3d-txt b{font-size:15px;font-weight:900}.j3d-txt small{font-size:10.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@keyframes j3dpulse{0%,100%{box-shadow:0 6px 18px #000a,0 0 0 0 #ffd87888}50%{box-shadow:0 6px 18px #000a,0 0 0 10px #ffd87800}}
+@media (prefers-reduced-motion:reduce){.j3d-sign{animation:none}}
 </style>
 </head>
 <body>
@@ -287,6 +292,7 @@ function initMap(){
     iconCreateFunction:function(c){var ids={},g=0;c.getAllChildMarkers().forEach(function(m){ids[m._tour]=1;});Object.keys(ids).forEach(function(id){var t=tours.filter(function(x){return x.id===id;})[0];if(t&&prog(t).stars===3)g++;});
       return L.divIcon({html:'<div class="pinwrap" style="width:46px;height:46px"><div class="cluster'+(g?' has-gold':'')+'">'+c.getChildCount()+'</div>'+(g?'<b class="pbadge g">👑'+(g>1?g:'')+'</b>':'')+'</div>',className:'',iconSize:[46,46]});}});
   map.addLayer(cluster);focusLayer=L.layerGroup().addTo(map);
+  addJerusalem3dSign();
   if(road&&road.geometry){roadLayer=L.layerGroup([
     L.polyline(road.geometry,{color:'#050a1f',weight:11,opacity:.8,interactive:false}),
     L.polyline(road.geometry,{color:'#ffffff',weight:6,dashArray:'2 10',lineCap:'round'}).on('click',function(){openTour('road67');}),
@@ -317,6 +323,15 @@ function pinIcon(t,s){var g=prog(t),cls='pin'+(current?(current.id===t.id?' on':
 function restyle(){if(map)drawMarkers(false);}
 
 /* ----- liste ----- */
+// Panneau « ירושלים בתלת-ממד » posé sur le mont du Temple (coordonnée Wikidata lue dans jerusalem3d/geo.json, jamais saisie à la main).
+// Hors des grappes de marqueurs, toujours visible, un toucher ouvre la 3D.
+function addJerusalem3dSign(){
+  fetch('jerusalem3d/geo.json').then(function(r){return r.ok?r.json():null;}).then(function(g){
+    var a=g&&g.anchors&&g.anchors.temple_mount;if(!a)return;
+    L.marker([a.lat,a.lon],{icon:L.divIcon({className:'',html:'<a class="j3d-sign" href="jerusalem3d.html?period=5" aria-label="ירושלים העתיקה בתלת-ממד"><span class="j3d-ico">🏛️</span><span class="j3d-txt"><b>ירושלים <bdi dir="ltr">3D</bdi></b><small>העיר העתיקה בכל התקופות</small></span></a>',iconSize:[184,48],iconAnchor:[92,58]}),zIndexOffset:2000,keyboard:true,title:'ירושלים העתיקה בתלת-ממד'})
+      .on('click',function(){location.href='jerusalem3d.html?period=5';}).addTo(map);
+  }).catch(function(){});
+}
 function render(fit){
   var vis=visible();
   $('cards').innerHTML=vis.length?vis.map(function(t){
