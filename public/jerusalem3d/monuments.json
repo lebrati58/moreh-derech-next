@@ -234,6 +234,198 @@
  ],
  "monuments": [
   {
+   "id": "jerusalem_gihon_spring",
+   "anchor": "gihon_spring",
+   "name": {
+    "he": "מעיין הגיחון",
+    "fr": "La source du Gihon",
+    "en": "The Gihon Spring",
+    "ru": "Источник Гихон"
+   },
+   "text": {
+    "he": "מקור המים הקבוע היחיד של ירושלים הקדומה, למרגלות עיר דוד בצד נחל קדרון. מימיו הובלו בנקבת חזקיהו אל בריכת השילוח.",
+    "fr": "La seule source permanente de Jérusalem antique, au pied de la Cité de David, côté Kidron. Son eau était conduite par le tunnel d’Ézéchias jusqu’au bassin de Siloé.",
+    "en": "The only permanent spring of ancient Jerusalem, at the foot of the City of David on the Kidron side. Its water was led through Hezekiah’s Tunnel to the Pool of Siloam.",
+    "ru": "Единственный постоянный источник древнего Иерусалима у подножия Города Давида со стороны Кедрона. Его вода шла по туннелю Езекии в Силоамскую купель."
+   },
+   "shape": {
+    "type": "marker"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap — Gichon Spring (node 1608094098)",
+     "url": "https://www.openstreetmap.org/node/1608094098"
+    }
+   ],
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_tyropoeon",
+   "name": {
+    "he": "גיא הטירופיאון (הגיא, גיא עושי הגבינה)",
+    "fr": "La vallée du Tyropéon (« des fromagers »)",
+    "en": "The Tyropoeon Valley (“of the cheesemakers”)",
+    "ru": "Долина Тиропеон («сыроделов»)"
+   },
+   "text": {
+    "he": "גיא פנימי המפריד בין הגבעה המזרחית לגבעה המערבית. מתחיל באזור שער שכם של ימינו, עובר ממערב להר הבית ולכותל המערבי, ממשיך דרומה ותוחם את עיר דוד ממערב, עד שהוא נשפך אל נחל קדרון.",
+    "fr": "Vallée intérieure qui sépare la colline est de la colline ouest. Elle commence vers l’actuelle porte de Damas, passe à l’ouest du mont du Temple et du Mur occidental, continue vers le sud en bordant la Cité de David à l’ouest, et se jette dans le Kidron.",
+    "en": "An inner valley separating the eastern and western hills. It begins near today’s Damascus Gate, runs west of the Temple Mount and the Western Wall, continues south along the west side of the City of David and flows into the Kidron.",
+    "ru": "Внутренняя долина между восточным и западным холмами. Начинается у нынешних Дамасских ворот, идёт западнее Храмовой горы и Западной стены, далее на юг вдоль западной стороны Города Давида и впадает в Кедрон."
+   },
+   "debate": {
+    "he": "הגיא מלא היום בעיי חורבות לעומק רב, ולכן הוא כמעט אינו נראה בתבליט של היום מדרום לכותל.",
+    "fr": "La vallée est aujourd’hui comblée de décombres sur une grande profondeur : au sud du Mur occidental, le relief actuel ne la montre presque plus.",
+    "en": "The valley is now filled with deep debris, so south of the Western Wall today’s relief barely shows it.",
+    "ru": "Сегодня долина засыпана толстым слоем обломков, поэтому южнее Западной стены современный рельеф её почти не показывает."
+   },
+   "shape": {
+    "type": "valley",
+    "from": "a:damascus_gate",
+    "until": "a:wilsons_arch",
+    "then": [
+     "a:robinsons_arch",
+     "a:givati",
+     "a:siloam_pool"
+    ],
+    "w": 9,
+    "labelAt": 0.4
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "Relief SRTM 30 m (NASA) via OpenTopoData — écoulement calculé",
+     "url": "https://www.opentopodata.org/datasets/srtm/"
+    }
+   ],
+   "placementNote": {
+    "he": "משער שכם עד קשת וילסון — מחושב מהתבליט. מדרום לכך — לפי תיאור מסמך הקורס, בקווים ישרים (קשת רובינסון ← חניון גבעתי ← בריכת השילוח), מוצג בשקיפות. נחל אכזב: מים זורמים בו רק אחרי גשמים.",
+    "fr": "De la porte de Damas à l’arc de Wilson : calculé sur le relief. Plus au sud : d’après la description du cours, en lignes droites (arc de Robinson → Givati → Siloé), affiché plus transparent. Torrent intermittent : l’eau n’y coule qu’après les pluies.",
+    "en": "From Damascus Gate to Wilson’s Arch: computed from the relief. Further south: after the course description, in straight lines (Robinson’s Arch → Givati → Siloam), shown fainter. Seasonal stream: water flows only after rain.",
+    "ru": "От Дамасских ворот до арки Уилсона — по рельефу. Южнее — по описанию курса, прямыми отрезками (арка Робинсона → Гивати → Силоам), бледнее. Пересыхающий поток: вода течёт только после дождей."
+   },
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_hinnom",
+   "name": {
+    "he": "גיא בן הינום",
+    "fr": "La vallée de Ben Hinnom (Géhenne)",
+    "en": "The Hinnom Valley (Gehenna)",
+    "ru": "Долина Хинном (Геенна)"
+   },
+   "text": {
+    "he": "מתחיל באזור בריכת ממילא של ימינו, עובר מתחת לשער יפו, פונה בתשעים מעלות מצפון לדרום, וממשיך מזרחה עד להתחברותו אל נחל קדרון.",
+    "fr": "Elle commence vers l’actuel bassin de Mamilla, passe sous la porte de Jaffa, tourne à angle droit vers le sud, puis continue vers l’est jusqu’à rejoindre le Kidron.",
+    "en": "It begins near today’s Mamilla Pool, passes below Jaffa Gate, turns at a right angle to the south, then runs east until it joins the Kidron.",
+    "ru": "Начинается у нынешнего бассейна Мамилла, проходит под Яффскими воротами, поворачивает под прямым углом на юг и затем на восток до слияния с Кедроном."
+   },
+   "shape": {
+    "type": "valley",
+    "from": "a:jaffa_gate",
+    "head": true,
+    "maxKm2": 5.5,
+    "w": 11,
+    "labelAt": 0.55
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "Relief SRTM 30 m (NASA) via OpenTopoData — écoulement calculé",
+     "url": "https://www.opentopodata.org/datasets/srtm/"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap — Valley of Hinnom (way 1278537560)",
+     "url": "https://www.openstreetmap.org/way/1278537560"
+    }
+   ],
+   "placementNote": {
+    "he": "התוואי מחושב מהתבליט (SRTM 30 מ׳): כיוון הזרימה ושטח הניקוז. בדיקה מול נחל קדרון ב-OpenStreetMap: סטייה חציונית של 14–18 מ׳. נחל אכזב: מים זורמים בו רק אחרי גשמים.",
+    "fr": "Tracé calculé sur le relief (SRTM 30 m) : sens d’écoulement et surface drainée. Contrôle sur le Kidron d’OpenStreetMap : écart médian 14–18 m. Torrent intermittent : l’eau n’y coule qu’après les pluies.",
+    "en": "Route computed from the relief (SRTM 30 m): flow direction and drained area. Checked against the Kidron in OpenStreetMap: median offset 14–18 m. Seasonal stream: water flows only after rain.",
+    "ru": "Трасса рассчитана по рельефу (SRTM 30 м): направление стока и площадь водосбора. Проверка по Кедрону в OpenStreetMap: медианное отклонение 14–18 м. Пересыхающий поток: вода течёт только после дождей."
+   },
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_kidron",
+   "name": {
+    "he": "נחל קדרון",
+    "fr": "La vallée du Cédron (Kidron)",
+    "en": "The Kidron Valley",
+    "ru": "Кедронская долина"
+   },
+   "text": {
+    "he": "עובר בצדה המזרחי של העיר ותוחם אותה מכיוון מזרח; מדרונותיו התלולים הם גבול טבעי לעיר. בנקודה הדרומית הוא פונה מזרחה לעבר ים המלח.",
+    "fr": "Il longe le côté est de la ville et la borde à l’est ; ses pentes raides sont une limite naturelle. Au sud, il tourne vers l’est, vers la mer Morte.",
+    "en": "It runs along the east side of the city and bounds it on the east; its steep slopes are a natural limit. In the south it turns east toward the Dead Sea.",
+    "ru": "Проходит по восточной стороне города и ограничивает его с востока; крутые склоны — естественная граница. На юге поворачивает на восток, к Мёртвому морю."
+   },
+   "shape": {
+    "type": "valley",
+    "osm": "Nahal Kidron",
+    "w": 13,
+    "labelAt": 0.18
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 12 — מוזאון ישראל (טופוגרפיה)",
+     "url": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap — Nahal Kidron (way 844849843, 538989205)",
+     "url": "https://www.openstreetmap.org/way/844849843"
+    }
+   ],
+   "placementNote": {
+    "he": "תוואי: OpenStreetMap; התבליט מאשר אותו. נחל אכזב: מים זורמים בו רק אחרי גשמים.",
+    "fr": "Tracé : OpenStreetMap, confirmé par le relief. Torrent intermittent : l’eau n’y coule qu’après les pluies.",
+    "en": "Route: OpenStreetMap, confirmed by the relief. Seasonal stream: water flows only after rain.",
+    "ru": "Трасса: OpenStreetMap, подтверждена рельефом. Пересыхающий поток: вода течёт только после дождей."
+   },
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
    "id": "jerusalem_canaanite_wall",
    "from": 1,
    "to": 1,
@@ -315,7 +507,7 @@
   {
    "id": "jerusalem_warren_shaft",
    "from": 1,
-   "to": 2,
+   "to": 12,
    "certainty": "attested",
    "anchor": "warren_shaft",
    "shape": {
@@ -383,7 +575,7 @@
   {
    "id": "jerusalem_broad_wall",
    "from": 2,
-   "to": 2,
+   "to": 12,
    "certainty": "attested",
    "anchor": "broad_wall",
    "shape": {
@@ -1471,7 +1663,7 @@
   {
    "id": "jerusalem_burnt_house",
    "from": 5,
-   "to": 5,
+   "to": 12,
    "certainty": "attested",
    "anchor": "burnt_house",
    "shape": {
@@ -1502,7 +1694,7 @@
   {
    "id": "jerusalem_herodian_quarter",
    "from": 5,
-   "to": 5,
+   "to": 12,
    "certainty": "attested",
    "anchor": "herodian_quarter",
    "shape": {
@@ -1533,7 +1725,7 @@
   {
    "id": "jerusalem_siloam_pool",
    "from": 5,
-   "to": 5,
+   "to": 12,
    "certainty": "attested",
    "anchor": "siloam_pool",
    "shape": {
@@ -1738,6 +1930,61 @@
    }
   },
   {
+   "id": "jerusalem_ecce_homo",
+   "from": 6,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "ecce_homo",
+   "shape": {
+    "type": "eccehomo"
+   },
+   "name": {
+    "he": "קשת אקה הומו",
+    "fr": "L’arc de l’Ecce Homo",
+    "en": "The Ecce Homo Arch",
+    "ru": "Арка Ecce Homo"
+   },
+   "text": {
+    "he": "ברחוב ויה דולורוזה, בין התחנות 2 ו-3, קשת מעל הרחוב. היא חלק משער ניצחון נוסף לאדריאנוס. בחפירה להקמת מנזר האחיות מציון התגלתה קשת הצד הצפונית, והובן שמדובר בשער ניצחון לקיסר אדריאנוס (135 לסה״נ). הקשת שולבה בבזיליקה של המנזר.",
+    "fr": "Sur la Via Dolorosa, entre les stations 2 et 3, un arc enjambe la rue. Il fait partie d’un autre arc de triomphe d’Hadrien. Les fouilles du couvent des Sœurs de Sion ont dégagé l’arche latérale nord : c’était un arc de triomphe de l’empereur Hadrien (135). L’arche est intégrée à la basilique du couvent.",
+    "en": "On the Via Dolorosa, between stations 2 and 3, an arch spans the street. It belongs to another triumphal arch of Hadrian. Excavations for the Sisters of Zion convent uncovered the northern side arch, showing it was a triumphal arch of Emperor Hadrian (135 CE). The arch is built into the convent’s basilica.",
+    "ru": "На Виа Долороза, между 2-й и 3-й станциями, над улицей арка. Она — часть ещё одной триумфальной арки Адриана. При строительстве монастыря Сестёр Сиона открыли северный боковой пролёт: это триумфальная арка императора Адриана (135 г.). Пролёт встроен в базилику монастыря."
+   },
+   "builder": {
+    "he": "אדריאנוס · 135 לסה״נ",
+    "fr": "Hadrien · 135 apr. J.-C.",
+    "en": "Hadrian · 135 CE",
+    "ru": "Адриан · 135 г. н. э."
+   },
+   "remains": {
+    "he": "הקשת המרכזית מעל ויה דולורוזה; קשת הצד הצפונית בתוך בזיליקת מנזר האחיות מציון.",
+    "fr": "L’arche centrale au-dessus de la Via Dolorosa ; l’arche nord dans la basilique des Sœurs de Sion.",
+    "en": "The central arch over the Via Dolorosa; the northern side arch inside the Sisters of Zion basilica.",
+    "ru": "Центральная арка над Виа Долороза; северный пролёт — в базилике Сестёр Сиона."
+   },
+   "otherView": {
+    "he": "במסורת הנוצרית: המקום שבו הציג פונטיוס פילטוס את ישו (״אקה הומו״ — ״הנה האיש״); הקשת עצמה מאוחרת בכמאה שנה.",
+    "fr": "Selon la tradition chrétienne, lieu où Ponce Pilate présenta Jésus (« Ecce homo ») ; l’arc lui-même est postérieur d’environ un siècle.",
+    "en": "In Christian tradition, where Pontius Pilate presented Jesus (‘Ecce homo’); the arch itself is about a century later.",
+    "ru": "По христианскому преданию — место, где Пилат показал Иисуса («Ecce homo»); сама арка примерно на век позже."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת שער בן שלוש קשתות לפי מסמך הקורס; המידות סכמטיות. בתקופות המאוחרות מוצגות רק הקשת המרכזית והצפונית.",
+    "fr": "Position : Wikidata. Arc à trois baies d’après le cours ; dimensions schématiques. Aux époques suivantes, seules l’arche centrale et l’arche nord sont montrées.",
+    "en": "Position: Wikidata. Three-bay arch after the course; dimensions schematic. In later periods only the central and northern arches are shown.",
+    "ru": "Положение: Wikidata. Трёхпролётная арка по курсу; размеры схематичны. В поздние эпохи показаны только центральный и северный пролёты."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — מנזר האחיות מציון",
+     "url": "https://drive.google.com/file/d/1cnMZNr9ftON8mP2_-4SC4iNcjOj1JI1e/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
    "id": "jerusalem_legio_x",
    "from": 6,
    "to": 6,
@@ -1933,6 +2180,10 @@
      "a:alexander_nevsky",
      "a:hurva",
      "a:nea_church"
+    ],
+    "restored": [
+     "a:hurva",
+     "a:nea_church"
     ]
    },
    "name": {
@@ -1968,10 +2219,10 @@
     "ru": "ширина 20 м"
    },
    "placementNote": {
-    "he": "התוואי עובר בין שער שכם, כנסיית אלכסנדר נייבסקי, החורבה וכנסיית הנאה (נקודות Wikidata), בקווים ישרים. החתך לפי מסמך הקורס: 20 מ׳ — חנויות, שדרת עמודים, מדרכה ורחוב עגלות. הקארדו המזרחי (רחוב הגיא) אינו מוצג.",
-    "fr": "Tracé en lignes droites entre la porte de Damas, Alexandre-Nevski, la Hourva et la Néa (repères Wikidata). Coupe d’après le cours : 20 m — boutiques, colonnade, trottoir, chaussée. Le cardo oriental (rue HaGai) n’est pas représenté.",
-    "en": "Route in straight lines between Damascus Gate, Alexander Nevsky, the Hurva and the Nea (Wikidata points). Cross-section per the course: 20 m — shops, colonnade, sidewalk, carriageway. The eastern cardo (HaGai Street) is not shown.",
-    "ru": "Трасса прямыми отрезками между Дамасскими воротами, Александром Невским, Хурвой и Неа (точки Wikidata). Сечение по курсу: 20 м — лавки, колоннада, тротуар, проезжая часть. Восточное кардо (ул. ха-Гай) не показано."
+    "he": "התוואי עובר בין שער שכם, כנסיית אלכסנדר נייבסקי, החורבה וכנסיית הנאה (נקודות Wikidata), בקווים ישרים. החתך לפי מסמך הקורס: 20 מ׳ — חנויות, שדרת עמודים, מדרכה ורחוב עגלות. הקארדו המזרחי (רחוב הגיא) אינו מוצג. בתקופת ״היום״: הקטע ברובע היהודי מוצג עם שדרת העמודים ששוחזרה.",
+    "fr": "Tracé en lignes droites entre la porte de Damas, Alexandre-Nevski, la Hourva et la Néa (repères Wikidata). Coupe d’après le cours : 20 m — boutiques, colonnade, trottoir, chaussée. Le cardo oriental (rue HaGai) n’est pas représenté. Période « aujourd’hui » : le tronçon du quartier juif est montré avec sa colonnade restaurée.",
+    "en": "Route in straight lines between Damascus Gate, Alexander Nevsky, the Hurva and the Nea (Wikidata points). Cross-section per the course: 20 m — shops, colonnade, sidewalk, carriageway. The eastern cardo (HaGai Street) is not shown. ‘Today’ period: the Jewish Quarter section is shown with its restored colonnade.",
+    "ru": "Трасса прямыми отрезками между Дамасскими воротами, Александром Невским, Хурвой и Неа (точки Wikidata). Сечение по курсу: 20 м — лавки, колоннада, тротуар, проезжая часть. Восточное кардо (ул. ха-Гай) не показано. Период «сегодня»: участок в Еврейском квартале показан с восстановленной колоннадой."
    },
    "remains": {
     "he": "קטע חפור ומשוחזר ברובע היהודי: חנויות, שדרת עמודים, מדרכה וחלק מרחוב הכרכרות; חלקו מקורה.",

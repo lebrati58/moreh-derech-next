@@ -98,6 +98,8 @@ ok((await page.textContent('#pName')).includes('היום'), 'comparer avec aujou
 await page.click('#backChip'); await page.waitForTimeout(600);
 ok((await page.textContent('#pName')).includes('הורדוסית'), 'retour à la période d’origine');
 ok(await page.locator('#toolsMenu .tl').first().textContent().then(s => s.length > 2), 'menu Outils : boutons avec libellés');
+// vallées : Kidron (OSM), Hinnom et Tyropéon (relief)
+ok(await page.evaluate(() => ['jerusalem_kidron', 'jerusalem_hinnom', 'jerusalem_tyropoeon'].every(id => { const b = window.MDJerusalem3D._bounds(id); return b[1][0] - b[0][0] > 100 || b[1][2] - b[0][2] > 100; })), 'vallées : Kidron, Ben Hinnom et Tyropéon tracés');
 // couleurs de certitude
 await tool('#bColors'); await page.waitForTimeout(500);
 ok(await page.getAttribute('#bColors', 'aria-pressed') === 'true', 'bouton couleurs de certitude');

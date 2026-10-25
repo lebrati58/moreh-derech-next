@@ -337,12 +337,12 @@ export function ottomanGate({ w = 16, d = 12, h = 13, span = 4.6, openH = 6.5, k
 }
 // ARC D'HADRIEN (porte nord d'Aelia Capitolina, 130 apr. J.-C.) : arc de triomphe à trois baies entre deux tours (Drive, סיור 18).
 // Seule la baie est subsiste avec son inscription ; hauteurs et largeurs schématiques.
-export function hadrianArch() {
+export function hadrianArch({ towers = true, sides = [-1, 1], attic = true } = {}) {
   const g = new THREE.Group(), m = stone('ashlar', { tint: '#eadfc8' }), W = 24, D = 6;
-  g.add(archWall(W, 7.5, 6, D, m, 3.5));                         // baie centrale
-  for (const s of [-1, 1]) { const side = archWall(6, 4, 3, D + 0.01, m, 1.5); side.position.x = s * 7.6; g.add(side); }
-  g.add(box(W + 1, 1, D + 0.8, stone('marble'), 0, 7.5 + 3 + 3.5, 0)); // corniche / attique de l'inscription
-  for (const s of [-1, 1]) { const t = box(9, 16, 9, stone('herodian', { tint: '#e6dac2' }), s * (W / 2 + 4.5), 0, 0); g.add(t); g.add(merlons(s * (W / 2) , 4.5, s * (W / 2 + 9), 4.5, 16, m)); g.add(merlons(s * (W / 2), -4.5, s * (W / 2 + 9), -4.5, 16, m)); }
+  g.add(archWall(towers || sides.length > 1 ? W - 12 : 12, 7.5, 6, D, m, 3.5));                         // baie centrale
+  for (const s of sides) { const side = archWall(6, 4, 3, D + 0.01, m, 1.5); side.position.x = s * 9; g.add(side); }
+  if (attic) g.add(box(towers ? W + 1 : 13, 1, D + 0.8, stone('marble', { tint: '#e8decb' }), 0, 7.5 + 3 + 3.5, 0)); // corniche / attique de l'inscription (sur la baie centrale)
+  if (towers) for (const s of [-1, 1]) { const t = box(9, 16, 9, stone('herodian', { tint: '#e6dac2' }), s * (W / 2 + 4.5), 0, 0); g.add(t); g.add(merlons(s * (W / 2) , 4.5, s * (W / 2 + 9), 4.5, 16, m)); g.add(merlons(s * (W / 2), -4.5, s * (W / 2 + 9), -4.5, 16, m)); }
   return g;
 }
 
