@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "מורה דרך LIVE — חידון חי לסיור באוטובוס",
   "scripts": {
-    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/journey.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/journey.test.mjs tests/jerusalem3d.test.mjs",
     "build:sql": "node tools/build-route-sql.mjs",
     "dev": "node tests/dev-server.mjs 8787 mdl_dev",
     "scenario": "node tests/scenario.mjs",
@@ -15,6 +15,8 @@
     "test:map": "node --test tests/map.test.mjs",
     "e2e:map": "node tests/map-browser.mjs screens-map",
     "e2e:journey": "node tests/journey-browser.mjs screens-journey",
+    "e2e:jerusalem3d": "node tests/jerusalem3d-browser.mjs screens-jerusalem3d",
+    "build:jerusalem3d": "node tools/build-jerusalem3d.mjs",
     "build:places": "node tools/build-places.mjs",
     "build:questions": "node tools/merge-drive-questions.mjs"
   },

@@ -406,6 +406,9 @@ function renderSheet(){
   var t=current,M=MODES[mode];
   $('sheetHead').innerHTML='<span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><div style="min-width:0"><div class="sub">'+(t.community?'מסלול משתתפים':(t.road?'מסלול נסיעה · V3':'סיור '+t.id+' · '+esc(places.regions[t.region]||'')))+'</div><h2 id="sheetTitle">'+esc(t.title)+'</h2><div class="sub">'+t.counts.total+' שאלות'+(t.road?'':' · '+t.placed.length+'/'+t.stops.length+' תחנות במפה')+'</div></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
   var h='<div class="cta-zone">'+cta(t)+'</div>';
+  // Jérusalem — Vieille Ville en 3D (סיורים 11, 12, 13, 18) : ouvre la scène sur la période du סיור.
+  var J3D={'11':2,'12':5,'13':5,'18':7};
+  if(J3D[t.id])h+='<a class="play alt j3d" href="jerusalem3d.html?period='+J3D[t.id]+'">🏛️ העיר העתיקה בתלת-ממד ←</a>';
   if(t.prep)h+='<div class="notice warn">📒 החומר בתיק הזה הוא חוברת הכנה. הוא אינו מאשר שהסיור והתחנות בוצעו בפועל.</div>';
   if(t.road)h+='<div class="notice warn">🛣️ קו המסלול על המפה משוחזר ממחלפים שפורסמו בוויקיפדיה עם נקודות ביניים משוערות — לא הקלטת GPS.</div>';
   h+='<div class="tags" style="margin-top:12px">'+t.themes.map(function(k){return '<span class="tag">'+esc(places.themes[k])+'</span>';}).join('')+'</div>';

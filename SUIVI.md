@@ -21,6 +21,7 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | Guide LIVE (micro + bus) | 🟡 | `admin.html` ; seul le parcours 67 est branché sur Supabase |
 | Idées / signalements élèves | ⛔ | exécuter `supabase/feedback.sql` une fois |
 | Bibliothèque communautaire | ⛔ | exécuter `supabase/community_quizzes.sql` et `community_documents.sql` |
+| **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 49 fiches, plan 2D, quiz 3D éteints (phase 2) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
@@ -35,9 +36,19 @@ Objectif : rendre le jeu plus motivant et donner un vrai suivi de progression.
 - ✅ Tests : `tests/journey.test.mjs` (4 tests) ; `tests/journey-browser.mjs` (parcours complet sur téléphone 390×844 : accueil → défi → suivi → révision, 16 vérifications OK).
 - ℹ️ 3 tests base de données échouaient **déjà avant** cette session (rôles publics, confidentialité LIVE, migration V2) — sur Postgres local ; à examiner séparément.
 
+### 25 octobre 2026 — Jérusalem 3D, phase 1
+- ✅ Audit historique et technique (document Claude « Audit — Jérusalem 3D ») ; décision de Lionel : **11 périodes**, **le Drive d'abord**, recherches en ligne en complément (« autre avis » affiché, jamais en remplacement).
+- ✅ `jerusalem3d.html` + `jerusalem3d/app.js` (three.js 0.169 copié dans `vendor/three/`) : relief réel, murailles et esplanade réelles, curseur de 11 périodes, couleur selon la certitude (attesté / reconstitution / hypothèse), vestiges des périodes antérieures en gris, tracé actuel en pointillé, fiches en 4 langues avec sources (📄 Drive, 📜 source antique, 🌐 en ligne), liste des sites, plan 2D (sans WebGL ou au choix).
+- ✅ `jerusalem3d/monuments.json` : 49 fiches, identifiants stables `jerusalem_*`, `quiz3dEnabled: false`. Les éléments sans position fiable (Hippicus, Mariamne, 1re/2e/3e murailles, camp de la Xe légion…) restent dans la liste, **sans position inventée**.
+- ✅ `jerusalem3d/geo.json` généré par `tools/build-jerusalem3d.mjs` (workflow « Jérusalem 3D — géographie ») : 35 repères Wikidata, murailles et contours OpenStreetMap, relief SRTM 30 m. Aucune coordonnée saisie à la main.
+- ✅ Entrée : bouton « 🏛️ העיר העתיקה בתלת-ממד » dans les fiches des סיורים 11, 12, 13 et 18 de la carte. Hors ligne : ajouté à `sw.js`.
+- ✅ Tests : `tests/jerusalem3d.test.mjs` (4) ; `tests/jerusalem3d-browser.mjs` (14 vérifications sur téléphone 390×844, WebGL).
+- ⚠️ Contradictions Drive ↔ en ligne affichées dans les fiches : Gihon (datation), porte de Damas (1561 / 1537), carte de Madaba (croisée / VIe s.). Omar « 3e calife » : non repris dans les fiches.
+- ⏳ Reste : tracés des murailles antiques (plans géoréférencés à obtenir), repère du Cardo (aucune coordonnée Wikidata), éviter le chevauchement d'étiquettes dans la Cité de David, administration des fiches (table Supabase), phase 2 (quiz 3D) **interdite sans accord**.
+
 ## 3. À faire / idées (par priorité)
 
-0. ⏳ **Jérusalem 3D (העיר העתיקה)** — audit historique et technique rédigé le 25/10/2026 (document Claude « Audit — Jérusalem 3D »). **En attente de validation** des 6 décisions avant tout code. Quiz 3D = phase 2, interdite sans accord explicite.
+0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
 
 1. ⛔ **Supabase NEXT** : exécuter une fois `class_contest.sql`, `feedback.sql`, `community_quizzes.sql`, `community_documents.sql` (SQL Editor). Sans cela, le classement de la classe et les signalements ne fonctionnent pas.
 2. ⏳ Essai réel avec 2–3 élèves sur téléphone (défi du jour + partage WhatsApp) et retour d'expérience.

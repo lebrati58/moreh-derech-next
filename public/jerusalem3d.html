@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="ירושלים — העיר העתיקה בתלת-ממד: אתרים מתועדים, שחזורים והשערות, לפי תקופות, עם מקורות">
+<title>ירושלים בתלת-ממד — Moreh Derech NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js"}}</script>
+<style>
+:root{--bg:#0b1230;--panel:#121b45f2;--line:#4a5c99;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf;--att:#3fbf8a;--rec:#f0b44c;--hyp:#e0607e}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+#stage{position:fixed;inset:0;touch-action:none}
+#stage canvas{display:block}
+#plan2d{position:fixed;inset:0;display:none;background:#0d1838;touch-action:none}
+body.mode2d #plan2d{display:block}body.mode2d #stage{display:none}
+/* barre du haut */
+.top{position:fixed;top:0;inset-inline:0;z-index:20;display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top,0px)) 10px 8px;background:linear-gradient(#0b1230f0,#0b123000)}
+.top a,.top .tb{flex:none;text-decoration:none;color:var(--ink);font-weight:800;font-size:13px;padding:9px 11px;border-radius:12px;background:#1d2a56e6;border:1px solid var(--line)}
+.top h1{flex:1;min-width:0;margin:0;font-size:15px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top h1 small{display:block;font-size:11.5px;font-weight:700;color:var(--soft)}
+.langs{display:flex;gap:2px;background:#1d2a56e6;border:1px solid var(--line);border-radius:12px;padding:3px}
+.langs button{border:0;background:transparent;border-radius:9px;padding:6px 7px;font-size:11.5px;font-weight:900}
+.langs button[aria-pressed=true]{background:var(--mint);color:#0f1d3a}
+/* outils à droite */
+.tools{position:fixed;z-index:20;inset-inline-end:10px;top:calc(64px + env(safe-area-inset-top,0px));display:flex;flex-direction:column;gap:7px}
+.tools button{width:46px;height:46px;border-radius:14px;background:#1d2a56e6;border:1px solid var(--line);font-size:19px;display:grid;place-items:center}
+.tools button[aria-pressed=true]{background:var(--gold);color:#1c1f45;border-color:#fff0a4}
+/* légende */
+.legend{position:fixed;z-index:15;inset-inline-start:10px;top:calc(64px + env(safe-area-inset-top,0px));display:flex;flex-direction:row;gap:7px;font-size:12px;font-weight:800;background:#0b1230cc;border:1px solid var(--line);border-radius:12px;padding:8px 10px;cursor:pointer;max-width:calc(100% - 80px)}
+.legend em{font-style:normal;display:none}.legend .more{display:none;color:var(--soft);font-weight:700}.legend .attrl{font-size:10.5px;max-width:260px;white-space:normal}
+.legend.full{flex-direction:column;gap:4px}.legend.full em,.legend.full .more{display:inline}
+@media(min-width:760px){.legend{flex-direction:column;gap:4px}.legend em,.legend .more{display:inline}}
+.legend span{display:flex;align-items:center;gap:7px}.legend i{width:12px;height:12px;border-radius:4px;display:inline-block}
+.legend .old i{background:#c9ccd6}.legend .today i{background:transparent;border:2px dashed #fff}
+/* frise des périodes */
+.periods{position:fixed;z-index:20;inset-inline:0;bottom:0;padding:8px 0 calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(#0b123000,#0b1230f5 35%)}
+.pnow{display:flex;align-items:baseline;gap:8px;padding:0 14px 6px;font-weight:900}
+.pnow b{font-size:17px}.pnow small{color:var(--gold);font-size:13px}
+.pnow .count{margin-inline-start:auto;font-size:12.5px;color:var(--soft);font-weight:800;border:1px solid var(--line);background:#1d2a56;border-radius:999px;padding:6px 11px}
+.strip{display:flex;gap:6px;overflow-x:auto;padding:2px 12px 2px;scrollbar-width:none;scroll-snap-type:x proximity}.strip::-webkit-scrollbar{display:none}
+.strip button{flex:none;scroll-snap-align:center;min-width:76px;max-width:130px;padding:8px 10px;border-radius:14px;border:1px solid var(--line);background:#16224a;font-size:12.5px;font-weight:800;line-height:1.25;text-align:center}
+.strip button small{display:block;font-size:10.5px;color:var(--soft);font-weight:700;margin-top:2px}
+.strip button[aria-pressed=true]{background:var(--gold);color:#1c1f45;border-color:#fff0a4}.strip button[aria-pressed=true] small{color:#4a3a00}
+/* étiquettes */
+#labels{position:fixed;inset:0;pointer-events:none;z-index:10}
+.lb{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;white-space:nowrap;font-size:12px;font-weight:800;padding:4px 8px;border-radius:9px;background:#0b1230d9;border:1.5px solid var(--c,#fff);color:#fff;cursor:pointer;user-select:none}
+.lb.old{opacity:.75;border-style:dashed}
+.lb.sel{background:var(--c);color:#111}
+/* fiche */
+.sheet{position:fixed;z-index:40;inset-inline:0;bottom:0;max-height:72dvh;overflow-y:auto;overscroll-behavior:contain;background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .22s ease;max-width:720px;margin:0 auto}
+.sheet.open{transform:none}
+.sheet h2{margin:0 0 4px;font-size:21px;padding-inline-end:44px}
+.sheet .x{position:absolute;top:12px;inset-inline-end:12px;width:40px;height:40px;border-radius:12px;background:#26355f;border:1px solid var(--line);font-size:18px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px}
+.badge{font-size:12px;font-weight:900;padding:5px 10px;border-radius:999px;background:#1d2a56;border:1px solid var(--line)}
+.badge.c{background:var(--c);color:#111;border-color:transparent}
+.sheet p{margin:0 0 10px;line-height:1.65;font-size:15px}
+.sheet .k{font-size:12px;font-weight:900;color:var(--gold);margin:12px 0 3px;letter-spacing:.3px}
+.sheet .box{border-radius:13px;padding:10px 12px;margin:10px 0;font-size:14px;line-height:1.55}
+.sheet .debate{background:#3b1d33;border:1px solid #e0607e80}
+.sheet .other{background:#2c2a14;border:1px solid #f0b44c80}
+.sheet .note{background:#16224a;border:1px solid var(--line);color:var(--soft)}
+.sheet ul{margin:4px 0 0;padding-inline-start:18px;line-height:1.7;font-size:14px}
+.sheet a{color:var(--mint);font-weight:800}
+.sheet .acts{display:flex;gap:8px;margin-top:12px}.sheet .acts button{flex:1;min-height:46px;border-radius:13px;border:0;background:var(--gold);color:#1c1f45;font-weight:900}
+.list{display:grid;gap:7px;margin-top:6px}.list button{display:flex;gap:9px;align-items:center;text-align:start;padding:10px 12px;border-radius:13px;border:1px solid var(--line);background:#16224a;font-weight:800;font-size:14px}
+.list i{width:11px;height:11px;border-radius:4px;flex:none}.list small{display:block;color:var(--soft);font-weight:700;font-size:12px}
+.attr{position:fixed;z-index:12;inset-inline-start:8px;bottom:calc(118px + env(safe-area-inset-bottom,0px));font-size:10px;color:#c7d0f0b0;max-width:70%}
+.attr a{color:inherit}
+#msg{position:fixed;inset:0;display:grid;place-items:center;z-index:5;color:var(--soft);font-weight:800;text-align:center;padding:30px}
+@media(min-width:760px){.sheet{inset-inline-start:auto;inset-inline-end:14px;bottom:130px;border-radius:20px;border-bottom:1px solid var(--line);max-height:calc(100dvh - 220px);width:420px}}
+@media(prefers-reduced-motion:reduce){.sheet{transition:none}}
+</style>
+</head>
+<body>
+<div id="msg">טוען את ירושלים…</div>
+<div id="stage" aria-label="ירושלים בתלת-ממד"></div>
+<svg id="plan2d" role="img" aria-label="מפת ירושלים"></svg>
+<div id="labels"></div>
+
+<header class="top">
+  <a href="map.html" id="back">→ <span data-t="map">מפה</span></a>
+  <h1><span data-t="title">ירושלים · העיר העתיקה</span><small data-t="sub">שחזור לפי מקורות — לא עיר דמיונית</small></h1>
+  <div class="langs" role="group" aria-label="Language"><button data-lang="he">עב</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="ru">RU</button></div>
+</header>
+<div class="tools">
+  <button type="button" id="b2d" aria-pressed="false" title="2D / 3D">🗺️</button>
+  <button type="button" id="bToday" aria-pressed="true" title="">〰️</button>
+  <button type="button" id="bList" title="">📋</button>
+  <button type="button" id="bHome" title="">🎯</button>
+</div>
+<div class="legend" id="legend"></div>
+<section class="periods" aria-label="תקופות">
+  <div class="pnow"><b id="pName"></b><small id="pDates"></small><button type="button" class="count" id="pCount"></button></div>
+  <div class="strip" id="strip" role="group"></div>
+</section>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="false" aria-labelledby="sTitle"><button type="button" class="x" id="sClose" aria-label="✕">✕</button><div id="sBody"></div></aside>
+
+<script type="module" src="jerusalem3d/app.js"></script>
+<script src="config.js"></script>
+<script src="feedback.js" data-float="0"></script>
+</body>
+</html>
