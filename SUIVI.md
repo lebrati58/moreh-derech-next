@@ -71,6 +71,7 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ **Arc d'Hadrien** (période romaine–byzantine) : arc à trois baies entre deux tours, d'après le cours (סיור 18).
 - ✅ **Cardo** refait selon le cours : 20 m — boutiques, colonnade, trottoir couvert, chaussée. Le cardo oriental (rue HaGai) n'est pas encore représenté.
 - ✅ **Murailles** : hauteur ×2 par défaut pour la lisibilité (bouton « ↕ » dans la légende pour revenir à la hauteur réelle), bandeau de la couleur de l'époque au sommet, et **constructeur + date** sur chaque étiquette, dans la fiche (« 🏗️ Bâtie par »), dans la comparaison et dans le mode cinéma.
+- ✅ **Cité de David (ville basse), période hérodienne** : rue à degrés des pèlerins (8–10 m, paliers, bordures, « bema » de 4 marches ; vers 20/30 apr. J.-C., d'après le document « דרך עולי הרגל ») de Siloé jusqu'au secteur de l'arc de Robinson (tracé schématique par Givati) ; bassin de Siloé (69 m de large, trois volées de 5 marches, côtés nord et est). Les maisons de la ville basse ne sont pas dessinées (pas de plan fiable).
 
 ## 3. À faire / idées (par priorité)
 

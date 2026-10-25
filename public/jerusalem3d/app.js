@@ -389,7 +389,7 @@ function tmEdges() {
     out.push({ x1, z1, x2, z2, L, inward: [nx, nz], south: -(nx * TM.south[0] + nz * TM.south[1]) > 0.7, north: (nx * TM.south[0] + nz * TM.south[1]) > 0.7 }); }
   return out;
 }
-const SCHEMATIC = new Set(['hippicus', 'mariamne', 'gate', 'hadrian', 'cardo', 'temple', 'porticoes', 'royalstoa', 'antonia', 'palace', 'sepulchre_byz', 'nea', 'phasael', 'wilson']);
+const SCHEMATIC = new Set(['pilgrimroad', 'siloam', 'hippicus', 'mariamne', 'gate', 'hadrian', 'cardo', 'temple', 'porticoes', 'royalstoa', 'antonia', 'palace', 'sepulchre_byz', 'nea', 'phasael', 'wilson']);
 const PERIOD_STONE = { 1: ['ashlar', '#cfbb93'], 2: ['ashlar', '#d6c39b'], 3: ['ashlar', '#d6c39b'], 4: ['herodian', '#efe3cb'], 5: ['herodian', '#f2e8d5'], 6: ['ashlar', '#e3d6bb'], 7: ['ashlar', '#e8dcc2'], 8: ['ashlar', '#e2d3b4'], 9: ['ashlar', '#e2d3b4'], 11: ['ottoman', '#ffffff'] };
 // Construit un monument « réaliste » selon son type ; renvoie [objet, point d'étiquette] ou null.
 function buildModel(m, sh, now) {
@@ -430,6 +430,8 @@ function buildModel(m, sh, now) {
       const g = MD.ottomanGate(kind === 'damascus' ? { w: 15, h: 14, span: 5, openH: 7, kind } : kind === 'golden' ? { w: 22, h: 12, span: 5, openH: 6, d: 16, kind } : /jaffa/.test(m.id) ? { w: 17, h: 15 } : {});
       if (wallX > 1) g.scale.setScalar(1.8); // suit l'agrandissement d'affichage des murailles
       place(g, at[0], ground(at[0], at[1]) - 0.8, at[1], nearestWallYaw(at[0], at[1])); return [g, [at[0], ground(...at) + 22 * (wallX > 1 ? 1.8 : 1), at[1]]]; }
+    case 'pilgrimroad': { const pts = (sh.via || []).map(wpt).filter(Boolean); if (pts.length < 2) return null; const g = MD.pilgrimRoad(pts, ground); const c = pts[1]; return [g, [c[0], ground(...c) + 14, c[1]]]; }
+    case 'siloam': { if (!at) return null; const g = MD.siloamPool(), gy = ground(at[0], at[1]); g.position.set(at[0], gy - 0.3 + g.position.y, at[1]); return [g, [at[0], ground(...at) + 12, at[1]]]; }
     case 'phasael': { if (!at) return null; const g = now ? MD.phasael(C) : MD.box(40 * C, 20, 40 * C, stone('herodian')); place(g, at[0], ground(at[0], at[1]) - 1, at[1], TM ? TM.yaw : 0); return [g, [at[0], ground(...at) + 52, at[1]]]; }
     case 'palace': { const t0 = anchorXZ('tower_of_david'); if (!t0) return null; const s = TM ? TM.south : [0, 1], cx = t0[0] + s[0] * 165, cz = t0[1] + s[1] * 165;
       const g = MD.herodPalace(300, 55, 5); place(g, cx, ground(cx, cz) - 1, cz, TM ? TM.yaw : 0); return [g, [cx, ground(cx, cz) + 26, cz]]; }
@@ -505,7 +507,7 @@ function nearestWallYaw(x, z) { let best = 0, bd = Infinity; (GEO.shapes || []).
 
 // ---------- mode cinéma : survol guidé + enregistrement vidéo ----------
 // Plans : vue d'ensemble, puis orbite lente autour de chaque monument modélisé de la période, avec sous-titre.
-const CINE_ORDER = ['jerusalem_second_temple', 'jerusalem_temple_mount', 'jerusalem_royal_stoa', 'jerusalem_porticoes', 'jerusalem_robinsons_arch', 'jerusalem_wilsons_arch', 'jerusalem_antonia', 'jerusalem_phasael', 'jerusalem_hippicus', 'jerusalem_mariamne', 'jerusalem_herod_palace', 'jerusalem_dome_of_the_rock', 'jerusalem_al_aqsa', 'jerusalem_holy_sepulchre_byz', 'jerusalem_holy_sepulchre_crusader', 'jerusalem_nea', 'jerusalem_cardo', 'jerusalem_hadrian_arch', 'jerusalem_damascus_gate', 'jerusalem_golden_gate', 'jerusalem_jaffa_gate', 'jerusalem_broad_wall', 'jerusalem_gihon_fortress', 'jerusalem_siloam_pool'];
+const CINE_ORDER = ['jerusalem_second_temple', 'jerusalem_temple_mount', 'jerusalem_royal_stoa', 'jerusalem_porticoes', 'jerusalem_robinsons_arch', 'jerusalem_wilsons_arch', 'jerusalem_antonia', 'jerusalem_phasael', 'jerusalem_hippicus', 'jerusalem_mariamne', 'jerusalem_herod_palace', 'jerusalem_pilgrim_road', 'jerusalem_siloam_pool', 'jerusalem_dome_of_the_rock', 'jerusalem_al_aqsa', 'jerusalem_holy_sepulchre_byz', 'jerusalem_holy_sepulchre_crusader', 'jerusalem_nea', 'jerusalem_cardo', 'jerusalem_hadrian_arch', 'jerusalem_damascus_gate', 'jerusalem_golden_gate', 'jerusalem_jaffa_gate', 'jerusalem_broad_wall', 'jerusalem_gihon_fortress', 'jerusalem_siloam_pool'];
 let cine = null, rec = null;
 function startCinema(record) {
   if (mode2d) setMode2d(false); $('sheet').classList.remove('open');

@@ -345,3 +345,32 @@ export function hadrianArch() {
   for (const s of [-1, 1]) { const t = box(9, 16, 9, stone('herodian', { tint: '#e6dac2' }), s * (W / 2 + 4.5), 0, 0); g.add(t); g.add(merlons(s * (W / 2) , 4.5, s * (W / 2 + 9), 4.5, 16, m)); g.add(merlons(s * (W / 2), -4.5, s * (W / 2 + 9), -4.5, 16, m)); }
   return g;
 }
+
+// RUE À DEGRÉS DES PÈLERINS (Drive « דרך עולי הרגל ») : rue principale de 8–10 m, dallée, en paliers, canal de drainage dessous,
+// une « bema » de 4 marches au milieu. Paliers de 6 m qui suivent le relief : chaque palier = une volée de marches.
+export function pilgrimRoad(points, groundAt) {
+  const g = new THREE.Group(), P = [points[0]], W = 9, pave = stone('paving', { tint: '#e8dcc6' }), kerb = stone('ashlar', { tint: '#e2d4b8' });
+  for (let i = 1; i < points.length; i++) { const [a, b] = [points[i - 1], points[i]], n = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / 6)); for (let k = 1; k <= n; k++) P.push([a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n]); }
+  const at = (x, z, L, w, h, y, r, mat) => { const s = box(L, h, w, mat); s.position.set(x, y + h / 2, z); s.rotation.y = r; g.add(s); };
+  for (let i = 1; i < P.length; i++) {
+    const [x1, z1] = P[i - 1], [x2, z2] = P[i], L = Math.hypot(x2 - x1, z2 - z1), r = -Math.atan2(z2 - z1, x2 - x1), mx = (x1 + x2) / 2, mz = (z1 + z2) / 2, nx = -(z2 - z1) / L, nz = (x2 - x1) / L, y = groundAt(mx, mz);
+    at(mx, mz, L + 0.05, W, 1.2, y - 0.9, r, pave);                                   // palier dallé (son bord forme la marche)
+    for (const s of [-1, 1]) at(mx + nx * s * (W / 2 + 0.4), mz + nz * s * (W / 2 + 0.4), L + 0.05, 0.8, 1.6, y - 0.9, r, kerb); // bordures
+    if (i === Math.floor(P.length / 2)) for (let k = 0; k < 4; k++) at(mx + nx * 2.5, mz + nz * 2.5, 4 - k * 0.8, 4 - k * 0.8, 0.3, y + 0.3 + k * 0.3, r, kerb); // « bema »
+  }
+  return g;
+}
+// BASSIN DE SILOÉ (Second Temple) : 69 m de large (Wikipedia, fouilles Reich–Shukron), trois volées de cinq marches séparées
+// par deux paliers (Drive, סיור 12 « הגבעה המזרחית »). Côtés nord et est seulement (fouillés) ; longueur et profondeur schématiques.
+export function siloamPool(W = 69, D = 45) {
+  const g = new THREE.Group(), st = stone('paving', { tint: '#eadfca' }), water = new THREE.MeshStandardMaterial({ color: '#3f7f8f', roughness: 0.15, metalness: 0.1, transparent: true, opacity: 0.85 });
+  // bassin construit au-dessus du sol du modèle (le relief SRTM masquerait un creux) : marches pleines jusqu'au fond
+  const step = 0.3, tread = 0.5, land = 1.6, F = -(15 + 2) * step - 0.4; let off = 0, y = 0;
+  const put = (w, d, x, z, top) => g.add(box(w, top - F, d, st, x, F, z));
+  for (let f = 0; f < 3; f++) { for (let s = 0; s < 5; s++) { put(W - 2 * off, tread + 0.01, 0, -D / 2 + off + tread / 2, y); put(tread + 0.01, D - 2 * off, W / 2 - off - tread / 2, 0, y); off += tread; y -= step; }
+    if (f < 2) { put(W - 2 * off, land, 0, -D / 2 + off + land / 2, y); put(land, D - 2 * off, W / 2 - off - land / 2, 0, y); off += land; y -= step; } }
+  g.add(box(W, 0.1, D, water, 0, F + 0.6, 0)); g.add(box(W, 0.2, D, stone('paving'), 0, F, 0));
+  g.add(box(W, -F + 0.6, 1.2, stone('ashlar'), 0, F, D / 2 + 0.6)); g.add(box(1.2, -F + 0.6, D, stone('ashlar'), -W / 2 - 0.6, F, 0)); // côtés non fouillés : simple mur
+  g.position.y = -F; // le fond repose au niveau du sol
+  return g;
+}

@@ -1407,7 +1407,7 @@
    "certainty": "attested",
    "anchor": "siloam_pool",
    "shape": {
-    "type": "marker"
+    "type": "siloam"
    },
    "name": {
     "he": "בריכת השילוח",
@@ -1426,6 +1426,92 @@
      "kind": "drive",
      "label": "דגם ירושלים בית שני (סיור 12)",
      "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 12 — הגבעה המזרחית",
+     "url": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view"
+    },
+    {
+     "kind": "online",
+     "label": "Pool of Siloam (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Pool_of_Siloam"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 69 מ׳ (ויקיפדיה); שלוש מערכות של 5 מדרגות עם שני משטחי ביניים (מסמך הקורס)",
+    "fr": "69 m de large (Wikipedia) ; trois volées de 5 marches avec deux paliers (cours)",
+    "en": "69 m wide (Wikipedia); three flights of 5 steps with two landings (course)",
+    "ru": "Ширина 69 м (Википедия); три марша по 5 ступеней с двумя площадками (курс)"
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. מוצגים הצד הצפוני והמזרחי (שנחשפו); אורך ועומק סכמטיים.",
+    "fr": "Position : Wikidata. Côtés nord et est (fouillés) ; longueur et profondeur schématiques.",
+    "en": "Position: Wikidata. North and east sides (excavated) shown; length and depth schematic.",
+    "ru": "Положение: Wikidata. Показаны северная и восточная стороны (раскопанные); длина и глубина схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_pilgrim_road",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "anchor": "siloam_pool",
+   "shape": {
+    "type": "pilgrimroad",
+    "via": [
+     "a:siloam_pool",
+     "a:givati",
+     "a:robinsons_arch"
+    ]
+   },
+   "name": {
+    "he": "דרך עולי הרגל (הרחוב המדורג)",
+    "fr": "La rue des pèlerins (rue à degrés)",
+    "en": "The Pilgrims' Road (stepped street)",
+    "ru": "Дорога паломников (ступенчатая улица)"
+   },
+   "text": {
+    "he": "רחוב מדורג ומרוצף שעלה מבריכת השילוח לכיוון הר הבית, ומתחתיו תעלת ניקוז. נבנה כנראה בשנות ה-20/30 לסה״נ (מטבעות מימי פונטיוס פילטוס מתחת לריצוף) ושימש כ-40 שנה עד החורבן. לאורכו חנויות ו״במה״ בת 4 מדרגות. בתעלה נמצאו סירי בישול שלמים — עדות למסתתרים בשנת 70.",
+    "fr": "Rue dallée à degrés qui montait du bassin de Siloé vers le mont du Temple, avec un canal de drainage dessous. Construite sans doute vers 20/30 apr. J.-C. (monnaies de Ponce Pilate sous le dallage), utilisée une quarantaine d’années jusqu’à la destruction. Boutiques et « bema » de 4 marches le long de la rue. Dans le canal, des marmites intactes : traces des gens cachés en 70.",
+    "en": "A paved stepped street climbing from the Pool of Siloam toward the Temple Mount, with a drainage channel beneath. Probably built around 20/30 CE (coins of Pontius Pilate under the paving) and used for about 40 years until the destruction. Shops and a 4-step 'bema' along it. Intact cooking pots in the channel: traces of people hiding in 70.",
+    "ru": "Мощёная ступенчатая улица от Силоамской купели к Храмовой горе, под ней дренажный канал. Построена, вероятно, около 20/30 г. н. э. (монеты Понтия Пилата под мостовой), использовалась около 40 лет до разрушения. Вдоль неё лавки и «бима» из 4 ступеней. В канале — целые горшки: следы укрывавшихся в 70 г."
+   },
+   "dims": {
+    "he": "רחוב ראשי ברוחב 8–10 מ׳ (מסמך הקורס)",
+    "fr": "Rue principale de 8 à 10 m de large (cours)",
+    "en": "Main street 8–10 m wide (course)",
+    "ru": "Главная улица шириной 8–10 м (курс)"
+   },
+   "debate": {
+    "he": "״דרך עולי הרגל״ היא רשת של רחובות ולא רחוב אחד. בחפירות 2023–2024 התברר שהרחוב נפרד מתעלת הניקוז ועולה באלכסון לעבר שערי הר הבית הדרומיים.",
+    "fr": "La « rue des pèlerins » est un réseau de rues, pas une rue unique. Les fouilles de 2023–2024 ont montré que la rue quitte le canal de drainage et monte en diagonale vers les portes sud du mont du Temple.",
+    "en": "The 'Pilgrims' Road' is a network of streets, not one street. Excavations in 2023–2024 showed the street leaves the drainage channel and climbs diagonally toward the southern Temple Mount gates.",
+    "ru": "«Дорога паломников» — сеть улиц, а не одна улица. Раскопки 2023–2024 гг. показали, что улица отходит от канала и поднимается наискось к южным воротам Храмовой горы."
+   },
+   "placementNote": {
+    "he": "תוואי סכמטי בקווים ישרים: בריכת השילוח ← חניון גבעתי ← אזור קשת רובינסון (נקודות Wikidata).",
+    "fr": "Tracé schématique en lignes droites : bassin de Siloé → parking Givati → secteur de l’arc de Robinson (repères Wikidata).",
+    "en": "Schematic route in straight lines: Pool of Siloam → Givati parking lot → Robinson's Arch area (Wikidata points).",
+    "ru": "Схематичная трасса прямыми отрезками: Силоамская купель → стоянка Гивати → район арки Робинсона (точки Wikidata)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דרך עולי הרגל (סיור 12)",
+     "url": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 12 — הגבעה המזרחית",
+     "url": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view"
+    },
+    {
+     "kind": "online",
+     "label": "Pool of Siloam (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Pool_of_Siloam"
     }
    ],
    "questions": [],
