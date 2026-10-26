@@ -182,15 +182,28 @@ export function antonia(C, L = 112, W = 40) {
   g.add(merlons(-L / 2, -W / 2, L / 2, -W / 2, H, m)); g.add(merlons(-L / 2, W / 2, L / 2, W / 2, H, m)); g.add(merlons(-L / 2, -W / 2, -L / 2, W / 2, H, m)); g.add(merlons(L / 2, -W / 2, L / 2, W / 2, H, m));
   return g;
 }
-// TOUR DE PHASAËL (Josèphe 5.166–169) : base pleine de 40 × 40 × 40 coudées, galerie de 10 coudées, tour centrale jusqu'à ~90.
+// TOUR DE PHASAËL (Josèphe, Guerre 5.166–169) : base carrée et PLEINE de 40 × 40 coudées sur 40 de haut ; dessus, une galerie
+// (portique) de 10 coudées entourée de parapets et de bastions ; au centre, une tour d'appartements et de bains, couronnée de
+// créneaux et de tourelles ; 90 coudées environ en tout (« semblable au phare d'Alexandrie »). Détails architecturaux reconstitués.
 export function phasael(C) {
-  const g = new THREE.Group(), m = stone('herodian', { tint: '#f2e9d8' }), B = 40 * C;
-  g.add(box(B, B, B, m));
-  g.add(box(B, 1.2, B, stone('paving'), 0, B, 0)); for (const [a, b, c, d] of [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]]) g.add(merlons(a * B / 2, b * B / 2, c * B / 2, d * B / 2, B + 1.2, m));
-  const T = B * 0.62, Ht = 90 * C - B; g.add(box(T, Ht, T, m, 0, B, 0));
-  const win = []; for (let k = 0; k < 3; k++) for (let i = -1; i <= 1; i++) for (const s of [-1, 1]) { win.push([i * T / 4, B + Ht * (0.35 + k * 0.2), s * (T / 2 + 0.05), 0]); win.push([s * (T / 2 + 0.05), B + Ht * (0.35 + k * 0.2), i * T / 4, 1]); }
-  win.forEach(([x, y, z, r]) => { const w = box(1.4, 2.4, 0.2, new THREE.MeshStandardMaterial({ color: '#21180f' }), x, y, z); if (r) w.rotation.y = Math.PI / 2; g.add(w); });
-  for (const [a, b, c, d] of [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]]) g.add(merlons(a * T / 2, b * T / 2, c * T / 2, d * T / 2, B + Ht, m));
+  const g = new THREE.Group(), m = stone('herodian', { tint: '#f2e9d8' }), B = 40 * C, Hs = 40 * C;
+  solidBase(g, B, B, Hs, m);
+  const top = Hs + 0.5; g.add(box(B, 0.5, B, stone('paving'), 0, Hs, 0));
+  parapet(g, B, B, top, m, 1.1);                                                    // parapets (« ἐπάλξεις »)
+  for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) {                    // bastions d'angle (« προμαχῶνες »)
+    const s = 3.6; g.add(box(s, 3.2, s, m, sx * (B / 2 - s / 2), top, sz * (B / 2 - s / 2))); g.add(crown(s, s, top + 3.2, m, sx * (B / 2 - s / 2), sz * (B / 2 - s / 2)));
+  }
+  const T = B * 0.56, cl = 10 * C, ring = (T / 2 + 2.6);                           // galerie de 10 coudées autour de la tour
+  const cols = []; for (let i = -3; i <= 3; i++) { const t = i / 3 * (ring - 0.4); cols.push([t, -ring], [t, ring], [-ring, t], [ring, t]); }
+  g.add(columns(cols, cl - 0.6, 0.32, stone('marble', { rough: 0.5 }), top));
+  g.add(box(2 * ring + 1.2, 0.6, 2 * ring + 1.2, stone('ashlar', { tint: '#e9dfca' }), 0, top + cl - 0.6, 0));
+  const Ht = 90 * C - Hs - 3;                                                       // tour centrale (appartements, bains)
+  g.add(box(T, Ht, T, m, 0, top, 0));
+  for (let f = 1; f <= 3; f++) g.add(box(T + 0.5, 0.35, T + 0.5, stone('ashlar', { tint: '#e9dfca' }), 0, top + f * Ht / 4, 0)); // bandeaux d'étage
+  archWindows(g, T, T, top + cl + 1.2, 3, 3, Ht / 4 * 0.98);
+  const ty = top + Ht; g.add(box(T + 0.8, 0.6, T + 0.8, stone('ashlar', { tint: '#e9dfca' }), 0, ty, 0));
+  parapet(g, T + 0.8, T + 0.8, ty + 0.6, m, 1.2);
+  for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { const s = 2.6, x = sx * (T / 2 - s / 2 + 0.4), z = sz * (T / 2 - s / 2 + 0.4); g.add(box(s, 3 * C + 1.6, s, m, x, ty + 0.6, z)); g.add(crown(s, s, ty + 0.6 + 3 * C + 1.6, m, x, z)); } // tourelles
   return g;
 }
 // PALAIS D'HÉRODE : plateforme (≈ 300 × 55 m) et deux ailes (Caesareum, Agrippeum, Josèphe 1.402) — volumes schématiques.
@@ -286,32 +299,46 @@ export function crenels(lines, segTop, mat, { w = 0.9, gap = 0.8, h = 1.3, d = 2
 }
 
 // =====================================================================================
-// TOURS D'HÉRODE (Josèphe, Guerre 5.161–175) : Hippicus 25 × 25 coudées, plein sur 30, réservoir de 20, maison à deux étages
-// de 25, tourelles et créneaux : 80 coudées en tout. Mariamne 20 × 20, pleine sur 20, 50 coudées en tout, étages plus ornés.
+// TOURS D'HÉRODE (Josèphe, Guerre 5.161–175). Hippicus : 25 × 25 coudées, PLEINE sur 30 ; au-dessus un réservoir de 20 coudées,
+// puis une maison à deux étages de 25 coudées ; tourelles de 2 coudées et créneaux de 3 : 80 coudées en tout.
+// Mariamne : 20 × 20, pleine sur 20 ; au-dessus des appartements plus richement ornés ; 50 coudées en tout.
+// Mesures d'après Josèphe ; formes des fenêtres, corniches et pilastres reconstituées (aucun relevé des parties hautes).
 export function hippicus(C) {
-  const g = new THREE.Group(), m = stone('herodian', { tint: '#f2e9d8' }), B = 25 * C, H = 75 * C;
-  g.add(box(B, H, B, m));
-  g.add(box(B + 0.6, 0.6, B + 0.6, stone('ashlar'), 0, 30 * C, 0)); g.add(box(B + 0.6, 0.6, B + 0.6, stone('ashlar'), 0, 50 * C, 0)); // repères : plein / réservoir / maison
-  windows(g, B, B, 50 * C + 2.5, 2, 3, 25 * C / 2);
-  for (const [a, b, c, d] of [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]]) g.add(merlons(a * B / 2, b * B / 2, c * B / 2, d * B / 2, H, m, { h: 5 * C * 0.6 }));
-  for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) g.add(box(2.4, 2 * C + 1.5, 2.4, m, sx * (B / 2 - 1.2), H, sz * (B / 2 - 1.2))); // tourelles d'angle (2 coudées)
+  const g = new THREE.Group(), m = stone('herodian', { tint: '#f2e9d8' }), trim = stone('ashlar', { tint: '#e9dfca' }), B = 25 * C;
+  solidBase(g, B, B, 30 * C, m);
+  const r0 = 30 * C, r1 = r0 + 20 * C, h1 = r1 + 25 * C;
+  g.add(box(B - 0.6, 20 * C, B - 0.6, m, 0, r0, 0)); g.add(box(B + 0.4, 0.45, B + 0.4, trim, 0, r0, 0)); // réservoir : mur plein
+  g.add(box(B, 25 * C, B, m, 0, r1, 0)); g.add(box(B + 0.5, 0.45, B + 0.5, trim, 0, r1, 0)); g.add(box(B + 0.5, 0.45, B + 0.5, trim, 0, r1 + 12.5 * C, 0));
+  archWindows(g, B, B, r1 + 1.6, 3, 2, 12.5 * C);                                  // maison à deux étages
+  g.add(box(B + 0.8, 0.6, B + 0.8, trim, 0, h1, 0)); parapet(g, B + 0.8, B + 0.8, h1 + 0.6, m, 3 * C * 0.55);
+  for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { const s = 2.4, x = sx * (B / 2 - s / 2 + 0.4), z = sz * (B / 2 - s / 2 + 0.4); g.add(box(s, 2 * C + 1.6, s, m, x, h1 + 0.6, z)); g.add(crown(s, s, h1 + 2.2 + 2 * C, m, x, z)); }
   return g;
 }
 export function mariamne(C) {
-  const g = new THREE.Group(), m = stone('herodian', { tint: '#f4ecde' }), B = 20 * C, H = 47 * C;
-  g.add(box(B, H, B, m)); g.add(box(B + 0.6, 0.6, B + 0.6, stone('marble'), 0, 20 * C, 0));
-  windows(g, B, B, 20 * C + 2.2, 3, 2, 3.6);
-  g.add(box(B + 0.4, 1, B + 0.4, stone('marble', { rough: 0.4 }), 0, H - 1, 0)); // corniche : « plus ornée » (Josèphe 5.171)
-  for (const [a, b, c, d] of [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]]) g.add(merlons(a * B / 2, b * B / 2, c * B / 2, d * B / 2, H, m, { h: 3 * C * 0.8 }));
+  const g = new THREE.Group(), m = stone('herodian', { tint: '#f4ecde' }), marble = stone('marble', { rough: 0.4 }), B = 20 * C, r0 = 20 * C, H = 50 * C - 2;
+  solidBase(g, B, B, r0, m);
+  g.add(box(B, H - r0, B, m, 0, r0, 0)); g.add(box(B + 0.6, 0.5, B + 0.6, marble, 0, r0, 0));
+  const pil = []; for (const t of [-0.5, -1 / 6, 1 / 6, 0.5]) { const u = t * (B - 0.8); pil.push([u, B / 2 + 0.15, 0], [u, -B / 2 - 0.15, 0], [B / 2 + 0.15, u, 1], [-B / 2 - 0.15, u, 1]); } // pilastres (« plus ornée »)
+  pil.forEach(([x, z, r]) => { const p = box(0.7, H - r0 - 1, 0.3, marble, x, r0 + 0.5, z); if (r) p.rotation.y = Math.PI / 2; g.add(p); });
+  archWindows(g, B, B, r0 + 1.4, 3, 2, (H - r0) / 2.2);
+  g.add(box(B + 1, 0.8, B + 1, marble, 0, H, 0)); parapet(g, B + 1, B + 1, H + 0.8, m, 1.1);
   return g;
 }
-// fenêtres sur les 4 faces : n par face et par étage, `rows` étages espacés de `dy`
-function windows(g, W, D, y0, n, rows, dy) {
-  const P = [], dark = new THREE.MeshStandardMaterial({ color: '#1e160e', roughness: 1 });
+// --- éléments des tours ---
+// base pleine : léger fruit (empattement), soubassement et bossages hérodiens (texture « herodian »)
+function solidBase(g, W, D, H, m) { g.add(box(W + 0.8, 1.2, D + 0.8, m, 0, 0, 0)); g.add(box(W, H, D, m, 0, 0, 0)); }
+function parapet(g, W, D, y, m, h = 1.2) { for (const [a, b, c, d] of [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]]) { g.add(merlons(a * W / 2, b * D / 2, c * W / 2, d * D / 2, y + 0.6, m, { h, w: 0.9, gap: 0.8, d: 0.7 })); }
+  g.add(box(W, 0.6, 0.7, m, 0, y, -D / 2 + 0.35)); g.add(box(W, 0.6, 0.7, m, 0, y, D / 2 - 0.35)); g.add(box(0.7, 0.6, D, m, -W / 2 + 0.35, y, 0)); g.add(box(0.7, 0.6, D, m, W / 2 - 0.35, y, 0)); }
+function crown(w, d, y, m, x, z) { const c = new THREE.Group(); c.add(box(w + 0.3, 0.3, d + 0.3, m, 0, 0, 0)); for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) c.add(box(0.6, 0.9, 0.6, m, sx * (w / 2 - 0.15), 0.3, sz * (d / 2 - 0.15))); c.position.set(x, y, z); return c; }
+// fenêtres étroites en plein cintre sur les 4 faces : n par face et par étage, `rows` étages espacés de `dy`
+let archWinGeo = null;
+function archWindows(g, W, D, y0, n, rows, dy) {
+  if (!archWinGeo) archWinGeo = mergeGeometries([new THREE.BoxGeometry(0.9, 1.7, 0.25).translate(0, 0, 0), new THREE.CylinderGeometry(0.45, 0.45, 0.25, 12, 1, false, 0, Math.PI).rotateX(Math.PI / 2).rotateZ(Math.PI / 2).translate(0, 0.85, 0)].map(x => x.toNonIndexed()));
+  const P = [], dark = new THREE.MeshStandardMaterial({ color: '#2a2017', roughness: 1 });
   for (let r = 0; r < rows; r++) for (let i = 0; i < n; i++) { const t = (i + 0.5) / n - 0.5, y = y0 + r * dy;
-    P.push([t * W, y, D / 2 + 0.05, 0], [t * W, y, -D / 2 - 0.05, 0], [W / 2 + 0.05, y, t * D, 1], [-W / 2 - 0.05, y, t * D, 1]); }
-  const im = new THREE.InstancedMesh(new THREE.BoxGeometry(1.3, 2.4, 0.2), dark, P.length), M = new THREE.Matrix4(), q = new THREE.Quaternion();
-  P.forEach(([x, y, z, r], i) => { q.setFromAxisAngle(V(0, 1, 0), r ? Math.PI / 2 : 0); M.compose(V(x, y, z), q, V(1, 1, 1)); im.setMatrixAt(i, M); }); g.add(im);
+    P.push([t * W * 0.8, y, D / 2 + 0.06, 0], [t * W * 0.8, y, -D / 2 - 0.06, 0], [W / 2 + 0.06, y, t * D * 0.8, 1], [-W / 2 - 0.06, y, t * D * 0.8, 1]); }
+  const im = new THREE.InstancedMesh(archWinGeo, dark, P.length), M = new THREE.Matrix4(), q = new THREE.Quaternion();
+  P.forEach(([x, y, z, r], i) => { q.setFromAxisAngle(V(0, 1, 0), r ? Math.PI / 2 : 0); M.compose(V(x, y + 0.85, z), q, V(1, 1, 1)); im.setMatrixAt(i, M); }); g.add(im);
 }
 
 // PORTES OTTOMANES (1537–1541) : tour-porte à passage en arc brisé, mâchicoulis au-dessus du passage, créneaux.

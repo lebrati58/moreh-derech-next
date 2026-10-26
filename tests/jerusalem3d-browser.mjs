@@ -57,7 +57,16 @@ await page.click('#strip [data-p="11"]'); await page.waitForTimeout(1200);
 ok((await page.textContent('#pName')).includes('עות'), 'période ottomane');
 await shot('04-ottoman');
 await page.click('#strip [data-p="7"]'); await page.waitForTimeout(1200); await shot('05-byzantin');
-await page.click('#pCount'); await page.waitForSelector('.sheet.open .list');
+// grand sélecteur d'époque : liste des 12 époques + flèches
+await page.click('#pBig'); await page.waitForSelector('#pPick:not([hidden]) [data-p]');
+ok((await page.locator('#pPick [data-p]').count()) === 12, 'sélecteur : 12 époques en gros boutons');
+await shot('05b-selecteur-epoque');
+await page.click('#pPick [data-p="5"]'); await page.waitForTimeout(800);
+ok(await page.evaluate(() => document.getElementById('pPick').hidden && document.getElementById('pName').textContent.includes('הורדוס')), 'sélecteur : choix de l\'époque hérodienne, liste refermée');
+await page.click('#pNext'); await page.waitForTimeout(800);
+ok((await page.textContent('#pName')).includes('רומית'), 'flèche : époque suivante');
+await page.click('#pPrev'); await page.waitForTimeout(800); await page.click('#strip [data-p="7"]'); await page.waitForTimeout(800);
+await page.click('#bList'); await page.waitForSelector('.sheet.open .list');
 ok((await page.locator('.list [data-id]').count()) >= 3, 'liste des sites de la période');
 await shot('06-liste-byzantin');
 await page.click('#sClose');

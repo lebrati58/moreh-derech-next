@@ -1485,7 +1485,7 @@
    "id": "jerusalem_hippicus",
    "from": 5,
    "to": 5,
-   "certainty": "hypothesis",
+   "certainty": "reconstruction",
    "anchor": null,
    "shape": {
     "type": "hippicus"
@@ -1539,7 +1539,7 @@
    "id": "jerusalem_mariamne",
    "from": 5,
    "to": 5,
-   "certainty": "hypothesis",
+   "certainty": "reconstruction",
    "anchor": null,
    "shape": {
     "type": "mariamne"
@@ -3305,7 +3305,7 @@
     "parts": [
      {
       "via": [
-       "a:tower_of_david",
+       "herod:hippicus",
        {
         "itm": [
          221090,
