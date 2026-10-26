@@ -1,39 +1,516 @@
 {
   "_doc": "Cadres et repères des sites 3D (hors Jérusalem). Repères : candidats d'articles Wikipédia (lang:titre), le premier qui a une coordonnée dans le cadre est retenu. Rien n'est saisi à la main : les positions viennent de Wikipédia/Wikidata et d'OpenStreetMap.",
   "masada": {
-    "box": { "s": 31.300, "n": 31.330, "w": 35.335, "e": 35.372 },
-    "step": [0.00027, 0.00032],
+    "box": {
+      "s": 31.3,
+      "n": 31.33,
+      "w": 35.335,
+      "e": 35.372
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
     "anchors": {
-      "masada": ["en:Masada", "he:מצדה"],
-      "snake_path": ["en:Snake Path (Masada)", "he:שביל הנחש"],
-      "roman_ramp": ["en:Siege of Masada", "he:המצור על מצדה"],
-      "northern_palace": ["en:Northern Palace (Masada)", "he:הארמון הצפוני (מצדה)"],
-      "masada_synagogue": ["en:Masada synagogue", "he:בית הכנסת במצדה"]
+      "masada": [
+        "en:Masada",
+        "he:מצדה"
+      ],
+      "snake_path": [
+        "en:Snake Path (Masada)",
+        "he:שביל הנחש"
+      ],
+      "roman_ramp": [
+        "en:Siege of Masada",
+        "he:המצור על מצדה"
+      ],
+      "northern_palace": [
+        "en:Northern Palace (Masada)",
+        "he:הארמון הצפוני (מצדה)"
+      ],
+      "masada_synagogue": [
+        "en:Masada synagogue",
+        "he:בית הכנסת במצדה"
+      ]
     }
   },
   "caesarea": {
-    "box": { "s": 32.486, "n": 32.522, "w": 34.878, "e": 34.906 },
-    "step": [0.00027, 0.00032],
+    "box": {
+      "s": 32.486,
+      "n": 32.522,
+      "w": 34.878,
+      "e": 34.906
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
     "anchors": {
-      "caesarea": ["en:Caesarea Maritima", "he:קיסריה העתיקה"],
-      "theater": ["en:Caesarea Maritima theatre", "en:Roman theatre of Caesarea", "he:התיאטרון הרומי בקיסריה"],
-      "hippodrome": ["en:Herod's Hippodrome", "en:Hippodrome of Caesarea", "he:ההיפודרום בקיסריה"],
-      "harbour": ["en:Sebastos (harbour)", "en:Harbour of Caesarea", "he:נמל קיסריה העתיק"],
-      "aqueduct": ["en:Caesarea aqueduct", "he:אמת המים של קיסריה", "he:אמות המים לקיסריה"],
-      "palace": ["en:Promontory Palace", "he:ארמון השונית"],
-      "mosque": ["en:Bosnian Mosque (Caesarea)", "he:המסגד הבוסני בקיסריה"],
-      "pilate_stone": ["en:Pilate stone"]
+      "caesarea": [
+        "en:Caesarea Maritima",
+        "he:קיסריה העתיקה"
+      ],
+      "theater": [
+        "en:Caesarea Maritima theatre",
+        "en:Roman theatre of Caesarea",
+        "he:התיאטרון הרומי בקיסריה"
+      ],
+      "hippodrome": [
+        "en:Herod's Hippodrome",
+        "en:Hippodrome of Caesarea",
+        "he:ההיפודרום בקיסריה"
+      ],
+      "harbour": [
+        "en:Sebastos (harbour)",
+        "en:Harbour of Caesarea",
+        "he:נמל קיסריה העתיק"
+      ],
+      "aqueduct": [
+        "en:Caesarea aqueduct",
+        "he:אמת המים של קיסריה",
+        "he:אמות המים לקיסריה"
+      ],
+      "palace": [
+        "en:Promontory Palace",
+        "he:ארמון השונית"
+      ],
+      "mosque": [
+        "en:Bosnian Mosque (Caesarea)",
+        "he:המסגד הבוסני בקיסריה"
+      ],
+      "pilate_stone": [
+        "en:Pilate stone"
+      ]
     }
   },
   "beitshean": {
-    "box": { "s": 32.493, "n": 32.513, "w": 35.491, "e": 35.513 },
-    "step": [0.00027, 0.00032],
+    "box": {
+      "s": 32.493,
+      "n": 32.513,
+      "w": 35.491,
+      "e": 35.513
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
     "anchors": {
-      "tel": ["en:Tel Beit She'an", "he:תל בית שאן"],
-      "national_park": ["en:Beit She'an National Park", "he:גן לאומי בית שאן"],
-      "theater": ["en:Roman theatre of Scythopolis", "en:Beit She'an Roman theatre", "he:התיאטרון הרומי בבית שאן"],
-      "amphitheater": ["en:Amphitheatre of Scythopolis", "he:האמפיתיאטרון בבית שאן"],
-      "nysa": ["en:Scythopolis", "en:Beit She'an"]
+      "tel": [
+        "en:Tel Beit She'an",
+        "he:תל בית שאן"
+      ],
+      "national_park": [
+        "en:Beit She'an National Park",
+        "he:גן לאומי בית שאן"
+      ],
+      "theater": [
+        "en:Roman theatre of Scythopolis",
+        "en:Beit She'an Roman theatre",
+        "he:התיאטרון הרומי בבית שאן"
+      ],
+      "amphitheater": [
+        "en:Amphitheatre of Scythopolis",
+        "he:האמפיתיאטרון בבית שאן"
+      ],
+      "nysa": [
+        "en:Scythopolis",
+        "en:Beit She'an"
+      ]
+    }
+  },
+  "herodium": {
+    "box": {
+      "s": 31.65683,
+      "n": 31.67483,
+      "w": 35.23077,
+      "e": 35.25201
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "herodium": [
+        "en:Herodium",
+        "he:הרודיון"
+      ],
+      "tomb": [
+        "en:Tomb of Herod",
+        "he:קבר הורדוס"
+      ]
+    }
+  },
+  "megiddo": {
+    "box": {
+      "s": 32.57928,
+      "n": 32.59128,
+      "w": 35.17736,
+      "e": 35.19152
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "megiddo": [
+        "en:Tel Megiddo",
+        "he:תל מגידו"
+      ]
+    }
+  },
+  "tzippori": {
+    "box": {
+      "s": 32.73756,
+      "n": 32.75356,
+      "w": 35.26917,
+      "e": 35.28805
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "tzippori": [
+        "en:Sepphoris",
+        "he:ציפורי"
+      ],
+      "np": [
+        "en:Tzippori National Park",
+        "he:גן לאומי ציפורי"
+      ]
+    }
+  },
+  "gamla": {
+    "box": {
+      "s": 32.89478,
+      "n": 32.91078,
+      "w": 35.73112,
+      "e": 35.75
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "gamla": [
+        "en:Gamla",
+        "he:גמלא"
+      ]
+    }
+  },
+  "arad": {
+    "box": {
+      "s": 31.27383,
+      "n": 31.28783,
+      "w": 35.11674,
+      "e": 35.13326
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "arad": [
+        "en:Tel Arad",
+        "he:תל ערד"
+      ]
+    }
+  },
+  "beersheba": {
+    "box": {
+      "s": 31.23872,
+      "n": 31.25072,
+      "w": 34.83375,
+      "e": 34.84791
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "tel": [
+        "en:Tel Be'er Sheva",
+        "he:תל באר שבע"
+      ]
+    }
+  },
+  "qumran": {
+    "box": {
+      "s": 31.73283,
+      "n": 31.74883,
+      "w": 35.44917,
+      "e": 35.46805
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "qumran": [
+        "en:Qumran",
+        "he:קומראן"
+      ],
+      "cave4": [
+        "en:Qumran Cave 4",
+        "he:מערה 4 בקומראן"
+      ]
+    }
+  },
+  "banias": {
+    "box": {
+      "s": 33.24161,
+      "n": 33.25561,
+      "w": 35.68618,
+      "e": 35.7027
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "banias": [
+        "en:Banias",
+        "he:בניאס"
+      ],
+      "pan": [
+        "en:Banias Spring",
+        "en:Sanctuary of Pan"
+      ]
+    }
+  },
+  "nimrod": {
+    "box": {
+      "s": 33.24678,
+      "n": 33.25878,
+      "w": 35.70764,
+      "e": 35.7218
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "nimrod": [
+        "en:Nimrod Fortress",
+        "he:מבצר נמרוד"
+      ]
+    }
+  },
+  "beitguvrin": {
+    "box": {
+      "s": 31.584,
+      "n": 31.606,
+      "w": 34.88652,
+      "e": 34.91248
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "np": [
+        "en:Beit Guvrin-Maresha National Park",
+        "he:גן לאומי בית גוברין-מרשה"
+      ],
+      "maresha": [
+        "en:Maresha",
+        "he:מרשה"
+      ],
+      "amphi": [
+        "en:Beit Guvrin amphitheater"
+      ]
+    }
+  },
+  "lachish": {
+    "box": {
+      "s": 31.559,
+      "n": 31.571,
+      "w": 34.84181,
+      "e": 34.85597
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "lachish": [
+        "en:Tel Lachish",
+        "he:תל לכיש"
+      ]
+    }
+  },
+  "qeiyafa": {
+    "box": {
+      "s": 31.69039,
+      "n": 31.70239,
+      "w": 34.95014,
+      "e": 34.9643
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "qeiyafa": [
+        "en:Khirbet Qeiyafa",
+        "he:חורבת קייאפה"
+      ]
+    }
+  },
+  "susya": {
+    "box": {
+      "s": 31.38494,
+      "n": 31.39894,
+      "w": 35.10396,
+      "e": 35.12048
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "susya": [
+        "en:Susya",
+        "en:Khirbet Susya",
+        "he:סוסיא העתיקה"
+      ]
+    }
+  },
+  "shiloh": {
+    "box": {
+      "s": 32.0497,
+      "n": 32.0617,
+      "w": 35.28246,
+      "e": 35.29662
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "shiloh": [
+        "en:Tel Shiloh",
+        "he:שילה (יישוב מקראי)",
+        "en:Shiloh (biblical city)"
+      ]
+    }
+  },
+  "beitshearim": {
+    "box": {
+      "s": 32.69522,
+      "n": 32.70922,
+      "w": 35.11868,
+      "e": 35.1352
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "necropolis": [
+        "en:Beit She'arim necropolis",
+        "he:בית שערים"
+      ]
+    }
+  },
+  "apollonia": {
+    "box": {
+      "s": 32.18928,
+      "n": 32.20128,
+      "w": 34.79959,
+      "e": 34.81375
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "apollonia": [
+        "en:Apollonia–Arsuf",
+        "he:אפולוניה (ארסוף)"
+      ]
+    }
+  },
+  "eingedi": {
+    "box": {
+      "s": 31.45447,
+      "n": 31.46847,
+      "w": 35.38424,
+      "e": 35.40076
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "synagogue": [
+        "he:בית הכנסת העתיק בעין גדי",
+        "en:Ein Gedi synagogue"
+      ],
+      "tel": [
+        "en:Tel Goren"
+      ]
+    }
+  },
+  "beitalpha": {
+    "box": {
+      "s": 32.5126,
+      "n": 32.5246,
+      "w": 35.42192,
+      "e": 35.43608
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "synagogue": [
+        "en:Beit Alpha",
+        "he:בית הכנסת העתיק בבית אלפא"
+      ]
+    }
+  },
+  "atlit": {
+    "box": {
+      "s": 32.685,
+      "n": 32.709,
+      "w": 34.92284,
+      "e": 34.95116
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "castle": [
+        "en:Atlit Yam",
+        "en:Château Pèlerin",
+        "he:מבצר עתלית"
+      ],
+      "atlit": [
+        "he:עתלית"
+      ]
+    }
+  },
+  "baram": {
+    "box": {
+      "s": 33.03789,
+      "n": 33.04989,
+      "w": 35.4071,
+      "e": 35.42126
+    },
+    "step": [
+      0.00027,
+      0.00032
+    ],
+    "anchors": {
+      "synagogue": [
+        "en:Kafr Bir'im synagogue",
+        "he:בית הכנסת העתיק בברעם"
+      ],
+      "np": [
+        "en:Bar'am National Park"
+      ]
     }
   }
 }

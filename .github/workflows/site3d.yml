@@ -3,6 +3,10 @@ name: Sites 3D — géographie
 # Lancement manuel : Actions → « Sites 3D — géographie » → Run workflow.
 on:
   workflow_dispatch:
+    inputs:
+      sites:
+        description: 'JSON list of sites'
+        default: '["masada","caesarea","beitshean"]'
 permissions:
   contents: write
 jobs:
@@ -10,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 1
+      max-parallel: 4
       matrix:
-        site: [masada, caesarea, beitshean]
+        site: ${{ fromJSON(inputs.sites) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
