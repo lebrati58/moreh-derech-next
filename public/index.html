@@ -13,7 +13,7 @@ html{scroll-behavior:smooth}
 body{min-height:100dvh;color:#fff;background:#081027;background-image:radial-gradient(ellipse at 10% 0%,#263e91 0%,transparent 42%),radial-gradient(ellipse at 95% 34%,#472a7f 0%,transparent 46%),linear-gradient(150deg,#071329,#111333 74%,#0c1536);font-family:'Heebo',system-ui,-apple-system,Arial,sans-serif;overflow-x:hidden}
 body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#a7caff 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(#000,transparent 90%)}
 .arcade-top{max-width:1050px;margin:auto;padding:20px 22px 0;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
-.logo{font-size:20px;font-weight:1000;letter-spacing:-.8px}.logo b{color:#77f4dc}.top-pill{border:1px solid #667bc0;background:#162448aa;padding:7px 12px;border-radius:100px;font-size:11px;font-weight:900;letter-spacing:2px;color:#cfd8ff}
+.logo{font-size:20px;font-weight:1000;letter-spacing:-.8px}.logo b{color:#77f4dc}.top-pill{border:1px solid #667bc0;background:#162448;padding:8px 14px;border-radius:100px;font-size:15px;font-weight:900;color:#e6ecff;font-family:inherit;min-height:44px;cursor:pointer}.top-pill #langFlag{font-size:20px;vertical-align:-2px}.top-lang{position:relative}.lang-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;z-index:50;display:flex;flex-direction:column;gap:4px;background:#1d2a52;border:1px solid #4b6096;border-radius:14px;padding:6px;box-shadow:0 8px 24px #000a;min-width:150px}.lang-menu[hidden]{display:none}.lang-menu button{border:0;border-radius:10px;background:transparent;color:#e0e7ff;padding:11px 12px;font-size:16px;font-weight:800;text-align:start;font-family:inherit}.lang-menu button[aria-pressed=true]{background:#94f5de;color:#101c3a}
 .mode-shell{max-width:1050px;position:relative;margin:0 auto;padding:0 20px 50px!important}
 .arcade-art{position:relative;overflow:hidden;border-radius:28px;margin:20px 0 15px;padding:28px 24px 0;min-height:194px;background:linear-gradient(115deg,#1738aa 0%,#5139cc 54%,#823fc7 100%);border:1px solid #738cff70;box-shadow:0 12px 0 #050b1d,0 24px 45px #0009}
 .arcade-art:before{content:'✦';position:absolute;top:10px;right:32%;color:#fff6;font-size:32px}.arcade-art:after{content:'✦';position:absolute;top:42px;left:20%;color:#c3ffe4;font-size:20px}
@@ -70,7 +70,7 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
 <link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
 </head>
 <body>
-<header class="arcade-top"><a class="identity" href="index.html" aria-label="Moreh Derech NEXT"><img src="assets/moreh-derech-next-driver.webp" alt="" width="54" height="54" decoding="async"><span class="identity-name">MOREH DERECH <b>NEXT</b></span></a><span class="top-pill">LEVEL SELECT</span></header>
+<header class="arcade-top"><a class="identity" href="index.html" aria-label="Moreh Derech NEXT"><img src="assets/moreh-derech-next-driver.webp" alt="" width="54" height="54" decoding="async"><span class="identity-name">MOREH DERECH <b>NEXT</b></span></a><div class="top-lang"><button type="button" class="top-pill" id="langTop" aria-haspopup="true" aria-expanded="false" aria-label="Language / שפה"><span id="langFlag">🇮🇱</span> <span id="langCode">עב</span> ▾</button><div class="lang-menu" id="langMenu" hidden><button type="button" data-lang="he">🇮🇱 עברית</button><button type="button" data-lang="fr">🇫🇷 Français</button><button type="button" data-lang="en">🇬🇧 English</button><button type="button" data-lang="ru">🇷🇺 Русский</button></div></div></header>
 <main class="mode-shell">
   <section class="arcade-art" aria-label="Moreh Derech LIVE">
     <div class="hero-word">★ PLAY • EXPLORE • DISCOVER ★</div>
@@ -149,10 +149,14 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
     document.documentElement.dir=lang==='he'?'rtl':'ltr';
     document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=(L[lang][el.dataset.t]||'').replace('{tours}',stats.tours).replace('{q}',stats.q);});
     document.querySelectorAll('[data-lang]').forEach(function(el){el.setAttribute('aria-pressed',String(el.dataset.lang===lang));});
+    var FL={he:['🇮🇱','עב'],fr:['🇫🇷','FR'],en:['🇬🇧','EN'],ru:['🇷🇺','RU']};document.getElementById('langFlag').textContent=FL[lang][0];document.getElementById('langCode').textContent=FL[lang][1];
     renderS3d();
     liveStatus();
   }
   document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.lang;try{localStorage.setItem('mdl_mode_lang',lang);}catch(e){}render();});});
+  (function(){var bt=document.getElementById('langTop'),mn=document.getElementById('langMenu');function close(){mn.hidden=true;bt.setAttribute('aria-expanded','false');}
+    bt.addEventListener('click',function(e){e.stopPropagation();mn.hidden=!mn.hidden;bt.setAttribute('aria-expanded',String(!mn.hidden));});
+    mn.addEventListener('click',function(e){if(e.target.closest('[data-lang]'))close();});document.addEventListener('click',function(e){if(!e.target.closest('.top-lang'))close();});})();
   render();
   function liveStatus(){var P=window.MDProgress;if(!P)return;var r=P.dailyResult(),s=P.dailyStreak(),d=P.dayStreak(),m=P.mistakes().length;
     var S={he:{done:'✅ היום: ',st:' ברצף',fix:' טעויות לתיקון'},fr:{done:'✅ Aujourd’hui : ',st:' d’affilée',fix:' erreurs à revoir'},en:{done:'✅ Today: ',st:' in a row',fix:' mistakes to fix'},ru:{done:'✅ Сегодня: ',st:' подряд',fix:' ошибок исправить'}}[lang]||{};
