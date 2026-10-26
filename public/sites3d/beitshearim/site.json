@@ -1,0 +1,547 @@
+{
+ "site": "beitshearim",
+ "title": {
+  "he": "בית שערים",
+  "fr": "Beit Shearim",
+  "en": "Beit She'arim",
+  "ru": "Бейт-Шеарим"
+ },
+ "defaultPeriod": 2,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#efe3c8",
+ "home": {
+  "at": {
+   "off": "o:rabbi",
+   "dx": -70,
+   "dz": 90
+  },
+  "dist": 460,
+  "from": 200,
+  "elev": 30
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "basilica": {
+   "osm": "way/1120603335"
+  },
+  "rabbi": {
+   "osm": "way/745362514"
+  },
+  "coffins": {
+   "osm": "way/745362513"
+  },
+  "mausoleum": {
+   "osm": "way/1120502532"
+  },
+  "zaid": {
+   "osm": "node/1354204559"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "בית שני — אחוזת ברניקי",
+    "fr": "Second Temple — domaine de Bérénice",
+    "en": "Second Temple — Berenice’s estate",
+    "ru": "Второй Храм — имение Береники"
+   },
+   "dates": {
+    "he": "המאה ה-1",
+    "fr": "Ier s.",
+    "en": "1st c.",
+    "ru": "I в."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "רבי יהודה הנשיא והסנהדרין",
+    "fr": "Rabbi Juda ha-Nassi et le Sanhédrin",
+    "en": "Rabbi Judah ha-Nasi and the Sanhedrin",
+    "ru": "Рабби Иегуда ха-Наси и Синедрион"
+   },
+   "dates": {
+    "he": "סוף המאה ה-2 – המאה ה-3",
+    "fr": "fin IIe – IIIe s.",
+    "en": "late 2nd – 3rd c.",
+    "ru": "конец II – III в."
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "עיר המתים",
+    "fr": "La nécropole",
+    "en": "The necropolis",
+    "ru": "Некрополь"
+   },
+   "dates": {
+    "he": "המאות ה-3–4 (עד 352/363)",
+    "fr": "IIIe–IVe s. (jusqu’en 352/363)",
+    "en": "3rd–4th c. (until 352/363)",
+    "ru": "III–IV вв. (до 352/363)"
+   }
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "בית שערים היום",
+    "fr": "Beit Shearim aujourd’hui",
+    "en": "Beit She’arim today",
+    "ru": "Бейт-Шеарим сегодня"
+   },
+   "dates": {
+    "he": "מאז 1936 · אונסק״ו 2015",
+    "fr": "depuis 1936 · UNESCO 2015",
+    "en": "since 1936 · UNESCO 2015",
+    "ru": "с 1936 г. · ЮНЕСКО 2015"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "bsh_basilica",
+   "from": 2,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "הבזיליקה",
+    "fr": "La basilique",
+    "en": "The basilica",
+    "ru": "Базилика"
+   },
+   "text": {
+    "he": "מבנה אבן גדול בתכנית בזיליקה — אולם ארוך ומסדרונות משני צדיו — הפונה דרומה. בצפונו חדרים עם ספסלים לאורך ארבעת הקירות, אולי חדרי כינוס של הסנהדרין. בדרך אליו שרידי חומה ושער.",
+    "fr": "Grand bâtiment de pierre en plan basilical — une longue nef et des bas-côtés — tourné vers le sud. Au nord, des salles à banquettes sur les quatre murs, peut-être des salles de réunion du Sanhédrin. En chemin, restes d’un mur et d’une porte.",
+    "en": "A large stone building on a basilica plan — a long hall with aisles — facing south. To the north, rooms with benches along all four walls, perhaps meeting rooms of the Sanhedrin. On the way, remains of a wall and a gate.",
+    "ru": "Большое каменное здание базиликального плана — длинный зал с боковыми нефами — обращено на юг. К северу комнаты со скамьями вдоль четырёх стен, возможно залы заседаний Синедриона. По пути остатки стены и ворот."
+   },
+   "otherView": {
+    "he": "זיהוי החדרים עם הסנהדרין הוא השערה.",
+    "fr": "L’attribution des salles au Sanhédrin est une hypothèse.",
+    "en": "Linking the rooms to the Sanhedrin is a hypothesis.",
+    "ru": "Связь комнат с Синедрионом — гипотеза."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "basilica",
+    "h": 4
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 16 – גליל תחתון – בית שערים (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית שערים — סיכום לימודי",
+     "url": "https://drive.google.com/file/d/1F1JH6qZO2PJ6JcZPUDHhIMV06ANk6rFm/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/1120603335",
+     "url": "https://www.openstreetmap.org/way/1120603335"
+    }
+   ]
+  },
+  {
+   "id": "bsh_house",
+   "from": 2,
+   "to": 4,
+   "certainty": "hypothesis",
+   "name": {
+    "he": "בית רבי יהודה הנשיא",
+    "fr": "La maison de Rabbi Juda ha-Nassi",
+    "en": "Rabbi Judah ha-Nasi’s house",
+    "ru": "Дом рабби Иегуды ха-Наси"
+   },
+   "text": {
+    "he": "בראש הגבעה מבנה אבן ארוך: אורוות סוסים, בית מגורים נרחב ובסופו מבנה תפילה הפונה לירושלים. מסורות על אחוזת רבי, סוסיו ועשרו תומכות בזיהוי. הקיסר אנטונינוס, לפי המסורת, נתן לו את בית שערים.",
+    "fr": "Au sommet, un long bâtiment de pierre : écuries, vaste logis et, au bout, une salle de prière tournée vers Jérusalem. Les traditions sur le domaine de Rabbi, ses chevaux et sa richesse appuient l’identification. Selon la tradition, l’empereur « Antoninus » lui donna Beit Shearim.",
+    "en": "On the hilltop, a long stone building: stables, a large dwelling and at its end a prayer hall facing Jerusalem. Traditions about Rabbi’s estate, horses and wealth support the identification. By tradition the emperor “Antoninus” gave him Beit She’arim.",
+    "ru": "На вершине длинное каменное здание: конюшни, большой жилой дом и в конце молельный зал, обращённый к Иерусалиму. Предания об имении Рабби, его лошадях и богатстве подкрепляют отождествление. По преданию, император «Антонин» подарил ему Бейт-Шеарим."
+   },
+   "placementNote": {
+    "he": "מחוץ לגן הלאומי, אינו מסומן במפה; המקום אינו מוסדר לביקור.",
+    "fr": "Hors du parc national, non cartographié ; le lieu n’est pas aménagé pour la visite.",
+    "en": "Outside the national park, not mapped; the spot is not set up for visitors.",
+    "ru": "Вне национального парка, на карте не отмечен; не оборудован для посещения."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 16 – גליל תחתון – בית שערים (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית שערים — סיכום לימודי",
+     "url": "https://drive.google.com/file/d/1F1JH6qZO2PJ6JcZPUDHhIMV06ANk6rFm/view"
+    }
+   ]
+  },
+  {
+   "id": "bsh_rabbi_cave",
+   "from": 2,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "מערת רבי יהודה הנשיא",
+    "fr": "La grotte de Rabbi Juda ha-Nassi",
+    "en": "The cave of Rabbi Judah ha-Nasi",
+    "ru": "Пещера рабби Иегуды ха-Наси"
+   },
+   "text": {
+    "he": "רבי ביקש להיקבר בבית שערים ושיישבו מעל קברו — ומעל המערה ספסלי ישיבה. בפנים השמות ״רבי שמעון״, ״אנינא הקטן״ ו״גמליאל״ — בניו ותלמידו. קבר כפול חצוב בקרקע: ״תהא ארוני נקובה לקרקע״.",
+    "fr": "Rabbi demanda à être enterré à Beit Shearim et qu’on étudie sur sa tombe — au-dessus de la grotte, des gradins. À l’intérieur, les noms « Rabbi Shimon », « Anina le petit » et « Gamliel » — ses fils et son disciple. Une double tombe creusée dans le sol : « que mon cercueil touche la terre ».",
+    "en": "Rabbi asked to be buried at Beit She’arim and for study to be held over his grave — above the cave there are benches. Inside, the names “Rabbi Shimon”, “Anina the small” and “Gamliel” — his sons and his disciple. A double grave cut into the floor: “let my coffin touch the earth”.",
+    "ru": "Рабби просил похоронить его в Бейт-Шеариме и учиться над его могилой — над пещерой скамьи. Внутри имена «рабби Шимон», «Анина Малый» и «Гамлиэль» — его сыновья и ученик. Двойная могила в скальном полу: «пусть мой гроб касается земли»."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:rabbi",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 16 – גליל תחתון – בית שערים (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית שערים — סיכום לימודי",
+     "url": "https://drive.google.com/file/d/1F1JH6qZO2PJ6JcZPUDHhIMV06ANk6rFm/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/745362514",
+     "url": "https://www.openstreetmap.org/way/745362514"
+    }
+   ]
+  },
+  {
+   "id": "bsh_coffins",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "מערת הארונות",
+    "fr": "La grotte des sarcophages",
+    "en": "The Cave of the Coffins",
+    "ru": "Пещера саркофагов"
+   },
+   "text": {
+    "he": "הצמודה למערת רבי והיוקרתית מכולן, עם חזית שער משולשת. עשרות סרקופגים ובהם כתובות בעברית וביוונית; עיטורים של מנורות, אך גם אריות, נשרים ודמויות מיתולוגיות — קבורים בעלי רמות מסורתיות שונות.",
+    "fr": "À côté de celle de Rabbi, la plus prestigieuse, avec une triple porte. Des dizaines de sarcophages inscrits en hébreu et en grec ; menorot, mais aussi lions, aigles et figures mythologiques — des défunts de traditions diverses.",
+    "en": "Next to Rabbi’s cave and the most prestigious, with a triple doorway. Dozens of sarcophagi inscribed in Hebrew and Greek; menorahs, but also lions, eagles and mythological figures — the dead came from varied traditions.",
+    "ru": "Рядом с пещерой Рабби, самая престижная, с тройным входом. Десятки саркофагов с надписями на иврите и греческом; меноры, а также львы, орлы и мифологические фигуры — погребённые разных традиций."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:coffins",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 16 – גליל תחתון – בית שערים (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית שערים — סיכום לימודי",
+     "url": "https://drive.google.com/file/d/1F1JH6qZO2PJ6JcZPUDHhIMV06ANk6rFm/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/745362513",
+     "url": "https://www.openstreetmap.org/way/745362513"
+    }
+   ]
+  },
+  {
+   "id": "bsh_museum",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "מערת המוזיאון והמאוזוליאום",
+    "fr": "La grotte-musée et le mausolée",
+    "en": "The museum cave and the mausoleum",
+    "ru": "Пещера-музей и мавзолей"
+   },
+   "text": {
+    "he": "בור מים ששימש לתצוגה: מפת מוצא הנקברים (מצרים, צור, בבל), דלתות אבן, וגוש זכוכית גולמי של כ-9 טונות (המאה ה-7). מעל אחת המערות מבנה זיכרון עם כתובת יוונית ״יוסטוס ובסוס״.",
+    "fr": "Une citerne devenue salle d’exposition : carte de l’origine des défunts (Égypte, Tyr, Babylonie), portes de pierre, bloc de verre brut d’environ 9 tonnes (VIIe s.). Au-dessus d’une grotte, un mausolée avec l’inscription grecque « Justus et Bassus ».",
+    "en": "A cistern turned display hall: a map of where the dead came from (Egypt, Tyre, Babylonia), stone doors, and a ~9-tonne raw glass slab (7th c.). Above one cave, a mausoleum with the Greek inscription “Justus and Bassus”.",
+    "ru": "Цистерна, ставшая выставочным залом: карта происхождения погребённых (Египет, Тир, Вавилония), каменные двери и глыба сырого стекла ~9 т (VII в.). Над одной пещерой мавзолей с греческой надписью «Юст и Басс»."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "mausoleum",
+    "h": 4,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 16 – גליל תחתון – בית שערים (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית שערים — סיכום לימודי",
+     "url": "https://drive.google.com/file/d/1F1JH6qZO2PJ6JcZPUDHhIMV06ANk6rFm/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/1120502532",
+     "url": "https://www.openstreetmap.org/way/1120502532"
+    }
+   ]
+  },
+  {
+   "id": "bsh_zaid",
+   "from": 4,
+   "to": 4,
+   "certainty": "attested",
+   "pri": 2,
+   "name": {
+    "he": "אלכסנדר זייד והגילוי",
+    "fr": "Alexandre Zaïd et la découverte",
+    "en": "Alexander Zaid and the discovery",
+    "ru": "Александр Зайд и открытие"
+   },
+   "text": {
+    "he": "זייד, ממייסדי ״בר גיורא״ ו״השומר״, שמר מ-1926 על אדמות שייח׳ אבריק. הוא ובנו מצאו עתיקות וכתבו לבנימין מזר; מזר ויצחק בן-צבי זיהו את בית שערים וחשפו את עיר המתים. זייד נרצח ב-1938. ב-2015 הוכרזה בית שערים אתר מורשת עולמית.",
+    "fr": "Zaïd, cofondateur de « Bar Giora » et de « HaShomer », gardait depuis 1926 les terres de Cheikh Abreik. Avec son fils il trouva des antiquités et écrivit à Benjamin Mazar ; Mazar et Yitzhak Ben-Zvi identifièrent Beit Shearim et dégagèrent la nécropole. Zaïd fut assassiné en 1938. Patrimoine mondial depuis 2015.",
+    "en": "Zaid, co-founder of “Bar Giora” and “HaShomer”, guarded the Sheikh Abreik lands from 1926. With his son he found antiquities and wrote to Benjamin Mazar; Mazar and Yitzhak Ben-Zvi identified Beit She’arim and uncovered the necropolis. Zaid was murdered in 1938. World Heritage since 2015.",
+    "ru": "Зайд, соучредитель «Бар-Гиоры» и «Ха-Шомер», с 1926 г. охранял земли Шейх-Абрейка. С сыном он нашёл древности и написал Беньямину Мазару; Мазар и Ицхак Бен-Цви отождествили Бейт-Шеарим и раскопали некрополь. Зайд убит в 1938 г. Всемирное наследие с 2015 г."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:zaid",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 16 – גליל תחתון – בית שערים (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית שערים — סיכום לימודי",
+     "url": "https://drive.google.com/file/d/1F1JH6qZO2PJ6JcZPUDHhIMV06ANk6rFm/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1354204559",
+     "url": "https://www.openstreetmap.org/node/1354204559"
+    }
+   ]
+  },
+  {
+   "id": "bsh_end",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "החורבן",
+    "fr": "La destruction",
+    "en": "The destruction",
+    "ru": "Разрушение"
+   },
+   "text": {
+    "he": "העיר נחרבה בשני שלבים: דיכוי מרד גאלוס (352/353) ורעידת האדמה של 363. המקום ננטש ונשכח עד המאה ה-20.",
+    "fr": "La ville fut détruite en deux temps : la répression de la révolte de Gallus (352/353) et le séisme de 363. Le site fut abandonné et oublié jusqu’au XXe s.",
+    "en": "The town was destroyed in two stages: the suppression of the Gallus revolt (352/353) and the 363 earthquake. It was abandoned and forgotten until the 20th c.",
+    "ru": "Город разрушен в два этапа: подавление восстания против Галла (352/353) и землетрясение 363 г. Место было заброшено и забыто до XX в."
+   },
+   "placementNote": {
+    "he": "אין סימון — אירוע.",
+    "fr": "Pas de repère — un événement.",
+    "en": "No marker — an event.",
+    "ru": "Без метки — событие."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 16 – גליל תחתון – בית שערים (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Ga4yLBRGSHAstdOKYV-POUzVKmvOpYIf/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית שערים — סיכום לימודי",
+     "url": "https://drive.google.com/file/d/1F1JH6qZO2PJ6JcZPUDHhIMV06ANk6rFm/view"
+    }
+   ]
+  }
+ ]
+}

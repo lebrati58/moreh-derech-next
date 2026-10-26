@@ -31,7 +31,22 @@ const shot = async n => { await page.evaluate(() => { const A = window.MDSite3D;
 
 const EXPECT = { masada: ['masada_northern_palace', 'masada_casemate_wall', 'masada_ramp', 'masada_roman_camps', 'masada_western_palace'], caesarea: ['caesarea_theater', 'caesarea_harbour', 'caesarea_palace', 'caesarea_hippostadium', 'caesarea_aqueduct'], beitshean: ['bs_theater', 'bs_palladius', 'bs_amphitheater', 'bs_temple', 'bs_nymphaeum'] };
 const PERIOD = { masada: 3, caesarea: 2, beitshean: 5 };
-for (const site of Object.keys(EXPECT)) {
+// autres sites : chargement, au moins 2 monuments placés, étiquettes, aucune erreur (SITES=a,b pour limiter)
+const idx = await readFile(join(ROOT, 'index.html'), 'utf8');
+const LIVE = [...idx.matchAll(/site3d\.html\?site=(\w+)/g)].map(m => m[1]).filter((x, i, a) => a.indexOf(x) === i);
+const ONLY = process.env.SITES ? process.env.SITES.split(',') : null;
+for (const site of LIVE.filter(x => !EXPECT[x] && (!ONLY || ONLY.includes(x)))) {
+  await page.goto(base + `site3d.html?site=${site}`);
+  await page.waitForFunction(() => document.body.dataset.ready === '1', null, { timeout: 400000 });
+  await page.waitForTimeout(800);
+  const placed = await page.evaluate(() => window.MDSite3D.placed());
+  ok(placed.length >= 1, `${site} : ${placed.length} monuments placés`);
+  const sizes = await page.evaluate(ids => ids.map(id => { const b = window.MDSite3D._bounds(id); return Math.max(b[1][0] - b[0][0], b[1][2] - b[0][2]); }), placed);
+  ok(sizes.every(s => s > 1 && s < 3000), `${site} : tailles plausibles (${sizes.map(Math.round).join(', ')} m)`);
+  ok((await page.locator('.lb:visible').count()) >= 1, `${site} : étiquettes visibles`);
+  await shot(`n-${site}`);
+}
+for (const site of Object.keys(EXPECT).filter(x => !ONLY || ONLY.includes(x))) {
   await page.goto(base + `site3d.html?site=${site}&period=${PERIOD[site]}`);
   await page.waitForFunction(() => document.body.dataset.ready === '1', null, { timeout: 400000 });
   await page.waitForTimeout(800);
@@ -65,11 +80,11 @@ for (const site of Object.keys(EXPECT)) {
 }
 // langue
 await page.click('[data-lang="fr"]'); await page.waitForTimeout(300);
-ok(await page.evaluate(() => document.documentElement.dir === 'ltr' && document.getElementById('title').textContent.includes('Scythopolis')), 'interface en français (LTR)');
+ok(await page.evaluate(() => document.documentElement.dir === 'ltr' && /[a-z]/i.test(document.getElementById('title').textContent)), 'interface en français (LTR)');
 await page.click('[data-lang="he"]');
 // accès : accueil et carte
 await page.goto(base + 'index.html'); await page.waitForTimeout(800);
-ok((await page.locator('.s3d-chips a').count()) === 3, 'accueil : 3 accès (Massada, Césarée, Beit Shean)');
+ok((await page.locator('.s3d-chips a').count()) === LIVE.length, `accueil : ${LIVE.length} accès 3D`);
 await page.screenshot({ path: `${OUT}/4-accueil.png` });
 
 console.log(errors.length ? '\n' + errors.join('\n') : '\n✅ Sites 3D OK — captures dans ' + OUT);

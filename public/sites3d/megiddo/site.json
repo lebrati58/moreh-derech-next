@@ -1,0 +1,915 @@
+{
+ "site": "megiddo",
+ "title": {
+  "he": "תל מגידו",
+  "fr": "Tel Megiddo",
+  "en": "Tel Megiddo",
+  "ru": "Тель Мегиддо"
+ },
+ "defaultPeriod": 3,
+ "cubitMeters": 0.5,
+ "stone": "ashlar",
+ "tint": "#e9dbc0",
+ "home": {
+  "at": "o:granary",
+  "dist": 380,
+  "from": 200,
+  "elev": 38
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "temples": {
+   "osm": "node/1450786272"
+  },
+  "cgate": {
+   "osm": "node/1450786278"
+  },
+  "cpalace": {
+   "osm": "node/1450794138"
+  },
+  "igate": {
+   "osm": "node/1450786268"
+  },
+  "sstables": {
+   "osm": "node/1450786313"
+  },
+  "nstables": {
+   "osm": "node/1450794137"
+  },
+  "npalace": {
+   "osm": "node/6875172451"
+  },
+  "granary": {
+   "osm": "node/1450787292"
+  },
+  "water": {
+   "osm": "way/131876872"
+  },
+  "edge": {
+   "osm": "way/131877004"
+  },
+  "apalace": {
+   "osm": "node/1450794136"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "ברונזה קדומה",
+    "fr": "Bronze ancien",
+    "en": "Early Bronze",
+    "ru": "Ранняя бронза"
+   },
+   "dates": {
+    "he": "כ-3000–2350 לפנה״ס",
+    "fr": "v. 3000–2350 av. J.-C.",
+    "en": "c. 3000–2350 BCE",
+    "ru": "ок. 3000–2350 до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "כנענית (ברונזה תיכונה ומאוחרת)",
+    "fr": "Cananéenne (Bronze moyen et récent)",
+    "en": "Canaanite (Middle & Late Bronze)",
+    "ru": "Ханаанская (средняя и поздняя бронза)"
+   },
+   "dates": {
+    "he": "כ-2000–1150 לפנה״ס",
+    "fr": "v. 2000–1150 av. J.-C.",
+    "en": "c. 2000–1150 BCE",
+    "ru": "ок. 2000–1150 до н. э."
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "ממלכת ישראל (ברזל)",
+    "fr": "Royaume d’Israël (fer)",
+    "en": "Kingdom of Israel (Iron Age)",
+    "ru": "Израильское царство (железный век)"
+   },
+   "dates": {
+    "he": "המאות ה-10–8 לפנה״ס",
+    "fr": "Xe–VIIIe s. av. J.-C.",
+    "en": "10th–8th c. BCE",
+    "ru": "X–VIII вв. до н. э."
+   }
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "אשורית",
+    "fr": "Assyrienne",
+    "en": "Assyrian",
+    "ru": "Ассирийская"
+   },
+   "dates": {
+    "he": "732–630 לפנה״ס",
+    "fr": "732–630 av. J.-C.",
+    "en": "732–630 BCE",
+    "ru": "732–630 до н. э."
+   }
+  },
+  {
+   "n": 5,
+   "name": {
+    "he": "מגידו היום",
+    "fr": "Megiddo aujourd’hui",
+    "en": "Megiddo today",
+    "ru": "Мегиддо сегодня"
+   },
+   "dates": {
+    "he": "חפירות 1903–היום",
+    "fr": "fouilles de 1903 à nos jours",
+    "en": "excavations 1903–today",
+    "ru": "раскопки с 1903 г."
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "mg_altar",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "המזבח העגול (הבמה)",
+    "fr": "L’autel rond (bamah)",
+    "en": "The round altar (bamah)",
+    "ru": "Круглый алтарь (бама)"
+   },
+   "text": {
+    "he": "במת פולחן עגולה גדולה ליד המקדשים הכנעניים; ליד שלושת המקדשים נמצאו אבני משטח להקרבת הזבח (סיכום הקורס). נראית היטב מתצפית החתך של שומכר.",
+    "fr": "Grand autel rond près des temples cananéens ; des dalles pour les sacrifices à côté des trois temples (cours). Bien visible depuis la tranchée de Schumacher.",
+    "en": "A large round altar by the Canaanite temples; slabs for sacrifices beside the three temples (course). Clearly seen from Schumacher’s trench.",
+    "ru": "Большой круглый алтарь у ханаанских храмов; рядом с тремя храмами — плиты для жертвоприношений (курс). Хорошо виден с траншеи Шумахера."
+   },
+   "dims": {
+    "he": "קוטר 8.5 מ׳, גובה 1.5 מ׳, שבע מדרגות; כ-2700 לפנה״ס (Madain Project).",
+    "fr": "8,5 m de diamètre, 1,5 m de haut, sept marches ; v. 2700 av. J.-C. (Madain Project).",
+    "en": "8.5 m across, 1.5 m high, seven steps; c. 2700 BCE (Madain Project).",
+    "ru": "Диаметр 8,5 м, высота 1,5 м, семь ступеней; ок. 2700 г. до н. э. (Madain Project)."
+   },
+   "placementNote": {
+    "he": "בנקודת ״Canaanite temples״ (OpenStreetMap).",
+    "fr": "Au point « Canaanite temples » (OpenStreetMap).",
+    "en": "At the “Canaanite temples” point (OpenStreetMap).",
+    "ru": "В точке «Canaanite temples» (OpenStreetMap)."
+   },
+   "shape": {
+    "type": "altar",
+    "at": "o:temples",
+    "D": 8.5,
+    "h": 1.5
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450786272",
+     "url": "https://www.openstreetmap.org/node/1450786272"
+    }
+   ]
+  },
+  {
+   "id": "mg_canaanite_gate",
+   "from": 2,
+   "to": 2,
+   "certainty": "attested",
+   "pri": 2,
+   "name": {
+    "he": "השער הכנעני",
+    "fr": "La porte cananéenne",
+    "en": "The Canaanite gate",
+    "ru": "Ханаанские ворота"
+   },
+   "text": {
+    "he": "באזור השער נמצאו שרידי חמישה שערים מתקופות שונות. השער הכנעני (ברונזה מאוחרת) — שער ארבעה תאים בכיוון צפון-דרום; בסיס הקירות באבני בזלת (אורתוסטטים).",
+    "fr": "Cinq portes de périodes différentes se superposent ici. La porte cananéenne (Bronze récent) a quatre chambres, orientées nord-sud ; base des murs en orthostates de basalte.",
+    "en": "Five gates of different periods overlap here. The Canaanite gate (Late Bronze) has four chambers, oriented north–south; the wall bases are basalt orthostats.",
+    "ru": "Здесь наслаиваются пять ворот разных эпох. Ханаанские ворота (поздняя бронза) — четырёхкамерные, ориентированы с севера на юг; основания стен из базальтовых ортостатов."
+   },
+   "placementNote": {
+    "he": "בנקודת ״Later Canaanite gate״; המידות משוערות.",
+    "fr": "Au point « Later Canaanite gate » ; dimensions estimées.",
+    "en": "At the “Later Canaanite gate” point; size estimated.",
+    "ru": "В точке «Later Canaanite gate»; размеры оценочные."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "gate",
+    "at": "o:cgate",
+    "chambers": 2,
+    "W": 15,
+    "L": 12,
+    "h": 5,
+    "bearing": 0,
+    "towers": false
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450786278",
+     "url": "https://www.openstreetmap.org/node/1450786278"
+    }
+   ]
+  },
+  {
+   "id": "mg_canaanite_palace",
+   "from": 2,
+   "to": 2,
+   "certainty": "attested",
+   "name": {
+    "he": "הארמון הכנעני",
+    "fr": "Le palais cananéen",
+    "en": "The Canaanite palace",
+    "ru": "Ханаанский дворец"
+   },
+   "text": {
+    "he": "ליד שער העיר; נמצאו בו חפצי שנהב (אפריקה) ורצפה מכוסה צדפים — עדות לעושר ולסחר בינלאומי.",
+    "fr": "Près de la porte ; on y trouva des objets en ivoire (Afrique) et un sol couvert de coquillages — signe de richesse et de commerce international.",
+    "en": "By the city gate; ivory objects (Africa) and a shell-covered floor were found — signs of wealth and international trade.",
+    "ru": "У городских ворот; найдены изделия из слоновой кости (Африка) и пол, выложенный ракушками, — признаки богатства и международной торговли."
+   },
+   "placementNote": {
+    "he": "בנקודת ״Canaanite palace״; המבנה מצויר בצורה כללית.",
+    "fr": "Au point « Canaanite palace » ; bâtiment dessiné de façon générale.",
+    "en": "At the “Canaanite palace” point; building drawn in general form.",
+    "ru": "В точке «Canaanite palace»; здание в общих чертах."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "hall",
+    "at": "o:cpalace",
+    "W": 26,
+    "D": 24,
+    "h": 5,
+    "court": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450794138",
+     "url": "https://www.openstreetmap.org/node/1450794138"
+    }
+   ]
+  },
+  {
+   "id": "mg_israelite_gate",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "השער הישראלי",
+    "fr": "La porte israélite",
+    "en": "The Israelite gate",
+    "ru": "Израильские ворота"
+   },
+   "builder": {
+    "he": "ממלכת ישראל (המיוחס לשלמה — במחלוקת)",
+    "fr": "Royaume d’Israël (attribué à Salomon — débattu)",
+    "en": "Kingdom of Israel (attributed to Solomon — debated)",
+    "ru": "Израильское царство (приписывается Соломону — спорно)"
+   },
+   "text": {
+    "he": "שער שישה תאים: ארבעה זוגות אומנות ושני מגדלים, בנוי בניצב לרחבה הפנימית (סיכום הקורס). ״וזה דבר המס… לבנות… את חצור ואת מגדו ואת גזר״ (מל״א ט׳ ט״ו).",
+    "fr": "Porte à six chambres : quatre paires de piliers et deux tours, perpendiculaire à la place intérieure (cours). « Voici la corvée… pour bâtir… Hatsor, Megiddo et Guézer » (1 R 9,15).",
+    "en": "A six-chambered gate: four pairs of piers and two towers, set perpendicular to the inner square (course). “This is the levy… to build… Hazor, Megiddo and Gezer” (1 Kings 9:15).",
+    "ru": "Шестикамерные ворота: четыре пары пилонов и две башни, перпендикулярно внутренней площади (курс). «Вот подать… чтобы построить… Гацор, Мегиддо и Гезер» (3 Цар 9:15)."
+   },
+   "debate": {
+    "he": "ידין שייך את השער לשלמה; פינקלשטיין ואחרים מאחרים אותו לימי בית עמרי (המאה ה-9).",
+    "fr": "Yadin attribuait la porte à Salomon ; Finkelstein et d’autres la datent des Omrides (IXe s.).",
+    "en": "Yadin attributed the gate to Solomon; Finkelstein and others date it to the Omrides (9th c.).",
+    "ru": "Ядин приписывал ворота Соломону; Финкельштейн и другие датируют их Омридами (IX в.)."
+   },
+   "placementNote": {
+    "he": "בנקודת ״Israelite Gate״; המידות משוערות.",
+    "fr": "Au point « Israelite Gate » ; dimensions estimées.",
+    "en": "At the “Israelite Gate” point; size estimated.",
+    "ru": "В точке «Israelite Gate»; размеры оценочные."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "gate",
+    "at": "o:igate",
+    "chambers": 3,
+    "W": 17,
+    "L": 20,
+    "h": 6,
+    "bearing": 15
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450786268",
+     "url": "https://www.openstreetmap.org/node/1450786268"
+    }
+   ]
+  },
+  {
+   "id": "mg_stables_s",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "האורוות הדרומיות",
+    "fr": "Les écuries sud",
+    "en": "The southern stables",
+    "ru": "Южные конюшни"
+   },
+   "text": {
+    "he": "חמישה מבנים מקבילים מקורים; בכל יחידה שתי שורות עמודים ואבוסים לסירוגין. נמצאה ביניהם רחבה גדולה.",
+    "fr": "Cinq bâtiments parallèles couverts ; dans chaque unité, deux rangées alternant piliers et auges. Une grande cour les accompagne.",
+    "en": "Five parallel roofed buildings; each unit has two rows of alternating pillars and troughs. A large courtyard goes with them.",
+    "ru": "Пять параллельных крытых зданий; в каждом два ряда чередующихся столбов и кормушек. Рядом большой двор."
+   },
+   "dims": {
+    "he": "הדרומיות: עד כ-150 סוסים (Madain Project).",
+    "fr": "Sud : jusqu’à env. 150 chevaux (Madain Project).",
+    "en": "Southern: up to about 150 horses (Madain Project).",
+    "ru": "Южные: до ~150 лошадей (Madain Project)."
+   },
+   "debate": {
+    "he": "האם שימשו כאורוות סוסים או כאזור טעינה ומחסנים? (סיכום הקורס).",
+    "fr": "Écuries ou entrepôts / zone de chargement ? (cours).",
+    "en": "Stables, or storehouses / a loading area? (course).",
+    "ru": "Конюшни или склады / место погрузки? (курс)."
+   },
+   "placementNote": {
+    "he": "בנקודת OpenStreetMap; מספר היחידות ומידותיהן משוערים.",
+    "fr": "Au point OpenStreetMap ; nombre et taille des unités estimés.",
+    "en": "At the OpenStreetMap point; number and size of units estimated.",
+    "ru": "В точке OpenStreetMap; число и размер блоков оценочные."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "stables",
+    "at": "o:sstables",
+    "units": 5,
+    "L": 21,
+    "w": 11,
+    "h": 4
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450786313",
+     "url": "https://www.openstreetmap.org/node/1450786313"
+    }
+   ]
+  },
+  {
+   "id": "mg_stables_n",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "האורוות הצפוניות",
+    "fr": "Les écuries nord",
+    "en": "The northern stables",
+    "ru": "Северные конюшни"
+   },
+   "text": {
+    "he": "ליד השער הצפוני ולצד ארמון שבו נמצא החותם ״לשמע עבד ירבעם״ (משלחת שיקגו).",
+    "fr": "Près de la porte nord, à côté d’un palais où fut trouvé le sceau « à Shema serviteur de Jéroboam » (mission de Chicago).",
+    "en": "By the northern gate, next to a palace where the seal “Belonging to Shema, servant of Jeroboam” was found (Chicago expedition).",
+    "ru": "У северных ворот, рядом с дворцом, где найдена печать «Шема, раба Иеровоама» (чикагская экспедиция)."
+   },
+   "dims": {
+    "he": "הדרומיות: עד כ-150 סוסים (Madain Project).",
+    "fr": "Sud : jusqu’à env. 150 chevaux (Madain Project).",
+    "en": "Southern: up to about 150 horses (Madain Project).",
+    "ru": "Южные: до ~150 лошадей (Madain Project)."
+   },
+   "debate": {
+    "he": "האם שימשו כאורוות סוסים או כאזור טעינה ומחסנים? (סיכום הקורס).",
+    "fr": "Écuries ou entrepôts / zone de chargement ? (cours).",
+    "en": "Stables, or storehouses / a loading area? (course).",
+    "ru": "Конюшни или склады / место погрузки? (курс)."
+   },
+   "placementNote": {
+    "he": "בנקודת OpenStreetMap; מספר היחידות ומידותיהן משוערים.",
+    "fr": "Au point OpenStreetMap ; nombre et taille des unités estimés.",
+    "en": "At the OpenStreetMap point; number and size of units estimated.",
+    "ru": "В точке OpenStreetMap; число и размер блоков оценочные."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "stables",
+    "at": "o:nstables",
+    "units": 5,
+    "L": 21,
+    "w": 11,
+    "h": 4
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450794137",
+     "url": "https://www.openstreetmap.org/node/1450794137"
+    }
+   ]
+  },
+  {
+   "id": "mg_north_palace",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הארמון הצפוני",
+    "fr": "Le palais nord",
+    "en": "The northern palace",
+    "ru": "Северный дворец"
+   },
+   "text": {
+    "he": "ארמון ישראלי; בארמונות הישראליים נמצאו כותרות פרוטו-איאוליות.",
+    "fr": "Palais israélite ; des chapiteaux proto-éoliens ont été trouvés dans les palais israélites.",
+    "en": "An Israelite palace; proto-Aeolic capitals were found in the Israelite palaces.",
+    "ru": "Израильский дворец; в израильских дворцах найдены протоэолийские капители."
+   },
+   "otherView": {
+    "he": "Madain Project: כ-900 לפנה״ס — שלמה או אחאב.",
+    "fr": "Madain Project : v. 900 av. J.-C. — Salomon ou Achab.",
+    "en": "Madain Project: c. 900 BCE — Solomon or Ahab.",
+    "ru": "Madain Project: ок. 900 г. до н. э. — Соломон или Ахав."
+   },
+   "placementNote": {
+    "he": "בנקודת ״Northern Palace״; המבנה מצויר בצורה כללית.",
+    "fr": "Au point « Northern Palace » ; forme générale.",
+    "en": "At the “Northern Palace” point; general form.",
+    "ru": "В точке «Northern Palace»; общая форма."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "hall",
+    "at": "o:npalace",
+    "W": 22,
+    "D": 20,
+    "h": 5,
+    "court": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/6875172451",
+     "url": "https://www.openstreetmap.org/node/6875172451"
+    }
+   ]
+  },
+  {
+   "id": "mg_granary",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הממגורה",
+    "fr": "Le grand silo",
+    "en": "The granary",
+    "ru": "Зернохранилище"
+   },
+   "text": {
+    "he": "אסם תבואה חפור באדמה עם שני גרמי מדרגות; נמצאו בו שרידי גרעיני חיטה ותבן.",
+    "fr": "Silo à grain creusé dans le sol, avec deux escaliers ; on y trouva des restes de blé et de paille.",
+    "en": "A grain silo dug into the ground with two staircases; remains of wheat and straw were found.",
+    "ru": "Зерновая яма с двумя лестницами; найдены остатки пшеницы и соломы."
+   },
+   "placementNote": {
+    "he": "בנקודת ״Granary״; הקוטר משוער.",
+    "fr": "Au point « Granary » ; diamètre estimé.",
+    "en": "At the “Granary” point; diameter estimated.",
+    "ru": "В точке «Granary»; диаметр оценочный."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "silo",
+    "at": "o:granary",
+    "D": 11
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450787292",
+     "url": "https://www.openstreetmap.org/node/1450787292"
+    }
+   ]
+  },
+  {
+   "id": "mg_water",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "מפעל המים",
+    "fr": "Le système d’eau",
+    "en": "The water system",
+    "ru": "Водная система"
+   },
+   "text": {
+    "he": "פיר אנכי עד מי התהום ומנהרה אופקית מתחת לחומה אל המעיין, שהוסתר בקיר ובכיסוי עפר. אופן השימוש אינו ברור: אין סימני מדרגות בפיר. בסיור: 183 מדרגות ירידה ו-80 עלייה.",
+    "fr": "Un puits vertical jusqu’à la nappe et un tunnel horizontal sous le mur jusqu’à la source, masquée par un mur et de la terre. Le mode d’usage reste obscur : pas de marches dans le puits. À la visite : 183 marches à descendre, 80 à monter.",
+    "en": "A vertical shaft down to the water table and a horizontal tunnel under the wall to the spring, hidden by a wall and earth. How it was used is unclear: no steps in the shaft. On the visit: 183 steps down, 80 up.",
+    "ru": "Вертикальная шахта до грунтовых вод и горизонтальный туннель под стеной к источнику, скрытому стеной и землёй. Способ использования неясен: в шахте нет ступеней. На экскурсии: 183 ступени вниз, 80 вверх."
+   },
+   "placementNote": {
+    "he": "קו המתאר ״Mifal Hamaim״ (OpenStreetMap); החלק התת-קרקעי אינו מצויר.",
+    "fr": "Contour « Mifal Hamaim » (OSM) ; la partie souterraine n’est pas dessinée.",
+    "en": "Outline “Mifal Hamaim” (OSM); the underground part is not drawn.",
+    "ru": "Контур «Mifal Hamaim» (OSM); подземная часть не нарисована."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "water",
+    "h": 1.5
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/131876872",
+     "url": "https://www.openstreetmap.org/way/131876872"
+    }
+   ]
+  },
+  {
+   "id": "mg_wall",
+   "from": 3,
+   "to": 5,
+   "certainty": "reconstruction",
+   "keep": true,
+   "name": {
+    "he": "חומת העיר",
+    "fr": "La muraille",
+    "en": "The city wall",
+    "ru": "Городская стена"
+   },
+   "text": {
+    "he": "״שלמה בנה את חומת מגידו״ (מל״א ט׳). בתקופת הברזל חוברו השערים לחומת סוגרים כפולה.",
+    "fr": "« Salomon bâtit le mur de Megiddo » (1 R 9). À l’âge du fer, les portes étaient reliées à une muraille à casemates.",
+    "en": "“Solomon built the wall of Megiddo” (1 Kings 9). In the Iron Age the gates joined a casemate wall.",
+    "ru": "«Соломон построил стену Мегиддо» (3 Цар 9). В железном веке ворота соединялись с казематной стеной."
+   },
+   "placementNote": {
+    "he": "החומה מצוירת לאורך שולי התל (קו ״cliff״ ב-OpenStreetMap); מהלכה המדויק בכל תקופה שונה.",
+    "fr": "Mur dessiné le long du bord du tell (ligne « cliff » d’OSM) ; son tracé exact varie selon les périodes.",
+    "en": "Wall drawn along the edge of the mound (OSM “cliff” line); its exact line varies by period.",
+    "ru": "Стена нарисована по краю холма (линия «cliff» в OSM); точная линия менялась."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "wall",
+    "osm": "edge",
+    "h": 4,
+    "thick": 2.5
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/131877004",
+     "url": "https://www.openstreetmap.org/way/131877004"
+    }
+   ]
+  },
+  {
+   "id": "mg_assyrian",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הרובע האשורי",
+    "fr": "Le quartier assyrien",
+    "en": "The Assyrian quarter",
+    "ru": "Ассирийский квартал"
+   },
+   "text": {
+    "he": "אחרי הכיבוש האשורי (732) הייתה מגידו (״מגידּו״) בירת מחוז; נשתמרו שרידי ארמון ורחובות מצטלבים מזרח-מערב וצפון-דרום. השער הפנימי הוחלף בשער שני תאים.",
+    "fr": "Après la conquête assyrienne (732), Megiddo (« Magiddu ») fut capitale de province : restes d’un palais et rues se croisant est-ouest et nord-sud. La porte intérieure fut remplacée par une porte à deux chambres.",
+    "en": "After the Assyrian conquest (732) Megiddo (“Magiddu”) was a provincial capital: remains of a palace and streets crossing east–west and north–south. The inner gate was replaced by a two-chambered gate.",
+    "ru": "После ассирийского завоевания (732) Мегиддо («Магидду») стал столицей провинции: остатки дворца и улиц, пересекающихся с востока на запад и с севера на юг. Внутренние ворота заменены двухкамерными."
+   },
+   "placementNote": {
+    "he": "סימון בנקודת ״Assyrian Palace״.",
+    "fr": "Repère au point « Assyrian Palace ».",
+    "en": "Marker at the “Assyrian Palace” point.",
+    "ru": "Метка у точки «Assyrian Palace»."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:apalace",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1450794136",
+     "url": "https://www.openstreetmap.org/node/1450794136"
+    }
+   ]
+  },
+  {
+   "id": "mg_armageddon",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "ארמגדון ומגידו בהיסטוריה",
+    "fr": "Armageddon et Megiddo dans l’histoire",
+    "en": "Armageddon and Megiddo in history",
+    "ru": "Армагеддон и Мегиддо в истории"
+   },
+   "text": {
+    "he": "צומת דרכים בין מצרים למסופוטמיה: מסע תחותמס השלישי (1457 לפנה״ס, 7 חודשי מצור), מכתבי אל-עמארנה, מסע שישק, מות יאשיהו (609). ״הר מגידו״ — ארמגדון בחזון יוחנן. 1918: קרב מגידו, אלנבי ״הוויקונט ממגידו״. 40 שכבות (סיכום הקורס).",
+    "fr": "Carrefour entre l’Égypte et la Mésopotamie : campagne de Thoutmôsis III (1457 av. J.-C., 7 mois de siège), lettres d’Amarna, campagne de Sheshonq, mort de Josias (609). « Har Megiddo » : l’Armageddon de l’Apocalypse. 1918 : bataille de Megiddo, Allenby « vicomte de Megiddo ». 40 niveaux (cours).",
+    "en": "A crossroads between Egypt and Mesopotamia: Thutmose III’s campaign (1457 BCE, 7-month siege), the Amarna letters, Shishak’s campaign, Josiah’s death (609). “Har Megiddo”: Armageddon in Revelation. 1918: battle of Megiddo, Allenby “Viscount Megiddo”. 40 layers (course).",
+    "ru": "Перекрёсток между Египтом и Месопотамией: поход Тутмоса III (1457 г. до н. э., 7 месяцев осады), письма Амарны, поход Шешонка, гибель Иосии (609). «Хар-Мегиддо» — Армагеддон Апокалипсиса. 1918: битва при Мегиддо, Алленби — «виконт Мегиддо». 40 слоёв (курс)."
+   },
+   "placementNote": {
+    "he": "לא מקום מסוים בתל — אין סימון.",
+    "fr": "Pas un lieu précis du tell — pas de repère.",
+    "en": "Not a specific spot on the mound — no marker.",
+    "ru": "Не конкретное место — без метки."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 — תל מגידו (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Megiddo (Madain Project)",
+     "url": "https://madainproject.com/tel_megiddo"
+    }
+   ]
+  }
+ ]
+}

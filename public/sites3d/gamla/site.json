@@ -1,0 +1,567 @@
+{
+ "site": "gamla",
+ "title": {
+  "he": "גמלא",
+  "fr": "Gamla",
+  "en": "Gamla",
+  "ru": "Гамла"
+ },
+ "defaultPeriod": 2,
+ "cubitMeters": 0.5,
+ "stone": "basalt",
+ "tint": "#ffffff",
+ "home": {
+  "at": "o:synagogue",
+  "dist": 450,
+  "from": 60,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#7c7656",
+  "mid": "#a59a72",
+  "hi": "#c9bd94"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "synagogue": {
+   "osm": "way/734139359"
+  },
+  "tower": {
+   "osm": "way/734139350"
+  },
+  "dwelling": {
+   "osm": "way/734139358"
+  },
+  "path": {
+   "osm": "way/146364301"
+  },
+  "deir": {
+   "osm": "node/5637859963"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "הלניסטית-חשמונאית",
+    "fr": "Hellénistique-hasmonéenne",
+    "en": "Hellenistic–Hasmonean",
+    "ru": "Эллинистическо-хасмонейская"
+   },
+   "dates": {
+    "he": "אמצע המאה ה-2 לפנה״ס – 66 לסה״נ",
+    "fr": "milieu du IIe s. av. – 66 apr. J.-C.",
+    "en": "mid-2nd c. BCE – 66 CE",
+    "ru": "сер. II в. до н. э. – 66 г. н. э."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "המרד הגדול והמצור",
+    "fr": "Grande Révolte et siège",
+    "en": "Great Revolt and siege",
+    "ru": "Великое восстание и осада"
+   },
+   "dates": {
+    "he": "66–67 לסה״נ",
+    "fr": "66–67 apr. J.-C.",
+    "en": "66–67 CE",
+    "ru": "66–67 гг. н. э."
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "ביזנטית — דיר קרוח",
+    "fr": "Byzantine — Deir Qeruh",
+    "en": "Byzantine — Deir Qeruh",
+    "ru": "Византийская — Дейр-Керух"
+   },
+   "dates": {
+    "he": "המאות ה-5–6",
+    "fr": "Ve–VIe s.",
+    "en": "5th–6th c.",
+    "ru": "V–VI вв."
+   }
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "גמלא היום",
+    "fr": "Gamla aujourd’hui",
+    "en": "Gamla today",
+    "ru": "Гамла сегодня"
+   },
+   "dates": {
+    "he": "זוהתה ב-1968",
+    "fr": "identifiée en 1968",
+    "en": "identified in 1968",
+    "ru": "опознана в 1968 г."
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "gm_synagogue",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "בית הכנסת",
+    "fr": "La synagogue",
+    "en": "The synagogue",
+    "ru": "Синагога"
+   },
+   "text": {
+    "he": "מבנה מפואר בקצה העיר, מבתי הכנסת העתיקים ביותר שנחשפו בארץ (ראשית המאה ה-1). הקיר המזרחי שלו היה חלק מחומת העיר. בתוכו נמצאו אבני בליסטרה וראשי חצים, וסימנים שפליטים גרו בו בזמן המצור; לידו מקווה.",
+    "fr": "Édifice imposant au bord de la ville, l’une des plus anciennes synagogues du pays (début du Ier s.). Son mur est faisait partie de la muraille. On y a trouvé des boulets de baliste, des pointes de flèches et des traces de réfugiés pendant le siège ; un mikvé à côté.",
+    "en": "A fine building at the edge of the town, one of the oldest synagogues found in the country (early 1st c.). Its eastern wall was part of the city wall. Ballista balls, arrowheads and signs of refugees during the siege were found inside; a mikveh next to it.",
+    "ru": "Величественное здание на краю города, одна из древнейших синагог страны (начало I в.). Её восточная стена входила в городскую стену. Внутри найдены ядра баллист, наконечники стрел и следы беженцев во время осады; рядом миква."
+   },
+   "dims": {
+    "he": "25.5 × 17 מ׳, ארבע שורות ספסלי אבן (ויקיפדיה).",
+    "fr": "25,5 × 17 m, quatre rangées de bancs de pierre (Wikipédia).",
+    "en": "25.5 × 17 m, four rows of stone benches (Wikipedia).",
+    "ru": "25,5 × 17 м, четыре ряда каменных скамей (Википедия)."
+   },
+   "otherView": {
+    "he": "זמן הבנייה: המאה ה-1 לפנה״ס או ה-1 לסה״נ — במחלוקת.",
+    "fr": "Date de construction : Ier s. av. ou Ier s. apr. J.-C. — débattue.",
+    "en": "Construction date: 1st c. BCE or 1st c. CE — debated.",
+    "ru": "Дата постройки: I в. до н. э. или I в. н. э. — спорно."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "synagogue",
+    "h": 4,
+    "kind": "basalt"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי גמלא (רשות הטבע והגנים)",
+     "url": "https://drive.google.com/file/d/1CxUI-SPau0ZnD9eJSECmTBGohy2VDnOJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Gamla Synagogue (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Gamla_Synagogue"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/734139359",
+     "url": "https://www.openstreetmap.org/way/734139359"
+    }
+   ]
+  },
+  {
+   "id": "gm_tower",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "המגדל העגול",
+    "fr": "La tour ronde",
+    "en": "The round tower",
+    "ru": "Круглая башня"
+   },
+   "text": {
+    "he": "מגדל בפינה העליונה של חומת העיר; ממנו ירדה החומה לאורך הצד המזרחי של העיר אל מעל נחל דליות.",
+    "fr": "Tour à l’angle supérieur de la muraille ; de là, le mur descendait le long du côté est de la ville jusqu’au-dessus du Daliyot.",
+    "en": "A tower at the upper corner of the city wall; from it the wall ran down the eastern side of the town to above the Daliyot stream.",
+    "ru": "Башня в верхнем углу городской стены; от неё стена спускалась по восточной стороне города к ущелью Далийот."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "tower",
+    "h": 9,
+    "kind": "basalt",
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי גמלא (רשות הטבע והגנים)",
+     "url": "https://drive.google.com/file/d/1CxUI-SPau0ZnD9eJSECmTBGohy2VDnOJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/734139350",
+     "url": "https://www.openstreetmap.org/way/734139350"
+    }
+   ]
+  },
+  {
+   "id": "gm_wall",
+   "from": 2,
+   "to": 4,
+   "certainty": "reconstruction",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "החומה ונקודת הפריצה",
+    "fr": "La muraille et la brèche",
+    "en": "The wall and the breach",
+    "ru": "Стена и пролом"
+   },
+   "builder": {
+    "he": "תושבי גמלא בהנהגת יוסף בן מתתיהו (66)",
+    "fr": "Les habitants, sous Josèphe (66)",
+    "en": "The inhabitants, led by Josephus (66)",
+    "ru": "Жители под руководством Иосифа (66)"
+   },
+   "text": {
+    "he": "ערב המרד ביצרו התושבים בחיפזון את החומה בצד המזרחי, היחיד שאפשר לעלות ממנו. אגריפס השני צר על העיר שבעה חודשים ונסוג; אספסיאנוס פרץ את החומה אחרי חודש, הרומאים נכנסו ונהדפו, וכעבור ימים אחדים כבשו את העיר. לפי יוסף בן מתתיהו נהרגו 9,000. הכניסה לאתר היום היא במקום הפריצה.",
+    "fr": "À la veille de la révolte, les habitants fortifièrent à la hâte le côté est, le seul accessible. Agrippa II assiégea la ville sept mois puis se retira ; Vespasien perça le mur après un mois, les Romains entrèrent et furent repoussés, puis prirent la ville quelques jours plus tard. Selon Josèphe, 9 000 morts. On entre aujourd’hui par la brèche.",
+    "en": "On the eve of the revolt the inhabitants hastily fortified the eastern side, the only one that could be climbed. Agrippa II besieged the town for seven months and withdrew; Vespasian breached the wall after a month, the Romans broke in and were thrown back, and took the town a few days later. Josephus: 9,000 dead. Today’s entrance is at the breach.",
+    "ru": "Накануне восстания жители спешно укрепили восточную сторону — единственную доступную. Агриппа II осаждал город семь месяцев и отступил; Веспасиан пробил стену через месяц, римляне ворвались и были отброшены, а через несколько дней взяли город. По Иосифу — 9000 погибших. Сегодня вход — через пролом."
+   },
+   "placementNote": {
+    "he": "מהלך החומה משוער: מהמגדל העגול, לאורך הקיר המזרחי של בית הכנסת, ומטה לכיוון הנחל.",
+    "fr": "Tracé estimé : de la tour ronde, le long du mur est de la synagogue, puis vers le ruisseau.",
+    "en": "Line estimated: from the round tower, along the synagogue’s east wall, then down towards the stream.",
+    "ru": "Трасса оценочная: от круглой башни вдоль восточной стены синагоги и вниз к ручью."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "wall",
+    "lines": [
+     [
+      "o:tower",
+      {
+       "off": "o:synagogue",
+       "dx": 13,
+       "dz": -6
+      },
+      {
+       "off": "o:synagogue",
+       "dx": 18,
+       "dz": 10
+      },
+      {
+       "off": "o:synagogue",
+       "dx": 40,
+       "dz": 70
+      }
+     ]
+    ],
+    "h": 5,
+    "thick": 3,
+    "kind": "basalt"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי גמלא (רשות הטבע והגנים)",
+     "url": "https://drive.google.com/file/d/1CxUI-SPau0ZnD9eJSECmTBGohy2VDnOJ/view"
+    },
+    {
+     "kind": "drive",
+     "label": "התקופה הרומית הראשונה (סיכום הרצאה)",
+     "url": "https://drive.google.com/file/d/16VZd3J6UNXoADV1hFpMrUoOJi0_y4pRA/view"
+    },
+    {
+     "kind": "online",
+     "label": "Gamla (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Gamla"
+    }
+   ]
+  },
+  {
+   "id": "gm_dwelling",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "בתי המגורים",
+    "fr": "Les habitations",
+    "en": "The dwellings",
+    "ru": "Жилые дома"
+   },
+   "text": {
+    "he": "בתים צפופים על המדרון התלול; הרובע הסמוך למגדל העגול מתוארך לתקופה החשמונאית. במערב העיר רובע עשיר ובית בד גדול עם שתי קשתות.",
+    "fr": "Maisons serrées sur la pente raide ; le quartier près de la tour ronde date de l’époque hasmonéenne. À l’ouest, un quartier aisé et un grand pressoir à huile à deux arcs.",
+    "en": "Crowded houses on the steep slope; the quarter near the round tower dates from the Hasmonean period. In the west, a wealthy quarter and a large olive press with two arches.",
+    "ru": "Тесные дома на крутом склоне; квартал у круглой башни — хасмонейский. На западе богатый квартал и большая маслодавильня с двумя арками."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "dwelling",
+    "h": 3,
+    "kind": "basalt"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי גמלא (רשות הטבע והגנים)",
+     "url": "https://drive.google.com/file/d/1CxUI-SPau0ZnD9eJSECmTBGohy2VDnOJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/734139358",
+     "url": "https://www.openstreetmap.org/way/734139358"
+    }
+   ]
+  },
+  {
+   "id": "gm_path",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הדרך העתיקה",
+    "fr": "Le chemin antique",
+    "en": "The ancient path",
+    "ru": "Древняя тропа"
+   },
+   "text": {
+    "he": "״היא יושבת על רכס הר גבוה… כמו גמל״ (יוסף בן מתתיהו): אל העיר אפשר להגיע רק מצד אחד, מהרמה המזרחית, בשביל אחד — אותו שביל שמוביל אליה היום.",
+    "fr": "« Située sur l’arête d’une haute montagne… comme un chameau » (Josèphe) : on n’accède à la ville que par un côté, depuis le plateau est, par un seul sentier — celui d’aujourd’hui.",
+    "en": "“Situated upon a rough ridge of a high mountain… like a camel” (Josephus): the town can only be reached from one side, from the eastern plateau, by a single path — the one used today.",
+    "ru": "«На хребте высокой горы… как верблюд» (Иосиф): в город можно попасть лишь с одной стороны, с восточного плато, по одной тропе — той же, что и сегодня."
+   },
+   "shape": {
+    "type": "path",
+    "osm": "path",
+    "w": 2,
+    "color": "#efe0b8"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי גמלא (רשות הטבע והגנים)",
+     "url": "https://drive.google.com/file/d/1CxUI-SPau0ZnD9eJSECmTBGohy2VDnOJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/146364301",
+     "url": "https://www.openstreetmap.org/way/146364301"
+    }
+   ]
+  },
+  {
+   "id": "gm_deirqeruh",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "דיר קרוח",
+    "fr": "Deir Qeruh",
+    "en": "Deir Qeruh",
+    "ru": "Дейр-Керух"
+   },
+   "text": {
+    "he": "כפר ביזנטי נוצרי ובו מנזר וכנסייה ייחודית שהאפסיס שלה מרובע, כמו בכנסיות אזור הבזלת בירדן ובסוריה. בחצר כתובת יוונית: ״אלוהי גרגוריוס מושיע ומרחם, אמן״.",
+    "fr": "Village chrétien byzantin avec un monastère et une église à abside carrée, comme dans les régions basaltiques de Jordanie et de Syrie. Inscription grecque : « le dieu de Grégoire sauve et prend pitié, amen ».",
+    "en": "A Byzantine Christian village with a monastery and a church with a square apse, like churches in the basalt regions of Jordan and Syria. Greek inscription: “the god of Gregorius saves and takes pity, amen”.",
+    "ru": "Византийская христианская деревня с монастырём и церковью с квадратной апсидой, как в базальтовых районах Иордании и Сирии. Греческая надпись: «Бог Григория спасает и милует, аминь»."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:deir",
+    "h": 8
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי גמלא (רשות הטבע והגנים)",
+     "url": "https://drive.google.com/file/d/1CxUI-SPau0ZnD9eJSECmTBGohy2VDnOJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/5637859963",
+     "url": "https://www.openstreetmap.org/node/5637859963"
+    }
+   ]
+  },
+  {
+   "id": "gm_today",
+   "from": 4,
+   "to": 4,
+   "certainty": "attested",
+   "name": {
+    "he": "גילוי מחדש ושמורת הטבע",
+    "fr": "Redécouverte et réserve naturelle",
+    "en": "Rediscovery and nature reserve",
+    "ru": "Повторное открытие и заповедник"
+   },
+   "text": {
+    "he": "אחרי החורבן (67) לא נבנתה העיר מחדש ונשכחה 1,900 שנה. ב-1968 הציע יצחקי גל לזהות כאן את גמלא, ושמריהו גוטמן חפר ואישר. היום: אנדרטת רמת הגולן, מושבת הנשרים הגדולה בארץ ומפל של 51 מ׳.",
+    "fr": "Détruite en 67, la ville ne fut jamais rebâtie et resta oubliée 1 900 ans. En 1968, Yitzhaki Gal proposa l’identification ; Shmaryahu Guttman fouilla et la confirma. Aujourd’hui : mémorial du Golan, la plus grande colonie de vautours du pays et une cascade de 51 m.",
+    "en": "Destroyed in 67, the town was never rebuilt and lay forgotten for 1,900 years. In 1968 Yitzhaki Gal proposed the identification; Shmaryahu Guttman excavated and confirmed it. Today: the Golan memorial, the country’s largest vulture colony and a 51-m waterfall.",
+    "ru": "Разрушенный в 67 г., город не восстанавливался и был забыт на 1900 лет. В 1968 г. Ицхаки Гал предложил отождествление; Шмарьяху Гутман провёл раскопки и подтвердил его. Сегодня: мемориал Голан, крупнейшая колония грифов в стране и водопад высотой 51 м."
+   },
+   "placementNote": {
+    "he": "אין סימון — מידע כללי.",
+    "fr": "Pas de repère — information générale.",
+    "en": "No marker — general information.",
+    "ru": "Без метки — общая информация."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי גמלא (רשות הטבע והגנים)",
+     "url": "https://drive.google.com/file/d/1CxUI-SPau0ZnD9eJSECmTBGohy2VDnOJ/view"
+    }
+   ]
+  }
+ ]
+}

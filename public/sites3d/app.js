@@ -309,10 +309,11 @@ function buildModel(m, sh) {
     default: { // modèles posés en un point, orientés selon un cap
       let c = at, bearing = sh.bearing ?? 0; if (F) { c = c || F.c; if (sh.bearing == null) bearing = (Math.atan2(F.u[0], -F.u[1]) * 180 / Math.PI + 360) % 360; }
       if (!c) return null;
-      const make = { pool: () => SM.pool({ W: sh.W || 35, D: sh.D || 18, peristyle: sh.peristyle ?? 6, kind: K }), temple: () => SM.templeOnPodium({ podiumW: sh.podiumW || 100, podiumD: sh.podiumD || 90, podiumH: sh.podiumH || 4, L: sh.L || 46, W: sh.W || 28, H: sh.H || 16, kind: K }),
+      const make = { pool: () => SM.pool({ W: sh.W || 35, D: sh.D || 18, peristyle: sh.peristyle ?? 6, kind: K, pavilion: sh.pavilion || 0 }), temple: () => SM.templeOnPodium({ podiumW: sh.podiumW || 100, podiumD: sh.podiumD || 90, podiumH: sh.podiumH || 4, L: sh.L || 46, W: sh.W || 28, H: sh.H || 16, kind: K }),
         storerooms: () => SM.storerooms({ n: sh.n || 11, L: sh.L || 27, w: sh.w || 4, kind: K }), hall: () => SM.hall({ W: sh.W || 15, D: sh.D || 12, h: sh.h || 6, kind: K, court: sh.court, domeR: sh.domeR || 0, cols: sh.cols || 0, tint: sh.tint }),
         basilica: () => JM.basilica(sh.L || 30, sh.W || 16, sh.H || 10, { apse: true, atrium: sh.atrium || 0 }), mosque: () => SM.mosque({}), facade: () => SM.facade({ W: sh.W || 22, h: sh.h || 12, apse: sh.apse !== false, kind: K }),
-        marker: () => SM.marker({ h: sh.h || 8 }), tholos: () => SM.tholos({ R: sh.R || 6, h: sh.h || 9, kind: K }), tower: () => SM.tower({ W: sh.W || 8, h: sh.h || 14, kind: K }), box: () => JM.box(sh.W || 10, sh.h || 5, sh.D || 10, stone(K, { tint: sh.tint || '#ffffff' })) }[sh.type];
+        marker: () => SM.marker({ h: sh.h || 8 }), fortress: () => SM.roundFortress({ R: sh.R || 31, gap: sh.gap || 2.5, h: sh.h || 30, eastD: sh.eastD || 18, towerD: sh.towerD || 16, kind: K, tint: sh.tint || DATA.tint }), gate: () => SM.chamberGate({ W: sh.W || 18, L: sh.L || 20, chambers: sh.chambers || 3, h: sh.h || 6, kind: K, tint: sh.tint || DATA.tint, towers: sh.towers !== false }),
+        stables: () => SM.pillaredHall({ units: sh.units || 5, L: sh.L || 21, w: sh.w || 11, h: sh.h || 4, kind: K, tint: sh.tint || DATA.tint }), altar: () => SM.roundAltar({ D: sh.D || 8.5, h: sh.h || 1.5, kind: K }), silo: () => SM.silo({ D: sh.D || 11, kind: K }), roundtower: () => SM.roundTower({ D: sh.D || 10, h: sh.h || 12, kind: K, tint: sh.tint || DATA.tint }), tholos: () => SM.tholos({ R: sh.R || 6, h: sh.h || 9, kind: K }), tower: () => SM.tower({ W: sh.W || 8, h: sh.h || 14, kind: K }), box: () => JM.box(sh.W || 10, sh.h || 5, sh.D || 10, stone(K, { tint: sh.tint || '#ffffff' })) }[sh.type];
       if (!make) return null; const g = make();
       // bassins et plates-formes : posés au point le plus haut de leur emprise (sinon le relief les recouvre)
       const hw = (sh.W || 10) / 2 + 4, hd = (sh.D || sh.podiumD || 10) / 2 + 4, [bx, bz] = bearingVec(bearing), corners = [[1, 1], [1, -1], [-1, 1], [-1, -1]].map(([i, j]) => ground(c[0] + (-bz) * hw * i + bx * hd * j, c[1] + bx * hw * i + bz * hd * j));
@@ -372,7 +373,11 @@ window.MDSite3D = {
   if (!GEO || !GEO.dem) { applyUI(); $('msg').textContent = t('geoMissing'); return; }
   LAT0 = (GEO.box.s + GEO.box.n) / 2; LON0 = (GEO.box.w + GEO.box.e) / 2; KX = 111320 * Math.cos(LAT0 * Math.PI / 180);
   demH = GEO.dem.heights.slice(); const valid = demH.filter(v => v != null);
-  if (DATA.sea) { demH = demH.map(v => v == null || v <= 0.5 ? -6 : v); seaY = 0; } // sous la mer : fond à −6 m, surface au niveau 0
+  if (DATA.sea) { // la mer = cellules basses reliées au bord du cadre (remplissage) ; les creux à l'intérieur des terres restent à sec
+    const R = GEO.dem.rows, C = GEO.dem.cols, low = i => demH[i] == null || demH[i] <= 0.5, sea = new Uint8Array(R * C), st = [];
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) if ((r === 0 || c === 0 || r === R - 1 || c === C - 1) && low(r * C + c)) { sea[r * C + c] = 1; st.push(r * C + c); }
+    while (st.length) { const i = st.pop(), r = Math.floor(i / C), c = i % C; for (const [dr, dc] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const rr = r + dr, cc = c + dc, j = rr * C + cc; if (rr >= 0 && cc >= 0 && rr < R && cc < C && !sea[j] && low(j)) { sea[j] = 1; st.push(j); } } }
+    demH = demH.map((v, i) => sea[i] ? -6 : Math.max(v ?? 1, 1)); seaY = 0; } // sous la mer : fond à −6 m, surface au niveau 0
   demMin = Math.min(...demH.filter(v => v != null)); if (seaY != null) seaY = 0 - demMin; void valid;
   applyUI();
   if (!webglOK()) { $('msg').textContent = t('noWebgl'); return; }

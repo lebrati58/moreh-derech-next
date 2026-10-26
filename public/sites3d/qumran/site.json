@@ -1,0 +1,404 @@
+{
+ "site": "qumran",
+ "title": {
+  "he": "קומראן",
+  "fr": "Qumrân",
+  "en": "Qumran",
+  "ru": "Кумран"
+ },
+ "defaultPeriod": 1,
+ "cubitMeters": 0.5,
+ "stone": "dolomite",
+ "tint": "#ecd3a2",
+ "home": {
+  "at": "o:site",
+  "dist": 600,
+  "from": 120,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#9f8a6a",
+  "mid": "#c8b48e",
+  "hi": "#e2d3b2"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "site": {
+   "osm": "way/611895589"
+  },
+  "cave": {
+   "osm": "node/5792954872"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "קהילת היחד",
+    "fr": "La communauté (Yahad)",
+    "en": "The Yahad community",
+    "ru": "Община Яхад"
+   },
+   "dates": {
+    "he": "המאה ה-1 לפנה״ס – 68 לסה״נ",
+    "fr": "Ier s. av. – 68 apr. J.-C.",
+    "en": "1st c. BCE – 68 CE",
+    "ru": "I в. до н. э. – 68 г. н. э."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "גילוי המגילות והחפירות",
+    "fr": "Découverte des manuscrits et fouilles",
+    "en": "Scroll discovery and excavations",
+    "ru": "Находка свитков и раскопки"
+   },
+   "dates": {
+    "he": "1947–היום",
+    "fr": "1947 à nos jours",
+    "en": "1947–today",
+    "ru": "1947 — наши дни"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "qm_site",
+   "from": 1,
+   "to": 2,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "יישוב קומראן",
+    "fr": "Le site de Qumrân",
+    "en": "The Qumran settlement",
+    "ru": "Поселение Кумран"
+   },
+   "text": {
+    "he": "מרכז הקהילה (מזוהה עם האיסיים): חדר אוכל ומטבח, ״חדר הסופרים״ עם כלי כתיבה ודיו, חדר הכספים, מקוואות רבים ובית קברות של גברים בלבד. אין מבני מגורים — ייתכן שגרו בסוכות או באוהלים, או מחוץ לאתר.",
+    "fr": "Centre de la communauté (identifiée aux Esséniens) : réfectoire et cuisine, « scriptorium » avec encriers, salle du trésor, nombreux bains rituels, cimetière d’hommes seulement. Pas de maisons : peut-être des huttes ou des tentes, ou un habitat ailleurs.",
+    "en": "The community centre (identified with the Essenes): dining hall and kitchen, a “scriptorium” with inkwells, a treasury, many ritual baths, and a cemetery of men only. No dwellings — perhaps huts or tents, or living elsewhere.",
+    "ru": "Центр общины (отождествляемой с ессеями): трапезная и кухня, «скрипторий» с чернильницами, казна, много ритуальных бассейнов, кладбище только мужчин. Жилых домов нет — возможно, шалаши, палатки или жильё вне поселения."
+   },
+   "debate": {
+    "he": "יצחק מגן ואחרים סברו שהמגילות לא נכתבו בידי תושבי קומראן.",
+    "fr": "Yitzhak Magen et d’autres pensent que les rouleaux n’ont pas été écrits par les habitants de Qumrân.",
+    "en": "Yitzhak Magen and others argue the scrolls were not written by Qumran’s inhabitants.",
+    "ru": "Ицхак Маген и другие считают, что свитки написаны не жителями Кумрана."
+   },
+   "placementNote": {
+    "he": "קו המתאר של האתר (OpenStreetMap); החדרים הפנימיים אינם מצוירים.",
+    "fr": "Contour du site (OpenStreetMap) ; pièces intérieures non dessinées.",
+    "en": "Site outline (OpenStreetMap); inner rooms not drawn.",
+    "ru": "Контур памятника (OpenStreetMap); внутренние помещения не нарисованы."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "site",
+    "h": 3,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 1 — קומראן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/611895589",
+     "url": "https://www.openstreetmap.org/way/611895589"
+    }
+   ]
+  },
+  {
+   "id": "qm_water",
+   "from": 1,
+   "to": 2,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "תעלת המים והמקוואות",
+    "fr": "Le canal et les bains rituels",
+    "en": "The channel and the ritual baths",
+    "ru": "Канал и миквы"
+   },
+   "text": {
+    "he": "תעלה הובילה מי שיטפונות ממפל נחל קומראן אל בורות האגירה, דרך אגן שיקוע שעצר את הסחף; משם למקוואות ולשתייה. ברוב המקוואות הפרדה בין היורדים (טמאים) לעולים (טהורים).",
+    "fr": "Un canal amenait les crues de la cascade du Qumrân aux citernes, via un bassin de décantation ; de là aux bains rituels et à la boisson. La plupart des bains séparent ceux qui descendent (impurs) de ceux qui remontent (purs).",
+    "en": "A channel brought flood water from the Qumran waterfall to the cisterns through a settling basin; from there to the ritual baths and for drinking. Most baths separate those going down (impure) from those coming up (pure).",
+    "ru": "Канал вёл паводковую воду от водопада Кумрана к цистернам через отстойник; оттуда — в миквы и для питья. В большинстве микв разделены спускающиеся (нечистые) и поднимающиеся (чистые)."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 1 — קומראן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view"
+    }
+   ]
+  },
+  {
+   "id": "qm_caves",
+   "from": 1,
+   "to": 2,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "מערות המגילות",
+    "fr": "Les grottes des manuscrits",
+    "en": "The scroll caves",
+    "ru": "Пещеры свитков"
+   },
+   "text": {
+    "he": "רועה שזרק אבן שמע קול נפץ ומצא מגילות (1947). סוקניק רכש שלוש; ארבע נוספות נמכרו לראש הכנסייה הסורית ונקנו ב-1954 בניו יורק. במערות: ספרי מקרא, ספרים חיצוניים, פרשנויות ותקנוני הכת.",
+    "fr": "Un berger lança une pierre, entendit un bruit de poterie brisée et trouva des rouleaux (1947). Soukenik en acheta trois ; quatre autres, vendus au métropolite syriaque, furent rachetés à New York en 1954. Dans les grottes : livres bibliques, apocryphes, commentaires, règles de la secte.",
+    "en": "A shepherd threw a stone, heard pottery break and found scrolls (1947). Sukenik bought three; four more, sold to the Syrian metropolitan, were bought in New York in 1954. In the caves: biblical books, apocrypha, commentaries, the sect’s rules.",
+    "ru": "Пастух бросил камень, услышал звон разбитого сосуда и нашёл свитки (1947). Сукеник купил три; ещё четыре, проданные сирийскому митрополиту, выкупили в Нью-Йорке в 1954 г. В пещерах — библейские книги, апокрифы, толкования, уставы общины."
+   },
+   "placementNote": {
+    "he": "סימון בנקודות ״Qumran cave״ (OpenStreetMap).",
+    "fr": "Repère aux points « Qumran cave » (OSM).",
+    "en": "Marker at the “Qumran cave” points (OSM).",
+    "ru": "Метка у точек «Qumran cave» (OSM)."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:cave",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 1 — קומראן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/5792954872",
+     "url": "https://www.openstreetmap.org/node/5792954872"
+    }
+   ]
+  },
+  {
+   "id": "qm_life",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "name": {
+    "he": "אורחות החיים",
+    "fr": "La vie de la communauté",
+    "en": "Community life",
+    "ru": "Жизнь общины"
+   },
+   "text": {
+    "he": "יוסף בן מתתיהו מתאר שלושה זרמים: פרושים, צדוקים ואיסיים. סדר היום: עבודה, טבילה, ארוחה משותפת בשתיקה, עבודה, טבילה וארוחת ערב, ולימוד עד שליש הלילה. בלי רכוש פרטי; קבלה לקבוצה אחרי שלוש שנים. לוח שנה שונה מהלוח העברי. אולי קשור ליוחנן המטביל.",
+    "fr": "Josèphe décrit trois courants : pharisiens, sadducéens, esséniens. Journée : travail, bain rituel, repas commun en silence, travail, bain et souper, étude jusqu’au tiers de la nuit. Pas de propriété privée ; admission après trois ans. Calendrier différent du calendrier hébraïque. Peut-être lien avec Jean le Baptiste.",
+    "en": "Josephus describes three movements: Pharisees, Sadducees, Essenes. Day: work, ritual bath, a common meal in silence, work, bath and supper, study until a third of the night. No private property; admission after three years. A calendar different from the Hebrew one. Perhaps linked to John the Baptist.",
+    "ru": "Иосиф описывает три течения: фарисеи, саддукеи, ессеи. День: работа, омовение, общая трапеза в молчании, работа, омовение и ужин, учёба до трети ночи. Без частной собственности; приём через три года. Свой календарь. Возможно, связь с Иоанном Крестителем."
+   },
+   "placementNote": {
+    "he": "אין סימון — מידע כללי.",
+    "fr": "Pas de repère — information générale.",
+    "en": "No marker — general information.",
+    "ru": "Без метки — общая информация."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 1 — קומראן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view"
+    }
+   ]
+  },
+  {
+   "id": "qm_digs",
+   "from": 2,
+   "to": 2,
+   "certainty": "attested",
+   "name": {
+    "he": "החפירות",
+    "fr": "Les fouilles",
+    "en": "The excavations",
+    "ru": "Раскопки"
+   },
+   "text": {
+    "he": "רולאן דה וו (כומר דומיניקני) חפר בראשית שנות ה-50 בתקופת השלטון הירדני; מ-1967 חפרו ארכאולוגים ישראלים, בהם יצחק מגן וחנן אשל.",
+    "fr": "Roland de Vaux (dominicain) fouilla au début des années 1950, sous administration jordanienne ; après 1967, des archéologues israéliens, dont Yitzhak Magen et Hanan Eshel.",
+    "en": "Roland de Vaux (a Dominican) excavated in the early 1950s under Jordanian rule; after 1967 Israeli archaeologists, among them Yitzhak Magen and Hanan Eshel.",
+    "ru": "Ролан де Во (доминиканец) копал в начале 1950-х при иорданцах; после 1967 г. — израильские археологи, в том числе Ицхак Маген и Ханан Эшель."
+   },
+   "placementNote": {
+    "he": "אין סימון — מידע כללי.",
+    "fr": "Pas de repère — information générale.",
+    "en": "No marker — general information.",
+    "ru": "Без метки — общая информация."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 1 — קומראן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/view"
+    }
+   ]
+  }
+ ]
+}

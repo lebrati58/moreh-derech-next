@@ -1,0 +1,560 @@
+{
+ "site": "beitguvrin",
+ "title": {
+  "he": "בית גוברין ומרשה",
+  "fr": "Beit Guvrin et Marésha",
+  "en": "Beit Guvrin & Maresha",
+  "ru": "Бейт-Гуврин и Мареша"
+ },
+ "defaultPeriod": 5,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#efe3c8",
+ "home": {
+  "at": {
+   "off": "o:tel",
+   "dx": 300,
+   "dz": -150
+  },
+  "dist": 560,
+  "from": 170,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "tel": {
+   "osm": "node/278470166"
+  },
+  "bell": {
+   "osm": "node/315766135"
+  },
+  "church": {
+   "osm": "node/994342492"
+  },
+  "villa": {
+   "osm": "way/732026188"
+  },
+  "amphi": {
+   "osm": "way/149788063"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "מרשה המקראית",
+    "fr": "Marésha biblique",
+    "en": "Biblical Maresha",
+    "ru": "Библейская Мареша"
+   },
+   "dates": {
+    "he": "ימי בית ראשון",
+    "fr": "époque du Premier Temple",
+    "en": "First Temple period",
+    "ru": "эпоха Первого Храма"
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "מרשה ההלניסטית",
+    "fr": "Marésha hellénistique",
+    "en": "Hellenistic Maresha",
+    "ru": "Эллинистическая Мареша"
+   },
+   "dates": {
+    "he": "538–40 לפנה״ס",
+    "fr": "538–40 av. J.-C.",
+    "en": "538–40 BCE",
+    "ru": "538–40 гг. до н. э."
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "בית גוברין — אלאותרופוליס",
+    "fr": "Beit Guvrin — Éleuthéropolis",
+    "en": "Beit Guvrin — Eleutheropolis",
+    "ru": "Бейт-Гуврин — Элевтерополь"
+   },
+   "dates": {
+    "he": "המאות ה-1–7",
+    "fr": "Ier–VIIe s.",
+    "en": "1st–7th c.",
+    "ru": "I–VII вв."
+   }
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "מערות הפעמון והצלבנים",
+    "fr": "Grottes en cloche et croisés",
+    "en": "Bell caves and Crusaders",
+    "ru": "Колоколообразные пещеры и крестоносцы"
+   },
+   "dates": {
+    "he": "המאות ה-7–12",
+    "fr": "VIIe–XIIe s.",
+    "en": "7th–12th c.",
+    "ru": "VII–XII вв."
+   }
+  },
+  {
+   "n": 5,
+   "name": {
+    "he": "הגן הלאומי היום",
+    "fr": "Le parc national aujourd’hui",
+    "en": "The national park today",
+    "ru": "Национальный парк сегодня"
+   },
+   "dates": {
+    "he": "אתר מורשת עולמית",
+    "fr": "patrimoine mondial",
+    "en": "World Heritage site",
+    "ru": "объект всемирного наследия"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "bg_tel",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "תל מרשה",
+    "fr": "Tel Marésha",
+    "en": "Tel Maresha",
+    "ru": "Тель Мареша"
+   },
+   "text": {
+    "he": "אקרופוליס מימי בית ראשון — התל כ-24 דונם, העיר התחתית כ-350 דונם. רחבעם ביצר אותה; נפגעה במסע סנחריב (701) וננטשה ב-586. אחרי שיבת ציון ישבו בה אדומים וצידונים; יוחנן הורקנוס כבש וגייר את תושביה (111 לפנה״ס), והפרתים החריבו אותה (40 לפנה״ס).",
+    "fr": "Acropole du Premier Temple — le tell fait environ 24 dounams, la ville basse environ 350. Roboam la fortifia ; touchée par Sennachérib (701), abandonnée en 586. Après le retour d’exil, Iduméens et Sidoniens s’y installèrent ; Jean Hyrcan la prit et convertit ses habitants (111 av. J.-C.) ; les Parthes la détruisirent (40 av. J.-C.).",
+    "en": "A First Temple acropolis — the mound about 24 dunams, the lower city about 350. Rehoboam fortified it; hit by Sennacherib (701) and abandoned in 586. After the return from exile Idumeans and Sidonians settled; John Hyrcanus took it and converted its people (111 BCE); the Parthians destroyed it (40 BCE).",
+    "ru": "Акрополь эпохи Первого Храма — холм около 24 дунамов, нижний город около 350. Ровоам укрепил его; пострадал от Синаххериба (701), покинут в 586 г. После возвращения из плена здесь жили идумеи и сидоняне; Иоанн Гиркан взял город и обратил жителей (111 г. до н. э.); парфяне разрушили его (40 г. до н. э.)."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:tel",
+    "h": 9
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – תל מרשה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי בית גוברין–מרשה",
+     "url": "https://drive.google.com/file/d/1ytSdvi6_tlIycXzvPT6T5OXzn22mR1ni/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/278470166",
+     "url": "https://www.openstreetmap.org/node/278470166"
+    }
+   ]
+  },
+  {
+   "id": "bg_lowercity",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "העיר התחתית ומערותיה",
+    "fr": "La ville basse et ses grottes",
+    "en": "The lower city and its caves",
+    "ru": "Нижний город и его пещеры"
+   },
+   "text": {
+    "he": "תכנון היפודמי — רחובות ישרים ורובעים. מתחת לכל בית מערה למשק הבית: קולומבריום (מאות גומחות — יונים? קבורה?), בית בד עם מפרכה בסגנון יווני ושני מתקני דחיסה, בורות מים בצורת פעמון. מערות הקבורה הצידוניות מעוטרות בציורים ובכתובות יווניות — אפולופנס, ראש קהילת הצידונים, וקרברוס בכניסה.",
+    "fr": "Plan hippodamien — rues droites et îlots. Sous chaque maison, une grotte domestique : columbarium (des centaines de niches — pigeons ? sépulture ?), pressoir à huile à meule de type grec et deux presses, citernes en cloche. Les tombes sidoniennes sont peintes avec des inscriptions grecques — Apollophanès, chef des Sidoniens, et Cerbère à l’entrée.",
+    "en": "A Hippodamian plan — straight streets and blocks. Under every house a household cave: a columbarium (hundreds of niches — doves? burial?), an olive press with a Greek-style crusher and two presses, bell-shaped cisterns. The Sidonian tombs are painted with Greek inscriptions — Apollophanes, head of the Sidonians, and Cerberus at the entrance.",
+    "ru": "Гипподамова планировка — прямые улицы и кварталы. Под каждым домом хозяйственная пещера: колумбарий (сотни ниш — голуби? погребения?), маслодавильня с жерновом греческого типа и двумя прессами, колоколообразные цистерны. Сидонские гробницы расписаны, с греческими надписями — Аполлофан, глава сидонян, и Цербер у входа."
+   },
+   "debate": {
+    "he": "ייעוד הקולומבריום שנוי במחלוקת: גידול יונים (לקורבן, למאכל, לזבל) או קבורה משנית.",
+    "fr": "La fonction du columbarium est discutée : élevage de pigeons (sacrifice, viande, engrais) ou sépulture secondaire.",
+    "en": "The columbarium’s use is debated: raising doves (sacrifice, meat, manure) or secondary burial.",
+    "ru": "Назначение колумбария спорно: разведение голубей (жертвы, мясо, удобрение) или вторичное захоронение."
+   },
+   "placementNote": {
+    "he": "המערות פזורות סביב התל; מיקומיהן אינם בנתוני המפה.",
+    "fr": "Les grottes sont dispersées autour du tell ; leurs positions ne sont pas dans les données.",
+    "en": "The caves are scattered around the mound; their positions are not in the data.",
+    "ru": "Пещеры разбросаны вокруг холма; их положения нет в данных."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – תל מרשה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי בית גוברין–מרשה",
+     "url": "https://drive.google.com/file/d/1ytSdvi6_tlIycXzvPT6T5OXzn22mR1ni/view"
+    }
+   ]
+  },
+  {
+   "id": "bg_bell",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "מערות הפעמון",
+    "fr": "Les grottes en cloche",
+    "en": "The bell caves",
+    "ru": "Колоколообразные пещеры"
+   },
+   "text": {
+    "he": "מהתקופה הביזנטית עד הערבית: פורצים פתח קטן בשכבת הנארי הקשה וחוצבים את הקירטון הרך כלפי מטה, בהיקף הולך וגדל — לייצור סיד. כשמערות התחברו, התקרה קרסה. חלקן שימשו אחר כך ככנסיות.",
+    "fr": "De l’époque byzantine à l’époque arabe : on perçait un petit trou dans la croûte de nari, puis on taillait la craie tendre vers le bas en s’élargissant — pour faire de la chaux. Quand des grottes se rejoignaient, le plafond s’effondrait. Certaines servirent ensuite d’églises.",
+    "en": "From the Byzantine to the Arab period: a small hole was cut through the hard nari crust, then the soft chalk was quarried downwards in a widening bell — to make lime. Where caves joined, the ceiling collapsed. Some later served as churches.",
+    "ru": "От византийского до арабского периода: пробивали небольшое отверстие в твёрдой корке нари и вырубали мягкий мел вниз, расширяя «колокол», — для производства извести. Где пещеры сливались, свод обрушивался. Некоторые потом служили церквями."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:bell",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – תל מרשה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1FM9D6aRhifX9Emvl48uuMc9PjX54mkuL/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי בית גוברין–מרשה",
+     "url": "https://drive.google.com/file/d/1ytSdvi6_tlIycXzvPT6T5OXzn22mR1ni/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/315766135",
+     "url": "https://www.openstreetmap.org/node/315766135"
+    }
+   ]
+  },
+  {
+   "id": "bg_church",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "כנסיית סנט אנה (סנדחנה)",
+    "fr": "L’église Sainte-Anne (Sandahanna)",
+    "en": "St Anne’s Church (Sandahanna)",
+    "ru": "Церковь св. Анны (Сандаханна)"
+   },
+   "text": {
+    "he": "כנסייה ביזנטית ששוקמה בידי הצלבנים; האפסיס עדיין עומד לגובה רב. השם הערבי סנדחנה (״סנטה אנה״) נשמר בשם התל — תל סנדחנה.",
+    "fr": "Église byzantine restaurée par les croisés ; l’abside se dresse encore très haut. Le nom arabe Sandahanna (« Sainte Anne ») est resté au tell — Tell Sandahanna.",
+    "en": "A Byzantine church restored by the Crusaders; its apse still stands high. The Arabic name Sandahanna (“Santa Anna”) survives in the mound’s name — Tell Sandahanna.",
+    "ru": "Византийская церковь, восстановленная крестоносцами; апсида всё ещё высоко стоит. Арабское название Сандаханна («Санта-Анна») сохранилось в имени холма — Телль-Сандаханна."
+   },
+   "dims": {
+    "he": "56 × 52 מ׳ (לפי עלון הגן).",
+    "fr": "56 × 52 m (d’après la brochure du parc).",
+    "en": "56 × 52 m (per the park leaflet).",
+    "ru": "56 × 52 м (по буклету парка)."
+   },
+   "shape": {
+    "type": "facade",
+    "at": "o:church",
+    "W": 16,
+    "h": 14,
+    "apse": true,
+    "bearing": 90,
+    "kind": "ashlar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי בית גוברין–מרשה",
+     "url": "https://drive.google.com/file/d/1ytSdvi6_tlIycXzvPT6T5OXzn22mR1ni/view"
+    },
+    {
+     "kind": "online",
+     "label": "Beit Guvrin-Maresha National Park (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Beit_Guvrin-Maresha_National_Park"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/994342492",
+     "url": "https://www.openstreetmap.org/node/994342492"
+    }
+   ],
+   "placementNote": {
+    "he": "רק האפסיס מצויר, בנקודת המפה; כיוונו (מזרח) לפי מנהג הכנסיות.",
+    "fr": "Seule l’abside est dessinée, au point cartographique ; tournée vers l’est comme les églises.",
+    "en": "Only the apse is drawn, at the map point; facing east as churches do.",
+    "ru": "Нарисована только апсида, по точке на карте; обращена на восток, как в церквях."
+   }
+  },
+  {
+   "id": "bg_villa",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "מבנה חפור על התל",
+    "fr": "Bâtiment fouillé sur le tell",
+    "en": "Excavated building on the mound",
+    "ru": "Раскопанное здание на холме"
+   },
+   "text": {
+    "he": "מבנה חפור על מדרון התל, המסומן במפה ״The Villa״. תיארוכו ותפקידו אינם בסיכומי הקורס.",
+    "fr": "Bâtiment fouillé sur la pente du tell, noté « The Villa » sur la carte. Sa date et sa fonction ne sont pas dans les résumés du cours.",
+    "en": "An excavated building on the mound’s slope, marked “The Villa” on the map. Its date and use are not in the course summaries.",
+    "ru": "Раскопанное здание на склоне холма, отмечено на карте как «The Villa». Его дата и назначение в конспектах курса не указаны."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "villa",
+    "h": 3
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/732026188",
+     "url": "https://www.openstreetmap.org/way/732026188"
+    }
+   ]
+  },
+  {
+   "id": "bg_amphi",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "האמפיתיאטרון הרומי",
+    "fr": "L’amphithéâtre romain",
+    "en": "The Roman amphitheatre",
+    "ru": "Римский амфитеатр"
+   },
+   "text": {
+    "he": "אמפיתיאטרון רומי של העיר אלאותרופוליס (בית גוברין), כ-3,500 מקומות — למופעי לוחמים וחיות.",
+    "fr": "Amphithéâtre romain de la ville d’Éleuthéropolis (Beit Guvrin), environ 3 500 places — pour les combats de gladiateurs et de bêtes.",
+    "en": "The Roman amphitheatre of Eleutheropolis (Beit Guvrin), about 3,500 seats — for gladiator and animal shows.",
+    "ru": "Римский амфитеатр Элевтерополя (Бейт-Гуврина), около 3500 мест — для боёв гладиаторов и животных."
+   },
+   "shape": {
+    "type": "amphi",
+    "fit": "amphi"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי בית גוברין–מרשה",
+     "url": "https://drive.google.com/file/d/1ytSdvi6_tlIycXzvPT6T5OXzn22mR1ni/view"
+    },
+    {
+     "kind": "online",
+     "label": "Beit Guvrin-Maresha National Park (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Beit_Guvrin-Maresha_National_Park"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/149788063",
+     "url": "https://www.openstreetmap.org/way/149788063"
+    }
+   ]
+  },
+  {
+   "id": "bg_city",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "בית גוברין והצלבנים",
+    "fr": "Beit Guvrin et les croisés",
+    "en": "Beit Guvrin and the Crusaders",
+    "ru": "Бейт-Гуврин и крестоносцы"
+   },
+   "text": {
+    "he": "אחרי חורבן מרשה עבר המרכז לבית גוברין, שזכתה למעמד עיר רומית (אלאותרופוליס). מרחץ רומי של יותר מ-4,000 מ״ר. ב-1136 הקימו הצלבנים מבצר בתוך העיר.",
+    "fr": "Après la ruine de Marésha, le centre passa à Beit Guvrin, devenue cité romaine (Éleuthéropolis). Thermes romains de plus de 4 000 m². En 1136, les croisés y élevèrent une forteresse.",
+    "en": "After Maresha fell, the centre moved to Beit Guvrin, which became a Roman city (Eleutheropolis). A Roman bath of over 4,000 m². In 1136 the Crusaders built a fortress in the town.",
+    "ru": "После гибели Мареши центр переместился в Бейт-Гуврин, ставший римским городом (Элевтерополь). Римские бани площадью более 4000 м². В 1136 г. крестоносцы построили здесь крепость."
+   },
+   "placementNote": {
+    "he": "המרחץ והמבצר הצלבני אינם בנתוני המפה.",
+    "fr": "Les thermes et la forteresse croisée ne sont pas dans les données.",
+    "en": "The bath and the Crusader fort are not in the map data.",
+    "ru": "Бань и крепости крестоносцев нет в данных."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי בית גוברין–מרשה",
+     "url": "https://drive.google.com/file/d/1ytSdvi6_tlIycXzvPT6T5OXzn22mR1ni/view"
+    }
+   ]
+  }
+ ]
+}

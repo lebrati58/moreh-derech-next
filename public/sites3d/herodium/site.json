@@ -1,0 +1,709 @@
+{
+ "site": "herodium",
+ "title": {
+  "he": "הרודיון",
+  "fr": "Hérodion",
+  "en": "Herodium",
+  "ru": "Иродион"
+ },
+ "defaultPeriod": 1,
+ "cubitMeters": 0.5,
+ "stone": "herodian",
+ "tint": "#f2e6cc",
+ "home": {
+  "at": {
+   "off": "o:garden",
+   "dx": -130,
+   "dz": -170
+  },
+  "dist": 640,
+  "from": 120,
+  "elev": 30
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "garden": {
+   "osm": "way/79983292"
+  },
+  "theater": {
+   "osm": "node/933264997"
+  },
+  "tomb": {
+   "osm": "node/933265036"
+  },
+  "pool": {
+   "osm": "node/8803075026"
+  },
+  "bath": {
+   "osm": "way/79983290"
+  },
+  "synagogue": {
+   "osm": "way/79983299"
+  },
+  "cisterns": {
+   "osm": "node/933452100"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "dates": {
+    "he": "23–4 לפנה״ס",
+    "fr": "23–4 av. J.-C.",
+    "en": "23–4 BCE",
+    "ru": "23–4 гг. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "המרד הגדול",
+    "fr": "Grande Révolte",
+    "en": "Great Revolt",
+    "ru": "Великое восстание"
+   },
+   "dates": {
+    "he": "66–71 לסה״נ",
+    "fr": "66–71 apr. J.-C.",
+    "en": "66–71 CE",
+    "ru": "66–71 гг. н. э."
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "מרד בר כוכבא",
+    "fr": "Révolte de Bar Kokhba",
+    "en": "Bar Kokhba revolt",
+    "ru": "Восстание Бар-Кохбы"
+   },
+   "dates": {
+    "he": "132–135 לסה״נ",
+    "fr": "132–135",
+    "en": "132–135 CE",
+    "ru": "132–135 гг."
+   }
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "הרודיון היום",
+    "fr": "Hérodion aujourd’hui",
+    "en": "Herodium today",
+    "ru": "Иродион сегодня"
+   },
+   "dates": {
+    "he": "חפירות נצר · הקבר 2007",
+    "fr": "fouilles Netzer · tombe 2007",
+    "en": "Netzer’s digs · tomb 2007",
+    "ru": "раскопки Нецера · гробница 2007"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "hr_fortress",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "ארמון-המבצר העליון",
+    "fr": "Le palais-forteresse",
+    "en": "The palace-fortress",
+    "ru": "Дворец-крепость"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "המבצר היחיד שהורדוס בנה מראשיתו, במקום ניצחונו על תומכי אנטיגונוס (40 לפנה״ס). ״מבצר בתוך מבצר בתוך מבצר״: חומה עגולה כפולה, מגדל מזרחי עצום שבו היו חדרי הורדוס, שלושה מגדלים קטנים, וגן, טרקלין ובית מרחץ בפנים. הגבעה הוגבהה בשפך עפר עד שקיבלה צורת חרוט.",
+    "fr": "La seule forteresse qu’Hérode bâtit de toutes pièces, sur le lieu de sa victoire sur les partisans d’Antigone (40 av. J.-C.). « Forteresse dans la forteresse » : double mur circulaire, énorme tour orientale où logeait Hérode, trois tours plus petites, jardin, triclinium et bain à l’intérieur. La colline fut rehaussée de terre en forme de cône.",
+    "en": "The only fortress Herod built from scratch, where he defeated Antigonus’ supporters (40 BCE). “A fortress within a fortress”: a circular double wall, a huge eastern tower with Herod’s rooms, three smaller towers, and a garden, reception hall and bath inside. The hill was built up with earth into a cone.",
+    "ru": "Единственная крепость, построенная Иродом с нуля, на месте его победы над сторонниками Антигона (40 г. до н. э.). «Крепость в крепости»: двойная круглая стена, огромная восточная башня с покоями Ирода, три меньшие башни, внутри сад, зал и баня. Холм насыпали в форме конуса."
+   },
+   "dims": {
+    "he": "קוטר החומה החיצונית 62 מ׳, רווח של 2.5 מ׳ בין החומות; גובה מקורי כ-30 מ׳ (7 קומות, שתיים מתחת לקרקע); המגדל המזרחי בקוטר 18 מ׳, שלושת האחרים חצי-עגולים בקוטר 16 מ׳ (נצר).",
+    "fr": "Mur extérieur de 62 m de diamètre, 2,5 m entre les deux murs ; env. 30 m de haut à l’origine (7 niveaux dont 2 souterrains) ; tour est de 18 m de diamètre, les trois autres semi-circulaires de 16 m (Netzer).",
+    "en": "Outer wall 62 m across, 2.5 m between the walls; originally c. 30 m high (7 storeys, 2 underground); eastern tower 18 m in diameter, the other three semicircular, 16 m (Netzer).",
+    "ru": "Внешняя стена диаметром 62 м, 2,5 м между стенами; высота ок. 30 м (7 этажей, 2 подземных); восточная башня 18 м, три другие полукруглые по 16 м (Нецер)."
+   },
+   "remains": {
+    "he": "כיפת החדר הפושר בבית המרחץ שלמה — הכיפה העתיקה ביותר בארץ.",
+    "fr": "La coupole du tepidarium est intacte — la plus ancienne du pays.",
+    "en": "The warm-room dome of the bath survives intact — the oldest dome in the country.",
+    "ru": "Купол тепидария бани сохранился целиком — древнейший купол в стране."
+   },
+   "placementNote": {
+    "he": "מרכז המבנה בחצר-הגן שב-OpenStreetMap; המגדלים לפי המידות; מראה הקומות העליונות משוחזר.",
+    "fr": "Centre au jardin intérieur d’OpenStreetMap ; tours selon les mesures ; étages supérieurs restitués.",
+    "en": "Centre at the inner garden in OpenStreetMap; towers to scale; upper storeys reconstructed.",
+    "ru": "Центр — внутренний сад по OpenStreetMap; башни по размерам; верхние этажи восстановлены."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "fortress",
+    "at": "o:garden",
+    "R": 31,
+    "gap": 2.5,
+    "h": 30,
+    "kind": "herodian"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 6 — הרודיון (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view"
+    },
+    {
+     "kind": "drive",
+     "label": "הרודיון — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view"
+    },
+    {
+     "kind": "online",
+     "label": "Herodium (Jewish Virtual Library, Netzer)",
+     "url": "https://jewishvirtuallibrary.org/jsource/Archaeology/Herodian1.html"
+    },
+    {
+     "kind": "online",
+     "label": "Herodium (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Herodium"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/79983292",
+     "url": "https://www.openstreetmap.org/way/79983292"
+    }
+   ]
+  },
+  {
+   "id": "hr_theater",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "pri": 1,
+   "name": {
+    "he": "התיאטרון המלכותי",
+    "fr": "Le théâtre royal",
+    "en": "The royal theatre",
+    "ru": "Царский театр"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "תיאטרון קטן במדרון, ליד גרם המדרגות. לקראת ביקור מרקוס אגריפס (15 לפנה״ס) נבנה בו תא מלכותי מעוטר בפרסקו ובסטוקו. פורק וכוסה עפר מעט לפני מות הורדוס.",
+    "fr": "Petit théâtre sur la pente, près de l’escalier. Pour la visite de Marcus Agrippa (15 av. J.-C.), on y ajouta une loge royale ornée de fresques et de stucs. Démonté et enfoui peu avant la mort d’Hérode.",
+    "en": "A small theatre on the slope, by the staircase. For Marcus Agrippa’s visit (15 BCE) a royal box decorated with frescoes and stucco was added. Dismantled and buried shortly before Herod’s death.",
+    "ru": "Небольшой театр на склоне у лестницы. К визиту Марка Агриппы (15 г. до н. э.) добавили царскую ложу с фресками и лепниной. Разобран и засыпан незадолго до смерти Ирода."
+   },
+   "dims": {
+    "he": "כ-300 מקומות (סיכום הקורס).",
+    "fr": "Env. 300 places (cours).",
+    "en": "About 300 seats (course).",
+    "ru": "Около 300 мест (курс)."
+   },
+   "otherView": {
+    "he": "ויקיפדיה: 450–650 מקומות.",
+    "fr": "Wikipédia : 450 à 650 places.",
+    "en": "Wikipedia: 450–650 seats.",
+    "ru": "Википедия: 450–650 мест."
+   },
+   "placementNote": {
+    "he": "בנקודת OpenStreetMap; גודל וכיוון משוערים.",
+    "fr": "Au point OpenStreetMap ; taille et orientation estimées.",
+    "en": "At the OpenStreetMap point; size and orientation estimated.",
+    "ru": "В точке OpenStreetMap; размер и ориентация оценочные."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "theater",
+    "at": "o:theater",
+    "R": 13,
+    "rows": 10,
+    "bearing": 0,
+    "scaenaH": 7,
+    "kind": "herodian",
+    "seatKind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 6 — הרודיון (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view"
+    },
+    {
+     "kind": "drive",
+     "label": "הרודיון — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view"
+    },
+    {
+     "kind": "online",
+     "label": "Herodium (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Herodium"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/933264997",
+     "url": "https://www.openstreetmap.org/node/933264997"
+    }
+   ]
+  },
+  {
+   "id": "hr_tomb",
+   "from": 1,
+   "to": 4,
+   "certainty": "hypothesis",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "קבר הורדוס",
+    "fr": "Le tombeau d’Hérode",
+    "en": "Herod’s tomb",
+    "ru": "Гробница Ирода"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "מסע הלוויה מיריחו נמשך כשבוע; הורדוס נקבר בהרודיון לפי צוואתו. ב-2007 חשף אהוד נצר במדרון הצפוני בסיס של מבנה קבורה מונומנטלי; נצר עצמו נהרג במקום בתאונה (2010).",
+    "fr": "Le cortège funèbre depuis Jéricho dura environ une semaine ; Hérode fut enterré à l’Hérodion selon sa volonté. En 2007, Ehud Netzer dégagea sur la pente nord la base d’un mausolée ; il mourut lui-même sur le site dans un accident (2010).",
+    "en": "The funeral procession from Jericho took about a week; Herod was buried at Herodium as he wished. In 2007 Ehud Netzer uncovered the base of a monumental tomb on the northern slope; Netzer himself died there in an accident (2010).",
+    "ru": "Похоронная процессия из Иерихона длилась около недели; Ирода похоронили в Иродионе по его воле. В 2007 г. Эхуд Нецер раскрыл на северном склоне основание мавзолея; сам Нецер погиб там при несчастном случае (2010)."
+   },
+   "debate": {
+    "he": "הזיהוי כקבר הורדוס מקובל על רבים אך אינו ודאי: לא נמצאה כתובת.",
+    "fr": "L’identification comme tombe d’Hérode est largement admise mais pas certaine : aucune inscription.",
+    "en": "The identification as Herod’s tomb is widely accepted but not certain: no inscription was found.",
+    "ru": "Отождествление с гробницей Ирода широко принято, но не бесспорно: надписи нет."
+   },
+   "placementNote": {
+    "he": "בנקודת ״Herod's Tomb״ (OpenStreetMap); צורת המאוזוליאום (מבנה עגול על בסיס) משוחזרת.",
+    "fr": "Au point « Herod's Tomb » (OSM) ; forme du mausolée (rotonde sur socle) restituée.",
+    "en": "At the “Herod's Tomb” point (OSM); mausoleum form (rotunda on a base) reconstructed.",
+    "ru": "В точке «Herod's Tomb» (OSM); форма мавзолея (ротонда на цоколе) восстановлена."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "tholos",
+    "at": "o:tomb",
+    "R": 4.5,
+    "h": 9,
+    "kind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 6 — הרודיון (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view"
+    },
+    {
+     "kind": "drive",
+     "label": "הרודיון — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view"
+    },
+    {
+     "kind": "online",
+     "label": "Herodium (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Herodium"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/933265036",
+     "url": "https://www.openstreetmap.org/node/933265036"
+    }
+   ]
+  },
+  {
+   "id": "hr_pool",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הבריכה בהרודיון תחתית",
+    "fr": "La grande piscine de l’Hérodion inférieur",
+    "en": "The great pool of Lower Herodium",
+    "ru": "Большой бассейн Нижнего Иродиона"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "בעיר המנהלית שלמרגלות הגבעה: בריכת נוי ענקית שאפשר היה לשוט בה בסירה, ובמרכזה ביתן עגול. המים הובאו באמת מים ממעיינות באזור בית לחם (בריכות שלמה).",
+    "fr": "Dans la ville administrative au pied de la colline : un immense bassin d’agrément où l’on pouvait naviguer, avec un pavillon rond au centre. L’eau venait par aqueduc des sources près de Bethléem (bassins de Salomon).",
+    "en": "In the administrative town at the foot of the hill: a huge ornamental pool you could sail on, with a round pavilion in the middle. Water came by aqueduct from springs near Bethlehem (Solomon’s Pools).",
+    "ru": "В административном городе у подножия: огромный бассейн, по которому плавали на лодке, с круглым павильоном в центре. Вода шла по акведуку от источников у Вифлеема (пруды Соломона)."
+   },
+   "dims": {
+    "he": "70 × 46 מ׳, עומק 3 מ׳; ביתן בקוטר 15 מ׳ (נצר, JVL); נפח כ-10,000 מ״ק (herodium.org).",
+    "fr": "70 × 46 m, 3 m de profondeur ; pavillon de 15 m de diamètre (Netzer, JVL) ; env. 10 000 m³ (herodium.org).",
+    "en": "70 × 46 m, 3 m deep; pavilion 15 m across (Netzer, JVL); about 10,000 m³ (herodium.org).",
+    "ru": "70 × 46 м, глубина 3 м; павильон диаметром 15 м (Нецер, JVL); около 10 000 м³ (herodium.org)."
+   },
+   "placementNote": {
+    "he": "בנקודת ״The Pool״ (OpenStreetMap); כיוון הבריכה משוער.",
+    "fr": "Au point « The Pool » (OSM) ; orientation estimée.",
+    "en": "At the “The Pool” point (OSM); orientation estimated.",
+    "ru": "В точке «The Pool» (OSM); ориентация оценочная."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "pool",
+    "at": "o:pool",
+    "W": 70,
+    "D": 46,
+    "peristyle": 0,
+    "kind": "herodian",
+    "pavilion": 7.5
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 6 — הרודיון (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view"
+    },
+    {
+     "kind": "drive",
+     "label": "הרודיון — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view"
+    },
+    {
+     "kind": "online",
+     "label": "Herodium (Jewish Virtual Library, Netzer)",
+     "url": "https://jewishvirtuallibrary.org/jsource/Archaeology/Herodian1.html"
+    },
+    {
+     "kind": "online",
+     "label": "The Great Pool in Lower Herodium (herodium.org)",
+     "url": "https://herodium.org/?p=2057"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/8803075026",
+     "url": "https://www.openstreetmap.org/node/8803075026"
+    }
+   ]
+  },
+  {
+   "id": "hr_bath",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "בית המרחץ",
+    "fr": "Les thermes",
+    "en": "The bathhouse",
+    "ru": "Баня"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "בית מרחץ רומי: חדר קר, פושר וחם; בתקרת החדר הפושר פתח שאפשר לפתוח ולסגור כדי לווסת את החום. חפר אותו האב וירג׳ליו קורבו (1956–1962).",
+    "fr": "Bain romain : salles froide, tiède et chaude ; une ouverture au sommet de la coupole tiède, qu’on ouvrait ou fermait pour régler la chaleur. Fouillé par le père Virgilio Corbo (1956–1962).",
+    "en": "A Roman bath: cold, warm and hot rooms; an opening at the top of the warm-room dome could be opened or closed to control the heat. Excavated by Father Virgilio Corbo (1956–1962).",
+    "ru": "Римская баня: холодный, тёплый и горячий залы; отверстие в куполе тепидария открывали и закрывали для регулировки тепла. Раскопана отцом Вирджилио Корбо (1956–1962)."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "bath",
+    "h": 4,
+    "kind": "herodian"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 6 — הרודיון (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view"
+    },
+    {
+     "kind": "drive",
+     "label": "הרודיון — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/79983290",
+     "url": "https://www.openstreetmap.org/way/79983290"
+    }
+   ]
+  },
+  {
+   "id": "hr_synagogue",
+   "from": 2,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "בית הכנסת של המורדים",
+    "fr": "La synagogue des rebelles",
+    "en": "The rebels’ synagogue",
+    "ru": "Синагога повстанцев"
+   },
+   "text": {
+    "he": "בימי המרד הגדול הסבו המורדים את הטרקלין לבית כנסת והוסיפו מקווה בחצר. המבצר נכנע לנציב לוקיליוס באסוס בלי קרב (71 לסה״נ).",
+    "fr": "Pendant la Grande Révolte, les rebelles transformèrent le triclinium en synagogue et ajoutèrent un mikvé dans la cour. La forteresse se rendit au légat Lucilius Bassus sans combat (71).",
+    "en": "During the Great Revolt the rebels turned the reception hall into a synagogue and added a mikveh in the courtyard. The fortress surrendered to the legate Lucilius Bassus without a fight (71 CE).",
+    "ru": "Во время Великого восстания повстанцы превратили зал в синагогу и добавили микву во дворе. Крепость сдалась легату Луцилию Бассу без боя (71 г.)."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "synagogue",
+    "h": 3,
+    "kind": "herodian"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "הרודיון — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 6 — הרודיון (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view"
+    },
+    {
+     "kind": "online",
+     "label": "Herodium (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Herodium"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/79983299",
+     "url": "https://www.openstreetmap.org/way/79983299"
+    }
+   ]
+  },
+  {
+   "id": "hr_tunnels",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "מנהרות מרד בר כוכבא",
+    "fr": "Les tunnels de Bar Kokhba",
+    "en": "The Bar Kokhba tunnels",
+    "ru": "Туннели Бар-Кохбы"
+   },
+   "text": {
+    "he": "״המחנה שיושב בהרודיס״: בימי בר כוכבא הפכה הרודיון למפקדה; הלוחמים חצבו מעברים בין בורות המים והפכו אותם למחילות מסתור ולמנהרות תקיפה. מסמך מוואדי מורבעת נחתם ״במחנה שיושב בהרודיס״.",
+    "fr": "« Le camp qui siège à Hérodis » : sous Bar Kokhba, l’Hérodion devint un quartier général ; les combattants percèrent des passages entre les citernes et en firent des cachettes et des tunnels d’attaque. Un document du Wadi Murabba‘at est signé « au camp qui siège à Hérodis ».",
+    "en": "“The camp at Herodis”: under Bar Kokhba Herodium became a headquarters; fighters cut passages between the cisterns, turning them into hiding places and attack tunnels. A document from Wadi Murabba‘at is signed “at the camp at Herodis”.",
+    "ru": "«Лагерь в Иродисе»: при Бар-Кохбе Иродион стал штабом; бойцы прорубили ходы между цистернами и превратили их в укрытия и туннели для вылазок. Документ из Вади-Мураббаат подписан «в лагере в Иродисе»."
+   },
+   "placementNote": {
+    "he": "הסימון בנקודת ״בורות המים״ (OpenStreetMap); המנהרות תת-קרקעיות ואינן מצוירות.",
+    "fr": "Repère au point « Water Cisterns » (OSM) ; les tunnels, souterrains, ne sont pas dessinés.",
+    "en": "Marker at the “Water Cisterns” point (OSM); the underground tunnels are not drawn.",
+    "ru": "Метка у точки «Water Cisterns» (OSM); подземные туннели не нарисованы."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:cisterns",
+    "h": 8
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "הרודיון — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/1oGlTbWtfkIFafLvnZnIotuvLjLSoswq8/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 6 — הרודיון (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1Lw3sl28LnsW7cMClk_YLxPTxwR1VXAbU/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/933452100",
+     "url": "https://www.openstreetmap.org/node/933452100"
+    }
+   ]
+  }
+ ]
+}

@@ -179,10 +179,11 @@ export function templeOnPodium({ podiumW = 100, podiumD = 90, podiumH = 4, L = 4
 }
 
 // BASSIN rectangulaire (W × D) avec margelle et péristyle optionnel.
-export function pool({ W = 35, D = 18, depth = 2, peristyle = 6, kind = 'kurkar' } = {}) {
+export function pool({ W = 35, D = 18, depth = 2, peristyle = 6, kind = 'kurkar', pavilion = 0 } = {}) {
   const g = new THREE.Group(), m = stone(kind), water = new THREE.MeshStandardMaterial({ color: '#3c9be6', emissive: '#0e4f8f', emissiveIntensity: 0.25, roughness: 0.1, metalness: 0.1 });
   g.add(box(W + 4, 0.6, D + 4, stone('paving'), 0, -0.6, 0)); g.add(box(W, 0.1, D, water, 0, -0.35, 0));
   for (const [w, d, x, z] of [[W + 4, 2, 0, -D / 2 - 1], [W + 4, 2, 0, D / 2 + 1], [2, D, -W / 2 - 1, 0], [2, D, W / 2 + 1, 0]]) g.add(box(w, 0.7, d, m, x, -0.6, z));
+  if (pavilion) { const t = tholos({ R: pavilion, h: 6, kind }); t.position.y = -0.4; g.add(t); }
   if (peristyle) { const pts = [], o = peristyle; for (let x = -W / 2 - o; x <= W / 2 + o + 0.1; x += 3.5) pts.push([x, -D / 2 - o], [x, D / 2 + o]); for (let z = -D / 2 - o + 3.5; z < D / 2 + o; z += 3.5) pts.push([-W / 2 - o, z], [W / 2 + o, z]);
     g.add(columns(pts, 5, 0.3, stone('marble', { rough: 0.5 }), 0)); const rf = new THREE.Group(); for (const [w, d, x, z] of [[W + 2 * o + 6, 4, 0, -D / 2 - o - 1], [W + 2 * o + 6, 4, 0, D / 2 + o + 1], [4, D + 2 * o, -W / 2 - o - 1, 0], [4, D + 2 * o, W / 2 + o + 1, 0]]) rf.add(box(w, 0.4, d, stone('ashlar', { tint: '#c79a72' }), x, 5.2, z)); g.add(rf); }
   return g;
@@ -240,5 +241,49 @@ export function tower({ W = 8, h = 14, kind = 'kurkar' } = {}) { const g = new T
 // REPÈRE simple (lieu sans plan connu) : stèle et petit fanion.
 export function marker({ h = 8 } = {}) { const g = new THREE.Group(); g.add(box(1.2, 1.2, 1.2, stone('ashlar'))); const p = mesh(new THREE.CylinderGeometry(0.12, 0.12, h, 8), new THREE.MeshStandardMaterial({ color: '#5b4a35' })); p.position.y = h / 2 + 1.2; g.add(p);
   const f = mesh(new THREE.PlaneGeometry(2.6, 1.6), new THREE.MeshStandardMaterial({ color: '#ffd878', side: THREE.DoubleSide, emissive: '#6b5200', emissiveIntensity: 0.3 })); f.position.set(1.3, h + 0.4, 0); g.add(f); return g; }
+
+// FORTERESSE-PALAIS CIRCULAIRE (Hérodion) : double mur concentrique (écart g), grande tour est (D 18 m), trois tours semi-circulaires
+// (D 16 m) au nord, à l'ouest et au sud ; jardin à colonnes (moitié est) et bâtiments (moitié ouest). Mesures : JVL / Netzer.
+export function roundFortress({ R = 31, gap = 2.5, h = 30, eastD = 18, towerD = 16, kind = 'herodian', tint = '#ffffff' } = {}) {
+  const g = new THREE.Group(), m = stone(kind, { tint }), pl = stone('plaster', { tint: '#efe4cf' });
+  const ring = (r, t, hh, y = 0) => { const s = new THREE.Shape(); s.absarc(0, 0, r, 0, Math.PI * 2); const ho = new THREE.Path(); ho.absarc(0, 0, r - t, 0, Math.PI * 2, true); s.holes.push(ho);
+    const mm = mesh(new THREE.ExtrudeGeometry(s, { depth: hh, bevelEnabled: false, curveSegments: 64 }), m); mm.rotation.x = -Math.PI / 2; mm.position.y = y; g.add(mm); };
+  ring(R, 1.6, h * 0.62); ring(R - 1.6 - gap, 1.3, h * 0.62);
+  const tw = (x, z, D, hh, half) => { const c = mesh(new THREE.CylinderGeometry(D / 2, D / 2, hh, 40, 1, false, half ? -Math.PI / 2 : 0, half ? Math.PI : Math.PI * 2), m); c.position.set(x, hh / 2, z); if (half) c.rotation.y = Math.atan2(x, z); g.add(c);
+    const r = mesh(new THREE.CylinderGeometry(D / 2 + 0.3, D / 2 + 0.3, 0.6, 40, 1, false, half ? -Math.PI / 2 : 0, half ? Math.PI : Math.PI * 2), pl); r.position.set(x, hh + 0.3, z); if (half) r.rotation.y = Math.atan2(x, z); g.add(r); };
+  tw(R - 2, 0, eastD, h, false);                                   // tour orientale, pleine à la base
+  for (const [x, z] of [[0, -R], [-R, 0], [0, R]]) tw(x, z, towerD, h * 0.78, true);
+  const ri = R - 1.6 - gap - 1.3, pts = []; for (let i = 0; i < 14; i++) { const a = -Math.PI / 2 + Math.PI * i / 13; pts.push([Math.cos(a) * ri * 0.55 + 3, Math.sin(a) * ri * 0.8]); }
+  g.add(columns(pts, 6, 0.35, stone('marble', { rough: 0.5 }), 0)); g.add(mesh(new THREE.CircleGeometry(ri * 0.55, 32, -Math.PI / 2, Math.PI).rotateX(-Math.PI / 2).translate(3, 0.1, 0), new THREE.MeshStandardMaterial({ color: '#6f8a4a', roughness: 1 })));
+  g.add(box(ri * 0.9, h * 0.35, ri * 1.5, pl, -ri * 0.45, 0, 0));   // palais (moitié ouest)
+  return g;
+}
+// PORTE À CHAMBRES (âge du fer) : deux massifs à n piliers de chaque côté du passage, tours en façade (Megiddo, Beer-Sheva…).
+export function chamberGate({ W = 18, L = 20, chambers = 3, h = 6, pass = 4.2, kind = 'ashlar', tint = '#ffffff', towers = true } = {}) {
+  const g = new THREE.Group(), m = stone(kind, { tint }), side = (W - pass) / 2, n = chambers + 1;
+  for (const s of [-1, 1]) { const x = s * (pass / 2 + side / 2);
+    g.add(box(1.6, h, L, m, s * (W / 2 - 0.8), 0, 0));                                    // mur extérieur
+    for (let i = 0; i < n; i++) g.add(box(side, h, 1.8, m, x, 0, -L / 2 + 0.9 + i * (L - 1.8) / (n - 1))); // piliers
+    if (towers) g.add(box(side + 2, h + 2, 6, m, x, 0, -L / 2 - 2)); }
+  return g;
+}
+// SALLE À PILIERS (écuries / entrepôts) : n unités parallèles, chacune à deux rangées de piliers.
+export function pillaredHall({ units = 5, L = 21, w = 11, h = 4, kind = 'ashlar', tint = '#ffffff' } = {}) {
+  const g = new THREE.Group(), m = stone(kind, { tint }), W = units * w;
+  for (let u = 0; u < units; u++) { const x = -W / 2 + w / 2 + u * w; g.add(box(0.8, h, L, m, x - w / 2 + 0.4, 0, 0));
+    for (const s of [-1, 1]) { const pts = []; for (let k = 0; k < 12; k++) pts.push([x + s * w / 6, -L / 2 + 1 + k * (L - 2) / 11]); pts.forEach(([px, pz]) => g.add(box(0.6, h * 0.8, 0.6, m, px, 0, pz))); } }
+  g.add(box(0.8, h, L, m, W / 2 - 0.4, 0, 0)); g.add(box(W, h, 0.8, m, 0, 0, -L / 2)); g.add(box(W, h, 0.8, m, 0, 0, L / 2));
+  return g;
+}
+// AUTEL ROND (bamah) : plate-forme circulaire à gradins (Megiddo : 8,5 m de diamètre, 1,5 m de haut, 7 marches).
+export function roundAltar({ D = 8.5, h = 1.5, kind = 'ashlar' } = {}) { const g = new THREE.Group(), m = stone(kind, { tint: '#d8c8a6' }); g.add(mesh(new THREE.CylinderGeometry(D / 2, D / 2 + 0.3, h, 40).translate(0, h / 2, 0), m));
+  for (let i = 0; i < 7; i++) g.add(box(1.8, (i + 1) * h / 7, 0.4, m, 0, 0, D / 2 + 2.8 - i * 0.4)); return g; }
+// FOSSE-SILO ronde : margelle et cuve (rendue en creux sombre), deux escaliers.
+export function silo({ D = 11, depth = 7, kind = 'ashlar' } = {}) { const g = new THREE.Group(), m = stone(kind);
+  const s = new THREE.Shape(); s.absarc(0, 0, D / 2 + 0.8, 0, Math.PI * 2); const ho = new THREE.Path(); ho.absarc(0, 0, D / 2, 0, Math.PI * 2, true); s.holes.push(ho);
+  const r = mesh(new THREE.ExtrudeGeometry(s, { depth: 0.8, bevelEnabled: false, curveSegments: 40 }), m); r.rotation.x = -Math.PI / 2; g.add(r);
+  g.add(mesh(new THREE.CircleGeometry(D / 2, 40).rotateX(-Math.PI / 2).translate(0, 0.05, 0), new THREE.MeshStandardMaterial({ color: '#3a2e22', roughness: 1 }))); void depth; return g; }
+// TOUR RONDE pleine.
+export function roundTower({ D = 10, h = 12, kind = 'ashlar', tint = '#ffffff' } = {}) { const g = new THREE.Group(), m = stone(kind, { tint }); g.add(mesh(new THREE.CylinderGeometry(D / 2, D / 2 + 0.3, h, 32).translate(0, h / 2, 0), m)); return g; }
 
 export { mergeGeometries };

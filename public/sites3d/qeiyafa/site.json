@@ -1,0 +1,615 @@
+{
+ "site": "qeiyafa",
+ "title": {
+  "he": "חורבת קייאפה",
+  "fr": "Khirbet Qeiyafa",
+  "en": "Khirbet Qeiyafa",
+  "ru": "Хирбет-Кейафа"
+ },
+ "defaultPeriod": 1,
+ "cubitMeters": 0.5,
+ "stone": "fieldstone",
+ "tint": "#efe3c8",
+ "home": {
+  "at": {
+   "off": "a:qeiyafa",
+   "dx": 25,
+   "dz": 20
+  },
+  "dist": 420,
+  "from": 200,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "gw": {
+   "osm": "node/14137429841"
+  },
+  "gs": {
+   "osm": "node/14137429840"
+  },
+  "valley": {
+   "osm": "way/495905256"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "העיר מתקופת הברזל",
+    "fr": "La ville de l’âge du Fer",
+    "en": "The Iron Age town",
+    "ru": "Город железного века"
+   },
+   "dates": {
+    "he": "כ-1020–980 לפנה״ס",
+    "fr": "vers 1020–980 av. J.-C.",
+    "en": "c. 1020–980 BCE",
+    "ru": "ок. 1020–980 гг. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "המבצר ההלניסטי",
+    "fr": "Le fortin hellénistique",
+    "en": "The Hellenistic fort",
+    "ru": "Эллинистический форт"
+   },
+   "dates": {
+    "he": "התקופה ההלניסטית",
+    "fr": "époque hellénistique",
+    "en": "Hellenistic period",
+    "ru": "эллинистический период"
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "חרבת קייאפה היום",
+    "fr": "Khirbet Qeiyafa aujourd’hui",
+    "en": "Khirbet Qeiyafa today",
+    "ru": "Хирбет-Кейафа сегодня"
+   },
+   "dates": {
+    "he": "גן לאומי",
+    "fr": "parc national",
+    "en": "national park",
+    "ru": "национальный парк"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "qy_wall",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "חומת הסוגרים",
+    "fr": "La muraille à casemates",
+    "en": "The casemate wall",
+    "ru": "Казематная стена"
+   },
+   "text": {
+    "he": "עיר של כ-23 דונם מוקפת חומת סוגרים שהשתמרה היטב; הבתים צמודים לחומה, ואפשר לראות את הכניסות מהבתים אל חדרי הסוגרים. אתר חד-שכבתי: מתחת לשכבת הברזל — סלע האם.",
+    "fr": "Ville d’environ 23 dounams entourée d’une muraille à casemates bien conservée ; les maisons s’y adossent et l’on voit les accès des maisons aux casemates. Site à une seule couche : sous le Fer, la roche.",
+    "en": "A town of about 23 dunams enclosed by a well-preserved casemate wall; the houses abut it and the doorways from the houses into the casemates are visible. A single-layer site: below the Iron Age level, bedrock.",
+    "ru": "Город около 23 дунамов, окружённый хорошо сохранившейся казематной стеной; дома примыкают к ней, видны проходы из домов в казематы. Однослойный памятник: под слоем железного века — скала."
+   },
+   "placementNote": {
+    "he": "שתי השערים ממוקמים לפי המפה; קו החומה ביניהם משורטט כאליפסה סכמטית סביב ראש הגבעה.",
+    "fr": "Les deux portes sont placées d’après la carte ; le mur entre elles est une ellipse schématique autour du sommet.",
+    "en": "Both gates are placed from the map; the wall between them is a schematic ellipse around the hilltop.",
+    "ru": "Обе ворота размещены по карте; стена между ними — схематичный эллипс вокруг вершины."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "casemate",
+    "lines": [
+     [
+      {
+       "off": "a:qeiyafa",
+       "dx": 112,
+       "dz": 15
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 107,
+       "dz": 42
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 93,
+       "dz": 66
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 71,
+       "dz": 84
+      },
+      "o:gs",
+      {
+       "off": "a:qeiyafa",
+       "dx": 16,
+       "dz": 94
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": -11,
+       "dz": 84
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": -33,
+       "dz": 66
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": -47,
+       "dz": 42
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": -52,
+       "dz": 15
+      },
+      "o:gw",
+      {
+       "off": "a:qeiyafa",
+       "dx": -33,
+       "dz": -36
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": -11,
+       "dz": -54
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 16,
+       "dz": -64
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 44,
+       "dz": -64
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 71,
+       "dz": -54
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 93,
+       "dz": -36
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 107,
+       "dz": -12
+      },
+      {
+       "off": "a:qeiyafa",
+       "dx": 112,
+       "dz": 15
+      }
+     ]
+    ],
+    "h": 4,
+    "towerEvery": 0,
+    "kind": "fieldstone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – חרבת קייאפה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view"
+    },
+    {
+     "kind": "online",
+     "label": "Khirbet Qeiyafa (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Khirbet_Qeiyafa"
+    }
+   ]
+  },
+  {
+   "id": "qy_gate_w",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "השער המערבי",
+    "fr": "La porte ouest",
+    "en": "The western gate",
+    "ru": "Западные ворота"
+   },
+   "text": {
+    "he": "שער בנוי שלושה זוגות אומנות; אבן סף גדולה עם שקע לציר, ותעלת ניקוז בצדו. לעיר קטנה — שני שערים: יש המזהים אותה עם ״שעריים״ שבסיפור דוד וגוליית.",
+    "fr": "Porte à trois paires de piliers ; grand seuil creusé pour le pivot, caniveau sur le côté. Deux portes pour une petite ville : certains l’identifient à « Shaarayim » du récit de David et Goliath.",
+    "en": "A gate with three pairs of piers; a large threshold with a pivot socket and a drain at the side. Two gates for a small town: some identify it with “Sha’arayim” of the David and Goliath story.",
+    "ru": "Ворота с тремя парами пилонов; большой порог с гнездом для оси, сбоку водосток. Двое ворот у маленького города: некоторые отождествляют его с «Шаараим» из рассказа о Давиде и Голиафе."
+   },
+   "placementNote": {
+    "he": "מידות השער משוערות; מיקומו לפי המפה.",
+    "fr": "Dimensions estimées ; position d’après la carte.",
+    "en": "Size estimated; position from the map.",
+    "ru": "Размеры оценочные; положение по карте."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "gate",
+    "at": "o:gw",
+    "chambers": 2,
+    "W": 14,
+    "L": 11,
+    "h": 4.5,
+    "bearing": 270,
+    "towers": false,
+    "kind": "fieldstone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – חרבת קייאפה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/14137429841",
+     "url": "https://www.openstreetmap.org/node/14137429841"
+    }
+   ]
+  },
+  {
+   "id": "qy_gate_s",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "השער הדרומי",
+    "fr": "La porte sud",
+    "en": "The southern gate",
+    "ru": "Южные ворота"
+   },
+   "text": {
+    "he": "שער בנוי שלושה זוגות אומנות; אבן סף גדולה עם שקע לציר, ותעלת ניקוז בצדו. לעיר קטנה — שני שערים: יש המזהים אותה עם ״שעריים״ שבסיפור דוד וגוליית. לידו, בצד הפנימי, חדרים מקודשים ובהם הממצאים הייחודיים.",
+    "fr": "Porte à trois paires de piliers ; grand seuil creusé pour le pivot, caniveau sur le côté. Deux portes pour une petite ville : certains l’identifient à « Shaarayim » du récit de David et Goliath. Juste à l’intérieur, des pièces sacrées qui ont livré les objets exceptionnels.",
+    "en": "A gate with three pairs of piers; a large threshold with a pivot socket and a drain at the side. Two gates for a small town: some identify it with “Sha’arayim” of the David and Goliath story. Just inside, cultic rooms that yielded the unique finds.",
+    "ru": "Ворота с тремя парами пилонов; большой порог с гнездом для оси, сбоку водосток. Двое ворот у маленького города: некоторые отождествляют его с «Шаараим» из рассказа о Давиде и Голиафе. Сразу внутри — культовые помещения с уникальными находками."
+   },
+   "placementNote": {
+    "he": "מידות השער משוערות; מיקומו לפי המפה.",
+    "fr": "Dimensions estimées ; position d’après la carte.",
+    "en": "Size estimated; position from the map.",
+    "ru": "Размеры оценочные; положение по карте."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "gate",
+    "at": "o:gs",
+    "chambers": 2,
+    "W": 14,
+    "L": 11,
+    "h": 4.5,
+    "bearing": 180,
+    "towers": false,
+    "kind": "fieldstone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – חרבת קייאפה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/14137429840",
+     "url": "https://www.openstreetmap.org/node/14137429840"
+    }
+   ]
+  },
+  {
+   "id": "qy_finds",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "הממצאים",
+    "fr": "Les découvertes",
+    "en": "The finds",
+    "ru": "Находки"
+   },
+   "text": {
+    "he": "אוסטרקון בכתב עברי קדום עם המילים ״עבד״, ״עשה״, ״מלך״; חרס ״אשבעל בן בדע״; שני דגמי מקדש (חרס ואבן) — באחד שני עמודים, כמו יכין ובועז; עשרה גלעיני תמרים מתוארכים ל-1020–980 לפנה״ס; ואין עצמות חזיר.",
+    "fr": "Un ostracon paléo-hébreu avec les mots « serviteur », « faire », « roi » ; un tesson « Ishbaal fils de Beda » ; deux maquettes de sanctuaire (terre cuite et pierre) — l’une à deux colonnes, comme Yakhin et Boaz ; dix noyaux de dattes datés de 1020–980 av. J.-C. ; et aucun os de porc.",
+    "en": "An Old Hebrew ostracon with the words “servant”, “do”, “king”; a sherd reading “Ishbaal son of Beda”; two shrine models (clay and stone) — one with two columns, like Jachin and Boaz; ten date pits dated to 1020–980 BCE; and no pig bones.",
+    "ru": "Палеоеврейский остракон со словами «раб», «делать», «царь»; черепок «Ишбаал сын Беды»; две модели святилища (глина и камень) — у одной две колонны, как Яхин и Боаз; десять финиковых косточек 1020–980 гг. до н. э.; и никаких свиных костей."
+   },
+   "placementNote": {
+    "he": "אין סימון — ממצאים מכל העיר.",
+    "fr": "Pas de repère — trouvailles de toute la ville.",
+    "en": "No marker — finds from across the town.",
+    "ru": "Без метки — находки со всего города."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – חרבת קייאפה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view"
+    },
+    {
+     "kind": "online",
+     "label": "Khirbet Qeiyafa (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Khirbet_Qeiyafa"
+    }
+   ]
+  },
+  {
+   "id": "qy_debate",
+   "from": 1,
+   "to": 3,
+   "certainty": "hypothesis",
+   "name": {
+    "he": "עיר של ממלכת יהודה?",
+    "fr": "Une ville du royaume de Juda ?",
+    "en": "A town of the Kingdom of Judah?",
+    "ru": "Город Иудейского царства?"
+   },
+   "text": {
+    "he": "החופר, פרופ׳ יוסי גרפינקל: תרבות יהודית ועדות לממלכה בימי דוד — השער כמו בגזר, מגידו וחצור, האוסטרקון, היעדר החזיר.",
+    "fr": "Le fouilleur, Yossi Garfinkel : culture judéenne et preuve d’un royaume au temps de David — porte comme à Gézer, Megiddo et Hatsor, l’ostracon, l’absence de porc.",
+    "en": "The excavator, Prof. Yossi Garfinkel: Judahite culture and evidence of a kingdom in David’s time — a gate like Gezer, Megiddo and Hazor, the ostracon, the absence of pig.",
+    "ru": "Руководитель раскопок проф. Йоси Гарфинкель: иудейская культура и свидетельство царства времён Давида — ворота как в Гезере, Мегиддо и Хацоре, остракон, отсутствие свиньи."
+   },
+   "debate": {
+    "he": "פרופ׳ ישראל פינקלשטיין חולק: מציע שיוך לכנענים, לפלשתים או לממלכת ישראל.",
+    "fr": "Israel Finkelstein conteste : il propose une attribution aux Cananéens, aux Philistins ou au royaume d’Israël.",
+    "en": "Prof. Israel Finkelstein disagrees: he proposes Canaanites, Philistines or the Kingdom of Israel.",
+    "ru": "Проф. Исраэль Финкельштейн возражает: предлагает ханаанеев, филистимлян или Израильское царство."
+   },
+   "placementNote": {
+    "he": "אין סימון — שאלת פרשנות.",
+    "fr": "Pas de repère — question d’interprétation.",
+    "en": "No marker — a question of interpretation.",
+    "ru": "Без метки — вопрос толкования."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – חרבת קייאפה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view"
+    }
+   ]
+  },
+  {
+   "id": "qy_valley",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "עמק האלה",
+    "fr": "La vallée d’Ela",
+    "en": "The Elah Valley",
+    "ru": "Долина Эла"
+   },
+   "text": {
+    "he": "העיר שולטת על עמק האלה — צומת דרכים בין מישור החוף הדרומי להרי יהודה (מעזה לירושלים, חברון ובית שמש). שפלה נמוכה עד 250 מ׳, שפלה גבוהה עד 450 מ׳; צומח של חרוב ואלת מסטיק.",
+    "fr": "La ville domine la vallée d’Ela — carrefour entre la plaine côtière sud et les monts de Judée (de Gaza vers Jérusalem, Hébron et Beit Shemesh). Basse Shéfélah jusqu’à 250 m, haute Shéfélah jusqu’à 450 m ; caroubiers et pistachiers lentisques.",
+    "en": "The town overlooks the Elah Valley — a crossroads between the southern coastal plain and the Judean hills (Gaza to Jerusalem, Hebron and Beit Shemesh). Lower Shephelah up to 250 m, upper Shephelah up to 450 m; carob and mastic vegetation.",
+    "ru": "Город господствует над долиной Эла — перекрёстком между южной прибрежной равниной и Иудейскими горами (из Газы в Иерусалим, Хеврон и Бейт-Шемеш). Нижняя Шфела до 250 м, верхняя до 450 м; рожковое дерево и мастиковая фисташка."
+   },
+   "placementNote": {
+    "he": "העמק משתרע מצפון לגבעה (ראו בנוף).",
+    "fr": "La vallée s’étend au nord de la colline (visible dans le paysage).",
+    "en": "The valley lies north of the hill (visible in the landscape).",
+    "ru": "Долина лежит к северу от холма (видна в ландшафте)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – חרבת קייאפה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/495905256",
+     "url": "https://www.openstreetmap.org/way/495905256"
+    }
+   ]
+  },
+  {
+   "id": "qy_fort",
+   "from": 2,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "המבצר ההלניסטי",
+    "fr": "Le fortin hellénistique",
+    "en": "The Hellenistic fort",
+    "ru": "Эллинистический форт"
+   },
+   "text": {
+    "he": "מלבד שכבת הברזל, הממצא המאוחר היחיד באתר הוא מבצר מהתקופה ההלניסטית.",
+    "fr": "En dehors de la couche du Fer, le seul vestige plus tardif est un fortin hellénistique.",
+    "en": "Apart from the Iron Age layer, the only later remain on the site is a Hellenistic fort.",
+    "ru": "Кроме слоя железного века, единственный более поздний памятник — эллинистический форт."
+   },
+   "placementNote": {
+    "he": "מיקומו אינו בנתוני המפה.",
+    "fr": "Sa position n’est pas dans les données.",
+    "en": "Its position is not in the map data.",
+    "ru": "Его положения нет в данных."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 5 – השפלה – חרבת קייאפה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1SzBWhBAMtCb_BkkZvc6sO1enrFEomz7e/view"
+    }
+   ]
+  }
+ ]
+}

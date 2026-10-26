@@ -117,6 +117,7 @@ const KINDS = {
   basalt: () => texPair('basalt', () => ashlarCanvas({ world: 6, courses: [0.5, 0.6, 0.55], minL: 0.6, maxL: 1.3, margin: 0.03, base: [78, 76, 74], vary: 14, seed: 17, boss: false })), // pierre noire de Beit Shean
   kurkar: () => texPair('kurkar', () => ashlarCanvas({ world: 6, courses: [0.5, 0.55, 0.45], minL: 0.7, maxL: 1.5, margin: 0.04, base: [205, 176, 132], vary: 22, seed: 19, boss: false })), // grès côtier de Césarée
   dolomite: () => texPair('dolomite', () => ashlarCanvas({ world: 6, courses: [0.35, 0.45, 0.4, 0.3], minL: 0.4, maxL: 1.0, margin: 0.02, base: [196, 178, 150], vary: 26, seed: 23, boss: false })), // moellons de Massada
+  fieldstone: () => texPair('fieldstone', () => ashlarCanvas({ world: 5, courses: [0.3, 0.42, 0.26, 0.36], minL: 0.25, maxL: 0.6, margin: 0.06, base: [176, 160, 134], vary: 30, seed: 23, boss: false })), // moellons (Arad, Megiddo…)
   paving: () => texPair('paving', () => ashlarCanvas({ world: 6, courses: [0.9, 1.0, 0.8], minL: 0.8, maxL: 1.6, margin: 0.0, base: [216, 204, 178], vary: 14, seed: 13, boss: false, joint: 0.02 }))
 };
 const matCache = {};
@@ -124,7 +125,7 @@ const matCache = {};
 export function stone(kind = 'ashlar', { tint = '#ffffff', rough = 0.92, bump = 0.06, transparent = false, opacity = 1 } = {}) {
   const key = [kind, tint, rough, bump, transparent, opacity].join('|');
   if (matCache[key]) return matCache[key];
-  const t = KINDS[kind]();
+  const t = (KINDS[kind] || KINDS.ashlar)();
   const m = new THREE.MeshStandardMaterial({ color: tint, map: t.map, bumpMap: t.bump, bumpScale: bump, roughness: rough, metalness: 0, transparent, opacity, depthWrite: !transparent || opacity > 0.7 });
   return (matCache[key] = worldProject(m, t.world));
 }

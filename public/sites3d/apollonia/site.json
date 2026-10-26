@@ -1,0 +1,481 @@
+{
+ "site": "apollonia",
+ "title": {
+  "he": "אפולוניה",
+  "fr": "Apollonia",
+  "en": "Apollonia",
+  "ru": "Аполлония"
+ },
+ "defaultPeriod": 4,
+ "cubitMeters": 0.5,
+ "stone": "kurkar",
+ "tint": "#ffffff",
+ "home": {
+  "at": {
+   "off": "o:fortress",
+   "dx": 30,
+   "dz": 120
+  },
+  "dist": 520,
+  "from": 110,
+  "elev": 30
+ },
+ "terrain": {
+  "lo": "#b79a6c",
+  "mid": "#d2b98c",
+  "hi": "#e6d4ad"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "fortress": {
+   "osm": "way/685115758"
+  },
+  "villa": {
+   "osm": "way/685115761"
+  },
+  "gate": {
+   "osm": "node/11937352830"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "ארשף הצידונית",
+    "fr": "Arshaf sidonienne",
+    "en": "Sidonian Arshaf",
+    "ru": "Сидонский Аршаф"
+   },
+   "dates": {
+    "he": "המאות ה-6–4 לפנה״ס",
+    "fr": "VIe–IVe s. av. J.-C.",
+    "en": "6th–4th c. BCE",
+    "ru": "VI–IV вв. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "אפולוניה ההלניסטית-רומית",
+    "fr": "Apollonia hellénistique et romaine",
+    "en": "Hellenistic–Roman Apollonia",
+    "ru": "Эллинистическо-римская Аполлония"
+   },
+   "dates": {
+    "he": "המאה ה-4 לפנה״ס – המאה ה-2",
+    "fr": "IVe s. av. – IIe s.",
+    "en": "4th c. BCE – 2nd c.",
+    "ru": "IV в. до н. э. – II в."
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "סוזוסה ואַרסוּף המוסלמית",
+    "fr": "Sozousa et Arsuf musulmane",
+    "en": "Sozousa and Muslim Arsuf",
+    "ru": "Созуса и мусульманский Арсуф"
+   },
+   "dates": {
+    "he": "המאות ה-3–11",
+    "fr": "IIIe–XIe s.",
+    "en": "3rd–11th c.",
+    "ru": "III–XI вв."
+   }
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "ארסור הצלבנית",
+    "fr": "Arsur croisée",
+    "en": "Crusader Arsur",
+    "ru": "Арсур крестоносцев"
+   },
+   "dates": {
+    "he": "1101–1265",
+    "fr": "1101–1265",
+    "en": "1101–1265",
+    "ru": "1101–1265"
+   }
+  },
+  {
+   "n": 5,
+   "name": {
+    "he": "אפולוניה היום",
+    "fr": "Apollonia aujourd’hui",
+    "en": "Apollonia today",
+    "ru": "Аполлония сегодня"
+   },
+   "dates": {
+    "he": "גן לאומי",
+    "fr": "parc national",
+    "en": "national park",
+    "ru": "национальный парк"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "ap_fortress",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "המצודה הצלבנית",
+    "fr": "La forteresse croisée",
+    "en": "The Crusader fortress",
+    "ru": "Крепость крестоносцев"
+   },
+   "text": {
+    "he": "בעל האחוזה, שחשש מהאוכלוסייה המקומית, בנה בתוך העיר הבצורה ״מצודת עוז״ (דונז׳ון) המוקפת חפיר יבש, עם גשר גישה. בשער אבן סף מסיבית ומגרעות לשער מורד, ומגדלים עגולים משני צדיו. ב-1265 צר בייברס 40 יום; הטמפלרים נכנעו, אך הוא הפר את ההסכם ומכר אותם לעבדות.",
+    "fr": "Le seigneur, méfiant envers la population locale, bâtit dans la ville fortifiée un donjon entouré d’un fossé sec, avec un pont d’accès. À la porte, un seuil massif, des rainures de herse et deux tours rondes. En 1265 Baybars assiégea 40 jours ; les Templiers se rendirent, mais il rompit l’accord et les vendit comme esclaves.",
+    "en": "The lord, wary of the local population, built a keep inside the walled town, ringed by a dry moat and reached by a bridge. At the gate a massive threshold, portcullis grooves and two round towers. In 1265 Baybars besieged it for 40 days; the Templars surrendered, but he broke the agreement and sold them into slavery.",
+    "ru": "Сеньор, опасаясь местного населения, построил внутри укреплённого города донжон, окружённый сухим рвом, с мостом. У ворот массивный порог, пазы для решётки и две круглые башни. В 1265 г. Бейбарс осаждал крепость 40 дней; тамплиеры сдались, но он нарушил договор и продал их в рабство."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "fortress",
+    "h": 9,
+    "thick": 2.5,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 – אפולוניה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view"
+    },
+    {
+     "kind": "online",
+     "label": "Apollonia–Arsuf (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Apollonia%E2%80%93Arsuf"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/685115758",
+     "url": "https://www.openstreetmap.org/way/685115758"
+    }
+   ]
+  },
+  {
+   "id": "ap_villa",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הווילה הרומית",
+    "fr": "La villa romaine",
+    "en": "The Roman villa",
+    "ru": "Римская вилла"
+   },
+   "text": {
+    "he": "וילה ימית (וילה מריטימה) על המצוק, בקצה החומה. הקורס מבחין בין וילה ימית, כפרית, עירונית ופרברית.",
+    "fr": "Une villa maritime (villa maritima) sur la falaise, au bout du mur. Le cours distingue villa maritime, rustique, urbaine et suburbaine.",
+    "en": "A seaside villa (villa maritima) on the cliff at the end of the wall. The course distinguishes seaside, rural, urban and suburban villas.",
+    "ru": "Приморская вилла (villa maritima) на обрыве, у конца стены. Курс различает приморские, сельские, городские и пригородные виллы."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "villa",
+    "h": 3,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 – אפולוניה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/685115761",
+     "url": "https://www.openstreetmap.org/way/685115761"
+    }
+   ]
+  },
+  {
+   "id": "ap_gate",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "שער העיר הצלבנית",
+    "fr": "La porte de la ville croisée",
+    "en": "The Crusader town gate",
+    "ru": "Ворота города крестоносцев"
+   },
+   "text": {
+    "he": "ב-1099–1101 ניסו הצלבנים לכבוש את העיר ונכשלו, עד שצי גנואה סגר את המצור. העיר ניתנה כאחוזה, ובהמשך לבית איבלין ולמסדר הטמפלרים.",
+    "fr": "En 1099–1101, les croisés échouèrent à prendre la ville jusqu’à ce que la flotte génoise ferme le blocus. La ville devint un fief, puis passa aux Ibelin et à l’ordre du Temple.",
+    "en": "In 1099–1101 the Crusaders failed to take the town until the Genoese fleet closed the blockade. It became a fief, later passing to the Ibelins and the Templars.",
+    "ru": "В 1099–1101 гг. крестоносцы не могли взять город, пока генуэзский флот не замкнул блокаду. Город стал феодом, затем перешёл к Ибелинам и тамплиерам."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:gate",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 – אפולוניה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/11937352830",
+     "url": "https://www.openstreetmap.org/node/11937352830"
+    }
+   ]
+  },
+  {
+   "id": "ap_arshaf",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "name": {
+    "he": "ארשף — עיר רשף",
+    "fr": "Arshaf, ville de Reshef",
+    "en": "Arshaf, city of Reshef",
+    "ru": "Аршаф — город Решефа"
+   },
+   "text": {
+    "he": "עיר צידונית על שם אל האש רשף. הפרסים, מעצמה יבשתית, נתנו לצידונים ולצורים שטחים בתמורה לשירותים ימיים. כלכלה: זכוכית, ארגמן, תיקון והובלה ימית וחקלאות. חומת העיר בנויה מעל כבשן זכוכית פרסי.",
+    "fr": "Ville sidonienne nommée d’après Reshef, dieu du feu. Les Perses, puissance terrestre, cédaient des territoires aux Sidoniens et aux Tyriens contre des services navals. Économie : verre, pourpre, réparation et transport maritimes, agriculture. Le mur de la ville passe au-dessus d’un four à verre perse.",
+    "en": "A Sidonian town named after Reshef, the fire god. The Persians, a land power, granted land to Sidonians and Tyrians in return for naval service. Economy: glass, purple dye, ship repair and transport, farming. The town wall runs over a Persian glass kiln.",
+    "ru": "Сидонский город, названный в честь бога огня Решефа. Персы, сухопутная держава, давали сидонянам и тирянам земли за морскую службу. Экономика: стекло, пурпур, ремонт и перевозки судов, земледелие. Городская стена проходит над персидской стекловаренной печью."
+   },
+   "placementNote": {
+    "he": "השרידים בצד הדרומי של הגן; מיקומם המדויק אינו בנתוני המפה.",
+    "fr": "Vestiges au sud du parc ; position exacte absente des données.",
+    "en": "Remains in the south of the park; exact position not in the data.",
+    "ru": "Остатки на юге парка; точного положения нет в данных."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 – אפולוניה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view"
+    }
+   ]
+  },
+  {
+   "id": "ap_samaritan",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "בית התפילה השומרוני",
+    "fr": "La salle de prière samaritaine",
+    "en": "The Samaritan prayer hall",
+    "ru": "Самаритянский молельный дом"
+   },
+   "text": {
+    "he": "בראש העיר בית תפילה. לפי כיוונו — אל הר גריזים — הוא שומרוני (מוסלמים: מכה; נוצרים: מזרח; יהודים: ירושלים). בעיר הביזנטית, סוזוסה, חיו נוצרים ושומרונים; בתקופה המוסלמית הקדומה היו פרעות בשומרונים.",
+    "fr": "Au sommet de la ville, une salle de prière. Son orientation — vers le mont Garizim — la désigne comme samaritaine (musulmans : La Mecque ; chrétiens : l’est ; juifs : Jérusalem). Dans la Sozousa byzantine vivaient chrétiens et Samaritains ; au début de l’islam, il y eut des violences contre ces derniers.",
+    "en": "At the top of the town, a prayer hall. Its orientation — towards Mount Gerizim — marks it as Samaritan (Muslims: Mecca; Christians: east; Jews: Jerusalem). Byzantine Sozousa had Christians and Samaritans; in the early Islamic period Samaritans were attacked.",
+    "ru": "На вершине города молельный дом. Ориентация на гору Гризим указывает на самаритян (мусульмане — Мекка, христиане — восток, евреи — Иерусалим). В византийской Созусе жили христиане и самаритяне; в раннеисламский период самаритяне подвергались погромам."
+   },
+   "placementNote": {
+    "he": "מיקום מדויק אינו בנתוני המפה.",
+    "fr": "Position exacte absente des données.",
+    "en": "Exact position not in the data.",
+    "ru": "Точного положения нет в данных."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 – אפולוניה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view"
+    }
+   ]
+  },
+  {
+   "id": "ap_siege",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "כלי המצור",
+    "fr": "Les engins de siège",
+    "en": "The siege engines",
+    "ru": "Осадные машины"
+   },
+   "text": {
+    "he": "בכניסה למצודה דגמים של ארבעה כלים: בליסטרה (חצים גדולים), קטפולטה (אבנים מעל החומה), טריבושה (אבנים למרחק, בזרוע וקלע) ואיל ניגוח (במגע ישיר עם החומה).",
+    "fr": "À l’entrée, des maquettes de quatre engins : baliste (grandes flèches), catapulte (pierres par-dessus le mur), trébuchet (pierres au loin, bras et fronde) et bélier (au contact du mur).",
+    "en": "At the entrance, models of four engines: ballista (large bolts), catapult (stones over the wall), trebuchet (long-range stones with arm and sling) and battering ram (in direct contact with the wall).",
+    "ru": "У входа модели четырёх машин: баллиста (большие стрелы), катапульта (камни через стену), требушет (камни вдаль, рычаг и праща) и таран (прямой контакт со стеной)."
+   },
+   "placementNote": {
+    "he": "דגמים מודרניים בכניסה — לא מסומנים.",
+    "fr": "Maquettes modernes à l’entrée — non représentées.",
+    "en": "Modern models at the entrance — not shown.",
+    "ru": "Современные модели у входа — не показаны."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 – אפולוניה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1NnEZUF0cl6OiZGN8zXOOjChO2TcjU7oo/view"
+    }
+   ]
+  }
+ ],
+ "sea": true
+}

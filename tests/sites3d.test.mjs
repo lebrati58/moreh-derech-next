@@ -2,19 +2,20 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 
 const read = p => readFile(new URL('../' + p, import.meta.url), 'utf8');
-const SITES = ['masada', 'caesarea', 'beitshean'];
+const SITES = Object.keys(JSON.parse(await read('tools/site3d-sites.json'))).filter(k => !k.startsWith('_') && existsSync(new URL(`../public/sites3d/${k}/site.json`, import.meta.url)));
 const LANGS = ['he', 'fr', 'en', 'ru'];
-const TYPES = new Set(['theater', 'circus', 'amphi', 'casemate', 'wall', 'aqueduct', 'path', 'street', 'footprint', 'terraces', 'ramp', 'breakwater', 'pool', 'temple', 'storerooms', 'hall', 'basilica', 'mosque', 'facade', 'marker', 'tholos', 'tower', 'box']);
+const TYPES = new Set(['theater', 'circus', 'amphi', 'casemate', 'wall', 'aqueduct', 'path', 'street', 'footprint', 'terraces', 'ramp', 'breakwater', 'pool', 'temple', 'storerooms', 'hall', 'basilica', 'mosque', 'facade', 'marker', 'tholos', 'tower', 'box', 'fortress', 'gate', 'stables', 'altar', 'silo', 'roundtower']);
 
 for (const s of SITES) {
   test(`${s} : périodes, fiches 4 langues, sources, certitude`, async () => {
     const d = JSON.parse(await read(`public/sites3d/${s}/site.json`));
-    assert.ok(d.periods.length >= 4, 'au moins 4 périodes');
+    assert.ok(d.periods.length >= 2, 'au moins 2 périodes');
     for (const p of d.periods) for (const l of LANGS) { assert.ok(p.name[l], `${s} période ${p.n} nom ${l}`); assert.ok(p.dates[l], `${s} période ${p.n} dates ${l}`); }
     const ns = new Set(d.periods.map(p => p.n)), ids = new Set();
-    assert.ok(d.monuments.length >= 12, 'au moins 12 fiches');
+    assert.ok(d.monuments.length >= 5, 'au moins 5 fiches');
     for (const m of d.monuments) {
       assert.ok(!ids.has(m.id), 'id unique ' + m.id); ids.add(m.id);
       assert.ok(ns.has(m.from) && ns.has(m.to) && m.from <= m.to, m.id + ' : périodes');

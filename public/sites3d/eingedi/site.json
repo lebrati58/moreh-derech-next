@@ -1,0 +1,448 @@
+{
+ "site": "eingedi",
+ "title": {
+  "he": "עין גדי",
+  "fr": "Ein Gedi",
+  "en": "Ein Gedi",
+  "ru": "Эйн-Геди"
+ },
+ "defaultPeriod": 3,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#efe2c6",
+ "home": {
+  "at": {
+   "off": "o:synagogue",
+   "dx": -60,
+   "dz": -60
+  },
+  "dist": 520,
+  "from": 100,
+  "elev": 28
+ },
+ "terrain": {
+  "lo": "#9c8564",
+  "mid": "#c3ab84",
+  "hi": "#ddcaa6"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "synagogue": {
+   "osm": "way/514938610"
+  },
+  "temple": {
+   "osm": "node/515050472"
+  },
+  "tel": {
+   "osm": "node/2267227696"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "כלקולית",
+    "fr": "Chalcolithique",
+    "en": "Chalcolithic",
+    "ru": "Халколит"
+   },
+   "dates": {
+    "he": "האלף ה-4 לפנה״ס",
+    "fr": "IVe millénaire av. J.-C.",
+    "en": "4th millennium BCE",
+    "ru": "IV тыс. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "מהמקרא עד בר כוכבא",
+    "fr": "De la Bible à Bar Kokhba",
+    "en": "From the Bible to Bar Kokhba",
+    "ru": "От Библии до Бар-Кохбы"
+   },
+   "dates": {
+    "he": "המאה ה-7 לפנה״ס – 135",
+    "fr": "VIIe s. av. – 135",
+    "en": "7th c. BCE – 135",
+    "ru": "VII в. до н. э. – 135"
+   }
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "העיר היהודית ובית הכנסת",
+    "fr": "La ville juive et la synagogue",
+    "en": "The Jewish town and synagogue",
+    "ru": "Еврейский город и синагога"
+   },
+   "dates": {
+    "he": "המאות ה-3–7",
+    "fr": "IIIe–VIIe s.",
+    "en": "3rd–7th c.",
+    "ru": "III–VII вв."
+   }
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "עין גדי היום",
+    "fr": "Ein Gedi aujourd’hui",
+    "en": "Ein Gedi today",
+    "ru": "Эйн-Геди сегодня"
+   },
+   "dates": {
+    "he": "קיבוץ מאז 1956",
+    "fr": "kibboutz depuis 1956",
+    "en": "kibbutz since 1956",
+    "ru": "кибуц с 1956 г."
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "eg_synagogue",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "בית הכנסת",
+    "fr": "La synagogue",
+    "en": "The synagogue",
+    "ru": "Синагога"
+   },
+   "text": {
+    "he": "נבנה במאה ה-3 וחודש במאה ה-4 בזכות העושר מבושם האפרסמון. פסיפס גאומטרי ובמרכזו טווסים וברווזים; בימה וארון קודש — בו נמצא קלף שרוף שפוענח בסריקה: ספר ויקרא. מנורת ברונזה, מנורת כסף קטנה וכ-5,000 מטבעות.",
+    "fr": "Construite au IIIe s. et rénovée au IVe grâce à la richesse du baume. Mosaïque géométrique avec paons et canards ; une estrade et une arche — on y trouva un rouleau carbonisé, lu par numérisation : le Lévitique. Une menorah de bronze, une petite menorah d’argent et environ 5 000 pièces.",
+    "en": "Built in the 3rd c. and renovated in the 4th thanks to wealth from balsam perfume. A geometric mosaic with peacocks and ducks; a bema and an ark — where a charred scroll was found and read by scanning: Leviticus. A bronze menorah, a small silver menorah and about 5,000 coins.",
+    "ru": "Построена в III в. и обновлена в IV в. на доходы от бальзама. Геометрическая мозаика с павлинами и утками; бима и ковчег — в нём найден обугленный свиток, прочитанный сканированием: Левит. Бронзовая менора, маленькая серебряная менора и около 5000 монет."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "synagogue",
+    "h": 3.5
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 21 – בית הכנסת העתיק בעין גדי (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view"
+    },
+    {
+     "kind": "online",
+     "label": "Ein Gedi Synagogue (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Ein_Gedi_synagogue"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/514938610",
+     "url": "https://www.openstreetmap.org/way/514938610"
+    }
+   ]
+  },
+  {
+   "id": "eg_inscription",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "pri": 2,
+   "name": {
+    "he": "כתובת ״סוד העיר״",
+    "fr": "L’inscription du « secret de la ville »",
+    "en": "The “secret of the town” inscription",
+    "ru": "Надпись о «тайне города»"
+   },
+   "text": {
+    "he": "בפסיפס הסטיו: הקדשות לתורמים, רשימת החודשים והמזלות (לא כגלגל), השמות מאדם עד נח, וכתובת הזהרה למי שיגלה את ״סוד העיר״ — כנראה סוד הפקת האפרסמון.",
+    "fr": "Dans la mosaïque du bas-côté : dédicaces aux donateurs, liste des mois et des signes (pas en roue), les noms d’Adam à Noé, et une malédiction contre qui « révèle le secret de la ville » — sans doute la fabrication du baume.",
+    "en": "In the aisle mosaic: dedications to donors, a list of months and zodiac signs (not a wheel), the names from Adam to Noah, and a curse on whoever “reveals the secret of the town” — probably how the balsam was made.",
+    "ru": "В мозаике бокового нефа: посвящения жертвователям, список месяцев и знаков (не круг), имена от Адама до Ноя и проклятие тому, кто «раскроет тайну города» — вероятно, изготовление бальзама."
+   },
+   "placementNote": {
+    "he": "בתוך בית הכנסת (ראו שם).",
+    "fr": "Dans la synagogue (voir cette fiche).",
+    "en": "Inside the synagogue (see that entry).",
+    "ru": "Внутри синагоги (см. там)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 21 – בית הכנסת העתיק בעין גדי (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view"
+    },
+    {
+     "kind": "online",
+     "label": "Ein Gedi Synagogue (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Ein_Gedi_synagogue"
+    }
+   ]
+  },
+  {
+   "id": "eg_temple",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "המקדש הכלקוליתי",
+    "fr": "Le temple chalcolithique",
+    "en": "The Chalcolithic temple",
+    "ru": "Халколитический храм"
+   },
+   "text": {
+    "he": "מקדש ליד מעיין עין גדי, במעלה השלוחה. נמצא נטוש וללא ממצא טקסי; אוצר הכלים ממערת נחל משמר נחשב כלקוח ממנו.",
+    "fr": "Un temple près de la source d’Ein Gedi, en haut de l’éperon. Trouvé abandonné et sans mobilier cultuel ; le trésor de la grotte du Nahal Mishmar en proviendrait.",
+    "en": "A temple near the Ein Gedi spring, up the spur. Found abandoned with no cult objects; the Nahal Mishmar cave hoard is thought to have come from it.",
+    "ru": "Храм у источника Эйн-Геди, выше по отрогу. Найден заброшенным, без культовых предметов; клад из пещеры Нахаль-Мишмар считается происходящим из него."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:temple",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 21 – בית הכנסת העתיק בעין גדי (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/515050472",
+     "url": "https://www.openstreetmap.org/node/515050472"
+    }
+   ]
+  },
+  {
+   "id": "eg_tel",
+   "from": 2,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "עין גדי במקרא ובמרד",
+    "fr": "Ein Gedi dans la Bible et la révolte",
+    "en": "Ein Gedi in the Bible and the revolts",
+    "ru": "Эйн-Геди в Библии и восстаниях"
+   },
+   "text": {
+    "he": "״חצצון תמר היא עין גדי״; עיר בנחלת יהודה; דוד ישב ״במצדות עין גדי״; ״כרמי עין גדי״. במרד הגדול הרגו הסיקריים ממצדה כ-700 מתושביה; בר כוכבא נזף באנשיה. ארכיון בבתא ממערת האגרות.",
+    "fr": "« Hatsatson-Tamar, c’est Ein Gedi » ; ville de Juda ; David séjourna « dans les forteresses d’Ein Gedi » ; « les vignes d’Ein Gedi ». Pendant la Grande Révolte, les sicaires de Massada tuèrent environ 700 habitants ; Bar Kokhba réprimanda ses gens. Archives de Babatha (grotte des Lettres).",
+    "en": "“Hazazon-tamar, that is Ein Gedi”; a town of Judah; David stayed “in the strongholds of Ein Gedi”; “the vineyards of Ein Gedi”. In the Great Revolt the Sicarii of Masada killed some 700 inhabitants; Bar Kokhba rebuked its people. Babatha’s archive (Cave of Letters).",
+    "ru": "«Хацацон-Тамар — это Эйн-Геди»; город Иуды; Давид жил «в укреплениях Эйн-Геди»; «виноградники Эйн-Геди». В Великое восстание сикарии из Масады убили около 700 жителей; Бар-Кохба упрекал его людей. Архив Бабаты (пещера Писем)."
+   },
+   "placementNote": {
+    "he": "הסימון בתל גורן, אתר הישוב מימי המקרא (לפי ויקיפדיה; התל אינו בסיכום הקורס).",
+    "fr": "Repère sur Tel Goren, site de l’époque biblique (d’après Wikipédia ; le tell n’est pas dans le résumé du cours).",
+    "en": "Marker on Tel Goren, the biblical-period settlement (per Wikipedia; the mound is not in the course summary).",
+    "ru": "Метка на Тель-Горен, поселении библейской эпохи (по Википедии; холма нет в конспекте курса)."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:tel",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 21 – בית הכנסת העתיק בעין גדי (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Goren (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Tel_Goren"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/2267227696",
+     "url": "https://www.openstreetmap.org/node/2267227696"
+    }
+   ]
+  },
+  {
+   "id": "eg_today",
+   "from": 4,
+   "to": 4,
+   "certainty": "attested",
+   "name": {
+    "he": "ים המלח ועין גדי היום",
+    "fr": "La mer Morte et Ein Gedi aujourd’hui",
+    "en": "The Dead Sea and Ein Gedi today",
+    "ru": "Мёртвое море и Эйн-Геди сегодня"
+   },
+   "text": {
+    "he": "עין גדי נהרסה בין הכיבוש הפרסי (614) לחזרת הביזנטים (628). אחר כך ישוב דליל של תמרים, ננטש בתקופה העות׳מאנית. נכבשה במבצע ״ייצוב״ (1949); היאחזות נח״ל 1953, קיבוץ 1956. ים המלח — המקום היבש הנמוך בעולם — יורד כמטר בשנה.",
+    "fr": "Ein Gedi fut détruite entre la conquête perse (614) et le retour byzantin (628). Ensuite un petit village de palmiers, abandonné sous les Ottomans. Prise lors de l’opération « Yitsouv » (1949) ; avant-poste Nahal en 1953, kibboutz en 1956. La mer Morte, point émergé le plus bas du monde, baisse d’environ un mètre par an.",
+    "en": "Ein Gedi was destroyed between the Persian conquest (614) and the Byzantine return (628). Later a sparse date-growing village, abandoned in Ottoman times. Taken in Operation “Yitzuv” (1949); a Nahal outpost in 1953, a kibbutz in 1956. The Dead Sea — the lowest dry land on earth — drops about a metre a year.",
+    "ru": "Эйн-Геди разрушен между персидским завоеванием (614) и возвращением византийцев (628). Затем малая финиковая деревня, покинутая при османах. Занят в операции «Ицув» (1949); форпост НАХАЛЬ в 1953 г., кибуц в 1956 г. Мёртвое море — самая низкая суша на Земле — опускается примерно на метр в год."
+   },
+   "placementNote": {
+    "he": "אין סימון — מידע כללי.",
+    "fr": "Pas de repère — information générale.",
+    "en": "No marker — general information.",
+    "ru": "Без метки — общая информация."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 21 – בית הכנסת העתיק בעין גדי (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/14_rvrnjV-NMl5QGQlQHadYrapP_Mqueu/view"
+    }
+   ]
+  }
+ ]
+}
