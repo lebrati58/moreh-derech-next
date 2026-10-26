@@ -1,0 +1,35 @@
+name: Sites 3D — géographie
+# Régénère public/sites3d/<site>/geo.json (repères Wikipédia, vestiges OpenStreetMap, relief SRTM) pour Massada, Césarée, Beit Shean.
+# Lancement manuel : Actions → « Sites 3D — géographie » → Run workflow.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [masada, caesarea, beitshean]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-site3d.mjs ${{ matrix.site }} | tee /tmp/build.log
+      - name: Pack
+        run: |
+          gzip -9c public/sites3d/${{ matrix.site }}/geo.json | base64 -w0 | fold -w 4000 > /tmp/chunks.txt
+          echo "::notice title=geo-count-${{ matrix.site }}::$(wc -l < /tmp/chunks.txt) chunks, $(grep -c '^EL' /tmp/build.log) OSM, $(grep -c 'ANCRE ✓' /tmp/build.log) anchors"
+      - name: Publish chunks 1
+        run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '1,9p' | while IFS= read -r line; do echo "::notice title=geo-${{ matrix.site }}::$line"; done
+      - name: Publish chunks 2
+        run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '10,18p' | while IFS= read -r line; do echo "::notice title=geo-${{ matrix.site }}::$line"; done
+      - name: Publish chunks 3
+        run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '19,27p' | while IFS= read -r line; do echo "::notice title=geo-${{ matrix.site }}::$line"; done
+      - name: Publish chunks 4
+        run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '28,36p' | while IFS= read -r line; do echo "::notice title=geo-${{ matrix.site }}::$line"; done
+      - name: Publish chunks 5
+        run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '37,45p' | while IFS= read -r line; do echo "::notice title=geo-${{ matrix.site }}::$line"; done

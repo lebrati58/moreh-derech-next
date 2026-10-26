@@ -1,0 +1,39 @@
+{
+  "_doc": "Cadres et repères des sites 3D (hors Jérusalem). Repères : candidats d'articles Wikipédia (lang:titre), le premier qui a une coordonnée dans le cadre est retenu. Rien n'est saisi à la main : les positions viennent de Wikipédia/Wikidata et d'OpenStreetMap.",
+  "masada": {
+    "box": { "s": 31.300, "n": 31.330, "w": 35.335, "e": 35.372 },
+    "step": [0.00027, 0.00032],
+    "anchors": {
+      "masada": ["en:Masada", "he:מצדה"],
+      "snake_path": ["en:Snake Path (Masada)", "he:שביל הנחש"],
+      "roman_ramp": ["en:Siege of Masada", "he:המצור על מצדה"],
+      "northern_palace": ["en:Northern Palace (Masada)", "he:הארמון הצפוני (מצדה)"],
+      "masada_synagogue": ["en:Masada synagogue", "he:בית הכנסת במצדה"]
+    }
+  },
+  "caesarea": {
+    "box": { "s": 32.486, "n": 32.522, "w": 34.878, "e": 34.906 },
+    "step": [0.00027, 0.00032],
+    "anchors": {
+      "caesarea": ["en:Caesarea Maritima", "he:קיסריה העתיקה"],
+      "theater": ["en:Caesarea Maritima theatre", "en:Roman theatre of Caesarea", "he:התיאטרון הרומי בקיסריה"],
+      "hippodrome": ["en:Herod's Hippodrome", "en:Hippodrome of Caesarea", "he:ההיפודרום בקיסריה"],
+      "harbour": ["en:Sebastos (harbour)", "en:Harbour of Caesarea", "he:נמל קיסריה העתיק"],
+      "aqueduct": ["en:Caesarea aqueduct", "he:אמת המים של קיסריה", "he:אמות המים לקיסריה"],
+      "palace": ["en:Promontory Palace", "he:ארמון השונית"],
+      "mosque": ["en:Bosnian Mosque (Caesarea)", "he:המסגד הבוסני בקיסריה"],
+      "pilate_stone": ["en:Pilate stone"]
+    }
+  },
+  "beitshean": {
+    "box": { "s": 32.493, "n": 32.513, "w": 35.491, "e": 35.513 },
+    "step": [0.00027, 0.00032],
+    "anchors": {
+      "tel": ["en:Tel Beit She'an", "he:תל בית שאן"],
+      "national_park": ["en:Beit She'an National Park", "he:גן לאומי בית שאן"],
+      "theater": ["en:Roman theatre of Scythopolis", "en:Beit She'an Roman theatre", "he:התיאטרון הרומי בבית שאן"],
+      "amphitheater": ["en:Amphitheatre of Scythopolis", "he:האמפיתיאטרון בבית שאן"],
+      "nysa": ["en:Scythopolis", "en:Beit She'an"]
+    }
+  }
+}

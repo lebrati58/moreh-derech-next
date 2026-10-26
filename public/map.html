@@ -144,10 +144,10 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 @keyframes bob{50%{transform:translateY(-8px) rotate(-3deg)}}
 @media(min-width:900px){.sheet{inset-inline-start:16px;inset-inline-end:auto;margin:0;width:420px;bottom:16px;border-radius:26px;border-bottom:1px solid #5f6fc0;max-height:calc(100dvh - 190px)}.sheet.peek{transform:translateY(calc(100% + 16px - var(--peek,250px)))}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-.j3d-sign{display:flex;align-items:center;gap:8px;width:184px;height:48px;padding:0 12px 0 8px;border-radius:16px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:2px solid #fff6c9;box-shadow:0 6px 18px #000a;font-family:inherit;position:relative;animation:j3dpulse 2.4s ease-in-out infinite}
-.j3d-sign::after{content:'';position:absolute;left:50%;bottom:-10px;margin-left:-8px;border:8px solid transparent;border-top-color:#f0b44c;border-bottom:0}
-.j3d-sign b,.j3d-sign small{color:#1c1f45!important}.j3d-ico{font-size:24px;line-height:1}.j3d-txt{display:flex;flex-direction:column;line-height:1.1;min-width:0}.j3d-txt b{font-size:15px;font-weight:900}.j3d-txt small{font-size:10.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@keyframes j3dpulse{0%,100%{box-shadow:0 6px 18px #000a,0 0 0 0 #ffd87888}50%{box-shadow:0 6px 18px #000a,0 0 0 10px #ffd87800}}
+.j3d-sign{display:flex;align-items:center;justify-content:center;gap:3px;width:58px;height:28px;border-radius:999px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:2px solid #fff6c9;box-shadow:0 3px 10px #0009;font-family:inherit;position:relative;animation:j3dpulse 2.4s ease-in-out infinite}
+.j3d-sign::after{content:'';position:absolute;left:50%;bottom:-7px;margin-left:-5px;border:5px solid transparent;border-top-color:#f0b44c;border-bottom:0}
+.j3d-sign b{color:#1c1f45!important;font-size:12.5px;font-weight:900;line-height:1}.j3d-ico{font-size:14px;line-height:1}
+@keyframes j3dpulse{0%,100%{box-shadow:0 3px 10px #0009,0 0 0 0 #ffd87888}50%{box-shadow:0 3px 10px #0009,0 0 0 6px #ffd87800}}
 @media (prefers-reduced-motion:reduce){.j3d-sign{animation:none}}
 </style>
 </head>
@@ -325,12 +325,16 @@ function restyle(){if(map)drawMarkers(false);}
 /* ----- liste ----- */
 // Panneau « ירושלים בתלת-ממד » posé sur le mont du Temple (coordonnée Wikidata lue dans jerusalem3d/geo.json, jamais saisie à la main).
 // Hors des grappes de marqueurs, toujours visible, un toucher ouvre la 3D.
+// panneaux « 3D » : un petit badge doré sur chaque site modélisé (la liste grandit avec les sites)
+var SITES_3D=[{geo:'jerusalem3d/geo.json',anchor:'temple_mount',href:'jerusalem3d.html?period=5',name:'ירושלים העתיקה'}];
 function addJerusalem3dSign(){
-  fetch('jerusalem3d/geo.json').then(function(r){return r.ok?r.json():null;}).then(function(g){
-    var a=g&&g.anchors&&g.anchors.temple_mount;if(!a)return;
-    L.marker([a.lat,a.lon],{icon:L.divIcon({className:'',html:'<a class="j3d-sign" href="jerusalem3d.html?period=5" aria-label="ירושלים העתיקה בתלת-ממד"><span class="j3d-ico">🏛️</span><span class="j3d-txt"><b>ירושלים <bdi dir="ltr">3D</bdi></b><small>העיר העתיקה בכל התקופות</small></span></a>',iconSize:[184,48],iconAnchor:[92,58]}),zIndexOffset:2000,keyboard:true,title:'ירושלים העתיקה בתלת-ממד'})
-      .on('click',function(){location.href='jerusalem3d.html?period=5';}).addTo(map);
-  }).catch(function(){});
+  SITES_3D.forEach(function(S){
+    fetch(S.geo).then(function(r){return r.ok?r.json():null;}).then(function(g){
+      var a=g&&g.anchors&&g.anchors[S.anchor];if(!a)return;
+      L.marker([a.lat,a.lon],{icon:L.divIcon({className:'',html:'<a class="j3d-sign" href="'+S.href+'" aria-label="'+S.name+' בתלת-ממד"><span class="j3d-ico">🏛️</span><b><bdi dir="ltr">3D</bdi></b></a>',iconSize:[58,28],iconAnchor:[29,36]}),zIndexOffset:2000,keyboard:true,title:S.name+' בתלת-ממד'})
+        .on('click',function(){location.href=S.href;}).addTo(map);
+    }).catch(function(){});
+  });
 }
 function render(fit){
   var vis=visible();
