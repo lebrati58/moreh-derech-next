@@ -100,6 +100,16 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ Hippicus et Mariamne passent de « hypothèse » à « reconstruction argumentée » : leur existence et leurs mesures sont dans Josèphe, seule la position exacte est schématique (note conservée dans la fiche). Elles ne sont donc plus translucides. Les vraies hypothèses restent translucides, mais moins (72 % au lieu de 55 %) et sans effet « fil de fer ».
 - ✅ 3e muraille (tracé Sukenik–Mayer) : part maintenant de la tour Hippicus (Josèphe 5.147), comme la 1re.
 
+### 26 octobre 2026 (après-midi) — Massada, Césarée et Beit Shean en 3D
+- ✅ Panneau « 🏛️ 3D » de la carte réduit en petit badge (58 × 28 px), un badge par site modélisé (Jérusalem, Massada, Césarée, Beit Shean).
+- ✅ **Nouvelle page `site3d.html?site=…`** (moteur commun `public/sites3d/`) : même principe que Jérusalem — relief SRTM réel, positions réelles (Wikipédia/Wikidata et OpenStreetMap, identifiants cités dans les fiches), fiches en 4 langues avec sources, 3 niveaux de certitude, grand sélecteur d'époque, liste des sites, quiz 3D éteints.
+- ✅ Géographie réelle générée par le workflow « Sites 3D — géographie » (`tools/build-site3d.mjs`, cadres dans `tools/site3d-sites.json`) ; fiches écrites dans `tools/site3d-data/<site>.py` (hébreu d'abord).
+- ✅ **Massada** (5 époques, 17 fiches) : muraille à casemates sur le contour réel du site, palais du Nord en 3 terrasses (points OSM « terrasse supérieure / médiane / inférieure », dénivelés ≈ 20 m puis 15 m), palais occidental, entrepôts, thermes, petits palais, columbarium, piscine, synagogue, mikvé, 8 camps romains (contours OSM), rampe de siège jusqu'au « point de la brèche », église byzantine, sentier du Serpent. ⚠️ Le cours n'a pas de document détaillé sur Massada : mesures tirées de Josèphe (Guerre 7.275–319), Wikipédia et WiBiLex.
+- ✅ **Césarée** (8 époques, 15 fiches, surtout d'après סיור 15) : théâtre (orientation et rayon tirés du contour OSM), palais du promontoire (piscine 35 × 18 m), hippo-stade d'Hérode, port Sébastos (môles 500 m et 275 m — tracé schématique), temple d'Auguste et Rome (position estimée → « hypothèse »), aqueduc haut (tracé OSM), thermes, synagogue, hippodrome oriental, pierre de Pilate. Sans tracé dans les données (fiche seulement) : tour de Straton, mithraeum, muraille byzantine, ville croisée, village bosniaque.
+- ✅ **Beit Shean** (7 époques, 16 fiches, d'après סיור 19) : tell, résidence du gouverneur égyptien (23 × 22 m, position estimée), mort de Saül, temple du tell (hypothèse), Tel Iztabba, théâtre, rues Palladius et Silvanus, temple romain, nymphée, amphithéâtre, thermes, pont, Nahal Harod, séisme de 749. Muraille byzantine : fiche seulement.
+- ✅ Accès : badges sur la carte, 3 boutons sous la bannière de l'accueil, bouton « 🏛️ תלת‑ממד » dans les parcours 15 (Césarée) et 19 (Beit Shean).
+- ⏳ À vérifier par Lionel sur téléphone réel ; plans des murailles byzantines/croisées et du temple de Césarée à ajouter si un plan géoréférencé est disponible.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.

@@ -180,7 +180,7 @@ function placeStops(t){return (places&&places.tours[t]&&places.tours[t].stops)||
 function matchStop(t,name){const n=norm(name);if(!n)return null;return placeStops(t).find(s=>{const a=norm(s.name),b=norm(s.he&&s.he.title);return n.includes(a)||a.includes(n)||(b&&(n.includes(b)||b.includes(n)));})||null;}
 function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
 function syncUrl(){const u=new URL(location.href);u.searchParams.delete("new");if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
-  {const J3D={11:2,12:5,13:5,14:5,18:7},jp=J3D[Number(tour)],jl=$("j3dLink");if(jl){jl.hidden=!jp;if(jp)jl.href="jerusalem3d.html?period="+jp;}} // parcours de Jérusalem : accès direct à la 3D
+  {const J3D={11:"jerusalem3d.html?period=2",12:"jerusalem3d.html?period=5",13:"jerusalem3d.html?period=5",14:"jerusalem3d.html?period=5",18:"jerusalem3d.html?period=7",15:"site3d.html?site=caesarea",19:"site3d.html?site=beitshean"},jp=J3D[Number(tour)],jl=$("j3dLink");if(jl){jl.hidden=!jp;if(jp)jl.href=jp;}} // parcours avec un site 3D : accès direct // parcours de Jérusalem : accès direct à la 3D
   $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode==="review"||mode==="daily"?"quiz":mode)+(tour!=="all"?"&tour="+tour:"");}
 
 // Sélecteur de סיור sans liste déroulante système : 22 choix en grille compacte + recherche.

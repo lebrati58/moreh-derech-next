@@ -114,6 +114,9 @@ const KINDS = {
   plaster: () => texPair('plaster', () => smoothCanvas({ world: 4, base: [236, 228, 210], vary: 12, seed: 4, spots: 160 })),
   marble: () => texPair('marble', () => smoothCanvas({ world: 3, base: [242, 238, 230], vary: 10, seed: 8, spots: 120 })),
   ground: () => texPair('ground', () => groundCanvas({})),
+  basalt: () => texPair('basalt', () => ashlarCanvas({ world: 6, courses: [0.5, 0.6, 0.55], minL: 0.6, maxL: 1.3, margin: 0.03, base: [78, 76, 74], vary: 14, seed: 17, boss: false })), // pierre noire de Beit Shean
+  kurkar: () => texPair('kurkar', () => ashlarCanvas({ world: 6, courses: [0.5, 0.55, 0.45], minL: 0.7, maxL: 1.5, margin: 0.04, base: [205, 176, 132], vary: 22, seed: 19, boss: false })), // grès côtier de Césarée
+  dolomite: () => texPair('dolomite', () => ashlarCanvas({ world: 6, courses: [0.35, 0.45, 0.4, 0.3], minL: 0.4, maxL: 1.0, margin: 0.02, base: [196, 178, 150], vary: 26, seed: 23, boss: false })), // moellons de Massada
   paving: () => texPair('paving', () => ashlarCanvas({ world: 6, courses: [0.9, 1.0, 0.8], minL: 0.8, maxL: 1.6, margin: 0.0, base: [216, 204, 178], vary: 14, seed: 13, boss: false, joint: 0.02 }))
 };
 const matCache = {};

@@ -326,7 +326,7 @@ function restyle(){if(map)drawMarkers(false);}
 // Panneau « ירושלים בתלת-ממד » posé sur le mont du Temple (coordonnée Wikidata lue dans jerusalem3d/geo.json, jamais saisie à la main).
 // Hors des grappes de marqueurs, toujours visible, un toucher ouvre la 3D.
 // panneaux « 3D » : un petit badge doré sur chaque site modélisé (la liste grandit avec les sites)
-var SITES_3D=[{geo:'jerusalem3d/geo.json',anchor:'temple_mount',href:'jerusalem3d.html?period=5',name:'ירושלים העתיקה'}];
+var SITES_3D=[{geo:'jerusalem3d/geo.json',anchor:'temple_mount',href:'jerusalem3d.html?period=5',name:'ירושלים העתיקה'},{geo:'sites3d/masada/geo.json',anchor:'masada',href:'site3d.html?site=masada',name:'מצדה'},{geo:'sites3d/caesarea/geo.json',anchor:'caesarea',href:'site3d.html?site=caesarea',name:'קיסריה'},{geo:'sites3d/beitshean/geo.json',anchor:'tel',href:'site3d.html?site=beitshean',name:'בית שאן'}];
 function addJerusalem3dSign(){
   SITES_3D.forEach(function(S){
     fetch(S.geo).then(function(r){return r.ok?r.json():null;}).then(function(g){
