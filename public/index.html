@@ -29,9 +29,6 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
 .mode-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:19px 0 16px}
 .mode-head h2{margin:0;color:white;font-size:22px;font-weight:1000;line-height:1.25}
 .mode-head p{color:#9daed3;font-size:13px;margin:3px 0 0}
-.mode-langs{display:flex;gap:4px;background:#1d2a52;border:1px solid #4b6096;border-radius:14px;padding:4px;flex-shrink:0}
-.mode-langs button{border:0;border-radius:10px;background:transparent;color:#e0e7ff;padding:10px;font-size:12px;font-weight:1000;min-width:39px}
-.mode-langs button[aria-pressed=true]{background:#94f5de;color:#101c3a;box-shadow:0 3px 0 #4ba28c}
 .mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
 .mode-link{--accent:#ffca55;--accent-2:#ff9f55;position:relative;min-width:0;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:#fff;background:linear-gradient(150deg,#222a55 0%,#111a3d 100%);border:2px solid #46598d;border-radius:25px;padding:18px 20px 16px;min-height:210px;box-shadow:0 7px 0 #050b1c,0 14px 32px #01051055;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
 .mode-link:nth-child(1){--accent:#ffce62;--accent-2:#fb8d4c}
@@ -80,12 +77,6 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
   </section>
   <section class="mode-head">
     <div><h2 data-t="choose">איך רוצים לשחק?</h2><p data-t="subtitle">בחרו מצב. אפשר להחליף בכל רגע.</p></div>
-    <div class="mode-langs" aria-label="Language">
-      <button type="button" data-lang="he" aria-pressed="true">עב</button>
-      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
-    </div>
   </section>
   <a class="map-banner j3d-banner" href="jerusalem3d.html?period=5"><span class="mb-ico" aria-hidden="true">🏛️</span><span><b data-t="j3dTitle">ירושלים בתלת‑ממד</b><small data-t="j3dDesc">העיר העתיקה ב-12 תקופות · בית המקדש, חומות ושערים</small></span><span class="mb-go" aria-hidden="true">←</span></a>
   <div class="s3d-chips" id="s3dChips" aria-label="3D"></div>
