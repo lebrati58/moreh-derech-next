@@ -144,11 +144,8 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 @keyframes bob{50%{transform:translateY(-8px) rotate(-3deg)}}
 @media(min-width:900px){.sheet{inset-inline-start:16px;inset-inline-end:auto;margin:0;width:420px;bottom:16px;border-radius:26px;border-bottom:1px solid #5f6fc0;max-height:calc(100dvh - 190px)}.sheet.peek{transform:translateY(calc(100% + 16px - var(--peek,250px)))}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-.j3d-sign{display:flex;align-items:center;justify-content:center;gap:3px;width:58px;height:28px;border-radius:999px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:2px solid #fff6c9;box-shadow:0 3px 10px #0009;font-family:inherit;position:relative;animation:j3dpulse 2.4s ease-in-out infinite}
-.j3d-sign::after{content:'';position:absolute;left:50%;bottom:-7px;margin-left:-5px;border:5px solid transparent;border-top-color:#f0b44c;border-bottom:0}
-.j3d-sign b{color:#1c1f45!important;font-size:12.5px;font-weight:900;line-height:1}.j3d-ico{font-size:14px;line-height:1}
-@keyframes j3dpulse{0%,100%{box-shadow:0 3px 10px #0009,0 0 0 0 #ffd87888}50%{box-shadow:0 3px 10px #0009,0 0 0 6px #ffd87800}}
-@media (prefers-reduced-motion:reduce){.j3d-sign{animation:none}}
+.j3d-sign{display:flex;align-items:center;justify-content:center;width:34px;height:20px;border-radius:999px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:1.5px solid #fff6c9;box-shadow:0 2px 6px #0008;font-family:inherit;opacity:.95}
+.j3d-sign b{color:#1c1f45!important;font-size:11px;font-weight:900;line-height:1}
 </style>
 </head>
 <body>
@@ -284,6 +281,7 @@ var ISRAEL=[[29.45,34.25],[33.35,35.9]];
 function viewPad(extra){return Object.assign({paddingTopLeft:[12,($('top').offsetHeight||140)+12],paddingBottomRight:[12,56]},extra||{});}
 function initMap(){
   map=L.map('map',{zoomControl:false,attributionControl:true,minZoom:5,maxZoom:18,maxBounds:[[24,26],[40,46]],maxBoundsViscosity:0.6,bounceAtZoomLimits:false,tap:true});
+  window.MDMap=map; // pour les tests
   map.fitBounds(ISRAEL,viewPad());
   // Tuiles OpenStreetMap standard (gratuites, sans clé), assombries en CSS pour le thème nuit.
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,className:'osm-dark',attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>'}).addTo(map);
@@ -328,13 +326,19 @@ function restyle(){if(map)drawMarkers(false);}
 // panneaux « 3D » : un petit badge doré sur chaque site modélisé (la liste grandit avec les sites)
 var SITES_3D=[{geo:'jerusalem3d/geo.json',anchor:'temple_mount',href:'jerusalem3d.html?period=5',name:'ירושלים העתיקה'},{geo:'sites3d/masada/geo.json',anchor:'masada',href:'site3d.html?site=masada',name:'מצדה'},{geo:'sites3d/caesarea/geo.json',anchor:'caesarea',href:'site3d.html?site=caesarea',name:'קיסריה'},{geo:'sites3d/beitshean/geo.json',anchor:'tel',href:'site3d.html?site=beitshean',name:'בית שאן'},{geo:'sites3d/herodium/geo.json',anchor:'herodium',href:'site3d.html?site=herodium',name:'הרודיון'},{geo:'sites3d/megiddo/geo.json',anchor:'megiddo',href:'site3d.html?site=megiddo',name:'תל מגידו'},{geo:'sites3d/tzippori/geo.json',anchor:'tzippori',href:'site3d.html?site=tzippori',name:'ציפורי'},{geo:'sites3d/gamla/geo.json',anchor:'gamla',href:'site3d.html?site=gamla',name:'גמלא'},{geo:'sites3d/arad/geo.json',anchor:'arad',href:'site3d.html?site=arad',name:'תל ערד'},{geo:'sites3d/beersheba/geo.json',anchor:'tel',href:'site3d.html?site=beersheba',name:'תל באר שבע'},{geo:'sites3d/qumran/geo.json',anchor:'qumran',href:'site3d.html?site=qumran',name:'קומראן'},{geo:'sites3d/banias/geo.json',anchor:'banias',href:'site3d.html?site=banias',name:'בניאס'},{geo:'sites3d/nimrod/geo.json',anchor:'nimrod',href:'site3d.html?site=nimrod',name:'מבצר נמרוד'},{geo:'sites3d/beitguvrin/geo.json',anchor:'np',href:'site3d.html?site=beitguvrin',name:'בית גוברין ומרשה'},{geo:'sites3d/lachish/geo.json',anchor:'lachish',href:'site3d.html?site=lachish',name:'תל לכיש'},{geo:'sites3d/qeiyafa/geo.json',anchor:'qeiyafa',href:'site3d.html?site=qeiyafa',name:'חורבת קייאפה'},{geo:'sites3d/beitshearim/geo.json',anchor:'necropolis',href:'site3d.html?site=beitshearim',name:'בית שערים'},{geo:'sites3d/apollonia/geo.json',anchor:'apollonia',href:'site3d.html?site=apollonia',name:'אפולוניה'},{geo:'sites3d/eingedi/geo.json',anchor:'synagogue',href:'site3d.html?site=eingedi',name:'עין גדי'},{geo:'sites3d/beitalpha/geo.json',anchor:'synagogue',href:'site3d.html?site=beitalpha',name:'בית אלפא'},{geo:'sites3d/baram/geo.json',anchor:'np',href:'site3d.html?site=baram',name:'ברעם'}];
 function addJerusalem3dSign(){
+  // petit badge « 3D » posé À CÔTÉ du point (en haut à droite) et SOUS les épingles du quiz : il ne cache jamais une question.
+  // Vue pays : seul Jérusalem ; à partir du zoom 10, tous les sites 3D.
+  var signs=[];
+  function sync(){var z=map.getZoom();signs.forEach(function(o){var show=o.always||z>=10;if(show&&!map.hasLayer(o.m))o.m.addTo(map);if(!show&&map.hasLayer(o.m))map.removeLayer(o.m);});}
   SITES_3D.forEach(function(S){
     fetch(S.geo).then(function(r){return r.ok?r.json():null;}).then(function(g){
       var a=g&&g.anchors&&g.anchors[S.anchor];if(!a)return;
-      L.marker([a.lat,a.lon],{icon:L.divIcon({className:'',html:'<a class="j3d-sign" href="'+S.href+'" aria-label="'+S.name+' בתלת-ממד"><span class="j3d-ico">🏛️</span><b><bdi dir="ltr">3D</bdi></b></a>',iconSize:[58,28],iconAnchor:[29,36]}),zIndexOffset:2000,keyboard:true,title:S.name+' בתלת-ממד'})
-        .on('click',function(){location.href=S.href;}).addTo(map);
+      var m=L.marker([a.lat,a.lon],{icon:L.divIcon({className:'',html:'<a class="j3d-sign" href="'+S.href+'" aria-label="'+S.name+' בתלת-ממד"><b><bdi dir="ltr">3D</bdi></b></a>',iconSize:[34,20],iconAnchor:[-20,44]}),zIndexOffset:-1000,keyboard:true,title:S.name+' בתלת-ממד'})
+        .on('click',function(){location.href=S.href;});
+      signs.push({m:m,always:/jerusalem3d/.test(S.href)});sync();
     }).catch(function(){});
   });
+  map.on('zoomend',sync);
 }
 function render(fit){
   var vis=visible();
