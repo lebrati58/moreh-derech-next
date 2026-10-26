@@ -61,6 +61,12 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
 .map-banner{display:flex;align-items:center;gap:14px;margin-top:17px;padding:16px 18px;border-radius:22px;text-decoration:none;color:#fff;background:linear-gradient(110deg,#0f6f7a,#2b3fa8 60%,#5b37b8);border:2px solid #7fe9dc80;box-shadow:0 7px 0 #050b1c,0 14px 30px #0006}
 .j3d-banner{background:linear-gradient(110deg,#8a5a12,#b8862a 45%,#5b37b8);border-color:#ffe3a080;margin:4px 0 8px}
 .s3d-chips{display:flex;gap:8px;margin:0 0 18px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}.s3d-chips a{flex:0 0 auto;white-space:nowrap;text-align:center;text-decoration:none;font-weight:900;font-size:14px;color:#1c1f45;background:linear-gradient(135deg,#ffd878,#f0b44c);border:1px solid #fff6c9;border-radius:12px;padding:9px 8px}.j3d-banner small{color:#fff3d6}
+.s3d-wrap{margin:0 0 18px}.s3d-head{display:flex;justify-content:space-between;align-items:baseline;margin:0 4px 8px;color:#fff3d6;font-size:15px}.s3d-head span{font-size:13px;color:#cfd8ff;font-weight:700}
+.s3d-row{position:relative;display:flex;align-items:center;gap:6px}
+.s3d-row .s3d-chips{flex:1;margin:0;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);padding:4px 14px}
+.s3d-row .s3d-chips::-webkit-scrollbar{display:none}.s3d-row .s3d-chips a{scroll-snap-align:start}
+.s3d-arrow{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:2px solid #fff6c9;background:#1c1f45;color:#ffd878;font-size:28px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px #0008;cursor:pointer;font-family:inherit;padding:0 0 3px}
+.s3d-arrow:disabled{opacity:.25;cursor:default}
 .map-banner:active{transform:translateY(4px);box-shadow:0 3px 0 #050b1c}
 .mb-ico{font-size:38px;display:grid;place-items:center;width:62px;height:62px;border-radius:18px;background:#ffffff22;flex:none}.map-banner b{display:block;font-size:20px;font-weight:1000}.map-banner small{display:block;color:#d6f9f2;font-size:13px;margin-top:2px}.mb-go{margin-inline-start:auto;font-size:24px;font-weight:1000;background:#ffd66e;color:#1c1f45;border-radius:14px;width:46px;height:46px;display:grid;place-items:center;flex:none;box-shadow:0 4px 0 #b98a2e}
 </style>
@@ -79,7 +85,14 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
     <div><h2 data-t="choose">איך רוצים לשחק?</h2><p data-t="subtitle">בחרו מצב. אפשר להחליף בכל רגע.</p></div>
   </section>
   <a class="map-banner j3d-banner" href="jerusalem3d.html?period=5"><span class="mb-ico" aria-hidden="true">🏛️</span><span><b data-t="j3dTitle">ירושלים בתלת‑ממד</b><small data-t="j3dDesc">העיר העתיקה ב-12 תקופות · בית המקדש, חומות ושערים</small></span><span class="mb-go" aria-hidden="true">←</span></a>
-  <div class="s3d-chips" id="s3dChips" aria-label="3D"></div>
+  <div class="s3d-wrap" id="s3dWrap">
+    <div class="s3d-head"><b id="s3dTitle">🏛️ אתרים בתלת-ממד</b><span id="s3dCount"></span></div>
+    <div class="s3d-row">
+      <button type="button" class="s3d-arrow prev" id="s3dPrev" aria-label="הקודם">‹</button>
+      <div class="s3d-chips" id="s3dChips" aria-label="3D"></div>
+      <button type="button" class="s3d-arrow next" id="s3dNext" aria-label="הבא">›</button>
+    </div>
+  </div>
   <div class="mode-grid">
     <a class="mode-link" data-label="LIVE" href="map.html?mode=guide">
       <span class="mode-icon" aria-hidden="true">🎤</span><span class="mode-title" data-t="guide">מדריך — עם מיקרופון</span>
@@ -133,7 +146,11 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
   var stats={tours:'22',q:'…'};
   var lang='he';try{lang=localStorage.getItem('mdl_mode_lang')||localStorage.getItem('mdl_lang')||'he';}catch(e){}
   var S3D=[{h:'site3d.html?site=masada',n:{"he": "מצדה", "fr": "Massada", "en": "Masada", "ru": "Масада"}},{h:'site3d.html?site=caesarea',n:{"he": "קיסריה", "fr": "Césarée", "en": "Caesarea", "ru": "Кесария"}},{h:'site3d.html?site=beitshean',n:{"he": "בית שאן", "fr": "Beit Shean", "en": "Beit She'an", "ru": "Бейт-Шеан"}},{h:'site3d.html?site=herodium',n:{"he": "הרודיון", "fr": "Hérodion", "en": "Herodium", "ru": "Иродион"}},{h:'site3d.html?site=megiddo',n:{"he": "תל מגידו", "fr": "Tel Megiddo", "en": "Tel Megiddo", "ru": "Тель Мегиддо"}},{h:'site3d.html?site=tzippori',n:{"he": "ציפורי", "fr": "Tsippori", "en": "Sepphoris", "ru": "Ципори"}},{h:'site3d.html?site=gamla',n:{"he": "גמלא", "fr": "Gamla", "en": "Gamla", "ru": "Гамла"}},{h:'site3d.html?site=arad',n:{"he": "תל ערד", "fr": "Tel Arad", "en": "Tel Arad", "ru": "Тель Арад"}},{h:'site3d.html?site=beersheba',n:{"he": "תל באר שבע", "fr": "Tel Beer-Sheva", "en": "Tel Be'er Sheva", "ru": "Тель Беэр-Шева"}},{h:'site3d.html?site=qumran',n:{"he": "קומראן", "fr": "Qumrân", "en": "Qumran", "ru": "Кумран"}},{h:'site3d.html?site=banias',n:{"he": "בניאס", "fr": "Banias", "en": "Banias", "ru": "Баниас"}},{h:'site3d.html?site=nimrod',n:{"he": "מבצר נמרוד", "fr": "Forteresse de Nimrod", "en": "Nimrod Fortress", "ru": "Крепость Нимрод"}},{h:'site3d.html?site=beitguvrin',n:{"he": "בית גוברין ומרשה", "fr": "Beit Guvrin et Marésha", "en": "Beit Guvrin & Maresha", "ru": "Бейт-Гуврин и Мареша"}},{h:'site3d.html?site=lachish',n:{"he": "תל לכיש", "fr": "Tel Lakhish", "en": "Tel Lachish", "ru": "Тель Лахиш"}},{h:'site3d.html?site=qeiyafa',n:{"he": "חורבת קייאפה", "fr": "Khirbet Qeiyafa", "en": "Khirbet Qeiyafa", "ru": "Хирбет-Кейафа"}},{h:'site3d.html?site=beitshearim',n:{"he": "בית שערים", "fr": "Beit Shearim", "en": "Beit She'arim", "ru": "Бейт-Шеарим"}},{h:'site3d.html?site=apollonia',n:{"he": "אפולוניה", "fr": "Apollonia", "en": "Apollonia", "ru": "Аполлония"}},{h:'site3d.html?site=eingedi',n:{"he": "עין גדי", "fr": "Ein Gedi", "en": "Ein Gedi", "ru": "Эйн-Геди"}},{h:'site3d.html?site=beitalpha',n:{"he": "בית אלפא", "fr": "Beit Alpha", "en": "Beit Alpha", "ru": "Бейт-Альфа"}},{h:'site3d.html?site=baram',n:{"he": "ברעם", "fr": "Baram", "en": "Bar'am", "ru": "Барам"}}];
-  function renderS3d(){var c=document.getElementById('s3dChips');if(!c)return;c.innerHTML='';S3D.forEach(function(x){var a=document.createElement('a');a.href=x.h;a.textContent='🏛️ '+(x.n[lang]||x.n.he)+' 3D';c.appendChild(a);});}
+  var S3T={he:['🏛️ אתרים בתלת-ממד','{n} אתרים','הקודם','הבא'],fr:['🏛️ Sites en 3D','{n} sites','Précédent','Suivant'],en:['🏛️ Sites in 3D','{n} sites','Previous','Next'],ru:['🏛️ Места в 3D','{n} мест','Назад','Далее']};
+  function s3dArrows(){var c=document.getElementById('s3dChips');if(!c)return;var max=c.scrollWidth-c.clientWidth,x=Math.abs(c.scrollLeft);
+    document.getElementById('s3dPrev').disabled=x<24;document.getElementById('s3dNext').disabled=x>max-24;}
+  function s3dGo(dir){var c=document.getElementById('s3dChips'),rtl=getComputedStyle(c).direction==='rtl',step=Math.max(160,c.clientWidth*0.8)*dir;c.scrollBy({left:rtl?-step:step,behavior:'smooth'});}
+  function renderS3d(){var c=document.getElementById('s3dChips');if(!c)return;c.innerHTML='';S3D.forEach(function(x){var a=document.createElement('a');a.href=x.h;a.textContent='🏛️ '+(x.n[lang]||x.n.he)+' 3D';c.appendChild(a);});var T=S3T[lang]||S3T.he;document.getElementById('s3dTitle').textContent=T[0];document.getElementById('s3dCount').textContent=T[1].replace('{n}',S3D.length);document.getElementById('s3dPrev').setAttribute('aria-label',T[2]);document.getElementById('s3dNext').setAttribute('aria-label',T[3]);c.scrollLeft=0;setTimeout(s3dArrows,50);}
   function render(){
     if(!L[lang])lang='he';
     document.documentElement.lang=lang;
@@ -145,6 +162,7 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
     liveStatus();
   }
   document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.lang;try{localStorage.setItem('mdl_mode_lang',lang);}catch(e){}render();});});
+  document.getElementById('s3dPrev').addEventListener('click',function(){s3dGo(-1);});document.getElementById('s3dNext').addEventListener('click',function(){s3dGo(1);});document.getElementById('s3dChips').addEventListener('scroll',s3dArrows,{passive:true});window.addEventListener('resize',s3dArrows);
   (function(){var bt=document.getElementById('langTop'),mn=document.getElementById('langMenu');function close(){mn.hidden=true;bt.setAttribute('aria-expanded','false');}
     bt.addEventListener('click',function(e){e.stopPropagation();mn.hidden=!mn.hidden;bt.setAttribute('aria-expanded',String(!mn.hidden));});
     mn.addEventListener('click',function(e){if(e.target.closest('[data-lang]'))close();});document.addEventListener('click',function(e){if(!e.target.closest('.top-lang'))close();});})();
