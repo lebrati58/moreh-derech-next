@@ -110,6 +110,15 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ✅ Accès : badges sur la carte, 3 boutons sous la bannière de l'accueil, bouton « 🏛️ תלת‑ממד » dans les parcours 15 (Césarée) et 19 (Beit Shean).
 - ⏳ À vérifier par Lionel sur téléphone réel ; plans des murailles byzantines/croisées et du temple de Césarée à ajouter si un plan géoréférencé est disponible.
 
+### 26 octobre 2026 (soir) — 17 sites 3D de plus (20 au total)
+- ✅ En ligne (commit 88319cf) : Hérodion, Megiddo, Tsippori, Gamla, Arad, Beer-Sheva, Qumrân, Banias, Nimrod, Beit Guvrin–Marésha, Lakhish, Qeiyafa, Beit Shearim, Apollonia, Ein Gedi, Beit Alpha, Baram (+ Massada, Césarée, Beit Shean). Fiches en 4 langues tirées des documents du cours (Drive) ; positions OSM/Wikidata ; ce qui n'est pas dans les données reste en fiche « sans position ».
+- ✅ Accès : badges carte, rangée défilante sur l'accueil (générée par `tools/site3d-data/integrate.py`), bouton 3D dans les parcours 01, 03, 04, 05, 06, 15, 16, 17, 19, 21, 22 (un site par parcours ; les autres via le menu « autres sites »).
+- ✅ Moteur : la mer n'inonde plus les creux à l'intérieur des terres (remplissage depuis le bord) ; pierre « moellons ».
+- ✅ Tests : 41 unitaires sites 3D ; navigateur (téléphone simulé) sur les 20 sites — chargement, monuments placés, étiquettes, sans erreur.
+- ⛔ Non faits (données insuffisantes, rien inventé) : Soussia (seule la localité moderne est cartographiée), Shiloh (seul le contour du parc), Atlit (château en zone militaire, cours = géologie).
+- ⏳ Schématique à améliorer : rampe de Lakhish, enceinte de Qeiyafa (ellipse passant par les 2 portes), dimensions de Beit Alpha et Baram (absentes des résumés).
+- ⏳ « מדריך למדריך » de רט״ג (Lakhish, Apollonia) : PDF non accessibles depuis la session — à déposer dans le Drive.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
