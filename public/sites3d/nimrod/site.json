@@ -185,7 +185,7 @@
    "n": 1,
    "era": "mamluk",
    "name": {
-    "he": "איובית",
+    "he": "האיובים",
     "fr": "Ayyoubide",
     "en": "Ayyubid",
     "ru": "Айюбидская"
@@ -201,7 +201,7 @@
    "n": 2,
    "era": "mamluk",
    "name": {
-    "he": "ממלוכית",
+    "he": "הממלוכים",
     "fr": "Mamelouke",
     "en": "Mamluk",
     "ru": "Мамлюкская"
@@ -217,7 +217,7 @@
    "n": 3,
    "era": "today",
    "name": {
-    "he": "המבצר היום",
+    "he": "היום",
     "fr": "La forteresse aujourd’hui",
     "en": "The fortress today",
     "ru": "Крепость сегодня"

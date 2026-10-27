@@ -127,7 +127,7 @@ function renderPeriod() {
   $('pName').textContent = tx(p.name); $('pDates').textContent = tx(p.dates);
   $('pCount').textContent = '📋 ' + DATA.monuments.filter(inPeriod).length + ' ' + t('sites');
   markTimeline($('strip'), $('pBig'), DATA.periods, period);
-  { const ns = DATA.periods.map(x => x.n), i = ns.indexOf(period); const rtl = document.documentElement.dir === 'rtl'; $('pPrev').textContent = rtl ? '›' : '‹'; $('pNext').textContent = rtl ? '‹' : '›'; $('pPrev').disabled = compare || i <= 0; $('pNext').disabled = compare || i >= ns.length - 1; $('pPrev').setAttribute('aria-label', t('prevP')); $('pNext').setAttribute('aria-label', t('nextP')); $('pBig').title = t('pickP'); }
+  { const ns = DATA.periods.map(x => x.n), i = ns.indexOf(period); $('pPrev').textContent = '‹'; $('pNext').textContent = '›'; /* le navigateur retourne ‹ › en hébreu */ $('pPrev').disabled = compare || i <= 0; $('pNext').disabled = compare || i >= ns.length - 1; $('pPrev').setAttribute('aria-label', t('prevP')); $('pNext').setAttribute('aria-label', t('nextP')); $('pBig').title = t('pickP'); }
   $('bToday').setAttribute('aria-pressed', String(showToday)); $('bBase').setAttribute('aria-pressed', String(basemap));
   $('pBig').classList.toggle('tl', !compare);
   $('pName').textContent = compare ? '🧱 ' + t('compare') : tx(p.name); if (compare) { $('pDates').textContent = DATA.monuments.filter(m => m.wall).length + ' ' + t('walls'); }

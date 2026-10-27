@@ -198,7 +198,7 @@
    "n": 1,
    "era": "herodian",
    "name": {
-    "he": "בית שני — אחוזת ברניקי",
+    "he": "בית שני",
     "fr": "Second Temple — domaine de Bérénice",
     "en": "Second Temple — Berenice’s estate",
     "ru": "Второй Храм — имение Береники"
@@ -214,7 +214,7 @@
    "n": 2,
    "era": "roman",
    "name": {
-    "he": "רבי יהודה הנשיא והסנהדרין",
+    "he": "רבי יהודה הנשיא",
     "fr": "Rabbi Juda ha-Nassi et le Sanhédrin",
     "en": "Rabbi Judah ha-Nasi and the Sanhedrin",
     "ru": "Рабби Иегуда ха-Наси и Синедрион"
@@ -246,7 +246,7 @@
    "n": 4,
    "era": "today",
    "name": {
-    "he": "בית שערים היום",
+    "he": "היום",
     "fr": "Beit Shearim aujourd’hui",
     "en": "Beit She’arim today",
     "ru": "Бейт-Шеарим сегодня"

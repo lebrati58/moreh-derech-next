@@ -106,8 +106,8 @@ function renderPeriod() {
   $('pName').textContent = tx(p.name); $('pDates').textContent = tx(p.dates);
   $('pCount').textContent = '📋 ' + DATA.monuments.filter(inPeriod).length + ' ' + t('sites');
   markTimeline($('strip'), $('pBig'), DATA.periods, period);
-  const ns = DATA.periods.map(x => x.n), i = ns.indexOf(period), rtl = document.documentElement.dir === 'rtl';
-  $('pPrev').textContent = rtl ? '›' : '‹'; $('pNext').textContent = rtl ? '‹' : '›'; $('pPrev').disabled = i <= 0; $('pNext').disabled = i >= ns.length - 1;
+  const ns = DATA.periods.map(x => x.n), i = ns.indexOf(period);
+  $('pPrev').textContent = '‹'; $('pNext').textContent = '›'; /* le navigateur retourne ‹ › en hébreu */ $('pPrev').disabled = i <= 0; $('pNext').disabled = i >= ns.length - 1;
   $('pPrev').setAttribute('aria-label', t('prevP')); $('pNext').setAttribute('aria-label', t('nextP')); $('pBig').title = t('pickP');
   if (renderer) rebuildScene();
 }

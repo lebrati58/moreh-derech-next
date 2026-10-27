@@ -192,7 +192,7 @@
    "n": 1,
    "era": "chalco",
    "name": {
-    "he": "כלקולית",
+    "he": "התקופה הכלקוליתית",
     "fr": "Chalcolithique",
     "en": "Chalcolithic",
     "ru": "Халколит"
@@ -208,7 +208,7 @@
    "n": 2,
    "era": "iron",
    "name": {
-    "he": "מהמקרא עד בר כוכבא",
+    "he": "ימי המקרא",
     "fr": "De la Bible à Bar Kokhba",
     "en": "From the Bible to Bar Kokhba",
     "ru": "От Библии до Бар-Кохбы"
@@ -224,7 +224,7 @@
    "n": 3,
    "era": "byzantine",
    "name": {
-    "he": "העיר היהודית ובית הכנסת",
+    "he": "העיר היהודית",
     "fr": "La ville juive et la synagogue",
     "en": "The Jewish town and synagogue",
     "ru": "Еврейский город и синагога"
@@ -240,7 +240,7 @@
    "n": 4,
    "era": "today",
    "name": {
-    "he": "עין גדי היום",
+    "he": "היום",
     "fr": "Ein Gedi aujourd’hui",
     "en": "Ein Gedi today",
     "ru": "Эйн-Геди сегодня"

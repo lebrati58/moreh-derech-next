@@ -192,7 +192,7 @@
    "n": 1,
    "era": "iron",
    "name": {
-    "he": "העיר מתקופת הברזל",
+    "he": "ימי המקרא",
     "fr": "La ville de l’âge du Fer",
     "en": "The Iron Age town",
     "ru": "Город железного века"
@@ -208,7 +208,7 @@
    "n": 2,
    "era": "hellenistic",
    "name": {
-    "he": "המבצר ההלניסטי",
+    "he": "יוון",
     "fr": "Le fortin hellénistique",
     "en": "The Hellenistic fort",
     "ru": "Эллинистический форт"
@@ -224,7 +224,7 @@
    "n": 3,
    "era": "today",
    "name": {
-    "he": "חרבת קייאפה היום",
+    "he": "היום",
     "fr": "Khirbet Qeiyafa aujourd’hui",
     "en": "Khirbet Qeiyafa today",
     "ru": "Хирбет-Кейафа сегодня"

@@ -212,7 +212,7 @@
    "n": 1,
    "era": "ebronze",
    "name": {
-    "he": "ברונזה קדומה",
+    "he": "הברונזה הקדומה",
     "fr": "Bronze ancien",
     "en": "Early Bronze",
     "ru": "Ранняя бронза"
@@ -228,7 +228,7 @@
    "n": 2,
    "era": "canaanite",
    "name": {
-    "he": "כנענית (ברונזה תיכונה ומאוחרת)",
+    "he": "כנען",
     "fr": "Cananéenne (Bronze moyen et récent)",
     "en": "Canaanite (Middle & Late Bronze)",
     "ru": "Ханаанская (средняя и поздняя бронза)"
@@ -244,7 +244,7 @@
    "n": 3,
    "era": "iron",
    "name": {
-    "he": "ממלכת ישראל (ברזל)",
+    "he": "ממלכת ישראל",
     "fr": "Royaume d’Israël (fer)",
     "en": "Kingdom of Israel (Iron Age)",
     "ru": "Израильское царство (железный век)"
@@ -260,7 +260,7 @@
    "n": 4,
    "era": "iron",
    "name": {
-    "he": "אשורית",
+    "he": "אשור",
     "fr": "Assyrienne",
     "en": "Assyrian",
     "ru": "Ассирийская"
@@ -276,7 +276,7 @@
    "n": 5,
    "era": "today",
    "name": {
-    "he": "מגידו היום",
+    "he": "היום",
     "fr": "Megiddo aujourd’hui",
     "en": "Megiddo today",
     "ru": "Мегиддо сегодня"
