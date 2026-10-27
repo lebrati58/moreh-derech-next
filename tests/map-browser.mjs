@@ -12,6 +12,10 @@ const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/c
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png' };
 
 const server = createServer(async (req, res) => {
+  // La carte lit aussi la bibliothèque communautaire (Supabase) : ici, bibliothèque vide.
+  if (req.method === 'POST' && /\/rest\/v1\/rpc\/community_catalog$/.test(req.url)) {
+    res.writeHead(200, { 'content-type': 'application/json' }); return res.end(JSON.stringify({ documents: [], routes: [] }));
+  }
   const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^\/+/, '') || 'index.html';
   try { const body = await readFile(join(ROOT, path)); res.writeHead(200, { 'content-type': TYPES[extname(path)] || 'application/octet-stream' }); res.end(body); }
   catch { res.writeHead(404); res.end('not found'); }
@@ -32,9 +36,9 @@ const shot = name => page.screenshot({ path: `${OUT}/${name}.png` });
 
 // 1. Accueil : les modes mènent à la carte
 await page.goto(base + 'index.html');
-await page.waitForFunction(() => /\d{2,}/.test(document.querySelector('.map-banner small')?.textContent || ''));
+await page.waitForFunction(() => /\d{2,}/.test(document.querySelector('.map-banner small[data-t=mapDesc]')?.textContent || ''));
 ok(await page.locator('a[href="map.html?mode=guided"]').count() === 1, 'accueil : סיור מודרך → carte');
-const banner = await page.locator('.map-banner small').textContent();
+const banner = await page.locator('.map-banner small[data-t=mapDesc]').textContent();
 const quiz = JSON.parse(await readFile(join(ROOT, 'guided-quiz.json'), 'utf8'));
 ok(banner.includes(String(quiz.questions.length)), `accueil : compteur dynamique (${quiz.questions.length})`);
 await shot('01-home');

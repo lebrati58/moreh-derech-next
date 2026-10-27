@@ -67,7 +67,7 @@ assert.match(await p.textContent('#busbody'), /באיזו שנה|על שם מי|
 await p.screenshot({ path: `${OUT}/c3-bus.png` });
 // un élève rejoint en français
 const sctx = await browser.newContext(phone); const s = await sctx.newPage(); watch(s, 'élève');
-await s.goto(BASE + '/'); await s.waitForSelector('#joinf');
+await s.goto(BASE + '/play.html'); await s.waitForSelector('#joinf');   // page élève (l'accueil `/` est le lanceur NEXT)
 await s.click('[data-lang=fr]'); await s.fill('#nm', 'Lea'); await s.click('#jbtn');
 await s.waitForSelector('.waiting');
 await p.click('#busact');
