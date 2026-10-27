@@ -186,6 +186,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "canaanite",
    "name": {
     "he": "לכיש הכנענית",
     "fr": "Lakhish cananéenne",
@@ -201,6 +202,7 @@
   },
   {
    "n": 2,
+   "era": "iron",
    "name": {
     "he": "עיר המבצר של יהודה",
     "fr": "Ville forte de Juda",
@@ -216,6 +218,7 @@
   },
   {
    "n": 3,
+   "era": "iron",
    "name": {
     "he": "המצור האשורי",
     "fr": "Le siège assyrien",
@@ -231,6 +234,7 @@
   },
   {
    "n": 4,
+   "era": "iron",
    "name": {
     "he": "שיקום וחורבן בבל",
     "fr": "Reconstruction et chute babylonienne",
@@ -246,6 +250,7 @@
   },
   {
    "n": 5,
+   "era": "today",
    "name": {
     "he": "תל לכיש היום",
     "fr": "Tel Lakhish aujourd’hui",

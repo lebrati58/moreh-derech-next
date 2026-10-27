@@ -190,6 +190,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "iron",
    "name": {
     "he": "העיר מתקופת הברזל",
     "fr": "La ville de l’âge du Fer",
@@ -205,6 +206,7 @@
   },
   {
    "n": 2,
+   "era": "hellenistic",
    "name": {
     "he": "המבצר ההלניסטי",
     "fr": "Le fortin hellénistique",
@@ -220,6 +222,7 @@
   },
   {
    "n": 3,
+   "era": "today",
    "name": {
     "he": "חרבת קייאפה היום",
     "fr": "Khirbet Qeiyafa aujourd’hui",

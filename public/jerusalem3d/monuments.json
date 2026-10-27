@@ -41,6 +41,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "canaanite",
    "id": "canaanite",
    "name": {
     "he": "כנענית (ברונזה תיכונה)",
@@ -57,6 +58,7 @@
   },
   {
    "n": 2,
+   "era": "iron",
    "id": "first_temple",
    "name": {
     "he": "בית ראשון (ברזל 2)",
@@ -73,6 +75,7 @@
   },
   {
    "n": 3,
+   "era": "persian",
    "id": "persian",
    "name": {
     "he": "פרסית — שיבת ציון",
@@ -89,6 +92,7 @@
   },
   {
    "n": 4,
+   "era": "hasmonean",
    "id": "hasmonean",
    "name": {
     "he": "חשמונאית",
@@ -105,6 +109,7 @@
   },
   {
    "n": 5,
+   "era": "herodian",
    "id": "herodian",
    "name": {
     "he": "הורדוסית — ימי בית שני",
@@ -121,6 +126,7 @@
   },
   {
    "n": 6,
+   "era": "roman",
    "id": "aelia",
    "name": {
     "he": "רומית — איליה קפיטולינה",
@@ -137,6 +143,7 @@
   },
   {
    "n": 7,
+   "era": "byzantine",
    "id": "byzantine",
    "name": {
     "he": "ביזנטית",
@@ -153,6 +160,7 @@
   },
   {
    "n": 8,
+   "era": "early_islamic",
    "id": "early_islamic",
    "name": {
     "he": "ערבית קדומה ופאטימית",
@@ -169,6 +177,7 @@
   },
   {
    "n": 9,
+   "era": "crusader",
    "id": "crusader",
    "name": {
     "he": "צלבנית",
@@ -185,6 +194,7 @@
   },
   {
    "n": 10,
+   "era": "mamluk",
    "id": "ayyubid_mamluk",
    "name": {
     "he": "איובית וממלוכית",
@@ -201,6 +211,7 @@
   },
   {
    "n": 11,
+   "era": "ottoman",
    "id": "ottoman",
    "name": {
     "he": "עות׳מאנית",
@@ -217,6 +228,7 @@
   },
   {
    "n": 12,
+   "era": "today",
    "id": "today",
    "name": {
     "he": "ירושלים היום",

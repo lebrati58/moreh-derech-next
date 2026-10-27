@@ -196,6 +196,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "herodian",
    "name": {
     "he": "בית שני — אחוזת ברניקי",
     "fr": "Second Temple — domaine de Bérénice",
@@ -211,6 +212,7 @@
   },
   {
    "n": 2,
+   "era": "roman",
    "name": {
     "he": "רבי יהודה הנשיא והסנהדרין",
     "fr": "Rabbi Juda ha-Nassi et le Sanhédrin",
@@ -226,6 +228,7 @@
   },
   {
    "n": 3,
+   "era": "roman",
    "name": {
     "he": "עיר המתים",
     "fr": "La nécropole",
@@ -241,6 +244,7 @@
   },
   {
    "n": 4,
+   "era": "today",
    "name": {
     "he": "בית שערים היום",
     "fr": "Beit Shearim aujourd’hui",

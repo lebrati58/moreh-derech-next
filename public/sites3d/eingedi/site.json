@@ -190,6 +190,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "chalco",
    "name": {
     "he": "כלקולית",
     "fr": "Chalcolithique",
@@ -205,6 +206,7 @@
   },
   {
    "n": 2,
+   "era": "iron",
    "name": {
     "he": "מהמקרא עד בר כוכבא",
     "fr": "De la Bible à Bar Kokhba",
@@ -220,6 +222,7 @@
   },
   {
    "n": 3,
+   "era": "byzantine",
    "name": {
     "he": "העיר היהודית ובית הכנסת",
     "fr": "La ville juive et la synagogue",
@@ -235,6 +238,7 @@
   },
   {
    "n": 4,
+   "era": "today",
    "name": {
     "he": "עין גדי היום",
     "fr": "Ein Gedi aujourd’hui",

@@ -189,6 +189,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "ebronze",
    "name": {
     "he": "העיר הכנענית",
     "fr": "La ville cananéenne",
@@ -204,6 +205,7 @@
   },
   {
    "n": 2,
+   "era": "iron",
    "name": {
     "he": "המצודה הישראלית",
     "fr": "La forteresse israélite",
@@ -219,6 +221,7 @@
   },
   {
    "n": 3,
+   "era": "persian",
    "name": {
     "he": "פרסית עד מוסלמית",
     "fr": "Perse à musulmane",
@@ -234,6 +237,7 @@
   },
   {
    "n": 4,
+   "era": "today",
    "name": {
     "he": "תל ערד היום",
     "fr": "Tel Arad aujourd’hui",

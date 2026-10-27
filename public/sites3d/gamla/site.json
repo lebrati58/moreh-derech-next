@@ -192,6 +192,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "hasmonean",
    "name": {
     "he": "הלניסטית-חשמונאית",
     "fr": "Hellénistique-hasmonéenne",
@@ -207,6 +208,7 @@
   },
   {
    "n": 2,
+   "era": "roman",
    "name": {
     "he": "המרד הגדול והמצור",
     "fr": "Grande Révolte et siège",
@@ -222,6 +224,7 @@
   },
   {
    "n": 3,
+   "era": "byzantine",
    "name": {
     "he": "ביזנטית — דיר קרוח",
     "fr": "Byzantine — Deir Qeruh",
@@ -237,6 +240,7 @@
   },
   {
    "n": 4,
+   "era": "today",
    "name": {
     "he": "גמלא היום",
     "fr": "Gamla aujourd’hui",
