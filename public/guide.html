@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="Espace guide — Moreh Derech NEXT : sortie avec micro, écran du guide, lien pour les élèves, simulation.">
+<title>🎤 Espace guide — Moreh Derech NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<style>
+:root{color-scheme:dark;--bg:#0b1230;--line:#3d5190;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(120% 60% at 50% 0,#2b2a7a 0,var(--bg) 60%) fixed,var(--bg);color:var(--ink);font-family:'Heebo',system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;min-height:100vh}
+.wrap{max-width:640px;margin:auto;padding:14px 16px 24px}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;padding:9px 13px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a;min-height:44px}
+h1{font-size:26px;margin:16px 2px 4px}
+.lead{color:var(--soft);margin:0 2px 16px;font-size:14.5px;line-height:1.45}
+.card{display:flex;align-items:center;gap:13px;padding:14px;margin-bottom:10px;border-radius:18px;background:#151f4a;border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.card:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+.card .ic{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:14px;font-size:25px;background:#22306a}
+.card.main{background:linear-gradient(120deg,#5a2e00,#3a2f99);border-color:#ff9a4d}.card.main .ic{background:linear-gradient(120deg,#ff9a4d,#ffd878)}
+.card .tx{flex:1;min-width:0}.card b{display:block;font-size:16.5px;line-height:1.25}.card small{display:block;color:var(--soft);font-size:13px;margin-top:3px;line-height:1.4}
+.card .tag{flex:none;font-size:10.5px;letter-spacing:1.5px;font-weight:900;color:var(--gold);border:1px solid #6b5a2a;border-radius:7px;padding:4px 7px}
+.note{margin-top:16px;padding:12px 14px;border-radius:14px;border:1px dashed var(--line);color:var(--soft);font-size:13px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html"><span class="bk" aria-hidden="true">→</span> <span data-t="back">לדף הבית</span></a>
+  <h1 data-t="title">🎤 מרחב המדריך</h1>
+  <p class="lead" data-t="lead">כל מה שצריך כדי להוביל סיור באוטובוס. התלמידים לא רואים את הדף הזה בדף הבית.</p>
+
+  <a class="card main" href="map.html?mode=guide"><span class="ic" aria-hidden="true">🎤</span><span class="tx"><b data-t="guide">יציאה לסיור עם מיקרופון</b><small data-t="guideDesc">בוחרים סיור במפה. ה-GPS מציע שאלות, ואתם מפרסמים לתלמידים.</small></span><span class="tag">LIVE</span></a>
+  <a class="card" href="play.html"><span class="ic" aria-hidden="true">🔗</span><span class="tx"><b data-t="players">קישור לתלמידים</b><small data-t="playersDesc">הקישור שהתלמידים פותחים בטלפון כדי לענות.</small></span></a>
+  <a class="card" href="admin.html?mode=guide"><span class="ic" aria-hidden="true">🖥️</span><span class="tx"><b data-t="direct">ישר למסך המדריך</b><small data-t="directDesc">פתיחת לוח השאלות בלי לעבור דרך המפה.</small></span></a>
+  <a class="card" href="map.html?mode=sim"><span class="ic" aria-hidden="true">🧪</span><span class="tx"><b data-t="sim">סימולציה</b><small data-t="simDesc">נסיעה מדומה לבדיקת שאלות, תזמון ותקלות GPS. שום דבר לא נשלח לתלמידים.</small></span><span class="tag">TEST</span></a>
+
+  <p class="note" data-t="tip">טיפ: הוסיפו את הדף הזה למועדפים בטלפון כדי להגיע אליו בנגיעה אחת.</p>
+</div>
+<script>
+(function(){
+  'use strict';
+  var L={
+    he:{back:'לדף הבית',title:'🎤 מרחב המדריך',lead:'כל מה שצריך כדי להוביל סיור באוטובוס. התלמידים לא רואים את הכלים האלה בדף הבית.',guide:'יציאה לסיור עם מיקרופון',guideDesc:'בוחרים סיור במפה. ה-GPS מציע שאלות, ואתם מפרסמים לתלמידים.',players:'קישור לתלמידים',playersDesc:'הקישור שהתלמידים פותחים בטלפון כדי לענות.',direct:'ישר למסך המדריך',directDesc:'פתיחת לוח השאלות בלי לעבור דרך המפה.',sim:'סימולציה',simDesc:'נסיעה מדומה לבדיקת שאלות, תזמון ותקלות GPS. שום דבר לא נשלח לתלמידים.',tip:'טיפ: הוסיפו את הדף הזה למועדפים בטלפון כדי להגיע אליו בנגיעה אחת.'},
+    fr:{back:'Accueil',title:'🎤 Espace guide',lead:'Tout ce qu’il faut pour mener une sortie en bus. Les élèves ne voient plus ces outils sur l’accueil.',guide:'Partir en sortie avec le micro',guideDesc:'Choisir la sortie sur la carte. Le GPS propose les questions, vous les publiez aux élèves.',players:'Lien pour les élèves',playersDesc:'Le lien que les élèves ouvrent sur leur téléphone pour répondre.',direct:'Écran du guide direct',directDesc:'Ouvrir le tableau des questions sans passer par la carte.',sim:'Simulation',simDesc:'Trajet virtuel pour tester questions, minutage et incidents GPS. Rien n’est envoyé aux élèves.',tip:'Astuce : mettez cette page en favori sur votre téléphone pour l’ouvrir en un geste.'},
+    en:{back:'Home',title:'🎤 Guide space',lead:'Everything you need to lead a bus tour. Students no longer see these tools on the home page.',guide:'Start a tour with the microphone',guideDesc:'Pick the tour on the map. GPS suggests questions; you publish them to students.',players:'Link for students',playersDesc:'The link students open on their phone to answer.',direct:'Guide screen, direct',directDesc:'Open the question board without going through the map.',sim:'Simulation',simDesc:'A virtual drive to test questions, timing and GPS issues. Nothing is sent to students.',tip:'Tip: bookmark this page on your phone to reach it in one tap.'},
+    ru:{back:'Главная',title:'🎤 Раздел гида',lead:'Всё, чтобы провести экскурсию в автобусе. Ученики больше не видят эти инструменты на главной.',guide:'Экскурсия с микрофоном',guideDesc:'Выберите экскурсию на карте. GPS предлагает вопросы, вы отправляете их ученикам.',players:'Ссылка для учеников',playersDesc:'Ссылка, которую ученики открывают на телефоне, чтобы отвечать.',direct:'Экран гида напрямую',directDesc:'Открыть панель вопросов без карты.',sim:'Симуляция',simDesc:'Виртуальная поездка для проверки вопросов, времени и сбоев GPS. Ученикам ничего не отправляется.',tip:'Совет: добавьте эту страницу в закладки телефона.'}
+  };
+  var lang='he';try{lang=localStorage.getItem('mdl_mode_lang')||localStorage.getItem('mdl_lang')||'he';}catch(e){}
+  if(!L[lang])lang='he';
+  document.documentElement.lang=lang;document.documentElement.dir=lang==='he'?'rtl':'ltr';
+  document.querySelector('.bk').textContent=lang==='he'?'→':'←';
+  document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=L[lang][el.dataset.t]||el.textContent;});
+})();
+</script>
+<script src="tabbar.js"></script>
+</body>
+</html>

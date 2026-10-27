@@ -119,6 +119,14 @@ Demande de Lionel : modèle 3D le plus précis possible, bâtiments importants e
 - ⏳ Schématique à améliorer : rampe de Lakhish, enceinte de Qeiyafa (ellipse passant par les 2 portes), dimensions de Beit Alpha et Baram (absentes des résumés).
 - ⏳ « מדריך למדריך » de רט״ג (Lakhish, Apollonia) : PDF non accessibles depuis la session — à déposer dans le Drive.
 
+### 28 octobre 2026 — Accueil épuré, barre d'onglets, espace guide
+Constat de Lionel : « trop de choses, plus du tout ergonomique ». L'accueil comptait 39 boutons sur 2,5 écrans de téléphone, mélangeait outils élèves et outils guide, et avait des doublons (titre « Choisir un mode » ×2, « quatre façons » pour 5 modes, carte / visite guidée, micro / écran du guide).
+- ✅ **`index.html` refait** : tient sur un seul écran (390×844). Trois blocs : **Aujourd'hui** (défi du jour + « Mon parcours » avec série et erreurs en direct), **Jouer** (visite guidée sur la carte, Solo, Anecdotes), **Explorer en 3D** (Jérusalem + les 20 sites en une ligne). Lien discret « Je suis guide ». Rien n'est supprimé : tout reste accessible.
+- ✅ **`tabbar.js`** (nouveau, partagé) : barre d'onglets fixe Accueil · Carte · Parcours · Classe · Plus. « Plus » ouvre un panneau : bibliothèque, communauté, ajouter un document, créer un parcours, espace guide, signaler un bug. 4 langues. Ajoutée à l'accueil, `journey.html`, `class.html` et `guide.html` (pas aux pages de jeu plein écran ni à la carte).
+- ✅ **`guide.html`** (nouveau) : espace guide — sortie avec micro, lien pour les élèves, écran du guide direct, simulation. 4 langues.
+- ✅ `journey.html` : bouton flottant « idée/bug » retiré (il est dans « Plus »). `sw.js` : cache `v29-accueil`, `guide.html` et `tabbar.js` hors ligne.
+- ✅ Tests : `community.test.mjs` adapté (les liens communauté passent par `tabbar.js`) ; tests navigateur journey, carte et sites 3D verts. Les échecs restants sont les tests base de données (Postgres absent), identiques avant/après.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
