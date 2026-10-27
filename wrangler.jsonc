@@ -1,0 +1,10 @@
+// Cloudflare (Workers Builds) : site 100 % statique — on publie uniquement le dossier public/.
+// Le déploiement GitHub Pages reste inchangé.
+{
+  "name": "moreh-derech-next",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash"
+  }
+}
