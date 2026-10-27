@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="he" dir="rtl"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="utf-8"><link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0a1430"><title>בונים קטע דרך — MOREH DERECH NEXT</title>
 <meta name="description" content="צרו קטע דרך משלכם ושתפו משחק שאלות, בלי קוד ובלי מנהל">
 <link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
@@ -211,4 +217,5 @@ $("send").onclick=async()=>{const url=$("linkOutput").value;if(navigator.share){
 $("nextQuestion").onclick=nextStep;$("backToEditor").onclick=renderReview;$("newRoute").onclick=createNew;
 (async()=>{renderSaved();const id=new URLSearchParams(location.search).get("id");if(id&&UUID_RE.test(id)){await startPublic(id);return;}const h=location.hash;if(h.startsWith("#route=")){try{const p=await decode(h.slice(7));startGame(p,false);}catch(e){status("⚠️ הקישור לא תקין או לא נתמך בדפדפן הזה.",true);}}})();
 })();
-</script></body></html>
+</script><script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body></html>

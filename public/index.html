@@ -2,6 +2,12 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#081027">
 <title>Moreh Derech NEXT — Choisir un mode</title>
@@ -13,7 +19,7 @@ html{scroll-behavior:smooth}
 body{min-height:100dvh;color:#fff;background:#081027;background-image:radial-gradient(ellipse at 10% 0%,#263e91 0%,transparent 42%),radial-gradient(ellipse at 95% 34%,#472a7f 0%,transparent 46%),linear-gradient(150deg,#071329,#111333 74%,#0c1536);font-family:'Heebo',system-ui,-apple-system,Arial,sans-serif;overflow-x:hidden}
 body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#a7caff 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(#000,transparent 90%)}
 .arcade-top{max-width:1050px;margin:auto;padding:20px 22px 0;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
-.logo{font-size:20px;font-weight:1000;letter-spacing:-.8px}.logo b{color:#77f4dc}.top-pill{border:1px solid #667bc0;background:#162448;padding:8px 14px;border-radius:100px;font-size:15px;font-weight:900;color:#e6ecff;font-family:inherit;min-height:44px;cursor:pointer}.top-pill #langFlag{font-size:20px;vertical-align:-2px}.top-lang{position:relative}.lang-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;z-index:50;display:flex;flex-direction:column;gap:4px;background:#1d2a52;border:1px solid #4b6096;border-radius:14px;padding:6px;box-shadow:0 8px 24px #000a;min-width:150px}.lang-menu[hidden]{display:none}.lang-menu button{border:0;border-radius:10px;background:transparent;color:#e0e7ff;padding:11px 12px;font-size:16px;font-weight:800;text-align:start;font-family:inherit}.lang-menu button[aria-pressed=true]{background:#94f5de;color:#101c3a}
+.logo{font-size:20px;font-weight:1000;letter-spacing:-.8px}.logo b{color:#77f4dc}.top-pill{border:1px solid #667bc0;background:#162448;padding:8px 14px;border-radius:100px;font-size:15px;font-weight:900;color:#e6ecff;font-family:inherit;min-height:44px;cursor:pointer}.top-pill #langFlag{font-size:20px;vertical-align:-2px}.top-lang{position:relative}.top-right{display:flex;gap:6px;align-items:center;flex-shrink:0}.top-pill{white-space:nowrap}@media(max-width:420px){.top-pill{padding:8px 10px;font-size:14px}.identity-name{font-size:13px}}.top-pill.install{background:linear-gradient(135deg,#94f5de,#4fd1b5);color:#101c3a;border-color:#c9fff1}.ios-tip{position:fixed;inset-inline:12px;bottom:16px;z-index:80;background:#1d2a52;border:1px solid #94f5de;border-radius:16px;padding:16px 16px 14px;color:#fff;font-size:17px;line-height:1.5;box-shadow:0 10px 30px #000c}.ios-tip[hidden]{display:none}.ios-tip button{margin-top:10px;border:0;border-radius:10px;background:#94f5de;color:#101c3a;font-weight:900;padding:10px 16px;font-size:16px;font-family:inherit}.lang-menu{position:absolute;top:calc(100% + 6px);inset-inline-end:0;z-index:50;display:flex;flex-direction:column;gap:4px;background:#1d2a52;border:1px solid #4b6096;border-radius:14px;padding:6px;box-shadow:0 8px 24px #000a;min-width:150px}.lang-menu[hidden]{display:none}.lang-menu button{border:0;border-radius:10px;background:transparent;color:#e0e7ff;padding:11px 12px;font-size:16px;font-weight:800;text-align:start;font-family:inherit}.lang-menu button[aria-pressed=true]{background:#94f5de;color:#101c3a}
 .mode-shell{max-width:1050px;position:relative;margin:0 auto;padding:0 20px 50px!important}
 .arcade-art{position:relative;overflow:hidden;border-radius:28px;margin:20px 0 15px;padding:28px 24px 0;min-height:194px;background:linear-gradient(115deg,#1738aa 0%,#5139cc 54%,#823fc7 100%);border:1px solid #738cff70;box-shadow:0 12px 0 #050b1d,0 24px 45px #0009}
 .arcade-art:before{content:'✦';position:absolute;top:10px;right:32%;color:#fff6;font-size:32px}.arcade-art:after{content:'✦';position:absolute;top:42px;left:20%;color:#c3ffe4;font-size:20px}
@@ -73,7 +79,8 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
 <link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
 </head>
 <body>
-<header class="arcade-top"><a class="identity" href="index.html" aria-label="Moreh Derech NEXT"><img src="assets/moreh-derech-next-driver.webp" alt="" width="54" height="54" decoding="async"><span class="identity-name">MOREH DERECH <b>NEXT</b></span></a><div class="top-lang"><button type="button" class="top-pill" id="langTop" aria-haspopup="true" aria-expanded="false" aria-label="Language / שפה"><span id="langFlag">🇮🇱</span> <span id="langCode">עב</span> ▾</button><div class="lang-menu" id="langMenu" hidden><button type="button" data-lang="he">🇮🇱 עברית</button><button type="button" data-lang="fr">🇫🇷 Français</button><button type="button" data-lang="en">🇬🇧 English</button><button type="button" data-lang="ru">🇷🇺 Русский</button></div></div></header>
+<div class="ios-tip" id="iosTip" hidden role="dialog" aria-live="polite"><div id="iosTipTxt"></div><button type="button" id="iosTipOk">OK</button></div>
+<header class="arcade-top"><a class="identity" href="index.html" aria-label="Moreh Derech NEXT"><img src="assets/moreh-derech-next-driver.webp" alt="" width="54" height="54" decoding="async"><span class="identity-name">MOREH DERECH <b>NEXT</b></span></a><div class="top-right"><button type="button" class="top-pill install" id="installBtn" hidden>📲 <span id="installTxt">התקנה</span></button><div class="top-lang"><button type="button" class="top-pill" id="langTop" aria-haspopup="true" aria-expanded="false" aria-label="Language / שפה"><span id="langFlag">🇮🇱</span> <span id="langCode">עב</span> ▾</button><div class="lang-menu" id="langMenu" hidden><button type="button" data-lang="he">🇮🇱 עברית</button><button type="button" data-lang="fr">🇫🇷 Français</button><button type="button" data-lang="en">🇬🇧 English</button><button type="button" data-lang="ru">🇷🇺 Русский</button></div></div></div></header>
 <main class="mode-shell">
   <section class="arcade-art" aria-label="Moreh Derech LIVE">
     <div class="hero-word">★ PLAY • EXPLORE • DISCOVER ★</div>
@@ -159,10 +166,26 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
     document.querySelectorAll('[data-lang]').forEach(function(el){el.setAttribute('aria-pressed',String(el.dataset.lang===lang));});
     var FL={he:['🇮🇱','עב'],fr:['🇫🇷','FR'],en:['🇬🇧','EN'],ru:['🇷🇺','RU']};document.getElementById('langFlag').textContent=FL[lang][0];document.getElementById('langCode').textContent=FL[lang][1];
     renderS3d();
+    if(window.MDInstallText)window.MDInstallText();
     liveStatus();
   }
   document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.lang;try{localStorage.setItem('mdl_mode_lang',lang);}catch(e){}render();});});
   document.getElementById('s3dPrev').addEventListener('click',function(){s3dGo(-1);});document.getElementById('s3dNext').addEventListener('click',function(){s3dGo(1);});document.getElementById('s3dChips').addEventListener('scroll',s3dArrows,{passive:true});window.addEventListener('resize',s3dArrows);
+
+  // ----- installation comme application (webapp) -----
+  (function(){var IT={he:['התקנה','כדי להתקין: לחצו על כפתור השיתוף ⬆️ בתחתית Safari, ואז „הוספה למסך הבית״.'],fr:['Installer','Pour installer : touchez le bouton Partager ⬆️ en bas de Safari, puis « Sur l’écran d’accueil ».'],en:['Install','To install: tap the Share button ⬆️ at the bottom of Safari, then “Add to Home Screen”.'],ru:['Установить','Чтобы установить: нажмите «Поделиться» ⬆️ внизу Safari, затем «На экран „Домой“».']};
+    var btn=document.getElementById('installBtn'),tip=document.getElementById('iosTip'),deferred=null;
+    var standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+    var ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+    function txt(){var T=IT[lang]||IT.he;document.getElementById('installTxt').textContent=T[0];document.getElementById('iosTipTxt').textContent=T[1];}
+    window.MDInstallText=txt;txt();
+    if(standalone)return;
+    if(ios)btn.hidden=false;
+    addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;btn.hidden=false;});
+    addEventListener('appinstalled',function(){btn.hidden=true;deferred=null;});
+    btn.addEventListener('click',function(){if(deferred){deferred.prompt();deferred.userChoice.finally(function(){deferred=null;});}else{txt();tip.hidden=false;}});
+    document.getElementById('iosTipOk').addEventListener('click',function(){tip.hidden=true;});
+  })();
   (function(){var bt=document.getElementById('langTop'),mn=document.getElementById('langMenu');function close(){mn.hidden=true;bt.setAttribute('aria-expanded','false');}
     bt.addEventListener('click',function(e){e.stopPropagation();mn.hidden=!mn.hidden;bt.setAttribute('aria-expanded',String(!mn.hidden));});
     mn.addEventListener('click',function(e){if(e.target.closest('[data-lang]'))close();});document.addEventListener('click',function(e){if(!e.target.closest('.top-lang'))close();});})();
@@ -178,5 +201,6 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.13;ba
 <script src="config.js"></script>
 <script src="progress.js"></script>
 <script src="feedback.js" data-float="0"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
 </body>
 </html>
