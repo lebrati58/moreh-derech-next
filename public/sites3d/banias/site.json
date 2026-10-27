@@ -202,8 +202,9 @@
  "periods": [
   {
    "n": 1,
+   "era": "hellenistic",
    "name": {
-    "he": "הלניסטית — מקדש פאן",
+    "he": "יוון",
     "fr": "Hellénistique — sanctuaire de Pan",
     "en": "Hellenistic — sanctuary of Pan",
     "ru": "Эллинистическая — святилище Пана"
@@ -217,8 +218,9 @@
   },
   {
    "n": 2,
+   "era": "herodian",
    "name": {
-    "he": "הורדוס ובניו — קיסריה פיליפי",
+    "he": "הורדוס",
     "fr": "Hérode et ses fils — Césarée de Philippe",
     "en": "Herod and sons — Caesarea Philippi",
     "ru": "Ирод и сыновья — Кесария Филиппова"
@@ -232,8 +234,9 @@
   },
   {
    "n": 3,
+   "era": "byzantine",
    "name": {
-    "he": "ביזנטית",
+    "he": "ביזנטיון",
     "fr": "Byzantine",
     "en": "Byzantine",
     "ru": "Византийская"
@@ -247,8 +250,9 @@
   },
   {
    "n": 4,
+   "era": "crusader",
    "name": {
-    "he": "צלבנית ומוסלמית",
+    "he": "הצלבנים",
     "fr": "Croisée et musulmane",
     "en": "Crusader and Muslim",
     "ru": "Крестоносцы и ислам"
@@ -262,8 +266,9 @@
   },
   {
    "n": 5,
+   "era": "today",
    "name": {
-    "he": "בניאס היום",
+    "he": "היום",
     "fr": "Banias aujourd’hui",
     "en": "Banias today",
     "ru": "Баниас сегодня"

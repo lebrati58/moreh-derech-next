@@ -180,8 +180,9 @@
  "periods": [
   {
    "n": 1,
+   "era": "roman",
    "name": {
-    "he": "הכפר בית אילפא",
+    "he": "ימי התלמוד",
     "fr": "Le village de Beit Ilfa",
     "en": "The village of Beit Ilfa",
     "ru": "Деревня Бейт-Ильфа"
@@ -195,8 +196,9 @@
   },
   {
    "n": 2,
+   "era": "byzantine",
    "name": {
-    "he": "בית הכנסת והפסיפס",
+    "he": "ביזנטיון",
     "fr": "La synagogue et la mosaïque",
     "en": "The synagogue and the mosaic",
     "ru": "Синагога и мозаика"
@@ -210,8 +212,9 @@
   },
   {
    "n": 3,
+   "era": "today",
    "name": {
-    "he": "הגילוי והיום",
+    "he": "היום",
     "fr": "La découverte et aujourd’hui",
     "en": "Discovery and today",
     "ru": "Открытие и сегодня"

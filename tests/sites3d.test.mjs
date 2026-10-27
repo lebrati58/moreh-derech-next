@@ -55,3 +55,18 @@ test('sites 3D : accès depuis la carte, l\'accueil et les parcours 15 et 19 ; h
   const app = await read('public/sites3d/app.js');
   assert.match(app, /quizEnabled: false/, 'quiz 3D désactivés (phase 2 non autorisée)');
 });
+
+test('frise du temps : chaque époque a son ère et sa couleur, jamais deux voisines identiques', async () => {
+  const { ERA_COLORS, eraPaint } = await import('../public/era-timeline.js');
+  const fs = await import('node:fs');
+  const files = ['public/jerusalem3d/monuments.json', ...fs.readdirSync('public/sites3d').map(s => `public/sites3d/${s}/site.json`).filter(f => fs.existsSync(f))];
+  assert.ok(files.length >= 20);
+  for (const f of files) {
+    const { periods } = JSON.parse(fs.readFileSync(f, 'utf8'));
+    for (const p of periods) assert.ok(ERA_COLORS[p.era], `${f} : époque ${p.n} sans ère connue`);
+    assert.equal(periods.at(-1).era, 'today', f + ' : la frise finit par aujourd’hui');
+    const c = eraPaint(periods).map(x => x.c);
+    for (let i = 1; i < c.length; i++) assert.notEqual(c[i], c[i - 1], `${f} : époques ${i} et ${i + 1} de même couleur`);
+  }
+  assert.equal(new Set(Object.values(ERA_COLORS)).size, Object.keys(ERA_COLORS).length, 'une couleur par ère');
+});

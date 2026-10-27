@@ -180,8 +180,9 @@
  "periods": [
   {
    "n": 1,
+   "era": "iron",
    "name": {
-    "he": "תקופת הברזל — עיר מנהלית",
+    "he": "ימי המקרא",
     "fr": "Âge du fer — ville administrative",
     "en": "Iron Age — administrative town",
     "ru": "Железный век — административный город"
@@ -195,6 +196,7 @@
   },
   {
    "n": 2,
+   "era": "persian",
    "name": {
     "he": "תקופות מאוחרות",
     "fr": "Périodes tardives",
@@ -210,8 +212,9 @@
   },
   {
    "n": 3,
+   "era": "today",
    "name": {
-    "he": "תל באר שבע היום",
+    "he": "היום",
     "fr": "Tel Beer-Sheva aujourd’hui",
     "en": "Tel Be'er Sheva today",
     "ru": "Тель Беэр-Шева сегодня"

@@ -183,6 +183,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "herodian",
    "name": {
     "he": "קהילת היחד",
     "fr": "La communauté (Yahad)",
@@ -198,8 +199,9 @@
   },
   {
    "n": 2,
+   "era": "today",
    "name": {
-    "he": "גילוי המגילות והחפירות",
+    "he": "היום",
     "fr": "Découverte des manuscrits et fouilles",
     "en": "Scroll discovery and excavations",
     "ru": "Находка свитков и раскопки"

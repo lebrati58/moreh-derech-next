@@ -189,8 +189,9 @@
  "periods": [
   {
    "n": 1,
+   "era": "ebronze",
    "name": {
-    "he": "העיר הכנענית",
+    "he": "כנען",
     "fr": "La ville cananéenne",
     "en": "The Canaanite city",
     "ru": "Ханаанский город"
@@ -204,8 +205,9 @@
   },
   {
    "n": 2,
+   "era": "iron",
    "name": {
-    "he": "המצודה הישראלית",
+    "he": "ממלכת ישראל",
     "fr": "La forteresse israélite",
     "en": "The Israelite fortress",
     "ru": "Израильская крепость"
@@ -219,8 +221,9 @@
   },
   {
    "n": 3,
+   "era": "persian",
    "name": {
-    "he": "פרסית עד מוסלמית",
+    "he": "פרס עד האסלאם",
     "fr": "Perse à musulmane",
     "en": "Persian to Islamic",
     "ru": "От персидской до исламской"
@@ -234,8 +237,9 @@
   },
   {
    "n": 4,
+   "era": "today",
    "name": {
-    "he": "תל ערד היום",
+    "he": "היום",
     "fr": "Tel Arad aujourd’hui",
     "en": "Tel Arad today",
     "ru": "Тель Арад сегодня"

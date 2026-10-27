@@ -3,6 +3,7 @@
 // générée par tools/build-jerusalem3d.mjs). Aucune coordonnée saisie à la main : tout objet est posé sur un repère
 // Wikidata ou sur un tracé OpenStreetMap ; un objet sans repère reste dans la liste, sans position dans la scène.
 // Quiz 3D : préparés (API window.MDJerusalem3D) mais NON affichés tant que monuments.quiz3dEnabled === false.
+import { renderTimeline, markTimeline, pickStyle } from '../era-timeline.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
@@ -116,7 +117,7 @@ function applyUI() {
   renderStrip(); renderPeriod(); if (selected) openSheet(selected);
 }
 function renderStrip() {
-  $('strip').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.n}" aria-pressed="${p.n === period}">${esc(tx(p.name))}<small>${esc(tx(p.dates))}</small></button>`).join('');
+  renderTimeline($('strip'), DATA.periods, period, tx, esc, ({ he: 'ציר הזמן', fr: 'le temps', en: 'time', ru: 'время' })[lang]);
   const cur = $('strip').querySelector('[aria-pressed=true]'); if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center' });
 }
 const inPeriod = m => m.from <= period && period <= m.to;
@@ -125,9 +126,10 @@ function renderPeriod() {
   const p = DATA.periods.find(x => x.n === period);
   $('pName').textContent = tx(p.name); $('pDates').textContent = tx(p.dates);
   $('pCount').textContent = '📋 ' + DATA.monuments.filter(inPeriod).length + ' ' + t('sites');
-  document.querySelectorAll('#strip [data-p]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.p) === period)));
-  { const ns = DATA.periods.map(x => x.n), i = ns.indexOf(period); const rtl = document.documentElement.dir === 'rtl'; $('pPrev').textContent = rtl ? '›' : '‹'; $('pNext').textContent = rtl ? '‹' : '›'; $('pPrev').disabled = compare || i <= 0; $('pNext').disabled = compare || i >= ns.length - 1; $('pPrev').setAttribute('aria-label', t('prevP')); $('pNext').setAttribute('aria-label', t('nextP')); $('pBig').title = t('pickP'); }
+  markTimeline($('strip'), $('pBig'), DATA.periods, period);
+  { const ns = DATA.periods.map(x => x.n), i = ns.indexOf(period); $('pPrev').textContent = '‹'; $('pNext').textContent = '›'; /* le navigateur retourne ‹ › en hébreu */ $('pPrev').disabled = compare || i <= 0; $('pNext').disabled = compare || i >= ns.length - 1; $('pPrev').setAttribute('aria-label', t('prevP')); $('pNext').setAttribute('aria-label', t('nextP')); $('pBig').title = t('pickP'); }
   $('bToday').setAttribute('aria-pressed', String(showToday)); $('bBase').setAttribute('aria-pressed', String(basemap));
+  $('pBig').classList.toggle('tl', !compare);
   $('pName').textContent = compare ? '🧱 ' + t('compare') : tx(p.name); if (compare) { $('pDates').textContent = DATA.monuments.filter(m => m.wall).length + ' ' + t('walls'); }
   if (mode2d) draw2d(); else rebuildScene();
   try { window.dispatchEvent(new CustomEvent('mdl:period', { detail: { n: period } })); } catch (e) { /* lien vers la frise (history-link.js) */ }
@@ -182,7 +184,7 @@ $('strip').addEventListener('click', e => { const b = e.target.closest('[data-p]
 // grand sélecteur d'époque : bouton bien visible + flèches ‹ › + liste des 12 périodes en gros boutons
 function closePick() { $('pPick').hidden = true; $('pBig').setAttribute('aria-expanded', 'false'); document.querySelector('.periods').classList.remove('picking'); }
 $('pBig').onclick = () => { if (!$('pPick').hidden) return closePick();
-  $('pPick').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.n}" aria-pressed="${p.n === period}">${esc(tx(p.name))}<small>${esc(tx(p.dates))}</small></button>`).join('');
+  $('pPick').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.n}" aria-pressed="${p.n === period}" style="${pickStyle(DATA.periods, p.n)}">${esc(tx(p.name))}<small>${esc(tx(p.dates))}</small></button>`).join('');
   $('pPick').hidden = false; $('pBig').setAttribute('aria-expanded', 'true'); document.querySelector('.periods').classList.add('picking');
   const cur = $('pPick').querySelector('[aria-pressed=true]'); if (cur) cur.scrollIntoView({ block: 'nearest' }); };
 $('pPick').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) goPeriod(Number(b.dataset.p)); });

@@ -35,7 +35,7 @@ await page.waitForSelector('#strip [data-p]');
 await page.waitForFunction(() => document.body.dataset.ready === '1' || document.body.classList.contains('mode2d'), null, { timeout: 400000 });
 await page.waitForTimeout(500);
 ok(await page.locator('#strip [data-p]').count() === 12, '12 périodes dans la frise (dont « aujourd’hui »)');
-ok((await page.textContent('#pName')).includes('הורדוסית'), 'période hérodienne active');
+ok((await page.textContent('#pName')).includes('הורדוס'), 'période hérodienne active');
 const has3d = await page.evaluate(() => !!document.querySelector('#stage canvas'));
 console.log('   ↳ WebGL :', has3d ? 'oui (3D)' : 'non (plan 2D)');
 ok((await page.locator('.lb').count()) > 5 || !has3d, 'étiquettes des monuments affichées');
@@ -63,8 +63,11 @@ ok((await page.locator('#pPick [data-p]').count()) === 12, 'sélecteur : 12 épo
 await shot('05b-selecteur-epoque');
 await page.click('#pPick [data-p="5"]'); await page.waitForTimeout(800);
 ok(await page.evaluate(() => document.getElementById('pPick').hidden && document.getElementById('pName').textContent.includes('הורדוס')), 'sélecteur : choix de l\'époque hérodienne, liste refermée');
+{ const x = async sel => (await page.locator(sel).boundingBox()).x;
+  ok(await x('#pNext') < await x('#pPrev') && await x('#strip [data-p="6"]') < await x('#strip [data-p="5"]'), 'hébreu : flèche « suivante » et époque suivante du même côté (gauche)');
+  await page.locator('.pnow').screenshot({ path: OUT + '/05c-fleches.png' }); }
 await page.click('#pNext'); await page.waitForTimeout(800);
-ok((await page.textContent('#pName')).includes('רומית'), 'flèche : époque suivante');
+ok((await page.textContent('#pName')).includes('רומא'), 'flèche : époque suivante');
 await page.click('#pPrev'); await page.waitForTimeout(800); await page.click('#strip [data-p="7"]'); await page.waitForTimeout(800);
 await page.click('#bList'); await page.waitForSelector('.sheet.open .list');
 ok((await page.locator('.list [data-id]').count()) >= 3, 'liste des sites de la période');
@@ -105,7 +108,7 @@ ok((await page.textContent('#sBody .altname')).length > 2, 'fiche : nom dans une
 await page.click('#sToday'); await page.waitForTimeout(600);
 ok((await page.textContent('#pName')).includes('היום'), 'comparer avec aujourd’hui : période actuelle');
 await page.click('#backChip'); await page.waitForTimeout(600);
-ok((await page.textContent('#pName')).includes('הורדוסית'), 'retour à la période d’origine');
+ok((await page.textContent('#pName')).includes('הורדוס'), 'retour à la période d’origine');
 ok(await page.locator('#toolsMenu .tl').first().textContent().then(s => s.length > 2), 'menu Outils : boutons avec libellés');
 // vallées : Kidron (OSM), Hinnom et Tyropéon (relief)
 ok(await page.evaluate(() => ['jerusalem_kidron', 'jerusalem_hinnom', 'jerusalem_tyropoeon'].every(id => { const b = window.MDJerusalem3D._bounds(id); return b[1][0] - b[0][0] > 100 || b[1][2] - b[0][2] > 100; })), 'vallées : Kidron, Ben Hinnom et Tyropéon tracés');

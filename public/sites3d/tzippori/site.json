@@ -208,8 +208,9 @@
  "periods": [
   {
    "n": 1,
+   "era": "hasmonean",
    "name": {
-    "he": "חשמונאית ורומית קדומה",
+    "he": "החשמונאים",
     "fr": "Hasmonéenne et romaine ancienne",
     "en": "Hasmonean and Early Roman",
     "ru": "Хасмонейская и раннеримская"
@@ -223,8 +224,9 @@
   },
   {
    "n": 2,
+   "era": "roman",
    "name": {
-    "he": "רומית — עיר המשנה",
+    "he": "רומא",
     "fr": "Romaine — ville de la Mishna",
     "en": "Roman — city of the Mishnah",
     "ru": "Римская — город Мишны"
@@ -238,8 +240,9 @@
   },
   {
    "n": 3,
+   "era": "byzantine",
    "name": {
-    "he": "ביזנטית",
+    "he": "ביזנטיון",
     "fr": "Byzantine",
     "en": "Byzantine",
     "ru": "Византийская"
@@ -253,8 +256,9 @@
   },
   {
    "n": 4,
+   "era": "today",
    "name": {
-    "he": "המצודה וציפורי היום",
+    "he": "היום",
     "fr": "La citadelle et Tsippori aujourd’hui",
     "en": "The citadel and Sepphoris today",
     "ru": "Цитадель и Ципори сегодня"

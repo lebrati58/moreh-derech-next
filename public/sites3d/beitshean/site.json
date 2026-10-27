@@ -214,8 +214,9 @@
  "periods": [
   {
    "n": 1,
+   "era": "canaanite",
    "name": {
-    "he": "כנענית — שלטון מצרי",
+    "he": "כנען ומצרים",
     "fr": "Cananéenne — domination égyptienne",
     "en": "Canaanite — Egyptian rule",
     "ru": "Ханаанская — египетское владычество"
@@ -229,8 +230,9 @@
   },
   {
    "n": 2,
+   "era": "iron",
    "name": {
-    "he": "ימי המקרא (ברזל)",
+    "he": "ימי המקרא",
     "fr": "Époque biblique (fer)",
     "en": "Biblical (Iron Age)",
     "ru": "Библейская (железный век)"
@@ -244,8 +246,9 @@
   },
   {
    "n": 3,
+   "era": "hellenistic",
    "name": {
-    "he": "הלניסטית — ניסה-סקיתופוליס",
+    "he": "יוון",
     "fr": "Hellénistique — Nysa-Scythopolis",
     "en": "Hellenistic — Nysa-Scythopolis",
     "ru": "Эллинистическая — Ниса-Скифополь"
@@ -259,8 +262,9 @@
   },
   {
    "n": 4,
+   "era": "roman",
    "name": {
-    "he": "רומית — עיר הדקאפוליס",
+    "he": "רומא",
     "fr": "Romaine — ville de la Décapole",
     "en": "Roman — a Decapolis city",
     "ru": "Римская — город Декаполиса"
@@ -274,8 +278,9 @@
   },
   {
    "n": 5,
+   "era": "byzantine",
    "name": {
-    "he": "ביזנטית — בירת פלשתינה סקונדה",
+    "he": "ביזנטיון",
     "fr": "Byzantine — capitale de la Palestina Secunda",
     "en": "Byzantine — capital of Palaestina Secunda",
     "ru": "Византийская — столица Палестины Второй"
@@ -289,8 +294,9 @@
   },
   {
    "n": 6,
+   "era": "early_islamic",
    "name": {
-    "he": "ערבית קדומה — עד רעש 749",
+    "he": "האסלאם הקדום",
     "fr": "Arabe ancienne — jusqu’au séisme de 749",
     "en": "Early Islamic — until the 749 quake",
     "ru": "Раннеисламская — до землетрясения 749 г."
@@ -304,8 +310,9 @@
   },
   {
    "n": 7,
+   "era": "today",
    "name": {
-    "he": "בית שאן היום",
+    "he": "היום",
     "fr": "Beit Shean aujourd’hui",
     "en": "Beit She'an today",
     "ru": "Бейт-Шеан сегодня"
