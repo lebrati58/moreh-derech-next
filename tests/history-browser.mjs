@@ -23,7 +23,8 @@ const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbo
 
 const errors = [];
 const ok = (cond, msg) => { if (!cond) { errors.push('ASSERT: ' + msg); console.log('❌', msg); } else console.log('✅', msg); };
-const PLAYER = () => { try { if (!localStorage.getItem('mdl_player_v1')) localStorage.setItem('mdl_player_v1', JSON.stringify({ id: '11111111-2222-4333-8444-555555555555', name: 'נועה', consent: false, asked: true })); } catch (e) {} };
+// Parcours historiques : questions « année » classiques (les nouveaux types sont testés plus bas, contexte « types de questions »).
+const PLAYER = () => { try { if (!localStorage.getItem('mdl_hist_pref_v1') && !window.__mixed) localStorage.setItem('mdl_hist_pref_v1', JSON.stringify({ types: 'date' })); if (!localStorage.getItem('mdl_player_v1')) localStorage.setItem('mdl_player_v1', JSON.stringify({ id: '11111111-2222-4333-8444-555555555555', name: 'נועה', consent: false, asked: true })); } catch (e) {} };
 
 async function newPage(opts) {
   const ctx = await browser.newContext(Object.assign({ locale: 'he-IL' }, opts));
@@ -225,6 +226,65 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await page.tap('#start'); await page.tap('.ans >> nth=0'); await page.tap('#next');
   ok(await page.evaluate(() => window.__done && window.__done.total === 1), 'événement « moreh-dereh:quiz-complete » émis');
   ok(!errors.some(e => !e.startsWith('ASSERT')), 'S24 : aucune erreur JavaScript');
+  await ctx.close();
+}
+
+// ================= types de questions : inverse, plusieurs réponses, ordre =================
+{
+  const { ctx, page } = await newPage({ viewport: { width: 360, height: 780 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  const shot = name => page.screenshot({ path: `${OUT}/types-${name}.png` });
+  await page.addInitScript(() => { try { localStorage.setItem('mdl_hist_pref_v1', JSON.stringify({ types: 'mix' })); } catch (e) {} });
+  await page.goto(base + 'history.html#/quiz?mode=practice');
+  await page.waitForSelector('#vQuiz:not([hidden])');
+  ok(await page.locator('#qtypes [data-ty]').count() === 5, 'réglages : 5 familles de questions');
+  ok(await page.getAttribute('#qtypes [data-ty="mix"]', 'aria-pressed') === 'true', 'réglages : « tout mélangé » par défaut');
+  ok(await page.locator('#counts [data-n="40"]').count() === 1, 'réglages : jusqu’à 40+ questions en mélangé');
+  await shot('01-reglages');
+  // Inverse : « que s'est-il passé en … ? »
+  await page.tap('#qtypes [data-ty="event"]');
+  await page.tap('#start');
+  await page.waitForSelector('#vPlay:not([hidden]) .ans');
+  ok(/^מה קרה בשנת .+\?$/.test(await page.textContent('#qtext')), 'inverse : « מה קרה בשנת …? »');
+  ok(await page.evaluate(() => document.getElementById('answers').classList.contains('txt')), 'inverse : réponses en liste (titres d’événements)');
+  await shot('02-inverse');
+  let ci = await correctIndex(page);
+  await page.tap(`.ans[data-i="${(ci + 1) % 4}"]`);
+  await page.waitForSelector('#fb:not([hidden])');
+  ok(await page.locator('#fb .yrs li').count() === 4 && await page.locator('#fb .yrs li.ok').count() === 1, 'inverse : correction avec l’année de chaque option');
+  await shot('03-inverse-correction');
+  // Plusieurs réponses
+  await page.goto(base + 'history.html#/quiz?mode=practice');
+  await page.tap('#qtypes [data-ty="multi"]');
+  await page.tap('#start');
+  await page.waitForSelector('#vPlay:not([hidden]) .ans');
+  ok(await page.isVisible('#check') && await page.isDisabled('#check'), 'QCM : bouton « בדיקה » visible, inactif sans sélection');
+  ok((await page.textContent('#qtag')).includes('כמה תשובות'), 'QCM : « plusieurs réponses » annoncé');
+  const want = await page.evaluate(() => { const s = window.MDHistoryApp.state(); return s.questions[s.i].options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0); });
+  for (const i of want) await page.tap(`.ans[data-i="${i}"]`);
+  ok(await page.locator('.ans.sel').count() === want.length, `QCM : ${want.length} réponse(s) cochée(s)`);
+  ok(await page.evaluate(() => document.getElementById('fb').hidden), 'QCM : cocher ne valide pas encore');
+  await shot('04-qcm');
+  await page.tap('#check');
+  await page.waitForSelector('#fb:not([hidden])');
+  ok(await page.evaluate(() => { const s = window.MDHistoryApp.state(); return s.answers[s.i].correct; }), 'QCM : toutes les bonnes cases = juste');
+  await shot('05-qcm-juste');
+  await page.tap('#next');
+  const w2 = await page.evaluate(() => { const s = window.MDHistoryApp.state(); return s.questions[s.i].options.findIndex(o => o.correct); });
+  await page.tap(`.ans[data-i="${w2}"]`); await page.tap(`.ans[data-i="${w2}"]`); // cocher puis décocher
+  ok(await page.locator('.ans.sel').count() === 0, 'QCM : un 2e toucher décoche');
+  const half = await page.evaluate(() => { const s = window.MDHistoryApp.state(), o = s.questions[s.i].options; return [o.findIndex(x => x.correct), o.findIndex(x => !x.correct)]; });
+  for (const i of half) await page.tap(`.ans[data-i="${i}"]`);
+  await page.tap('#check');
+  ok(await page.evaluate(() => { const s = window.MDHistoryApp.state(); return !s.answers[s.i].correct; }), 'QCM : une case en trop = faux');
+  // Ordre
+  await page.goto(base + 'history.html#/quiz?mode=practice');
+  await page.tap('#qtypes [data-ty="order"]');
+  await page.tap('#start');
+  await page.waitForSelector('#vPlay:not([hidden]) .ans');
+  ok(/(ראשון|אחרון|באיזו מאה)/.test(await page.textContent('#qtext')), 'ordre / siècle : question posée');
+  await shot('06-ordre');
+  ok(await noHScroll(page), 'types : pas de défilement horizontal');
+  ok(!errors.some(e => !e.startsWith('ASSERT')), 'types : aucune erreur JavaScript');
   await ctx.close();
 }
 

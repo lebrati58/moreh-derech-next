@@ -20,14 +20,14 @@
 
   let DATA = null, PER = {}, EV = {};
   let tl = { period: 'all', q: '' }, visible = [];
-  let pref = Object.assign({ mode: 'practice', period: 'all', count: 10, timed: true }, store.get(PREF_KEY, {}));
+  let pref = Object.assign({ mode: 'practice', period: 'all', count: 10, timed: true, types: 'mix' }, store.get(PREF_KEY, {}));
   let run = null, timer = null, ticker = null, sheetFromApp = false, lastFocus = null, announced = {};
 
   // ======================= données =======================
   fetch('history-events.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
     const errs = H.validate(d);
     if (errs.length) console.error('history-events.json', errs);
-    DATA = d; d.periods.forEach(p => { PER[p.id] = p; }); d.events.forEach(e => { EV[e.id] = e; });
+    DATA = d; H.setPeriods(d.periods); d.periods.forEach(p => { PER[p.id] = p; }); d.events.forEach(e => { EV[e.id] = e; });
     run = loadRun();
     buildStatic();
     window.addEventListener('hashchange', route);
@@ -123,10 +123,12 @@
     document.querySelectorAll('.mode').forEach(b => b.addEventListener('click', () => { pref.mode = b.dataset.mode; savePref(); renderSetup(); }));
     $('counts').addEventListener('click', e => { const b = e.target.closest('[data-n]'); if (b) { pref.count = Number(b.dataset.n); savePref(); renderSetup(); } });
     $('timed').addEventListener('change', () => { pref.timed = $('timed').checked; savePref(); renderSetup(); });
-    $('start').addEventListener('click', () => startRun({ mode: pref.mode, period: pref.period, count: pref.count, timed: pref.mode === 'exam' ? true : pref.timed }));
-    $('startReview').addEventListener('click', () => { const m = P ? P.historyStats().mistakes.filter(id => EV[id]) : []; if (m.length) startRun({ mode: 'practice', review: true, period: 'all', ids: m, count: m.length, timed: pref.timed }); });
+    $('qtypes').addEventListener('click', e => { const b = e.target.closest('[data-ty]'); if (b) { pref.types = b.dataset.ty; savePref(); renderSetup(); } });
+    $('start').addEventListener('click', () => startRun({ mode: pref.mode, period: pref.period, count: pref.count, types: pref.types, timed: pref.mode === 'exam' ? true : pref.timed }));
+    $('startReview').addEventListener('click', () => { const m = P ? P.historyStats().mistakes.filter(id => EV[id]) : []; if (m.length) startRun({ mode: 'practice', review: true, period: 'all', ids: m, count: m.length, types: pref.types, timed: pref.timed }); });
     // jeu
-    $('answers').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b && !b.disabled) answer(Number(b.dataset.i)); });
+    $('answers').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b && !b.disabled) pick(Number(b.dataset.i)); });
+    $('check').addEventListener('click', () => { if (run && run.sel && run.sel.length) answer(run.sel.slice()); });
     $('next').addEventListener('click', nextQuestion);
     $('fb').addEventListener('click', e => { if (e.target.closest('a[href^="#/event/"]')) { sheetFromApp = true; lastFocus = $('next'); } });
     $('pauseBtn').addEventListener('click', () => { if (run && run.phase === 'question' && !run.paused) pauseRun('user'); });
@@ -146,7 +148,7 @@
       const a = e.target.closest('[data-act]'); if (!a) return;
       const last = store.get(LAST_KEY, null); if (!last) return;
       if (a.dataset.act === 'again') startRun(Object.assign({}, last.config));
-      else if (a.dataset.act === 'fix') startRun({ mode: 'practice', review: true, period: 'all', ids: last.wrongIds, count: last.wrongIds.length, timed: last.config.timed });
+      else if (a.dataset.act === 'fix') startRun({ mode: 'practice', review: true, period: 'all', ids: last.wrongIds, count: last.wrongIds.length, types: last.config.types, timed: last.config.timed });
       else if (a.dataset.act === 'ev') { sheetFromApp = true; lastFocus = a; go('#/event/' + a.dataset.id); }
     });
   }
@@ -235,16 +237,19 @@
     if (pref.period !== 'all' && !PER[pref.period]) pref.period = 'all';
     document.querySelectorAll('.mode').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === pref.mode)));
     document.querySelectorAll('#qpchips [data-p]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.p === pref.period)));
+    if (!H.TYPE_GROUPS[pref.types]) pref.types = 'mix';
+    document.querySelectorAll('#qtypes [data-ty]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ty === pref.types)));
     const size = H.pool(DATA, { mode: pref.mode, period: pref.period }).length, all = H.pool(DATA, { period: pref.period }).length;
-    const opts = [10, 20].filter(n => n < size).concat([size]);
+    const max = H.maxQuestions(DATA, { mode: pref.mode, period: pref.period, types: pref.types }), top = Math.min(max, 60);
+    const opts = [10, 20, 40].filter(n => n < top).concat([top]);
     if (!opts.includes(pref.count)) pref.count = opts[0];
-    $('counts').innerHTML = opts.map(n => `<button type="button" data-n="${n}" aria-pressed="${n === pref.count}">${n === size ? 'הכול · ' + n : n}</button>`).join('');
+    $('counts').innerHTML = opts.map(n => `<button type="button" data-n="${n}" aria-pressed="${n === pref.count}">${n === max ? 'הכול · ' + n : n}</button>`).join('');
     $('timedWrap').hidden = pref.mode === 'exam'; $('timed').checked = pref.timed !== false;
     const excluded = all - size;
     $('rules').innerHTML = (pref.mode === 'exam'
-      ? ['⏳ 30 שניות לשאלה. נגמר הזמן = טעות.', '🏆 נכון = 100 + 3 × שניות שנותרו + בונוס רצף (עד +100).', '📈 בכל אירוע נספר רק השיא שלכם — משחק חוזר לא מכפיל נקודות.', '🙈 התשובות וההסברים מוצגים בסוף. בזמן השהיה השאלה מוסתרת.'].concat(excluded ? [`⚖️ ${excluded} אירועים שתאריכם שנוי במחלוקת או לא אחיד בחומרי הקורס — רק באימון.`] : [])
-      : ['📖 אחרי כל תשובה: הסבר וקישור לחומר הקורס.', pref.timed !== false ? '⏳ 30 שניות לשאלה (אפשר לכבות את השעון).' : '🐢 בלי שעון — לומדים בנחת.', '🎯 ניקוד אימון לא נספר בטבלת הכיתה.']
-    ).map(t => `<li>${esc(t)}</li>`).join('');
+      ? ['⏳ 30 שניות לשאלה (45 בשאלות עם כמה תשובות). נגמר הזמן = טעות.', '🏆 נכון = 100 + 3 × שניות שנותרו + בונוס רצף (עד +100).', '📈 בכל אירוע נספר רק השיא שלכם — משחק חוזר לא מכפיל נקודות.', '🙈 התשובות וההסברים מוצגים בסוף. בזמן השהיה השאלה מוסתרת.'].concat(excluded ? [`⚖️ ${excluded} אירועים שתאריכם שנוי במחלוקת או לא אחיד בחומרי הקורס — רק באימון.`] : [])
+      : ['📖 אחרי כל תשובה: הסבר, השנים של כל האפשרויות וקישור לחומר הקורס.', pref.timed !== false ? '⏳ 30 שניות לשאלה (אפשר לכבות את השעון).' : '🐢 בלי שעון — לומדים בנחת.', '🎯 ניקוד אימון לא נספר בטבלת הכיתה.']
+    ).concat(pref.types === 'mix' || pref.types === 'multi' ? ['☑️ בשאלות „אילו…?” יש כמה תשובות נכונות: מסמנים את כולן ולוחצים „בדיקה”.'] : []).map(t => `<li>${esc(t)}</li>`).join('');
     const st = P && P.historyStats ? P.historyStats() : null, mis = st ? st.mistakes.filter(id => EV[id]) : [];
     $('startReview').hidden = !mis.length; $('startReview').textContent = `🔁 לתרגל רק את הטעויות שלי (${mis.length})`;
     $('resume').hidden = !(run && run.phase !== 'done');
@@ -259,18 +264,19 @@
   // ======================= quiz : partie =======================
   function startRun(cfg) {
     const seed = uuid();
-    const evs = H.pickEvents(DATA, { mode: cfg.mode, period: cfg.period, ids: cfg.ids, count: cfg.count, seed });
-    if (!evs.length) return;
+    const types = H.TYPE_GROUPS[cfg.types] ? cfg.types : 'mix';
+    const questions = H.buildRun(DATA, { mode: cfg.mode, period: cfg.period, ids: cfg.ids, count: cfg.count, seed, types });
+    if (!questions.length) return;
     clearInterval(ticker); ticker = null;
     run = { v: 1, runId: seed, mode: cfg.mode, review: !!cfg.review, period: cfg.period || 'all', timed: cfg.mode === 'exam' ? true : cfg.timed !== false,
-      config: { mode: cfg.mode, period: cfg.period || 'all', count: cfg.count, timed: cfg.timed, ids: cfg.ids, review: !!cfg.review },
-      questions: evs.map(e => H.buildQuestion(e, DATA.events, seed)), i: 0, answers: [], score: 0, streak: 0, bestStreak: 0,
+      config: { mode: cfg.mode, period: cfg.period || 'all', count: cfg.count, timed: cfg.timed, ids: cfg.ids, review: !!cfg.review, types },
+      questions, sel: [], i: 0, answers: [], score: 0, streak: 0, bestStreak: 0,
       activeMs: 0, phase: 'question', left: null, paused: null, startedAt: Date.now() };
     run.paused = 'nav'; newTimer(); saveRun();
     if (parse().view === 'play') { renderPlay(); resumeRun(); }
     else go('#/play');
   }
-  function limit() { return run.timed ? H.DURATION_MS : 3600000; }
+  function limit() { return run.timed ? H.questionMs(run.questions[run.i]) : 3600000; }
   function newTimer(left) { timer = new H.Timer(limit()); if (left != null) timer.left = left; announced = {}; }
   function saveRun() { if (!run) return; if (timer && run.phase === 'question') run.left = timer.remaining(); run.savedAt = Date.now(); store.set(RUN_KEY, run); }
   function loadRun() {
@@ -280,28 +286,34 @@
     if (r.phase === 'question') r.paused = r.paused || 'nav';
     newTimerFor(r); return r;
   }
-  function newTimerFor(r) { timer = new H.Timer(r.timed ? H.DURATION_MS : 3600000); if (r.left != null) timer.left = r.left; }
+  function newTimerFor(r) { timer = new H.Timer(r.timed ? H.questionMs(r.questions[r.i]) : 3600000); if (r.left != null) timer.left = r.left; }
 
   function renderPlay() {
     const q = run.questions[run.i], e = EV[q.eventId], p = PER[e.period], n = run.questions.length;
     $('qcard').setAttribute('style', styleP(e.period));
-    $('qtag').textContent = `${p.icon} ${p.short}` + (run.mode === 'exam' ? ' · מבחן' : run.review ? ' · חזרה על טעויות' : ' · אימון');
+    $('qtag').textContent = `${p.icon} ${p.short}` + (run.mode === 'exam' ? ' · מבחן' : run.review ? ' · חזרה על טעויות' : ' · אימון') + (q.multi ? ' · ☑️ כמה תשובות נכונות' : '');
     $('qtext').textContent = q.prompt;
     $('hPos').textContent = `שאלה ${run.i + 1} מתוך ${n}`;
     const pct = Math.round((run.i + (run.phase === 'answered' ? 1 : 0)) / n * 100);
     $('fill').style.width = pct + '%'; $('track').setAttribute('aria-valuenow', String(pct));
     $('hScore').textContent = fmt(run.score); $('hStreak').textContent = run.streak;
     $('clock').classList.toggle('off', !run.timed); $('pauseBtn').hidden = run.phase !== 'question';
-    const a = run.phase === 'answered' ? run.answers[run.i] : null;
+    const a = run.phase === 'answered' ? run.answers[run.i] : null, sel = run.sel || [];
+    $('answers').classList.toggle('txt', q.type !== 'date' && q.type !== 'century');
+    $('answers').setAttribute('aria-label', q.multi ? 'תשובות — אפשר לסמן כמה' : 'תשובות');
     $('answers').innerHTML = q.options.map((o, i) => {
       let cls = 'ans';
+      if (!a && q.multi && sel.includes(i)) cls += ' sel';
       if (a) {
-        const picked = a.chosen === o.value;
+        const picked = a.chosenIdx ? a.chosenIdx.includes(i) : a.chosen === o.value;
         if (run.mode === 'exam') cls += picked ? (o.correct ? ' picked-ok' : ' picked-bad') : ' dim';
         else cls += o.correct ? ' correct' : picked ? ' wrong' : ' dim';
       }
-      return `<button type="button" class="${cls}" data-i="${i}" ${a ? 'disabled' : ''}><kbd aria-hidden="true">${i + 1}</kbd>${esc(o.label)}${a && run.mode !== 'exam' && o.correct ? ' ✓' : ''}${a && a.chosen === o.value && !o.correct ? ' ✗' : ''}</button>`;
+      const picked = a && (a.chosenIdx ? a.chosenIdx.includes(i) : a.chosen === o.value);
+      return `<button type="button" class="${cls}" data-i="${i}" ${a ? 'disabled' : ''}${q.multi && !a ? ` aria-pressed="${sel.includes(i)}"` : ''}><kbd aria-hidden="true">${i + 1}</kbd>${esc(o.label)}${a && run.mode !== 'exam' && o.correct ? ' ✓' : ''}${picked && !o.correct ? ' ✗' : ''}</button>`;
     }).join('');
+    $('check').hidden = !(q.multi && !a); $('check').disabled = !sel.length;
+    $('check').textContent = sel.length ? `✔ בדיקה (${sel.length} נבחרו)` : '✔ בדיקה — סמנו תשובה אחת או יותר';
     renderFeedback(a, e);
     $('next').hidden = !a; $('next').textContent = run.i === n - 1 ? '🏁 לתוצאות' : 'לשאלה הבאה ←';
     updateClock();
@@ -320,13 +332,18 @@
       return;
     }
     fb.className = 'fb ' + (a.correct ? 'good' : 'bad');
-    fb.innerHTML = `<strong>${a.correct ? `✅ נכון! <span class="pts">+${a.points}</span>` : (a.timedOut ? '⌛ נגמר הזמן — ' : '❌ ') + 'התשובה: ' + esc(H.yearLabel(e))}</strong>${esc(e.title)} — ${esc(e.desc)}${e.note ? `<br><small>⚠️ ${esc(e.note)}</small>` : ''}<br><a href="${esc(doc.url)}" target="_blank" rel="noopener noreferrer">📚 לחומרי הקורס ↗</a> · <a href="#/event/${e.id}">📖 לכרטיס האירוע</a>`;
+    const q = run.questions[run.i], answerTxt = q.type === 'date' ? H.yearLabel(e) : H.correctLabel(q);
+    // Pour les questions sur plusieurs événements : chaque option avec son année, dans l'ordre du temps (on apprend aussi les leurres).
+    const evOpts = q.options.map(o => EV[o.value]).filter(Boolean);
+    const years = evOpts.length === q.options.length ? `<ul class="yrs">${evOpts.slice().sort((x, y) => x.year - y.year).map(x => `<li class="${q.options.find(o => o.value === x.id).correct ? 'ok' : ''}"><b>${esc(H.yearLabel(x))}</b> ${esc(x.title)}</li>`).join('')}</ul>` : '';
+    fb.innerHTML = `<strong>${a.correct ? `✅ נכון! <span class="pts">+${a.points}</span>` : (a.timedOut ? '⌛ נגמר הזמן — ' : '❌ ') + 'התשובה: ' + esc(answerTxt)}</strong>${years || `${esc(e.title)} (${esc(H.yearLabel(e))}) — ${esc(e.desc)}`}${e.note && !years ? `<br><small>⚠️ ${esc(e.note)}</small>` : ''}<br><a href="${esc(doc.url)}" target="_blank" rel="noopener noreferrer">📚 לחומרי הקורס ↗</a> · <a href="#/event/${e.id}">📖 לכרטיס האירוע</a>`;
   }
   function updateClock() {
-    const left = run && run.phase === 'question' ? timer.remaining() : (run && run.answers[run.i] ? Math.max(0, H.DURATION_MS - run.answers[run.i].msUsed) : H.DURATION_MS);
+    const full = run ? H.questionMs(run.questions[run.i]) : H.DURATION_MS;
+    const left = run && run.phase === 'question' ? timer.remaining() : (run && run.answers[run.i] ? Math.max(0, full - run.answers[run.i].msUsed) : full);
     const secs = run && run.timed ? Math.ceil(left / 1000) : '∞';
     $('hSec').textContent = secs;
-    const frac = run && run.timed ? Math.max(0, Math.min(1, left / H.DURATION_MS)) : 1;
+    const frac = run && run.timed ? Math.max(0, Math.min(1, left / full)) : 1;
     $('ring').setAttribute('stroke-dashoffset', String((226.2 * (1 - frac)).toFixed(1)));
     $('clock').classList.toggle('urgent', !!(run && run.timed && run.phase === 'question' && left <= 8000));
     $('clock').classList.toggle('paused', !(run && run.phase === 'question' && !run.paused));
@@ -344,16 +361,28 @@
       }
     }, 100);
   }
+  // Question simple : un toucher = réponse. Plusieurs réponses : un toucher coche/décoche, puis « בדיקה ».
+  function pick(i) {
+    if (!run || run.phase !== 'question' || run.paused) return;
+    const q = run.questions[run.i];
+    if (!q.multi) { answer(i); return; }
+    run.sel = run.sel || [];
+    run.sel = run.sel.includes(i) ? run.sel.filter(x => x !== i) : run.sel.concat([i]);
+    saveRun(); renderPlay();
+  }
   function answer(idx) {
     if (!run || run.phase !== 'question' || run.paused) return;
     timer.pause(); clearInterval(ticker); ticker = null;
     const q = run.questions[run.i], left = timer.remaining(), used = Math.min(limit(), limit() - left);
-    const opt = idx == null ? null : q.options[idx], correct = !!(opt && opt.correct), timedOut = idx == null;
+    const idxs = idx == null ? null : (Array.isArray(idx) ? idx.slice().sort((x, y) => x - y) : [idx]);
+    const correct = H.isCorrect(q, idxs), timedOut = idx == null;
+    const values = idxs ? idxs.map(i => q.options[i].value) : null, want = q.options.filter(o => o.correct).map(o => o.value);
     const pts = H.scoreAnswer(correct, run.timed ? left : 0, run.streak);
     run.streak = correct ? run.streak + 1 : 0; run.bestStreak = Math.max(run.bestStreak, run.streak);
     run.score += pts; run.activeMs += used;
-    run.answers[run.i] = { eventId: q.eventId, questionId: q.id, chosen: opt ? opt.value : null, expected: q.options.find(o => o.correct).value, correct, timedOut, msUsed: Math.round(used), points: pts };
-    run.phase = 'answered'; run.left = null; saveRun();
+    run.answers[run.i] = { eventId: q.eventId, questionId: q.id, type: q.type, chosen: values ? (q.multi ? values : values[0]) : null, chosenIdx: idxs,
+      expected: q.multi ? want : want[0], chosenLabel: H.answerLabel(q, idxs), expectedLabel: H.correctLabel(q), prompt: q.prompt, correct, timedOut, msUsed: Math.round(used), points: pts };
+    run.phase = 'answered'; run.left = null; run.sel = []; saveRun();
     renderPlay();
     say(correct ? `נכון, ${pts} נקודות` : timedOut ? 'נגמר הזמן' : 'לא נכון');
     cheer(correct, pts);
@@ -363,7 +392,7 @@
   function nextQuestion() {
     if (!run || run.phase !== 'answered') return;
     if (run.i >= run.questions.length - 1) { finish(); return; }
-    run.i++; run.phase = 'question'; run.paused = null; newTimer(); saveRun();
+    run.i++; run.phase = 'question'; run.paused = null; run.sel = []; newTimer(); saveRun();
     renderPlay(); timer.start(); startTicker();
     $('qtext').focus({ preventScroll: true }); window.scrollTo({ top: $('vPlay').offsetTop - 70, behavior: reduceMotion() ? 'auto' : 'smooth' });
   }
@@ -379,7 +408,8 @@
   }
   function onKey(e) {
     if (parse().view !== 'play' || !run || e.altKey || e.ctrlKey || e.metaKey) return;
-    if (/^[1-4]$/.test(e.key) && run.phase === 'question' && !run.paused) { const b = $('answers').querySelector(`[data-i="${Number(e.key) - 1}"]`); if (b) { e.preventDefault(); answer(Number(e.key) - 1); } }
+    if (/^[1-9]$/.test(e.key) && run.phase === 'question' && !run.paused) { const b = $('answers').querySelector(`[data-i="${Number(e.key) - 1}"]`); if (b) { e.preventDefault(); pick(Number(e.key) - 1); } }
+    if (e.key === 'Enter' && run.phase === 'question' && !run.paused && run.questions[run.i].multi && run.sel && run.sel.length && document.activeElement !== $('check')) { e.preventDefault(); answer(run.sel.slice()); }
   }
   function finish() {
     if (!run || run.phase === 'done') return;
@@ -411,7 +441,7 @@
         <a class="btn mint" href="#/timeline" style="display:grid;place-items:center;text-decoration:none">⏳ לציר הזמן</a>
         <a class="btn" href="journey.html" style="display:grid;place-items:center;text-decoration:none">📈 המסע שלי</a>
       </div>
-      ${wrong.length ? `<h3 style="text-align:start;margin:20px 0 0;font-size:16px">${exam ? '📋 התשובות הנכונות' : '📋 לחזור על'}</h3><ul class="recap">${wrong.map(a => { const e = EV[a.eventId]; if (!e) return ''; return `<li><button type="button" data-act="ev" data-id="${e.id}" style="${styleP(e.period)}"><span><b>${esc(e.title)}</b><small>${a.timedOut ? '⌛ נגמר הזמן' : 'ענית: ' + esc(a.chosen == null ? '—' : H.formatYear(a.chosen))}</small></span><span class="yr">${esc(H.yearLabel(e))}</span></button></li>`; }).join('')}</ul>` : '<p class="sub" style="margin-top:16px">כל התשובות נכונות! 🌟</p>'}`;
+      ${wrong.length ? `<h3 style="text-align:start;margin:20px 0 0;font-size:16px">${exam ? '📋 התשובות הנכונות' : '📋 לחזור על'}</h3><ul class="recap">${wrong.map(a => { const e = EV[a.eventId]; if (!e) return ''; return `<li><button type="button" data-act="ev" data-id="${e.id}" style="${styleP(e.period)}"><span><b>${esc(e.title)}</b><small>${a.prompt && a.type !== 'date' ? esc(a.prompt) + '<br>' : ''}${a.timedOut ? '⌛ נגמר הזמן' : 'ענית: ' + esc(a.chosenLabel || (a.chosen == null ? '—' : H.formatYear(a.chosen)))}${a.expectedLabel && a.type !== 'date' ? ' · נכון: ' + esc(a.expectedLabel) : ''}</small></span><span class="yr">${esc(H.yearLabel(e))}</span></button></li>`; }).join('')}</ul>` : '<p class="sub" style="margin-top:16px">כל התשובות נכונות! 🌟</p>'}`;
     if (!reduceMotion() && pct >= 80) burst(window.innerWidth / 2, 120, 60);
   }
 

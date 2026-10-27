@@ -143,6 +143,13 @@ La frise + quiz des 48 événements (branche `feature/frise-quiz-histoire`, dema
 - ✅ `sw.js` : cache `v31-quiz-dates`, fichiers `history*` hors ligne. `tests/history-browser.mjs` adapté (la carte ouvre le quiz, la frise par le lien). Tests history (unitaires + 66 vérifications S24/ordinateur), journey et carte : verts.
 - ⏳ Toujours à trancher par Lionel (voir `docs/AUDIT_histoire_48.md`) : Bar Kokhba 131/132, Esdras, crucifixion, Aelia Capitolina (hors examen en attendant), « 614 » à la place de « 612 ».
 
+### 28 octobre 2026 (nuit) — Quiz des dates : 6 types de questions, plusieurs réponses
+Demande de Lionel : beaucoup plus de questions différentes, pouvoir inverser (« que s'est-il passé en 70 ? »), et des QCM à plusieurs réponses.
+- ✅ `history-data.js` : nouveaux types dans `QUESTION_TYPES` — **inverse** (`event`, « מה קרה בשנת …? »), **ordre** (`first`, « קרה ראשון / אחרון »), **siècle** (`century`), **plusieurs réponses** (`multiPeriod` « שייכים לתקופת … », `multiBefore` « קרו לפני … »). Garde-fous : jamais deux événements à moins de 10 ans l'un de l'autre dans une même question (ni leurs années alternatives), pas de siècle pour une année à ±5 ans d'un changement de siècle, pas de question de période pour un événement à la frontière de deux périodes. En examen, seules des dates sûres (`examReady`) apparaissent, y compris dans les options.
+- ✅ `buildRun` : un même événement revient sous d'autres types → jusqu'à ~250 questions différentes en « mélangé » (parties de 10, 20, 40 ou 60). `TYPE_GROUPS` : mélangé (défaut), année, inverse, plusieurs réponses, ordre/siècles.
+- ✅ Écran : choix du type de questions ; QCM = cocher puis « ✔ בדיקה » (45 s au lieu de 30) ; correction avec **l'année de chaque option**, dans l'ordre du temps ; récapitulatif de fin avec la question et la bonne réponse. Clavier : 1–9 pour cocher, Entrée pour valider.
+- ✅ Tests : `history.test.mjs` (10, dont un test de ~7 000 questions générées), `history-browser.mjs` (82 vérifications, dont un parcours « types de questions » sur S24). Cache hors ligne v32.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
