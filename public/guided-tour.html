@@ -41,7 +41,7 @@ body.setup-collapsed #setupPanel,body.setup-collapsed .hero{display:none}
 
 /* NEXT — carte, étapes et lecture */
 [hidden]{display:none!important}
-.me-chip{white-space:nowrap;background:linear-gradient(120deg,#6a4a00,#3a2f99);border-color:#ffd878}.stars-line{font-size:15px;margin:8px 0 2px}.stars-line b{color:#ffd878;letter-spacing:2px}.report-q{margin-inline-start:8px;border:1px solid #c9a650;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:800}.fb-link{cursor:pointer}.top{flex-wrap:wrap}.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
+.me-chip{white-space:nowrap;background:linear-gradient(120deg,#6a4a00,#3a2f99);border-color:#ffd878}.stars-line{font-size:15px;margin:8px 0 2px}.stars-line b{color:#ffd878;letter-spacing:2px}.report-q{margin-inline-start:8px;border:1px solid #c9a650;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:800}.fb-link{cursor:pointer}.top{flex-wrap:wrap}.top .links{flex-wrap:wrap;max-width:100%;min-width:0}/* petits téléphones (360 px) : les boutons passent à la ligne au lieu d'élargir la page */.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
 .mode{flex-wrap:wrap}
 .stepbar{display:flex;gap:5px;margin:16px 0 0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.stepbar::-webkit-scrollbar{display:none}
 .stepbar button{flex:none;border:1px solid #4f62a0;background:#18244f;color:#cdd8ff;border-radius:30px;padding:7px 12px;font-size:13px;font-weight:850}
@@ -129,7 +129,7 @@ let collapsed=(tour!=="all"&&([1,2,3].includes(pLevel)||!!pMode))||index>0||Obje
 function setCollapsed(v){collapsed=v;document.body.classList.toggle("setup-collapsed",v);$("setupBar").hidden=!v;$("setupBar").setAttribute("aria-expanded",String(!v));}
 function setupSummary(){const MD={quiz:"🎮 תרגול",tour:"🧭 סיור מודרך",stories:"📖 סיפורים",review:"🔁 חזרה על טעויות",daily:"☀️ אתגר היום"};$("setupText").textContent=mode==="daily"?MD.daily+" · 5 שאלות מכל הסיורים":"📍 "+tourLabel(tour)+(mode==="stories"||mode==="review"?"":" · "+LV[level])+" · "+MD[mode];}
 function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers,special}));}catch(e){}}
-function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>n*31+c.charCodeAt(0),7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>0)%(j+1);[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
+function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>(Math.imul(n,31)+c.charCodeAt(0))|0,7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>16)%(j+1);/* bits hauts : bonne réponse répartie ~25 % par case */[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
 // Petite fête quand la réponse est juste : confettis depuis le bouton, « +100 » vers le score, série de bonnes réponses.
 let streak=0;
 const reduceMotion=()=>window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
