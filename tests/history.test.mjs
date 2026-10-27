@@ -109,6 +109,37 @@ test('questions : 4 options distinctes, exactement 1 juste, leurres plausibles (
   assert.equal(typeof H.QUESTION_TYPES.date, 'function');
 });
 
+test('nouveaux types : inverse, ordre, siècle, plusieurs réponses — toujours une correction juste', async () => {
+  const H = await lib(); H.setPeriods(DATA.periods);
+  const E = Object.fromEntries(DATA.events.map(e => [e.id, e])), seen = {};
+  for (let s = 0; s < 25; s++) for (const ev of DATA.events) for (const t of Object.keys(H.QUESTION_TYPES)) {
+    const q = H.QUESTION_TYPES[t](ev, DATA.events, 's' + s); if (!q) continue; seen[t] = (seen[t] || 0) + 1;
+    assert.equal(q.eventId, ev.id); assert.equal(q.id, ev.id + ':' + t);
+    assert.equal(new Set(q.options.map(o => o.label)).size, q.options.length, 'options distinctes ' + q.id);
+    const n = q.options.filter(o => o.correct).length;
+    if (q.multi) { assert.ok(n >= 1 && n < q.options.length, q.id); assert.equal(H.questionMs(q), 45000); } else assert.equal(n, 1, q.id);
+    if (t === 'event') { assert.match(q.prompt, /^מה קרה בשנת /); assert.equal(q.options.find(o => o.correct).value, ev.id); }
+    if (t === 'first') { const ys = q.options.map(o => E[o.value].year), last = q.prompt.includes('אחרון'); assert.equal(E[q.options.find(o => o.correct).value].year, last ? Math.max(...ys) : Math.min(...ys), q.id); }
+    if (t === 'multiBefore') q.options.forEach(o => assert.equal(o.correct, E[o.value].year < ev.year, q.id));
+    if (t === 'multiPeriod') q.options.forEach(o => assert.equal(o.correct, E[o.value].period === ev.period, q.id));
+    if (t === 'event' || t === 'first') q.options.filter(o => !o.correct).forEach(o => assert.ok(Math.abs(E[o.value].year - ev.year) >= 10, 'pas de piège à moins de 10 ans ' + q.id));
+  }
+  for (const t of ['date', 'event', 'first', 'century', 'multiPeriod', 'multiBefore']) assert.ok(seen[t] > 100, 'type utilisé : ' + t);
+  // Correction : exactement le bon ensemble.
+  const q = H.QUESTION_TYPES.multiBefore(DATA.events.find(e => e.id === 'masada') || DATA.events[28], DATA.events, 'k');
+  const good = q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0), bad = q.options.findIndex(o => !o.correct);
+  assert.equal(H.isCorrect(q, good), true); assert.equal(H.isCorrect(q, good.slice().reverse()), true);
+  assert.equal(H.isCorrect(q, good.concat([bad])), false); assert.equal(H.isCorrect(q, null), false);
+  if (good.length > 1) assert.equal(H.isCorrect(q, good.slice(1)), false);
+  // Partie mélangée : beaucoup plus de questions que d'événements, jamais deux fois la même, examen = événements sûrs uniquement.
+  const mix = H.buildRun(DATA, { types: 'mix', count: 60, seed: 'm', mode: 'practice' });
+  assert.equal(mix.length, 60); assert.equal(new Set(mix.map(x => x.id)).size, 60);
+  assert.ok(new Set(mix.map(x => x.type)).size >= 5, 'au moins 5 types dans une partie mélangée');
+  const exam = H.buildRun(DATA, { types: 'mix', count: 60, seed: 'x', mode: 'exam' }), ready = new Set(DATA.events.filter(e => e.examReady).map(e => e.id));
+  exam.forEach(x => { assert.ok(ready.has(x.eventId)); x.options.forEach(o => { if (E[o.value]) assert.ok(ready.has(o.value), 'examen : option contestée ' + o.value); }); });
+  assert.equal(H.buildRun(DATA, { types: 'date', period: 'persian', count: 99, seed: 'p' }).length, 5, 'type « année » seul : une question par événement');
+});
+
 test('score : 100 + 3 × secondes restantes (arrondi sup.) + 20 × min(série précédente, 5) ; erreur/expiration = 0', async () => {
   const H = await lib();
   assert.equal(H.scoreAnswer(true, 30000, 0), 190);

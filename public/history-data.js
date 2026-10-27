@@ -83,13 +83,130 @@
     var opts = shuffle([y].concat(picks), rnd).map(function (v) { return { value: v, label: formatYear(v), correct: v === y }; });
     return opts;
   }
+  // ---------- outils communs aux types de questions ----------
+  function centuryOf(y) { return y < 0 ? -Math.ceil(-y / 100) : Math.ceil(y / 100); }
+  function centuryLabel(c) { return 'המאה ה־' + Math.abs(c) + (c < 0 ? ' לפנה״ס' : ' לספירה'); }
+  function evOption(e, correct) { return { value: e.id, label: e.title, correct: !!correct }; }
+  // Deux événements trop proches dans le temps (ou dont l'une des années alternatives est proche) ne peuvent pas
+  // servir de piège l'un pour l'autre : on ne demande jamais de départager 66 et 67.
+  function apart(a, b, gap) {
+    var ya = [a.year].concat(a.alts || []), yb = [b.year].concat(b.alts || []);
+    return ya.every(function (x) { return yb.every(function (y) { return Math.abs(x - y) >= gap; }); });
+  }
+  var FAR = 10; // écart minimal (années) entre deux événements proposés ensemble
+  function spread(cands, n, rnd, anchor) {
+    var out = [];
+    shuffle(cands, rnd).forEach(function (c) {
+      if (out.length < n && apart(c, anchor, FAR) && out.every(function (o) { return apart(o, c, FAR); })) out.push(c);
+    });
+    return out.length === n ? out : null;
+  }
+  function nearest(ev, list, k) {
+    return list.slice().sort(function (a, b) { return Math.abs(a.year - ev.year) - Math.abs(b.year - ev.year); }).slice(0, k);
+  }
+  function periodBounds(events) {
+    var order = [], first = {};
+    events.forEach(function (e) { if (!(e.period in first)) { first[e.period] = e.year; order.push(e.period); } });
+    var b = {};
+    order.forEach(function (p, i) { b[p] = [first[p], i < order.length - 1 ? first[order[i + 1]] : Infinity]; });
+    return b;
+  }
+  function nearBound(y, bounds) { return bounds.some(function (b) { return isFinite(b) && Math.abs(y - b) <= 3; }); }
+
+  var PERIODS = {};
+  function setPeriods(list) { PERIODS = {}; (list || []).forEach(function (p) { PERIODS[p.id] = p; }); }
+  var MULTI_MS = 45000; // plus de temps quand il faut cocher plusieurs réponses
+
   var QUESTION_TYPES = {
+    // Événement → année (4 années, une juste).
     date: function (ev, events, seed) {
       return { id: ev.id + ':date', type: 'date', eventId: ev.id, prompt: ev.q, options: dateOptions(ev, events, seed) };
+    },
+    // Année → événement (« מה קרה בשנת 70 לספירה? »).
+    event: function (ev, events, seed) {
+      var rnd = rng(seed + '|' + ev.id + '|event');
+      var others = events.filter(function (o) { return o.id !== ev.id; });
+      var picks = spread(nearest(ev, others.filter(function (o) { return apart(o, ev, FAR); }), 9), 3, rnd, ev);
+      if (!picks) return null;
+      return { id: ev.id + ':event', type: 'event', eventId: ev.id, prompt: 'מה קרה בשנת ' + yearLabel(ev) + '?',
+        options: shuffle([evOption(ev, true)].concat(picks.map(function (o) { return evOption(o, false); })), rnd) };
+    },
+    // Ordre : « איזה מהאירועים האלה קרה ראשון? » (ou « אחרון » en fin de frise).
+    first: function (ev, events, seed) {
+      var rnd = rng(seed + '|' + ev.id + '|first'), others = events.filter(function (o) { return o.id !== ev.id && apart(o, ev, FAR); });
+      var later = others.filter(function (o) { return o.year > ev.year && o.year - ev.year <= 400; });
+      var earlier = others.filter(function (o) { return o.year < ev.year && ev.year - o.year <= 400; });
+      var useLast = later.length < 3 || (earlier.length >= 3 && rnd() < 0.35);
+      var picks = spread(nearest(ev, useLast ? earlier : later, 10), 3, rnd, ev);
+      if (!picks) return null;
+      return { id: ev.id + ':first', type: 'first', eventId: ev.id,
+        prompt: useLast ? 'איזה מהאירועים האלה קרה אחרון?' : 'איזה מהאירועים האלה קרה ראשון?',
+        options: shuffle([evOption(ev, true)].concat(picks.map(function (o) { return evOption(o, false); })), rnd) };
+    },
+    // Siècle : « באיזו מאה התרחש…? » (jamais pour une année trop proche d'un changement de siècle).
+    century: function (ev, events, seed) {
+      var r = Math.abs(ev.year) % 100;
+      if (ev.certainty === 'disputed' || r <= 5 || r >= 95) return null;
+      var rnd = rng(seed + '|' + ev.id + '|century'), c = centuryOf(ev.year), near = [];
+      [-2, -1, 1, 2].forEach(function (d) { var x = c + d; if (c < 0 && x >= 0) x += 1; if (c > 0 && x <= 0) x -= 1; if (x !== 0 && near.indexOf(x) < 0 && x !== c) near.push(x); });
+      var picks = shuffle(near, rnd).slice(0, 3);
+      return { id: ev.id + ':century', type: 'century', eventId: ev.id, prompt: 'באיזו מאה התרחש: ' + ev.title + '?',
+        options: shuffle([c].concat(picks), rnd).map(function (x) { return { value: x, label: centuryLabel(x), correct: x === c }; }) };
+    },
+    // Plusieurs réponses : « אילו מהאירועים האלה שייכים לתקופת …? »
+    multiPeriod: function (ev, events, seed) {
+      var rnd = rng(seed + '|' + ev.id + '|multiPeriod'), B = periodBounds(events), b = B[ev.period] || [ev.year, Infinity];
+      if (nearBound(ev.year, b)) return null;
+      var same = events.filter(function (o) { return o.id !== ev.id && o.period === ev.period && !nearBound(o.year, b); });
+      var other = events.filter(function (o) { return o.period !== ev.period && !nearBound(o.year, b) && Math.abs(o.year - ev.year) <= 250; });
+      var k = Math.min(same.length, Math.floor(rnd() * 3)), right = [ev];
+      shuffle(same, rnd).forEach(function (o) { if (right.length < k + 1 && right.every(function (x) { return apart(x, o, 5); })) right.push(o); });
+      var wrong = [];
+      shuffle(nearest(ev, other, 10), rnd).forEach(function (o) { if (wrong.length < 5 - right.length && wrong.concat(right).every(function (x) { return apart(x, o, 5); })) wrong.push(o); });
+      if (wrong.length < 5 - right.length || wrong.length < 2) return null;
+      var per = PERIODS[ev.period];
+      var name = per ? '„' + per.short + '” (' + per.range + ')' : ev.period;
+      return { id: ev.id + ':multiPeriod', type: 'multiPeriod', eventId: ev.id, multi: true, ms: MULTI_MS,
+        prompt: 'אילו מהאירועים האלה שייכים לתקופת ' + name + '?',
+        options: shuffle(right.map(function (o) { return evOption(o, true); }).concat(wrong.map(function (o) { return evOption(o, false); })), rnd) };
+    },
+    // Plusieurs réponses : « אילו מהאירועים האלה קרו לפני …? »
+    multiBefore: function (ev, events, seed) {
+      var rnd = rng(seed + '|' + ev.id + '|multiBefore');
+      var cands = nearest(ev, events.filter(function (o) { return o.id !== ev.id && apart(o, ev, FAR) && Math.abs(o.year - ev.year) <= 300; }), 12);
+      var before = cands.filter(function (o) { return o.year < ev.year; }), after = cands.filter(function (o) { return o.year > ev.year; });
+      if (!before.length || !after.length) return null;
+      var nb = Math.max(1, Math.min(before.length, 1 + Math.floor(rnd() * 3))), na = 5 - nb;
+      if (after.length < na) { na = after.length; nb = Math.min(before.length, 5 - na); }
+      if (nb + na < 4 || na < 1) return null;
+      var picks = shuffle(before, rnd).slice(0, nb).concat(shuffle(after, rnd).slice(0, na));
+      return { id: ev.id + ':multiBefore', type: 'multiBefore', eventId: ev.id, multi: true, ms: MULTI_MS,
+        prompt: 'אילו מהאירועים האלה קרו לפני ' + ev.title + ' (' + yearLabel(ev) + ')?',
+        options: shuffle(picks.map(function (o) { return evOption(o, o.year < ev.year); }), rnd) };
     }
-    // À venir (même forme de sortie) : 'person' (qui ?), 'cause', 'consequence', 'order' (remettre dans l'ordre).
+  };
+  // Familles proposées dans les réglages du quiz.
+  var TYPE_GROUPS = {
+    mix: ['date', 'event', 'first', 'century', 'multiPeriod', 'multiBefore'],
+    date: ['date'],
+    event: ['event'],
+    multi: ['multiPeriod', 'multiBefore'],
+    order: ['first', 'century']
   };
   function buildQuestion(ev, events, seed, type) { return (QUESTION_TYPES[type || 'date'])(ev, events, seed); }
+  function questionMs(q) { return (q && q.ms) || DURATION_MS; }
+  // Bonne réponse ? (une option pour les questions simples, exactement le bon ensemble pour les questions à choix multiples)
+  function isCorrect(q, chosen) {
+    if (chosen == null) return false;
+    var want = []; q.options.forEach(function (o, i) { if (o.correct) want.push(i); });
+    var got = (Array.isArray(chosen) ? chosen : [chosen]).slice().sort(function (a, b) { return a - b; });
+    return got.length === want.length && got.every(function (v, i) { return v === want[i]; });
+  }
+  function answerLabel(q, idxs) {
+    if (idxs == null) return '—';
+    return (Array.isArray(idxs) ? idxs : [idxs]).map(function (i) { return q.options[i] ? q.options[i].label : '?'; }).join(' · ') || '—';
+  }
+  function correctLabel(q) { return q.options.filter(function (o) { return o.correct; }).map(function (o) { return o.label; }).join(' · '); }
 
   // Événements d'une partie : examen = uniquement examReady ; entraînement = tous.
   function pool(data, opts) {
@@ -106,6 +223,27 @@
     var list = shuffle(pool(data, opts), rng('pick|' + (opts.seed || '')));
     if (opts.count && opts.count < list.length) list = list.slice(0, opts.count);
     return list;
+  }
+
+  // Questions d'une partie : chaque événement peut revenir sous un autre type de question (jamais deux fois la même).
+  function maxQuestions(data, opts) { return pool(data, opts).length * (TYPE_GROUPS[opts.types] || TYPE_GROUPS.date).length; }
+  function buildRun(data, opts) {
+    opts = opts || {};
+    if (data.periods) setPeriods(data.periods);
+    var seed = opts.seed || '', types = TYPE_GROUPS[opts.types] || TYPE_GROUPS.date;
+    var evs = shuffle(pool(data, opts), rng('pick|' + seed)), optEvents = opts.mode === 'exam' ? data.events.filter(function (e) { return e.examReady; }) : data.events;
+    var count = opts.count || evs.length, out = [], used = {};
+    for (var round = 0; round < types.length && out.length < count; round++) {
+      for (var i = 0; i < evs.length && out.length < count; i++) {
+        var ev = evs[i], order = shuffle(types, rng(seed + '|' + ev.id + '|' + round));
+        for (var t = 0; t < order.length; t++) {
+          if (used[ev.id + ':' + order[t]]) continue;
+          var q = QUESTION_TYPES[order[t]](ev, optEvents, seed);
+          if (q) { used[q.id] = 1; out.push(q); break; }
+        }
+      }
+    }
+    return out;
   }
 
   // ---------- score ----------
@@ -129,7 +267,7 @@
 
   // ---------- résultat structuré et versionné ----------
   function buildResult(st, data) {
-    var details = st.answers.map(function (a) { return { eventId: a.eventId, questionId: a.questionId, type: 'date', chosen: a.chosen, expected: a.expected, correct: a.correct, timedOut: !!a.timedOut, msUsed: a.msUsed, points: a.points }; });
+    var details = st.answers.map(function (a) { return { eventId: a.eventId, questionId: a.questionId, type: a.type || 'date', chosen: a.chosen, expected: a.expected, chosenLabel: a.chosenLabel, expectedLabel: a.expectedLabel, prompt: a.prompt, correct: a.correct, timedOut: !!a.timedOut, msUsed: a.msUsed, points: a.points }; });
     return {
       version: 1, quizId: (data && data.quizId) || 'history-48-dates', dataVersion: (data && data.dataVersion) || null,
       runId: st.runId, mode: st.mode, period: st.period || 'all',
@@ -148,7 +286,8 @@
     DURATION_MS: DURATION_MS, MAX_POINTS: MAX_POINTS, MIN_GAP: MIN_GAP, PERIOD_IDS: PERIOD_IDS,
     CERT_LABEL: CERT_LABEL, SOURCE_LABEL: SOURCE_LABEL,
     formatYear: formatYear, yearLabel: yearLabel, validate: validate, rng: rng, shuffle: shuffle, hash: hash,
-    QUESTION_TYPES: QUESTION_TYPES, buildQuestion: buildQuestion, dateOptions: dateOptions, pool: pool, pickEvents: pickEvents,
+    QUESTION_TYPES: QUESTION_TYPES, TYPE_GROUPS: TYPE_GROUPS, setPeriods: setPeriods, buildQuestion: buildQuestion, buildRun: buildRun, maxQuestions: maxQuestions, questionMs: questionMs,
+    isCorrect: isCorrect, answerLabel: answerLabel, correctLabel: correctLabel, centuryLabel: centuryLabel, MULTI_MS: MULTI_MS, dateOptions: dateOptions, pool: pool, pickEvents: pickEvents,
     scoreAnswer: scoreAnswer, Timer: Timer, buildResult: buildResult
   };
 })(typeof window !== 'undefined' ? window : globalThis);

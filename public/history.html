@@ -180,6 +180,16 @@ body.locked{overflow:hidden}
 .ans.wrong{background:#ffe1df;border-color:var(--bad);box-shadow:0 4px 0 #a23f4d}
 .ans.picked-ok{background:#d9f7ec;border-color:var(--ok)}.ans.picked-bad{background:#fde7e5;border-color:var(--bad)}
 .ans.dim{opacity:.55}
+.answers.txt{grid-template-columns:1fr}
+.answers.txt .ans{font-size:16px;line-height:1.35;text-align:start;padding:12px 14px 12px 14px;padding-inline-start:34px;min-height:54px}
+.ans.sel{background:#dfe3ff;border-color:#5b61d9;box-shadow:0 4px 0 #3b3fa0}
+.ans.sel::after{content:'☑';position:absolute;inset-inline-end:10px;top:50%;transform:translateY(-50%);font-size:20px;color:#3b3fa0}
+#check:disabled{opacity:.55;cursor:default}
+.counts.types button{flex:1 1 auto}
+.fb .yrs{list-style:none;margin:8px 0 4px;padding:0;display:grid;gap:4px}
+.fb .yrs li{padding:6px 9px;border-radius:9px;background:#00000010;font-size:14px;line-height:1.35}
+.fb .yrs li.ok{background:#c9f5e2;outline:2px solid #1fa877}
+.fb .yrs b{display:inline-block;min-width:96px;font-weight:900}
 .fb{border-radius:15px;padding:13px 14px;margin-top:16px;line-height:1.6;font-size:15px;background:#f8f2d9;border:2px solid #f6d788;color:#554017}
 .fb.good{background:#e3fbf1;border-color:#8be0c0;color:#0f4d3a}.fb.bad{background:#fff0ee;border-color:#f3b3b0;color:#6a1f26}
 .fb strong{display:block;font-size:16px;margin-bottom:3px}
@@ -266,7 +276,7 @@ body.locked{overflow:hidden}
     <section class="hero">
       <div class="eyebrow">★ QUIZ · 30 SEC · STREAK ★</div>
       <h1>חידון התאריכים</h1>
-      <p>מתי זה קרה? ארבע תשובות, 30 שניות לכל שאלה. תשובה מהירה ורצף נכונות = יותר נקודות.</p>
+      <p>מתי זה קרה? ומה קרה בשנה הזאת? שאלות על שנים, על סדר האירועים ועם כמה תשובות נכונות. תשובה מהירה ורצף נכונות = יותר נקודות.</p>
       <div class="art" aria-hidden="true">🎯</div>
     </section>
     <a class="card resume" id="resume" href="#/play" hidden><span aria-hidden="true" style="font-size:34px">⏸️</span><span class="txt"><b>יש חידון באמצע</b><small id="resumeTxt"></small></span><span class="btn go" style="min-height:44px;display:grid;place-items:center">המשך ←</span></a>
@@ -279,6 +289,14 @@ body.locked{overflow:hidden}
       </div>
       <div class="lbl" id="perLbl">תקופה</div>
       <div class="pchips" id="qpchips" role="group" aria-labelledby="perLbl" style="padding-top:0"></div>
+      <div class="lbl" id="tyLbl">סוג שאלות</div>
+      <div class="counts types" id="qtypes" role="group" aria-labelledby="tyLbl">
+        <button type="button" data-ty="mix" aria-pressed="true">🔀 הכול מעורב</button>
+        <button type="button" data-ty="date" aria-pressed="false">📅 אירוע ← שנה</button>
+        <button type="button" data-ty="event" aria-pressed="false">❓ שנה ← אירוע</button>
+        <button type="button" data-ty="multi" aria-pressed="false">☑️ כמה תשובות</button>
+        <button type="button" data-ty="order" aria-pressed="false">⏩ מה קודם? · מאות</button>
+      </div>
       <div class="lbl" id="cntLbl">מספר שאלות</div>
       <div class="counts" id="counts" role="group" aria-labelledby="cntLbl"></div>
       <label class="lbl" style="display:flex;align-items:center;gap:10px;letter-spacing:0;font-size:14px;color:var(--ink)" id="timedWrap"><input type="checkbox" id="timed" checked style="width:22px;height:22px;accent-color:#ffd878"> ⏳ שעון של 30 שניות</label>
@@ -311,6 +329,7 @@ body.locked{overflow:hidden}
         <span class="qtag" id="qtag"></span>
         <h2 id="qtext" tabindex="-1"></h2>
         <div class="answers" id="answers" role="group" aria-label="תשובות"></div>
+        <button type="button" class="btn go next" id="check" hidden disabled>✔ בדיקה</button>
         <div class="fb" id="fb" hidden></div>
         <button type="button" class="btn go next" id="next" hidden></button>
       </div>
