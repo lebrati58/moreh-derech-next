@@ -28,7 +28,7 @@ const ext = [];
 const ctx = await browser.newContext(phone); await stub(ctx);
 ctx.on('request', r => { if (!/localhost/.test(r.url())) ext.push(r.url()); });
 const p = await ctx.newPage(); watch(p, 'solo');
-await p.goto(BASE + '/');
+await p.goto(BASE + '/play.html');   // page élève (l'accueil `/` est le lanceur NEXT)
 await p.waitForSelector('a[href="solo.html"]');
 await p.click('a[href="solo.html"]');
 await p.waitForSelector('#sf');
