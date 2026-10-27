@@ -130,6 +130,7 @@ function renderPeriod() {
   $('bToday').setAttribute('aria-pressed', String(showToday)); $('bBase').setAttribute('aria-pressed', String(basemap));
   $('pName').textContent = compare ? '🧱 ' + t('compare') : tx(p.name); if (compare) { $('pDates').textContent = DATA.monuments.filter(m => m.wall).length + ' ' + t('walls'); }
   if (mode2d) draw2d(); else rebuildScene();
+  try { window.dispatchEvent(new CustomEvent('mdl:period', { detail: { n: period } })); } catch (e) { /* lien vers la frise (history-link.js) */ }
 }
 function museumSheet(id) {
   if (period !== 5 || !MUSEUM.meta) return '';

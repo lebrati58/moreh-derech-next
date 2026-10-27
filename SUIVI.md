@@ -22,9 +22,19 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | Idées / signalements élèves | ⛔ | exécuter `supabase/feedback.sql` une fois |
 | Bibliothèque communautaire | ⛔ | exécuter `supabase/community_quizzes.sql` et `community_documents.sql` |
 | **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 58 fiches, monuments modélisés en détail, mode cinéma + vidéo, plan 2D, quiz 3D éteints (phase 2) |
+| **Frise + quiz d'histoire « ציר הזמן והחידון »** | ✅ test navigateur S24 + ordinateur | `history.html` — 48 événements, 7 périodes, quiz chronométré (voir §2, 27 octobre) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
+
+### 27 octobre 2026 — Frise historique et quiz de 48 événements (« ציר הזמן והחידון »)
+Intégration du pack de Lionel (prototypes HTML autonomes) **dans le jeu**, sans iframe.
+- ✅ **Données uniques** `public/history-events.json` : 48 événements à identifiants stables (`ezra`, `masada`…), 7 périodes alignées sur les dossiers « מאורגן לפי תקופות » du Drive, lien de chaque période vers son **תקציר מאורגן** précis + dossier des leçons + תאריכון. Audit complet : `docs/AUDIT_histoire_48.md` (19 av. au lieu de 20 pour le Temple d'Hérode ; « 612 » remplacé par 614 ; 4 événements contestés hors examen).
+- ✅ **Logique partagée** `public/history-data.js` (validation, questions de date à 4 choix avec leurres ≥ 5 ans, score, chronomètre avec pause, résultat versionné) ; **page** `public/history.html` + `public/history-app.js` : onglets ⏳ ציר הזמן / 🎯 חידון, navigation par ancres (le bouton retour Android ferme la fiche), recherche, filtres, fiche en feuille du bas, entraînement / examen / révision des erreurs, chronomètre 30 s (pause si l'appli passe en arrière-plan, question masquée), confettis (sauf reduced motion), reprise d'une partie après sortie ou rechargement.
+- ✅ **Points** (`progress.js`) : seul le **meilleur score d'examen par événement** compte (≤ 290, compatible avec la borne serveur `points ≤ answered × 300`) ; anti-doublon par `runId` ; l'entraînement ne compte pas ; l'activité compte pour la série de jours. Événement `moreh-dereh:quiz-complete` émis en fin de partie.
+- ✅ **Entrées** : tuile d'accueil (4 langues), carte dans « המסע שלי », bouton ⏳ dans Jérusalem 3D (période correspondante) et dans les sites 3D liés (Massada, Hérodion, Césarée, Banias, Tsippori, Beit Shearim). Hors ligne : ajouté à `sw.js` (cache v24).
+- ✅ Tests : `tests/history.test.mjs` (9 tests) ; `tests/history-browser.mjs` (≈ 70 vérifications, Galaxy S24 360×780 + ordinateur 1280×800). Non-régression : journey, sites 3D, Jérusalem 3D OK.
+- ⏳ À trancher par Lionel : Bar Kokhba 131/132, remplacement de « 612 », liste des dates `external` (voir l'audit). Questions « personnages / causes / ordre chronologique » : registre `QUESTION_TYPES` prêt, contenu à écrire.
 
 ### 24 octobre 2026 — Suivi du joueur + motivation quotidienne
 Objectif : rendre le jeu plus motivant et donner un vrai suivi de progression.

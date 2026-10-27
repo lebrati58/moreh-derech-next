@@ -38,6 +38,7 @@ h2{font-size:16px;margin:24px 0 10px;color:#dfe6ff}
 .review{background:linear-gradient(115deg,#8a2a4a,#2b3fa8);border-color:#ff8fb180}
 .review.clean{background:linear-gradient(115deg,#1d3a5c,#22306a);border-color:#6ee9cf60}
 .next{background:linear-gradient(115deg,#0f6f7a,#2b3fa8);border-color:#7fe9dc80}
+.history{background:linear-gradient(115deg,#7a3fc0,#2277bb);border-color:#ffd87880}
 .chart{display:flex;align-items:flex-end;gap:5px;height:96px;padding:10px 10px 0;background:#0f1840;border:1px solid var(--line);border-radius:16px}
 .bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:3px}
 .bar i{display:block;width:100%;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--mint),#2a8fb0);min-height:3px}
@@ -75,6 +76,7 @@ h2{font-size:16px;margin:24px 0 10px;color:#dfe6ff}
   <a class="cta daily" id="daily" href="guided-tour.html?mode=daily&new=1"></a>
   <a class="cta review" id="review" href="guided-tour.html?mode=review&new=1"></a>
   <a class="cta next" id="next" href="map.html?mode=quiz"></a>
+  <a class="cta history" id="history" href="history.html#/quiz"></a>
 
   <h2>📅 14 הימים האחרונים</h2>
   <div class="chart" id="chart" role="img" aria-label="מספר השאלות שנענו בכל יום"></div>
@@ -155,13 +157,18 @@ h2{font-size:16px;margin:24px 0 10px;color:#dfe6ff}
     else el.innerHTML = `<span class="ico" aria-hidden="true">👑</span><span><b>כל המפה בזהב!</b><small>מורה דרך אמיתי. אפשר לשפר דיוק בתרגול חוזר</small></span><span class="go" aria-hidden="true">←</span>`;
   }
 
-  header(); daily(); chart();
+  function historyCard(){
+    const el = $('history'); if (!P.historyStats) { el.hidden = true; return; }
+    const h = P.historyStats(), k = h.mastered.length, m = h.mistakes.length;
+    el.innerHTML = `<span class="ico" aria-hidden="true">⏳</span><span><b>ציר הזמן והחידון${k ? ` · ✅ ${k}/48` : ''}</b><small>${h.points ? '🏆 ' + fmt(h.points) + ' נק׳ שיא במבחנים · ' : ''}${m ? '🔁 ' + m + ' אירועים לחזרה' : k ? 'ממשיכים לשפר את השיא' : '48 אירועים מבבל ועד הכיבוש הפרסי — חידון עם שעון'}</small></span><span class="go" aria-hidden="true">←</span>`;
+  }
+  header(); daily(); chart(); historyCard();
   Promise.all([MDTours.getJSON('guided-quiz.json'), MDTours.getJSON('siyurim-catalog.json')]).then(([data, catalogue]) => {
     const known = new Set(data.questions.map(q => q.id));
     review(P.mistakes().filter(id => known.has(id)).length);
     tours(data, catalogue);
   }).catch(() => { review(P.mistakes().length); $('tours').innerHTML = '<p class="lead">⚠️ לא ניתן לטעון את רשימת הסיורים. נסו שוב עם חיבור.</p>'; $('next').hidden = true; });
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) { header(); daily(); chart(); } });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { header(); daily(); chart(); historyCard(); } });
 })();
 </script>
 <script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>

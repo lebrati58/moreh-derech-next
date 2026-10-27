@@ -1,5 +1,11 @@
 > 📋 **Journal de suivi du projet : [SUIVI.md](SUIVI.md)** — état actuel, sessions, prochaines étapes.
 
+## ⏳ Frise historique et quiz « ציר הזמן והחידון » (27 octobre 2026)
+
+- Page : `public/history.html` (`#/timeline`, `#/event/<id>`, `#/quiz?period=…&mode=exam|practice`, `#/play`, `#/result`). Données : `public/history-events.json` — **seul fichier à modifier** pour corriger une date ; la frise et le quiz le lisent tous les deux. Logique : `public/history-data.js` ; interface : `public/history-app.js`.
+- Audit des 48 dates contre le Drive : `docs/AUDIT_histoire_48.md`. Mettre `examReady: false` pour retirer un événement de l'examen noté.
+- Tests : `npm run test:history` et `CHROME=… npm run e2e:history`.
+
 ## 🌍 Bibliothèque communautaire de קטעי דרך (22 octobre 2026)
 
 **Fonctionnalité développée, activation Supabase requise une seule fois.**
