@@ -47,8 +47,11 @@ test('public RPC migration keeps tables private and validates questions server-s
 });
 
 test('navigation provides both creation and public community library', async () => {
+  // l'accueil passe par la barre d'onglets (menu « Plus ») pour la communauté
+  const tabbar = await read('public/tabbar.js');
+  assert.match(await read('public/index.html'), /<script src="tabbar\.js"><\/script>/);
   for (const path of ['public/index.html', 'public/modes.html', 'public/map.html']) {
-    const html = await read(path);
+    const html = (await read(path)) + (path.endsWith('index.html') ? tabbar : '');
     assert.match(html, /community\.html/);
     assert.match(html, /community-library\.html/);
     for (const script of inlineScripts(html)) assert.doesNotThrow(() => new Function(script));
