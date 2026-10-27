@@ -3,6 +3,7 @@
 {
   "name": "moreh-derech-next",
   "compatibility_date": "2026-10-01",
+  "workers_dev": true,
   "assets": {
     "directory": "./public",
     "html_handling": "auto-trailing-slash"
