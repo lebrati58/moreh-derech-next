@@ -55,3 +55,16 @@ test('les pages de la carte sont dans le cache hors ligne', () => {
   const sw = read('sw.js');
   for (const f of ['map.html', 'places.json', 'tour-data.js', 'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.markercluster.js']) assert.ok(sw.includes("'./" + f + "'"), f);
 });
+
+test('quiz : la bonne réponse n’est pas devinable à sa longueur', () => {
+  // Au hasard, la bonne réponse serait la plus longue dans ~25 % des cas. Avant correction : 71 %.
+  const longest = q => q.options.every((o, i) => i === q.correct || o.length < q.options[q.correct].length);
+  const byTour = {};
+  for (const q of quiz.questions) {
+    assert.equal(new Set(q.options).size, 4, q.id + ' : réponses en double');
+    const t = (byTour[q.tourId] ||= { n: 0, l: 0 }); t.n++; if (longest(q)) t.l++;
+  }
+  const all = Object.values(byTour).reduce((s, t) => s + t.l, 0) / quiz.questions.length;
+  assert.ok(all <= 0.3, 'total ' + Math.round(all * 100) + ' %');
+  for (const [id, t] of Object.entries(byTour)) assert.ok(t.l / t.n <= 0.35, id + ' : ' + Math.round(100 * t.l / t.n) + ' %');
+});
