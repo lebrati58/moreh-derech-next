@@ -192,7 +192,7 @@
    "n": 1,
    "era": "byzantine",
    "name": {
-    "he": "הכפר היהודי ובית הכנסת",
+    "he": "הכפר היהודי",
     "fr": "Le village juif et la synagogue",
     "en": "The Jewish village and synagogue",
     "ru": "Еврейская деревня и синагога"
@@ -208,7 +208,7 @@
    "n": 2,
    "era": "ottoman",
    "name": {
-    "he": "הכפר המרוני כפר בירעם",
+    "he": "הכפר המרוני",
     "fr": "Le village maronite de Kafr Bir’im",
     "en": "The Maronite village of Kafr Bir’im",
     "ru": "Маронитская деревня Кафр-Бирим"
@@ -224,7 +224,7 @@
    "n": 3,
    "era": "today",
    "name": {
-    "he": "ברעם היום",
+    "he": "היום",
     "fr": "Baram aujourd’hui",
     "en": "Bar’am today",
     "ru": "Барам сегодня"

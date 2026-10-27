@@ -192,7 +192,7 @@
    "n": 1,
    "era": "persian",
    "name": {
-    "he": "ארשף הצידונית",
+    "he": "פרס",
     "fr": "Arshaf sidonienne",
     "en": "Sidonian Arshaf",
     "ru": "Сидонский Аршаф"
@@ -208,7 +208,7 @@
    "n": 2,
    "era": "hellenistic",
    "name": {
-    "he": "אפולוניה ההלניסטית-רומית",
+    "he": "יוון ורומא",
     "fr": "Apollonia hellénistique et romaine",
     "en": "Hellenistic–Roman Apollonia",
     "ru": "Эллинистическо-римская Аполлония"
@@ -224,7 +224,7 @@
    "n": 3,
    "era": "byzantine",
    "name": {
-    "he": "סוזוסה ואַרסוּף המוסלמית",
+    "he": "ביזנטיון והאסלאם",
     "fr": "Sozousa et Arsuf musulmane",
     "en": "Sozousa and Muslim Arsuf",
     "ru": "Созуса и мусульманский Арсуф"
@@ -240,7 +240,7 @@
    "n": 4,
    "era": "crusader",
    "name": {
-    "he": "ארסור הצלבנית",
+    "he": "הצלבנים",
     "fr": "Arsur croisée",
     "en": "Crusader Arsur",
     "ru": "Арсур крестоносцев"
@@ -256,7 +256,7 @@
    "n": 5,
    "era": "today",
    "name": {
-    "he": "אפולוניה היום",
+    "he": "היום",
     "fr": "Apollonia aujourd’hui",
     "en": "Apollonia today",
     "ru": "Аполлония сегодня"

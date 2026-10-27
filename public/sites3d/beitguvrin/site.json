@@ -198,7 +198,7 @@
    "n": 1,
    "era": "iron",
    "name": {
-    "he": "מרשה המקראית",
+    "he": "ימי המקרא",
     "fr": "Marésha biblique",
     "en": "Biblical Maresha",
     "ru": "Библейская Мареша"
@@ -214,7 +214,7 @@
    "n": 2,
    "era": "hellenistic",
    "name": {
-    "he": "מרשה ההלניסטית",
+    "he": "יוון",
     "fr": "Marésha hellénistique",
     "en": "Hellenistic Maresha",
     "ru": "Эллинистическая Мареша"
@@ -230,7 +230,7 @@
    "n": 3,
    "era": "roman",
    "name": {
-    "he": "בית גוברין — אלאותרופוליס",
+    "he": "רומא",
     "fr": "Beit Guvrin — Éleuthéropolis",
     "en": "Beit Guvrin — Eleutheropolis",
     "ru": "Бейт-Гуврин — Элевтерополь"
@@ -246,7 +246,7 @@
    "n": 4,
    "era": "early_islamic",
    "name": {
-    "he": "מערות הפעמון והצלבנים",
+    "he": "האסלאם הקדום והצלבנים",
     "fr": "Grottes en cloche et croisés",
     "en": "Bell caves and Crusaders",
     "ru": "Колоколообразные пещеры и крестоносцы"
@@ -262,7 +262,7 @@
    "n": 5,
    "era": "today",
    "name": {
-    "he": "הגן הלאומי היום",
+    "he": "היום",
     "fr": "Le parc national aujourd’hui",
     "en": "The national park today",
     "ru": "Национальный парк сегодня"

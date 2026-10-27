@@ -215,7 +215,7 @@
    "n": 1,
    "era": "hellenistic",
    "name": {
-    "he": "מגדל סטרטון (הלניסטית)",
+    "he": "יוון",
     "fr": "Tour de Straton (hellénistique)",
     "en": "Straton’s Tower (Hellenistic)",
     "ru": "Стратонова башня (эллинизм)"
@@ -247,7 +247,7 @@
    "n": 3,
    "era": "roman",
    "name": {
-    "he": "רומית — בירת הפרובינציה",
+    "he": "רומא",
     "fr": "Romaine — capitale provinciale",
     "en": "Roman — provincial capital",
     "ru": "Римская — столица провинции"
@@ -263,7 +263,7 @@
    "n": 4,
    "era": "byzantine",
    "name": {
-    "he": "ביזנטית",
+    "he": "ביזנטיון",
     "fr": "Byzantine",
     "en": "Byzantine",
     "ru": "Византийская"
@@ -279,7 +279,7 @@
    "n": 5,
    "era": "early_islamic",
    "name": {
-    "he": "ערבית קדומה",
+    "he": "האסלאם הקדום",
     "fr": "Arabe ancienne",
     "en": "Early Islamic",
     "ru": "Раннеисламская"
@@ -295,7 +295,7 @@
    "n": 6,
    "era": "crusader",
    "name": {
-    "he": "צלבנית",
+    "he": "הצלבנים",
     "fr": "Croisée",
     "en": "Crusader",
     "ru": "Крестоносцы"
@@ -327,7 +327,7 @@
    "n": 8,
    "era": "today",
    "name": {
-    "he": "קיסריה היום",
+    "he": "היום",
     "fr": "Césarée aujourd’hui",
     "en": "Caesarea today",
     "ru": "Кесария сегодня"

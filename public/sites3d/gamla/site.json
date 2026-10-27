@@ -194,7 +194,7 @@
    "n": 1,
    "era": "hasmonean",
    "name": {
-    "he": "הלניסטית-חשמונאית",
+    "he": "החשמונאים",
     "fr": "Hellénistique-hasmonéenne",
     "en": "Hellenistic–Hasmonean",
     "ru": "Эллинистическо-хасмонейская"
@@ -210,7 +210,7 @@
    "n": 2,
    "era": "roman",
    "name": {
-    "he": "המרד הגדול והמצור",
+    "he": "המרד הגדול",
     "fr": "Grande Révolte et siège",
     "en": "Great Revolt and siege",
     "ru": "Великое восстание и осада"
@@ -226,7 +226,7 @@
    "n": 3,
    "era": "byzantine",
    "name": {
-    "he": "ביזנטית — דיר קרוח",
+    "he": "ביזנטיון",
     "fr": "Byzantine — Deir Qeruh",
     "en": "Byzantine — Deir Qeruh",
     "ru": "Византийская — Дейр-Керух"
@@ -242,7 +242,7 @@
    "n": 4,
    "era": "today",
    "name": {
-    "he": "גמלא היום",
+    "he": "היום",
     "fr": "Gamla aujourd’hui",
     "en": "Gamla today",
     "ru": "Гамла сегодня"

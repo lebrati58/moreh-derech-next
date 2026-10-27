@@ -44,7 +44,7 @@
    "era": "canaanite",
    "id": "canaanite",
    "name": {
-    "he": "כנענית (ברונזה תיכונה)",
+    "he": "כנען",
     "fr": "Cananéenne (Bronze moyen)",
     "en": "Canaanite (Middle Bronze)",
     "ru": "Ханаанский (средняя бронза)"
@@ -61,7 +61,7 @@
    "era": "iron",
    "id": "first_temple",
    "name": {
-    "he": "בית ראשון (ברזל 2)",
+    "he": "בית ראשון",
     "fr": "Premier Temple (Fer II)",
     "en": "First Temple (Iron II)",
     "ru": "Первый Храм (железный век II)"
@@ -78,7 +78,7 @@
    "era": "persian",
    "id": "persian",
    "name": {
-    "he": "פרסית — שיבת ציון",
+    "he": "פרס",
     "fr": "Perse — Retour de Sion",
     "en": "Persian — Return to Zion",
     "ru": "Персидский — возвращение в Сион"
@@ -95,7 +95,7 @@
    "era": "hasmonean",
    "id": "hasmonean",
    "name": {
-    "he": "חשמונאית",
+    "he": "החשמונאים",
     "fr": "Hasmonéenne",
     "en": "Hasmonean",
     "ru": "Хасмонейский"
@@ -112,7 +112,7 @@
    "era": "herodian",
    "id": "herodian",
    "name": {
-    "he": "הורדוסית — ימי בית שני",
+    "he": "הורדוס",
     "fr": "Hérodienne — Second Temple",
     "en": "Herodian — Second Temple",
     "ru": "Иродианский — Второй Храм"
@@ -129,7 +129,7 @@
    "era": "roman",
    "id": "aelia",
    "name": {
-    "he": "רומית — איליה קפיטולינה",
+    "he": "רומא",
     "fr": "Romaine — Aelia Capitolina",
     "en": "Roman — Aelia Capitolina",
     "ru": "Римский — Элия Капитолина"
@@ -146,7 +146,7 @@
    "era": "byzantine",
    "id": "byzantine",
    "name": {
-    "he": "ביזנטית",
+    "he": "ביזנטיון",
     "fr": "Byzantine",
     "en": "Byzantine",
     "ru": "Византийский"
@@ -163,7 +163,7 @@
    "era": "early_islamic",
    "id": "early_islamic",
    "name": {
-    "he": "ערבית קדומה ופאטימית",
+    "he": "האסלאם הקדום",
     "fr": "Arabe ancienne et fatimide",
     "en": "Early Islamic and Fatimid",
     "ru": "Раннеисламский и фатимидский"
@@ -180,7 +180,7 @@
    "era": "crusader",
    "id": "crusader",
    "name": {
-    "he": "צלבנית",
+    "he": "הצלבנים",
     "fr": "Croisée",
     "en": "Crusader",
     "ru": "Крестоносцев"
@@ -197,7 +197,7 @@
    "era": "mamluk",
    "id": "ayyubid_mamluk",
    "name": {
-    "he": "איובית וממלוכית",
+    "he": "האיובים והממלוכים",
     "fr": "Ayyoubide et mamelouke",
     "en": "Ayyubid and Mamluk",
     "ru": "Айюбидский и мамлюкский"
@@ -214,7 +214,7 @@
    "era": "ottoman",
    "id": "ottoman",
    "name": {
-    "he": "עות׳מאנית",
+    "he": "העות׳מאנים",
     "fr": "Ottomane",
     "en": "Ottoman",
     "ru": "Османский"
@@ -231,7 +231,7 @@
    "era": "today",
    "id": "today",
    "name": {
-    "he": "ירושלים היום",
+    "he": "היום",
     "fr": "Jérusalem aujourd’hui",
     "en": "Jerusalem today",
     "ru": "Иерусалим сегодня"
