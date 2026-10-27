@@ -208,6 +208,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "hasmonean",
    "name": {
     "he": "חשמונאית ורומית קדומה",
     "fr": "Hasmonéenne et romaine ancienne",
@@ -223,6 +224,7 @@
   },
   {
    "n": 2,
+   "era": "roman",
    "name": {
     "he": "רומית — עיר המשנה",
     "fr": "Romaine — ville de la Mishna",
@@ -238,6 +240,7 @@
   },
   {
    "n": 3,
+   "era": "byzantine",
    "name": {
     "he": "ביזנטית",
     "fr": "Byzantine",
@@ -253,6 +256,7 @@
   },
   {
    "n": 4,
+   "era": "today",
    "name": {
     "he": "המצודה וציפורי היום",
     "fr": "La citadelle et Tsippori aujourd’hui",

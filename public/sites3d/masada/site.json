@@ -240,6 +240,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "hasmonean",
    "name": {
     "he": "חשמונאית",
     "fr": "Hasmonéenne",
@@ -255,6 +256,7 @@
   },
   {
    "n": 2,
+   "era": "herodian",
    "name": {
     "he": "הורדוס",
     "fr": "Hérode",
@@ -270,6 +272,7 @@
   },
   {
    "n": 3,
+   "era": "roman",
    "name": {
     "he": "המרד הגדול והמצור",
     "fr": "Grande Révolte et siège",
@@ -285,6 +288,7 @@
   },
   {
    "n": 4,
+   "era": "byzantine",
    "name": {
     "he": "ביזנטית — נזירים",
     "fr": "Byzantine — moines",
@@ -300,6 +304,7 @@
   },
   {
    "n": 5,
+   "era": "today",
    "name": {
     "he": "מצדה היום",
     "fr": "Massada aujourd’hui",

@@ -213,6 +213,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "hellenistic",
    "name": {
     "he": "מגדל סטרטון (הלניסטית)",
     "fr": "Tour de Straton (hellénistique)",
@@ -228,6 +229,7 @@
   },
   {
    "n": 2,
+   "era": "herodian",
    "name": {
     "he": "הורדוס",
     "fr": "Hérode",
@@ -243,6 +245,7 @@
   },
   {
    "n": 3,
+   "era": "roman",
    "name": {
     "he": "רומית — בירת הפרובינציה",
     "fr": "Romaine — capitale provinciale",
@@ -258,6 +261,7 @@
   },
   {
    "n": 4,
+   "era": "byzantine",
    "name": {
     "he": "ביזנטית",
     "fr": "Byzantine",
@@ -273,6 +277,7 @@
   },
   {
    "n": 5,
+   "era": "early_islamic",
    "name": {
     "he": "ערבית קדומה",
     "fr": "Arabe ancienne",
@@ -288,6 +293,7 @@
   },
   {
    "n": 6,
+   "era": "crusader",
    "name": {
     "he": "צלבנית",
     "fr": "Croisée",
@@ -303,6 +309,7 @@
   },
   {
    "n": 7,
+   "era": "ottoman",
    "name": {
     "he": "הכפר הבוסני",
     "fr": "Le village bosniaque",
@@ -318,6 +325,7 @@
   },
   {
    "n": 8,
+   "era": "today",
    "name": {
     "he": "קיסריה היום",
     "fr": "Césarée aujourd’hui",

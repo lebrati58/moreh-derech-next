@@ -196,6 +196,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "iron",
    "name": {
     "he": "מרשה המקראית",
     "fr": "Marésha biblique",
@@ -211,6 +212,7 @@
   },
   {
    "n": 2,
+   "era": "hellenistic",
    "name": {
     "he": "מרשה ההלניסטית",
     "fr": "Marésha hellénistique",
@@ -226,6 +228,7 @@
   },
   {
    "n": 3,
+   "era": "roman",
    "name": {
     "he": "בית גוברין — אלאותרופוליס",
     "fr": "Beit Guvrin — Éleuthéropolis",
@@ -241,6 +244,7 @@
   },
   {
    "n": 4,
+   "era": "early_islamic",
    "name": {
     "he": "מערות הפעמון והצלבנים",
     "fr": "Grottes en cloche et croisés",
@@ -256,6 +260,7 @@
   },
   {
    "n": 5,
+   "era": "today",
    "name": {
     "he": "הגן הלאומי היום",
     "fr": "Le parc national aujourd’hui",

@@ -1,6 +1,7 @@
 // Moreh Derech NEXT — sites archéologiques en 3D (Massada, Césarée, Beit Shean).
 // Même principe que Jérusalem 3D : relief réel (SRTM), positions réelles (Wikipédia/Wikidata, OpenStreetMap), fiches sourcées
 // (cours d'abord), trois niveaux de certitude. Données : sites3d/<site>/site.json (fiches) + sites3d/<site>/geo.json (géographie).
+import { renderTimeline, markTimeline, pickStyle } from '../era-timeline.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Sky } from 'three/addons/objects/Sky.js';
@@ -95,7 +96,7 @@ function applyUI() {
   renderStrip(); renderPeriod(); if (selected) openSheet(selected);
 }
 function renderStrip() {
-  $('strip').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.n}" aria-pressed="${p.n === period}">${esc(tx(p.name))}<small>${esc(tx(p.dates))}</small></button>`).join('');
+  renderTimeline($('strip'), DATA.periods, period, tx, esc, ({ he: 'ציר הזמן', fr: 'le temps', en: 'time', ru: 'время' })[lang]);
   const cur = $('strip').querySelector('[aria-pressed=true]'); if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center' });
 }
 const inPeriod = m => m.from <= period && period <= m.to;
@@ -104,7 +105,7 @@ function renderPeriod() {
   const p = DATA.periods.find(x => x.n === period);
   $('pName').textContent = tx(p.name); $('pDates').textContent = tx(p.dates);
   $('pCount').textContent = '📋 ' + DATA.monuments.filter(inPeriod).length + ' ' + t('sites');
-  document.querySelectorAll('#strip [data-p]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.p) === period)));
+  markTimeline($('strip'), $('pBig'), DATA.periods, period);
   const ns = DATA.periods.map(x => x.n), i = ns.indexOf(period), rtl = document.documentElement.dir === 'rtl';
   $('pPrev').textContent = rtl ? '›' : '‹'; $('pNext').textContent = rtl ? '‹' : '›'; $('pPrev').disabled = i <= 0; $('pNext').disabled = i >= ns.length - 1;
   $('pPrev').setAttribute('aria-label', t('prevP')); $('pNext').setAttribute('aria-label', t('nextP')); $('pBig').title = t('pickP');
@@ -137,7 +138,7 @@ function goPeriod(n) { if (!DATA.periods.some(p => p.n === n)) return; period = 
 $('strip').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) goPeriod(Number(b.dataset.p)); });
 function closePick() { $('pPick').hidden = true; $('pBig').setAttribute('aria-expanded', 'false'); document.querySelector('.periods').classList.remove('picking'); }
 $('pBig').onclick = () => { if (!$('pPick').hidden) return closePick();
-  $('pPick').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.n}" aria-pressed="${p.n === period}">${esc(tx(p.name))}<small>${esc(tx(p.dates))}</small></button>`).join('');
+  $('pPick').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.n}" aria-pressed="${p.n === period}" style="${pickStyle(DATA.periods, p.n)}">${esc(tx(p.name))}<small>${esc(tx(p.dates))}</small></button>`).join('');
   $('pPick').hidden = false; $('pBig').setAttribute('aria-expanded', 'true'); document.querySelector('.periods').classList.add('picking'); };
 $('pPick').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) goPeriod(Number(b.dataset.p)); });
 const stepPeriod = d => { const ns = DATA.periods.map(p => p.n), i = ns.indexOf(period); if (ns[i + d] !== undefined) goPeriod(ns[i + d]); };

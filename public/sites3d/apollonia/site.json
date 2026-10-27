@@ -190,6 +190,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "persian",
    "name": {
     "he": "ארשף הצידונית",
     "fr": "Arshaf sidonienne",
@@ -205,6 +206,7 @@
   },
   {
    "n": 2,
+   "era": "hellenistic",
    "name": {
     "he": "אפולוניה ההלניסטית-רומית",
     "fr": "Apollonia hellénistique et romaine",
@@ -220,6 +222,7 @@
   },
   {
    "n": 3,
+   "era": "byzantine",
    "name": {
     "he": "סוזוסה ואַרסוּף המוסלמית",
     "fr": "Sozousa et Arsuf musulmane",
@@ -235,6 +238,7 @@
   },
   {
    "n": 4,
+   "era": "crusader",
    "name": {
     "he": "ארסור הצלבנית",
     "fr": "Arsur croisée",
@@ -250,6 +254,7 @@
   },
   {
    "n": 5,
+   "era": "today",
    "name": {
     "he": "אפולוניה היום",
     "fr": "Apollonia aujourd’hui",

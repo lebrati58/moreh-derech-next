@@ -183,6 +183,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "mamluk",
    "name": {
     "he": "איובית",
     "fr": "Ayyoubide",
@@ -198,6 +199,7 @@
   },
   {
    "n": 2,
+   "era": "mamluk",
    "name": {
     "he": "ממלוכית",
     "fr": "Mamelouke",
@@ -213,6 +215,7 @@
   },
   {
    "n": 3,
+   "era": "today",
    "name": {
     "he": "המבצר היום",
     "fr": "La forteresse aujourd’hui",

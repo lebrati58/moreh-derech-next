@@ -210,6 +210,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "ebronze",
    "name": {
     "he": "ברונזה קדומה",
     "fr": "Bronze ancien",
@@ -225,6 +226,7 @@
   },
   {
    "n": 2,
+   "era": "canaanite",
    "name": {
     "he": "כנענית (ברונזה תיכונה ומאוחרת)",
     "fr": "Cananéenne (Bronze moyen et récent)",
@@ -240,6 +242,7 @@
   },
   {
    "n": 3,
+   "era": "iron",
    "name": {
     "he": "ממלכת ישראל (ברזל)",
     "fr": "Royaume d’Israël (fer)",
@@ -255,6 +258,7 @@
   },
   {
    "n": 4,
+   "era": "iron",
    "name": {
     "he": "אשורית",
     "fr": "Assyrienne",
@@ -270,6 +274,7 @@
   },
   {
    "n": 5,
+   "era": "today",
    "name": {
     "he": "מגידו היום",
     "fr": "Megiddo aujourd’hui",

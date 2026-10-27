@@ -180,6 +180,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "roman",
    "name": {
     "he": "הכפר בית אילפא",
     "fr": "Le village de Beit Ilfa",
@@ -195,6 +196,7 @@
   },
   {
    "n": 2,
+   "era": "byzantine",
    "name": {
     "he": "בית הכנסת והפסיפס",
     "fr": "La synagogue et la mosaïque",
@@ -210,6 +212,7 @@
   },
   {
    "n": 3,
+   "era": "today",
    "name": {
     "he": "הגילוי והיום",
     "fr": "La découverte et aujourd’hui",

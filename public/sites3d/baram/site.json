@@ -190,6 +190,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "byzantine",
    "name": {
     "he": "הכפר היהודי ובית הכנסת",
     "fr": "Le village juif et la synagogue",
@@ -205,6 +206,7 @@
   },
   {
    "n": 2,
+   "era": "ottoman",
    "name": {
     "he": "הכפר המרוני כפר בירעם",
     "fr": "Le village maronite de Kafr Bir’im",
@@ -220,6 +222,7 @@
   },
   {
    "n": 3,
+   "era": "today",
    "name": {
     "he": "ברעם היום",
     "fr": "Baram aujourd’hui",

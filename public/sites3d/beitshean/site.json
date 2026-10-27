@@ -214,6 +214,7 @@
  "periods": [
   {
    "n": 1,
+   "era": "canaanite",
    "name": {
     "he": "כנענית — שלטון מצרי",
     "fr": "Cananéenne — domination égyptienne",
@@ -229,6 +230,7 @@
   },
   {
    "n": 2,
+   "era": "iron",
    "name": {
     "he": "ימי המקרא (ברזל)",
     "fr": "Époque biblique (fer)",
@@ -244,6 +246,7 @@
   },
   {
    "n": 3,
+   "era": "hellenistic",
    "name": {
     "he": "הלניסטית — ניסה-סקיתופוליס",
     "fr": "Hellénistique — Nysa-Scythopolis",
@@ -259,6 +262,7 @@
   },
   {
    "n": 4,
+   "era": "roman",
    "name": {
     "he": "רומית — עיר הדקאפוליס",
     "fr": "Romaine — ville de la Décapole",
@@ -274,6 +278,7 @@
   },
   {
    "n": 5,
+   "era": "byzantine",
    "name": {
     "he": "ביזנטית — בירת פלשתינה סקונדה",
     "fr": "Byzantine — capitale de la Palestina Secunda",
@@ -289,6 +294,7 @@
   },
   {
    "n": 6,
+   "era": "early_islamic",
    "name": {
     "he": "ערבית קדומה — עד רעש 749",
     "fr": "Arabe ancienne — jusqu’au séisme de 749",
@@ -304,6 +310,7 @@
   },
   {
    "n": 7,
+   "era": "today",
    "name": {
     "he": "בית שאן היום",
     "fr": "Beit Shean aujourd’hui",
