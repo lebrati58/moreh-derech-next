@@ -78,6 +78,10 @@ const plan = await page.textContent('#out');
 ok(/בתוך שעות הפתיחה \(09:00–17:00\)/.test(plan) && /✗/.test(plan), 'programme : heures d’ouverture du cours vérifiées (עין קשתות jusqu’à 17:00)');
 ok(/נקודת פיזור/.test(plan), 'programme : point de dispersion exigé');
 
+// supprimer toutes les lignes ne laisse jamais un tableau vide
+while (await page.$('.plan [data-del]')) { await page.$eval('.plan [data-del]', el => el.click()); await page.waitForTimeout(80); if ((await page.$$('.plan .pr')).length === 1 && (await page.$eval('.plan [data-k="start"]', e => e.value)) === '08:00') break; }
+ok((await page.$$('.plan .pr')).length === 1 && (await page.$eval('.plan [data-k="start"]', e => e.value)) === '08:00', 'programme : après suppression, la ligne 08:00 מפגש revient');
+
 // éditeur courte : compteur et dépassement
 await page.goto(base + 'exam.html#/m/g1/guided/3');
 await page.waitForSelector('#ed textarea');

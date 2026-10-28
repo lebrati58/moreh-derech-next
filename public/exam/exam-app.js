@@ -325,7 +325,7 @@
   }
   function stepPlan(m, D, body) {
     const model = MODELS.models.school5;
-    if (!D.plan.length) D.plan = [{ start: '08:00', end: '', what: 'מפגש ואיסוף: צומת צמח', log: '' }];
+    if (!D.plan.length) D.plan = [{ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((DATA.anchors || [{}])[0].he || ''), log: 'לבדוק שכולם הגיעו' }];
     const siteOpts = r => `<option value="">—</option>${DATA.sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}`;
     const draw = res => {
       body.innerHTML = `<p class="lead">${esc(model.day.he)} עמודת המשך מחושבת לבד. כל שורה מתחילה בשעת הסיום של הקודמת. זמני נסיעה — רק ממה שאתם יודעים; האפליקציה לא ממציאה אותם.</p>
@@ -342,9 +342,15 @@
         if (inp.dataset.k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = inp.value.trim();
         save(); draw();
       }));
-      $$('[data-del]', body).forEach(b => b.addEventListener('click', () => { D.plan.splice(+b.dataset.del, 1); save(); draw(); }));
+      $$('[data-del]', body).forEach(b => b.addEventListener('click', () => {
+        const r = D.plan[+b.dataset.del];
+        if ((r.what || r.log || r.site) && !confirm('למחוק את השורה ״' + (r.what || r.start) + '״?')) return;
+        D.plan.splice(+b.dataset.del, 1);
+        if (!D.plan.length) D.plan.push({ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((DATA.anchors || [{}])[0].he || ''), log: 'לבדוק שכולם הגיעו' });   // jamais de tableau vide
+        save(); draw();
+      }));
       $('#add', body).addEventListener('click', () => { const last = D.plan[D.plan.length - 1]; D.plan.push({ start: last ? last.end : '', end: '', what: '', log: '' }); save(); draw(); });
-      $('#rst', body).addEventListener('click', () => { D.plan = []; save(); stepPlan(m, D, body); });
+      $('#rst', body).addEventListener('click', () => { if (!confirm('למחוק את כל לוח הזמנים ולהתחיל מחדש?')) return; D.plan = []; save(); stepPlan(m, D, body); });
       $('#hnt', body).addEventListener('click', () => { $('#out', body).innerHTML = `<div class="panel"><h3>💡 שיעור 26 — כתיבת לו״ז</h3><ul class="tips">${MODELS.planRules.tips.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${srcLink('lesson26')}</div>`; });
       $('#mdl', body).addEventListener('click', () => {
         $('#out', body).innerHTML = `<div class="panel"><h3>👀 דוגמה מהשיעור: ״מקורות הירקון״ (משפחות)</h3><p class="muted">זו דוגמת המרצה מהקורס, לא תשובה למשימה הזו — כדי לראות את הצורה.</p>
@@ -452,7 +458,7 @@
       const draw = () => {
         body.innerHTML = `<div class="plan">${E.plan.map((r, i) => `<div class="pr" data-i="${i}"><input aria-label="התחלה" data-k="start" value="${esc(r.start)}" placeholder="08:00"><input aria-label="סיום" data-k="end" value="${esc(r.end)}" placeholder="08:30"><span class="dur">${(C.toMin(r.end) - C.toMin(r.start)) >= 0 ? (C.toMin(r.end) - C.toMin(r.start)) + ' דק׳' : ''}</span><input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}"><input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}"><select aria-label="אתר" data-k="site"><option value="">—</option>${DATA.sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>`).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
         $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => { const i = +inp.closest('.pr').dataset.i; E.plan[i][inp.dataset.k] = inp.value.trim(); if (inp.dataset.k === 'end' && E.plan[i + 1] && !E.plan[i + 1].start) E.plan[i + 1].start = inp.value.trim(); save(); draw(); }));
-        $$('[data-del]', body).forEach(b => b.addEventListener('click', () => { E.plan.splice(+b.dataset.del, 1); save(); draw(); }));
+        $$('[data-del]', body).forEach(b => b.addEventListener('click', () => { E.plan.splice(+b.dataset.del, 1); if (!E.plan.length) E.plan.push({ start: model.day.start, end: '', what: '', log: '' }); save(); draw(); }));
         $('#add', body).addEventListener('click', () => { const last = E.plan[E.plan.length - 1]; E.plan.push({ start: last ? last.end : '', end: '', what: '', log: '' }); save(); draw(); });
       };
       if (!E.plan.length) E.plan.push({ start: '08:00', end: '', what: '', log: '' });
