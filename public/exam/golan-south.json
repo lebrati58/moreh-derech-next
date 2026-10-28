@@ -182,6 +182,11 @@
             "ek",
             "ek_tiuli"
           ]
+        },
+        "queue": {
+          "status": "unknown",
+          "he": "זמן המתנה בקופה לא ידוע — להוסיף מרווח ולשקול תשלום מראש לקבוצה",
+          "src": null
         }
       }
     },
@@ -274,7 +279,12 @@
           ]
         },
         "phone": null,
-        "group": null
+        "group": null,
+        "queue": {
+          "status": "yes",
+          "he": "אין קופה לפי המקורות (כניסה חופשית)",
+          "src": null
+        }
       }
     },
     {
@@ -379,6 +389,11 @@
         "group": {
           "he": "סיפור אישי של לוחם — לתאם מראש",
           "src": "ts"
+        },
+        "queue": {
+          "status": "yes",
+          "he": "אין קופה לפי המקורות (כניסה חופשית)",
+          "src": null
         }
       }
     },
@@ -461,7 +476,12 @@
           "src": "hippos_news"
         },
         "phone": null,
-        "group": null
+        "group": null,
+        "queue": {
+          "status": "unknown",
+          "he": "זמן המתנה בקופה לא ידוע — להוסיף מרווח ולשקול תשלום מראש לקבוצה",
+          "src": null
+        }
       }
     },
     {
@@ -540,7 +560,12 @@
           "src": null
         },
         "phone": null,
-        "group": null
+        "group": null,
+        "queue": {
+          "status": "unknown",
+          "he": "זמן המתנה בקופה לא ידוע — להוסיף מרווח ולשקול תשלום מראש לקבוצה",
+          "src": null
+        }
       }
     }
   ],

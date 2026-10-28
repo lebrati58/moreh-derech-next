@@ -133,6 +133,26 @@ await shot('6-result');
 const st = await page.evaluate(() => window.MDExamApp.state());
 ok(st.badges.includes('examdone') && st.history.length === 1, 'badge + historique enregistrés dans le téléphone');
 
+// « À l'envers » : le guide décrit, l'app propose
+await page.goto(base + 'exam.html#/tiyul');
+await page.waitForSelector('#tGo');
+await page.fill('#tGroup', 'משפחות, 40 איש, אוטובוס');
+for (const t of ['synagogue', 'view', 'yom_kippur', 'christianity']) await page.$eval(`[data-tag="${t}"]`, el => el.click());
+await page.$eval('#tGo', el => el.click());
+await page.waitForSelector('.prop');
+const prop = await page.textContent('.prop');
+ok(/הצעה 1/.test(prop) && /עין קשתות/.test(prop) && /תל סאקי/.test(prop) && /כל מה שביקשתם מכוסה/.test(prop), 'tiyul : proposition couvrant les 4 souhaits');
+ok(/זמן: לבדוק ב-Waze/.test(prop) && /לברר: שירותים/.test(prop) && /המתנה בקופה/.test(prop), 'tiyul : brouillon de programme sans temps inventé, toilettes et caisse « לברר »');
+await page.$eval('[data-open="0"]', el => el.click());
+await page.waitForSelector('.slots');
+ok(/הטיול שלי/.test(await page.textContent('.brief h1')) && (await page.$$('.slots select')).length >= 4, 'tiyul : ouvert comme mission d’entraînement, sites pré-remplis');
+await page.click('#chk'); await page.waitForSelector('.slot.ok');
+ok((await page.$$('.slot.bad')).length === 0, 'mission personnalisée : tous les sites valides');
+await page.goto(base + 'exam.html#/m/custom/guided/2');
+await page.waitForSelector('.plan');
+ok((await page.$$('.plan .pr')).length >= 9 && (await page.$$eval('.plan [data-k="what"]', els => els.map(e => e.value).join('|'))).includes('לבדוק ב-Waze'), 'programme pré-rempli (lignes de trajet à compléter)');
+await shot('7-tiyul');
+
 // FR
 await page.goto(base + 'exam.html');
 await page.waitForSelector('#lng'); await page.click('#lng');

@@ -262,7 +262,53 @@
     return out;
   }
 
-  const api = { distanceKm, navLinks, legs, wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
+  // ---------- « À l'envers » : le guide dit ce qu'il veut, l'app propose des parcours ----------
+  // prefs : { tags:[...], count:3..5, road:bool, start:{lat,lon,...}|null }
+  // Chaque proposition : sites (ordre de proximité depuis le départ), étapes de route, couverture des souhaits,
+  // trajets (distance aérienne seulement), brouillon de לוח זמנים SANS temps inventés, et unités modèles disponibles.
+  function suggest(prefs, data) {
+    const P = places(data), want = prefs.tags || [], n = Math.max(2, Math.min(5, prefs.count || 4));
+    const sites = data.sites.map(s => {
+      const hit = want.filter(t => (s.tags || []).includes(t));
+      const verified = (s.status || []).includes('visited') ? 1 : 0;
+      return { s, hit, score: hit.length * 10 + verified * 2 + (s.hours ? 1 : 0) };
+    }).filter(x => !want.length || x.hit.length).sort((a, b) => b.score - a.score);
+    const order = (list) => {   // plus proche voisin depuis le départ
+      const rest = list.slice(), out = []; let cur = prefs.start || rest[0];
+      while (rest.length) { rest.sort((a, b) => distanceKm(cur, a) - distanceKm(cur, b)); const x = rest.shift(); out.push(x); cur = x; }
+      return out;
+    };
+    const build = picked => {
+      const ids = picked.map(s => s.id), ord = order(picked);
+      const covered = want.filter(t => picked.some(s => (s.tags || []).includes(t)));
+      const roads = prefs.road ? (data.roads || []).filter(r => !r.line || r.line.every(id => ids.includes(id) || id === 'kursi')) : [];
+      const L = legs(ord.map(s => s.id), data, prefs.start);
+      const plan = [{ start: prefs.startTime || '08:00', end: '', what: 'מפגש ואיסוף: ' + ((prefs.start && prefs.start.he) || 'נקודת המפגש'), log: 'לבדוק שכולם הגיעו' }];
+      ord.forEach((s, i) => {
+        const L2 = s.logistics2 || {};
+        plan.push({ start: '', end: '', what: 'נסיעה ל' + s.short + ' (זמן: לבדוק ב-Waze)', log: '' });
+        const todo = ['toilets', 'parking', 'queue'].filter(k => L2[k] && L2[k].status === 'unknown').map(k => ({ toilets: 'שירותים', parking: 'חניה', queue: 'המתנה בקופה' })[k]);
+        plan.push({ start: '', end: '', what: s.he, site: s.id, log: [L2.price && !/חינם|לא/.test(L2.price.he) ? 'תשלום כניסה' : '', todo.length ? 'לברר: ' + todo.join(', ') : '', L2.group ? 'תיאום קבוצה' : ''].filter(Boolean).join(' · ') });
+        if (i === Math.min(1, ord.length - 1)) plan.push({ start: '', end: '', what: 'ארוחת צהריים', log: 'לבדוק אם יש מקום לאכול — אחרת ארוחה עצמית' });
+      });
+      plan.push({ start: '', end: prefs.endTime || '18:00', what: 'נסיעה חזרה ופיזור: ' + ((prefs.start && prefs.start.he) || 'נקודת הפיזור'), log: 'פיזור' });
+      const units = ord.map(s => ({ site: s.id, model: !!(data.models && data.models[s.id]), long: !!(data.models && data.models['long_' + s.id]) }));
+      return { sites: ord, roads, covered, missing: want.filter(t => !covered.includes(t)), legs: L, km: Math.round(L.reduce((a, l) => a + l.km, 0) * 10) / 10, plan, units,
+        warnings: ord.filter(s => (s.status || []).includes('unverified')).map(s => s.short + ' — החומר חלקי (טרם אומת)') };
+    };
+    const out = [], seen = new Set();
+    const push = picked => { const key = picked.map(s => s.id).sort().join(','); if (picked.length && !seen.has(key)) { seen.add(key); out.push(build(picked)); } };
+    // 1) couverture gloutonne des souhaits, 2) les mieux notés, 3) variante sans les sites non vérifiés
+    const greedy = []; const left = new Set(want);
+    for (const x of sites) { if (greedy.length >= n) break; if (!want.length || x.hit.some(t => left.has(t)) || greedy.length < n && left.size === 0) { greedy.push(x.s); x.hit.forEach(t => left.delete(t)); } }
+    for (const x of sites) { if (greedy.length >= n) break; if (!greedy.includes(x.s)) greedy.push(x.s); }
+    push(greedy);
+    push(sites.slice(0, n).map(x => x.s));
+    push(sites.filter(x => !(x.s.status || []).includes('unverified')).slice(0, n).map(x => x.s));
+    return out.slice(0, 3);
+  }
+
+  const api = { suggest, distanceKm, navLinks, legs, wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.MDExamCore = api;
 })(typeof window !== 'undefined' ? window : globalThis);

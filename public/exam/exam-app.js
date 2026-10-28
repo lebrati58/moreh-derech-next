@@ -28,6 +28,7 @@
     if (C.level(S.xp).n > before) { celebrate('🎉 ' + t('level') + ' ' + C.level(S.xp).n + ' — ' + C.level(S.xp).he); }
     return xp;
   }
+  const TAGS = { road: '🚌 הדרכת דרך', view: '🔭 תצפית', geology: '🪨 גאולוגיה', judaism: '✡️ יהדות', synagogue: '🕍 בית כנסת עתיק', christianity: '✝️ נצרות', new_testament: '📖 ברית חדשה', hellenistic_roman: '🏛️ הלניסטי-רומי', byzantine: '⛪ ביזנטי', archaeology: '⛏️ ארכאולוגיה', battle: '⚔️ קרב', yom_kippur: '🎖️ מלחמת יום הכיפורים', heritage: '🏅 מורשת', personal_story: '🎙️ סיפור אישי', water: '💧 מים', city: '🏙️ עיר עתיקה', bible: '📜 תנ״ך', geography: '🗺️ גאוגרפיה' };
   const BADGES = {
     first: ['🧭', 'צעד ראשון', 'בחרתם אתרים למשימה'],
     clock: ['⏱️', 'שומר הזמן', 'לוח זמנים תקין'],
@@ -135,7 +136,7 @@
     const nav = C.navLinks(null, p);
     return `<div class="logi"><h4>🧾 לוגיסטיקה לתכנון</h4><ul>
       ${row('🕘', 'שעות', L.hours)}${row('⏮️', 'כניסה אחרונה', L.lastEntry)}${row('💳', 'תשלום', L.price)}
-      ${flag('🚻', 'שירותים', L.toilets)}${flag('🅿️', 'חניה לאוטובוס', L.parking)}
+      ${flag('🚻', 'שירותים', L.toilets)}${flag('🅿️', 'חניה לאוטובוס', L.parking)}${flag('🎫', 'קופה / המתנה', L.queue)}
       ${row('📞', 'טלפון', L.phone)}${row('👥', 'קבוצות', L.group)}
       <li><span class="lk">🧭 ניווט</span><span><a href="${nav.waze}" target="_blank" rel="noopener">Waze</a> · <a href="${nav.google}" target="_blank" rel="noopener">Google Maps</a></span></li></ul>
       ${compact ? '' : '<p class="muted">מה שלא אומת במקורות מסומן ״לברר״ — במבחן כותבים את זה בעמודת ״תיאומים ומנהלות״ (לברר שירותים, חניה, תשלום).</p>'}</div>`;
@@ -225,6 +226,7 @@
       ${locked(m) ? `<p class="lk">🔒 ${t('locked')}</p>` : `<div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div>`}</div></article>`;
     const catRows = Object.entries(S.cats).filter(([, v]) => v.err + v.ok).sort((a, b) => b[1].err - a[1].err).slice(0, 6);
     shell(`<section class="hero"><div class="eyebrow">MOREH DERECH EXAM · אתגר המבחן</div><h1>🎓 ${t('title')}</h1><p>${t('sub')}</p>
+      <a class="btn tiyul" href="#/tiyul">🧑‍🏫 הפוך: אני אומר מה אני רוצה — האפליקציה מציעה מסלול</a>
       <div class="lvl"><div class="lvlt"><b>${t('level')} ${L.n} — ${esc(L.he)}</b><bdi dir="ltr">${S.xp}${L.to ? ' / ' + L.to : ''} XP</bdi></div><div class="lb"><i style="width:${L.pct}%"></i></div></div></section>
       <section class="daily"><div class="eyebrow">☀️ ${t('today')}</div><h2>${daily.emoji} ${esc(daily.he)}</h2><p>${esc(daily.brief)}</p>
         <div class="modes big"><a href="#/m/${daily.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${daily.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${daily.id}/exam">⏱️ ${t('exam')}</a></div></section>
@@ -495,11 +497,50 @@
     void slots;
   }
 
+  // ===== « À l'envers » : planificateur de tiyul =====
+  function viewTiyul() {
+    const F = S.tiyul || (S.tiyul = { group: '', tags: [], count: 4, road: true, startTime: '08:00', endTime: '18:00' });
+    const tagKeys = Object.keys(TAGS).filter(k => k === 'road' || DATA.sites.some(s => (s.tags || []).includes(k)));
+    shell(`<section class="brief"><div class="eyebrow">🧑‍🏫 ${esc(DATA.he)}</div><h1>תכנון טיול — הפוך</h1><p>אתם מורי הדרך: כתבו מה הקבוצה רוצה, והאפליקציה מציעה מסלולים מהאתרים שנלמדו, עם לוח זמנים ראשוני, מה לברר, ויחידות הדרכה מוכנות לתרגול.</p></section>
+      <section class="panel"><label class="fl">הקבוצה (חופשי)<input id="tGroup" value="${esc(F.group)}" placeholder="למשל: משפחות עם ילדים, 40 איש, אוטובוס"></label>
+      <p class="fl"><b>מה רוצים לראות?</b></p><div class="tagpick">${tagKeys.map(k => `<button type="button" data-tag="${k}" class="${F.tags.includes(k) ? 'on' : ''}" aria-pressed="${F.tags.includes(k)}">${TAGS[k]}</button>`).join('')}</div>
+      <div class="row3"><label class="fl">כמה אתרים<select id="tCount">${[2, 3, 4, 5].map(n => `<option value="${n}" ${F.count === n ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+      <label class="fl">התחלה<input id="tStart" value="${esc(F.startTime)}" placeholder="08:00" inputmode="numeric"></label><label class="fl">סיום<input id="tEnd" value="${esc(F.endTime)}" placeholder="18:00" inputmode="numeric"></label></div>
+      <p class="muted">יציאה וחזרה: ${esc((DATA.anchors || [{}])[0].he || '')}. זמני נסיעה לא מומצאים — בלוח יש שורות נסיעה ריקות לבדיקה ב-Waze.</p>
+      <div class="acts"><button type="button" class="btn" id="tGo">✨ להציע מסלולים</button></div></section><div id="tOut"></div>`, { back: '#/' });
+    $$('[data-tag]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.tag; if (k === 'road') { F.road = !F.road; } F.tags = F.tags.includes(k) ? F.tags.filter(x => x !== k) : F.tags.concat(k); b.classList.toggle('on'); b.setAttribute('aria-pressed', b.classList.contains('on')); save(); }));
+    $('#tGo').addEventListener('click', () => {
+      F.group = $('#tGroup').value.trim(); F.count = +$('#tCount').value; F.startTime = $('#tStart').value.trim() || '08:00'; F.endTime = $('#tEnd').value.trim() || '18:00'; F.road = F.tags.includes('road'); save();
+      const res = C.suggest({ tags: F.tags.filter(t => t !== 'road'), count: F.count, road: F.road, start: (DATA.anchors || [])[0], startTime: F.startTime, endTime: F.endTime }, DATA);
+      $('#tOut').innerHTML = res.length ? res.map((r, i) => `<article class="panel prop"><h3>הצעה ${i + 1}: ${r.sites.map(s => esc(s.short)).join(' ← ')}</h3>
+        <p class="muted">🚌 ~${r.km} ק״מ אווירי בין התחנות${r.roads.length ? ' · הדרכת דרך: ' + r.roads.map(x => esc(x.short)).join(', ') : ''}</p>
+        ${r.missing.length ? `<p class="conf">⚠️ לא נמצא אתר ל: ${r.missing.map(t => esc(TAGS[t] || t)).join(', ')}</p>` : '<p class="good">✔ כל מה שביקשתם מכוסה</p>'}
+        ${r.warnings.map(w => `<p class="conf">ℹ️ ${esc(w)}</p>`).join('')}
+        <ul class="legs">${r.legs.map(l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a></span></li>`).join('')}</ul>
+        <details class="mo"><summary>📋 לוח זמנים ראשוני (${r.plan.length} שורות) ומה לברר</summary><ul class="ex">${r.plan.map(p => `<li><b>${esc(p.start || '…')}${p.end ? '–' + esc(p.end) : ''}</b> ${esc(p.what)}${p.log ? ' · <i>' + esc(p.log) + '</i>' : ''}</li>`).join('')}</ul></details>
+        <details class="mo"><summary>🧾 לוגיסטיקה של כל אתר</summary>${r.sites.map(s => `<div class="pi"><b>${esc(s.he)}</b>${logisticsHtml(s, true)}</div>`).join('')}</details>
+        <p class="muted">🎤 יחידות לתרגול: ${r.units.map(u => `${esc(P[u.site].short)} ${u.model ? '✔' : '—'}${u.long ? ' (גם מורחבת)' : ''}`).join(' · ')}</p>
+        <div class="acts"><button type="button" class="btn" data-open="${i}">🧭 לפתוח כמשימה ולתרגל</button></div></article>`).join('') : '<p class="panel">לא נמצאו אתרים מתאימים — בחרו פחות נושאים.</p>';
+      $$('[data-open]').forEach(b => b.addEventListener('click', () => {
+        const r = res[+b.dataset.open];
+        const slots = (r.roads[0] ? [{ id: 'r', he: 'יחידת הדרכת דרך: ' + r.roads[0].short, need: ['road'], best: r.roads[0].id, why: '' }] : []).concat(r.sites.map((s, i) => ({ id: 's' + i, he: 'יחידה ב' + s.short, need: s.tags, best: s.id, why: '' })));
+        const longSite = r.sites.find(s => DATA.models['long_' + s.id]) || r.sites[r.sites.length - 1];
+        const shortSlots = slots.filter(s => s.best !== longSite.id);
+        S.custom = { id: 'custom', he: 'הטיול שלי: ' + r.sites.map(s => s.short).join(' ← '), emoji: '🧑‍🏫', level: 1, group: F.group || 'הקבוצה שלי', brief: `${F.group ? F.group + '. ' : ''}יום טיול בדרום רמת הגולן לפי הבחירה שלכם. יציאה וחזרה: ${(DATA.anchors || [{}])[0].he || ''}.`, slots: shortSlots, long: { he: 'יחידת הדרכה מורחבת: ' + longSite.he, need: longSite.tags, best: longSite.id } };
+        const picks = {}; shortSlots.forEach(s => { picks[s.id] = s.best; }); picks.long = longSite.id;
+        S.drafts.custom = { picks, plan: r.plan.map(p => Object.assign({}, p)), units: {}, long: {}, hint: {} }; save();
+        location.hash = '#/m/custom/guided/1';
+      }));
+      window.scrollTo(0, $('#tOut').offsetTop - 10);
+    });
+  }
+
   // ---------- Routeur ----------
   function route() {
     const h = location.hash.replace(/\?.*$/, ''), p = h.split('/');
+    if (p[1] === 'tiyul') return viewTiyul();
     if (p[1] === 'm') {
-      const m = DATA.missions.find(x => x.id === p[2]);
+      const m = DATA.missions.find(x => x.id === p[2]) || (p[2] === 'custom' && S.custom) || null;
       if (!m) return viewHome();
       if (m.level > 1 && C.level(S.xp).n < 2 && !/[?&]all\b/.test(location.search)) { toast('🔒 ' + t('locked')); return viewHome(); }
       if (p[3] === 'errors') return viewErrors(m, p[4]);
