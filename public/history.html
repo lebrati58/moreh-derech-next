@@ -180,6 +180,7 @@ body.locked{overflow:hidden}
 .ans.wrong{background:#ffe1df;border-color:var(--bad);box-shadow:0 4px 0 #a23f4d}
 .ans.picked-ok{background:#d9f7ec;border-color:var(--ok)}.ans.picked-bad{background:#fde7e5;border-color:var(--bad)}
 .ans.dim{opacity:.55}
+.qhint{margin:-6px 0 14px;padding:9px 12px;border-radius:12px;background:#eef0ff;border:2px solid #5b61d9;color:#2b2f8a;font-weight:900;font-size:15px;line-height:1.4}
 .answers.txt{grid-template-columns:1fr}
 .answers.txt .ans{font-size:16px;line-height:1.35;text-align:start;padding:12px 14px 12px 14px;padding-inline-start:34px;min-height:54px}
 .ans.sel{background:#dfe3ff;border-color:#5b61d9;box-shadow:0 4px 0 #3b3fa0}
@@ -328,6 +329,7 @@ body.locked{overflow:hidden}
       <div class="qbody">
         <span class="qtag" id="qtag"></span>
         <h2 id="qtext" tabindex="-1"></h2>
+        <p class="qhint" id="qhint" hidden></p>
         <div class="answers" id="answers" role="group" aria-label="תשובות"></div>
         <button type="button" class="btn go next" id="check" hidden disabled>✔ בדיקה</button>
         <div class="fb" id="fb" hidden></div>

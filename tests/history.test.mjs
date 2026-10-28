@@ -140,6 +140,25 @@ test('nouveaux types : inverse, ordre, siècle, plusieurs réponses — toujours
   assert.equal(H.buildRun(DATA, { types: 'date', period: 'persian', count: 99, seed: 'p' }).length, 5, 'type « année » seul : une question par événement');
 });
 
+test('toutes les années affichées précisent לפנה״ס ou לספירה', async () => {
+  // On efface les années correctement suivies de leur ère (« 66 לספירה », « 203–200 לפנה״ס », « 73 או 74 לספירה »),
+  // puis il ne doit plus rester aucun nombre de 2 à 4 chiffres (hormis « הלגיון ה־12 »).
+  const withEra = /\d{1,4}(?:\s*(?:–|-|או|\/)\s*\d{1,4})*\s*(?:לפנה״ס|לספירה)/g;
+  const bareIn = t => t.replace(/ה־\d+/g, '').replace(withEra, '').match(/\d{2,4}/g);
+  for (const e of DATA.events) for (const k of ['yearText', 'title', 'q', 'desc', 'note']) {
+    const t = (e[k] || '').replace(/[בכמל]־/g, ' ');
+    const m = bareIn(t); assert.equal(m, null, `${e.id}.${k} : année sans ère → ${m}`);
+  }
+  for (const p of DATA.periods) assert.match(p.range, /(לפנה״ס|לספירה)$/, p.id);
+  const H = await lib(); H.setPeriods(DATA.periods);
+  for (const ev of DATA.events) for (const t of Object.keys(H.QUESTION_TYPES)) {
+    const q = H.QUESTION_TYPES[t](ev, DATA.events, 'era'); if (!q) continue;
+    const txt = (q.prompt + ' ' + q.options.map(o => o.label).join(' ')).replace(/[בכמל]־/g, ' ');
+    assert.equal(bareIn(txt), null, `${q.id} : ${txt}`);
+    if (q.multi) assert.match(H.multiHint(q), /תשובות נכונות|תשובה נכונה אחת/, 'consigne QCM ' + q.id);
+  }
+});
+
 test('score : 100 + 3 × secondes restantes (arrondi sup.) + 20 × min(série précédente, 5) ; erreur/expiration = 0', async () => {
   const H = await lib();
   assert.equal(H.scoreAnswer(true, 30000, 0), 190);

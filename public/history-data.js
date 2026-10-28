@@ -206,6 +206,12 @@
     if (idxs == null) return '—';
     return (Array.isArray(idxs) ? idxs : [idxs]).map(function (i) { return q.options[i] ? q.options[i].label : '?'; }).join(' · ') || '—';
   }
+  // Consigne des questions à plusieurs réponses : on dit toujours combien de réponses sont justes.
+  function multiHint(q) {
+    if (!q || !q.multi) return '';
+    var n = q.options.filter(function (o) { return o.correct; }).length;
+    return n === 1 ? '☑️ כאן יש תשובה נכונה אחת בלבד — סמנו אותה ולחצו „בדיקה”' : '☑️ כאן יש ' + n + ' תשובות נכונות — סמנו את כולן ולחצו „בדיקה”';
+  }
   function correctLabel(q) { return q.options.filter(function (o) { return o.correct; }).map(function (o) { return o.label; }).join(' · '); }
 
   // Événements d'une partie : examen = uniquement examReady ; entraînement = tous.
@@ -287,7 +293,7 @@
     CERT_LABEL: CERT_LABEL, SOURCE_LABEL: SOURCE_LABEL,
     formatYear: formatYear, yearLabel: yearLabel, validate: validate, rng: rng, shuffle: shuffle, hash: hash,
     QUESTION_TYPES: QUESTION_TYPES, TYPE_GROUPS: TYPE_GROUPS, setPeriods: setPeriods, buildQuestion: buildQuestion, buildRun: buildRun, maxQuestions: maxQuestions, questionMs: questionMs,
-    isCorrect: isCorrect, answerLabel: answerLabel, correctLabel: correctLabel, centuryLabel: centuryLabel, MULTI_MS: MULTI_MS, dateOptions: dateOptions, pool: pool, pickEvents: pickEvents,
+    isCorrect: isCorrect, multiHint: multiHint, answerLabel: answerLabel, correctLabel: correctLabel, centuryLabel: centuryLabel, MULTI_MS: MULTI_MS, dateOptions: dateOptions, pool: pool, pickEvents: pickEvents,
     scoreAnswer: scoreAnswer, Timer: Timer, buildResult: buildResult
   };
 })(typeof window !== 'undefined' ? window : globalThis);

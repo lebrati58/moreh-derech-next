@@ -150,6 +150,10 @@ Demande de Lionel : beaucoup plus de questions différentes, pouvoir inverser (�
 - ✅ Écran : choix du type de questions ; QCM = cocher puis « ✔ בדיקה » (45 s au lieu de 30) ; correction avec **l'année de chaque option**, dans l'ordre du temps ; récapitulatif de fin avec la question et la bonne réponse. Clavier : 1–9 pour cocher, Entrée pour valider.
 - ✅ Tests : `history.test.mjs` (10, dont un test de ~7 000 questions générées), `history-browser.mjs` (82 vérifications, dont un parcours « types de questions » sur S24). Cache hors ligne v32.
 
+### 28 octobre 2026 (nuit, suite) — Précisions demandées par Lionel
+- ✅ Questions à plusieurs réponses : une consigne sous la question dit **combien** de réponses sont justes (« ☑️ כאן יש 2 תשובות נכונות — סמנו את כולן ») ; même info dans l'étiquette et sur le bouton « בדיקה (1 מתוך 2 נבחרו) ».
+- ✅ Toutes les années des textes (`yearText`, descriptions, notes) précisent **לפנה״ס / לספירה** (46 corrections dans `history-events.json`, ex. « 132 לספירה (בתאריכון: 131 לספירה) »). Nouveau test : aucune année sans ère dans les données ni dans les questions générées.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
