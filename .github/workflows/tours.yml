@@ -1,0 +1,32 @@
+name: Parcours סיפור דרך — coordonnées et tracés
+# Complète content/tours/geo-cache.json (coordonnées Wikipédia/Wikidata, tracés OSRM) puis reconstruit public/tours/.
+# Se lance tout seul quand une source de parcours change sur une branche, ou à la main (Actions → Run workflow).
+# Ne publie rien aux élèves : un parcours n'est visible que s'il est « pret » ET « published: true » ET sans erreur.
+on:
+  push:
+    paths:
+      - 'content/tours/*.src.json'
+      - 'content/tours/registry.json'
+      - 'tools/build-tours.mjs'
+      - 'public/tour-engine.js'
+      - '.github/workflows/tours.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-tours.mjs --online | tee tools/tours-build.log
+      - name: Commit
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/tours/geo-cache.json public/tours tools/tours-build.log
+          git diff --cached --quiet || git commit -m "data(tours): coordonnées Wikipédia + tracés OSRM"
+          git push

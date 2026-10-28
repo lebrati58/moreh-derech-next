@@ -1,0 +1,851 @@
+{
+ "v": 1,
+ "asOf": "2026-10-28",
+ "root": "https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f",
+ "statuses": {
+  "a_importer": "dossier détecté, rien d’analysé",
+  "en_analyse": "sources inventoriées et classées, parcours pas encore construit",
+  "a_verifier": "parcours construit : à vérifier par un humain",
+  "pret": "vérifié — publiable par Lionel (published: true)"
+ },
+ "transcriptKinds": {
+  "verbatim": "transcription brute du prof (preuve de ce qui a été dit)",
+  "ivrit-docx": "transcription automatique ivrit.ai (docx à côté de l’audio) — preuve, après lecture par tools/parse-ivrit-docx.mjs",
+  "edited-transcript": "transcription éditée par un élève",
+  "ai-edited": "réécriture IA « enrichie » d’une transcription — ne prouve PAS ce qu’a dit le prof",
+  "student-notes": "notes d’élève",
+  "student-guiding": "exercice de guidage d’un élève — pas le prof",
+  "unclassified": "non lu"
+ },
+ "tours": [
+  {
+   "id": "road67",
+   "title": "מסלול 67 — זכרון יעקב ← יקנעם",
+   "folder": null,
+   "status": "pret",
+   "published": true,
+   "statusNote": "Parcours de référence (content/v3, public/v3/road67-route.json). Converti au format commun par tools/build-tours.mjs.",
+   "recordings": null,
+   "transcripts": [],
+   "source": "content/v3/road67_questions.json"
+  },
+  {
+   "id": "01",
+   "title": "צפון מדבר יהודה",
+   "folder": "https://drive.google.com/drive/folders/1PNRBWnYYUn8KkPirrd36rdmFkNrV7Xji",
+   "status": "a_verifier",
+   "statusNote": "Parcours pilote construit depuis la transcription du prof : content/tours/01.src.json.",
+   "recordings": {
+    "audioFiles": 0,
+    "audioMB": 0,
+    "folder": null
+   },
+   "transcripts": [
+    {
+     "fileId": "16MhvuZJ26MwrRd4Y8W6MoSe5JeYZkrYY1fd12AIztNA",
+     "title": "הקלטה סיור מס 1 סיפור דרך ת״א למדבר יהודה",
+     "kind": "verbatim",
+     "url": "https://docs.google.com/document/d/16MhvuZJ26MwrRd4Y8W6MoSe5JeYZkrYY1fd12AIztNA/edit"
+    }
+   ],
+   "source": "content/tours/01.src.json"
+  },
+  {
+   "id": "02",
+   "title": "כרמל",
+   "folder": "https://drive.google.com/drive/folders/1cpDKo14aka3MTbemjs5opW-8BR4lMwhl",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 13,
+    "audioMB": 132,
+    "folder": "https://drive.google.com/drive/folders/1XxLsZ8f01tsK0L0N-GiduqC1Qdpep4aV"
+   },
+   "transcripts": [
+    {
+     "fileId": "1apefngMVgrOEzpAB4JQxSeTzyn4PUfJRD3az4ud2UnA",
+     "title": "סיור מס׳ 2 — סיפור דרך ת״א הכרמל",
+     "kind": "student-notes",
+     "url": "https://docs.google.com/document/d/1apefngMVgrOEzpAB4JQxSeTzyn4PUfJRD3az4ud2UnA/edit"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "03",
+   "title": "הנגב הצפוני",
+   "folder": "https://drive.google.com/drive/folders/1RhLDlWhG5B_si-itayOHbn-gpG0QER-a",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 0,
+    "audioMB": 0,
+    "folder": null
+   },
+   "transcripts": [
+    {
+     "fileId": "1VZmTPo6rpW6mscPBtpKln-Q7b-SAJMKrRBDnDLc11hU",
+     "title": "2026-05-28 סיור 3 סיפור הדרך ת״א צומת שוקת",
+     "kind": "verbatim",
+     "url": "https://docs.google.com/document/d/1VZmTPo6rpW6mscPBtpKln-Q7b-SAJMKrRBDnDLc11hU/edit"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "04",
+   "title": "מגידו, העמקים והגלבוע",
+   "folder": "https://drive.google.com/drive/folders/1kQa3Ag9y5mzDg_r64i6xNmI7QNItgwDf",
+   "status": "en_analyse",
+   "statusNote": "Aucun enregistrement dans le dossier.",
+   "recordings": {
+    "audioFiles": 0,
+    "audioMB": 0,
+    "folder": null
+   },
+   "transcripts": [],
+   "source": null
+  },
+  {
+   "id": "05",
+   "title": "השפלה",
+   "folder": "https://drive.google.com/drive/folders/1bfRPHNOphGIbX4PaPhsT7D3N-1_Vsjfn",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 14,
+    "audioMB": 349,
+    "folder": "https://drive.google.com/drive/folders/1sB75lari06yR-uVZ9my9kI9qwR-gMNl4"
+   },
+   "transcripts": [],
+   "source": null
+  },
+  {
+   "id": "06",
+   "title": "סוסיא, חברון והרודיון",
+   "folder": "https://drive.google.com/drive/folders/1VysAYN1DWsO_pMO_NfVtqcReWHKnEP7a",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 15,
+    "audioMB": 430,
+    "folder": "https://drive.google.com/drive/folders/1TPo0dY4-mG4uXfBAxnktLYTBKX0eA8oc"
+   },
+   "transcripts": [
+    {
+     "fileId": "1D7qjwHZCS-VnjJeLV4lCgpFLLpmcb3k66H52MVDCPDs",
+     "title": "סיפור דרך סוסיא למכפלה (מנשה)",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/1D7qjwHZCS-VnjJeLV4lCgpFLLpmcb3k66H52MVDCPDs/edit"
+    },
+    {
+     "fileId": "1P_zMq-rp4j_kiXjrPqQljqZvmxaofCpGtTEb61JlkWo",
+     "title": "סיפור דרך מבית שמש לסוסיא מנשה 18 -6-2026",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/1P_zMq-rp4j_kiXjrPqQljqZvmxaofCpGtTEb61JlkWo/edit"
+    },
+    {
+     "fileId": "1zqODs5rm_nqzh81ZKqCp0RpUb0xNjXty",
+     "title": "19edb1257f3e1ff522d1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1zqODs5rm_nqzh81ZKqCp0RpUb0xNjXty/view"
+    },
+    {
+     "fileId": "1M7iWSQ6K8u6K-guMdh3Idcspcod1pLH3",
+     "title": "הקלטה 2 (55e9d96c-fd32-419d-a733-b54a9b18ef81).docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1M7iWSQ6K8u6K-guMdh3Idcspcod1pLH3/view"
+    },
+    {
+     "fileId": "1_8kQ5_GrJ2O2x6pZM4V33EQ-_UqJsYPF",
+     "title": "מערה 1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1_8kQ5_GrJ2O2x6pZM4V33EQ-_UqJsYPF/view"
+    },
+    {
+     "fileId": "1pExYMP8kyja6PEvJksdys5WHmuHpa-06",
+     "title": "הרודיון 1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1pExYMP8kyja6PEvJksdys5WHmuHpa-06/view"
+    },
+    {
+     "fileId": "1l20dXFjjG2kiBRcArlwYNA5_str_lcpy",
+     "title": "סוסיה 2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1l20dXFjjG2kiBRcArlwYNA5_str_lcpy/view"
+    },
+    {
+     "fileId": "1ibf0WjMgczFZC2ZX6iUQBE7Avadl4J9X",
+     "title": "מערה 4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1ibf0WjMgczFZC2ZX6iUQBE7Avadl4J9X/view"
+    },
+    {
+     "fileId": "1pNLs6ZkLduKK3_1YGhdaMy8bOShf1Eoh",
+     "title": "מערה 3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1pNLs6ZkLduKK3_1YGhdaMy8bOShf1Eoh/view"
+    },
+    {
+     "fileId": "1kw1yDuegMjuwLGGlbyiF-owZotlO1jno",
+     "title": "1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1kw1yDuegMjuwLGGlbyiF-owZotlO1jno/view"
+    },
+    {
+     "fileId": "1L-qxaURY-ZYIOlRba9MOA6EsPPOotkYp",
+     "title": "סוסיה5.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1L-qxaURY-ZYIOlRba9MOA6EsPPOotkYp/view"
+    },
+    {
+     "fileId": "17jZFFpHGolJ0ztULtU55cxtwS0HeVnDp",
+     "title": "מערה 2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/17jZFFpHGolJ0ztULtU55cxtwS0HeVnDp/view"
+    },
+    {
+     "fileId": "1ofPrcE2hiExIOsRwWJwEvYuCHVldM7nf",
+     "title": "הרודיון3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1ofPrcE2hiExIOsRwWJwEvYuCHVldM7nf/view"
+    },
+    {
+     "fileId": "1390k2yOuZkp7RctOUbTCayI2o7yDR5-E",
+     "title": "סוסיה 4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1390k2yOuZkp7RctOUbTCayI2o7yDR5-E/view"
+    },
+    {
+     "fileId": "1z_Ws_Tk0R8nIO6Y0xQUHjKo5F7vTxF-w",
+     "title": "הרודיון2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1z_Ws_Tk0R8nIO6Y0xQUHjKo5F7vTxF-w/view"
+    },
+    {
+     "fileId": "1Q2D99j56BBJgjKwMDTGQsC8bl5DcdDxG",
+     "title": "הרודיון4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1Q2D99j56BBJgjKwMDTGQsC8bl5DcdDxG/view"
+    },
+    {
+     "fileId": "12Usvh6AD54EWVO0ki6is09T5f7o2SLGH",
+     "title": "סוסיה3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/12Usvh6AD54EWVO0ki6is09T5f7o2SLGH/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "07",
+   "title": "חיפה",
+   "folder": "https://drive.google.com/drive/folders/1JPSTs8ImCfJQ5E6LOeHx2gYue-rBQ1PI",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 0,
+    "audioMB": 0,
+    "folder": "https://drive.google.com/drive/folders/157E80yeWFKodxhkcei939bLYanSVWohd"
+   },
+   "transcripts": [
+    {
+     "fileId": "1po0FZ--DQMDg_AXDGHBv1X39TbMOVtrR",
+     "title": "11.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1po0FZ--DQMDg_AXDGHBv1X39TbMOVtrR/view"
+    },
+    {
+     "fileId": "1J8w5w1GZjWWYn7qtjuGz4tnu5-OhlqEi",
+     "title": "4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1J8w5w1GZjWWYn7qtjuGz4tnu5-OhlqEi/view"
+    },
+    {
+     "fileId": "1PaHQYB0xytyLnBp3B_qYRecmxikR7UHP",
+     "title": "3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1PaHQYB0xytyLnBp3B_qYRecmxikR7UHP/view"
+    },
+    {
+     "fileId": "1qcBy2zq1d7TxD55EgeXXb6JeeiuaqNsO",
+     "title": "7.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1qcBy2zq1d7TxD55EgeXXb6JeeiuaqNsO/view"
+    },
+    {
+     "fileId": "15T-iUXcB8e4Rrkq5XKQgZZ2F4ATfR2zX",
+     "title": "1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/15T-iUXcB8e4Rrkq5XKQgZZ2F4ATfR2zX/view"
+    },
+    {
+     "fileId": "1capV8Jvayl3Sv8NM8qG_MzTlofIaQXbh",
+     "title": "10.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1capV8Jvayl3Sv8NM8qG_MzTlofIaQXbh/view"
+    },
+    {
+     "fileId": "1XmT4v6vpUoYnokBR5eqChKOjasbqatw3",
+     "title": "6.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1XmT4v6vpUoYnokBR5eqChKOjasbqatw3/view"
+    },
+    {
+     "fileId": "1hGFuez3_vvked50vNgukj9x60x4yDxSi",
+     "title": "8.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1hGFuez3_vvked50vNgukj9x60x4yDxSi/view"
+    },
+    {
+     "fileId": "1eOgIi0z3aGK5k-cxLczKyQWxBLjg444Q",
+     "title": "2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1eOgIi0z3aGK5k-cxLczKyQWxBLjg444Q/view"
+    },
+    {
+     "fileId": "1ViTuhV6nhp1BLVJbaYvdtFkZkmeoOcgL",
+     "title": "9.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1ViTuhV6nhp1BLVJbaYvdtFkZkmeoOcgL/view"
+    },
+    {
+     "fileId": "1JRHc6P2gLCYASFlJXdD1DgmXBlvl0wzT",
+     "title": "5.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1JRHc6P2gLCYASFlJXdD1DgmXBlvl0wzT/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "08",
+   "title": "גיאולוגיה: הכרמל והחוף",
+   "folder": "https://drive.google.com/drive/folders/1dZGP2DgShnWjyUqHMhPMrvfCv01sfY_t",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 9,
+    "audioMB": 181,
+    "folder": "https://drive.google.com/drive/folders/1OHUzyirC9pMuyx-oLraBnVFd7JPkRsuW"
+   },
+   "transcripts": [
+    {
+     "fileId": "125SPMPaCfBXsn7qn0ju9q-cH7NRqjnWC",
+     "title": "4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/125SPMPaCfBXsn7qn0ju9q-cH7NRqjnWC/view"
+    },
+    {
+     "fileId": "1_nKpQXBXjL7CKhT6JaiedHpDSX-wqnPw",
+     "title": "1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1_nKpQXBXjL7CKhT6JaiedHpDSX-wqnPw/view"
+    },
+    {
+     "fileId": "1z_CJhkwXlSWI4n63TFrEIFLJzn5ODhbJ",
+     "title": "5.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1z_CJhkwXlSWI4n63TFrEIFLJzn5ODhbJ/view"
+    },
+    {
+     "fileId": "1HvoH3QVec2EROXstvb55v9yvNkO_lj61",
+     "title": "9.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1HvoH3QVec2EROXstvb55v9yvNkO_lj61/view"
+    },
+    {
+     "fileId": "1RUOdDeRkxIpoKIc4lQ_jMf0F2vlYARPw",
+     "title": "2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1RUOdDeRkxIpoKIc4lQ_jMf0F2vlYARPw/view"
+    },
+    {
+     "fileId": "1R_kJGy4tt4HYYa5UdAmFcsVH6aSF4ON_",
+     "title": "8.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1R_kJGy4tt4HYYa5UdAmFcsVH6aSF4ON_/view"
+    },
+    {
+     "fileId": "1ZGtX3IZ_oEUCK09Pe-iISNK_mXnc1oEt",
+     "title": "7.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1ZGtX3IZ_oEUCK09Pe-iISNK_mXnc1oEt/view"
+    },
+    {
+     "fileId": "18tHBnVmaT4Eshw84gjRlPSUILp7RdEug",
+     "title": "6.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/18tHBnVmaT4Eshw84gjRlPSUILp7RdEug/view"
+    },
+    {
+     "fileId": "1kOIg15HmR_NstNVtAy39ARhUPQNbc4ei",
+     "title": "3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1kOIg15HmR_NstNVtAy39ARhUPQNbc4ei/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "09",
+   "title": "השומרון",
+   "folder": "https://drive.google.com/drive/folders/1v2Wz6GarM191Q5P6NrcXO8DIhhY8PYrg",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 10,
+    "audioMB": 396,
+    "folder": "https://drive.google.com/drive/folders/1hX6tUTrTSyJHbcELyBYChoAdNH36ibGx"
+   },
+   "transcripts": [
+    {
+     "fileId": "1isgKupUhwLb5R5pLOMQiAZjRAtFsB7-vlyYgTLdKF98",
+     "title": "סיפור דרך – מאריאל ללבונה ולשלה",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/1isgKupUhwLb5R5pLOMQiAZjRAtFsB7-vlyYgTLdKF98/edit"
+    },
+    {
+     "fileId": "1vswIkGExeF6IMQKl4_6XSlh8LvIOap5I",
+     "title": "שומרונים.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1vswIkGExeF6IMQKl4_6XSlh8LvIOap5I/view"
+    },
+    {
+     "fileId": "1n9l_0RhkGXYX0-vEoAXeV9C2jQPym1VY",
+     "title": "שילו6.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1n9l_0RhkGXYX0-vEoAXeV9C2jQPym1VY/view"
+    },
+    {
+     "fileId": "1Uw1EK08txFYTC57tQ22rs2sy71CagHeG",
+     "title": "שילו2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1Uw1EK08txFYTC57tQ22rs2sy71CagHeG/view"
+    },
+    {
+     "fileId": "1V6N9oTQltju-MNDg_MjAfsAukWQuhrqf",
+     "title": "שילו1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1V6N9oTQltju-MNDg_MjAfsAukWQuhrqf/view"
+    },
+    {
+     "fileId": "1XsNfUnJXjDxXj4BuvVBYykCuA7new5qy",
+     "title": "שילו3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1XsNfUnJXjDxXj4BuvVBYykCuA7new5qy/view"
+    },
+    {
+     "fileId": "1hn0Ei50tDlR1BEvgA26JWyYagLMuLDGP",
+     "title": "שומרונים 2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1hn0Ei50tDlR1BEvgA26JWyYagLMuLDGP/view"
+    },
+    {
+     "fileId": "1JuaU7IJn43wEVTzmt0v7KXtLhSbTHElO",
+     "title": "שילו5.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1JuaU7IJn43wEVTzmt0v7KXtLhSbTHElO/view"
+    },
+    {
+     "fileId": "1Tnpmde3bzkSM3bkwakTQbuIAO7t0vpHv",
+     "title": "שילו4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1Tnpmde3bzkSM3bkwakTQbuIAO7t0vpHv/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "10",
+   "title": "הרי ירושלים",
+   "folder": "https://drive.google.com/drive/folders/1HrlOBlK9S2XpRe8Xh7hj8K05gwlZKkia",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 13,
+    "audioMB": 330,
+    "folder": "https://drive.google.com/drive/folders/10O8EAoqGwrqvNa7WWTO0kkR8BjwIfAYn"
+   },
+   "transcripts": [
+    {
+     "fileId": "1lFHCeDPe7I_ezmI7Mwvvl648fu2ICRuA",
+     "title": "יער הקדושים 1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1lFHCeDPe7I_ezmI7Mwvvl648fu2ICRuA/view"
+    },
+    {
+     "fileId": "1F6I9W4qiNPH_5qE90vnFy494nr6RTc2I",
+     "title": "שמורת המסרק 1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1F6I9W4qiNPH_5qE90vnFy494nr6RTc2I/view"
+    },
+    {
+     "fileId": "1Z5KC_m4gy6ujmgoVSaxRXI2dUx-M79FR",
+     "title": "הר הדר 2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1Z5KC_m4gy6ujmgoVSaxRXI2dUx-M79FR/view"
+    },
+    {
+     "fileId": "1_X2SZkwq7XzAkxnoDTZx5-oZT_0udPN7",
+     "title": "סטף 3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1_X2SZkwq7XzAkxnoDTZx5-oZT_0udPN7/view"
+    },
+    {
+     "fileId": "1ySnCS0q653i_Oms2QkF9QGKKFmljskv_",
+     "title": "הר אדר 1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1ySnCS0q653i_Oms2QkF9QGKKFmljskv_/view"
+    },
+    {
+     "fileId": "1ERU-Oi21o2NJjJYcrQWzxXFiwYKnwXHU",
+     "title": "יד ה-8.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1ERU-Oi21o2NJjJYcrQWzxXFiwYKnwXHU/view"
+    },
+    {
+     "fileId": "1t_GkJKd7DVd6pgdoLnm-UFFjX22UkTlx",
+     "title": "יער הקדושים 2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1t_GkJKd7DVd6pgdoLnm-UFFjX22UkTlx/view"
+    },
+    {
+     "fileId": "1Y5YofNH7GBQj0lfmvTVh3I85m3fuaRWY",
+     "title": "סטף 2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1Y5YofNH7GBQj0lfmvTVh3I85m3fuaRWY/view"
+    },
+    {
+     "fileId": "1_AlnBjGCCf_FoduiRlH7cuOD4B72rk1F",
+     "title": "סיפור דרך.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1_AlnBjGCCf_FoduiRlH7cuOD4B72rk1F/view"
+    },
+    {
+     "fileId": "1_RB6NwqK7iLlf-6qbKGn2YSxFxJN-tqp",
+     "title": "סטף 1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1_RB6NwqK7iLlf-6qbKGn2YSxFxJN-tqp/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "11",
+   "title": "ירושלים: בית ראשון",
+   "folder": "https://drive.google.com/drive/folders/1aNCu0Vk8oTaIG1K59GQqE1_umQrz8sK8",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 6,
+    "audioMB": 250,
+    "folder": "https://drive.google.com/drive/folders/1kORpnUhJUzoltqxw0bZO7rDBM1mrEhDc"
+   },
+   "transcripts": [
+    {
+     "fileId": "1J18mUQkhWMtKOqMy8i29iJF1z2yiArTQ",
+     "title": "2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1J18mUQkhWMtKOqMy8i29iJF1z2yiArTQ/view"
+    },
+    {
+     "fileId": "1bLC15zyjYgWwGuq-vLY-DCRvK4keb3go",
+     "title": "4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1bLC15zyjYgWwGuq-vLY-DCRvK4keb3go/view"
+    },
+    {
+     "fileId": "1XoqFumARkCT_E1R9TK3QUBn2ry8dzsx5",
+     "title": "6.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1XoqFumARkCT_E1R9TK3QUBn2ry8dzsx5/view"
+    },
+    {
+     "fileId": "1KwqDQMsFS-8psnOnNycSSulP64zmzfcs",
+     "title": "5.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1KwqDQMsFS-8psnOnNycSSulP64zmzfcs/view"
+    },
+    {
+     "fileId": "1TplaS9hJDcjrkBSvfLIgFS5Z-6zWMqvp",
+     "title": "1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1TplaS9hJDcjrkBSvfLIgFS5Z-6zWMqvp/view"
+    },
+    {
+     "fileId": "1QtyCNlIhiGV10d0mejc37ZXgDKMcJ3tL",
+     "title": "3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1QtyCNlIhiGV10d0mejc37ZXgDKMcJ3tL/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "12",
+   "title": "ירושלים: בית שני א'",
+   "folder": "https://drive.google.com/drive/folders/1VZztNtwHL3g3looy5v95qLTcUfi7oAq4",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 16,
+    "audioMB": 867,
+    "folder": "https://drive.google.com/drive/folders/1N3tyg-gtZvOKgZEbV3Oag5Ll2BO1oo3n"
+   },
+   "transcripts": [],
+   "source": null
+  },
+  {
+   "id": "13",
+   "title": "ירושלים: בית שני ב'",
+   "folder": "https://drive.google.com/drive/folders/1cLHFMh7TnHCdO5_OvUPTAV-1HROK0vKo",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 14,
+    "audioMB": 546,
+    "folder": "https://drive.google.com/drive/folders/1mK7vH_P2JiIgy6rUHr3wT-pdvOMMH4di"
+   },
+   "transcripts": [],
+   "source": null
+  },
+  {
+   "id": "14",
+   "title": "תצפיות סובב ירושלים",
+   "folder": "https://drive.google.com/drive/folders/1OW7dTQBQUW1yhRTicp5CrNS_tfRj-PYU",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 6,
+    "audioMB": 243,
+    "folder": "https://drive.google.com/drive/folders/1Gmgq7zRtX6ke_c9EcthATmdipKnwAC-I"
+   },
+   "transcripts": [],
+   "source": null
+  },
+  {
+   "id": "15",
+   "title": "קיסריה, נחל תנינים, אפולוניה",
+   "folder": "https://drive.google.com/drive/folders/1oFqTPI0QwpuuXR3nVMHTYMA1zxt5NjHU",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 9,
+    "audioMB": 385,
+    "folder": "https://drive.google.com/drive/folders/1hxHoHQZ2kbOoGkFepA2dW8ZYCSjOyCcx"
+   },
+   "transcripts": [
+    {
+     "fileId": "11fGZOB8IRqHeC9UKNjQ3v0wskA_OmtFwLeNBbb8z_y8",
+     "title": "סיפור דרך שפיים אור עקיבא בית חנניה",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/11fGZOB8IRqHeC9UKNjQ3v0wskA_OmtFwLeNBbb8z_y8/edit"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "16",
+   "title": "בית שערים וציפורי",
+   "folder": "https://drive.google.com/drive/folders/12cYe4au1FC6P5eVkfiUco-64M0Ee8xiK",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 9,
+    "audioMB": 387,
+    "folder": "https://drive.google.com/drive/folders/1lMyn2kdwLJ7tcHGLvVfQlTDgZBbdWpke"
+   },
+   "transcripts": [
+    {
+     "fileId": "1n8eACmcLpVrD2bcZhNWEQBwV3_WkEcba",
+     "title": "בית שערים — תמלול ערוך",
+     "kind": "edited-transcript",
+     "url": "https://drive.google.com/file/d/1n8eACmcLpVrD2bcZhNWEQBwV3_WkEcba/view"
+    },
+    {
+     "fileId": "1ptu0xyuMpoxHxRC0T1fcGRFeaGPZlDY8",
+     "title": "ציפורי — תמלול ערוך",
+     "kind": "edited-transcript",
+     "url": "https://drive.google.com/file/d/1ptu0xyuMpoxHxRC0T1fcGRFeaGPZlDY8/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "17",
+   "title": "קמפוס גולן וחרמון",
+   "folder": "https://drive.google.com/drive/folders/16mGflWTWpvDlOQkrng589YZMqAd6QHV6",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 23,
+    "audioMB": 988,
+    "folder": "https://drive.google.com/drive/folders/1AHlHER_4Ra7j6XpJj8O1q9oOo7Iyy1KG"
+   },
+   "transcripts": [
+    {
+     "fileId": "1o2IgArtNdLIRv6u5CIHuV0sYV2zrWpk-pFZImcu_9bo",
+     "title": "קטע 1 — סיפור דרך נתניה עד צמח",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/1o2IgArtNdLIRv6u5CIHuV0sYV2zrWpk-pFZImcu_9bo/edit"
+    },
+    {
+     "fileId": "11aIG-O3hd04PKBOPeQERyYaHGzIZHRzhCSoxjb0Ug1c",
+     "title": "קטע 2 — סיפור דרך מצמח לדרום רמת הגולן",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/11aIG-O3hd04PKBOPeQERyYaHGzIZHRzhCSoxjb0Ug1c/edit"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "18",
+   "title": "ירושלים הרומית והביזנטית",
+   "folder": "https://drive.google.com/drive/folders/10Dx4xMPJoaqFG4eNCkY5x6MOjkwcOEM7",
+   "status": "en_analyse",
+   "statusNote": "Transcription exploitable : parcours à construire.",
+   "recordings": {
+    "audioFiles": 4,
+    "audioMB": 387,
+    "folder": "https://drive.google.com/drive/folders/1I3yEcBQCPxR9jjSV-14scjH1J0qC2xVV"
+   },
+   "transcripts": [
+    {
+     "fileId": "1WLY2pun2HSy77OWO6bwSyJ68_sKEJOmC",
+     "title": "3.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1WLY2pun2HSy77OWO6bwSyJ68_sKEJOmC/view"
+    },
+    {
+     "fileId": "1iTfVDFjctBThlG3TxajSJRi3qVYMfJYt",
+     "title": "4.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1iTfVDFjctBThlG3TxajSJRi3qVYMfJYt/view"
+    },
+    {
+     "fileId": "1CVw6gBP21j4eZ8u3rwRo8qYEu7zcbxhA",
+     "title": "1.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1CVw6gBP21j4eZ8u3rwRo8qYEu7zcbxhA/view"
+    },
+    {
+     "fileId": "1XhaKAKBcHXNiXzBa_q3QIAQ320OU0Z1X",
+     "title": "2.docx",
+     "kind": "ivrit-docx",
+     "url": "https://drive.google.com/file/d/1XhaKAKBcHXNiXzBa_q3QIAQ320OU0Z1X/view"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "19",
+   "title": "בית שאן וכוכב הירדן",
+   "folder": "https://drive.google.com/drive/folders/1FgQMzG4phl1VjlNOhgmR7WkDDD3hOE_s",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 12,
+    "audioMB": 479,
+    "folder": "https://drive.google.com/drive/folders/1poK_Ljt9-sy8DzQZW46LIxIGMqERFgFl"
+   },
+   "transcripts": [
+    {
+     "fileId": "1Ty_7wiBqW3B9t4vKdPi5xUpDYl0TGBpz-XKTcfQDmZ8",
+     "title": "ספור דרך מצומת גלילות למגידו (מדריכה: אירנה)",
+     "kind": "student-guiding",
+     "url": "https://docs.google.com/document/d/1Ty_7wiBqW3B9t4vKdPi5xUpDYl0TGBpz-XKTcfQDmZ8/edit"
+    },
+    {
+     "fileId": "1tp-tMElYJMq2TAIZ2cEFCszPmvfKnIoUqWgT_kCNnns",
+     "title": "ספור דרך מבית שאן לכוכב הירדן ותצפית",
+     "kind": "unclassified",
+     "url": "https://docs.google.com/document/d/1tp-tMElYJMq2TAIZ2cEFCszPmvfKnIoUqWgT_kCNnns/edit"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "20",
+   "title": "ראש פינה, תל חי והחולה",
+   "folder": "https://drive.google.com/drive/folders/1gcsJryCHmkJAqzhFYvRdhufREr-Grqsr",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 6,
+    "audioMB": 231,
+    "folder": "https://drive.google.com/drive/folders/1DLZni0rL5W1GQlzzoDsYWBSZB9x6fbeb"
+   },
+   "transcripts": [
+    {
+     "fileId": "1f1QXQ02V7BWZ0HHnQPeyQABuUkPyyKAvSPPoUCSJJ-o",
+     "title": "חלק 1 סיפור דרך: מגלילות ליוקנעם",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/1f1QXQ02V7BWZ0HHnQPeyQABuUkPyyKAvSPPoUCSJJ-o/edit"
+    },
+    {
+     "fileId": "1P_lEEzouOyocLtLORad4pozO8C9tJ7C_1UL5QuRZgTg",
+     "title": "חלק 2 סיפור דרך: מיקנעם לצומת גולני",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/1P_lEEzouOyocLtLORad4pozO8C9tJ7C_1UL5QuRZgTg/edit"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "21",
+   "title": "עין גדי והר סדום",
+   "folder": "https://drive.google.com/drive/folders/10mk0VvLCEJXnp8k4PB4aldt_BMmtetv4",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 5,
+    "audioMB": 217,
+    "folder": "https://drive.google.com/drive/folders/16jxt56DljO6XM4PYpaTFOhR5pT75BJO9"
+   },
+   "transcripts": [],
+   "source": null
+  },
+  {
+   "id": "22",
+   "title": "קמפוס גליל עליון",
+   "folder": "https://drive.google.com/drive/folders/1coH6MKSfbbu26RXZMX9SrIevkIsFWwV5",
+   "status": "en_analyse",
+   "statusNote": "Audio seulement : transcription à faire (ivrit.ai, comme pour les autres סיורים).",
+   "recordings": {
+    "audioFiles": 18,
+    "audioMB": 615,
+    "folder": "https://drive.google.com/drive/folders/1cMWXETvy3xT71ll9WGLwy9lN7HtCiKfI"
+   },
+   "transcripts": [
+    {
+     "fileId": "1xlVKbfvVS41_nEuSctKHLcmLaqQbFk9oMkH6JOvNSX8",
+     "title": "חלק 1 סיפור דרך גלילות עד יוקנעם",
+     "kind": "ai-edited",
+     "url": "https://docs.google.com/document/d/1xlVKbfvVS41_nEuSctKHLcmLaqQbFk9oMkH6JOvNSX8/edit"
+    },
+    {
+     "fileId": "1Q4uDcKm_eoiceH66feSmA7KF_LLrEYJRP1xWXWYERek",
+     "title": "חלק 2 סיפור דרך יקנעם עד קרית אתא",
+     "kind": "unclassified",
+     "url": "https://docs.google.com/document/d/1Q4uDcKm_eoiceH66feSmA7KF_LLrEYJRP1xWXWYERek/edit"
+    }
+   ],
+   "source": null
+  },
+  {
+   "id": "23",
+   "title": "ישובי עמק הירדן ודרום הכנרת",
+   "folder": "https://drive.google.com/drive/folders/1vhraDtYeTiLNzcdaKBa2kMsTmlImnaQh",
+   "status": "a_importer",
+   "statusNote": "Nouveau dossier (28/10) : seulement une חוברת הכנה. Le סיור n’a pas encore eu lieu.",
+   "recordings": {
+    "audioFiles": 0,
+    "audioMB": 0,
+    "folder": null
+   },
+   "transcripts": [],
+   "source": null
+  }
+ ]
+}

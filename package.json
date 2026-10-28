@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "מורה דרך LIVE — חידון חי לסיור באוטובוס",
   "scripts": {
-    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/access.test.mjs tests/journey.test.mjs tests/jerusalem3d.test.mjs tests/sites3d.test.mjs tests/history.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/access.test.mjs tests/journey.test.mjs tests/jerusalem3d.test.mjs tests/sites3d.test.mjs tests/history.test.mjs tests/tours.test.mjs",
     "build:sql": "node tools/build-route-sql.mjs",
     "dev": "node tests/dev-server.mjs 8787 mdl_dev",
     "scenario": "node tests/scenario.mjs",
@@ -22,7 +22,11 @@
     "build:sites3d": "node tools/build-site3d.mjs",
     "build:jerusalem3d": "node tools/build-jerusalem3d.mjs",
     "build:places": "node tools/build-places.mjs",
-    "build:questions": "node tools/merge-drive-questions.mjs"
+    "build:questions": "node tools/merge-drive-questions.mjs",
+    "test:tours": "node --test tests/tours.test.mjs",
+    "e2e:tours": "node tests/tours-browser.mjs screens-tours",
+    "build:tours": "node tools/build-tours.mjs --online",
+    "tours:status": "node tools/tours-registry.mjs"
   },
   "license": "UNLICENSED",
   "devDependencies": {

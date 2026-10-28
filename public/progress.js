@@ -114,6 +114,39 @@
       mistakes: ids.filter(id => ev[id].ok === -1), runs: h.runs.slice(), best: id => (ev[id] && ev[id].best) || 0, status: id => (ev[id] && ev[id].ok) || 0 };
   }
 
+  // ---- parcours « סיפור דרך » (parcours.html) ----
+  // Par question de parcours : rt.q["01:01-hiriya"] = { ok: 1|-1, x: 1 si tentée en examen, best: meilleur score d'examen ≤ 290 }.
+  // Comme pour le quiz historique : seul le meilleur score d'examen compte, un brouillon (non publié) ne compte jamais.
+  function rdata(g) { g.rt = g.rt || {}; g.rt.q = g.rt.q || {}; g.rt.runs = g.rt.runs || []; g.rt.seen = g.rt.seen || []; return g.rt; }
+  function tourPoints(rt) { return Object.values(rt.q).reduce((n, e) => n + (e.best || 0), 0); }
+  function saveTourRun(rec, opts) {
+    if (!rec || rec.version !== 1 || rec.kind !== 'tour' || !rec.runId || !Array.isArray(rec.answerDetails) || !/^(?:\d{2}|road67)$/.test(rec.tourId || '')) return { saved: false, reason: 'invalid' };
+    const g = data(), rt = rdata(g);
+    if (rt.seen.includes(rec.runId)) return { saved: false, reason: 'duplicate' };
+    const counts = rec.mode === 'exam' && !(opts && opts.draft), before = tourPoints(rt);
+    let right = 0;
+    rec.answerDetails.forEach(a => {
+      if (!a || typeof a.questionId !== 'string' || a.questionId.length > 80) return;
+      const e = rt.q[rec.tourId + ':' + a.questionId] || (rt.q[rec.tourId + ':' + a.questionId] = {});
+      if (a.correct) { e.ok = 1; right++; } else if (e.ok !== 1) e.ok = -1;
+      if (counts) { e.x = 1; const p = Math.max(0, Math.min(HIST_MAX, Number(a.points) || 0)); if (!(e.best >= p)) e.best = p; }
+    });
+    g.days = g.days || {}; const k = today(), d = g.days[k] || (g.days[k] = { a: 0, c: 0 });
+    d.a += rec.answerDetails.length; d.c += right;
+    rt.seen.push(rec.runId); while (rt.seen.length > 60) rt.seen.shift();
+    rt.runs.push({ id: rec.runId, tour: rec.tourId, at: rec.completedAt, mode: rec.mode, score: rec.score, correct: rec.correct, total: rec.total });
+    while (rt.runs.length > 40) rt.runs.shift();
+    ls.set(GKEY, g);
+    if (counts) submitSoon();
+    return { saved: true, gained: tourPoints(rt) - before, counted: counts };
+  }
+  function tourStats(tourId) {
+    const rt = rdata(data()), pre = tourId ? tourId + ':' : '';
+    const ids = Object.keys(rt.q).filter(k => k.startsWith(pre));
+    return { points: ids.reduce((n, k) => n + (rt.q[k].best || 0), 0), known: ids.filter(k => rt.q[k].ok === 1).map(k => k.slice(k.indexOf(':') + 1)),
+      mistakes: ids.filter(k => rt.q[k].ok === -1).map(k => k.slice(k.indexOf(':') + 1)), runs: rt.runs.filter(r => !tourId || r.tour === tourId) };
+  }
+
   function totals() {
     const g = data(); let points = 0, st = 0, answered = 0; const tours = new Set(), gold = new Set();
     Object.entries(g.lv).forEach(([k, s]) => {
@@ -123,6 +156,7 @@
     tours.forEach(t => { if (stars(t) === 3) gold.add(t); });
     // Quiz historique : meilleur score d'examen par événement (≤ 290 < 300, donc compatible avec la borne serveur points ≤ answered × 300).
     const h = hdata(g); points += historyPoints(h); answered += Object.values(h.ev).filter(e => e.x).length;
+    const rt = rdata(g); points += tourPoints(rt); answered += Object.values(rt.q).filter(e => e.x).length;
     return { points, stars: st, gold: gold.size, answered };
   }
   const starText = n => '★'.repeat(n) + '☆'.repeat(3 - n);
@@ -207,5 +241,5 @@
   }
 
   window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, classCode, setClassCode, normCode, askName, PASS,
-    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats };
+    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats, saveTourRun, tourStats };
 })();
