@@ -105,6 +105,35 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
   }
   // ---- Accès réservé : liste des élèves autorisés (numéros de teoudat zehout) ----
   // Les numéros partent directement au serveur, qui n'en garde qu'une empreinte chiffrée. Ils ne sont jamais réaffichés.
+  // Même règle que mdl.tz_pick côté serveur : sert seulement à montrer À L'ADMIN, sur son écran, les lignes à corriger.
+  function tzOk(d){ if (d.length < 5 || d.length > 9) return null; d = d.padStart(9, '0'); if (d === '000000000') return null;
+    let s = 0; for (let k = 0; k < 9; k++) { let v = +d[k] * (k % 2 ? 2 : 1); s += v > 9 ? v - 9 : v; } return s % 10 ? null : d; }
+  function tzPick(line){
+    if (/\d[.,]\d*e\+?\d/i.test(line)) return null;
+    let v = line.replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff\u00ad]/g, '').replace(/[\u00a0\u2007\u202f]/g, ' ').replace(/^\s*\d{1,3}[.)]\s+/, '');
+    for (let pass = 1; pass <= 2; pass++) {
+      if (pass === 2) v = v.replace(/(\d)[ .\-]+(?=\d)/g, '$1');
+      for (const m of v.match(/\d+/g) || []) { const r = tzOk(m); if (r) return r; }
+    }
+    return null;
+  }
+  function tzWhy(line){
+    if (/\d[.,]\d*e\+?\d/i.test(line)) return 'אקסל הפך את המספר לכתיב מדעי (E+) — סמנו את העמודה כ„טקסט” והעתיקו שוב';
+    const runs = (line.replace(/(\d)[ .\-]+(?=\d)/g, '$1').match(/\d+/g) || []);
+    if (!runs.length) return 'אין מספר בשורה';
+    if (runs.some(x => x.length > 9)) return 'יותר מ-9 ספרות';
+    if (!runs.some(x => x.length >= 5)) return 'פחות מ-5 ספרות';
+    return 'ספרת הביקורת לא מתאימה — כנראה ספרה שגויה או חסרה';
+  }
+  function tzCheck(list){
+    const bad = [], seen = new Set(); let dup = 0, ok = 0;
+    list.split(/\r?\n/).map(l => l.trim()).filter(Boolean).forEach((l, i) => {
+      const t = tzPick(l);
+      if (!t) bad.push({ n: i + 1, line: l, why: tzWhy(l) });
+      else if (seen.has(t)) dup++; else { seen.add(t); ok++; }
+    });
+    return { bad, dup, ok };
+  }
   async function renderAccess(){
     const old = document.getElementById('accessCard'); if (old) old.remove();
     const box = document.createElement('div'); box.className = 'card'; box.id = 'accessCard'; box.style.marginTop = '22px';
@@ -118,19 +147,26 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
     box.innerHTML = `<b>👥 מי יכול להיכנס לאפליקציה</b>
       <p class="sub" style="margin:6px 0 10px">${n ? `🔒 האפליקציה סגורה: <b>${n}</b> מספרים מורשים.` : '🔓 האפליקציה פתוחה לכולם (הרשימה ריקה).'}</p>
       <p class="sub" style="margin:0 0 8px">הדביקו את <b>כל</b> הרשימה (מחליפה את הקודמת): מספר תעודת זהות אחד בכל שורה. אפשר להעתיק עמודה מאקסל. לא נשמר שום שם — רק טביעה מוצפנת של המספר, שלא תוצג כאן שוב.</p>
-      <textarea id="accList" rows="7" style="width:100%;box-sizing:border-box;border-radius:12px;background:#101a40;color:var(--ink);border:1px solid var(--line);padding:10px;font:inherit;direction:rtl" placeholder="012345678&#10;123456782"></textarea>
+      <textarea oninput="delete this.dataset.confirmed" id="accList" rows="7" style="width:100%;box-sizing:border-box;border-radius:12px;background:#101a40;color:var(--ink);border:1px solid var(--line);padding:10px;font:inherit;direction:rtl" placeholder="012345678&#10;123456782"></textarea>
       <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn ok" id="accSave" type="button">💾 שמירת הרשימה</button>${n ? '<button class="btn" id="accOpen" type="button">🔓 לפתוח לכולם</button>' : ''}</div>
       <p class="sub" id="accMsg" style="margin:8px 0 0"></p>`;
     const msg = t => { document.getElementById('accMsg').innerHTML = t; };
     document.getElementById('accSave').onclick = async () => {
       const ta = document.getElementById('accList'), list = ta.value;
       if (!list.trim()) return msg('הרשימה ריקה. כדי לפתוח לכולם השתמשו בכפתור „לפתוח לכולם”.');
+      const chk = tzCheck(list);
+      if (chk.bad.length && !ta.dataset.confirmed) {
+        ta.dataset.confirmed = '1';
+        return msg(`⚠️ <b>${chk.bad.length}</b> שורות לא יתקבלו (${chk.ok} תקינים${chk.dup ? `, ${chk.dup} כפולים` : ''}). תקנו אותן ברשימה ולחצו שוב, או לחצו שוב כדי לשמור בלעדיהן:` +
+          '<ul style="margin:6px 0 0;padding-inline-start:18px">' + chk.bad.map(b => `<li>שורה <bdi>${b.n}</bdi>: <bdi dir="ltr">${esc(b.line)}</bdi> — ${b.why}</li>`).join('') + '</ul>');
+      }
       try {
         const r = await rpc('admin_access_set', { p_token: token, p_list: list });
-        if (r.error === 'no_valid_lines') return msg('❌ לא נמצא אף מספר תעודת זהות תקין — שום דבר לא שונה.');
+        if (r.error === 'no_valid_lines') { delete ta.dataset.confirmed; return msg('❌ לא נמצא אף מספר תעודת זהות תקין — שום דבר לא שונה.'); }
         ta.value = ''; // on ne laisse pas les numéros affichés
         await renderAccess();
-        msg(`✅ נשמר: ${r.allowed} מספרים מורשים.` + (r.bad_lines && r.bad_lines.length ? ` ⚠️ שורות שנדחו (מספר לא תקין): ${r.bad_lines.join(', ')}` : ''));
+        msg(`✅ נשמר: ${r.allowed} מספרים מורשים.` + (r.duplicates ? ` (${r.duplicates} מספרים הופיעו פעמיים ונספרו פעם אחת)` : '') +
+          (r.bad_lines && r.bad_lines.length ? ` ⚠️ שורות שנדחו: ${r.bad_lines.join(', ')} — הדביקו שוב את כל הרשימה כדי לראות את הסיבה.` : ''));
       } catch (e) { if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } msg('❌ השמירה לא הצליחה.'); }
     };
     const op = document.getElementById('accOpen');
