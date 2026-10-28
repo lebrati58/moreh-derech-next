@@ -32,6 +32,7 @@ ok(await page.$('.daily .modes a[href*="/guided"]'), 'mission du jour avec les 3
 await page.waitForSelector('#homeMap svg');
 ok((await page.$$('#homeMap .pt')).length === 5, 'carte (schéma hors ligne) : 5 sites');
 ok(!(await page.$('#mdlGate')), 'aucun numéro de teoudat zehout demandé');
+ok(await page.$('#homeMap [data-retry]') && /לא נטענה/.test(await page.textContent('#homeMap .mapnote')), 'carte : raison de l’échec + bouton « réessayer la vraie carte »');
 await shot('1-home');
 // fiche d'un site : statut et sources
 await page.click('#homeMap .pt[data-id="ein_keshatot"]');
@@ -68,6 +69,13 @@ await page.goto(base + 'exam.html#/m/g1/guided/2');
 await page.waitForSelector('.plan');
 const info = await page.textContent('.info');
 ok(/עין קשתות/.test(info) && /שירותים/.test(info) && /לברר/.test(info), 'programme : infos des sites choisis (horaires, toilettes « לברר »)');
+await page.waitForSelector('#pMap svg');
+ok((await page.$$('#pMap .pt')).length === 5, 'programme : la carte est là, avec les numéros de visite');
+await page.$eval('[data-mv="tel_saki:-1"]', el => el.click());
+await page.waitForFunction(() => /תל א-סאקי/.test(document.querySelector('.pi .nm').textContent));
+ok(/צומת צמח ← תל סאקי/.test(await page.textContent('.info')), 'ordre des visites modifié avec ▲ : trajets recalculés');
+await page.$eval('[data-mv="tel_saki:1"]', el => el.click());
+await page.waitForFunction(() => /מצפה אופיר/.test(document.querySelector('.pi .nm').textContent));
 ok(/צומת צמח ← מצפה אופיר/.test(info) && /ק״מ אווירי/.test(info) && (await page.$$('.legs a[href*="google.com/maps/dir"]')).length >= 4, 'trajets : distance aérienne + liens Google/Waze, aucun temps inventé');
 const pickTime = async (i, k, v) => { await page.$eval(`.pr[data-i="${i}"] .tbtn[data-t="${k}:${i}"]`, el => el.click()); await page.waitForSelector('.sheet.clock');
   const want = v.split(':').reduce((a, x) => a * 60 + +x, 0); let cur = (await page.textContent('#cv')).split(':').reduce((a, x) => a * 60 + +x, 0);
@@ -127,6 +135,15 @@ ok(!(await page.$('#mdl')) && !(await page.$('[data-hint]')), 'examen : aucune a
 await page.click('[data-t="long"]');
 await page.waitForSelector('#ed textarea');
 await page.selectOption('[data-f="site"]', 'ein_keshatot');
+// trajet logique proposé dans la simulation à partir des sites choisis
+await page.click('[data-t="ua"]'); await page.waitForSelector('#ed select'); await page.selectOption('#ed [data-f="site"]', 'tel_saki');
+await page.click('[data-t="plan"]'); await page.waitForSelector('#sugg');
+await page.$eval('#sugg', el => el.click());
+await page.waitForFunction(() => document.querySelectorAll('.plan .pr').length >= 6);
+const whats = await page.$$eval('.plan [data-k="what"]', els => els.map(e => e.value));
+ok(whats[0].startsWith('מפגש') && whats.some(w => /עין קשתות/.test(w)) && whats.some(w => /תל א-סאקי/.test(w)) && whats.some(w => /ארוחת צהריים/.test(w)) && /פיזור/.test(whats[whats.length - 1]), 'simulation : programme pré-rempli dans un ordre logique (rendez-vous, sites, déjeuner, retour)');
+ok(whats.indexOf(whats.find(w => /עין קשתות/.test(w))) < whats.indexOf(whats.find(w => /תל א-סאקי/.test(w))), 'ordre par proximité depuis צומת צמח : עין קשתות avant תל סאקי');
+await page.click('[data-t="long"]'); await page.waitForSelector('#ed textarea');
 const longModel = await page.evaluate(async () => (await (await fetch('exam/golan-south.json')).json()).models.long_ein_keshatot);
 await page.fill('[data-f="topic"]', longModel.topic); await page.fill('[data-f="place"]', longModel.place); await page.fill('[data-f="minutes"]', '45'); await page.fill('[data-f="method"]', longModel.method);
 await page.fill('#ed textarea', longModel.text.replace(/749/, '363').replace('כלומר, זה לא בית כנסת מימי הבית השני.', 'זה בית כנסת מימי הבית השני.'));
