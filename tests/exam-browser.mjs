@@ -32,6 +32,7 @@ ok(await page.$('.daily .modes a[href*="/guided"]'), 'mission du jour avec les 3
 await page.waitForSelector('#homeMap svg');
 ok((await page.$$('#homeMap .pt')).length === 5, 'carte (schéma hors ligne) : 5 sites');
 ok(!(await page.$('#mdlGate')), 'aucun numéro de teoudat zehout demandé');
+ok(await page.$('#homeMap [data-retry]') && /לא נטענה/.test(await page.textContent('#homeMap .mapnote')), 'carte : raison de l’échec + bouton « réessayer la vraie carte »');
 await shot('1-home');
 // fiche d'un site : statut et sources
 await page.click('#homeMap .pt[data-id="ein_keshatot"]');

@@ -74,16 +74,30 @@
   function loadMapLibre() {
     if (window.maplibregl) return Promise.resolve(window.maplibregl);
     if (mlPromise) return mlPromise;
-    mlPromise = new Promise((res, rej) => {
-      if (/[?&]nomap\b/.test(location.search) || !navigator.onLine) return rej(new Error('offline'));
-      const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css'; document.head.appendChild(css);
-      const sc = document.createElement('script'); sc.src = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
-      const to = setTimeout(() => rej(new Error('timeout')), 8000);
-      sc.onload = () => { clearTimeout(to); window.maplibregl ? res(window.maplibregl) : rej(new Error('no lib')); };
-      sc.onerror = () => { clearTimeout(to); rej(new Error('load')); };
+    const CDNS = ['https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl', 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl'];
+    const tryCdn = (i) => new Promise((res, rej) => {
+      if (i >= CDNS.length) return rej(new Error('load'));
+      const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = CDNS[i] + '.css'; document.head.appendChild(css);
+      const sc = document.createElement('script'); sc.src = CDNS[i] + '.js';
+      const to = setTimeout(() => { sc.remove(); tryCdn(i + 1).then(res, rej); }, 9000);
+      sc.onload = () => { clearTimeout(to); window.maplibregl ? res(window.maplibregl) : tryCdn(i + 1).then(res, rej); };
+      sc.onerror = () => { clearTimeout(to); tryCdn(i + 1).then(res, rej); };
       document.head.appendChild(sc);
     });
+    mlPromise = (/[?&]nomap\b/.test(location.search) || !navigator.onLine) ? Promise.reject(new Error('offline')) : tryCdn(0);
+    mlPromise.catch(() => { mlPromise = null; });   // on pourra réessayer
     return mlPromise;
+  }
+  // Itinéraire routier via le serveur public OSRM (OpenStreetMap). Estimation « sans embouteillages », jamais une invention :
+  // la source est affichée. En cas d'échec (hors ligne, serveur occupé), on reste sur les distances aériennes.
+  function osrmRoute(points) {
+    const ctl = window.AbortController ? new AbortController() : null, t = ctl && setTimeout(() => ctl.abort(), 9000);
+    const url = 'https://router.project-osrm.org/route/v1/driving/' + points.map(p => p.lon + ',' + p.lat).join(';') + '?overview=full&geometries=geojson';
+    return fetch(url, { signal: ctl && ctl.signal }).then(r => r.json()).then(j => {
+      if (t) clearTimeout(t);
+      const r = j && j.routes && j.routes[0]; if (!r) return null;
+      return { feature: { type: 'Feature', geometry: r.geometry }, legs: r.legs.map(l => ({ km: Math.round(l.distance / 100) / 10, min: Math.round(l.duration / 60) })), km: Math.round(r.distance / 100) / 10, min: Math.round(r.duration / 60) };
+    });
   }
   function mapBox(el, opts) {
     // opts : { pick(id) | null, mark: {id: label}, onSite(id) }
@@ -101,8 +115,9 @@
         <line x1="${x(a.lon)}" y1="${y(a.lat)}" x2="${x(b.lon)}" y2="${y(b.lat)}" stroke="#ffd878" stroke-width="2" stroke-dasharray="5 4"/>
         ${sites.map(s => `<g class="pt" data-id="${s.id}" tabindex="0" role="button" aria-label="${esc(s.short)}"><circle cx="${x(s.lon)}" cy="${y(s.lat)}" r="9" fill="${opts.mark && opts.mark[s.id] ? '#6ee9cf' : '#ff8f8f'}" stroke="#fff" stroke-width="2"/>
           <text x="${x(s.lon)}" y="${s.id === 'kursi' ? y(s.lat) + 22 : y(s.lat) - 13}" text-anchor="${s.id === 'kursi' ? 'start' : 'middle'}" fill="#fff" font-size="12" font-weight="800">${esc(s.short)}${opts.mark && opts.mark[s.id] ? ' · ' + esc(opts.mark[s.id]) : ''}</text></g>`).join('')}
-      </svg><div class="mapnote">${why === 'offline' ? 'מפה סכמטית (ללא חיבור)' : 'מפה סכמטית'} · מיקומים לפי Wikidata</div>`;
+      </svg><div class="mapnote">${why === 'offline' ? 'מפה סכמטית (ללא חיבור)' : 'מפה סכמטית — המפה האמיתית לא נטענה (' + esc(why) + ')'} · מיקומים לפי Wikidata ${why !== 'offline' || navigator.onLine ? '<button type="button" class="mini" data-retry>🗺️ לנסות שוב מפה אמיתית</button>' : ''}</div>`;
       $$('.pt', holder).forEach(g => { g.addEventListener('click', () => click(g.dataset.id)); g.addEventListener('keydown', e => { if (e.key === 'Enter') click(g.dataset.id); }); });
+      const rb = $('[data-retry]', holder); if (rb) rb.addEventListener('click', () => { mlPromise = null; mapBox(el, opts); });
     };
     loadMapLibre().then(ml => {
       let map;
@@ -119,6 +134,15 @@
         const r = DATA.roads.find(x => x.line);
         map.addSource('r789', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: r.line.map(id => [P[id].lon, P[id].lat]) } } });
         map.addLayer({ id: 'r789', type: 'line', source: 'r789', paint: { 'line-color': '#f0b44c', 'line-width': 3, 'line-dasharray': [2, 2] } });
+        // Trajet réel par les routes (OSRM / OpenStreetMap) entre les visites, dans l'ordre des numéros
+        const seq = Object.entries(opts.mark || {}).filter(([, v]) => /^\d+$/.test(v)).sort((a, b) => +a[1] - +b[1]).map(([id]) => P[id]).filter(Boolean);
+        if (seq.length >= 1 && (DATA.anchors || [])[0]) { seq.unshift(DATA.anchors[0]); seq.push(DATA.anchors[0]); }
+        if (seq.length >= 2) osrmRoute(seq).then(geo => {
+          if (!geo || !map.getStyle()) return;
+          map.addSource('route', { type: 'geojson', data: geo.feature });
+          map.addLayer({ id: 'route', type: 'line', source: 'route', paint: { 'line-color': '#6ee9cf', 'line-width': 4 } });
+          if (opts.onRoute) opts.onRoute(geo);
+        }).catch(() => {});
       });
       sites.forEach(s => {
         const m = document.createElement('button'); m.type = 'button'; m.className = 'mk' + (opts.mark && opts.mark[s.id] ? ' on' : ''); m.dataset.id = s.id;
@@ -381,7 +405,10 @@
       $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
       wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
       const vo = visitOrder(m, D);
-      if ($('#pMap', body)) mapBox($('#pMap', body), { mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])) });
+      if ($('#pMap', body)) mapBox($('#pMap', body), { mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])), onRoute: geo => {
+        const lis = $$('.legs li', body); geo.legs.forEach((l, i) => { if (lis[i]) lis[i].insertAdjacentHTML('beforeend', `<span class="osrm">🛣️ ${l.km} ק״מ · ~${l.min} דק׳ <small>(OSRM/OpenStreetMap, ללא פקקים)</small></span>`); });
+        const tot = $('.legs', body); if (tot) tot.insertAdjacentHTML('afterend', `<p class="muted osrm-tot">סה״כ נסיעה לפי OSRM: ${geo.km} ק״מ · ~${Math.floor(geo.min / 60)}:${String(geo.min % 60).padStart(2, '0')} שעות (הערכה ללא פקקים — לבדוק גם ב-Waze)</p>`);
+      } });
       $$('[data-mv]', body).forEach(b => b.addEventListener('click', () => {
         const [id, d] = b.dataset.mv.split(':'), o = visitOrder(m, D), i = o.indexOf(id), j = i + (+d);
         if (j < 0 || j >= o.length) return; [o[i], o[j]] = [o[j], o[i]]; D.order = o; save(); draw(res);
