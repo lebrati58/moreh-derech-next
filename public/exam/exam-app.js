@@ -333,6 +333,15 @@
     return P[sl.best].short + ' — ' + (sl.why || sl.he);
   }
 
+  // Une étape du programme = une carte : n°, heures en gros (début → fin · durée), quoi, logistique, site, poubelle.
+  function planRow(r, i, sites) {
+    const a = C.toMin(r.start), b = C.toMin(r.end), dur = a !== null && b !== null && b >= a ? (b - a) + ' דק׳' : '';
+    return `<div class="pr" data-i="${i}">
+      <div class="prh"><span class="prn">${i + 1}</span>${timeButton('start:' + i, r.start, 'שעת התחלה')}<span class="arr">←</span>${timeButton('end:' + i, r.end, 'שעת סיום')}<span class="dur">${dur}</span><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>
+      <input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}" placeholder="מה עושים: נסיעה / הדרכה / ארוחה…">
+      <input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}" placeholder="תיאומים ומנהלות: תשלום, שירותים, תיאום…">
+      <select aria-label="אתר" data-k="site"><option value="">📍 אתר (אם זו הדרכה באתר)</option>${sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select></div>`;
+  }
   // Infos pour construire le programme : sites choisis à l'étape 1 (heures, toilettes, parking) + trajets à vérifier.
   function planInfoHtml(m, D) {
     const order = m.slots.map(s => D.picks[s.id]).concat([D.picks.long]).filter(Boolean);
@@ -351,15 +360,10 @@
   function stepPlan(m, D, body) {
     const model = MODELS.models.school5;
     if (!D.plan.length) D.plan = [{ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((DATA.anchors || [{}])[0].he || ''), log: 'לבדוק שכולם הגיעו' }];
-    const siteOpts = r => `<option value="">—</option>${DATA.sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}`;
     const draw = res => {
       body.innerHTML = `<p class="lead">${esc(model.day.he)} עמודת המשך מחושבת לבד. כל שורה מתחילה בשעת הסיום של הקודמת. זמני נסיעה — רק ממה שאתם יודעים; האפליקציה לא ממציאה אותם.</p>
         ${planInfoHtml(m, D)}
-        <div class="plan" role="table"><div class="ph" role="row"><span>התחלה</span><span>סיום</span><span>משך</span><span>פירוט המסלול</span><span>תיאומים ומנהלות</span><span>אתר</span><span></span></div>
-        ${D.plan.map((r, i) => { const a = C.toMin(r.start), b = C.toMin(r.end), dur = a !== null && b !== null && b >= a ? (b - a) + ' דק׳' : ''; return `<div class="pr" role="row" data-i="${i}">
-          ${timeButton('start:' + i, r.start, 'שעת התחלה')}${timeButton('end:' + i, r.end, 'שעת סיום')}<span class="dur">${dur}</span>
-          <input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}" placeholder="נסיעה / הדרכה / ארוחה…"><input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}" placeholder="תשלום, שירותים, תיאום…">
-          <select aria-label="אתר" data-k="site">${siteOpts(r)}</select><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>`; }).join('')}</div>
+        <div class="plan">${D.plan.map((r, i) => planRow(r, i, DATA.sites)).join('')}</div>
         <div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="hnt">💡 ${t('hint')}</button><button type="button" class="btn ghost" id="mdl">👀 דוגמה מהקורס</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
         <div id="out">${res ? `<div class="panel"><h3>תוצאה: ${Math.round(res.frac * 100)}%</h3>${checklist(res, true)}</div>` : ''}</div>`;
       const setRow = (i, k, v) => { D.plan[i][k] = v; if (k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = v; save(); draw(); };
@@ -479,7 +483,7 @@
       const D = { picks: {}, plan: E.plan };
       // éditeur de programme sans aide
       const draw = () => {
-        body.innerHTML = `<div class="plan">${E.plan.map((r, i) => `<div class="pr" data-i="${i}">${timeButton('start:' + i, r.start, 'שעת התחלה')}${timeButton('end:' + i, r.end, 'שעת סיום')}<span class="dur">${(C.toMin(r.end) - C.toMin(r.start)) >= 0 ? (C.toMin(r.end) - C.toMin(r.start)) + ' דק׳' : ''}</span><input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}"><input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}"><select aria-label="אתר" data-k="site"><option value="">—</option>${DATA.sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>`).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
+        body.innerHTML = `<div class="plan">${E.plan.map((r, i) => planRow(r, i, DATA.sites)).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
         const setRow = (i, k, v) => { E.plan[i][k] = v; if (k === 'end' && E.plan[i + 1] && !E.plan[i + 1].start) E.plan[i + 1].start = v; save(); draw(); };
         $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
         wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
