@@ -34,6 +34,34 @@
     "wd": {
       "title": "Wikidata / Wikipedia (קואורדינטות)",
       "url": "https://www.wikidata.org"
+    },
+    "ek_tiuli": {
+      "title": "עין קשתות — דף האתר ב-tiuli (שעות, מחירים)",
+      "url": "https://www.tiuli.com/points-of-interest/262/עין-קשתות"
+    },
+    "ek_site": {
+      "title": "עין קשתות — האתר הרשמי",
+      "url": "https://einkeshatot.org.il/"
+    },
+    "ts_site": {
+      "title": "תל סאקי — אתר מורשת הקרב",
+      "url": "https://www.tel-saki.com/"
+    },
+    "mo_edu": {
+      "title": "מצפה אופיר — פורטל הטיולים של משרד החינוך",
+      "url": "https://pop.education.gov.il/metaylim-im-tchumei-daat/kol-hatiyulim/mitzpe-ofir-ein-gev/"
+    },
+    "inpa": {
+      "title": "רשות הטבע והגנים — שעות ומחירים עדכניים",
+      "url": "https://www.parks.org.il/"
+    },
+    "hippos_news": {
+      "title": "סוסיתא נפתח לקהל (מקור ראשון, 2023)",
+      "url": "https://www.makorrishon.co.il/news/598789/"
+    },
+    "wd_tz": {
+      "title": "צומת צמח — Wikipedia (קואורדינטות)",
+      "url": "https://en.wikipedia.org/wiki/Tsemah_Junction"
     }
   },
   "sites": [
@@ -74,7 +102,10 @@
             "16:00"
           ]
         },
-        "src": "ek"
+        "src": [
+          "ek",
+          "ek_tiuli"
+        ]
       },
       "visit": null,
       "access": null,
@@ -111,7 +142,53 @@
       "sources": [
         "ek",
         "itai"
-      ]
+      ],
+      "logistics2": {
+        "hours": {
+          "he": "מרץ–אוקטובר: א׳–ה׳ 09:00–17:00, ו׳/שבת/ערבי חג 09:00–16:00 · נובמבר–פברואר: א׳–ה׳ 09:00–16:00, ו׳/ערבי חג 09:00–15:00",
+          "src": [
+            "ek",
+            "ek_tiuli"
+          ]
+        },
+        "lastEntry": {
+          "he": "כניסה אחרונה שעה לפני הסגירה",
+          "src": "ek_tiuli"
+        },
+        "price": {
+          "he": "מבוגר 28 ₪ · ילד/חייל/גמלאי/נכה 18 ₪ (נכון לדף tiuli — לבדוק לפני)",
+          "src": "ek_tiuli"
+        },
+        "toilets": {
+          "status": "unknown",
+          "he": "לא נמצא אישור במקורות — לברר בטלפון",
+          "src": null
+        },
+        "parking": {
+          "status": "unknown",
+          "he": "חניה לאוטובוס: לא צוין במקורות — לברר",
+          "src": null
+        },
+        "phone": {
+          "he": "04-6851002 · מדריך מקומי: 055-4533549",
+          "src": [
+            "ek",
+            "ek_tiuli"
+          ]
+        },
+        "group": {
+          "he": "ניתן לתאם ביקור לקבוצות גם מחוץ לשעות הפתיחה",
+          "src": [
+            "ek",
+            "ek_tiuli"
+          ]
+        },
+        "queue": {
+          "status": "unknown",
+          "he": "זמן המתנה בקופה לא ידוע — להוסיף מרווח ולשקול תשלום מראש לקבוצה",
+          "src": null
+        }
+      }
     },
     {
       "id": "mitzpe_ofir",
@@ -175,7 +252,40 @@
         "mo",
         "road",
         "itai"
-      ]
+      ],
+      "logistics2": {
+        "hours": {
+          "he": "אתר פתוח, ללא שעות פתיחה (חניון/תצפית)",
+          "src": "mo_edu"
+        },
+        "price": {
+          "he": "חינם",
+          "src": "mo_edu"
+        },
+        "toilets": {
+          "status": "unknown",
+          "he": "במקורות: שולחנות פיקניק ורחבה מוצלת בלבד — שירותים לא מוזכרים. לברר, או לתכנן שירותים באתר הקודם/הבא",
+          "src": [
+            "mo",
+            "mo_edu"
+          ]
+        },
+        "parking": {
+          "status": "caution",
+          "he": "סתירה: בחומר הקורס ״הכניסה אפשרית לאוטובוסים״; בפורטל משרד החינוך הגישה בדרך עפר של כ-2 ק״מ מכביש 789 (״מתאימה לכל כלי רכב״). לבדוק עם הנהג",
+          "src": [
+            "mo",
+            "mo_edu"
+          ]
+        },
+        "phone": null,
+        "group": null,
+        "queue": {
+          "status": "yes",
+          "he": "אין קופה לפי המקורות (כניסה חופשית)",
+          "src": null
+        }
+      }
     },
     {
       "id": "tel_saki",
@@ -252,7 +362,40 @@
       "sources": [
         "ts",
         "road"
-      ]
+      ],
+      "logistics2": {
+        "hours": {
+          "he": "פתוח 09:00–22:00 (חומר הקורס)",
+          "src": "ts"
+        },
+        "price": {
+          "he": "לא צוין",
+          "src": null
+        },
+        "toilets": {
+          "status": "unknown",
+          "he": "לא נמצא אישור במקורות — לברר בטלפון",
+          "src": null
+        },
+        "parking": {
+          "status": "unknown",
+          "he": "לא צוין — לברר",
+          "src": null
+        },
+        "phone": {
+          "he": "053-4836900 — לתיאום סיפור אישי / חדר בריחה",
+          "src": "ts"
+        },
+        "group": {
+          "he": "סיפור אישי של לוחם — לתאם מראש",
+          "src": "ts"
+        },
+        "queue": {
+          "status": "yes",
+          "he": "אין קופה לפי המקורות (כניסה חופשית)",
+          "src": null
+        }
+      }
     },
     {
       "id": "hippos",
@@ -277,7 +420,23 @@
         "christianity",
         "city"
       ],
-      "hours": null,
+      "hours": {
+        "he": "גן לאומי של רט״ג — שעות לפי עונה; לא אומתו. במבחן: אתרי רט״ג 08:00–17:00 (שיעור 26)",
+        "summer": {
+          "tue": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        "winter": {
+          "tue": [
+            "08:00",
+            "16:00"
+          ]
+        },
+        "src": "lesson26",
+        "assumed": true
+      },
       "visit": null,
       "access": null,
       "facts": [
@@ -293,7 +452,37 @@
       "note": "אין בחומר הקורס מסמך ייעודי לסוסיתא — רק שתי שורות בסיפור הדרך. ההדרכה עליה מבוססת על מידע חלקי.",
       "sources": [
         "road"
-      ]
+      ],
+      "logistics2": {
+        "hours": {
+          "he": "גן לאומי של רט״ג — שעות לפי עונה; לא אומתו. במבחן: אתרי רט״ג 08:00–17:00 (שיעור 26)",
+          "src": [
+            "inpa",
+            "lesson26"
+          ]
+        },
+        "price": {
+          "he": "מבוגר 22 ₪ · ילד 9 ₪ (פרסום מ-2023 — לבדוק)",
+          "src": "hippos_news"
+        },
+        "toilets": {
+          "status": "unknown",
+          "he": "יש מרכז מבקרים (2023); שירותים לא אומתו",
+          "src": "hippos_news"
+        },
+        "parking": {
+          "status": "unknown",
+          "he": "כביש גישה סלול נפתח (2023); חניית אוטובוס לא אומתה",
+          "src": "hippos_news"
+        },
+        "phone": null,
+        "group": null,
+        "queue": {
+          "status": "unknown",
+          "he": "זמן המתנה בקופה לא ידוע — להוסיף מרווח ולשקול תשלום מראש לקבוצה",
+          "src": null
+        }
+      }
     },
     {
       "id": "kursi",
@@ -315,7 +504,23 @@
         "archaeology",
         "new_testament"
       ],
-      "hours": null,
+      "hours": {
+        "he": "גן לאומי של רט״ג — שעות לפי עונה; לא אומתו. במבחן: אתרי רט״ג 08:00–17:00 (שיעור 26)",
+        "summer": {
+          "tue": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        "winter": {
+          "tue": [
+            "08:00",
+            "16:00"
+          ]
+        },
+        "src": "lesson26",
+        "assumed": true
+      },
       "visit": null,
       "access": null,
       "facts": [
@@ -331,7 +536,37 @@
       "note": "אין עדיין מסמך ייעודי לכורסי. הביקור מתוכנן בלוח הזמנים של הקורס ל-14/12.",
       "sources": [
         "road"
-      ]
+      ],
+      "logistics2": {
+        "hours": {
+          "he": "גן לאומי של רט״ג — שעות לפי עונה; לא אומתו. במבחן: אתרי רט״ג 08:00–17:00 (שיעור 26)",
+          "src": [
+            "inpa",
+            "lesson26"
+          ]
+        },
+        "price": {
+          "he": "לא אומת",
+          "src": null
+        },
+        "toilets": {
+          "status": "unknown",
+          "he": "לא נמצא אישור — לברר ברט״ג",
+          "src": null
+        },
+        "parking": {
+          "status": "unknown",
+          "he": "לא אומת — לברר",
+          "src": null
+        },
+        "phone": null,
+        "group": null,
+        "queue": {
+          "status": "unknown",
+          "he": "זמן המתנה בקופה לא ידוע — להוסיף מרווח ולשקול תשלום מראש לקבוצה",
+          "src": null
+        }
+      }
     }
   ],
   "roads": [
@@ -1003,6 +1238,16 @@
       "cat": "orientation",
       "he": "בהדרכת דרך — להצביע רק ימינה או שמאלה.",
       "src": "roadTips"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "tzemach",
+      "he": "צומת צמח",
+      "lat": 32.7047,
+      "lon": 35.5865,
+      "coordSource": "wd_tz",
+      "short": "צומת צמח"
     }
   ]
 }
