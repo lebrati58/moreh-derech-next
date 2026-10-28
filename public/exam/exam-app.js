@@ -143,8 +143,9 @@
       ${compact ? '' : '<p class="muted">מה שלא אומת במקורות מסומן ״לברר״ — במבחן כותבים את זה בעמודת ״תיאומים ומנהלות״ (לברר שירותים, חניה, תשלום).</p>'}</div>`;
   }
   // Bloc d'un site dans un panneau : en-tête bien visible (numéro, nom, statut) + logistique.
-  function siteBlock(p, n) {
-    return `<div class="pi"><div class="pih"><span class="num">${n}</span><span class="nm">📍 ${esc(p.he)}</span><span class="chips">${statusChips(p)}</span></div>${logisticsHtml(p, true)}</div>`;
+  function siteBlock(p, n, mv) {
+    const arrows = mv ? `<span class="mv"><button type="button" data-mv="${p.id}:-1" aria-label="להעלות" ${mv.up ? '' : 'disabled'}>▲</button><button type="button" data-mv="${p.id}:1" aria-label="להוריד" ${mv.down ? '' : 'disabled'}>▼</button></span>` : '';
+    return `<div class="pi"><div class="pih"><span class="num">${n}</span><span class="nm">📍 ${esc(p.he)}</span>${arrows}<span class="chips">${statusChips(p)}</span></div>${logisticsHtml(p, true)}</div>`;
   }
   function siteSheet(id) {
     const p = P[id]; if (!p) return;
@@ -346,9 +347,14 @@
       <select aria-label="אתר" data-k="site"><option value="">📍 אתר (אם זו הדרכה באתר)</option>${sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select></div>`;
   }
   // Infos pour construire le programme : sites choisis à l'étape 1 (heures, toilettes, parking) + trajets à vérifier.
+  // Ordre des visites (modifiable avec ▲ ▼) : D.order, complété par les sites choisis à l'étape 1.
+  function visitOrder(m, D) {
+    const picked = [...new Set(m.slots.map(s => D.picks[s.id]).concat([D.picks.long]).filter(Boolean))].filter(id => P[id] && P[id].type === 'site');
+    const kept = (D.order || []).filter(id => picked.includes(id));
+    return kept.concat(picked.filter(id => !kept.includes(id)));
+  }
   function planInfoHtml(m, D) {
-    const order = m.slots.map(s => D.picks[s.id]).concat([D.picks.long]).filter(Boolean);
-    const sites = [...new Set(order)].filter(id => P[id] && P[id].type === 'site');
+    const sites = visitOrder(m, D);
     if (!sites.length) return '<p class="muted">בחרו אתרים בשלב 1 כדי לראות כאן שעות, שירותים וחניה.</p>';
     const start = (DATA.anchors || [])[0];
     const L = C.legs(sites, DATA, start);
@@ -356,7 +362,9 @@
     const back = start ? { from: last, to: start, km: C.distanceKm(last, start), nav: C.navLinks(last, start) } : null;
     const leg = l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ אווירי · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a> · <a href="${l.nav.waze}" target="_blank" rel="noopener">Waze</a></span></li>`;
     return `<details class="panel info" open><summary><b>📋 מידע לתכנון — האתרים שבחרתם</b></summary>
-      ${sites.map((id, i) => siteBlock(P[id], i + 1)).join('')}
+      <div id="pMap"></div>
+      <p class="muted">סדר הביקור: שנו עם החצים ▲ ▼ — המספרים על המפה והנסיעות מתעדכנים.</p>
+      ${sites.map((id, i) => siteBlock(P[id], i + 1, { up: i > 0, down: i < sites.length - 1 })).join('')}
       <h4>🚌 נסיעות — לפי סדר הבחירה (אפשר לשנות בלוח)</h4><ul class="legs">${L.map(leg).join('')}${back ? leg(back) : ''}</ul>
       <p class="muted">המרחק הוא בקו אווירי בלבד. זמן נסיעה אמיתי בודקים ב-Google Maps / Waze (״נסיעה ללא פקקים״), ורושמים בלוח. במבחן אין אפליקציה — כדאי לזכור סדרי גודל.</p></details>`;
   }
@@ -369,9 +377,16 @@
         <div class="plan">${D.plan.map((r, i) => planRow(r, i, DATA.sites)).join('')}</div>
         <div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="hnt">💡 ${t('hint')}</button><button type="button" class="btn ghost" id="mdl">👀 דוגמה מהקורס</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
         <div id="out">${res ? `<div class="panel"><h3>תוצאה: ${Math.round(res.frac * 100)}%</h3>${checklist(res, true)}</div>` : ''}</div>`;
-      const setRow = (i, k, v) => { D.plan[i][k] = v; if (k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = v; save(); draw(); };
+      const setRow = (i, k, v) => { D.plan[i][k] = v; if (k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = v; save(); draw(res); };
       $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
       wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
+      const vo = visitOrder(m, D);
+      if ($('#pMap', body)) mapBox($('#pMap', body), { mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])) });
+      $$('[data-mv]', body).forEach(b => b.addEventListener('click', () => {
+        const [id, d] = b.dataset.mv.split(':'), o = visitOrder(m, D), i = o.indexOf(id), j = i + (+d);
+        if (j < 0 || j >= o.length) return; [o[i], o[j]] = [o[j], o[i]]; D.order = o; save(); draw(res);
+        const el = $(`[data-mv="${id}:${d}"]`, body); if (el) el.scrollIntoView({ block: 'center' });
+      }));
       $$('[data-del]', body).forEach(b => b.addEventListener('click', () => {
         const r = D.plan[+b.dataset.del];
         if ((r.what || r.log || r.site) && !confirm('למחוק את השורה ״' + (r.what || r.start) + '״?')) return;
