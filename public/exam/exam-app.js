@@ -62,6 +62,7 @@
   const srcLink = (key, label) => {
     if (Array.isArray(key)) return key.map(k => srcLink(k, label)).join(' ');
     const s = (DATA.sources[key] || MODELS.planRules && { lesson26: MODELS.planRules.source, roadTips: MODELS.roadTips.source, longRules: MODELS.longRules.source }[key]);
+    if (key === 'guide') return '<span class="src">🧑‍🏫 כלל המדריך</span>';
     if (!s) return key === 'model' ? '<span class="src">📐 תנאי המבחן</span>' : '';
     const href = s.url || ('https://drive.google.com/open?id=' + encodeURIComponent(s.id));
     return `<a class="src" href="${esc(href)}" target="_blank" rel="noopener">📄 ${esc(label || s.title)}</a>`;
