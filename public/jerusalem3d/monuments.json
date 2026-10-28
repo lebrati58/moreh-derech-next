@@ -1398,10 +1398,10 @@
     "ru": "Иосиф: скала 50 локтей, башня 40, четыре угловые башни по 50 (юго-восточная 70). Площадь по остаткам: ок. 112 × 40 м (онлайн-источник)."
    },
    "debate": {
-    "he": "צורתה וגודלה שנויים במחלוקת (נצר מול מרפי-או׳קונור). המרצפת במנזר האחיות מציון מתוארכת לימי אדריאנוס ואינה חלק מהאנטוניה.",
-    "fr": "Forme et taille débattues (Netzer contre Murphy-O'Connor). Le dallage des Sœurs de Sion date d'Hadrien et n'appartient pas à l'Antonia.",
-    "en": "Its shape and size are debated (Netzer vs Murphy-O'Connor). The pavement at the Sisters of Zion is Hadrianic, not part of the Antonia.",
-    "ru": "Форма и размер спорны (Нецер против Мёрфи-О'Коннора). Мостовая монастыря Сестёр Сиона — времён Адриана, не часть Антонии."
+    "he": "צורתה וגודלה שנויים במחלוקת (נצר מול מרפי-או׳קונור). המרצפת במנזר האחיות מציון מתוארכת לימי אדריאנוס ואינה חלק מהאנטוניה. פייר בנואה הציע מצודה קטנה עם מגדל אחד בלבד בפינה הדרום-מזרחית, וטען שאין עדות ארכאולוגית לארבעה מגדלים; ארבעת המגדלים שבשחזור באים מתיאור יוסף בן מתתיהו.",
+    "fr": "Forme et taille débattues (Netzer contre Murphy-O'Connor). Le dallage des Sœurs de Sion date d'Hadrien et n'appartient pas à l'Antonia. Pierre Benoit a proposé une forteresse réduite à une seule tour, à l’angle sud-est, faute de toute preuve archéologique de quatre tours ; les quatre tours de la reconstitution viennent de la description de Josèphe.",
+    "en": "Its shape and size are debated (Netzer vs Murphy-O'Connor). The pavement at the Sisters of Zion is Hadrianic, not part of the Antonia. Pierre Benoit proposed a smaller fortress with a single tower at the south-east corner, finding no archaeological evidence for four towers; the four towers in the reconstruction come from Josephus’ description.",
+    "ru": "Форма и размер спорны (Нецер против Мёрфи-О'Коннора). Мостовая монастыря Сестёр Сиона — времён Адриана, не часть Антонии. Пьер Бенуа предлагал небольшую крепость с одной башней в юго-восточном углу, не найдя археологических доказательств четырёх башен; четыре башни реконструкции взяты из описания Иосифа Флавия."
    },
    "placementNote": {
     "he": "מיקום: Wikidata, מוסט צפונה כך שהמבצר צמוד לצלע הצפונית של הרחבה ואינו חופף לה. הנפחים סכמטיים.",
@@ -1670,6 +1670,12 @@
     "fr": "Palais royal, deux ailes : Caesareum et Agrippeum (cours).",
     "en": "Royal palace, two wings: Caesareum and Agrippeum (course).",
     "ru": "Царский дворец, два крыла: Цезарион и Агриппион (курс)."
+   },
+   "debate": {
+    "he": "מהבסיס (הפודיום) נשתמרו רק שרידים מפוזרים (חפירות הקישלה, עמית ראם). היקף הארמון — עד שטח הרובע הארמני — הוא שחזור. הזיהוי עם הפרטוריון שבו נשפט ישו מקובל על רבים (למשל ג׳ודי מגנס), אך אינו ודאי.",
+    "fr": "Du podium ne subsistent que des restes épars (fouilles de la Kishlé, Amit Re’em). L’extension du palais, jusqu’au quartier arménien, est une reconstitution. Son identification avec le prétoire du procès de Jésus est admise par beaucoup (p. ex. Jodi Magness), sans être certaine.",
+    "en": "Only scattered remains of the podium survive (Kishle excavations, Amit Re’em). The palace’s extent, as far as the Armenian Quarter, is a reconstruction. Its identification with the praetorium of Jesus’ trial is widely accepted (e.g. Jodi Magness) but not certain.",
+    "ru": "От подиума сохранились лишь разрозненные остатки (раскопки Кишле, Амит Реэм). Протяжённость дворца, вплоть до Армянского квартала, — реконструкция. Отождествление с преторией суда над Иисусом принято многими (напр. Джоди Магнесс), но не бесспорно."
    }
   },
   {
@@ -1837,10 +1843,10 @@
     "ru": "Главная улица шириной 8–10 м (курс)"
    },
    "debate": {
-    "he": "״דרך עולי הרגל״ היא רשת של רחובות ולא רחוב אחד. בחפירות 2023–2024 התברר שהרחוב נפרד מתעלת הניקוז ועולה באלכסון לעבר שערי הר הבית הדרומיים.",
-    "fr": "La « rue des pèlerins » est un réseau de rues, pas une rue unique. Les fouilles de 2023–2024 ont montré que la rue quitte le canal de drainage et monte en diagonale vers les portes sud du mont du Temple.",
-    "en": "The 'Pilgrims' Road' is a network of streets, not one street. Excavations in 2023–2024 showed the street leaves the drainage channel and climbs diagonally toward the southern Temple Mount gates.",
-    "ru": "«Дорога паломников» — сеть улиц, а не одна улица. Раскопки 2023–2024 гг. показали, что улица отходит от канала и поднимается наискось к южным воротам Храмовой горы."
+    "he": "״דרך עולי הרגל״ היא רשת של רחובות ולא רחוב אחד. בחפירות 2023–2024 התברר שהרחוב נפרד מתעלת הניקוז ועולה באלכסון לעבר שערי הר הבית הדרומיים. גם התיארוך שנוי במחלוקת: הרחוב יוחס להורדוס, לתקופה ההרודיאנית או לאגריפס השני (אילת מזר); מחקר המטבעות מ-2019 (שנטון, הגבי, עוזיאל, אריאל) מציע כ-31 לסה\"נ, בימי פונטיוס פילטוס.",
+    "fr": "La « rue des pèlerins » est un réseau de rues, pas une rue unique. Les fouilles de 2023–2024 ont montré que la rue quitte le canal de drainage et monte en diagonale vers les portes sud du mont du Temple. La datation est aussi discutée : la rue a été attribuée à Hérode, à l’époque hérodienne ou à Agrippa II (Eilat Mazar) ; l’étude des monnaies de 2019 (Szanton, Hagbi, Uziel, Ariel) propose vers 31 apr. J.-C., sous Ponce Pilate.",
+    "en": "The 'Pilgrims' Road' is a network of streets, not one street. Excavations in 2023–2024 showed the street leaves the drainage channel and climbs diagonally toward the southern Temple Mount gates. Its date is also debated: the street has been attributed to Herod, to the Herodian period or to Agrippa II (Eilat Mazar); the 2019 coin study (Szanton, Hagbi, Uziel, Ariel) proposes c. 31 CE, under Pontius Pilate.",
+    "ru": "«Дорога паломников» — сеть улиц, а не одна улица. Раскопки 2023–2024 гг. показали, что улица отходит от канала и поднимается наискось к южным воротам Храмовой горы. Датировка тоже спорна: улицу приписывали Ироду, иродианскому периоду или Агриппе II (Эйлат Мазар); исследование монет 2019 г. (Сантон, Хагби, Узиэль, Ариэль) предлагает ок. 31 г. н. э., при Понтии Пилате."
    },
    "placementNote": {
     "he": "תוואי סכמטי בקווים ישרים: בריכת השילוח ← חניון גבעתי ← אזור קשת רובינסון (נקודות Wikidata).",
@@ -1863,6 +1869,11 @@
      "kind": "online",
      "label": "Pool of Siloam (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Pool_of_Siloam"
+    },
+    {
+     "kind": "online",
+     "label": "Szanton, Hagbi, Uziel, Ariel 2019 — Pontius Pilate in Jerusalem: The Monumental Street from the Siloam Pool to the Temple Mount, Tel Aviv 46/2",
+     "url": "https://www.tandfonline.com/doi/full/10.1080/03344355.2019.1650491"
     }
    ],
    "questions": [],
