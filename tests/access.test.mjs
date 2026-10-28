@@ -30,12 +30,14 @@ test('accès par teoudat zehout : liste privée hachée, connexion, retrait, lim
     // rien n'est stocké en clair
     const dump = JSON.stringify((await c.query('select * from mdl.access_people')).rows);
     assert.ok(!dump.includes(A) && !dump.includes(B), 'aucun numéro en clair');
-    assert.deepEqual((await rpc(c, 'admin_access_list', { p_token: adm })).labels, ['דנה', 'יוסי']);
+    assert.deepEqual(await rpc(c, 'admin_access_list', { p_token: adm }), { allowed: 2 });
+    assert.equal((await c.query('select count(*)::int n from mdl.access_people where label is not null')).rows[0].n, 0, 'aucun prénom enregistré, même collé');
+    assert.ok(!JSON.stringify((await c.query('select * from mdl.access_people')).rows).includes('דנה'), 'le prénom collé n’est nulle part');
     // connexion
     assert.equal((await rpc(c, 'access_login', { p_tz: C })).error, 'not_allowed');
     assert.equal((await rpc(c, 'access_login', { p_tz: '12' })).error, 'invalid_tz');
     const s = await rpc(c, 'access_login', { p_tz: ' ' + A.slice(0, 3) + '-' + A.slice(3) + ' ' });
-    assert.ok(s.ok && s.token && s.label === 'דנה', 'connexion avec espaces et tiret');
+    assert.ok(s.ok && s.token && !('label' in s), 'connexion avec espaces et tiret, aucun prénom renvoyé');
     assert.equal((await rpc(c, 'access_check', { p_token: s.token })).ok, true);
     assert.equal((await rpc(c, 'access_check', { p_token: 'autre' })).ok, false);
     // le numéro ouvre l'application, JAMAIS l'administration : la session élève est refusée partout côté admin

@@ -114,11 +114,11 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
     try { info = await rpc('admin_access_list', { p_token: token }); }
     catch (e) { if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); }
       document.getElementById('accInfo').innerHTML = 'יש להריץ פעם אחת את <b>supabase/access_control.sql</b> ב-Supabase › SQL Editor.'; return; }
-    const n = info.allowed || 0, names = (info.labels || []).map(esc).join(' · ');
+    const n = info.allowed || 0;
     box.innerHTML = `<b>👥 מי יכול להיכנס לאפליקציה</b>
-      <p class="sub" style="margin:6px 0 10px">${n ? `🔒 האפליקציה סגורה: <b>${n}</b> תלמידים מורשים.${names ? '<br>' + names : ''}` : '🔓 האפליקציה פתוחה לכולם (הרשימה ריקה).'}</p>
-      <p class="sub" style="margin:0 0 8px">הדביקו את <b>כל</b> הרשימה (מחליפה את הקודמת): שורה לכל תלמיד — מספר תעודת זהות, ואפשר גם שם. אפשר להעתיק ישר מאקסל. המספרים לא נשמרים בשרת בגלוי ולא יוצגו כאן שוב.</p>
-      <textarea id="accList" rows="7" style="width:100%;box-sizing:border-box;border-radius:12px;background:#101a40;color:var(--ink);border:1px solid var(--line);padding:10px;font:inherit;direction:rtl" placeholder="דנה כהן	012345678&#10;יוסי לוי	123456782"></textarea>
+      <p class="sub" style="margin:6px 0 10px">${n ? `🔒 האפליקציה סגורה: <b>${n}</b> מספרים מורשים.` : '🔓 האפליקציה פתוחה לכולם (הרשימה ריקה).'}</p>
+      <p class="sub" style="margin:0 0 8px">הדביקו את <b>כל</b> הרשימה (מחליפה את הקודמת): מספר תעודת זהות אחד בכל שורה. אפשר להעתיק עמודה מאקסל. לא נשמר שום שם — רק טביעה מוצפנת של המספר, שלא תוצג כאן שוב.</p>
+      <textarea id="accList" rows="7" style="width:100%;box-sizing:border-box;border-radius:12px;background:#101a40;color:var(--ink);border:1px solid var(--line);padding:10px;font:inherit;direction:rtl" placeholder="012345678&#10;123456782"></textarea>
       <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn ok" id="accSave" type="button">💾 שמירת הרשימה</button>${n ? '<button class="btn" id="accOpen" type="button">🔓 לפתוח לכולם</button>' : ''}</div>
       <p class="sub" id="accMsg" style="margin:8px 0 0"></p>`;
     const msg = t => { document.getElementById('accMsg').innerHTML = t; };
@@ -130,7 +130,7 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
         if (r.error === 'no_valid_lines') return msg('❌ לא נמצא אף מספר תעודת זהות תקין — שום דבר לא שונה.');
         ta.value = ''; // on ne laisse pas les numéros affichés
         await renderAccess();
-        msg(`✅ נשמר: ${r.allowed} תלמידים מורשים.` + (r.bad_lines && r.bad_lines.length ? ` ⚠️ שורות שנדחו (מספר לא תקין): ${r.bad_lines.join(', ')}` : ''));
+        msg(`✅ נשמר: ${r.allowed} מספרים מורשים.` + (r.bad_lines && r.bad_lines.length ? ` ⚠️ שורות שנדחו (מספר לא תקין): ${r.bad_lines.join(', ')}` : ''));
       } catch (e) { if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } msg('❌ השמירה לא הצליחה.'); }
     };
     const op = document.getElementById('accOpen');

@@ -19,7 +19,7 @@ const server = createServer(async (req, res) => {
     if (fn === 'access_check') return send({ required, ok: sessions.has(body.p_token) });
     if (fn === 'access_login') {
       const d = String(body.p_tz || '').replace(/\D/g, '').padStart(9, '0');
-      if (d === OK_TZ) { const t = 'tok-' + Math.random().toString(36).slice(2); sessions.add(t); return send({ ok: true, token: t, label: 'דנה' }); }
+      if (d === OK_TZ) { const t = 'tok-' + Math.random().toString(36).slice(2); sessions.add(t); return send({ ok: true, token: t }); }
       return send({ error: d === '000000000' ? 'invalid_tz' : 'not_allowed' });
     }
     res.writeHead(404); return res.end();

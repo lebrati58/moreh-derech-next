@@ -69,7 +69,7 @@
       e.preventDefault(); err.textContent = ''; btn.disabled = true;
       rpc('access_login', { p_tz: inp.value }).then(function (r) {
         btn.disabled = false;
-        if (r && r.ok) { save({ token: r.token, label: r.label || '', checked: Date.now() }); inp.value = ''; open(); return; }
+        if (r && r.ok) { save({ token: r.token, checked: Date.now() }); inp.value = ''; open(); return; }
         err.textContent = MSG[r && r.error] || MSG.not_allowed;
       }).catch(function () { btn.disabled = false; err.textContent = MSG.offline; });
     });
@@ -89,5 +89,5 @@
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', decide); else decide();
-  window.MDAccess = { logout: function () { save({}); location.reload(); }, get label() { return load().label || ''; } };
+  window.MDAccess = { logout: function () { save({}); location.reload(); } };
 })();

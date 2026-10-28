@@ -28,6 +28,7 @@ create table if not exists mdl.access_sessions (
 );
 create table if not exists mdl.access_failures (at timestamptz not null default now());
 revoke all on mdl.access_secret, mdl.access_people, mdl.access_sessions, mdl.access_failures from public, anon, authenticated;
+update mdl.access_people set label = null where label is not null; -- numéros seulement : aucun prénom gardé
 
 -- Numéro valide : 5 à 9 chiffres (complété par des zéros à gauche) + chiffre de contrôle israélien.
 create or replace function mdl.tz_norm(p text)
@@ -74,8 +75,7 @@ begin
   delete from mdl.access_sessions where expires_at < now();
   insert into mdl.access_sessions (token_hash, tz_hash, expires_at)
     values (encode(sha256(convert_to(v_token, 'UTF8')), 'hex'), v_hash, now() + interval '180 days');
-  return jsonb_build_object('ok', true, 'token', v_token,
-    'label', (select label from mdl.access_people where tz_hash = v_hash));
+  return jsonb_build_object('ok', true, 'token', v_token);
 end $$;
 
 -- Session encore valable ? (et l'élève toujours dans la liste)
@@ -89,7 +89,7 @@ as $$
     'required', exists (select 1 from mdl.access_people))
 $$;
 
--- Admin : remplacer toute la liste. Une ligne par élève : « numéro », « numéro, prénom » ou « prénom ⇥ numéro » (Excel).
+-- Admin : remplacer toute la liste. Une ligne par numéro (s'il y a du texte autour, copié d'Excel, il est ignoré et JAMAIS enregistré).
 -- Les élèves retirés perdent l'accès tout de suite. Renvoie les lignes refusées (numéros invalides), sans les stocker.
 create or replace function public.admin_access_set(p_token text, p_list text)
 returns jsonb language plpgsql volatile security definer
@@ -106,7 +106,7 @@ begin
     v_n := v_n + 1;
     -- copié depuis Excel ou tapé à la main : le numéro est n'importe où dans la ligne, le reste = prénom
     v_tz := mdl.tz_norm(substring(v_line from '(\d{5,9})'));
-    v_label := nullif(left(btrim(regexp_replace(v_line, '\d{5,9}', '', 'g'), E' ,;\t-'), 40), '');
+    v_label := null; -- numéro seulement : aucun prénom n'est jamais enregistré, même s'il est collé
     if v_tz is null then v_bad := v_bad || to_jsonb(v_n); continue; end if;
     insert into pg_temp.new_people values (mdl.tz_hash(v_tz), v_label) on conflict (tz_hash) do update set label = excluded.label;
   end loop;
@@ -122,15 +122,14 @@ begin
   return jsonb_build_object('ok', true, 'allowed', v_ok, 'bad_lines', v_bad);
 end $$;
 
--- Admin : combien d'élèves autorisés, et leurs prénoms (jamais les numéros).
+-- Admin : combien d'élèves autorisés (ni numéros ni prénoms).
 create or replace function public.admin_access_list(p_token text)
 returns jsonb language plpgsql stable security definer
 set search_path = ''
 as $$
 begin
   perform mdl.check_admin(p_token);
-  return jsonb_build_object('allowed', (select count(*) from mdl.access_people),
-    'labels', coalesce((select jsonb_agg(label order by label) from mdl.access_people where label is not null), '[]'::jsonb));
+  return jsonb_build_object('allowed', (select count(*) from mdl.access_people));
 end $$;
 
 revoke all on function mdl.tz_norm(text), mdl.tz_hash(text) from public;
