@@ -1,0 +1,54 @@
+{
+  "about": "Modèles d'épreuve (פרק שני). Sources : cahier d'examen de l'école et sujets du ministère (Drive du cours). Aucun מחוון officiel n'a été trouvé : le score est une évaluation pédagogique indicative.",
+  "default": "school5",
+  "models": {
+    "school5": {
+      "he": "מודל בית הספר — 5 יחידות קצרות",
+      "fr": "Modèle de l'école — 5 interventions courtes",
+      "official": true,
+      "minutes": 180,
+      "day": { "he": "הטיול מתקיים בחודש אפריל, ביום שלישי בשבוע. התחלה בשעה 08:00 לאחר ארוחת בוקר, סיום בשעה 18:00 לפני ארוחת ערב.", "start": "08:00", "end": "18:00", "season": "summer", "weekday": "tue" },
+      "parts": [
+        { "id": "plan", "he": "תוכנית יום הטיול: לוח זמנים, מסלול, תיאור הפעילות, תיאומים ומנהלות", "points": 15 },
+        { "id": "short", "he": "חמש יחידות הדרכה קצרות, בהתאם להנחיות בשאלה", "count": 5, "pointsEach": 8, "points": 40 },
+        { "id": "long", "he": "יחידת הדרכה מורחבת שאינה כלולה בחלק 2", "points": 15 }
+      ],
+      "total": 70,
+      "limits": { "shortWords": 180, "shortGreenFrom": 170, "methodWords": 20, "longWords": 400, "longGreenFrom": 380 },
+      "overflowRule": "טקסט שיחרוג יבדק ללא 2 השורות האחרונות",
+      "sources": [
+        { "title": "מחברת בחינה ליובל-פורמט.xlsx", "id": "1LUD4_cEMjGCfH0UjcIHgNflJTGg_WDsj", "note": "גיליון ״פרטים אישיים והנחיות״, מוני מילים ועיצוב מותנה (180 / 400)" },
+        { "title": "טופס תיאור נקודת 180 מילים חדש", "id": "1GQdDAuU4MpXx_RfBKy2Adv3TUF1drcNWSZrXGEEKxFw", "note": "תמלול עד 180 מילים · אמצעים מתודיים עד 20 מילים" }
+      ]
+    },
+    "ministry6": {
+      "he": "נוסח משרד התיירות 2021–2023 — 6 יחידות קצרות",
+      "fr": "Sujets du ministère 2021–2023 — 6 interventions courtes",
+      "official": false,
+      "minutes": 180,
+      "day": { "he": "הסיור מתחיל בשעה 08:00 ומסתיים בשעה 18:00.", "start": "08:00", "end": "18:00", "season": "summer", "weekday": "tue" },
+      "parts": [
+        { "id": "plan", "he": "תוכנית יום הטיול", "points": null },
+        { "id": "short", "he": "6 יחידות ההדרכה הקצרות", "count": 6, "pointsEach": null, "points": null },
+        { "id": "long", "he": "יחידת הדרכה מורחבת", "points": null }
+      ],
+      "total": null,
+      "pointsNote": "חלוקת הנקודות בנוסח של 6 יחידות לא נמצאה בחומר. הציון מוצג באחוזים, כהערכה בלבד.",
+      "limits": { "shortWords": 180, "shortGreenFrom": 170, "methodWords": 20, "longWords": 400, "longGreenFrom": 380 },
+      "sources": [ { "title": "מבחנים משרד התיירות.docx", "id": "1AX0tjwS-l9K5_J0boJJNRNvVp21GoEuA", "note": "מדצמבר 2021: ״6 יחידות ההדרכה הקצרות״" } ]
+    }
+  },
+  "planRules": {
+    "source": { "title": "20261007 שיעור 26 כתיבת לוח זמנים.docx", "id": "1NX7UBxqcUVZmYz216y96lkKP97CA8fKw" },
+    "columns": ["שעת התחלה", "שעת סיום", "משך הפעילות", "פירוט המסלול", "תיאומים ומנהלות"],
+    "tips": ["נסיעה ללא פקקים", "לציין שם רשמי", "תחבורה", "נקודת מפגש ופיזור", "לציין נסיעות מעל 30 דקות אחרת להוסיף לזמן ההדרכה הכללי", "להתאים מסלול לקבוצה", "מנהלות: הדרכה מקומית, שירותים, תשלום, תזמון סרטים, קטע קריאה"]
+  },
+  "roadTips": {
+    "source": { "title": "טיפים להדרכת דרך.docx", "id": "1z9eqqEWGny5WaVNEU9oWz4TUSlBgX5pS" },
+    "tips": ["להתחיל בלהציג את עצמכם ולתאר את המקטע", "להדריך על דברים שרואים רק בזמן שרואים אותם", "להצביע רק על דברים בימין/שמאל ולא קדימה", "לא לחרטט", "בזמן מת: מאפייני האזור בקצרה, ממש ב-3 משפטים"]
+  },
+  "longRules": {
+    "source": { "title": "20260909 שיעור 23 כתיבת נקודה רחבה.docx", "id": "1b6Bby3N7mXpZ6VyFZIG85bQcZLWhXgQb" },
+    "tips": ["לבחור מקום שיש מה לדבר ומה לראות", "אפשר לעבור בתוך האתר ל-2–3 מקומות", "להשתמש במונחים מקצועיים", "להגדיר את המיקום המדויק", "חלק ראשון – פתיחה, תיאור כללי (מי, מה, למה)", "חלק שני – תיאור מה רואים", "חלק שלישי – סיכום", "יש להוליך את המודרכים"]
+  }
+}
