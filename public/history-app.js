@@ -291,8 +291,10 @@
   function renderPlay() {
     const q = run.questions[run.i], e = EV[q.eventId], p = PER[e.period], n = run.questions.length;
     $('qcard').setAttribute('style', styleP(e.period));
-    $('qtag').textContent = `${p.icon} ${p.short}` + (run.mode === 'exam' ? ' · מבחן' : run.review ? ' · חזרה על טעויות' : ' · אימון') + (q.multi ? ' · ☑️ כמה תשובות נכונות' : '');
+    const need = q.multi ? q.options.filter(o => o.correct).length : 0;
+    $('qtag').textContent = `${p.icon} ${p.short}` + (run.mode === 'exam' ? ' · מבחן' : run.review ? ' · חזרה על טעויות' : ' · אימון') + (q.multi ? (need > 1 ? ` · ☑️ ${need} תשובות נכונות` : ' · ☑️ תשובה נכונה אחת') : '');
     $('qtext').textContent = q.prompt;
+    $('qhint').hidden = !q.multi; $('qhint').textContent = H.multiHint(q);
     $('hPos').textContent = `שאלה ${run.i + 1} מתוך ${n}`;
     const pct = Math.round((run.i + (run.phase === 'answered' ? 1 : 0)) / n * 100);
     $('fill').style.width = pct + '%'; $('track').setAttribute('aria-valuenow', String(pct));
@@ -313,7 +315,7 @@
       return `<button type="button" class="${cls}" data-i="${i}" ${a ? 'disabled' : ''}${q.multi && !a ? ` aria-pressed="${sel.includes(i)}"` : ''}><kbd aria-hidden="true">${i + 1}</kbd>${esc(o.label)}${a && run.mode !== 'exam' && o.correct ? ' ✓' : ''}${picked && !o.correct ? ' ✗' : ''}</button>`;
     }).join('');
     $('check').hidden = !(q.multi && !a); $('check').disabled = !sel.length;
-    $('check').textContent = sel.length ? `✔ בדיקה (${sel.length} נבחרו)` : '✔ בדיקה — סמנו תשובה אחת או יותר';
+    $('check').textContent = sel.length ? `✔ בדיקה (${sel.length} מתוך ${need} נבחרו)` : (need > 1 ? `✔ בדיקה — סמנו ${need} תשובות` : '✔ בדיקה — סמנו תשובה אחת');
     renderFeedback(a, e);
     $('next').hidden = !a; $('next').textContent = run.i === n - 1 ? '🏁 לתוצאות' : 'לשאלה הבאה ←';
     updateClock();

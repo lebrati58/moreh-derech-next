@@ -258,7 +258,8 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await page.tap('#start');
   await page.waitForSelector('#vPlay:not([hidden]) .ans');
   ok(await page.isVisible('#check') && await page.isDisabled('#check'), 'QCM : bouton « בדיקה » visible, inactif sans sélection');
-  ok((await page.textContent('#qtag')).includes('כמה תשובות'), 'QCM : « plusieurs réponses » annoncé');
+  const nGood = await page.evaluate(() => { const s = window.MDHistoryApp.state(); return s.questions[s.i].options.filter(o => o.correct).length; });
+  ok(await page.isVisible('#qhint') && (await page.textContent('#qhint')).includes(nGood > 1 ? `${nGood} תשובות נכונות` : 'תשובה נכונה אחת'), `QCM : nombre de bonnes réponses annoncé (${nGood})`);
   const want = await page.evaluate(() => { const s = window.MDHistoryApp.state(); return s.questions[s.i].options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0); });
   for (const i of want) await page.tap(`.ans[data-i="${i}"]`);
   ok(await page.locator('.ans.sel').count() === want.length, `QCM : ${want.length} réponse(s) cochée(s)`);
