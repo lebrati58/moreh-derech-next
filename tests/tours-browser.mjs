@@ -1,7 +1,7 @@
 // « סיפורי דרך » dans un vrai navigateur — Samsung Galaxy S24 (360×780, tactile) puis ordinateur.
 // Accueil → liste (seulement les parcours publiés) → route 67 : carte, מצב לימוד (citation, côté, réponse + sources),
 // nasiya simulée qui ouvre les lieux toute seule, retour Android → מצב מבחן (chrono, expiration, pause, points)
-// → brouillon 01 en aperçu (bandeau, pas de carte, pas de points) → lien direct sans aperçu bloqué.
+// → brouillon 01 en aperçu (bandeau, carte partielle, pas de points) → lien direct sans aperçu bloqué.
 // Usage : CHROME=/chemin/chrome node tests/tours-browser.mjs [dossier-captures]
 import { createServer } from 'node:http';
 import { readFile, mkdir } from 'node:fs/promises';
@@ -10,7 +10,7 @@ import { chromium } from 'playwright-core';
 
 const ROOT = new URL('../public/', import.meta.url).pathname;
 const OUT = process.argv[2] || 'screens-tours';
-const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1243/chrome-linux64/chrome';
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.webmanifest': 'application/manifest+json' };
 const server = createServer(async (req, res) => {
   const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^\/+/, '') || 'index.html';
@@ -123,7 +123,9 @@ const correctIdx = p => p.evaluate(() => { const s = MDTourApp.state(), t = MDTo
   ok((await page.textContent('#below')).includes('טיוטה'), 'aperçu : badge « טיוטה »');
   await page.tap('.titem >> nth=1');
   await page.waitForSelector('.draft');
-  ok(await page.isVisible('.nomap'), '01 : pas de carte tant que les coordonnées ne sont pas vérifiées');
+  await page.waitForSelector('#map .pin');
+  const located = await page.evaluate(() => MDTourApp.tour().stops.filter(s => s.coord).length);
+  ok(await page.locator('#map .pin').count() === located && located < 20, `01 : carte avec les seuls lieux localisés (${located}/20), sans coordonnées inventées`);
   await shot('09-brouillon');
   await page.tap('a.mode:not(.exam)');
   await page.waitForSelector('.quote');

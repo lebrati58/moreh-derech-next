@@ -66,7 +66,10 @@ test('examen : sans anecdotes ni points à vérifier ni côtés non confirmés ;
   assert.ok(ex.length < study.length);
   assert.ok(ex.every(q => q.certainty === 'firm' || q.certainty === 'approx'));
   assert.ok(!ex.some(q => q.id === '01-command' || q.id === '01-benzion' || q.id === '01-french'));
-  assert.ok(!ex.some(q => q.type === 'side'), 'pas de côté confirmé par la carte tant que le tracé manque');
+  // une question de côté n'entre dans l'examen que si la carte confirme ce que dit le prof
+  ex.filter(q => q.type === 'side').forEach(q => assert.equal(t.stops.find(s => s.id === q.stop).side.agree, true, q.id));
+  const nabi = t.stops.find(s => s.id === 'nabisamwil');
+  if (nabi.side.agree === false) assert.ok(!ex.some(q => q.id === 'nabisamwil:side'), 'désaccord prof/carte → hors examen');
   const order = t.stops.map(s => s.id);
   for (let i = 1; i < study.length; i++) assert.ok(order.indexOf(study[i].stop) >= order.indexOf(study[i - 1].stop));
 });
