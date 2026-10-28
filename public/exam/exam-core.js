@@ -75,7 +75,14 @@
     add(/מפגש|איסוף|נקודת יציאה/.test(R[0].what || ''), 'נקודת מפגש בשורה הראשונה', 'time', 1);
     add(/פיזור/.test((R[R.length - 1].what || '') + (R[R.length - 1].log || '')), 'נקודת פיזור בשורה האחרונה', 'time', 1);
     add(R.some(r => /נסיעה/.test(r.what || '')), 'הנסיעות מופיעות בלוח הזמנים', 'route', 1);
-    add(R.some(r => /צהר|ארוחה|הפסקה/.test((r.what || '') + (r.log || ''))), 'הפסקת אוכל / מנוחה', 'time', 1);
+    // Déjeuner (règle du guide) : 1 h, pas avant 12:00, pas après 14:00.
+    const lunch = R.find(r => /צהר|ארוחה/.test((r.what || '') + (r.log || '')));
+    add(!!lunch, 'ארוחת צהריים בלוח הזמנים', 'time', 2);
+    if (lunch) {
+      const a = toMin(lunch.start), b = toMin(lunch.end);
+      add(a !== null && b !== null && b - a === 60, `ארוחת צהריים: שעה אחת בדיוק${a !== null && b !== null ? ` (כתוב ${b - a} דק׳)` : ''}`, 'time', 2);
+      add(a !== null && a >= toMin('12:00') && b !== null && b <= toMin('14:00'), 'ארוחת צהריים בין 12:00 ל-14:00 (לא מתחילה לפני 12:00, לא מסתיימת אחרי 14:00)', 'time', 2);
+    }
     const siteRows = R.filter(r => r.site);
     add(siteRows.length && siteRows.every(r => (r.log || '').trim().length > 2), 'עמודת ״תיאומים ומנהלות״ מלאה בשורות האתרים (תשלום, שירותים, תיאום)', 'logistics', 2);
     const want = ctx.sites || [];
@@ -289,7 +296,7 @@
         plan.push({ start: '', end: '', what: 'נסיעה ל' + s.short + ' (זמן: לבדוק ב-Waze)', log: '' });
         const todo = ['toilets', 'parking', 'queue'].filter(k => L2[k] && L2[k].status === 'unknown').map(k => ({ toilets: 'שירותים', parking: 'חניה', queue: 'המתנה בקופה' })[k]);
         plan.push({ start: '', end: '', what: s.he, site: s.id, log: [L2.price && !/חינם|לא/.test(L2.price.he) ? 'תשלום כניסה' : '', todo.length ? 'לברר: ' + todo.join(', ') : '', L2.group ? 'תיאום קבוצה' : ''].filter(Boolean).join(' · ') });
-        if (i === Math.min(1, ord.length - 1)) plan.push({ start: '', end: '', what: 'ארוחת צהריים', log: 'לבדוק אם יש מקום לאכול — אחרת ארוחה עצמית' });
+        if (i === Math.min(1, ord.length - 1)) plan.push({ start: '', end: '', what: 'ארוחת צהריים — שעה אחת, בין 12:00 ל-14:00', log: 'לבדוק אם יש מקום לאכול — אחרת ארוחה עצמית' });
       });
       plan.push({ start: '', end: prefs.endTime || '18:00', what: 'נסיעה חזרה ופיזור: ' + ((prefs.start && prefs.start.he) || 'נקודת הפיזור'), log: 'פיזור' });
       const units = ord.map(s => ({ site: s.id, model: !!(data.models && data.models[s.id]), long: !!(data.models && data.models['long_' + s.id]) }));

@@ -74,14 +74,21 @@ test('programme : début 08:00, continuité, heures d’ouverture du cours, prog
   const good = [
     { start: '08:00', end: '09:00', what: 'מפגש ואיסוף בצומת צמח, נסיעה', log: 'לבדוק שכולם הגיעו' },
     { start: '09:00', end: '10:30', what: 'עין קשתות', log: 'תשלום, שירותים', site: 'ein_keshatot' },
-    { start: '10:30', end: '11:30', what: 'ארוחת צהריים', log: 'עצמית' },
-    { start: '11:30', end: '18:00', what: 'נסיעה וחזרה, פיזור בצומת צמח', log: 'פיזור' }
+    { start: '10:30', end: '12:30', what: 'נסיעה', log: '' },
+    { start: '12:30', end: '13:30', what: 'ארוחת צהריים', log: 'עצמית' },
+    { start: '13:30', end: '18:00', what: 'נסיעה וחזרה, פיזור בצומת צמח', log: 'פיזור' }
   ];
   assert.equal(C.checkPlan(good, ctx).frac, 1);
   const late = good.map(r => Object.assign({}, r)); late[1].end = '17:30';
   const r = C.checkPlan(late, ctx);
   assert.ok(r.items.some(i => !i.ok && /שעות הפתיחה \(09:00–17:00\)/.test(i.he)), 'עין קשתות après 17:00 → signalé');
   assert.ok(r.items.some(i => !i.ok && /חורים/.test(i.he)), 'trou entre 17:30 et 11:30 → signalé');
+  // déjeuner : 1 h entre 12:00 et 14:00 (règle du guide)
+  const lunch = good.map(r => Object.assign({}, r)); lunch[3].start = '11:30'; lunch[3].end = '13:00'; lunch[2].end = '11:30';
+  const rl = C.checkPlan(lunch, ctx);
+  assert.ok(rl.items.some(i => !i.ok && /שעה אחת/.test(i.he)) && rl.items.some(i => !i.ok && /בין 12:00 ל-14:00/.test(i.he)), 'déjeuner 11:30–13:00 → durée et plage signalées');
+  const late2 = good.map(r => Object.assign({}, r)); late2[3].start = '13:30'; late2[3].end = '14:30'; late2[2].end = '13:30'; late2[4].start = '14:30';
+  assert.ok(C.checkPlan(late2, ctx).items.some(i => !i.ok && /בין 12:00 ל-14:00/.test(i.he)), 'déjeuner finissant 14:30 → signalé');
 });
 
 test('examen blanc : copie vide = 0, sur 70, indicatif ; 6 interventions → % sans barème inventé', () => {
