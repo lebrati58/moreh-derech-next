@@ -105,3 +105,24 @@ test('progression : niveaux, révision ciblée, mission du jour stable', () => {
   assert.equal(rec.cat, 'period'); assert.ok(rec.sets.includes('e1'));
   assert.equal(C.dailyMission('2026-10-28', D.missions).id, C.dailyMission('2026-10-28T23:00', D.missions).id);
 });
+
+test('trajets : durée de route (Google saisi > estimation OSRM), jamais inventée, comptée dans le לוח זמנים', () => {
+  const data = Object.assign({}, D, { drive: D.drive || { legs: { 'tzemach>mitzpe_ofir': { min: 28, km: 27.1 }, 'mitzpe_ofir>tel_saki': { min: 40, km: 35 } } } });
+  const P = C.points(data);
+  assert.equal(C.driveMin(P.tzemach, P.mitzpe_ofir, { sites: [] }), null, 'sans donnée : null, pas de chiffre inventé');
+  const est = C.driveMin(P.tzemach, P.mitzpe_ofir, data);
+  assert.equal(est.src, 'osrm');
+  assert.deepEqual(C.driveMin(P.tzemach, P.mitzpe_ofir, data, { 'tzemach>mitzpe_ofir': 35 }), { min: 35, src: 'google' }, 'la valeur Google remplace l’estimation');
+  const rows = [{ start: '08:00', end: '08:15', what: 'מפגש ואיסוף' }, { start: '', end: '', what: 'נסיעה', drive: 'tzemach>mitzpe_ofir' }, { start: '', end: '10:00', what: 'מצפה אופיר', site: 'mitzpe_ofir' }, { start: '', end: '', what: 'נסיעה', drive: 'mitzpe_ofir>tel_saki' }];
+  C.reflowPlan(rows, data, { 'tzemach>mitzpe_ofir': 35 });
+  assert.deepEqual([rows[1].start, rows[1].end, rows[2].start], ['08:15', '08:50', '08:50'], 'la nסיעה s’enchaîne et la ligne suivante commence à l’arrivée');
+  assert.equal(rows[3].start, '10:00'); assert.equal(rows[3].end, '10:00'.replace('10:00', C.fmt(600 + C.driveMin(P.mitzpe_ofir, P.tel_saki, data).min)));
+  rows[1].end = '08:30';
+  const r = C.checkPlan(rows, { model: M, data, sites: [], own: { 'tzemach>mitzpe_ofir': 35 } });
+  assert.ok(r.items.some(x => !x.ok && /לפחות 35 דק׳/.test(x.he)), 'trajet trop court signalé');
+});
+
+test('heures tapées sur le clavier numérique du téléphone (sans « : »)', () => {
+  const cases = { '830': '08:30', '0830': '08:30', '8.30': '08:30', '8,30': '08:30', '8-30': '08:30', '8 30': '08:30', '8:30': '08:30', '8': '08:00', '1745': '17:45', '17.5': '17:50', '': '', '2561': '2561', 'abc': 'abc' };
+  for (const [k, v] of Object.entries(cases)) assert.equal(C.normTime(k), v, k);
+});

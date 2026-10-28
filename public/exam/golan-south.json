@@ -1260,5 +1260,6 @@
       "coordSource": "wd_tz",
       "short": "צומת צמח"
     }
-  ]
+  ],
+ "drive": {"source":"OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic","fetchedAt":"2026-10-28","legs":{"tzemach>ein_keshatot":{"min":50,"km":44.6},"tzemach>mitzpe_ofir":{"min":28,"km":27.1},"tzemach>tel_saki":{"min":39,"km":39.4},"tzemach>hippos":{"min":22,"km":18.7},"tzemach>kursi":{"min":17,"km":17},"ein_keshatot>tzemach":{"min":50,"km":44.7},"ein_keshatot>mitzpe_ofir":{"min":33,"km":26.1},"ein_keshatot>tel_saki":{"min":20,"km":14.5},"ein_keshatot>hippos":{"min":42,"km":29.1},"ein_keshatot>kursi":{"min":37,"km":32.4},"mitzpe_ofir>tzemach":{"min":28,"km":27.1},"mitzpe_ofir>ein_keshatot":{"min":33,"km":26.2},"mitzpe_ofir>tel_saki":{"min":22,"km":21},"mitzpe_ofir>hippos":{"min":24,"km":15.1},"mitzpe_ofir>kursi":{"min":11,"km":10.1},"tel_saki>tzemach":{"min":39,"km":39.6},"tel_saki>ein_keshatot":{"min":21,"km":14.6},"tel_saki>mitzpe_ofir":{"min":23,"km":21.1},"tel_saki>hippos":{"min":31,"km":24.1},"tel_saki>kursi":{"min":28,"km":28.9},"hippos>tzemach":{"min":18,"km":15.7},"hippos>ein_keshatot":{"min":47,"km":32.5},"hippos>mitzpe_ofir":{"min":22,"km":19.2},"hippos>tel_saki":{"min":36,"km":27.3},"hippos>kursi":{"min":12,"km":9.1},"kursi>tzemach":{"min":17,"km":17.1},"kursi>ein_keshatot":{"min":37,"km":32.4},"kursi>mitzpe_ofir":{"min":11,"km":10.1},"kursi>tel_saki":{"min":28,"km":28.7},"kursi>hippos":{"min":16,"km":12.2}}}
 }

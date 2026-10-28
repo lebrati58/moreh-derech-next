@@ -139,7 +139,7 @@
       ${row('🕘', 'שעות', L.hours)}${row('⏮️', 'כניסה אחרונה', L.lastEntry)}${row('💳', 'תשלום', L.price)}
       ${flag('🚻', 'שירותים', L.toilets)}${flag('🅿️', 'חניה לאוטובוס', L.parking)}${flag('🎫', 'קופה / המתנה', L.queue)}
       ${row('📞', 'טלפון', L.phone)}${row('👥', 'קבוצות', L.group)}
-      <li><span class="lk">🧭 ניווט</span><span><a href="${nav.waze}" target="_blank" rel="noopener">Waze</a> · <a href="${nav.google}" target="_blank" rel="noopener">Google Maps</a></span></li></ul>
+      <li><span class="lk">🧭 ניווט</span><span><a href="${nav.google}" target="_blank" rel="noopener">Google Maps</a></span></li></ul>
       ${compact ? '' : '<p class="muted">מה שלא אומת במקורות מסומן ״לברר״ — במבחן כותבים את זה בעמודת ״תיאומים ומנהלות״ (לברר שירותים, חניה, תשלום).</p>'}</div>`;
   }
   function siteSheet(id) {
@@ -313,32 +313,59 @@
     const L = C.legs(sites, DATA, start);
     const last = P[sites[sites.length - 1]];
     const back = start ? { from: last, to: start, km: C.distanceKm(last, start), nav: C.navLinks(last, start) } : null;
-    const leg = l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ אווירי · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a> · <a href="${l.nav.waze}" target="_blank" rel="noopener">Waze</a></span></li>`;
+    const own = D.drive || {};
+    const leg = l => { const k = l.from.id + '>' + l.to.id, d = C.driveMin(l.from, l.to, DATA, own), est = C.driveMin(l.from, l.to, DATA);
+      return `<li data-leg="${k}"><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span>
+        <span class="drv">${d ? `🚗 <b>${d.min} דק׳</b> ${d.src === 'google' ? '(Google)' : `· ${est.km} ק״מ בכביש (הערכה)`}` : `~${l.km} ק״מ אווירי`}
+        · <a href="${l.nav.google}" target="_blank" rel="noopener">לבדוק ב-Google</a>
+        · <label class="gmin">Google: <input data-gmin="${k}" value="${esc(own[k] || '')}" placeholder="${est ? est.min : ''}" inputmode="numeric" size="3" aria-label="דקות לפי Google"> דק׳</label>
+        <button type="button" class="mini" data-addleg="${k}">➕ ללוח</button></span></li>`; };
     return `<details class="panel info" open><summary><b>📋 מידע לתכנון — האתרים שבחרתם</b></summary>
       ${sites.map(id => `<div class="pi"><b>${esc(P[id].he)}</b>${logisticsHtml(P[id], true)}</div>`).join('')}
-      <h4>🚌 נסיעות — לפי סדר הבחירה (אפשר לשנות בלוח)</h4><ul class="legs">${L.map(leg).join('')}${back ? leg(back) : ''}</ul>
-      <p class="muted">המרחק הוא בקו אווירי בלבד. זמן נסיעה אמיתי בודקים ב-Google Maps / Waze (״נסיעה ללא פקקים״), ורושמים בלוח. במבחן אין אפליקציה — כדאי לזכור סדרי גודל.</p></details>`;
+      <h4>🚌 נסיעות — לפי סדר הבחירה</h4><ul class="legs">${L.map(leg).join('')}${back ? leg(back) : ''}</ul>
+      <div class="acts"><button type="button" class="btn" id="allLegs">🚌 לבנות את הלוח עם כל הנסיעות</button></div>
+      <p class="muted">זמן הנסיעה נכנס ללוח לבד: שורת ״נסיעה״ מתחילה כשהשורה הקודמת נגמרת ונגמרת אחרי זמן הנסיעה. ההערכה מחושבת על מפת הכבישים (OpenStreetMap, בלי פקקים); פתחו ״לבדוק ב-Google״ וכתבו את הדקות של Google — הן מחליפות את ההערכה. אוטובוס נוסע לאט יותר מרכב פרטי. במבחן אין אפליקציה — כדאי לזכור סדרי גודל.</p></details>`;
   }
   function stepPlan(m, D, body) {
     const model = MODELS.models.school5;
     if (!D.plan.length) D.plan = [{ start: '08:00', end: '', what: 'מפגש ואיסוף: צומת צמח', log: '' }];
     const siteOpts = r => `<option value="">—</option>${DATA.sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}`;
+    D.drive = D.drive || {};
+    const P2 = C.points(DATA), nameOf = id => (P2[id] && (P2[id].short || P2[id].he)) || id;
+    const driveRow = k => { const [a, b] = k.split('>'); return { start: '', end: '', what: `נסיעה: ${nameOf(a)} ← ${nameOf(b)}`, log: '', drive: k }; };
+    const reflow = () => C.reflowPlan(D.plan, DATA, D.drive);
     const draw = res => {
-      body.innerHTML = `<p class="lead">${esc(model.day.he)} עמודת המשך מחושבת לבד. כל שורה מתחילה בשעת הסיום של הקודמת. זמני נסיעה — רק ממה שאתם יודעים; האפליקציה לא ממציאה אותם.</p>
+      reflow();
+      body.innerHTML = `<p class="lead">${esc(model.day.he)} עמודת המשך מחושבת לבד. שעות: אפשר להקליד בלי נקודתיים — 830 או 0830 הופך ל-08:30. כל שורה מתחילה בשעת הסיום של הקודמת. זמני נסיעה — רק ממה שאתם יודעים; האפליקציה לא ממציאה אותם.</p>
         ${planInfoHtml(m, D)}
         <div class="plan" role="table"><div class="ph" role="row"><span>התחלה</span><span>סיום</span><span>משך</span><span>פירוט המסלול</span><span>תיאומים ומנהלות</span><span>אתר</span><span></span></div>
         ${D.plan.map((r, i) => { const a = C.toMin(r.start), b = C.toMin(r.end), dur = a !== null && b !== null && b >= a ? (b - a) + ' דק׳' : ''; return `<div class="pr" role="row" data-i="${i}">
-          <input aria-label="התחלה" data-k="start" value="${esc(r.start)}" placeholder="08:00" inputmode="numeric"><input aria-label="סיום" data-k="end" value="${esc(r.end)}" placeholder="08:30" inputmode="numeric"><span class="dur">${dur}</span>
+          <input aria-label="התחלה" data-k="start" value="${esc(r.start)}" placeholder="0800" inputmode="numeric" enterkeyhint="next"><input aria-label="סיום" data-k="end" value="${esc(r.end)}" placeholder="0830" inputmode="numeric" enterkeyhint="next"><span class="dur">${dur}</span>
           <input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}" placeholder="נסיעה / הדרכה / ארוחה…"><input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}" placeholder="תשלום, שירותים, תיאום…">
           <select aria-label="אתר" data-k="site">${siteOpts(r)}</select><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>`; }).join('')}</div>
         <div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="hnt">💡 ${t('hint')}</button><button type="button" class="btn ghost" id="mdl">👀 דוגמה מהקורס</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
         <div id="out">${res ? `<div class="panel"><h3>תוצאה: ${Math.round(res.frac * 100)}%</h3>${checklist(res, true)}</div>` : ''}</div>`;
       $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => {
-        const i = +inp.closest('.pr').dataset.i; D.plan[i][inp.dataset.k] = inp.value.trim();
-        if (inp.dataset.k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = inp.value.trim();
+        const i = +inp.closest('.pr').dataset.i, k = inp.dataset.k; D.plan[i][k] = (k === 'start' || k === 'end') ? C.normTime(inp.value) : inp.value.trim();
+        if (k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = D.plan[i][k];
         save(); draw();
       }));
       $$('[data-del]', body).forEach(b => b.addEventListener('click', () => { D.plan.splice(+b.dataset.del, 1); save(); draw(); }));
+      $$('[data-gmin]', body).forEach(inp => inp.addEventListener('change', () => { const v = parseInt(inp.value, 10); if (v > 0 && v < 600) D.drive[inp.dataset.gmin] = v; else delete D.drive[inp.dataset.gmin]; save(); draw(); }));
+      $$('[data-addleg]', body).forEach(b => b.addEventListener('click', () => { D.plan.push(driveRow(b.dataset.addleg)); save(); draw(); toast('הנסיעה נוספה ללוח'); }));
+      const allBtn = $('#allLegs', body);
+      if (allBtn) allBtn.addEventListener('click', () => {
+        const keys = $$('[data-leg]', body).map(li => li.dataset.leg), first = D.plan[0] && !D.plan[0].drive ? [D.plan[0]] : [{ start: model.day.start || '08:00', end: '', what: 'מפגש ואיסוף', log: '' }];
+        if (!first[0].end) first[0].end = first[0].start;
+        const rows = first.slice();
+        keys.forEach((k, i) => {
+          rows.push(driveRow(k));
+          const to = k.split('>')[1], old = D.plan.find(r => r.site === to && !r.drive);
+          if (i < keys.length - 1) rows.push(old || { start: '', end: '', what: nameOf(to), log: '', site: P2[to] && P2[to].type === 'site' ? to : '' });
+        });
+        rows.push({ start: '', end: '', what: 'פיזור', log: 'פיזור' });
+        D.plan = rows; save(); draw(); toast('הלוח נבנה — מלאו את שעות הסיום באתרים, והנסיעות יזוזו לבד');
+      });
       $('#add', body).addEventListener('click', () => { const last = D.plan[D.plan.length - 1]; D.plan.push({ start: last ? last.end : '', end: '', what: '', log: '' }); save(); draw(); });
       $('#rst', body).addEventListener('click', () => { D.plan = []; save(); stepPlan(m, D, body); });
       $('#hnt', body).addEventListener('click', () => { $('#out', body).innerHTML = `<div class="panel"><h3>💡 שיעור 26 — כתיבת לו״ז</h3><ul class="tips">${MODELS.planRules.tips.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${srcLink('lesson26')}</div>`; });
@@ -348,7 +375,7 @@
       });
       $('#chk', body).addEventListener('click', () => {
         const sites = Object.values(D.picks).filter(Boolean);
-        const r = C.checkPlan(D.plan, { model, data: DATA, sites });
+        const r = C.checkPlan(D.plan, { model, data: DATA, sites, own: D.drive });
         r.items.forEach(x => x.ok ? noteOk(x.cat || 'time') : noteErr(x.cat));
         if (r.frac >= .8) { award(`${m.id}:plan`, 40); badge('clock'); }
         draw(r);
@@ -507,17 +534,17 @@
       <p class="fl"><b>מה רוצים לראות?</b></p><div class="tagpick">${tagKeys.map(k => `<button type="button" data-tag="${k}" class="${F.tags.includes(k) ? 'on' : ''}" aria-pressed="${F.tags.includes(k)}">${TAGS[k]}</button>`).join('')}</div>
       <div class="row3"><label class="fl">כמה אתרים<select id="tCount">${[2, 3, 4, 5].map(n => `<option value="${n}" ${F.count === n ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
       <label class="fl">התחלה<input id="tStart" value="${esc(F.startTime)}" placeholder="08:00" inputmode="numeric"></label><label class="fl">סיום<input id="tEnd" value="${esc(F.endTime)}" placeholder="18:00" inputmode="numeric"></label></div>
-      <p class="muted">יציאה וחזרה: ${esc((DATA.anchors || [{}])[0].he || '')}. זמני נסיעה לא מומצאים — בלוח יש שורות נסיעה ריקות לבדיקה ב-Waze.</p>
+      <p class="muted">יציאה וחזרה: ${esc((DATA.anchors || [{}])[0].he || '')}. זמני הנסיעה: הערכה לפי מפת הכבישים (OpenStreetMap, בלי פקקים) — לאשר ב-Google.</p>
       <div class="acts"><button type="button" class="btn" id="tGo">✨ להציע מסלולים</button></div></section><div id="tOut"></div>`, { back: '#/' });
     $$('[data-tag]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.tag; if (k === 'road') { F.road = !F.road; } F.tags = F.tags.includes(k) ? F.tags.filter(x => x !== k) : F.tags.concat(k); b.classList.toggle('on'); b.setAttribute('aria-pressed', b.classList.contains('on')); save(); }));
     $('#tGo').addEventListener('click', () => {
-      F.group = $('#tGroup').value.trim(); F.count = +$('#tCount').value; F.startTime = $('#tStart').value.trim() || '08:00'; F.endTime = $('#tEnd').value.trim() || '18:00'; F.road = F.tags.includes('road'); save();
+      F.group = $('#tGroup').value.trim(); F.count = +$('#tCount').value; F.startTime = C.normTime($('#tStart').value) || '08:00'; F.endTime = C.normTime($('#tEnd').value) || '18:00'; F.road = F.tags.includes('road'); save();
       const res = C.suggest({ tags: F.tags.filter(t => t !== 'road'), count: F.count, road: F.road, start: (DATA.anchors || [])[0], startTime: F.startTime, endTime: F.endTime }, DATA);
       $('#tOut').innerHTML = res.length ? res.map((r, i) => `<article class="panel prop"><h3>הצעה ${i + 1}: ${r.sites.map(s => esc(s.short)).join(' ← ')}</h3>
         <p class="muted">🚌 ~${r.km} ק״מ אווירי בין התחנות${r.roads.length ? ' · הדרכת דרך: ' + r.roads.map(x => esc(x.short)).join(', ') : ''}</p>
         ${r.missing.length ? `<p class="conf">⚠️ לא נמצא אתר ל: ${r.missing.map(t => esc(TAGS[t] || t)).join(', ')}</p>` : '<p class="good">✔ כל מה שביקשתם מכוסה</p>'}
         ${r.warnings.map(w => `<p class="conf">ℹ️ ${esc(w)}</p>`).join('')}
-        <ul class="legs">${r.legs.map(l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a></span></li>`).join('')}</ul>
+        <ul class="legs">${r.legs.map(l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>${l.drive ? `🚗 ${l.drive.min} דק׳ · ${l.drive.km} ק״מ בכביש` : `~${l.km} ק״מ`} · <a href="${l.nav.google}" target="_blank" rel="noopener">לבדוק ב-Google</a></span></li>`).join('')}</ul>
         <details class="mo"><summary>📋 לוח זמנים ראשוני (${r.plan.length} שורות) ומה לברר</summary><ul class="ex">${r.plan.map(p => `<li><b>${esc(p.start || '…')}${p.end ? '–' + esc(p.end) : ''}</b> ${esc(p.what)}${p.log ? ' · <i>' + esc(p.log) + '</i>' : ''}</li>`).join('')}</ul></details>
         <details class="mo"><summary>🧾 לוגיסטיקה של כל אתר</summary>${r.sites.map(s => `<div class="pi"><b>${esc(s.he)}</b>${logisticsHtml(s, true)}</div>`).join('')}</details>
         <p class="muted">🎤 יחידות לתרגול: ${r.units.map(u => `${esc(P[u.site].short)} ${u.model ? '✔' : '—'}${u.long ? ' (גם מורחבת)' : ''}`).join(' · ')}</p>
