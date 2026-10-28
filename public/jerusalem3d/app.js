@@ -5,6 +5,7 @@
 // Quiz 3D : préparés (API window.MDJerusalem3D) mais NON affichés tant que monuments.quiz3dEnabled === false.
 import { renderTimeline, markTimeline, pickStyle } from '../era-timeline.js';
 import * as THREE from 'three';
+import { install as installMuseumTools } from './museum-tools.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { Sky } from 'three/addons/objects/Sky.js';
@@ -34,7 +35,7 @@ const t = k => UI[lang][k] || UI.he[k] || k;
 const tx = o => (o && (o[lang] || o.he)) || '';
 
 let DATA = null, GEO = null, period = Number(store.get('mdl_j3d_period', '5')) || 5, showToday = store.get('mdl_j3d_today', '1') === '1', selected = null;
-let mode2d = false, pickMode = false, compare = false, basemap = store.get('mdl_j3d_base', '0') === '1', hiddenWalls = new Set();
+let mode2d = false, pickMode = false, walking = false, compare = false, basemap = store.get('mdl_j3d_base', '0') === '1', hiddenWalls = new Set();
 
 // ---------- géographie : lat/lon → mètres locaux (x = est, z = sud) ----------
 let LAT0, LON0, KX, KZ = 110574;
@@ -179,7 +180,7 @@ function openList() {
   $('sBody').querySelectorAll('[data-id]').forEach(b => b.onclick = () => openSheet(b.dataset.id));
 }
 $('sClose').onclick = () => { $('sheet').classList.remove('open'); selected = null; updateLabelSel(); };
-function goPeriod(n) { if (!DATA.periods.some(p => p.n === n)) return; if (compare) { compare = false; $('bCompare').setAttribute('aria-pressed', 'false'); document.body.classList.remove('compare'); } period = n; store.set('mdl_j3d_period', String(period)); backTo = null; $('backChip').hidden = true; $('sheet').classList.remove('open'); selected = null; closePick(); renderPeriod(); { const cur = $('strip').querySelector('[aria-pressed=true]'); if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center' }); } if (!mode2d && camera) homeView(true); }
+function goPeriod(n, keepView) { if (!DATA.periods.some(p => p.n === n)) return; if (compare) { compare = false; $('bCompare').setAttribute('aria-pressed', 'false'); document.body.classList.remove('compare'); } period = n; store.set('mdl_j3d_period', String(period)); backTo = null; $('backChip').hidden = true; $('sheet').classList.remove('open'); selected = null; closePick(); renderPeriod(); { const cur = $('strip').querySelector('[aria-pressed=true]'); if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center' }); } if (!mode2d && camera && !keepView && !walking) homeView(true); }
 $('strip').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) goPeriod(Number(b.dataset.p)); });
 // grand sélecteur d'époque : bouton bien visible + flèches ‹ › + liste des 12 périodes en gros boutons
 function closePick() { $('pPick').hidden = true; $('pBig').setAttribute('aria-expanded', 'false'); document.querySelector('.periods').classList.remove('picking'); }
@@ -268,7 +269,7 @@ function init3d() {
     ray.setFromCamera(v, camera);
     const targets = museumActive() ? [world, MUSEUM.group] : [world];
     const hit = ray.intersectObjects(targets, true).find(h => idOf(h.object) || (MUSEUM.group && h.object.parent && isMuseum(h.object)));
-    if (hit) { const id = idOf(hit.object) || museumPick(hit.point); document.dispatchEvent(new CustomEvent('mdj3d-pick', { detail: id })); if (!pickMode) openSheet(id); }
+    if (hit) { const id = idOf(hit.object) || museumPick(hit.point), pm = pickMode; document.dispatchEvent(new CustomEvent('mdj3d-pick', { detail: id })); if (!pm) openSheet(id); }
   });
   window.addEventListener('resize', resize); resize(); homeView(false); loop(); loadCity();
 }
@@ -763,7 +764,7 @@ function loop() {
   if (cine) cineFrame(now);
   else if (tw) { const k = Math.min(1, (now - tw.t0) / tw.dur), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2; camera.position.lerpVectors(tw.e0, tw.e1, e); controls.target.lerpVectors(tw.t0v, tw.t1, e); if (k >= 1) tw = null; }
   if (mode2d) return;
-  if (!cine) controls.update();
+  if (!cine && !walking) controls.update();
   if (flowTex) flowTex.offset.x = -(now / 1000) * 0.25; // le courant descend la vallée
   followSun(); // l'ombre suit la zone regardée (cadrage serré = ombres nettes)
   frame();
@@ -866,6 +867,12 @@ window.MDJerusalem3D = {
   viewAt(id) { flyTo(id); if (tw) { camera.position.copy(tw.e1); controls.target.copy(tw.t1); tw = null; controls.update(); } highlight(null); },
   monument: id => DATA && DATA.monuments.find(m => m.id === id),
   // Pour une question « localisation » : appelle cb(id) au prochain toucher d'un monument.
+  // Outils « musée » (jerusalem3d/museum-tools.js) : visite des rues, comparaison de deux époques, mode apprentissage
+  get camera() { return camera; }, get controls() { return controls; }, get world() { return world; }, get period() { return period; }, get periods() { return DATA ? DATA.periods : []; },
+  get lang() { return lang; }, get tm() { return TM; }, ground, anchorXZ, tx, goPeriod, homeView, inPeriod: m => inPeriod(m),
+  placedIds: () => Array.from(placed), setWalking(v) { walking = !!v; controls.enabled = !v; if (!v) controls.update(); }, setPickMode(v) { pickMode = !!v; },
+  pickTargets: () => (museumActive() && MUSEUM.group ? [world, MUSEUM.group] : [world]),
+  perf() { const r = renderer.info.render, mem = renderer.info.memory; return { calls: r.calls, triangles: r.triangles, geometries: mem.geometries, textures: mem.textures, programs: (renderer.info.programs || []).length, monuments: placed.size, quality }; },
   pickOnce(cb) { pickMode = true; const h = e => { pickMode = false; document.removeEventListener('mdj3d-pick', h); cb(e.detail); }; document.addEventListener('mdj3d-pick', h); }
 };
 
@@ -882,6 +889,7 @@ Promise.all([fetch('jerusalem3d/monuments.json', { cache: 'no-cache' }).then(r =
     const want2d = q.get('view') === '2d' || !webglOK();
     if (!want2d) init3d();
     applyUI();
+    if (!want2d) window.MDJerusalem3D.museum = installMuseumTools(window.MDJerusalem3D);
     if (want2d) { $('msg').style.display = 'none'; setMode2d(true); if (!webglOK()) { $('msg').style.display = ''; $('msg').textContent = t('noWebgl'); setTimeout(() => $('msg').style.display = 'none', 2500); } }
     const id = q.get('site'); if (id) setTimeout(() => { openSheet(id); flyTo(id); }, 400);
   })
