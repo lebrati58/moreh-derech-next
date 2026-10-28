@@ -139,7 +139,8 @@
         // Trajet réel par les routes (OSRM / OpenStreetMap) entre les visites, dans l'ordre des numéros
         const seq = Object.entries(opts.mark || {}).filter(([, v]) => /^\d+$/.test(v)).sort((a, b) => +a[1] - +b[1]).map(([id]) => P[id]).filter(Boolean);
         if (seq.length >= 1 && (DATA.anchors || [])[0]) { seq.unshift(DATA.anchors[0]); seq.push(DATA.anchors[0]); }
-        if (seq.length >= 2) osrmRoute(seq).then(geo => {
+        const lg0 = $('.maplegend', el); if (lg0) lg0.textContent = '📍 לחצו על נקודה לפרטים · 0 = נקודת המפגש';
+        if (opts.route && seq.length >= 2) osrmRoute(seq).then(geo => {
           if (!geo || !map.getStyle()) return;
           map.addSource('route', { type: 'geojson', data: geo.feature });
           map.addLayer({ id: 'route', type: 'line', source: 'route', paint: { 'line-color': '#6ee9cf', 'line-width': 4 } });
@@ -412,7 +413,7 @@
       $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
       wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
       const vo = visitOrder(m, D);
-      if ($('#pMap', body)) mapBox($('#pMap', body), { mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])), onRoute: geo => {
+      if ($('#pMap', body)) mapBox($('#pMap', body), { route: true, mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])), onRoute: geo => {
         const lis = $$('.legs li', body); geo.legs.forEach((l, i) => { if (lis[i]) lis[i].insertAdjacentHTML('beforeend', `<span class="osrm">🛣️ ${l.km} ק״מ · ~${l.min} דק׳ <small>(OSRM/OpenStreetMap, ללא פקקים)</small></span>`); });
         const tot = $('.legs', body); if (tot) tot.insertAdjacentHTML('afterend', `<p class="muted osrm-tot">סה״כ נסיעה לפי OSRM: ${geo.km} ק״מ · ~${Math.floor(geo.min / 60)}:${String(geo.min % 60).padStart(2, '0')} שעות (הערכה ללא פקקים — לבדוק גם ב-Waze)</p>`);
       } });
