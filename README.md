@@ -492,7 +492,7 @@ pas une modération parfaite. Pour un usage grand public, ajouter CAPTCHA, signa
 ## Accès réservé aux élèves (teoudat zehout)
 
 - Installer **une fois** `supabase/access_control.sql` (après `install.sql`).
-- Dans `inbox.html` (admin), carte « 👥 מי יכול להיכנס » : coller la liste (une ligne par élève, numéro ± prénom, copie Excel acceptée). La liste remplace la précédente.
+- Dans `inbox.html` (admin), carte « 👥 מי יכול להיכנס » : coller la liste : un numéro par ligne (copie d'une colonne Excel acceptée ; tout texte autour est ignoré et jamais enregistré). La liste remplace la précédente. Aucun prénom n'est stocké.
 - Aucun numéro n'est stocké en clair ni dans le dépôt : le serveur garde seulement `sha256(clé secrète | numéro)`, la clé étant tirée au hasard dans la base.
 - Liste vide = application ouverte à tous. Une liste collée sans aucun numéro valide est refusée (rien ne change).
 - `public/access-gate.js` est chargé dans toutes les pages sauf `inbox.html`. C'est une porte d'entrée : les fichiers publics (JSON, images) restent techniquement téléchargeables par qui connaît leur adresse.

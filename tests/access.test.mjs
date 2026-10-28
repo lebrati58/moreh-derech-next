@@ -27,15 +27,29 @@ test('accès par teoudat zehout : liste privée hachée, connexion, retrait, lim
     const r = await rpc(c, 'admin_access_set', { p_token: adm, p_list: `דנה\t${A}\r\n${B}, יוסי\n\n123456789\n` });
     assert.equal(r.allowed, 2); assert.deepEqual(r.bad_lines, [3]);
     assert.equal((await rpc(c, 'access_required')).required, true);
+    // collages difficiles qui doivent passer (« il manque quelques-uns ») : séparateurs, caractères invisibles,
+    // zéros initiaux perdus par Excel, téléphone ou n° de ligne sur la même ligne ; doublons comptés une fois
+    const D = fakeTz(1234567), E = fakeTz(45678901), F = fakeTz(56789012), G = fakeTz(67890123), H = fakeTz(78901234);
+    const pick = async l => (await c.query('select mdl.tz_pick($1) t', [l])).rows[0].t;
+    assert.equal(await pick(D.slice(0, 3) + ' ' + D.slice(3, 6) + ' ' + D.slice(6)), D);
+    assert.equal(await pick('\u200f' + E + '\u200e'), E);
+    assert.equal(await pick(F.replace(/^0+/, '')), F);
+    assert.equal(await pick('0521234567\t' + G), G, 'téléphone ignoré');
+    assert.equal(await pick('3. ' + H.slice(0, 4) + '-' + H.slice(4)), H);
+    assert.equal(await pick('1.23457E+08'), null);
+    const r2 = await rpc(c, 'admin_access_set', { p_token: adm, p_list: [A, B, A, D.slice(0, 3) + ' ' + D.slice(3), '\u200f' + E, '0521234567\t' + G].join('\n') });
+    assert.equal(r2.allowed, 5); assert.equal(r2.duplicates, 1); assert.deepEqual(r2.bad_lines, []);
     // rien n'est stocké en clair
     const dump = JSON.stringify((await c.query('select * from mdl.access_people')).rows);
     assert.ok(!dump.includes(A) && !dump.includes(B), 'aucun numéro en clair');
-    assert.deepEqual((await rpc(c, 'admin_access_list', { p_token: adm })).labels, ['דנה', 'יוסי']);
+    assert.deepEqual(await rpc(c, 'admin_access_list', { p_token: adm }), { allowed: 5 });
+    assert.equal((await c.query('select count(*)::int n from mdl.access_people where label is not null')).rows[0].n, 0, 'aucun prénom enregistré, même collé');
+    assert.ok(!JSON.stringify((await c.query('select * from mdl.access_people')).rows).includes('דנה'), 'le prénom collé n’est nulle part');
     // connexion
     assert.equal((await rpc(c, 'access_login', { p_tz: C })).error, 'not_allowed');
     assert.equal((await rpc(c, 'access_login', { p_tz: '12' })).error, 'invalid_tz');
     const s = await rpc(c, 'access_login', { p_tz: ' ' + A.slice(0, 3) + '-' + A.slice(3) + ' ' });
-    assert.ok(s.ok && s.token && s.label === 'דנה', 'connexion avec espaces et tiret');
+    assert.ok(s.ok && s.token && !('label' in s), 'connexion avec espaces et tiret, aucun prénom renvoyé');
     assert.equal((await rpc(c, 'access_check', { p_token: s.token })).ok, true);
     assert.equal((await rpc(c, 'access_check', { p_token: 'autre' })).ok, false);
     // le numéro ouvre l'application, JAMAIS l'administration : la session élève est refusée partout côté admin
