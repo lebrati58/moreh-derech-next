@@ -213,9 +213,12 @@
       <label>אמצעי הדרכה <span data-c="method"></span><input data-f="method" value="${esc(u.method)}" placeholder="עד 20 מילים"></label></div>
       <label class="tx">כתיבה — ${long ? 'עד 400 מילים · פתיחה / מה רואים / סיכום' : 'עד 180 מילים'} <span data-c="text"></span>
       <textarea data-f="text" rows="${long ? 14 : 8}" dir="rtl" placeholder="${long ? 'פסקה ראשונה: פתיחה (מי, מה, למה)…\n\nפסקה שנייה: מה רואים, מוליכים בין 2–3 נקודות…\n\nפסקה שלישית: סיכום' : 'פתיחה — מה רואים — סיום ומעבר'}">${esc(u.text)}</textarea></label>
-      <div class="bar"><i></i></div></div>`;
+      <div class="wcbar" aria-live="polite"><span class="wcl">מילים</span><b data-c="big"></b><span class="wcm" data-c="max"></span><div class="bar"><i></i></div></div></div>`;
     const upd = () => {
       $('[data-c="text"]', box).innerHTML = wordBadge(C.wordCount(u.text), long ? 'long' : 'short');
+      const nn = C.wordCount(u.text), st = C.wordState(nn, long ? 'long' : 'short', MODELS.models.school5.limits);
+      $('[data-c="big"]', box).textContent = nn; $('[data-c="max"]', box).textContent = '/ ' + st.max + (st.state === 'over' ? ' — חריגה!' : st.state === 'ok' ? ' ✔' : '');
+      $('.wcbar', box).className = 'wcbar ' + st.state;
       const mw = C.wordCount(u.method);
       $('[data-c="method"]', box).innerHTML = `<span class="wc wc-${mw > 20 ? 'over' : mw ? 'ok' : 'low'}">${mw}/20</span>`;
       const max = long ? 400 : 180, n = C.wordCount(u.text);
