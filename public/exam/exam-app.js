@@ -387,7 +387,7 @@
     const leg = l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ אווירי · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a> · <a href="${l.nav.waze}" target="_blank" rel="noopener">Waze</a></span></li>`;
     return `<details class="panel info" open><summary><b>📋 מידע לתכנון — האתרים שבחרתם</b></summary>
       <div id="pMap"></div>
-      <p class="muted">סדר הביקור: שנו עם החצים ▲ ▼ — המספרים על המפה והנסיעות מתעדכנים.</p>
+      <p class="muted">סדר הביקור: שנו עם החצים ▲ ▼ — המספרים על המפה והנסיעות מתעדכנים. <button type="button" class="mini" data-autoorder>🧭 סדר הגיוני אוטומטי</button> <button type="button" class="mini" data-fillplan>📋 למלא את הלוח לפי הסדר</button></p>
       ${sites.map((id, i) => siteBlock(P[id], i + 1, { up: i > 0, down: i < sites.length - 1 })).join('')}
       <h4>🚌 נסיעות — לפי סדר הבחירה (אפשר לשנות בלוח)</h4><ul class="legs">${L.map(leg).join('')}${back ? leg(back) : ''}</ul>
       <p class="muted">המרחק הוא בקו אווירי בלבד. זמן נסיעה אמיתי בודקים ב-Google Maps / Waze (״נסיעה ללא פקקים״), ורושמים בלוח. במבחן אין אפליקציה — כדאי לזכור סדרי גודל.</p></details>`;
@@ -409,6 +409,12 @@
         const lis = $$('.legs li', body); geo.legs.forEach((l, i) => { if (lis[i]) lis[i].insertAdjacentHTML('beforeend', `<span class="osrm">🛣️ ${l.km} ק״מ · ~${l.min} דק׳ <small>(OSRM/OpenStreetMap, ללא פקקים)</small></span>`); });
         const tot = $('.legs', body); if (tot) tot.insertAdjacentHTML('afterend', `<p class="muted osrm-tot">סה״כ נסיעה לפי OSRM: ${geo.km} ק״מ · ~${Math.floor(geo.min / 60)}:${String(geo.min % 60).padStart(2, '0')} שעות (הערכה ללא פקקים — לבדוק גם ב-Waze)</p>`);
       } });
+      const ao = $('[data-autoorder]', body); if (ao) ao.addEventListener('click', () => { D.order = C.orderSites(vo.map(id => P[id]), (DATA.anchors || [])[0]).map(s => s.id); save(); draw(res); toast('🧭 סודר לפי קרבה'); });
+      const fp = $('[data-fillplan]', body); if (fp) fp.addEventListener('click', () => {
+        const filled = D.plan.filter(r => r.what && !/^מפגש/.test(r.what)).length;
+        if (filled && !confirm('להחליף את הלוח הנוכחי בברירת מחדל לפי הסדר?')) return;
+        D.plan = C.draftPlan(vo.map(id => P[id]), { start: (DATA.anchors || [])[0], startTime: model.day.start, endTime: model.day.end }); save(); draw(res); toast('📋 הלוח מולא — עכשיו השעות');
+      });
       $$('[data-mv]', body).forEach(b => b.addEventListener('click', () => {
         const [id, d] = b.dataset.mv.split(':'), o = visitOrder(m, D), i = o.indexOf(id), j = i + (+d);
         if (j < 0 || j >= o.length) return; [o[i], o[j]] = [o[j], o[i]]; D.order = o; save(); draw(res);
@@ -528,7 +534,15 @@
       const D = { picks: {}, plan: E.plan };
       // éditeur de programme sans aide
       const draw = () => {
-        body.innerHTML = `<div class="plan">${E.plan.map((r, i) => planRow(r, i, DATA.sites)).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
+        const chosen = [...new Set(Object.values(E.units).map(u => u.site).concat([E.long.site]).filter(id => id && P[id] && P[id].type === 'site'))];
+        body.innerHTML = `${chosen.length ? `<div class="panel sugg"><b>🧭 מסלול הגיוני</b><p class="muted">לפי האתרים שבחרתם ביחידות (${chosen.length}): סדר לפי קרבה מ${esc((DATA.anchors || [{}])[0].he || 'נקודת המפגש')}. השעות — שלכם.</p><button type="button" class="btn" id="sugg">📋 למלא את הלוח בסדר המוצע</button></div>` : '<p class="muted">בחרו אתרים ביחידות הקצרות והמורחבת — ואז האפליקציה תציע כאן את סדר המסלול ההגיוני.</p>'}
+          <div class="plan">${E.plan.map((r, i) => planRow(r, i, DATA.sites)).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
+        const sg = $('#sugg', body); if (sg) sg.addEventListener('click', () => {
+          const filled = E.plan.filter(r => r.what && !/^מפגש/.test(r.what)).length;
+          if (filled && !confirm('להחליף את הלוח הנוכחי בסדר המוצע?')) return;
+          const ord = C.orderSites(chosen.map(id => P[id]), (DATA.anchors || [])[0]);
+          E.plan = C.draftPlan(ord, { start: (DATA.anchors || [])[0], startTime: model.day.start, endTime: model.day.end }); save(); draw(); toast('📋 הלוח מולא — עכשיו השעות');
+        });
         const setRow = (i, k, v) => { E.plan[i][k] = v; if (k === 'end' && E.plan[i + 1] && !E.plan[i + 1].start) E.plan[i + 1].start = v; save(); draw(); };
         $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
         wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });

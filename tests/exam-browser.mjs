@@ -135,6 +135,15 @@ ok(!(await page.$('#mdl')) && !(await page.$('[data-hint]')), 'examen : aucune a
 await page.click('[data-t="long"]');
 await page.waitForSelector('#ed textarea');
 await page.selectOption('[data-f="site"]', 'ein_keshatot');
+// trajet logique proposé dans la simulation à partir des sites choisis
+await page.click('[data-t="ua"]'); await page.waitForSelector('#ed select'); await page.selectOption('#ed [data-f="site"]', 'tel_saki');
+await page.click('[data-t="plan"]'); await page.waitForSelector('#sugg');
+await page.$eval('#sugg', el => el.click());
+await page.waitForFunction(() => document.querySelectorAll('.plan .pr').length >= 6);
+const whats = await page.$$eval('.plan [data-k="what"]', els => els.map(e => e.value));
+ok(whats[0].startsWith('מפגש') && whats.some(w => /עין קשתות/.test(w)) && whats.some(w => /תל א-סאקי/.test(w)) && whats.some(w => /ארוחת צהריים/.test(w)) && /פיזור/.test(whats[whats.length - 1]), 'simulation : programme pré-rempli dans un ordre logique (rendez-vous, sites, déjeuner, retour)');
+ok(whats.indexOf(whats.find(w => /עין קשתות/.test(w))) < whats.indexOf(whats.find(w => /תל א-סאקי/.test(w))), 'ordre par proximité depuis צומת צמח : עין קשתות avant תל סאקי');
+await page.click('[data-t="long"]'); await page.waitForSelector('#ed textarea');
 const longModel = await page.evaluate(async () => (await (await fetch('exam/golan-south.json')).json()).models.long_ein_keshatot);
 await page.fill('[data-f="topic"]', longModel.topic); await page.fill('[data-f="place"]', longModel.place); await page.fill('[data-f="minutes"]', '45'); await page.fill('[data-f="method"]', longModel.method);
 await page.fill('#ed textarea', longModel.text.replace(/749/, '363').replace('כלומר, זה לא בית כנסת מימי הבית השני.', 'זה בית כנסת מימי הבית השני.'));
