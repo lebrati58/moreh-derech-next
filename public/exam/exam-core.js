@@ -287,9 +287,8 @@
       ord.forEach((s, i) => {
         const L2 = s.logistics2 || {};
         plan.push({ start: '', end: '', what: 'נסיעה ל' + s.short + ' (זמן: לבדוק ב-Waze)', log: '' });
-        const todo = ['toilets', 'parking', 'queue', 'payment'].filter(k => L2[k] && L2[k].status === 'unknown').map(k => ({ toilets: 'שירותים', parking: 'חניה', queue: 'המתנה בקופה', payment: 'מזומן/אשראי/מראש' })[k]);
-        const cash = L2.payment && L2.payment.status === 'cash' ? '💵 מזומן בלבד — להביא מזומן!' : '';
-        plan.push({ start: '', end: '', what: s.he, site: s.id, log: [L2.price && !/חינם|לא/.test(L2.price.he) ? 'תשלום כניסה' : '', cash, todo.length ? 'לברר: ' + todo.join(', ') : '', L2.group ? 'תיאום קבוצה' : ''].filter(Boolean).join(' · ') });
+        const todo = ['toilets', 'parking', 'queue'].filter(k => L2[k] && L2[k].status === 'unknown').map(k => ({ toilets: 'שירותים', parking: 'חניה', queue: 'המתנה בקופה' })[k]);
+        plan.push({ start: '', end: '', what: s.he, site: s.id, log: [L2.price && !/חינם|לא/.test(L2.price.he) ? 'תשלום כניסה' : '', todo.length ? 'לברר: ' + todo.join(', ') : '', L2.group ? 'תיאום קבוצה' : ''].filter(Boolean).join(' · ') });
         if (i === Math.min(1, ord.length - 1)) plan.push({ start: '', end: '', what: 'ארוחת צהריים', log: 'לבדוק אם יש מקום לאכול — אחרת ארוחה עצמית' });
       });
       plan.push({ start: '', end: prefs.endTime || '18:00', what: 'נסיעה חזרה ופיזור: ' + ((prefs.start && prefs.start.he) || 'נקודת הפיזור'), log: 'פיזור' });

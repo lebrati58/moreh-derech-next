@@ -128,7 +128,7 @@
       el._map = map;
     }).catch(e => svgFallback(String(e && e.message)));
   }
-  const ST = { yes: ['✅', 'יש'], unknown: ['❓', 'לברר'], caution: ['⚠️', 'שימו לב'], no: ['⛔', 'אין'], cash: ['💵', 'מזומן בלבד!'] };
+  const ST = { yes: ['✅', 'יש'], unknown: ['❓', 'לברר'], caution: ['⚠️', 'שימו לב'], no: ['⛔', 'אין'] };
   function logisticsHtml(p, compact) {
     const L = p.logistics2; if (!L) return '';
     const row = (ico, lab, v) => v ? `<li><span class="lk">${ico} ${lab}</span><span>${esc(v.he)} ${v.src ? srcLink(v.src, 'מקור') : ''}</span></li>` : '';
@@ -136,7 +136,7 @@
     const nav = C.navLinks(null, p);
     return `<div class="logi"><h4>🧾 לוגיסטיקה לתכנון</h4><ul>
       ${row('🕘', 'שעות', L.hours)}${row('⏮️', 'כניסה אחרונה', L.lastEntry)}${row('💳', 'תשלום', L.price)}
-      ${flag('🚻', 'שירותים', L.toilets)}${flag('🅿️', 'חניה לאוטובוס', L.parking)}${flag('🎫', 'קופה / המתנה', L.queue)}${flag('💵', 'אמצעי תשלום', L.payment)}
+      ${flag('🚻', 'שירותים', L.toilets)}${flag('🅿️', 'חניה לאוטובוס', L.parking)}${flag('🎫', 'קופה / המתנה', L.queue)}
       ${row('📞', 'טלפון', L.phone)}${row('👥', 'קבוצות', L.group)}
       <li><span class="lk">🧭 ניווט</span><span><a href="${nav.waze}" target="_blank" rel="noopener">Waze</a> · <a href="${nav.google}" target="_blank" rel="noopener">Google Maps</a></span></li></ul>
       ${compact ? '' : '<p class="muted">מה שלא אומת במקורות מסומן ״לברר״ — במבחן כותבים את זה בעמודת ״תיאומים ומנהלות״ (לברר שירותים, חניה, תשלום).</p>'}</div>`;
