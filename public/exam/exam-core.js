@@ -241,7 +241,28 @@
     return missions[((day % missions.length) + missions.length) % missions.length];
   }
 
-  const api = { wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
+  // Distance à vol d'oiseau (km). Ce n'est PAS un temps de trajet : les trajets se vérifient dans Waze / Google Maps.
+  function distanceKm(a, b) {
+    const R = 6371, r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
+    return Math.round(2 * R * Math.asin(Math.sqrt(h)) * 10) / 10;
+  }
+  function navLinks(from, to) {
+    const ll = p => `${p.lat},${p.lon}`;
+    return {
+      google: from ? `https://www.google.com/maps/dir/?api=1&origin=${ll(from)}&destination=${ll(to)}&travelmode=driving` : `https://www.google.com/maps/search/?api=1&query=${ll(to)}`,
+      waze: `https://waze.com/ul?ll=${ll(to)}&navigate=yes`
+    };
+  }
+  // Étapes du programme (sites choisis, dans l'ordre) → segments avec distance aérienne et liens de navigation.
+  function legs(ids, data, start) {
+    const P = places(data), seq = (start ? [start] : []).concat(ids.map(id => P[id]).filter(p => p && p.type === 'site'));
+    const out = [];
+    for (let i = 1; i < seq.length; i++) out.push({ from: seq[i - 1], to: seq[i], km: distanceKm(seq[i - 1], seq[i]), nav: navLinks(seq[i - 1], seq[i]) });
+    return out;
+  }
+
+  const api = { distanceKm, navLinks, legs, wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.MDExamCore = api;
 })(typeof window !== 'undefined' ? window : globalThis);

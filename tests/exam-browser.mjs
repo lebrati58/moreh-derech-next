@@ -38,6 +38,7 @@ await page.click('#homeMap .pt[data-id="ein_keshatot"]');
 await page.waitForSelector('.sheet');
 const sheet = await page.textContent('.sheet');
 ok(/ביקרנו בשטח/.test(sheet) && /749/.test(sheet) && /drive\.google\.com/.test(await page.innerHTML('.sheet')), 'fiche עין קשתות : statut, faits, lien source Drive');
+ok(/09:00–17:00/.test(sheet) && /28 ₪/.test(sheet) && /🚻/.test(sheet) && /waze\.com/.test(await page.innerHTML('.sheet')), 'fiche : horaires, prix, toilettes, lien Waze');
 await page.click('.sheet .x');
 
 // MODE 1 — choix des sites
@@ -65,6 +66,9 @@ await shot('2-sites');
 // programme
 await page.goto(base + 'exam.html#/m/g1/guided/2');
 await page.waitForSelector('.plan');
+const info = await page.textContent('.info');
+ok(/עין קשתות/.test(info) && /שירותים/.test(info) && /לברר/.test(info), 'programme : infos des sites choisis (horaires, toilettes « לברר »)');
+ok(/צומת צמח ← מצפה אופיר/.test(info) && /ק״מ אווירי/.test(info) && (await page.$$('.legs a[href*="google.com/maps/dir"]')).length >= 4, 'trajets : distance aérienne + liens Google/Waze, aucun temps inventé');
 const fill = async (i, k, v) => { const sel = `.pr[data-i="${i}"] [data-k="${k}"]`; if (k === 'site') await page.selectOption(sel, v); else { await page.fill(sel, v); await page.dispatchEvent(sel, 'change'); } };
 await fill(0, 'end', '08:15'); await fill(0, 'what', 'מפגש ואיסוף: צומת צמח'); await fill(0, 'log', 'לבדוק שכולם הגיעו');
 await page.click('#add'); await fill(1, 'end', '17:30'); await fill(1, 'what', 'עין קשתות'); await fill(1, 'site', 'ein_keshatot'); await fill(1, 'log', 'תשלום כניסה');
