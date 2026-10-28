@@ -60,7 +60,8 @@
       '<label for="mdlTz" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">מספר תעודת זהות</label>' +
       '<input id="mdlTz" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="000000000">' +
       '<button type="submit">כניסה</button><div class="err" role="alert"></div>' +
-      '<small>🔒 המספר נשלח לבדיקה בלבד ואינו נשמר בטלפון. בשרת נשמרת רק טביעה מוצפנת שלו.</small></form>';
+      '<small>🔒 המספר נשלח לבדיקה בלבד ואינו נשמר בטלפון. בשרת נשמרת רק טביעה מוצפנת שלו.</small>' +
+      '<a href="admin.html" style="display:inline-block;margin-top:14px;color:#ffd66e;font-weight:800;font-size:14px">🧭 כניסת מדריך (סיסמה)</a></form>';
     (document.body || root).appendChild(g);
     var f = g.querySelector('form'), inp = g.querySelector('input'), btn = g.querySelector('button'), err = g.querySelector('.err');
     if (note) err.textContent = note;
@@ -75,16 +76,19 @@
     });
   }
 
+  // le guide déjà connecté avec son mot de passe (admin.html) entre sans numéro
+  function adminToken() { try { var t = JSON.parse(localStorage.getItem('mdl_admin')); return typeof t === 'string' ? t : ''; } catch (e) { return ''; } }
   function decide() {
-    var s = load();
-    var call = s.token ? rpc('access_check', { p_token: s.token }) : rpc('access_required');
+    var s = load(), adm = !s.token && adminToken();
+    var call = (s.token || adm) ? rpc('access_check', { p_token: s.token || adm }) : rpc('access_required');
     call.then(function (r) {
       if (!r || !r.required) { if (s.token) save(Object.assign(s, { checked: Date.now() })); return open(); } // liste vide : ouvert
+      if (adm && r.ok) return open();
       if (s.token && r.ok) { save(Object.assign(s, { checked: Date.now() })); return open(); }
       save({}); root.classList.add('mdl-gate'); showLogin(s.token ? 'הגישה שלכם הסתיימה. הקלידו שוב את המספר.' : '');
     }).catch(function (e) {
       if (e && e.status === 404) return open();          // access_control.sql pas encore installé : rien n'est fermé
-      if (s.token) return open();                          // hors connexion, déjà connecté : on laisse passer
+      if (s.token || adm) return open();                   // hors connexion, déjà connecté : on laisse passer
       showLogin(MSG.offline);
     });
   }

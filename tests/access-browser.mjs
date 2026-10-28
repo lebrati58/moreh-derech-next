@@ -58,6 +58,22 @@ await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('mdl_acces
 await page.goto(base + 'history.html');
 await page.waitForSelector('#mdlGate input');
 ok(/הסתיימה/.test(await page.textContent('#mdlGate .err')), 'élève retiré : accès terminé, écran de connexion');
+// le guide : la page admin ne demande JAMAIS de numéro ; une fois connecté avec son mot de passe, toutes les pages s'ouvrent
+await page.evaluate(() => localStorage.clear());
+await page.goto(base + 'admin.html');
+await page.waitForTimeout(800);
+ok(!(await page.$('#mdlGate')) && !(await hidden()), 'admin.html : pas d’écran de numéro (mot de passe du guide)');
+await page.goto(base + 'index.html');
+await page.waitForSelector('#mdlGate a[href="admin.html"]');
+ok(true, 'écran de numéro : lien « כניסת מדריך »');
+sessions.add('adm-tok'); await page.evaluate(() => localStorage.setItem('mdl_admin', JSON.stringify('adm-tok')));
+await page.goto(base + 'map.html');
+await page.waitForFunction(() => !document.getElementById('mdlGate') && getComputedStyle(document.body).visibility !== 'hidden');
+ok(true, 'guide connecté (session admin) : application ouverte sans numéro');
+sessions.delete('adm-tok');
+await page.goto(base + 'history.html');
+await page.waitForSelector('#mdlGate input');
+ok(true, 'session admin expirée : écran de numéro');
 // liste vide : tout le monde passe
 required = false;
 await ctx.clearCookies(); await page.evaluate(() => localStorage.clear());
