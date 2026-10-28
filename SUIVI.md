@@ -27,6 +27,15 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 28–29 octobre 2026 — Généraliser la route 67 à tous les סיורים (« סיפורי דרך »)
+- ✅ **Audit Drive** : 23 dossiers (le n° 23 est apparu le 28/10), audio dans 20 d'entre eux (≈ 7,5 Go). Les `.docx` placés à côté des MP3 sont des **transcriptions ivrit.ai**, illisibles dans l'aperçu Drive. Les « Copy of … סיפור דרך » ajoutés le 28/10 sont soit des transcriptions brutes (01, 03), soit des **réécritures IA enrichies** (06, 09, 15, 17, 20, 22), soit des notes ou exercices d'élèves (02, 19). Tout est classé dans `content/tours/registry.json`.
+- ✅ **Moteur commun** : `public/tour-engine.js` (validation, garde-fous de publication, examen, score, chrono, correction) + `public/parcours.html` / `parcours-app.js` (carte Leaflet, מצב לימוד avec citations du prof, côté du bus, simulation et GPS via `gps-engine.js`, מצב מבחן avec chrono, pause, correction détaillée et sources). Points : `progress.js → saveTourRun` (meilleur score d'examen par question, brouillons jamais comptés).
+- ✅ **Route 67** convertie automatiquement en parcours `road67` (fichiers d'origine inchangés).
+- 🧪 **Pilote סיור 01** : `content/tours/01.src.json` (20 lieux, 24 questions + questions de côté, toutes avec une citation de l'enregistrement). Statut « à vérifier », pas publié.
+- ✅ Outils : `tools/build-tours.mjs` (coordonnées Wikipédia + tracé OSRM en ligne via `.github/workflows/tours.yml`, contrôle du côté prof/carte), `tools/parse-ivrit-docx.mjs`, `tools/tours-registry.mjs`. Mode d'emploi : `content/tours/README.md`.
+- ✅ Tests : `tests/tours.test.mjs` (10), `tests/tours-browser.mjs` (37 vérifications S24 + ordinateur). Non-régression journey et histoire OK.
+- ⏳ À faire : lire les transcriptions ivrit.ai (07, 08, 09, 10, 11, 18 — il faut les fichiers `.docx` ; voir le README), transcrire l'audio des סיורים sans texte, construire 03, valider 01.
+
 ### 27 octobre 2026 — Frise historique et quiz de 48 événements (« ציר הזמן והחידון »)
 Intégration du pack de Lionel (prototypes HTML autonomes) **dans le jeu**, sans iframe.
 - ✅ **Données uniques** `public/history-events.json` : 48 événements à identifiants stables (`ezra`, `masada`…), 7 périodes alignées sur les dossiers « מאורגן לפי תקופות » du Drive, lien de chaque période vers son **תקציר מאורגן** précis + dossier des leçons + תאריכון. Audit complet : `docs/AUDIT_histoire_48.md` (19 av. au lieu de 20 pour le Temple d'Hérode ; « 612 » remplacé par 614 ; 4 événements contestés hors examen).
