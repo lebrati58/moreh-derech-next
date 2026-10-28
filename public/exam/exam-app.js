@@ -172,28 +172,27 @@
 
   // ---------- Horloge à boutons (pas de clavier) ----------
   function timeButton(k, v, label) { return `<button type="button" class="tbtn" data-t="${k}" data-v="${esc(v || '')}" aria-label="${esc(label)}">${v ? esc(v) : '--:--'}</button>`; }
-  function clockPick(value, label, cb) {
-    let [h, mi] = /^\d{1,2}:\d{2}$/.test(value || '') ? value.split(':').map(Number) : [null, null];
+  function clockPick(value, label, cb, base) {
+    // Simple : une heure en grand, on ajuste avec ±5 / ±15 / ±1h, puis ✔. Point de départ : la valeur, sinon l'heure précédente, sinon 08:00.
+    let m = C.toMin(value) ?? C.toMin(base) ?? C.toMin('08:00');
     const sheet = document.createElement('div'); sheet.className = 'sheet clock'; sheet.setAttribute('role', 'dialog'); sheet.setAttribute('aria-label', label);
     const close = () => sheet.remove();
-    const done = () => { close(); cb(String(h).padStart(2, '0') + ':' + String(mi).padStart(2, '0')); };
-    const draw = () => {
-      sheet.innerHTML = `<div class="sheet-in"><button type="button" class="x" aria-label="סגירה">✕</button><h3>🕒 ${esc(label)}</h3>
-        <div class="cval">${h === null ? '--' : String(h).padStart(2, '0')}:${mi === null ? '--' : String(mi).padStart(2, '0')}</div>
-        <p class="clab">שעה</p><div class="cgrid h">${Array.from({ length: 17 }, (_, i) => i + 6).map(x => `<button type="button" data-h="${x}" class="${x === h ? 'on' : ''}">${String(x).padStart(2, '0')}</button>`).join('')}</div>
-        <p class="clab">דקות</p><div class="cgrid m">${[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(x => `<button type="button" data-m="${x}" class="${x === mi ? 'on' : ''}">${String(x).padStart(2, '0')}</button>`).join('')}</div>
-        <div class="acts"><button type="button" class="btn" id="cok" ${h === null || mi === null ? 'disabled' : ''}>✔ אישור</button><button type="button" class="btn ghost" id="cclr">מחיקה</button></div></div>`;
-      $('.x', sheet).addEventListener('click', close);
-      $$('[data-h]', sheet).forEach(b => b.addEventListener('click', () => { h = +b.dataset.h; if (mi === null) mi = 0; draw(); }));
-      $$('[data-m]', sheet).forEach(b => b.addEventListener('click', () => { mi = +b.dataset.m; if (h !== null) done(); else draw(); }));
-      $('#cok', sheet).addEventListener('click', done);
-      $('#cclr', sheet).addEventListener('click', () => { close(); cb(''); });
-    };
+    sheet.innerHTML = `<div class="sheet-in"><h3>${esc(label)}</h3><div class="cval" id="cv"></div>
+      <div class="cbtns"><button type="button" data-d="-60">−1h</button><button type="button" data-d="-15">−15</button><button type="button" data-d="-5">−5</button><button type="button" data-d="5">+5</button><button type="button" data-d="15">+15</button><button type="button" data-d="60">+1h</button></div>
+      <div class="acts"><button type="button" class="btn" id="cok">✔ אישור</button><button type="button" class="btn ghost" id="cx">ביטול</button></div></div>`;
+    const show = () => { $('#cv', sheet).textContent = C.fmt(m); };
+    $$('[data-d]', sheet).forEach(b => b.addEventListener('click', () => { m = Math.max(0, Math.min(23 * 60 + 55, m + +b.dataset.d)); show(); }));
+    $('#cok', sheet).addEventListener('click', () => { close(); cb(C.fmt(m)); });
+    $('#cx', sheet).addEventListener('click', close);
     sheet.addEventListener('click', e => { if (e.target === sheet) close(); });
-    document.body.appendChild(sheet); draw();
+    document.body.appendChild(sheet); show();
   }
   function wireClocks(box, onPick) {
-    $$('.tbtn', box).forEach(b => b.addEventListener('click', () => clockPick(b.dataset.v, b.getAttribute('aria-label'), v => onPick(b.dataset.t, v, b))));
+    $$('.tbtn', box).forEach(b => b.addEventListener('click', () => {
+      // sans valeur : on part de l'heure précédente de la ligne / du tableau
+      const row = b.closest('.pr'), prev = row ? (b.dataset.t.startsWith('end') ? $('.tbtn[data-t^="start"]', row).dataset.v : (row.previousElementSibling && $('.tbtn[data-t^="end"]', row.previousElementSibling) || {}).dataset?.v) : '';
+      clockPick(b.dataset.v, b.getAttribute('aria-label'), v => onPick(b.dataset.t, v, b), prev);
+    }));
   }
 
   // ---------- Éditeur d'intervention ----------
