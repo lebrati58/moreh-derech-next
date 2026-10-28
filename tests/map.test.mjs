@@ -80,11 +80,15 @@ test('frise de la carte : chaque événement pointe sur un lieu déjà vérifié
     if (i) assert.ok(e.year >= file.events[i - 1].year, 'ordre : ' + e.id);
     assert.ok(ERA_COLORS[e.era], e.id + ' : ère inconnue');
     assert.ok(['fact', 'tradition'].includes(e.kind), e.id);
-    for (const l of ['he', 'fr', 'en', 'ru']) { assert.ok(e.title[l] && e.text[l], `${e.id} : ${l} manquant`); if (e.label) assert.ok(e.label[l], `${e.id} : date ${l}`); }
+    for (const l of ['he', 'fr', 'en', 'ru']) { assert.ok(e.title[l] && e.text[l] && e.more?.[l] && e.src?.[l], `${e.id} : ${l} manquant (titre, texte, détails, source)`); if (e.label) assert.ok(e.label[l], `${e.id} : date ${l}`); }
     assert.ok(e.lat > 29 && e.lat < 33.5 && e.lon > 34 && e.lon < 36, e.id + ' : hors d’Israël');
     assert.ok(/^(stop|site|j3d):/.test(e.at) && e.from, e.id + ' : position sans provenance');
   });
   assert.ok(file.events.some(e => e.id === 'masada_falls' && e.at === 'site:masada:masada'), 'Massada 73');
+  const dg = file.events.find(e => e.id === 'david_goliath');
+  assert.ok(dg && dg.kind === 'tradition' && dg.battle && /עזקה/.test(dg.text.he), 'David et Goliath : tradition, vallée d’Elah');
+  assert.ok(file.events.find(e => e.id === 'gamla_falls').battle, 'Gamla est une bataille');
+  assert.ok(file.events.filter(e => e.battle).length >= 25, 'au moins 25 batailles');
   // aucune coordonnée saisie à la main dans la source
   const src = readFileSync(new URL('../tools/israel-timeline.src.json', import.meta.url), 'utf8');
   assert.doesNotMatch(src, /"lat"|"lon"/);
