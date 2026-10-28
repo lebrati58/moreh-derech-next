@@ -7,6 +7,15 @@
   var DURATION_MS = 30000;          // 30 s par question
   var MAX_POINTS = 100 + 3 * 30 + 20 * 5; // 290 : bonne réponse instantanée avec une série ≥ 5
   var MIN_GAP = 5;                  // écart minimal (années) entre la bonne réponse et un leurre
+  // Niveaux de difficulté. « בינוני » = le jeu d'origine (mêmes leurres, même chrono).
+  //  minGap / window / spacing / steps : choix des années-leurres ; far : écart minimal entre événements proposés ensemble ;
+  //  century : décalages des siècles proposés ; ms / multiMs : chrono ; mult : coefficient des points.
+  var LEVELS = {
+    1: { id: 1, icon: '🌱', label: 'קל', desc: 'שנים רחוקות · 40 שנ׳', minGap: 40, window: 400, spacing: 20, steps: [45, 60, 80, 100, 120, 150], far: 40, century: [-3, -2, 2, 3], ms: 40000, multiMs: 55000, mult: 0.75 },
+    2: { id: 2, icon: '⭐', label: 'בינוני', desc: 'שנים קרובות · 30 שנ׳', minGap: 5, window: 160, spacing: 3, steps: [7, 11, 13, 18, 25, 30, 40, 55, 70, 90], far: 10, century: [-2, -1, 1, 2], ms: 30000, multiMs: 45000, mult: 1 },
+    3: { id: 3, icon: '🔥', label: 'קשה', desc: 'קרוב מאוד · 20 שנ׳', minGap: 3, window: 60, spacing: 2, steps: [3, 4, 6, 8, 10, 12, 15, 20], far: 5, century: [-2, -1, 1, 2], ms: 20000, multiMs: 35000, mult: 1 }
+  };
+  function lvl(n) { return LEVELS[n] || LEVELS[2]; }
   var PERIOD_IDS = ['babylon', 'persian', 'hellenistic', 'hasmonean', 'roman', 'late_roman', 'byzantine'];
   var CERTAINTY = ['firm', 'approx', 'disputed'];
   var SOURCES = ['course', 'course-diff', 'external'];
@@ -65,20 +74,20 @@
   //  • jamais à moins de MIN_GAP ans de la bonne année (pas de piège 538/539) ;
   //  • jamais une année alternative reconnue (alts : 587, 515, 33…) ;
   //  • de préférence d'autres années du référentiel proches dans le temps, sinon des écarts plausibles.
-  function dateOptions(ev, events, seed) {
-    var rnd = rng(seed + '|' + ev.id), y = ev.year, banned = {}; (ev.alts || []).forEach(function (a) { banned[a] = 1; });
-    var ok = function (v) { return v !== y && v !== 0 && !banned[v] && Math.abs(v - y) >= MIN_GAP; };
+  function dateOptions(ev, events, seed, level) {
+    var L = lvl(level), rnd = rng(seed + '|' + ev.id), y = ev.year, banned = {}; (ev.alts || []).forEach(function (a) { banned[a] = 1; });
+    var ok = function (v) { return v !== y && v !== 0 && !banned[v] && Math.abs(v - y) >= L.minGap && (ev.alts || []).every(function (a) { return Math.abs(v - a) >= L.minGap; }); };
     var near = [], seen = {};
-    events.forEach(function (o) { var v = o.year; if (!seen[v] && ok(v) && Math.abs(v - y) <= 160) { seen[v] = 1; near.push(v); } });
+    events.forEach(function (o) { var v = o.year; if (!seen[v] && ok(v) && Math.abs(v - y) <= L.window) { seen[v] = 1; near.push(v); } });
     near = shuffle(near, rnd).sort(function (a, b) { return Math.abs(a - y) - Math.abs(b - y); }).slice(0, 6);
     var picks = [];
-    shuffle(near, rnd).forEach(function (v) { if (picks.length < 3 && picks.every(function (p) { return Math.abs(p - v) >= 3; })) picks.push(v); });
-    var steps = [7, 11, 13, 18, 25, 30, 40, 55, 70, 90];
+    shuffle(near, rnd).forEach(function (v) { if (picks.length < 3 && picks.every(function (p) { return Math.abs(p - v) >= L.spacing; })) picks.push(v); });
+    var steps = L.steps;
     var guard = 0;
     while (picks.length < 3 && guard++ < 200) {
       var d = steps[Math.floor(rnd() * steps.length)] * (rnd() < 0.5 ? -1 : 1), v = y + d;
       if ((y < 0) !== (v < 0)) v = y - d; // reste du même côté de l'ère pour ne pas rendre la réponse évidente
-      if (ok(v) && picks.indexOf(v) < 0 && picks.every(function (p) { return Math.abs(p - v) >= 3; })) picks.push(v);
+      if (ok(v) && picks.indexOf(v) < 0 && picks.every(function (p) { return Math.abs(p - v) >= L.spacing; })) picks.push(v);
     }
     var opts = shuffle([y].concat(picks), rnd).map(function (v) { return { value: v, label: formatYear(v), correct: v === y }; });
     return opts;
@@ -94,10 +103,10 @@
     return ya.every(function (x) { return yb.every(function (y) { return Math.abs(x - y) >= gap; }); });
   }
   var FAR = 10; // écart minimal (années) entre deux événements proposés ensemble
-  function spread(cands, n, rnd, anchor) {
-    var out = [];
+  function spread(cands, n, rnd, anchor, far) {
+    var out = [], gap = far || FAR;
     shuffle(cands, rnd).forEach(function (c) {
-      if (out.length < n && apart(c, anchor, FAR) && out.every(function (o) { return apart(o, c, FAR); })) out.push(c);
+      if (out.length < n && apart(c, anchor, gap) && out.every(function (o) { return apart(o, c, gap); })) out.push(c);
     });
     return out.length === n ? out : null;
   }
@@ -119,42 +128,42 @@
 
   var QUESTION_TYPES = {
     // Événement → année (4 années, une juste).
-    date: function (ev, events, seed) {
-      return { id: ev.id + ':date', type: 'date', eventId: ev.id, prompt: ev.q, options: dateOptions(ev, events, seed) };
+    date: function (ev, events, seed, level) {
+      return { id: ev.id + ':date', type: 'date', eventId: ev.id, prompt: ev.q, options: dateOptions(ev, events, seed, level) };
     },
     // Année → événement (« מה קרה בשנת 70 לספירה? »).
-    event: function (ev, events, seed) {
-      var rnd = rng(seed + '|' + ev.id + '|event');
+    event: function (ev, events, seed, level) {
+      var rnd = rng(seed + '|' + ev.id + '|event'), far = lvl(level).far;
       var others = events.filter(function (o) { return o.id !== ev.id; });
-      var picks = spread(nearest(ev, others.filter(function (o) { return apart(o, ev, FAR); }), 9), 3, rnd, ev);
+      var picks = spread(nearest(ev, others.filter(function (o) { return apart(o, ev, far); }), 9), 3, rnd, ev, far);
       if (!picks) return null;
       return { id: ev.id + ':event', type: 'event', eventId: ev.id, prompt: 'מה קרה בשנת ' + yearLabel(ev) + '?',
         options: shuffle([evOption(ev, true)].concat(picks.map(function (o) { return evOption(o, false); })), rnd) };
     },
     // Ordre : « איזה מהאירועים האלה קרה ראשון? » (ou « אחרון » en fin de frise).
-    first: function (ev, events, seed) {
-      var rnd = rng(seed + '|' + ev.id + '|first'), others = events.filter(function (o) { return o.id !== ev.id && apart(o, ev, FAR); });
+    first: function (ev, events, seed, level) {
+      var far = lvl(level).far, rnd = rng(seed + '|' + ev.id + '|first'), others = events.filter(function (o) { return o.id !== ev.id && apart(o, ev, far); });
       var later = others.filter(function (o) { return o.year > ev.year && o.year - ev.year <= 400; });
       var earlier = others.filter(function (o) { return o.year < ev.year && ev.year - o.year <= 400; });
       var useLast = later.length < 3 || (earlier.length >= 3 && rnd() < 0.35);
-      var picks = spread(nearest(ev, useLast ? earlier : later, 10), 3, rnd, ev);
+      var picks = spread(nearest(ev, useLast ? earlier : later, 10), 3, rnd, ev, far);
       if (!picks) return null;
       return { id: ev.id + ':first', type: 'first', eventId: ev.id,
         prompt: useLast ? 'איזה מהאירועים האלה קרה אחרון?' : 'איזה מהאירועים האלה קרה ראשון?',
         options: shuffle([evOption(ev, true)].concat(picks.map(function (o) { return evOption(o, false); })), rnd) };
     },
     // Siècle : « באיזו מאה התרחש…? » (jamais pour une année trop proche d'un changement de siècle).
-    century: function (ev, events, seed) {
+    century: function (ev, events, seed, level) {
       var r = Math.abs(ev.year) % 100;
       if (ev.certainty === 'disputed' || r <= 5 || r >= 95) return null;
       var rnd = rng(seed + '|' + ev.id + '|century'), c = centuryOf(ev.year), near = [];
-      [-2, -1, 1, 2].forEach(function (d) { var x = c + d; if (c < 0 && x >= 0) x += 1; if (c > 0 && x <= 0) x -= 1; if (x !== 0 && near.indexOf(x) < 0 && x !== c) near.push(x); });
+      lvl(level).century.forEach(function (d) { var x = c + d; if (c < 0 && x >= 0) x += 1; if (c > 0 && x <= 0) x -= 1; if (x !== 0 && near.indexOf(x) < 0 && x !== c) near.push(x); });
       var picks = shuffle(near, rnd).slice(0, 3);
       return { id: ev.id + ':century', type: 'century', eventId: ev.id, prompt: 'באיזו מאה התרחש: ' + ev.title + '?',
         options: shuffle([c].concat(picks), rnd).map(function (x) { return { value: x, label: centuryLabel(x), correct: x === c }; }) };
     },
     // Plusieurs réponses : « אילו מהאירועים האלה שייכים לתקופת …? »
-    multiPeriod: function (ev, events, seed) {
+    multiPeriod: function (ev, events, seed, level) {
       var rnd = rng(seed + '|' + ev.id + '|multiPeriod'), B = periodBounds(events), b = B[ev.period] || [ev.year, Infinity];
       if (nearBound(ev.year, b)) return null;
       var same = events.filter(function (o) { return o.id !== ev.id && o.period === ev.period && !nearBound(o.year, b); });
@@ -171,9 +180,9 @@
         options: shuffle(right.map(function (o) { return evOption(o, true); }).concat(wrong.map(function (o) { return evOption(o, false); })), rnd) };
     },
     // Plusieurs réponses : « אילו מהאירועים האלה קרו לפני …? »
-    multiBefore: function (ev, events, seed) {
-      var rnd = rng(seed + '|' + ev.id + '|multiBefore');
-      var cands = nearest(ev, events.filter(function (o) { return o.id !== ev.id && apart(o, ev, FAR) && Math.abs(o.year - ev.year) <= 300; }), 12);
+    multiBefore: function (ev, events, seed, level) {
+      var rnd = rng(seed + '|' + ev.id + '|multiBefore'), far = lvl(level).far;
+      var cands = nearest(ev, events.filter(function (o) { return o.id !== ev.id && apart(o, ev, far) && Math.abs(o.year - ev.year) <= (level === 1 ? 600 : 300); }), 12);
       var before = cands.filter(function (o) { return o.year < ev.year; }), after = cands.filter(function (o) { return o.year > ev.year; });
       if (!before.length || !after.length) return null;
       var nb = Math.max(1, Math.min(before.length, 1 + Math.floor(rnd() * 3))), na = 5 - nb;
@@ -193,7 +202,7 @@
     multi: ['multiPeriod', 'multiBefore'],
     order: ['first', 'century']
   };
-  function buildQuestion(ev, events, seed, type) { return (QUESTION_TYPES[type || 'date'])(ev, events, seed); }
+  function buildQuestion(ev, events, seed, type, level) { return (QUESTION_TYPES[type || 'date'])(ev, events, seed, level); }
   function questionMs(q) { return (q && q.ms) || DURATION_MS; }
   // Bonne réponse ? (une option pour les questions simples, exactement le bon ensemble pour les questions à choix multiples)
   function isCorrect(q, chosen) {
@@ -236,7 +245,7 @@
   function buildRun(data, opts) {
     opts = opts || {};
     if (data.periods) setPeriods(data.periods);
-    var seed = opts.seed || '', types = TYPE_GROUPS[opts.types] || TYPE_GROUPS.date;
+    var seed = opts.seed || '', types = TYPE_GROUPS[opts.types] || TYPE_GROUPS.date, L = lvl(opts.level);
     var evs = shuffle(pool(data, opts), rng('pick|' + seed)), optEvents = opts.mode === 'exam' ? data.events.filter(function (e) { return e.examReady; }) : data.events;
     var count = opts.count || evs.length, out = [], used = {};
     for (var round = 0; round < types.length && out.length < count; round++) {
@@ -244,8 +253,8 @@
         var ev = evs[i], order = shuffle(types, rng(seed + '|' + ev.id + '|' + round));
         for (var t = 0; t < order.length; t++) {
           if (used[ev.id + ':' + order[t]]) continue;
-          var q = QUESTION_TYPES[order[t]](ev, optEvents, seed);
-          if (q) { used[q.id] = 1; out.push(q); break; }
+          var q = QUESTION_TYPES[order[t]](ev, optEvents, seed, L.id);
+          if (q) { used[q.id] = 1; q.level = L.id; q.ms = q.multi ? L.multiMs : L.ms; out.push(q); break; }
         }
       }
     }
@@ -255,10 +264,12 @@
   // ---------- score ----------
   // Bonne réponse = 100 + 3 × secondes restantes (arrondi supérieur) + 20 × min(série précédente, 5).
   // Mauvaise réponse ou temps écoulé = 0, et la série repart à zéro.
-  function scoreAnswer(correct, remainingMs, prevStreak) {
+  // Le bonus de vitesse suit la PART du temps restant (ms = durée de la question) : 20 s en « קשה » ne coûtent rien.
+  // Plafond inchangé (290) : compatible avec la borne serveur des points (≤ 300 par réponse).
+  function scoreAnswer(correct, remainingMs, prevStreak, level, ms) {
     if (!correct) return 0;
-    var s = Math.max(0, Math.min(30, Math.ceil(Math.max(0, remainingMs) / 1000)));
-    return 100 + 3 * s + 20 * Math.min(Math.max(0, prevStreak | 0), 5);
+    var s = Math.max(0, Math.min(30, Math.ceil(Math.max(0, remainingMs) / 1000 * 30000 / (ms || DURATION_MS))));
+    return Math.round((100 + 3 * s + 20 * Math.min(Math.max(0, prevStreak | 0), 5)) * lvl(level).mult);
   }
 
   // ---------- chronomètre avec pause (horloge injectable pour les tests) ----------
@@ -289,7 +300,7 @@
   }
 
   global.MDHistory = {
-    DURATION_MS: DURATION_MS, MAX_POINTS: MAX_POINTS, MIN_GAP: MIN_GAP, PERIOD_IDS: PERIOD_IDS,
+    DURATION_MS: DURATION_MS, MAX_POINTS: MAX_POINTS, MIN_GAP: MIN_GAP, LEVELS: LEVELS, PERIOD_IDS: PERIOD_IDS,
     CERT_LABEL: CERT_LABEL, SOURCE_LABEL: SOURCE_LABEL,
     formatYear: formatYear, yearLabel: yearLabel, validate: validate, rng: rng, shuffle: shuffle, hash: hash,
     QUESTION_TYPES: QUESTION_TYPES, TYPE_GROUPS: TYPE_GROUPS, setPeriods: setPeriods, buildQuestion: buildQuestion, buildRun: buildRun, maxQuestions: maxQuestions, questionMs: questionMs,

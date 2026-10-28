@@ -231,3 +231,27 @@ test('contrastes AA : couleurs de période sur fond sombre et texte foncé sur p
     assert.ok(ratio('#10173a', p.color) >= 4.5, `texte sur ${p.id}`);
   }
 });
+
+test('niveaux de difficulté : leurres plus ou moins proches, chrono, points', async () => {
+  const H = await lib(); H.setPeriods(DATA.periods);
+  const evs = DATA.events, gap = q => Math.min(...q.options.filter(o => !o.correct).map(o => Math.abs(o.value - q.options.find(x => x.correct).value)));
+  const avg = lv => { const qs = H.buildRun(DATA, { seed: 'lv', types: 'date', level: lv }); return { n: qs.length, min: Math.min(...qs.map(gap)), mean: qs.map(gap).reduce((a, b) => a + b, 0) / qs.length, ms: qs[0].ms }; };
+  const e = avg(1), m = avg(2), h = avg(3);
+  assert.ok(e.min >= 40, 'קל : leurres à 40 ans ou plus (min ' + e.min + ')');
+  assert.ok(m.min >= H.MIN_GAP && h.min >= 3, 'בינוני ≥ 5 ans, קשה ≥ 3 ans');
+  assert.ok(e.mean > m.mean && m.mean > h.mean, `écart moyen décroissant : ${e.mean.toFixed(0)} > ${m.mean.toFixed(0)} > ${h.mean.toFixed(0)}`);
+  assert.deepEqual([e.ms, m.ms, h.ms], [40000, 30000, 20000]);
+  assert.equal(e.n, evs.length); assert.equal(h.n, evs.length);
+  // le niveau moyen est le jeu d'origine
+  assert.deepEqual(H.buildRun(DATA, { seed: 's', types: 'mix', level: 2 }).map(q => q.id), H.buildRun(DATA, { seed: 's', types: 'mix' }).map(q => q.id));
+  // points : facile ×0,75 ; difficile = même barème, le bonus suit la part du temps restant ; jamais plus de 290
+  assert.equal(H.scoreAnswer(true, 30000, 0, 2, 30000), 190);
+  assert.equal(H.scoreAnswer(true, 40000, 0, 1, 40000), Math.round(190 * 0.75));
+  assert.equal(H.scoreAnswer(true, 20000, 0, 3, 20000), 190);
+  assert.equal(H.scoreAnswer(true, 10000, 0, 3, 20000), H.scoreAnswer(true, 15000, 0, 2, 30000));
+  assert.ok(H.scoreAnswer(true, 20000, 99, 3, 20000) <= H.MAX_POINTS);
+  // aucune réponse ne reprend une année alternative reconnue
+  for (const lv of [1, 2, 3]) for (const q of H.buildRun(DATA, { seed: 'alt' + lv, types: 'date', level: lv })) {
+    const ev = evs.find(x => x.id === q.eventId); for (const o of q.options) if (!o.correct) assert.ok(!(ev.alts || []).includes(o.value), q.id);
+  }
+});
