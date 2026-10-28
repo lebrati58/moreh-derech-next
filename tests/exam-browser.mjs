@@ -69,7 +69,8 @@ await page.waitForSelector('.plan');
 const info = await page.textContent('.info');
 ok(/עין קשתות/.test(info) && /שירותים/.test(info) && /לברר/.test(info), 'programme : infos des sites choisis (horaires, toilettes « לברר »)');
 ok(/צומת צמח ← מצפה אופיר/.test(info) && /ק״מ אווירי/.test(info) && (await page.$$('.legs a[href*="google.com/maps/dir"]')).length >= 4, 'trajets : distance aérienne + liens Google/Waze, aucun temps inventé');
-const fill = async (i, k, v) => { const sel = `.pr[data-i="${i}"] [data-k="${k}"]`; if (k === 'site') await page.selectOption(sel, v); else { await page.fill(sel, v); await page.dispatchEvent(sel, 'change'); } };
+const pickTime = async (i, k, v) => { await page.$eval(`.pr[data-i="${i}"] .tbtn[data-t="${k}:${i}"]`, el => el.click()); await page.waitForSelector('.sheet.clock'); const [h, m] = v.split(':'); await page.click(`.sheet.clock [data-h="${+h}"]`); await page.click(`.sheet.clock [data-m="${+m}"]`); await page.waitForFunction(() => !document.querySelector('.sheet.clock')); };
+const fill = async (i, k, v) => { if (k === 'start' || k === 'end') return pickTime(i, k, v); const sel = `.pr[data-i="${i}"] [data-k="${k}"]`; if (k === 'site') await page.selectOption(sel, v); else { await page.fill(sel, v); await page.dispatchEvent(sel, 'change'); } };
 await fill(0, 'end', '08:15'); await fill(0, 'what', 'מפגש ואיסוף: צומת צמח'); await fill(0, 'log', 'לבדוק שכולם הגיעו');
 await page.click('#add'); await fill(1, 'end', '17:30'); await fill(1, 'what', 'עין קשתות'); await fill(1, 'site', 'ein_keshatot'); await fill(1, 'log', 'תשלום כניסה');
 await page.click('#chk');
@@ -77,6 +78,10 @@ await page.waitForSelector('#out .checks');
 const plan = await page.textContent('#out');
 ok(/בתוך שעות הפתיחה \(09:00–17:00\)/.test(plan) && /✗/.test(plan), 'programme : heures d’ouverture du cours vérifiées (עין קשתות jusqu’à 17:00)');
 ok(/נקודת פיזור/.test(plan), 'programme : point de dispersion exigé');
+
+// supprimer toutes les lignes ne laisse jamais un tableau vide
+while (await page.$('.plan [data-del]')) { await page.$eval('.plan [data-del]', el => el.click()); await page.waitForTimeout(80); if ((await page.$$('.plan .pr')).length === 1 && (await page.$eval('.plan .tbtn', e => e.dataset.v)) === '08:00') break; }
+ok((await page.$$('.plan .pr')).length === 1 && (await page.$eval('.plan .tbtn', e => e.dataset.v)) === '08:00', 'programme : après suppression, la ligne 08:00 מפגש revient');
 
 // éditeur courte : compteur et dépassement
 await page.goto(base + 'exam.html#/m/g1/guided/3');
