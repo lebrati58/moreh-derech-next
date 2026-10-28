@@ -142,6 +142,10 @@
       <li><span class="lk">🧭 ניווט</span><span><a href="${nav.waze}" target="_blank" rel="noopener">Waze</a> · <a href="${nav.google}" target="_blank" rel="noopener">Google Maps</a></span></li></ul>
       ${compact ? '' : '<p class="muted">מה שלא אומת במקורות מסומן ״לברר״ — במבחן כותבים את זה בעמודת ״תיאומים ומנהלות״ (לברר שירותים, חניה, תשלום).</p>'}</div>`;
   }
+  // Bloc d'un site dans un panneau : en-tête bien visible (numéro, nom, statut) + logistique.
+  function siteBlock(p, n) {
+    return `<div class="pi"><div class="pih"><span class="num">${n}</span><span class="nm">📍 ${esc(p.he)}</span><span class="chips">${statusChips(p)}</span></div>${logisticsHtml(p, true)}</div>`;
+  }
   function siteSheet(id) {
     const p = P[id]; if (!p) return;
     const m = S.sites[id] || { ok: 0, err: 0 }, tot = m.ok + m.err;
@@ -315,7 +319,7 @@
     const back = start ? { from: last, to: start, km: C.distanceKm(last, start), nav: C.navLinks(last, start) } : null;
     const leg = l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ אווירי · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a> · <a href="${l.nav.waze}" target="_blank" rel="noopener">Waze</a></span></li>`;
     return `<details class="panel info" open><summary><b>📋 מידע לתכנון — האתרים שבחרתם</b></summary>
-      ${sites.map(id => `<div class="pi"><b>${esc(P[id].he)}</b>${logisticsHtml(P[id], true)}</div>`).join('')}
+      ${sites.map((id, i) => siteBlock(P[id], i + 1)).join('')}
       <h4>🚌 נסיעות — לפי סדר הבחירה (אפשר לשנות בלוח)</h4><ul class="legs">${L.map(leg).join('')}${back ? leg(back) : ''}</ul>
       <p class="muted">המרחק הוא בקו אווירי בלבד. זמן נסיעה אמיתי בודקים ב-Google Maps / Waze (״נסיעה ללא פקקים״), ורושמים בלוח. במבחן אין אפליקציה — כדאי לזכור סדרי גודל.</p></details>`;
   }
@@ -519,7 +523,7 @@
         ${r.warnings.map(w => `<p class="conf">ℹ️ ${esc(w)}</p>`).join('')}
         <ul class="legs">${r.legs.map(l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a></span></li>`).join('')}</ul>
         <details class="mo"><summary>📋 לוח זמנים ראשוני (${r.plan.length} שורות) ומה לברר</summary><ul class="ex">${r.plan.map(p => `<li><b>${esc(p.start || '…')}${p.end ? '–' + esc(p.end) : ''}</b> ${esc(p.what)}${p.log ? ' · <i>' + esc(p.log) + '</i>' : ''}</li>`).join('')}</ul></details>
-        <details class="mo"><summary>🧾 לוגיסטיקה של כל אתר</summary>${r.sites.map(s => `<div class="pi"><b>${esc(s.he)}</b>${logisticsHtml(s, true)}</div>`).join('')}</details>
+        <details class="mo"><summary>🧾 לוגיסטיקה של כל אתר</summary>${r.sites.map((s, j) => siteBlock(s, j + 1)).join('')}</details>
         <p class="muted">🎤 יחידות לתרגול: ${r.units.map(u => `${esc(P[u.site].short)} ${u.model ? '✔' : '—'}${u.long ? ' (גם מורחבת)' : ''}`).join(' · ')}</p>
         <div class="acts"><button type="button" class="btn" data-open="${i}">🧭 לפתוח כמשימה ולתרגל</button></div></article>`).join('') : '<p class="panel">לא נמצאו אתרים מתאימים — בחרו פחות נושאים.</p>';
       $$('[data-open]').forEach(b => b.addEventListener('click', () => {
