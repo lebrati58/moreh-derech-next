@@ -170,6 +170,32 @@
     $('.x', sheet).focus();
   }
 
+  // ---------- Horloge à boutons (pas de clavier) ----------
+  function timeButton(k, v, label) { return `<button type="button" class="tbtn" data-t="${k}" data-v="${esc(v || '')}" aria-label="${esc(label)}">${v ? esc(v) : '--:--'}</button>`; }
+  function clockPick(value, label, cb) {
+    let [h, mi] = /^\d{1,2}:\d{2}$/.test(value || '') ? value.split(':').map(Number) : [null, null];
+    const sheet = document.createElement('div'); sheet.className = 'sheet clock'; sheet.setAttribute('role', 'dialog'); sheet.setAttribute('aria-label', label);
+    const close = () => sheet.remove();
+    const done = () => { close(); cb(String(h).padStart(2, '0') + ':' + String(mi).padStart(2, '0')); };
+    const draw = () => {
+      sheet.innerHTML = `<div class="sheet-in"><button type="button" class="x" aria-label="סגירה">✕</button><h3>🕒 ${esc(label)}</h3>
+        <div class="cval">${h === null ? '--' : String(h).padStart(2, '0')}:${mi === null ? '--' : String(mi).padStart(2, '0')}</div>
+        <p class="clab">שעה</p><div class="cgrid h">${Array.from({ length: 17 }, (_, i) => i + 6).map(x => `<button type="button" data-h="${x}" class="${x === h ? 'on' : ''}">${String(x).padStart(2, '0')}</button>`).join('')}</div>
+        <p class="clab">דקות</p><div class="cgrid m">${[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(x => `<button type="button" data-m="${x}" class="${x === mi ? 'on' : ''}">${String(x).padStart(2, '0')}</button>`).join('')}</div>
+        <div class="acts"><button type="button" class="btn" id="cok" ${h === null || mi === null ? 'disabled' : ''}>✔ אישור</button><button type="button" class="btn ghost" id="cclr">מחיקה</button></div></div>`;
+      $('.x', sheet).addEventListener('click', close);
+      $$('[data-h]', sheet).forEach(b => b.addEventListener('click', () => { h = +b.dataset.h; if (mi === null) mi = 0; draw(); }));
+      $$('[data-m]', sheet).forEach(b => b.addEventListener('click', () => { mi = +b.dataset.m; if (h !== null) done(); else draw(); }));
+      $('#cok', sheet).addEventListener('click', done);
+      $('#cclr', sheet).addEventListener('click', () => { close(); cb(''); });
+    };
+    sheet.addEventListener('click', e => { if (e.target === sheet) close(); });
+    document.body.appendChild(sheet); draw();
+  }
+  function wireClocks(box, onPick) {
+    $$('.tbtn', box).forEach(b => b.addEventListener('click', () => clockPick(b.dataset.v, b.getAttribute('aria-label'), v => onPick(b.dataset.t, v, b))));
+  }
+
   // ---------- Éditeur d'intervention ----------
   function wordBadge(n, kind) {
     const w = C.wordState(n, kind, MODELS.models.school5.limits);
@@ -332,16 +358,14 @@
         ${planInfoHtml(m, D)}
         <div class="plan" role="table"><div class="ph" role="row"><span>התחלה</span><span>סיום</span><span>משך</span><span>פירוט המסלול</span><span>תיאומים ומנהלות</span><span>אתר</span><span></span></div>
         ${D.plan.map((r, i) => { const a = C.toMin(r.start), b = C.toMin(r.end), dur = a !== null && b !== null && b >= a ? (b - a) + ' דק׳' : ''; return `<div class="pr" role="row" data-i="${i}">
-          <input aria-label="התחלה" data-k="start" type="time" step="300" value="${esc(r.start)}"><input aria-label="סיום" data-k="end" type="time" step="300" value="${esc(r.end)}"><span class="dur">${dur}</span>
+          ${timeButton('start:' + i, r.start, 'שעת התחלה')}${timeButton('end:' + i, r.end, 'שעת סיום')}<span class="dur">${dur}</span>
           <input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}" placeholder="נסיעה / הדרכה / ארוחה…"><input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}" placeholder="תשלום, שירותים, תיאום…">
           <select aria-label="אתר" data-k="site">${siteOpts(r)}</select><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>`; }).join('')}</div>
         <div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="hnt">💡 ${t('hint')}</button><button type="button" class="btn ghost" id="mdl">👀 דוגמה מהקורס</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
         <div id="out">${res ? `<div class="panel"><h3>תוצאה: ${Math.round(res.frac * 100)}%</h3>${checklist(res, true)}</div>` : ''}</div>`;
-      $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => {
-        const i = +inp.closest('.pr').dataset.i; D.plan[i][inp.dataset.k] = inp.value.trim();
-        if (inp.dataset.k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = inp.value.trim();
-        save(); draw();
-      }));
+      const setRow = (i, k, v) => { D.plan[i][k] = v; if (k === 'end' && D.plan[i + 1] && !D.plan[i + 1].start) D.plan[i + 1].start = v; save(); draw(); };
+      $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
+      wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
       $$('[data-del]', body).forEach(b => b.addEventListener('click', () => {
         const r = D.plan[+b.dataset.del];
         if ((r.what || r.log || r.site) && !confirm('למחוק את השורה ״' + (r.what || r.start) + '״?')) return;
@@ -456,8 +480,10 @@
       const D = { picks: {}, plan: E.plan };
       // éditeur de programme sans aide
       const draw = () => {
-        body.innerHTML = `<div class="plan">${E.plan.map((r, i) => `<div class="pr" data-i="${i}"><input aria-label="התחלה" data-k="start" type="time" step="300" value="${esc(r.start)}"><input aria-label="סיום" data-k="end" type="time" step="300" value="${esc(r.end)}"><span class="dur">${(C.toMin(r.end) - C.toMin(r.start)) >= 0 ? (C.toMin(r.end) - C.toMin(r.start)) + ' דק׳' : ''}</span><input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}"><input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}"><select aria-label="אתר" data-k="site"><option value="">—</option>${DATA.sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>`).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
-        $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => { const i = +inp.closest('.pr').dataset.i; E.plan[i][inp.dataset.k] = inp.value.trim(); if (inp.dataset.k === 'end' && E.plan[i + 1] && !E.plan[i + 1].start) E.plan[i + 1].start = inp.value.trim(); save(); draw(); }));
+        body.innerHTML = `<div class="plan">${E.plan.map((r, i) => `<div class="pr" data-i="${i}">${timeButton('start:' + i, r.start, 'שעת התחלה')}${timeButton('end:' + i, r.end, 'שעת סיום')}<span class="dur">${(C.toMin(r.end) - C.toMin(r.start)) >= 0 ? (C.toMin(r.end) - C.toMin(r.start)) + ' דק׳' : ''}</span><input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}"><input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}"><select aria-label="אתר" data-k="site"><option value="">—</option>${DATA.sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>`).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
+        const setRow = (i, k, v) => { E.plan[i][k] = v; if (k === 'end' && E.plan[i + 1] && !E.plan[i + 1].start) E.plan[i + 1].start = v; save(); draw(); };
+        $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
+        wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
         $$('[data-del]', body).forEach(b => b.addEventListener('click', () => { E.plan.splice(+b.dataset.del, 1); if (!E.plan.length) E.plan.push({ start: model.day.start, end: '', what: '', log: '' }); save(); draw(); }));
         $('#add', body).addEventListener('click', () => { const last = E.plan[E.plan.length - 1]; E.plan.push({ start: last ? last.end : '', end: '', what: '', log: '' }); save(); draw(); });
       };
@@ -516,12 +542,13 @@
       <section class="panel"><label class="fl">הקבוצה (חופשי)<input id="tGroup" value="${esc(F.group)}" placeholder="למשל: משפחות עם ילדים, 40 איש, אוטובוס"></label>
       <p class="fl"><b>מה רוצים לראות?</b></p><div class="tagpick">${tagKeys.map(k => `<button type="button" data-tag="${k}" class="${F.tags.includes(k) ? 'on' : ''}" aria-pressed="${F.tags.includes(k)}">${TAGS[k]}</button>`).join('')}</div>
       <div class="row3"><label class="fl">כמה אתרים<select id="tCount">${[2, 3, 4, 5].map(n => `<option value="${n}" ${F.count === n ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
-      <label class="fl">התחלה<input id="tStart" type="time" step="300" value="${esc(F.startTime)}"></label><label class="fl">סיום<input id="tEnd" type="time" step="300" value="${esc(F.endTime)}"></label></div>
+      <div class="fl">התחלה${timeButton('startTime', F.startTime, 'שעת התחלה')}</div><div class="fl">סיום${timeButton('endTime', F.endTime, 'שעת סיום')}</div></div>
       <p class="muted">יציאה וחזרה: ${esc((DATA.anchors || [{}])[0].he || '')}. זמני נסיעה לא מומצאים — בלוח יש שורות נסיעה ריקות לבדיקה ב-Waze.</p>
       <div class="acts"><button type="button" class="btn" id="tGo">✨ להציע מסלולים</button></div></section><div id="tOut"></div>`, { back: '#/' });
+    wireClocks(app, (k, v, b) => { F[k] = v || (k === 'startTime' ? '08:00' : '18:00'); b.dataset.v = F[k]; b.textContent = F[k]; save(); });
     $$('[data-tag]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.tag; if (k === 'road') { F.road = !F.road; } F.tags = F.tags.includes(k) ? F.tags.filter(x => x !== k) : F.tags.concat(k); b.classList.toggle('on'); b.setAttribute('aria-pressed', b.classList.contains('on')); save(); }));
     $('#tGo').addEventListener('click', () => {
-      F.group = $('#tGroup').value.trim(); F.count = +$('#tCount').value; F.startTime = $('#tStart').value.trim() || '08:00'; F.endTime = $('#tEnd').value.trim() || '18:00'; F.road = F.tags.includes('road'); save();
+      F.group = $('#tGroup').value.trim(); F.count = +$('#tCount').value; F.road = F.tags.includes('road'); save();
       const res = C.suggest({ tags: F.tags.filter(t => t !== 'road'), count: F.count, road: F.road, start: (DATA.anchors || [])[0], startTime: F.startTime, endTime: F.endTime }, DATA);
       $('#tOut').innerHTML = res.length ? res.map((r, i) => `<article class="panel prop"><h3>הצעה ${i + 1}: ${r.sites.map(s => esc(s.short)).join(' ← ')}</h3>
         <p class="muted">🚌 ~${r.km} ק״מ אווירי בין התחנות${r.roads.length ? ' · הדרכת דרך: ' + r.roads.map(x => esc(x.short)).join(', ') : ''}</p>
