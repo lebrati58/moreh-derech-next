@@ -38,6 +38,10 @@ test('accès par teoudat zehout : liste privée hachée, connexion, retrait, lim
     assert.ok(s.ok && s.token && s.label === 'דנה', 'connexion avec espaces et tiret');
     assert.equal((await rpc(c, 'access_check', { p_token: s.token })).ok, true);
     assert.equal((await rpc(c, 'access_check', { p_token: 'autre' })).ok, false);
+    // le numéro ouvre l'application, JAMAIS l'administration : la session élève est refusée partout côté admin
+    for (const [fn, args] of [['admin_access_set', { p_list: C }], ['admin_access_list', {}], ['admin_state', {}]]) {
+      await assert.rejects(rpc(c, fn, Object.assign({ p_token: s.token }, args)), /not_authorized/, fn + ' refusé avec un jeton élève');
+    }
     // liste collée sans aucun numéro valide : refusée, rien ne change
     assert.equal((await rpc(c, 'admin_access_set', { p_token: adm, p_list: 'n’importe quoi' })).error, 'no_valid_lines');
     assert.equal((await rpc(c, 'access_check', { p_token: s.token })).ok, true);
