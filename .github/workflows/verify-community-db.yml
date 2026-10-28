@@ -1,4 +1,4 @@
-name: One-time community database read check
+name: Database read check (community + class contest)
 on:
   push:
     branches: [main]
@@ -25,6 +25,13 @@ jobs:
           const cfg = sandbox.window.MDL_CONFIG;
           if(!cfg?.url || !cfg?.anonKey)throw Error('Missing application Supabase configuration');
           (async () => {
+            // Concours de la classe : la fonction de lecture du classement existe-t-elle ? (lecture seule)
+            const cls = await fetch(cfg.url+'/rest/v1/rpc/class_leaderboard',{method:'POST',
+              headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},/^eyJ/.test(cfg.anonKey)?{Authorization:'Bearer '+cfg.anonKey}:{}),
+              body:'{}',signal:AbortSignal.timeout(12000)});
+            const cd = await cls.json().catch(()=>null);
+            console.log('Class contest:',cls.status,cls.ok&&cd&&Array.isArray(cd.items)?('installed, '+cd.items.length+' players'):(cls.status===404?'NOT INSTALLED — run supabase/class_contest.sql once':'unavailable'));
+            if(!cls.ok) process.exitCode=1;
             const rsp = await fetch(cfg.url+'/rest/v1/rpc/community_catalog',{
               method:'POST',
               headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},
