@@ -9,19 +9,19 @@
     he: { home: 'בית', map: 'מפה', journey: 'המסע', klass: 'הכיתה', more: 'עוד', moreTitle: 'עוד', close: 'סגירה',
       lib: 'ספריית הסיורים', libSub: 'כל 22 הסיורים והמסמכים', comm: 'קטעי דרך של הקהילה', commSub: 'מסלולים שתלמידים שיתפו',
       doc: 'הוספת מסמך לסיור', docSub: 'PDF או Word לסיור קיים', create: 'יצירת מסלול חדש', createSub: 'קטע דרך עם שאלות משלכם',
-      guide: 'מרחב המדריך', guideSub: 'מיקרופון, סימולציה, קישור לתלמידים', fb: 'רעיון, בעיה או טעות?', fbSub: 'ההודעה מגיעה ישירות לצוות' },
+      guide: 'חידון חי לקבוצה', guideSub: 'להפעלה באוטובוס · מדריכים ותלמידי הקורס', fb: 'רעיון, בעיה או טעות?', fbSub: 'ההודעה מגיעה ישירות לצוות' },
     fr: { home: 'Accueil', map: 'Carte', journey: 'Parcours', klass: 'Classe', more: 'Plus', moreTitle: 'Plus', close: 'Fermer',
       lib: 'Bibliothèque des sorties', libSub: 'Les 22 סיורים et leurs documents', comm: 'Parcours de la communauté', commSub: 'Trajets partagés par les élèves',
       doc: 'Ajouter un document', docSub: 'PDF ou Word pour une sortie', create: 'Créer un parcours', createSub: 'Un trajet avec vos propres questions',
-      guide: 'Espace guide', guideSub: 'Micro, simulation, lien pour les élèves', fb: 'Une idée, un bug, une erreur ?', fbSub: 'Le message arrive directement à l’équipe' },
+      guide: 'Quiz en direct', guideSub: 'Lancer pour un groupe · guides et élèves du cours', fb: 'Une idée, un bug, une erreur ?', fbSub: 'Le message arrive directement à l’équipe' },
     en: { home: 'Home', map: 'Map', journey: 'Journey', klass: 'Class', more: 'More', moreTitle: 'More', close: 'Close',
       lib: 'Tour library', libSub: 'All 22 tours and their documents', comm: 'Community routes', commSub: 'Routes shared by students',
       doc: 'Add a document', docSub: 'PDF or Word for a tour', create: 'Create a route', createSub: 'A road segment with your own questions',
-      guide: 'Guide space', guideSub: 'Microphone, simulation, student link', fb: 'Idea, bug or mistake?', fbSub: 'Your message goes straight to the team' },
+      guide: 'Live group quiz', guideSub: 'Run it on the bus · guides and course students', fb: 'Idea, bug or mistake?', fbSub: 'Your message goes straight to the team' },
     ru: { home: 'Главная', map: 'Карта', journey: 'Мой путь', klass: 'Класс', more: 'Ещё', moreTitle: 'Ещё', close: 'Закрыть',
       lib: 'Библиотека экскурсий', libSub: 'Все 22 экскурсии и документы', comm: 'Маршруты сообщества', commSub: 'Маршруты от учеников',
       doc: 'Добавить документ', docSub: 'PDF или Word для экскурсии', create: 'Создать маршрут', createSub: 'Участок дороги со своими вопросами',
-      guide: 'Раздел гида', guideSub: 'Микрофон, симуляция, ссылка ученикам', fb: 'Идея, ошибка или проблема?', fbSub: 'Сообщение сразу получит команда' }
+      guide: 'Живая викторина', guideSub: 'Для группы · гиды и ученики курса', fb: 'Идея, ошибка или проблема?', fbSub: 'Сообщение сразу получит команда' }
   };
 
   var TABS = [
@@ -35,7 +35,7 @@
     { k: 'comm', icon: '🌍', href: 'community-library.html' },
     { k: 'doc', icon: '📄', href: 'contribute.html' },
     { k: 'create', icon: '✨', href: 'community.html' },
-    { k: 'guide', icon: '🎤', href: 'guide.html' }
+    { k: 'guide', icon: '🚌', href: 'guide.html' }
   ];
 
   var css = '' +
