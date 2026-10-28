@@ -4,11 +4,14 @@
 export const ERA_COLORS = {
   chalco: '#7d5a46', ebronze: '#a0663a', canaanite: '#d08a3a', iron: '#e3c341', persian: '#9a7fe0',
   hellenistic: '#9bcf4a', hasmonean: '#2f9e5b', herodian: '#ef7d3c', roman: '#b0479a', byzantine: '#3d8be0',
-  early_islamic: '#20b3a6', crusader: '#c8333a', mamluk: '#8a8f2e', ottoman: '#f08fb0', today: '#a9b4cf',
+  early_islamic: '#20b3a6', crusader: '#c8333a', mamluk: '#8a8f2e', ottoman: '#f08fb0', mandate: '#d9a5f0', israel: '#4fc3f7', today: '#a9b4cf',
 };
 const hex = c => [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16));
 const mix = (c, w, k) => '#' + hex(c).map((v, i) => Math.round(v + (hex(w)[i] - v) * k).toString(16).padStart(2, '0')).join('');
 const ink = c => { const [r, g, b] = hex(c); return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.6 ? '#151a33' : '#fff'; };
+
+// Couleur d'une ère et couleur de texte lisible dessus (frise de la carte d'Israël).
+export const eraColor = era => { const c = ERA_COLORS[era] || '#8090b0'; return { c, ink: ink(c) }; };
 
 // Couleur et couleur du texte de chaque époque, dans l'ordre des données.
 export function eraPaint(periods) {

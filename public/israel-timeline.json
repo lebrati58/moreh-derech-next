@@ -1,0 +1,938 @@
+{
+ "generatedAt": "tools/build-israel-timeline.mjs",
+ "note": "Positions reprises de places.json / sites3d / jerusalem3d (Wikidata, Wikipédia, OpenStreetMap) — aucune saisie à la main.",
+ "events": [
+  {
+   "id": "megiddo_battle",
+   "year": -1457,
+   "circa": true,
+   "era": "canaanite",
+   "kind": "fact",
+   "at": "site:megiddo:megiddo",
+   "link": "site3d.html?site=megiddo",
+   "title": {
+    "he": "קרב מגידו",
+    "fr": "Bataille de Megiddo",
+    "en": "Battle of Megiddo",
+    "ru": "Битва при Мегиддо"
+   },
+   "text": {
+    "he": "תחותמס השלישי מנצח קואליציה כנענית — הקרב הראשון שתואר בפירוט בהיסטוריה.",
+    "fr": "Thoutmôsis III bat une coalition cananéenne : la première bataille décrite en détail dans l’histoire.",
+    "en": "Thutmose III defeats a Canaanite coalition — the first battle recorded in detail in history.",
+    "ru": "Тутмос III побеждает ханаанскую коалицию — первая подробно описанная битва в истории."
+   },
+   "lat": 32.58527778,
+   "lon": 35.18444444,
+   "qid": "Q208379",
+   "from": "sites3d/megiddo/geo.json · megiddo"
+  },
+  {
+   "id": "qeiyafa",
+   "year": -1000,
+   "circa": true,
+   "era": "iron",
+   "kind": "fact",
+   "at": "stop:05:חורבת קייאפה",
+   "link": "site3d.html?site=qeiyafa",
+   "label": {
+    "he": "כ-1020–980 לפנה״ס",
+    "fr": "vers 1020–980 av. J.-C.",
+    "en": "c. 1020–980 BCE",
+    "ru": "ок. 1020–980 до н. э."
+   },
+   "title": {
+    "he": "העיר המבוצרת בחורבת קייאפה",
+    "fr": "La ville fortifiée de Khirbet Qeiyafa",
+    "en": "The fortified town of Khirbet Qeiyafa",
+    "ru": "Укреплённый город Хирбет-Кейафа"
+   },
+   "text": {
+    "he": "עיר בעלת שני שערים מעל עמק האלה; השאלה אם הייתה שייכת לממלכת דוד שנויה במחלוקת.",
+    "fr": "Ville à deux portes au-dessus de la vallée d’Elah ; son lien avec le royaume de David est débattu.",
+    "en": "A two-gate town above the Elah Valley; whether it belonged to David’s kingdom is debated.",
+    "ru": "Город с двумя воротами над долиной Эла; связь с царством Давида спорна."
+   },
+   "lat": 31.69639,
+   "lon": 34.95722,
+   "qid": "Q910323",
+   "from": "places.json · סיור 05 · חורבת קייאפה"
+  },
+  {
+   "id": "elijah_carmel",
+   "year": -870,
+   "circa": true,
+   "era": "iron",
+   "kind": "tradition",
+   "at": "stop:02:מוחרקה",
+   "label": {
+    "he": "המאה ה-9 לפנה״ס (מסורת)",
+    "fr": "IXe s. av. J.-C. (tradition)",
+    "en": "9th c. BCE (tradition)",
+    "ru": "IX в. до н. э. (предание)"
+   },
+   "title": {
+    "he": "אליהו ונביאי הבעל",
+    "fr": "Élie et les prophètes de Baal",
+    "en": "Elijah and the prophets of Baal",
+    "ru": "Илия и пророки Ваала"
+   },
+   "text": {
+    "he": "לפי המסורת, כאן ירדה האש על מזבח אליהו (מלכים א׳ יח). מסורת — לא ממצא ארכאולוגי.",
+    "fr": "Selon la tradition, le feu descendit ici sur l’autel d’Élie (1 Rois 18). Tradition, pas une découverte archéologique.",
+    "en": "By tradition, fire fell here on Elijah’s altar (1 Kings 18). A tradition, not an archaeological find.",
+    "ru": "По преданию, здесь огонь сошёл на жертвенник Илии (3 Цар. 18). Предание, а не археологическая находка."
+   },
+   "lat": 32.67278,
+   "lon": 35.08861,
+   "qid": "Q2911032",
+   "from": "places.json · סיור 02 · מוחרקה"
+  },
+  {
+   "id": "lachish_siege",
+   "year": -701,
+   "era": "iron",
+   "kind": "fact",
+   "at": "site:lachish:lachish",
+   "link": "site3d.html?site=lachish",
+   "title": {
+    "he": "מצור סנחריב על לכיש",
+    "fr": "Siège de Lakhish par Sennachérib",
+    "en": "Sennacherib’s siege of Lachish",
+    "ru": "Осада Лахиша Синаххерибом"
+   },
+   "text": {
+    "he": "מלך אשור כובש את לכיש; המצור מתואר בתבליטי ארמונו בנינווה.",
+    "fr": "Le roi d’Assyrie prend Lakhish ; le siège est sculpté sur les reliefs de son palais de Ninive.",
+    "en": "The Assyrian king takes Lachish; the siege is carved on the reliefs of his palace at Nineveh.",
+    "ru": "Ассирийский царь берёт Лахиш; осада изображена на рельефах его дворца в Ниневии."
+   },
+   "lat": 31.565,
+   "lon": 34.84888889,
+   "qid": "Q848509",
+   "from": "sites3d/lachish/geo.json · lachish"
+  },
+  {
+   "id": "first_temple_destroyed",
+   "year": -586,
+   "era": "iron",
+   "kind": "fact",
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=2",
+   "label": {
+    "he": "586 לפנה״ס (או 587)",
+    "fr": "586 av. J.-C. (ou 587)",
+    "en": "586 BCE (or 587)",
+    "ru": "586 до н. э. (или 587)"
+   },
+   "title": {
+    "he": "חורבן בית ראשון",
+    "fr": "Destruction du Premier Temple",
+    "en": "Destruction of the First Temple",
+    "ru": "Разрушение Первого Храма"
+   },
+   "text": {
+    "he": "נבוכדנאצר מלך בבל מחריב את ירושלים ואת המקדש.",
+    "fr": "Nabuchodonosor, roi de Babylone, détruit Jérusalem et le Temple.",
+    "en": "Nebuchadnezzar of Babylon destroys Jerusalem and the Temple.",
+    "ru": "Навуходоносор, царь Вавилона, разрушает Иерусалим и Храм."
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "second_temple_dedicated",
+   "year": -516,
+   "circa": true,
+   "era": "persian",
+   "kind": "fact",
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=3",
+   "label": {
+    "he": "כ-516/515 לפנה״ס",
+    "fr": "vers 516/515 av. J.-C.",
+    "en": "c. 516/515 BCE",
+    "ru": "ок. 516/515 до н. э."
+   },
+   "title": {
+    "he": "חנוכת בית שני",
+    "fr": "Inauguration du Second Temple",
+    "en": "Dedication of the Second Temple",
+    "ru": "Освящение Второго Храма"
+   },
+   "text": {
+    "he": "שבי ציון משלימים את בניית המקדש בימי דריווש (עזרא ו).",
+    "fr": "Les exilés revenus achèvent le Temple sous Darius (Esdras 6).",
+    "en": "Returned exiles complete the Temple under Darius (Ezra 6).",
+    "ru": "Вернувшиеся изгнанники завершают Храм при Дарии (Ездра 6)."
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "caesarea_founded",
+   "year": -22,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "site:caesarea:caesarea",
+   "link": "site3d.html?site=caesarea",
+   "label": {
+    "he": "22–10/9 לפנה״ס",
+    "fr": "22–10/9 av. J.-C.",
+    "en": "22–10/9 BCE",
+    "ru": "22–10/9 до н. э."
+   },
+   "title": {
+    "he": "הורדוס בונה את קיסריה",
+    "fr": "Hérode bâtit Césarée",
+    "en": "Herod builds Caesarea",
+    "ru": "Ирод строит Кесарию"
+   },
+   "text": {
+    "he": "עיר נמל חדשה עם הנמל המלאכותי סבסטוס, לכבוד הקיסר אוגוסטוס.",
+    "fr": "Nouvelle ville portuaire avec le port artificiel Sébastos, en l’honneur d’Auguste.",
+    "en": "A new port city with the artificial harbour Sebastos, honouring Augustus.",
+    "ru": "Новый портовый город с искусственной гаванью Себастос в честь Августа."
+   },
+   "lat": 32.5,
+   "lon": 34.89166667,
+   "qid": "Q319242",
+   "from": "sites3d/caesarea/geo.json · caesarea"
+  },
+  {
+   "id": "banias_augusteum",
+   "year": -20,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "site:banias:banias",
+   "link": "site3d.html?site=banias",
+   "title": {
+    "he": "מקדש לאוגוסטוס בפניאס",
+    "fr": "Temple d’Auguste à Panéas",
+    "en": "Temple of Augustus at Paneas",
+    "ru": "Храм Августа в Панеаде"
+   },
+   "text": {
+    "he": "הורדוס מקים מקדש לאוגוסטוס ליד מערת פאן (יוסף בן מתתיהו); מיקומו המדויק נדון.",
+    "fr": "Hérode élève un temple à Auguste près de la grotte de Pan (Josèphe) ; son emplacement exact est discuté.",
+    "en": "Herod erects a temple to Augustus near the cave of Pan (Josephus); its exact location is debated.",
+    "ru": "Ирод возводит храм Августу у пещеры Пана (Иосиф Флавий); точное место спорно."
+   },
+   "lat": 33.24861111,
+   "lon": 35.69444444,
+   "qid": "Q606295",
+   "from": "sites3d/banias/geo.json · banias"
+  },
+  {
+   "id": "machpelah_enclosure",
+   "year": -20,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "stop:06:מערת המכפלה",
+   "label": {
+    "he": "סוף המאה ה-1 לפנה״ס",
+    "fr": "fin du Ier s. av. J.-C.",
+    "en": "late 1st c. BCE",
+    "ru": "конец I в. до н. э."
+   },
+   "title": {
+    "he": "המבנה ההרודיאני מעל מערת המכפלה",
+    "fr": "L’enceinte hérodienne du caveau des Patriarches",
+    "en": "The Herodian enclosure over the Cave of the Patriarchs",
+    "ru": "Иродова ограда над Пещерой Патриархов"
+   },
+   "text": {
+    "he": "חומת אבני גזית ענקיות, המיוחסת להורדוס, עומדת עד היום.",
+    "fr": "Une enceinte de pierres de taille géantes, attribuée à Hérode, toujours debout.",
+    "en": "A wall of giant ashlars, attributed to Herod, still standing today.",
+    "ru": "Стена из огромных тёсаных камней, приписываемая Ироду, стоит до сих пор."
+   },
+   "lat": 31.5247,
+   "lon": 35.1107,
+   "qid": "Q204200",
+   "from": "places.json · סיור 06 · מערת המכפלה"
+  },
+  {
+   "id": "herod_burial",
+   "year": -4,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "site:herodium:herodium",
+   "link": "site3d.html?site=herodium",
+   "label": {
+    "he": "4 לפנה״ס",
+    "fr": "4 av. J.-C.",
+    "en": "4 BCE",
+    "ru": "4 до н. э."
+   },
+   "title": {
+    "he": "קבורת הורדוס בהרודיון",
+    "fr": "Sépulture d’Hérode à l’Hérodion",
+    "en": "Herod buried at Herodium",
+    "ru": "Погребение Ирода в Иродионе"
+   },
+   "text": {
+    "he": "הורדוס נקבר בהרודיון; אהוד נצר זיהה את קברו ב-2007 (זיהוי שיש החולקים עליו).",
+    "fr": "Hérode est enterré à l’Hérodion ; Ehud Netzer a identifié sa tombe en 2007 (identification discutée).",
+    "en": "Herod is buried at Herodium; Ehud Netzer identified his tomb in 2007 (identification debated).",
+    "ru": "Ирод похоронен в Иродионе; Эхуд Нецер определил его гробницу в 2007 г. (определение спорно)."
+   },
+   "lat": 31.66583333,
+   "lon": 35.24138889,
+   "qid": "Q913099",
+   "from": "sites3d/herodium/geo.json · herodium"
+  },
+  {
+   "id": "stepped_street",
+   "year": 31,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "j3d:siloam_pool",
+   "link": "jerusalem3d.html?period=5&site=jerusalem_pilgrim_road",
+   "title": {
+    "he": "רחוב המדרגות מהשילוח להר הבית",
+    "fr": "La rue à degrés de Siloé au mont du Temple",
+    "en": "The stepped street from Siloam to the Temple Mount",
+    "ru": "Ступенчатая улица от Силоама к Храмовой горе"
+   },
+   "text": {
+    "he": "לפי המטבעות נסלל כ-31 לסה״נ, בימי פונטיוס פילטוס; היו שייחסו אותו לאגריפס השני.",
+    "fr": "D’après les monnaies, pavée vers 31 apr. J.-C., sous Ponce Pilate ; d’autres l’ont attribuée à Agrippa II.",
+    "en": "Coins date its paving to c. 31 CE, under Pontius Pilate; others attributed it to Agrippa II.",
+    "ru": "По монетам вымощена ок. 31 г. н. э., при Понтии Пилате; другие приписывали её Агриппе II."
+   },
+   "lat": 31.77055556,
+   "lon": 35.235,
+   "qid": "Q1483483",
+   "from": "jerusalem3d/geo.json · siloam_pool"
+  },
+  {
+   "id": "gamla_falls",
+   "year": 67,
+   "era": "roman",
+   "kind": "fact",
+   "at": "site:gamla:gamla",
+   "link": "site3d.html?site=gamla",
+   "title": {
+    "he": "נפילת גמלא",
+    "fr": "Chute de Gamla",
+    "en": "Fall of Gamla",
+    "ru": "Падение Гамлы"
+   },
+   "text": {
+    "he": "הרומאים כובשים את גמלא בתחילת המרד הגדול (יוסף בן מתתיהו).",
+    "fr": "Les Romains prennent Gamla au début de la Grande Révolte (Josèphe).",
+    "en": "The Romans take Gamla early in the Great Revolt (Josephus).",
+    "ru": "Римляне берут Гамлу в начале Великого восстания (Иосиф Флавий)."
+   },
+   "lat": 32.90277778,
+   "lon": 35.74055556,
+   "qid": "Q1493165",
+   "from": "sites3d/gamla/geo.json · gamla"
+  },
+  {
+   "id": "second_temple_destroyed",
+   "year": 70,
+   "era": "roman",
+   "kind": "fact",
+   "at": "j3d:burnt_house",
+   "link": "jerusalem3d.html?period=5&site=jerusalem_burnt_house",
+   "title": {
+    "he": "חורבן בית שני",
+    "fr": "Destruction du Second Temple",
+    "en": "Destruction of the Second Temple",
+    "ru": "Разрушение Второго Храма"
+   },
+   "text": {
+    "he": "טיטוס כובש את ירושלים; ״הבית השרוף״ ברובע היהודי נשרף באותה שנה.",
+    "fr": "Titus prend Jérusalem ; la « Maison brûlée » du quartier juif brûle cette année-là.",
+    "en": "Titus takes Jerusalem; the “Burnt House” in the Jewish Quarter burns that year.",
+    "ru": "Тит берёт Иерусалим; «Сожжённый дом» в Еврейском квартале сгорает в тот же год."
+   },
+   "lat": 31.77557,
+   "lon": 35.23259,
+   "qid": "Q4854786",
+   "from": "jerusalem3d/geo.json · burnt_house"
+  },
+  {
+   "id": "masada_falls",
+   "year": 73,
+   "era": "roman",
+   "kind": "fact",
+   "at": "site:masada:masada",
+   "link": "site3d.html?site=masada",
+   "label": {
+    "he": "73 או 74 לסה״נ",
+    "fr": "73 ou 74 apr. J.-C.",
+    "en": "73 or 74 CE",
+    "ru": "73 или 74 н. э."
+   },
+   "title": {
+    "he": "נפילת מצדה",
+    "fr": "Chute de Massada",
+    "en": "Fall of Masada",
+    "ru": "Падение Масады"
+   },
+   "text": {
+    "he": "הלגיון העשירי בונה סוללה ומבקיע את החומה; לפי יוסף בן מתתיהו המגינים בחרו למות.",
+    "fr": "La Xe légion construit une rampe et perce la muraille ; selon Josèphe, les défenseurs choisirent la mort.",
+    "en": "The Tenth Legion builds a ramp and breaches the wall; according to Josephus the defenders chose death.",
+    "ru": "Десятый легион строит насыпь и проламывает стену; по Иосифу Флавию, защитники избрали смерть."
+   },
+   "lat": 31.31555556,
+   "lon": 35.35388889,
+   "qid": "Q186312",
+   "from": "sites3d/masada/geo.json · masada"
+  },
+  {
+   "id": "bar_kokhba",
+   "year": 132,
+   "era": "roman",
+   "kind": "fact",
+   "at": "site:herodium:herodium",
+   "link": "site3d.html?site=herodium",
+   "label": {
+    "he": "132–135 לסה״נ",
+    "fr": "132–135 apr. J.-C.",
+    "en": "132–135 CE",
+    "ru": "132–135 н. э."
+   },
+   "title": {
+    "he": "מרד בר כוכבא",
+    "fr": "Révolte de Bar Kokhba",
+    "en": "Bar Kokhba revolt",
+    "ru": "Восстание Бар-Кохбы"
+   },
+   "text": {
+    "he": "ההרודיון משמש מוצב של המורדים; במקום נחפרו מנהרות מסתור.",
+    "fr": "L’Hérodion sert de base aux rebelles ; des galeries-refuges y ont été creusées.",
+    "en": "Herodium serves as a rebel base; hiding tunnels were dug there.",
+    "ru": "Иродион служит базой повстанцев; там вырыты тоннели-убежища."
+   },
+   "lat": 31.66583333,
+   "lon": 35.24138889,
+   "qid": "Q913099",
+   "from": "sites3d/herodium/geo.json · herodium"
+  },
+  {
+   "id": "mishnah",
+   "year": 200,
+   "circa": true,
+   "era": "roman",
+   "kind": "fact",
+   "at": "stop:16:ציפורי",
+   "link": "site3d.html?site=tzippori",
+   "title": {
+    "he": "חתימת המשנה",
+    "fr": "Rédaction de la Mishna",
+    "en": "Redaction of the Mishnah",
+    "ru": "Составление Мишны"
+   },
+   "text": {
+    "he": "רבי יהודה הנשיא, שישב בציפורי, חותם את המשנה.",
+    "fr": "Rabbi Judah ha-Nassi, qui siégeait à Tsippori, met la Mishna par écrit.",
+    "en": "Rabbi Judah ha-Nasi, based at Sepphoris, compiles the Mishnah.",
+    "ru": "Рабби Иегуда ха-Наси, живший в Ципори, составляет Мишну."
+   },
+   "lat": 32.74556,
+   "lon": 35.27861,
+   "qid": "Q1132798",
+   "from": "places.json · סיור 16 · ציפורי"
+  },
+  {
+   "id": "eleutheropolis",
+   "year": 200,
+   "era": "roman",
+   "kind": "fact",
+   "at": "stop:05:בית גוברין",
+   "link": "site3d.html?site=beitguvrin",
+   "title": {
+    "he": "בית גוברין נעשית לאלאותרופוליס",
+    "fr": "Beit Guvrin devient Éleuthéropolis",
+    "en": "Beit Guvrin becomes Eleutheropolis",
+    "ru": "Бейт-Гуврин становится Елевферополем"
+   },
+   "text": {
+    "he": "הקיסר ספטימיוס סוורוס מעניק לעיר מעמד של עיר רומית.",
+    "fr": "L’empereur Septime Sévère lui donne le statut de cité romaine.",
+    "en": "Emperor Septimius Severus grants it the status of a Roman city.",
+    "ru": "Император Септимий Север даёт ему статус римского города."
+   },
+   "lat": 31.59696,
+   "lon": 34.90065,
+   "qid": "Q2407530",
+   "from": "places.json · סיור 05 · בית גוברין"
+  },
+  {
+   "id": "holy_sepulchre",
+   "year": 335,
+   "era": "byzantine",
+   "kind": "fact",
+   "at": "j3d:holy_sepulchre",
+   "link": "jerusalem3d.html?period=7&site=jerusalem_holy_sepulchre",
+   "title": {
+    "he": "חנוכת כנסיית הקבר",
+    "fr": "Consécration du Saint-Sépulcre",
+    "en": "Consecration of the Holy Sepulchre",
+    "ru": "Освящение храма Гроба Господня"
+   },
+   "text": {
+    "he": "הכנסייה שבנה הקיסר קונסטנטינוס נחנכת.",
+    "fr": "L’église bâtie par l’empereur Constantin est consacrée.",
+    "en": "The church built by Emperor Constantine is consecrated.",
+    "ru": "Освящена церковь, построенная императором Константином."
+   },
+   "lat": 31.77844444,
+   "lon": 35.22975,
+   "qid": "Q187702",
+   "from": "jerusalem3d/geo.json · holy_sepulchre"
+  },
+  {
+   "id": "beit_alpha",
+   "year": 525,
+   "circa": true,
+   "era": "byzantine",
+   "kind": "fact",
+   "at": "stop:04:בית אלפא",
+   "link": "site3d.html?site=beitalpha",
+   "label": {
+    "he": "המאה ה-6",
+    "fr": "VIe siècle",
+    "en": "6th century",
+    "ru": "VI век"
+   },
+   "title": {
+    "he": "פסיפס בית הכנסת בבית אלפא",
+    "fr": "La mosaïque de la synagogue de Beit Alpha",
+    "en": "The Beit Alpha synagogue mosaic",
+    "ru": "Мозаика синагоги Бейт-Альфа"
+   },
+   "text": {
+    "he": "עקדת יצחק, גלגל המזלות וארון הקודש; הכתובת מזכירה את הקיסר יוסטינוס.",
+    "fr": "Sacrifice d’Isaac, zodiaque et arche sainte ; l’inscription mentionne l’empereur Justin.",
+    "en": "Binding of Isaac, zodiac and Torah shrine; the inscription names Emperor Justin.",
+    "ru": "Жертвоприношение Исаака, зодиак и ковчег; надпись называет императора Юстина."
+   },
+   "lat": 32.51611,
+   "lon": 35.43028,
+   "qid": "Q2900562",
+   "from": "places.json · סיור 04 · בית אלפא"
+  },
+  {
+   "id": "dome_of_the_rock",
+   "year": 691,
+   "era": "early_islamic",
+   "kind": "fact",
+   "at": "j3d:dome_of_the_rock",
+   "link": "jerusalem3d.html?period=8&site=jerusalem_dome_of_the_rock",
+   "label": {
+    "he": "691/692",
+    "fr": "691/692",
+    "en": "691/692",
+    "ru": "691/692"
+   },
+   "title": {
+    "he": "השלמת כיפת הסלע",
+    "fr": "Achèvement du Dôme du Rocher",
+    "en": "Dome of the Rock completed",
+    "ru": "Завершение Купола Скалы"
+   },
+   "text": {
+    "he": "הח׳ליף עבד אל-מלכ משלים את המבנה על הר הבית.",
+    "fr": "Le calife Abd al-Malik achève l’édifice sur le mont du Temple.",
+    "en": "Caliph Abd al-Malik completes the building on the Temple Mount.",
+    "ru": "Халиф Абд аль-Малик завершает здание на Храмовой горе."
+   },
+   "lat": 31.77805556,
+   "lon": 35.23527778,
+   "qid": "Q172077",
+   "from": "jerusalem3d/geo.json · dome_of_the_rock"
+  },
+  {
+   "id": "earthquake_749",
+   "year": 749,
+   "era": "early_islamic",
+   "kind": "fact",
+   "at": "site:beitshean:tel",
+   "link": "site3d.html?site=beitshean",
+   "title": {
+    "he": "רעידת האדמה של 749",
+    "fr": "Le tremblement de terre de 749",
+    "en": "The earthquake of 749",
+    "ru": "Землетрясение 749 года"
+   },
+   "text": {
+    "he": "בית שאן נהרסת; גם בית הכנסת בעין קשתות קרס ברעידה.",
+    "fr": "Beit Shean est détruite ; la synagogue d’Ein Keshatot s’effondre aussi.",
+    "en": "Beit She’an is destroyed; the Ein Keshatot synagogue also collapses.",
+    "ru": "Бейт-Шеан разрушен; рушится и синагога в Эйн-Кешатот."
+   },
+   "lat": 32.50184061,
+   "lon": 35.50156426,
+   "qid": "Q16558174",
+   "from": "sites3d/beitshean/geo.json · tel"
+  },
+  {
+   "id": "crusaders_jerusalem",
+   "year": 1099,
+   "era": "crusader",
+   "kind": "fact",
+   "at": "j3d:herods_gate",
+   "link": "jerusalem3d.html?period=9",
+   "title": {
+    "he": "הצלבנים כובשים את ירושלים",
+    "fr": "Les croisés prennent Jérusalem",
+    "en": "The Crusaders take Jerusalem",
+    "ru": "Крестоносцы берут Иерусалим"
+   },
+   "text": {
+    "he": "15 ביולי 1099; החומה נפרצה בצפון, באזור שער הפרחים של היום.",
+    "fr": "15 juillet 1099 ; la muraille est percée au nord, vers l’actuelle porte d’Hérode.",
+    "en": "15 July 1099; the wall is breached in the north, near today’s Herod’s Gate.",
+    "ru": "15 июля 1099 г.; стена прорвана на севере, у нынешних Ворот Ирода."
+   },
+   "lat": 31.783,
+   "lon": 35.23375,
+   "qid": "Q1484405",
+   "from": "jerusalem3d/geo.json · herods_gate"
+  },
+  {
+   "id": "atlit_built",
+   "year": 1218,
+   "era": "crusader",
+   "kind": "fact",
+   "at": "stop:08:עתלית",
+   "title": {
+    "he": "הטמפלרים בונים את מבצר עתלית",
+    "fr": "Les Templiers bâtissent Château-Pèlerin (Atlit)",
+    "en": "The Templars build Château Pèlerin (Atlit)",
+    "ru": "Тамплиеры строят Шато-Пелерин (Атлит)"
+   },
+   "text": {
+    "he": "מבצר הצלבנים האחרון שנפל — ב-1291.",
+    "fr": "Dernière forteresse croisée à tomber, en 1291.",
+    "en": "The last Crusader fortress to fall, in 1291.",
+    "ru": "Последняя крепость крестоносцев, павшая в 1291 г."
+   },
+   "lat": 32.69101,
+   "lon": 34.94266,
+   "qid": "Q757398",
+   "from": "places.json · סיור 08 · עתלית"
+  },
+  {
+   "id": "nimrod_built",
+   "year": 1228,
+   "circa": true,
+   "era": "mamluk",
+   "kind": "fact",
+   "at": "site:nimrod:nimrod",
+   "link": "site3d.html?site=nimrod",
+   "title": {
+    "he": "בניית מבצר נמרוד",
+    "fr": "Construction de la forteresse de Nimrod",
+    "en": "Nimrod Fortress built",
+    "ru": "Строительство крепости Нимрод"
+   },
+   "text": {
+    "he": "המושל האיובי אל-עזיז עות׳מאן מקים את המבצר מעל הדרך לדמשק.",
+    "fr": "Le prince ayyoubide al-Aziz Uthman élève la forteresse au-dessus de la route de Damas.",
+    "en": "The Ayyubid prince al-Aziz Uthman raises the fortress above the road to Damascus.",
+    "ru": "Айюбидский правитель аль-Азиз Усман возводит крепость над дорогой в Дамаск."
+   },
+   "lat": 33.252777777778,
+   "lon": 35.714722222222,
+   "qid": "Q1404704",
+   "from": "sites3d/nimrod/geo.json · nimrod"
+  },
+  {
+   "id": "arsuf_falls",
+   "year": 1265,
+   "era": "mamluk",
+   "kind": "fact",
+   "at": "site:apollonia:apollonia",
+   "link": "site3d.html?site=apollonia",
+   "title": {
+    "he": "בייברס כובש את ארסוף",
+    "fr": "Baybars prend Arsouf",
+    "en": "Baybars takes Arsuf",
+    "ru": "Бейбарс берёт Арсуф"
+   },
+   "text": {
+    "he": "אחרי מצור של 40 יום נכנעים ההוספיטלרים; בייברס מפר את ההסכם.",
+    "fr": "Après 40 jours de siège, les Hospitaliers se rendent ; Baybars rompt l’accord.",
+    "en": "After a 40-day siege the Hospitallers surrender; Baybars breaks the agreement.",
+    "ru": "После 40-дневной осады госпитальеры сдаются; Бейбарс нарушает договор."
+   },
+   "lat": 32.19527778,
+   "lon": 34.80666667,
+   "qid": "Q1024886",
+   "from": "sites3d/apollonia/geo.json · apollonia"
+  },
+  {
+   "id": "atlit_evacuated",
+   "year": 1291,
+   "era": "crusader",
+   "kind": "fact",
+   "at": "stop:08:עתלית",
+   "title": {
+    "he": "סוף הצלבנים: פינוי עתלית",
+    "fr": "Fin des croisades : évacuation d’Atlit",
+    "en": "End of the Crusades: Atlit evacuated",
+    "ru": "Конец крестоносцев: эвакуация Атлита"
+   },
+   "text": {
+    "he": "אחרי נפילת עכו נוטשים הטמפלרים את עתלית בלי קרב.",
+    "fr": "Après la chute d’Acre, les Templiers abandonnent Atlit sans combat.",
+    "en": "After the fall of Acre, the Templars abandon Atlit without a fight.",
+    "ru": "После падения Акры тамплиеры оставляют Атлит без боя."
+   },
+   "lat": 32.69101,
+   "lon": 34.94266,
+   "qid": "Q757398",
+   "from": "places.json · סיור 08 · עתלית"
+  },
+  {
+   "id": "suleiman_walls",
+   "year": 1537,
+   "era": "ottoman",
+   "kind": "fact",
+   "at": "j3d:damascus_gate",
+   "link": "jerusalem3d.html?period=11",
+   "label": {
+    "he": "1537–1541",
+    "fr": "1537–1541",
+    "en": "1537–1541",
+    "ru": "1537–1541"
+   },
+   "title": {
+    "he": "סולימאן בונה את חומות ירושלים",
+    "fr": "Soliman reconstruit les murailles de Jérusalem",
+    "en": "Suleiman rebuilds Jerusalem’s walls",
+    "ru": "Сулейман отстраивает стены Иерусалима"
+   },
+   "text": {
+    "he": "החומות והשערים של העיר העתיקה, כמו שער שכם, עומדים עד היום.",
+    "fr": "Les murailles et les portes de la Vieille Ville, dont la porte de Damas, sont encore debout.",
+    "en": "The Old City walls and gates, including Damascus Gate, still stand.",
+    "ru": "Стены и ворота Старого города, в том числе Дамасские, стоят до сих пор."
+   },
+   "lat": 31.781639,
+   "lon": 35.2305,
+   "qid": "Q947597",
+   "from": "jerusalem3d/geo.json · damascus_gate"
+  },
+  {
+   "id": "haifa_templers",
+   "year": 1869,
+   "circa": true,
+   "era": "ottoman",
+   "kind": "fact",
+   "at": "stop:07:המושבה הגרמנית",
+   "label": {
+    "he": "1868/1869",
+    "fr": "1868/1869",
+    "en": "1868/1869",
+    "ru": "1868/1869"
+   },
+   "title": {
+    "he": "המושבה הטמפלרית בחיפה",
+    "fr": "La colonie templière de Haïfa",
+    "en": "The Templer colony in Haifa",
+    "ru": "Колония темплеров в Хайфе"
+   },
+   "text": {
+    "he": "מהמושבות המודרניות הראשונות בארץ, של הטמפלרים הגרמנים — שאינם קשורים לאבירים הצלבנים.",
+    "fr": "L’une des premières colonies modernes du pays, fondée par les Templiers allemands — sans lien avec les chevaliers croisés.",
+    "en": "One of the country’s first modern colonies, founded by the German Templers — unrelated to the Crusader knights.",
+    "ru": "Одна из первых современных колоний в стране, основанная немецкими темплерами — не связанными с рыцарями."
+   },
+   "lat": 32.82,
+   "lon": 34.99056,
+   "qid": "Q2413425",
+   "from": "places.json · סיור 07 · המושבה הגרמנית"
+  },
+  {
+   "id": "rosh_pina",
+   "year": 1882,
+   "era": "ottoman",
+   "kind": "fact",
+   "at": "stop:20:ראש פינה",
+   "title": {
+    "he": "ייסוד ראש פינה",
+    "fr": "Fondation de Rosh Pina",
+    "en": "Rosh Pina founded",
+    "ru": "Основание Рош-Пины"
+   },
+   "text": {
+    "he": "עולים מרומניה מקימים את המושבה במקום גיא אוני.",
+    "fr": "Des immigrants de Roumanie fondent le village sur le site de Gei Oni.",
+    "en": "Immigrants from Romania found the village on the site of Gei Oni.",
+    "ru": "Переселенцы из Румынии основывают поселение на месте Гей-Они."
+   },
+   "lat": 32.97,
+   "lon": 35.54222,
+   "qid": "Q525649",
+   "from": "places.json · סיור 20 · ראש פינה"
+  },
+  {
+   "id": "allenby",
+   "year": 1917,
+   "era": "mandate",
+   "kind": "fact",
+   "at": "j3d:jaffa_gate",
+   "link": "jerusalem3d.html?period=12",
+   "title": {
+    "he": "אלנבי נכנס לירושלים",
+    "fr": "Allenby entre à Jérusalem",
+    "en": "Allenby enters Jerusalem",
+    "ru": "Алленби входит в Иерусалим"
+   },
+   "text": {
+    "he": "11 בדצמבר 1917, ברגל דרך שער יפו: סוף השלטון העות׳מאני בעיר.",
+    "fr": "11 décembre 1917, à pied par la porte de Jaffa : fin du pouvoir ottoman dans la ville.",
+    "en": "11 December 1917, on foot through Jaffa Gate: the end of Ottoman rule in the city.",
+    "ru": "11 декабря 1917 г., пешком через Яффские ворота: конец османской власти в городе."
+   },
+   "lat": 31.776528,
+   "lon": 35.227694,
+   "qid": "Q312812",
+   "from": "jerusalem3d/geo.json · jaffa_gate"
+  },
+  {
+   "id": "tel_hai",
+   "year": 1920,
+   "era": "mandate",
+   "kind": "fact",
+   "at": "stop:20:תל חי",
+   "title": {
+    "he": "קרב תל חי",
+    "fr": "Bataille de Tel Haï",
+    "en": "Battle of Tel Hai",
+    "ru": "Бой у Тель-Хая"
+   },
+   "text": {
+    "he": "1 במרץ 1920; יוסף טרומפלדור ועוד שבעה מגינים נופלים.",
+    "fr": "1er mars 1920 ; Joseph Trumpeldor et sept autres défenseurs tombent.",
+    "en": "1 March 1920; Joseph Trumpeldor and seven other defenders fall.",
+    "ru": "1 марта 1920 г.; гибнут Иосиф Трумпельдор и ещё семеро защитников."
+   },
+   "lat": 33.235,
+   "lon": 35.57833,
+   "qid": "Q2094886",
+   "from": "places.json · סיור 20 · תל חי"
+  },
+  {
+   "id": "dead_sea_scrolls",
+   "year": 1947,
+   "era": "mandate",
+   "kind": "fact",
+   "at": "stop:01:קומראן",
+   "link": "site3d.html?site=qumran",
+   "label": {
+    "he": "1946/1947",
+    "fr": "1946/1947",
+    "en": "1946/1947",
+    "ru": "1946/1947"
+   },
+   "title": {
+    "he": "גילוי המגילות הגנוזות",
+    "fr": "Découverte des manuscrits de la mer Morte",
+    "en": "Discovery of the Dead Sea Scrolls",
+    "ru": "Открытие рукописей Мёртвого моря"
+   },
+   "text": {
+    "he": "רועים בדואים מוצאים את המגילות הראשונות במערה ליד קומראן.",
+    "fr": "Des bergers bédouins trouvent les premiers rouleaux dans une grotte près de Qumrân.",
+    "en": "Bedouin shepherds find the first scrolls in a cave near Qumran.",
+    "ru": "Бедуины-пастухи находят первые свитки в пещере у Кумрана."
+   },
+   "lat": 31.74083,
+   "lon": 35.45861,
+   "qid": "Q223399",
+   "from": "places.json · סיור 01 · קומראן"
+  },
+  {
+   "id": "negev_brigade",
+   "year": 1948,
+   "era": "israel",
+   "kind": "fact",
+   "at": "stop:03:אנדרטת הנגב",
+   "title": {
+    "he": "חטיבת הנגב במלחמת העצמאות",
+    "fr": "La brigade du Néguev dans la guerre d’indépendance",
+    "en": "The Negev Brigade in the War of Independence",
+    "ru": "Бригада «Негев» в Войне за независимость"
+   },
+   "text": {
+    "he": "האנדרטה של דני קרוון מעל באר שבע מנציחה את לוחמי החטיבה.",
+    "fr": "Le monument de Dani Karavan, au-dessus de Beer-Sheva, rend hommage à ses combattants.",
+    "en": "Dani Karavan’s monument above Beersheba honours its fighters.",
+    "ru": "Памятник Дани Каравана над Беэр-Шевой чтит её бойцов."
+   },
+   "lat": 31.26666,
+   "lon": 34.8206,
+   "qid": "Q456424",
+   "from": "places.json · סיור 03 · אנדרטת הנגב"
+  },
+  {
+   "id": "masada_excavations",
+   "year": 1963,
+   "era": "israel",
+   "kind": "fact",
+   "at": "site:masada:masada",
+   "link": "site3d.html?site=masada",
+   "label": {
+    "he": "1963–1965",
+    "fr": "1963–1965",
+    "en": "1963–1965",
+    "ru": "1963–1965"
+   },
+   "title": {
+    "he": "חפירות יגאל ידין במצדה",
+    "fr": "Fouilles de Yigael Yadin à Massada",
+    "en": "Yigael Yadin’s excavations at Masada",
+    "ru": "Раскопки Игаэля Ядина в Масаде"
+   },
+   "text": {
+    "he": "אלפי מתנדבים מהארץ ומהעולם חושפים את הארמונות, המחסנים ובית הכנסת.",
+    "fr": "Des milliers de volontaires du monde entier dégagent palais, entrepôts et synagogue.",
+    "en": "Thousands of volunteers from around the world uncover palaces, storerooms and the synagogue.",
+    "ru": "Тысячи добровольцев со всего мира раскапывают дворцы, склады и синагогу."
+   },
+   "lat": 31.31555556,
+   "lon": 35.35388889,
+   "qid": "Q186312",
+   "from": "sites3d/masada/geo.json · masada"
+  },
+  {
+   "id": "hula_reserve",
+   "year": 1964,
+   "era": "israel",
+   "kind": "fact",
+   "at": "stop:20:שמורת החולה",
+   "title": {
+    "he": "שמורת החולה — שמורת הטבע הראשונה",
+    "fr": "La Houla, première réserve naturelle",
+    "en": "Hula, the first nature reserve",
+    "ru": "Хула — первый заповедник"
+   },
+   "text": {
+    "he": "אחרי ייבוש החולה הוכרז שריד הביצה כשמורת הטבע הראשונה בישראל.",
+    "fr": "Après l’assèchement de la Houla, le reste du marais devient la première réserve naturelle d’Israël.",
+    "en": "After the Hula was drained, the remaining marsh became Israel’s first nature reserve.",
+    "ru": "После осушения Хулы остаток болота стал первым заповедником Израиля."
+   },
+   "lat": 33.07806,
+   "lon": 35.59833,
+   "qid": "Q7022146",
+   "from": "places.json · סיור 20 · שמורת החולה"
+  }
+ ]
+}
