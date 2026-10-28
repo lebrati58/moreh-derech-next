@@ -13,4 +13,4 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node tools/exam-drive-times.mjs public/exam/golan-south.json | tee drive.log
-      - run: while IFS= read -r l; do echo "::notice title=drive::$l"; done < drive.log
+      - run: echo "::notice title=drive-json::$(node -e "process.stdout.write(JSON.stringify(require('./public/exam/golan-south.drive.json')))")"
