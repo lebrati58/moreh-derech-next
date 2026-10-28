@@ -11,8 +11,8 @@
 
   // ---------- Langue de l'accompagnement (le contenu d'examen reste en hébreu) ----------
   const T = {
-    he: { title: 'אתגר המבחן', sub: 'מורה דרך EXAM — מתכננים יום טיול, בוחרים אתרים וכותבים הדרכות, כמו בפרק השני של המבחן.', today: 'משימת היום', missions: 'משימות', soon: 'בקרוב', locked: 'נפתח ברמה 2', guided: 'אימון מודרך', errors: 'מצא את הטעות', exam: 'סימולציית מבחן', progress: 'ההתקדמות שלי', badges: 'תגים', weak: 'חזרה ממוקדת', noweak: 'עוד אין מספיק נתונים — שחקו משימה אחת.', back: 'חזרה', hint: 'רמז', model: 'תשובה לדוגמה', compare: 'השוואה', improve: 'לשפר את התשובה', check: 'בדיקה', reset: 'מחדש', next: 'הלאה', prev: 'הקודם', start: 'להתחיל', submit: 'הגשה', sources: 'מקורות', indicative: 'הערכה פדגוגית בלבד — לא נמצא מחוון רשמי. הניקוד לפי הכללים שבחומר הקורס.', map: 'מפה', lang: 'FR', mine: 'התשובה שלי', words: 'מילים', time: 'זמן', level: 'רמה' },
-    fr: { title: 'Exam Challenge', sub: 'Moreh Derech EXAM — préparer une journée, choisir les sites et rédiger les interventions, comme dans la 2e partie de l’examen.', today: 'Mission du jour', missions: 'Missions', soon: 'Bientôt', locked: 'Débloqué au niveau 2', guided: 'Entraînement guidé', errors: 'Trouve les erreurs', exam: 'Examen blanc', progress: 'Ma progression', badges: 'Badges', weak: 'Révision ciblée', noweak: 'Pas encore assez de données — joue une mission.', back: 'Retour', hint: 'Indice', model: 'Réponse modèle', compare: 'Comparer', improve: 'Améliorer ma réponse', check: 'Vérifier', reset: 'Recommencer', next: 'Suivant', prev: 'Précédent', start: 'Commencer', submit: 'Rendre', sources: 'Sources', indicative: 'Évaluation pédagogique indicative — aucune grille officielle trouvée. Le score suit les règles des documents du cours.', map: 'Carte', lang: 'עב', mine: 'Ma réponse', words: 'mots', time: 'Temps', level: 'Niveau' }
+    he: { title: 'אתגר המבחן', sub: 'מורה דרך EXAM — מתכננים יום טיול, בוחרים אתרים וכותבים הדרכות, כמו בפרק השני של המבחן.', today: 'משימת היום', missions: 'משימות', soon: 'בקרוב', harder: 'מתקדם', guided: 'אימון מודרך', errors: 'מצא את הטעות', exam: 'סימולציית מבחן', progress: 'ההתקדמות שלי', badges: 'תגים', weak: 'חזרה ממוקדת', noweak: 'עוד אין מספיק נתונים — שחקו משימה אחת.', back: 'חזרה', hint: 'רמז', model: 'תשובה לדוגמה', compare: 'השוואה', improve: 'לשפר את התשובה', check: 'בדיקה', reset: 'מחדש', next: 'הלאה', prev: 'הקודם', start: 'להתחיל', submit: 'הגשה', sources: 'מקורות', indicative: 'הערכה פדגוגית בלבד — לא נמצא מחוון רשמי. הניקוד לפי הכללים שבחומר הקורס.', map: 'מפה', lang: 'FR', mine: 'התשובה שלי', words: 'מילים', time: 'זמן', level: 'רמה' },
+    fr: { title: 'Exam Challenge', sub: 'Moreh Derech EXAM — préparer une journée, choisir les sites et rédiger les interventions, comme dans la 2e partie de l’examen.', today: 'Mission du jour', missions: 'Missions', soon: 'Bientôt', harder: 'avancé', guided: 'Entraînement guidé', errors: 'Trouve les erreurs', exam: 'Examen blanc', progress: 'Ma progression', badges: 'Badges', weak: 'Révision ciblée', noweak: 'Pas encore assez de données — joue une mission.', back: 'Retour', hint: 'Indice', model: 'Réponse modèle', compare: 'Comparer', improve: 'Améliorer ma réponse', check: 'Vérifier', reset: 'Recommencer', next: 'Suivant', prev: 'Précédent', start: 'Commencer', submit: 'Rendre', sources: 'Sources', indicative: 'Évaluation pédagogique indicative — aucune grille officielle trouvée. Le score suit les règles des documents du cours.', map: 'Carte', lang: 'עב', mine: 'Ma réponse', words: 'mots', time: 'Temps', level: 'Niveau' }
   };
   let lang = 'he'; try { lang = localStorage.getItem('mdl_exam_lang') || 'he'; } catch (e) {}
   const t = k => (T[lang] || T.he)[k] || T.he[k] || k;
@@ -222,9 +222,8 @@
   function viewHome() {
     const L = C.level(S.xp), daily = C.dailyMission(new Date(), DATA.missions);
     const rec = C.recommend(Object.fromEntries(Object.entries(S.cats).map(([k, v]) => [k, v.err])), DATA);
-    const locked = m => m.level > 1 && L.n < 2;
-    const card = m => `<article class="mcard ${locked(m) ? 'lock' : ''}"><div class="me">${m.emoji}</div><div class="mt"><h3>${esc(m.he)}</h3><p>${esc(m.group)}</p>
-      ${locked(m) ? `<p class="lk">🔒 ${t('locked')}</p>` : `<div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div>`}</div></article>`;
+    const card = m => `<article class="mcard"><div class="me">${m.emoji}</div><div class="mt"><h3>${esc(m.he)}</h3><p>${esc(m.group)}${m.level > 1 ? ` · <span class="lk">${'⭐'.repeat(m.level)} ${t('harder')}</span>` : ''}</p>
+      <div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div></div></article>`;
     const catRows = Object.entries(S.cats).filter(([, v]) => v.err + v.ok).sort((a, b) => b[1].err - a[1].err).slice(0, 6);
     shell(`<section class="hero"><div class="eyebrow">MOREH DERECH EXAM · אתגר המבחן</div><h1>🎓 ${t('title')}</h1><p>${t('sub')}</p>
       <a class="btn tiyul" href="#/tiyul">🧑‍🏫 הפוך: אני אומר מה אני רוצה — האפליקציה מציעה מסלול</a>
@@ -570,7 +569,6 @@
     if (p[1] === 'm') {
       const m = DATA.missions.find(x => x.id === p[2]) || (p[2] === 'custom' && S.custom) || null;
       if (!m) return viewHome();
-      if (m.level > 1 && C.level(S.xp).n < 2 && !/[?&]all\b/.test(location.search)) { toast('🔒 ' + t('locked')); return viewHome(); }
       if (p[3] === 'errors') return viewErrors(m, p[4]);
       if (p[3] === 'exam') return viewExam(m);
       if (p[3] === 'result') return viewResult(m);

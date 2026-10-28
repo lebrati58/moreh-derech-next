@@ -34,6 +34,10 @@ await page.waitForSelector('#homeMap svg');
 ok((await page.$$('#homeMap .pt')).length === 5, 'carte (schéma hors ligne) : 5 sites');
 ok(!(await page.$('#mdlGate')), 'aucun numéro de teoudat zehout demandé');
 await shot('1-home');
+ok(await page.$$eval('.mlist:not(.soon) .mcard', cs => cs.length >= 3 && cs.every(c => c.querySelector('.modes a') && !c.classList.contains('lock'))), 'accueil : toutes les missions ouvertes dès le départ (pas de verrou de niveau)');
+await page.goto(base + 'exam.html#/m/g3/guided'); await page.waitForSelector('.brief');
+ok(!/נפתח ברמה/.test(await page.textContent('body')), 'mission de niveau 2 : accessible sans XP');
+await page.goto(base + 'exam.html#/'); await page.waitForSelector('#homeMap .pt');
 // fiche d'un site : statut et sources
 await page.click('#homeMap .pt[data-id="ein_keshatot"]');
 await page.waitForSelector('.sheet');
