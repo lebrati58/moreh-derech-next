@@ -146,7 +146,10 @@
     try {
       if (p.consent && p.name) {
         const t = totals();
-        await rpc('class_score_submit', { p_token: p.id, p_name: p.name, p_points: t.points, p_stars: t.stars, p_gold: t.gold, p_answered: t.answered });
+        const a = { p_token: p.id, p_name: p.name, p_points: t.points, p_stars: t.stars, p_gold: t.gold, p_answered: t.answered };
+        // v2 (code de classe) ; si le serveur n'a que la v1, on envoie au tableau général
+        try { await rpc('class_submit', Object.assign({ p_class: classCode() }, a)); }
+        catch (e) { if (!/http_404/.test(e.message) || classCode()) throw e; await rpc('class_score_submit', a); }
       } else if (p.published) {
         await rpc('class_score_delete', { p_token: p.id });
       }
@@ -154,7 +157,14 @@
       else if (p.published) ls.set(PKEY, Object.assign(player(), { published: false }));
     } catch (e) { /* hors ligne ou SQL pas encore installé : on réessaiera au prochain envoi */ }
   }
-  const leaderboard = () => rpc('class_leaderboard', {});
+  // Code de classe : un tableau par classe (« יובל-2026 »). Vide = tableau général.
+  const normCode = c => String(c || '').trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9א-תа-яё-]/g, '').slice(0, 24);
+  const classCode = () => normCode(player().classCode);
+  function setClassCode(c) { const p = Object.assign(player(), { classCode: normCode(c) }); ls.set(PKEY, p); submitSoon(); return p.classCode; }
+  async function leaderboard() {
+    try { return await rpc('class_board', { p_class: classCode() }); }
+    catch (e) { if (/http_404/.test(e.message) && !classCode()) return rpc('class_leaderboard', {}); if (/http_404/.test(e.message)) e.v2missing = true; throw e; }
+  }
 
   // ---- fenêtre « prénom + accord » ----
   const CSS = `.pg-wrap{position:fixed;inset:0;z-index:2600;display:flex;align-items:flex-end;justify-content:center;background:#03081acc}
@@ -196,6 +206,6 @@
     setTimeout(() => w.querySelector('#pgName').focus(), 60);
   }
 
-  window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, askName, PASS,
+  window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, classCode, setClassCode, normCode, askName, PASS,
     today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats };
 })();
