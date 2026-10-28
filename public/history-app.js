@@ -20,7 +20,8 @@
 
   let DATA = null, PER = {}, EV = {};
   let tl = { period: 'all', q: '' }, visible = [];
-  let pref = Object.assign({ mode: 'practice', period: 'all', count: 10, timed: true, types: 'mix' }, store.get(PREF_KEY, {}));
+  let pref = Object.assign({ mode: 'practice', period: 'all', count: 10, timed: true, types: 'mix', level: 2 }, store.get(PREF_KEY, {}));
+  const LV = n => H.LEVELS[n] || H.LEVELS[2], lvTag = n => `${LV(n).icon} ${LV(n).label}`;
   let run = null, timer = null, ticker = null, sheetFromApp = false, lastFocus = null, announced = {};
 
   // ======================= données =======================
@@ -124,7 +125,8 @@
     $('counts').addEventListener('click', e => { const b = e.target.closest('[data-n]'); if (b) { pref.count = Number(b.dataset.n); savePref(); renderSetup(); } });
     $('timed').addEventListener('change', () => { pref.timed = $('timed').checked; savePref(); renderSetup(); });
     $('qtypes').addEventListener('click', e => { const b = e.target.closest('[data-ty]'); if (b) { pref.types = b.dataset.ty; savePref(); renderSetup(); } });
-    $('start').addEventListener('click', () => startRun({ mode: pref.mode, period: pref.period, count: pref.count, types: pref.types, timed: pref.mode === 'exam' ? true : pref.timed }));
+    $('qlevels').addEventListener('click', e => { const b = e.target.closest('[data-lv]'); if (b) { pref.level = Number(b.dataset.lv); savePref(); renderSetup(); } });
+    $('start').addEventListener('click', () => startRun({ mode: pref.mode, period: pref.period, count: pref.count, types: pref.types, level: pref.level, timed: pref.mode === 'exam' ? true : pref.timed }));
     $('startReview').addEventListener('click', () => { const m = P ? P.historyStats().mistakes.filter(id => EV[id]) : []; if (m.length) startRun({ mode: 'practice', review: true, period: 'all', ids: m, count: m.length, types: pref.types, timed: pref.timed }); });
     // jeu
     $('answers').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b && !b.disabled) pick(Number(b.dataset.i)); });
@@ -148,7 +150,7 @@
       const a = e.target.closest('[data-act]'); if (!a) return;
       const last = store.get(LAST_KEY, null); if (!last) return;
       if (a.dataset.act === 'again') startRun(Object.assign({}, last.config));
-      else if (a.dataset.act === 'fix') startRun({ mode: 'practice', review: true, period: 'all', ids: last.wrongIds, count: last.wrongIds.length, types: last.config.types, timed: last.config.timed });
+      else if (a.dataset.act === 'fix') startRun({ mode: 'practice', review: true, period: 'all', ids: last.wrongIds, count: last.wrongIds.length, types: last.config.types, level: last.config.level, timed: last.config.timed });
       else if (a.dataset.act === 'ev') { sheetFromApp = true; lastFocus = a; go('#/event/' + a.dataset.id); }
     });
   }
@@ -239,6 +241,9 @@
     document.querySelectorAll('#qpchips [data-p]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.p === pref.period)));
     if (!H.TYPE_GROUPS[pref.types]) pref.types = 'mix';
     document.querySelectorAll('#qtypes [data-ty]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ty === pref.types)));
+    if (!H.LEVELS[pref.level]) pref.level = 2;
+    $('qlevels').innerHTML = [1, 2, 3].map(n => `<button type="button" data-lv="${n}" aria-pressed="${n === pref.level}"><b>${esc(lvTag(n))}</b><small>${esc(LV(n).desc)}</small></button>`).join('');
+    const secs = LV(pref.level).ms / 1000, msecs = LV(pref.level).multiMs / 1000; $('timedTxt').textContent = `שעון של ${secs} שניות`;
     const size = H.pool(DATA, { mode: pref.mode, period: pref.period }).length, all = H.pool(DATA, { period: pref.period }).length;
     const max = H.maxQuestions(DATA, { mode: pref.mode, period: pref.period, types: pref.types }), top = Math.min(max, 60);
     const opts = [10, 20, 40].filter(n => n < top).concat([top]);
@@ -247,13 +252,13 @@
     $('timedWrap').hidden = pref.mode === 'exam'; $('timed').checked = pref.timed !== false;
     const excluded = all - size;
     $('rules').innerHTML = (pref.mode === 'exam'
-      ? ['⏳ 30 שניות לשאלה (45 בשאלות עם כמה תשובות). נגמר הזמן = טעות.', '🏆 נכון = 100 + 3 × שניות שנותרו + בונוס רצף (עד +100).', '📈 בכל אירוע נספר רק השיא שלכם — משחק חוזר לא מכפיל נקודות.', '🙈 התשובות וההסברים מוצגים בסוף. בזמן השהיה השאלה מוסתרת.'].concat(excluded ? [`⚖️ ${excluded} אירועים שתאריכם שנוי במחלוקת או לא אחיד בחומרי הקורס — רק באימון.`] : [])
-      : ['📖 אחרי כל תשובה: הסבר, השנים של כל האפשרויות וקישור לחומר הקורס.', pref.timed !== false ? '⏳ 30 שניות לשאלה (אפשר לכבות את השעון).' : '🐢 בלי שעון — לומדים בנחת.', '🎯 ניקוד אימון לא נספר בטבלת הכיתה.']
-    ).concat(pref.types === 'mix' || pref.types === 'multi' ? ['☑️ בשאלות „אילו…?” יש כמה תשובות נכונות: מסמנים את כולן ולוחצים „בדיקה”.'] : []).map(t => `<li>${esc(t)}</li>`).join('');
+      ? [`⏳ ${secs} שניות לשאלה (${msecs} בשאלות עם כמה תשובות). נגמר הזמן = טעות.`, '🏆 נכון = 100 + 3 × שניות שנותרו + בונוס רצף (עד +100).', '📈 בכל אירוע נספר רק השיא שלכם — משחק חוזר לא מכפיל נקודות.', '🙈 התשובות וההסברים מוצגים בסוף. בזמן השהיה השאלה מוסתרת.'].concat(excluded ? [`⚖️ ${excluded} אירועים שתאריכם שנוי במחלוקת או לא אחיד בחומרי הקורס — רק באימון.`] : [])
+      : ['📖 אחרי כל תשובה: הסבר, השנים של כל האפשרויות וקישור לחומר הקורס.', pref.timed !== false ? `⏳ ${secs} שניות לשאלה (אפשר לכבות את השעון).` : '🐢 בלי שעון — לומדים בנחת.', '🎯 ניקוד אימון לא נספר בטבלת הכיתה.']
+    ).concat(pref.level === 1 ? ['🌱 רמה קלה: התשובות השגויות רחוקות לפחות 40 שנה; הניקוד ×0.75.'] : pref.level === 3 ? ['🔥 רמה קשה: שנים ואירועים קרובים מאוד, 20 שניות לשאלה.'] : []).concat(pref.types === 'mix' || pref.types === 'multi' ? ['☑️ בשאלות „אילו…?” יש כמה תשובות נכונות: מסמנים את כולן ולוחצים „בדיקה”.'] : []).map(t => `<li>${esc(t)}</li>`).join('');
     const st = P && P.historyStats ? P.historyStats() : null, mis = st ? st.mistakes.filter(id => EV[id]) : [];
     $('startReview').hidden = !mis.length; $('startReview').textContent = `🔁 לתרגל רק את הטעויות שלי (${mis.length})`;
     $('resume').hidden = !(run && run.phase !== 'done');
-    if (run && run.phase !== 'done') $('resumeTxt').textContent = `${run.mode === 'exam' ? '🏆 מבחן' : '📖 אימון'} · שאלה ${Math.min(run.i + 1, run.questions.length)} מתוך ${run.questions.length} · ${fmt(run.score)} נק׳`;
+    if (run && run.phase !== 'done') $('resumeTxt').textContent = `${run.mode === 'exam' ? '🏆 מבחן' : '📖 אימון'} · ${lvTag(run.level)} · שאלה ${Math.min(run.i + 1, run.questions.length)} מתוך ${run.questions.length} · ${fmt(run.score)} נק׳`;
     if (st) {
       $('kpis').innerHTML = `<div><strong>${fmt(st.points)}</strong><span>נק׳ שיא במבחנים</span></div><div><strong>${st.mastered.filter(id => EV[id]).length}/${DATA.events.length}</strong><span>אירועים שידעתי</span></div><div><strong>${mis.length}</strong><span>לחזרה</span></div>`;
       const runs = st.runs.slice(-5).reverse();
@@ -265,11 +270,12 @@
   function startRun(cfg) {
     const seed = uuid();
     const types = H.TYPE_GROUPS[cfg.types] ? cfg.types : 'mix';
-    const questions = H.buildRun(DATA, { mode: cfg.mode, period: cfg.period, ids: cfg.ids, count: cfg.count, seed, types });
+    const level = H.LEVELS[cfg.level] ? cfg.level : 2;
+    const questions = H.buildRun(DATA, { mode: cfg.mode, period: cfg.period, ids: cfg.ids, count: cfg.count, seed, types, level });
     if (!questions.length) return;
     clearInterval(ticker); ticker = null;
     run = { v: 1, runId: seed, mode: cfg.mode, review: !!cfg.review, period: cfg.period || 'all', timed: cfg.mode === 'exam' ? true : cfg.timed !== false,
-      config: { mode: cfg.mode, period: cfg.period || 'all', count: cfg.count, timed: cfg.timed, ids: cfg.ids, review: !!cfg.review, types },
+      level, config: { mode: cfg.mode, period: cfg.period || 'all', count: cfg.count, timed: cfg.timed, ids: cfg.ids, review: !!cfg.review, types, level },
       questions, sel: [], i: 0, answers: [], score: 0, streak: 0, bestStreak: 0,
       activeMs: 0, phase: 'question', left: null, paused: null, startedAt: Date.now() };
     run.paused = 'nav'; newTimer(); saveRun();
@@ -379,7 +385,7 @@
     const idxs = idx == null ? null : (Array.isArray(idx) ? idx.slice().sort((x, y) => x - y) : [idx]);
     const correct = H.isCorrect(q, idxs), timedOut = idx == null;
     const values = idxs ? idxs.map(i => q.options[i].value) : null, want = q.options.filter(o => o.correct).map(o => o.value);
-    const pts = H.scoreAnswer(correct, run.timed ? left : 0, run.streak);
+    const pts = H.scoreAnswer(correct, run.timed ? left : 0, run.streak, run.level, H.questionMs(q));
     run.streak = correct ? run.streak + 1 : 0; run.bestStreak = Math.max(run.bestStreak, run.streak);
     run.score += pts; run.activeMs += used;
     run.answers[run.i] = { eventId: q.eventId, questionId: q.id, type: q.type, chosen: values ? (q.multi ? values : values[0]) : null, chosenIdx: idxs,

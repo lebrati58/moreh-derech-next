@@ -240,6 +240,19 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   ok(await page.getAttribute('#qtypes [data-ty="mix"]', 'aria-pressed') === 'true', 'réglages : « tout mélangé » par défaut');
   ok(await page.locator('#counts [data-n="40"]').count() === 1, 'réglages : jusqu’à 40+ questions en mélangé');
   await shot('01-reglages');
+  // Niveaux de difficulté
+  ok(await page.locator('#qlevels [data-lv]').count() === 3, 'réglages : 3 niveaux (קל, בינוני, קשה)');
+  ok(await page.getAttribute('#qlevels [data-lv="2"]', 'aria-pressed') === 'true', 'réglages : « בינוני » par défaut');
+  await page.tap('#qlevels [data-lv="3"]');
+  ok((await page.textContent('#timedTxt')).includes('20'), 'קשה : chrono de 20 s annoncé');
+  await page.locator('#qlevels').scrollIntoViewIfNeeded(); await shot('01b-niveaux');
+  await page.tap('#qtypes [data-ty="date"]'); await page.tap('#start');
+  await page.waitForSelector('#vPlay:not([hidden]) .ans');
+  const lvRun = await page.evaluate(() => { const s = window.MDHistoryApp.state(); return { level: s.level, ms: s.questions[0].ms }; });
+  ok(lvRun.level === 3 && lvRun.ms === 20000, 'partie « קשה » : niveau 3, 20 s par question');
+  await page.goto(base + 'history.html#/quiz?mode=practice');
+  await page.waitForSelector('#vQuiz:not([hidden])');
+  await page.tap('#qlevels [data-lv="2"]'); await page.tap('#qtypes [data-ty="mix"]');
   // Inverse : « que s'est-il passé en … ? »
   await page.tap('#qtypes [data-ty="event"]');
   await page.tap('#start');

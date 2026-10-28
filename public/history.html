@@ -131,6 +131,8 @@ body.locked{overflow:hidden}
 .mode b{font-size:17px}.mode small{color:var(--soft);font-size:12.5px;line-height:1.4}
 .mode[aria-pressed=true]{background:#2a3a74;border-color:var(--gold);box-shadow:0 4px 0 #a87831}
 .counts{display:flex;gap:7px;flex-wrap:wrap}
+.levels button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 6px}
+.levels button small{font-size:11px;font-weight:700;opacity:.85;line-height:1.25;text-align:center}
 .counts button{min-height:44px;min-width:64px;border-radius:12px;background:#202d58;border:2px solid #44578c;font-weight:900;padding:6px 12px}
 .counts button[aria-pressed=true]{background:#ffe17b;border-color:#fff0a4;color:#222450}
 .rules{font-size:13px;color:var(--soft);line-height:1.6;margin:12px 0 0;padding:0;list-style:none}
@@ -290,6 +292,8 @@ body.locked{overflow:hidden}
       </div>
       <div class="lbl" id="perLbl">תקופה</div>
       <div class="pchips" id="qpchips" role="group" aria-labelledby="perLbl" style="padding-top:0"></div>
+      <div class="lbl" id="lvLbl">רמת קושי</div>
+      <div class="counts levels" id="qlevels" role="group" aria-labelledby="lvLbl"></div>
       <div class="lbl" id="tyLbl">סוג שאלות</div>
       <div class="counts types" id="qtypes" role="group" aria-labelledby="tyLbl">
         <button type="button" data-ty="mix" aria-pressed="true">🔀 הכול מעורב</button>
@@ -300,7 +304,7 @@ body.locked{overflow:hidden}
       </div>
       <div class="lbl" id="cntLbl">מספר שאלות</div>
       <div class="counts" id="counts" role="group" aria-labelledby="cntLbl"></div>
-      <label class="lbl" style="display:flex;align-items:center;gap:10px;letter-spacing:0;font-size:14px;color:var(--ink)" id="timedWrap"><input type="checkbox" id="timed" checked style="width:22px;height:22px;accent-color:#ffd878"> ⏳ שעון של 30 שניות</label>
+      <label class="lbl" style="display:flex;align-items:center;gap:10px;letter-spacing:0;font-size:14px;color:var(--ink)" id="timedWrap"><input type="checkbox" id="timed" checked style="width:22px;height:22px;accent-color:#ffd878"> ⏳ <span id="timedTxt">שעון של 30 שניות</span></label>
       <ul class="rules" id="rules"></ul>
       <button type="button" class="btn go start" id="start">מתחילים ←</button>
       <button type="button" class="btn start" id="startReview" hidden></button>
