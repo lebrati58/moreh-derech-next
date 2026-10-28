@@ -1,6 +1,6 @@
 {
  "v": 1,
- "builtAt": "2026-10-28T22:07:46.305Z",
+ "builtAt": "2026-10-28T22:14:56.633Z",
  "tours": [
   {
    "id": "road67",
@@ -23,7 +23,7 @@
    "stops": 20,
    "questions": 41,
    "map": false,
-   "issues": 20,
+   "issues": 4,
    "warnings": 0
   }
  ]
