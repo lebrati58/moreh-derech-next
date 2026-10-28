@@ -51,24 +51,38 @@ end $$;
 --  • caractères invisibles (sens d'écriture, espace insécable) retirés ;
 --  • on prend le premier groupe de 5 à 9 chiffres VALIDE (un n° de téléphone ou de ligne à côté est ignoré) ;
 --  • numérotation de liste en début de ligne (« 3. ») retirée ;
---  • sinon on recolle les chiffres séparés par des espaces, tirets ou points (« 012-345-678 », « 012 345 678 »).
+--  • sinon on recolle les chiffres séparés par des espaces, tirets ou points (« 012-345-678 », « 012 345 678 ») ;
+--  • en dernier recours, premier groupe de 5 à 9 chiffres même si le chiffre de contrôle ne tombe pas juste.
 create or replace function mdl.tz_pick(p_line text)
 returns text language plpgsql immutable
 set search_path = ''
 as $$
-declare v text := regexp_replace(coalesce(p_line, ''), '[\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff\u00ad]', '', 'g'); m text; r text;
+declare v text := regexp_replace(coalesce(p_line, ''), '[\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff\u00ad]', '', 'g'); v0 text; m text; r text;
 begin
   v := regexp_replace(v, '[\u00a0\u2007\u202f]', ' ', 'g');
   if v ~* '\d[.,]\d*e\+?\d' then return null; end if;          -- « 1.23457E+08 » d'Excel : chiffres perdus, on refuse
   v := regexp_replace(v, '^\s*\d{1,3}[.)]\s+', '');            -- liste numérotée « 3. » ou « 3) »
+  v0 := v;
   for pass in 1..2 loop
     if pass = 2 then v := regexp_replace(v, '(\d)[ .\-]+(?=\d)', '\1', 'g'); end if;
     for m in select (regexp_matches(v, '\d+', 'g'))[1] loop
       if char_length(m) between 5 and 9 then r := mdl.tz_norm(m); if r is not null then return r; end if; end if;
     end loop;
   end loop;
+  -- aucun numéro au chiffre de contrôle juste : on prend quand même le premier groupe de 5 à 9 chiffres
+  for m in select (regexp_matches(v0, '\d+', 'g'))[1] union all select (regexp_matches(v, '\d+', 'g'))[1] loop
+    r := mdl.tz_loose(m); if r is not null then return r; end if;
+  end loop;
   return null;
 end $$;
+
+-- Numéro accepté même si le chiffre de contrôle ne tombe pas juste (demande du guide : « si c'est le bon numéro,
+-- accepte-le ») : 5 à 9 chiffres, complété par des zéros à gauche (Excel efface souvent le 0 du début).
+create or replace function mdl.tz_loose(p text)
+returns text language sql immutable
+set search_path = ''
+as $$ select case when char_length(d) between 5 and 9 and d !~ '^0+$' then lpad(d, 9, '0') end
+        from (select regexp_replace(coalesce(p, ''), '\D', '', 'g') d) x $$;
 
 create or replace function mdl.tz_hash(p_tz text)
 returns text language sql stable
@@ -85,7 +99,7 @@ create or replace function public.access_login(p_tz text)
 returns jsonb language plpgsql volatile security definer
 set search_path = ''
 as $$
-declare v_tz text := mdl.tz_norm(p_tz); v_hash text; v_token text;
+declare v_tz text := mdl.tz_loose(p_tz); v_hash text; v_token text;
 begin
   delete from mdl.access_failures where at < now() - interval '10 minutes';
   if (select count(*) from mdl.access_failures) >= 60 then return jsonb_build_object('error', 'too_many_attempts'); end if;
@@ -118,7 +132,7 @@ create or replace function public.admin_access_set(p_token text, p_list text)
 returns jsonb language plpgsql volatile security definer
 set search_path = ''
 as $$
-declare v_line text; v_tz text; v_label text; v_ok int := 0; v_bad jsonb := '[]'::jsonb; v_n int := 0; v_dup int := 0;
+declare v_line text; v_tz text; v_label text; v_ok int := 0; v_bad jsonb := '[]'::jsonb; v_n int := 0; v_dup int := 0; v_warn jsonb := '[]'::jsonb;
 begin
   perform mdl.check_admin(p_token);
   create temporary table if not exists pg_temp.new_people (tz_hash text primary key, label text) on commit drop;
@@ -130,6 +144,7 @@ begin
     v_tz := mdl.tz_pick(v_line);
     v_label := null; -- numéro seulement : aucun prénom n'est jamais enregistré, même s'il est collé
     if v_tz is null then v_bad := v_bad || to_jsonb(v_n); continue; end if;
+    if mdl.tz_norm(v_tz) is null then v_warn := v_warn || to_jsonb(v_n); end if;  -- accepté, mais à vérifier
     if exists (select 1 from pg_temp.new_people where tz_hash = mdl.tz_hash(v_tz)) then v_dup := v_dup + 1; continue; end if;
     insert into pg_temp.new_people values (mdl.tz_hash(v_tz), v_label);
   end loop;
@@ -142,7 +157,7 @@ begin
     on conflict (tz_hash) do update set label = excluded.label;
   delete from mdl.access_sessions where tz_hash not in (select tz_hash from mdl.access_people);
   select count(*) into v_ok from mdl.access_people;
-  return jsonb_build_object('ok', true, 'allowed', v_ok, 'bad_lines', v_bad, 'duplicates', v_dup);
+  return jsonb_build_object('ok', true, 'allowed', v_ok, 'bad_lines', v_bad, 'duplicates', v_dup, 'check_lines', v_warn);
 end $$;
 
 -- Admin : combien d'élèves autorisés (ni numéros ni prénoms).
@@ -155,7 +170,7 @@ begin
   return jsonb_build_object('allowed', (select count(*) from mdl.access_people));
 end $$;
 
-revoke all on function mdl.tz_norm(text), mdl.tz_pick(text), mdl.tz_hash(text) from public;
+revoke all on function mdl.tz_norm(text), mdl.tz_loose(text), mdl.tz_pick(text), mdl.tz_hash(text) from public;
 revoke all on function public.access_required(), public.access_login(text), public.access_check(text),
   public.admin_access_set(text, text), public.admin_access_list(text) from public;
 grant execute on function public.access_required(), public.access_login(text), public.access_check(text),

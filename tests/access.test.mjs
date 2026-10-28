@@ -24,8 +24,11 @@ test('accès par teoudat zehout : liste privée hachée, connexion, retrait, lim
     const adm = (await rpc(c, 'admin_login', { p_password: 'test-password-123' })).token;
     await assert.rejects(rpc(c, 'admin_access_set', { p_token: 'faux', p_list: A }), /not_authorized/);
     // collage façon Excel : prénom ⇥ numéro, numéro sans zéro initial, ligne invalide, ligne vide
-    const r = await rpc(c, 'admin_access_set', { p_token: adm, p_list: `דנה\t${A}\r\n${B}, יוסי\n\n123456789\n` });
-    assert.equal(r.allowed, 2); assert.deepEqual(r.bad_lines, [3]);
+    // « 123456789 » : chiffre de contrôle faux, mais accepté quand même (demande du guide) et signalé à vérifier ; « 12 » refusé
+    const r = await rpc(c, 'admin_access_set', { p_token: adm, p_list: `דנה\t${A}\r\n${B}, יוסי\n\n123456789\nאבי 12\n` });
+    assert.equal(r.allowed, 3); assert.deepEqual(r.bad_lines, [4]); assert.deepEqual(r.check_lines, [3]);
+    assert.equal((await rpc(c, 'access_login', { p_tz: '123456789' })).ok, true, 'numéro au chiffre de contrôle faux : accepté');
+    assert.equal((await rpc(c, 'access_login', { p_tz: '0123456789' })).ok, undefined, '10 chiffres : refusé');
     assert.equal((await rpc(c, 'access_required')).required, true);
     // collages difficiles qui doivent passer (« il manque quelques-uns ») : séparateurs, caractères invisibles,
     // zéros initiaux perdus par Excel, téléphone ou n° de ligne sur la même ligne ; doublons comptés une fois
@@ -37,6 +40,7 @@ test('accès par teoudat zehout : liste privée hachée, connexion, retrait, lim
     assert.equal(await pick('0521234567\t' + G), G, 'téléphone ignoré');
     assert.equal(await pick('3. ' + H.slice(0, 4) + '-' + H.slice(4)), H);
     assert.equal(await pick('1.23457E+08'), null);
+    assert.equal(await pick('0521234567\t1234567'), '001234567', 'contrôle faux : premier groupe de 5 à 9 chiffres');
     const r2 = await rpc(c, 'admin_access_set', { p_token: adm, p_list: [A, B, A, D.slice(0, 3) + ' ' + D.slice(3), '\u200f' + E, '0521234567\t' + G].join('\n') });
     assert.equal(r2.allowed, 5); assert.equal(r2.duplicates, 1); assert.deepEqual(r2.bad_lines, []);
     // rien n'est stocké en clair

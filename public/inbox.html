@@ -110,11 +110,15 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
     let s = 0; for (let k = 0; k < 9; k++) { let v = +d[k] * (k % 2 ? 2 : 1); s += v > 9 ? v - 9 : v; } return s % 10 ? null : d; }
   function tzPick(line){
     if (/\d[.,]\d*e\+?\d/i.test(line)) return null;
-    let v = line.replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff\u00ad]/g, '').replace(/[\u00a0\u2007\u202f]/g, ' ').replace(/^\s*\d{1,3}[.)]\s+/, '');
+    let v0, v = line.replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff\u00ad]/g, '').replace(/[\u00a0\u2007\u202f]/g, ' ').replace(/^\s*\d{1,3}[.)]\s+/, '');
+    v0 = v;
     for (let pass = 1; pass <= 2; pass++) {
       if (pass === 2) v = v.replace(/(\d)[ .\-]+(?=\d)/g, '$1');
       for (const m of v.match(/\d+/g) || []) { const r = tzOk(m); if (r) return r; }
     }
+    // comme mdl.tz_loose : accepté même si le chiffre de contrôle ne tombe pas juste (signalé pour vérification)
+    for (const m of [...(v0.match(/\d+/g) || []), ...(v.match(/\d+/g) || [])])
+      if (m.length >= 5 && m.length <= 9 && !/^0+$/.test(m)) return { loose: m.padStart(9, '0') };
     return null;
   }
   function tzWhy(line){
@@ -123,16 +127,17 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
     if (!runs.length) return 'אין מספר בשורה';
     if (runs.some(x => x.length > 9)) return 'יותר מ-9 ספרות';
     if (!runs.some(x => x.length >= 5)) return 'פחות מ-5 ספרות';
-    return 'ספרת הביקורת לא מתאימה — כנראה ספרה שגויה או חסרה';
+    return 'מספר לא מזוהה';
   }
   function tzCheck(list){
-    const bad = [], seen = new Set(); let dup = 0, ok = 0;
+    const bad = [], warn = [], seen = new Set(); let dup = 0, ok = 0;
     list.split(/\r?\n/).map(l => l.trim()).filter(Boolean).forEach((l, i) => {
-      const t = tzPick(l);
-      if (!t) bad.push({ n: i + 1, line: l, why: tzWhy(l) });
-      else if (seen.has(t)) dup++; else { seen.add(t); ok++; }
+      let t = tzPick(l);
+      if (!t) return bad.push({ n: i + 1, line: l, why: tzWhy(l) });
+      if (t.loose) { t = t.loose; warn.push({ n: i + 1, line: l }); }
+      if (seen.has(t)) dup++; else { seen.add(t); ok++; }
     });
-    return { bad, dup, ok };
+    return { bad, warn, dup, ok };
   }
   async function renderAccess(){
     const old = document.getElementById('accessCard'); if (old) old.remove();
@@ -166,7 +171,9 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
         ta.value = ''; // on ne laisse pas les numéros affichés
         await renderAccess();
         msg(`✅ נשמר: ${r.allowed} מספרים מורשים.` + (r.duplicates ? ` (${r.duplicates} מספרים הופיעו פעמיים ונספרו פעם אחת)` : '') +
-          (r.bad_lines && r.bad_lines.length ? ` ⚠️ שורות שנדחו: ${r.bad_lines.join(', ')} — הדביקו שוב את כל הרשימה כדי לראות את הסיבה.` : ''));
+          (r.bad_lines && r.bad_lines.length ? ` ⚠️ שורות שנדחו: ${r.bad_lines.join(', ')}.` : '') +
+          (chk.warn.length ? `<br>ℹ️ נשמרו גם המספרים האלה, אבל ספרת הביקורת שלהם לא מתאימה — כדאי לוודא עם התלמיד שאין טעות הקלדה:` +
+            '<ul style="margin:6px 0 0;padding-inline-start:18px">' + chk.warn.map(b => `<li>שורה <bdi>${b.n}</bdi>: <bdi dir="ltr">${esc(b.line)}</bdi></li>`).join('') + '</ul>' : ''));
       } catch (e) { if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } msg('❌ השמירה לא הצליחה.'); }
     };
     const op = document.getElementById('accOpen');
