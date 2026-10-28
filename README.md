@@ -488,3 +488,11 @@ pas une modération parfaite. Pour un usage grand public, ajouter CAPTCHA, signa
 - `class.html` : podium et classement. Remise à zéro depuis `inbox.html` (admin).
 - Installation : exécuter **une fois** `supabase/class_contest.sql` dans Supabase › SQL Editor (après `install.sql`).
 - Codes de classe (un tableau par classe, lien `class.html?c=yuval-2026`) : exécuter ensuite **une fois** `supabase/class_contest_v2.sql`. Additif : n'efface aucun score ; les anciens scores restent dans le tableau « général ». Remise à zéro d'une seule classe depuis `inbox.html` (admin).
+
+## Accès réservé aux élèves (teoudat zehout)
+
+- Installer **une fois** `supabase/access_control.sql` (après `install.sql`).
+- Dans `inbox.html` (admin), carte « 👥 מי יכול להיכנס » : coller la liste (une ligne par élève, numéro ± prénom, copie Excel acceptée). La liste remplace la précédente.
+- Aucun numéro n'est stocké en clair ni dans le dépôt : le serveur garde seulement `sha256(clé secrète | numéro)`, la clé étant tirée au hasard dans la base.
+- Liste vide = application ouverte à tous. Une liste collée sans aucun numéro valide est refusée (rien ne change).
+- `public/access-gate.js` est chargé dans toutes les pages sauf `inbox.html`. C'est une porte d'entrée : les fichiers publics (JSON, images) restent techniquement téléchargeables par qui connaît leur adresse.

@@ -37,6 +37,12 @@ jobs:
               headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},/^eyJ/.test(cfg.anonKey)?{Authorization:'Bearer '+cfg.anonKey}:{}),
               body:JSON.stringify({p_class:''}),signal:AbortSignal.timeout(12000)});
             console.log('Class codes (v2):',v2.status,v2.ok?'installed':(v2.status===404?'NOT INSTALLED — run supabase/class_contest_v2.sql once':'unavailable'));
+            // Accès réservé (teoudat zehout) : information seulement
+            const acc = await fetch(cfg.url+'/rest/v1/rpc/access_required',{method:'POST',
+              headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},/^eyJ/.test(cfg.anonKey)?{Authorization:'Bearer '+cfg.anonKey}:{}),
+              body:'{}',signal:AbortSignal.timeout(12000)});
+            const ad = await acc.json().catch(()=>null);
+            console.log('Access control:',acc.status,acc.ok?('installed, app '+(ad&&ad.required?'RESTRICTED to the list':'OPEN (empty list)')):(acc.status===404?'NOT INSTALLED — run supabase/access_control.sql once':'unavailable'));
             const rsp = await fetch(cfg.url+'/rest/v1/rpc/community_catalog',{
               method:'POST',
               headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},

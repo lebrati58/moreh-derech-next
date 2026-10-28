@@ -16,6 +16,10 @@ const server = createServer(async (req, res) => {
   if (req.method === 'POST' && /\/rest\/v1\/rpc\/community_catalog$/.test(req.url)) {
     res.writeHead(200, { 'content-type': 'application/json' }); return res.end(JSON.stringify({ documents: [], routes: [] }));
   }
+  // Accès réservé installé, liste vide : application ouverte (comme le vrai serveur avant de coller la liste)
+  if (req.method === 'POST' && /\/rest\/v1\/rpc\/access_(required|check)$/.test(req.url)) {
+    res.writeHead(200, { 'content-type': 'application/json' }); return res.end('{"required":false,"ok":false}');
+  }
   const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^\/+/, '') || 'index.html';
   try { const body = await readFile(join(ROOT, path)); res.writeHead(200, { 'content-type': TYPES[extname(path)] || 'application/octet-stream' }); res.end(body); }
   catch { res.writeHead(404); res.end('not found'); }
