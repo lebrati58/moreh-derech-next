@@ -34,12 +34,13 @@ ok((await page.$$('#homeMap .pt')).length === 5, 'carte (schéma hors ligne) : 5
 ok(!(await page.$('#mdlGate')), 'aucun numéro de teoudat zehout demandé');
 ok(await page.$('#homeMap [data-retry]') && /לא נטענה/.test(await page.textContent('#homeMap .mapnote')), 'carte : raison de l’échec + bouton « réessayer la vraie carte »');
 await shot('1-home');
+ok(await page.$$eval('.mlist:not(.soon) .mcard', cs => cs.length >= 3 && cs.every(c => c.querySelector('.modes a') && !c.classList.contains('lock'))), 'accueil : toutes les missions ouvertes dès le départ (pas de verrou de niveau)');
 // fiche d'un site : statut et sources
 await page.click('#homeMap .pt[data-id="ein_keshatot"]');
 await page.waitForSelector('.sheet');
 const sheet = await page.textContent('.sheet');
 ok(/ביקרנו בשטח/.test(sheet) && /749/.test(sheet) && /drive\.google\.com/.test(await page.innerHTML('.sheet')), 'fiche עין קשתות : statut, faits, lien source Drive');
-ok(/09:00–17:00/.test(sheet) && /28 ₪/.test(sheet) && /🚻/.test(sheet) && /waze\.com/.test(await page.innerHTML('.sheet')), 'fiche : horaires, prix, toilettes, lien Waze');
+ok(/09:00–17:00/.test(sheet) && /28 ₪/.test(sheet) && /🚻/.test(sheet) && /google\.com\/maps/.test(await page.innerHTML('.sheet')) && !/waze/.test(await page.innerHTML('.sheet')), 'fiche : horaires, prix, toilettes, lien Google Maps (plus de Waze)');
 await page.click('.sheet .x');
 
 // MODE 1 — choix des sites
@@ -76,7 +77,7 @@ await page.waitForFunction(() => /תל א-סאקי/.test(document.querySelector(
 ok(/צומת צמח ← תל סאקי/.test(await page.textContent('.info')), 'ordre des visites modifié avec ▲ : trajets recalculés');
 await page.$eval('[data-mv="tel_saki:1"]', el => el.click());
 await page.waitForFunction(() => /מצפה אופיר/.test(document.querySelector('.pi .nm').textContent));
-ok(/צומת צמח ← מצפה אופיר/.test(info) && /ק״מ אווירי/.test(info) && (await page.$$('.legs a[href*="google.com/maps/dir"]')).length >= 4, 'trajets : distance aérienne + liens Google/Waze, aucun temps inventé');
+ok(/צומת צמח ← מצפה אופיר/.test(info) && /28 דק׳/.test(info) && /ק״מ בכביש/.test(info) && (await page.$$('.legs a[href*="google.com/maps/dir"]')).length >= 4 && !(await page.$$('.legs a[href*="waze"]')).length, 'trajets : temps de route (OSRM) + lien Google, sans Waze');
 const pickTime = async (i, k, v) => { await page.$eval(`.pr[data-i="${i}"] .tbtn[data-t="${k}:${i}"]`, el => el.click()); await page.waitForSelector('.sheet.clock');
   const want = v.split(':').reduce((a, x) => a * 60 + +x, 0); let cur = (await page.textContent('#cv')).split(':').reduce((a, x) => a * 60 + +x, 0);
   while (cur !== want) { const d = want - cur, step = Math.abs(d) >= 60 ? 60 : Math.abs(d) >= 15 ? 15 : 5; await page.click(`.sheet.clock [data-d="${d > 0 ? step : -step}"]`); cur += d > 0 ? step : -step; }
@@ -93,6 +94,18 @@ ok(/נקודת פיזור/.test(plan), 'programme : point de dispersion exigé')
 // supprimer toutes les lignes ne laisse jamais un tableau vide
 while (await page.$('.plan [data-del]')) { await page.$eval('.plan [data-del]', el => el.click()); await page.waitForTimeout(80); if ((await page.$$('.plan .pr')).length === 1 && (await page.$eval('.plan .tbtn', e => e.dataset.v)) === '08:00') break; }
 ok((await page.$$('.plan .pr')).length === 1 && (await page.$eval('.plan .tbtn', e => e.dataset.v)) === '08:00', 'programme : après suppression, la ligne 08:00 מפגש revient');
+// le temps de trajet compte dans le לוח זמנים
+await page.$eval('[data-fillplan]', el => el.click());
+await page.waitForFunction(() => document.querySelectorAll('.plan .pr').length > 3);
+const rowsT = () => page.$$eval('.plan .pr', rs => rs.map(r => { const b = r.querySelectorAll('.tbtn'); return [b[0] && b[0].dataset.v, b[1] && b[1].dataset.v, r.querySelector('[data-k="what"]').value]; }));
+const mn = t => { const m = /^(\d+):(\d\d)$/.exec(t || ''); return m ? +m[1] * 60 + +m[2] : NaN; };
+let rt = await rowsT();
+ok(/נסיעה למצפה אופיר/.test(rt[1][2]) && rt[1][0] === '08:00' && mn(rt[1][1]) - mn(rt[1][0]) === 28 && rt[2][0] === rt[1][1], `לוח : la nסיעה dure 28 min et le site commence à l’arrivée (${rt[1].join(' ')})`);
+await page.fill('[data-gmin="tzemach>mitzpe_ofir"]', '35'); await page.dispatchEvent('[data-gmin="tzemach>mitzpe_ofir"]', 'change');
+await page.waitForFunction(() => /35 דק׳/.test(document.querySelector('.info').textContent));
+rt = await rowsT();
+ok(mn(rt[1][1]) - mn(rt[1][0]) === 35 && rt[2][0] === rt[1][1], 'לוח : le temps Google saisi remplace l’estimation et décale la suite');
+await shot('plan-trajets');
 
 // éditeur courte : compteur et dépassement
 await page.goto(base + 'exam.html#/m/g1/guided/3');
@@ -167,7 +180,7 @@ await page.$eval('#tGo', el => el.click());
 await page.waitForSelector('.prop');
 const prop = await page.textContent('.prop');
 ok(/הצעה 1/.test(prop) && /עין קשתות/.test(prop) && /תל סאקי/.test(prop) && /כל מה שביקשתם מכוסה/.test(prop), 'tiyul : proposition couvrant les 4 souhaits');
-ok(/זמן: לבדוק ב-Waze/.test(prop) && /לברר: שירותים/.test(prop) && /המתנה בקופה/.test(prop), 'tiyul : brouillon de programme sans temps inventé, toilettes et caisse « לברר »');
+ok(/דק׳ — לאשר ב-Google/.test(prop) && !/Waze/.test(prop) && /לברר: שירותים/.test(prop) && /המתנה בקופה/.test(prop), 'tiyul : brouillon de programme sans temps inventé, toilettes et caisse « לברר »');
 await page.$eval('[data-open="0"]', el => el.click());
 await page.waitForSelector('.slots');
 ok(/הטיול שלי/.test(await page.textContent('.brief h1')) && (await page.$$('.slots select')).length >= 4, 'tiyul : ouvert comme mission d’entraînement, sites pré-remplis');
@@ -175,7 +188,7 @@ await page.click('#chk'); await page.waitForSelector('.slot.ok');
 ok((await page.$$('.slot.bad')).length === 0, 'mission personnalisée : tous les sites valides');
 await page.goto(base + 'exam.html#/m/custom/guided/2');
 await page.waitForSelector('.plan');
-ok((await page.$$('.plan .pr')).length >= 9 && (await page.$$eval('.plan [data-k="what"]', els => els.map(e => e.value).join('|'))).includes('לבדוק ב-Waze'), 'programme pré-rempli (lignes de trajet à compléter)');
+ok((await page.$$('.plan .pr')).length >= 9 && (await page.$$eval('.plan [data-k="what"]', els => els.map(e => e.value).join('|'))).includes('לאשר ב-Google'), 'programme pré-rempli (lignes de trajet à compléter)');
 await shot('7-tiyul');
 
 // FR
