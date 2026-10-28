@@ -125,6 +125,31 @@ await page.waitForSelector('.rcard');
 ok(await page.locator('.rcard').count() >= 4, 'lecture : fiches par étape');
 await shot('08-stories');
 
+// 10 bis. Frise du temps de la carte : toucher « Massada 73 » fait voler la carte sur Massada
+await page.goto(base + 'map.html?mode=guided');
+await page.waitForSelector('#loading.gone');
+await page.waitForSelector('#itl .ev');
+const nEv = await page.locator('#itl .ev').count();
+ok(nEv >= 30, 'frise : ' + nEv + ' événements');
+await page.waitForTimeout(500); // fin de l'animation du bouton
+const fabUp = await page.evaluate(() => { const f = document.getElementById('fit').getBoundingClientRect(), t = document.getElementById('itl').getBoundingClientRect(); return f.bottom <= t.top + 1; });
+ok(fabUp, 'frise : le bouton 🇮🇱 reste au-dessus de la frise');
+await page.locator('#itl [data-id="masada_falls"]').scrollIntoViewIfNeeded();
+await page.click('#itl [data-id="masada_falls"]');
+await page.waitForSelector('.itl-pop', { timeout: 15000 });
+const at = await page.evaluate(() => { const c = window.MDMap.getCenter(), e = window.MDTimeline.events.find(x => x.id === 'masada_falls'); return { d: window.MDMap.distance(c, [e.lat, e.lon]), z: window.MDMap.getZoom(), pop: document.querySelector('.itl-pop').textContent }; });
+ok(at.d < 3000 && at.z >= 12, 'frise : la carte est sur Massada (' + Math.round(at.d) + ' m du point, zoom ' + at.z + ')');
+ok(/מצדה/.test(at.pop) && /73/.test(at.pop), 'frise : bulle « נפילת מצדה · 73 »');
+ok(await page.locator('.itl-pop a[href="site3d.html?site=masada"]').count() === 1, 'frise : lien vers Massada 3D');
+ok(/event=masada_falls/.test(page.url()), 'frise : lien partageable ?event=masada_falls');
+await shot('10b-frise-massada');
+await page.click('#itl [data-id="elijah_carmel"]');
+await page.waitForFunction(() => /מסורת/.test(document.querySelector('.itl-pop')?.textContent || ''), null, { timeout: 15000 });
+ok(true, 'frise : Élie au Carmel marqué « מסורת » (tradition)');
+await page.click('#itlHide');
+ok(await page.locator('#itl').isHidden() && await page.locator('.itl-open').isVisible(), 'frise : masquable, bouton pour la rouvrir');
+await page.click('.itl-open');
+
 // 11. Catalogue : compteurs calculés
 await page.goto(base + 'tour-catalog.html');
 await page.waitForFunction(() => document.getElementById('sQ').textContent !== '…');

@@ -68,3 +68,24 @@ test('quiz : la bonne réponse n’est pas devinable à sa longueur', () => {
   assert.ok(all <= 0.3, 'total ' + Math.round(all * 100) + ' %');
   for (const [id, t] of Object.entries(byTour)) assert.ok(t.l / t.n <= 0.35, id + ' : ' + Math.round(100 * t.l / t.n) + ' %');
 });
+
+test('frise de la carte : chaque événement pointe sur un lieu déjà vérifié, 4 langues, ordre chronologique', async () => {
+  const { build } = await import('../tools/build-israel-timeline.mjs');
+  const { ERA_COLORS } = await import('../public/era-timeline.js');
+  const file = json('israel-timeline.json'), fresh = build();
+  assert.deepEqual(file, JSON.parse(JSON.stringify(fresh)), 'israel-timeline.json à regénérer (node tools/build-israel-timeline.mjs)');
+  assert.ok(file.events.length >= 30);
+  assert.equal(new Set(file.events.map(e => e.id)).size, file.events.length, 'identifiants uniques');
+  file.events.forEach((e, i) => {
+    if (i) assert.ok(e.year >= file.events[i - 1].year, 'ordre : ' + e.id);
+    assert.ok(ERA_COLORS[e.era], e.id + ' : ère inconnue');
+    assert.ok(['fact', 'tradition'].includes(e.kind), e.id);
+    for (const l of ['he', 'fr', 'en', 'ru']) { assert.ok(e.title[l] && e.text[l], `${e.id} : ${l} manquant`); if (e.label) assert.ok(e.label[l], `${e.id} : date ${l}`); }
+    assert.ok(e.lat > 29 && e.lat < 33.5 && e.lon > 34 && e.lon < 36, e.id + ' : hors d’Israël');
+    assert.ok(/^(stop|site|j3d):/.test(e.at) && e.from, e.id + ' : position sans provenance');
+  });
+  assert.ok(file.events.some(e => e.id === 'masada_falls' && e.at === 'site:masada:masada'), 'Massada 73');
+  // aucune coordonnée saisie à la main dans la source
+  const src = readFileSync(new URL('../tools/israel-timeline.src.json', import.meta.url), 'utf8');
+  assert.doesNotMatch(src, /"lat"|"lon"/);
+});

@@ -196,6 +196,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 <script src="community.js"></script>
 <script src="tour-data.js"></script>
 <script src="progress.js"></script>
+<script type="module" src="israel-timeline.js"></script>
 <script>
 (function(){
 'use strict';
@@ -288,6 +289,7 @@ function viewPad(extra){return Object.assign({paddingTopLeft:[12,($('top').offse
 function initMap(){
   map=L.map('map',{zoomControl:false,attributionControl:true,minZoom:5,maxZoom:18,maxBounds:[[24,26],[40,46]],maxBoundsViscosity:0.6,bounceAtZoomLimits:false,tap:true});
   window.MDMap=map; // pour les tests
+  window.MDOpenTour=function(id){openTour(id);}; // frise du temps (israel-timeline.js)
   map.fitBounds(ISRAEL,viewPad());
   // Tuiles OpenStreetMap standard (gratuites, sans clé), assombries en CSS pour le thème nuit.
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,className:'osm-dark',attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>'}).addTo(map);
