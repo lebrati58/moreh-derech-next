@@ -33,11 +33,18 @@ a{color:inherit}
 .top>*{pointer-events:auto}
 .cta-row{display:flex;gap:7px;margin-top:8px}.cta-row a{flex:1;min-width:0;text-align:center;text-decoration:none;font-weight:900;font-size:12.5px;border-radius:11px;padding:7px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cta-add{color:#111d45;background:#ffd878}.cta-lib{color:#a4ffe8;background:#163b61;border:1px solid #5fcca9}.cta-class{flex:.75!important;color:#2a1300;background:linear-gradient(120deg,#ff9a4d,#ffd878)}
 .row{display:flex;align-items:center;gap:8px}
+.search-row{margin-top:9px}.search-row .search{margin-top:0}
+.more-panel{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px;padding:10px;border-radius:16px;background:#111a3df5;border:1px solid var(--line);box-shadow:0 10px 24px #000a}
+.more-panel a,.more-panel button{display:flex;align-items:center;justify-content:center;min-height:44px;padding:6px 8px;border-radius:12px;border:1px solid var(--line);background:var(--panel-2);font-weight:900;font-size:13.5px;text-decoration:none;text-align:center}
+.more-panel button{grid-column:1/-1}
+.more-panel .cta-add{background:#ffd878;color:#111d45;border-color:#ffe7a1}.more-panel .cta-lib{background:#163b61;color:#a4ffe8;border-color:#5fcca9}.more-panel .cta-class{background:linear-gradient(120deg,#ff9a4d,#ffd878);color:#2a1300;border-color:#ffd8a8}
+.icon-btn[aria-expanded=true]{background:var(--teal);color:#0d2a33;border-color:#fff}
+.filt{position:relative}.filt .on-dot{position:absolute;top:6px;inset-inline-end:6px;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 2px #081027}
 .icon-btn{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:15px;background:var(--panel-2);border:1px solid var(--line);box-shadow:0 3px 0 #040919;text-decoration:none;font-size:20px}
 .brand{flex:none;width:46px;height:46px;border-radius:14px;background:#fff;border:2px solid #ffe7a1;box-shadow:0 3px 0 #040919;overflow:hidden}
 .brand img{width:100%;height:100%;object-fit:contain;display:block}
 .mode-chip{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:46px;padding:0 12px;border-radius:15px;border:1px solid #6d5fd8;background:linear-gradient(120deg,#3a2f99,#25307a);box-shadow:0 3px 0 #040919;font-weight:900;text-align:start}
-.mode-chip .mi{font-size:21px}.mode-chip .ml{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mode-chip .mc{font-size:11px;color:#cfc8ff;font-weight:800}
+.mode-chip .mi{font-size:21px}.mode-chip .ml{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15.5px}
 .seg{flex:none;display:flex;padding:4px;gap:3px;height:46px;border-radius:15px;background:var(--panel-2);border:1px solid var(--line)}
 .seg button{border:0;background:transparent;border-radius:11px;padding:0 10px;font-weight:900;font-size:18px;min-width:40px}
 .seg button[aria-pressed=true]{background:var(--teal);color:#0d2a33;box-shadow:0 3px 0 var(--teal-d)}
@@ -160,21 +167,25 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 <header class="top" id="top">
   <div class="row">
     <a class="icon-btn" href="index.html" aria-label="חזרה לבחירת מצב" title="חזרה">→</a>
-    <button type="button" class="mode-chip" id="modeChip" aria-haspopup="dialog"><span class="mi" id="modeIcon">🧭</span><span class="ml"><span class="mc">מצב משחק</span><br><span id="modeLabel">סיור מודרך</span></span><span aria-hidden="true">▾</span></button>
-    <a class="icon-btn" href="community.html" aria-label="צרו קטע דרך משלכם ללא מנהל" title="הוספת קטע דרך">＋</a>
-    <button type="button" class="icon-btn" data-feedback aria-label="רעיון, בעיה או טעות? כתבו לנו" title="רעיון או בעיה">💡</button>
+    <button type="button" class="mode-chip" id="modeChip" aria-haspopup="dialog" aria-label="מצב משחק"><span class="mi" id="modeIcon">🧭</span><span class="ml" id="modeLabel">סיור מודרך</span><span aria-hidden="true">▾</span></button>
+    <button type="button" class="icon-btn" id="moreBtn" aria-expanded="false" aria-controls="morePanel" aria-label="עוד פעולות" title="עוד">⋯</button>
     <div class="seg" role="group" aria-label="תצוגה">
       <button type="button" data-view="map" aria-pressed="true" aria-label="מפה" title="מפה">🗺️</button>
       <button type="button" data-view="list" aria-pressed="false" aria-label="רשימה" title="רשימה">📋</button>
     </div>
   </div>
-  <div class="cta-row">
+  <nav class="more-panel" id="morePanel" hidden aria-label="עוד פעולות">
     <a class="cta-add" href="contribute.html">➕ הוספת מסמך/מסלול</a>
+    <a href="community.html">🛣️ קטע דרך חדש</a>
     <a class="cta-lib" href="community-library.html">🌍 קטעי הקהילה</a>
-    <a class="cta-class" href="class.html">🏆 תחרות</a>
+    <a class="cta-class" href="class.html">🏆 תחרות הכיתה</a>
+    <button type="button" data-feedback>💡 רעיון, בעיה או טעות?</button>
+  </nav>
+  <div class="row search-row">
+    <div class="search"><label class="sr" for="q">חיפוש</label><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="חפשו אתר, סיור או מספר…"><span class="mag" aria-hidden="true">🔎</span></div>
+    <button type="button" class="icon-btn filt" id="filtBtn" aria-expanded="false" aria-controls="chips" aria-label="סינון לפי אזור ונושא" title="סינון">🎚️<b class="on-dot" hidden></b></button>
   </div>
-  <div class="search"><label class="sr" for="q">חיפוש</label><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="חפשו אתר, סיור או מספר…"><span class="mag" aria-hidden="true">🔎</span></div>
-  <div class="chips" id="chips" role="group" aria-label="סינון"></div>
+  <div class="chips" id="chips" role="group" aria-label="סינון" hidden></div>
 </header>
 
 <div id="map" role="application" aria-label="מפת ישראל עם אתרי הסיורים" dir="ltr"></div>
@@ -272,11 +283,17 @@ function buildChips(){
   Object.keys(places.regions).forEach(function(k){h+='<button type="button" class="chip" data-region="'+k+'" aria-pressed="false" style="--c:'+regionColor(k)+'"><span class="dot"></span>'+esc(places.regions[k])+'</button>';});
   $('chips').innerHTML=h;
   $('chips').addEventListener('click',function(e){var b=e.target.closest('[data-region]');if(!b)return;filter.region=b.dataset.region;
-    $('chips').querySelectorAll('[data-region]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});render(true);});
-  $('theme').addEventListener('change',function(e){filter.theme=e.target.value;render(true);});
+    $('chips').querySelectorAll('[data-region]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});filterDot();render(true);});
+  $('theme').addEventListener('change',function(e){filter.theme=e.target.value;filterDot();render(true);});
   var t;$('q').addEventListener('input',function(e){clearTimeout(t);t=setTimeout(function(){filter.q=norm(e.target.value);render(true);},120);});
   $('q').addEventListener('keydown',function(e){if(e.key==='Enter'){var v=visible();if(v.length===1){$('q').blur();openTour(v[0].id);}else $('q').blur();}});
 }
+/* menu « ⋯ » et filtres repliables : l'en-tête tient sur deux rangées */
+function toggle(btn,panel,open){open=open==null?panel.hidden:open;panel.hidden=!open;btn.setAttribute('aria-expanded',String(open));syncTop&&syncTop();}
+$('moreBtn').addEventListener('click',function(){toggle($('moreBtn'),$('morePanel'));if(!$('morePanel').hidden)toggle($('filtBtn'),$('chips'),false);});
+$('filtBtn').addEventListener('click',function(){toggle($('filtBtn'),$('chips'));if(!$('chips').hidden)toggle($('moreBtn'),$('morePanel'),false);});
+document.addEventListener('click',function(e){if(!$('morePanel').hidden&&!e.target.closest('#morePanel,#moreBtn'))toggle($('moreBtn'),$('morePanel'),false);});
+function filterDot(){$('filtBtn').querySelector('.on-dot').hidden=filter.region==='all'&&filter.theme==='all';}
 function visible(){return tours.filter(function(t){
   if(filter.region!=='all'&&t.region!==filter.region)return false;
   if(filter.theme!=='all'&&t.themes.indexOf(filter.theme)<0)return false;

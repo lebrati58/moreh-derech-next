@@ -85,11 +85,25 @@ ok(!(await page.locator('.sheet.peek, .sheet.full').count()), 'retour : la fiche
 // 6. Liste + filtre région
 await page.fill('#q', '');
 await page.click('[data-view="list"]');
+ok(await page.locator('#chips').isHidden(), 'en-tête compact : filtres repliés par défaut');
+await page.click('#filtBtn');
 await page.click('[data-region="jerusalem"]');
+ok(await page.locator('#filtBtn .on-dot').isVisible(), 'filtre actif signalé sur le bouton 🎚️');
 await page.waitForTimeout(300);
 ok(await page.locator('.tcard').count() === 6, 'liste filtrée ירושלים : 6 סיורים');
 await shot('05-list');
 await page.click('[data-region="all"]');
+ok(await page.locator('#filtBtn .on-dot').isHidden(), 'plus de filtre actif : point retiré');
+await page.click('#filtBtn');
+// Menu « ⋯ » : les liens qui occupaient une rangée entière
+await page.click('#moreBtn');
+ok(await page.locator('#morePanel a[href="class.html"]').isVisible() && await page.locator('#morePanel a[href="contribute.html"]').isVisible(), 'menu ⋯ : concours, ajout de document, communauté');
+const hdr = await page.evaluate(() => ({ top: document.getElementById('top').offsetHeight, mode: (() => { const l = document.getElementById('modeLabel'); return l.scrollWidth <= l.clientWidth + 1; })() }));
+await shot('02b-menu');
+await page.click('#moreBtn');
+const hdr2 = await page.evaluate(() => document.getElementById('top').offsetHeight);
+ok(hdr2 < 160, 'en-tête compact : ' + hdr2 + ' px (avant ≈ 250)');
+ok(hdr.mode, 'nom du mode affiché en entier (plus de « מ… ס… »)');
 await page.click('[data-view="map"]');
 
 // 7. Choix du mode depuis la carte, puis מסלול 67 en mode LIVE

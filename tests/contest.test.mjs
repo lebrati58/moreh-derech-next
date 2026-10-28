@@ -28,3 +28,35 @@ test('scores are only published with a name and explicit consent', async () => {
   assert.match(map, /<script src="progress\.js"><\/script>/);
   assert.match(await read('public/class.html'), /esc\(x\.name\)/);
 });
+
+test('concours v2 : un tableau par code de classe, migration sans perte, remise à zéro d’une seule classe', async () => {
+  const { freshDb, rpc } = await import('./helpers.mjs');
+  const c = await freshDb('mdl_contest_v2', { seed: false });
+  try {
+    await c.query(await read('supabase/class_contest.sql'));
+    const tok = n => `0000000${n}-0000-4000-8000-00000000000${n}`;
+    // un score déjà envoyé avec la v1, avant la migration
+    assert.ok((await rpc(c, 'class_score_submit', { p_token: tok(1), p_name: 'דנה', p_points: 500, p_stars: 1, p_gold: 0, p_answered: 5 })).ok);
+    await c.query(await read('supabase/class_contest_v2.sql'));
+    await c.query(await read('supabase/class_contest_v2.sql')); // ré-exécutable
+    assert.deepEqual((await rpc(c, 'class_board', { p_class: '' })).items.map(x => x.name), ['דנה'], 'ancien score conservé dans le tableau général');
+    assert.ok((await rpc(c, 'class_submit', { p_token: tok(2), p_name: 'יוסי', p_points: 900, p_stars: 2, p_gold: 0, p_answered: 9, p_class: ' Yuval-2026 ' })).ok);
+    assert.ok((await rpc(c, 'class_submit', { p_token: tok(3), p_name: 'נועה', p_points: 700, p_stars: 1, p_gold: 0, p_answered: 7, p_class: 'yuval-2026' })).ok);
+    assert.ok((await rpc(c, 'class_submit', { p_token: tok(4), p_name: 'Paul', p_points: 300, p_stars: 0, p_gold: 0, p_answered: 3, p_class: 'אחר' })).ok);
+    assert.deepEqual((await rpc(c, 'class_board', { p_class: 'YUVAL-2026' })).items.map(x => x.name), ['יוסי', 'נועה'], 'classe : seulement ses élèves, code sans majuscules ni espaces');
+    assert.deepEqual((await rpc(c, 'class_board', { p_class: 'אחר' })).items.map(x => x.name), ['Paul']);
+    assert.equal((await rpc(c, 'class_submit', { p_token: tok(5), p_name: 'x', p_points: 1, p_stars: 0, p_gold: 0, p_answered: 1, p_class: 'bad code!' })).error, 'invalid_class');
+    // l'élève change de classe : il quitte l'ancien tableau
+    await rpc(c, 'class_submit', { p_token: tok(4), p_name: 'Paul', p_points: 300, p_stars: 0, p_gold: 0, p_answered: 3, p_class: 'yuval-2026' });
+    assert.equal((await rpc(c, 'class_board', { p_class: 'אחר' })).items.length, 0);
+    // remise à zéro d'une seule classe, réservée à l'admin
+    await assert.rejects(rpc(c, 'admin_class_reset_code', { p_token: 'faux', p_class: 'yuval-2026' }));
+    const tokA = (await rpc(c, 'admin_login', { p_password: 'test-password-123' })).token;
+    assert.equal((await rpc(c, 'admin_class_reset_code', { p_token: tokA, p_class: 'yuval-2026' })).deleted, 3);
+    assert.equal((await rpc(c, 'class_board', { p_class: 'yuval-2026' })).items.length, 0);
+    assert.equal((await rpc(c, 'class_board', { p_class: '' })).items.length, 1, 'les autres tableaux ne sont pas touchés');
+    // aucun accès direct à la table
+    const pub = await c.query(`select has_table_privilege('anon','mdl.class_scores','select') as s`).catch(() => ({ rows: [{ s: false }] }));
+    assert.equal(pub.rows[0].s, false);
+  } finally { await c.end(); }
+});

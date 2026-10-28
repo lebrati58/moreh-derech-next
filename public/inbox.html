@@ -104,8 +104,15 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
   }
   app.addEventListener('click', async e => {
     if (e.target.closest('#resetBoard')) {
-      if (!confirm('למחוק את כל הניקוד בטבלת הכיתה?')) return;
-      try { await rpc('admin_class_reset', { p_token: token }); alert('הטבלה אופסה.'); } catch (err) { if (err.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } alert('האיפוס לא הצליח — האם הותקן supabase/class_contest.sql?'); }
+      // Une classe précise (code), ou tout le tableau si le code est laissé vide.
+      const code = prompt('איזו כיתה לאפס? כתבו את קוד הכיתה (למשל: יובל-2026).\nהשאירו ריק כדי למחוק את כל הטבלאות.');
+      if (code === null) return;
+      const c = code.trim();
+      if (!confirm(c ? `למחוק את הניקוד של הכיתה „${c}”?` : 'למחוק את כל הניקוד בכל הכיתות?')) return;
+      try {
+        const r = c ? await rpc('admin_class_reset_code', { p_token: token, p_class: c }) : await rpc('admin_class_reset', { p_token: token });
+        alert(c ? `הכיתה „${c}” אופסה (${r && r.deleted != null ? r.deleted : 0} תלמידים).` : 'כל הטבלאות אופסו.');
+      } catch (err) { if (err.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } alert(c ? 'האיפוס לא הצליח — האם הותקן class_contest_v2.sql?' : 'האיפוס לא הצליח — האם הותקן class_contest.sql?'); }
       return;
     }
     const f = e.target.closest('[data-f]');
