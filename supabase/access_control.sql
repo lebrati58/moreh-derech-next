@@ -116,13 +116,16 @@ begin
 end $$;
 
 -- Session encore valable ? (et l'élève toujours dans la liste)
+-- Le guide connecté avec son mot de passe (session admin) entre aussi, SANS numéro.
+-- L'inverse reste impossible : une session élève n'ouvre jamais l'administration (mdl.check_admin).
 create or replace function public.access_check(p_token text)
 returns jsonb language sql stable security definer
 set search_path = ''
 as $$
   select jsonb_build_object('ok', exists (
     select 1 from mdl.access_sessions s join mdl.access_people p on p.tz_hash = s.tz_hash
-     where s.token_hash = encode(sha256(convert_to(coalesce(p_token, ''), 'UTF8')), 'hex') and s.expires_at > now()),
+     where s.token_hash = encode(sha256(convert_to(coalesce(p_token, ''), 'UTF8')), 'hex') and s.expires_at > now())
+    or exists (select 1 from mdl.admin_sessions a where a.token::text = p_token and a.expires_at > clock_timestamp()),
     'required', exists (select 1 from mdl.access_people))
 $$;
 
