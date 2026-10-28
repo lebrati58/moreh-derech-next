@@ -69,7 +69,10 @@ await page.waitForSelector('.plan');
 const info = await page.textContent('.info');
 ok(/עין קשתות/.test(info) && /שירותים/.test(info) && /לברר/.test(info), 'programme : infos des sites choisis (horaires, toilettes « לברר »)');
 ok(/צומת צמח ← מצפה אופיר/.test(info) && /ק״מ אווירי/.test(info) && (await page.$$('.legs a[href*="google.com/maps/dir"]')).length >= 4, 'trajets : distance aérienne + liens Google/Waze, aucun temps inventé');
-const pickTime = async (i, k, v) => { await page.$eval(`.pr[data-i="${i}"] .tbtn[data-t="${k}:${i}"]`, el => el.click()); await page.waitForSelector('.sheet.clock'); const [h, m] = v.split(':'); await page.click(`.sheet.clock [data-h="${+h}"]`); await page.click(`.sheet.clock [data-m="${+m}"]`); await page.waitForFunction(() => !document.querySelector('.sheet.clock')); };
+const pickTime = async (i, k, v) => { await page.$eval(`.pr[data-i="${i}"] .tbtn[data-t="${k}:${i}"]`, el => el.click()); await page.waitForSelector('.sheet.clock');
+  const want = v.split(':').reduce((a, x) => a * 60 + +x, 0); let cur = (await page.textContent('#cv')).split(':').reduce((a, x) => a * 60 + +x, 0);
+  while (cur !== want) { const d = want - cur, step = Math.abs(d) >= 60 ? 60 : Math.abs(d) >= 15 ? 15 : 5; await page.click(`.sheet.clock [data-d="${d > 0 ? step : -step}"]`); cur += d > 0 ? step : -step; }
+  await page.click('#cok'); await page.waitForFunction(() => !document.querySelector('.sheet.clock')); };
 const fill = async (i, k, v) => { if (k === 'start' || k === 'end') return pickTime(i, k, v); const sel = `.pr[data-i="${i}"] [data-k="${k}"]`; if (k === 'site') await page.selectOption(sel, v); else { await page.fill(sel, v); await page.dispatchEvent(sel, 'change'); } };
 await fill(0, 'end', '08:15'); await fill(0, 'what', 'מפגש ואיסוף: צומת צמח'); await fill(0, 'log', 'לבדוק שכולם הגיעו');
 await page.click('#add'); await fill(1, 'end', '17:30'); await fill(1, 'what', 'עין קשתות'); await fill(1, 'site', 'ein_keshatot'); await fill(1, 'log', 'תשלום כניסה');
