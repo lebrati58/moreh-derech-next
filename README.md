@@ -489,10 +489,21 @@ pas une modération parfaite. Pour un usage grand public, ajouter CAPTCHA, signa
 - Installation : exécuter **une fois** `supabase/class_contest.sql` dans Supabase › SQL Editor (après `install.sql`).
 - Codes de classe (un tableau par classe, lien `class.html?c=yuval-2026`) : exécuter ensuite **une fois** `supabase/class_contest_v2.sql`. Additif : n'efface aucun score ; les anciens scores restent dans le tableau « général ». Remise à zéro d'une seule classe depuis `inbox.html` (admin).
 
-## Accès réservé aux élèves (teoudat zehout)
+## Flux d'accès : élèves, animateurs, admin
+
+| Qui | Comment il entre | Ce qu'il peut faire |
+|---|---|---|
+| **Élève / participant** | rien à taper | tout le contenu élève (accueil, cartes, quiz, 3D, concours) et **rejoindre** un quiz en direct (`play.html`) |
+| **Animateur** (guide ou élève-guide de la liste) | accueil › « 🚌 להפעיל חידון חי לקבוצה » › numéro de teoudat zehout (une fois, 180 jours) | **lancer et mener** un quiz en direct : nouvelle partie, publier / fermer / révéler, pause, fin, réglages de la partie, classement, retirer un joueur, simulation |
+| **Admin** (mot de passe) | pas sur l'accueil : lien « ⚙️ ניהול » en bas de l'espace « חידון חי », ou `admin.html?login=admin`, ou `inbox.html` | tout, dont ce que l'animateur ne peut **pas** : modifier / supprimer / réordonner des questions, importer des parcours, exporter, liste des numéros, messages, remise à zéro du concours |
+
+Le contrôle est fait **par le serveur** (`mdl.check_host` pour le quiz en direct, `mdl.check_admin` pour le reste) : cacher un bouton ne suffit pas, un numéro ne donne jamais les droits d'admin.
+Une seule partie est active à la fois : un animateur qui lance une nouvelle partie remplace celle en cours.
+
+### Liste des numéros
 
 - Installer **une fois** `supabase/access_control.sql` (après `install.sql`).
 - Dans `inbox.html` (admin), carte « 👥 מי יכול להיכנס » : coller la liste : un numéro par ligne (copie d'une colonne Excel acceptée ; tout texte autour est ignoré et jamais enregistré). La liste remplace la précédente. Aucun prénom n'est stocké.
 - Aucun numéro n'est stocké en clair ni dans le dépôt : le serveur garde seulement `sha256(clé secrète | numéro)`, la clé étant tirée au hasard dans la base.
-- Liste vide = application ouverte à tous. Une liste collée sans aucun numéro valide est refusée (rien ne change).
-- `public/access-gate.js` est chargé dans toutes les pages sauf les pages du guide (`admin.html`, `update.html`, `inbox.html`), qui ont leur mot de passe. Le guide connecté avec son mot de passe ouvre toutes les pages sans numéro ; un numéro d'élève n'ouvre jamais l'administration. C'est une porte d'entrée : les fichiers publics (JSON, images) restent techniquement téléchargeables par qui connaît leur adresse.
+- Liste vide = aucun animateur par numéro (seul l'admin, avec son mot de passe, lance un quiz en direct). Une liste collée sans aucun numéro valide est refusée (rien ne change).
+- `public/access-gate.js` n'est chargé que dans `guide.html` et `admin.html` (porte « animateur »). Les pages élèves ne le chargent pas. Si `install.sql` ou une migration est relancé, relancer ensuite `access_control.sql` (sinon le quiz en direct redevient « admin seulement »).

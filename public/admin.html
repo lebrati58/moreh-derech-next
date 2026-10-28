@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="manifest" href="manifest.webmanifest">
+<script src="access-gate.js"></script>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -17,6 +18,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap&subset=hebrew" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="next-theme.css">
+<style>/* animateur (numéro) : seulement mener le quiz — les outils d'administration sont cachés */
+body.host [data-a="edit"],body.host [data-a="newq"],body.host [data-a="del"],body.host [data-a="up"],body.host [data-a="down"],body.host [data-a="export"],body.host [data-a="solo-share"]{display:none!important}</style>
 <link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
 </head>
 <body>
@@ -59,7 +62,14 @@
   const banner = document.getElementById('banner');
   const chip = document.getElementById('hdr-chip');
 
-  let token = store.get(KEY);
+  // Deux façons d'entrer : ADMIN (mot de passe, tous les droits) ou ANIMATEUR (numéro de la liste, via access-gate.js :
+  // seulement mener le quiz en direct). admin.html?login=admin force la connexion par mot de passe.
+  const forceAdmin = /[?&]login=admin\b/.test(location.search);
+  const hostToken = () => { try { return (JSON.parse(localStorage.getItem('mdl_access_v1')) || {}).token || ''; } catch { return ''; } };
+  let token = store.get(KEY) || (forceAdmin ? null : hostToken() || null);
+  const isHost = () => !!token && token !== store.get(KEY);
+  const markHost = () => document.body.classList.toggle('host', isHost());
+  markHost();
   const launchMode = new URLSearchParams(location.search).get('mode');
   const simulationLaunch = launchMode === 'simulation';
   let S = null, offset = 0, view = simulationLaunch ? 'gallery' : 'live', pickId = null, timer = null, failures = 0, lastHash = '', busy = false, routeMode = simulationLaunch, nav = null, backupOpen = false,
@@ -140,7 +150,7 @@
       try {
         const r = await rpc('admin_login', { p_password: document.getElementById('pw').value });
         if (r.error) return renderLogin({ bad_password: 'סיסמה שגויה.', too_many_attempts: 'יותר מדי ניסיונות. נסו שוב בעוד 15 דקות.', no_password_set: 'לא הוגדרה סיסמה (ראו README).' }[r.error] || r.error);
-        token = r.token; store.set(KEY, token); lastHash = ''; refresh();
+        token = r.token; store.set(KEY, token); markHost(); lastHash = ''; refresh();
       } catch { renderLogin('אין חיבור לשרת.'); }
     });
   }
@@ -156,7 +166,8 @@
       if (navigator.vibrate) navigator.vibrate(20);
       return r;
     } catch (e) {
-      if (e.auth) { store.del(KEY); token = null; renderLogin('פג תוקף הכניסה.'); }
+      if (e.auth && isHost()) toast('🔒 רק המנהל (סיסמה) יכול לעשות את זה.');
+      else if (e.auth) { store.del(KEY); token = null; renderLogin('פג תוקף הכניסה.'); }
       else toast('הפעולה נכשלה — אין חיבור. נסו שוב.');
     } finally { busy = false; lastHash = ''; refresh(); }
   }
@@ -174,6 +185,7 @@
       if (S.game?.bank === 'V2' && !loadPhotos._busy && (!P || P._game !== (S.game && S.game.id))) loadPhotos();   // une fois par partie
       render();
     } catch (e) {
+      if (e.auth && isHost()) { try { localStorage.removeItem('mdl_access_v1'); } catch {} return location.reload(); } // animateur retiré : retour à la porte
       if (e.auth) { store.del(KEY); token = null; return renderLogin('פג תוקף הכניסה.'); }
       if (++failures >= 2) banner.classList.remove('hidden');
       if (!S && bank().length) renderOfflineBank();
@@ -205,7 +217,7 @@
     const rt = document.querySelector('#tab-route');
     if (rt) { const v3 = S.game && routeBank(S.game.bank); rt.querySelector('.i').textContent = v3 ? '🗺️' : '📷'; }
     chip.classList.remove('hidden');
-    chip.textContent = `👥 ${S.online}/${S.players}`;
+    chip.textContent = (isHost() ? '🚌 מפעיל · ' : '') + `👥 ${S.online}/${S.players}`;
     // Ouverture automatique du panneau micro à la révélation (une seule fois par question)
     if (S.game && S.game.phase === 'revealed' && S.current) {
       const k = S.game.id + ':' + S.current.question_id;
@@ -1010,7 +1022,9 @@
       case 'bus-on': setBus(true); break;
       case 'qr': showQr(); break;
       case 'solo-share': soloShare(); break;
-      case 'logout': store.del(KEY); token = null; renderLogin(); break;
+      case 'logout':
+        if (isHost()) { try { localStorage.removeItem('mdl_access_v1'); } catch {} location.href = 'index.html'; break; }
+        store.del(KEY); token = null; markHost(); renderLogin(); break;
     }
   });
 

@@ -56,10 +56,19 @@ test('accès par teoudat zehout : liste privée hachée, connexion, retrait, lim
     assert.ok(s.ok && s.token && !('label' in s), 'connexion avec espaces et tiret, aucun prénom renvoyé');
     assert.equal((await rpc(c, 'access_check', { p_token: s.token })).ok, true);
     assert.equal((await rpc(c, 'access_check', { p_token: 'autre' })).ok, false);
-    // le numéro ouvre l'application, JAMAIS l'administration : la session élève est refusée partout côté admin
-    for (const [fn, args] of [['admin_access_set', { p_list: C }], ['admin_access_list', {}], ['admin_state', {}]]) {
-      await assert.rejects(rpc(c, fn, Object.assign({ p_token: s.token }, args)), /not_authorized/, fn + ' refusé avec un jeton élève');
+    // ANIMATEUR (numéro de la liste) : peut lancer et mener un quiz en direct…
+    const st = await rpc(c, 'admin_state', { p_token: s.token });
+    assert.ok(st && 'questions' in st, 'animateur : écran du quiz en direct');
+    assert.ok((await rpc(c, 'admin_new_game', { p_token: s.token, p_title: 'אוטובוס' })).ok !== false, 'animateur : nouvelle partie');
+    await rpc(c, 'admin_pause', { p_token: s.token, p_paused: true });
+    await rpc(c, 'admin_pause', { p_token: s.token, p_paused: false });
+    // … mais n'a JAMAIS les droits d'administration du guide
+    for (const [fn, args] of [['admin_access_set', { p_list: C }], ['admin_access_list', {}], ['admin_export', {}],
+        ['admin_save_question', { p_q: { text: 'x' } }], ['admin_delete_question', { p_id: 1 }], ['admin_reorder', { p_ids: [] }]]) {
+      await assert.rejects(rpc(c, fn, Object.assign({ p_token: s.token }, args)), /not_authorized/, fn + ' refusé avec un jeton animateur');
     }
+    // un jeton inventé n'anime rien
+    await assert.rejects(rpc(c, 'admin_state', { p_token: 'invente' }), /not_authorized/);
     // le guide connecté (session admin, mot de passe) entre dans l'application sans numéro
     assert.equal((await rpc(c, 'access_check', { p_token: adm })).ok, true, 'session admin : application ouverte');
     // liste collée sans aucun numéro valide : refusée, rien ne change
@@ -68,6 +77,7 @@ test('accès par teoudat zehout : liste privée hachée, connexion, retrait, lim
     // retrait de l'élève : sa session ne marche plus
     assert.equal((await rpc(c, 'admin_access_set', { p_token: adm, p_list: B })).allowed, 1);
     assert.equal((await rpc(c, 'access_check', { p_token: s.token })).ok, false);
+    await assert.rejects(rpc(c, 'admin_state', { p_token: s.token }), /not_authorized/, 'animateur retiré : ne mène plus le quiz');
     // limite de tentatives ratées
     for (let i = 0; i < 60; i++) await rpc(c, 'access_login', { p_tz: C });
     assert.equal((await rpc(c, 'access_login', { p_tz: B })).error, 'too_many_attempts');

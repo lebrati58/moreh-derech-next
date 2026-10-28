@@ -1,5 +1,6 @@
-// Moreh Derech NEXT — accès réservé aux élèves de la liste (numéro de teoudat zehout).
-// Chargé dans le <head> de chaque page (sauf inbox.html, où l'admin gère la liste).
+// Moreh Derech NEXT — porte « animateur » : numéro de teoudat zehout de la liste, demandé UNIQUEMENT pour lancer
+// et mener un quiz en direct (guide.html, admin.html). Toutes les pages élèves sont ouvertes sans numéro.
+// L'admin (mot de passe) passe aussi ; admin.html?login=admin saute la porte pour afficher la connexion par mot de passe.
 // • Le serveur décide : tant que la liste est vide (ou que access_control.sql n'est pas installé), tout reste ouvert.
 // • Le numéro n'est JAMAIS gardé dans le téléphone : seulement un jeton de session renvoyé par le serveur.
 // • Hors connexion, un téléphone déjà connecté continue de marcher.
@@ -7,6 +8,7 @@
   'use strict';
   var KEY = 'mdl_access_v1', RECHECK = 12 * 3600 * 1000;
   var root = document.documentElement;
+  if (/[?&]login=admin\b/.test(location.search)) return;   // connexion admin par mot de passe demandée
   var st = document.createElement('style');
   st.textContent = 'html.mdl-gate body{visibility:hidden}' +
     '#mdlGate{visibility:visible;position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 0,#2c2a7a,#081027 70%);color:#f4f6ff;font-family:system-ui,-apple-system,"Segoe UI","Arial Hebrew",Arial,sans-serif;direction:rtl}' +
@@ -47,7 +49,7 @@
   }
 
   var MSG = {
-    not_allowed: 'המספר לא נמצא ברשימת התלמידים. פנו למדריך.',
+    not_allowed: 'המספר לא נמצא ברשימה. פנו למדריך.',
     invalid_tz: 'מספר תעודת זהות לא תקין — בדקו את הספרות.',
     too_many_attempts: 'יותר מדי ניסיונות. נסו שוב בעוד כמה דקות.',
     offline: 'אין חיבור לשרת. התחברו לאינטרנט ונסו שוב.'
@@ -55,13 +57,14 @@
   function showLogin(note) {
     if (document.getElementById('mdlGate')) return;
     var g = document.createElement('div'); g.id = 'mdlGate';
-    g.innerHTML = '<form novalidate><img src="assets/moreh-derech-next-driver.webp" alt=""><h1>כניסה לתלמידי הקורס</h1>' +
-      '<p>האפליקציה פתוחה כרגע רק לתלמידי הקורס. הקלידו את מספר תעודת הזהות שלכם.</p>' +
+    g.innerHTML = '<form novalidate><img src="assets/moreh-derech-next-driver.webp" alt=""><h1>🚌 הפעלת חידון חי לקבוצה</h1>' +
+      '<p>כדי להפעיל חידון חי למשתתפים (למשל באוטובוס) הקלידו את מספר תעודת הזהות שלכם. רק מדריכים ותלמידי הקורס שברשימה.</p>' +
       '<label for="mdlTz" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">מספר תעודת זהות</label>' +
       '<input id="mdlTz" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="000000000">' +
       '<button type="submit">כניסה</button><div class="err" role="alert"></div>' +
       '<small>🔒 המספר נשלח לבדיקה בלבד ואינו נשמר בטלפון. בשרת נשמרת רק טביעה מוצפנת שלו.</small>' +
-      '<a href="admin.html" style="display:inline-block;margin-top:14px;color:#ffd66e;font-weight:800;font-size:14px">🧭 כניסת מדריך (סיסמה)</a></form>';
+      '<a href="index.html" style="display:inline-block;margin-top:14px;color:#a9b8df;font-size:14px">→ חזרה לדף הבית</a>' +
+      '<a href="admin.html?login=admin" style="display:block;margin-top:10px;color:#8f9fca;font-size:12px">⚙️ ניהול (סיסמת מנהל)</a></form>';
     (document.body || root).appendChild(g);
     var f = g.querySelector('form'), inp = g.querySelector('input'), btn = g.querySelector('button'), err = g.querySelector('.err');
     if (note) err.textContent = note;
@@ -85,7 +88,7 @@
       if (!r || !r.required) { if (s.token) save(Object.assign(s, { checked: Date.now() })); return open(); } // liste vide : ouvert
       if (adm && r.ok) return open();
       if (s.token && r.ok) { save(Object.assign(s, { checked: Date.now() })); return open(); }
-      save({}); root.classList.add('mdl-gate'); showLogin(s.token ? 'הגישה שלכם הסתיימה. הקלידו שוב את המספר.' : '');
+      save({}); root.classList.add('mdl-gate'); showLogin(s.token ? 'הכניסה הסתיימה. הקלידו שוב את המספר.' : '');
     }).catch(function (e) {
       if (e && e.status === 404) return open();          // access_control.sql pas encore installé : rien n'est fermé
       if (s.token || adm) return open();                   // hors connexion, déjà connecté : on laisse passer
@@ -93,5 +96,5 @@
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', decide); else decide();
-  window.MDAccess = { logout: function () { save({}); location.reload(); } };
+  window.MDAccess = { logout: function () { save({}); location.reload(); }, token: function () { return load().token || ''; } };
 })();

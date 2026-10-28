@@ -173,6 +173,45 @@ begin
   return jsonb_build_object('allowed', (select count(*) from mdl.access_people));
 end $$;
 
+-- ============================================================================================
+-- Trois niveaux d'accès :
+--  1. ÉLÈVE / PARTICIPANT : tout est ouvert, aucun numéro (accueil, cartes, quiz, 3D, concours, rejoindre un quiz en direct).
+--  2. ANIMATEUR (guide ou élève-guide de la liste, connecté avec son numéro) : peut LANCER et MENER un quiz en direct
+--     (nouvelle partie, publier / fermer / révéler une question, pause, fin, réglages de la partie, classement, retirer un joueur).
+--  3. ADMIN (mot de passe du guide) : tout, y compris ce que l'animateur ne peut PAS faire : modifier ou supprimer des questions,
+--     importer des parcours, exporter, gérer la liste des numéros, lire les messages, remettre le concours à zéro.
+-- ============================================================================================
+create or replace function mdl.check_host(p_token text) returns void
+language plpgsql stable
+set search_path = ''
+as $$
+begin
+  if p_token is null or not (
+       exists (select 1 from mdl.admin_sessions a where a.token::text = p_token and a.expires_at > clock_timestamp())
+    or exists (select 1 from mdl.access_sessions s join mdl.access_people p on p.tz_hash = s.tz_hash
+                where s.token_hash = encode(sha256(convert_to(p_token, 'UTF8')), 'hex') and s.expires_at > now()))
+  then raise exception 'not_authorized' using errcode = '42501'; end if;
+end $$;
+revoke all on function mdl.check_host(text) from public;
+
+-- Les fonctions du quiz EN DIRECT passent de « admin seulement » à « animateur ou admin ».
+-- (Elles sont réécrites telles qu'installées, seul le contrôle change. Si install.sql ou une migration est relancé
+--  plus tard, elles redeviennent « admin seulement » : relancer alors ce fichier.)
+do $$
+declare f text; d text;
+begin
+  foreach f in array array['admin_state','admin_new_game','admin_toggle_spare','admin_open_question','admin_close_question',
+                           'admin_reveal','admin_pause','admin_finish','admin_resume_game','admin_settings',
+                           'admin_remove_player','admin_photos','admin_bank_questions'] loop
+    for d in select pg_get_functiondef(p.oid) from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+              where n.nspname = 'public' and p.proname = f loop
+      if position('mdl.check_admin(p_token)' in d) > 0 then
+        execute replace(d, 'mdl.check_admin(p_token)', 'mdl.check_host(p_token)');
+      end if;
+    end loop;
+  end loop;
+end $$;
+
 revoke all on function mdl.tz_norm(text), mdl.tz_loose(text), mdl.tz_pick(text), mdl.tz_hash(text) from public;
 revoke all on function public.access_required(), public.access_login(text), public.access_check(text),
   public.admin_access_set(text, text), public.admin_access_list(text) from public;

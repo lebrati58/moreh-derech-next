@@ -1,5 +1,5 @@
-// Accès réservé (téléphone simulé, serveur Supabase SIMULÉ) : écran de connexion quand la liste existe,
-// numéro refusé / accepté, page visible ensuite, numéro jamais gardé dans le téléphone, application ouverte si liste vide.
+// Flux d'accès (téléphone simulé, serveur Supabase SIMULÉ) : élèves/participants sans numéro ; numéro demandé
+// seulement pour lancer un quiz en direct (animateur) ; admin par mot de passe, séparé, absent de l'accueil.
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
@@ -37,49 +37,55 @@ const errors = [], ok = (c, m) => { if (!c) { errors.push(m); console.log('❌',
 page.on('pageerror', e => errors.push('pageerror: ' + e.message));
 const hidden = () => page.evaluate(() => getComputedStyle(document.body).visibility === 'hidden');
 
-await page.goto(base + 'index.html');
+// 1. ÉLÈVES / PARTICIPANTS : tout est ouvert, jamais de numéro (même quand la liste existe)
+for (const p of ['index.html', 'map.html', 'history.html', 'class.html', 'play.html', 'admin.html?login=admin']) {
+  await page.goto(base + p); await page.waitForTimeout(500);
+  ok(!(await page.$('#mdlGate')) && !(await hidden()), p + ' : ouvert sans numéro');
+}
+ok(/חידון חי/.test(await (await page.goto(base + 'index.html'), page.textContent('.guide-link'))), 'accueil : seule entrée « להפעיל חידון חי », pas d’admin');
+ok(!(await page.$('a[href*="admin.html"]')) && !(await page.$('a[href*="inbox.html"]')), 'accueil : aucun lien vers l’administration');
+// 2. ANIMATEUR : le numéro est demandé seulement pour lancer un quiz en direct
+await page.click('.guide-link');
 await page.waitForSelector('#mdlGate input');
-ok(await hidden(), 'liste remplie : page cachée, écran « כניסה לתלמידי הקורס »');
+ok(await hidden() && /חידון חי/.test(await page.textContent('#mdlGate h1')), 'lancer un quiz en direct : numéro demandé');
 if (OUT) await page.screenshot({ path: OUT + '/acces-1.png' });
 await page.fill('#mdlGate input', '123456782'); await page.click('#mdlGate button');
 await page.waitForFunction(() => /לא נמצא/.test(document.querySelector('#mdlGate .err').textContent));
-ok(await hidden(), 'numéro hors liste : refusé, page toujours cachée');
+ok(await hidden(), 'numéro hors liste : refusé');
 await page.fill('#mdlGate input', '0000-00018'); await page.click('#mdlGate button');
 await page.waitForFunction(() => !document.getElementById('mdlGate'));
-ok(!(await hidden()), 'numéro de la liste : page visible');
+ok(!(await hidden()), 'numéro de la liste : espace « חידון חי » visible');
 const stored = await page.evaluate(() => JSON.stringify(localStorage));
 ok(!/000000018|18"/.test(stored) && /tok-/.test(stored), 'le numéro n’est pas gardé dans le téléphone, seulement un jeton');
-await page.goto(base + 'map.html');
+if (OUT) await page.screenshot({ path: OUT + '/acces-2.png', fullPage: true });
+await page.goto(base + 'admin.html?mode=guide');
 await page.waitForTimeout(800);
-ok(!(await page.$('#mdlGate')) && !(await hidden()), 'autre page : pas besoin de retaper le numéro');
-// élève retiré de la liste : au prochain contrôle, retour à l'écran de connexion
+ok(!(await page.$('#mdlGate')) && await page.evaluate(() => document.body.classList.contains('host')), 'écran du quiz en direct : mode animateur (outils admin cachés)');
+// 3. ADMIN : connexion distincte par mot de passe, jamais par le numéro
+await page.goto(base + 'admin.html?login=admin');
+await page.waitForSelector('#pw');
+ok(!(await page.evaluate(() => document.body.classList.contains('host'))), 'admin.html?login=admin : mot de passe demandé, pas le mode animateur');
+// animateur retiré de la liste : au prochain contrôle, retour au numéro
 sessions.clear();
 await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('mdl_access_v1')); s.checked = 0; localStorage.setItem('mdl_access_v1', JSON.stringify(s)); });
-await page.goto(base + 'history.html');
+await page.goto(base + 'guide.html');
 await page.waitForSelector('#mdlGate input');
-ok(/הסתיימה/.test(await page.textContent('#mdlGate .err')), 'élève retiré : accès terminé, écran de connexion');
-// le guide : la page admin ne demande JAMAIS de numéro ; une fois connecté avec son mot de passe, toutes les pages s'ouvrent
+ok(/הסתיימה/.test(await page.textContent('#mdlGate .err')), 'animateur retiré : il faut retaper le numéro');
+// le guide connecté avec son mot de passe entre sans numéro
 await page.evaluate(() => localStorage.clear());
-await page.goto(base + 'admin.html');
-await page.waitForTimeout(800);
-ok(!(await page.$('#mdlGate')) && !(await hidden()), 'admin.html : pas d’écran de numéro (mot de passe du guide)');
-await page.goto(base + 'index.html');
-await page.waitForSelector('#mdlGate a[href="admin.html"]');
-ok(true, 'écran de numéro : lien « כניסת מדריך »');
 sessions.add('adm-tok'); await page.evaluate(() => localStorage.setItem('mdl_admin', JSON.stringify('adm-tok')));
-await page.goto(base + 'map.html');
+await page.goto(base + 'guide.html');
 await page.waitForFunction(() => !document.getElementById('mdlGate') && getComputedStyle(document.body).visibility !== 'hidden');
-ok(true, 'guide connecté (session admin) : application ouverte sans numéro');
-sessions.delete('adm-tok');
-await page.goto(base + 'history.html');
-await page.waitForSelector('#mdlGate input');
-ok(true, 'session admin expirée : écran de numéro');
-// liste vide : tout le monde passe
+ok(true, 'admin connecté (mot de passe) : pas de numéro');
+await page.goto(base + 'admin.html');
+await page.waitForTimeout(500);
+ok(!(await page.evaluate(() => document.body.classList.contains('host'))), 'admin connecté : tous les outils (pas le mode animateur)');
+// liste vide : l'espace s'ouvre (l'écran du quiz demandera alors le mot de passe)
 required = false;
-await ctx.clearCookies(); await page.evaluate(() => localStorage.clear());
-await page.goto(base + 'class.html');
+await page.evaluate(() => localStorage.clear());
+await page.goto(base + 'guide.html');
 await page.waitForTimeout(800);
-ok(!(await page.$('#mdlGate')) && !(await hidden()), 'liste vide : application ouverte à tous');
+ok(!(await page.$('#mdlGate')) && !(await hidden()), 'liste vide : pas de numéro demandé');
 ok(errors.length === 0, 'aucune erreur JavaScript' + (errors.length ? ' : ' + errors.join(' | ') : ''));
 await browser.close(); server.close();
 process.exit(errors.length ? 1 : 0);

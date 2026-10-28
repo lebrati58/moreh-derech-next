@@ -142,23 +142,23 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
   async function renderAccess(){
     const old = document.getElementById('accessCard'); if (old) old.remove();
     const box = document.createElement('div'); box.className = 'card'; box.id = 'accessCard'; box.style.marginTop = '22px';
-    box.innerHTML = '<b>👥 מי יכול להיכנס לאפליקציה</b><p class="sub" id="accInfo" style="margin:6px 0 10px">טוען…</p>';
+    box.innerHTML = '<b>🚌 מי יכול להפעיל חידון חי</b><p class="sub" id="accInfo" style="margin:6px 0 10px">טוען…</p>';
     app.appendChild(box);
     let info;
     try { info = await rpc('admin_access_list', { p_token: token }); }
     catch (e) { if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); }
       document.getElementById('accInfo').innerHTML = 'יש להריץ פעם אחת את <b>supabase/access_control.sql</b> ב-Supabase › SQL Editor.'; return; }
     const n = info.allowed || 0;
-    box.innerHTML = `<b>👥 מי יכול להיכנס לאפליקציה</b>
-      <p class="sub" style="margin:6px 0 10px">${n ? `🔒 האפליקציה סגורה: <b>${n}</b> מספרים מורשים.` : '🔓 האפליקציה פתוחה לכולם (הרשימה ריקה).'}</p>
+    box.innerHTML = `<b>🚌 מי יכול להפעיל חידון חי</b>
+      <p class="sub" style="margin:6px 0 10px">${n ? `🔒 <b>${n}</b> מספרים יכולים להפעיל חידון חי (מדריכים ותלמידי הקורס). כל שאר האפליקציה פתוחה לכולם בלי מספר.` : '📭 הרשימה ריקה: רק המנהל (סיסמה) יכול להפעיל חידון חי. שאר האפליקציה פתוחה לכולם.'}</p>
       <p class="sub" style="margin:0 0 8px">הדביקו את <b>כל</b> הרשימה (מחליפה את הקודמת): מספר תעודת זהות אחד בכל שורה. אפשר להעתיק עמודה מאקסל. לא נשמר שום שם — רק טביעה מוצפנת של המספר, שלא תוצג כאן שוב.</p>
       <textarea oninput="delete this.dataset.confirmed" id="accList" rows="7" style="width:100%;box-sizing:border-box;border-radius:12px;background:#101a40;color:var(--ink);border:1px solid var(--line);padding:10px;font:inherit;direction:rtl" placeholder="012345678&#10;123456782"></textarea>
-      <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn ok" id="accSave" type="button">💾 שמירת הרשימה</button>${n ? '<button class="btn" id="accOpen" type="button">🔓 לפתוח לכולם</button>' : ''}</div>
+      <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn ok" id="accSave" type="button">💾 שמירת הרשימה</button>${n ? '<button class="btn" id="accOpen" type="button">🗑️ למחוק את הרשימה</button>' : ''}</div>
       <p class="sub" id="accMsg" style="margin:8px 0 0"></p>`;
     const msg = t => { document.getElementById('accMsg').innerHTML = t; };
     document.getElementById('accSave').onclick = async () => {
       const ta = document.getElementById('accList'), list = ta.value;
-      if (!list.trim()) return msg('הרשימה ריקה. כדי לפתוח לכולם השתמשו בכפתור „לפתוח לכולם”.');
+      if (!list.trim()) return msg('הרשימה ריקה. כדי למחוק את כל המספרים השתמשו בכפתור „למחוק את הרשימה”.');
       const chk = tzCheck(list);
       if (chk.bad.length && !ta.dataset.confirmed) {
         ta.dataset.confirmed = '1';
@@ -178,8 +178,8 @@ input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);ba
     };
     const op = document.getElementById('accOpen');
     if (op) op.onclick = async () => {
-      if (!confirm('למחוק את הרשימה ולפתוח את האפליקציה לכולם?')) return;
-      try { await rpc('admin_access_set', { p_token: token, p_list: '' }); await renderAccess(); msg('🔓 האפליקציה פתוחה לכולם.'); }
+      if (!confirm('למחוק את כל המספרים? רק המנהל יוכל להפעיל חידון חי.')) return;
+      try { await rpc('admin_access_set', { p_token: token, p_list: '' }); await renderAccess(); msg('🗑️ הרשימה נמחקה.'); }
       catch (e) { msg('❌ הפעולה לא הצליחה.'); }
     };
   }
