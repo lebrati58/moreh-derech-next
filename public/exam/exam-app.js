@@ -107,12 +107,13 @@
     const click = id => { if (opts.pick) opts.pick(id); else siteSheet(id); };
     const svgFallback = why => {
       holder.classList.add('svg');
-      const W = 360, H = 240, lo = [35.62, 35.87], la = [32.76, 32.89];
+      const W = 360, H = 260, lo = [35.56, 35.87], la = [32.69, 32.89];
       const x = l => Math.round((l - lo[0]) / (lo[1] - lo[0]) * W), y = l => Math.round((la[1] - l) / (la[1] - la[0]) * H);
       const r789 = DATA.roads.find(r => r.line), a = P[r789.line[0]], b = P[r789.line[1]];
       holder.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="מפה סכמטית"><rect width="${W}" height="${H}" rx="14" fill="#13234d"/>
         <text x="10" y="${H / 2}" fill="#7fb6ff" font-size="12" font-weight="800">← הכנרת (מערב)</text>
         <line x1="${x(a.lon)}" y1="${y(a.lat)}" x2="${x(b.lon)}" y2="${y(b.lat)}" stroke="#ffd878" stroke-width="2" stroke-dasharray="5 4"/>
+        ${(DATA.anchors || []).map(z => `<g aria-label="${esc(z.he)}"><rect x="${x(z.lon) - 12}" y="${y(z.lat) - 12}" width="24" height="24" rx="6" fill="#ffd878" stroke="#1c1f45" stroke-width="2"/><text x="${x(z.lon)}" y="${y(z.lat) + 5}" text-anchor="middle" fill="#1c1f45" font-size="13" font-weight="900">0</text><text x="${x(z.lon) + 2}" y="${y(z.lat) - 17}" text-anchor="start" fill="#ffd878" font-size="12" font-weight="800">${esc(z.he)}</text></g>`).join('')}
         ${sites.map(s => `<g class="pt" data-id="${s.id}" tabindex="0" role="button" aria-label="${esc(s.short)}"><circle cx="${x(s.lon)}" cy="${y(s.lat)}" r="9" fill="${opts.mark && opts.mark[s.id] ? '#6ee9cf' : '#ff8f8f'}" stroke="#fff" stroke-width="2"/>
           <text x="${x(s.lon)}" y="${s.id === 'kursi' ? y(s.lat) + 22 : y(s.lat) - 13}" text-anchor="${s.id === 'kursi' ? 'start' : 'middle'}" fill="#fff" font-size="12" font-weight="800">${esc(s.short)}${opts.mark && opts.mark[s.id] ? ' · ' + esc(opts.mark[s.id]) : ''}</text></g>`).join('')}
       </svg><div class="mapnote">${why === 'offline' ? 'מפה סכמטית (ללא חיבור)' : 'מפה סכמטית — המפה האמיתית לא נטענה (' + esc(why) + ')'} · מיקומים לפי Wikidata ${why !== 'offline' || navigator.onLine ? '<button type="button" class="mini" data-retry>🗺️ לנסות שוב מפה אמיתית</button>' : ''}</div>`;
@@ -125,6 +126,7 @@
         map = new ml.Map({ container: holder, style: 'https://tiles.openfreemap.org/styles/liberty', center: [35.735, 32.83], zoom: 10.4, pitch: 50, bearing: -15, attributionControl: { compact: true } });
       } catch (e) { return svgFallback('webgl'); }
       map.addControl(new ml.NavigationControl({ visualizePitch: true }), 'top-left');
+      try { const bb = DATA.sites.concat(DATA.anchors || []); map.fitBounds([[Math.min(...bb.map(p => p.lon)) - .03, Math.min(...bb.map(p => p.lat)) - .02], [Math.max(...bb.map(p => p.lon)) + .03, Math.max(...bb.map(p => p.lat)) + .02]], { padding: 30, pitch: 50, bearing: -15, duration: 0 }); } catch (e) {}
       map.on('error', () => {});
       map.on('load', () => {
         try {
@@ -141,8 +143,13 @@
           if (!geo || !map.getStyle()) return;
           map.addSource('route', { type: 'geojson', data: geo.feature });
           map.addLayer({ id: 'route', type: 'line', source: 'route', paint: { 'line-color': '#6ee9cf', 'line-width': 4 } });
+          const lg = $('.maplegend', el); if (lg) lg.textContent = '📍 לחצו על נקודה · 0 = נקודת המפגש · קו ירוק = מסלול בכבישים (OSRM/OpenStreetMap)';
           if (opts.onRoute) opts.onRoute(geo);
         }).catch(() => {});
+      });
+      (DATA.anchors || []).forEach(z => {
+        const m = document.createElement('div'); m.className = 'mk zero'; m.innerHTML = `<b>${esc(z.he)}</b><i>0</i>`;
+        new ml.Marker({ element: m, anchor: 'bottom' }).setLngLat([z.lon, z.lat]).addTo(map);
       });
       sites.forEach(s => {
         const m = document.createElement('button'); m.type = 'button'; m.className = 'mk' + (opts.mark && opts.mark[s.id] ? ' on' : ''); m.dataset.id = s.id;
