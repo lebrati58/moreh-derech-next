@@ -6,10 +6,10 @@ import { eraColor } from './era-timeline.js';
 
 const LANG = (document.documentElement.lang || 'he').slice(0, 2);
 const L = {
-  he: { title: 'ציר הזמן', hide: 'הסתרת ציר הזמן', show: 'ציר הזמן', prev: 'האירוע הקודם', next: 'האירוע הבא', tradition: 'מסורת', d3: '🏛️ בתלת-ממד', tour: '🧭 פתיחת סיור', where: 'מיקום', bce: 'לפנה״ס', ce: 'לסה״נ', c: 'כ-' },
-  fr: { title: 'Frise du temps', hide: 'Masquer la frise', show: 'Frise du temps', prev: 'Événement précédent', next: 'Événement suivant', tradition: 'Tradition', d3: '🏛️ En 3D', tour: '🧭 Ouvrir la sortie', where: 'Position', bce: 'av. J.-C.', ce: 'apr. J.-C.', c: 'vers ' },
-  en: { title: 'Timeline', hide: 'Hide timeline', show: 'Timeline', prev: 'Previous event', next: 'Next event', tradition: 'Tradition', d3: '🏛️ In 3D', tour: '🧭 Open tour', where: 'Position', bce: 'BCE', ce: 'CE', c: 'c. ' },
-  ru: { title: 'Лента времени', hide: 'Скрыть ленту', show: 'Лента времени', prev: 'Предыдущее событие', next: 'Следующее событие', tradition: 'Предание', d3: '🏛️ В 3D', tour: '🧭 Открыть маршрут', where: 'Место', bce: 'до н. э.', ce: 'н. э.', c: 'ок. ' },
+  he: { battles: 'קרבות', more: 'לפרטים נוספים', src: 'מקור', title: 'ציר הזמן', hide: 'הסתרת ציר הזמן', show: 'ציר הזמן', prev: 'האירוע הקודם', next: 'האירוע הבא', tradition: 'מסורת', d3: '🏛️ בתלת-ממד', tour: '🧭 פתיחת סיור', where: 'מיקום', bce: 'לפנה״ס', ce: 'לסה״נ', c: 'כ-' },
+  fr: { battles: 'Batailles', more: 'En savoir plus', src: 'Source', title: 'Frise du temps', hide: 'Masquer la frise', show: 'Frise du temps', prev: 'Événement précédent', next: 'Événement suivant', tradition: 'Tradition', d3: '🏛️ En 3D', tour: '🧭 Ouvrir la sortie', where: 'Position', bce: 'av. J.-C.', ce: 'apr. J.-C.', c: 'vers ' },
+  en: { battles: 'Battles', more: 'More details', src: 'Source', title: 'Timeline', hide: 'Hide timeline', show: 'Timeline', prev: 'Previous event', next: 'Next event', tradition: 'Tradition', d3: '🏛️ In 3D', tour: '🧭 Open tour', where: 'Position', bce: 'BCE', ce: 'CE', c: 'c. ' },
+  ru: { battles: 'Сражения', more: 'Подробнее', src: 'Источник', title: 'Лента времени', hide: 'Скрыть ленту', show: 'Лента времени', prev: 'Предыдущее событие', next: 'Следующее событие', tradition: 'Предание', d3: '🏛️ В 3D', tour: '🧭 Открыть маршрут', where: 'Место', bce: 'до н. э.', ce: 'н. э.', c: 'ок. ' },
 }[LANG] || {};
 const ERA = {
   he: { canaanite: 'כנען', iron: 'ימי המקרא', persian: 'פרס', herodian: 'הורדוס', roman: 'רומא', byzantine: 'ביזנטיון', early_islamic: 'האסלאם הקדום', crusader: 'הצלבנים', mamluk: 'האיובים והממלוכים', ottoman: 'העות׳מאנים', mandate: 'המנדט', israel: 'מדינת ישראל' },
@@ -19,6 +19,8 @@ const ERA = {
 }[LANG] || {};
 const tx = o => (o && (o[LANG] || o.he)) || '';
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// références « 4.1–83 », « 15.331–341 » : gardées de gauche à droite dans un texte hébreu
+const num = h => h.replace(/\d+(?:[.:]\d+)*(?:[–-]\d+(?:[.:]\d+)*)?/g, m => /[.:–-]/.test(m) ? `<bdi dir="ltr">${m}</bdi>` : m);
 export const yearLabel = e => e.label ? tx(e.label) : (e.circa ? L.c : '') + (e.year < 0 ? `${-e.year} ${L.bce}` : e.year < 1000 ? `${e.year} ${L.ce}` : String(e.year));
 
 const CSS = `
@@ -40,6 +42,10 @@ body.list-view .itl,body.itl-sheet .itl{display:none}
 .itl .ev[aria-pressed=true] .bar{transform:translateY(-6px);box-shadow:0 0 0 3px #fff,0 8px 18px #000a;border-radius:10px;z-index:1;position:relative}
 .itl .ev[aria-pressed=true]::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#fff;z-index:2}
 .itl .ev:focus-visible .bar{outline:3px solid #fff;outline-offset:2px}
+.itl .ev.off{display:none}
+.itl .nav.bt{width:auto;padding:0 9px;font-size:13px;font-weight:900}.itl .nav.bt[aria-pressed=true]{background:#c8333a;border-color:#fff}
+.itl-pop details{margin:4px 0 6px}.itl-pop summary{cursor:pointer;font-weight:900;font-size:13px;color:#2a4fa8}.itl-pop details p{margin:6px 0 0}
+.itl-pop .src{display:block;font-size:12px;margin:2px 0 6px;opacity:.85}
 .itl .nav.hide{width:30px;font-size:15px;background:#0b1230;margin-inline-end:8px}
 .itl-open{position:fixed;z-index:950;inset-inline-start:72px;bottom:calc(20px + env(safe-area-inset-bottom,0px));border:1px solid #ffffff40;background:#0b1230e6;color:#fff;border-radius:999px;padding:9px 14px;font-size:13px;font-weight:900}
 body.list-view .itl-open,body.itl-sheet .itl-open{display:none}
@@ -66,8 +72,8 @@ async function start() {
   let prevEra = null;
   bar.innerHTML = `<button type="button" class="nav" id="itlPrev" aria-label="${esc(L.prev)}">‹</button><div class="strip" id="itlStrip" role="group">` +
     E.map((e, i) => { const p = eraColor(e.era), first = e.era !== prevEra; prevEra = e.era;
-      return `<button type="button" class="ev${e.kind === 'tradition' ? ' trad' : ''}" data-i="${i}" data-id="${esc(e.id)}" aria-pressed="false" style="--c:${p.c};--ink:${p.ink}"><span class="era">${first ? esc(ERA[e.era] || '') : ''}</span><span class="bar"><b>${esc(yearLabel(e))}</b><span>${esc(tx(e.title))}</span></span></button>`; }).join('') +
-    `</div><button type="button" class="nav" id="itlNext" aria-label="${esc(L.next)}">›</button><button type="button" class="nav hide" id="itlHide" aria-label="${esc(L.hide)}" title="${esc(L.hide)}">✕</button>`;
+      return `<button type="button" class="ev${e.kind === 'tradition' ? ' trad' : ''}" data-i="${i}" data-id="${esc(e.id)}" aria-pressed="false" style="--c:${p.c};--ink:${p.ink}"><span class="era">${first ? esc(ERA[e.era] || '') : ''}</span><span class="bar"><b>${e.battle ? '⚔️ ' : ''}${esc(yearLabel(e))}</b><span>${esc(tx(e.title))}</span></span></button>`; }).join('') +
+    `</div><button type="button" class="nav" id="itlNext" aria-label="${esc(L.next)}">›</button><button type="button" class="nav bt" id="itlBattles" aria-pressed="false" title="${esc(L.battles)}">⚔️</button><button type="button" class="nav hide" id="itlHide" aria-label="${esc(L.hide)}" title="${esc(L.hide)}">✕</button>`;
   document.body.appendChild(bar);
   const openBtn = document.createElement('button'); openBtn.type = 'button'; openBtn.className = 'itl-open'; openBtn.textContent = '⏳ ' + L.show; openBtn.hidden = true; document.body.appendChild(openBtn);
   const $ = id => document.getElementById(id), strip = $('itlStrip');
@@ -94,23 +100,30 @@ async function start() {
     if (i < 0 || i >= E.length) return; cur = i; const e = E[i], p = eraColor(e.era);
     strip.querySelectorAll('.ev').forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
     const btn = strip.querySelector(`[data-i="${i}"]`); if (btn) btn.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
-    $('itlPrev').disabled = i === 0; $('itlNext').disabled = i === E.length - 1;
     layer.clearLayers();
     const ll = [e.lat, e.lon], zoom = e.at.startsWith('j3d:') ? 16 : 13;
     Lf.marker(ll, { icon: Lf.divIcon({ className: '', html: `<div class="itl-pulse" style="--c:${p.c}"></div>`, iconSize: [22, 22], iconAnchor: [11, 11] }), keyboard: false }).addTo(layer);
     const tour = e.at.startsWith('stop:') ? e.at.split(':')[1] : null;
-    const html = `<div style="--c:${p.c};--ink:${p.ink}"><span class="y">${esc(yearLabel(e))}</span>${e.kind === 'tradition' ? `<span class="tr">${esc(L.tradition)}</span>` : ''}<h3>${esc(tx(e.title))}</h3><p>${esc(tx(e.text))}</p>
+    const html = `<div style="--c:${p.c};--ink:${p.ink}"><span class="y">${esc(yearLabel(e))}</span>${e.kind === 'tradition' ? `<span class="tr">${esc(L.tradition)}</span>` : ''}<h3>${e.battle ? '⚔️ ' : ''}${esc(tx(e.title))}</h3><p>${esc(tx(e.text))}</p>${e.more ? `<details><summary>${esc(L.more)}</summary><p>${num(esc(tx(e.more)))}</p></details>` : ''}${e.src ? `<span class="src">📜 ${esc(L.src)}: ${num(esc(tx(e.src)))}</span>` : ''}
       <div class="acts">${e.link ? `<a href="${esc(e.link)}">${esc(L.d3)}</a>` : ''}${tour && window.MDOpenTour ? `<button type="button" data-tour="${esc(tour)}">${esc(L.tour)} ${esc(tour)}</button>` : ''}</div>
       <small>${esc(L.where)} : ${e.qid ? `<a href="https://www.wikidata.org/wiki/${esc(e.qid)}" target="_blank" rel="noopener">Wikidata ${esc(e.qid)}</a>` : esc(e.from)}</small></div>`;
-    const pop = Lf.popup({ className: 'itl-pop', autoPanPaddingTopLeft: [12, (document.getElementById('top')?.offsetHeight || 120) + 10], autoPanPaddingBottomRight: [12, (bar.hidden ? 0 : bar.offsetHeight) + 10], offset: [0, -8] }).setLatLng(ll).setContent(html);
+    const pop = Lf.popup({ className: 'itl-pop', maxHeight: Math.round(innerHeight * 0.45), autoPanPaddingTopLeft: [12, (document.getElementById('top')?.offsetHeight || 120) + 10], autoPanPaddingBottomRight: [12, (bar.hidden ? 0 : bar.offsetHeight) + 10], offset: [0, -8] }).setLatLng(ll).setContent(html);
     const openPop = () => { pop.openOn(map); const b = pop.getElement()?.querySelector('[data-tour]'); if (b) b.onclick = () => { map.closePopup(); window.MDOpenTour(b.dataset.tour); }; };
     if (fly) { map.once('moveend', openPop); map.flyTo(ll, zoom, { duration: 1.1 }); } else openPop();
     const u = new URL(location.href); u.searchParams.set('event', e.id); history.replaceState(history.state, '', u);
   }
   strip.addEventListener('click', ev => { const b = ev.target.closest('[data-i]'); if (b) select(Number(b.dataset.i)); });
-  $('itlPrev').onclick = () => select(cur < 0 ? 0 : cur - 1); $('itlNext').onclick = () => select(cur + 1);
+  let battleOnly = false;
+  const vis = i => !battleOnly || E[i].battle;
+  const step = d => { let i = cur < 0 ? (d > 0 ? -1 : E.length) : cur; do { i += d; } while (i >= 0 && i < E.length && !vis(i)); if (i >= 0 && i < E.length) select(i); };
+  $('itlPrev').onclick = () => step(-1); $('itlNext').onclick = () => step(1);
+  $('itlBattles').onclick = () => {
+    battleOnly = !battleOnly; $('itlBattles').setAttribute('aria-pressed', String(battleOnly));
+    strip.querySelectorAll('.ev').forEach((b, k) => b.classList.toggle('off', !vis(k)));
+    if (cur >= 0 && !vis(cur)) step(1); else if (cur >= 0) strip.querySelector(`[data-i="${cur}"]`).scrollIntoView({ block: 'nearest', inline: 'center' });
+  };
   const want = new URLSearchParams(location.search).get('event'), wi = E.findIndex(e => e.id === want);
   if (wi >= 0) { show(true); setTimeout(() => select(wi), 600); }
-  window.MDTimeline = { events: E, select, get current() { return cur; } };
+  window.MDTimeline = { events: E, select, get current() { return cur; }, get battleOnly() { return battleOnly; } };
 }
 start().catch(e => console.error('frise', e));
