@@ -105,3 +105,22 @@ test('progression : niveaux, révision ciblée, mission du jour stable', () => {
   assert.equal(rec.cat, 'period'); assert.ok(rec.sets.includes('e1'));
   assert.equal(C.dailyMission('2026-10-28', D.missions).id, C.dailyMission('2026-10-28T23:00', D.missions).id);
 });
+
+test('trajets : durée de route (Google saisi > estimation OSRM), jamais inventée, comptée dans le לוח זמנים', () => {
+  assert.ok(D.drive && Object.keys(D.drive.legs).length >= 30, 'matrice des trajets présente');
+  const P = C.points(D);
+  assert.equal(C.driveMin(P.tzemach, P.mitzpe_ofir, { sites: [] }), null, 'sans donnée : null, pas de chiffre inventé');
+  const est = C.driveMin(P.tzemach, P.mitzpe_ofir, D);
+  assert.equal(est.src, 'osrm'); assert.ok(est.min > 10 && est.min < 60);
+  assert.deepEqual(C.driveMin(P.tzemach, P.mitzpe_ofir, D, { 'tzemach>mitzpe_ofir': 35 }), { min: 35, src: 'google' }, 'la valeur Google remplace l’estimation');
+  const plan = C.draftPlan([P.mitzpe_ofir, P.tel_saki], { start: D.anchors[0], startTime: '08:00', endTime: '18:00', data: D });
+  assert.equal(plan[1].start, '08:00'); assert.equal(C.toMin(plan[1].end) - 480, est.min, 'brouillon : la 1re נסיעה dure le temps de route');
+  assert.equal(plan[2].start, plan[1].end, 'le site commence à l’arrivée');
+  plan[2].end = '10:00'; C.reflowPlan(plan, D, { 'tzemach>mitzpe_ofir': 35 });
+  assert.equal(plan[1].end, '08:35', 'Google saisi → la ligne se recalcule');
+  const tooShort = plan.map(r => Object.assign({}, r)); tooShort[1].end = '08:20';
+  const r = C.checkPlan(tooShort, { model: M, data: D, sites: [], own: { 'tzemach>mitzpe_ofir': 35 } });
+  assert.ok(r.items.some(x => !x.ok && /לפחות 35 דק׳/.test(x.he)), 'trajet trop court signalé');
+  const noData = C.draftPlan([P.mitzpe_ofir], { start: D.anchors[0], startTime: '08:00' });
+  assert.ok(noData.every((x, i) => !i || !x.start), 'sans données : horaires laissés vides');
+});

@@ -11,8 +11,8 @@
 
   // ---------- Langue de l'accompagnement (le contenu d'examen reste en hébreu) ----------
   const T = {
-    he: { title: 'אתגר המבחן', sub: 'מורה דרך EXAM — מתכננים יום טיול, בוחרים אתרים וכותבים הדרכות, כמו בפרק השני של המבחן.', today: 'משימת היום', missions: 'משימות', soon: 'בקרוב', locked: 'נפתח ברמה 2', guided: 'אימון מודרך', errors: 'מצא את הטעות', exam: 'סימולציית מבחן', progress: 'ההתקדמות שלי', badges: 'תגים', weak: 'חזרה ממוקדת', noweak: 'עוד אין מספיק נתונים — שחקו משימה אחת.', back: 'חזרה', hint: 'רמז', model: 'תשובה לדוגמה', compare: 'השוואה', improve: 'לשפר את התשובה', check: 'בדיקה', reset: 'מחדש', next: 'הלאה', prev: 'הקודם', start: 'להתחיל', submit: 'הגשה', sources: 'מקורות', indicative: 'הערכה פדגוגית בלבד — לא נמצא מחוון רשמי. הניקוד לפי הכללים שבחומר הקורס.', map: 'מפה', lang: 'FR', mine: 'התשובה שלי', words: 'מילים', time: 'זמן', level: 'רמה' },
-    fr: { title: 'Exam Challenge', sub: 'Moreh Derech EXAM — préparer une journée, choisir les sites et rédiger les interventions, comme dans la 2e partie de l’examen.', today: 'Mission du jour', missions: 'Missions', soon: 'Bientôt', locked: 'Débloqué au niveau 2', guided: 'Entraînement guidé', errors: 'Trouve les erreurs', exam: 'Examen blanc', progress: 'Ma progression', badges: 'Badges', weak: 'Révision ciblée', noweak: 'Pas encore assez de données — joue une mission.', back: 'Retour', hint: 'Indice', model: 'Réponse modèle', compare: 'Comparer', improve: 'Améliorer ma réponse', check: 'Vérifier', reset: 'Recommencer', next: 'Suivant', prev: 'Précédent', start: 'Commencer', submit: 'Rendre', sources: 'Sources', indicative: 'Évaluation pédagogique indicative — aucune grille officielle trouvée. Le score suit les règles des documents du cours.', map: 'Carte', lang: 'עב', mine: 'Ma réponse', words: 'mots', time: 'Temps', level: 'Niveau' }
+    he: { title: 'אתגר המבחן', sub: 'מורה דרך EXAM — מתכננים יום טיול, בוחרים אתרים וכותבים הדרכות, כמו בפרק השני של המבחן.', today: 'משימת היום', missions: 'משימות', soon: 'בקרוב', harder: 'מתקדם', guided: 'אימון מודרך', errors: 'מצא את הטעות', exam: 'סימולציית מבחן', progress: 'ההתקדמות שלי', badges: 'תגים', weak: 'חזרה ממוקדת', noweak: 'עוד אין מספיק נתונים — שחקו משימה אחת.', back: 'חזרה', hint: 'רמז', model: 'תשובה לדוגמה', compare: 'השוואה', improve: 'לשפר את התשובה', check: 'בדיקה', reset: 'מחדש', next: 'הלאה', prev: 'הקודם', start: 'להתחיל', submit: 'הגשה', sources: 'מקורות', indicative: 'הערכה פדגוגית בלבד — לא נמצא מחוון רשמי. הניקוד לפי הכללים שבחומר הקורס.', map: 'מפה', lang: 'FR', mine: 'התשובה שלי', words: 'מילים', time: 'זמן', level: 'רמה' },
+    fr: { title: 'Exam Challenge', sub: 'Moreh Derech EXAM — préparer une journée, choisir les sites et rédiger les interventions, comme dans la 2e partie de l’examen.', today: 'Mission du jour', missions: 'Missions', soon: 'Bientôt', harder: 'avancé', guided: 'Entraînement guidé', errors: 'Trouve les erreurs', exam: 'Examen blanc', progress: 'Ma progression', badges: 'Badges', weak: 'Révision ciblée', noweak: 'Pas encore assez de données — joue une mission.', back: 'Retour', hint: 'Indice', model: 'Réponse modèle', compare: 'Comparer', improve: 'Améliorer ma réponse', check: 'Vérifier', reset: 'Recommencer', next: 'Suivant', prev: 'Précédent', start: 'Commencer', submit: 'Rendre', sources: 'Sources', indicative: 'Évaluation pédagogique indicative — aucune grille officielle trouvée. Le score suit les règles des documents du cours.', map: 'Carte', lang: 'עב', mine: 'Ma réponse', words: 'mots', time: 'Temps', level: 'Niveau' }
   };
   let lang = 'he'; try { lang = localStorage.getItem('mdl_exam_lang') || 'he'; } catch (e) {}
   const t = k => (T[lang] || T.he)[k] || T.he[k] || k;
@@ -171,7 +171,7 @@
       ${row('🕘', 'שעות', L.hours)}${row('⏮️', 'כניסה אחרונה', L.lastEntry)}${row('💳', 'תשלום', L.price)}
       ${flag('🚻', 'שירותים', L.toilets)}${flag('🅿️', 'חניה לאוטובוס', L.parking)}${flag('🎫', 'קופה / המתנה', L.queue)}
       ${row('📞', 'טלפון', L.phone)}${row('👥', 'קבוצות', L.group)}
-      <li><span class="lk">🧭 ניווט</span><span><a href="${nav.waze}" target="_blank" rel="noopener">Waze</a> · <a href="${nav.google}" target="_blank" rel="noopener">Google Maps</a></span></li></ul>
+      <li><span class="lk">🧭 ניווט</span><span><a href="${nav.google}" target="_blank" rel="noopener">Google Maps</a></span></li></ul>
       ${compact ? '' : '<p class="muted">מה שלא אומת במקורות מסומן ״לברר״ — במבחן כותבים את זה בעמודת ״תיאומים ומנהלות״ (לברר שירותים, חניה, תשלום).</p>'}</div>`;
   }
   // Bloc d'un site dans un panneau : en-tête bien visible (numéro, nom, statut) + logistique.
@@ -287,9 +287,8 @@
   function viewHome() {
     const L = C.level(S.xp), daily = C.dailyMission(new Date(), DATA.missions);
     const rec = C.recommend(Object.fromEntries(Object.entries(S.cats).map(([k, v]) => [k, v.err])), DATA);
-    const locked = m => m.level > 1 && L.n < 2;
-    const card = m => `<article class="mcard ${locked(m) ? 'lock' : ''}"><div class="me">${m.emoji}</div><div class="mt"><h3>${esc(m.he)}</h3><p>${esc(m.group)}</p>
-      ${locked(m) ? `<p class="lk">🔒 ${t('locked')}</p>` : `<div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div>`}</div></article>`;
+    const card = m => `<article class="mcard"><div class="me">${m.emoji}</div><div class="mt"><h3>${esc(m.he)}</h3><p>${esc(m.group)}${m.level > 1 ? ` · <span class="lk">${'⭐'.repeat(m.level)} ${t('harder')}</span>` : ''}</p>
+      <div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div></div></article>`;
     const catRows = Object.entries(S.cats).filter(([, v]) => v.err + v.ok).sort((a, b) => b[1].err - a[1].err).slice(0, 6);
     shell(`<section class="hero"><div class="eyebrow">MOREH DERECH EXAM · אתגר המבחן</div><h1>🎓 ${t('title')}</h1><p>${t('sub')}</p>
       <a class="btn tiyul" href="#/tiyul">🧑‍🏫 הפוך: אני אומר מה אני רוצה — האפליקציה מציעה מסלול</a>
@@ -392,19 +391,26 @@
     const L = C.legs(sites, DATA, start);
     const last = P[sites[sites.length - 1]];
     const back = start ? { from: last, to: start, km: C.distanceKm(last, start), nav: C.navLinks(last, start) } : null;
-    const leg = l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ אווירי · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a> · <a href="${l.nav.waze}" target="_blank" rel="noopener">Waze</a></span></li>`;
+    const own = D.drive || {};
+    const leg = l => { const k = l.from.id + '>' + l.to.id, d = C.driveMin(l.from, l.to, DATA, own), est = C.driveMin(l.from, l.to, DATA);
+      return `<li data-leg="${k}"><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span>
+        <span class="drv">${d ? `🚗 <b>${d.min} דק׳</b> ${d.src === 'google' ? '(Google)' : `· ${est.km} ק״מ בכביש (הערכה)`}` : `~${l.km} ק״מ אווירי`}
+        · <a href="${l.nav.google}" target="_blank" rel="noopener">לבדוק ב-Google</a>
+        · <label class="gmin">Google: <input data-gmin="${k}" value="${esc(own[k] || '')}" placeholder="${est ? est.min : ''}" inputmode="numeric" size="3" aria-label="דקות לפי Google"> דק׳</label></span></li>`; };
     return `<details class="panel info" open><summary><b>📋 מידע לתכנון — האתרים שבחרתם</b></summary>
       <div id="pMap"></div>
       <p class="muted">סדר הביקור: שנו עם החצים ▲ ▼ — המספרים על המפה והנסיעות מתעדכנים. <button type="button" class="mini" data-autoorder>🧭 סדר הגיוני אוטומטי</button> <button type="button" class="mini" data-fillplan>📋 למלא את הלוח לפי הסדר</button></p>
       ${sites.map((id, i) => siteBlock(P[id], i + 1, { up: i > 0, down: i < sites.length - 1 })).join('')}
       <h4>🚌 נסיעות — לפי סדר הבחירה (אפשר לשנות בלוח)</h4><ul class="legs">${L.map(leg).join('')}${back ? leg(back) : ''}</ul>
-      <p class="muted">המרחק הוא בקו אווירי בלבד. זמן נסיעה אמיתי בודקים ב-Google Maps / Waze (״נסיעה ללא פקקים״), ורושמים בלוח. במבחן אין אפליקציה — כדאי לזכור סדרי גודל.</p></details>`;
+      <p class="muted">זמני הנסיעה נכנסים ללוח לבד (״📋 למלא את הלוח לפי הסדר״): שורת נסיעה מתחילה כשהשורה הקודמת נגמרת ונמשכת זמן הנסיעה. ההערכה מחושבת על מפת הכבישים (OpenStreetMap, ברכב, בלי פקקים); פתחו ״לבדוק ב-Google״ וכתבו את הדקות של Google — הן מחליפות את ההערכה. אוטובוס איטי יותר מרכב. במבחן אין אפליקציה — כדאי לזכור סדרי גודל.</p></details>`;
   }
   function stepPlan(m, D, body) {
     const model = MODELS.models.school5;
     if (!D.plan.length) D.plan = [{ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((DATA.anchors || [{}])[0].he || ''), log: 'לבדוק שכולם הגיעו' }];
+    D.drive = D.drive || {};
     const draw = res => {
-      body.innerHTML = `<p class="lead">${esc(model.day.he)} עמודת המשך מחושבת לבד. כל שורה מתחילה בשעת הסיום של הקודמת. זמני נסיעה — רק ממה שאתם יודעים; האפליקציה לא ממציאה אותם.</p>
+      C.reflowPlan(D.plan, DATA, D.drive);
+      body.innerHTML = `<p class="lead">${esc(model.day.he)} עמודת המשך מחושבת לבד. כל שורה מתחילה בשעת הסיום של הקודמת. שורות הנסיעה מתעדכנות לבד לפי זמן הנסיעה.</p>
         ${planInfoHtml(m, D)}
         <div class="plan">${D.plan.map((r, i) => planRow(r, i, DATA.sites)).join('')}</div>
         <div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="hnt">💡 ${t('hint')}</button><button type="button" class="btn ghost" id="mdl">👀 דוגמה מהקורס</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
@@ -414,15 +420,15 @@
       wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
       const vo = visitOrder(m, D);
       if ($('#pMap', body)) mapBox($('#pMap', body), { route: true, mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])), onRoute: geo => {
-        const lis = $$('.legs li', body); geo.legs.forEach((l, i) => { if (lis[i]) lis[i].insertAdjacentHTML('beforeend', `<span class="osrm">🛣️ ${l.km} ק״מ · ~${l.min} דק׳ <small>(OSRM/OpenStreetMap, ללא פקקים)</small></span>`); });
-        const tot = $('.legs', body); if (tot) tot.insertAdjacentHTML('afterend', `<p class="muted osrm-tot">סה״כ נסיעה לפי OSRM: ${geo.km} ק״מ · ~${Math.floor(geo.min / 60)}:${String(geo.min % 60).padStart(2, '0')} שעות (הערכה ללא פקקים — לבדוק גם ב-Waze)</p>`);
+        const tot = $('.legs', body); if (tot) tot.insertAdjacentHTML('afterend', `<p class="muted osrm-tot">סה״כ נסיעה לפי OSRM: ${geo.km} ק״מ · ~${Math.floor(geo.min / 60)}:${String(geo.min % 60).padStart(2, '0')} שעות (הערכה ללא פקקים — לבדוק גם ב-Google)</p>`);
       } });
       const ao = $('[data-autoorder]', body); if (ao) ao.addEventListener('click', () => { D.order = C.orderSites(vo.map(id => P[id]), (DATA.anchors || [])[0]).map(s => s.id); save(); draw(res); toast('🧭 סודר לפי קרבה'); });
       const fp = $('[data-fillplan]', body); if (fp) fp.addEventListener('click', () => {
         const filled = D.plan.filter(r => r.what && !/^מפגש/.test(r.what)).length;
         if (filled && !confirm('להחליף את הלוח הנוכחי בברירת מחדל לפי הסדר?')) return;
-        D.plan = C.draftPlan(vo.map(id => P[id]), { start: (DATA.anchors || [])[0], startTime: model.day.start, endTime: model.day.end }); save(); draw(res); toast('📋 הלוח מולא — עכשיו השעות');
+        D.plan = C.draftPlan(vo.map(id => P[id]), { start: (DATA.anchors || [])[0], startTime: model.day.start, endTime: model.day.end, data: DATA, own: D.drive }); save(); draw(res); toast('📋 הלוח מולא עם זמני הנסיעה — עכשיו שעות הסיום באתרים');
       });
+      $$('[data-gmin]', body).forEach(inp => inp.addEventListener('change', () => { const v = parseInt(inp.value, 10); if (v > 0 && v < 600) D.drive[inp.dataset.gmin] = v; else delete D.drive[inp.dataset.gmin]; save(); draw(res); }));
       $$('[data-mv]', body).forEach(b => b.addEventListener('click', () => {
         const [id, d] = b.dataset.mv.split(':'), o = visitOrder(m, D), i = o.indexOf(id), j = i + (+d);
         if (j < 0 || j >= o.length) return; [o[i], o[j]] = [o[j], o[i]]; D.order = o; save(); draw(res);
@@ -444,7 +450,7 @@
       });
       $('#chk', body).addEventListener('click', () => {
         const sites = Object.values(D.picks).filter(Boolean);
-        const r = C.checkPlan(D.plan, { model, data: DATA, sites });
+        const r = C.checkPlan(D.plan, { model, data: DATA, sites, own: D.drive });
         r.items.forEach(x => x.ok ? noteOk(x.cat || 'time') : noteErr(x.cat));
         if (r.frac >= .8) { award(`${m.id}:plan`, 40); badge('clock'); }
         draw(r);
@@ -613,7 +619,7 @@
       <p class="fl"><b>מה רוצים לראות?</b></p><div class="tagpick">${tagKeys.map(k => `<button type="button" data-tag="${k}" class="${F.tags.includes(k) ? 'on' : ''}" aria-pressed="${F.tags.includes(k)}">${TAGS[k]}</button>`).join('')}</div>
       <div class="row3"><label class="fl">כמה אתרים<select id="tCount">${[2, 3, 4, 5].map(n => `<option value="${n}" ${F.count === n ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
       <div class="fl">התחלה${timeButton('startTime', F.startTime, 'שעת התחלה')}</div><div class="fl">סיום${timeButton('endTime', F.endTime, 'שעת סיום')}</div></div>
-      <p class="muted">יציאה וחזרה: ${esc((DATA.anchors || [{}])[0].he || '')}. זמני נסיעה לא מומצאים — בלוח יש שורות נסיעה ריקות לבדיקה ב-Waze.</p>
+      <p class="muted">יציאה וחזרה: ${esc((DATA.anchors || [{}])[0].he || '')}. זמני הנסיעה: הערכה לפי מפת הכבישים (OpenStreetMap, ברכב, בלי פקקים) — לאשר ב-Google.</p>
       <div class="acts"><button type="button" class="btn" id="tGo">✨ להציע מסלולים</button></div></section><div id="tOut"></div>`, { back: '#/' });
     wireClocks(app, (k, v, b) => { F[k] = v || (k === 'startTime' ? '08:00' : '18:00'); b.dataset.v = F[k]; b.textContent = F[k]; save(); });
     $$('[data-tag]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.tag; if (k === 'road') { F.road = !F.road; } F.tags = F.tags.includes(k) ? F.tags.filter(x => x !== k) : F.tags.concat(k); b.classList.toggle('on'); b.setAttribute('aria-pressed', b.classList.contains('on')); save(); }));
@@ -624,7 +630,7 @@
         <p class="muted">🚌 ~${r.km} ק״מ אווירי בין התחנות${r.roads.length ? ' · הדרכת דרך: ' + r.roads.map(x => esc(x.short)).join(', ') : ''}</p>
         ${r.missing.length ? `<p class="conf">⚠️ לא נמצא אתר ל: ${r.missing.map(t => esc(TAGS[t] || t)).join(', ')}</p>` : '<p class="good">✔ כל מה שביקשתם מכוסה</p>'}
         ${r.warnings.map(w => `<p class="conf">ℹ️ ${esc(w)}</p>`).join('')}
-        <ul class="legs">${r.legs.map(l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>~${l.km} ק״מ · <a href="${l.nav.google}" target="_blank" rel="noopener">זמן ב-Google</a></span></li>`).join('')}</ul>
+        <ul class="legs">${r.legs.map(l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>${l.drive ? `🚗 ${l.drive.min} דק׳ · ${l.drive.km} ק״מ בכביש` : `~${l.km} ק״מ`} · <a href="${l.nav.google}" target="_blank" rel="noopener">לבדוק ב-Google</a></span></li>`).join('')}</ul>
         <details class="mo"><summary>📋 לוח זמנים ראשוני (${r.plan.length} שורות) ומה לברר</summary><ul class="ex">${r.plan.map(p => `<li><b>${esc(p.start || '…')}${p.end ? '–' + esc(p.end) : ''}</b> ${esc(p.what)}${p.log ? ' · <i>' + esc(p.log) + '</i>' : ''}</li>`).join('')}</ul></details>
         <details class="mo"><summary>🧾 לוגיסטיקה של כל אתר</summary>${r.sites.map((s, j) => siteBlock(s, j + 1)).join('')}</details>
         <p class="muted">🎤 יחידות לתרגול: ${r.units.map(u => `${esc(P[u.site].short)} ${u.model ? '✔' : '—'}${u.long ? ' (גם מורחבת)' : ''}`).join(' · ')}</p>
@@ -650,7 +656,6 @@
     if (p[1] === 'm') {
       const m = DATA.missions.find(x => x.id === p[2]) || (p[2] === 'custom' && S.custom) || null;
       if (!m) return viewHome();
-      if (m.level > 1 && C.level(S.xp).n < 2 && !/[?&]all\b/.test(location.search)) { toast('🔒 ' + t('locked')); return viewHome(); }
       if (p[3] === 'errors') return viewErrors(m, p[4]);
       if (p[3] === 'exam') return viewExam(m);
       if (p[3] === 'result') return viewResult(m);

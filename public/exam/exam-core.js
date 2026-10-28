@@ -28,6 +28,8 @@
     (data.roads || []).forEach(r => { all[r.id] = Object.assign({ type: 'road' }, r); });
     return all;
   }
+  // lieux + points de départ (pour les trajets)
+  function points(data) { const all = places(data); (data.anchors || []).forEach(a => { if (!all[a.id]) all[a.id] = Object.assign({ type: 'anchor' }, a); }); return all; }
 
   // ---------- Choix des lieux ----------
   function fits(place, need) { return !!place && (need || []).some(t => (place.tags || []).includes(t)); }
@@ -75,6 +77,13 @@
     add(/מפגש|איסוף|נקודת יציאה/.test(R[0].what || ''), 'נקודת מפגש בשורה הראשונה', 'time', 1);
     add(/פיזור/.test((R[R.length - 1].what || '') + (R[R.length - 1].log || '')), 'נקודת פיזור בשורה האחרונה', 'time', 1);
     add(R.some(r => /נסיעה/.test(r.what || '')), 'הנסיעות מופיעות בלוח הזמנים', 'route', 1);
+    // une נסיעה ne peut pas être plus courte que le temps de route (Google saisi, sinon estimation)
+    const Pd = points(ctx.data);
+    R.filter(r => r.drive).forEach(r => {
+      const [a, b] = r.drive.split('>'), d = driveMin(Pd[a], Pd[b], ctx.data, ctx.own); if (!d || !Pd[a] || !Pd[b]) return;
+      const x = toMin(r.start), y = toMin(r.end); if (x === null || y === null) return;
+      add(y - x >= d.min, `נסיעה ${Pd[a].short || Pd[a].he} ← ${Pd[b].short || Pd[b].he}: לפחות ${d.min} דק׳${y - x < d.min ? ` (כתוב ${y - x})` : ''}`, 'time', 1);
+    });
     // Déjeuner (règle du guide) : 1 h, pas avant 12:00, pas après 14:00.
     const lunch = R.find(r => /צהר|ארוחה/.test((r.what || '') + (r.log || '')));
     add(!!lunch, 'ארוחת צהריים בלוח הזמנים', 'time', 2);
@@ -248,7 +257,7 @@
     return missions[((day % missions.length) + missions.length) % missions.length];
   }
 
-  // Distance à vol d'oiseau (km). Ce n'est PAS un temps de trajet : les trajets se vérifient dans Waze / Google Maps.
+  // Distance à vol d'oiseau (km). Ce n'est PAS un temps de trajet : voir driveMin().
   function distanceKm(a, b) {
     const R = 6371, r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
     const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
@@ -258,14 +267,37 @@
     const ll = p => `${p.lat},${p.lon}`;
     return {
       google: from ? `https://www.google.com/maps/dir/?api=1&origin=${ll(from)}&destination=${ll(to)}&travelmode=driving` : `https://www.google.com/maps/search/?api=1&query=${ll(to)}`,
-      waze: `https://waze.com/ul?ll=${ll(to)}&navigate=yes`
     };
+  }
+  // Temps de trajet voiture (min) : valeur Google saisie par l'élève si elle existe, sinon l'estimation routière
+  // enregistrée (data.drive : OSRM / OpenStreetMap, sans trafic). Jamais inventé : null si inconnu.
+  function driveMin(from, to, data, own) {
+    if (!from || !to) return null;
+    const k = from.id + '>' + to.id, mine = own && Number(own[k]);
+    if (mine > 0) return { min: Math.round(mine), src: 'google' };
+    const L = data && data.drive && data.drive.legs && data.drive.legs[k];
+    return L ? { min: L.min, km: L.km, src: 'osrm' } : null;
+  }
+  // Les lignes נסיעה liées à un trajet (row.drive = 'a>b') partent à la fin de la ligne précédente et durent
+  // le temps de route ; la ligne qui suit une נסיעה commence à l'arrivée.
+  function reflowPlan(rows, data, own) {
+    const P = points(data);
+    (rows || []).forEach((r, i) => {
+      const prevEnd = i ? toMin(rows[i - 1].end) : null;
+      if (r.drive) {
+        const [a, b] = r.drive.split('>'), d = driveMin(P[a], P[b], data, own);
+        if (prevEnd !== null) r.start = fmt(prevEnd);
+        const st = toMin(r.start);
+        if (d && st !== null) r.end = fmt(st + d.min);
+      } else if (i && rows[i - 1].drive && prevEnd !== null) r.start = fmt(prevEnd);
+    });
+    return rows;
   }
   // Étapes du programme (sites choisis, dans l'ordre) → segments avec distance aérienne et liens de navigation.
   function legs(ids, data, start) {
     const P = places(data), seq = (start ? [start] : []).concat(ids.map(id => P[id]).filter(p => p && p.type === 'site'));
     const out = [];
-    for (let i = 1; i < seq.length; i++) out.push({ from: seq[i - 1], to: seq[i], km: distanceKm(seq[i - 1], seq[i]), nav: navLinks(seq[i - 1], seq[i]) });
+    for (let i = 1; i < seq.length; i++) out.push({ from: seq[i - 1], to: seq[i], km: distanceKm(seq[i - 1], seq[i]), nav: navLinks(seq[i - 1], seq[i]), drive: driveMin(seq[i - 1], seq[i], data) });
     return out;
   }
 
@@ -286,7 +318,7 @@
       const covered = want.filter(t => picked.some(s => (s.tags || []).includes(t)));
       const roads = prefs.road ? (data.roads || []).filter(r => !r.line || r.line.every(id => ids.includes(id) || id === 'kursi')) : [];
       const L = legs(ord.map(s => s.id), data, prefs.start);
-      const plan = draftPlan(ord, prefs);
+      const plan = draftPlan(ord, Object.assign({ data }, prefs));
       const units = ord.map(s => ({ site: s.id, model: !!(data.models && data.models[s.id]), long: !!(data.models && data.models['long_' + s.id]) }));
       return { sites: ord, roads, covered, missing: want.filter(t => !covered.includes(t)), legs: L, km: Math.round(L.reduce((a, l) => a + l.km, 0) * 10) / 10, plan, units,
         warnings: ord.filter(s => (s.status || []).includes('unverified')).map(s => s.short + ' — החומר חלקי (טרם אומת)') };
@@ -312,19 +344,23 @@
   // Brouillon de לוח זמנים : rendez-vous, trajet + site pour chaque visite, déjeuner, retour. Horaires laissés vides.
   function draftPlan(ord, prefs) {
     prefs = prefs || {};
-    const plan = [{ start: prefs.startTime || '08:00', end: '', what: 'מפגש ואיסוף: ' + ((prefs.start && prefs.start.he) || 'נקודת המפגש'), log: 'לבדוק שכולם הגיעו' }];
+    const plan = [{ start: prefs.startTime || '08:00', end: prefs.data ? (prefs.startTime || '08:00') : '', what: 'מפגש ואיסוף: ' + ((prefs.start && prefs.start.he) || 'נקודת המפגש'), log: 'לבדוק שכולם הגיעו' }];
     ord.forEach((s, i) => {
       const L2 = s.logistics2 || {};
-      plan.push({ start: '', end: '', what: 'נסיעה ל' + s.short + ' (זמן: לבדוק ב-Waze)', log: '' });
+      const from = i ? ord[i - 1] : prefs.start, d = driveMin(from, s, prefs.data, prefs.own);
+      plan.push({ start: '', end: '', what: 'נסיעה ל' + s.short + (d ? ` (~${d.min} דק׳ — לאשר ב-Google)` : ' (זמן: לבדוק ב-Google)'), log: '', drive: from && from.id ? from.id + '>' + s.id : undefined });
       const todo = ['toilets', 'parking', 'queue'].filter(k => L2[k] && L2[k].status === 'unknown').map(k => ({ toilets: 'שירותים', parking: 'חניה', queue: 'המתנה בקופה' })[k]);
       plan.push({ start: '', end: '', what: s.he, site: s.id, log: [L2.price && !/חינם|לא/.test(L2.price.he) ? 'תשלום כניסה' : '', todo.length ? 'לברר: ' + todo.join(', ') : '', L2.group ? 'תיאום קבוצה' : ''].filter(Boolean).join(' · ') });
       if (i === Math.min(1, ord.length - 1)) plan.push({ start: '', end: '', what: 'ארוחת צהריים — שעה אחת, בין 12:00 ל-14:00', log: 'לבדוק אם יש מקום לאכול — אחרת ארוחה עצמית' });
     });
-    plan.push({ start: '', end: prefs.endTime || '18:00', what: 'נסיעה חזרה ופיזור: ' + ((prefs.start && prefs.start.he) || 'נקודת הפיזור'), log: 'פיזור' });
+    const lastSite = ord[ord.length - 1], dBack = lastSite && prefs.start && driveMin(lastSite, prefs.start, prefs.data, prefs.own);
+    plan.push(dBack ? { start: '', end: '', what: `נסיעה חזרה ופיזור: ${prefs.start.he} (~${dBack.min} דק׳)`, log: 'פיזור', drive: lastSite.id + '>' + prefs.start.id }
+      : { start: '', end: prefs.endTime || '18:00', what: 'נסיעה חזרה ופיזור: ' + ((prefs.start && prefs.start.he) || 'נקודת הפיזור'), log: 'פיזור' });
+    if (prefs.data) reflowPlan(plan, prefs.data, prefs.own);
     return plan;
   }
 
-  const api = { orderSites, draftPlan, suggest, distanceKm, navLinks, legs, wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
+  const api = { points, driveMin, reflowPlan, orderSites, draftPlan, suggest, distanceKm, navLinks, legs, wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.MDExamCore = api;
 })(typeof window !== 'undefined' ? window : globalThis);
