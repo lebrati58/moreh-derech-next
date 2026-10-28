@@ -515,8 +515,8 @@
   }
   function examSetup(m, prev) {
     shell(missionHead(m, 'exam') + `<section class="panel"><h3>⏱️ ${t('exam')}</h3><p>תוכנית יום, יחידות קצרות ויחידה מורחבת. בלי רמזים ובלי תשובות לדוגמה. בסוף — תיקון מפורט, ציון ומקורות.</p>
-      <label>מודל<select id="mdlSel">${Object.entries(MODELS.models).map(([k, v]) => `<option value="${k}" ${k === MODELS.default ? 'selected' : ''}>${esc(v.he)}</option>`).join('')}</select></label>
-      <label>זמן<select id="durSel"><option value="180">3 שעות — כמו במבחן</option><option value="90">90 דקות — תרגול</option><option value="45">45 דקות — קצר</option></select></label>
+      <label class="fl">מודל<select id="mdlSel">${Object.entries(MODELS.models).map(([k, v]) => `<option value="${k}" ${k === MODELS.default ? 'selected' : ''}>${esc(v.he)}</option>`).join('')}</select></label>
+      <label class="fl">זמן<select id="durSel"><option value="180">3 שעות — כמו במבחן</option><option value="90">90 דקות — תרגול</option><option value="45">45 דקות — קצר</option></select></label>
       <p class="muted">${t('indicative')}</p><div class="acts"><button type="button" class="btn" id="go">▶ ${t('start')}</button>${prev && prev.done ? `<a class="btn ghost" href="#/m/${m.id}/result">📊 התוצאה הקודמת</a>` : ''}</div></section>`, { back: '#/' });
     $('#go').addEventListener('click', () => {
       S.exams[m.id] = { model: $('#mdlSel').value, minutes: +$('#durSel').value, startedAt: Date.now(), plan: [], units: {}, long: {}, tab: 'plan' }; save();
