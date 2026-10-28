@@ -507,3 +507,16 @@ Une seule partie est active à la fois : un animateur qui lance une nouvelle par
 - Aucun numéro n'est stocké en clair ni dans le dépôt : le serveur garde seulement `sha256(clé secrète | numéro)`, la clé étant tirée au hasard dans la base.
 - Liste vide = aucun animateur par numéro (seul l'admin, avec son mot de passe, lance un quiz en direct). Une liste collée sans aucun numéro valide est refusée (rien ne change).
 - `public/access-gate.js` n'est chargé que dans `guide.html` et `admin.html` (porte « animateur »). Les pages élèves ne le chargent pas. Si `install.sql` ou une migration est relancé, relancer ensuite `access_control.sql` (sinon le quiz en direct redevient « admin seulement »).
+
+## מורה דרך EXAM — אתגר המבחן (`exam.html`)
+
+Module d'entraînement à la 2e partie de l'examen : choisir les sites, construire le programme, rédiger les interventions courtes et développée.
+
+- **3 modes** :
+  - **entraînement guidé**, avec indices progressifs, réponse modèle, comparaison et conseils pour améliorer sa réponse ;
+  - **trouve les erreurs** ;
+  - **examen blanc** chronométré (3 h, 90 ou 45 min), sans aide, avec une correction détaillée.
+- **Contenu** : `public/exam/models.json` (modèles et règles) et `public/exam/golan-south.json` (sites, missions, réponses modèles, erreurs, pièges). Chaque fait renvoie à son document Drive.
+- **Logique pure** : `public/exam/exam-core.js` (tests : `tests/exam.test.mjs`). Le score est **indicatif** : aucune grille officielle n'a été trouvée.
+- **Progression** (XP, niveaux, badges, erreurs par catégorie) : enregistrée uniquement dans le téléphone (`mdl_exam_v1`). **Aucun numéro demandé.**
+- **Audit des documents** : `docs/EXAM_audit_2026-10-28.md`. Test navigateur : `npm run e2e:exam`.
