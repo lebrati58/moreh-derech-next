@@ -36,6 +36,11 @@
         "02",
         "07",
         "08"
+      ],
+      "file": "haifa-carmel.json",
+      "missions": [
+        "hc1",
+        "hc2"
       ]
     },
     {

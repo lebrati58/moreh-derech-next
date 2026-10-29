@@ -230,5 +230,364 @@
     "km": 11
    }
   }
+ },
+ "wiki:he:חיפה": {
+  "lat": 32.80375,
+  "lon": 35.00874,
+  "title": "he:חיפה",
+  "url": "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%A4%D7%94",
+  "qid": "Q41621"
+ },
+ "wiki:he:עתלית": {
+  "lat": 32.69101,
+  "lon": 34.94266,
+  "title": "he:עתלית",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%AA%D7%9C%D7%99%D7%AA",
+  "qid": "Q757398"
+ },
+ "wiki:he:המושבה הגרמנית (חיפה)": {
+  "lat": 32.82,
+  "lon": 34.99056,
+  "title": "he:המושבה הגרמנית (חיפה)",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%95%D7%A9%D7%91%D7%94_%D7%94%D7%92%D7%A8%D7%9E%D7%A0%D7%99%D7%AA_(%D7%97%D7%99%D7%A4%D7%94)",
+  "qid": "Q2413425"
+ },
+ "wiki:he:היכל הבאב": {
+  "lat": 32.81444,
+  "lon": 34.98722,
+  "title": "he:מקדש הבאב",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A7%D7%93%D7%A9_%D7%94%D7%91%D7%90%D7%91",
+  "qid": "Q1462314"
+ },
+ "wiki:he:כבאביר": {
+  "lat": 32.8042,
+  "lon": 34.97315,
+  "title": "he:כבאביר",
+  "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%91%D7%90%D7%91%D7%99%D7%A8",
+  "qid": "Q2897547"
+ },
+ "wiki:he:מנזר סטלה מאריס": {
+  "lat": 32.82667,
+  "lon": 34.97028,
+  "title": "he:מנזר סטלה מאריס",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%96%D7%A8_%D7%A1%D7%98%D7%9C%D7%94_%D7%9E%D7%90%D7%A8%D7%99%D7%A1",
+  "qid": "Q1606585"
+ },
+ "wiki:he:מערת אליהו": {
+  "lat": 32.82973,
+  "lon": 34.96777,
+  "title": "he:מערת אליהו",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%A8%D7%AA_%D7%90%D7%9C%D7%99%D7%94%D7%95",
+  "qid": "Q5054952"
+ },
+ "wiki:he:דאלית אל-כרמל": {
+  "lat": 32.69371,
+  "lon": 35.05088,
+  "title": "he:דאלית אל-כרמל",
+  "url": "https://he.wikipedia.org/wiki/%D7%93%D7%90%D7%9C%D7%99%D7%AA_%D7%90%D7%9C-%D7%9B%D7%A8%D7%9E%D7%9C",
+  "qid": "Q2667061"
+ },
+ "wiki:he:המוחרקה": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Muhraka": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "drive:haifa_carmel": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "haifa@32.80375,35.00874;atlit@32.69101,34.94266;german_colony@32.82,34.99056;bahai@32.81444,34.98722;ahmadi@32.8042,34.97315;stella_maris@32.82667,34.97028;elijah_cave@32.82973,34.96777;daliyat@32.69371,35.05088;atlit_kurkar@32.69101,34.94266",
+  "legs": {
+   "haifa>atlit": {
+    "min": 22,
+    "km": 20.6
+   },
+   "haifa>german_colony": {
+    "min": 6,
+    "km": 3.5
+   },
+   "haifa>bahai": {
+    "min": 7,
+    "km": 3.7
+   },
+   "haifa>ahmadi": {
+    "min": 11,
+    "km": 6.6
+   },
+   "haifa>stella_maris": {
+    "min": 10,
+    "km": 5.6
+   },
+   "haifa>elijah_cave": {
+    "min": 11,
+    "km": 7.1
+   },
+   "haifa>daliyat": {
+    "min": 23,
+    "km": 19.9
+   },
+   "haifa>atlit_kurkar": {
+    "min": 22,
+    "km": 20.6
+   },
+   "atlit>haifa": {
+    "min": 22,
+    "km": 20.2
+   },
+   "atlit>german_colony": {
+    "min": 22,
+    "km": 20.6
+   },
+   "atlit>bahai": {
+    "min": 23,
+    "km": 20.3
+   },
+   "atlit>ahmadi": {
+    "min": 21,
+    "km": 20.7
+   },
+   "atlit>stella_maris": {
+    "min": 19,
+    "km": 18.2
+   },
+   "atlit>elijah_cave": {
+    "min": 18,
+    "km": 17.6
+   },
+   "atlit>daliyat": {
+    "min": 25,
+    "km": 21.9
+   },
+   "atlit>atlit_kurkar": {
+    "min": 0,
+    "km": 0
+   },
+   "german_colony>haifa": {
+    "min": 6,
+    "km": 3.3
+   },
+   "german_colony>atlit": {
+    "min": 21,
+    "km": 19.8
+   },
+   "german_colony>bahai": {
+    "min": 3,
+    "km": 2
+   },
+   "german_colony>ahmadi": {
+    "min": 10,
+    "km": 6.2
+   },
+   "german_colony>stella_maris": {
+    "min": 5,
+    "km": 3.1
+   },
+   "german_colony>elijah_cave": {
+    "min": 5,
+    "km": 3.8
+   },
+   "german_colony>daliyat": {
+    "min": 26,
+    "km": 21.6
+   },
+   "german_colony>atlit_kurkar": {
+    "min": 21,
+    "km": 19.8
+   },
+   "bahai>haifa": {
+    "min": 7,
+    "km": 4.2
+   },
+   "bahai>atlit": {
+    "min": 21,
+    "km": 19.2
+   },
+   "bahai>german_colony": {
+    "min": 3,
+    "km": 1.8
+   },
+   "bahai>ahmadi": {
+    "min": 7,
+    "km": 4.3
+   },
+   "bahai>stella_maris": {
+    "min": 4,
+    "km": 2.6
+   },
+   "bahai>elijah_cave": {
+    "min": 8,
+    "km": 5.4
+   },
+   "bahai>daliyat": {
+    "min": 23,
+    "km": 20.7
+   },
+   "bahai>atlit_kurkar": {
+    "min": 21,
+    "km": 19.2
+   },
+   "ahmadi>haifa": {
+    "min": 10,
+    "km": 7.1
+   },
+   "ahmadi>atlit": {
+    "min": 21,
+    "km": 20.1
+   },
+   "ahmadi>german_colony": {
+    "min": 9,
+    "km": 5.9
+   },
+   "ahmadi>bahai": {
+    "min": 8,
+    "km": 4.5
+   },
+   "ahmadi>stella_maris": {
+    "min": 9,
+    "km": 5.4
+   },
+   "ahmadi>elijah_cave": {
+    "min": 10,
+    "km": 7.8
+   },
+   "ahmadi>daliyat": {
+    "min": 20,
+    "km": 18.9
+   },
+   "ahmadi>atlit_kurkar": {
+    "min": 21,
+    "km": 20.1
+   },
+   "stella_maris>haifa": {
+    "min": 10,
+    "km": 5.8
+   },
+   "stella_maris>atlit": {
+    "min": 18,
+    "km": 17.3
+   },
+   "stella_maris>german_colony": {
+    "min": 4,
+    "km": 2.7
+   },
+   "stella_maris>bahai": {
+    "min": 5,
+    "km": 2.9
+   },
+   "stella_maris>ahmadi": {
+    "min": 9,
+    "km": 5.4
+   },
+   "stella_maris>elijah_cave": {
+    "min": 5,
+    "km": 3.5
+   },
+   "stella_maris>daliyat": {
+    "min": 25,
+    "km": 21.8
+   },
+   "stella_maris>atlit_kurkar": {
+    "min": 18,
+    "km": 17.3
+   },
+   "elijah_cave>haifa": {
+    "min": 10,
+    "km": 5.8
+   },
+   "elijah_cave>atlit": {
+    "min": 18,
+    "km": 18
+   },
+   "elijah_cave>german_colony": {
+    "min": 5,
+    "km": 2.9
+   },
+   "elijah_cave>bahai": {
+    "min": 6,
+    "km": 3.8
+   },
+   "elijah_cave>ahmadi": {
+    "min": 11,
+    "km": 9.3
+   },
+   "elijah_cave>stella_maris": {
+    "min": 7,
+    "km": 4.2
+   },
+   "elijah_cave>daliyat": {
+    "min": 28,
+    "km": 25.7
+   },
+   "elijah_cave>atlit_kurkar": {
+    "min": 18,
+    "km": 18
+   },
+   "daliyat>haifa": {
+    "min": 22,
+    "km": 19.1
+   },
+   "daliyat>atlit": {
+    "min": 25,
+    "km": 21.7
+   },
+   "daliyat>german_colony": {
+    "min": 26,
+    "km": 21.4
+   },
+   "daliyat>bahai": {
+    "min": 24,
+    "km": 20.9
+   },
+   "daliyat>ahmadi": {
+    "min": 21,
+    "km": 18.9
+   },
+   "daliyat>stella_maris": {
+    "min": 25,
+    "km": 21.8
+   },
+   "daliyat>elijah_cave": {
+    "min": 26,
+    "km": 24.1
+   },
+   "daliyat>atlit_kurkar": {
+    "min": 25,
+    "km": 21.7
+   },
+   "atlit_kurkar>haifa": {
+    "min": 22,
+    "km": 20.2
+   },
+   "atlit_kurkar>atlit": {
+    "min": 0,
+    "km": 0
+   },
+   "atlit_kurkar>german_colony": {
+    "min": 22,
+    "km": 20.6
+   },
+   "atlit_kurkar>bahai": {
+    "min": 23,
+    "km": 20.3
+   },
+   "atlit_kurkar>ahmadi": {
+    "min": 21,
+    "km": 20.7
+   },
+   "atlit_kurkar>stella_maris": {
+    "min": 19,
+    "km": 18.2
+   },
+   "atlit_kurkar>elijah_cave": {
+    "min": 18,
+    "km": 17.6
+   },
+   "atlit_kurkar>daliyat": {
+    "min": 25,
+    "km": 21.9
+   }
+  }
  }
 }
