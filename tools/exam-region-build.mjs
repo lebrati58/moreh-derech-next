@@ -69,7 +69,8 @@ for (const m of src.missions || []) {
   if (m.start && !aids.has(m.start)) err(`mission ${m.id} : départ ${m.start} sans coordonnées`);
   if (m.end && !aids.has(m.end)) err(`mission ${m.id} : arrivée ${m.end} sans coordonnées`);
   if (bad.length) warn(`mission ${m.id} : lieu modèle absent pour ${bad.join(', ')} — le choix reste possible, sans « bonne réponse »`);
-  missions.push(Object.assign({}, m, { slots: m.slots.map(sl => Object.assign({}, sl, { alt: (sl.alt || []).filter(x => ids.has(x)) })) }));
+  const fixSlot = sl => ids.has(sl.best) || !sl.best ? sl : Object.assign({}, sl, { best: null, why: (sl.why ? sl.why + ' ' : '') + '(האתר שבמסמכים לא פורסם כאן: אין לו קואורדינטות מוויקיפדיה.)' });
+  missions.push(Object.assign({}, m, { slots: m.slots.map(sl => fixSlot(Object.assign({}, sl, { alt: (sl.alt || []).filter(x => ids.has(x)) }))), long: m.long ? fixSlot(m.long) : m.long }));
 }
 const models = {};
 for (const [k, v] of Object.entries(src.models || {})) {
