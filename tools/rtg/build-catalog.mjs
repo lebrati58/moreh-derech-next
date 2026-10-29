@@ -1,0 +1,73 @@
+// ספריית רט״ג — construit le catalogue léger de l'appli (public/rtg/catalog.json) à partir de :
+//   content/rtg/inventory.json   (import automatique : métadonnées, statut du texte, classifications AUTOMATIQUES)
+//   content/rtg/corrections.json (corrections manuelles — prioritaires, jamais écrasées par l'import)
+//   content/rtg/facts/<id>.json  (faits extraits, avec page — optionnel)
+// et relie chaque document aux lieux déjà présents dans le jeu (régions de l'examen, parcours) par leur nom.
+// Aucun texte intégral ni PDF n'est publié : seulement titre, type, langue, pages, région, liens officiels.
+import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
+
+const ROOT = new URL('../../', import.meta.url);
+const rd = async (p, d) => { try { return JSON.parse(await readFile(new URL(p, ROOT), 'utf8')); } catch (e) { return d; } };
+const inv = await rd('content/rtg/inventory.json', null);
+if (!inv) { console.error('pas d’inventaire (content/rtg/inventory.json) — lancer l’import d’abord'); process.exit(1); }
+const corr = (await rd('content/rtg/corrections.json', { documents: {} })).documents || {};
+
+// lieux du jeu : sites des 13 régions de l'examen + lieux des parcours
+const places = [];
+const regions = (await rd('public/exam/regions.json', { regions: [] })).regions.filter(r => r.file);
+for (const r of regions) {
+  const d = await rd('public/exam/' + r.file, null); if (!d) continue;
+  for (const s of d.sites || []) places.push({ kind: 'exam', region: r.id, regionHe: r.he, id: s.id, he: s.he, short: s.short || s.he, mission: (d.missions || []).find(m => (m.slots || []).some(sl => sl.best === s.id) || (m.long || {}).best === s.id)?.id || null });
+}
+const tours = await rd('public/tours/index.json', { tours: [] });
+for (const t of (tours.tours || []).filter(t => t.public)) {
+  const d = await rd('public/tours/' + t.id + '.json', null);
+  for (const s of (d && d.stops) || []) places.push({ kind: 'tour', tour: t.id, tourHe: t.title, id: s.id, he: s.name || s.he, short: s.name || s.he });
+}
+const norm = s => String(s || '').normalize('NFC').replace(/[״"׳'`(),.:;–—-]/g, ' ').replace(/\s+/g, ' ').trim();
+const STOP = new Set(['תל', 'גן', 'לאומי', 'שמורת', 'שמורה', 'נחל', 'הר', 'עין', 'מצפה', 'בית', 'חורבת', 'מערת', 'כביש', 'אתר', 'העיר', 'הדרכת', 'דרך']);
+const keyOf = p => {   // nom distinctif d'un lieu (ex. « תל לכיש (גן לאומי) » → « לכיש »)
+  const w = norm(p.short).split(' ').filter(x => x.length > 1 && !STOP.has(x));
+  return w.length ? w.join(' ') : null;
+};
+const placeKeys = places.map(p => ({ p, k: keyOf(p) })).filter(x => x.k && x.k.length >= 3);
+function linksFor(title) {
+  const t = ' ' + norm(title) + ' ';
+  const out = [];
+  for (const { p, k } of placeKeys) if (t.includes(' ' + k + ' ') || t.includes(' ' + k + 'ה ') || t.includes(' ה' + k + ' ')) out.push(p);
+  const seen = new Set();
+  return out.filter(p => { const id = p.kind + ':' + (p.region || p.tour) + ':' + p.id; if (seen.has(id)) return false; seen.add(id); return true; }).slice(0, 8);
+}
+
+let factIds = new Set();
+try { factIds = new Set((await readdir(new URL('content/rtg/facts/', ROOT))).filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, ''))); } catch (e) {}
+
+const docs = [];
+for (const d of inv.documents) {
+  const c = corr[d.id] || {};
+  if (c.hide) continue;
+  const title = c.title || d.title;
+  const links = (c.links || linksFor(title + ' ' + (d.fileName || ''))).map(p => p.kind === 'exam'
+    ? { k: 'exam', region: p.region, site: p.id, he: p.he, mission: p.mission || undefined, auto: !c.links }
+    : { k: 'tour', tour: p.tour, stop: p.id, he: p.he, auto: !c.links });
+  docs.push({
+    id: d.id, t: title, f: d.fileName, ty: c.type || d.type, lg: c.lang || d.lang || null, pg: d.pages || null,
+    st: d.status, q: d.quality ?? null, ocr: d.ocrPages || 0,
+    rg: c.regionVerified || null, rga: c.regionVerified ? null : (d.regionAuto || null),
+    per: c.periods || null, pera: c.periods ? null : (d.periodsAuto || null),
+    th: c.themes || [], site: c.site || null,
+    u: c.officialUrl || d.officialUrl || null, sp: d.sourcePage || null,
+    ln: links.length ? links : undefined, fx: factIds.has(d.id) || undefined
+  });
+}
+const prio = { guide: 0, brochure: 1, map: 2, activity: 3, article: 4, other: 5 };
+docs.sort((a, b) => (prio[a.ty] ?? 9) - (prio[b.ty] ?? 9) || a.t.localeCompare(b.t, 'he'));
+const s = inv.summary || {};
+await mkdir(new URL('public/rtg/', ROOT), { recursive: true });
+await writeFile(new URL('public/rtg/catalog.json', ROOT), JSON.stringify({
+  v: 1, built: new Date().toISOString().slice(0, 10), importDate: s.date || null,
+  note: 'רשות הטבע והגנים — הקבצים אינם מאוחסנים באפליקציה; הקישור הוא לאתר הרשמי. אזורים ותקופות שסומנו ״אוטומטי״ טרם אומתו.',
+  counts: { docs: docs.length, guides: docs.filter(d => d.ty === 'guide').length, withUrl: docs.filter(d => d.u).length, linked: docs.filter(d => d.ln).length },
+  docs
+}) + '\n');
+console.log(`catalogue : ${docs.length} documents · ${docs.filter(d => d.ty === 'guide').length} מדריך למדריך · ${docs.filter(d => d.u).length} avec lien officiel · ${docs.filter(d => d.ln).length} reliés à des lieux du jeu`);
