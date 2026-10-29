@@ -11,7 +11,7 @@
 import concurrent.futures as cf, csv, gzip, hashlib, io, json, os, re, subprocess, sys, time, unicodedata, urllib.request, zipfile
 
 ROOT_ID = os.environ.get('RTG_FOLDER', '1HW01dalAwBqkkoBXmVgihraY_Vup6cuM')
-TOOL_VERSION = 2
+TOOL_VERSION = 2   # (texte inchangé : seule la classification a évolué)
 OUT = 'content/rtg'
 WORK = os.environ.get('RTG_WORK', '/tmp/rtg')
 TEXT = os.environ.get('RTG_TEXT', 'rtg-text')
@@ -135,11 +135,15 @@ for d in docs.values():
     rows = by_sha.get(d['sha256'], []) + by_name.get(norm(d['fileName']), []) + [r for c in d['copies'] for r in by_name.get(norm(c['name']), [])]
     d['catalog'] = {
         'matched': bool(rows),
-        'title': pick(rows, 'titre', 'title', 'כותרת', 'שם'),
-        'url': pick(rows, 'url', 'lien', 'link', 'קישור'),
+        'title': pick(rows, 'title_he', 'titre', 'title', 'כותרת'),
+        'site': pick(rows, 'site', 'אתר'),
+        'subject': pick(rows, 'subject', 'sujet', 'נושא'),
+        'sections': pick(rows, 'sections'),
+        'manifestId': pick(rows, 'document_id'),
+        'url': pick(rows, 'pdf_url', 'url', 'lien', 'link', 'קישור'),
         'page': pick(rows, 'page_source', 'source_page', 'page source', 'referer', 'עמוד'),
         'regionAuto': pick(rows, 'région', 'region', 'אזור'),
-        'periodsAuto': pick(rows, 'période', 'periode', 'period', 'תקופ'),
+        'periodsAuto': pick(rows, 'period_keywords', 'période', 'periode', 'period', 'תקופ'),
         'typeAuto': pick(rows, 'type', 'catégorie', 'category', 'סוג'),
         'langAuto': pick(rows, 'langue', 'language', 'lang', 'שפה'),
     }
@@ -211,19 +215,25 @@ for i, d in enumerate(sorted(docs.values(), key=lambda x: x['sha256'])):
 
 # ---------- 5. inventaire public (métadonnées) ----------
 def doc_type(d):
-    t = ' '.join(filter(None, [d['fileName'], str(d['catalog'].get('title') or ''), str(d['catalog'].get('typeAuto') or ''), d.get('pdfTitle') or '']))
-    if re.search(r'מדריך\s*ל?מדריכ|מדריך-למדריך|madrich', t, re.I): return 'guide'
+    t = ' '.join(filter(None, [d['fileName'], str(d['catalog'].get('title') or ''), str(d['catalog'].get('typeAuto') or ''), str(d['catalog'].get('subject') or ''), d.get('pdfTitle') or '']))
+    if re.search(r'מדריך\s*[-–]?\s*ל?מדרי[ךכ]|madrich|guide for guides', t, re.I): return 'guide'
+    if re.search(r'דפדפת|פלאייר|flyer', t, re.I): return 'brochure'
     if re.search(r'מפה|מפת|map', t, re.I): return 'map'
     if re.search(r'פעילות|דף\s*עבודה|ערכה|חידון|activity|לימוד', t, re.I): return 'activity'
     if re.search(r'גיליון|מאמר|כתב\s*עת|עלון\s*מדעי|article', t, re.I): return 'article'
     if re.search(r'עלון|ברושור|brochure|leaflet|פלאייר', t, re.I): return 'brochure'
     return 'other'
+def clean_title(t, fn):
+    t = re.sub(r'\s*\n\s*הורדה\s*$', '', str(t)).replace('\n', ' ')
+    t = re.sub(r'\s+', ' ', t).strip()
+    return t or re.sub(r'_[0-9a-f]{6}\.pdf$|\.pdf$', '', fn)
 out = []
 for d in sorted(docs.values(), key=lambda x: x['fileName']):
     c = d['catalog']
     out.append({k: v for k, v in {
         'id': d['id'], 'sha256': d['sha256'], 'fileName': d['fileName'], 'source': d['source'], 'driveId': d['driveId'], 'zipPath': d['zipPath'] or None,
-        'copies': d['copies'] or None, 'title': c.get('title') or d.get('pdfTitle') or re.sub(r'_[0-9a-f]{6}\.pdf$|\.pdf$', '', d['fileName']),
+        'copies': d['copies'] or None, 'title': clean_title(c.get('title') or d.get('pdfTitle') or d['fileName'], d['fileName']),
+        'site': c.get('site'), 'subject': c.get('subject'), 'sections': c.get('sections'), 'manifestId': c.get('manifestId'),
         'officialUrl': c.get('url'), 'sourcePage': c.get('page'), 'regionAuto': c.get('regionAuto'), 'periodsAuto': c.get('periodsAuto'),
         'typeAuto': c.get('typeAuto'), 'type': doc_type(d), 'lang': d.get('lang') or c.get('langAuto'), 'pages': d.get('pages'),
         'status': d.get('status'), 'textPages': d.get('textPages'), 'ocrPages': d.get('ocrPages'), 'emptyPages': d.get('emptyPages'),
