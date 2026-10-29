@@ -30,9 +30,9 @@
    "guide": 11,
    "brochure": 77,
    "map": 13,
-   "activity": 3,
+   "activity": 7,
    "article": 293,
-   "other": 330
+   "other": 326
   },
   "langs": {
    "None": 0,
@@ -43,7 +43,8 @@
    "ru": 5
   },
   "pages": 5152,
-  "ocrPagesThisRun": 2,
+  "visualOrderFixed": 541,
+  "ocrPagesThisRun": 587,
   "manifestSchema": [
    "classification_status",
    "document_id",
@@ -95,8 +96,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4e19bfc73483",
@@ -126,8 +129,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "30c4d3c4a317",
@@ -157,8 +162,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8d19bbb9a175",
@@ -195,8 +202,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5f3dda0a6f30",
@@ -226,8 +235,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.05,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8a8da80752ee",
@@ -264,8 +275,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9af299fd328a",
@@ -302,8 +315,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ca7e460aa97b",
@@ -340,8 +355,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6ec9f0263969",
@@ -371,8 +388,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e6ca740536b7",
@@ -409,8 +428,10 @@
    "ocrPages": 6,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e4a8d58c39ee",
@@ -440,8 +461,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.06,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7816f1451ed3",
@@ -480,8 +503,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2f7ba7460081",
@@ -520,8 +545,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "883d564a8462",
@@ -554,8 +581,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "523e7810c433",
@@ -585,8 +614,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bb1902554135",
@@ -623,8 +654,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "131a354b6278",
@@ -658,8 +691,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1723bc74bbc3",
@@ -696,8 +731,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2d0505a44c3a",
@@ -734,8 +771,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.24,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "58f140cba51d",
@@ -772,8 +811,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.22,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "66434fb90a5d",
@@ -810,8 +851,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.21,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6f763369ef59",
@@ -848,8 +891,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8012baf9fd62",
@@ -889,8 +934,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8362e2930888",
@@ -927,8 +974,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "85d4d589d567",
@@ -965,8 +1014,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "90688e943227",
@@ -1007,8 +1058,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9a4c9de34f99",
@@ -1045,8 +1098,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9e8995f43959",
@@ -1083,8 +1138,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a2d99b4d1e97",
@@ -1126,8 +1183,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "aa64f82816c9",
@@ -1164,8 +1223,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.22,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b4012d91f1cf",
@@ -1202,8 +1263,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dce6124a43e0",
@@ -1240,8 +1303,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.23,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e2ad816d5754",
@@ -1278,8 +1343,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e86363ab28cb",
@@ -1316,8 +1383,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f0cb1cd43ee8",
@@ -1354,8 +1423,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "271b53d20667",
@@ -1392,8 +1463,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3ece7cdf5366",
@@ -1430,8 +1503,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.2,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5fff06e8b1b5",
@@ -1468,8 +1543,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.09,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "61f9e4011601",
@@ -1509,8 +1586,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "68d41c2b7c3c",
@@ -1551,8 +1630,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6e53f020c47c",
@@ -1589,8 +1670,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "825ca5924d54",
@@ -1630,8 +1713,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "95ec03ea734c",
@@ -1668,8 +1753,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a31e4a36dc35",
@@ -1706,8 +1793,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.18,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b9371381823b",
@@ -1744,8 +1833,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bd631dc5964b",
@@ -1782,8 +1873,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bdd65a320d8a",
@@ -1820,8 +1913,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.26,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c4d3e7ef8391",
@@ -1861,8 +1956,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dacb6f423a81",
@@ -1902,8 +1999,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "db3beced72c7",
@@ -1943,8 +2042,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.81,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "db94deb0196c",
@@ -1981,8 +2082,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e342d66113d6",
@@ -2022,8 +2125,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e46a4b659a3a",
@@ -2060,8 +2165,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.19,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e73531d38ea2",
@@ -2098,8 +2205,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "15016f80b080",
@@ -2136,8 +2245,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "15c2bf521852",
@@ -2174,8 +2285,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.25,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "19174bd81ea3",
@@ -2212,8 +2325,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3032225a71d8",
@@ -2254,8 +2369,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3217de6ec7ca",
@@ -2296,8 +2413,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3884259b0ab9",
@@ -2339,8 +2458,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3b0b147f749f",
@@ -2377,8 +2498,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.82,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "443ae0fccb80",
@@ -2408,8 +2531,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "460488f7b373",
@@ -2451,8 +2576,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5401c76e4d3b",
@@ -2492,8 +2619,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "648441eb32aa",
@@ -2533,8 +2662,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7f1223eecf2b",
@@ -2575,8 +2706,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "846d33cede23",
@@ -2617,8 +2750,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9332f7b99da1",
@@ -2655,8 +2790,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a4e274aabeaf",
@@ -2696,8 +2833,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a73bdcc93b11",
@@ -2734,8 +2873,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.21,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b16aca7b93c0",
@@ -2772,8 +2913,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e909ec8e8a93",
@@ -2813,8 +2956,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f52880a49eae",
@@ -2854,8 +2999,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0d8853d72ded",
@@ -2892,8 +3039,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5a8c2d7d40af",
@@ -2930,8 +3079,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7adbc7c14c61",
@@ -2968,8 +3119,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "95c5e10ad5af",
@@ -3006,8 +3159,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "99997b581126",
@@ -3044,8 +3199,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a780d31445e9",
@@ -3082,8 +3239,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f974c9fab5bb",
@@ -3123,8 +3282,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.48,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fd3304f94b19",
@@ -3164,8 +3325,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0e7a75582c31",
@@ -3202,8 +3365,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "17dead43c3d1",
@@ -3243,8 +3408,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1bb674cac8ff",
@@ -3281,8 +3448,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "71a921f021c1",
@@ -3324,8 +3493,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7dda539e65d9",
@@ -3362,8 +3533,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9043eb0fb7fc",
@@ -3403,8 +3576,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ac246cedd84c",
@@ -3441,8 +3616,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c28a70db35e4",
@@ -3472,8 +3649,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c44bff9f4912",
@@ -3510,8 +3689,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d6cf25a488b6",
@@ -3548,8 +3729,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.82,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fff4751e70ec",
@@ -3589,8 +3772,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1378425783f5",
@@ -3630,8 +3815,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2f4458cff0ca",
@@ -3668,8 +3855,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3a34d1228541",
@@ -3706,8 +3895,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.85,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3b41f6491d08",
@@ -3748,8 +3939,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.81,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "429ea16b3571",
@@ -3786,8 +3979,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5835d2193c86",
@@ -3828,8 +4023,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5beb45deac1c",
@@ -3866,8 +4063,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.82,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7599c6606fba",
@@ -3904,8 +4103,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "81583cd287a4",
@@ -3942,8 +4143,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "899707e958fd",
@@ -3980,8 +4183,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "97b17539c8c2",
@@ -4022,8 +4227,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a5083c2ed3ce",
@@ -4063,8 +4270,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ca94db06f583",
@@ -4104,8 +4313,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cc78a268c40c",
@@ -4142,8 +4353,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dbaef3fd149b",
@@ -4180,8 +4393,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.81,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ee260656f802",
@@ -4221,8 +4436,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0cacb58b25fe",
@@ -4259,8 +4476,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "25e5791fb788",
@@ -4297,8 +4516,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "35a65300c80b",
@@ -4335,8 +4556,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3f2ef6b82a7e",
@@ -4373,8 +4596,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4fe91b2b9584",
@@ -4411,8 +4636,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "539612445a38",
@@ -4456,8 +4683,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6ea01609c1c6",
@@ -4494,8 +4723,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7f86875bdbab",
@@ -4536,8 +4767,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.28,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "808331fdd011",
@@ -4581,8 +4814,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "94aff5a4b0dc",
@@ -4622,8 +4857,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.48,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a1717f2e7be5",
@@ -4660,8 +4897,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a73b8842d88d",
@@ -4698,8 +4937,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.2,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a93fd56db03d",
@@ -4736,8 +4977,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.83,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c22d0644d7ca",
@@ -4774,8 +5017,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.78,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c3dcefe2f89c",
@@ -4815,8 +5060,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.71,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "db3fa7a1ec05",
@@ -4853,8 +5100,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ed836848dafb",
@@ -4891,8 +5140,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f96e22c6e3f8",
@@ -4922,8 +5173,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1c5f55b4e3e9",
@@ -4960,8 +5213,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4dff9993ce2c",
@@ -5001,8 +5256,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "62a1201c2b48",
@@ -5043,8 +5300,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8293c7725119",
@@ -5081,8 +5340,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "97012e487294",
@@ -5119,8 +5380,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.88,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9db8c9baf00d",
@@ -5157,8 +5420,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.88,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a24ff1be1ae6",
@@ -5195,8 +5460,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.31,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d28c528b832a",
@@ -5233,8 +5500,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "db0579b955ae",
@@ -5277,8 +5546,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dc73c0add8ce",
@@ -5315,8 +5586,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e901b39d077a",
@@ -5358,8 +5631,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "eb3f2d6444a8",
@@ -5396,8 +5671,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ee2afc732d4a",
@@ -5437,8 +5714,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.28,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "079367c0fe0c",
@@ -5475,8 +5754,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "08a134dfbf07",
@@ -5513,8 +5794,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0e6b1adc2431",
@@ -5551,8 +5834,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "15d487e5ab7d",
@@ -5589,8 +5874,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.28,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "161235f16d72",
@@ -5630,8 +5917,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1a0952da32c0",
@@ -5664,8 +5953,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3989ddbacd40",
@@ -5702,8 +5993,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3bb478693358",
@@ -5740,8 +6033,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8072c2c55b69",
@@ -5778,8 +6073,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "91d298c1b890",
@@ -5819,8 +6116,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a6784c4cf706",
@@ -5857,8 +6156,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a6aa714a7411",
@@ -5898,8 +6199,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dc2efd5f5c97",
@@ -5936,8 +6239,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e00beca1197a",
@@ -5977,8 +6282,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e530ad2f9d55",
@@ -6015,8 +6322,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.88,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0600f56005f8",
@@ -6053,8 +6362,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "151af6e8adb8",
@@ -6094,8 +6405,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1b90f7b74a80",
@@ -6137,8 +6450,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5414224fef1a",
@@ -6179,8 +6494,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6848029afe6a",
@@ -6210,8 +6527,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.25,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "73023f9fa9db",
@@ -6248,8 +6567,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "76e3574e6e2f",
@@ -6286,8 +6607,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a2d88f672110",
@@ -6324,8 +6647,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ab799d113d67",
@@ -6365,8 +6690,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b0b05bcc6f74",
@@ -6403,8 +6730,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ba5d8af5ce7e",
@@ -6444,8 +6773,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bbe9d42058ab",
@@ -6475,8 +6806,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c73ce78d32fd",
@@ -6513,8 +6846,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c7425ef212e2",
@@ -6551,8 +6886,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c74996f369df",
@@ -6589,8 +6926,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d488d5e69dd2",
@@ -6630,8 +6969,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "da2fc4ed2e52",
@@ -6668,8 +7009,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e51e677b00e3",
@@ -6706,8 +7049,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f31289ffb638",
@@ -6744,8 +7089,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fb2a952d5dbe",
@@ -6782,8 +7129,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "069dc61e8c74",
@@ -6820,8 +7169,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.84,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "08f3c469df1c",
@@ -6858,8 +7209,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.27,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "226549584757",
@@ -6896,8 +7249,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.17,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2e305d5eeda4",
@@ -6937,8 +7292,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3dbddfb2ab3e",
@@ -6968,8 +7325,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "433ca5e6c92c",
@@ -7006,8 +7365,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "69eaedfa8425",
@@ -7047,8 +7408,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "74c3ad9a6754",
@@ -7085,8 +7448,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "78c1872aacfe",
@@ -7123,8 +7488,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.71,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7e79796425f7",
@@ -7161,8 +7528,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9bd6f287bca2",
@@ -7202,8 +7571,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9ebbc77fe507",
@@ -7240,8 +7611,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bb19d990eaac",
@@ -7278,8 +7651,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bc860b585e6d",
@@ -7316,8 +7691,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bcda54e246b3",
@@ -7359,8 +7736,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cbd378bca03e",
@@ -7397,8 +7776,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f98e331edd57",
@@ -7435,8 +7816,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fcb8b7d399e5",
@@ -7473,8 +7856,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.86,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fcd71a5a8194",
@@ -7511,8 +7896,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1bb681769bc3",
@@ -7549,8 +7936,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "339bddce3841",
@@ -7587,8 +7976,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "450cbbd0d10a",
@@ -7625,8 +8016,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6410d1947b45",
@@ -7663,8 +8056,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "675d96a016f0",
@@ -7701,8 +8096,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "89e1de561942",
@@ -7739,8 +8136,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.29,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9864c0192d92",
@@ -7777,8 +8176,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9a2a7f65fd84",
@@ -7818,8 +8219,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9b9a3de57dd1",
@@ -7860,8 +8263,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9d51bd5c0f53",
@@ -7898,8 +8303,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b0f67c1f7f63",
@@ -7936,8 +8343,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cf97ae258946",
@@ -7974,8 +8383,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.3,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d6692a6f5cd4",
@@ -8015,8 +8426,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e5f8b0fdc31c",
@@ -8056,8 +8469,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "eaea90cbd403",
@@ -8094,8 +8509,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fc8da180b207",
@@ -8132,8 +8549,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "014ae42f9123",
@@ -8170,8 +8589,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.48,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "08d543d80148",
@@ -8208,8 +8629,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.1,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0974910a8600",
@@ -8246,8 +8669,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "265cbe7d57f2",
@@ -8284,8 +8709,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "29b5d48a36d1",
@@ -8327,8 +8754,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "354b4d2911ef",
@@ -8368,8 +8797,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.71,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "410b4d3998b3",
@@ -8406,8 +8837,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4c08537272bf",
@@ -8437,8 +8870,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "62e902c91f2b",
@@ -8475,8 +8910,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "76c910837228",
@@ -8521,8 +8958,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "812f33b4c8ad",
@@ -8564,8 +9003,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.48,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8edddb304aa5",
@@ -8602,8 +9043,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9f1c33084a14",
@@ -8640,8 +9083,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.3,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ac4428b902ce",
@@ -8678,8 +9123,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b4666ebceffc",
@@ -8716,8 +9163,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.24,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c0155542378d",
@@ -8754,8 +9203,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "493094862c89",
@@ -8792,8 +9243,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5a5bebac02b5",
@@ -8830,8 +9283,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.84,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6c03e0c42e97",
@@ -8868,8 +9323,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.17,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "773115167538",
@@ -8909,8 +9366,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "89bf49f30f41",
@@ -8947,8 +9406,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9d6af10922fc",
@@ -8985,8 +9446,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bcec3e16d02a",
@@ -9023,8 +9486,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.29,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c7d5fe2da2fa",
@@ -9061,8 +9526,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cb8d83ccaa1c",
@@ -9102,8 +9569,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d4d7ec8afed3",
@@ -9140,8 +9609,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dcdf55710270",
@@ -9178,8 +9649,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e5fddceedd56",
@@ -9216,8 +9689,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.85,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ff175d7b874f",
@@ -9258,8 +9733,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0ab8da5bcf27",
@@ -9299,8 +9776,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "22085b08bd09",
@@ -9342,8 +9821,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "34fbd9dd057f",
@@ -9380,8 +9861,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "454a35f009f6",
@@ -9418,8 +9901,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4d821e051517",
@@ -9456,8 +9941,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6a6c199a90fe",
@@ -9494,8 +9981,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "806b217fa85a",
@@ -9525,8 +10014,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "88664f5a5694",
@@ -9567,8 +10058,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "97899a979f27",
@@ -9605,8 +10098,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.09,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9becabf848e5",
@@ -9643,8 +10138,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9d6bbcc51f81",
@@ -9681,8 +10178,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.69,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9f2dcaccb066",
@@ -9719,8 +10218,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a52f58eb18d4",
@@ -9757,8 +10258,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.27,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a5e96c32af17",
@@ -9795,8 +10298,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "afa9c94e3d34",
@@ -9833,8 +10338,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b84eaa89d0ec",
@@ -9876,8 +10383,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bbd17f89036f",
@@ -9914,8 +10423,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ca9a5cadaeed",
@@ -9952,8 +10463,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0dd09488d78d",
@@ -9990,8 +10503,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "143b28b3e95b",
@@ -10028,8 +10543,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "14cab8e58e79",
@@ -10066,8 +10583,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3366f7174aa6",
@@ -10104,8 +10623,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.9,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "44a86791be50",
@@ -10142,8 +10663,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5b557e6c64d3",
@@ -10180,8 +10703,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9bf3533eedb6",
@@ -10218,8 +10743,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.28,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b24a1ea1fded",
@@ -10256,8 +10783,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ca8cf6a1f5fd",
@@ -10294,8 +10823,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d133335e8c60",
@@ -10332,8 +10863,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "da6268400f7f",
@@ -10370,8 +10903,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dabd321b0058",
@@ -10408,8 +10943,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.19,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e5ac397c4d55",
@@ -10446,8 +10983,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e6720231009e",
@@ -10484,8 +11023,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e88f11171899",
@@ -10519,8 +11060,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f89ebcebc4d9",
@@ -10557,8 +11100,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fe9cb68f04d3",
@@ -10595,8 +11140,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "14ad19fcd920",
@@ -10637,8 +11184,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "311b73c27654",
@@ -10678,8 +11227,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "38b5786c1163",
@@ -10716,8 +11267,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.26,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "43f15acdd89f",
@@ -10754,8 +11307,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5b529c9c61bf",
@@ -10792,8 +11347,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "668f791e2df1",
@@ -10830,8 +11387,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.81,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7181b21df7d0",
@@ -10868,8 +11427,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7439e22c944c",
@@ -10906,8 +11467,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8dd8c11d27dd",
@@ -10944,8 +11507,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9f3fe45bc8db",
@@ -10982,8 +11547,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a48f5dc2c877",
@@ -11020,8 +11587,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.26,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "aade0b7ad8be",
@@ -11058,8 +11627,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b8bf3c2bce27",
@@ -11099,8 +11670,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c8ef9fa55d79",
@@ -11137,8 +11710,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d1cc2078a0d5",
@@ -11175,8 +11750,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.92,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ddc684d20674",
@@ -11206,8 +11783,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ded55efe2398",
@@ -11244,8 +11823,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ee0811dc476f",
@@ -11282,8 +11863,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.17,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "05164ef893e7",
@@ -11320,8 +11903,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "07eb3b98c398",
@@ -11358,8 +11943,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0fe4672409dd",
@@ -11399,8 +11986,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2be4b4f12db1",
@@ -11437,8 +12026,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "69806511ba9d",
@@ -11475,8 +12066,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "98a763094787",
@@ -11517,8 +12110,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.81,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9c809df034c6",
@@ -11555,8 +12150,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a636abfd68ac",
@@ -11593,8 +12190,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "aadba6ed337e",
@@ -11631,8 +12230,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b49793158c60",
@@ -11669,8 +12270,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b66c882e6cb1",
@@ -11707,8 +12310,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.31,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bd6596358fae",
@@ -11745,8 +12350,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "beafcf6c4919",
@@ -11786,8 +12393,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c41877c33532",
@@ -11827,8 +12436,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d2d9fe6dc3d3",
@@ -11865,8 +12476,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.07,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d39c1df57e42",
@@ -11903,8 +12516,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dfd93b80323e",
@@ -11941,8 +12556,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "240cd3214af0",
@@ -11983,8 +12600,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5075c219f5f2",
@@ -12017,8 +12636,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1392a3811e0d",
@@ -12052,8 +12673,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2abe77229ff6",
@@ -12090,8 +12713,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.18,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "320e2547f6a8",
@@ -12128,8 +12753,10 @@
    "ocrPages": 25,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.8,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4966760f5772",
@@ -12166,8 +12793,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "587e32684324",
@@ -12204,8 +12833,10 @@
    "ocrPages": 23,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "77061d37f885",
@@ -12242,8 +12873,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "84e3669a97c2",
@@ -12280,8 +12913,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "aa1d2a24d5e2",
@@ -12318,8 +12953,10 @@
    "ocrPages": 22,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.78,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b4b571c2049f",
@@ -12356,8 +12993,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f22c7f5e1898",
@@ -12394,8 +13033,10 @@
    "ocrPages": 23,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f282fffeb062",
@@ -12425,8 +13066,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0723e8788861",
@@ -12455,7 +13098,7 @@
    "officialUrl": "https://static.parks.org.il/wp-content/uploads/2022/01/2010.pdf",
    "sourcePage": "https://www.parks.org.il/files/mahali/",
    "regionAuto": "כלל ארצי או סיווג לבדיקה",
-   "type": "other",
+   "type": "activity",
    "lang": "he",
    "pages": 35,
    "status": "text",
@@ -12463,8 +13106,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1e87960063d8",
@@ -12501,8 +13146,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "24f20dc675c3",
@@ -12539,8 +13186,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "55859315518a",
@@ -12577,8 +13226,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "68c156ef6678",
@@ -12608,8 +13259,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6e9cc7a899b9",
@@ -12646,8 +13299,10 @@
    "ocrPages": 33,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7d6eeaa815f5",
@@ -12677,8 +13332,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8f71aad1063c",
@@ -12708,8 +13365,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9861c35114c7",
@@ -12746,8 +13405,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bec5c7e710c5",
@@ -12777,8 +13438,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bf9670737c45",
@@ -12807,7 +13470,7 @@
    "officialUrl": "https://static.parks.org.il/wp-content/uploads/2022/01/2011.pdf",
    "sourcePage": "https://www.parks.org.il/files/mahali/",
    "regionAuto": "כלל ארצי או סיווג לבדיקה",
-   "type": "other",
+   "type": "activity",
    "lang": "he",
    "pages": 36,
    "status": "text",
@@ -12815,8 +13478,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c5f67b261b74",
@@ -12846,8 +13511,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ce16dee6a310",
@@ -12877,8 +13544,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fa4eb8a8a637",
@@ -12915,8 +13584,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ff643bc52c6d",
@@ -12946,8 +13617,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5156a43b39db",
@@ -12980,8 +13653,10 @@
    "ocrPages": 9,
    "emptyPages": 8,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5c62045876e4",
@@ -13014,8 +13689,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8fc296b31e5a",
@@ -13051,8 +13728,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.69,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b2e219bc3764",
@@ -13089,8 +13768,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.09,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b3da212046b0",
@@ -13127,8 +13808,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cee702d2c815",
@@ -13161,8 +13844,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "db06e5cf2245",
@@ -13192,8 +13877,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ba266106c70a",
@@ -13230,8 +13917,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cbcf76a1f561",
@@ -13268,8 +13957,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "68a01dbb8966",
@@ -13310,8 +14001,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.31,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8108a3b3792f",
@@ -13346,8 +14039,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.29,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c8009777cce0",
@@ -13389,8 +14084,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0c28cf48b0e5",
@@ -13420,8 +14117,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0ce06bc9dfd1",
@@ -13451,8 +14150,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "28662b2bb5c6",
@@ -13485,8 +14186,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.3,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3524ed3ae86f",
@@ -13519,8 +14222,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "411eea9def3d",
@@ -13554,8 +14259,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5575ef7bf1fa",
@@ -13591,8 +14298,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.24,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "619e7935ea2f",
@@ -13626,8 +14335,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d1096975ac76",
@@ -13661,8 +14372,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.16,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f3b3b03d491d",
@@ -13700,8 +14413,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9d6f7de93689",
@@ -13731,8 +14446,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "03aeec9afc0b",
@@ -13769,8 +14486,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "45c1e3f33344",
@@ -13806,8 +14525,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c5c6df1c8fef",
@@ -13845,8 +14566,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "413d75c28ab3",
@@ -13884,8 +14607,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5b4c68359f9f",
@@ -13918,8 +14643,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.29,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7484daa8964e",
@@ -13964,8 +14691,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "99df2734a062",
@@ -13995,8 +14724,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "05b66ff5f227",
@@ -14032,8 +14763,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "450d9885d25b",
@@ -14070,8 +14803,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6c9188fcb4cc",
@@ -14112,8 +14847,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "87008ee28bf6",
@@ -14149,8 +14886,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0765cccde748",
@@ -14187,8 +14926,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.08,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "63795299d22b",
@@ -14221,8 +14962,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4168d3fc3933",
@@ -14252,8 +14995,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.01,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f5e93e7c2977",
@@ -14287,8 +15032,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "95964979d943",
@@ -14325,8 +15072,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f2c2f399a654",
@@ -14369,8 +15118,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5e6a5842db94",
@@ -14413,8 +15164,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "735fdb1dd8a1",
@@ -14447,8 +15200,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a243ff4c35eb",
@@ -14478,8 +15233,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "989314676c9f",
@@ -14521,8 +15278,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "34c2f675a074",
@@ -14563,8 +15322,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "393d6fabdc5e",
@@ -14598,8 +15359,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8aea669f3849",
@@ -14629,8 +15392,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "30acb401a568",
@@ -14666,8 +15431,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "84d347146f52",
@@ -14697,8 +15464,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6e06ec1214cf",
@@ -14728,8 +15497,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a5740160b045",
@@ -14766,8 +15537,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.31,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ef9051849be2",
@@ -14797,8 +15570,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "56fe96942b3a",
@@ -14841,8 +15616,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4edafd6a2d48",
@@ -14877,8 +15654,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "05006cbba25a",
@@ -14923,8 +15702,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bafd94da80bd",
@@ -14961,8 +15742,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cee6972fa1b0",
@@ -14999,8 +15782,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5be92ea21a0e",
@@ -15034,8 +15819,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ee084bcc4f9d",
@@ -15072,8 +15859,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3fe1375b1177",
@@ -15110,8 +15899,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9b6c301b71c8",
@@ -15144,8 +15935,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e37700b9fa58",
@@ -15175,8 +15968,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.23,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f5307c696ee8",
@@ -15221,8 +16016,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7dc9a6404a54",
@@ -15259,8 +16056,10 @@
    "ocrPages": 2,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.98,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "75634f93b441",
@@ -15290,8 +16089,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ff33a1e19a72",
@@ -15327,8 +16128,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5f16b8a71822",
@@ -15358,8 +16161,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "04fbdfd52b59",
@@ -15389,8 +16194,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.23,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "11e950d9cf0b",
@@ -15420,8 +16227,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "331a9d546a1e",
@@ -15451,8 +16260,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.21,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0a26bd209faa",
@@ -15485,8 +16296,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bcc6e6a0ee55",
@@ -15521,8 +16334,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "159ca3f67084",
@@ -15559,8 +16374,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.21,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e3d5ccf57917",
@@ -15593,8 +16410,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7a7765facbe1",
@@ -15635,8 +16454,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ecf21b0f48b7",
@@ -15669,8 +16490,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.26,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "08d4706c710e",
@@ -15705,8 +16528,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9613e8d5d341",
@@ -15736,8 +16561,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.26,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "37462f3d178d",
@@ -15774,8 +16601,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "722c7924b3ad",
@@ -15812,8 +16641,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.11,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8d082e0cae9e",
@@ -15850,8 +16681,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8bcb392094bc",
@@ -15881,8 +16714,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.0,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "98746d240150",
@@ -15912,8 +16747,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c94d126a79ec",
@@ -15943,8 +16780,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1773119b64b0",
@@ -15974,8 +16813,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "044e46fb0bc3",
@@ -16013,8 +16854,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "58883400d515",
@@ -16044,8 +16887,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d5f1465bbdfb",
@@ -16082,8 +16927,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.17,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "26a06883880b",
@@ -16113,8 +16960,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0be4807f5402",
@@ -16158,8 +17007,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.2,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1da1fb8fcaff",
@@ -16196,8 +17047,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "638832c309e9",
@@ -16227,8 +17080,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 1,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "79df695224eb",
@@ -16265,8 +17120,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 1,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "859455fbde45",
@@ -16303,8 +17160,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 1,
+   "visualOrder": false,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a9c50b18bcb1",
@@ -16334,8 +17193,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.13,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bcc27eac4c15",
@@ -16372,8 +17233,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.23,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cdf9acef7426",
@@ -16410,8 +17273,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 1,
+   "visualOrder": false,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f150d1eac74a",
@@ -16448,8 +17313,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.3,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "98ca03dc37d6",
@@ -16479,8 +17346,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.96,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d1e3f7179275",
@@ -16517,8 +17386,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.71,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f3befec4bb87",
@@ -16555,8 +17426,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.24,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ba4a51ee76d4",
@@ -16586,8 +17459,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "50dacfb2f4f6",
@@ -16617,8 +17492,10 @@
    "ocrPages": 12,
    "emptyPages": 2,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2deab05ab3d7",
@@ -16655,8 +17532,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b8a814e18840",
@@ -16689,8 +17568,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "074be91eef64",
@@ -16727,8 +17608,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "54f2202a787c",
@@ -16758,8 +17641,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "47bdd4bc82eb",
@@ -16796,8 +17681,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b53cc2f7ef7d",
@@ -16834,8 +17721,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f0e714e142f0",
@@ -16865,8 +17754,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "061519e8934e",
@@ -16903,8 +17794,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "14bab8a50dec",
@@ -16941,8 +17834,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "17a213c422d9",
@@ -16979,8 +17874,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "28e03ee18936",
@@ -17017,8 +17914,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.84,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3819d3645929",
@@ -17055,8 +17954,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "70d589e46000",
@@ -17093,8 +17994,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.82,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "91c4b5be1083",
@@ -17131,8 +18034,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a8af5af0da47",
@@ -17169,8 +18074,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "06ecd30f33ef",
@@ -17200,8 +18107,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "133c9c0800ed",
@@ -17238,8 +18147,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "333b98c36f06",
@@ -17276,8 +18187,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "336544783e39",
@@ -17314,8 +18227,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c518644eb48b",
@@ -17352,8 +18267,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.4,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "643683e69710",
@@ -17383,8 +18300,10 @@
    "ocrPages": 12,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.94,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5bda3c875be9",
@@ -17421,8 +18340,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "49313661911b",
@@ -17459,8 +18380,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f36a33864378",
@@ -17497,8 +18420,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4dc6cb0b4016",
@@ -17532,8 +18457,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "36bb4ac302c1",
@@ -17563,8 +18490,10 @@
    "ocrPages": 5,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.93,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "05cf7816afde",
@@ -17601,8 +18530,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.0,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "63e002db96de",
@@ -17640,8 +18571,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0ef5d2d59e0e",
@@ -17677,8 +18610,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "699a54f5e180",
@@ -17716,8 +18651,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0184dda40275",
@@ -17752,8 +18689,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8c52605be785",
@@ -17797,8 +18736,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a3dd15c55657",
@@ -17834,8 +18775,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d78968e08e73",
@@ -17872,8 +18815,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4091c5e9e87d",
@@ -17913,8 +18858,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ff3e9ed1e198",
@@ -17951,8 +18898,10 @@
    "ocrPages": 12,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.78,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "30dc0a371282",
@@ -17982,8 +18931,10 @@
    "ocrPages": 12,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "428cbb96965b",
@@ -18013,8 +18964,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e60cb805a743",
@@ -18044,8 +18997,10 @@
    "ocrPages": 6,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.91,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "90876ff110fe",
@@ -18075,8 +19030,10 @@
    "ocrPages": 6,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "03d8ce15c05e",
@@ -18116,8 +19073,10 @@
    "ocrPages": 3,
    "emptyPages": 3,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a55486721c89",
@@ -18154,8 +19113,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.95,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7477e37a9281",
@@ -18192,8 +19153,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.95,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "66b22b325e5a",
@@ -18230,8 +19193,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.89,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "58b892167d47",
@@ -18261,8 +19226,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "518aeff524e0",
@@ -18299,8 +19266,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "db11251eff93",
@@ -18337,8 +19306,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.92,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4283bcfb4847",
@@ -18375,8 +19346,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5fb1a7ab5624",
@@ -18409,8 +19382,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "30459a81f507",
@@ -18443,8 +19418,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "29838901e51e",
@@ -18474,8 +19451,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "38bd02469ee5",
@@ -18505,8 +19484,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.81,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5432f246b9cc",
@@ -18543,8 +19524,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "60eb68da45fc",
@@ -18581,8 +19564,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6753934feec3",
@@ -18622,8 +19607,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6cc9a0060f71",
@@ -18660,8 +19647,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.71,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b6a2f4d6af6d",
@@ -18698,8 +19687,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bd3824b9a9e7",
@@ -18729,8 +19720,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "06bdec6dad79",
@@ -18767,8 +19760,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1157a878af13",
@@ -18798,8 +19793,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4a0e97c49cde",
@@ -18836,8 +19833,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "51eeb36f2b98",
@@ -18874,8 +19873,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "54519a4d57aa",
@@ -18905,8 +19906,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d77c431709c2",
@@ -18949,8 +19952,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "67b4cfa99ad3",
@@ -18983,8 +19988,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b4ab7fd39fa4",
@@ -19021,8 +20028,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "712592bb69ed",
@@ -19059,8 +20068,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.36,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7c1f7764c0ad",
@@ -19097,8 +20108,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c3bd5613fdc0",
@@ -19135,8 +20148,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cc0bc0374b5d",
@@ -19173,8 +20188,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cca310836b55",
@@ -19211,8 +20228,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e17890b39e10",
@@ -19249,8 +20268,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "910b76520608",
@@ -19280,8 +20301,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ade524b44774",
@@ -19318,8 +20341,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.97,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1d349002e138",
@@ -19356,8 +20381,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8a5f6e91f5d2",
@@ -19394,8 +20421,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8dc0f627cd05",
@@ -19432,8 +20461,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a9b3def0ea82",
@@ -19470,8 +20501,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.26,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "afc818cde69f",
@@ -19504,8 +20537,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b99a8a6ea140",
@@ -19542,8 +20577,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ecb9f3d2d147",
@@ -19584,8 +20621,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ad05c4e77bd2",
@@ -19615,8 +20654,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "948af1b9d21a",
@@ -19652,9 +20693,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.0,
    "catalogMatched": true,
-   "toolVersion": 2
+   "toolVersion": 3
   },
   {
    "id": "79d6e6596614",
@@ -19691,8 +20733,10 @@
    "ocrPages": 16,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.83,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6de795ca27be",
@@ -19729,8 +20773,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bc0cc3c5f22a",
@@ -19760,8 +20806,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.85,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cbcfebdc0875",
@@ -19798,8 +20846,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1e99b719195b",
@@ -19836,8 +20886,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "23a42e9316d3",
@@ -19867,8 +20919,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e104308b5560",
@@ -19905,8 +20959,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "25125fe95dda",
@@ -19943,8 +20999,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bb8468ba7d55",
@@ -19974,8 +21032,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0f8160e4622f",
@@ -20015,8 +21075,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a5234624a165",
@@ -20046,8 +21108,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.69,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bdc579144222",
@@ -20077,8 +21141,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ec1d0764456d",
@@ -20118,8 +21184,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7ceae8bd0b7f",
@@ -20158,8 +21226,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a755bcb21bd4",
@@ -20196,8 +21266,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "02311ff968b7",
@@ -20242,8 +21314,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "84ac7ba1e956",
@@ -20283,8 +21357,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7561e969b354",
@@ -20324,8 +21400,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "694d7c79feee",
@@ -20359,8 +21437,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4e67c0fdb83d",
@@ -20398,8 +21478,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "40132a61a194",
@@ -20438,8 +21520,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d5b4cc4e18d3",
@@ -20488,8 +21572,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "359f22ca4c1d",
@@ -20532,8 +21618,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7c83969574a5",
@@ -20570,8 +21658,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "358d9153a4bd",
@@ -20604,8 +21694,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.6,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d65a3bce5964",
@@ -20642,8 +21734,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6518cb058858",
@@ -20676,8 +21770,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.48,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0d640e187fec",
@@ -20714,8 +21810,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4c3778ff02b1",
@@ -20752,8 +21850,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5986f03bf53f",
@@ -20790,8 +21890,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "82dba6ee9f44",
@@ -20828,8 +21930,10 @@
    "ocrPages": 2,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "da259844393d",
@@ -20863,8 +21967,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ea9e8313d30e",
@@ -20901,8 +22007,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8a4d67ff59a9",
@@ -20932,8 +22040,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1fba45bc283a",
@@ -20970,8 +22080,10 @@
    "ocrPages": 22,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "35709938064a",
@@ -21008,8 +22120,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.42,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "49ef258e5149",
@@ -21046,8 +22160,10 @@
    "ocrPages": 21,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "58cf03c81f60",
@@ -21084,8 +22200,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.27,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7a4deae9be69",
@@ -21122,8 +22240,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "93addfa56535",
@@ -21160,8 +22280,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cfd3f77f5daa",
@@ -21191,8 +22313,10 @@
    "ocrPages": 2,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d0372d617c6a",
@@ -21229,8 +22353,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.29,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d5157ae582fa",
@@ -21267,8 +22393,10 @@
    "ocrPages": 20,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dff1a2cd62af",
@@ -21305,8 +22433,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.24,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e3ed147f79f2",
@@ -21343,8 +22473,10 @@
    "ocrPages": 2,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9d0532443cbb",
@@ -21381,8 +22513,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b5bba6c15541",
@@ -21425,8 +22559,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.28,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0a7d433e203f",
@@ -21456,8 +22592,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c5274f3a21ad",
@@ -21500,8 +22638,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f65d0c406302",
@@ -21538,8 +22678,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "24bd009d5750",
@@ -21569,8 +22711,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8737051b869b",
@@ -21600,8 +22744,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a2ef83a4535b",
@@ -21631,8 +22777,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "69c3148dde4d",
@@ -21669,8 +22817,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "49180d6b9d8f",
@@ -21707,8 +22857,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "827785920f16",
@@ -21745,8 +22897,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ac3d1c846233",
@@ -21783,8 +22937,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cc592452d000",
@@ -21821,8 +22977,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "31b983805b89",
@@ -21851,7 +23009,7 @@
    "officialUrl": "https://static.parks.org.il/wp-content/uploads/2026/09/mik-er.pdf",
    "sourcePage": "https://www.parks.org.il/files/%d7%a6%d7%99%d7%93-%d7%95%d7%9c%d7%9b%d7%99%d7%93%d7%94/",
    "regionAuto": "כלל ארצי או סיווג לבדיקה",
-   "type": "other",
+   "type": "activity",
    "lang": "ar",
    "pages": 80,
    "status": "ocr",
@@ -21859,8 +23017,10 @@
    "ocrPages": 5,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "056f3878e7cf",
@@ -21896,9 +23056,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.0,
    "catalogMatched": true,
-   "toolVersion": 2
+   "toolVersion": 3
   },
   {
    "id": "83c414767fc4",
@@ -21935,8 +23096,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.91,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "730713bd2ce9",
@@ -21973,8 +23136,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "37d29de16c5b",
@@ -22011,8 +23176,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c57830c6b701",
@@ -22049,8 +23216,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4f493ca84e2d",
@@ -22080,8 +23249,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "595b7487300e",
@@ -22118,8 +23289,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bc27834c575b",
@@ -22156,8 +23329,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.27,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e98fd58409a4",
@@ -22194,8 +23369,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3d147944563b",
@@ -22225,8 +23402,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "547ee8eb808f",
@@ -22263,8 +23442,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.31,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "287c5f89d080",
@@ -22294,8 +23475,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "73b2a78b4ccb",
@@ -22325,8 +23508,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.29,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c558e27670ec",
@@ -22356,8 +23541,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.08,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1904cfac519f",
@@ -22394,8 +23581,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "101ad2817c8d",
@@ -22425,8 +23614,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.1,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "20e2fe4056c6",
@@ -22456,8 +23647,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "31e6e1fa3a41",
@@ -22490,8 +23683,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "70ec34efdb35",
@@ -22521,8 +23716,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a0783a887726",
@@ -22552,8 +23749,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b32ea0d82b42",
@@ -22590,8 +23789,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.54,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "cbd890bfd854",
@@ -22624,8 +23825,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4a2360a812a8",
@@ -22655,8 +23858,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "444d5ecc791b",
@@ -22686,8 +23891,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9766521130a4",
@@ -22721,8 +23928,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b6c9dfd2a1a1",
@@ -22759,8 +23968,10 @@
    "ocrPages": 2,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.08,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a8138087f1cf",
@@ -22803,8 +24014,10 @@
    "ocrPages": 2,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2d52ba1aa079",
@@ -22834,8 +24047,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3f00e05d9e1d",
@@ -22875,8 +24090,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "40ff16199b7b",
@@ -22913,8 +24130,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.43,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "666813d50be6",
@@ -22951,8 +24170,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "88c74b1cbdf8",
@@ -22982,8 +24203,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8e891cd92dfd",
@@ -23013,8 +24236,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "98d8507e0b45",
@@ -23044,8 +24269,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9b78ace147c1",
@@ -23075,8 +24302,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.74,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a618c814c8d2",
@@ -23113,8 +24342,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ab5baef58c81",
@@ -23151,8 +24382,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b0f84efddc94",
@@ -23189,8 +24422,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.56,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c79824bf269d",
@@ -23227,8 +24462,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.48,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7c619af445fe",
@@ -23258,8 +24495,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8eb224d7dce1",
@@ -23289,8 +24528,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1ebda64a977e",
@@ -23320,8 +24561,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.5,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0e629ccff520",
@@ -23351,8 +24594,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4dd34221b69c",
@@ -23382,8 +24627,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.46,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1996fe4c8370",
@@ -23413,8 +24660,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.28,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0b2010b70b91",
@@ -23451,8 +24700,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1a24d9caf4d0",
@@ -23489,8 +24740,10 @@
    "ocrPages": 3,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3a7667893fc3",
@@ -23527,8 +24780,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "44aaf3113f66",
@@ -23568,8 +24823,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4d180a96f0c2",
@@ -23606,8 +24863,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.73,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "500319412c68",
@@ -23637,8 +24896,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6b1d77bcdc6b",
@@ -23675,8 +24936,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "729fb26e3c67",
@@ -23713,8 +24976,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.69,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7ea3e93adf2c",
@@ -23751,8 +25016,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "859f27d8a1af",
@@ -23782,8 +25049,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8718d5a79434",
@@ -23820,8 +25089,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.8,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8827c0ba4157",
@@ -23858,8 +25129,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "886320ee58f3",
@@ -23889,8 +25162,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.72,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "922f54eab3ca",
@@ -23927,8 +25202,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9dcc6b68de75",
@@ -23965,8 +25242,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.64,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "be9bf4d11b45",
@@ -24006,8 +25285,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c3f713314bda",
@@ -24047,8 +25328,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c6ce315c3591",
@@ -24085,8 +25368,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d607f641d44c",
@@ -24123,8 +25408,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.69,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0944375564d5",
@@ -24146,7 +25433,7 @@
    "officialUrl": "https://static.parks.org.il/wp-content/uploads/2021/01/polshim.pdf",
    "sourcePage": "https://www.parks.org.il/files/%d7%a1%d7%a7%d7%a8%d7%99%d7%9d-%d7%95%d7%9e%d7%97%d7%a7%d7%a8%d7%99%d7%9d/",
    "regionAuto": "יהודה ושומרון",
-   "type": "other",
+   "type": "activity",
    "lang": "he",
    "pages": 24,
    "status": "text",
@@ -24154,8 +25441,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.63,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3448f721f39e",
@@ -24192,8 +25481,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "71a91361e744",
@@ -24230,8 +25521,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.71,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c0e80a585647",
@@ -24261,8 +25554,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.65,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d01df389b7f1",
@@ -24295,8 +25590,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.68,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "f9026a4ba12d",
@@ -24333,8 +25630,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1adea5b1930d",
@@ -24371,8 +25670,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2d29b947b071",
@@ -24409,8 +25710,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.26,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "753f70d3a2a5",
@@ -24440,8 +25743,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.31,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d630ca1c3d2c",
@@ -24471,8 +25776,10 @@
    "ocrPages": 2,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.35,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "efeb0cbf2797",
@@ -24509,8 +25816,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.23,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a40d8bca0943",
@@ -24545,8 +25854,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.92,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b01f27fbc9ac",
@@ -24576,8 +25887,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.93,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d3402bbc8f85",
@@ -24607,8 +25920,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.34,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2109fa0666eb",
@@ -24638,8 +25953,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.32,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1e89f12000c2",
@@ -24669,8 +25986,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "dd600b8531e4",
@@ -24700,8 +26019,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6c52fb7c1298",
@@ -24731,8 +26052,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.48,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9e80cf759216",
@@ -24765,8 +26088,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "570009b43b56",
@@ -24796,8 +26121,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "efad1c0e33c3",
@@ -24827,8 +26154,10 @@
    "ocrPages": 12,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.86,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3f52c4cabd76",
@@ -24861,8 +26190,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7cbf115f7140",
@@ -24902,8 +26233,10 @@
    "ocrPages": 2,
    "emptyPages": 2,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bf531381af9b",
@@ -24940,8 +26273,10 @@
    "ocrPages": 10,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.82,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "64a4e64440d0",
@@ -24971,8 +26306,10 @@
    "ocrPages": 12,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.82,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "946ecd689749",
@@ -25005,8 +26342,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.25,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "30fcd17a1c7b",
@@ -25036,8 +26375,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4a8a63b4e54a",
@@ -25071,8 +26412,10 @@
    "ocrPages": 3,
    "emptyPages": 3,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.25,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4551e8012d1c",
@@ -25105,8 +26448,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.38,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6c11b59a8ff7",
@@ -25136,8 +26481,10 @@
    "ocrPages": 12,
    "emptyPages": 2,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "0d7a2ddf46bb",
@@ -25174,8 +26521,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "28acd5244eb5",
@@ -25212,8 +26561,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "03b66af6bd03",
@@ -25243,8 +26594,10 @@
    "ocrPages": 6,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.9,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "d639a7a2cc7c",
@@ -25281,8 +26634,10 @@
    "ocrPages": 12,
    "emptyPages": 3,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "13397dc93e51",
@@ -25312,8 +26667,10 @@
    "ocrPages": 7,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.88,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "11e710201393",
@@ -25343,8 +26700,10 @@
    "ocrPages": 15,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.89,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "3bbf66e53f24",
@@ -25381,8 +26740,10 @@
    "ocrPages": 7,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "77617f233e92",
@@ -25419,8 +26780,10 @@
    "ocrPages": 6,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.91,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ce281dd551f4",
@@ -25450,8 +26813,10 @@
    "ocrPages": 8,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.84,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "563d230b8eb1",
@@ -25481,8 +26846,10 @@
    "ocrPages": 12,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "121cf3cc8a17",
@@ -25512,8 +26879,10 @@
    "ocrPages": 12,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.77,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "be2fc9baf9f3",
@@ -25543,8 +26912,10 @@
    "ocrPages": 8,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.89,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "202bb5d7c9ed",
@@ -25581,8 +26952,10 @@
    "ocrPages": 14,
    "emptyPages": 3,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "da5fcaea7e5d",
@@ -25612,8 +26985,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.41,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c4bede814958",
@@ -25646,8 +27021,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "68e4f34a6aa9",
@@ -25680,8 +27057,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.24,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e689ef932e30",
@@ -25711,8 +27090,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.39,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "387415e8c41c",
@@ -25749,8 +27130,10 @@
    "ocrPages": 12,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.75,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2755317780a0",
@@ -25780,8 +27163,10 @@
    "ocrPages": 12,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.9,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c34e967b9f91",
@@ -25818,8 +27203,10 @@
    "ocrPages": 1,
    "emptyPages": 1,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ffd5341aaab2",
@@ -25849,8 +27236,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2cc1e8e93b94",
@@ -25887,8 +27276,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.57,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "5a87fd7e60ec",
@@ -25925,8 +27316,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4fbcfd20a119",
@@ -25960,8 +27353,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.71,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "7264aff7b156",
@@ -25991,8 +27386,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.66,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "56b7246f5364",
@@ -26022,8 +27419,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.76,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bc6de08396e4",
@@ -26060,8 +27459,10 @@
    "ocrPages": 6,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2e603d95949a",
@@ -26098,8 +27499,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.53,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "6680734c9c6a",
@@ -26136,8 +27539,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.62,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "987e9ccf234b",
@@ -26174,8 +27579,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.55,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "40cb38860564",
@@ -26212,8 +27619,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.51,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4c9c2790e22b",
@@ -26250,8 +27659,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "66e02277318e",
@@ -26288,8 +27699,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.61,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "e01ec2579a9b",
@@ -26319,8 +27732,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.7,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "2c85e596c0df",
@@ -26357,8 +27772,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.86,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "de2093573aa8",
@@ -26388,8 +27805,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.67,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "36dcdbc15210",
@@ -26422,8 +27841,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.59,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "30b36b393391",
@@ -26460,8 +27881,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.19,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "ea5f066db435",
@@ -26498,8 +27921,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.0,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "1a6f9ffcbddd",
@@ -26529,8 +27954,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.33,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "828aa2761f37",
@@ -26567,8 +27994,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.44,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "822bf702a131",
@@ -26605,8 +28034,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.47,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4a5e49fc26d4",
@@ -26643,8 +28074,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.52,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "b620a9bed165",
@@ -26674,8 +28107,10 @@
    "ocrPages": 1,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.79,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "716696270cb6",
@@ -26705,8 +28140,10 @@
    "ocrPages": 5,
    "emptyPages": 2,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.45,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "9c1c90b7978d",
@@ -26736,8 +28173,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.58,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "491ebff8e174",
@@ -26774,8 +28213,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.49,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "c8ff1fe625ce",
@@ -26805,8 +28246,10 @@
    "ocrPages": 10,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.88,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "fe3aa173caf3",
@@ -26836,8 +28279,10 @@
    "ocrPages": 4,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.81,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "bd1c0136a82d",
@@ -26867,8 +28312,10 @@
    "ocrPages": 5,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.87,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "4318905bc5ea",
@@ -26898,8 +28345,10 @@
    "ocrPages": 18,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": false,
    "quality": 0.8,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "a1df47d9e2eb",
@@ -26929,8 +28378,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.37,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   },
   {
    "id": "8c920fd74c4f",
@@ -26967,8 +28418,10 @@
    "ocrPages": 0,
    "emptyPages": 0,
    "reversedPages": 0,
+   "visualOrder": true,
    "quality": 0.31,
-   "catalogMatched": true
+   "catalogMatched": true,
+   "toolVersion": 3
   }
  ]
 }
