@@ -76,7 +76,10 @@ const models = {};
 for (const [k, v] of Object.entries(src.models || {})) {
   const site = v.site || k.replace(/^long_/, '');
   if (!ids.has(site)) { warn(`modèle ${k} : lieu non publié — retiré`); continue; }
-  models[k] = Object.assign({}, v, { src: (v.src || []).filter(x => known.has(x)) });
+  const site0 = [...(src.sites || []), ...(src.roads || [])].find(x => x.id === site);
+  const srcOfMap = v.map ? [...new Set(v.map.flatMap(x => x.facts || []).map(i => site0 && site0.facts[i] && site0.facts[i].src).filter(Boolean))] : [];
+  models[k] = Object.assign({}, v, { src: [...new Set((v.src || []).concat(srcOfMap))].filter(x => known.has(x)) });
+  delete models[k].map;   // la correspondance phrase → faits reste dans la source (traçabilité), pas dans l'appli
 }
 const errorSets = (src.errorSets || []).map(e => Object.assign({}, e, { items: e.items.filter(it => it.ok || (it.fix && known.has(it.src))) }));
 
