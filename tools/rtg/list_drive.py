@@ -13,11 +13,13 @@ def listing(fid, path=''):
         is_folder = '/drive/folders/' in block
         out.append({'id': eid, 'name': title, 'path': path, 'folder': is_folder})
     return out
-root = sys.argv[1]
-res, todo = [], [(root, '')]
-while todo:
-    fid, path = todo.pop()
-    for e in listing(fid, path):
-        res.append(e)
-        if e['folder']: todo.append((e['id'], (path + '/' if path else '') + e['name']))
-json.dump(res, sys.stdout, ensure_ascii=False, indent=0)
+def listing_all(root):
+    res, todo = [], [(root, '')]
+    while todo:
+        fid, path = todo.pop()
+        for e in listing(fid, path):
+            res.append(e)
+            if e['folder']: todo.append((e['id'], (path + '/' if path else '') + e['name']))
+    return res
+if __name__ == '__main__':
+    json.dump(listing_all(sys.argv[1]), sys.stdout, ensure_ascii=False, indent=0)
