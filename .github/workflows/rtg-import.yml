@@ -8,7 +8,8 @@ on:
     inputs:
       ocr_max: { description: 'Pages OCR max pour cette exécution', default: '2500' }
   push:
-    paths: ['tools/rtg/**', '.github/workflows/rtg-import.yml']
+    paths: ['tools/rtg/import.py', 'tools/rtg/list_drive.py', 'tools/rtg/derive.mjs', 'tools/rtg/build-catalog.mjs', '.github/workflows/rtg-import.yml']
+concurrency: { group: rtg-import, cancel-in-progress: true }
 permissions:
   contents: write
   actions: read

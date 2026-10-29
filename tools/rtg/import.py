@@ -11,7 +11,7 @@
 import concurrent.futures as cf, csv, gzip, hashlib, io, json, os, re, subprocess, sys, time, unicodedata, urllib.request, zipfile
 
 ROOT_ID = os.environ.get('RTG_FOLDER', '1HW01dalAwBqkkoBXmVgihraY_Vup6cuM')
-TOOL_VERSION = 2   # (texte inchangé : seule la classification a évolué)
+TOOL_VERSION = 3   # 3 : texte remis en ordre logique (hébreu visuel)
 OUT = 'content/rtg'
 WORK = os.environ.get('RTG_WORK', '/tmp/rtg')
 TEXT = os.environ.get('RTG_TEXT', 'rtg-text')
@@ -172,6 +172,27 @@ def quality(t):
     words = re.findall(r'\S+', t)
     good = sum(1 for w in words if 2 <= len(w) <= 18)
     return round(min(1.0, (letters / max(1, len(t))) * 1.4) * (good / max(1, len(words))), 2)
+# Hébreu en ordre VISUEL (mots inversés, ponctuation en tête) — fréquent dans ces PDF → ordre logique, une fois par document.
+def to_logical(pages):
+    allt = '\n'.join(p['text'] for p in pages)
+    toks = re.findall(r'\S+', allt)
+    lead = sum(1 for t in toks if re.match(r'^[.,:;!?)\]]+[\u05D0-\u05EA]', t))
+    trail = sum(1 for t in toks if re.search(r'[\u05D0-\u05EA][.,:;!?(\[]+$', t))
+    vis = lead > trail * 1.5 and lead >= 10
+    def fix_line(l):
+        cols = [c.strip() for c in re.split(r'\s{3,}', l.strip()) if c.strip()]
+        out = []
+        for c in reversed(cols):
+            tk = c.split()
+            if sum(bool(HEB.search(t)) for t in tk) >= max(1, len(tk) // 2):
+                tk = [re.sub(r'^([.,:;!?)\]]+)(.*)$', lambda m: m.group(2) + m.group(1).replace(')', '(').replace(']', '['), t) for t in reversed(tk)]
+            out.append(' '.join(tk))
+        return '   '.join(out)
+    for p in pages:
+        if p.get('src') == 'ocr': continue   # l'OCR (Tesseract) rend déjà l'ordre logique
+        lines = [l for l in p['text'].split('\n') if l.strip()]
+        p['text'] = '\n'.join(fix_line(l) if vis else re.sub(r'\s{3,}', '   ', l.strip()) for l in lines)
+    return vis
 prev = {}
 try: prev = {d['sha256']: d for d in json.load(open(os.path.join(OUT, 'inventory.json'), encoding='utf-8'))['documents']}
 except Exception: pass
@@ -184,8 +205,13 @@ def ocr_page(page):
 for i, d in enumerate(sorted(docs.values(), key=lambda x: x['sha256'])):
     p = prev.get(d['sha256'])
     tf = os.path.join(TEXT, d['id'] + '.json.gz')
-    if p and p.get('toolVersion') == TOOL_VERSION and p.get('status') in ('text', 'ocr') and os.path.exists(tf):
-        d.update({k: p[k] for k in ('pages', 'lang', 'status', 'textPages', 'ocrPages', 'emptyPages', 'reversedPages', 'quality', 'pdfTitle') if k in p}); continue
+    if p and p.get('toolVersion') in (2, TOOL_VERSION) and p.get('status') in ('text', 'ocr') and os.path.exists(tf):
+        d.update({k: p[k] for k in ('pages', 'lang', 'status', 'textPages', 'ocrPages', 'emptyPages', 'reversedPages', 'quality', 'pdfTitle', 'visualOrder') if k in p})
+        J = json.load(gzip.open(tf, 'rt', encoding='utf-8'))
+        if not J.get('logical'):
+            d['visualOrder'] = to_logical(J['pages']); J['logical'] = True
+            with gzip.open(tf, 'wt', encoding='utf-8') as f: json.dump(J, f, ensure_ascii=False)
+        d['toolVersion'] = TOOL_VERSION; continue
     try:
         doc = fitz.open(d['file'])
         d['pages'] = doc.page_count; d['pdfTitle'] = (doc.metadata or {}).get('title') or None
@@ -207,7 +233,8 @@ for i, d in enumerate(sorted(docs.values(), key=lambda x: x['sha256'])):
         d['quality'] = round(sum(p['q'] for p in pages) / max(1, len(pages)), 2)
         d['status'] = 'ocr' if ocrp else ('text' if d['textPages'] else 'needs_ocr')
         if d['status'] != 'needs_ocr' and empty > len(pages) / 2: d['status'] = 'partial'
-        with gzip.open(tf, 'wt', encoding='utf-8') as f: json.dump({'id': d['id'], 'sha256': d['sha256'], 'pages': pages}, f, ensure_ascii=False)
+        d['visualOrder'] = to_logical(pages)
+        with gzip.open(tf, 'wt', encoding='utf-8') as f: json.dump({'id': d['id'], 'sha256': d['sha256'], 'pages': pages, 'logical': True}, f, ensure_ascii=False)
     except Exception as e:
         d['status'] = 'failed'; d['error'] = str(e)[:200]
     d['toolVersion'] = TOOL_VERSION
@@ -237,7 +264,7 @@ for d in sorted(docs.values(), key=lambda x: x['fileName']):
         'officialUrl': c.get('url'), 'sourcePage': c.get('page'), 'regionAuto': c.get('regionAuto'), 'periodsAuto': c.get('periodsAuto'),
         'typeAuto': c.get('typeAuto'), 'type': doc_type(d), 'lang': d.get('lang') or c.get('langAuto'), 'pages': d.get('pages'),
         'status': d.get('status'), 'textPages': d.get('textPages'), 'ocrPages': d.get('ocrPages'), 'emptyPages': d.get('emptyPages'),
-        'reversedPages': d.get('reversedPages'), 'quality': d.get('quality'), 'catalogMatched': c.get('matched'), 'error': d.get('error'), 'toolVersion': d.get('toolVersion')
+        'reversedPages': d.get('reversedPages'), 'visualOrder': d.get('visualOrder'), 'quality': d.get('quality'), 'catalogMatched': c.get('matched'), 'error': d.get('error'), 'toolVersion': d.get('toolVersion')
     }.items() if v is not None})
 st = lambda s: sum(1 for d in out if d.get('status') == s)
 summary = {
@@ -249,7 +276,7 @@ summary = {
     'catalogMatched': sum(1 for d in out if d.get('catalogMatched')), 'withOfficialUrl': sum(1 for d in out if d.get('officialUrl')),
     'types': {t: sum(1 for d in out if d['type'] == t) for t in ('guide', 'brochure', 'map', 'activity', 'article', 'other')},
     'langs': {l: sum(1 for d in out if d.get('lang') == l) for l in sorted({str(d.get('lang')) for d in out})},
-    'pages': sum(d.get('pages') or 0 for d in out), 'ocrPagesThisRun': OCR_MAX_PAGES - ocr_budget, 'manifestSchema': schema,
+    'pages': sum(d.get('pages') or 0 for d in out), 'visualOrderFixed': sum(1 for d in out if d.get('visualOrder')), 'ocrPagesThisRun': OCR_MAX_PAGES - ocr_budget, 'manifestSchema': schema,
     'errors': events['root_failed'][:20] + events['zip_failed']
 }
 json.dump({'summary': summary, 'documents': out}, open(os.path.join(OUT, 'inventory.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
