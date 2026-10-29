@@ -191,6 +191,40 @@ await page.waitForSelector('.plan');
 ok((await page.$$('.plan .pr')).length >= 9 && (await page.$$eval('.plan [data-k="what"]', els => els.map(e => e.value).join('|'))).includes('לאשר ב-Google'), 'programme pré-rempli (lignes de trajet à compléter)');
 await shot('7-tiyul');
 
+// sauver le מסלול (guide), le rouvrir, l'imprimer en PDF, l'exporter / l'importer
+await page.$eval('#saveM', el => el.click());
+await page.waitForSelector('#svName');
+await page.fill('#svName', 'גולן — משפחות 40');
+await page.$eval('#svOk', el => el.click());
+await page.waitForFunction(() => /#\/m\/s_/.test(location.hash));
+const sid = await page.evaluate(() => location.hash.split('/')[2]);
+ok((await page.textContent('.brief h1')).includes('גולן — משפחות 40') && /לשמור שינויים/.test(await page.textContent('#saveM')), `מסלול sauvegardé et rouvert sous son nom (${sid})`);
+await page.goto(base + 'exam.html#/');
+await page.waitForSelector('.saved .svl li');
+ok(/גולן — משפחות 40/.test(await page.textContent('.saved')) && /אתרים/.test(await page.textContent('.saved')), 'accueil : « המסלולים שלי » liste le parcours');
+await page.click('.saved .svl a[href$="/print"]');
+await page.waitForSelector('.printdoc');
+const pd = await page.textContent('.printdoc');
+ok(/לוח זמנים/.test(pd) && /לאשר ב-Google/.test(pd) && /דק׳/.test(pd) && /לוגיסטיקה/.test(pd) && /עין קשתות/.test(pd) && (await page.$$('.printdoc .ptab tbody tr')).length >= 9, 'PDF : itinéraire, trajets, לוח זמנים complet, logistique');
+await page.emulateMedia({ media: 'print' });
+ok(!(await page.isVisible('#doPrint')) && !(await page.isVisible('.md-tabbar')), 'PDF : boutons et barre du bas masqués à l’impression');
+const pdfOut = OUT ? `${OUT}/exam-maslul.pdf` : null;
+if (pdfOut) await page.pdf({ path: pdfOut, format: 'A4' });
+await page.emulateMedia({ media: 'screen' });
+await page.goto(base + 'exam.html#/'); await page.waitForSelector('.saved .svl li');
+const [dl] = await Promise.all([page.waitForEvent('download'), page.$eval('.saved [data-exp]', el => el.click())]);
+const file = await dl.path();
+ok(/^maslul-.*\.json$/.test(dl.suggestedFilename()), `export : fichier ${dl.suggestedFilename()}`);
+await page.setInputFiles('#svImp', file);
+await page.waitForFunction(() => document.querySelectorAll('.saved .svl li').length === 2);
+ok(true, 'import : le fichier ajoute un 2e parcours (pour un autre guide / un autre téléphone)');
+await page.setInputFiles('#svImp', { name: 'x.json', mimeType: 'application/json', buffer: Buffer.from('{"foo":1}') });
+await page.waitForTimeout(150);
+ok((await page.$$('.saved .svl li')).length === 2, 'import : un fichier qui n’est pas un parcours est refusé');
+await page.$eval('.saved [data-rm]', el => el.click());
+await page.waitForFunction(() => document.querySelectorAll('.saved .svl li').length === 1);
+ok(true, 'suppression d’un parcours sauvegardé');
+
 // FR
 await page.goto(base + 'exam.html');
 await page.waitForSelector('#lng'); await page.click('#lng');

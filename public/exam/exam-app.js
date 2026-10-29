@@ -299,12 +299,14 @@
       <div id="homeMap"></div>
       <div class="mlist">${DATA.missions.map(card).join('')}</div>
       <div class="mlist soon">${['גליל עליון וחרמון', 'ירושלים', 'מדבר יהודה וים המלח', 'מישור החוף'].map(r => `<article class="mcard lock"><div class="me">🔒</div><div class="mt"><h3>${esc(r)}</h3><p>${t('soon')}</p></div></article>`).join('')}</div>
+      ${savedHtml()}
       <h2 class="sec">📈 ${t('progress')}</h2>
       <section class="panel"><h3>🎯 ${t('weak')}</h3>${rec ? `<p>הכי הרבה טעויות: <b>${esc(rec.he)}</b> (${rec.count}).</p>${rec.sets.length ? `<a class="btn" href="#/m/${daily.id}/errors/${rec.sets[0]}">🔎 תרגול ממוקד</a>` : ''}` : `<p class="muted">${t('noweak')}</p>`}
         ${catRows.length ? `<ul class="stats">${catRows.map(([k, v]) => `<li><span>${esc(C.CATS[k] || k)}</span><span class="sb"><i style="width:${Math.round(100 * v.ok / (v.ok + v.err))}%"></i></span><small>${v.ok}✔ ${v.err}✗</small></li>`).join('')}</ul>` : ''}</section>
       <section class="panel"><h3>🏅 ${t('badges')}</h3><div class="bdg">${Object.entries(BADGES).map(([k, b]) => `<div class="b ${S.badges.includes(k) ? 'on' : ''}" title="${esc(b[2])}"><span>${b[0]}</span><small>${esc(b[1])}</small></div>`).join('')}</div></section>
       <p class="foot">${t('indicative')}<br>📄 ${MODELS.models.school5.sources.map(s => `<a href="https://drive.google.com/open?id=${esc(s.id)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</p>`);
     mapBox($('#homeMap'), {});
+    wireSaved();
   }
 
   function missionHead(m, mode) {
@@ -313,13 +315,113 @@
       <nav class="mtabs">${[['guided', '🧭', t('guided')], ['errors', '🔎', t('errors')], ['exam', '⏱️', t('exam')]].map(([k, i, l]) => `<a href="#/m/${m.id}/${k}" ${mode === k ? 'aria-current="page"' : ''}>${i} ${l}</a>`).join('')}</nav></section>`;
   }
 
+  // ===== Mes parcours (מסלולים שמורים) : enregistrés dans le téléphone, exportables en fichier, imprimables en PDF =====
+  // Un parcours enregistré = la mission (ou le טיול « à l'envers ») + tout le brouillon : sites, ordre, לוח זמנים,
+  // temps Google saisis et interventions écrites. Il devient une mission à part (id « s… ») qu'on peut rouvrir et modifier.
+  const clone = o => JSON.parse(JSON.stringify(o || {}));
+  const isSaved = m => /^s_/.test(m.id || '');
+  const savedList = () => (S.saved || (S.saved = []));
+  function savedMission(id) { const e = savedList().find(x => x.id === id); return e ? Object.assign({}, e.mission, { id: e.id, he: e.name }) : null; }
+  function storeSaved(entry) {
+    const L = savedList(), i = L.findIndex(x => x.id === entry.id);
+    if (i >= 0) L[i] = entry; else L.unshift(entry);
+    S.drafts[entry.id] = clone(entry.draft); save();
+  }
+  function saveFlow(m, D) {
+    const box = $('#saveForm'); if (!box) return;
+    if (isSaved(m)) { const e = savedList().find(x => x.id === m.id); if (e) { e.draft = clone(D); e.at = Date.now(); save(); toast('💾 נשמר'); } return; }
+    const def = (m.group || '') + ' · ' + new Date().toLocaleDateString('he-IL');
+    box.innerHTML = `<div class="panel saveform"><label class="fl">שם למסלול<input id="svName" value="${esc(m.he.replace(/^הטיול שלי: /, ''))}" placeholder="${esc(def)}" maxlength="80"></label>
+      <div class="acts"><button type="button" class="btn" id="svOk">💾 לשמור</button><button type="button" class="btn ghost" id="svNo">ביטול</button></div>
+      <p class="muted">נשמר בטלפון הזה בלבד (לא נשלח לשום מקום). אפשר אחר כך להוריד קובץ ולשלוח למדריך אחר.</p></div>`;
+    $('#svName').focus();
+    $('#svNo').addEventListener('click', () => { box.innerHTML = ''; });
+    $('#svOk').addEventListener('click', () => {
+      const name = $('#svName').value.trim() || def, id = 's_' + Date.now().toString(36);
+      const mission = clone(m); delete mission.id;
+      storeSaved({ v: 1, id, name, at: Date.now(), region: DATA.region || 'golan-south', mission, draft: clone(D) });
+      toast('💾 המסלול נשמר — ״המסלולים שלי״ במסך הראשי');
+      location.hash = location.hash.replace('#/m/' + m.id + '/', '#/m/' + id + '/');
+    });
+  }
+  function exportSaved(e) {
+    const blob = new Blob([JSON.stringify(Object.assign({ app: 'moreh-derech-exam' }, e), null, 1)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    // nom ASCII : certains navigateurs remplacent un nom en hébreu par « download »
+    const ascii = e.name.normalize('NFKD').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30);
+    a.download = 'maslul-' + new Date(e.at || Date.now()).toISOString().slice(0, 10) + (ascii ? '-' + ascii : '') + '-' + e.id.replace(/^s_/, '') + '.json';
+    document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+  function importSaved(file) {
+    const rd = new FileReader();
+    rd.onload = () => {
+      try {
+        const e = JSON.parse(rd.result);
+        if (e.app !== 'moreh-derech-exam' || !e.mission || !e.draft || !Array.isArray(e.mission.slots)) throw new Error('format');
+        const known = id => !id || P[id];
+        const ids = Object.values(e.draft.picks || {}).concat((e.draft.plan || []).map(r => r.site));
+        if (!ids.every(known)) throw new Error('sites');
+        delete e.app; e.id = 's_' + Date.now().toString(36); e.at = Date.now(); e.name = String(e.name || 'מסלול').slice(0, 80);
+        storeSaved(e); toast('📥 המסלול נוסף'); viewHome();
+      } catch (err) { toast('⚠️ הקובץ לא מתאים (מסלול של אתגר המבחן, אותו אזור)'); }
+    };
+    rd.readAsText(file);
+  }
+  function savedHtml() {
+    const L = savedList();
+    return `<section class="panel saved"><h3>💾 המסלולים שלי</h3>
+      ${L.length ? `<ul class="svl">${L.map(e => { const D = S.drafts[e.id] || e.draft || {}, n = new Set(Object.values(D.picks || {}).filter(Boolean)).size;
+        return `<li><a class="svn" href="#/m/${e.id}/guided/2"><b>${esc(e.name)}</b><small>${n} אתרים · ${(D.plan || []).length} שורות בלוח · ${new Date(e.at).toLocaleDateString('he-IL')}</small></a>
+          <span class="sva"><a class="mini" href="#/m/${e.id}/print" aria-label="PDF">🖨️</a><button type="button" class="mini" data-exp="${e.id}" aria-label="להוריד קובץ">⬇️</button><button type="button" class="mini" data-rm="${e.id}" aria-label="מחיקה">🗑️</button></span></li>`; }).join('')}</ul>`
+        : '<p class="muted">עוד אין מסלולים שמורים. בתוך משימה: ״💾 לשמור את המסלול״.</p>'}
+      <label class="mini imp">📥 לייבא קובץ מסלול<input type="file" id="svImp" accept="application/json,.json" hidden></label></section>`;
+  }
+  function wireSaved() {
+    $$('[data-exp]').forEach(b => b.addEventListener('click', () => { const e = savedList().find(x => x.id === b.dataset.exp); if (e) exportSaved(Object.assign({}, e, { draft: S.drafts[e.id] || e.draft })); }));
+    $$('[data-rm]').forEach(b => b.addEventListener('click', () => {
+      const e = savedList().find(x => x.id === b.dataset.rm); if (!e || !confirm('למחוק את המסלול ״' + e.name + '״?')) return;
+      S.saved = savedList().filter(x => x.id !== e.id); delete S.drafts[e.id]; save(); viewHome();
+    }));
+    const imp = $('#svImp'); if (imp) imp.addEventListener('change', () => { if (imp.files[0]) importSaved(imp.files[0]); });
+  }
+
+  // ===== Version imprimable (PDF) : tout le parcours sur des pages blanches =====
+  function viewPrint(m) {
+    const D = S.drafts[m.id] || {}, model = MODELS.models.school5, start = (DATA.anchors || [])[0];
+    const order = visitOrder(m, D), legsL = C.legs(order, DATA, start), last = P[order[order.length - 1]];
+    if (start && last) legsL.push({ from: last, to: start, km: C.distanceKm(last, start), drive: C.driveMin(last, start, DATA) });
+    const own = D.drive || {};
+    const dur = r => { const a = C.toMin(r.start), b = C.toMin(r.end); return a !== null && b !== null && b >= a ? (b - a) + ' דק׳' : ''; };
+    const unit = (u, title) => !u || !(u.site || u.text) ? '' : `<section class="pu"><h3>${esc(title)}${u.site && P[u.site] ? ' — ' + esc(P[u.site].he) : ''}</h3>
+      <p class="meta">${[u.place && '📍 ' + esc(u.place), u.minutes && '⏱️ ' + esc(u.minutes) + ' דק׳', u.method && '🧰 ' + esc(u.method), u.topic && '🎯 ' + esc(u.topic)].filter(Boolean).join(' · ')}</p>
+      ${u.text ? `<div class="ptext"><p>${esc(u.text).replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div><p class="meta">${C.wordCount(u.text)} מילים</p>` : ''}</section>`;
+    document.body.classList.add('print-view');
+    app.innerHTML = `<div class="noprint pbar"><a class="btn ghost" href="#/m/${m.id}/guided/2">→ ${t('back')}</a><button type="button" class="btn" id="doPrint">🖨️ להדפיס / לשמור PDF</button></div>
+      <article class="printdoc">
+        <header><h1>${esc(m.he)}</h1><p>${esc(DATA.he)} · ${esc(m.group || '')} · ${new Date().toLocaleDateString('he-IL')}</p><p class="meta">${esc(m.brief || '')}</p></header>
+        <section><h2>🗺️ המסלול</h2><ol class="pseq">${start ? `<li value="0">${esc(start.he)} — מפגש</li>` : ''}${order.map(id => `<li>${esc(P[id].he)}</li>`).join('')}</ol>
+          ${legsL.length ? `<table><thead><tr><th>נסיעה</th><th>זמן</th><th>ק״מ</th></tr></thead><tbody>${legsL.map(l => { const d = C.driveMin(l.from, l.to, DATA, own);
+            return `<tr><td>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</td><td>${d ? d.min + ' דק׳' + (d.src === 'google' ? ' (Google)' : '') : '—'}</td><td>${d && d.km ? d.km : '~' + l.km}</td></tr>`; }).join('')}</tbody></table>
+          <p class="meta">זמני נסיעה: הערכה ברכב לפי מפת הכבישים (OpenStreetMap, בלי פקקים), אלא אם צוין Google.</p>` : ''}</section>
+        <section><h2>🕘 לוח זמנים</h2>${(D.plan || []).length ? `<table class="ptab"><thead><tr><th>התחלה</th><th>סיום</th><th>משך</th><th>פירוט המסלול</th><th>תיאומים ומנהלות</th></tr></thead><tbody>
+          ${D.plan.map(r => `<tr><td>${esc(r.start || '')}</td><td>${esc(r.end || '')}</td><td>${dur(r)}</td><td>${esc(r.what || '')}</td><td>${esc(r.log || '')}</td></tr>`).join('')}</tbody></table>` : '<p class="meta">עוד לא מולא.</p>'}</section>
+        <section><h2>🧾 לוגיסטיקה</h2>${order.map(id => { const L2 = P[id].logistics2 || {}, v = x => x && x.he ? esc(x.he) : '';
+          return `<div class="plog"><b>${esc(P[id].he)}</b><ul>${[['שעות', L2.hours], ['תשלום', L2.price], ['שירותים', L2.toilets], ['חניה לאוטובוס', L2.parking], ['קופה', L2.queue], ['טלפון', L2.phone], ['קבוצות', L2.group]].filter(([, x]) => v(x)).map(([k, x]) => `<li><b>${k}:</b> ${v(x)}${x.status === 'unknown' ? ' (לברר)' : ''}</li>`).join('')}</ul></div>`; }).join('') || '<p class="meta">—</p>'}</section>
+        <section><h2>🎤 יחידות הדרכה</h2>${(m.slots.map((sl, i) => unit((D.units || {})[sl.id], (i + 1) + '. ' + sl.he)).join('') + unit(D.long, '★ ' + ((m.long && m.long.he) || 'יחידה מורחבת'))) || '<p class="meta">עוד לא נכתבו (שלבים 3–4).</p>'}</section>
+        <footer class="meta">מורה דרך EXAM · ${esc(model.day.he)}</footer>
+      </article>`;
+    window.scrollTo(0, 0);
+    $('#doPrint').addEventListener('click', () => window.print());
+  }
+
   // ===== MODE 1 : entraînement guidé =====
   function viewGuided(m, step) {
     const D = S.drafts[m.id] || (S.drafts[m.id] = { picks: {}, plan: [], units: {}, long: {}, hint: {} });
     step = Math.max(1, Math.min(4, +step || 1));
     const steps = ['בחירת אתרים', 'לוח זמנים', 'יחידה קצרה', 'יחידה מורחבת'];
-    shell(missionHead(m, 'guided') + `<ol class="stepper">${steps.map((s, i) => `<li class="${i + 1 === step ? 'on' : i + 1 < step ? 'done' : ''}"><a href="#/m/${m.id}/guided/${i + 1}">${i + 1}. ${s}</a></li>`).join('')}</ol><div id="stepBody"></div>
+    shell(missionHead(m, 'guided') + `<ol class="stepper">${steps.map((s, i) => `<li class="${i + 1 === step ? 'on' : i + 1 < step ? 'done' : ''}"><a href="#/m/${m.id}/guided/${i + 1}">${i + 1}. ${s}</a></li>`).join('')}</ol><div class="savebar"><a class="btn ghost" href="#/m/${m.id}/print">🖨️ PDF</a><button type="button" class="btn ghost" id="saveM">💾 ${isSaved(m) ? 'לשמור שינויים' : 'לשמור את המסלול'}</button></div><div id="saveForm"></div><div id="stepBody"></div>
       <div class="nav2">${step > 1 ? `<a class="btn ghost" href="#/m/${m.id}/guided/${step - 1}">${t('prev')}</a>` : '<span></span>'}${step < 4 ? `<a class="btn" href="#/m/${m.id}/guided/${step + 1}">${t('next')} ←</a>` : `<a class="btn" href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a>`}</div>`, { back: '#/' });
+    $('#saveM').addEventListener('click', () => saveFlow(m, D));
     const body = $('#stepBody');
     if (step === 1) stepSites(m, D, body);
     if (step === 2) stepPlan(m, D, body);
@@ -652,10 +754,13 @@
   // ---------- Routeur ----------
   function route() {
     const h = location.hash.replace(/\?.*$/, ''), p = h.split('/');
+    document.body.classList.remove('print-view');
     if (p[1] === 'tiyul') return viewTiyul();
     if (p[1] === 'm') {
-      const m = DATA.missions.find(x => x.id === p[2]) || (p[2] === 'custom' && S.custom) || null;
+      const m = DATA.missions.find(x => x.id === p[2]) || (p[2] === 'custom' && S.custom) || savedMission(p[2]) || null;
       if (!m) return viewHome();
+      if (isSaved(m) && !S.drafts[m.id]) { const e = savedList().find(x => x.id === m.id); S.drafts[m.id] = clone(e.draft); }
+      if (p[3] === 'print') return viewPrint(m);
       if (p[3] === 'errors') return viewErrors(m, p[4]);
       if (p[3] === 'exam') return viewExam(m);
       if (p[3] === 'result') return viewResult(m);
