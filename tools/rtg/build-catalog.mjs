@@ -42,20 +42,42 @@ function linksFor(title) {
 let factIds = new Set();
 try { factIds = new Set((await readdir(new URL('content/rtg/facts/', ROOT))).filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, ''))); } catch (e) {}
 
+const derived = await rd('content/rtg/derived.json', {});
+const byKey = Object.fromEntries(places.map(p => [p.kind + ':' + (p.region || p.tour) + ':' + p.id, p]));
+// type : titre « מדריך למדריך » d'abord, puis le sujet du manifeste (classement automatique de la collecte)
+function typeOf(d) {
+  const tt = (d.title || '') + ' ' + (d.fileName || '');
+  if (/מדריך\s*[-–]?\s*ל?מדרי[ךכ]/.test(tt)) return 'guide';
+  if (/מפה|מפת|\bmap\b/i.test(tt)) return 'map';
+  if (/חוברת\s*הפעלה|דפי\s*צביעה|מערך|פקח(ים)?\s*צעיר|ניצנים|פעילות|ערכה|activity/i.test(tt)) return 'activity';
+  if (/דוחות\s*כספיים|טפס|נהלים|הזמנה|ביטול|לינה|ceremony|form/i.test(tt)) return 'other';
+  const sub = String(d.subject || '');
+  if (/מפה ועלון/.test(sub) || /דפדפת|עלון|brochure|פלאייר/i.test(tt)) return 'brochure';
+  if (/מאמר|כתב עת/.test(sub) || /גיליון/.test(tt)) return 'article';
+  return d.type === 'guide' ? 'other' : (d.type || 'other');
+}
+const titleCount = {};
+for (const d of inv.documents) titleCount[d.title] = (titleCount[d.title] || 0) + 1;
 const docs = [];
 for (const d of inv.documents) {
   const c = corr[d.id] || {};
   if (c.hide) continue;
-  const title = c.title || d.title;
-  const links = (c.links || linksFor(title + ' ' + (d.fileName || ''))).map(p => p.kind === 'exam'
-    ? { k: 'exam', region: p.region, site: p.id, he: p.he, mission: p.mission || undefined, auto: !c.links }
-    : { k: 'tour', tour: p.tour, stop: p.id, he: p.he, auto: !c.links });
+  const dv = derived[d.id] || {};
+  // titres génériques répétés (« גיליון 58 » ×19) : on ajoute la première ligne du document
+  const title = c.title || (titleCount[d.title] > 1 && dv.heading ? `${d.title} — ${dv.heading}` : d.title);
+  const fromText = (dv.mentions || []).filter(m => m.count >= 2 || (dv.mentions || []).length <= 3).map(m => Object.assign({}, byKey[m.place], { pages: m.pages })).filter(p => p.id);
+  const fromTitle = linksFor(title + ' ' + (d.fileName || ''));
+  const seen = new Set(), cand = [];
+  for (const p of fromTitle.concat(fromText)) { const k = p.kind + ':' + (p.region || p.tour) + ':' + p.id; if (!seen.has(k)) { seen.add(k); cand.push(p); } }
+  const links = (c.links || cand.slice(0, 8)).map(p => p.kind === 'exam'
+    ? { k: 'exam', region: p.region, site: p.id, he: p.he, mission: p.mission || undefined, pages: p.pages ? p.pages.slice(0, 8) : undefined, auto: !c.links }
+    : { k: 'tour', tour: p.tour, stop: p.id, he: p.he, pages: p.pages ? p.pages.slice(0, 8) : undefined, auto: !c.links });
   docs.push({
-    id: d.id, t: title, f: d.fileName, ty: c.type || d.type, lg: c.lang || d.lang || null, pg: d.pages || null,
+    id: d.id, t: title, f: d.fileName, ty: c.type || typeOf(d), lg: c.lang || d.lang || null, pg: d.pages || null,
     st: d.status, q: d.quality ?? null, ocr: d.ocrPages || 0,
     rg: c.regionVerified || null, rga: c.regionVerified ? null : (d.regionAuto || null),
     per: c.periods || null, pera: c.periods ? null : (d.periodsAuto || null),
-    th: c.themes || [], site: c.site || null,
+    th: c.themes || [], site: c.site || (d.site && !/לא זוהה/.test(d.site) ? d.site : null), sitea: !c.site && d.site && !/לא זוהה/.test(d.site) ? true : undefined,
     u: c.officialUrl || d.officialUrl || null, sp: d.sourcePage || null,
     ln: links.length ? links : undefined, fx: factIds.has(d.id) || undefined
   });
