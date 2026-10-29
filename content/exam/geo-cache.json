@@ -6126,7 +6126,7 @@
  "drive:judean_desert": {
   "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
   "fetchedAt": "2026-10-29",
-  "sig": "tel_aviv@32.07632,34.78947;jerusalem@31.78265,35.21933;ein_gedi@31.45253,35.38477;ein_bokek@31.2,35.36389;nabi_musa@31.78639,35.43111;qumran@31.7419,35.45994;lido@31.83709,35.5465;ein_gedi_synagogue@31.46147,35.3925;dead_sea@31.5,35.5;har_sedom@31.07194,35.39694",
+  "sig": "tel_aviv@32.07632,34.78947;jerusalem@31.78265,35.21933;ein_gedi@31.45253,35.38477;ein_bokek@31.2,35.36389;nabi_musa@31.78639,35.43111;qumran@31.7419,35.45994;lido@31.83709,35.5465;nahal_david@31.46667,35.39444;ein_gedi_synagogue@31.46147,35.3925;dead_sea@31.5,35.5;har_sedom@31.07194,35.39694",
   "legs": {
    "tel_aviv>jerusalem": {
     "min": 55,
@@ -6151,6 +6151,10 @@
    "tel_aviv>lido": {
     "min": 87,
     "km": 94.6
+   },
+   "tel_aviv>nahal_david": {
+    "min": 114,
+    "km": 128.2
    },
    "tel_aviv>ein_gedi_synagogue": {
     "min": 115,
@@ -6188,6 +6192,10 @@
     "min": 44,
     "km": 40.9
    },
+   "jerusalem>nahal_david": {
+    "min": 72,
+    "km": 74.4
+   },
    "jerusalem>ein_gedi_synagogue": {
     "min": 72,
     "km": 74.9
@@ -6223,6 +6231,10 @@
    "ein_gedi>lido": {
     "min": 58,
     "km": 55.6
+   },
+   "ein_gedi>nahal_david": {
+    "min": 6,
+    "km": 4
    },
    "ein_gedi>ein_gedi_synagogue": {
     "min": 5,
@@ -6260,6 +6272,10 @@
     "min": 85,
     "km": 84.7
    },
+   "ein_bokek>nahal_david": {
+    "min": 33,
+    "km": 33.1
+   },
    "ein_bokek>ein_gedi_synagogue": {
     "min": 32,
     "km": 32.3
@@ -6295,6 +6311,10 @@
    "nabi_musa>lido": {
     "min": 21,
     "km": 16.8
+   },
+   "nabi_musa>nahal_david": {
+    "min": 49,
+    "km": 50.4
    },
    "nabi_musa>ein_gedi_synagogue": {
     "min": 49,
@@ -6332,6 +6352,10 @@
     "min": 23,
     "km": 18.7
    },
+   "qumran>nahal_david": {
+    "min": 33,
+    "km": 34
+   },
    "qumran>ein_gedi_synagogue": {
     "min": 34,
     "km": 34.5
@@ -6368,6 +6392,10 @@
     "min": 23,
     "km": 18.6
    },
+   "lido>nahal_david": {
+    "min": 53,
+    "km": 51.8
+   },
    "lido>ein_gedi_synagogue": {
     "min": 54,
     "km": 52.3
@@ -6379,6 +6407,46 @@
    "lido>har_sedom": {
     "min": 100,
     "km": 101.5
+   },
+   "nahal_david>tel_aviv": {
+    "min": 116,
+    "km": 128.7
+   },
+   "nahal_david>jerusalem": {
+    "min": 73,
+    "km": 74.1
+   },
+   "nahal_david>ein_gedi": {
+    "min": 6,
+    "km": 4
+   },
+   "nahal_david>ein_bokek": {
+    "min": 32,
+    "km": 32.7
+   },
+   "nahal_david>nabi_musa": {
+    "min": 49,
+    "km": 50.5
+   },
+   "nahal_david>qumran": {
+    "min": 33,
+    "km": 34.1
+   },
+   "nahal_david>lido": {
+    "min": 53,
+    "km": 51.9
+   },
+   "nahal_david>ein_gedi_synagogue": {
+    "min": 1,
+    "km": 0.7
+   },
+   "nahal_david>dead_sea": {
+    "min": 94,
+    "km": 102.3
+   },
+   "nahal_david>har_sedom": {
+    "min": 48,
+    "km": 49.9
    },
    "ein_gedi_synagogue>tel_aviv": {
     "min": 116,
@@ -6407,6 +6475,10 @@
    "ein_gedi_synagogue>lido": {
     "min": 54,
     "km": 52.3
+   },
+   "ein_gedi_synagogue>nahal_david": {
+    "min": 1,
+    "km": 0.8
    },
    "ein_gedi_synagogue>dead_sea": {
     "min": 94,
@@ -6444,6 +6516,10 @@
     "min": 71,
     "km": 66
    },
+   "dead_sea>nahal_david": {
+    "min": 109,
+    "km": 111.3
+   },
    "dead_sea>ein_gedi_synagogue": {
     "min": 109,
     "km": 111.7
@@ -6479,6 +6555,10 @@
    "har_sedom>lido": {
     "min": 100,
     "km": 101.5
+   },
+   "har_sedom>nahal_david": {
+    "min": 48,
+    "km": 50
    },
    "har_sedom>ein_gedi_synagogue": {
     "min": 46,
@@ -9605,5 +9685,16 @@
   "title": "he:יחיעם",
   "url": "https://he.wikipedia.org/wiki/%D7%99%D7%97%D7%99%D7%A2%D7%9D",
   "qid": "Q2889861"
+ },
+ "wiki:en:Nahal David": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:שמורת עין גדי": {
+  "lat": 31.46667,
+  "lon": 35.39444,
+  "title": "he:עין גדי (שמורה)",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%9F_%D7%92%D7%93%D7%99_(%D7%A9%D7%9E%D7%95%D7%A8%D7%94)",
+  "qid": "Q1011544"
  }
 }
