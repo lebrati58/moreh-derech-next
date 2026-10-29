@@ -1072,5 +1072,8629 @@
   "title": "he:חורבת רקית",
   "url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A8%D7%91%D7%AA_%D7%A8%D7%A7%D7%99%D7%AA",
   "qid": "Q55252730"
+ },
+ "wiki:he:הרצליה": {
+  "lat": 32.16998,
+  "lon": 34.83432,
+  "title": "he:הרצליה",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94",
+  "qid": "Q152491"
+ },
+ "wiki:he:נתניה": {
+  "lat": 32.332,
+  "lon": 34.855,
+  "title": "he:נתניה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A0%D7%AA%D7%A0%D7%99%D7%94",
+  "qid": "Q192225"
+ },
+ "wiki:he:אור עקיבא": {
+  "lat": 32.50755,
+  "lon": 34.9202,
+  "title": "he:אור עקיבא",
+  "url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8_%D7%A2%D7%A7%D7%99%D7%91%D7%90",
+  "qid": "Q1814658"
+ },
+ "wiki:he:קיסריה": {
+  "lat": 32.5011,
+  "lon": 34.8923,
+  "title": "he:קיסריה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%A1%D7%A8%D7%99%D7%94",
+  "qid": "Q319242"
+ },
+ "wiki:en:Caesarea Maritima": {
+  "lat": 32.5,
+  "lon": 34.89167,
+  "title": "en:Caesarea Maritima",
+  "url": "https://en.wikipedia.org/wiki/Caesarea_Maritima",
+  "qid": "Q319242"
+ },
+ "wiki:he:נחל תנינים": {
+  "lat": 32.5475,
+  "lon": 34.915,
+  "title": "he:נחל תנינים",
+  "url": "https://he.wikipedia.org/wiki/%D7%A0%D7%97%D7%9C_%D7%AA%D7%A0%D7%99%D7%A0%D7%99%D7%9D",
+  "qid": "Q972150"
+ },
+ "wiki:en:Apollonia-Arsuf": {
+  "lat": 32.19528,
+  "lon": 34.80667,
+  "title": "en:Apollonia–Arsuf",
+  "url": "https://en.wikipedia.org/wiki/Apollonia%E2%80%93Arsuf",
+  "qid": "Q1024886"
+ },
+ "drive:coast": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "herzliya@32.16998,34.83432;netanya@32.332,34.855;or_akiva@32.50755,34.9202;caesarea_town@32.5011,34.8923;caesarea_herod@32.5,34.89167;caesarea_theatre@32.5,34.89167;caesarea_palace@32.5,34.89167;caesarea_mithras@32.5,34.89167;caesarea_bath@32.5,34.89167;taninim@32.5475,34.915;apollonia_city@32.19528,34.80667;apollonia_fortress@32.19528,34.80667",
+  "legs": {
+   "herzliya>netanya": {
+    "min": 21,
+    "km": 21.7
+   },
+   "herzliya>or_akiva": {
+    "min": 36,
+    "km": 42.7
+   },
+   "herzliya>caesarea_town": {
+    "min": 37,
+    "km": 43.9
+   },
+   "herzliya>caesarea_herod": {
+    "min": 37,
+    "km": 44
+   },
+   "herzliya>caesarea_theatre": {
+    "min": 37,
+    "km": 44
+   },
+   "herzliya>caesarea_palace": {
+    "min": 37,
+    "km": 44
+   },
+   "herzliya>caesarea_mithras": {
+    "min": 37,
+    "km": 44
+   },
+   "herzliya>caesarea_bath": {
+    "min": 37,
+    "km": 44
+   },
+   "herzliya>taninim": {
+    "min": 44,
+    "km": 49.3
+   },
+   "herzliya>apollonia_city": {
+    "min": 8,
+    "km": 4.9
+   },
+   "herzliya>apollonia_fortress": {
+    "min": 8,
+    "km": 4.9
+   },
+   "netanya>herzliya": {
+    "min": 20,
+    "km": 21.3
+   },
+   "netanya>or_akiva": {
+    "min": 22,
+    "km": 25
+   },
+   "netanya>caesarea_town": {
+    "min": 23,
+    "km": 26.2
+   },
+   "netanya>caesarea_herod": {
+    "min": 23,
+    "km": 26.4
+   },
+   "netanya>caesarea_theatre": {
+    "min": 23,
+    "km": 26.4
+   },
+   "netanya>caesarea_palace": {
+    "min": 23,
+    "km": 26.4
+   },
+   "netanya>caesarea_mithras": {
+    "min": 23,
+    "km": 26.4
+   },
+   "netanya>caesarea_bath": {
+    "min": 23,
+    "km": 26.4
+   },
+   "netanya>taninim": {
+    "min": 30,
+    "km": 31.6
+   },
+   "netanya>apollonia_city": {
+    "min": 22,
+    "km": 22.2
+   },
+   "netanya>apollonia_fortress": {
+    "min": 22,
+    "km": 22.2
+   },
+   "or_akiva>herzliya": {
+    "min": 37,
+    "km": 42.9
+   },
+   "or_akiva>netanya": {
+    "min": 22,
+    "km": 24
+   },
+   "or_akiva>caesarea_town": {
+    "min": 4,
+    "km": 3.1
+   },
+   "or_akiva>caesarea_herod": {
+    "min": 4,
+    "km": 3.3
+   },
+   "or_akiva>caesarea_theatre": {
+    "min": 4,
+    "km": 3.3
+   },
+   "or_akiva>caesarea_palace": {
+    "min": 4,
+    "km": 3.3
+   },
+   "or_akiva>caesarea_mithras": {
+    "min": 4,
+    "km": 3.3
+   },
+   "or_akiva>caesarea_bath": {
+    "min": 4,
+    "km": 3.3
+   },
+   "or_akiva>taninim": {
+    "min": 10,
+    "km": 6.5
+   },
+   "or_akiva>apollonia_city": {
+    "min": 40,
+    "km": 43.9
+   },
+   "or_akiva>apollonia_fortress": {
+    "min": 40,
+    "km": 43.9
+   },
+   "caesarea_town>herzliya": {
+    "min": 38,
+    "km": 43.8
+   },
+   "caesarea_town>netanya": {
+    "min": 23,
+    "km": 24.9
+   },
+   "caesarea_town>or_akiva": {
+    "min": 4,
+    "km": 3.2
+   },
+   "caesarea_town>caesarea_herod": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_town>caesarea_theatre": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_town>caesarea_palace": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_town>caesarea_mithras": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_town>caesarea_bath": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_town>taninim": {
+    "min": 13,
+    "km": 9.9
+   },
+   "caesarea_town>apollonia_city": {
+    "min": 40,
+    "km": 44.8
+   },
+   "caesarea_town>apollonia_fortress": {
+    "min": 40,
+    "km": 44.8
+   },
+   "caesarea_herod>herzliya": {
+    "min": 38,
+    "km": 43.9
+   },
+   "caesarea_herod>netanya": {
+    "min": 23,
+    "km": 25
+   },
+   "caesarea_herod>or_akiva": {
+    "min": 4,
+    "km": 3.3
+   },
+   "caesarea_herod>caesarea_town": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_herod>caesarea_theatre": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_herod>caesarea_palace": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_herod>caesarea_mithras": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_herod>caesarea_bath": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_herod>taninim": {
+    "min": 13,
+    "km": 10
+   },
+   "caesarea_herod>apollonia_city": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_herod>apollonia_fortress": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_theatre>herzliya": {
+    "min": 38,
+    "km": 43.9
+   },
+   "caesarea_theatre>netanya": {
+    "min": 23,
+    "km": 25
+   },
+   "caesarea_theatre>or_akiva": {
+    "min": 4,
+    "km": 3.3
+   },
+   "caesarea_theatre>caesarea_town": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_theatre>caesarea_herod": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_theatre>caesarea_palace": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_theatre>caesarea_mithras": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_theatre>caesarea_bath": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_theatre>taninim": {
+    "min": 13,
+    "km": 10
+   },
+   "caesarea_theatre>apollonia_city": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_theatre>apollonia_fortress": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_palace>herzliya": {
+    "min": 38,
+    "km": 43.9
+   },
+   "caesarea_palace>netanya": {
+    "min": 23,
+    "km": 25
+   },
+   "caesarea_palace>or_akiva": {
+    "min": 4,
+    "km": 3.3
+   },
+   "caesarea_palace>caesarea_town": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_palace>caesarea_herod": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_palace>caesarea_theatre": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_palace>caesarea_mithras": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_palace>caesarea_bath": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_palace>taninim": {
+    "min": 13,
+    "km": 10
+   },
+   "caesarea_palace>apollonia_city": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_palace>apollonia_fortress": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_mithras>herzliya": {
+    "min": 38,
+    "km": 43.9
+   },
+   "caesarea_mithras>netanya": {
+    "min": 23,
+    "km": 25
+   },
+   "caesarea_mithras>or_akiva": {
+    "min": 4,
+    "km": 3.3
+   },
+   "caesarea_mithras>caesarea_town": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_mithras>caesarea_herod": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_mithras>caesarea_theatre": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_mithras>caesarea_palace": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_mithras>caesarea_bath": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_mithras>taninim": {
+    "min": 13,
+    "km": 10
+   },
+   "caesarea_mithras>apollonia_city": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_mithras>apollonia_fortress": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_bath>herzliya": {
+    "min": 38,
+    "km": 43.9
+   },
+   "caesarea_bath>netanya": {
+    "min": 23,
+    "km": 25
+   },
+   "caesarea_bath>or_akiva": {
+    "min": 4,
+    "km": 3.3
+   },
+   "caesarea_bath>caesarea_town": {
+    "min": 0,
+    "km": 0.1
+   },
+   "caesarea_bath>caesarea_herod": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_bath>caesarea_theatre": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_bath>caesarea_palace": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_bath>caesarea_mithras": {
+    "min": 0,
+    "km": 0
+   },
+   "caesarea_bath>taninim": {
+    "min": 13,
+    "km": 10
+   },
+   "caesarea_bath>apollonia_city": {
+    "min": 40,
+    "km": 44.9
+   },
+   "caesarea_bath>apollonia_fortress": {
+    "min": 40,
+    "km": 44.9
+   },
+   "taninim>herzliya": {
+    "min": 45,
+    "km": 49.8
+   },
+   "taninim>netanya": {
+    "min": 30,
+    "km": 30.8
+   },
+   "taninim>or_akiva": {
+    "min": 10,
+    "km": 7.6
+   },
+   "taninim>caesarea_town": {
+    "min": 12,
+    "km": 9.9
+   },
+   "taninim>caesarea_herod": {
+    "min": 13,
+    "km": 10
+   },
+   "taninim>caesarea_theatre": {
+    "min": 13,
+    "km": 10
+   },
+   "taninim>caesarea_palace": {
+    "min": 13,
+    "km": 10
+   },
+   "taninim>caesarea_mithras": {
+    "min": 13,
+    "km": 10
+   },
+   "taninim>caesarea_bath": {
+    "min": 13,
+    "km": 10
+   },
+   "taninim>apollonia_city": {
+    "min": 47,
+    "km": 50.7
+   },
+   "taninim>apollonia_fortress": {
+    "min": 47,
+    "km": 50.7
+   },
+   "apollonia_city>herzliya": {
+    "min": 8,
+    "km": 4.9
+   },
+   "apollonia_city>netanya": {
+    "min": 23,
+    "km": 21.8
+   },
+   "apollonia_city>or_akiva": {
+    "min": 38,
+    "km": 42.8
+   },
+   "apollonia_city>caesarea_town": {
+    "min": 39,
+    "km": 44
+   },
+   "apollonia_city>caesarea_herod": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_city>caesarea_theatre": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_city>caesarea_palace": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_city>caesarea_mithras": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_city>caesarea_bath": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_city>taninim": {
+    "min": 47,
+    "km": 49.4
+   },
+   "apollonia_city>apollonia_fortress": {
+    "min": 0,
+    "km": 0
+   },
+   "apollonia_fortress>herzliya": {
+    "min": 8,
+    "km": 4.9
+   },
+   "apollonia_fortress>netanya": {
+    "min": 23,
+    "km": 21.8
+   },
+   "apollonia_fortress>or_akiva": {
+    "min": 38,
+    "km": 42.8
+   },
+   "apollonia_fortress>caesarea_town": {
+    "min": 39,
+    "km": 44
+   },
+   "apollonia_fortress>caesarea_herod": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_fortress>caesarea_theatre": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_fortress>caesarea_palace": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_fortress>caesarea_mithras": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_fortress>caesarea_bath": {
+    "min": 40,
+    "km": 44.2
+   },
+   "apollonia_fortress>taninim": {
+    "min": 47,
+    "km": 49.4
+   },
+   "apollonia_fortress>apollonia_city": {
+    "min": 0,
+    "km": 0
+   }
+  }
+ },
+ "wiki:he:צמח (כפר)": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:גשר בנות יעקב": {
+  "lat": 33.01028,
+  "lon": 35.62829,
+  "title": "he:גשר בנות יעקב",
+  "url": "https://he.wikipedia.org/wiki/%D7%92%D7%A9%D7%A8_%D7%91%D7%A0%D7%95%D7%AA_%D7%99%D7%A2%D7%A7%D7%91",
+  "qid": "Q2916595"
+ },
+ "wiki:he:קריית שמונה": {
+  "lat": 33.21163,
+  "lon": 35.5732,
+  "title": "he:קריית שמונה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%99%D7%99%D7%AA_%D7%A9%D7%9E%D7%95%D7%A0%D7%94",
+  "qid": "Q327413"
+ },
+ "wiki:en:Merom Golan": {
+  "lat": 33.13333,
+  "lon": 35.77583,
+  "title": "en:Merom Golan",
+  "url": "https://en.wikipedia.org/wiki/Merom_Golan",
+  "qid": "Q985533"
+ },
+ "wiki:he:הר אודם": {
+  "lat": 33.19649,
+  "lon": 35.75555,
+  "title": "he:הר אודם",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%90%D7%95%D7%93%D7%9D",
+  "qid": "Q4327496"
+ },
+ "wiki:he:הר בנטל": {
+  "lat": 33.12917,
+  "lon": 35.78278,
+  "title": "he:הר בנטל",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%A0%D7%98%D7%9C",
+  "qid": "Q1047509"
+ },
+ "wiki:he:קרב תל פאחר": {
+  "lat": 33.22472,
+  "lon": 35.69134,
+  "title": "he:קרב תל פאחר",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%91_%D7%AA%D7%9C_%D7%A4%D7%90%D7%97%D7%A8",
+  "qid": "Q7695567"
+ },
+ "wiki:he:גדות": {
+  "lat": 33.01908,
+  "lon": 35.61939,
+  "title": "he:גדות",
+  "url": "https://he.wikipedia.org/wiki/%D7%92%D7%93%D7%95%D7%AA",
+  "qid": "Q2889745"
+ },
+ "wiki:he:קצרין העתיקה": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Katzrin": {
+  "lat": 32.992,
+  "lon": 35.691,
+  "title": "en:Katzrin",
+  "url": "https://en.wikipedia.org/wiki/Katzrin",
+  "qid": "Q1736959"
+ },
+ "wiki:he:מבצר נמרוד": {
+  "lat": 33.25278,
+  "lon": 35.71472,
+  "title": "he:מבצר נמרוד",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%91%D7%A6%D7%A8_%D7%A0%D7%9E%D7%A8%D7%95%D7%93",
+  "qid": "Q1404704"
+ },
+ "wiki:he:ברכת רם": {
+  "lat": 33.2325,
+  "lon": 35.76611,
+  "title": "he:בריכת רם",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%99%D7%9B%D7%AA_%D7%A8%D7%9D",
+  "qid": "Q26835"
+ },
+ "drive:golan_north": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tzemach@32.7047,35.5865;bnot_yaakov@33.01028,35.62829;kiryat_shmona@33.21163,35.5732;merom_golan@33.13314,35.77585;big_juba@33.19649,35.75555;har_bental@33.12917,35.78278;tel_fakhr@33.22472,35.69134;mitzpe_gadot@33.01908,35.61939;katzrin@32.992,35.691;nimrod@33.25278,35.71472;birkat_ram@33.2325,35.76611",
+  "legs": {
+   "tzemach>bnot_yaakov": {
+    "min": 48,
+    "km": 48
+   },
+   "tzemach>kiryat_shmona": {
+    "min": 65,
+    "km": 66.5
+   },
+   "tzemach>merom_golan": {
+    "min": 65,
+    "km": 65.5
+   },
+   "tzemach>big_juba": {
+    "min": 77,
+    "km": 75.3
+   },
+   "tzemach>har_bental": {
+    "min": 66,
+    "km": 65.6
+   },
+   "tzemach>tel_fakhr": {
+    "min": 86,
+    "km": 82.8
+   },
+   "tzemach>mitzpe_gadot": {
+    "min": 48,
+    "km": 46.9
+   },
+   "tzemach>katzrin": {
+    "min": 42,
+    "km": 42.6
+   },
+   "tzemach>nimrod": {
+    "min": 86,
+    "km": 85.7
+   },
+   "tzemach>birkat_ram": {
+    "min": 79,
+    "km": 78.1
+   },
+   "bnot_yaakov>tzemach": {
+    "min": 48,
+    "km": 48
+   },
+   "bnot_yaakov>kiryat_shmona": {
+    "min": 29,
+    "km": 29.5
+   },
+   "bnot_yaakov>merom_golan": {
+    "min": 27,
+    "km": 26.3
+   },
+   "bnot_yaakov>big_juba": {
+    "min": 38,
+    "km": 36
+   },
+   "bnot_yaakov>har_bental": {
+    "min": 27,
+    "km": 26.3
+   },
+   "bnot_yaakov>tel_fakhr": {
+    "min": 41,
+    "km": 37.7
+   },
+   "bnot_yaakov>mitzpe_gadot": {
+    "min": 4,
+    "km": 3
+   },
+   "bnot_yaakov>katzrin": {
+    "min": 11,
+    "km": 10.7
+   },
+   "bnot_yaakov>nimrod": {
+    "min": 41,
+    "km": 41.6
+   },
+   "bnot_yaakov>birkat_ram": {
+    "min": 41,
+    "km": 38.9
+   },
+   "kiryat_shmona>tzemach": {
+    "min": 65,
+    "km": 66.3
+   },
+   "kiryat_shmona>bnot_yaakov": {
+    "min": 29,
+    "km": 29.5
+   },
+   "kiryat_shmona>merom_golan": {
+    "min": 32,
+    "km": 32.2
+   },
+   "kiryat_shmona>big_juba": {
+    "min": 38,
+    "km": 31.8
+   },
+   "kiryat_shmona>har_bental": {
+    "min": 33,
+    "km": 32.3
+   },
+   "kiryat_shmona>tel_fakhr": {
+    "min": 23,
+    "km": 17
+   },
+   "kiryat_shmona>mitzpe_gadot": {
+    "min": 29,
+    "km": 27.8
+   },
+   "kiryat_shmona>katzrin": {
+    "min": 40,
+    "km": 40.2
+   },
+   "kiryat_shmona>nimrod": {
+    "min": 24,
+    "km": 20.8
+   },
+   "kiryat_shmona>birkat_ram": {
+    "min": 32,
+    "km": 26.7
+   },
+   "merom_golan>tzemach": {
+    "min": 65,
+    "km": 65.4
+   },
+   "merom_golan>bnot_yaakov": {
+    "min": 26,
+    "km": 26.1
+   },
+   "merom_golan>kiryat_shmona": {
+    "min": 32,
+    "km": 32.2
+   },
+   "merom_golan>big_juba": {
+    "min": 22,
+    "km": 18
+   },
+   "merom_golan>har_bental": {
+    "min": 3,
+    "km": 1
+   },
+   "merom_golan>tel_fakhr": {
+    "min": 31,
+    "km": 27.1
+   },
+   "merom_golan>mitzpe_gadot": {
+    "min": 30,
+    "km": 29.9
+   },
+   "merom_golan>katzrin": {
+    "min": 24,
+    "km": 23.3
+   },
+   "merom_golan>nimrod": {
+    "min": 27,
+    "km": 24.6
+   },
+   "merom_golan>birkat_ram": {
+    "min": 21,
+    "km": 17
+   },
+   "big_juba>tzemach": {
+    "min": 77,
+    "km": 75.3
+   },
+   "big_juba>bnot_yaakov": {
+    "min": 38,
+    "km": 36
+   },
+   "big_juba>kiryat_shmona": {
+    "min": 39,
+    "km": 31.9
+   },
+   "big_juba>merom_golan": {
+    "min": 22,
+    "km": 18.2
+   },
+   "big_juba>har_bental": {
+    "min": 23,
+    "km": 18.2
+   },
+   "big_juba>tel_fakhr": {
+    "min": 28,
+    "km": 19.7
+   },
+   "big_juba>mitzpe_gadot": {
+    "min": 40,
+    "km": 36.8
+   },
+   "big_juba>katzrin": {
+    "min": 36,
+    "km": 33.2
+   },
+   "big_juba>nimrod": {
+    "min": 24,
+    "km": 17.2
+   },
+   "big_juba>birkat_ram": {
+    "min": 17,
+    "km": 9.6
+   },
+   "har_bental>tzemach": {
+    "min": 66,
+    "km": 65.7
+   },
+   "har_bental>bnot_yaakov": {
+    "min": 27,
+    "km": 26.4
+   },
+   "har_bental>kiryat_shmona": {
+    "min": 33,
+    "km": 32.4
+   },
+   "har_bental>merom_golan": {
+    "min": 3,
+    "km": 0.9
+   },
+   "har_bental>big_juba": {
+    "min": 23,
+    "km": 18.3
+   },
+   "har_bental>tel_fakhr": {
+    "min": 32,
+    "km": 27.4
+   },
+   "har_bental>mitzpe_gadot": {
+    "min": 31,
+    "km": 30.1
+   },
+   "har_bental>katzrin": {
+    "min": 25,
+    "km": 23.6
+   },
+   "har_bental>nimrod": {
+    "min": 28,
+    "km": 24.9
+   },
+   "har_bental>birkat_ram": {
+    "min": 22,
+    "km": 17.3
+   },
+   "tel_fakhr>tzemach": {
+    "min": 86,
+    "km": 82.8
+   },
+   "tel_fakhr>bnot_yaakov": {
+    "min": 41,
+    "km": 37.8
+   },
+   "tel_fakhr>kiryat_shmona": {
+    "min": 23,
+    "km": 17.1
+   },
+   "tel_fakhr>merom_golan": {
+    "min": 31,
+    "km": 27.1
+   },
+   "tel_fakhr>big_juba": {
+    "min": 28,
+    "km": 19.6
+   },
+   "tel_fakhr>har_bental": {
+    "min": 32,
+    "km": 27.2
+   },
+   "tel_fakhr>mitzpe_gadot": {
+    "min": 40,
+    "km": 36.2
+   },
+   "tel_fakhr>katzrin": {
+    "min": 49,
+    "km": 46
+   },
+   "tel_fakhr>nimrod": {
+    "min": 13,
+    "km": 8.7
+   },
+   "tel_fakhr>birkat_ram": {
+    "min": 21,
+    "km": 14.5
+   },
+   "mitzpe_gadot>tzemach": {
+    "min": 49,
+    "km": 46.8
+   },
+   "mitzpe_gadot>bnot_yaakov": {
+    "min": 4,
+    "km": 3
+   },
+   "mitzpe_gadot>kiryat_shmona": {
+    "min": 29,
+    "km": 27.8
+   },
+   "mitzpe_gadot>merom_golan": {
+    "min": 30,
+    "km": 30
+   },
+   "mitzpe_gadot>big_juba": {
+    "min": 40,
+    "km": 36.9
+   },
+   "mitzpe_gadot>har_bental": {
+    "min": 31,
+    "km": 30
+   },
+   "mitzpe_gadot>tel_fakhr": {
+    "min": 40,
+    "km": 36.1
+   },
+   "mitzpe_gadot>katzrin": {
+    "min": 15,
+    "km": 13.7
+   },
+   "mitzpe_gadot>nimrod": {
+    "min": 41,
+    "km": 39.9
+   },
+   "mitzpe_gadot>birkat_ram": {
+    "min": 43,
+    "km": 39.8
+   },
+   "katzrin>tzemach": {
+    "min": 42,
+    "km": 42.6
+   },
+   "katzrin>bnot_yaakov": {
+    "min": 11,
+    "km": 10.7
+   },
+   "katzrin>kiryat_shmona": {
+    "min": 40,
+    "km": 40.2
+   },
+   "katzrin>merom_golan": {
+    "min": 24,
+    "km": 23.4
+   },
+   "katzrin>big_juba": {
+    "min": 36,
+    "km": 33.1
+   },
+   "katzrin>har_bental": {
+    "min": 25,
+    "km": 23.5
+   },
+   "katzrin>tel_fakhr": {
+    "min": 49,
+    "km": 46.1
+   },
+   "katzrin>mitzpe_gadot": {
+    "min": 15,
+    "km": 13.7
+   },
+   "katzrin>nimrod": {
+    "min": 45,
+    "km": 43.6
+   },
+   "katzrin>birkat_ram": {
+    "min": 38,
+    "km": 36
+   },
+   "nimrod>tzemach": {
+    "min": 86,
+    "km": 85.7
+   },
+   "nimrod>bnot_yaakov": {
+    "min": 41,
+    "km": 41.6
+   },
+   "nimrod>kiryat_shmona": {
+    "min": 24,
+    "km": 20.9
+   },
+   "nimrod>merom_golan": {
+    "min": 27,
+    "km": 24.6
+   },
+   "nimrod>big_juba": {
+    "min": 24,
+    "km": 17.1
+   },
+   "nimrod>har_bental": {
+    "min": 28,
+    "km": 24.7
+   },
+   "nimrod>tel_fakhr": {
+    "min": 13,
+    "km": 8.7
+   },
+   "nimrod>mitzpe_gadot": {
+    "min": 40,
+    "km": 40
+   },
+   "nimrod>katzrin": {
+    "min": 45,
+    "km": 43.6
+   },
+   "nimrod>birkat_ram": {
+    "min": 15,
+    "km": 11.3
+   },
+   "birkat_ram>tzemach": {
+    "min": 79,
+    "km": 78.1
+   },
+   "birkat_ram>bnot_yaakov": {
+    "min": 41,
+    "km": 38.8
+   },
+   "birkat_ram>kiryat_shmona": {
+    "min": 32,
+    "km": 26.7
+   },
+   "birkat_ram>merom_golan": {
+    "min": 21,
+    "km": 17.1
+   },
+   "birkat_ram>big_juba": {
+    "min": 17,
+    "km": 9.6
+   },
+   "birkat_ram>har_bental": {
+    "min": 22,
+    "km": 17.2
+   },
+   "birkat_ram>tel_fakhr": {
+    "min": 21,
+    "km": 14.5
+   },
+   "birkat_ram>mitzpe_gadot": {
+    "min": 43,
+    "km": 39.7
+   },
+   "birkat_ram>katzrin": {
+    "min": 38,
+    "km": 36
+   },
+   "birkat_ram>nimrod": {
+    "min": 15,
+    "km": 11.3
+   }
+  }
+ },
+ "wiki:he:לטרון": {
+  "lat": 31.83349,
+  "lon": 35.02361,
+  "title": "he:לטרון",
+  "url": "https://he.wikipedia.org/wiki/%D7%9C%D7%98%D7%A8%D7%95%D7%9F",
+  "qid": "Q1670976"
+ },
+ "wiki:en:Jewish Quarter (Jerusalem)": {
+  "lat": 31.77611,
+  "lon": 35.23222,
+  "title": "en:Jewish Quarter (Jerusalem)",
+  "url": "https://en.wikipedia.org/wiki/Jewish_Quarter_(Jerusalem)",
+  "qid": "Q1186403"
+ },
+ "wiki:he:שער יפו": {
+  "lat": 31.77653,
+  "lon": 35.22769,
+  "title": "he:שער יפו",
+  "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%A2%D7%A8_%D7%99%D7%A4%D7%95",
+  "qid": "Q312812"
+ },
+ "wiki:he:הר ציון": {
+  "lat": 31.77176,
+  "lon": 35.22879,
+  "title": "he:הר ציון",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A6%D7%99%D7%95%D7%9F",
+  "qid": "Q332444"
+ },
+ "wiki:he:טיילת ארמון הנציב": {
+  "lat": 31.75567,
+  "lon": 35.23442,
+  "title": "he:טיילת ארמון הנציב",
+  "url": "https://he.wikipedia.org/wiki/%D7%98%D7%99%D7%99%D7%9C%D7%AA_%D7%90%D7%A8%D7%9E%D7%95%D7%9F_%D7%94%D7%A0%D7%A6%D7%99%D7%91",
+  "qid": "Q7064954"
+ },
+ "wiki:he:כתף הינום": {
+  "lat": 31.76885,
+  "lon": 35.22535,
+  "title": "he:כתף הינום",
+  "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%AA%D7%A3_%D7%94%D7%99%D7%A0%D7%95%D7%9D",
+  "qid": "Q2662246"
+ },
+ "wiki:he:עיר דוד": {
+  "lat": 31.77304,
+  "lon": 35.23481,
+  "title": "he:עיר דוד",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%A8_%D7%93%D7%95%D7%93",
+  "qid": "Q1177750"
+ },
+ "wiki:he:נקבת השילוח": {
+  "lat": 31.77236,
+  "lon": 35.23567,
+  "title": "he:נקבת השילוח",
+  "url": "https://he.wikipedia.org/wiki/%D7%A0%D7%A7%D7%91%D7%AA_%D7%94%D7%A9%D7%99%D7%9C%D7%95%D7%97",
+  "qid": "Q1620682"
+ },
+ "wiki:he:החומה הרחבה": {
+  "lat": 31.77608,
+  "lon": 35.23189,
+  "title": "he:החומה הרחבה",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%97%D7%95%D7%9E%D7%94_%D7%94%D7%A8%D7%97%D7%91%D7%94",
+  "qid": "Q262874"
+ },
+ "wiki:he:דגם ירושלים בסוף ימי בית שני": {
+  "lat": 31.7732,
+  "lon": 35.2023,
+  "title": "he:דגם ירושלים בסוף ימי בית שני",
+  "url": "https://he.wikipedia.org/wiki/%D7%93%D7%92%D7%9D_%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D_%D7%91%D7%A1%D7%95%D7%A3_%D7%99%D7%9E%D7%99_%D7%91%D7%99%D7%AA_%D7%A9%D7%A0%D7%99",
+  "qid": "Q2920537"
+ },
+ "wiki:he:היכל הספר": {
+  "lat": 31.77333,
+  "lon": 35.20278,
+  "title": "he:היכל הספר",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%99%D7%9B%D7%9C_%D7%94%D7%A1%D7%A4%D7%A8",
+  "qid": "Q174527"
+ },
+ "wiki:he:בריכת השילוח": {
+  "lat": 31.77056,
+  "lon": 35.235,
+  "title": "he:בריכת השילוח",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%99%D7%9B%D7%AA_%D7%94%D7%A9%D7%99%D7%9C%D7%95%D7%97",
+  "qid": "Q1483483"
+ },
+ "wiki:he:חניון גבעתי": {
+  "lat": 31.77453,
+  "lon": 35.23509,
+  "title": "he:חניון גבעתי (עיר דוד)",
+  "url": "https://he.wikipedia.org/wiki/%D7%97%D7%A0%D7%99%D7%95%D7%9F_%D7%92%D7%91%D7%A2%D7%AA%D7%99_(%D7%A2%D7%99%D7%A8_%D7%93%D7%95%D7%93)",
+  "qid": "Q5565595"
+ },
+ "wiki:he:יד אבשלום": {
+  "lat": 31.77696,
+  "lon": 35.23896,
+  "title": "he:יד אבשלום",
+  "url": "https://he.wikipedia.org/wiki/%D7%99%D7%93_%D7%90%D7%91%D7%A9%D7%9C%D7%95%D7%9D",
+  "qid": "Q331729"
+ },
+ "wiki:he:מנהרות הכותל": {
+  "lat": 31.77698,
+  "lon": 35.23447,
+  "title": "he:מנהרות הכותל",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%94%D7%A8%D7%95%D7%AA_%D7%94%D7%9B%D7%95%D7%AA%D7%9C",
+  "qid": "Q1335177"
+ },
+ "wiki:he:העופל": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Ophel": {
+  "lat": 31.77417,
+  "lon": 35.23611,
+  "title": "en:Ophel",
+  "url": "https://en.wikipedia.org/wiki/Ophel",
+  "qid": "Q2630170"
+ },
+ "wiki:he:כנסיית הקבר": {
+  "lat": 31.77844,
+  "lon": 35.22975,
+  "title": "he:כנסיית הקבר",
+  "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A0%D7%A1%D7%99%D7%99%D7%AA_%D7%94%D7%A7%D7%91%D7%A8",
+  "qid": "Q187702"
+ },
+ "wiki:en:Church of Saint Peter in Gallicantu": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:הקרדו": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Cardo": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Zedekiah's Cave": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:חומות ירושלים": {
+  "lat": 31.77472,
+  "lon": 35.22778,
+  "title": "he:חומות ירושלים",
+  "url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%9E%D7%95%D7%AA_%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D",
+  "qid": "Q2918723"
+ },
+ "wiki:he:שער שכם": {
+  "lat": 31.78164,
+  "lon": 35.2305,
+  "title": "he:שער שכם",
+  "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%A2%D7%A8_%D7%A9%D7%9B%D7%9D",
+  "qid": "Q947597"
+ },
+ "drive:jerusalem": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;latrun@31.83349,35.02361;jerusalem@31.78265,35.21933;jewish_quarter@31.77611,35.23222;jaffa_gate@31.77653,35.22769;mount_zion@31.77176,35.22879;haas_promenade@31.75567,35.23442;ketef_hinnom@31.76885,35.22535;city_of_david@31.77304,35.23481;gihon_water@31.77236,35.23567;broad_wall@31.77608,35.23189;israel_museum_model@31.7732,35.2023;shrine_of_book@31.77333,35.20278;burnt_house@31.77557,35.23259;herodian_quarter@31.77519,35.23214;siloam_pilgrim_road@31.77056,35.235;givati@31.77453,35.23509;kidron_tombs@31.77696,35.23896;western_wall_tunnels@31.77698,35.23447;davidson@31.77417,35.23611;holy_sepulchre@31.77844,35.22975;sisters_of_zion@31.7803,35.23364;zedekiah_cave@31.78211,35.23074;ramparts@31.77472,35.22778;damascus_gate@31.78164,35.2305",
+  "legs": {
+   "tel_aviv>latrun": {
+    "min": 48,
+    "km": 42.2
+   },
+   "tel_aviv>jerusalem": {
+    "min": 55,
+    "km": 63.9
+   },
+   "tel_aviv>jewish_quarter": {
+    "min": 59,
+    "km": 65.8
+   },
+   "tel_aviv>jaffa_gate": {
+    "min": 56,
+    "km": 64.7
+   },
+   "tel_aviv>mount_zion": {
+    "min": 58,
+    "km": 65.4
+   },
+   "tel_aviv>haas_promenade": {
+    "min": 61,
+    "km": 67.5
+   },
+   "tel_aviv>ketef_hinnom": {
+    "min": 57,
+    "km": 64.7
+   },
+   "tel_aviv>city_of_david": {
+    "min": 57,
+    "km": 65.3
+   },
+   "tel_aviv>gihon_water": {
+    "min": 57,
+    "km": 65.3
+   },
+   "tel_aviv>broad_wall": {
+    "min": 59,
+    "km": 65.8
+   },
+   "tel_aviv>israel_museum_model": {
+    "min": 54,
+    "km": 63
+   },
+   "tel_aviv>shrine_of_book": {
+    "min": 54,
+    "km": 63
+   },
+   "tel_aviv>burnt_house": {
+    "min": 59,
+    "km": 65.8
+   },
+   "tel_aviv>herodian_quarter": {
+    "min": 59,
+    "km": 65.6
+   },
+   "tel_aviv>siloam_pilgrim_road": {
+    "min": 57,
+    "km": 65.4
+   },
+   "tel_aviv>givati": {
+    "min": 57,
+    "km": 64.7
+   },
+   "tel_aviv>kidron_tombs": {
+    "min": 55,
+    "km": 64.1
+   },
+   "tel_aviv>western_wall_tunnels": {
+    "min": 59,
+    "km": 65.8
+   },
+   "tel_aviv>davidson": {
+    "min": 58,
+    "km": 65.6
+   },
+   "tel_aviv>holy_sepulchre": {
+    "min": 57,
+    "km": 64.8
+   },
+   "tel_aviv>sisters_of_zion": {
+    "min": 56,
+    "km": 64.1
+   },
+   "tel_aviv>zedekiah_cave": {
+    "min": 55,
+    "km": 63.8
+   },
+   "tel_aviv>ramparts": {
+    "min": 56,
+    "km": 64.5
+   },
+   "tel_aviv>damascus_gate": {
+    "min": 55,
+    "km": 63.8
+   },
+   "latrun>tel_aviv": {
+    "min": 50,
+    "km": 46.1
+   },
+   "latrun>jerusalem": {
+    "min": 48,
+    "km": 36.3
+   },
+   "latrun>jewish_quarter": {
+    "min": 51,
+    "km": 36.8
+   },
+   "latrun>jaffa_gate": {
+    "min": 48,
+    "km": 35.7
+   },
+   "latrun>mount_zion": {
+    "min": 50,
+    "km": 36.9
+   },
+   "latrun>haas_promenade": {
+    "min": 52,
+    "km": 38.2
+   },
+   "latrun>ketef_hinnom": {
+    "min": 48,
+    "km": 35.4
+   },
+   "latrun>city_of_david": {
+    "min": 51,
+    "km": 37.4
+   },
+   "latrun>gihon_water": {
+    "min": 51,
+    "km": 37.4
+   },
+   "latrun>broad_wall": {
+    "min": 51,
+    "km": 36.8
+   },
+   "latrun>israel_museum_model": {
+    "min": 45,
+    "km": 33.2
+   },
+   "latrun>shrine_of_book": {
+    "min": 45,
+    "km": 33.1
+   },
+   "latrun>burnt_house": {
+    "min": 51,
+    "km": 36.8
+   },
+   "latrun>herodian_quarter": {
+    "min": 50,
+    "km": 36.6
+   },
+   "latrun>siloam_pilgrim_road": {
+    "min": 51,
+    "km": 37.1
+   },
+   "latrun>givati": {
+    "min": 51,
+    "km": 39.1
+   },
+   "latrun>kidron_tombs": {
+    "min": 50,
+    "km": 38.5
+   },
+   "latrun>western_wall_tunnels": {
+    "min": 51,
+    "km": 36.9
+   },
+   "latrun>davidson": {
+    "min": 51,
+    "km": 37.6
+   },
+   "latrun>holy_sepulchre": {
+    "min": 48,
+    "km": 35.8
+   },
+   "latrun>sisters_of_zion": {
+    "min": 51,
+    "km": 38.5
+   },
+   "latrun>zedekiah_cave": {
+    "min": 48,
+    "km": 36.3
+   },
+   "latrun>ramparts": {
+    "min": 48,
+    "km": 35.5
+   },
+   "latrun>damascus_gate": {
+    "min": 48,
+    "km": 36.2
+   },
+   "jerusalem>tel_aviv": {
+    "min": 57,
+    "km": 64.3
+   },
+   "jerusalem>latrun": {
+    "min": 41,
+    "km": 25.2
+   },
+   "jerusalem>jewish_quarter": {
+    "min": 7,
+    "km": 3.4
+   },
+   "jerusalem>jaffa_gate": {
+    "min": 4,
+    "km": 2.3
+   },
+   "jerusalem>mount_zion": {
+    "min": 7,
+    "km": 4.1
+   },
+   "jerusalem>haas_promenade": {
+    "min": 9,
+    "km": 5.4
+   },
+   "jerusalem>ketef_hinnom": {
+    "min": 6,
+    "km": 3
+   },
+   "jerusalem>city_of_david": {
+    "min": 7,
+    "km": 4.2
+   },
+   "jerusalem>gihon_water": {
+    "min": 8,
+    "km": 4.2
+   },
+   "jerusalem>broad_wall": {
+    "min": 7,
+    "km": 3.4
+   },
+   "jerusalem>israel_museum_model": {
+    "min": 7,
+    "km": 3.7
+   },
+   "jerusalem>shrine_of_book": {
+    "min": 7,
+    "km": 3.7
+   },
+   "jerusalem>burnt_house": {
+    "min": 7,
+    "km": 3.4
+   },
+   "jerusalem>herodian_quarter": {
+    "min": 7,
+    "km": 3.2
+   },
+   "jerusalem>siloam_pilgrim_road": {
+    "min": 7,
+    "km": 4.6
+   },
+   "jerusalem>givati": {
+    "min": 7,
+    "km": 3.6
+   },
+   "jerusalem>kidron_tombs": {
+    "min": 5,
+    "km": 3
+   },
+   "jerusalem>western_wall_tunnels": {
+    "min": 7,
+    "km": 3.5
+   },
+   "jerusalem>davidson": {
+    "min": 8,
+    "km": 4.4
+   },
+   "jerusalem>holy_sepulchre": {
+    "min": 5,
+    "km": 2.4
+   },
+   "jerusalem>sisters_of_zion": {
+    "min": 6,
+    "km": 3
+   },
+   "jerusalem>zedekiah_cave": {
+    "min": 3,
+    "km": 1.5
+   },
+   "jerusalem>ramparts": {
+    "min": 4,
+    "km": 2.1
+   },
+   "jerusalem>damascus_gate": {
+    "min": 3,
+    "km": 1.4
+   },
+   "jewish_quarter>tel_aviv": {
+    "min": 58,
+    "km": 65.2
+   },
+   "jewish_quarter>latrun": {
+    "min": 44,
+    "km": 27.9
+   },
+   "jewish_quarter>jerusalem": {
+    "min": 6,
+    "km": 3.6
+   },
+   "jewish_quarter>jaffa_gate": {
+    "min": 3,
+    "km": 1.8
+   },
+   "jewish_quarter>mount_zion": {
+    "min": 2,
+    "km": 0.9
+   },
+   "jewish_quarter>haas_promenade": {
+    "min": 7,
+    "km": 4.1
+   },
+   "jewish_quarter>ketef_hinnom": {
+    "min": 6,
+    "km": 3.3
+   },
+   "jewish_quarter>city_of_david": {
+    "min": 1,
+    "km": 0.8
+   },
+   "jewish_quarter>gihon_water": {
+    "min": 2,
+    "km": 0.8
+   },
+   "jewish_quarter>broad_wall": {
+    "min": 5,
+    "km": 2.9
+   },
+   "jewish_quarter>israel_museum_model": {
+    "min": 8,
+    "km": 4.6
+   },
+   "jewish_quarter>shrine_of_book": {
+    "min": 8,
+    "km": 4.6
+   },
+   "jewish_quarter>burnt_house": {
+    "min": 5,
+    "km": 2.9
+   },
+   "jewish_quarter>herodian_quarter": {
+    "min": 5,
+    "km": 2.6
+   },
+   "jewish_quarter>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 0.8
+   },
+   "jewish_quarter>givati": {
+    "min": 0,
+    "km": 0.2
+   },
+   "jewish_quarter>kidron_tombs": {
+    "min": 1,
+    "km": 0.6
+   },
+   "jewish_quarter>western_wall_tunnels": {
+    "min": 0,
+    "km": 0
+   },
+   "jewish_quarter>davidson": {
+    "min": 2,
+    "km": 1
+   },
+   "jewish_quarter>holy_sepulchre": {
+    "min": 3,
+    "km": 1.9
+   },
+   "jewish_quarter>sisters_of_zion": {
+    "min": 4,
+    "km": 1.6
+   },
+   "jewish_quarter>zedekiah_cave": {
+    "min": 4,
+    "km": 2.5
+   },
+   "jewish_quarter>ramparts": {
+    "min": 2,
+    "km": 1.6
+   },
+   "jewish_quarter>damascus_gate": {
+    "min": 4,
+    "km": 2.4
+   },
+   "jaffa_gate>tel_aviv": {
+    "min": 58,
+    "km": 65.2
+   },
+   "jaffa_gate>latrun": {
+    "min": 42,
+    "km": 26.5
+   },
+   "jaffa_gate>jerusalem": {
+    "min": 4,
+    "km": 2.2
+   },
+   "jaffa_gate>jewish_quarter": {
+    "min": 3,
+    "km": 1.1
+   },
+   "jaffa_gate>mount_zion": {
+    "min": 4,
+    "km": 1.1
+   },
+   "jaffa_gate>haas_promenade": {
+    "min": 6,
+    "km": 3.5
+   },
+   "jaffa_gate>ketef_hinnom": {
+    "min": 4,
+    "km": 1.9
+   },
+   "jaffa_gate>city_of_david": {
+    "min": 4,
+    "km": 1.9
+   },
+   "jaffa_gate>gihon_water": {
+    "min": 4,
+    "km": 2
+   },
+   "jaffa_gate>broad_wall": {
+    "min": 3,
+    "km": 1.1
+   },
+   "jaffa_gate>israel_museum_model": {
+    "min": 6,
+    "km": 3.2
+   },
+   "jaffa_gate>shrine_of_book": {
+    "min": 6,
+    "km": 3.2
+   },
+   "jaffa_gate>burnt_house": {
+    "min": 3,
+    "km": 1.1
+   },
+   "jaffa_gate>herodian_quarter": {
+    "min": 2,
+    "km": 0.9
+   },
+   "jaffa_gate>siloam_pilgrim_road": {
+    "min": 4,
+    "km": 2.7
+   },
+   "jaffa_gate>givati": {
+    "min": 3,
+    "km": 1.3
+   },
+   "jaffa_gate>kidron_tombs": {
+    "min": 4,
+    "km": 1.7
+   },
+   "jaffa_gate>western_wall_tunnels": {
+    "min": 3,
+    "km": 1.2
+   },
+   "jaffa_gate>davidson": {
+    "min": 5,
+    "km": 2.2
+   },
+   "jaffa_gate>holy_sepulchre": {
+    "min": 0,
+    "km": 0.1
+   },
+   "jaffa_gate>sisters_of_zion": {
+    "min": 7,
+    "km": 3.2
+   },
+   "jaffa_gate>zedekiah_cave": {
+    "min": 3,
+    "km": 1.7
+   },
+   "jaffa_gate>ramparts": {
+    "min": 0,
+    "km": 0.2
+   },
+   "jaffa_gate>damascus_gate": {
+    "min": 3,
+    "km": 1.7
+   },
+   "mount_zion>tel_aviv": {
+    "min": 59,
+    "km": 66.1
+   },
+   "mount_zion>latrun": {
+    "min": 44,
+    "km": 27.4
+   },
+   "mount_zion>jerusalem": {
+    "min": 6,
+    "km": 3.1
+   },
+   "mount_zion>jewish_quarter": {
+    "min": 5,
+    "km": 2.4
+   },
+   "mount_zion>jaffa_gate": {
+    "min": 3,
+    "km": 1.3
+   },
+   "mount_zion>haas_promenade": {
+    "min": 7,
+    "km": 3.6
+   },
+   "mount_zion>ketef_hinnom": {
+    "min": 6,
+    "km": 2.8
+   },
+   "mount_zion>city_of_david": {
+    "min": 5,
+    "km": 3
+   },
+   "mount_zion>gihon_water": {
+    "min": 6,
+    "km": 3.1
+   },
+   "mount_zion>broad_wall": {
+    "min": 5,
+    "km": 2.4
+   },
+   "mount_zion>israel_museum_model": {
+    "min": 8,
+    "km": 4.1
+   },
+   "mount_zion>shrine_of_book": {
+    "min": 8,
+    "km": 4.1
+   },
+   "mount_zion>burnt_house": {
+    "min": 5,
+    "km": 2.4
+   },
+   "mount_zion>herodian_quarter": {
+    "min": 5,
+    "km": 2.2
+   },
+   "mount_zion>siloam_pilgrim_road": {
+    "min": 5,
+    "km": 2.8
+   },
+   "mount_zion>givati": {
+    "min": 6,
+    "km": 2.6
+   },
+   "mount_zion>kidron_tombs": {
+    "min": 6,
+    "km": 3.6
+   },
+   "mount_zion>western_wall_tunnels": {
+    "min": 5,
+    "km": 2.5
+   },
+   "mount_zion>davidson": {
+    "min": 6,
+    "km": 3.3
+   },
+   "mount_zion>holy_sepulchre": {
+    "min": 3,
+    "km": 1.4
+   },
+   "mount_zion>sisters_of_zion": {
+    "min": 8,
+    "km": 4.1
+   },
+   "mount_zion>zedekiah_cave": {
+    "min": 5,
+    "km": 2.6
+   },
+   "mount_zion>ramparts": {
+    "min": 2,
+    "km": 1.1
+   },
+   "mount_zion>damascus_gate": {
+    "min": 5,
+    "km": 2.6
+   },
+   "haas_promenade>tel_aviv": {
+    "min": 60,
+    "km": 67.7
+   },
+   "haas_promenade>latrun": {
+    "min": 45,
+    "km": 28.6
+   },
+   "haas_promenade>jerusalem": {
+    "min": 9,
+    "km": 5.3
+   },
+   "haas_promenade>jewish_quarter": {
+    "min": 8,
+    "km": 4.6
+   },
+   "haas_promenade>jaffa_gate": {
+    "min": 5,
+    "km": 3.5
+   },
+   "haas_promenade>mount_zion": {
+    "min": 7,
+    "km": 3.5
+   },
+   "haas_promenade>ketef_hinnom": {
+    "min": 7,
+    "km": 3.8
+   },
+   "haas_promenade>city_of_david": {
+    "min": 6,
+    "km": 3.3
+   },
+   "haas_promenade>gihon_water": {
+    "min": 6,
+    "km": 3.3
+   },
+   "haas_promenade>broad_wall": {
+    "min": 8,
+    "km": 4.6
+   },
+   "haas_promenade>israel_museum_model": {
+    "min": 10,
+    "km": 6.3
+   },
+   "haas_promenade>shrine_of_book": {
+    "min": 10,
+    "km": 6.3
+   },
+   "haas_promenade>burnt_house": {
+    "min": 8,
+    "km": 4.6
+   },
+   "haas_promenade>herodian_quarter": {
+    "min": 8,
+    "km": 4.3
+   },
+   "haas_promenade>siloam_pilgrim_road": {
+    "min": 6,
+    "km": 3
+   },
+   "haas_promenade>givati": {
+    "min": 7,
+    "km": 3.7
+   },
+   "haas_promenade>kidron_tombs": {
+    "min": 7,
+    "km": 3.9
+   },
+   "haas_promenade>western_wall_tunnels": {
+    "min": 8,
+    "km": 4.6
+   },
+   "haas_promenade>davidson": {
+    "min": 7,
+    "km": 3.5
+   },
+   "haas_promenade>holy_sepulchre": {
+    "min": 6,
+    "km": 3.6
+   },
+   "haas_promenade>sisters_of_zion": {
+    "min": 10,
+    "km": 4.9
+   },
+   "haas_promenade>zedekiah_cave": {
+    "min": 8,
+    "km": 4.8
+   },
+   "haas_promenade>ramparts": {
+    "min": 5,
+    "km": 3.3
+   },
+   "haas_promenade>damascus_gate": {
+    "min": 8,
+    "km": 4.7
+   },
+   "ketef_hinnom>tel_aviv": {
+    "min": 57,
+    "km": 65.7
+   },
+   "ketef_hinnom>latrun": {
+    "min": 42,
+    "km": 26.6
+   },
+   "ketef_hinnom>jerusalem": {
+    "min": 5,
+    "km": 2.6
+   },
+   "ketef_hinnom>jewish_quarter": {
+    "min": 6,
+    "km": 3
+   },
+   "ketef_hinnom>jaffa_gate": {
+    "min": 3,
+    "km": 1.8
+   },
+   "ketef_hinnom>mount_zion": {
+    "min": 6,
+    "km": 2.6
+   },
+   "ketef_hinnom>haas_promenade": {
+    "min": 7,
+    "km": 3.7
+   },
+   "ketef_hinnom>city_of_david": {
+    "min": 6,
+    "km": 3
+   },
+   "ketef_hinnom>gihon_water": {
+    "min": 6,
+    "km": 3.1
+   },
+   "ketef_hinnom>broad_wall": {
+    "min": 6,
+    "km": 3
+   },
+   "ketef_hinnom>israel_museum_model": {
+    "min": 6,
+    "km": 3.1
+   },
+   "ketef_hinnom>shrine_of_book": {
+    "min": 6,
+    "km": 3.1
+   },
+   "ketef_hinnom>burnt_house": {
+    "min": 6,
+    "km": 3
+   },
+   "ketef_hinnom>herodian_quarter": {
+    "min": 6,
+    "km": 2.7
+   },
+   "ketef_hinnom>siloam_pilgrim_road": {
+    "min": 6,
+    "km": 2.8
+   },
+   "ketef_hinnom>givati": {
+    "min": 7,
+    "km": 3.2
+   },
+   "ketef_hinnom>kidron_tombs": {
+    "min": 6,
+    "km": 3.6
+   },
+   "ketef_hinnom>western_wall_tunnels": {
+    "min": 6,
+    "km": 3
+   },
+   "ketef_hinnom>davidson": {
+    "min": 7,
+    "km": 3.3
+   },
+   "ketef_hinnom>holy_sepulchre": {
+    "min": 4,
+    "km": 1.9
+   },
+   "ketef_hinnom>sisters_of_zion": {
+    "min": 7,
+    "km": 3.6
+   },
+   "ketef_hinnom>zedekiah_cave": {
+    "min": 4,
+    "km": 2.1
+   },
+   "ketef_hinnom>ramparts": {
+    "min": 3,
+    "km": 1.7
+   },
+   "ketef_hinnom>damascus_gate": {
+    "min": 4,
+    "km": 2
+   },
+   "city_of_david>tel_aviv": {
+    "min": 57,
+    "km": 65.2
+   },
+   "city_of_david>latrun": {
+    "min": 44,
+    "km": 28.1
+   },
+   "city_of_david>jerusalem": {
+    "min": 6,
+    "km": 3.8
+   },
+   "city_of_david>jewish_quarter": {
+    "min": 6,
+    "km": 3.1
+   },
+   "city_of_david>jaffa_gate": {
+    "min": 3,
+    "km": 2
+   },
+   "city_of_david>mount_zion": {
+    "min": 3,
+    "km": 1.1
+   },
+   "city_of_david>haas_promenade": {
+    "min": 7,
+    "km": 4.3
+   },
+   "city_of_david>ketef_hinnom": {
+    "min": 6,
+    "km": 3.5
+   },
+   "city_of_david>gihon_water": {
+    "min": 2,
+    "km": 1.1
+   },
+   "city_of_david>broad_wall": {
+    "min": 6,
+    "km": 3.1
+   },
+   "city_of_david>israel_museum_model": {
+    "min": 8,
+    "km": 4.8
+   },
+   "city_of_david>shrine_of_book": {
+    "min": 8,
+    "km": 4.8
+   },
+   "city_of_david>burnt_house": {
+    "min": 6,
+    "km": 3.1
+   },
+   "city_of_david>herodian_quarter": {
+    "min": 5,
+    "km": 2.9
+   },
+   "city_of_david>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 1.1
+   },
+   "city_of_david>givati": {
+    "min": 1,
+    "km": 0.4
+   },
+   "city_of_david>kidron_tombs": {
+    "min": 1,
+    "km": 0.6
+   },
+   "city_of_david>western_wall_tunnels": {
+    "min": 6,
+    "km": 3.2
+   },
+   "city_of_david>davidson": {
+    "min": 1,
+    "km": 0.2
+   },
+   "city_of_david>holy_sepulchre": {
+    "min": 3,
+    "km": 2.1
+   },
+   "city_of_david>sisters_of_zion": {
+    "min": 4,
+    "km": 1.6
+   },
+   "city_of_david>zedekiah_cave": {
+    "min": 4,
+    "km": 2.4
+   },
+   "city_of_david>ramparts": {
+    "min": 3,
+    "km": 1.8
+   },
+   "city_of_david>damascus_gate": {
+    "min": 4,
+    "km": 2.4
+   },
+   "gihon_water>tel_aviv": {
+    "min": 58,
+    "km": 65.3
+   },
+   "gihon_water>latrun": {
+    "min": 44,
+    "km": 28.3
+   },
+   "gihon_water>jerusalem": {
+    "min": 7,
+    "km": 3.9
+   },
+   "gihon_water>jewish_quarter": {
+    "min": 6,
+    "km": 3.2
+   },
+   "gihon_water>jaffa_gate": {
+    "min": 3,
+    "km": 2.1
+   },
+   "gihon_water>mount_zion": {
+    "min": 3,
+    "km": 1.2
+   },
+   "gihon_water>haas_promenade": {
+    "min": 8,
+    "km": 4.4
+   },
+   "gihon_water>ketef_hinnom": {
+    "min": 6,
+    "km": 3.6
+   },
+   "gihon_water>city_of_david": {
+    "min": 0,
+    "km": 0.1
+   },
+   "gihon_water>broad_wall": {
+    "min": 6,
+    "km": 3.2
+   },
+   "gihon_water>israel_museum_model": {
+    "min": 8,
+    "km": 4.9
+   },
+   "gihon_water>shrine_of_book": {
+    "min": 8,
+    "km": 4.9
+   },
+   "gihon_water>burnt_house": {
+    "min": 6,
+    "km": 3.2
+   },
+   "gihon_water>herodian_quarter": {
+    "min": 6,
+    "km": 3
+   },
+   "gihon_water>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 1.2
+   },
+   "gihon_water>givati": {
+    "min": 2,
+    "km": 0.5
+   },
+   "gihon_water>kidron_tombs": {
+    "min": 1,
+    "km": 0.7
+   },
+   "gihon_water>western_wall_tunnels": {
+    "min": 6,
+    "km": 3.3
+   },
+   "gihon_water>davidson": {
+    "min": 1,
+    "km": 0.3
+   },
+   "gihon_water>holy_sepulchre": {
+    "min": 4,
+    "km": 2.2
+   },
+   "gihon_water>sisters_of_zion": {
+    "min": 4,
+    "km": 1.7
+   },
+   "gihon_water>zedekiah_cave": {
+    "min": 5,
+    "km": 2.6
+   },
+   "gihon_water>ramparts": {
+    "min": 3,
+    "km": 1.9
+   },
+   "gihon_water>damascus_gate": {
+    "min": 5,
+    "km": 2.5
+   },
+   "broad_wall>tel_aviv": {
+    "min": 58,
+    "km": 65.2
+   },
+   "broad_wall>latrun": {
+    "min": 44,
+    "km": 27.9
+   },
+   "broad_wall>jerusalem": {
+    "min": 6,
+    "km": 3.6
+   },
+   "broad_wall>jewish_quarter": {
+    "min": 0,
+    "km": 0
+   },
+   "broad_wall>jaffa_gate": {
+    "min": 3,
+    "km": 1.8
+   },
+   "broad_wall>mount_zion": {
+    "min": 2,
+    "km": 0.9
+   },
+   "broad_wall>haas_promenade": {
+    "min": 7,
+    "km": 4.1
+   },
+   "broad_wall>ketef_hinnom": {
+    "min": 6,
+    "km": 3.3
+   },
+   "broad_wall>city_of_david": {
+    "min": 1,
+    "km": 0.8
+   },
+   "broad_wall>gihon_water": {
+    "min": 2,
+    "km": 0.8
+   },
+   "broad_wall>israel_museum_model": {
+    "min": 8,
+    "km": 4.6
+   },
+   "broad_wall>shrine_of_book": {
+    "min": 8,
+    "km": 4.6
+   },
+   "broad_wall>burnt_house": {
+    "min": 0,
+    "km": 0
+   },
+   "broad_wall>herodian_quarter": {
+    "min": 5,
+    "km": 2.6
+   },
+   "broad_wall>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 0.8
+   },
+   "broad_wall>givati": {
+    "min": 0,
+    "km": 0.2
+   },
+   "broad_wall>kidron_tombs": {
+    "min": 1,
+    "km": 0.6
+   },
+   "broad_wall>western_wall_tunnels": {
+    "min": 0,
+    "km": 0
+   },
+   "broad_wall>davidson": {
+    "min": 2,
+    "km": 1
+   },
+   "broad_wall>holy_sepulchre": {
+    "min": 3,
+    "km": 1.9
+   },
+   "broad_wall>sisters_of_zion": {
+    "min": 4,
+    "km": 1.6
+   },
+   "broad_wall>zedekiah_cave": {
+    "min": 4,
+    "km": 2.5
+   },
+   "broad_wall>ramparts": {
+    "min": 2,
+    "km": 1.6
+   },
+   "broad_wall>damascus_gate": {
+    "min": 4,
+    "km": 2.4
+   },
+   "israel_museum_model>tel_aviv": {
+    "min": 54,
+    "km": 62.9
+   },
+   "israel_museum_model>latrun": {
+    "min": 39,
+    "km": 23.8
+   },
+   "israel_museum_model>jerusalem": {
+    "min": 7,
+    "km": 3.8
+   },
+   "israel_museum_model>jewish_quarter": {
+    "min": 9,
+    "km": 4.4
+   },
+   "israel_museum_model>jaffa_gate": {
+    "min": 6,
+    "km": 3.3
+   },
+   "israel_museum_model>mount_zion": {
+    "min": 8,
+    "km": 4.4
+   },
+   "israel_museum_model>haas_promenade": {
+    "min": 10,
+    "km": 5.5
+   },
+   "israel_museum_model>ketef_hinnom": {
+    "min": 6,
+    "km": 2.9
+   },
+   "israel_museum_model>city_of_david": {
+    "min": 9,
+    "km": 4.9
+   },
+   "israel_museum_model>gihon_water": {
+    "min": 9,
+    "km": 4.9
+   },
+   "israel_museum_model>broad_wall": {
+    "min": 9,
+    "km": 4.4
+   },
+   "israel_museum_model>shrine_of_book": {
+    "min": 0,
+    "km": 0
+   },
+   "israel_museum_model>burnt_house": {
+    "min": 9,
+    "km": 4.4
+   },
+   "israel_museum_model>herodian_quarter": {
+    "min": 8,
+    "km": 4.1
+   },
+   "israel_museum_model>siloam_pilgrim_road": {
+    "min": 8,
+    "km": 4.7
+   },
+   "israel_museum_model>givati": {
+    "min": 9,
+    "km": 4.6
+   },
+   "israel_museum_model>kidron_tombs": {
+    "min": 9,
+    "km": 5
+   },
+   "israel_museum_model>western_wall_tunnels": {
+    "min": 9,
+    "km": 4.4
+   },
+   "israel_museum_model>davidson": {
+    "min": 9,
+    "km": 5.2
+   },
+   "israel_museum_model>holy_sepulchre": {
+    "min": 6,
+    "km": 3.4
+   },
+   "israel_museum_model>sisters_of_zion": {
+    "min": 10,
+    "km": 5
+   },
+   "israel_museum_model>zedekiah_cave": {
+    "min": 6,
+    "km": 3.5
+   },
+   "israel_museum_model>ramparts": {
+    "min": 5,
+    "km": 3.1
+   },
+   "israel_museum_model>damascus_gate": {
+    "min": 6,
+    "km": 3.4
+   },
+   "shrine_of_book>tel_aviv": {
+    "min": 54,
+    "km": 62.9
+   },
+   "shrine_of_book>latrun": {
+    "min": 39,
+    "km": 23.8
+   },
+   "shrine_of_book>jerusalem": {
+    "min": 7,
+    "km": 3.8
+   },
+   "shrine_of_book>jewish_quarter": {
+    "min": 9,
+    "km": 4.4
+   },
+   "shrine_of_book>jaffa_gate": {
+    "min": 6,
+    "km": 3.3
+   },
+   "shrine_of_book>mount_zion": {
+    "min": 8,
+    "km": 4.4
+   },
+   "shrine_of_book>haas_promenade": {
+    "min": 10,
+    "km": 5.5
+   },
+   "shrine_of_book>ketef_hinnom": {
+    "min": 5,
+    "km": 2.9
+   },
+   "shrine_of_book>city_of_david": {
+    "min": 9,
+    "km": 4.9
+   },
+   "shrine_of_book>gihon_water": {
+    "min": 9,
+    "km": 4.9
+   },
+   "shrine_of_book>broad_wall": {
+    "min": 9,
+    "km": 4.4
+   },
+   "shrine_of_book>israel_museum_model": {
+    "min": 0,
+    "km": 0
+   },
+   "shrine_of_book>burnt_house": {
+    "min": 9,
+    "km": 4.4
+   },
+   "shrine_of_book>herodian_quarter": {
+    "min": 8,
+    "km": 4.1
+   },
+   "shrine_of_book>siloam_pilgrim_road": {
+    "min": 8,
+    "km": 4.6
+   },
+   "shrine_of_book>givati": {
+    "min": 9,
+    "km": 4.6
+   },
+   "shrine_of_book>kidron_tombs": {
+    "min": 9,
+    "km": 5
+   },
+   "shrine_of_book>western_wall_tunnels": {
+    "min": 9,
+    "km": 4.4
+   },
+   "shrine_of_book>davidson": {
+    "min": 9,
+    "km": 5.1
+   },
+   "shrine_of_book>holy_sepulchre": {
+    "min": 6,
+    "km": 3.3
+   },
+   "shrine_of_book>sisters_of_zion": {
+    "min": 10,
+    "km": 5
+   },
+   "shrine_of_book>zedekiah_cave": {
+    "min": 6,
+    "km": 3.5
+   },
+   "shrine_of_book>ramparts": {
+    "min": 5,
+    "km": 3.1
+   },
+   "shrine_of_book>damascus_gate": {
+    "min": 6,
+    "km": 3.4
+   },
+   "burnt_house>tel_aviv": {
+    "min": 58,
+    "km": 65.2
+   },
+   "burnt_house>latrun": {
+    "min": 44,
+    "km": 27.9
+   },
+   "burnt_house>jerusalem": {
+    "min": 6,
+    "km": 3.6
+   },
+   "burnt_house>jewish_quarter": {
+    "min": 0,
+    "km": 0
+   },
+   "burnt_house>jaffa_gate": {
+    "min": 3,
+    "km": 1.8
+   },
+   "burnt_house>mount_zion": {
+    "min": 2,
+    "km": 0.9
+   },
+   "burnt_house>haas_promenade": {
+    "min": 7,
+    "km": 4.1
+   },
+   "burnt_house>ketef_hinnom": {
+    "min": 6,
+    "km": 3.3
+   },
+   "burnt_house>city_of_david": {
+    "min": 1,
+    "km": 0.8
+   },
+   "burnt_house>gihon_water": {
+    "min": 2,
+    "km": 0.8
+   },
+   "burnt_house>broad_wall": {
+    "min": 0,
+    "km": 0
+   },
+   "burnt_house>israel_museum_model": {
+    "min": 8,
+    "km": 4.6
+   },
+   "burnt_house>shrine_of_book": {
+    "min": 8,
+    "km": 4.6
+   },
+   "burnt_house>herodian_quarter": {
+    "min": 5,
+    "km": 2.6
+   },
+   "burnt_house>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 0.8
+   },
+   "burnt_house>givati": {
+    "min": 0,
+    "km": 0.2
+   },
+   "burnt_house>kidron_tombs": {
+    "min": 1,
+    "km": 0.6
+   },
+   "burnt_house>western_wall_tunnels": {
+    "min": 0,
+    "km": 0
+   },
+   "burnt_house>davidson": {
+    "min": 2,
+    "km": 1
+   },
+   "burnt_house>holy_sepulchre": {
+    "min": 3,
+    "km": 1.9
+   },
+   "burnt_house>sisters_of_zion": {
+    "min": 4,
+    "km": 1.6
+   },
+   "burnt_house>zedekiah_cave": {
+    "min": 4,
+    "km": 2.5
+   },
+   "burnt_house>ramparts": {
+    "min": 2,
+    "km": 1.6
+   },
+   "burnt_house>damascus_gate": {
+    "min": 4,
+    "km": 2.4
+   },
+   "herodian_quarter>tel_aviv": {
+    "min": 59,
+    "km": 65.7
+   },
+   "herodian_quarter>latrun": {
+    "min": 44,
+    "km": 27.8
+   },
+   "herodian_quarter>jerusalem": {
+    "min": 7,
+    "km": 3.5
+   },
+   "herodian_quarter>jewish_quarter": {
+    "min": 1,
+    "km": 0.5
+   },
+   "herodian_quarter>jaffa_gate": {
+    "min": 3,
+    "km": 1.7
+   },
+   "herodian_quarter>mount_zion": {
+    "min": 3,
+    "km": 0.8
+   },
+   "herodian_quarter>haas_promenade": {
+    "min": 7,
+    "km": 4
+   },
+   "herodian_quarter>ketef_hinnom": {
+    "min": 6,
+    "km": 3.2
+   },
+   "herodian_quarter>city_of_david": {
+    "min": 3,
+    "km": 1.3
+   },
+   "herodian_quarter>gihon_water": {
+    "min": 3,
+    "km": 1.3
+   },
+   "herodian_quarter>broad_wall": {
+    "min": 1,
+    "km": 0.5
+   },
+   "herodian_quarter>israel_museum_model": {
+    "min": 8,
+    "km": 4.5
+   },
+   "herodian_quarter>shrine_of_book": {
+    "min": 8,
+    "km": 4.5
+   },
+   "herodian_quarter>burnt_house": {
+    "min": 1,
+    "km": 0.5
+   },
+   "herodian_quarter>siloam_pilgrim_road": {
+    "min": 3,
+    "km": 1.3
+   },
+   "herodian_quarter>givati": {
+    "min": 2,
+    "km": 0.6
+   },
+   "herodian_quarter>kidron_tombs": {
+    "min": 2,
+    "km": 1.1
+   },
+   "herodian_quarter>western_wall_tunnels": {
+    "min": 1,
+    "km": 0.5
+   },
+   "herodian_quarter>davidson": {
+    "min": 3,
+    "km": 1.5
+   },
+   "herodian_quarter>holy_sepulchre": {
+    "min": 3,
+    "km": 1.8
+   },
+   "herodian_quarter>sisters_of_zion": {
+    "min": 5,
+    "km": 2.1
+   },
+   "herodian_quarter>zedekiah_cave": {
+    "min": 5,
+    "km": 3
+   },
+   "herodian_quarter>ramparts": {
+    "min": 3,
+    "km": 1.5
+   },
+   "herodian_quarter>damascus_gate": {
+    "min": 6,
+    "km": 2.9
+   },
+   "siloam_pilgrim_road>tel_aviv": {
+    "min": 58,
+    "km": 65.7
+   },
+   "siloam_pilgrim_road>latrun": {
+    "min": 44,
+    "km": 27.9
+   },
+   "siloam_pilgrim_road>jerusalem": {
+    "min": 6,
+    "km": 3.6
+   },
+   "siloam_pilgrim_road>jewish_quarter": {
+    "min": 6,
+    "km": 2.9
+   },
+   "siloam_pilgrim_road>jaffa_gate": {
+    "min": 3,
+    "km": 1.8
+   },
+   "siloam_pilgrim_road>mount_zion": {
+    "min": 4,
+    "km": 1.6
+   },
+   "siloam_pilgrim_road>haas_promenade": {
+    "min": 6,
+    "km": 3
+   },
+   "siloam_pilgrim_road>ketef_hinnom": {
+    "min": 6,
+    "km": 3.3
+   },
+   "siloam_pilgrim_road>city_of_david": {
+    "min": 1,
+    "km": 0.5
+   },
+   "siloam_pilgrim_road>gihon_water": {
+    "min": 1,
+    "km": 0.5
+   },
+   "siloam_pilgrim_road>broad_wall": {
+    "min": 6,
+    "km": 2.9
+   },
+   "siloam_pilgrim_road>israel_museum_model": {
+    "min": 8,
+    "km": 4.6
+   },
+   "siloam_pilgrim_road>shrine_of_book": {
+    "min": 8,
+    "km": 4.6
+   },
+   "siloam_pilgrim_road>burnt_house": {
+    "min": 6,
+    "km": 2.9
+   },
+   "siloam_pilgrim_road>herodian_quarter": {
+    "min": 5,
+    "km": 2.7
+   },
+   "siloam_pilgrim_road>givati": {
+    "min": 2,
+    "km": 0.9
+   },
+   "siloam_pilgrim_road>kidron_tombs": {
+    "min": 2,
+    "km": 1.1
+   },
+   "siloam_pilgrim_road>western_wall_tunnels": {
+    "min": 6,
+    "km": 2.9
+   },
+   "siloam_pilgrim_road>davidson": {
+    "min": 2,
+    "km": 0.7
+   },
+   "siloam_pilgrim_road>holy_sepulchre": {
+    "min": 3,
+    "km": 1.9
+   },
+   "siloam_pilgrim_road>sisters_of_zion": {
+    "min": 5,
+    "km": 2.1
+   },
+   "siloam_pilgrim_road>zedekiah_cave": {
+    "min": 5,
+    "km": 3.1
+   },
+   "siloam_pilgrim_road>ramparts": {
+    "min": 3,
+    "km": 1.6
+   },
+   "siloam_pilgrim_road>damascus_gate": {
+    "min": 5,
+    "km": 3.1
+   },
+   "givati>tel_aviv": {
+    "min": 57,
+    "km": 65
+   },
+   "givati>latrun": {
+    "min": 44,
+    "km": 28
+   },
+   "givati>jerusalem": {
+    "min": 6,
+    "km": 3.6
+   },
+   "givati>jewish_quarter": {
+    "min": 6,
+    "km": 3
+   },
+   "givati>jaffa_gate": {
+    "min": 3,
+    "km": 1.8
+   },
+   "givati>mount_zion": {
+    "min": 3,
+    "km": 1
+   },
+   "givati>haas_promenade": {
+    "min": 7,
+    "km": 4.1
+   },
+   "givati>ketef_hinnom": {
+    "min": 6,
+    "km": 3.3
+   },
+   "givati>city_of_david": {
+    "min": 2,
+    "km": 0.9
+   },
+   "givati>gihon_water": {
+    "min": 2,
+    "km": 0.9
+   },
+   "givati>broad_wall": {
+    "min": 6,
+    "km": 3
+   },
+   "givati>israel_museum_model": {
+    "min": 8,
+    "km": 4.7
+   },
+   "givati>shrine_of_book": {
+    "min": 8,
+    "km": 4.6
+   },
+   "givati>burnt_house": {
+    "min": 6,
+    "km": 3
+   },
+   "givati>herodian_quarter": {
+    "min": 5,
+    "km": 2.7
+   },
+   "givati>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 0.9
+   },
+   "givati>kidron_tombs": {
+    "min": 1,
+    "km": 0.4
+   },
+   "givati>western_wall_tunnels": {
+    "min": 6,
+    "km": 3
+   },
+   "givati>davidson": {
+    "min": 2,
+    "km": 1.1
+   },
+   "givati>holy_sepulchre": {
+    "min": 3,
+    "km": 1.9
+   },
+   "givati>sisters_of_zion": {
+    "min": 4,
+    "km": 1.4
+   },
+   "givati>zedekiah_cave": {
+    "min": 4,
+    "km": 2.3
+   },
+   "givati>ramparts": {
+    "min": 3,
+    "km": 1.7
+   },
+   "givati>damascus_gate": {
+    "min": 4,
+    "km": 2.2
+   },
+   "kidron_tombs>tel_aviv": {
+    "min": 57,
+    "km": 64.6
+   },
+   "kidron_tombs>latrun": {
+    "min": 44,
+    "km": 29.6
+   },
+   "kidron_tombs>jerusalem": {
+    "min": 6,
+    "km": 3.7
+   },
+   "kidron_tombs>jewish_quarter": {
+    "min": 6,
+    "km": 3.3
+   },
+   "kidron_tombs>jaffa_gate": {
+    "min": 3,
+    "km": 2.2
+   },
+   "kidron_tombs>mount_zion": {
+    "min": 3,
+    "km": 1.3
+   },
+   "kidron_tombs>haas_promenade": {
+    "min": 7,
+    "km": 4.5
+   },
+   "kidron_tombs>ketef_hinnom": {
+    "min": 6,
+    "km": 3.7
+   },
+   "kidron_tombs>city_of_david": {
+    "min": 2,
+    "km": 1.2
+   },
+   "kidron_tombs>gihon_water": {
+    "min": 2,
+    "km": 1.2
+   },
+   "kidron_tombs>broad_wall": {
+    "min": 6,
+    "km": 3.3
+   },
+   "kidron_tombs>israel_museum_model": {
+    "min": 8,
+    "km": 5
+   },
+   "kidron_tombs>shrine_of_book": {
+    "min": 8,
+    "km": 5
+   },
+   "kidron_tombs>burnt_house": {
+    "min": 6,
+    "km": 3.3
+   },
+   "kidron_tombs>herodian_quarter": {
+    "min": 5,
+    "km": 3
+   },
+   "kidron_tombs>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 1.2
+   },
+   "kidron_tombs>givati": {
+    "min": 1,
+    "km": 0.6
+   },
+   "kidron_tombs>western_wall_tunnels": {
+    "min": 6,
+    "km": 3.3
+   },
+   "kidron_tombs>davidson": {
+    "min": 3,
+    "km": 1.4
+   },
+   "kidron_tombs>holy_sepulchre": {
+    "min": 3,
+    "km": 2.3
+   },
+   "kidron_tombs>sisters_of_zion": {
+    "min": 3,
+    "km": 1
+   },
+   "kidron_tombs>zedekiah_cave": {
+    "min": 3,
+    "km": 1.8
+   },
+   "kidron_tombs>ramparts": {
+    "min": 3,
+    "km": 2
+   },
+   "kidron_tombs>damascus_gate": {
+    "min": 3,
+    "km": 1.8
+   },
+   "western_wall_tunnels>tel_aviv": {
+    "min": 58,
+    "km": 65.2
+   },
+   "western_wall_tunnels>latrun": {
+    "min": 44,
+    "km": 27.9
+   },
+   "western_wall_tunnels>jerusalem": {
+    "min": 6,
+    "km": 3.5
+   },
+   "western_wall_tunnels>jewish_quarter": {
+    "min": 5,
+    "km": 2.9
+   },
+   "western_wall_tunnels>jaffa_gate": {
+    "min": 3,
+    "km": 1.7
+   },
+   "western_wall_tunnels>mount_zion": {
+    "min": 2,
+    "km": 0.9
+   },
+   "western_wall_tunnels>haas_promenade": {
+    "min": 7,
+    "km": 4
+   },
+   "western_wall_tunnels>ketef_hinnom": {
+    "min": 6,
+    "km": 3.2
+   },
+   "western_wall_tunnels>city_of_david": {
+    "min": 1,
+    "km": 0.8
+   },
+   "western_wall_tunnels>gihon_water": {
+    "min": 2,
+    "km": 0.8
+   },
+   "western_wall_tunnels>broad_wall": {
+    "min": 5,
+    "km": 2.9
+   },
+   "western_wall_tunnels>israel_museum_model": {
+    "min": 8,
+    "km": 4.6
+   },
+   "western_wall_tunnels>shrine_of_book": {
+    "min": 8,
+    "km": 4.6
+   },
+   "western_wall_tunnels>burnt_house": {
+    "min": 5,
+    "km": 2.9
+   },
+   "western_wall_tunnels>herodian_quarter": {
+    "min": 5,
+    "km": 2.6
+   },
+   "western_wall_tunnels>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 0.8
+   },
+   "western_wall_tunnels>givati": {
+    "min": 0,
+    "km": 0.2
+   },
+   "western_wall_tunnels>kidron_tombs": {
+    "min": 1,
+    "km": 0.6
+   },
+   "western_wall_tunnels>davidson": {
+    "min": 2,
+    "km": 1
+   },
+   "western_wall_tunnels>holy_sepulchre": {
+    "min": 3,
+    "km": 1.8
+   },
+   "western_wall_tunnels>sisters_of_zion": {
+    "min": 4,
+    "km": 1.6
+   },
+   "western_wall_tunnels>zedekiah_cave": {
+    "min": 4,
+    "km": 2.4
+   },
+   "western_wall_tunnels>ramparts": {
+    "min": 2,
+    "km": 1.6
+   },
+   "western_wall_tunnels>damascus_gate": {
+    "min": 4,
+    "km": 2.4
+   },
+   "davidson>tel_aviv": {
+    "min": 57,
+    "km": 65.1
+   },
+   "davidson>latrun": {
+    "min": 44,
+    "km": 28
+   },
+   "davidson>jerusalem": {
+    "min": 6,
+    "km": 3.7
+   },
+   "davidson>jewish_quarter": {
+    "min": 6,
+    "km": 3
+   },
+   "davidson>jaffa_gate": {
+    "min": 3,
+    "km": 1.9
+   },
+   "davidson>mount_zion": {
+    "min": 3,
+    "km": 1
+   },
+   "davidson>haas_promenade": {
+    "min": 7,
+    "km": 4.2
+   },
+   "davidson>ketef_hinnom": {
+    "min": 6,
+    "km": 3.4
+   },
+   "davidson>city_of_david": {
+    "min": 2,
+    "km": 0.9
+   },
+   "davidson>gihon_water": {
+    "min": 2,
+    "km": 0.9
+   },
+   "davidson>broad_wall": {
+    "min": 6,
+    "km": 3
+   },
+   "davidson>israel_museum_model": {
+    "min": 8,
+    "km": 4.7
+   },
+   "davidson>shrine_of_book": {
+    "min": 8,
+    "km": 4.7
+   },
+   "davidson>burnt_house": {
+    "min": 6,
+    "km": 3
+   },
+   "davidson>herodian_quarter": {
+    "min": 5,
+    "km": 2.8
+   },
+   "davidson>siloam_pilgrim_road": {
+    "min": 2,
+    "km": 1
+   },
+   "davidson>givati": {
+    "min": 1,
+    "km": 0.3
+   },
+   "davidson>kidron_tombs": {
+    "min": 1,
+    "km": 0.5
+   },
+   "davidson>western_wall_tunnels": {
+    "min": 6,
+    "km": 3
+   },
+   "davidson>holy_sepulchre": {
+    "min": 3,
+    "km": 2
+   },
+   "davidson>sisters_of_zion": {
+    "min": 4,
+    "km": 1.5
+   },
+   "davidson>zedekiah_cave": {
+    "min": 4,
+    "km": 2.3
+   },
+   "davidson>ramparts": {
+    "min": 3,
+    "km": 1.7
+   },
+   "davidson>damascus_gate": {
+    "min": 4,
+    "km": 2.3
+   },
+   "holy_sepulchre>tel_aviv": {
+    "min": 58,
+    "km": 65.3
+   },
+   "holy_sepulchre>latrun": {
+    "min": 42,
+    "km": 26.6
+   },
+   "holy_sepulchre>jerusalem": {
+    "min": 5,
+    "km": 2.3
+   },
+   "holy_sepulchre>jewish_quarter": {
+    "min": 3,
+    "km": 1
+   },
+   "holy_sepulchre>jaffa_gate": {
+    "min": 0,
+    "km": 0.1
+   },
+   "holy_sepulchre>mount_zion": {
+    "min": 3,
+    "km": 1.1
+   },
+   "holy_sepulchre>haas_promenade": {
+    "min": 6,
+    "km": 3.6
+   },
+   "holy_sepulchre>ketef_hinnom": {
+    "min": 4,
+    "km": 2
+   },
+   "holy_sepulchre>city_of_david": {
+    "min": 4,
+    "km": 1.8
+   },
+   "holy_sepulchre>gihon_water": {
+    "min": 4,
+    "km": 1.9
+   },
+   "holy_sepulchre>broad_wall": {
+    "min": 3,
+    "km": 1
+   },
+   "holy_sepulchre>israel_museum_model": {
+    "min": 6,
+    "km": 3.3
+   },
+   "holy_sepulchre>shrine_of_book": {
+    "min": 6,
+    "km": 3.3
+   },
+   "holy_sepulchre>burnt_house": {
+    "min": 3,
+    "km": 1
+   },
+   "holy_sepulchre>herodian_quarter": {
+    "min": 2,
+    "km": 0.8
+   },
+   "holy_sepulchre>siloam_pilgrim_road": {
+    "min": 4,
+    "km": 1.9
+   },
+   "holy_sepulchre>givati": {
+    "min": 3,
+    "km": 1.2
+   },
+   "holy_sepulchre>kidron_tombs": {
+    "min": 4,
+    "km": 1.7
+   },
+   "holy_sepulchre>western_wall_tunnels": {
+    "min": 3,
+    "km": 1.1
+   },
+   "holy_sepulchre>davidson": {
+    "min": 5,
+    "km": 2.1
+   },
+   "holy_sepulchre>sisters_of_zion": {
+    "min": 7,
+    "km": 2.7
+   },
+   "holy_sepulchre>zedekiah_cave": {
+    "min": 3,
+    "km": 1.8
+   },
+   "holy_sepulchre>ramparts": {
+    "min": 1,
+    "km": 0.3
+   },
+   "holy_sepulchre>damascus_gate": {
+    "min": 4,
+    "km": 1.7
+   },
+   "sisters_of_zion>tel_aviv": {
+    "min": 58,
+    "km": 64.6
+   },
+   "sisters_of_zion>latrun": {
+    "min": 45,
+    "km": 29.5
+   },
+   "sisters_of_zion>jerusalem": {
+    "min": 7,
+    "km": 3.7
+   },
+   "sisters_of_zion>jewish_quarter": {
+    "min": 9,
+    "km": 4.3
+   },
+   "sisters_of_zion>jaffa_gate": {
+    "min": 6,
+    "km": 3.2
+   },
+   "sisters_of_zion>mount_zion": {
+    "min": 5,
+    "km": 2.3
+   },
+   "sisters_of_zion>haas_promenade": {
+    "min": 10,
+    "km": 5.5
+   },
+   "sisters_of_zion>ketef_hinnom": {
+    "min": 9,
+    "km": 4
+   },
+   "sisters_of_zion>city_of_david": {
+    "min": 5,
+    "km": 2.2
+   },
+   "sisters_of_zion>gihon_water": {
+    "min": 5,
+    "km": 2.2
+   },
+   "sisters_of_zion>broad_wall": {
+    "min": 9,
+    "km": 4.3
+   },
+   "sisters_of_zion>israel_museum_model": {
+    "min": 11,
+    "km": 5.3
+   },
+   "sisters_of_zion>shrine_of_book": {
+    "min": 11,
+    "km": 5.3
+   },
+   "sisters_of_zion>burnt_house": {
+    "min": 9,
+    "km": 4.3
+   },
+   "sisters_of_zion>herodian_quarter": {
+    "min": 8,
+    "km": 4
+   },
+   "sisters_of_zion>siloam_pilgrim_road": {
+    "min": 5,
+    "km": 2.2
+   },
+   "sisters_of_zion>givati": {
+    "min": 4,
+    "km": 1.6
+   },
+   "sisters_of_zion>kidron_tombs": {
+    "min": 3,
+    "km": 1
+   },
+   "sisters_of_zion>western_wall_tunnels": {
+    "min": 9,
+    "km": 4.3
+   },
+   "sisters_of_zion>davidson": {
+    "min": 5,
+    "km": 2.4
+   },
+   "sisters_of_zion>holy_sepulchre": {
+    "min": 6,
+    "km": 3.3
+   },
+   "sisters_of_zion>zedekiah_cave": {
+    "min": 4,
+    "km": 1.8
+   },
+   "sisters_of_zion>ramparts": {
+    "min": 6,
+    "km": 3
+   },
+   "sisters_of_zion>damascus_gate": {
+    "min": 4,
+    "km": 1.8
+   },
+   "zedekiah_cave>tel_aviv": {
+    "min": 56,
+    "km": 64.5
+   },
+   "zedekiah_cave>latrun": {
+    "min": 44,
+    "km": 28
+   },
+   "zedekiah_cave>jerusalem": {
+    "min": 5,
+    "km": 2.8
+   },
+   "zedekiah_cave>jewish_quarter": {
+    "min": 8,
+    "km": 3.5
+   },
+   "zedekiah_cave>jaffa_gate": {
+    "min": 5,
+    "km": 2.4
+   },
+   "zedekiah_cave>mount_zion": {
+    "min": 5,
+    "km": 2.8
+   },
+   "zedekiah_cave>haas_promenade": {
+    "min": 9,
+    "km": 5.5
+   },
+   "zedekiah_cave>ketef_hinnom": {
+    "min": 6,
+    "km": 3.1
+   },
+   "zedekiah_cave>city_of_david": {
+    "min": 5,
+    "km": 2.7
+   },
+   "zedekiah_cave>gihon_water": {
+    "min": 5,
+    "km": 2.8
+   },
+   "zedekiah_cave>broad_wall": {
+    "min": 8,
+    "km": 3.5
+   },
+   "zedekiah_cave>israel_museum_model": {
+    "min": 8,
+    "km": 4.4
+   },
+   "zedekiah_cave>shrine_of_book": {
+    "min": 8,
+    "km": 4.4
+   },
+   "zedekiah_cave>burnt_house": {
+    "min": 8,
+    "km": 3.5
+   },
+   "zedekiah_cave>herodian_quarter": {
+    "min": 7,
+    "km": 3.3
+   },
+   "zedekiah_cave>siloam_pilgrim_road": {
+    "min": 5,
+    "km": 2.8
+   },
+   "zedekiah_cave>givati": {
+    "min": 4,
+    "km": 2.1
+   },
+   "zedekiah_cave>kidron_tombs": {
+    "min": 3,
+    "km": 1.5
+   },
+   "zedekiah_cave>western_wall_tunnels": {
+    "min": 8,
+    "km": 3.5
+   },
+   "zedekiah_cave>davidson": {
+    "min": 5,
+    "km": 3
+   },
+   "zedekiah_cave>holy_sepulchre": {
+    "min": 5,
+    "km": 2.5
+   },
+   "zedekiah_cave>sisters_of_zion": {
+    "min": 4,
+    "km": 1.5
+   },
+   "zedekiah_cave>ramparts": {
+    "min": 4,
+    "km": 2.2
+   },
+   "zedekiah_cave>damascus_gate": {
+    "min": 2,
+    "km": 0.9
+   },
+   "ramparts>tel_aviv": {
+    "min": 57,
+    "km": 65
+   },
+   "ramparts>latrun": {
+    "min": 42,
+    "km": 26.4
+   },
+   "ramparts>jerusalem": {
+    "min": 4,
+    "km": 2
+   },
+   "ramparts>jewish_quarter": {
+    "min": 3,
+    "km": 1.3
+   },
+   "ramparts>jaffa_gate": {
+    "min": 0,
+    "km": 0.2
+   },
+   "ramparts>mount_zion": {
+    "min": 3,
+    "km": 2
+   },
+   "ramparts>haas_promenade": {
+    "min": 5,
+    "km": 3.4
+   },
+   "ramparts>ketef_hinnom": {
+    "min": 4,
+    "km": 1.7
+   },
+   "ramparts>city_of_david": {
+    "min": 4,
+    "km": 2.8
+   },
+   "ramparts>gihon_water": {
+    "min": 4,
+    "km": 2.8
+   },
+   "ramparts>broad_wall": {
+    "min": 3,
+    "km": 1.3
+   },
+   "ramparts>israel_museum_model": {
+    "min": 6,
+    "km": 3
+   },
+   "ramparts>shrine_of_book": {
+    "min": 6,
+    "km": 3
+   },
+   "ramparts>burnt_house": {
+    "min": 3,
+    "km": 1.3
+   },
+   "ramparts>herodian_quarter": {
+    "min": 3,
+    "km": 1.1
+   },
+   "ramparts>siloam_pilgrim_road": {
+    "min": 4,
+    "km": 2.5
+   },
+   "ramparts>givati": {
+    "min": 4,
+    "km": 1.5
+   },
+   "ramparts>kidron_tombs": {
+    "min": 4,
+    "km": 1.9
+   },
+   "ramparts>western_wall_tunnels": {
+    "min": 3,
+    "km": 1.3
+   },
+   "ramparts>davidson": {
+    "min": 5,
+    "km": 3
+   },
+   "ramparts>holy_sepulchre": {
+    "min": 1,
+    "km": 0.3
+   },
+   "ramparts>sisters_of_zion": {
+    "min": 6,
+    "km": 3.1
+   },
+   "ramparts>zedekiah_cave": {
+    "min": 3,
+    "km": 1.5
+   },
+   "ramparts>damascus_gate": {
+    "min": 3,
+    "km": 1.5
+   },
+   "damascus_gate>tel_aviv": {
+    "min": 56,
+    "km": 64.2
+   },
+   "damascus_gate>latrun": {
+    "min": 43,
+    "km": 27.4
+   },
+   "damascus_gate>jerusalem": {
+    "min": 4,
+    "km": 1.7
+   },
+   "damascus_gate>jewish_quarter": {
+    "min": 6,
+    "km": 2.9
+   },
+   "damascus_gate>jaffa_gate": {
+    "min": 3,
+    "km": 1.7
+   },
+   "damascus_gate>mount_zion": {
+    "min": 6,
+    "km": 3
+   },
+   "damascus_gate>haas_promenade": {
+    "min": 8,
+    "km": 4.8
+   },
+   "damascus_gate>ketef_hinnom": {
+    "min": 5,
+    "km": 2.4
+   },
+   "damascus_gate>city_of_david": {
+    "min": 5,
+    "km": 2.9
+   },
+   "damascus_gate>gihon_water": {
+    "min": 5,
+    "km": 2.9
+   },
+   "damascus_gate>broad_wall": {
+    "min": 6,
+    "km": 2.8
+   },
+   "damascus_gate>israel_museum_model": {
+    "min": 7,
+    "km": 3.7
+   },
+   "damascus_gate>shrine_of_book": {
+    "min": 7,
+    "km": 3.7
+   },
+   "damascus_gate>burnt_house": {
+    "min": 6,
+    "km": 2.8
+   },
+   "damascus_gate>herodian_quarter": {
+    "min": 6,
+    "km": 2.6
+   },
+   "damascus_gate>siloam_pilgrim_road": {
+    "min": 5,
+    "km": 3
+   },
+   "damascus_gate>givati": {
+    "min": 4,
+    "km": 2.3
+   },
+   "damascus_gate>kidron_tombs": {
+    "min": 3,
+    "km": 1.7
+   },
+   "damascus_gate>western_wall_tunnels": {
+    "min": 6,
+    "km": 2.9
+   },
+   "damascus_gate>davidson": {
+    "min": 6,
+    "km": 3.1
+   },
+   "damascus_gate>holy_sepulchre": {
+    "min": 4,
+    "km": 1.8
+   },
+   "damascus_gate>sisters_of_zion": {
+    "min": 4,
+    "km": 1.7
+   },
+   "damascus_gate>zedekiah_cave": {
+    "min": 1,
+    "km": 0.2
+   },
+   "damascus_gate>ramparts": {
+    "min": 3,
+    "km": 1.5
+   }
+  }
+ },
+ "wiki:he:שורש (מושב)": {
+  "lat": 31.79718,
+  "lon": 35.06537,
+  "title": "he:שורש (מושב)",
+  "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%A8%D7%A9_(%D7%9E%D7%95%D7%A9%D7%91)",
+  "qid": "Q2890648"
+ },
+ "wiki:he:מבשרת ציון": {
+  "lat": 31.79986,
+  "lon": 35.15143,
+  "title": "he:מבשרת ציון",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%91%D7%A9%D7%A8%D7%AA_%D7%A6%D7%99%D7%95%D7%9F",
+  "qid": "Q1025294"
+ },
+ "wiki:he:ירושלים": {
+  "lat": 31.78265,
+  "lon": 35.21933,
+  "title": "he:ירושלים",
+  "url": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D",
+  "qid": "Q1218"
+ },
+ "wiki:he:סטף": {
+  "lat": 31.7691,
+  "lon": 35.1273,
+  "title": "he:סטף",
+  "url": "https://he.wikipedia.org/wiki/%D7%A1%D7%98%D7%A3",
+  "qid": "Q2906185"
+ },
+ "wiki:he:שמורת המסרק": {
+  "lat": 31.79925,
+  "lon": 35.04563,
+  "title": "he:שמורת המסרק",
+  "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%9E%D7%95%D7%A8%D7%AA_%D7%94%D7%9E%D7%A1%D7%A8%D7%A7",
+  "qid": "Q7006836"
+ },
+ "wiki:he:יד השמונה": {
+  "lat": 31.80983,
+  "lon": 35.08965,
+  "title": "he:יד השמונה",
+  "url": "https://he.wikipedia.org/wiki/%D7%99%D7%93_%D7%94%D7%A9%D7%9E%D7%95%D7%A0%D7%94",
+  "qid": "Q2915704"
+ },
+ "wiki:he:גבעת הרדאר": {
+  "lat": 31.8247,
+  "lon": 35.13,
+  "title": "he:גבעת הרדאר",
+  "url": "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%A2%D7%AA_%D7%94%D7%A8%D7%93%D7%90%D7%A8",
+  "qid": "Q12404837"
+ },
+ "wiki:he:נבי סמואל": {
+  "lat": 31.8327,
+  "lon": 35.1801,
+  "title": "he:נבי סמואל",
+  "url": "https://he.wikipedia.org/wiki/%D7%A0%D7%91%D7%99_%D7%A1%D7%9E%D7%95%D7%90%D7%9C",
+  "qid": "Q2907254"
+ },
+ "wiki:he:הר גילה": {
+  "lat": 31.72159,
+  "lon": 35.17226,
+  "title": "he:הר גילה",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%92%D7%99%D7%9C%D7%94",
+  "qid": "Q1120621"
+ },
+ "wiki:he:רמת רחל": {
+  "lat": 31.73981,
+  "lon": 35.21837,
+  "title": "he:רמת רחל",
+  "url": "https://he.wikipedia.org/wiki/%D7%A8%D7%9E%D7%AA_%D7%A8%D7%97%D7%9C",
+  "qid": "Q2130036"
+ },
+ "wiki:he:אמות המים לירושלים": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:ארמון הנציב": {
+  "lat": 31.7545,
+  "lon": 35.2366,
+  "title": "he:ארמון הנציב",
+  "url": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%9E%D7%95%D7%9F_%D7%94%D7%A0%D7%A6%D7%99%D7%91",
+  "qid": "Q12404277"
+ },
+ "wiki:he:הר הזיתים": {
+  "lat": 31.78333,
+  "lon": 35.25083,
+  "title": "he:הר הזיתים",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%94%D7%96%D7%99%D7%AA%D7%99%D7%9D",
+  "qid": "Q205976"
+ },
+ "drive:jerusalem_hills": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;shoresh@31.79718,35.06537;mevaseret@31.79986,35.15143;jerusalem@31.78265,35.21933;sataf@31.7691,35.1273;mesrek@31.79925,35.04563;yad_hashmona@31.80983,35.08965;radar_hill@31.8247,35.13;gvilei_haesh@31.78056,35.06111;nebi_samuel@31.8327,35.1801;har_gilo@31.72159,35.17226;ramat_rachel@31.73981,35.21837;aqueduct@31.7545,35.2366;mount_olives@31.78333,35.25083",
+  "legs": {
+   "tel_aviv>shoresh": {
+    "min": 41,
+    "km": 50.3
+   },
+   "tel_aviv>mevaseret": {
+    "min": 50,
+    "km": 55.8
+   },
+   "tel_aviv>jerusalem": {
+    "min": 55,
+    "km": 63.9
+   },
+   "tel_aviv>sataf": {
+    "min": 58,
+    "km": 60.4
+   },
+   "tel_aviv>mesrek": {
+    "min": 51,
+    "km": 53.1
+   },
+   "tel_aviv>yad_hashmona": {
+    "min": 42,
+    "km": 51.1
+   },
+   "tel_aviv>radar_hill": {
+    "min": 46,
+    "km": 55.6
+   },
+   "tel_aviv>gvilei_haesh": {
+    "min": 50,
+    "km": 54.9
+   },
+   "tel_aviv>nebi_samuel": {
+    "min": 46,
+    "km": 55.5
+   },
+   "tel_aviv>har_gilo": {
+    "min": 64,
+    "km": 71.3
+   },
+   "tel_aviv>ramat_rachel": {
+    "min": 59,
+    "km": 66.6
+   },
+   "tel_aviv>aqueduct": {
+    "min": 61,
+    "km": 67.7
+   },
+   "tel_aviv>mount_olives": {
+    "min": 57,
+    "km": 64.3
+   },
+   "shoresh>tel_aviv": {
+    "min": 42,
+    "km": 51
+   },
+   "shoresh>mevaseret": {
+    "min": 15,
+    "km": 9.6
+   },
+   "shoresh>jerusalem": {
+    "min": 22,
+    "km": 19.4
+   },
+   "shoresh>sataf": {
+    "min": 22,
+    "km": 14.1
+   },
+   "shoresh>mesrek": {
+    "min": 12,
+    "km": 4
+   },
+   "shoresh>yad_hashmona": {
+    "min": 6,
+    "km": 4.9
+   },
+   "shoresh>radar_hill": {
+    "min": 10,
+    "km": 9.3
+   },
+   "shoresh>gvilei_haesh": {
+    "min": 25,
+    "km": 21.8
+   },
+   "shoresh>nebi_samuel": {
+    "min": 21,
+    "km": 19.7
+   },
+   "shoresh>har_gilo": {
+    "min": 28,
+    "km": 25.1
+   },
+   "shoresh>ramat_rachel": {
+    "min": 23,
+    "km": 20.4
+   },
+   "shoresh>aqueduct": {
+    "min": 26,
+    "km": 21.4
+   },
+   "shoresh>mount_olives": {
+    "min": 24,
+    "km": 23.9
+   },
+   "mevaseret>tel_aviv": {
+    "min": 50,
+    "km": 56.4
+   },
+   "mevaseret>shoresh": {
+    "min": 14,
+    "km": 9.9
+   },
+   "mevaseret>jerusalem": {
+    "min": 20,
+    "km": 12
+   },
+   "mevaseret>sataf": {
+    "min": 19,
+    "km": 6.4
+   },
+   "mevaseret>mesrek": {
+    "min": 24,
+    "km": 12.7
+   },
+   "mevaseret>yad_hashmona": {
+    "min": 13,
+    "km": 7.7
+   },
+   "mevaseret>radar_hill": {
+    "min": 14,
+    "km": 8.6
+   },
+   "mevaseret>gvilei_haesh": {
+    "min": 25,
+    "km": 15
+   },
+   "mevaseret>nebi_samuel": {
+    "min": 20,
+    "km": 12.3
+   },
+   "mevaseret>har_gilo": {
+    "min": 27,
+    "km": 17.7
+   },
+   "mevaseret>ramat_rachel": {
+    "min": 22,
+    "km": 13
+   },
+   "mevaseret>aqueduct": {
+    "min": 24,
+    "km": 14
+   },
+   "mevaseret>mount_olives": {
+    "min": 23,
+    "km": 16.5
+   },
+   "jerusalem>tel_aviv": {
+    "min": 57,
+    "km": 64.3
+   },
+   "jerusalem>shoresh": {
+    "min": 21,
+    "km": 17.8
+   },
+   "jerusalem>mevaseret": {
+    "min": 20,
+    "km": 11.6
+   },
+   "jerusalem>sataf": {
+    "min": 27,
+    "km": 16.2
+   },
+   "jerusalem>mesrek": {
+    "min": 31,
+    "km": 20.6
+   },
+   "jerusalem>yad_hashmona": {
+    "min": 19,
+    "km": 15.5
+   },
+   "jerusalem>radar_hill": {
+    "min": 20,
+    "km": 16.5
+   },
+   "jerusalem>gvilei_haesh": {
+    "min": 33,
+    "km": 24.7
+   },
+   "jerusalem>nebi_samuel": {
+    "min": 14,
+    "km": 9.2
+   },
+   "jerusalem>har_gilo": {
+    "min": 21,
+    "km": 13.1
+   },
+   "jerusalem>ramat_rachel": {
+    "min": 11,
+    "km": 6.9
+   },
+   "jerusalem>aqueduct": {
+    "min": 9,
+    "km": 5.6
+   },
+   "jerusalem>mount_olives": {
+    "min": 7,
+    "km": 3.8
+   },
+   "sataf>tel_aviv": {
+    "min": 58,
+    "km": 61.3
+   },
+   "sataf>shoresh": {
+    "min": 22,
+    "km": 14.8
+   },
+   "sataf>mevaseret": {
+    "min": 18,
+    "km": 6.1
+   },
+   "sataf>jerusalem": {
+    "min": 27,
+    "km": 16
+   },
+   "sataf>mesrek": {
+    "min": 32,
+    "km": 17.6
+   },
+   "sataf>yad_hashmona": {
+    "min": 21,
+    "km": 12.6
+   },
+   "sataf>radar_hill": {
+    "min": 22,
+    "km": 13.5
+   },
+   "sataf>gvilei_haesh": {
+    "min": 24,
+    "km": 13.1
+   },
+   "sataf>nebi_samuel": {
+    "min": 26,
+    "km": 16.4
+   },
+   "sataf>har_gilo": {
+    "min": 33,
+    "km": 21.7
+   },
+   "sataf>ramat_rachel": {
+    "min": 28,
+    "km": 15.4
+   },
+   "sataf>aqueduct": {
+    "min": 30,
+    "km": 16.5
+   },
+   "sataf>mount_olives": {
+    "min": 29,
+    "km": 20.5
+   },
+   "mesrek>tel_aviv": {
+    "min": 52,
+    "km": 53.8
+   },
+   "mesrek>shoresh": {
+    "min": 12,
+    "km": 4.1
+   },
+   "mesrek>mevaseret": {
+    "min": 25,
+    "km": 12.4
+   },
+   "mesrek>jerusalem": {
+    "min": 32,
+    "km": 22.2
+   },
+   "mesrek>sataf": {
+    "min": 32,
+    "km": 16.9
+   },
+   "mesrek>yad_hashmona": {
+    "min": 17,
+    "km": 7.7
+   },
+   "mesrek>radar_hill": {
+    "min": 20,
+    "km": 12.1
+   },
+   "mesrek>gvilei_haesh": {
+    "min": 35,
+    "km": 24.6
+   },
+   "mesrek>nebi_samuel": {
+    "min": 31,
+    "km": 22.5
+   },
+   "mesrek>har_gilo": {
+    "min": 38,
+    "km": 27.9
+   },
+   "mesrek>ramat_rachel": {
+    "min": 34,
+    "km": 23.2
+   },
+   "mesrek>aqueduct": {
+    "min": 36,
+    "km": 24.2
+   },
+   "mesrek>mount_olives": {
+    "min": 34,
+    "km": 26.7
+   },
+   "yad_hashmona>tel_aviv": {
+    "min": 43,
+    "km": 51.4
+   },
+   "yad_hashmona>shoresh": {
+    "min": 7,
+    "km": 4.9
+   },
+   "yad_hashmona>mevaseret": {
+    "min": 14,
+    "km": 8.3
+   },
+   "yad_hashmona>jerusalem": {
+    "min": 21,
+    "km": 18.1
+   },
+   "yad_hashmona>sataf": {
+    "min": 21,
+    "km": 12.8
+   },
+   "yad_hashmona>mesrek": {
+    "min": 17,
+    "km": 7.7
+   },
+   "yad_hashmona>radar_hill": {
+    "min": 7,
+    "km": 6.4
+   },
+   "yad_hashmona>gvilei_haesh": {
+    "min": 26,
+    "km": 22.3
+   },
+   "yad_hashmona>nebi_samuel": {
+    "min": 20,
+    "km": 18.4
+   },
+   "yad_hashmona>har_gilo": {
+    "min": 27,
+    "km": 23.7
+   },
+   "yad_hashmona>ramat_rachel": {
+    "min": 22,
+    "km": 19
+   },
+   "yad_hashmona>aqueduct": {
+    "min": 25,
+    "km": 20.1
+   },
+   "yad_hashmona>mount_olives": {
+    "min": 23,
+    "km": 22.6
+   },
+   "radar_hill>tel_aviv": {
+    "min": 47,
+    "km": 55.6
+   },
+   "radar_hill>shoresh": {
+    "min": 11,
+    "km": 9.1
+   },
+   "radar_hill>mevaseret": {
+    "min": 15,
+    "km": 8.6
+   },
+   "radar_hill>jerusalem": {
+    "min": 23,
+    "km": 18.4
+   },
+   "radar_hill>sataf": {
+    "min": 23,
+    "km": 13.2
+   },
+   "radar_hill>mesrek": {
+    "min": 21,
+    "km": 11.9
+   },
+   "radar_hill>yad_hashmona": {
+    "min": 8,
+    "km": 6
+   },
+   "radar_hill>gvilei_haesh": {
+    "min": 28,
+    "km": 17
+   },
+   "radar_hill>nebi_samuel": {
+    "min": 22,
+    "km": 18.7
+   },
+   "radar_hill>har_gilo": {
+    "min": 29,
+    "km": 24.1
+   },
+   "radar_hill>ramat_rachel": {
+    "min": 24,
+    "km": 19.4
+   },
+   "radar_hill>aqueduct": {
+    "min": 26,
+    "km": 20.5
+   },
+   "radar_hill>mount_olives": {
+    "min": 25,
+    "km": 22.9
+   },
+   "gvilei_haesh>tel_aviv": {
+    "min": 50,
+    "km": 54.1
+   },
+   "gvilei_haesh>shoresh": {
+    "min": 23,
+    "km": 18.5
+   },
+   "gvilei_haesh>mevaseret": {
+    "min": 24,
+    "km": 14.7
+   },
+   "gvilei_haesh>jerusalem": {
+    "min": 33,
+    "km": 24.6
+   },
+   "gvilei_haesh>sataf": {
+    "min": 24,
+    "km": 13
+   },
+   "gvilei_haesh>mesrek": {
+    "min": 33,
+    "km": 21.3
+   },
+   "gvilei_haesh>yad_hashmona": {
+    "min": 24,
+    "km": 19.4
+   },
+   "gvilei_haesh>radar_hill": {
+    "min": 27,
+    "km": 23.8
+   },
+   "gvilei_haesh>nebi_samuel": {
+    "min": 32,
+    "km": 25
+   },
+   "gvilei_haesh>har_gilo": {
+    "min": 39,
+    "km": 30.3
+   },
+   "gvilei_haesh>ramat_rachel": {
+    "min": 34,
+    "km": 24
+   },
+   "gvilei_haesh>aqueduct": {
+    "min": 36,
+    "km": 25.1
+   },
+   "gvilei_haesh>mount_olives": {
+    "min": 35,
+    "km": 29.1
+   },
+   "nebi_samuel>tel_aviv": {
+    "min": 48,
+    "km": 56.1
+   },
+   "nebi_samuel>shoresh": {
+    "min": 20,
+    "km": 19.4
+   },
+   "nebi_samuel>mevaseret": {
+    "min": 19,
+    "km": 13.2
+   },
+   "nebi_samuel>jerusalem": {
+    "min": 14,
+    "km": 8.7
+   },
+   "nebi_samuel>sataf": {
+    "min": 27,
+    "km": 17.8
+   },
+   "nebi_samuel>mesrek": {
+    "min": 30,
+    "km": 22.1
+   },
+   "nebi_samuel>yad_hashmona": {
+    "min": 19,
+    "km": 17.1
+   },
+   "nebi_samuel>radar_hill": {
+    "min": 20,
+    "km": 18
+   },
+   "nebi_samuel>gvilei_haesh": {
+    "min": 33,
+    "km": 26.3
+   },
+   "nebi_samuel>har_gilo": {
+    "min": 26,
+    "km": 19.8
+   },
+   "nebi_samuel>ramat_rachel": {
+    "min": 21,
+    "km": 15.2
+   },
+   "nebi_samuel>aqueduct": {
+    "min": 20,
+    "km": 12.8
+   },
+   "nebi_samuel>mount_olives": {
+    "min": 16,
+    "km": 13.2
+   },
+   "har_gilo>tel_aviv": {
+    "min": 63,
+    "km": 73.8
+   },
+   "har_gilo>shoresh": {
+    "min": 27,
+    "km": 27.3
+   },
+   "har_gilo>mevaseret": {
+    "min": 26,
+    "km": 21.1
+   },
+   "har_gilo>jerusalem": {
+    "min": 20,
+    "km": 17.2
+   },
+   "har_gilo>sataf": {
+    "min": 33,
+    "km": 23.7
+   },
+   "har_gilo>mesrek": {
+    "min": 37,
+    "km": 30.1
+   },
+   "har_gilo>yad_hashmona": {
+    "min": 26,
+    "km": 25.1
+   },
+   "har_gilo>radar_hill": {
+    "min": 27,
+    "km": 26
+   },
+   "har_gilo>gvilei_haesh": {
+    "min": 39,
+    "km": 32.2
+   },
+   "har_gilo>nebi_samuel": {
+    "min": 24,
+    "km": 21.7
+   },
+   "har_gilo>ramat_rachel": {
+    "min": 13,
+    "km": 10.6
+   },
+   "har_gilo>aqueduct": {
+    "min": 16,
+    "km": 12.2
+   },
+   "har_gilo>mount_olives": {
+    "min": 24,
+    "km": 16.9
+   },
+   "ramat_rachel>tel_aviv": {
+    "min": 60,
+    "km": 67.3
+   },
+   "ramat_rachel>shoresh": {
+    "min": 24,
+    "km": 20.8
+   },
+   "ramat_rachel>mevaseret": {
+    "min": 23,
+    "km": 14.6
+   },
+   "ramat_rachel>jerusalem": {
+    "min": 11,
+    "km": 6.8
+   },
+   "ramat_rachel>sataf": {
+    "min": 29,
+    "km": 15.5
+   },
+   "ramat_rachel>mesrek": {
+    "min": 34,
+    "km": 23.6
+   },
+   "ramat_rachel>yad_hashmona": {
+    "min": 23,
+    "km": 18.6
+   },
+   "ramat_rachel>radar_hill": {
+    "min": 23,
+    "km": 19.5
+   },
+   "ramat_rachel>gvilei_haesh": {
+    "min": 35,
+    "km": 24.1
+   },
+   "ramat_rachel>nebi_samuel": {
+    "min": 21,
+    "km": 15.2
+   },
+   "ramat_rachel>har_gilo": {
+    "min": 15,
+    "km": 8.6
+   },
+   "ramat_rachel>aqueduct": {
+    "min": 7,
+    "km": 3.6
+   },
+   "ramat_rachel>mount_olives": {
+    "min": 15,
+    "km": 8.7
+   },
+   "aqueduct>tel_aviv": {
+    "min": 61,
+    "km": 67.8
+   },
+   "aqueduct>shoresh": {
+    "min": 25,
+    "km": 21.3
+   },
+   "aqueduct>mevaseret": {
+    "min": 24,
+    "km": 15.1
+   },
+   "aqueduct>jerusalem": {
+    "min": 9,
+    "km": 5.4
+   },
+   "aqueduct>sataf": {
+    "min": 30,
+    "km": 16
+   },
+   "aqueduct>mesrek": {
+    "min": 35,
+    "km": 24.1
+   },
+   "aqueduct>yad_hashmona": {
+    "min": 23,
+    "km": 19.1
+   },
+   "aqueduct>radar_hill": {
+    "min": 24,
+    "km": 20
+   },
+   "aqueduct>gvilei_haesh": {
+    "min": 36,
+    "km": 24.6
+   },
+   "aqueduct>nebi_samuel": {
+    "min": 20,
+    "km": 12.8
+   },
+   "aqueduct>har_gilo": {
+    "min": 17,
+    "km": 10.2
+   },
+   "aqueduct>ramat_rachel": {
+    "min": 6,
+    "km": 3.5
+   },
+   "aqueduct>mount_olives": {
+    "min": 12,
+    "km": 7.3
+   },
+   "mount_olives>tel_aviv": {
+    "min": 58,
+    "km": 64.9
+   },
+   "mount_olives>shoresh": {
+    "min": 24,
+    "km": 24.1
+   },
+   "mount_olives>mevaseret": {
+    "min": 23,
+    "km": 17.9
+   },
+   "mount_olives>jerusalem": {
+    "min": 8,
+    "km": 4.5
+   },
+   "mount_olives>sataf": {
+    "min": 30,
+    "km": 22.5
+   },
+   "mount_olives>mesrek": {
+    "min": 34,
+    "km": 26.9
+   },
+   "mount_olives>yad_hashmona": {
+    "min": 22,
+    "km": 21.9
+   },
+   "mount_olives>radar_hill": {
+    "min": 23,
+    "km": 22.8
+   },
+   "mount_olives>gvilei_haesh": {
+    "min": 36,
+    "km": 31
+   },
+   "mount_olives>nebi_samuel": {
+    "min": 15,
+    "km": 12.9
+   },
+   "mount_olives>har_gilo": {
+    "min": 24,
+    "km": 14.7
+   },
+   "mount_olives>ramat_rachel": {
+    "min": 14,
+    "km": 8.5
+   },
+   "mount_olives>aqueduct": {
+    "min": 12,
+    "km": 7.2
+   }
+  }
+ },
+ "wiki:he:אריאל": {
+  "lat": 32.10514,
+  "lon": 35.18993,
+  "title": "he:אריאל",
+  "url": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%90%D7%9C",
+  "qid": "Q169310"
+ },
+ "wiki:he:סוסיא (אתר ארכאולוגי)": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Susya": {
+  "lat": 31.39194,
+  "lon": 35.11222,
+  "title": "en:Susya",
+  "url": "https://en.wikipedia.org/wiki/Susya",
+  "qid": "Q248002"
+ },
+ "wiki:he:הרודיון": {
+  "lat": 31.66583,
+  "lon": 35.24139,
+  "title": "he:הרודיון",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%95%D7%93%D7%99%D7%95%D7%9F",
+  "qid": "Q913099"
+ },
+ "wiki:he:קריית ארבע": {
+  "lat": 31.53542,
+  "lon": 35.1181,
+  "title": "he:קריית ארבע",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%99%D7%99%D7%AA_%D7%90%D7%A8%D7%91%D7%A2",
+  "qid": "Q247003"
+ },
+ "wiki:he:מעלה לבונה": {
+  "lat": 32.0549,
+  "lon": 35.24045,
+  "title": "he:מעלה לבונה",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%9C%D7%94_%D7%9C%D7%91%D7%95%D7%A0%D7%94",
+  "qid": "Q2777920"
+ },
+ "wiki:he:שילה (עיר מקראית)": {
+  "lat": 32.0557,
+  "lon": 35.28954,
+  "title": "he:שילה (יישוב מקראי)",
+  "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%9C%D7%94_(%D7%99%D7%99%D7%A9%D7%95%D7%91_%D7%9E%D7%A7%D7%A8%D7%90%D7%99)",
+  "qid": "Q985542"
+ },
+ "wiki:he:הר גריזים": {
+  "lat": 32.20714,
+  "lon": 35.26568,
+  "title": "he:הר גריזים",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%92%D7%A8%D7%99%D7%96%D7%99%D7%9D",
+  "qid": "Q1288751"
+ },
+ "wiki:he:אלון מורה": {
+  "lat": 32.23268,
+  "lon": 35.33494,
+  "title": "he:אלון מורה",
+  "url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%95%D7%9F_%D7%9E%D7%95%D7%A8%D7%94",
+  "qid": "Q2890437"
+ },
+ "drive:judea_samaria": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;jerusalem@31.78265,35.21933;ariel@32.10514,35.18993;susya@31.39194,35.11222;herodium@31.66583,35.24139;machpela@31.52463,35.1107;hebron_settlement@31.53542,35.1181;maale_levona@32.0549,35.24045;shiloh@32.0557,35.28954;gerizim@32.20714,35.26568;har_kabir@32.23268,35.33494",
+  "legs": {
+   "tel_aviv>jerusalem": {
+    "min": 55,
+    "km": 63.9
+   },
+   "tel_aviv>ariel": {
+    "min": 43,
+    "km": 45.5
+   },
+   "tel_aviv>susya": {
+    "min": 100,
+    "km": 126.2
+   },
+   "tel_aviv>herodium": {
+    "min": 70,
+    "km": 78.2
+   },
+   "tel_aviv>machpela": {
+    "min": 81,
+    "km": 97.7
+   },
+   "tel_aviv>hebron_settlement": {
+    "min": 83,
+    "km": 98.4
+   },
+   "tel_aviv>maale_levona": {
+    "min": 61,
+    "km": 61.6
+   },
+   "tel_aviv>shiloh": {
+    "min": 64,
+    "km": 63.4
+   },
+   "tel_aviv>gerizim": {
+    "min": 67,
+    "km": 59.7
+   },
+   "tel_aviv>har_kabir": {
+    "min": 72,
+    "km": 68.5
+   },
+   "jerusalem>tel_aviv": {
+    "min": 57,
+    "km": 64.3
+   },
+   "jerusalem>ariel": {
+    "min": 59,
+    "km": 57.4
+   },
+   "jerusalem>susya": {
+    "min": 63,
+    "km": 63.7
+   },
+   "jerusalem>herodium": {
+    "min": 25,
+    "km": 19.1
+   },
+   "jerusalem>machpela": {
+    "min": 41,
+    "km": 40.6
+   },
+   "jerusalem>hebron_settlement": {
+    "min": 43,
+    "km": 41.6
+   },
+   "jerusalem>maale_levona": {
+    "min": 42,
+    "km": 42.2
+   },
+   "jerusalem>shiloh": {
+    "min": 41,
+    "km": 40.4
+   },
+   "jerusalem>gerizim": {
+    "min": 85,
+    "km": 67.1
+   },
+   "jerusalem>har_kabir": {
+    "min": 77,
+    "km": 69.7
+   },
+   "ariel>tel_aviv": {
+    "min": 43,
+    "km": 45.3
+   },
+   "ariel>jerusalem": {
+    "min": 58,
+    "km": 58.1
+   },
+   "ariel>susya": {
+    "min": 113,
+    "km": 119.2
+   },
+   "ariel>herodium": {
+    "min": 78,
+    "km": 74.4
+   },
+   "ariel>machpela": {
+    "min": 91,
+    "km": 96.1
+   },
+   "ariel>hebron_settlement": {
+    "min": 93,
+    "km": 97.2
+   },
+   "ariel>maale_levona": {
+    "min": 22,
+    "km": 17.2
+   },
+   "ariel>shiloh": {
+    "min": 24,
+    "km": 18.9
+   },
+   "ariel>gerizim": {
+    "min": 44,
+    "km": 23.6
+   },
+   "ariel>har_kabir": {
+    "min": 37,
+    "km": 26.1
+   },
+   "susya>tel_aviv": {
+    "min": 99,
+    "km": 125.9
+   },
+   "susya>jerusalem": {
+    "min": 62,
+    "km": 63.8
+   },
+   "susya>ariel": {
+    "min": 112,
+    "km": 119.7
+   },
+   "susya>herodium": {
+    "min": 53,
+    "km": 50
+   },
+   "susya>machpela": {
+    "min": 27,
+    "km": 26.8
+   },
+   "susya>hebron_settlement": {
+    "min": 28,
+    "km": 26
+   },
+   "susya>maale_levona": {
+    "min": 96,
+    "km": 104.4
+   },
+   "susya>shiloh": {
+    "min": 94,
+    "km": 102.7
+   },
+   "susya>gerizim": {
+    "min": 138,
+    "km": 129.3
+   },
+   "susya>har_kabir": {
+    "min": 130,
+    "km": 131.9
+   },
+   "herodium>tel_aviv": {
+    "min": 72,
+    "km": 79.1
+   },
+   "herodium>jerusalem": {
+    "min": 25,
+    "km": 18.5
+   },
+   "herodium>ariel": {
+    "min": 78,
+    "km": 73.3
+   },
+   "herodium>susya": {
+    "min": 54,
+    "km": 49.9
+   },
+   "herodium>machpela": {
+    "min": 31,
+    "km": 26.8
+   },
+   "herodium>hebron_settlement": {
+    "min": 33,
+    "km": 27.8
+   },
+   "herodium>maale_levona": {
+    "min": 62,
+    "km": 58
+   },
+   "herodium>shiloh": {
+    "min": 60,
+    "km": 56.3
+   },
+   "herodium>gerizim": {
+    "min": 104,
+    "km": 83
+   },
+   "herodium>har_kabir": {
+    "min": 96,
+    "km": 85.5
+   },
+   "machpela>tel_aviv": {
+    "min": 82,
+    "km": 97.9
+   },
+   "machpela>jerusalem": {
+    "min": 40,
+    "km": 40.6
+   },
+   "machpela>ariel": {
+    "min": 91,
+    "km": 96.5
+   },
+   "machpela>susya": {
+    "min": 27,
+    "km": 26.8
+   },
+   "machpela>herodium": {
+    "min": 31,
+    "km": 26.9
+   },
+   "machpela>hebron_settlement": {
+    "min": 4,
+    "km": 2
+   },
+   "machpela>maale_levona": {
+    "min": 74,
+    "km": 81.3
+   },
+   "machpela>shiloh": {
+    "min": 72,
+    "km": 79.5
+   },
+   "machpela>gerizim": {
+    "min": 116,
+    "km": 106.2
+   },
+   "machpela>har_kabir": {
+    "min": 109,
+    "km": 108.7
+   },
+   "hebron_settlement>tel_aviv": {
+    "min": 84,
+    "km": 98.6
+   },
+   "hebron_settlement>jerusalem": {
+    "min": 42,
+    "km": 41.8
+   },
+   "hebron_settlement>ariel": {
+    "min": 92,
+    "km": 97.7
+   },
+   "hebron_settlement>susya": {
+    "min": 28,
+    "km": 26.1
+   },
+   "hebron_settlement>herodium": {
+    "min": 33,
+    "km": 28.1
+   },
+   "hebron_settlement>machpela": {
+    "min": 4,
+    "km": 2
+   },
+   "hebron_settlement>maale_levona": {
+    "min": 76,
+    "km": 82.5
+   },
+   "hebron_settlement>shiloh": {
+    "min": 74,
+    "km": 80.7
+   },
+   "hebron_settlement>gerizim": {
+    "min": 118,
+    "km": 107.4
+   },
+   "hebron_settlement>har_kabir": {
+    "min": 110,
+    "km": 109.9
+   },
+   "maale_levona>tel_aviv": {
+    "min": 61,
+    "km": 61
+   },
+   "maale_levona>jerusalem": {
+    "min": 42,
+    "km": 43.3
+   },
+   "maale_levona>ariel": {
+    "min": 22,
+    "km": 17.6
+   },
+   "maale_levona>susya": {
+    "min": 97,
+    "km": 104.4
+   },
+   "maale_levona>herodium": {
+    "min": 62,
+    "km": 59.6
+   },
+   "maale_levona>machpela": {
+    "min": 75,
+    "km": 81.3
+   },
+   "maale_levona>hebron_settlement": {
+    "min": 77,
+    "km": 82.3
+   },
+   "maale_levona>shiloh": {
+    "min": 12,
+    "km": 8.5
+   },
+   "maale_levona>gerizim": {
+    "min": 48,
+    "km": 27.3
+   },
+   "maale_levona>har_kabir": {
+    "min": 40,
+    "km": 29.8
+   },
+   "shiloh>tel_aviv": {
+    "min": 63,
+    "km": 62.6
+   },
+   "shiloh>jerusalem": {
+    "min": 41,
+    "km": 41.5
+   },
+   "shiloh>ariel": {
+    "min": 24,
+    "km": 19.3
+   },
+   "shiloh>susya": {
+    "min": 95,
+    "km": 102.6
+   },
+   "shiloh>herodium": {
+    "min": 61,
+    "km": 57.9
+   },
+   "shiloh>machpela": {
+    "min": 73,
+    "km": 79.5
+   },
+   "shiloh>hebron_settlement": {
+    "min": 75,
+    "km": 80.6
+   },
+   "shiloh>maale_levona": {
+    "min": 12,
+    "km": 8.5
+   },
+   "shiloh>gerizim": {
+    "min": 50,
+    "km": 28.9
+   },
+   "shiloh>har_kabir": {
+    "min": 42,
+    "km": 31.5
+   },
+   "gerizim>tel_aviv": {
+    "min": 66,
+    "km": 59.3
+   },
+   "gerizim>jerusalem": {
+    "min": 85,
+    "km": 68.4
+   },
+   "gerizim>ariel": {
+    "min": 45,
+    "km": 24.1
+   },
+   "gerizim>susya": {
+    "min": 139,
+    "km": 129.5
+   },
+   "gerizim>herodium": {
+    "min": 105,
+    "km": 84.7
+   },
+   "gerizim>machpela": {
+    "min": 117,
+    "km": 106.4
+   },
+   "gerizim>hebron_settlement": {
+    "min": 119,
+    "km": 107.4
+   },
+   "gerizim>maale_levona": {
+    "min": 48,
+    "km": 27.4
+   },
+   "gerizim>shiloh": {
+    "min": 50,
+    "km": 29.2
+   },
+   "gerizim>har_kabir": {
+    "min": 38,
+    "km": 12.9
+   },
+   "har_kabir>tel_aviv": {
+    "min": 72,
+    "km": 67.9
+   },
+   "har_kabir>jerusalem": {
+    "min": 77,
+    "km": 71
+   },
+   "har_kabir>ariel": {
+    "min": 37,
+    "km": 26.8
+   },
+   "har_kabir>susya": {
+    "min": 132,
+    "km": 132.1
+   },
+   "har_kabir>herodium": {
+    "min": 97,
+    "km": 87.4
+   },
+   "har_kabir>machpela": {
+    "min": 110,
+    "km": 109
+   },
+   "har_kabir>hebron_settlement": {
+    "min": 111,
+    "km": 110.1
+   },
+   "har_kabir>maale_levona": {
+    "min": 40,
+    "km": 30.1
+   },
+   "har_kabir>shiloh": {
+    "min": 43,
+    "km": 31.8
+   },
+   "har_kabir>gerizim": {
+    "min": 38,
+    "km": 14.1
+   }
+  }
+ },
+ "wiki:he:עין גדי": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:עין בוקק": {
+  "lat": 31.2,
+  "lon": 35.36389,
+  "title": "he:עין בוקק",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%9F_%D7%91%D7%95%D7%A7%D7%A7",
+  "qid": "Q679158"
+ },
+ "wiki:he:נבי מוסא": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Nabi Musa": {
+  "lat": 31.78639,
+  "lon": 35.43111,
+  "title": "en:Nabi Musa",
+  "url": "https://en.wikipedia.org/wiki/Nabi_Musa",
+  "qid": "Q2909131"
+ },
+ "wiki:he:קומראן": {
+  "lat": 31.7419,
+  "lon": 35.45994,
+  "title": "he:קומראן",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%9E%D7%A8%D7%90%D7%9F",
+  "qid": "Q223399"
+ },
+ "wiki:he:נחל דוד": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Ein Gedi": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:ים המלח": {
+  "lat": 31.5,
+  "lon": 35.5,
+  "title": "he:ים המלח",
+  "url": "https://he.wikipedia.org/wiki/%D7%99%D7%9D_%D7%94%D7%9E%D7%9C%D7%97",
+  "qid": "Q23883"
+ },
+ "wiki:he:הר סדום": {
+  "lat": 31.07194,
+  "lon": 35.39694,
+  "title": "he:הר סדום",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A1%D7%93%D7%95%D7%9D",
+  "qid": "Q2670801"
+ },
+ "drive:judean_desert": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;jerusalem@31.78265,35.21933;ein_gedi@31.45253,35.38477;ein_bokek@31.2,35.36389;nabi_musa@31.78639,35.43111;qumran@31.7419,35.45994;lido@31.83709,35.5465;nahal_david@31.46667,35.39444;ein_gedi_synagogue@31.46147,35.3925;dead_sea@31.5,35.5;har_sedom@31.07194,35.39694",
+  "legs": {
+   "tel_aviv>jerusalem": {
+    "min": 55,
+    "km": 63.9
+   },
+   "tel_aviv>ein_gedi": {
+    "min": 119,
+    "km": 131.8
+   },
+   "tel_aviv>ein_bokek": {
+    "min": 128,
+    "km": 163.1
+   },
+   "tel_aviv>nabi_musa": {
+    "min": 71,
+    "km": 80.9
+   },
+   "tel_aviv>qumran": {
+    "min": 84,
+    "km": 95
+   },
+   "tel_aviv>lido": {
+    "min": 87,
+    "km": 94.6
+   },
+   "tel_aviv>nahal_david": {
+    "min": 114,
+    "km": 128.2
+   },
+   "tel_aviv>ein_gedi_synagogue": {
+    "min": 115,
+    "km": 128.6
+   },
+   "tel_aviv>dead_sea": {
+    "min": 127,
+    "km": 145
+   },
+   "tel_aviv>har_sedom": {
+    "min": 132,
+    "km": 166
+   },
+   "jerusalem>tel_aviv": {
+    "min": 57,
+    "km": 64.3
+   },
+   "jerusalem>ein_gedi": {
+    "min": 77,
+    "km": 78.1
+   },
+   "jerusalem>ein_bokek": {
+    "min": 103,
+    "km": 106.9
+   },
+   "jerusalem>nabi_musa": {
+    "min": 28,
+    "km": 27.2
+   },
+   "jerusalem>qumran": {
+    "min": 41,
+    "km": 41.2
+   },
+   "jerusalem>lido": {
+    "min": 44,
+    "km": 40.9
+   },
+   "jerusalem>nahal_david": {
+    "min": 72,
+    "km": 74.4
+   },
+   "jerusalem>ein_gedi_synagogue": {
+    "min": 72,
+    "km": 74.9
+   },
+   "jerusalem>dead_sea": {
+    "min": 85,
+    "km": 91.3
+   },
+   "jerusalem>har_sedom": {
+    "min": 116,
+    "km": 124.8
+   },
+   "ein_gedi>tel_aviv": {
+    "min": 121,
+    "km": 132.4
+   },
+   "ein_gedi>jerusalem": {
+    "min": 78,
+    "km": 77.8
+   },
+   "ein_gedi>ein_bokek": {
+    "min": 31,
+    "km": 31.5
+   },
+   "ein_gedi>nabi_musa": {
+    "min": 54,
+    "km": 54.2
+   },
+   "ein_gedi>qumran": {
+    "min": 38,
+    "km": 37.8
+   },
+   "ein_gedi>lido": {
+    "min": 58,
+    "km": 55.6
+   },
+   "ein_gedi>nahal_david": {
+    "min": 6,
+    "km": 4
+   },
+   "ein_gedi>ein_gedi_synagogue": {
+    "min": 5,
+    "km": 3.3
+   },
+   "ein_gedi>dead_sea": {
+    "min": 99,
+    "km": 106
+   },
+   "ein_gedi>har_sedom": {
+    "min": 46,
+    "km": 48.7
+   },
+   "ein_bokek>tel_aviv": {
+    "min": 129,
+    "km": 161.9
+   },
+   "ein_bokek>jerusalem": {
+    "min": 105,
+    "km": 106.9
+   },
+   "ein_bokek>ein_gedi": {
+    "min": 31,
+    "km": 31.8
+   },
+   "ein_bokek>nabi_musa": {
+    "min": 81,
+    "km": 83.3
+   },
+   "ein_bokek>qumran": {
+    "min": 65,
+    "km": 66.8
+   },
+   "ein_bokek>lido": {
+    "min": 85,
+    "km": 84.7
+   },
+   "ein_bokek>nahal_david": {
+    "min": 33,
+    "km": 33.1
+   },
+   "ein_bokek>ein_gedi_synagogue": {
+    "min": 32,
+    "km": 32.3
+   },
+   "ein_bokek>dead_sea": {
+    "min": 126,
+    "km": 135
+   },
+   "ein_bokek>har_sedom": {
+    "min": 18,
+    "km": 17.8
+   },
+   "nabi_musa>tel_aviv": {
+    "min": 72,
+    "km": 81.4
+   },
+   "nabi_musa>jerusalem": {
+    "min": 29,
+    "km": 26.8
+   },
+   "nabi_musa>ein_gedi": {
+    "min": 54,
+    "km": 54
+   },
+   "nabi_musa>ein_bokek": {
+    "min": 80,
+    "km": 82.8
+   },
+   "nabi_musa>qumran": {
+    "min": 18,
+    "km": 17.2
+   },
+   "nabi_musa>lido": {
+    "min": 21,
+    "km": 16.8
+   },
+   "nabi_musa>nahal_david": {
+    "min": 49,
+    "km": 50.4
+   },
+   "nabi_musa>ein_gedi_synagogue": {
+    "min": 49,
+    "km": 50.8
+   },
+   "nabi_musa>dead_sea": {
+    "min": 62,
+    "km": 67.2
+   },
+   "nabi_musa>har_sedom": {
+    "min": 95,
+    "km": 100
+   },
+   "qumran>tel_aviv": {
+    "min": 85,
+    "km": 95.5
+   },
+   "qumran>jerusalem": {
+    "min": 42,
+    "km": 40.9
+   },
+   "qumran>ein_gedi": {
+    "min": 38,
+    "km": 37.7
+   },
+   "qumran>ein_bokek": {
+    "min": 65,
+    "km": 66.5
+   },
+   "qumran>nabi_musa": {
+    "min": 18,
+    "km": 17.3
+   },
+   "qumran>lido": {
+    "min": 23,
+    "km": 18.7
+   },
+   "qumran>nahal_david": {
+    "min": 33,
+    "km": 34
+   },
+   "qumran>ein_gedi_synagogue": {
+    "min": 34,
+    "km": 34.5
+   },
+   "qumran>dead_sea": {
+    "min": 63,
+    "km": 69
+   },
+   "qumran>har_sedom": {
+    "min": 80,
+    "km": 83.7
+   },
+   "lido>tel_aviv": {
+    "min": 88,
+    "km": 95
+   },
+   "lido>jerusalem": {
+    "min": 45,
+    "km": 40.4
+   },
+   "lido>ein_gedi": {
+    "min": 58,
+    "km": 55.5
+   },
+   "lido>ein_bokek": {
+    "min": 85,
+    "km": 84.3
+   },
+   "lido>nabi_musa": {
+    "min": 21,
+    "km": 16.8
+   },
+   "lido>qumran": {
+    "min": 23,
+    "km": 18.6
+   },
+   "lido>nahal_david": {
+    "min": 53,
+    "km": 51.8
+   },
+   "lido>ein_gedi_synagogue": {
+    "min": 54,
+    "km": 52.3
+   },
+   "lido>dead_sea": {
+    "min": 56,
+    "km": 56.9
+   },
+   "lido>har_sedom": {
+    "min": 100,
+    "km": 101.5
+   },
+   "nahal_david>tel_aviv": {
+    "min": 116,
+    "km": 128.7
+   },
+   "nahal_david>jerusalem": {
+    "min": 73,
+    "km": 74.1
+   },
+   "nahal_david>ein_gedi": {
+    "min": 6,
+    "km": 4
+   },
+   "nahal_david>ein_bokek": {
+    "min": 32,
+    "km": 32.7
+   },
+   "nahal_david>nabi_musa": {
+    "min": 49,
+    "km": 50.5
+   },
+   "nahal_david>qumran": {
+    "min": 33,
+    "km": 34.1
+   },
+   "nahal_david>lido": {
+    "min": 53,
+    "km": 51.9
+   },
+   "nahal_david>ein_gedi_synagogue": {
+    "min": 1,
+    "km": 0.7
+   },
+   "nahal_david>dead_sea": {
+    "min": 94,
+    "km": 102.3
+   },
+   "nahal_david>har_sedom": {
+    "min": 48,
+    "km": 49.9
+   },
+   "ein_gedi_synagogue>tel_aviv": {
+    "min": 116,
+    "km": 129.2
+   },
+   "ein_gedi_synagogue>jerusalem": {
+    "min": 73,
+    "km": 74.6
+   },
+   "ein_gedi_synagogue>ein_gedi": {
+    "min": 5,
+    "km": 3.2
+   },
+   "ein_gedi_synagogue>ein_bokek": {
+    "min": 31,
+    "km": 32
+   },
+   "ein_gedi_synagogue>nabi_musa": {
+    "min": 49,
+    "km": 51
+   },
+   "ein_gedi_synagogue>qumran": {
+    "min": 34,
+    "km": 34.5
+   },
+   "ein_gedi_synagogue>lido": {
+    "min": 54,
+    "km": 52.3
+   },
+   "ein_gedi_synagogue>nahal_david": {
+    "min": 1,
+    "km": 0.8
+   },
+   "ein_gedi_synagogue>dead_sea": {
+    "min": 94,
+    "km": 102.7
+   },
+   "ein_gedi_synagogue>har_sedom": {
+    "min": 46,
+    "km": 49.2
+   },
+   "dead_sea>tel_aviv": {
+    "min": 143,
+    "km": 154.5
+   },
+   "dead_sea>jerusalem": {
+    "min": 100,
+    "km": 99.9
+   },
+   "dead_sea>ein_gedi": {
+    "min": 114,
+    "km": 115
+   },
+   "dead_sea>ein_bokek": {
+    "min": 140,
+    "km": 143.7
+   },
+   "dead_sea>nabi_musa": {
+    "min": 76,
+    "km": 76.3
+   },
+   "dead_sea>qumran": {
+    "min": 78,
+    "km": 78.1
+   },
+   "dead_sea>lido": {
+    "min": 71,
+    "km": 66
+   },
+   "dead_sea>nahal_david": {
+    "min": 109,
+    "km": 111.3
+   },
+   "dead_sea>ein_gedi_synagogue": {
+    "min": 109,
+    "km": 111.7
+   },
+   "dead_sea>har_sedom": {
+    "min": 155,
+    "km": 160.9
+   },
+   "har_sedom>tel_aviv": {
+    "min": 132,
+    "km": 165.8
+   },
+   "har_sedom>jerusalem": {
+    "min": 116,
+    "km": 124.8
+   },
+   "har_sedom>ein_gedi": {
+    "min": 46,
+    "km": 48.7
+   },
+   "har_sedom>ein_bokek": {
+    "min": 18,
+    "km": 18.8
+   },
+   "har_sedom>nabi_musa": {
+    "min": 96,
+    "km": 100.1
+   },
+   "har_sedom>qumran": {
+    "min": 80,
+    "km": 83.7
+   },
+   "har_sedom>lido": {
+    "min": 100,
+    "km": 101.5
+   },
+   "har_sedom>nahal_david": {
+    "min": 48,
+    "km": 50
+   },
+   "har_sedom>ein_gedi_synagogue": {
+    "min": 46,
+    "km": 49.2
+   },
+   "har_sedom>dead_sea": {
+    "min": 141,
+    "km": 151.9
+   }
+  }
+ },
+ "wiki:he:זכרון יעקב": {
+  "lat": 32.57065,
+  "lon": 34.95227,
+  "title": "he:זכרון יעקב",
+  "url": "https://he.wikipedia.org/wiki/%D7%96%D7%9B%D7%A8%D7%95%D7%9F_%D7%99%D7%A2%D7%A7%D7%91",
+  "qid": "Q198399"
+ },
+ "wiki:he:ציפורי (מושב)": {
+  "lat": 32.74563,
+  "lon": 35.27849,
+  "title": "he:ציפורי (מושב)",
+  "url": "https://he.wikipedia.org/wiki/%D7%A6%D7%99%D7%A4%D7%95%D7%A8%D7%99_(%D7%9E%D7%95%D7%A9%D7%91)",
+  "qid": "Q2909379"
+ },
+ "wiki:he:גן שמואל": {
+  "lat": 32.45297,
+  "lon": 34.95005,
+  "title": "he:גן שמואל",
+  "url": "https://he.wikipedia.org/wiki/%D7%92%D7%9F_%D7%A9%D7%9E%D7%95%D7%90%D7%9C",
+  "qid": "Q166857"
+ },
+ "wiki:he:כנרת (קבוצה)": {
+  "lat": 32.71367,
+  "lon": 35.56208,
+  "title": "he:קבוצת כנרת",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%91%D7%95%D7%A6%D7%AA_%D7%9B%D7%A0%D7%A8%D7%AA",
+  "qid": "Q2296107"
+ },
+ "wiki:he:אלכסנדר זייד": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Alexander Zaïd": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Beit She'arim necropolis": {
+  "lat": 32.70222,
+  "lon": 35.12694,
+  "title": "en:Beit She'arim necropolis",
+  "url": "https://en.wikipedia.org/wiki/Beit_She%27arim_necropolis",
+  "qid": "Q830805"
+ },
+ "wiki:he:ציפורי": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Sepphoris": {
+  "lat": 32.74556,
+  "lon": 35.27861,
+  "title": "en:Sepphoris",
+  "url": "https://en.wikipedia.org/wiki/Sepphoris",
+  "qid": "Q1132798"
+ },
+ "wiki:en:Sepphoris Synagogue": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:בית שאן": {
+  "lat": 32.49734,
+  "lon": 35.4978,
+  "title": "he:בית שאן",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%A9%D7%90%D7%9F",
+  "qid": "Q152368"
+ },
+ "drive:lower_galilee": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "zichron@32.57065,34.95227;tzippori_moshav@32.74563,35.27849;gan_shmuel@32.45297,34.95005;kinneret@32.71367,35.56208;sheikh_abreik@32.70094,35.12894;beit_shearim_town@32.70333,35.12917;beit_shearim_necropolis@32.70222,35.12694;tzippori_water@32.74556,35.27861;tzippori_synagogue@32.74556,35.27861;tzippori_city@32.74556,35.27861;tzippori_citadel@32.74556,35.27861;tzippori_villas@32.74556,35.27861",
+  "legs": {
+   "zichron>tzippori_moshav": {
+    "min": 38,
+    "km": 43.9
+   },
+   "zichron>gan_shmuel": {
+    "min": 20,
+    "km": 17.4
+   },
+   "zichron>kinneret": {
+    "min": 65,
+    "km": 77.1
+   },
+   "zichron>sheikh_abreik": {
+    "min": 26,
+    "km": 26.1
+   },
+   "zichron>beit_shearim_town": {
+    "min": 26,
+    "km": 26.5
+   },
+   "zichron>beit_shearim_necropolis": {
+    "min": 25,
+    "km": 26.3
+   },
+   "zichron>tzippori_water": {
+    "min": 38,
+    "km": 43.9
+   },
+   "zichron>tzippori_synagogue": {
+    "min": 38,
+    "km": 43.9
+   },
+   "zichron>tzippori_city": {
+    "min": 38,
+    "km": 43.9
+   },
+   "zichron>tzippori_citadel": {
+    "min": 38,
+    "km": 43.9
+   },
+   "zichron>tzippori_villas": {
+    "min": 38,
+    "km": 43.9
+   },
+   "tzippori_moshav>zichron": {
+    "min": 39,
+    "km": 44
+   },
+   "tzippori_moshav>gan_shmuel": {
+    "min": 46,
+    "km": 56.6
+   },
+   "tzippori_moshav>kinneret": {
+    "min": 42,
+    "km": 45.9
+   },
+   "tzippori_moshav>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
+   "tzippori_moshav>beit_shearim_town": {
+    "min": 20,
+    "km": 19.8
+   },
+   "tzippori_moshav>beit_shearim_necropolis": {
+    "min": 20,
+    "km": 19.5
+   },
+   "tzippori_moshav>tzippori_water": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_moshav>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_moshav>tzippori_city": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_moshav>tzippori_citadel": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_moshav>tzippori_villas": {
+    "min": 0,
+    "km": 0
+   },
+   "gan_shmuel>zichron": {
+    "min": 19,
+    "km": 20.4
+   },
+   "gan_shmuel>tzippori_moshav": {
+    "min": 46,
+    "km": 57.2
+   },
+   "gan_shmuel>kinneret": {
+    "min": 68,
+    "km": 74.1
+   },
+   "gan_shmuel>sheikh_abreik": {
+    "min": 34,
+    "km": 39.4
+   },
+   "gan_shmuel>beit_shearim_town": {
+    "min": 34,
+    "km": 39.8
+   },
+   "gan_shmuel>beit_shearim_necropolis": {
+    "min": 34,
+    "km": 39.6
+   },
+   "gan_shmuel>tzippori_water": {
+    "min": 46,
+    "km": 57.2
+   },
+   "gan_shmuel>tzippori_synagogue": {
+    "min": 46,
+    "km": 57.2
+   },
+   "gan_shmuel>tzippori_city": {
+    "min": 46,
+    "km": 57.2
+   },
+   "gan_shmuel>tzippori_citadel": {
+    "min": 46,
+    "km": 57.2
+   },
+   "gan_shmuel>tzippori_villas": {
+    "min": 46,
+    "km": 57.2
+   },
+   "kinneret>zichron": {
+    "min": 66,
+    "km": 77.1
+   },
+   "kinneret>tzippori_moshav": {
+    "min": 40,
+    "km": 41.9
+   },
+   "kinneret>gan_shmuel": {
+    "min": 68,
+    "km": 74.1
+   },
+   "kinneret>sheikh_abreik": {
+    "min": 47,
+    "km": 52.4
+   },
+   "kinneret>beit_shearim_town": {
+    "min": 47,
+    "km": 52.8
+   },
+   "kinneret>beit_shearim_necropolis": {
+    "min": 46,
+    "km": 52.6
+   },
+   "kinneret>tzippori_water": {
+    "min": 40,
+    "km": 41.9
+   },
+   "kinneret>tzippori_synagogue": {
+    "min": 40,
+    "km": 41.9
+   },
+   "kinneret>tzippori_city": {
+    "min": 40,
+    "km": 41.9
+   },
+   "kinneret>tzippori_citadel": {
+    "min": 40,
+    "km": 41.9
+   },
+   "kinneret>tzippori_villas": {
+    "min": 40,
+    "km": 41.9
+   },
+   "sheikh_abreik>zichron": {
+    "min": 26,
+    "km": 26
+   },
+   "sheikh_abreik>tzippori_moshav": {
+    "min": 19,
+    "km": 19.4
+   },
+   "sheikh_abreik>gan_shmuel": {
+    "min": 33,
+    "km": 38.6
+   },
+   "sheikh_abreik>kinneret": {
+    "min": 47,
+    "km": 52.5
+   },
+   "sheikh_abreik>beit_shearim_town": {
+    "min": 3,
+    "km": 0.7
+   },
+   "sheikh_abreik>beit_shearim_necropolis": {
+    "min": 3,
+    "km": 0.5
+   },
+   "sheikh_abreik>tzippori_water": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_synagogue": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_city": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_citadel": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_villas": {
+    "min": 19,
+    "km": 19.3
+   },
+   "beit_shearim_town>zichron": {
+    "min": 26,
+    "km": 26.4
+   },
+   "beit_shearim_town>tzippori_moshav": {
+    "min": 20,
+    "km": 19.7
+   },
+   "beit_shearim_town>gan_shmuel": {
+    "min": 33,
+    "km": 39
+   },
+   "beit_shearim_town>kinneret": {
+    "min": 47,
+    "km": 52.9
+   },
+   "beit_shearim_town>sheikh_abreik": {
+    "min": 3,
+    "km": 0.7
+   },
+   "beit_shearim_town>beit_shearim_necropolis": {
+    "min": 1,
+    "km": 0.2
+   },
+   "beit_shearim_town>tzippori_water": {
+    "min": 20,
+    "km": 19.7
+   },
+   "beit_shearim_town>tzippori_synagogue": {
+    "min": 20,
+    "km": 19.7
+   },
+   "beit_shearim_town>tzippori_city": {
+    "min": 20,
+    "km": 19.7
+   },
+   "beit_shearim_town>tzippori_citadel": {
+    "min": 20,
+    "km": 19.7
+   },
+   "beit_shearim_town>tzippori_villas": {
+    "min": 20,
+    "km": 19.7
+   },
+   "beit_shearim_necropolis>zichron": {
+    "min": 25,
+    "km": 26.2
+   },
+   "beit_shearim_necropolis>tzippori_moshav": {
+    "min": 19,
+    "km": 19.5
+   },
+   "beit_shearim_necropolis>gan_shmuel": {
+    "min": 33,
+    "km": 38.7
+   },
+   "beit_shearim_necropolis>kinneret": {
+    "min": 46,
+    "km": 52.7
+   },
+   "beit_shearim_necropolis>sheikh_abreik": {
+    "min": 3,
+    "km": 0.5
+   },
+   "beit_shearim_necropolis>beit_shearim_town": {
+    "min": 1,
+    "km": 0.2
+   },
+   "beit_shearim_necropolis>tzippori_water": {
+    "min": 19,
+    "km": 19.5
+   },
+   "beit_shearim_necropolis>tzippori_synagogue": {
+    "min": 19,
+    "km": 19.5
+   },
+   "beit_shearim_necropolis>tzippori_city": {
+    "min": 19,
+    "km": 19.5
+   },
+   "beit_shearim_necropolis>tzippori_citadel": {
+    "min": 19,
+    "km": 19.5
+   },
+   "beit_shearim_necropolis>tzippori_villas": {
+    "min": 19,
+    "km": 19.5
+   },
+   "tzippori_water>zichron": {
+    "min": 39,
+    "km": 44
+   },
+   "tzippori_water>tzippori_moshav": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_water>gan_shmuel": {
+    "min": 46,
+    "km": 56.6
+   },
+   "tzippori_water>kinneret": {
+    "min": 42,
+    "km": 45.8
+   },
+   "tzippori_water>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
+   "tzippori_water>beit_shearim_town": {
+    "min": 20,
+    "km": 19.8
+   },
+   "tzippori_water>beit_shearim_necropolis": {
+    "min": 20,
+    "km": 19.5
+   },
+   "tzippori_water>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_water>tzippori_city": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_water>tzippori_citadel": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_water>tzippori_villas": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>zichron": {
+    "min": 39,
+    "km": 44
+   },
+   "tzippori_synagogue>tzippori_moshav": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>gan_shmuel": {
+    "min": 46,
+    "km": 56.6
+   },
+   "tzippori_synagogue>kinneret": {
+    "min": 42,
+    "km": 45.8
+   },
+   "tzippori_synagogue>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
+   "tzippori_synagogue>beit_shearim_town": {
+    "min": 20,
+    "km": 19.8
+   },
+   "tzippori_synagogue>beit_shearim_necropolis": {
+    "min": 20,
+    "km": 19.5
+   },
+   "tzippori_synagogue>tzippori_water": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>tzippori_city": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>tzippori_citadel": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>tzippori_villas": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_city>zichron": {
+    "min": 39,
+    "km": 44
+   },
+   "tzippori_city>tzippori_moshav": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_city>gan_shmuel": {
+    "min": 46,
+    "km": 56.6
+   },
+   "tzippori_city>kinneret": {
+    "min": 42,
+    "km": 45.8
+   },
+   "tzippori_city>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
+   "tzippori_city>beit_shearim_town": {
+    "min": 20,
+    "km": 19.8
+   },
+   "tzippori_city>beit_shearim_necropolis": {
+    "min": 20,
+    "km": 19.5
+   },
+   "tzippori_city>tzippori_water": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_city>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_city>tzippori_citadel": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_city>tzippori_villas": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_citadel>zichron": {
+    "min": 39,
+    "km": 44
+   },
+   "tzippori_citadel>tzippori_moshav": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_citadel>gan_shmuel": {
+    "min": 46,
+    "km": 56.6
+   },
+   "tzippori_citadel>kinneret": {
+    "min": 42,
+    "km": 45.8
+   },
+   "tzippori_citadel>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
+   "tzippori_citadel>beit_shearim_town": {
+    "min": 20,
+    "km": 19.8
+   },
+   "tzippori_citadel>beit_shearim_necropolis": {
+    "min": 20,
+    "km": 19.5
+   },
+   "tzippori_citadel>tzippori_water": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_citadel>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_citadel>tzippori_city": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_citadel>tzippori_villas": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_villas>zichron": {
+    "min": 39,
+    "km": 44
+   },
+   "tzippori_villas>tzippori_moshav": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_villas>gan_shmuel": {
+    "min": 46,
+    "km": 56.6
+   },
+   "tzippori_villas>kinneret": {
+    "min": 42,
+    "km": 45.8
+   },
+   "tzippori_villas>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
+   "tzippori_villas>beit_shearim_town": {
+    "min": 20,
+    "km": 19.8
+   },
+   "tzippori_villas>beit_shearim_necropolis": {
+    "min": 20,
+    "km": 19.5
+   },
+   "tzippori_villas>tzippori_water": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_villas>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_villas>tzippori_city": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_villas>tzippori_citadel": {
+    "min": 0,
+    "km": 0
+   }
+  }
+ },
+ "wiki:he:באר שבע": {
+  "lat": 31.25311,
+  "lon": 34.78671,
+  "title": "he:באר שבע",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%A8_%D7%A9%D7%91%D7%A2",
+  "qid": "Q41843"
+ },
+ "wiki:he:צומת שוקת": {
+  "lat": 31.31556,
+  "lon": 34.89231,
+  "title": "he:מחלף שוקת",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%9C%D7%A3_%D7%A9%D7%95%D7%A7%D7%AA",
+  "qid": "Q60611664"
+ },
+ "wiki:he:תל באר שבע": {
+  "lat": 31.24472,
+  "lon": 34.84083,
+  "title": "he:תל באר שבע",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%91%D7%90%D7%A8_%D7%A9%D7%91%D7%A2",
+  "qid": "Q534596"
+ },
+ "wiki:he:אנדרטת חטיבת הנגב": {
+  "lat": 31.26666,
+  "lon": 34.8206,
+  "title": "he:אנדרטת חטיבת הנגב",
+  "url": "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%93%D7%A8%D7%98%D7%AA_%D7%97%D7%98%D7%99%D7%91%D7%AA_%D7%94%D7%A0%D7%92%D7%91",
+  "qid": "Q456424"
+ },
+ "wiki:he:תל צפית": {
+  "lat": 31.69937,
+  "lon": 34.84669,
+  "title": "he:תל צפית",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%A6%D7%A4%D7%99%D7%AA",
+  "qid": "Q2402271"
+ },
+ "drive:negev": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;beer_sheva@31.25311,34.78671;shoket@31.31556,34.89231;tel_beer_sheva@31.24472,34.84083;negev_memorial@31.26666,34.8206;tel_tzafit@31.69937,34.84669;joe_alon@31.37931,34.86486",
+  "legs": {
+   "tel_aviv>beer_sheva": {
+    "min": 81,
+    "km": 101.7
+   },
+   "tel_aviv>shoket": {
+    "min": 74,
+    "km": 98.5
+   },
+   "tel_aviv>tel_beer_sheva": {
+    "min": 89,
+    "km": 106.2
+   },
+   "tel_aviv>negev_memorial": {
+    "min": 82,
+    "km": 101.8
+   },
+   "tel_aviv>tel_tzafit": {
+    "min": 71,
+    "km": 56.2
+   },
+   "tel_aviv>joe_alon": {
+    "min": 74,
+    "km": 90.9
+   },
+   "beer_sheva>tel_aviv": {
+    "min": 82,
+    "km": 101.7
+   },
+   "beer_sheva>shoket": {
+    "min": 23,
+    "km": 24.4
+   },
+   "beer_sheva>tel_beer_sheva": {
+    "min": 17,
+    "km": 9.5
+   },
+   "beer_sheva>negev_memorial": {
+    "min": 9,
+    "km": 5.4
+   },
+   "beer_sheva>tel_tzafit": {
+    "min": 70,
+    "km": 58.2
+   },
+   "beer_sheva>joe_alon": {
+    "min": 28,
+    "km": 27.5
+   },
+   "shoket>tel_aviv": {
+    "min": 76,
+    "km": 100.1
+   },
+   "shoket>beer_sheva": {
+    "min": 16,
+    "km": 16.1
+   },
+   "shoket>tel_beer_sheva": {
+    "min": 18,
+    "km": 12.9
+   },
+   "shoket>negev_memorial": {
+    "min": 12,
+    "km": 11.9
+   },
+   "shoket>tel_tzafit": {
+    "min": 64,
+    "km": 56.7
+   },
+   "shoket>joe_alon": {
+    "min": 15,
+    "km": 13.9
+   },
+   "tel_beer_sheva>tel_aviv": {
+    "min": 90,
+    "km": 106.4
+   },
+   "tel_beer_sheva>beer_sheva": {
+    "min": 18,
+    "km": 10.8
+   },
+   "tel_beer_sheva>shoket": {
+    "min": 26,
+    "km": 22.4
+   },
+   "tel_beer_sheva>negev_memorial": {
+    "min": 15,
+    "km": 6.7
+   },
+   "tel_beer_sheva>tel_tzafit": {
+    "min": 77,
+    "km": 62.9
+   },
+   "tel_beer_sheva>joe_alon": {
+    "min": 31,
+    "km": 25.5
+   },
+   "negev_memorial>tel_aviv": {
+    "min": 82,
+    "km": 102
+   },
+   "negev_memorial>beer_sheva": {
+    "min": 10,
+    "km": 5.6
+   },
+   "negev_memorial>shoket": {
+    "min": 19,
+    "km": 20.2
+   },
+   "negev_memorial>tel_beer_sheva": {
+    "min": 13,
+    "km": 5.3
+   },
+   "negev_memorial>tel_tzafit": {
+    "min": 70,
+    "km": 58.6
+   },
+   "negev_memorial>joe_alon": {
+    "min": 24,
+    "km": 23.3
+   },
+   "tel_tzafit>tel_aviv": {
+    "min": 65,
+    "km": 51.8
+   },
+   "tel_tzafit>beer_sheva": {
+    "min": 80,
+    "km": 56.6
+   },
+   "tel_tzafit>shoket": {
+    "min": 73,
+    "km": 53.3
+   },
+   "tel_tzafit>tel_beer_sheva": {
+    "min": 88,
+    "km": 61.1
+   },
+   "tel_tzafit>negev_memorial": {
+    "min": 80,
+    "km": 56.6
+   },
+   "tel_tzafit>joe_alon": {
+    "min": 72,
+    "km": 45.8
+   },
+   "joe_alon>tel_aviv": {
+    "min": 74,
+    "km": 91
+   },
+   "joe_alon>beer_sheva": {
+    "min": 27,
+    "km": 27.5
+   },
+   "joe_alon>shoket": {
+    "min": 13,
+    "km": 12.8
+   },
+   "joe_alon>tel_beer_sheva": {
+    "min": 29,
+    "km": 24.3
+   },
+   "joe_alon>negev_memorial": {
+    "min": 23,
+    "km": 23.3
+   },
+   "joe_alon>tel_tzafit": {
+    "min": 62,
+    "km": 47.5
+   }
+  }
+ },
+ "wiki:he:צפת": {
+  "lat": 32.96476,
+  "lon": 35.50458,
+  "title": "he:צפת",
+  "url": "https://he.wikipedia.org/wiki/%D7%A6%D7%A4%D7%AA",
+  "qid": "Q188336"
+ },
+ "wiki:he:יקנעם עילית": {
+  "lat": 32.65944,
+  "lon": 35.11,
+  "title": "he:יקנעם עילית",
+  "url": "https://he.wikipedia.org/wiki/%D7%99%D7%A7%D7%A0%D7%A2%D7%9D_%D7%A2%D7%99%D7%9C%D7%99%D7%AA",
+  "qid": "Q167582"
+ },
+ "wiki:he:צומת גולני": {
+  "lat": 32.77489,
+  "lon": 35.40789,
+  "title": "he:מחלף גולני",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%9C%D7%A3_%D7%92%D7%95%D7%9C%D7%A0%D7%99",
+  "qid": "Q5578407"
+ },
+ "wiki:he:ראש פינה": {
+  "lat": 32.96908,
+  "lon": 35.54246,
+  "title": "he:ראש פינה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A8%D7%90%D7%A9_%D7%A4%D7%99%D7%A0%D7%94",
+  "qid": "Q525649"
+ },
+ "wiki:he:תל חי": {
+  "lat": 33.235,
+  "lon": 35.57833,
+  "title": "he:תל חי",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%97%D7%99",
+  "qid": "Q2094886"
+ },
+ "wiki:he:שמורת החולה": {
+  "lat": 33.07806,
+  "lon": 35.59833,
+  "title": "he:שמורת החולה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%9E%D7%95%D7%A8%D7%AA_%D7%94%D7%97%D7%95%D7%9C%D7%94",
+  "qid": "Q7022146"
+ },
+ "wiki:he:אגמון החולה": {
+  "lat": 33.10583,
+  "lon": 35.60361,
+  "title": "he:אגמון החולה",
+  "url": "https://he.wikipedia.org/wiki/%D7%90%D7%92%D7%9E%D7%95%D7%9F_%D7%94%D7%97%D7%95%D7%9C%D7%94",
+  "qid": "Q6623354"
+ },
+ "wiki:he:מצודת כ\"ח": {
+  "lat": 33.11472,
+  "lon": 35.55611,
+  "title": "he:מצודת כ\"ח",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A6%D7%95%D7%93%D7%AA_%D7%9B%22%D7%97",
+  "qid": "Q2909656"
+ },
+ "wiki:he:ריחאניה": {
+  "lat": 33.04947,
+  "lon": 35.48741,
+  "title": "he:ריחאניה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%97%D7%90%D7%A0%D7%99%D7%94",
+  "qid": "Q2916856"
+ },
+ "wiki:he:קבר רבי שמעון בר יוחאי": {
+  "lat": 32.98103,
+  "lon": 35.44095,
+  "title": "he:קבר רבי שמעון בר יוחאי",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%91%D7%A8_%D7%A8%D7%91%D7%99_%D7%A9%D7%9E%D7%A2%D7%95%D7%9F_%D7%91%D7%A8_%D7%99%D7%95%D7%97%D7%90%D7%99",
+  "qid": "Q5371188"
+ },
+ "wiki:he:מערת קשת": {
+  "lat": 33.07622,
+  "lon": 35.19169,
+  "title": "he:מערת קשת",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%A8%D7%AA_%D7%A7%D7%A9%D7%AA",
+  "qid": "Q6588806"
+ },
+ "wiki:he:יד לי\"ד": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Night of the Bridges": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:פקיעין": {
+  "lat": 32.97309,
+  "lon": 35.32671,
+  "title": "he:פקיעין",
+  "url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A7%D7%99%D7%A2%D7%99%D7%9F",
+  "qid": "Q2915001"
+ },
+ "wiki:he:שיירת יחיעם": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Yehiam convoy": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:מבצר מונפור": {
+  "lat": 33.04472,
+  "lon": 35.22611,
+  "title": "he:מונפור (מבצר)",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A0%D7%A4%D7%95%D7%A8_(%D7%9E%D7%91%D7%A6%D7%A8)",
+  "qid": "Q14201945"
+ },
+ "wiki:he:ראש הנקרה": {
+  "lat": 33.09312,
+  "lon": 35.10477,
+  "title": "he:ראש הנקרה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A8%D7%90%D7%A9_%D7%94%D7%A0%D7%A7%D7%A8%D7%94",
+  "qid": "Q1650601"
+ },
+ "drive:upper_galilee": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;kiryat_shmona@33.21163,35.5732;nahariya@33.00863,35.09753;safed@32.96476,35.50458;yokneam@32.65944,35.11;golani_jct@32.77489,35.40789;rosh_pina@32.96908,35.54246;tel_hai@33.235,35.57833;hula_reserve@33.07806,35.59833;agamon@33.10583,35.60361;metzudat_koach@33.11472,35.55611;rihaniya@33.04947,35.48741;rashbi_meron@32.98103,35.44095;baram@33.04348,35.41404;keshet_cave@33.07622,35.19169;peqiin@32.97309,35.32671;yehiam_convoy@32.99686,35.22081;montfort@33.04472,35.22611;rosh_hanikra@33.09312,35.10477",
+  "legs": {
+   "tel_aviv>kiryat_shmona": {
+    "min": 146,
+    "km": 183.2
+   },
+   "tel_aviv>nahariya": {
+    "min": 100,
+    "km": 128.8
+   },
+   "tel_aviv>safed": {
+    "min": 128,
+    "km": 160.8
+   },
+   "tel_aviv>yokneam": {
+    "min": 67,
+    "km": 87
+   },
+   "tel_aviv>golani_jct": {
+    "min": 95,
+    "km": 123.2
+   },
+   "tel_aviv>rosh_pina": {
+    "min": 121,
+    "km": 154.7
+   },
+   "tel_aviv>tel_hai": {
+    "min": 150,
+    "km": 186.3
+   },
+   "tel_aviv>hula_reserve": {
+    "min": 150,
+    "km": 171.3
+   },
+   "tel_aviv>agamon": {
+    "min": 160,
+    "km": 175.3
+   },
+   "tel_aviv>metzudat_koach": {
+    "min": 141,
+    "km": 177.7
+   },
+   "tel_aviv>rihaniya": {
+    "min": 131,
+    "km": 163.4
+   },
+   "tel_aviv>rashbi_meron": {
+    "min": 118,
+    "km": 151.1
+   },
+   "tel_aviv>baram": {
+    "min": 131,
+    "km": 162.1
+   },
+   "tel_aviv>keshet_cave": {
+    "min": 109,
+    "km": 142.7
+   },
+   "tel_aviv>peqiin": {
+    "min": 117,
+    "km": 141
+   },
+   "tel_aviv>yehiam_convoy": {
+    "min": 109,
+    "km": 138.7
+   },
+   "tel_aviv>montfort": {
+    "min": 120,
+    "km": 145.3
+   },
+   "tel_aviv>rosh_hanikra": {
+    "min": 109,
+    "km": 143.2
+   },
+   "kiryat_shmona>tel_aviv": {
+    "min": 144,
+    "km": 181.8
+   },
+   "kiryat_shmona>nahariya": {
+    "min": 72,
+    "km": 73.6
+   },
+   "kiryat_shmona>safed": {
+    "min": 38,
+    "km": 38.4
+   },
+   "kiryat_shmona>yokneam": {
+    "min": 86,
+    "km": 99.4
+   },
+   "kiryat_shmona>golani_jct": {
+    "min": 60,
+    "km": 65.4
+   },
+   "kiryat_shmona>rosh_pina": {
+    "min": 28,
+    "km": 30.1
+   },
+   "kiryat_shmona>tel_hai": {
+    "min": 6,
+    "km": 3.7
+   },
+   "kiryat_shmona>hula_reserve": {
+    "min": 36,
+    "km": 21.7
+   },
+   "kiryat_shmona>agamon": {
+    "min": 41,
+    "km": 19.7
+   },
+   "kiryat_shmona>metzudat_koach": {
+    "min": 15,
+    "km": 14.8
+   },
+   "kiryat_shmona>rihaniya": {
+    "min": 28,
+    "km": 28.2
+   },
+   "kiryat_shmona>rashbi_meron": {
+    "min": 41,
+    "km": 40.6
+   },
+   "kiryat_shmona>baram": {
+    "min": 39,
+    "km": 37.4
+   },
+   "kiryat_shmona>keshet_cave": {
+    "min": 68,
+    "km": 69.3
+   },
+   "kiryat_shmona>peqiin": {
+    "min": 64,
+    "km": 63.6
+   },
+   "kiryat_shmona>yehiam_convoy": {
+    "min": 68,
+    "km": 65.3
+   },
+   "kiryat_shmona>montfort": {
+    "min": 70,
+    "km": 62.3
+   },
+   "kiryat_shmona>rosh_hanikra": {
+    "min": 73,
+    "km": 75.9
+   },
+   "nahariya>tel_aviv": {
+    "min": 97,
+    "km": 127.6
+   },
+   "nahariya>kiryat_shmona": {
+    "min": 72,
+    "km": 73.7
+   },
+   "nahariya>safed": {
+    "min": 52,
+    "km": 52.5
+   },
+   "nahariya>yokneam": {
+    "min": 40,
+    "km": 45.1
+   },
+   "nahariya>golani_jct": {
+    "min": 51,
+    "km": 57
+   },
+   "nahariya>rosh_pina": {
+    "min": 56,
+    "km": 62
+   },
+   "nahariya>tel_hai": {
+    "min": 77,
+    "km": 76.8
+   },
+   "nahariya>hula_reserve": {
+    "min": 85,
+    "km": 78.7
+   },
+   "nahariya>agamon": {
+    "min": 93,
+    "km": 72.9
+   },
+   "nahariya>metzudat_koach": {
+    "min": 58,
+    "km": 59
+   },
+   "nahariya>rihaniya": {
+    "min": 46,
+    "km": 44.5
+   },
+   "nahariya>rashbi_meron": {
+    "min": 43,
+    "km": 43.6
+   },
+   "nahariya>baram": {
+    "min": 37,
+    "km": 36.8
+   },
+   "nahariya>keshet_cave": {
+    "min": 16,
+    "km": 17
+   },
+   "nahariya>peqiin": {
+    "min": 28,
+    "km": 26.5
+   },
+   "nahariya>yehiam_convoy": {
+    "min": 15,
+    "km": 13
+   },
+   "nahariya>montfort": {
+    "min": 27,
+    "km": 19.6
+   },
+   "nahariya>rosh_hanikra": {
+    "min": 11,
+    "km": 10.6
+   },
+   "safed>tel_aviv": {
+    "min": 128,
+    "km": 160.3
+   },
+   "safed>kiryat_shmona": {
+    "min": 39,
+    "km": 39.3
+   },
+   "safed>nahariya": {
+    "min": 54,
+    "km": 53.2
+   },
+   "safed>yokneam": {
+    "min": 71,
+    "km": 77.8
+   },
+   "safed>golani_jct": {
+    "min": 45,
+    "km": 44.8
+   },
+   "safed>rosh_pina": {
+    "min": 11,
+    "km": 8.9
+   },
+   "safed>tel_hai": {
+    "min": 43,
+    "km": 42.3
+   },
+   "safed>hula_reserve": {
+    "min": 43,
+    "km": 27.4
+   },
+   "safed>agamon": {
+    "min": 53,
+    "km": 31.3
+   },
+   "safed>metzudat_koach": {
+    "min": 29,
+    "km": 28.1
+   },
+   "safed>rihaniya": {
+    "min": 16,
+    "km": 15.2
+   },
+   "safed>rashbi_meron": {
+    "min": 13,
+    "km": 11.4
+   },
+   "safed>baram": {
+    "min": 25,
+    "km": 21.5
+   },
+   "safed>keshet_cave": {
+    "min": 49,
+    "km": 48.9
+   },
+   "safed>peqiin": {
+    "min": 43,
+    "km": 35.6
+   },
+   "safed>yehiam_convoy": {
+    "min": 49,
+    "km": 44.9
+   },
+   "safed>montfort": {
+    "min": 51,
+    "km": 41.9
+   },
+   "safed>rosh_hanikra": {
+    "min": 55,
+    "km": 55.5
+   },
+   "yokneam>tel_aviv": {
+    "min": 66,
+    "km": 86.4
+   },
+   "yokneam>kiryat_shmona": {
+    "min": 87,
+    "km": 99.9
+   },
+   "yokneam>nahariya": {
+    "min": 41,
+    "km": 45.5
+   },
+   "yokneam>safed": {
+    "min": 70,
+    "km": 77.5
+   },
+   "yokneam>golani_jct": {
+    "min": 36,
+    "km": 39.9
+   },
+   "yokneam>rosh_pina": {
+    "min": 62,
+    "km": 71.3
+   },
+   "yokneam>tel_hai": {
+    "min": 91,
+    "km": 102.9
+   },
+   "yokneam>hula_reserve": {
+    "min": 92,
+    "km": 88
+   },
+   "yokneam>agamon": {
+    "min": 102,
+    "km": 91.9
+   },
+   "yokneam>metzudat_koach": {
+    "min": 82,
+    "km": 94.3
+   },
+   "yokneam>rihaniya": {
+    "min": 73,
+    "km": 80.1
+   },
+   "yokneam>rashbi_meron": {
+    "min": 60,
+    "km": 67.8
+   },
+   "yokneam>baram": {
+    "min": 73,
+    "km": 78.8
+   },
+   "yokneam>keshet_cave": {
+    "min": 51,
+    "km": 59.3
+   },
+   "yokneam>peqiin": {
+    "min": 59,
+    "km": 57.7
+   },
+   "yokneam>yehiam_convoy": {
+    "min": 51,
+    "km": 55.4
+   },
+   "yokneam>montfort": {
+    "min": 62,
+    "km": 62
+   },
+   "yokneam>rosh_hanikra": {
+    "min": 51,
+    "km": 59.9
+   },
+   "golani_jct>tel_aviv": {
+    "min": 95,
+    "km": 125.5
+   },
+   "golani_jct>kiryat_shmona": {
+    "min": 55,
+    "km": 62.4
+   },
+   "golani_jct>nahariya": {
+    "min": 52,
+    "km": 55
+   },
+   "golani_jct>safed": {
+    "min": 39,
+    "km": 41.6
+   },
+   "golani_jct>yokneam": {
+    "min": 37,
+    "km": 43.1
+   },
+   "golani_jct>rosh_pina": {
+    "min": 29,
+    "km": 33.8
+   },
+   "golani_jct>tel_hai": {
+    "min": 59,
+    "km": 65.4
+   },
+   "golani_jct>hula_reserve": {
+    "min": 59,
+    "km": 50.5
+   },
+   "golani_jct>agamon": {
+    "min": 69,
+    "km": 54.4
+   },
+   "golani_jct>metzudat_koach": {
+    "min": 49,
+    "km": 56.8
+   },
+   "golani_jct>rihaniya": {
+    "min": 45,
+    "km": 51.6
+   },
+   "golani_jct>rashbi_meron": {
+    "min": 36,
+    "km": 33.2
+   },
+   "golani_jct>baram": {
+    "min": 49,
+    "km": 44.2
+   },
+   "golani_jct>keshet_cave": {
+    "min": 59,
+    "km": 64.6
+   },
+   "golani_jct>peqiin": {
+    "min": 42,
+    "km": 35.2
+   },
+   "golani_jct>yehiam_convoy": {
+    "min": 58,
+    "km": 51.3
+   },
+   "golani_jct>montfort": {
+    "min": 60,
+    "km": 48.4
+   },
+   "golani_jct>rosh_hanikra": {
+    "min": 60,
+    "km": 65.1
+   },
+   "rosh_pina>tel_aviv": {
+    "min": 118,
+    "km": 153.4
+   },
+   "rosh_pina>kiryat_shmona": {
+    "min": 28,
+    "km": 30.2
+   },
+   "rosh_pina>nahariya": {
+    "min": 55,
+    "km": 61.8
+   },
+   "rosh_pina>safed": {
+    "min": 10,
+    "km": 8.6
+   },
+   "rosh_pina>yokneam": {
+    "min": 61,
+    "km": 70.9
+   },
+   "rosh_pina>golani_jct": {
+    "min": 34,
+    "km": 37
+   },
+   "rosh_pina>tel_hai": {
+    "min": 32,
+    "km": 33.3
+   },
+   "rosh_pina>hula_reserve": {
+    "min": 32,
+    "km": 18.4
+   },
+   "rosh_pina>agamon": {
+    "min": 42,
+    "km": 22.3
+   },
+   "rosh_pina>metzudat_koach": {
+    "min": 23,
+    "km": 24.7
+   },
+   "rosh_pina>rihaniya": {
+    "min": 21,
+    "km": 22.8
+   },
+   "rosh_pina>rashbi_meron": {
+    "min": 17,
+    "km": 18.8
+   },
+   "rosh_pina>baram": {
+    "min": 29,
+    "km": 28.8
+   },
+   "rosh_pina>keshet_cave": {
+    "min": 53,
+    "km": 56.3
+   },
+   "rosh_pina>peqiin": {
+    "min": 38,
+    "km": 35.1
+   },
+   "rosh_pina>yehiam_convoy": {
+    "min": 54,
+    "km": 51.3
+   },
+   "rosh_pina>montfort": {
+    "min": 56,
+    "km": 48.3
+   },
+   "rosh_pina>rosh_hanikra": {
+    "min": 59,
+    "km": 62.9
+   },
+   "tel_hai>tel_aviv": {
+    "min": 148,
+    "km": 185
+   },
+   "tel_hai>kiryat_shmona": {
+    "min": 5,
+    "km": 3.7
+   },
+   "tel_hai>nahariya": {
+    "min": 77,
+    "km": 78.3
+   },
+   "tel_hai>safed": {
+    "min": 41,
+    "km": 41.6
+   },
+   "tel_hai>yokneam": {
+    "min": 90,
+    "km": 102.6
+   },
+   "tel_hai>golani_jct": {
+    "min": 64,
+    "km": 68.6
+   },
+   "tel_hai>rosh_pina": {
+    "min": 32,
+    "km": 33.3
+   },
+   "tel_hai>hula_reserve": {
+    "min": 40,
+    "km": 24.9
+   },
+   "tel_hai>agamon": {
+    "min": 45,
+    "km": 22.9
+   },
+   "tel_hai>metzudat_koach": {
+    "min": 19,
+    "km": 18
+   },
+   "tel_hai>rihaniya": {
+    "min": 32,
+    "km": 31.4
+   },
+   "tel_hai>rashbi_meron": {
+    "min": 45,
+    "km": 43.8
+   },
+   "tel_hai>baram": {
+    "min": 44,
+    "km": 42
+   },
+   "tel_hai>keshet_cave": {
+    "min": 72,
+    "km": 73.9
+   },
+   "tel_hai>peqiin": {
+    "min": 67,
+    "km": 66.8
+   },
+   "tel_hai>yehiam_convoy": {
+    "min": 73,
+    "km": 69.9
+   },
+   "tel_hai>montfort": {
+    "min": 75,
+    "km": 66.9
+   },
+   "tel_hai>rosh_hanikra": {
+    "min": 78,
+    "km": 80.6
+   },
+   "hula_reserve>tel_aviv": {
+    "min": 148,
+    "km": 170.1
+   },
+   "hula_reserve>kiryat_shmona": {
+    "min": 36,
+    "km": 21.7
+   },
+   "hula_reserve>nahariya": {
+    "min": 85,
+    "km": 78.5
+   },
+   "hula_reserve>safed": {
+    "min": 42,
+    "km": 26.6
+   },
+   "hula_reserve>yokneam": {
+    "min": 91,
+    "km": 87.6
+   },
+   "hula_reserve>golani_jct": {
+    "min": 64,
+    "km": 53.7
+   },
+   "hula_reserve>rosh_pina": {
+    "min": 32,
+    "km": 18.3
+   },
+   "hula_reserve>tel_hai": {
+    "min": 40,
+    "km": 24.8
+   },
+   "hula_reserve>agamon": {
+    "min": 50,
+    "km": 13.8
+   },
+   "hula_reserve>metzudat_koach": {
+    "min": 30,
+    "km": 16.2
+   },
+   "hula_reserve>rihaniya": {
+    "min": 43,
+    "km": 29.5
+   },
+   "hula_reserve>rashbi_meron": {
+    "min": 47,
+    "km": 35.7
+   },
+   "hula_reserve>baram": {
+    "min": 54,
+    "km": 38.7
+   },
+   "hula_reserve>keshet_cave": {
+    "min": 82,
+    "km": 70.7
+   },
+   "hula_reserve>peqiin": {
+    "min": 68,
+    "km": 51.8
+   },
+   "hula_reserve>yehiam_convoy": {
+    "min": 84,
+    "km": 68
+   },
+   "hula_reserve>montfort": {
+    "min": 86,
+    "km": 65
+   },
+   "hula_reserve>rosh_hanikra": {
+    "min": 88,
+    "km": 77.3
+   },
+   "agamon>tel_aviv": {
+    "min": 158,
+    "km": 174
+   },
+   "agamon>kiryat_shmona": {
+    "min": 41,
+    "km": 19.8
+   },
+   "agamon>nahariya": {
+    "min": 93,
+    "km": 73
+   },
+   "agamon>safed": {
+    "min": 52,
+    "km": 30.6
+   },
+   "agamon>yokneam": {
+    "min": 100,
+    "km": 91.5
+   },
+   "agamon>golani_jct": {
+    "min": 74,
+    "km": 57.6
+   },
+   "agamon>rosh_pina": {
+    "min": 42,
+    "km": 22.2
+   },
+   "agamon>tel_hai": {
+    "min": 45,
+    "km": 22.8
+   },
+   "agamon>hula_reserve": {
+    "min": 50,
+    "km": 13.8
+   },
+   "agamon>metzudat_koach": {
+    "min": 36,
+    "km": 14.2
+   },
+   "agamon>rihaniya": {
+    "min": 49,
+    "km": 27.6
+   },
+   "agamon>rashbi_meron": {
+    "min": 57,
+    "km": 39.6
+   },
+   "agamon>baram": {
+    "min": 59,
+    "km": 36.8
+   },
+   "agamon>keshet_cave": {
+    "min": 88,
+    "km": 68.7
+   },
+   "agamon>peqiin": {
+    "min": 78,
+    "km": 55.7
+   },
+   "agamon>yehiam_convoy": {
+    "min": 88,
+    "km": 64.7
+   },
+   "agamon>montfort": {
+    "min": 90,
+    "km": 61.7
+   },
+   "agamon>rosh_hanikra": {
+    "min": 94,
+    "km": 75.3
+   },
+   "metzudat_koach>tel_aviv": {
+    "min": 138,
+    "km": 176.3
+   },
+   "metzudat_koach>kiryat_shmona": {
+    "min": 15,
+    "km": 14.9
+   },
+   "metzudat_koach>nahariya": {
+    "min": 58,
+    "km": 59.1
+   },
+   "metzudat_koach>safed": {
+    "min": 28,
+    "km": 27.5
+   },
+   "metzudat_koach>yokneam": {
+    "min": 81,
+    "km": 93.9
+   },
+   "metzudat_koach>golani_jct": {
+    "min": 54,
+    "km": 59.9
+   },
+   "metzudat_koach>rosh_pina": {
+    "min": 22,
+    "km": 24.6
+   },
+   "metzudat_koach>tel_hai": {
+    "min": 20,
+    "km": 18
+   },
+   "metzudat_koach>hula_reserve": {
+    "min": 30,
+    "km": 16.2
+   },
+   "metzudat_koach>agamon": {
+    "min": 36,
+    "km": 14.2
+   },
+   "metzudat_koach>rihaniya": {
+    "min": 14,
+    "km": 13.6
+   },
+   "metzudat_koach>rashbi_meron": {
+    "min": 26,
+    "km": 26.1
+   },
+   "metzudat_koach>baram": {
+    "min": 25,
+    "km": 22.8
+   },
+   "metzudat_koach>keshet_cave": {
+    "min": 53,
+    "km": 54.8
+   },
+   "metzudat_koach>peqiin": {
+    "min": 49,
+    "km": 44.8
+   },
+   "metzudat_koach>yehiam_convoy": {
+    "min": 54,
+    "km": 50.7
+   },
+   "metzudat_koach>montfort": {
+    "min": 56,
+    "km": 47.7
+   },
+   "metzudat_koach>rosh_hanikra": {
+    "min": 59,
+    "km": 61.4
+   },
+   "rihaniya>tel_aviv": {
+    "min": 129,
+    "km": 162.1
+   },
+   "rihaniya>kiryat_shmona": {
+    "min": 28,
+    "km": 28.3
+   },
+   "rihaniya>nahariya": {
+    "min": 46,
+    "km": 44.5
+   },
+   "rihaniya>safed": {
+    "min": 15,
+    "km": 14.7
+   },
+   "rihaniya>yokneam": {
+    "min": 72,
+    "km": 79.6
+   },
+   "rihaniya>golani_jct": {
+    "min": 50,
+    "km": 54.5
+   },
+   "rihaniya>rosh_pina": {
+    "min": 21,
+    "km": 22.8
+   },
+   "rihaniya>tel_hai": {
+    "min": 32,
+    "km": 31.3
+   },
+   "rihaniya>hula_reserve": {
+    "min": 43,
+    "km": 29.5
+   },
+   "rihaniya>agamon": {
+    "min": 49,
+    "km": 27.5
+   },
+   "rihaniya>metzudat_koach": {
+    "min": 14,
+    "km": 13.6
+   },
+   "rihaniya>rashbi_meron": {
+    "min": 14,
+    "km": 13.3
+   },
+   "rihaniya>baram": {
+    "min": 13,
+    "km": 8.8
+   },
+   "rihaniya>keshet_cave": {
+    "min": 41,
+    "km": 40.2
+   },
+   "rihaniya>peqiin": {
+    "min": 36,
+    "km": 30.3
+   },
+   "rihaniya>yehiam_convoy": {
+    "min": 42,
+    "km": 36.2
+   },
+   "rihaniya>montfort": {
+    "min": 43,
+    "km": 33.2
+   },
+   "rihaniya>rosh_hanikra": {
+    "min": 47,
+    "km": 46.8
+   },
+   "rashbi_meron>tel_aviv": {
+    "min": 116,
+    "km": 149.8
+   },
+   "rashbi_meron>kiryat_shmona": {
+    "min": 41,
+    "km": 40.8
+   },
+   "rashbi_meron>nahariya": {
+    "min": 43,
+    "km": 43.8
+   },
+   "rashbi_meron>safed": {
+    "min": 11,
+    "km": 10.8
+   },
+   "rashbi_meron>yokneam": {
+    "min": 59,
+    "km": 67.3
+   },
+   "rashbi_meron>golani_jct": {
+    "min": 41,
+    "km": 35.9
+   },
+   "rashbi_meron>rosh_pina": {
+    "min": 17,
+    "km": 18.9
+   },
+   "rashbi_meron>tel_hai": {
+    "min": 45,
+    "km": 43.9
+   },
+   "rashbi_meron>hula_reserve": {
+    "min": 47,
+    "km": 35.7
+   },
+   "rashbi_meron>agamon": {
+    "min": 57,
+    "km": 39.6
+   },
+   "rashbi_meron>metzudat_koach": {
+    "min": 27,
+    "km": 26.1
+   },
+   "rashbi_meron>rihaniya": {
+    "min": 14,
+    "km": 13.3
+   },
+   "rashbi_meron>baram": {
+    "min": 14,
+    "km": 12
+   },
+   "rashbi_meron>keshet_cave": {
+    "min": 39,
+    "km": 39.5
+   },
+   "rashbi_meron>peqiin": {
+    "min": 32,
+    "km": 25.1
+   },
+   "rashbi_meron>yehiam_convoy": {
+    "min": 39,
+    "km": 35.4
+   },
+   "rashbi_meron>montfort": {
+    "min": 41,
+    "km": 32.4
+   },
+   "rashbi_meron>rosh_hanikra": {
+    "min": 44,
+    "km": 46.1
+   },
+   "baram>tel_aviv": {
+    "min": 129,
+    "km": 160.8
+   },
+   "baram>kiryat_shmona": {
+    "min": 39,
+    "km": 37.5
+   },
+   "baram>nahariya": {
+    "min": 37,
+    "km": 36.9
+   },
+   "baram>safed": {
+    "min": 23,
+    "km": 20.8
+   },
+   "baram>yokneam": {
+    "min": 72,
+    "km": 78.3
+   },
+   "baram>golani_jct": {
+    "min": 53,
+    "km": 46.8
+   },
+   "baram>rosh_pina": {
+    "min": 29,
+    "km": 28.9
+   },
+   "baram>tel_hai": {
+    "min": 43,
+    "km": 40.5
+   },
+   "baram>hula_reserve": {
+    "min": 54,
+    "km": 38.7
+   },
+   "baram>agamon": {
+    "min": 59,
+    "km": 36.7
+   },
+   "baram>metzudat_koach": {
+    "min": 25,
+    "km": 22.8
+   },
+   "baram>rihaniya": {
+    "min": 13,
+    "km": 8.8
+   },
+   "baram>rashbi_meron": {
+    "min": 14,
+    "km": 11.9
+   },
+   "baram>keshet_cave": {
+    "min": 32,
+    "km": 32.6
+   },
+   "baram>peqiin": {
+    "min": 27,
+    "km": 22.6
+   },
+   "baram>yehiam_convoy": {
+    "min": 33,
+    "km": 28.5
+   },
+   "baram>montfort": {
+    "min": 34,
+    "km": 25.5
+   },
+   "baram>rosh_hanikra": {
+    "min": 38,
+    "km": 39.2
+   },
+   "keshet_cave>tel_aviv": {
+    "min": 108,
+    "km": 141.5
+   },
+   "keshet_cave>kiryat_shmona": {
+    "min": 68,
+    "km": 69.5
+   },
+   "keshet_cave>nahariya": {
+    "min": 16,
+    "km": 17
+   },
+   "keshet_cave>safed": {
+    "min": 48,
+    "km": 48.2
+   },
+   "keshet_cave>yokneam": {
+    "min": 51,
+    "km": 59
+   },
+   "keshet_cave>golani_jct": {
+    "min": 62,
+    "km": 70.9
+   },
+   "keshet_cave>rosh_pina": {
+    "min": 54,
+    "km": 56.4
+   },
+   "keshet_cave>tel_hai": {
+    "min": 72,
+    "km": 72.5
+   },
+   "keshet_cave>hula_reserve": {
+    "min": 83,
+    "km": 70.7
+   },
+   "keshet_cave>agamon": {
+    "min": 88,
+    "km": 68.7
+   },
+   "keshet_cave>metzudat_koach": {
+    "min": 54,
+    "km": 54.8
+   },
+   "keshet_cave>rihaniya": {
+    "min": 41,
+    "km": 40.2
+   },
+   "keshet_cave>rashbi_meron": {
+    "min": 39,
+    "km": 39.4
+   },
+   "keshet_cave>baram": {
+    "min": 32,
+    "km": 32.6
+   },
+   "keshet_cave>peqiin": {
+    "min": 33,
+    "km": 33.9
+   },
+   "keshet_cave>yehiam_convoy": {
+    "min": 20,
+    "km": 20.4
+   },
+   "keshet_cave>montfort": {
+    "min": 32,
+    "km": 27
+   },
+   "keshet_cave>rosh_hanikra": {
+    "min": 11,
+    "km": 11.9
+   },
+   "peqiin>tel_aviv": {
+    "min": 115,
+    "km": 143
+   },
+   "peqiin>kiryat_shmona": {
+    "min": 63,
+    "km": 63.7
+   },
+   "peqiin>nahariya": {
+    "min": 29,
+    "km": 26.6
+   },
+   "peqiin>safed": {
+    "min": 42,
+    "km": 34.9
+   },
+   "peqiin>yokneam": {
+    "min": 58,
+    "km": 60.5
+   },
+   "peqiin>golani_jct": {
+    "min": 46,
+    "km": 37.9
+   },
+   "peqiin>rosh_pina": {
+    "min": 38,
+    "km": 35.2
+   },
+   "peqiin>tel_hai": {
+    "min": 68,
+    "km": 66.8
+   },
+   "peqiin>hula_reserve": {
+    "min": 68,
+    "km": 51.8
+   },
+   "peqiin>agamon": {
+    "min": 78,
+    "km": 55.8
+   },
+   "peqiin>metzudat_koach": {
+    "min": 49,
+    "km": 44.7
+   },
+   "peqiin>rihaniya": {
+    "min": 36,
+    "km": 30.2
+   },
+   "peqiin>rashbi_meron": {
+    "min": 32,
+    "km": 25.2
+   },
+   "peqiin>baram": {
+    "min": 27,
+    "km": 22.5
+   },
+   "peqiin>keshet_cave": {
+    "min": 33,
+    "km": 33.9
+   },
+   "peqiin>yehiam_convoy": {
+    "min": 24,
+    "km": 18.2
+   },
+   "peqiin>montfort": {
+    "min": 26,
+    "km": 15.2
+   },
+   "peqiin>rosh_hanikra": {
+    "min": 33,
+    "km": 34.4
+   },
+   "yehiam_convoy>tel_aviv": {
+    "min": 108,
+    "km": 137.6
+   },
+   "yehiam_convoy>kiryat_shmona": {
+    "min": 68,
+    "km": 65.4
+   },
+   "yehiam_convoy>nahariya": {
+    "min": 15,
+    "km": 13.1
+   },
+   "yehiam_convoy>safed": {
+    "min": 48,
+    "km": 44.2
+   },
+   "yehiam_convoy>yokneam": {
+    "min": 51,
+    "km": 55.1
+   },
+   "yehiam_convoy>golani_jct": {
+    "min": 62,
+    "km": 54
+   },
+   "yehiam_convoy>rosh_pina": {
+    "min": 54,
+    "km": 51.3
+   },
+   "yehiam_convoy>tel_hai": {
+    "min": 72,
+    "km": 68.4
+   },
+   "yehiam_convoy>hula_reserve": {
+    "min": 84,
+    "km": 68
+   },
+   "yehiam_convoy>agamon": {
+    "min": 88,
+    "km": 64.6
+   },
+   "yehiam_convoy>metzudat_koach": {
+    "min": 54,
+    "km": 50.7
+   },
+   "yehiam_convoy>rihaniya": {
+    "min": 41,
+    "km": 36.2
+   },
+   "yehiam_convoy>rashbi_meron": {
+    "min": 39,
+    "km": 35.3
+   },
+   "yehiam_convoy>baram": {
+    "min": 32,
+    "km": 28.5
+   },
+   "yehiam_convoy>keshet_cave": {
+    "min": 20,
+    "km": 20.4
+   },
+   "yehiam_convoy>peqiin": {
+    "min": 24,
+    "km": 18.2
+   },
+   "yehiam_convoy>montfort": {
+    "min": 25,
+    "km": 14.4
+   },
+   "yehiam_convoy>rosh_hanikra": {
+    "min": 20,
+    "km": 21
+   },
+   "montfort>tel_aviv": {
+    "min": 119,
+    "km": 144.1
+   },
+   "montfort>kiryat_shmona": {
+    "min": 70,
+    "km": 62.5
+   },
+   "montfort>nahariya": {
+    "min": 27,
+    "km": 19.6
+   },
+   "montfort>safed": {
+    "min": 50,
+    "km": 41.2
+   },
+   "montfort>yokneam": {
+    "min": 62,
+    "km": 61.6
+   },
+   "montfort>golani_jct": {
+    "min": 64,
+    "km": 51.1
+   },
+   "montfort>rosh_pina": {
+    "min": 56,
+    "km": 48.4
+   },
+   "montfort>tel_hai": {
+    "min": 74,
+    "km": 65.5
+   },
+   "montfort>hula_reserve": {
+    "min": 86,
+    "km": 65
+   },
+   "montfort>agamon": {
+    "min": 91,
+    "km": 61.7
+   },
+   "montfort>metzudat_koach": {
+    "min": 56,
+    "km": 47.8
+   },
+   "montfort>rihaniya": {
+    "min": 44,
+    "km": 33.2
+   },
+   "montfort>rashbi_meron": {
+    "min": 41,
+    "km": 32.4
+   },
+   "montfort>baram": {
+    "min": 35,
+    "km": 25.6
+   },
+   "montfort>keshet_cave": {
+    "min": 32,
+    "km": 26.9
+   },
+   "montfort>peqiin": {
+    "min": 26,
+    "km": 15.3
+   },
+   "montfort>yehiam_convoy": {
+    "min": 25,
+    "km": 14.4
+   },
+   "montfort>rosh_hanikra": {
+    "min": 32,
+    "km": 27.5
+   },
+   "rosh_hanikra>tel_aviv": {
+    "min": 108,
+    "km": 137.7
+   },
+   "rosh_hanikra>kiryat_shmona": {
+    "min": 74,
+    "km": 76.1
+   },
+   "rosh_hanikra>nahariya": {
+    "min": 11,
+    "km": 10.6
+   },
+   "rosh_hanikra>safed": {
+    "min": 53,
+    "km": 54.9
+   },
+   "rosh_hanikra>yokneam": {
+    "min": 51,
+    "km": 55.2
+   },
+   "rosh_hanikra>golani_jct": {
+    "min": 61,
+    "km": 67.1
+   },
+   "rosh_hanikra>rosh_pina": {
+    "min": 59,
+    "km": 63.1
+   },
+   "rosh_hanikra>tel_hai": {
+    "min": 78,
+    "km": 79.2
+   },
+   "rosh_hanikra>hula_reserve": {
+    "min": 88,
+    "km": 77.4
+   },
+   "rosh_hanikra>agamon": {
+    "min": 94,
+    "km": 75.4
+   },
+   "rosh_hanikra>metzudat_koach": {
+    "min": 59,
+    "km": 61.5
+   },
+   "rosh_hanikra>rihaniya": {
+    "min": 47,
+    "km": 46.9
+   },
+   "rosh_hanikra>rashbi_meron": {
+    "min": 44,
+    "km": 46
+   },
+   "rosh_hanikra>baram": {
+    "min": 38,
+    "km": 39.2
+   },
+   "rosh_hanikra>keshet_cave": {
+    "min": 12,
+    "km": 11.9
+   },
+   "rosh_hanikra>peqiin": {
+    "min": 34,
+    "km": 34.5
+   },
+   "rosh_hanikra>yehiam_convoy": {
+    "min": 20,
+    "km": 21
+   },
+   "rosh_hanikra>montfort": {
+    "min": 32,
+    "km": 27.5
+   }
+  }
+ },
+ "wiki:he:תל מגידו": {
+  "lat": 32.58528,
+  "lon": 35.18444,
+  "title": "he:תל מגידו",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%9E%D7%92%D7%99%D7%93%D7%95",
+  "qid": "Q208379"
+ },
+ "wiki:he:עפולה": {
+  "lat": 32.61,
+  "lon": 35.29,
+  "title": "he:עפולה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%A4%D7%95%D7%9C%D7%94",
+  "qid": "Q152462"
+ },
+ "wiki:en:Tel Jezreel": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:הגלבוע": {
+  "lat": 32.43389,
+  "lon": 35.41444,
+  "title": "he:הר הגלבוע",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%94%D7%92%D7%9C%D7%91%D7%95%D7%A2",
+  "qid": "Q1161616"
+ },
+ "wiki:he:הר ברקן": {
+  "lat": 32.50972,
+  "lon": 35.40917,
+  "title": "he:הר ברקן",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%A8%D7%A7%D7%9F",
+  "qid": "Q12019082"
+ },
+ "wiki:he:בית הכנסת העתיק בבית אלפא": {
+  "lat": 32.5217,
+  "lon": 35.43236,
+  "title": "he:בית הכנסת בבית אלפא",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%94%D7%9B%D7%A0%D7%A1%D7%AA_%D7%91%D7%91%D7%99%D7%AA_%D7%90%D7%9C%D7%A4%D7%90",
+  "qid": "Q2916397"
+ },
+ "wiki:he:מעיין חרוד": {
+  "lat": 32.54861,
+  "lon": 35.35583,
+  "title": "he:מעיין חרוד",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%99%D7%99%D7%9F_%D7%97%D7%A8%D7%95%D7%93",
+  "qid": "Q603425"
+ },
+ "wiki:he:גן לאומי בית שאן": {
+  "lat": 32.5022,
+  "lon": 35.5022,
+  "title": "he:גן לאומי בית שאן",
+  "url": "https://he.wikipedia.org/wiki/%D7%92%D7%9F_%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%91%D7%99%D7%AA_%D7%A9%D7%90%D7%9F",
+  "qid": "Q11811439"
+ },
+ "wiki:he:כוכב הירדן": {
+  "lat": 32.59556,
+  "lon": 35.52139,
+  "title": "he:כוכב הירדן",
+  "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%95%D7%9B%D7%91_%D7%94%D7%99%D7%A8%D7%93%D7%9F",
+  "qid": "Q1010980"
+ },
+ "drive:valleys": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;megiddo@32.58528,35.18444;afula@32.61,35.29;beit_shean_town@32.49734,35.4978;tiberias@32.78753,35.52437;tel_jezreel@32.55785,35.32795;har_shaul@32.43389,35.41444;har_barkan@32.50972,35.40917;beit_alpha@32.5217,35.43236;ein_harod@32.54861,35.35583;beit_shean@32.5022,35.5022;kokhav_hayarden@32.59556,35.52139",
+  "legs": {
+   "tel_aviv>megiddo": {
+    "min": 69,
+    "km": 83
+   },
+   "tel_aviv>afula": {
+    "min": 76,
+    "km": 91.6
+   },
+   "tel_aviv>beit_shean_town": {
+    "min": 97,
+    "km": 115.2
+   },
+   "tel_aviv>tiberias": {
+    "min": 102,
+    "km": 133.4
+   },
+   "tel_aviv>tel_jezreel": {
+    "min": 80,
+    "km": 95.9
+   },
+   "tel_aviv>har_shaul": {
+    "min": 107,
+    "km": 121
+   },
+   "tel_aviv>har_barkan": {
+    "min": 89,
+    "km": 106.7
+   },
+   "tel_aviv>beit_alpha": {
+    "min": 94,
+    "km": 110
+   },
+   "tel_aviv>ein_harod": {
+    "min": 85,
+    "km": 101.6
+   },
+   "tel_aviv>beit_shean": {
+    "min": 98,
+    "km": 115.6
+   },
+   "tel_aviv>kokhav_hayarden": {
+    "min": 123,
+    "km": 133.1
+   },
+   "megiddo>tel_aviv": {
+    "min": 68,
+    "km": 81.8
+   },
+   "megiddo>afula": {
+    "min": 14,
+    "km": 13
+   },
+   "megiddo>beit_shean_town": {
+    "min": 35,
+    "km": 36.6
+   },
+   "megiddo>tiberias": {
+    "min": 48,
+    "km": 51.2
+   },
+   "megiddo>tel_jezreel": {
+    "min": 18,
+    "km": 17.2
+   },
+   "megiddo>har_shaul": {
+    "min": 45,
+    "km": 42.4
+   },
+   "megiddo>har_barkan": {
+    "min": 28,
+    "km": 28.1
+   },
+   "megiddo>beit_alpha": {
+    "min": 32,
+    "km": 31.3
+   },
+   "megiddo>ein_harod": {
+    "min": 24,
+    "km": 23
+   },
+   "megiddo>beit_shean": {
+    "min": 37,
+    "km": 37
+   },
+   "megiddo>kokhav_hayarden": {
+    "min": 61,
+    "km": 54.5
+   },
+   "afula>tel_aviv": {
+    "min": 75,
+    "km": 90.9
+   },
+   "afula>megiddo": {
+    "min": 15,
+    "km": 13.4
+   },
+   "afula>beit_shean_town": {
+    "min": 25,
+    "km": 26.5
+   },
+   "afula>tiberias": {
+    "min": 38,
+    "km": 40.2
+   },
+   "afula>tel_jezreel": {
+    "min": 8,
+    "km": 8
+   },
+   "afula>har_shaul": {
+    "min": 35,
+    "km": 33.1
+   },
+   "afula>har_barkan": {
+    "min": 18,
+    "km": 18.9
+   },
+   "afula>beit_alpha": {
+    "min": 22,
+    "km": 21.3
+   },
+   "afula>ein_harod": {
+    "min": 13,
+    "km": 12.9
+   },
+   "afula>beit_shean": {
+    "min": 26,
+    "km": 27
+   },
+   "afula>kokhav_hayarden": {
+    "min": 51,
+    "km": 44.5
+   },
+   "beit_shean_town>tel_aviv": {
+    "min": 95,
+    "km": 114.1
+   },
+   "beit_shean_town>megiddo": {
+    "min": 35,
+    "km": 36.6
+   },
+   "beit_shean_town>afula": {
+    "min": 24,
+    "km": 26.4
+   },
+   "beit_shean_town>tiberias": {
+    "min": 45,
+    "km": 42.7
+   },
+   "beit_shean_town>tel_jezreel": {
+    "min": 19,
+    "km": 20.5
+   },
+   "beit_shean_town>har_shaul": {
+    "min": 29,
+    "km": 24.3
+   },
+   "beit_shean_town>har_barkan": {
+    "min": 18,
+    "km": 17.4
+   },
+   "beit_shean_town>beit_alpha": {
+    "min": 10,
+    "km": 8.1
+   },
+   "beit_shean_town>ein_harod": {
+    "min": 17,
+    "km": 17.3
+   },
+   "beit_shean_town>beit_shean": {
+    "min": 3,
+    "km": 0.8
+   },
+   "beit_shean_town>kokhav_hayarden": {
+    "min": 31,
+    "km": 20.8
+   },
+   "tiberias>tel_aviv": {
+    "min": 101,
+    "km": 132.3
+   },
+   "tiberias>megiddo": {
+    "min": 49,
+    "km": 51.6
+   },
+   "tiberias>afula": {
+    "min": 39,
+    "km": 42
+   },
+   "tiberias>beit_shean_town": {
+    "min": 45,
+    "km": 42.4
+   },
+   "tiberias>tel_jezreel": {
+    "min": 46,
+    "km": 49.7
+   },
+   "tiberias>har_shaul": {
+    "min": 72,
+    "km": 65.1
+   },
+   "tiberias>har_barkan": {
+    "min": 55,
+    "km": 60.6
+   },
+   "tiberias>beit_alpha": {
+    "min": 51,
+    "km": 51.4
+   },
+   "tiberias>ein_harod": {
+    "min": 45,
+    "km": 46.3
+   },
+   "tiberias>beit_shean": {
+    "min": 46,
+    "km": 42.7
+   },
+   "tiberias>kokhav_hayarden": {
+    "min": 47,
+    "km": 35
+   },
+   "tel_jezreel>tel_aviv": {
+    "min": 79,
+    "km": 94.8
+   },
+   "tel_jezreel>megiddo": {
+    "min": 18,
+    "km": 17.2
+   },
+   "tel_jezreel>afula": {
+    "min": 8,
+    "km": 8.1
+   },
+   "tel_jezreel>beit_shean_town": {
+    "min": 19,
+    "km": 20.5
+   },
+   "tel_jezreel>tiberias": {
+    "min": 44,
+    "km": 47.5
+   },
+   "tel_jezreel>har_shaul": {
+    "min": 29,
+    "km": 26.3
+   },
+   "tel_jezreel>har_barkan": {
+    "min": 12,
+    "km": 12
+   },
+   "tel_jezreel>beit_alpha": {
+    "min": 17,
+    "km": 15.3
+   },
+   "tel_jezreel>ein_harod": {
+    "min": 8,
+    "km": 6.9
+   },
+   "tel_jezreel>beit_shean": {
+    "min": 21,
+    "km": 21
+   },
+   "tel_jezreel>kokhav_hayarden": {
+    "min": 46,
+    "km": 38.5
+   },
+   "har_shaul>tel_aviv": {
+    "min": 106,
+    "km": 119.9
+   },
+   "har_shaul>megiddo": {
+    "min": 45,
+    "km": 42.4
+   },
+   "har_shaul>afula": {
+    "min": 35,
+    "km": 33.2
+   },
+   "har_shaul>beit_shean_town": {
+    "min": 29,
+    "km": 24.3
+   },
+   "har_shaul>tiberias": {
+    "min": 70,
+    "km": 69.6
+   },
+   "har_shaul>tel_jezreel": {
+    "min": 29,
+    "km": 26.3
+   },
+   "har_shaul>har_barkan": {
+    "min": 18,
+    "km": 14.3
+   },
+   "har_shaul>beit_alpha": {
+    "min": 25,
+    "km": 19.7
+   },
+   "har_shaul>ein_harod": {
+    "min": 33,
+    "km": 29.9
+   },
+   "har_shaul>beit_shean": {
+    "min": 31,
+    "km": 25.1
+   },
+   "har_shaul>kokhav_hayarden": {
+    "min": 58,
+    "km": 43.1
+   },
+   "har_barkan>tel_aviv": {
+    "min": 88,
+    "km": 105.6
+   },
+   "har_barkan>megiddo": {
+    "min": 28,
+    "km": 28.1
+   },
+   "har_barkan>afula": {
+    "min": 17,
+    "km": 18.9
+   },
+   "har_barkan>beit_shean_town": {
+    "min": 18,
+    "km": 17.4
+   },
+   "har_barkan>tiberias": {
+    "min": 53,
+    "km": 58.4
+   },
+   "har_barkan>tel_jezreel": {
+    "min": 12,
+    "km": 12
+   },
+   "har_barkan>har_shaul": {
+    "min": 17,
+    "km": 14.3
+   },
+   "har_barkan>beit_alpha": {
+    "min": 15,
+    "km": 12.7
+   },
+   "har_barkan>ein_harod": {
+    "min": 15,
+    "km": 15.7
+   },
+   "har_barkan>beit_shean": {
+    "min": 21,
+    "km": 18.2
+   },
+   "har_barkan>kokhav_hayarden": {
+    "min": 48,
+    "km": 38
+   },
+   "beit_alpha>tel_aviv": {
+    "min": 93,
+    "km": 109.7
+   },
+   "beit_alpha>megiddo": {
+    "min": 32,
+    "km": 32.2
+   },
+   "beit_alpha>afula": {
+    "min": 21,
+    "km": 22
+   },
+   "beit_alpha>beit_shean_town": {
+    "min": 9,
+    "km": 8.1
+   },
+   "beit_alpha>tiberias": {
+    "min": 49,
+    "km": 51.3
+   },
+   "beit_alpha>tel_jezreel": {
+    "min": 16,
+    "km": 16.1
+   },
+   "beit_alpha>har_shaul": {
+    "min": 25,
+    "km": 19.7
+   },
+   "beit_alpha>har_barkan": {
+    "min": 14,
+    "km": 12.8
+   },
+   "beit_alpha>ein_harod": {
+    "min": 14,
+    "km": 12.9
+   },
+   "beit_alpha>beit_shean": {
+    "min": 12,
+    "km": 8.9
+   },
+   "beit_alpha>kokhav_hayarden": {
+    "min": 39,
+    "km": 28.7
+   },
+   "ein_harod>tel_aviv": {
+    "min": 84,
+    "km": 100.6
+   },
+   "ein_harod>megiddo": {
+    "min": 24,
+    "km": 23.1
+   },
+   "ein_harod>afula": {
+    "min": 13,
+    "km": 12.9
+   },
+   "ein_harod>beit_shean_town": {
+    "min": 16,
+    "km": 17.1
+   },
+   "ein_harod>tiberias": {
+    "min": 43,
+    "km": 45.2
+   },
+   "ein_harod>tel_jezreel": {
+    "min": 8,
+    "km": 7
+   },
+   "ein_harod>har_shaul": {
+    "min": 33,
+    "km": 30
+   },
+   "ein_harod>har_barkan": {
+    "min": 16,
+    "km": 15.8
+   },
+   "ein_harod>beit_alpha": {
+    "min": 14,
+    "km": 11.9
+   },
+   "ein_harod>beit_shean": {
+    "min": 18,
+    "km": 17.6
+   },
+   "ein_harod>kokhav_hayarden": {
+    "min": 43,
+    "km": 35.1
+   },
+   "beit_shean>tel_aviv": {
+    "min": 97,
+    "km": 114.5
+   },
+   "beit_shean>megiddo": {
+    "min": 37,
+    "km": 37
+   },
+   "beit_shean>afula": {
+    "min": 26,
+    "km": 26.8
+   },
+   "beit_shean>beit_shean_town": {
+    "min": 3,
+    "km": 0.9
+   },
+   "beit_shean>tiberias": {
+    "min": 47,
+    "km": 44.3
+   },
+   "beit_shean>tel_jezreel": {
+    "min": 21,
+    "km": 20.9
+   },
+   "beit_shean>har_shaul": {
+    "min": 31,
+    "km": 25.1
+   },
+   "beit_shean>har_barkan": {
+    "min": 21,
+    "km": 18.2
+   },
+   "beit_shean>beit_alpha": {
+    "min": 12,
+    "km": 8.9
+   },
+   "beit_shean>ein_harod": {
+    "min": 18,
+    "km": 17.7
+   },
+   "beit_shean>kokhav_hayarden": {
+    "min": 33,
+    "km": 22.3
+   },
+   "kokhav_hayarden>tel_aviv": {
+    "min": 121,
+    "km": 132
+   },
+   "kokhav_hayarden>megiddo": {
+    "min": 61,
+    "km": 54.5
+   },
+   "kokhav_hayarden>afula": {
+    "min": 50,
+    "km": 44.3
+   },
+   "kokhav_hayarden>beit_shean_town": {
+    "min": 31,
+    "km": 20.5
+   },
+   "kokhav_hayarden>tiberias": {
+    "min": 47,
+    "km": 35
+   },
+   "kokhav_hayarden>tel_jezreel": {
+    "min": 45,
+    "km": 38.4
+   },
+   "kokhav_hayarden>har_shaul": {
+    "min": 58,
+    "km": 43.1
+   },
+   "kokhav_hayarden>har_barkan": {
+    "min": 47,
+    "km": 38.1
+   },
+   "kokhav_hayarden>beit_alpha": {
+    "min": 39,
+    "km": 28.7
+   },
+   "kokhav_hayarden>ein_harod": {
+    "min": 43,
+    "km": 35.2
+   },
+   "kokhav_hayarden>beit_shean": {
+    "min": 32,
+    "km": 20.7
+   }
+  }
+ },
+ "wiki:he:מרום גולן": {
+  "lat": 33.13314,
+  "lon": 35.77585,
+  "title": "he:מרום גולן",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%95%D7%9D_%D7%92%D7%95%D7%9C%D7%9F",
+  "qid": "Q985533"
+ },
+ "wiki:he:הרובע היהודי": {
+  "lat": 31.77611,
+  "lon": 35.23222,
+  "title": "he:הרובע היהודי",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%95%D7%91%D7%A2_%D7%94%D7%99%D7%94%D7%95%D7%93%D7%99",
+  "qid": "Q1186403"
+ },
+ "wiki:he:הבית השרוף": {
+  "lat": 31.77557,
+  "lon": 35.23259,
+  "title": "he:הבית השרוף",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%91%D7%99%D7%AA_%D7%94%D7%A9%D7%A8%D7%95%D7%A3",
+  "qid": "Q4854786"
+ },
+ "wiki:en:Wohl Archaeological Museum": {
+  "lat": 31.77519,
+  "lon": 35.23214,
+  "title": "en:Herodian Quarter",
+  "url": "https://en.wikipedia.org/wiki/Herodian_Quarter",
+  "qid": "Q12406905"
+ },
+ "wiki:en:Ecce Homo Arch": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Struthion Pool": {
+  "lat": 31.7803,
+  "lon": 35.23364,
+  "title": "en:Struthion Pool",
+  "url": "https://en.wikipedia.org/wiki/Struthion_Pool",
+  "qid": "Q7625455"
+ },
+ "wiki:he:מערת צדקיהו": {
+  "lat": 31.78211,
+  "lon": 35.23074,
+  "title": "he:מערת צדקיהו",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%A8%D7%AA_%D7%A6%D7%93%D7%A7%D7%99%D7%94%D7%95",
+  "qid": "Q184272"
+ },
+ "wiki:he:מגילת האש": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:יער הקדושים": {
+  "lat": 31.78056,
+  "lon": 35.06111,
+  "title": "he:יער הקדושים",
+  "url": "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%A8_%D7%94%D7%A7%D7%93%D7%95%D7%A9%D7%99%D7%9D",
+  "qid": "Q574308"
+ },
+ "wiki:he:מערת המכפלה": {
+  "lat": 31.52463,
+  "lon": 35.1107,
+  "title": "he:מערת המכפלה",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%A8%D7%AA_%D7%94%D7%9E%D7%9B%D7%A4%D7%9C%D7%94",
+  "qid": "Q204200"
+ },
+ "wiki:en:Qasr al-Yahud": {
+  "lat": 31.83833,
+  "lon": 35.53917,
+  "title": "en:Qasr al-Yahud",
+  "url": "https://en.wikipedia.org/wiki/Qasr_al-Yahud",
+  "qid": "Q1574073"
+ },
+ "wiki:he:בית שערים": {
+  "lat": 32.70333,
+  "lon": 35.12917,
+  "title": "he:בית שערים",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%A9%D7%A2%D7%A8%D7%99%D7%9D",
+  "qid": "Q830805"
+ },
+ "wiki:he:להב": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:נהריה": {
+  "lat": 33.00863,
+  "lon": 35.09753,
+  "title": "he:נהריה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A0%D7%94%D7%A8%D7%99%D7%94",
+  "qid": "Q167749"
+ },
+ "wiki:he:בירעם": {
+  "lat": 33.04348,
+  "lon": 35.41404,
+  "title": "he:כפר בירעם",
+  "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A4%D7%A8_%D7%91%D7%99%D7%A8%D7%A2%D7%9D",
+  "qid": "Q2904390"
+ },
+ "wiki:he:טבריה": {
+  "lat": 32.78753,
+  "lon": 35.52437,
+  "title": "he:טבריה",
+  "url": "https://he.wikipedia.org/wiki/%D7%98%D7%91%D7%A8%D7%99%D7%94",
+  "qid": "Q151920"
+ },
+ "wiki:he:תל יזרעאל": {
+  "lat": 32.55785,
+  "lon": 35.32795,
+  "title": "he:תל יזרעאל",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%99%D7%96%D7%A8%D7%A2%D7%90%D7%9C",
+  "qid": "Q2914898"
+ },
+ "wiki:en:Tsemah Junction": {
+  "lat": 32.7047,
+  "lon": 35.5865,
+  "title": "en:Tsemah Junction",
+  "url": "https://en.wikipedia.org/wiki/Tsemah_Junction",
+  "qid": "Q7849516"
+ },
+ "wiki:he:העיר התחתית של חיפה": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:בית החסד (חיפה)": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Saint Peter in Gallicantu": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:כנסיית פטרוס בגליקנטו": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Church of St. Peter in Gallicantu": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:הקרדו (ירושלים)": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Cardo (Jerusalem)": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:הקארדו": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Jerusalem Cardo": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:עין גדי (קיבוץ)": {
+  "lat": 31.45253,
+  "lon": 35.38477,
+  "title": "he:עין גדי (קיבוץ)",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%9F_%D7%92%D7%93%D7%99_(%D7%A7%D7%99%D7%91%D7%95%D7%A5)",
+  "qid": "Q2469471"
+ },
+ "wiki:he:קאסר אל-יהוד": {
+  "lat": 31.83709,
+  "lon": 35.5465,
+  "title": "he:קסר אל-יהוד",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A1%D7%A8_%D7%90%D7%9C-%D7%99%D7%94%D7%95%D7%93",
+  "qid": "Q1574073"
+ },
+ "wiki:he:בית הכנסת העתיק בעין גדי": {
+  "lat": 31.46147,
+  "lon": 35.3925,
+  "title": "he:בית הכנסת העתיק בעין גדי",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%94%D7%9B%D7%A0%D7%A1%D7%AA_%D7%94%D7%A2%D7%AA%D7%99%D7%A7_%D7%91%D7%A2%D7%99%D7%9F_%D7%92%D7%93%D7%99",
+  "qid": "Q3508021"
+ },
+ "wiki:he:שייח' אבריק": {
+  "lat": 32.70094,
+  "lon": 35.12894,
+  "title": "he:שייח' אבריק",
+  "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%99%D7%97%27_%D7%90%D7%91%D7%A8%D7%99%D7%A7",
+  "qid": "Q7492909"
+ },
+ "wiki:he:בית הכנסת בציפורי": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Sepphoris synagogue": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:גן לאומי ציפורי": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Zippori National Park": {
+  "lat": 32.74556,
+  "lon": 35.27861,
+  "title": "en:Sepphoris",
+  "url": "https://en.wikipedia.org/wiki/Sepphoris",
+  "qid": "Q1132798"
+ },
+ "wiki:he:מרכז ג'ו אלון": {
+  "lat": 31.37931,
+  "lon": 34.86486,
+  "title": "he:מרכז ג'ו אלון",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%9B%D7%96_%D7%92%27%D7%95_%D7%90%D7%9C%D7%95%D7%9F",
+  "qid": "Q6973713"
+ },
+ "wiki:he:גשר א-זיב": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:ליל הגשרים": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:יחיעם": {
+  "lat": 32.99686,
+  "lon": 35.22081,
+  "title": "he:יחיעם",
+  "url": "https://he.wikipedia.org/wiki/%D7%99%D7%97%D7%99%D7%A2%D7%9D",
+  "qid": "Q2889861"
+ },
+ "wiki:en:Nahal David": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:שמורת עין גדי": {
+  "lat": 31.46667,
+  "lon": 35.39444,
+  "title": "he:עין גדי (שמורה)",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%9F_%D7%92%D7%93%D7%99_(%D7%A9%D7%9E%D7%95%D7%A8%D7%94)",
+  "qid": "Q1011544"
  }
 }

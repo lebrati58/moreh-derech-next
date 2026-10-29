@@ -240,6 +240,23 @@ await page.goto(base + 'exam.html#/'); await page.waitForSelector('[data-region=
 await page.$eval('[data-region="golan_south"]', el => el.click());
 await page.waitForFunction(() => /דרום רמת הגולן/.test(document.querySelector('h2.sec').textContent));
 
+// toutes les régions : accueil, missions et étape 1 de chaque mission sans erreur
+{
+  const R = JSON.parse(await (await fetch(base + 'exam/regions.json')).text()).regions.filter(r => r.file);
+  let okAll = true;
+  for (const r of R) {
+    await page.goto(base + 'exam.html#/'); await page.waitForSelector(`[data-region="${r.id}"]`);
+    await page.$eval(`[data-region="${r.id}"]`, el => el.click());
+    await page.waitForSelector(`[data-region="${r.id}"].on`);
+    const n = (await page.$$('.mlist .mcard')).length;
+    for (const mid of r.missions) { await page.goto(base + `exam.html#/m/${mid}/guided/1`); await page.waitForSelector('.slots'); }
+    if (n !== r.missions.length) { okAll = false; console.log('  ', r.id, n, r.missions.length); }
+  }
+  ok(okAll && R.length >= 12, `toutes les régions (${R.length}) s’ouvrent avec leurs missions`);
+  await page.goto(base + 'exam.html#/'); await page.waitForSelector('[data-region="golan_south"]'); await page.$eval('[data-region="golan_south"]', el => el.click());
+  await page.waitForFunction(() => /דרום רמת הגולן/.test(document.querySelector('h2.sec').textContent));
+}
+
 // FR
 await page.goto(base + 'exam.html');
 await page.waitForSelector('#lng'); await page.click('#lng');
