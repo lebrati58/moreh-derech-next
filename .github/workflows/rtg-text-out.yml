@@ -1,0 +1,30 @@
+name: ספריית רט״ג — texte de documents choisis (annotations)
+on:
+  workflow_dispatch:
+    inputs:
+      ids: { description: 'Identifiants (12 caractères), séparés par des virgules', required: true }
+permissions:
+  actions: read
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: { matrix: '${{ steps.p.outputs.matrix }}' }
+    steps:
+      - uses: actions/checkout@v4
+      - env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          id=$(gh api "repos/${{ github.repository }}/actions/artifacts?name=rtg-text&per_page=1" --jq '.artifacts[0].id')
+          gh api "repos/${{ github.repository }}/actions/artifacts/$id/zip" > t.zip && mkdir -p rtg-text && unzip -q t.zip -d rtg-text
+      - id: p
+        run: echo "matrix=$(python3 tools/rtg/text_out.py plan '${{ inputs.ids }}')" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with: { name: sel, path: rtg-text/, retention-days: 1 }
+  emit:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy: { matrix: '${{ fromJSON(needs.plan.outputs.matrix) }}', max-parallel: 20 }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: sel, path: rtg-text }
+      - run: python3 tools/rtg/text_out.py emit ${{ matrix.id }} ${{ matrix.a }} ${{ matrix.b }}
