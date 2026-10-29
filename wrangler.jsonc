@@ -1,27 +1,11 @@
-// Cloudflare (Workers Builds) : le site statique (public/) + une seule API, /api/grade (correction par Claude).
-// Le Worker ne s'exécute que pour /api/* ; tout le reste est servi tel quel depuis public/.
-// Secrets à définir dans Cloudflare (Workers → moreh-derech-next → Settings → Variables and Secrets) :
-//   ANTHROPIC_API_KEY          — clé de l'API Anthropic (Claude)
-//   SUPABASE_SERVICE_ROLE_KEY  — clé « service_role » de Supabase (enregistrement des corrections)
-// Le déploiement GitHub Pages reste inchangé (il appelle cette API par son adresse workers.dev).
+// Cloudflare (Workers Builds) : site 100 % statique — on publie uniquement le dossier public/.
+// Le déploiement GitHub Pages reste inchangé.
 {
   "name": "moreh-derech-next",
-  "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
   "assets": {
     "directory": "./public",
-    "binding": "ASSETS",
-    "run_worker_first": ["/api/*"],
     "html_handling": "auto-trailing-slash"
-  },
-  "vars": {
-    "SUPABASE_URL": "https://evvutvnfmbhdxeyzmknv.supabase.co",
-    "GRADER_MODEL": "claude-sonnet-5-5"
-  },
-  // 5 corrections par minute et par clé (joueur, puis IP) ; les plafonds journaliers sont dans Supabase.
-  "ratelimits": [
-    { "name": "GRADE_LIMITER", "namespace_id": "1701", "simple": { "limit": 5, "period": 60 } }
-  ],
-  "observability": { "enabled": true }
+  }
 }

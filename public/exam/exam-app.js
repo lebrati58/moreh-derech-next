@@ -351,7 +351,7 @@
     $('#svNo').addEventListener('click', () => { box.innerHTML = ''; });
     $('#svOk').addEventListener('click', () => {
       const name = $('#svName').value.trim() || def, id = 's_' + Date.now().toString(36);
-      const mission = clone(m); mission.orig = m.orig || m.id; delete mission.id;
+      const mission = clone(m); delete mission.id;
       storeSaved({ v: 1, id, name, at: Date.now(), region: DATA.region, mission, draft: clone(D) });
       toast('💾 המסלול נשמר — ״המסלולים שלי״ במסך הראשי');
       location.hash = location.hash.replace('#/m/' + m.id + '/', '#/m/' + id + '/');
@@ -587,8 +587,7 @@
       body.innerHTML = `${long ? '' : `<div class="unitsel">${m.slots.map((s, i) => `<button type="button" class="${s.id === slotId ? 'on' : ''}" data-u="${s.id}">${i + 1}</button>`).join('')}</div>`}
         <p class="lead"><b>${esc(sl.he)}</b>${!u.site ? ' — בחרו אתר (או חזרו לשלב 1).' : ''}</p><div id="ed"></div>
         <div class="acts"><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="imp">✨ ${t('improve')}</button><button type="button" class="btn ghost" id="mdl">👀 ${t('model')}</button><button type="button" class="btn ghost" id="cmp">⚖️ ${t('compare')}</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
-        <div id="out">${res ? `<div class="panel"><h3>תוצאה: ${Math.round(res.frac * 100)}%</h3>${checklist(res, true)}</div>` : ''}${extra || ''}</div>
-        <div class="acts aiacts"><button type="button" class="btn ai" id="ai">🤖 בדיקה של Claude — ציון מתוך 10</button></div>`;
+        <div id="out">${res ? `<div class="panel"><h3>תוצאה: ${Math.round(res.frac * 100)}%</h3>${checklist(res, true)}</div>` : ''}${extra || ''}</div>`;
       editor($('#ed', body), u, { kind, siteChoices: placeChoices(), onChange: save });
       $$('[data-u]', body).forEach(b => b.addEventListener('click', () => { D.cur = b.dataset.u; save(); unitStep(m, D, body, kind); }));
       const ctx = () => ({ model, data: DATA, need: sl.need, shortSites: long ? m.slots.map(s => (D.units[s.id] || {}).site || D.picks[s.id]).filter(Boolean) : null });
@@ -603,7 +602,6 @@
         }
         draw(r);
       });
-      $('#ai', body).addEventListener('click', () => aiGrade(m, slotId, u, kind, $('#out', body), $('#ai', body)));
       $('#imp', body).addEventListener('click', () => { const r = C.checkUnit(Object.assign({ kind }, u), ctx()); draw(r, `<div class="panel"><h3>✨ ${t('improve')}</h3>${improveTips(r)}</div>`); });
       const modelHtml = mo => mo ? `<p class="meta">📍 ${esc(mo.place)} · ⏱️ ${mo.minutes} דק׳ · 🧰 ${esc(mo.method)}</p><div class="mtext">${esc(mo.text).replace(/\n\n/g, '</p><p>').replace(/^/, '<p>') + '</p>'}</div><p class="muted">${C.wordCount(mo.text)} מילים · תשובה לדוגמה שנכתבה מחומר הקורס — לא תשובה רשמית.${mo.limited ? ' ⚠️ החומר על האתר הזה חלקי (טרם אומת).' : ''}</p><div class="srcs">${(mo.src || []).map(k => srcLink(k)).join('')}</div>` : '<p class="muted">אין עדיין תשובה לדוגמה לאתר הזה במשימה הזו.</p>';
       $('#mdl', body).addEventListener('click', () => { draw(null, `<div class="panel"><h3>👀 ${t('model')}</h3>${modelHtml(modelFor())}</div>`); });
@@ -612,49 +610,6 @@
     };
     draw();
   }
-  // ---------- Correction par Claude (Worker /api/grade) ----------
-  // Le navigateur n'envoie que des identifiants + le texte : le מחוון est construit côté serveur à partir des
-  // fichiers vérifiés. Aucune clé ici. Adresse : même origine sur workers.dev, sinon MDL_CONFIG.graderUrl.
-  function graderUrl() {
-    if (/\.workers\.dev$/.test(location.hostname) || ['localhost', '127.0.0.1'].includes(location.hostname)) return '/api/grade';
-    return (window.MDL_CONFIG && window.MDL_CONFIG.graderUrl) || null;
-  }
-  function graderId() {
-    try { const p = JSON.parse(localStorage.getItem('mdl_player_v1') || 'null'); if (p && /^[0-9a-f-]{36}$/i.test(p.id)) return p.id; } catch (e) {}
-    if (!S.uid) { S.uid = (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g, () => (Math.random() * 16 | 0).toString(16))); save(); }
-    return S.uid;
-  }
-  function aiHtml(r) {
-    const g = r.grade, li = a => a.map(x => `<li>${esc(typeof x === 'string' ? x : x.claim + (x.why ? ' — ' + x.why : ''))}</li>`).join('');
-    return `<div class="panel aig"><h3>🤖 ציון Claude: <b>${g.score}/10</b></h3><p>${esc(g.summary || '')}</p>
-      ${g.correct_points.length ? `<h4>✔ נקודות נכונות</h4><ul>${li(g.correct_points)}</ul>` : ''}
-      ${g.missing_points.length ? `<h4>➕ נקודות חסרות</h4><ul>${li(g.missing_points)}</ul>` : ''}
-      ${g.errors.length ? `<h4>✗ טעויות</h4><ul>${li(g.errors)}</ul>` : ''}
-      ${(g.unverifiable || []).length ? `<h4>❓ לא ניתן לאמת מחומר הקורס</h4><ul>${li(g.unverifiable)}</ul>` : ''}
-      <details><summary><b>📝 תשובה מלאה לדוגמה</b></summary><div class="mtext"><p>${esc(g.full_answer || '').replace(/\n\n/g, '</p><p>')}</p></div></details>
-      <p class="muted">הבדיקה מבוססת על העובדות המאומתות מחומר הקורס בלבד · ${r.words}/${r.limit} מילים · הערכה פדגוגית, לא ציון רשמי${r.saved ? ' · נשמר' : ''}.</p></div>`;
-  }
-  function aiGrade(m, slotId, u, kind, out, btn) {
-    const url = graderUrl(), missionId = m.orig || m.id;
-    if (m.id === 'custom' && !m.orig) { out.innerHTML = '<p class="panel conf">🤖 הבדיקה של Claude זמינה במשימות הקורס (לטיול ״הפוך״ אין מחוון מאומת).</p>'; return; }
-    if (!url) { out.innerHTML = '<p class="panel conf">🤖 הבדיקה של Claude עוד לא חוברה בגרסה הזו של האתר.</p>'; return; }
-    if (!u.site) { out.innerHTML = '<p class="panel conf">בחרו אתר לפני הבדיקה.</p>'; return; }
-    if (C.wordCount(u.text) < 25) { out.innerHTML = '<p class="panel conf">כתבו לפחות 25 מילים לפני הבדיקה.</p>'; return; }
-    btn.disabled = true; out.innerHTML = '<p class="panel">🤖 Claude בודק את התשובה… (עד חצי דקה)</p>';
-    const ctl = window.AbortController ? new AbortController() : null, to = setTimeout(() => ctl && ctl.abort(), 60000);
-    fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, signal: ctl && ctl.signal,
-      body: JSON.stringify({ player: graderId(), region: DATA.region, mission: missionId, slot: slotId, site: u.site, kind, text: u.text || '', place: u.place || '', method: u.method || '', minutes: u.minutes || '' }) })
-      .then(r => r.json().then(j => ({ status: r.status, j })))
-      .then(({ j }) => {
-        if (!j.ok) { out.innerHTML = `<p class="panel conf">⚠️ ${esc(j.he || 'הבדיקה לא הצליחה (' + (j.error || 'שגיאה') + ').')}</p>`; return; }
-        (S.ai || (S.ai = [])).unshift({ at: Date.now(), m: missionId, slot: slotId, site: u.site, score: j.grade.score }); S.ai = S.ai.slice(0, 50); save();
-        if (j.grade.score >= 8) award(`${missionId}:${slotId}:${u.site}:ai`, long2pts(kind));
-        out.innerHTML = aiHtml(j);
-      })
-      .catch(() => { out.innerHTML = '<p class="panel conf">⚠️ אין חיבור לשרת הבדיקה. נסו שוב.</p>'; })
-      .finally(() => { clearTimeout(to); btn.disabled = false; });
-  }
-  const long2pts = kind => kind === 'long' ? 30 : 15;
   const stepShort = (m, D, body) => unitStep(m, D, body, 'short');
   const stepLong = (m, D, body) => unitStep(m, D, body, 'long');
 
