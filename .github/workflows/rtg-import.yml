@@ -1,0 +1,30 @@
+name: ספריית רט״ג — import (Drive partagé par lien)
+# Télécharge le corpus depuis le dossier Drive (lecture par lien), déduplique par SHA-256, extrait le texte
+# page par page (PyMuPDF), détecte les pages à OCR et fait l'OCR hébreu (Tesseract heb). Aucun PDF ni texte
+# intégral n'est publié dans le dépôt public : seul l'inventaire (métadonnées) est commité ; les textes par page
+# restent dans un artefact privé de l'exécution.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['tools/rtg/**', '.github/workflows/rtg-import.yml']
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/rtg/list_drive.py 1HW01dalAwBqkkoBXmVgihraY_Vup6cuM > listing.json
+      - run: |
+          python3 - <<'PY'
+          import json; L=json.load(open('listing.json'))
+          f=[x for x in L if not x['folder']]
+          pdf=[x for x in f if x['name'].lower().endswith('.pdf')]
+          root_pdf=[x for x in pdf if x['path']=='']
+          zips=[x['name'] for x in f if x['name'].lower().endswith('.zip')]
+          print(f"::notice title=rtg-probe::entrées {len(L)} · fichiers {len(f)} · PDF {len(pdf)} (racine {len(root_pdf)}) · ZIP {len(zips)} · dossiers {sum(x['folder'] for x in L)}")
+          print("::notice title=rtg-zips::"+' | '.join(sorted(zips)))
+          print("::notice title=rtg-other::"+' | '.join(sorted(x['name'] for x in f if not x['name'].lower().endswith(('.pdf','.zip'))))[:3900])
+          PY
+      - uses: actions/upload-artifact@v4
+        with: { name: rtg-listing, path: listing.json, retention-days: 7 }
