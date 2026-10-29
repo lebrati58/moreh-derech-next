@@ -55,6 +55,8 @@ test('correction : appel Claude avec la clé du Secret, outil forcé, résultat 
   const sent = JSON.parse(a.init.body);
   assert.equal(sent.tool_choice.name, 'report_grade'); assert.ok(sent.max_tokens <= 1500);
   assert.ok(calls.some(c => c.url.endsWith('/rpc/ai_grade_save') && c.init.headers.apikey === 'svc'));
+  const sv = calls.find(c => c.url.endsWith('/rpc/ai_grade_save'));
+  assert.equal(sv.init.headers.authorization, undefined, 'clé secrète « sb_secret_ » : jamais en Authorization');
   assert.equal(r.headers.get('access-control-allow-origin'), 'https://lebrati58.github.io');
   assert.ok(!JSON.stringify(j).includes('sk-test'), 'la clé ne revient jamais au navigateur');
 });

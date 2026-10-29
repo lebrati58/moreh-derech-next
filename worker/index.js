@@ -104,7 +104,9 @@ export const wordCount = s => String(s || '').trim().split(/\s+/).filter(Boolean
 async function sb(env, fn, args) {
   if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) return { skipped: 'no_db' };
   const r = await fetch(`${env.SUPABASE_URL}/rest/v1/rpc/${fn}`, {
-    method: 'POST', headers: { 'content-type': 'application/json', apikey: env.SUPABASE_SERVICE_ROLE_KEY, authorization: 'Bearer ' + env.SUPABASE_SERVICE_ROLE_KEY },
+    // nouvelle clé secrète « sb_secret_… » : apikey seul ; ancienne clé service_role (JWT « eyJ… ») : aussi en Authorization
+    method: 'POST', headers: Object.assign({ 'content-type': 'application/json', apikey: env.SUPABASE_SERVICE_ROLE_KEY },
+      /^eyJ/.test(env.SUPABASE_SERVICE_ROLE_KEY) ? { authorization: 'Bearer ' + env.SUPABASE_SERVICE_ROLE_KEY } : {}),
     body: JSON.stringify(args)
   });
   const t = await r.text();
