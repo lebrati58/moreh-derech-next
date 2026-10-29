@@ -471,7 +471,7 @@
         draw(r);
       });
       $('#mdl', body).addEventListener('click', () => {
-        $('#out', body).innerHTML = `<div class="panel"><h3>👀 ${t('model')}</h3><ol>${m.slots.map(s => `<li><b>${esc(P[s.best].short)}</b> — ${esc(s.why)}</li>`).join('')}<li>★ <b>${esc(P[m.long.best].short)}</b>${m.long.trap ? ' — ⚠️ ' + esc(m.long.trap) : ''}</li></ol></div>`;
+        $('#out', body).innerHTML = `<div class="panel"><h3>👀 ${t('model')}</h3><ol>${m.slots.map(s => `<li><b>${s.best && P[s.best] ? esc(P[s.best].short) : '— אין בחומר הקורס אתר מוכח'}</b> — ${esc(s.why || '')}</li>`).join('')}<li>★ <b>${m.long.best && P[m.long.best] ? esc(P[m.long.best].short) : '—'}</b>${m.long.trap ? ' — ⚠️ ' + esc(m.long.trap) : ''}</li></ol></div>`;
       });
       $('#rst', body).addEventListener('click', () => { D.picks = {}; D.hint = {}; save(); draw(); });
     };
@@ -482,7 +482,7 @@
     if (lvl === 1) return 'מה הנושא? ' + need + '.';
     const cands = Object.values(P).filter(p => C.fits(p, sl.need)).map(p => p.short);
     if (lvl === 2) return 'מועמדים: ' + cands.join(', ') + '.';
-    return P[sl.best].short + ' — ' + (sl.why || sl.he);
+    return (sl.best && P[sl.best] ? P[sl.best].short : 'אין בחומר הקורס אתר מוכח') + ' — ' + (sl.why || sl.he);
   }
 
   // Une étape du programme = une carte : n°, heures en gros (début → fin · durée), quoi, logistique, site, poubelle.
