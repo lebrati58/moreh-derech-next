@@ -137,6 +137,11 @@
       "course": [
         "04",
         "19"
+      ],
+      "file": "valleys.json",
+      "missions": [
+        "va1",
+        "va2"
       ]
     },
     {
@@ -158,6 +163,11 @@
       "course": [
         "20",
         "22"
+      ],
+      "file": "upper-galilee.json",
+      "missions": [
+        "ug1",
+        "ug2"
       ]
     }
   ]
