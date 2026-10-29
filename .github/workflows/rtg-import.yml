@@ -1,0 +1,52 @@
+name: ספריית רט״ג — import (Drive partagé par lien)
+# Télécharge le corpus depuis le dossier Drive (lecture par lien), déduplique par SHA-256, extrait le texte page
+# par page (PyMuPDF) et fait l'OCR hébreu des pages sans texte (Tesseract). Le dépôt est PUBLIC : seul l'inventaire
+# (métadonnées) est commité ; les PDF et les textes par page restent dans un artefact de l'exécution (14 jours).
+# Relançable : un document déjà traité (même empreinte) n'est pas refait ; corrections.json n'est jamais écrasé.
+on:
+  workflow_dispatch:
+    inputs:
+      ocr_max: { description: 'Pages OCR max pour cette exécution', default: '2500' }
+  push:
+    paths: ['tools/rtg/import.py', 'tools/rtg/list_drive.py', 'tools/rtg/derive.mjs', 'tools/rtg/build-catalog.mjs', '.github/workflows/rtg-import.yml']
+concurrency: { group: rtg-import, cancel-in-progress: true }
+permissions:
+  contents: write
+  actions: read
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-heb > /dev/null && pip install -q pymupdf
+      - name: Texte des exécutions précédentes (pour ne pas tout refaire)
+        continue-on-error: true
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          id=$(gh api "repos/${{ github.repository }}/actions/artifacts?name=rtg-text&per_page=1" --jq '.artifacts[0].id // empty')
+          if [ -n "$id" ]; then gh api "repos/${{ github.repository }}/actions/artifacts/$id/zip" > prev.zip && mkdir -p rtg-text && unzip -q -o prev.zip -d rtg-text && echo "repris: $(ls rtg-text | wc -l)"; fi
+      - run: RTG_OCR_MAX="${{ inputs.ocr_max || '2500' }}" python3 tools/rtg/import.py | tee rtg.log
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Métadonnées dérivées (titres de 1re page, lieux du jeu cités par page)
+        run: node tools/rtg/derive.mjs rtg-text && node tools/rtg/build-catalog.mjs | tee -a rtg.log
+      - name: Bilan (annotation)
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,gzip,base64
+          try: s=json.load(open('content/rtg/inventory.json'))['summary']
+          except Exception as e: s={'error':str(e)}
+          print('::notice title=rtg-summary::'+base64.b64encode(gzip.compress(json.dumps(s,ensure_ascii=False).encode())).decode())
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: rtg-text, path: rtg-text/, retention-days: 14, if-no-files-found: ignore }
+      - name: Commit de l'inventaire
+        if: always()
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/rtg/inventory.json content/rtg/corrections.json content/rtg/derived.json public/rtg/catalog.json
+          git diff --cached --quiet || git commit -m "data(rtg): inventaire de la ספריית רט״ג" && git pull --rebase -q && git push

@@ -7,19 +7,19 @@
 
   var T = {
     he: { exam: 'אתגר המבחן', examSub: 'מתכננים יום טיול וכותבים הדרכות', home: 'בית', map: 'מפה', journey: 'המסע', klass: 'הכיתה', more: 'עוד', moreTitle: 'עוד', close: 'סגירה',
-      lib: 'ספריית הסיורים', libSub: 'כל 22 הסיורים והמסמכים', comm: 'קטעי דרך של הקהילה', commSub: 'מסלולים שתלמידים שיתפו',
+      rtg: 'ספריית רט״ג', rtgSub: 'מדריכים, עלונים ומפות של רשות הטבע והגנים', lib: 'ספריית הסיורים', libSub: 'כל 22 הסיורים והמסמכים', comm: 'קטעי דרך של הקהילה', commSub: 'מסלולים שתלמידים שיתפו',
       doc: 'הוספת מסמך לסיור', docSub: 'PDF או Word לסיור קיים', create: 'יצירת מסלול חדש', createSub: 'קטע דרך עם שאלות משלכם',
       guide: 'חידון חי לקבוצה', guideSub: 'להפעלה באוטובוס · מדריכים ותלמידי הקורס', fb: 'רעיון, בעיה או טעות?', fbSub: 'ההודעה מגיעה ישירות לצוות' },
     fr: { exam: 'Défi de l’examen', examSub: 'Journée, sites et interventions', home: 'Accueil', map: 'Carte', journey: 'Parcours', klass: 'Classe', more: 'Plus', moreTitle: 'Plus', close: 'Fermer',
-      lib: 'Bibliothèque des sorties', libSub: 'Les 22 סיורים et leurs documents', comm: 'Parcours de la communauté', commSub: 'Trajets partagés par les élèves',
+      rtg: 'Bibliothèque RTG', rtgSub: 'Guides, brochures et cartes de l’Autorité des parcs', lib: 'Bibliothèque des sorties', libSub: 'Les 22 סיורים et leurs documents', comm: 'Parcours de la communauté', commSub: 'Trajets partagés par les élèves',
       doc: 'Ajouter un document', docSub: 'PDF ou Word pour une sortie', create: 'Créer un parcours', createSub: 'Un trajet avec vos propres questions',
       guide: 'Quiz en direct', guideSub: 'Lancer pour un groupe · guides et élèves du cours', fb: 'Une idée, un bug, une erreur ?', fbSub: 'Le message arrive directement à l’équipe' },
     en: { exam: 'Exam challenge', examSub: 'Plan a day, write guiding units', home: 'Home', map: 'Map', journey: 'Journey', klass: 'Class', more: 'More', moreTitle: 'More', close: 'Close',
-      lib: 'Tour library', libSub: 'All 22 tours and their documents', comm: 'Community routes', commSub: 'Routes shared by students',
+      rtg: 'INPA library', rtgSub: 'Guides, brochures and maps from the Parks Authority', lib: 'Tour library', libSub: 'All 22 tours and their documents', comm: 'Community routes', commSub: 'Routes shared by students',
       doc: 'Add a document', docSub: 'PDF or Word for a tour', create: 'Create a route', createSub: 'A road segment with your own questions',
       guide: 'Live group quiz', guideSub: 'Run it on the bus · guides and course students', fb: 'Idea, bug or mistake?', fbSub: 'Your message goes straight to the team' },
     ru: { exam: 'Экзамен', examSub: 'План дня и тексты экскурсий', home: 'Главная', map: 'Карта', journey: 'Мой путь', klass: 'Класс', more: 'Ещё', moreTitle: 'Ещё', close: 'Закрыть',
-      lib: 'Библиотека экскурсий', libSub: 'Все 22 экскурсии и документы', comm: 'Маршруты сообщества', commSub: 'Маршруты от учеников',
+      rtg: 'Библиотека УПП', rtgSub: 'Путеводители, буклеты и карты Управления парков', lib: 'Библиотека экскурсий', libSub: 'Все 22 экскурсии и документы', comm: 'Маршруты сообщества', commSub: 'Маршруты от учеников',
       doc: 'Добавить документ', docSub: 'PDF или Word для экскурсии', create: 'Создать маршрут', createSub: 'Участок дороги со своими вопросами',
       guide: 'Живая викторина', guideSub: 'Для группы · гиды и ученики курса', fb: 'Идея, ошибка или проблема?', fbSub: 'Сообщение сразу получит команда' }
   };
@@ -32,6 +32,7 @@
   ];
   var MORE = [
     { k: 'exam', icon: '🎓', href: 'exam.html' },
+    { k: 'rtg', icon: '🌿', href: 'rtg.html' },
     { k: 'lib', icon: '📚', href: 'tour-catalog.html' },
     { k: 'comm', icon: '🌍', href: 'community-library.html' },
     { k: 'doc', icon: '📄', href: 'contribute.html' },

@@ -205,6 +205,7 @@
       <p class="muted">⏳ משך ביקור: ${p.visit ? esc(p.visit) : 'לא צוין בחומר — לא ממציאים'}</p>
       ${logisticsHtml(p)}
       <ul class="facts">${(p.facts || []).map(f => `<li>${esc(f.he)} ${srcLink(f.src, '')}</li>`).join('')}</ul>
+      <p><a class="mini" href="rtg.html?q=${encodeURIComponent((p.short || p.he).replace(/\s*\(.*\)\s*/g, ' ').trim())}">🌿 מסמכי רט״ג על ${esc(p.short || p.he)}</a></p>
       ${(p.conflicts || []).map(c => `<p class="conf">⚠️ ${esc(c.he)}</p>`).join('')}
       ${p.note ? `<p class="conf">ℹ️ ${esc(p.note)}</p>` : ''}
       <p class="mast">רמת שליטה: ${tot ? Math.round(100 * m.ok / tot) + '%' : '—'} (${m.ok} ✔ · ${m.err} ✗)</p>
