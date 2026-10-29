@@ -117,6 +117,9 @@
    "he": "שייח' אבריק — אלכסנדר זייד, פסל השומר ובית הקברות של אגודת השומרים",
    "short": "שייח' אבריק",
    "wiki": [
+    "he:שייח' אבריק",
+    "en:Sheikh Abreik",
+    "he:שיח אבריק",
     "he:אלכסנדר זייד",
     "en:Alexander Zaïd"
    ],
@@ -826,6 +829,11 @@
    "he": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'",
    "short": "בית הכנסת בציפורי",
    "wiki": [
+    "he:בית הכנסת בציפורי",
+    "en:Sepphoris synagogue",
+    "he:גן לאומי ציפורי",
+    "en:Zippori National Park",
+    "en:Sepphoris",
     "en:Sepphoris Synagogue",
     "he:ציפורי"
    ],
@@ -1364,65 +1372,6 @@
    ],
    "course": [
     "16"
-   ]
-  },
-  {
-   "id": "beit_shean",
-   "he": "בית שאן — התל המצרי וסקיתופוליס",
-   "short": "בית שאן",
-   "wiki": [
-    "he:בית שאן",
-    "en:Beit She'an"
-   ],
-   "status": [
-    "material"
-   ],
-   "periods": [
-    "תקופת הברונזה המאוחרת",
-    "התקופה הרומית",
-    "התקופה הביזנטית"
-   ],
-   "tags": [
-    "archaeology",
-    "hellenistic_roman",
-    "byzantine",
-    "city",
-    "road"
-   ],
-   "facts": [],
-   "conflicts": [
-    {
-     "he": "מספר המושבים בתיאטרון בית שאן: כ-7,000 (חוברת סיור 23) מול כ-10,000 (תמלול ציפורי, סיור 16).",
-     "srcs": [
-      "jv_book",
-      "tz_tr"
-     ]
-    }
-   ],
-   "logistics2": {
-    "hours": null,
-    "price": null,
-    "toilets": {
-     "status": "unknown",
-     "he": "לברר"
-    },
-    "parking": {
-     "status": "unknown",
-     "he": "לברר"
-    },
-    "queue": {
-     "status": "unknown",
-     "he": "לברר"
-    },
-    "phone": null,
-    "group": null
-   },
-   "sources": [
-    "jv_book",
-    "tz_tr"
-   ],
-   "course": [
-    "23"
    ]
   }
  ],
