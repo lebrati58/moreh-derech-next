@@ -33,6 +33,14 @@
 
   // ---------- Choix des lieux ----------
   function fits(place, need) { return !!place && (need || []).some(t => (place.tags || []).includes(t)); }
+  // Réponse modèle pour un lieu : plusieurs modèles possibles par lieu (ex. מרשה : bassin d'huile / grottes funéraires),
+  // choisis selon le thème de l'unité (model.topic ∈ need). Clé « long_<lieu> » pour l'unité développée.
+  function modelFor(data, siteId, need, long) {
+    const M = (data && data.models) || {};
+    if (long) return M['long_' + siteId] || null;
+    const c = Object.entries(M).filter(([k, v]) => !/^long_/.test(k) && (v.site || k) === siteId).map(([, v]) => v);
+    return c.find(v => v.topic && (need || []).includes(v.topic)) || c.find(v => !v.topic) || c[0] || null;
+  }
   function checkSlots(mission, picks, data) {
     const P = places(data), res = [], used = {};
     mission.slots.forEach(sl => {
@@ -40,7 +48,7 @@
       const r = { slot: sl.id, site: id || null, ok: false, cat: null, he: '' };
       if (!id) { r.he = 'לא נבחר אתר'; r.cat = 'site'; }
       else if (!fits(p, sl.need)) { r.he = `${p.short} לא מתאים לדרישה: ״${sl.he}״`; r.cat = 'site'; }
-      else if (used[id]) { r.he = `${p.short} כבר נבחר ליחידה אחרת — כל יחידה בנקודה אחרת`; r.cat = 'site'; }
+      else if (used[id] && !sl.shareOk) { r.he = `${p.short} כבר נבחר ליחידה אחרת — כל יחידה בנקודה אחרת`; r.cat = 'site'; }
       else { r.ok = true; r.he = sl.why || 'מתאים'; }
       if (id) used[id] = true;
       res.push(r);
@@ -49,7 +57,7 @@
     const lr = { slot: 'long', site: L || null, ok: false, cat: null, he: '' };
     if (!L) { lr.he = 'לא נבחר אתר ליחידה המורחבת'; lr.cat = 'site'; }
     else if (!fits(lp, mission.long.need)) { lr.he = `${lp.short} לא מתאים: ״${mission.long.he}״`; lr.cat = 'site'; }
-    else if (used[L]) { lr.he = 'היחידה המורחבת חייבת להיות באתר ״שלא נכלל ביחידות הקצרות״'; lr.cat = 'site'; }
+    else if (used[L] && !mission.long.shareOk) { lr.he = 'היחידה המורחבת חייבת להיות באתר ״שלא נכלל ביחידות הקצרות״'; lr.cat = 'site'; }
     else { lr.ok = true; lr.he = mission.long.trap ? '✔ — ' + mission.long.trap : 'מתאים'; }
     res.push(lr);
     return res;
@@ -233,7 +241,7 @@
 
   // ---------- Progression ----------
   const LEVELS = [
-    [0, 'חניך'], [120, 'מדריך מתלמד'], [300, 'מורה דרך צעיר'], [600, 'מורה דרך'], [1000, 'מורה דרך בכיר'], [1600, 'מומחה הגולן']
+    [0, 'חניך'], [120, 'מדריך מתלמד'], [300, 'מורה דרך צעיר'], [600, 'מורה דרך'], [1000, 'מורה דרך בכיר'], [1600, 'מומחה שטח']
   ];
   function level(xp) {
     let i = 0; while (i + 1 < LEVELS.length && xp >= LEVELS[i + 1][0]) i++;
@@ -319,7 +327,7 @@
       const roads = prefs.road ? (data.roads || []).filter(r => !r.line || r.line.every(id => ids.includes(id) || id === 'kursi')) : [];
       const L = legs(ord.map(s => s.id), data, prefs.start);
       const plan = draftPlan(ord, Object.assign({ data }, prefs));
-      const units = ord.map(s => ({ site: s.id, model: !!(data.models && data.models[s.id]), long: !!(data.models && data.models['long_' + s.id]) }));
+      const units = ord.map(s => ({ site: s.id, model: !!modelFor(data, s.id, s.tags), long: !!(data.models && data.models['long_' + s.id]) }));
       return { sites: ord, roads, covered, missing: want.filter(t => !covered.includes(t)), legs: L, km: Math.round(L.reduce((a, l) => a + l.km, 0) * 10) / 10, plan, units,
         warnings: ord.filter(s => (s.status || []).includes('unverified')).map(s => s.short + ' — החומר חלקי (טרם אומת)') };
     };
@@ -353,14 +361,15 @@
       plan.push({ start: '', end: '', what: s.he, site: s.id, log: [L2.price && !/חינם|לא/.test(L2.price.he) ? 'תשלום כניסה' : '', todo.length ? 'לברר: ' + todo.join(', ') : '', L2.group ? 'תיאום קבוצה' : ''].filter(Boolean).join(' · ') });
       if (i === Math.min(1, ord.length - 1)) plan.push({ start: '', end: '', what: 'ארוחת צהריים — שעה אחת, בין 12:00 ל-14:00', log: 'לבדוק אם יש מקום לאכול — אחרת ארוחה עצמית' });
     });
-    const lastSite = ord[ord.length - 1], dBack = lastSite && prefs.start && driveMin(lastSite, prefs.start, prefs.data, prefs.own);
-    plan.push(dBack ? { start: '', end: '', what: `נסיעה חזרה ופיזור: ${prefs.start.he} (~${dBack.min} דק׳)`, log: 'פיזור', drive: lastSite.id + '>' + prefs.start.id }
-      : { start: '', end: prefs.endTime || '18:00', what: 'נסיעה חזרה ופיזור: ' + ((prefs.start && prefs.start.he) || 'נקודת הפיזור'), log: 'פיזור' });
+    const fin = prefs.end || prefs.start, back = fin && prefs.start && fin.id === prefs.start.id ? 'נסיעה חזרה ופיזור: ' : 'נסיעה לנקודת הפיזור: ';
+    const lastSite = ord[ord.length - 1], dBack = lastSite && fin && driveMin(lastSite, fin, prefs.data, prefs.own);
+    plan.push(dBack ? { start: '', end: '', what: `${back}${fin.he} (~${dBack.min} דק׳)`, log: 'פיזור', drive: lastSite.id + '>' + fin.id }
+      : { start: '', end: prefs.endTime || '18:00', what: back + ((fin && fin.he) || 'נקודת הפיזור'), log: 'פיזור' });
     if (prefs.data) reflowPlan(plan, prefs.data, prefs.own);
     return plan;
   }
 
-  const api = { points, driveMin, reflowPlan, orderSites, draftPlan, suggest, distanceKm, navLinks, legs, wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
+  const api = { modelFor, points, driveMin, reflowPlan, orderSites, draftPlan, suggest, distanceKm, navLinks, legs, wordCount, wordState, toMin, fmt, places, fits, checkSlots, checkPlan, checkUnit, findPitfalls, scoreExam, examSlots, gradeErrors, level, LEVELS, CATS, recommend, dailyMission };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.MDExamCore = api;
 })(typeof window !== 'undefined' ? window : globalThis);

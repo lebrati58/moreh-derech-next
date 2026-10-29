@@ -124,3 +124,23 @@ test('trajets : durée de route (Google saisi > estimation OSRM), jamais invent�
   const noData = C.draftPlan([P.mitzpe_ofir], { start: D.anchors[0], startTime: '08:00' });
   assert.ok(noData.every((x, i) => !i || !x.start), 'sans données : horaires laissés vides');
 });
+
+test('régions : chaque région publiée est complète et sourcée (tout Israël, une région à la fois)', () => {
+  const R = JSON.parse(readFileSync(new URL('../public/exam/regions.json', import.meta.url)));
+  const ready = R.regions.filter(r => r.file);
+  assert.ok(ready.length >= 1 && R.regions.length >= 8, 'index des régions');
+  for (const r of ready) {
+    const d = JSON.parse(readFileSync(new URL('../public/exam/' + r.file, import.meta.url)));
+    assert.equal(d.region, r.id, r.id + ' : id');
+    assert.deepEqual(d.missions.map(m => m.id).sort(), [...r.missions].sort(), r.id + ' : missions listées dans l’index');
+    const srcs = new Set(Object.keys(d.sources).concat(['roadTips', 'lesson26', 'longRules', 'model']));
+    const ids = new Set(d.sites.map(s => s.id).concat(d.roads.map(x => x.id))), aids = new Set((d.anchors || []).map(a => a.id));
+    for (const s of d.sites.concat(d.anchors || [])) assert.ok(s.lat > 29.3 && s.lat < 33.5 && s.lon > 34.2 && s.lon < 35.95, `${r.id}/${s.id} : coordonnées en Israël`);
+    for (const s of d.sites) for (const f of s.facts) assert.ok(srcs.has(f.src), `${r.id}/${s.id} : source ${f.src}`);
+    for (const m of d.missions) {
+      assert.ok(!m.start || aids.has(m.start), `${m.id} : départ`); assert.ok(!m.end || aids.has(m.end), `${m.id} : arrivée`);
+      for (const sl of m.slots) assert.ok(!sl.best || ids.has(sl.best), `${m.id}/${sl.id} : lieu modèle publié`);
+    }
+    for (const [k, mo] of Object.entries(d.models || {})) assert.ok(C.wordCount(mo.text) <= (mo.kind === 'long' ? 400 : 180), `${r.id}/${k} : ${C.wordCount(mo.text)} mots`);
+  }
+});
