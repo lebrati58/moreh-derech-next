@@ -1632,6 +1632,18 @@
  "pitfalls": [],
  "anchors": [
   {
+   "id": "tzemach",
+   "he": "צומת צמח",
+   "short": "צומת צמח",
+   "lat": 32.7047,
+   "lon": 35.5865,
+   "coordSource": "wiki",
+   "coordRef": "en:Tsemah Junction",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
    "id": "bnot_yaakov",
    "he": "גשר בנות יעקב – משמר הירדן",
    "short": "גשר בנות יעקב",
@@ -1672,6 +1684,50 @@
   "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
   "fetchedAt": "2026-10-29",
   "legs": {
+   "tzemach>bnot_yaakov": {
+    "min": 48,
+    "km": 48
+   },
+   "tzemach>kiryat_shmona": {
+    "min": 65,
+    "km": 66.5
+   },
+   "tzemach>merom_golan": {
+    "min": 65,
+    "km": 65.5
+   },
+   "tzemach>big_juba": {
+    "min": 77,
+    "km": 75.3
+   },
+   "tzemach>har_bental": {
+    "min": 66,
+    "km": 65.6
+   },
+   "tzemach>tel_fakhr": {
+    "min": 86,
+    "km": 82.8
+   },
+   "tzemach>mitzpe_gadot": {
+    "min": 48,
+    "km": 46.9
+   },
+   "tzemach>katzrin": {
+    "min": 42,
+    "km": 42.6
+   },
+   "tzemach>nimrod": {
+    "min": 86,
+    "km": 85.7
+   },
+   "tzemach>birkat_ram": {
+    "min": 79,
+    "km": 78.1
+   },
+   "bnot_yaakov>tzemach": {
+    "min": 48,
+    "km": 48
+   },
    "bnot_yaakov>kiryat_shmona": {
     "min": 29,
     "km": 29.5
@@ -1707,6 +1763,10 @@
    "bnot_yaakov>birkat_ram": {
     "min": 41,
     "km": 38.9
+   },
+   "kiryat_shmona>tzemach": {
+    "min": 65,
+    "km": 66.3
    },
    "kiryat_shmona>bnot_yaakov": {
     "min": 29,
@@ -1744,6 +1804,10 @@
     "min": 32,
     "km": 26.7
    },
+   "merom_golan>tzemach": {
+    "min": 65,
+    "km": 65.4
+   },
    "merom_golan>bnot_yaakov": {
     "min": 26,
     "km": 26.1
@@ -1779,6 +1843,10 @@
    "merom_golan>birkat_ram": {
     "min": 21,
     "km": 17
+   },
+   "big_juba>tzemach": {
+    "min": 77,
+    "km": 75.3
    },
    "big_juba>bnot_yaakov": {
     "min": 38,
@@ -1816,6 +1884,10 @@
     "min": 17,
     "km": 9.6
    },
+   "har_bental>tzemach": {
+    "min": 66,
+    "km": 65.7
+   },
    "har_bental>bnot_yaakov": {
     "min": 27,
     "km": 26.4
@@ -1851,6 +1923,10 @@
    "har_bental>birkat_ram": {
     "min": 22,
     "km": 17.3
+   },
+   "tel_fakhr>tzemach": {
+    "min": 86,
+    "km": 82.8
    },
    "tel_fakhr>bnot_yaakov": {
     "min": 41,
@@ -1888,6 +1964,10 @@
     "min": 21,
     "km": 14.5
    },
+   "mitzpe_gadot>tzemach": {
+    "min": 49,
+    "km": 46.8
+   },
    "mitzpe_gadot>bnot_yaakov": {
     "min": 4,
     "km": 3
@@ -1923,6 +2003,10 @@
    "mitzpe_gadot>birkat_ram": {
     "min": 43,
     "km": 39.8
+   },
+   "katzrin>tzemach": {
+    "min": 42,
+    "km": 42.6
    },
    "katzrin>bnot_yaakov": {
     "min": 11,
@@ -1960,6 +2044,10 @@
     "min": 38,
     "km": 36
    },
+   "nimrod>tzemach": {
+    "min": 86,
+    "km": 85.7
+   },
    "nimrod>bnot_yaakov": {
     "min": 41,
     "km": 41.6
@@ -1995,6 +2083,10 @@
    "nimrod>birkat_ram": {
     "min": 15,
     "km": 11.3
+   },
+   "birkat_ram>tzemach": {
+    "min": 79,
+    "km": 78.1
    },
    "birkat_ram>bnot_yaakov": {
     "min": 41,

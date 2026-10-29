@@ -376,6 +376,103 @@
    "hours": null,
    "visit": null,
    "access": null
+  },
+  {
+   "id": "joe_alon",
+   "he": "מצפה להבים ומרכז ג'ו אלון — מוזיאון הבדואים",
+   "short": "מרכז ג'ו אלון",
+   "status": [
+    "material"
+   ],
+   "periods": [
+    "ימינו"
+   ],
+   "tags": [
+    "bedouin",
+    "heritage",
+    "view",
+    "personal_story"
+   ],
+   "facts": [
+    {
+     "he": "מצפה להבים נמצא ליד קיבוץ להב.",
+     "src": "ng_road"
+    },
+    {
+     "he": "במקום מרכז ג'ו אלון, על שם נספח ישראל בוושינגטון שנרצח, ובו מוזיאון הבדואים הקרוי על שמו.",
+     "src": "ng_road"
+    },
+    {
+     "he": "את מוזיאון הבדואים פוקדים בעיקר בדואים.",
+     "src": "ng_road"
+    },
+    {
+     "he": "הם באים כי הסבא גר באוהל, והנכד לומד במוזיאון מה זה אוהל.",
+     "src": "ng_road"
+    },
+    {
+     "he": "לפי מסורת בדואית, האל יצר את הבדואי מהרוח הסובבת את הארץ – נע ונד וחופשי כמו הרוח.",
+     "src": "ng_tel"
+    },
+    {
+     "he": "לפי האגדה, האל ירה חץ, תפס אותו במעופו ויצר ממנו את הסוס, מהיר כחץ.",
+     "src": "ng_tel"
+    },
+    {
+     "he": "מענני הגשם יצר האל את הגמל, שמביא ברכה בכל מקום.",
+     "src": "ng_tel"
+    },
+    {
+     "he": "מעפר האדמה יצר האל את החמור, ומגלליו – את הפלאח.",
+     "src": "ng_tel"
+    },
+    {
+     "he": "העיירות הבדואיות בנגב הוקמו כי השלטון רצה ליישב את הבדואים שלא ינדדו.",
+     "src": "ng_road"
+    },
+    {
+     "he": "לא כל הבדואים רצו לעבור ליישובי הקבע: 'אנחנו אנשי אוהלים'.",
+     "src": "ng_road"
+    },
+    {
+     "he": "רהט היא אחת העיירות הבדואיות שהפכה כבר לעיר; רואים מהכביש את צריחי המסגדים.",
+     "src": "ng_road"
+    }
+   ],
+   "conflicts": [],
+   "note": "מוזכר בסיפור הדרך בכביש 31; לא בוקר בסיור. האגדה הבדואית לקוחה מהקטעים הספרותיים שבדף תל באר שבע",
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "ng_road",
+    "ng_tel"
+   ],
+   "course": [
+    "03"
+   ],
+   "lat": 31.37931,
+   "lon": 34.86486,
+   "coordSource": "wiki",
+   "coordRef": "he:מרכז ג'ו אלון",
+   "hours": null,
+   "visit": null,
+   "access": null
   }
  ],
  "roads": [
@@ -995,6 +1092,10 @@
     "min": 71,
     "km": 56.2
    },
+   "tel_aviv>joe_alon": {
+    "min": 74,
+    "km": 90.9
+   },
    "beer_sheva>tel_aviv": {
     "min": 82,
     "km": 101.7
@@ -1014,6 +1115,10 @@
    "beer_sheva>tel_tzafit": {
     "min": 70,
     "km": 58.2
+   },
+   "beer_sheva>joe_alon": {
+    "min": 28,
+    "km": 27.5
    },
    "shoket>tel_aviv": {
     "min": 76,
@@ -1035,6 +1140,10 @@
     "min": 64,
     "km": 56.7
    },
+   "shoket>joe_alon": {
+    "min": 15,
+    "km": 13.9
+   },
    "tel_beer_sheva>tel_aviv": {
     "min": 90,
     "km": 106.4
@@ -1054,6 +1163,10 @@
    "tel_beer_sheva>tel_tzafit": {
     "min": 77,
     "km": 62.9
+   },
+   "tel_beer_sheva>joe_alon": {
+    "min": 31,
+    "km": 25.5
    },
    "negev_memorial>tel_aviv": {
     "min": 82,
@@ -1075,6 +1188,10 @@
     "min": 70,
     "km": 58.6
    },
+   "negev_memorial>joe_alon": {
+    "min": 24,
+    "km": 23.3
+   },
    "tel_tzafit>tel_aviv": {
     "min": 65,
     "km": 51.8
@@ -1094,6 +1211,34 @@
    "tel_tzafit>negev_memorial": {
     "min": 80,
     "km": 56.6
+   },
+   "tel_tzafit>joe_alon": {
+    "min": 72,
+    "km": 45.8
+   },
+   "joe_alon>tel_aviv": {
+    "min": 74,
+    "km": 91
+   },
+   "joe_alon>beer_sheva": {
+    "min": 27,
+    "km": 27.5
+   },
+   "joe_alon>shoket": {
+    "min": 13,
+    "km": 12.8
+   },
+   "joe_alon>tel_beer_sheva": {
+    "min": 29,
+    "km": 24.3
+   },
+   "joe_alon>negev_memorial": {
+    "min": 23,
+    "km": 23.3
+   },
+   "joe_alon>tel_tzafit": {
+    "min": 62,
+    "km": 47.5
    }
   }
  }

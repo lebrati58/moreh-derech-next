@@ -1686,6 +1686,113 @@
    "access": null
   },
   {
+   "id": "yehiam_convoy",
+   "he": "אתר שיירת יחיעם",
+   "short": "שיירת יחיעם",
+   "status": [
+    "taught"
+   ],
+   "periods": [
+    "מלחמת העצמאות"
+   ],
+   "tags": [
+    "battle",
+    "heritage",
+    "personal_story",
+    "road"
+   ],
+   "facts": [
+    {
+     "he": "בסוף 1946 עלה קיבוץ הסלע של השומר הצעיר למבצר ג'דין.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "יוסף וייץ ביקש להנציח את בנו יחיעם, וחברי הקיבוץ הסכימו.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "צבא ההצלה בראשות שישקלי תקף את הקיבוץ וצר עליו.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "אספקה הוצנחה למגיני הקיבוץ.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "ב-27 במרץ יצאה שיירה מנהריה לקיבוץ.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "ליד כברי הותקפה השיירה.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "האש העיקרית כוונה לאוטובוס הממוגן שהוביל 39 לוחמים.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "האוטובוס נתקע, רימונים הושלכו לתוכו ונהרגו 34 לוחמים.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "רכב הפריצה הגיע לקיבוץ, ושם התברר שמפקדו נהרג.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "מרץ 1948 היה מהחודשים הקשים ביותר ליישוב.",
+     "src": "ug_yehiam"
+    },
+    {
+     "he": "מבצע בן עמי, על שם מפקד השיירה בן עמי פכטר, שחרר את הגליל המערבי מהמצור.",
+     "src": "ug_yehiam"
+    }
+   ],
+   "conflicts": [
+    {
+     "he": "מספר הנופלים: 34 נהרגו באוטובוס (דף סיור 22) מול '47 לוחמים ולוחמות' ומפקד בשם איתן זייץ (חוברת ההכנה).",
+     "srcs": [
+      "ug_yehiam",
+      "ug_booklet"
+     ]
+    }
+   ],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": {
+     "he": "באתר פינות ישיבה",
+     "src": "ug_yehiam"
+    }
+   },
+   "sources": [
+    "ug_yehiam",
+    "ug_booklet"
+   ],
+   "course": [
+    "22"
+   ],
+   "lat": 32.99686,
+   "lon": 35.22081,
+   "coordSource": "wiki",
+   "coordRef": "he:יחיעם",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
    "id": "montfort",
    "he": "פארק גורן ומבצר מונפורט",
    "short": "מונפורט",
@@ -2601,6 +2708,10 @@
     "min": 117,
     "km": 141
    },
+   "tel_aviv>yehiam_convoy": {
+    "min": 109,
+    "km": 138.7
+   },
    "tel_aviv>montfort": {
     "min": 120,
     "km": 145.3
@@ -2668,6 +2779,10 @@
    "kiryat_shmona>peqiin": {
     "min": 64,
     "km": 63.6
+   },
+   "kiryat_shmona>yehiam_convoy": {
+    "min": 68,
+    "km": 65.3
    },
    "kiryat_shmona>montfort": {
     "min": 70,
@@ -2737,6 +2852,10 @@
     "min": 28,
     "km": 26.5
    },
+   "nahariya>yehiam_convoy": {
+    "min": 15,
+    "km": 13
+   },
    "nahariya>montfort": {
     "min": 27,
     "km": 19.6
@@ -2804,6 +2923,10 @@
    "safed>peqiin": {
     "min": 43,
     "km": 35.6
+   },
+   "safed>yehiam_convoy": {
+    "min": 49,
+    "km": 44.9
    },
    "safed>montfort": {
     "min": 51,
@@ -2873,6 +2996,10 @@
     "min": 59,
     "km": 57.7
    },
+   "yokneam>yehiam_convoy": {
+    "min": 51,
+    "km": 55.4
+   },
    "yokneam>montfort": {
     "min": 62,
     "km": 62
@@ -2940,6 +3067,10 @@
    "golani_jct>peqiin": {
     "min": 42,
     "km": 35.2
+   },
+   "golani_jct>yehiam_convoy": {
+    "min": 58,
+    "km": 51.3
    },
    "golani_jct>montfort": {
     "min": 60,
@@ -3009,6 +3140,10 @@
     "min": 38,
     "km": 35.1
    },
+   "rosh_pina>yehiam_convoy": {
+    "min": 54,
+    "km": 51.3
+   },
    "rosh_pina>montfort": {
     "min": 56,
     "km": 48.3
@@ -3076,6 +3211,10 @@
    "tel_hai>peqiin": {
     "min": 67,
     "km": 66.8
+   },
+   "tel_hai>yehiam_convoy": {
+    "min": 73,
+    "km": 69.9
    },
    "tel_hai>montfort": {
     "min": 75,
@@ -3145,6 +3284,10 @@
     "min": 68,
     "km": 51.8
    },
+   "hula_reserve>yehiam_convoy": {
+    "min": 84,
+    "km": 68
+   },
    "hula_reserve>montfort": {
     "min": 86,
     "km": 65
@@ -3212,6 +3355,10 @@
    "agamon>peqiin": {
     "min": 78,
     "km": 55.7
+   },
+   "agamon>yehiam_convoy": {
+    "min": 88,
+    "km": 64.7
    },
    "agamon>montfort": {
     "min": 90,
@@ -3281,6 +3428,10 @@
     "min": 49,
     "km": 44.8
    },
+   "metzudat_koach>yehiam_convoy": {
+    "min": 54,
+    "km": 50.7
+   },
    "metzudat_koach>montfort": {
     "min": 56,
     "km": 47.7
@@ -3348,6 +3499,10 @@
    "rihaniya>peqiin": {
     "min": 36,
     "km": 30.3
+   },
+   "rihaniya>yehiam_convoy": {
+    "min": 42,
+    "km": 36.2
    },
    "rihaniya>montfort": {
     "min": 43,
@@ -3417,6 +3572,10 @@
     "min": 32,
     "km": 25.1
    },
+   "rashbi_meron>yehiam_convoy": {
+    "min": 39,
+    "km": 35.4
+   },
    "rashbi_meron>montfort": {
     "min": 41,
     "km": 32.4
@@ -3484,6 +3643,10 @@
    "baram>peqiin": {
     "min": 27,
     "km": 22.6
+   },
+   "baram>yehiam_convoy": {
+    "min": 33,
+    "km": 28.5
    },
    "baram>montfort": {
     "min": 34,
@@ -3553,6 +3716,10 @@
     "min": 33,
     "km": 33.9
    },
+   "keshet_cave>yehiam_convoy": {
+    "min": 20,
+    "km": 20.4
+   },
    "keshet_cave>montfort": {
     "min": 32,
     "km": 27
@@ -3621,6 +3788,10 @@
     "min": 33,
     "km": 33.9
    },
+   "peqiin>yehiam_convoy": {
+    "min": 24,
+    "km": 18.2
+   },
    "peqiin>montfort": {
     "min": 26,
     "km": 15.2
@@ -3628,6 +3799,78 @@
    "peqiin>rosh_hanikra": {
     "min": 33,
     "km": 34.4
+   },
+   "yehiam_convoy>tel_aviv": {
+    "min": 108,
+    "km": 137.6
+   },
+   "yehiam_convoy>kiryat_shmona": {
+    "min": 68,
+    "km": 65.4
+   },
+   "yehiam_convoy>nahariya": {
+    "min": 15,
+    "km": 13.1
+   },
+   "yehiam_convoy>safed": {
+    "min": 48,
+    "km": 44.2
+   },
+   "yehiam_convoy>yokneam": {
+    "min": 51,
+    "km": 55.1
+   },
+   "yehiam_convoy>golani_jct": {
+    "min": 62,
+    "km": 54
+   },
+   "yehiam_convoy>rosh_pina": {
+    "min": 54,
+    "km": 51.3
+   },
+   "yehiam_convoy>tel_hai": {
+    "min": 72,
+    "km": 68.4
+   },
+   "yehiam_convoy>hula_reserve": {
+    "min": 84,
+    "km": 68
+   },
+   "yehiam_convoy>agamon": {
+    "min": 88,
+    "km": 64.6
+   },
+   "yehiam_convoy>metzudat_koach": {
+    "min": 54,
+    "km": 50.7
+   },
+   "yehiam_convoy>rihaniya": {
+    "min": 41,
+    "km": 36.2
+   },
+   "yehiam_convoy>rashbi_meron": {
+    "min": 39,
+    "km": 35.3
+   },
+   "yehiam_convoy>baram": {
+    "min": 32,
+    "km": 28.5
+   },
+   "yehiam_convoy>keshet_cave": {
+    "min": 20,
+    "km": 20.4
+   },
+   "yehiam_convoy>peqiin": {
+    "min": 24,
+    "km": 18.2
+   },
+   "yehiam_convoy>montfort": {
+    "min": 25,
+    "km": 14.4
+   },
+   "yehiam_convoy>rosh_hanikra": {
+    "min": 20,
+    "km": 21
    },
    "montfort>tel_aviv": {
     "min": 119,
@@ -3692,6 +3935,10 @@
    "montfort>peqiin": {
     "min": 26,
     "km": 15.3
+   },
+   "montfort>yehiam_convoy": {
+    "min": 25,
+    "km": 14.4
    },
    "montfort>rosh_hanikra": {
     "min": 32,
@@ -3760,6 +4007,10 @@
    "rosh_hanikra>peqiin": {
     "min": 34,
     "km": 34.5
+   },
+   "rosh_hanikra>yehiam_convoy": {
+    "min": 20,
+    "km": 21
    },
    "rosh_hanikra>montfort": {
     "min": 32,

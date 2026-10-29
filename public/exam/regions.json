@@ -21,6 +21,11 @@
       "emoji": "🏞️",
       "course": [
         "17"
+      ],
+      "file": "golan-north.json",
+      "missions": [
+        "gn1",
+        "gn2"
       ]
     },
     {
@@ -88,6 +93,11 @@
       "course": [
         "01",
         "21"
+      ],
+      "file": "judean-desert.json",
+      "missions": [
+        "jd1",
+        "jd2"
       ]
     },
     {

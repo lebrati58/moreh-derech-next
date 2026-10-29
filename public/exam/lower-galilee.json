@@ -45,6 +45,205 @@
  },
  "sites": [
   {
+   "id": "sheikh_abreik",
+   "he": "שייח' אבריק — אלכסנדר זייד, פסל השומר ובית הקברות של אגודת השומרים",
+   "short": "שייח' אבריק",
+   "status": [
+    "taught"
+   ],
+   "periods": [
+    "העלייה השנייה",
+    "המנדט הבריטי"
+   ],
+   "tags": [
+    "heritage",
+    "personal_story",
+    "burial",
+    "view",
+    "geology",
+    "settlement"
+   ],
+   "facts": [
+    {
+     "he": "אלכסנדר זייד נולד ב-1886 בסיביר, במחוז אירקוטצק.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "אביו, יצחק אליהו, נשפט לגלות בסיביר בשל פעילות ציונית.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "אחרי פרעות קישינב (1903) הצטרף זייד לארגון נוער יהודי להגנה עצמית.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "ב-1904 פגש את מיכאל אלפרין, שהכשיר בני נוער לעבודת אדמה ולשמירה.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "ב-1907 הוקם ביפו 'בר גיורא' – ארגון השמירה היהודי הראשון.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "ב-1909 הוקם בכפר תבור (מסחה) ארגון 'השומר'.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "סמל 'השומר': מגן דוד והסיסמה 'בדם ואש יהודה נפלה, בדם ואש יהודה תקומה'.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "כשליש מחברי 'השומר' היו נשים; זייד נישא לציפורה בקר, שומרת בארגון.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "ב-1926 עזבה משפחת זייד את כפר גלעדי ועברה לשמור על אדמות קק\"ל בשייח' אבריק.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "ב-10 ביוני 1938, במרד הערבי הגדול, שמע זייד צלצול פעמונים חריג מעלונים, שהתפרש כקריאת מצוקה.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "הוא יצא על סוסתו לעלונים ונפל במארב מאחורי סלע בגבעות.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "לפי התמלול חוליית 'ההגנה' (ובה יצחק חנקין) הגיעה ב-1942 למאהל בדואי בבית נטופה ועשתה דין ברוצח; התמלול מסייג שהפרטים אינם ודאיים.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "בית הקברות שייך ל'אגודת השומרים' – תת-ארגון של 'השומר' לחברים שפרשו מחיים שיתופיים מלאים.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "המצבות מצופות אבני גיר ודולומית קרסטיות ונראות כעדר כבשים רובץ.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "העיצוב הוא מחווה לאגודת הרועים מג'דה (רמת ישי), שסיפקה להם הגנה.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "בבית הקברות הישן של טבעון קבורים אלכסנדר זייד וראשי השומר.",
+     "src": "lg_road"
+    },
+    {
+     "he": "אליעזר שמאלי כתב את 'אנשי בראשית', שגיבורו 'חרמוני' הוא כינוי ספרותי לזייד.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "אלכסנדר פן, חברו של זייד, כתב לזכרו את 'אדמה אדמתי'.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "יצחק בן-צבי הספיד את זייד ורמז לתגליות העתיקות: 'פינה זו שקבריה מעידים על החיים העבריים כאן לפני אלף חמש מאות שנה'.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "הפסל פוסל ב-1941 בידי דוד פולוס; דוגמנית הסוס הייתה הבת כוכבת.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "הפסל נעשה מבטון ובשנות ה-80 צופה בברונזה.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "שם המקום על שם קבר שייח' בעל שתי כיפות.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "לפי סיפור הדרך שייח' אבריק היה דמות מיסטית ששמרה על טהרה והסתובבה עם כד מים (אבריק).",
+     "src": "lg_road"
+    },
+    {
+     "he": "'גליל' הוא מונח מקראי שמשמעותו חבל ארץ.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "גובה הגליל העליון 800–1,000 מ', ואילו הגליל התחתון 400–600 מ'.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "פערי הגובה נובעים משקיעת הגליל התחתון ועליית הגליל העליון.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "הגליל התחתון המערבי (גבעות אלונים-שפרעם) בנוי קירטון מתקופת האיאוקן, סלע משקע ימי רך.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "הגליל התחתון המזרחי בנוי בזלת צעירה, רמות בזלת נטויות.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "עמק עכו אינו 'עמק זבולון': זו בקעה (גרבן), ושבט זבולון לא ישב שם.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "מהתצפית נראים עלונים, מרכז אלונים והמושבות הטמפלריות בית לחם הגלילית ואלוני אבא.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "ממערב נראים רכס הכרמל, אוניברסיטת חיפה, עוספיא, דליית אל-כרמל והמוחרקה.",
+     "src": "bs_tr"
+    },
+    {
+     "he": "מהתצפית נראים עמק יזרעאל המערבי ורמת מנשה: תל יוקנעם, שדה יעקב, כפר יהושע, נהלל, גבעת המורה ועפולה.",
+     "src": "bs_tr"
+    }
+   ],
+   "conflicts": [
+    {
+     "he": "תאריכי הרצח והקבורה של זייד: שני המסמכים כותבים שנרצח ב-10 ביוני 1938 אך הובא לקבורה (והוספד) ב-11 ביולי 1938 – פער של חודש שאינו מוסבר. ייתכן שאחד התאריכים שגוי.",
+     "srcs": [
+      "bs_tr",
+      "bs_sum"
+     ]
+    },
+    {
+     "he": "מקום מאסרו של זייד: 'נעצר ביפו' (סיכום) מול 'נכלא ביפו/עכו' (תמלול).",
+     "srcs": [
+      "bs_sum",
+      "bs_tr"
+     ]
+    }
+   ],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "bs_tr",
+    "bs_sum",
+    "lg_road"
+   ],
+   "course": [
+    "16"
+   ],
+   "lat": 32.70094,
+   "lon": 35.12894,
+   "coordSource": "wiki",
+   "coordRef": "he:שייח' אבריק",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
    "id": "beit_shearim_town",
    "he": "בית שערים — גבעת העיר, ביתו של רבי והסנהדרין",
    "short": "גבעת בית שערים",
@@ -471,6 +670,130 @@
    "access": null
   },
   {
+   "id": "tzippori_synagogue",
+   "he": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'",
+   "short": "בית הכנסת בציפורי",
+   "status": [
+    "taught"
+   ],
+   "periods": [
+    "התקופה הביזנטית"
+   ],
+   "tags": [
+    "synagogue",
+    "judaism",
+    "byzantine",
+    "archaeology",
+    "mosaics"
+   ],
+   "facts": [
+    {
+     "he": "לפי חז\"ל, מסע הלוויה של רבי עבר ב-18 בתי כנסת בציפורי.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "בית הכנסת התגלה בעבודות להרחבת מגרש החנייה.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "בית הכנסת מתוארך למאה ה-5–6 (ביזנטית).",
+     "src": "tz_tr"
+    },
+    {
+     "he": "במבנה אולם תווך וסטיו אחד בלבד.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "ציר המבנה מזרח-מערב, אף שירושלים מציפורי בדרום.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "לפי זאב וייס הסיבה טופוגרפית: בית הכנסת נבנה על טרסה צרה.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "וייס הגדיר את נושא הפסיפס 'מהבטחה לגאולה'.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "בחלק המזרחי: שרה בפתח האוהל ושלושת המלאכים המבשרים על לידת יצחק.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "סצנת העקדה: הנערים, החמור והנעליים שחלצו אברהם ויצחק.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "חזית המקדש/ארון הקודש מוקפת בשני אריות.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "שתי מנורות, שופר, מחתה וארבעת המינים.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "סל ביכורים ששתי יונים קשורות לדופנו כדי שלא יזיקו לפירות.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "כבשי הקורבן מלווים בכתובת 'אהרון'.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "גלגל המזלות הוא לפי וייס ייצוג של לוח השנה העברי, לא עבודה זרה.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "שמות החודשים והמזלות כתובים בעברית.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "בפינות ארבע נשים – ארבע עונות השנה.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "במרכז מרכבת שמש בלי דמות הליוס, בניגוד לחמת טבריה ולבית אלפא.",
+     "src": "tz_tr"
+    },
+    {
+     "he": "המסר: העולם נע במחזוריות עד הגאולה והקמת בית המקדש השלישי.",
+     "src": "tz_tr"
+    }
+   ],
+   "conflicts": [],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "tz_tr"
+   ],
+   "course": [
+    "16"
+   ],
+   "lat": 32.74556,
+   "lon": 35.27861,
+   "coordSource": "wiki",
+   "coordRef": "en:Sepphoris",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
    "id": "tzippori_city",
    "he": "ציפורי — העיר המעורבת, התיאטרון והרובע היהודי",
    "short": "העיר ציפורי והתיאטרון",
@@ -831,69 +1154,6 @@
    "lon": 35.27861,
    "coordSource": "wiki",
    "coordRef": "en:Sepphoris",
-   "hours": null,
-   "visit": null,
-   "access": null
-  },
-  {
-   "id": "beit_shean",
-   "he": "בית שאן — התל המצרי וסקיתופוליס",
-   "short": "בית שאן",
-   "status": [
-    "material",
-    "unverified"
-   ],
-   "periods": [
-    "תקופת הברונזה המאוחרת",
-    "התקופה הרומית",
-    "התקופה הביזנטית"
-   ],
-   "tags": [
-    "archaeology",
-    "hellenistic_roman",
-    "byzantine",
-    "city",
-    "road"
-   ],
-   "facts": [],
-   "conflicts": [
-    {
-     "he": "מספר המושבים בתיאטרון בית שאן: כ-7,000 (חוברת סיור 23) מול כ-10,000 (תמלול ציפורי, סיור 16).",
-     "srcs": [
-      "jv_book",
-      "tz_tr"
-     ]
-    }
-   ],
-   "logistics2": {
-    "hours": null,
-    "price": null,
-    "toilets": {
-     "status": "unknown",
-     "he": "לברר"
-    },
-    "parking": {
-     "status": "unknown",
-     "he": "לברר"
-    },
-    "queue": {
-     "status": "unknown",
-     "he": "לברר"
-    },
-    "phone": null,
-    "group": null
-   },
-   "sources": [
-    "jv_book",
-    "tz_tr"
-   ],
-   "course": [
-    "23"
-   ],
-   "lat": 32.49734,
-   "lon": 35.4978,
-   "coordSource": "wiki",
-   "coordRef": "he:בית שאן",
    "hours": null,
    "visit": null,
    "access": null
@@ -1283,6 +1543,10 @@
     "min": 65,
     "km": 77.1
    },
+   "zichron>sheikh_abreik": {
+    "min": 26,
+    "km": 26.1
+   },
    "zichron>beit_shearim_town": {
     "min": 26,
     "km": 26.5
@@ -1292,6 +1556,10 @@
     "km": 26.3
    },
    "zichron>tzippori_water": {
+    "min": 38,
+    "km": 43.9
+   },
+   "zichron>tzippori_synagogue": {
     "min": 38,
     "km": 43.9
    },
@@ -1307,10 +1575,6 @@
     "min": 38,
     "km": 43.9
    },
-   "zichron>beit_shean": {
-    "min": 64,
-    "km": 67.3
-   },
    "tzippori_moshav>zichron": {
     "min": 39,
     "km": 44
@@ -1323,6 +1587,10 @@
     "min": 42,
     "km": 45.9
    },
+   "tzippori_moshav>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
    "tzippori_moshav>beit_shearim_town": {
     "min": 20,
     "km": 19.8
@@ -1332,6 +1600,10 @@
     "km": 19.5
    },
    "tzippori_moshav>tzippori_water": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_moshav>tzippori_synagogue": {
     "min": 0,
     "km": 0
    },
@@ -1347,10 +1619,6 @@
     "min": 0,
     "km": 0
    },
-   "tzippori_moshav>beit_shean": {
-    "min": 48,
-    "km": 45.6
-   },
    "gan_shmuel>zichron": {
     "min": 19,
     "km": 20.4
@@ -1363,6 +1631,10 @@
     "min": 68,
     "km": 74.1
    },
+   "gan_shmuel>sheikh_abreik": {
+    "min": 34,
+    "km": 39.4
+   },
    "gan_shmuel>beit_shearim_town": {
     "min": 34,
     "km": 39.8
@@ -1372,6 +1644,10 @@
     "km": 39.6
    },
    "gan_shmuel>tzippori_water": {
+    "min": 46,
+    "km": 57.2
+   },
+   "gan_shmuel>tzippori_synagogue": {
     "min": 46,
     "km": 57.2
    },
@@ -1387,10 +1663,6 @@
     "min": 46,
     "km": 57.2
    },
-   "gan_shmuel>beit_shean": {
-    "min": 57,
-    "km": 62.7
-   },
    "kinneret>zichron": {
     "min": 66,
     "km": 77.1
@@ -1403,6 +1675,10 @@
     "min": 68,
     "km": 74.1
    },
+   "kinneret>sheikh_abreik": {
+    "min": 47,
+    "km": 52.4
+   },
    "kinneret>beit_shearim_town": {
     "min": 47,
     "km": 52.8
@@ -1412,6 +1688,10 @@
     "km": 52.6
    },
    "kinneret>tzippori_water": {
+    "min": 40,
+    "km": 41.9
+   },
+   "kinneret>tzippori_synagogue": {
     "min": 40,
     "km": 41.9
    },
@@ -1427,9 +1707,49 @@
     "min": 40,
     "km": 41.9
    },
-   "kinneret>beit_shean": {
-    "min": 31,
-    "km": 29.9
+   "sheikh_abreik>zichron": {
+    "min": 26,
+    "km": 26
+   },
+   "sheikh_abreik>tzippori_moshav": {
+    "min": 19,
+    "km": 19.4
+   },
+   "sheikh_abreik>gan_shmuel": {
+    "min": 33,
+    "km": 38.6
+   },
+   "sheikh_abreik>kinneret": {
+    "min": 47,
+    "km": 52.5
+   },
+   "sheikh_abreik>beit_shearim_town": {
+    "min": 3,
+    "km": 0.7
+   },
+   "sheikh_abreik>beit_shearim_necropolis": {
+    "min": 3,
+    "km": 0.5
+   },
+   "sheikh_abreik>tzippori_water": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_synagogue": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_city": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_citadel": {
+    "min": 19,
+    "km": 19.3
+   },
+   "sheikh_abreik>tzippori_villas": {
+    "min": 19,
+    "km": 19.3
    },
    "beit_shearim_town>zichron": {
     "min": 26,
@@ -1447,11 +1767,19 @@
     "min": 47,
     "km": 52.9
    },
+   "beit_shearim_town>sheikh_abreik": {
+    "min": 3,
+    "km": 0.7
+   },
    "beit_shearim_town>beit_shearim_necropolis": {
     "min": 1,
     "km": 0.2
    },
    "beit_shearim_town>tzippori_water": {
+    "min": 20,
+    "km": 19.7
+   },
+   "beit_shearim_town>tzippori_synagogue": {
     "min": 20,
     "km": 19.7
    },
@@ -1466,10 +1794,6 @@
    "beit_shearim_town>tzippori_villas": {
     "min": 20,
     "km": 19.7
-   },
-   "beit_shearim_town>beit_shean": {
-    "min": 45,
-    "km": 51.1
    },
    "beit_shearim_necropolis>zichron": {
     "min": 25,
@@ -1487,11 +1811,19 @@
     "min": 46,
     "km": 52.7
    },
+   "beit_shearim_necropolis>sheikh_abreik": {
+    "min": 3,
+    "km": 0.5
+   },
    "beit_shearim_necropolis>beit_shearim_town": {
     "min": 1,
     "km": 0.2
    },
    "beit_shearim_necropolis>tzippori_water": {
+    "min": 19,
+    "km": 19.5
+   },
+   "beit_shearim_necropolis>tzippori_synagogue": {
     "min": 19,
     "km": 19.5
    },
@@ -1506,10 +1838,6 @@
    "beit_shearim_necropolis>tzippori_villas": {
     "min": 19,
     "km": 19.5
-   },
-   "beit_shearim_necropolis>beit_shean": {
-    "min": 45,
-    "km": 50.9
    },
    "tzippori_water>zichron": {
     "min": 39,
@@ -1527,6 +1855,10 @@
     "min": 42,
     "km": 45.8
    },
+   "tzippori_water>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
    "tzippori_water>beit_shearim_town": {
     "min": 20,
     "km": 19.8
@@ -1534,6 +1866,10 @@
    "tzippori_water>beit_shearim_necropolis": {
     "min": 20,
     "km": 19.5
+   },
+   "tzippori_water>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
    },
    "tzippori_water>tzippori_city": {
     "min": 0,
@@ -1547,9 +1883,49 @@
     "min": 0,
     "km": 0
    },
-   "tzippori_water>beit_shean": {
-    "min": 48,
-    "km": 45.6
+   "tzippori_synagogue>zichron": {
+    "min": 39,
+    "km": 44
+   },
+   "tzippori_synagogue>tzippori_moshav": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>gan_shmuel": {
+    "min": 46,
+    "km": 56.6
+   },
+   "tzippori_synagogue>kinneret": {
+    "min": 42,
+    "km": 45.8
+   },
+   "tzippori_synagogue>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
+   "tzippori_synagogue>beit_shearim_town": {
+    "min": 20,
+    "km": 19.8
+   },
+   "tzippori_synagogue>beit_shearim_necropolis": {
+    "min": 20,
+    "km": 19.5
+   },
+   "tzippori_synagogue>tzippori_water": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>tzippori_city": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>tzippori_citadel": {
+    "min": 0,
+    "km": 0
+   },
+   "tzippori_synagogue>tzippori_villas": {
+    "min": 0,
+    "km": 0
    },
    "tzippori_city>zichron": {
     "min": 39,
@@ -1567,6 +1943,10 @@
     "min": 42,
     "km": 45.8
    },
+   "tzippori_city>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
    "tzippori_city>beit_shearim_town": {
     "min": 20,
     "km": 19.8
@@ -1579,6 +1959,10 @@
     "min": 0,
     "km": 0
    },
+   "tzippori_city>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
    "tzippori_city>tzippori_citadel": {
     "min": 0,
     "km": 0
@@ -1586,10 +1970,6 @@
    "tzippori_city>tzippori_villas": {
     "min": 0,
     "km": 0
-   },
-   "tzippori_city>beit_shean": {
-    "min": 48,
-    "km": 45.6
    },
    "tzippori_citadel>zichron": {
     "min": 39,
@@ -1607,6 +1987,10 @@
     "min": 42,
     "km": 45.8
    },
+   "tzippori_citadel>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
    "tzippori_citadel>beit_shearim_town": {
     "min": 20,
     "km": 19.8
@@ -1619,6 +2003,10 @@
     "min": 0,
     "km": 0
    },
+   "tzippori_citadel>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
    "tzippori_citadel>tzippori_city": {
     "min": 0,
     "km": 0
@@ -1626,10 +2014,6 @@
    "tzippori_citadel>tzippori_villas": {
     "min": 0,
     "km": 0
-   },
-   "tzippori_citadel>beit_shean": {
-    "min": 48,
-    "km": 45.6
    },
    "tzippori_villas>zichron": {
     "min": 39,
@@ -1647,6 +2031,10 @@
     "min": 42,
     "km": 45.8
    },
+   "tzippori_villas>sheikh_abreik": {
+    "min": 20,
+    "km": 19.4
+   },
    "tzippori_villas>beit_shearim_town": {
     "min": 20,
     "km": 19.8
@@ -1659,6 +2047,10 @@
     "min": 0,
     "km": 0
    },
+   "tzippori_villas>tzippori_synagogue": {
+    "min": 0,
+    "km": 0
+   },
    "tzippori_villas>tzippori_city": {
     "min": 0,
     "km": 0
@@ -1666,50 +2058,6 @@
    "tzippori_villas>tzippori_citadel": {
     "min": 0,
     "km": 0
-   },
-   "tzippori_villas>beit_shean": {
-    "min": 48,
-    "km": 45.6
-   },
-   "beit_shean>zichron": {
-    "min": 65,
-    "km": 75.4
-   },
-   "beit_shean>tzippori_moshav": {
-    "min": 44,
-    "km": 47.2
-   },
-   "beit_shean>gan_shmuel": {
-    "min": 57,
-    "km": 62.6
-   },
-   "beit_shean>kinneret": {
-    "min": 31,
-    "km": 30.3
-   },
-   "beit_shean>beit_shearim_town": {
-    "min": 46,
-    "km": 51.2
-   },
-   "beit_shean>beit_shearim_necropolis": {
-    "min": 45,
-    "km": 50.9
-   },
-   "beit_shean>tzippori_water": {
-    "min": 44,
-    "km": 47.2
-   },
-   "beit_shean>tzippori_city": {
-    "min": 44,
-    "km": 47.2
-   },
-   "beit_shean>tzippori_citadel": {
-    "min": 44,
-    "km": 47.2
-   },
-   "beit_shean>tzippori_villas": {
-    "min": 44,
-    "km": 47.2
    }
   }
  }
