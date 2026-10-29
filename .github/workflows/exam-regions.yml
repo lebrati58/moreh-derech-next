@@ -17,10 +17,8 @@ jobs:
       - run: for f in content/exam/*.src.json; do node tools/exam-region-build.mjs $(basename $f .src.json) --online; done | tee exam-build.log
       - name: Log (annotation unique)
         run: echo "::notice title=exam-log::$(grep -E '🟢|🟡|❌|⚠️' exam-build.log | head -60 | gzip -9 | base64 -w0)"
-      - name: Fichiers (annotations, max 10 par étape)
-        run: |
-          files=$(for f in content/exam/*.src.json; do n=$(basename $f .src.json); echo public/exam/${n//_/-}.json; done)
-          tar czf - $files public/exam/regions.json content/exam/geo-cache.json | base64 -w0 | fold -w 60000 | nl -nln -w1 -s'|' | head -10 | while IFS= read -r l; do echo "::notice title=exam-chunk::$l"; done
+      - name: Cache géo (annotations ≤ 4096 car., max 10 par étape ; le reste se reconstruit en local depuis ce cache)
+        run: gzip -9c content/exam/geo-cache.json | base64 -w0 | fold -w 4000 | nl -nln -w1 -s'|' | head -10 | while IFS= read -r l; do echo "::notice title=exam-geo::$l"; done
       - name: Commit
         continue-on-error: true
         run: |
