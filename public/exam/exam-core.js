@@ -233,7 +233,7 @@
 
   // ---------- Progression ----------
   const LEVELS = [
-    [0, 'חניך'], [120, 'מדריך מתלמד'], [300, 'מורה דרך צעיר'], [600, 'מורה דרך'], [1000, 'מורה דרך בכיר'], [1600, 'מומחה הגולן']
+    [0, 'חניך'], [120, 'מדריך מתלמד'], [300, 'מורה דרך צעיר'], [600, 'מורה דרך'], [1000, 'מורה דרך בכיר'], [1600, 'מומחה שטח']
   ];
   function level(xp) {
     let i = 0; while (i + 1 < LEVELS.length && xp >= LEVELS[i + 1][0]) i++;
@@ -353,9 +353,10 @@
       plan.push({ start: '', end: '', what: s.he, site: s.id, log: [L2.price && !/חינם|לא/.test(L2.price.he) ? 'תשלום כניסה' : '', todo.length ? 'לברר: ' + todo.join(', ') : '', L2.group ? 'תיאום קבוצה' : ''].filter(Boolean).join(' · ') });
       if (i === Math.min(1, ord.length - 1)) plan.push({ start: '', end: '', what: 'ארוחת צהריים — שעה אחת, בין 12:00 ל-14:00', log: 'לבדוק אם יש מקום לאכול — אחרת ארוחה עצמית' });
     });
-    const lastSite = ord[ord.length - 1], dBack = lastSite && prefs.start && driveMin(lastSite, prefs.start, prefs.data, prefs.own);
-    plan.push(dBack ? { start: '', end: '', what: `נסיעה חזרה ופיזור: ${prefs.start.he} (~${dBack.min} דק׳)`, log: 'פיזור', drive: lastSite.id + '>' + prefs.start.id }
-      : { start: '', end: prefs.endTime || '18:00', what: 'נסיעה חזרה ופיזור: ' + ((prefs.start && prefs.start.he) || 'נקודת הפיזור'), log: 'פיזור' });
+    const fin = prefs.end || prefs.start, back = fin && prefs.start && fin.id === prefs.start.id ? 'נסיעה חזרה ופיזור: ' : 'נסיעה לנקודת הפיזור: ';
+    const lastSite = ord[ord.length - 1], dBack = lastSite && fin && driveMin(lastSite, fin, prefs.data, prefs.own);
+    plan.push(dBack ? { start: '', end: '', what: `${back}${fin.he} (~${dBack.min} דק׳)`, log: 'פיזור', drive: lastSite.id + '>' + fin.id }
+      : { start: '', end: prefs.endTime || '18:00', what: back + ((fin && fin.he) || 'נקודת הפיזור'), log: 'פיזור' });
     if (prefs.data) reflowPlan(plan, prefs.data, prefs.own);
     return plan;
   }

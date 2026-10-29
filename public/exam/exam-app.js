@@ -29,6 +29,7 @@
     return xp;
   }
   const TAGS = { road: '🚌 הדרכת דרך', view: '🔭 תצפית', geology: '🪨 גאולוגיה', judaism: '✡️ יהדות', synagogue: '🕍 בית כנסת עתיק', christianity: '✝️ נצרות', new_testament: '📖 ברית חדשה', hellenistic_roman: '🏛️ הלניסטי-רומי', byzantine: '⛪ ביזנטי', archaeology: '⛏️ ארכאולוגיה', battle: '⚔️ קרב', yom_kippur: '🎖️ מלחמת יום הכיפורים', heritage: '🏅 מורשת', personal_story: '🎙️ סיפור אישי', water: '💧 מים', city: '🏙️ עיר עתיקה', bible: '📜 תנ״ך', geography: '🗺️ גאוגרפיה' };
+  const tagLabel = k => TAGS[k] || (DATA && DATA.tags && DATA.tags[k]) || k;   // étiquettes propres à une région (ex. « 🏰 ביצורים »)
   const BADGES = {
     first: ['🧭', 'צעד ראשון', 'בחרתם אתרים למשימה'],
     clock: ['⏱️', 'שומר הזמן', 'לוח זמנים תקין'],
@@ -58,7 +59,18 @@
   }
 
   // ---------- Données ----------
-  let MODELS, DATA, P;
+  let MODELS, DATA, P, REGIONS = [];
+  // Point de départ / d'arrivée d'une mission (ex. « מת״א … ויסתיים בקרית גת ») ; par défaut le premier point de la région.
+  const anchorById = id => (DATA.anchors || []).find(a => a.id === id) || null;
+  const startOf = m => anchorById(m && m.start) || (DATA.anchors || [])[0] || null;
+  const endOf = m => anchorById(m && m.end) || startOf(m);
+  // Cadre de la carte : calculé sur les lieux de la région (plus de coordonnées du Golan en dur)
+  function bounds() {
+    const bb = DATA.sites.concat(DATA.anchors || []).filter(p => p.lat && p.lon);
+    const lo = [Math.min(...bb.map(p => p.lon)), Math.max(...bb.map(p => p.lon))], la = [Math.min(...bb.map(p => p.lat)), Math.max(...bb.map(p => p.lat))];
+    const px = Math.max(.02, (lo[1] - lo[0]) * .12), py = Math.max(.015, (la[1] - la[0]) * .12);
+    return { lo: [lo[0] - px, lo[1] + px], la: [la[0] - py, la[1] + py] };
+  }
   const srcLink = (key, label) => {
     if (Array.isArray(key)) return key.map(k => srcLink(k, label)).join(' ');
     const s = (DATA.sources[key] || MODELS.planRules && { lesson26: MODELS.planRules.source, roadTips: MODELS.roadTips.source, longRules: MODELS.longRules.source }[key]);
@@ -101,18 +113,18 @@
   }
   function mapBox(el, opts) {
     // opts : { pick(id) | null, mark: {id: label}, onSite(id) }
-    el.innerHTML = '<div class="mapwrap"><div class="map" role="application" aria-label="מפת דרום רמת הגולן"></div><div class="maplegend">📍 לחצו על נקודה · 🚌 קו מקווקו = סכמטי, לא תוואי כביש</div></div>';
+    el.innerHTML = '<div class="mapwrap"><div class="map" role="application" aria-label="מפת ${esc(DATA.he)}"></div><div class="maplegend">📍 לחצו על נקודה · 🚌 קו מקווקו = סכמטי, לא תוואי כביש</div></div>';
     const holder = $('.map', el);
     const sites = DATA.sites;
     const click = id => { if (opts.pick) opts.pick(id); else siteSheet(id); };
     const svgFallback = why => {
       holder.classList.add('svg');
-      const W = 360, H = 260, lo = [35.56, 35.87], la = [32.69, 32.89];
+      const W = 360, H = 260, B = bounds(), lo = B.lo, la = B.la;
       const x = l => Math.round((l - lo[0]) / (lo[1] - lo[0]) * W), y = l => Math.round((la[1] - l) / (la[1] - la[0]) * H);
-      const r789 = DATA.roads.find(r => r.line), a = P[r789.line[0]], b = P[r789.line[1]];
+      const r789 = (DATA.roads || []).find(r => r.line && P[r.line[0]] && P[r.line[1]]), a = r789 && P[r789.line[0]], b = r789 && P[r789.line[1]];
       holder.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="מפה סכמטית"><rect width="${W}" height="${H}" rx="14" fill="#13234d"/>
-        <text x="10" y="${H / 2}" fill="#7fb6ff" font-size="12" font-weight="800">← הכנרת (מערב)</text>
-        <line x1="${x(a.lon)}" y1="${y(a.lat)}" x2="${x(b.lon)}" y2="${y(b.lat)}" stroke="#ffd878" stroke-width="2" stroke-dasharray="5 4"/>
+        ${DATA.mapHint ? `<text x="10" y="${H / 2}" fill="#7fb6ff" font-size="12" font-weight="800">${esc(DATA.mapHint)}</text>` : ''}
+        ${r789 ? `<line x1="${x(a.lon)}" y1="${y(a.lat)}" x2="${x(b.lon)}" y2="${y(b.lat)}" stroke="#ffd878" stroke-width="2" stroke-dasharray="5 4"/>` : ''}
         ${(DATA.anchors || []).map(z => `<g aria-label="${esc(z.he)}"><rect x="${x(z.lon) - 12}" y="${y(z.lat) - 12}" width="24" height="24" rx="6" fill="#ffd878" stroke="#1c1f45" stroke-width="2"/><text x="${x(z.lon)}" y="${y(z.lat) + 5}" text-anchor="middle" fill="#1c1f45" font-size="13" font-weight="900">0</text><text x="${x(z.lon) + 2}" y="${y(z.lat) - 17}" text-anchor="start" fill="#ffd878" font-size="12" font-weight="800">${esc(z.he)}</text></g>`).join('')}
         ${sites.map(s => `<g class="pt" data-id="${s.id}" tabindex="0" role="button" aria-label="${esc(s.short)}"><circle cx="${x(s.lon)}" cy="${y(s.lat)}" r="9" fill="${opts.mark && opts.mark[s.id] ? '#6ee9cf' : '#ff8f8f'}" stroke="#fff" stroke-width="2"/>
           <text x="${x(s.lon)}" y="${s.id === 'kursi' ? y(s.lat) + 22 : y(s.lat) - 13}" text-anchor="${s.id === 'kursi' ? 'start' : 'middle'}" fill="#fff" font-size="12" font-weight="800">${esc(s.short)}${opts.mark && opts.mark[s.id] ? ' · ' + esc(opts.mark[s.id]) : ''}</text></g>`).join('')}
@@ -123,7 +135,7 @@
     loadMapLibre().then(ml => {
       let map;
       try {
-        map = new ml.Map({ container: holder, style: 'https://tiles.openfreemap.org/styles/liberty', center: [35.735, 32.83], zoom: 10.4, pitch: 50, bearing: -15, attributionControl: { compact: true } });
+        map = new ml.Map({ container: holder, style: 'https://tiles.openfreemap.org/styles/liberty', center: (B0 => [(B0.lo[0] + B0.lo[1]) / 2, (B0.la[0] + B0.la[1]) / 2])(bounds()), zoom: 10.4, pitch: 50, bearing: -15, attributionControl: { compact: true } });
       } catch (e) { return svgFallback('webgl'); }
       map.addControl(new ml.NavigationControl({ visualizePitch: true }), 'top-left');
       try { const bb = DATA.sites.concat(DATA.anchors || []); map.fitBounds([[Math.min(...bb.map(p => p.lon)) - .03, Math.min(...bb.map(p => p.lat)) - .02], [Math.max(...bb.map(p => p.lon)) + .03, Math.max(...bb.map(p => p.lat)) + .02]], { padding: 30, pitch: 50, bearing: -15, duration: 0 }); } catch (e) {}
@@ -133,12 +145,13 @@
           map.addSource('dem', { type: 'raster-dem', tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'], encoding: 'terrarium', tileSize: 256, maxzoom: 13, attribution: 'Terrain: Mapzen/AWS' });
           map.setTerrain({ source: 'dem', exaggeration: 1.6 });
         } catch (e) {}
-        const r = DATA.roads.find(x => x.line);
-        map.addSource('r789', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: r.line.map(id => [P[id].lon, P[id].lat]) } } });
-        map.addLayer({ id: 'r789', type: 'line', source: 'r789', paint: { 'line-color': '#f0b44c', 'line-width': 3, 'line-dasharray': [2, 2] } });
+        const r = (DATA.roads || []).find(x => x.line && x.line.every(id => P[id]));
+        if (r) map.addSource('r789', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: r.line.map(id => [P[id].lon, P[id].lat]) } } });
+        if (r) map.addLayer({ id: 'r789', type: 'line', source: 'r789', paint: { 'line-color': '#f0b44c', 'line-width': 3, 'line-dasharray': [2, 2] } });
         // Trajet réel par les routes (OSRM / OpenStreetMap) entre les visites, dans l'ordre des numéros
         const seq = Object.entries(opts.mark || {}).filter(([, v]) => /^\d+$/.test(v)).sort((a, b) => +a[1] - +b[1]).map(([id]) => P[id]).filter(Boolean);
-        if (seq.length >= 1 && (DATA.anchors || [])[0]) { seq.unshift(DATA.anchors[0]); seq.push(DATA.anchors[0]); }
+        const A0 = opts.start || (DATA.anchors || [])[0], A1 = opts.end || A0;
+        if (seq.length >= 1 && A0) { seq.unshift(A0); seq.push(A1); }
         const lg0 = $('.maplegend', el); if (lg0) lg0.textContent = '📍 לחצו על נקודה לפרטים · 0 = נקודת המפגש';
         if (opts.route && seq.length >= 2) osrmRoute(seq).then(geo => {
           if (!geo || !map.getStyle()) return;
@@ -296,9 +309,9 @@
       <section class="daily"><div class="eyebrow">☀️ ${t('today')}</div><h2>${daily.emoji} ${esc(daily.he)}</h2><p>${esc(daily.brief)}</p>
         <div class="modes big"><a href="#/m/${daily.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${daily.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${daily.id}/exam">⏱️ ${t('exam')}</a></div></section>
       <h2 class="sec">🗺️ ${t('missions')} — ${esc(DATA.he)}</h2>
+      ${regionNav()}
       <div id="homeMap"></div>
       <div class="mlist">${DATA.missions.map(card).join('')}</div>
-      <div class="mlist soon">${['גליל עליון וחרמון', 'ירושלים', 'מדבר יהודה וים המלח', 'מישור החוף'].map(r => `<article class="mcard lock"><div class="me">🔒</div><div class="mt"><h3>${esc(r)}</h3><p>${t('soon')}</p></div></article>`).join('')}</div>
       ${savedHtml()}
       <h2 class="sec">📈 ${t('progress')}</h2>
       <section class="panel"><h3>🎯 ${t('weak')}</h3>${rec ? `<p>הכי הרבה טעויות: <b>${esc(rec.he)}</b> (${rec.count}).</p>${rec.sets.length ? `<a class="btn" href="#/m/${daily.id}/errors/${rec.sets[0]}">🔎 תרגול ממוקד</a>` : ''}` : `<p class="muted">${t('noweak')}</p>`}
@@ -306,7 +319,7 @@
       <section class="panel"><h3>🏅 ${t('badges')}</h3><div class="bdg">${Object.entries(BADGES).map(([k, b]) => `<div class="b ${S.badges.includes(k) ? 'on' : ''}" title="${esc(b[2])}"><span>${b[0]}</span><small>${esc(b[1])}</small></div>`).join('')}</div></section>
       <p class="foot">${t('indicative')}<br>📄 ${MODELS.models.school5.sources.map(s => `<a href="https://drive.google.com/open?id=${esc(s.id)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</p>`);
     mapBox($('#homeMap'), {});
-    wireSaved();
+    wireSaved(); wireRegions();
   }
 
   function missionHead(m, mode) {
@@ -339,7 +352,7 @@
     $('#svOk').addEventListener('click', () => {
       const name = $('#svName').value.trim() || def, id = 's_' + Date.now().toString(36);
       const mission = clone(m); delete mission.id;
-      storeSaved({ v: 1, id, name, at: Date.now(), region: DATA.region || 'golan-south', mission, draft: clone(D) });
+      storeSaved({ v: 1, id, name, at: Date.now(), region: DATA.region, mission, draft: clone(D) });
       toast('💾 המסלול נשמר — ״המסלולים שלי״ במסך הראשי');
       location.hash = location.hash.replace('#/m/' + m.id + '/', '#/m/' + id + '/');
     });
@@ -354,16 +367,18 @@
   }
   function importSaved(file) {
     const rd = new FileReader();
+    const bad = () => toast('⚠️ הקובץ לא מתאים (מסלול של אתגר המבחן)');
     rd.onload = () => {
-      try {
-        const e = JSON.parse(rd.result);
-        if (e.app !== 'moreh-derech-exam' || !e.mission || !e.draft || !Array.isArray(e.mission.slots)) throw new Error('format');
-        const known = id => !id || P[id];
+      let e; try { e = JSON.parse(rd.result); } catch (err) { return bad(); }
+      if (!e || e.app !== 'moreh-derech-exam' || !e.mission || !e.draft || !Array.isArray(e.mission.slots)) return bad();
+      e.region = regionById(e.region) ? e.region : 'golan_south';   // anciens fichiers : sud du Golan
+      const back = DATA.region;
+      loadRegion(e.region).then(() => {
         const ids = Object.values(e.draft.picks || {}).concat((e.draft.plan || []).map(r => r.site));
-        if (!ids.every(known)) throw new Error('sites');
+        if (!ids.every(id => !id || P[id])) return loadRegion(back).then(bad);
         delete e.app; e.id = 's_' + Date.now().toString(36); e.at = Date.now(); e.name = String(e.name || 'מסלול').slice(0, 80);
-        storeSaved(e); toast('📥 המסלול נוסף'); viewHome();
-      } catch (err) { toast('⚠️ הקובץ לא מתאים (מסלול של אתגר המבחן, אותו אזור)'); }
+        storeSaved(e); return loadRegion(back).then(() => { toast('📥 המסלול נוסף'); viewHome(); });
+      }).catch(bad);
     };
     rd.readAsText(file);
   }
@@ -371,7 +386,7 @@
     const L = savedList();
     return `<section class="panel saved"><h3>💾 המסלולים שלי</h3>
       ${L.length ? `<ul class="svl">${L.map(e => { const D = S.drafts[e.id] || e.draft || {}, n = new Set(Object.values(D.picks || {}).filter(Boolean)).size;
-        return `<li><a class="svn" href="#/m/${e.id}/guided/2"><b>${esc(e.name)}</b><small>${n} אתרים · ${(D.plan || []).length} שורות בלוח · ${new Date(e.at).toLocaleDateString('he-IL')}</small></a>
+        return `<li><a class="svn" href="#/m/${e.id}/guided/2"><b>${esc(e.name)}</b><small>${esc((regionById(e.region) || {}).he || '')} · ${n} אתרים · ${(D.plan || []).length} שורות בלוח · ${new Date(e.at).toLocaleDateString('he-IL')}</small></a>
           <span class="sva"><a class="mini" href="#/m/${e.id}/print" aria-label="PDF">🖨️</a><button type="button" class="mini" data-exp="${e.id}" aria-label="להוריד קובץ">⬇️</button><button type="button" class="mini" data-rm="${e.id}" aria-label="מחיקה">🗑️</button></span></li>`; }).join('')}</ul>`
         : '<p class="muted">עוד אין מסלולים שמורים. בתוך משימה: ״💾 לשמור את המסלול״.</p>'}
       <label class="mini imp">📥 לייבא קובץ מסלול<input type="file" id="svImp" accept="application/json,.json" hidden></label></section>`;
@@ -387,9 +402,9 @@
 
   // ===== Version imprimable (PDF) : tout le parcours sur des pages blanches =====
   function viewPrint(m) {
-    const D = S.drafts[m.id] || {}, model = MODELS.models.school5, start = (DATA.anchors || [])[0];
+    const D = S.drafts[m.id] || {}, model = MODELS.models.school5, start = startOf(m), fin = endOf(m);
     const order = visitOrder(m, D), legsL = C.legs(order, DATA, start), last = P[order[order.length - 1]];
-    if (start && last) legsL.push({ from: last, to: start, km: C.distanceKm(last, start), drive: C.driveMin(last, start, DATA) });
+    if (fin && last) legsL.push({ from: last, to: fin, km: C.distanceKm(last, fin), drive: C.driveMin(last, fin, DATA) });
     const own = D.drive || {};
     const dur = r => { const a = C.toMin(r.start), b = C.toMin(r.end); return a !== null && b !== null && b >= a ? (b - a) + ' דק׳' : ''; };
     const unit = (u, title) => !u || !(u.site || u.text) ? '' : `<section class="pu"><h3>${esc(title)}${u.site && P[u.site] ? ' — ' + esc(P[u.site].he) : ''}</h3>
@@ -399,7 +414,7 @@
     app.innerHTML = `<div class="noprint pbar"><a class="btn ghost" href="#/m/${m.id}/guided/2">→ ${t('back')}</a><button type="button" class="btn" id="doPrint">🖨️ להדפיס / לשמור PDF</button></div>
       <article class="printdoc">
         <header><h1>${esc(m.he)}</h1><p>${esc(DATA.he)} · ${esc(m.group || '')} · ${new Date().toLocaleDateString('he-IL')}</p><p class="meta">${esc(m.brief || '')}</p></header>
-        <section><h2>🗺️ המסלול</h2><ol class="pseq">${start ? `<li value="0">${esc(start.he)} — מפגש</li>` : ''}${order.map(id => `<li>${esc(P[id].he)}</li>`).join('')}</ol>
+        <section><h2>🗺️ המסלול</h2><ol class="pseq">${start ? `<li value="0">${esc(start.he)} — מפגש</li>` : ''}${order.map(id => `<li>${esc(P[id].he)}</li>`).join('')}${fin && fin !== start ? `<li>${esc(fin.he)} — פיזור</li>` : ''}</ol>
           ${legsL.length ? `<table><thead><tr><th>נסיעה</th><th>זמן</th><th>ק״מ</th></tr></thead><tbody>${legsL.map(l => { const d = C.driveMin(l.from, l.to, DATA, own);
             return `<tr><td>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</td><td>${d ? d.min + ' דק׳' + (d.src === 'google' ? ' (Google)' : '') : '—'}</td><td>${d && d.km ? d.km : '~' + l.km}</td></tr>`; }).join('')}</tbody></table>
           <p class="meta">זמני נסיעה: הערכה ברכב לפי מפת הכבישים (OpenStreetMap, בלי פקקים), אלא אם צוין Google.</p>` : ''}</section>
@@ -463,7 +478,7 @@
     draw();
   }
   function hintFor(sl, lvl) {
-    const need = sl.need.map(n => ({ road: 'מקטע נסיעה (הדרכת דרך)', view: 'נקודת תצפית', yom_kippur: 'מלחמת יום הכיפורים', christianity: 'נצרות', hellenistic_roman: 'התקופה ההלניסטית-רומית', new_testament: 'הברית החדשה', city: 'עיר עתיקה', judaism: 'יהדות', geology: 'גאולוגיה', synagogue: 'בית כנסת עתיק' }[n] || n)).join(' / ');
+    const need = sl.need.map(n => ({ road: 'מקטע נסיעה (הדרכת דרך)', view: 'נקודת תצפית', yom_kippur: 'מלחמת יום הכיפורים', christianity: 'נצרות', hellenistic_roman: 'התקופה ההלניסטית-רומית', new_testament: 'הברית החדשה', city: 'עיר עתיקה', judaism: 'יהדות', geology: 'גאולוגיה', synagogue: 'בית כנסת עתיק' }[n] || tagLabel(n).replace(/^\S+\s/, ''))).join(' / ');
     if (lvl === 1) return 'מה הנושא? ' + need + '.';
     const cands = Object.values(P).filter(p => C.fits(p, sl.need)).map(p => p.short);
     if (lvl === 2) return 'מועמדים: ' + cands.join(', ') + '.';
@@ -489,10 +504,10 @@
   function planInfoHtml(m, D) {
     const sites = visitOrder(m, D);
     if (!sites.length) return '<p class="muted">בחרו אתרים בשלב 1 כדי לראות כאן שעות, שירותים וחניה.</p>';
-    const start = (DATA.anchors || [])[0];
+    const start = startOf(m), fin = endOf(m);
     const L = C.legs(sites, DATA, start);
     const last = P[sites[sites.length - 1]];
-    const back = start ? { from: last, to: start, km: C.distanceKm(last, start), nav: C.navLinks(last, start) } : null;
+    const back = fin ? { from: last, to: fin, km: C.distanceKm(last, fin), nav: C.navLinks(last, fin) } : null;
     const own = D.drive || {};
     const leg = l => { const k = l.from.id + '>' + l.to.id, d = C.driveMin(l.from, l.to, DATA, own), est = C.driveMin(l.from, l.to, DATA);
       return `<li data-leg="${k}"><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span>
@@ -508,7 +523,7 @@
   }
   function stepPlan(m, D, body) {
     const model = MODELS.models.school5;
-    if (!D.plan.length) D.plan = [{ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((DATA.anchors || [{}])[0].he || ''), log: 'לבדוק שכולם הגיעו' }];
+    if (!D.plan.length) D.plan = [{ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((startOf(m) || {}).he || ''), log: 'לבדוק שכולם הגיעו' }];
     D.drive = D.drive || {};
     const draw = res => {
       C.reflowPlan(D.plan, DATA, D.drive);
@@ -521,14 +536,14 @@
       $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
       wireClocks(body, (key, v) => { const [k, i] = key.split(':'); setRow(+i, k, v); });
       const vo = visitOrder(m, D);
-      if ($('#pMap', body)) mapBox($('#pMap', body), { route: true, mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])), onRoute: geo => {
+      if ($('#pMap', body)) mapBox($('#pMap', body), { route: true, start: startOf(m), end: endOf(m), mark: Object.fromEntries(vo.map((id, i) => [id, String(i + 1)])), onRoute: geo => {
         const tot = $('.legs', body); if (tot) tot.insertAdjacentHTML('afterend', `<p class="muted osrm-tot">סה״כ נסיעה לפי OSRM: ${geo.km} ק״מ · ~${Math.floor(geo.min / 60)}:${String(geo.min % 60).padStart(2, '0')} שעות (הערכה ללא פקקים — לבדוק גם ב-Google)</p>`);
       } });
-      const ao = $('[data-autoorder]', body); if (ao) ao.addEventListener('click', () => { D.order = C.orderSites(vo.map(id => P[id]), (DATA.anchors || [])[0]).map(s => s.id); save(); draw(res); toast('🧭 סודר לפי קרבה'); });
+      const ao = $('[data-autoorder]', body); if (ao) ao.addEventListener('click', () => { D.order = C.orderSites(vo.map(id => P[id]), startOf(m), endOf(m)).map(s => s.id); save(); draw(res); toast('🧭 סודר לפי קרבה'); });
       const fp = $('[data-fillplan]', body); if (fp) fp.addEventListener('click', () => {
         const filled = D.plan.filter(r => r.what && !/^מפגש/.test(r.what)).length;
         if (filled && !confirm('להחליף את הלוח הנוכחי בברירת מחדל לפי הסדר?')) return;
-        D.plan = C.draftPlan(vo.map(id => P[id]), { start: (DATA.anchors || [])[0], startTime: model.day.start, endTime: model.day.end, data: DATA, own: D.drive }); save(); draw(res); toast('📋 הלוח מולא עם זמני הנסיעה — עכשיו שעות הסיום באתרים');
+        D.plan = C.draftPlan(vo.map(id => P[id]), { start: startOf(m), end: endOf(m), startTime: model.day.start, endTime: model.day.end, data: DATA, own: D.drive }); save(); draw(res); toast('📋 הלוח מולא עם זמני הנסיעה — עכשיו שעות הסיום באתרים');
       });
       $$('[data-gmin]', body).forEach(inp => inp.addEventListener('change', () => { const v = parseInt(inp.value, 10); if (v > 0 && v < 600) D.drive[inp.dataset.gmin] = v; else delete D.drive[inp.dataset.gmin]; save(); draw(res); }));
       $$('[data-mv]', body).forEach(b => b.addEventListener('click', () => {
@@ -540,12 +555,12 @@
         const r = D.plan[+b.dataset.del];
         if ((r.what || r.log || r.site) && !confirm('למחוק את השורה ״' + (r.what || r.start) + '״?')) return;
         D.plan.splice(+b.dataset.del, 1);
-        if (!D.plan.length) D.plan.push({ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((DATA.anchors || [{}])[0].he || ''), log: 'לבדוק שכולם הגיעו' });   // jamais de tableau vide
+        if (!D.plan.length) D.plan.push({ start: model.day.start, end: '', what: 'מפגש ואיסוף: ' + ((startOf(m) || {}).he || ''), log: 'לבדוק שכולם הגיעו' });   // jamais de tableau vide
         save(); draw();
       }));
       $('#add', body).addEventListener('click', () => { const last = D.plan[D.plan.length - 1]; D.plan.push({ start: last ? last.end : '', end: '', what: '', log: '' }); save(); draw(); });
       $('#rst', body).addEventListener('click', () => { if (!confirm('למחוק את כל לוח הזמנים ולהתחיל מחדש?')) return; D.plan = []; save(); stepPlan(m, D, body); });
-      $('#hnt', body).addEventListener('click', () => { $('#out', body).innerHTML = `<div class="panel"><h3>💡 שיעור 26 — כתיבת לו״ז</h3><ul class="tips">${MODELS.planRules.tips.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${srcLink('lesson26')}</div>`; });
+      $('#hnt', body).addEventListener('click', () => { $('#out', body).innerHTML = `<div class="panel"><h3>💡 שיעור 26 — כתיבת לו״ז</h3><ul class="tips">${MODELS.planRules.tips.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${srcLink('lesson26')}${MODELS.examRules ? `<h4>📋 מדף המבחן</h4><ul class="tips">${MODELS.examRules.tips.slice(3).map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}</div>`; });
       $('#mdl', body).addEventListener('click', () => {
         $('#out', body).innerHTML = `<div class="panel"><h3>👀 דוגמה מהשיעור: ״מקורות הירקון״ (משפחות)</h3><p class="muted">זו דוגמת המרצה מהקורס, לא תשובה למשימה הזו — כדי לראות את הצורה.</p>
           <ul class="ex"><li>08:00 · מסוף אוטובוסים — איסוף · לבדוק שכולם הגיעו</li><li>08:00–08:30 · נסיעה לפארק לאומי מגדל צדק</li><li>08:30–10:00 · מגדל צדק — סיפור המקום ותצפית · תשלום כניסה, שירותים</li><li>…</li><li>12:30–13:30 · ארוחת צהריים — עצמית, אין מקורות אוכל במקום</li><li>…</li><li>17:30–18:00 · נסיעה לקניון — פיזור</li></ul>${srcLink('lesson26')}</div>`;
@@ -656,8 +671,8 @@
         const sg = $('#sugg', body); if (sg) sg.addEventListener('click', () => {
           const filled = E.plan.filter(r => r.what && !/^מפגש/.test(r.what)).length;
           if (filled && !confirm('להחליף את הלוח הנוכחי בסדר המוצע?')) return;
-          const ord = C.orderSites(chosen.map(id => P[id]), (DATA.anchors || [])[0]);
-          E.plan = C.draftPlan(ord, { start: (DATA.anchors || [])[0], startTime: model.day.start, endTime: model.day.end }); save(); draw(); toast('📋 הלוח מולא — עכשיו השעות');
+          const ord = C.orderSites(chosen.map(id => P[id]), startOf(m), endOf(m));
+          E.plan = C.draftPlan(ord, { start: startOf(m), end: endOf(m), startTime: model.day.start, endTime: model.day.end }); save(); draw(); toast('📋 הלוח מולא — עכשיו השעות');
         });
         const setRow = (i, k, v) => { E.plan[i][k] = v; if (k === 'end' && E.plan[i + 1] && !E.plan[i + 1].start) E.plan[i + 1].start = v; save(); draw(); };
         $$('.pr input, .pr select', body).forEach(inp => inp.addEventListener('change', () => setRow(+inp.closest('.pr').dataset.i, inp.dataset.k, inp.value.trim())));
@@ -690,6 +705,7 @@
   }
   function examSetup(m, prev) {
     shell(missionHead(m, 'exam') + `<section class="panel"><h3>⏱️ ${t('exam')}</h3><p>תוכנית יום, יחידות קצרות ויחידה מורחבת. בלי רמזים ובלי תשובות לדוגמה. בסוף — תיקון מפורט, ציון ומקורות.</p>
+      ${MODELS.examRules ? `<h4>📋 כללי המבחן</h4><ul class="tips">${MODELS.examRules.tips.map(x => `<li>${esc(x)}</li>`).join('')}</ul><p class="muted">מקור: ${esc(MODELS.examRules.source.title)}</p>` : ''}
       <label class="fl">מודל<select id="mdlSel">${Object.entries(MODELS.models).map(([k, v]) => `<option value="${k}" ${k === MODELS.default ? 'selected' : ''}>${esc(v.he)}</option>`).join('')}</select></label>
       <label class="fl">זמן<select id="durSel"><option value="180">3 שעות — כמו במבחן</option><option value="90">90 דקות — תרגול</option><option value="45">45 דקות — קצר</option></select></label>
       <p class="muted">${t('indicative')}</p><div class="acts"><button type="button" class="btn" id="go">▶ ${t('start')}</button>${prev && prev.done ? `<a class="btn ghost" href="#/m/${m.id}/result">📊 התוצאה הקודמת</a>` : ''}</div></section>`, { back: '#/' });
@@ -715,10 +731,10 @@
   // ===== « À l'envers » : planificateur de tiyul =====
   function viewTiyul() {
     const F = S.tiyul || (S.tiyul = { group: '', tags: [], count: 4, road: true, startTime: '08:00', endTime: '18:00' });
-    const tagKeys = Object.keys(TAGS).filter(k => k === 'road' || DATA.sites.some(s => (s.tags || []).includes(k)));
+    const tagKeys = [...new Set(Object.keys(TAGS).concat(Object.keys(DATA.tags || {})))].filter(k => k === 'road' || DATA.sites.some(s => (s.tags || []).includes(k)));
     shell(`<section class="brief"><div class="eyebrow">🧑‍🏫 ${esc(DATA.he)}</div><h1>תכנון טיול — הפוך</h1><p>אתם מורי הדרך: כתבו מה הקבוצה רוצה, והאפליקציה מציעה מסלולים מהאתרים שנלמדו, עם לוח זמנים ראשוני, מה לברר, ויחידות הדרכה מוכנות לתרגול.</p></section>
       <section class="panel"><label class="fl">הקבוצה (חופשי)<input id="tGroup" value="${esc(F.group)}" placeholder="למשל: משפחות עם ילדים, 40 איש, אוטובוס"></label>
-      <p class="fl"><b>מה רוצים לראות?</b></p><div class="tagpick">${tagKeys.map(k => `<button type="button" data-tag="${k}" class="${F.tags.includes(k) ? 'on' : ''}" aria-pressed="${F.tags.includes(k)}">${TAGS[k]}</button>`).join('')}</div>
+      <p class="fl"><b>מה רוצים לראות?</b></p><div class="tagpick">${tagKeys.map(k => `<button type="button" data-tag="${k}" class="${F.tags.includes(k) ? 'on' : ''}" aria-pressed="${F.tags.includes(k)}">${tagLabel(k)}</button>`).join('')}</div>
       <div class="row3"><label class="fl">כמה אתרים<select id="tCount">${[2, 3, 4, 5].map(n => `<option value="${n}" ${F.count === n ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
       <div class="fl">התחלה${timeButton('startTime', F.startTime, 'שעת התחלה')}</div><div class="fl">סיום${timeButton('endTime', F.endTime, 'שעת סיום')}</div></div>
       <p class="muted">יציאה וחזרה: ${esc((DATA.anchors || [{}])[0].he || '')}. זמני הנסיעה: הערכה לפי מפת הכבישים (OpenStreetMap, ברכב, בלי פקקים) — לאשר ב-Google.</p>
@@ -730,7 +746,7 @@
       const res = C.suggest({ tags: F.tags.filter(t => t !== 'road'), count: F.count, road: F.road, start: (DATA.anchors || [])[0], startTime: F.startTime, endTime: F.endTime }, DATA);
       $('#tOut').innerHTML = res.length ? res.map((r, i) => `<article class="panel prop"><h3>הצעה ${i + 1}: ${r.sites.map(s => esc(s.short)).join(' ← ')}</h3>
         <p class="muted">🚌 ~${r.km} ק״מ אווירי בין התחנות${r.roads.length ? ' · הדרכת דרך: ' + r.roads.map(x => esc(x.short)).join(', ') : ''}</p>
-        ${r.missing.length ? `<p class="conf">⚠️ לא נמצא אתר ל: ${r.missing.map(t => esc(TAGS[t] || t)).join(', ')}</p>` : '<p class="good">✔ כל מה שביקשתם מכוסה</p>'}
+        ${r.missing.length ? `<p class="conf">⚠️ לא נמצא אתר ל: ${r.missing.map(t => esc(tagLabel(t))).join(', ')}</p>` : '<p class="good">✔ כל מה שביקשתם מכוסה</p>'}
         ${r.warnings.map(w => `<p class="conf">ℹ️ ${esc(w)}</p>`).join('')}
         <ul class="legs">${r.legs.map(l => `<li><span>${esc(l.from.short || l.from.he)} ← ${esc(l.to.short || l.to.he)}</span><span>${l.drive ? `🚗 ${l.drive.min} דק׳ · ${l.drive.km} ק״מ בכביש` : `~${l.km} ק״מ`} · <a href="${l.nav.google}" target="_blank" rel="noopener">לבדוק ב-Google</a></span></li>`).join('')}</ul>
         <details class="mo"><summary>📋 לוח זמנים ראשוני (${r.plan.length} שורות) ומה לברר</summary><ul class="ex">${r.plan.map(p => `<li><b>${esc(p.start || '…')}${p.end ? '–' + esc(p.end) : ''}</b> ${esc(p.what)}${p.log ? ' · <i>' + esc(p.log) + '</i>' : ''}</li>`).join('')}</ul></details>
@@ -742,7 +758,7 @@
         const slots = (r.roads[0] ? [{ id: 'r', he: 'יחידת הדרכת דרך: ' + r.roads[0].short, need: ['road'], best: r.roads[0].id, why: '' }] : []).concat(r.sites.map((s, i) => ({ id: 's' + i, he: 'יחידה ב' + s.short, need: s.tags, best: s.id, why: '' })));
         const longSite = r.sites.find(s => DATA.models['long_' + s.id]) || r.sites[r.sites.length - 1];
         const shortSlots = slots.filter(s => s.best !== longSite.id);
-        S.custom = { id: 'custom', he: 'הטיול שלי: ' + r.sites.map(s => s.short).join(' ← '), emoji: '🧑‍🏫', level: 1, group: F.group || 'הקבוצה שלי', brief: `${F.group ? F.group + '. ' : ''}יום טיול בדרום רמת הגולן לפי הבחירה שלכם. יציאה וחזרה: ${(DATA.anchors || [{}])[0].he || ''}.`, slots: shortSlots, long: { he: 'יחידת הדרכה מורחבת: ' + longSite.he, need: longSite.tags, best: longSite.id } };
+        S.custom = { id: 'custom', region: DATA.region, he: 'הטיול שלי: ' + r.sites.map(s => s.short).join(' ← '), emoji: '🧑‍🏫', level: 1, group: F.group || 'הקבוצה שלי', brief: `${F.group ? F.group + '. ' : ''}יום טיול בדרום רמת הגולן לפי הבחירה שלכם. יציאה וחזרה: ${(DATA.anchors || [{}])[0].he || ''}.`, slots: shortSlots, long: { he: 'יחידת הדרכה מורחבת: ' + longSite.he, need: longSite.tags, best: longSite.id } };
         const picks = {}; shortSlots.forEach(s => { picks[s.id] = s.best; }); picks.long = longSite.id;
         S.drafts.custom = { picks, plan: r.plan.map(p => Object.assign({}, p)), units: {}, long: {}, hint: {} }; save();
         location.hash = '#/m/custom/guided/1';
@@ -751,12 +767,33 @@
     });
   }
 
+  // ---------- Régions (tout Israël, une région à la fois : exam/regions.json → un fichier par région) ----------
+  const readyRegions = () => REGIONS.filter(r => r.file);
+  const regionById = id => readyRegions().find(r => r.id === id) || null;
+  const regionOfMission = id => readyRegions().find(r => (r.missions || []).includes(id)) || null;
+  const regionCache = {};
+  function loadRegion(id) {
+    const r = regionById(id) || readyRegions()[0];
+    if (DATA && DATA.region === r.id) return Promise.resolve();
+    const get = regionCache[r.id] ? Promise.resolve(regionCache[r.id]) : fetch('exam/' + r.file).then(x => x.json()).then(d => (regionCache[r.id] = d));
+    return get.then(d => { DATA = d; P = C.places(d); if (S.region !== r.id) { S.region = r.id; save(); } });
+  }
+  function regionNav() {
+    return `<nav class="regions" aria-label="אזורים">${REGIONS.map(r => r.file
+      ? `<button type="button" data-region="${r.id}" class="${DATA.region === r.id ? 'on' : ''}" aria-pressed="${DATA.region === r.id}">${r.emoji || '📍'} ${esc(r.he)}</button>`
+      : `<span class="soonr" title="${t('soon')}">🔒 ${esc(r.he)}</span>`).join('')}</nav>`;
+  }
+  function wireRegions() { $$('[data-region]').forEach(b => b.addEventListener('click', () => loadRegion(b.dataset.region).then(() => { location.hash = '#/'; viewHome(); }))); }
+
   // ---------- Routeur ----------
   function route() {
     const h = location.hash.replace(/\?.*$/, ''), p = h.split('/');
     document.body.classList.remove('print-view');
     if (p[1] === 'tiyul') return viewTiyul();
     if (p[1] === 'm') {
+      // la mission peut appartenir à une autre région : on charge la bonne région d'abord
+      const sv = savedList().find(x => x.id === p[2]), want = (sv && sv.region) || (p[2] === 'custom' && S.custom && S.custom.region) || (regionOfMission(p[2]) || {}).id;
+      if (want && want !== DATA.region && regionById(want)) return loadRegion(want).then(route);
       const m = DATA.missions.find(x => x.id === p[2]) || (p[2] === 'custom' && S.custom) || savedMission(p[2]) || null;
       if (!m) return viewHome();
       if (isSaved(m) && !S.drafts[m.id]) { const e = savedList().find(x => x.id === m.id); S.drafts[m.id] = clone(e.draft); }
@@ -769,10 +806,10 @@
     viewHome();
   }
   window.addEventListener('hashchange', route);
-  Promise.all([fetch('exam/models.json').then(r => r.json()), fetch('exam/golan-south.json').then(r => r.json())]).then(([mo, d]) => {
-    MODELS = mo; DATA = d; P = C.places(d);
+  Promise.all([fetch('exam/models.json').then(r => r.json()), fetch('exam/regions.json').then(r => r.json())]).then(([mo, rg]) => {
+    MODELS = mo; REGIONS = rg.regions || [];
     document.documentElement.lang = 'he';
-    route();
+    return loadRegion(S.region).then(route);
   }).catch(() => { app.innerHTML = '<p class="panel">לא ניתן לטעון את התוכן. בדקו את החיבור ונסו שוב.</p>'; });
   window.MDExamApp = { state: () => S };
 })();

@@ -34,6 +34,7 @@ ok((await page.$$('#homeMap .pt')).length === 5, 'carte (schéma hors ligne) : 5
 ok(!(await page.$('#mdlGate')), 'aucun numéro de teoudat zehout demandé');
 ok(await page.$('#homeMap [data-retry]') && /לא נטענה/.test(await page.textContent('#homeMap .mapnote')), 'carte : raison de l’échec + bouton « réessayer la vraie carte »');
 await shot('1-home');
+ok((await page.$$('.regions button, .regions .soonr')).length >= 8 && (await page.$$('.regions button.on')).length === 1, 'accueil : choix de la région (tout Israël, régions à venir marquées)');
 ok(await page.$$eval('.mlist:not(.soon) .mcard', cs => cs.length >= 3 && cs.every(c => c.querySelector('.modes a') && !c.classList.contains('lock'))), 'accueil : toutes les missions ouvertes dès le départ (pas de verrou de niveau)');
 // fiche d'un site : statut et sources
 await page.click('#homeMap .pt[data-id="ein_keshatot"]');
