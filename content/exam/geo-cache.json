@@ -1,0 +1,234 @@
+{
+ "wiki:he:תל אביב-יפו": {
+  "lat": 32.07632,
+  "lon": 34.78947,
+  "title": "he:תל אביב-יפו",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95",
+  "qid": "Q33935"
+ },
+ "wiki:he:קריית גת": {
+  "lat": 31.6091,
+  "lon": 34.7649,
+  "title": "he:קריית גת",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%99%D7%99%D7%AA_%D7%92%D7%AA",
+  "qid": "Q152406"
+ },
+ "wiki:he:חורבת קיאפה": {
+  "lat": 31.6963,
+  "lon": 34.9575,
+  "title": "he:חורבת קייאפה",
+  "url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A8%D7%91%D7%AA_%D7%A7%D7%99%D7%99%D7%90%D7%A4%D7%94",
+  "qid": "Q910323"
+ },
+ "wiki:he:תל עזקה": {
+  "lat": 31.70098,
+  "lon": 34.93567,
+  "title": "he:עזקה",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%96%D7%A7%D7%94",
+  "qid": "Q723564"
+ },
+ "wiki:he:מרשה": {
+  "lat": 31.59296,
+  "lon": 34.89824,
+  "title": "he:מרשה",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%A9%D7%94",
+  "qid": "Q1507676"
+ },
+ "wiki:he:גן לאומי בית גוברין-מרשה": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Beit Guvrin-Maresha National Park": {
+  "lat": 31.59696,
+  "lon": 34.90065,
+  "title": "en:Beit Guvrin-Maresha National Park",
+  "url": "https://en.wikipedia.org/wiki/Beit_Guvrin-Maresha_National_Park",
+  "qid": "Q2407530"
+ },
+ "wiki:he:לכיש": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Lachish": {
+  "lat": 31.565,
+  "lon": 34.84889,
+  "title": "en:Tel Lachish",
+  "url": "https://en.wikipedia.org/wiki/Tel_Lachish",
+  "qid": "Q848509"
+ },
+ "drive:shfela": {
+  "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
+  "fetchedAt": "2026-10-29",
+  "sig": "tel_aviv@32.07632,34.78947;kiryat_gat@31.6091,34.7649;qeiyafa@31.6963,34.9575;azeka@31.70098,34.93567;maresha@31.59296,34.89824;beit_guvrin@31.59696,34.90065;lachish@31.565,34.84889",
+  "legs": {
+   "tel_aviv>kiryat_gat": {
+    "min": 54,
+    "km": 66.8
+   },
+   "tel_aviv>qeiyafa": {
+    "min": 61,
+    "km": 60.8
+   },
+   "tel_aviv>azeka": {
+    "min": 62,
+    "km": 61.9
+   },
+   "tel_aviv>maresha": {
+    "min": 59,
+    "km": 71.7
+   },
+   "tel_aviv>beit_guvrin": {
+    "min": 58,
+    "km": 71.2
+   },
+   "tel_aviv>lachish": {
+    "min": 56,
+    "km": 66.4
+   },
+   "kiryat_gat>tel_aviv": {
+    "min": 55,
+    "km": 67.6
+   },
+   "kiryat_gat>qeiyafa": {
+    "min": 35,
+    "km": 30.4
+   },
+   "kiryat_gat>azeka": {
+    "min": 36,
+    "km": 32.3
+   },
+   "kiryat_gat>maresha": {
+    "min": 18,
+    "km": 18
+   },
+   "kiryat_gat>beit_guvrin": {
+    "min": 17,
+    "km": 17.6
+   },
+   "kiryat_gat>lachish": {
+    "min": 15,
+    "km": 12.8
+   },
+   "qeiyafa>tel_aviv": {
+    "min": 62,
+    "km": 61.4
+   },
+   "qeiyafa>kiryat_gat": {
+    "min": 35,
+    "km": 30.6
+   },
+   "qeiyafa>azeka": {
+    "min": 27,
+    "km": 6
+   },
+   "qeiyafa>maresha": {
+    "min": 27,
+    "km": 16.5
+   },
+   "qeiyafa>beit_guvrin": {
+    "min": 26,
+    "km": 16.1
+   },
+   "qeiyafa>lachish": {
+    "min": 33,
+    "km": 23.8
+   },
+   "azeka>tel_aviv": {
+    "min": 60,
+    "km": 61.4
+   },
+   "azeka>kiryat_gat": {
+    "min": 34,
+    "km": 31.3
+   },
+   "azeka>qeiyafa": {
+    "min": 24,
+    "km": 4.8
+   },
+   "azeka>maresha": {
+    "min": 26,
+    "km": 17.3
+   },
+   "azeka>beit_guvrin": {
+    "min": 25,
+    "km": 16.8
+   },
+   "azeka>lachish": {
+    "min": 31,
+    "km": 24.6
+   },
+   "maresha>tel_aviv": {
+    "min": 59,
+    "km": 71.6
+   },
+   "maresha>kiryat_gat": {
+    "min": 18,
+    "km": 18.1
+   },
+   "maresha>qeiyafa": {
+    "min": 26,
+    "km": 16.3
+   },
+   "maresha>azeka": {
+    "min": 28,
+    "km": 18.3
+   },
+   "maresha>beit_guvrin": {
+    "min": 1,
+    "km": 0.5
+   },
+   "maresha>lachish": {
+    "min": 16,
+    "km": 11.3
+   },
+   "beit_guvrin>tel_aviv": {
+    "min": 58,
+    "km": 71.1
+   },
+   "beit_guvrin>kiryat_gat": {
+    "min": 17,
+    "km": 17.6
+   },
+   "beit_guvrin>qeiyafa": {
+    "min": 25,
+    "km": 15.8
+   },
+   "beit_guvrin>azeka": {
+    "min": 27,
+    "km": 17.8
+   },
+   "beit_guvrin>maresha": {
+    "min": 1,
+    "km": 0.5
+   },
+   "beit_guvrin>lachish": {
+    "min": 14,
+    "km": 10.8
+   },
+   "lachish>tel_aviv": {
+    "min": 57,
+    "km": 66.6
+   },
+   "lachish>kiryat_gat": {
+    "min": 16,
+    "km": 13.1
+   },
+   "lachish>qeiyafa": {
+    "min": 33,
+    "km": 23.8
+   },
+   "lachish>azeka": {
+    "min": 34,
+    "km": 25.8
+   },
+   "lachish>maresha": {
+    "min": 16,
+    "km": 11.5
+   },
+   "lachish>beit_guvrin": {
+    "min": 15,
+    "km": 11
+   }
+  }
+ }
+}

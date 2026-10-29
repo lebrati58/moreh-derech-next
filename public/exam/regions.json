@@ -1,16 +1,116 @@
 {
   "about": "Régions de l'אתגר המבחן. Une région n'a un fichier (« file ») que si son contenu a été construit à partir des documents du cours et vérifié ; les autres sont affichées « בקרוב ».",
   "regions": [
-    { "id": "golan_south", "he": "דרום רמת הגולן", "emoji": "🏔️", "file": "golan-south.json", "missions": ["g1", "g2", "g3"], "course": ["17"] },
-    { "id": "shfela", "he": "השפלה", "emoji": "🏺", "course": ["05"] },
-    { "id": "haifa_carmel", "he": "חיפה והכרמל", "emoji": "🕍", "course": ["02", "07", "08"] },
-    { "id": "jerusalem", "he": "ירושלים", "emoji": "🕌", "course": ["10", "11", "12", "13", "14", "18"] },
-    { "id": "judean_desert", "he": "מדבר יהודה וים המלח", "emoji": "🏜️", "course": ["01", "21"] },
-    { "id": "negev", "he": "הנגב הצפוני", "emoji": "🌵", "course": ["03"] },
-    { "id": "judea_samaria", "he": "הר חברון והשומרון", "emoji": "⛰️", "course": ["06", "09"] },
-    { "id": "coast", "he": "מישור החוף", "emoji": "🌊", "course": ["15"] },
-    { "id": "valleys", "he": "העמקים, הגלבוע ובית שאן", "emoji": "🌾", "course": ["04", "19"] },
-    { "id": "lower_galilee", "he": "הגליל התחתון", "emoji": "🌳", "course": ["16", "23"] },
-    { "id": "upper_galilee", "he": "הגליל העליון והחולה", "emoji": "🌲", "course": ["20", "22"] }
+    {
+      "id": "golan_south",
+      "he": "דרום רמת הגולן",
+      "emoji": "🏔️",
+      "file": "golan-south.json",
+      "missions": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "course": [
+        "17"
+      ]
+    },
+    {
+      "id": "shfela",
+      "he": "השפלה",
+      "emoji": "🏺",
+      "course": [
+        "05"
+      ],
+      "file": "shfela.json",
+      "missions": [
+        "sh1",
+        "sh2"
+      ]
+    },
+    {
+      "id": "haifa_carmel",
+      "he": "חיפה והכרמל",
+      "emoji": "🕍",
+      "course": [
+        "02",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "id": "jerusalem",
+      "he": "ירושלים",
+      "emoji": "🕌",
+      "course": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "18"
+      ]
+    },
+    {
+      "id": "judean_desert",
+      "he": "מדבר יהודה וים המלח",
+      "emoji": "🏜️",
+      "course": [
+        "01",
+        "21"
+      ]
+    },
+    {
+      "id": "negev",
+      "he": "הנגב הצפוני",
+      "emoji": "🌵",
+      "course": [
+        "03"
+      ]
+    },
+    {
+      "id": "judea_samaria",
+      "he": "הר חברון והשומרון",
+      "emoji": "⛰️",
+      "course": [
+        "06",
+        "09"
+      ]
+    },
+    {
+      "id": "coast",
+      "he": "מישור החוף",
+      "emoji": "🌊",
+      "course": [
+        "15"
+      ]
+    },
+    {
+      "id": "valleys",
+      "he": "העמקים, הגלבוע ובית שאן",
+      "emoji": "🌾",
+      "course": [
+        "04",
+        "19"
+      ]
+    },
+    {
+      "id": "lower_galilee",
+      "he": "הגליל התחתון",
+      "emoji": "🌳",
+      "course": [
+        "16",
+        "23"
+      ]
+    },
+    {
+      "id": "upper_galilee",
+      "he": "הגליל העליון והחולה",
+      "emoji": "🌲",
+      "course": [
+        "20",
+        "22"
+      ]
+    }
   ]
 }
