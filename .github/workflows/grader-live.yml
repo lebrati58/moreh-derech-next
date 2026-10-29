@@ -1,0 +1,18 @@
+name: Correction Claude — test réel sur le site en ligne
+# Lancer à la main (Actions → Run workflow) avec l'adresse workers.dev du site.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Adresse du site Cloudflare (https://moreh-derech-next.<compte>.workers.dev)'
+        required: true
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node tools/grader-live-test.mjs "${{ inputs.url }}" | tee live.log
+      - if: always()
+        run: echo "::notice title=grader-live::$(gzip -9c live.log | base64 -w0)"
