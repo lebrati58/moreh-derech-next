@@ -69,7 +69,7 @@ for (const m of src.missions || []) {
 }
 const models = {};
 for (const [k, v] of Object.entries(src.models || {})) {
-  const site = k.replace(/^long_/, '');
+  const site = v.site || k.replace(/^long_/, '');
   if (!ids.has(site)) { warn(`modèle ${k} : lieu non publié — retiré`); continue; }
   models[k] = Object.assign({}, v, { src: (v.src || []).filter(x => known.has(x)) });
 }

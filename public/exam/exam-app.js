@@ -583,7 +583,7 @@
     const u = long ? D.long : (D.units[slotId] || (D.units[slotId] = {}));
     if (!u.site && D.picks[slotId]) u.site = D.picks[slotId];
     const draw = (res, extra) => {
-      const modelFor = () => long ? DATA.models['long_' + u.site] : DATA.models[u.site];
+      const modelFor = () => C.modelFor(DATA, u.site, sl.need, long);
       body.innerHTML = `${long ? '' : `<div class="unitsel">${m.slots.map((s, i) => `<button type="button" class="${s.id === slotId ? 'on' : ''}" data-u="${s.id}">${i + 1}</button>`).join('')}</div>`}
         <p class="lead"><b>${esc(sl.he)}</b>${!u.site ? ' — בחרו אתר (או חזרו לשלב 1).' : ''}</p><div id="ed"></div>
         <div class="acts"><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="imp">✨ ${t('improve')}</button><button type="button" class="btn ghost" id="mdl">👀 ${t('model')}</button><button type="button" class="btn ghost" id="cmp">⚖️ ${t('compare')}</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
@@ -719,7 +719,7 @@
     if (!E || !E.result) { location.hash = `#/m/${m.id}/exam`; return; }
     const r = E.result, model = MODELS.models[E.model];
     const slots = C.examSlots(m, model);
-    const modelFor = p => p.id === 'long' ? DATA.models['long_' + m.long.best] : p.slot ? DATA.models[(m.slots.find(s => s.id === p.slot) || {}).best] : null;
+    const modelFor = p => { if (p.id === 'long') return C.modelFor(DATA, m.long.best, m.long.need, true); const sl = p.slot && m.slots.find(s => s.id === p.slot); return sl ? C.modelFor(DATA, sl.best, sl.need) : null; };
     shell(missionHead(m, 'exam') + `<section class="score"><div class="big"><bdi dir="ltr">${r.total ? `${r.got} / ${r.max}` : `${r.pct}%`}</bdi></div><p>${r.total ? r.pct + '% · ' : ''}${esc(model.he)}</p><p class="muted">⚠️ ${t('indicative')}${model.pointsNote ? ' ' + esc(model.pointsNote) : ''}</p></section>
       ${r.parts.map(p => { const mo = modelFor(p); return `<details class="panel part"><summary><b>${esc(p.he)}</b><bdi dir="ltr">${p.got} / ${p.max}</bdi></summary>${checklist(p.res, true)}${mo ? `<details class="mo"><summary>👀 ${t('model')}</summary><p class="meta">📍 ${esc(mo.place)} · 🧰 ${esc(mo.method)}</p><div class="mtext"><p>${esc(mo.text).replace(/\n\n/g, '</p><p>')}</p></div><div class="srcs">${(mo.src || []).map(k => srcLink(k)).join('')}</div></details>` : ''}</details>`; }).join('')}
       <div class="acts"><button type="button" class="btn" id="again">↺ סימולציה חדשה</button><a class="btn ghost" href="#/m/${m.id}/guided">🧭 ${t('guided')}</a></div>
