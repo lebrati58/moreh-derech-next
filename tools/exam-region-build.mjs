@@ -27,7 +27,11 @@ async function wiki(title) {
   const [lang, ...rest] = title.split(':'), t = rest.join(':');
   const url = `https://${lang}.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&redirects=1&prop=coordinates|info|pageprops&inprop=url&titles=${encodeURIComponent(t)}`;
   try {
-    const j = await (await fetch(url, { headers: { 'User-Agent': UA } })).json(); await sleep(150);
+    let j = null;
+    for (let k = 0; k < 4 && !j; k++) {   // Wikipédia limite le débit (« You are making too many requests ») : on attend et on réessaie
+      const txt = await (await fetch(url, { headers: { 'User-Agent': UA } })).text(); await sleep(600 + k * 2500);
+      try { j = JSON.parse(txt); } catch (e) { if (k === 3) throw new Error('réponse non JSON : ' + txt.slice(0, 40)); }
+    }
     const p = j.query && j.query.pages && j.query.pages[0], c = p && p.coordinates && p.coordinates[0];
     const out = c && inBox(c) ? { lat: +c.lat.toFixed(5), lon: +c.lon.toFixed(5), title: `${lang}:${p.title}`, url: p.fullurl, qid: (p.pageprops || {}).wikibase_item || null } : null;
     cache['wiki:' + title] = out || { none: true, at: new Date().toISOString().slice(0, 10) };
