@@ -66,6 +66,17 @@ ok(true, 'retour à la liste');
 // document relié au jeu
 const linked = CAT.docs.find(d => d.ln);
 if (linked) { await page.goto(base + 'rtg.html#/d/' + linked.id); await page.waitForSelector('.links a'); ok((await page.$$('.links a')).length >= 1, `liens vers le jeu (${linked.ln.map(l => l.he).join(', ')})`); }
+// fiche d'un מדריך למדריך exploité : faits avec page, fiche de révision, questions à 3 niveaux et corrigé
+const fx = CAT.docs.find(d => d.fx && d.ty === 'guide');
+if (fx) {
+  await page.goto(base + 'rtg.html#/d/' + fx.id); await page.waitForSelector('#facts details');
+  const ft = await page.textContent('#facts');
+  ok(/עמ׳ \d+/.test(ft) && /רמה 1/.test(ft) && /רמה 2/.test(ft) && /רמה 3/.test(ft), 'faits avec n° de page + questions des 3 niveaux');
+  ok((await page.$$('#facts details')).length >= 3, 'faits groupés par thème (histoire, archéologie, géographie…)');
+  await page.click('[data-ans]');
+  ok(/מה צריך להופיע/.test(await page.textContent('.quiz')) && /מקור:/.test(await page.textContent('.quiz')), 'corrigé : éléments attendus + références');
+  await shot('4-faits');
+}
 await ctx.close();
 // ordinateur
 const c2 = await browser.newContext({ viewport: { width: 1280, height: 800 }, serviceWorkers: 'block' });

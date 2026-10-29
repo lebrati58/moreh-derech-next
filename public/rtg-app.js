@@ -89,11 +89,24 @@
       ${d.ln ? `<section class="card"><h2>🔗 ${t('linked')}</h2><div class="links">${d.ln.map(l => `<a href="${linkHref(l)}">${l.k === 'exam' ? '🎓' : '🛣️'} ${esc(l.he)}${l.auto ? ' <small>(' + t('auto') + ')</small>' : ''}</a>`).join('')}</div></section>` : ''}
       <section class="card"><h2>📌 ${t('facts')}</h2><div id="facts">${d.fx ? '…' : `<p class="note">${t('noFacts')}</p>`}</div></section>
       <p class="note">${esc(t('credit'))}</p>`;
-    if (d.fx) fetch('rtg/facts/' + encodeURIComponent(d.id) + '.json').then(r => r.json()).then(F => {
-      $('#facts').innerHTML = (F.items || []).map(x => `<div class="fact">${x.kind === 'tip' ? '💡 ' : ''}${esc(x.he)}<small>${x.kind === 'tip' ? t('tip') : t('fact')} · ${t('doc')} ${esc(d.id)}, עמ׳ ${esc(x.page)}${x.topic ? ' · ' + esc(x.topic) : ''}</small></div>`).join('') || `<p class="note">${t('noFacts')}</p>`;
-    }).catch(() => { $('#facts').innerHTML = `<p class="note">${t('noFacts')}</p>`; });
+    if (d.fx) fetch('rtg/facts/' + encodeURIComponent(d.id) + '.json').then(r => r.json()).then(F => { $('#facts').innerHTML = factsHtml(F, d); wireQuiz(); })
+      .catch(() => { $('#facts').innerHTML = `<p class="note">${t('noFacts')}</p>`; });
     window.scrollTo(0, 0);
   }
+  const TOPICS = { history: '📜 היסטוריה וכרונולוגיה', archaeology: '🏛️ ארכאולוגיה ושרידים', geo: '🌿 גאוגרפיה, גאולוגיה וסביבה', stations: '📍 תחנות ונקודות תצפית', guiding: '🎤 להדרכה ולסיפור דרך' };
+  const pg = n => `עמ׳ ${esc(n)}`;
+  function factsHtml(F, d) {
+    const items = F.items || [];
+    const groups = Object.keys(TOPICS).map(k => [k, items.filter(x => x.topic === k)]).filter(([, l]) => l.length);
+    const fact = x => `<div class="fact">${x.kind === 'tip' ? '💡 ' : ''}${esc(x.he)}<small>${x.kind === 'tip' ? t('tip') : t('fact')} · ${pg(x.page)}${x.quote ? ' · ״' + esc(x.quote) + '״' : ''}</small></div>`;
+    return `${(F.stations || []).length ? `<h3>🚏 תחנות המסלול</h3><ol>${F.stations.map(s => `<li>${esc(s.he)} <small class="note">(${pg(s.page)})</small></li>`).join('')}</ol>` : ''}
+      ${groups.map(([k, l]) => `<details ${k === 'stations' ? 'open' : ''}><summary><b>${TOPICS[k]}</b> (${l.length})</summary>${l.map(fact).join('')}</details>`).join('')}
+      ${(F.sheet || []).length ? `<details><summary><b>🗒️ דף חזרה</b></summary><ul>${F.sheet.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
+      ${(F.questions || []).length ? `<h3>❓ שאלות לתרגול</h3>${[1, 2, 3].map(lv => F.questions.filter(q => q.level === lv).map(q => `<div class="fact quiz"><span class="bd ${lv === 3 ? 'g' : lv === 2 ? 'w' : ''}">רמה ${lv}</span> ${esc(q.q)}
+        <button type="button" class="more" data-ans>👀 תשובה מצופה</button><div hidden><b>מה צריך להופיע:</b><ul>${(q.expected || []).map(e => `<li>${esc(e)}</li>`).join('')}</ul>${(q.accept || []).length ? `<b>גם מתקבל:</b> ${esc(q.accept.join(' · '))}` : ''}<small>מקור: ${esc(d.t)}, ${(q.refs || []).map(pg).join(', ')}</small></div></div>`).join('')).join('')}` : ''}
+      <p class="note">✔ עובדה = מופיעה במסמך בעמוד המצוין · 💡 הצעה = הצעה להדרכה מתוך המסמך עצמו.</p>`;
+  }
+  function wireQuiz() { $$('[data-ans]').forEach(b => b.addEventListener('click', () => { const box = b.nextElementSibling; box.hidden = !box.hidden; b.textContent = box.hidden ? '👀 תשובה מצופה' : '🙈 להסתיר'; })); }
   function route() {
     const h = location.hash.replace(/^#\/?/, '').split('/');
     $('#back').hidden = h[0] !== 'd';

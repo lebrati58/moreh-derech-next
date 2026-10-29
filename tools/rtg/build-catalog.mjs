@@ -82,6 +82,12 @@ for (const d of inv.documents) {
     ln: links.length ? links : undefined, fx: factIds.has(d.id) || undefined
   });
 }
+// faits / fiches / questions par document → public/rtg/facts/<id>.json (chargés à la demande dans la fiche)
+await mkdir(new URL('public/rtg/facts/', ROOT), { recursive: true });
+for (const id of factIds) {
+  const F = await rd('content/rtg/facts/' + id + '.json', null); if (!F) continue;
+  await writeFile(new URL('public/rtg/facts/' + id + '.json', ROOT), JSON.stringify(F) + '\n');
+}
 const prio = { guide: 0, brochure: 1, map: 2, activity: 3, article: 4, other: 5 };
 docs.sort((a, b) => (prio[a.ty] ?? 9) - (prio[b.ty] ?? 9) || a.t.localeCompare(b.t, 'he'));
 const s = inv.summary || {};
