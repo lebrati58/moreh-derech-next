@@ -60,6 +60,11 @@
         "12",
         "13",
         "18"
+      ],
+      "file": "jerusalem.json",
+      "missions": [
+        "je1",
+        "je2"
       ]
     },
     {
@@ -69,6 +74,11 @@
       "course": [
         "10",
         "14"
+      ],
+      "file": "jerusalem-hills.json",
+      "missions": [
+        "jh1",
+        "jh2"
       ]
     },
     {
@@ -86,6 +96,11 @@
       "emoji": "🌵",
       "course": [
         "03"
+      ],
+      "file": "negev.json",
+      "missions": [
+        "ng1",
+        "ng2"
       ]
     },
     {
@@ -95,6 +110,11 @@
       "course": [
         "06",
         "09"
+      ],
+      "file": "judea-samaria.json",
+      "missions": [
+        "js1",
+        "js2"
       ]
     },
     {
@@ -103,6 +123,11 @@
       "emoji": "🌊",
       "course": [
         "15"
+      ],
+      "file": "coast.json",
+      "missions": [
+        "co1",
+        "co2"
       ]
     },
     {
@@ -120,6 +145,10 @@
       "emoji": "🌳",
       "course": [
         "16"
+      ],
+      "file": "lower-galilee.json",
+      "missions": [
+        "lg1"
       ]
     },
     {
