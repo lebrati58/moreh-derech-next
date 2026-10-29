@@ -226,6 +226,20 @@ await page.$eval('.saved [data-rm]', el => el.click());
 await page.waitForFunction(() => document.querySelectorAll('.saved .svl li').length === 1);
 ok(true, 'suppression d’un parcours sauvegardé');
 
+// autres régions : שפלה (examen groupe 2, Tel-Aviv → Kiryat Gat) et חיפה והכרמל (groupe 3)
+await page.goto(base + 'exam.html#/');
+await page.waitForSelector('[data-region="shfela"]');
+await page.$eval('[data-region="shfela"]', el => el.click());
+await page.waitForFunction(() => /השפלה/.test(document.querySelector('h2.sec').textContent));
+ok((await page.$$('.mlist .mcard')).length === 2 && /מסע/.test(await page.textContent('.mlist')), 'région שפלה : missions de l’examen (groupe « מסע »)');
+await page.goto(base + 'exam.html#/m/sh1/guided/1'); await page.waitForSelector('.slots');
+ok(/מבנה מתק׳ הברזל/.test(await page.textContent('.slots')) && /קרית גת/.test(await page.textContent('.brief')), 'sh1 : unités du sujet d’examen, arrivée à Kiryat Gat');
+await page.goto(base + 'exam.html#/m/hc1/guided/2'); await page.waitForSelector('.plan');
+ok(/דתות זרמים ועדות/.test(await page.textContent('.brief')) && (await page.$eval('.plan [data-k="what"]', e => e.value)).includes('חיפה'), 'hc1 : mission חיפה והכרמל ouverte par lien direct (la région se charge toute seule)');
+await page.goto(base + 'exam.html#/'); await page.waitForSelector('[data-region="golan_south"]');
+await page.$eval('[data-region="golan_south"]', el => el.click());
+await page.waitForFunction(() => /דרום רמת הגולן/.test(document.querySelector('h2.sec').textContent));
+
 // FR
 await page.goto(base + 'exam.html');
 await page.waitForSelector('#lng'); await page.click('#lng');
