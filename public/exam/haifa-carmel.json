@@ -997,6 +997,523 @@
    "access": null
   },
   {
+   "id": "muhraka",
+   "he": "המוחרקה (קרן הכרמל) — מנזר הכרמליתים",
+   "short": "המוחרקה",
+   "status": [
+    "taught"
+   ],
+   "periods": [
+    "תקופת המקרא"
+   ],
+   "tags": [
+    "prophet_elijah",
+    "bible",
+    "christianity",
+    "religions",
+    "view",
+    "judaism"
+   ],
+   "facts": [
+    {
+     "he": "המוחרקה נקראת גם 'קרן הכרמל'.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אליהו הנביא פעל בהר הכרמל ובשומרון.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אליהו נחשב למשמר האמונה בתקופתו, ולכן קושרים אותו לאירועים רבים בדת היהודית.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "בעל היה אל הגשם הכנעני.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אליהו ו-400 כוהני הבעל התמודדו בהעלאת קורבן לאל בלי להדליק אש.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "כוהני הבעל התפללו כל היום שהבעל ידליק את המזבח – ללא הועיל.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אליהו שפך מים על המזבח והתפלל, ואש הציתה את העצים.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "בסיום היום טבח אליהו את כוהני הבעל בנחל קישון.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "בפסח מוזגים כוס יין חמישית ומשאירים דלת פתוחה לאליהו.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "בברית מילה מחזיק העולל יושב בכיסא אליהו, זכר לקיום הברית.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אליהו עלה השמיימה במרכבת אש; אין מוות מוכר.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אחאב ואיזבל חמסו את כרם נבות היזרעאלי במשפט מבוים.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אליהו נזף באחאב וניבא לו ולאיזבל מוות וחורבן.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "במוחרקה יש מנזר כרמליתי.",
+     "src": "c_road"
+    },
+    {
+     "he": "המסדר הכרמליתי רואה באליהו את הנזיר האולטימטיבי, ולכן נקרא על שם הכרמל.",
+     "src": "hc_stella"
+    },
+    {
+     "he": "מערת אליהו בחיפה מקודשת לארבע דתות.",
+     "src": "hc_elijah"
+    },
+    {
+     "he": "אליהו הוא מהנביאים החשובים והמרכזיים בדת הדרוזית.",
+     "src": "hc_elijah"
+    }
+   ],
+   "conflicts": [],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "hc_elijah",
+    "c_road",
+    "hc_stella"
+   ],
+   "course": [
+    "02",
+    "07"
+   ],
+   "lat": 32.67278,
+   "lon": 35.08861,
+   "coordSource": "wiki",
+   "coordRef": "he:קרן הכרמל",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
+   "id": "louis",
+   "he": "טיילת לואי — תצפית על חיפה והמפרץ",
+   "short": "טיילת לואי",
+   "status": [
+    "taught"
+   ],
+   "periods": [
+    "המאה ה 18",
+    "המאה ה 19",
+    "המנדט הבריטי"
+   ],
+   "tags": [
+    "view",
+    "city",
+    "heritage",
+    "coast"
+   ],
+   "facts": [
+    {
+     "he": "משפחת גולדשטיין הקימה את הטיילת ב-1992 לזכר בנם לואי.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "אובליסק הקיסר (1910) מציין את ביקור וילהלם השני ואוגוסטה ויקטוריה ב-1898.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "רחוב יפה נוף משקיף על קו החוף הצפוני מראש הנקרה ועד ראש הכרמל.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "ב-1761 הקים דאהר אל-עומר את חיפה כעיר מוקפת חומה, באזור קריית הממשלה.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "האובליסק שוחזר אחרי שהמקורי נפגע בכיבוש חיפה בידי הבריטים ב-1918.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "לפי דף הטיילת, תותח בלגי הוצב לזכר כיבוש חיפה בידי הבריטים ב-1918.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "הטיילת הוקמה כחלק מהכניסה לגנים הבהאיים.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "בתלמוד הבבלי יש הלכות של אבדימי דמן חיפה.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "הרצל ב'אלטנוילנד' תיאר את חיפה כעיר מרכזית, קוסמופוליטית, עיר נמל ותעשייה.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "חיפה היא עיר מעורבת, שבה מתגוררות אוכלוסיות שונות בעירוב.",
+     "src": "hc_louis"
+    },
+    {
+     "he": "הבריטים מתחו צינור נפט מכירכוכ שבעיראק לחיפה.",
+     "src": "hc_louis"
+    }
+   ],
+   "conflicts": [],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "hc_louis"
+   ],
+   "course": [
+    "07"
+   ],
+   "lat": 32.80975,
+   "lon": 34.98579,
+   "coordSource": "wiki",
+   "coordRef": "he:טיילת לואי",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
+   "id": "nahal_oren",
+   "he": "נחל אורן — מבנה הכרמל, מפנים ושריפת 2010",
+   "short": "נחל אורן",
+   "status": [
+    "taught"
+   ],
+   "periods": [],
+   "tags": [
+    "geology",
+    "view",
+    "water",
+    "heritage"
+   ],
+   "facts": [
+    {
+     "he": "הכרמל הוא חלק משדרת ההר שנוצרה כחלק מהקשת הסורית.",
+     "src": "g_intro"
+    },
+    {
+     "he": "שדרת ההר המרכזית נקטעת בשני מקומות: עמק יזרעאל ובקעת באר שבע.",
+     "src": "g_intro"
+    },
+    {
+     "he": "הצניר הוא מחשוף דמוי חצי צינור לאורך קו גובה, תוצר המסה כימית של דולומיט.",
+     "src": "c_road"
+    },
+    {
+     "he": "הכרמל הוא שלוחה הנמתחת משדרת ההר המרכזית, באזור השומרון, לכיוון צפון-מערב.",
+     "src": "g_intro"
+    },
+    {
+     "he": "הכרמל מחולק לפי גובה; הכרמל הגבוה – מעל 400 מ'.",
+     "src": "g_intro"
+    },
+    {
+     "he": "הסיור הגיאולוגי מתקיים בכרמל התיכון.",
+     "src": "g_intro"
+    },
+    {
+     "he": "המפנה הדרומי חשוף לקרינת שמש חזקה, ולכן הצמחייה בו מתמודדת עם קשיים גדולים יותר.",
+     "src": "c_road"
+    },
+    {
+     "he": "במפנה הדרומי החשיפה לשמש מגבירה את אידוי המים, והמים הופכים לגורם מגביל.",
+     "src": "g_defs"
+    },
+    {
+     "he": "בדצמבר 2010, בנר שמיני של חנוכה, פרצה שריפה באזור עוספיה.",
+     "src": "c_disaster"
+    },
+    {
+     "he": "בטופוגרפיה של נחל אורן רוחות מערביות העלו את האש במעלה ההר.",
+     "src": "c_disaster"
+    },
+    {
+     "he": "אנדרטת אסון הכרמל כוללת פסל פלדה של עיקול הכביש ולשון האש.",
+     "src": "c_disaster"
+    }
+   ],
+   "conflicts": [],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "yes",
+     "he": "בסיור הקורס: עצירת הקדמה בחניון פארק הכרמל / חניון בית אורן",
+     "src": "g_road"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "g_intro",
+    "c_road",
+    "g_road",
+    "g_defs",
+    "c_disaster"
+   ],
+   "course": [
+    "02",
+    "08"
+   ],
+   "lat": 32.726,
+   "lon": 35,
+   "coordSource": "wiki",
+   "coordRef": "he:נחל אורן",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
+   "id": "har_shokef",
+   "he": "מסלול הר שוקף — נחל רקית: סלע, קרקע וצומח",
+   "short": "הר שוקף",
+   "status": [
+    "taught"
+   ],
+   "periods": [],
+   "tags": [
+    "geology",
+    "water"
+   ],
+   "facts": [
+    {
+     "he": "סלע שתוסס בחומצה, אחיד ונחרץ בציפורן – קירטון.",
+     "src": "g_defs"
+    },
+    {
+     "he": "רצועת עצי קטלב מסמנת שכבת סלע חוואר מתחתיה.",
+     "src": "g_defs"
+    },
+    {
+     "he": "לסיור גיאולוגי נדרשת חומצה מלחית 5%, אפשר לדלל חומצה 10% מחנות חומרי בניין.",
+     "src": "g_intro"
+    },
+    {
+     "he": "קירטון הוא סלע רך שנוצר בים עמוק משרידי פורמיניפרה.",
+     "src": "g_intro"
+    },
+    {
+     "he": "גיר הוא סלע קשה שנוצר במדף הים משרידי צדפות וקונכיות.",
+     "src": "g_intro"
+    },
+    {
+     "he": "דולומיט הוא סלע קשה שנוצר בלגונות.",
+     "src": "g_intro"
+    },
+    {
+     "he": "קרקעות הן צירוף טבעי מפורר של מינרלים.",
+     "src": "g_intro"
+    },
+    {
+     "he": "בתחנה 1 הקרקע תוססת הרבה ולאורך זמן – רנדזינה.",
+     "src": "g_defs"
+    },
+    {
+     "he": "על הרנדזינה בתחנה 1 גדל אורן ירושלים – עלים מחטניים בזוגות.",
+     "src": "g_defs"
+    },
+    {
+     "he": "סלע שאינו נחרץ בציפורן אך נחרץ במסמר – גיר.",
+     "src": "g_defs"
+    },
+    {
+     "he": "בתחנה 2 הקרקע החומה זוהתה כטרה רוסה.",
+     "src": "g_defs"
+    },
+    {
+     "he": "סלע עם תסיסה מועטה שנחרץ במסמר – דולומיט.",
+     "src": "g_defs"
+    }
+   ],
+   "conflicts": [],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "yes",
+     "he": "בסיור הקורס: נקודות מפגש עם האוטובוס בחניון חרבת רקית ובחניון האגם",
+     "src": "g_road"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "g_defs",
+    "g_intro",
+    "g_road"
+   ],
+   "course": [
+    "08"
+   ],
+   "lat": 32.70816,
+   "lon": 35.02587,
+   "coordSource": "wiki",
+   "coordRef": "he:הר שוקף",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
+   "id": "rakit",
+   "he": "חורבת רקית — קבר מרינוס, בית הבד ובית הכנסת השומרוני",
+   "short": "חורבת רקית",
+   "status": [
+    "taught"
+   ],
+   "periods": [],
+   "tags": [
+    "archaeology",
+    "geology",
+    "synagogue",
+    "water"
+   ],
+   "facts": [
+    {
+     "he": "מערת הקבורה חצובה בקירטון, והכניסה מעוטרת בחריטת פרח ורדה בעל 6 עלי כותרת.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "העיטור העליון בצורת שלט עם ידיות – 'טאבולה אנסאטה'.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "בבית הבד הניחו משקולות על קצה הענף, וכך נלחצו שקי הזיתים והשמן זרם לבור.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "בבית האחוזה: קירות חיצוניים מגיר או דולומיט, קירות פנימיים מקירטון.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "במבנה הציבורי אין מחראב לדרום, ולכן אינו מסגד.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "בפסיפס נמצאה הכתובת 'האל האחד והיחיד', האופיינית לבתי כנסת שומרוניים.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "מיקום אחוזת הקבר מעיד על יישוב סמוך, נגד כיוון הרוח האופייני.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "לאורך קירות המבנה הציבורי ספסלי אבן.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "לא נמצאו עצמות של בעלי חיים לא כשרים, ולכן המבנה אינו נוצרי.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "בור המים ליד הכניסה שימש לשטיפה וטהרה לפני הכניסה לבית הכנסת.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "הקירות הפנימיים מוגנים יותר, ולכן נבנו מסלע קל לעיבוד.",
+     "src": "g_rakit"
+    },
+    {
+     "he": "מתודה: מזהים אלמנטים חוזרים, שואלים מה תפקידם, ורק בסוף מסבירים איך עבד בית הבד.",
+     "src": "g_rakit"
+    }
+   ],
+   "conflicts": [],
+   "logistics2": {
+    "hours": null,
+    "price": null,
+    "toilets": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "parking": {
+     "status": "yes",
+     "he": "חניון חרבת רקית (נקודת מפגש עם האוטובוס בסיור הקורס)",
+     "src": "g_road"
+    },
+    "queue": {
+     "status": "unknown",
+     "he": "לברר"
+    },
+    "phone": null,
+    "group": null
+   },
+   "sources": [
+    "g_rakit",
+    "g_road"
+   ],
+   "course": [
+    "08"
+   ],
+   "lat": 32.71394,
+   "lon": 35.01588,
+   "coordSource": "wiki",
+   "coordRef": "he:חורבת רקית",
+   "hours": null,
+   "visit": null,
+   "access": null
+  },
+  {
    "id": "atlit_kurkar",
    "he": "רכס הכורכר וחוף עתלית — מישור החוף",
    "short": "רכס הכורכר בעתלית",
@@ -1443,7 +1960,9 @@
       "geology"
      ],
      "best": "nahal_oren",
-     "alt": [],
+     "alt": [
+      "har_shokef"
+     ],
      "why": "בכביש נחל אורן רואים מימין מפנה צפוני ומשמאל מפנה דרומי; בדרומי האידוי מגביר את מחסור המים.",
      "shareOk": true
     },
@@ -1545,6 +2064,18 @@
     "c_road",
     "hc_german",
     "hc_elijah"
+   ]
+  },
+  "long_muhraka": {
+   "kind": "long",
+   "place": "חצר מנזר הכרמליתים במוחרקה",
+   "minutes": 25,
+   "method": "סיפור דרמטי עם שאלות פתיחה וסיום; קישור מהסיפור המקראי למנהגים חיים ולדתות שפגשנו במהלך היום",
+   "text": "חברים, הגענו למוחרקה, שנקראת גם קרן הכרמל. אנחנו עומדים במנזר הכרמליתי, אבל לפני שנדבר על הנזירים, נדבר על האיש שבגללו הם כאן: אליהו הנביא. אליהו פעל בהר הכרמל ובשומרון, ונחשב למשמר האמונה בתקופת חייו. ולכן, כפי שתראו, קושרים אותו לאירועים רבים בדת היהודית. מי מכם השתתף פעם בסדר פסח או בברית מילה? הרימו יד. אם כן – כבר פגשתם את אליהו, גם אם לא ידעתם.\nשאלה אליכם לפני הסיפור: מי היה בעל? בעל היה אל הגשם הכנעני. ועכשיו דמיינו את ההר הזה ואת המבחן הגדול. מצד אחד ארבע מאות כוהני הבעל, ומצד שני אליהו לבדו. התנאי פשוט: להעלות קורבן לאל – בלי להדליק אש. האל שידליק את המזבח, הוא האל האמיתי.\nכוהני הבעל מתפללים כל היום לבעל שיקבל את הקורבן וידליק את המזבח – ללא הועיל. ואז מגיע תורו של אליהו, והוא עושה דבר מפתיע: הוא שופך מים על המזבח. כן, מים. ואחר כך מתפלל לאלוהים. אש מציתה את העצים, והקורבן מתקבל. ובסיום היום טובח אליהו את כוהני הבעל בנחל קישון. נעצור רגע ונסכם את הדמויות: אליהו לבדו, ארבע מאות כוהני הבעל, ובעל – אל הגשם.\nסיפור כזה לא נשכח. ביהדות אליהו נוכח בכל בית: בליל הסדר מוזגים כוס יין חמישית ומשאירים דלת פתוחה לכניסת אליהו, ובברית מילה מחזיק העולל יושב בכיסא אליהו, זכר לקיום הברית עם האלוהים. ואליהו גם לא מת כמו כולנו: הוא עלה השמיימה במרכבת אש. אין מוות מוכר – הוא נלקח אל האלוהים.\nאבל אליהו לא היה רק נביא של ניסים. הוא גם עמד מול השלטון. אחאב ואיזבל חמסו את כרם נבות היזרעאלי במשפט מבוים, ואליהו הגיע לנזוף באחאב וניבא לו ולאיזבל מוות וחורבן.\nומה מחבר את המנזר הזה לסיפור? המסדר הכרמליתי רואה באליהו את הנזיר האולטימטיבי, ומכיוון שאליהו משויך לכרמל – המסדר נקרא כרמליתי. וזו לא רק נצרות: מערת אליהו בחיפה מקודשת לארבע דתות, ובדת הדרוזית, שפגשנו היום בדליה, אליהו הוא אחד הנביאים החשובים והמרכזיים.\nאז הנה הר אחד, וסביבו מסורות של דתות רבות, שכל אחת מספרת את אליהו בדרכה. קחו רגע של שקט, והביטו סביב. ושאלה לסיום, לדרך חזרה לחיפה: מה לדעתכם הופך דמות אחת לגשר בין כל כך הרבה מסורות?",
+   "src": [
+    "hc_elijah",
+    "hc_stella",
+    "c_road"
    ]
   }
  },
@@ -1725,6 +2256,26 @@
     "min": 23,
     "km": 19.9
    },
+   "haifa>muhraka": {
+    "min": 29,
+    "km": 23.7
+   },
+   "haifa>louis": {
+    "min": 9,
+    "km": 5.1
+   },
+   "haifa>nahal_oren": {
+    "min": 27,
+    "km": 16.9
+   },
+   "haifa>har_shokef": {
+    "min": 32,
+    "km": 23.2
+   },
+   "haifa>rakit": {
+    "min": 27,
+    "km": 19.8
+   },
    "haifa>atlit_kurkar": {
     "min": 22,
     "km": 20.6
@@ -1756,6 +2307,26 @@
    "atlit>daliyat": {
     "min": 25,
     "km": 21.9
+   },
+   "atlit>muhraka": {
+    "min": 31,
+    "km": 25.7
+   },
+   "atlit>louis": {
+    "min": 22,
+    "km": 20.6
+   },
+   "atlit>nahal_oren": {
+    "min": 22,
+    "km": 13.1
+   },
+   "atlit>har_shokef": {
+    "min": 32,
+    "km": 14.8
+   },
+   "atlit>rakit": {
+    "min": 17,
+    "km": 11.6
    },
    "atlit>atlit_kurkar": {
     "min": 0,
@@ -1789,6 +2360,26 @@
     "min": 26,
     "km": 21.6
    },
+   "german_colony>muhraka": {
+    "min": 32,
+    "km": 25.4
+   },
+   "german_colony>louis": {
+    "min": 7,
+    "km": 4
+   },
+   "german_colony>nahal_oren": {
+    "min": 30,
+    "km": 18.6
+   },
+   "german_colony>har_shokef": {
+    "min": 35,
+    "km": 24.8
+   },
+   "german_colony>rakit": {
+    "min": 28,
+    "km": 23.1
+   },
    "german_colony>atlit_kurkar": {
     "min": 21,
     "km": 19.8
@@ -1820,6 +2411,26 @@
    "bahai>daliyat": {
     "min": 23,
     "km": 20.7
+   },
+   "bahai>muhraka": {
+    "min": 29,
+    "km": 24.5
+   },
+   "bahai>louis": {
+    "min": 4,
+    "km": 2
+   },
+   "bahai>nahal_oren": {
+    "min": 27,
+    "km": 17.7
+   },
+   "bahai>har_shokef": {
+    "min": 32,
+    "km": 23.9
+   },
+   "bahai>rakit": {
+    "min": 27,
+    "km": 20.5
    },
    "bahai>atlit_kurkar": {
     "min": 21,
@@ -1853,6 +2464,26 @@
     "min": 20,
     "km": 18.9
    },
+   "ahmadi>muhraka": {
+    "min": 26,
+    "km": 22.7
+   },
+   "ahmadi>louis": {
+    "min": 5,
+    "km": 3.2
+   },
+   "ahmadi>nahal_oren": {
+    "min": 24,
+    "km": 15.9
+   },
+   "ahmadi>har_shokef": {
+    "min": 30,
+    "km": 22.2
+   },
+   "ahmadi>rakit": {
+    "min": 25,
+    "km": 18.8
+   },
    "ahmadi>atlit_kurkar": {
     "min": 21,
     "km": 20.1
@@ -1884,6 +2515,26 @@
    "stella_maris>daliyat": {
     "min": 25,
     "km": 21.8
+   },
+   "stella_maris>muhraka": {
+    "min": 31,
+    "km": 25.6
+   },
+   "stella_maris>louis": {
+    "min": 6,
+    "km": 3.1
+   },
+   "stella_maris>nahal_oren": {
+    "min": 29,
+    "km": 18.8
+   },
+   "stella_maris>har_shokef": {
+    "min": 34,
+    "km": 25
+   },
+   "stella_maris>rakit": {
+    "min": 26,
+    "km": 20.5
    },
    "stella_maris>atlit_kurkar": {
     "min": 18,
@@ -1917,6 +2568,26 @@
     "min": 28,
     "km": 25.7
    },
+   "elijah_cave>muhraka": {
+    "min": 33,
+    "km": 29.5
+   },
+   "elijah_cave>louis": {
+    "min": 10,
+    "km": 5.8
+   },
+   "elijah_cave>nahal_oren": {
+    "min": 30,
+    "km": 22.8
+   },
+   "elijah_cave>har_shokef": {
+    "min": 37,
+    "km": 29
+   },
+   "elijah_cave>rakit": {
+    "min": 25,
+    "km": 21.3
+   },
    "elijah_cave>atlit_kurkar": {
     "min": 18,
     "km": 18
@@ -1949,9 +2620,289 @@
     "min": 26,
     "km": 24.1
    },
+   "daliyat>muhraka": {
+    "min": 9,
+    "km": 5.5
+   },
+   "daliyat>louis": {
+    "min": 22,
+    "km": 19.5
+   },
+   "daliyat>nahal_oren": {
+    "min": 20,
+    "km": 12.1
+   },
+   "daliyat>har_shokef": {
+    "min": 11,
+    "km": 3.7
+   },
+   "daliyat>rakit": {
+    "min": 20,
+    "km": 15
+   },
    "daliyat>atlit_kurkar": {
     "min": 25,
     "km": 21.7
+   },
+   "muhraka>haifa": {
+    "min": 27,
+    "km": 22.8
+   },
+   "muhraka>atlit": {
+    "min": 31,
+    "km": 25.4
+   },
+   "muhraka>german_colony": {
+    "min": 31,
+    "km": 25.1
+   },
+   "muhraka>bahai": {
+    "min": 29,
+    "km": 24.5
+   },
+   "muhraka>ahmadi": {
+    "min": 26,
+    "km": 22.6
+   },
+   "muhraka>stella_maris": {
+    "min": 31,
+    "km": 25.4
+   },
+   "muhraka>elijah_cave": {
+    "min": 31,
+    "km": 27.8
+   },
+   "muhraka>daliyat": {
+    "min": 9,
+    "km": 5.4
+   },
+   "muhraka>louis": {
+    "min": 27,
+    "km": 23.2
+   },
+   "muhraka>nahal_oren": {
+    "min": 25,
+    "km": 15.8
+   },
+   "muhraka>har_shokef": {
+    "min": 17,
+    "km": 8.2
+   },
+   "muhraka>rakit": {
+    "min": 26,
+    "km": 18.6
+   },
+   "muhraka>atlit_kurkar": {
+    "min": 31,
+    "km": 25.4
+   },
+   "louis>haifa": {
+    "min": 10,
+    "km": 5.9
+   },
+   "louis>atlit": {
+    "min": 19,
+    "km": 19
+   },
+   "louis>german_colony": {
+    "min": 6,
+    "km": 3.5
+   },
+   "louis>bahai": {
+    "min": 4,
+    "km": 2.2
+   },
+   "louis>ahmadi": {
+    "min": 4,
+    "km": 2.5
+   },
+   "louis>stella_maris": {
+    "min": 6,
+    "km": 3.1
+   },
+   "louis>elijah_cave": {
+    "min": 8,
+    "km": 6.7
+   },
+   "louis>daliyat": {
+    "min": 21,
+    "km": 18.9
+   },
+   "louis>muhraka": {
+    "min": 26,
+    "km": 22.7
+   },
+   "louis>nahal_oren": {
+    "min": 24,
+    "km": 15.9
+   },
+   "louis>har_shokef": {
+    "min": 30,
+    "km": 22.2
+   },
+   "louis>rakit": {
+    "min": 25,
+    "km": 18.8
+   },
+   "louis>atlit_kurkar": {
+    "min": 19,
+    "km": 19
+   },
+   "nahal_oren>haifa": {
+    "min": 25,
+    "km": 16.1
+   },
+   "nahal_oren>atlit": {
+    "min": 21,
+    "km": 12.9
+   },
+   "nahal_oren>german_colony": {
+    "min": 29,
+    "km": 18.5
+   },
+   "nahal_oren>bahai": {
+    "min": 27,
+    "km": 17.9
+   },
+   "nahal_oren>ahmadi": {
+    "min": 24,
+    "km": 15.9
+   },
+   "nahal_oren>stella_maris": {
+    "min": 28,
+    "km": 18.8
+   },
+   "nahal_oren>elijah_cave": {
+    "min": 29,
+    "km": 21.6
+   },
+   "nahal_oren>daliyat": {
+    "min": 20,
+    "km": 12.1
+   },
+   "nahal_oren>muhraka": {
+    "min": 25,
+    "km": 15.9
+   },
+   "nahal_oren>louis": {
+    "min": 25,
+    "km": 16.6
+   },
+   "nahal_oren>har_shokef": {
+    "min": 29,
+    "km": 15.3
+   },
+   "nahal_oren>rakit": {
+    "min": 16,
+    "km": 6.2
+   },
+   "nahal_oren>atlit_kurkar": {
+    "min": 21,
+    "km": 12.9
+   },
+   "har_shokef>haifa": {
+    "min": 31,
+    "km": 22.3
+   },
+   "har_shokef>atlit": {
+    "min": 31,
+    "km": 14.5
+   },
+   "har_shokef>german_colony": {
+    "min": 35,
+    "km": 24.6
+   },
+   "har_shokef>bahai": {
+    "min": 33,
+    "km": 24
+   },
+   "har_shokef>ahmadi": {
+    "min": 30,
+    "km": 22.1
+   },
+   "har_shokef>stella_maris": {
+    "min": 34,
+    "km": 24.9
+   },
+   "har_shokef>elijah_cave": {
+    "min": 35,
+    "km": 27.3
+   },
+   "har_shokef>daliyat": {
+    "min": 10,
+    "km": 3.7
+   },
+   "har_shokef>muhraka": {
+    "min": 17,
+    "km": 8.8
+   },
+   "har_shokef>louis": {
+    "min": 31,
+    "km": 22.7
+   },
+   "har_shokef>nahal_oren": {
+    "min": 29,
+    "km": 15.3
+   },
+   "har_shokef>rakit": {
+    "min": 26,
+    "km": 7.7
+   },
+   "har_shokef>atlit_kurkar": {
+    "min": 31,
+    "km": 14.5
+   },
+   "rakit>haifa": {
+    "min": 26,
+    "km": 19
+   },
+   "rakit>atlit": {
+    "min": 16,
+    "km": 11.4
+   },
+   "rakit>german_colony": {
+    "min": 29,
+    "km": 23
+   },
+   "rakit>bahai": {
+    "min": 28,
+    "km": 20.8
+   },
+   "rakit>ahmadi": {
+    "min": 25,
+    "km": 18.8
+   },
+   "rakit>stella_maris": {
+    "min": 26,
+    "km": 20.7
+   },
+   "rakit>elijah_cave": {
+    "min": 24,
+    "km": 20.1
+   },
+   "rakit>daliyat": {
+    "min": 20,
+    "km": 15
+   },
+   "rakit>muhraka": {
+    "min": 26,
+    "km": 18.7
+   },
+   "rakit>louis": {
+    "min": 25,
+    "km": 19.4
+   },
+   "rakit>nahal_oren": {
+    "min": 16,
+    "km": 6.2
+   },
+   "rakit>har_shokef": {
+    "min": 27,
+    "km": 7.8
+   },
+   "rakit>atlit_kurkar": {
+    "min": 16,
+    "km": 11.4
    },
    "atlit_kurkar>haifa": {
     "min": 22,
@@ -1984,6 +2935,26 @@
    "atlit_kurkar>daliyat": {
     "min": 25,
     "km": 21.9
+   },
+   "atlit_kurkar>muhraka": {
+    "min": 31,
+    "km": 25.7
+   },
+   "atlit_kurkar>louis": {
+    "min": 22,
+    "km": 20.6
+   },
+   "atlit_kurkar>nahal_oren": {
+    "min": 22,
+    "km": 13.1
+   },
+   "atlit_kurkar>har_shokef": {
+    "min": 32,
+    "km": 14.8
+   },
+   "atlit_kurkar>rakit": {
+    "min": 17,
+    "km": 11.6
    }
   }
  }

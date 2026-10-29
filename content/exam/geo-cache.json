@@ -298,7 +298,7 @@
  "drive:haifa_carmel": {
   "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
   "fetchedAt": "2026-10-29",
-  "sig": "haifa@32.80375,35.00874;atlit@32.69101,34.94266;german_colony@32.82,34.99056;bahai@32.81444,34.98722;ahmadi@32.8042,34.97315;stella_maris@32.82667,34.97028;elijah_cave@32.82973,34.96777;daliyat@32.69371,35.05088;atlit_kurkar@32.69101,34.94266",
+  "sig": "haifa@32.80375,35.00874;atlit@32.69101,34.94266;german_colony@32.82,34.99056;bahai@32.81444,34.98722;ahmadi@32.8042,34.97315;stella_maris@32.82667,34.97028;elijah_cave@32.82973,34.96777;daliyat@32.69371,35.05088;muhraka@32.67278,35.08861;louis@32.80975,34.98579;nahal_oren@32.726,35;har_shokef@32.70816,35.02587;rakit@32.71394,35.01588;atlit_kurkar@32.69101,34.94266",
   "legs": {
    "haifa>atlit": {
     "min": 22,
@@ -327,6 +327,26 @@
    "haifa>daliyat": {
     "min": 23,
     "km": 19.9
+   },
+   "haifa>muhraka": {
+    "min": 29,
+    "km": 23.7
+   },
+   "haifa>louis": {
+    "min": 9,
+    "km": 5.1
+   },
+   "haifa>nahal_oren": {
+    "min": 27,
+    "km": 16.9
+   },
+   "haifa>har_shokef": {
+    "min": 32,
+    "km": 23.2
+   },
+   "haifa>rakit": {
+    "min": 27,
+    "km": 19.8
    },
    "haifa>atlit_kurkar": {
     "min": 22,
@@ -360,6 +380,26 @@
     "min": 25,
     "km": 21.9
    },
+   "atlit>muhraka": {
+    "min": 31,
+    "km": 25.7
+   },
+   "atlit>louis": {
+    "min": 22,
+    "km": 20.6
+   },
+   "atlit>nahal_oren": {
+    "min": 22,
+    "km": 13.1
+   },
+   "atlit>har_shokef": {
+    "min": 32,
+    "km": 14.8
+   },
+   "atlit>rakit": {
+    "min": 17,
+    "km": 11.6
+   },
    "atlit>atlit_kurkar": {
     "min": 0,
     "km": 0
@@ -391,6 +431,26 @@
    "german_colony>daliyat": {
     "min": 26,
     "km": 21.6
+   },
+   "german_colony>muhraka": {
+    "min": 32,
+    "km": 25.4
+   },
+   "german_colony>louis": {
+    "min": 7,
+    "km": 4
+   },
+   "german_colony>nahal_oren": {
+    "min": 30,
+    "km": 18.6
+   },
+   "german_colony>har_shokef": {
+    "min": 35,
+    "km": 24.8
+   },
+   "german_colony>rakit": {
+    "min": 28,
+    "km": 23.1
    },
    "german_colony>atlit_kurkar": {
     "min": 21,
@@ -424,6 +484,26 @@
     "min": 23,
     "km": 20.7
    },
+   "bahai>muhraka": {
+    "min": 29,
+    "km": 24.5
+   },
+   "bahai>louis": {
+    "min": 4,
+    "km": 2
+   },
+   "bahai>nahal_oren": {
+    "min": 27,
+    "km": 17.7
+   },
+   "bahai>har_shokef": {
+    "min": 32,
+    "km": 23.9
+   },
+   "bahai>rakit": {
+    "min": 27,
+    "km": 20.5
+   },
    "bahai>atlit_kurkar": {
     "min": 21,
     "km": 19.2
@@ -455,6 +535,26 @@
    "ahmadi>daliyat": {
     "min": 20,
     "km": 18.9
+   },
+   "ahmadi>muhraka": {
+    "min": 26,
+    "km": 22.7
+   },
+   "ahmadi>louis": {
+    "min": 5,
+    "km": 3.2
+   },
+   "ahmadi>nahal_oren": {
+    "min": 24,
+    "km": 15.9
+   },
+   "ahmadi>har_shokef": {
+    "min": 30,
+    "km": 22.2
+   },
+   "ahmadi>rakit": {
+    "min": 25,
+    "km": 18.8
    },
    "ahmadi>atlit_kurkar": {
     "min": 21,
@@ -488,6 +588,26 @@
     "min": 25,
     "km": 21.8
    },
+   "stella_maris>muhraka": {
+    "min": 31,
+    "km": 25.6
+   },
+   "stella_maris>louis": {
+    "min": 6,
+    "km": 3.1
+   },
+   "stella_maris>nahal_oren": {
+    "min": 29,
+    "km": 18.8
+   },
+   "stella_maris>har_shokef": {
+    "min": 34,
+    "km": 25
+   },
+   "stella_maris>rakit": {
+    "min": 26,
+    "km": 20.5
+   },
    "stella_maris>atlit_kurkar": {
     "min": 18,
     "km": 17.3
@@ -519,6 +639,26 @@
    "elijah_cave>daliyat": {
     "min": 28,
     "km": 25.7
+   },
+   "elijah_cave>muhraka": {
+    "min": 33,
+    "km": 29.5
+   },
+   "elijah_cave>louis": {
+    "min": 10,
+    "km": 5.8
+   },
+   "elijah_cave>nahal_oren": {
+    "min": 30,
+    "km": 22.8
+   },
+   "elijah_cave>har_shokef": {
+    "min": 37,
+    "km": 29
+   },
+   "elijah_cave>rakit": {
+    "min": 25,
+    "km": 21.3
    },
    "elijah_cave>atlit_kurkar": {
     "min": 18,
@@ -552,9 +692,289 @@
     "min": 26,
     "km": 24.1
    },
+   "daliyat>muhraka": {
+    "min": 9,
+    "km": 5.5
+   },
+   "daliyat>louis": {
+    "min": 22,
+    "km": 19.5
+   },
+   "daliyat>nahal_oren": {
+    "min": 20,
+    "km": 12.1
+   },
+   "daliyat>har_shokef": {
+    "min": 11,
+    "km": 3.7
+   },
+   "daliyat>rakit": {
+    "min": 20,
+    "km": 15
+   },
    "daliyat>atlit_kurkar": {
     "min": 25,
     "km": 21.7
+   },
+   "muhraka>haifa": {
+    "min": 27,
+    "km": 22.8
+   },
+   "muhraka>atlit": {
+    "min": 31,
+    "km": 25.4
+   },
+   "muhraka>german_colony": {
+    "min": 31,
+    "km": 25.1
+   },
+   "muhraka>bahai": {
+    "min": 29,
+    "km": 24.5
+   },
+   "muhraka>ahmadi": {
+    "min": 26,
+    "km": 22.6
+   },
+   "muhraka>stella_maris": {
+    "min": 31,
+    "km": 25.4
+   },
+   "muhraka>elijah_cave": {
+    "min": 31,
+    "km": 27.8
+   },
+   "muhraka>daliyat": {
+    "min": 9,
+    "km": 5.4
+   },
+   "muhraka>louis": {
+    "min": 27,
+    "km": 23.2
+   },
+   "muhraka>nahal_oren": {
+    "min": 25,
+    "km": 15.8
+   },
+   "muhraka>har_shokef": {
+    "min": 17,
+    "km": 8.2
+   },
+   "muhraka>rakit": {
+    "min": 26,
+    "km": 18.6
+   },
+   "muhraka>atlit_kurkar": {
+    "min": 31,
+    "km": 25.4
+   },
+   "louis>haifa": {
+    "min": 10,
+    "km": 5.9
+   },
+   "louis>atlit": {
+    "min": 19,
+    "km": 19
+   },
+   "louis>german_colony": {
+    "min": 6,
+    "km": 3.5
+   },
+   "louis>bahai": {
+    "min": 4,
+    "km": 2.2
+   },
+   "louis>ahmadi": {
+    "min": 4,
+    "km": 2.5
+   },
+   "louis>stella_maris": {
+    "min": 6,
+    "km": 3.1
+   },
+   "louis>elijah_cave": {
+    "min": 8,
+    "km": 6.7
+   },
+   "louis>daliyat": {
+    "min": 21,
+    "km": 18.9
+   },
+   "louis>muhraka": {
+    "min": 26,
+    "km": 22.7
+   },
+   "louis>nahal_oren": {
+    "min": 24,
+    "km": 15.9
+   },
+   "louis>har_shokef": {
+    "min": 30,
+    "km": 22.2
+   },
+   "louis>rakit": {
+    "min": 25,
+    "km": 18.8
+   },
+   "louis>atlit_kurkar": {
+    "min": 19,
+    "km": 19
+   },
+   "nahal_oren>haifa": {
+    "min": 25,
+    "km": 16.1
+   },
+   "nahal_oren>atlit": {
+    "min": 21,
+    "km": 12.9
+   },
+   "nahal_oren>german_colony": {
+    "min": 29,
+    "km": 18.5
+   },
+   "nahal_oren>bahai": {
+    "min": 27,
+    "km": 17.9
+   },
+   "nahal_oren>ahmadi": {
+    "min": 24,
+    "km": 15.9
+   },
+   "nahal_oren>stella_maris": {
+    "min": 28,
+    "km": 18.8
+   },
+   "nahal_oren>elijah_cave": {
+    "min": 29,
+    "km": 21.6
+   },
+   "nahal_oren>daliyat": {
+    "min": 20,
+    "km": 12.1
+   },
+   "nahal_oren>muhraka": {
+    "min": 25,
+    "km": 15.9
+   },
+   "nahal_oren>louis": {
+    "min": 25,
+    "km": 16.6
+   },
+   "nahal_oren>har_shokef": {
+    "min": 29,
+    "km": 15.3
+   },
+   "nahal_oren>rakit": {
+    "min": 16,
+    "km": 6.2
+   },
+   "nahal_oren>atlit_kurkar": {
+    "min": 21,
+    "km": 12.9
+   },
+   "har_shokef>haifa": {
+    "min": 31,
+    "km": 22.3
+   },
+   "har_shokef>atlit": {
+    "min": 31,
+    "km": 14.5
+   },
+   "har_shokef>german_colony": {
+    "min": 35,
+    "km": 24.6
+   },
+   "har_shokef>bahai": {
+    "min": 33,
+    "km": 24
+   },
+   "har_shokef>ahmadi": {
+    "min": 30,
+    "km": 22.1
+   },
+   "har_shokef>stella_maris": {
+    "min": 34,
+    "km": 24.9
+   },
+   "har_shokef>elijah_cave": {
+    "min": 35,
+    "km": 27.3
+   },
+   "har_shokef>daliyat": {
+    "min": 10,
+    "km": 3.7
+   },
+   "har_shokef>muhraka": {
+    "min": 17,
+    "km": 8.8
+   },
+   "har_shokef>louis": {
+    "min": 31,
+    "km": 22.7
+   },
+   "har_shokef>nahal_oren": {
+    "min": 29,
+    "km": 15.3
+   },
+   "har_shokef>rakit": {
+    "min": 26,
+    "km": 7.7
+   },
+   "har_shokef>atlit_kurkar": {
+    "min": 31,
+    "km": 14.5
+   },
+   "rakit>haifa": {
+    "min": 26,
+    "km": 19
+   },
+   "rakit>atlit": {
+    "min": 16,
+    "km": 11.4
+   },
+   "rakit>german_colony": {
+    "min": 29,
+    "km": 23
+   },
+   "rakit>bahai": {
+    "min": 28,
+    "km": 20.8
+   },
+   "rakit>ahmadi": {
+    "min": 25,
+    "km": 18.8
+   },
+   "rakit>stella_maris": {
+    "min": 26,
+    "km": 20.7
+   },
+   "rakit>elijah_cave": {
+    "min": 24,
+    "km": 20.1
+   },
+   "rakit>daliyat": {
+    "min": 20,
+    "km": 15
+   },
+   "rakit>muhraka": {
+    "min": 26,
+    "km": 18.7
+   },
+   "rakit>louis": {
+    "min": 25,
+    "km": 19.4
+   },
+   "rakit>nahal_oren": {
+    "min": 16,
+    "km": 6.2
+   },
+   "rakit>har_shokef": {
+    "min": 27,
+    "km": 7.8
+   },
+   "rakit>atlit_kurkar": {
+    "min": 16,
+    "km": 11.4
    },
    "atlit_kurkar>haifa": {
     "min": 22,
@@ -587,7 +1007,70 @@
    "atlit_kurkar>daliyat": {
     "min": 25,
     "km": 21.9
+   },
+   "atlit_kurkar>muhraka": {
+    "min": 31,
+    "km": 25.7
+   },
+   "atlit_kurkar>louis": {
+    "min": 22,
+    "km": 20.6
+   },
+   "atlit_kurkar>nahal_oren": {
+    "min": 22,
+    "km": 13.1
+   },
+   "atlit_kurkar>har_shokef": {
+    "min": 32,
+    "km": 14.8
+   },
+   "atlit_kurkar>rakit": {
+    "min": 17,
+    "km": 11.6
    }
   }
+ },
+ "wiki:he:מוחרקה": {
+  "lat": 32.67278,
+  "lon": 35.08861,
+  "title": "he:קרן הכרמל",
+  "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%9F_%D7%94%D7%9B%D7%A8%D7%9E%D7%9C",
+  "qid": "Q2911032"
+ },
+ "wiki:he:טיילת לואי": {
+  "lat": 32.80975,
+  "lon": 34.98579,
+  "title": "he:טיילת לואי",
+  "url": "https://he.wikipedia.org/wiki/%D7%98%D7%99%D7%99%D7%9C%D7%AA_%D7%9C%D7%95%D7%90%D7%99",
+  "qid": "Q6960091"
+ },
+ "wiki:he:העיר התחתית (חיפה)": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:en:Downtown Haifa": {
+  "none": true,
+  "at": "2026-10-29"
+ },
+ "wiki:he:נחל אורן": {
+  "lat": 32.726,
+  "lon": 35,
+  "title": "he:נחל אורן",
+  "url": "https://he.wikipedia.org/wiki/%D7%A0%D7%97%D7%9C_%D7%90%D7%95%D7%A8%D7%9F",
+  "qid": "Q3995568"
+ },
+ "wiki:he:הר שוקף": {
+  "lat": 32.70816,
+  "lon": 35.02587,
+  "title": "he:הר שוקף",
+  "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A9%D7%95%D7%A7%D7%A3",
+  "qid": "Q1584351"
+ },
+ "wiki:he:חורבת רקית": {
+  "lat": 32.71394,
+  "lon": 35.01588,
+  "title": "he:חורבת רקית",
+  "url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A8%D7%91%D7%AA_%D7%A8%D7%A7%D7%99%D7%AA",
+  "qid": "Q55252730"
  }
 }
