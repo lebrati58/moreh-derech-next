@@ -77,6 +77,29 @@ if (fx) {
   ok(/מה צריך להופיע/.test(await page.textContent('.quiz')) && /מקור:/.test(await page.textContent('.quiz')), 'corrigé : éléments attendus + références');
   await shot('4-faits');
 }
+// חידון רט״ג : réponse ouverte, auto-vérification, points au מסע (chrono simulé)
+if (fx) {
+  await page.addInitScript(() => { try { localStorage.setItem('mdl_player_v1', JSON.stringify({ id: '11111111-2222-4333-8444-555555555555', name: 'נועה', consent: false, asked: true })); } catch (e) {} });
+  await page.goto(base + 'rtg.html#/q/' + fx.id); await page.waitForSelector('#go');
+  const before = await page.evaluate(() => MDProgress.totals().points);
+  await page.click('#go'); await page.waitForSelector('#ans');
+  const F = JSON.parse(await readFile(join(ROOT, 'rtg/facts/' + fx.id + '.json'), 'utf8'));
+  const qs = F.questions.slice().map((q, i) => Object.assign({ i }, q)).sort((a, b) => a.level - b.level);
+  ok(/רמה 1/.test(await page.textContent('.hero')) && /שנ׳/.test(await page.textContent('.hero')), 'quiz : niveau 1 d’abord, chrono affiché');
+  for (let k = 0; k < qs.length; k++) {
+    await page.fill('#ans', k % 2 ? 'לא יודע' : qs[k].expected.join(' . '));
+    await page.click('#chk'); await page.waitForSelector('#nxt');
+    if (k === 0) ok((await page.$$eval('#res input:checked', e => e.length)) === qs[0].expected.length, 'auto-vérification : tous les éléments attendus repérés dans une bonne réponse');
+    if (k === 1) ok((await page.$$eval('#res input:checked', e => e.length)) === 0, 'auto-vérification : rien coché sur « לא יודע »');
+    await page.click('#nxt');
+  }
+  await page.waitForSelector('.hero h1');
+  const after = await page.evaluate(() => MDProgress.totals().points);
+  ok(after > before && /נקודות חדשות למסע/.test(await page.textContent('.hero')), `points ajoutés au מסע (+${after - before})`);
+  await page.click('#again'); await page.waitForSelector('#go');
+  ok(/שיא נוכחי/.test(await page.textContent('.hero')), 'quiz : le record est rappelé');
+  await shot('5-quiz');
+}
 await ctx.close();
 // ordinateur
 const c2 = await browser.newContext({ viewport: { width: 1280, height: 800 }, serviceWorkers: 'block' });

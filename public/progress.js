@@ -120,7 +120,9 @@
   function rdata(g) { g.rt = g.rt || {}; g.rt.q = g.rt.q || {}; g.rt.runs = g.rt.runs || []; g.rt.seen = g.rt.seen || []; return g.rt; }
   function tourPoints(rt) { return Object.values(rt.q).reduce((n, e) => n + (e.best || 0), 0); }
   function saveTourRun(rec, opts) {
-    if (!rec || rec.version !== 1 || rec.kind !== 'tour' || !rec.runId || !Array.isArray(rec.answerDetails) || !/^(?:\d{2}|road67)$/.test(rec.tourId || '')) return { saved: false, reason: 'invalid' };
+    // kind 'tour' : parcours סיפור דרך ; kind 'rtg' : חידון רט״ג sur un guide officiel (tourId = « rtg:<id du document> »)
+    const okId = rec && (rec.kind === 'tour' ? /^(?:\d{2}|road67)$/.test(rec.tourId || '') : rec.kind === 'rtg' ? /^rtg:[0-9a-f]{12}$/.test(rec.tourId || '') : false);
+    if (!rec || rec.version !== 1 || !okId || !rec.runId || !Array.isArray(rec.answerDetails)) return { saved: false, reason: 'invalid' };
     const g = data(), rt = rdata(g);
     if (rt.seen.includes(rec.runId)) return { saved: false, reason: 'duplicate' };
     const counts = rec.mode === 'exam' && !(opts && opts.draft), before = tourPoints(rt);
