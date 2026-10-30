@@ -45,7 +45,7 @@ async function locate(p) {
 
 const sources = Object.assign({}, src.sources, { wiki: { title: 'Wikipedia (קואורדינטות)', url: 'https://www.wikipedia.org' } });
 const known = new Set(Object.keys(sources));
-const clean = f => ({ he: f.he, src: f.src });
+const clean = f => Object.assign({ he: f.he, src: f.src }, f.official ? { official: true, page: f.page } : {});
 const placeOut = async (p, kind) => {
   const c = await locate(p);
   if (!c) { err(`${kind} ${p.id} (${p.he}) : pas de coordonnées Wikipédia — non publié (titres essayés : ${[].concat(p.wiki || []).join(', ') || 'aucun'})`); return null; }
