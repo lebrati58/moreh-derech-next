@@ -1,0 +1,2501 @@
+{
+ "generatedAt": "tools/build-israel-timeline.mjs",
+ "note": "Positions reprises de places.json / sites3d / jerusalem3d (Wikidata, Wikipédia, OpenStreetMap) — aucune saisie à la main.",
+ "events": [
+  {
+   "id": "megiddo_battle",
+   "year": -1457,
+   "circa": true,
+   "era": "canaanite",
+   "kind": "fact",
+   "at": "site:megiddo:megiddo",
+   "link": "site3d.html?site=megiddo",
+   "title": {
+    "he": "קרב מגידו",
+    "fr": "Bataille de Megiddo",
+    "en": "Battle of Megiddo",
+    "ru": "Битва при Мегиддо"
+   },
+   "text": {
+    "he": "תחותמס השלישי מנצח קואליציה כנענית — הקרב הראשון שתואר בפירוט בהיסטוריה.",
+    "fr": "Thoutmôsis III bat une coalition cananéenne : la première bataille décrite en détail dans l’histoire.",
+    "en": "Thutmose III defeats a Canaanite coalition — the first battle recorded in detail in history.",
+    "ru": "Тутмос III побеждает ханаанскую коалицию — первая подробно описанная битва в истории."
+   },
+   "more": {
+    "he": "מגידו שלטה במעבר נחל עירון, על ״דרך הים״ בין מצרים למסופוטמיה. המצור נמשך כשבעה חודשים, והקרב מתואר בכתובות מקדש כרנך. השם ״ארמגדון״ (הר מגידו) נולד מכאן.",
+    "fr": "Megiddo contrôlait le passage du Wadi Ara sur la « Via Maris » entre l’Égypte et la Mésopotamie. Le siège dura environ sept mois ; la bataille est gravée sur les murs du temple de Karnak. Le nom « Armageddon » (Har Megiddo) vient d’ici.",
+    "en": "Megiddo controlled the Wadi Ara pass on the ‘Way of the Sea’ between Egypt and Mesopotamia. The siege lasted about seven months; the battle is carved on the walls of Karnak temple. The name ‘Armageddon’ (Har Megiddo) comes from here.",
+    "ru": "Мегиддо контролировал проход Вади-Ара на «Морском пути» между Египтом и Месопотамией. Осада длилась около семи месяцев; битва описана на стенах храма в Карнаке. Отсюда имя «Армагеддон» (Хар-Мегиддо)."
+   },
+   "src": {
+    "he": "תולדות תחותמס השלישי, מקדש כרנך",
+    "fr": "Annales de Thoutmôsis III, temple de Karnak",
+    "en": "Annals of Thutmose III, Karnak temple",
+    "ru": "Анналы Тутмоса III, храм Карнака"
+   },
+   "battle": true,
+   "lat": 32.58527778,
+   "lon": 35.18444444,
+   "qid": "Q208379",
+   "from": "sites3d/megiddo/geo.json · megiddo"
+  },
+  {
+   "id": "gideon_harod",
+   "year": -1150,
+   "circa": true,
+   "era": "canaanite",
+   "kind": "tradition",
+   "at": "stop:19:מעיין חרוד",
+   "label": {
+    "he": "תקופת השופטים (מסורת)",
+    "fr": "époque des Juges (tradition)",
+    "en": "period of the Judges (tradition)",
+    "ru": "эпоха Судей (предание)"
+   },
+   "title": {
+    "he": "גדעון ו־300 לוחמיו",
+    "fr": "Gédéon et ses 300 hommes",
+    "en": "Gideon and his 300 men",
+    "ru": "Гедеон и его 300 воинов"
+   },
+   "text": {
+    "he": "לפי ספר שופטים, ליד עין חרוד בחר גדעון את לוחמיו לפי הדרך שבה שתו מים, ויצא נגד המדיינים.",
+    "fr": "Selon les Juges, près de la source de Harod, Gédéon choisit ses hommes selon leur façon de boire, puis attaque les Madianites.",
+    "en": "According to Judges, at the spring of Harod Gideon chose his men by the way they drank, then attacked the Midianites.",
+    "ru": "По Книге Судей, у источника Харод Гедеон отобрал воинов по тому, как они пили воду, и напал на мадианитян."
+   },
+   "more": {
+    "he": "מסורת מקראית מתקופת השופטים, ללא תיארוך ארכאולוגי. מתחת לגלבוע, ליד המעיין, נמצא קבר יהושע חנקין, גואל אדמות העמק.",
+    "fr": "Récit biblique de l’époque des Juges, sans datation archéologique. Près de la source, au pied du Guilboa, se trouve la tombe de Yehoshua Hankin, qui acheta les terres de la vallée.",
+    "en": "A biblical story from the period of the Judges, with no archaeological date. Near the spring, below Gilboa, lies the grave of Yehoshua Hankin, who bought the valley’s lands.",
+    "ru": "Библейский рассказ эпохи Судей без археологической датировки. У источника под Гильбоа — могила Иехошуа Ханкина, выкупившего земли долины."
+   },
+   "src": {
+    "he": "שופטים ז",
+    "fr": "Juges 7",
+    "en": "Judges 7",
+    "ru": "Судьи 7"
+   },
+   "battle": true,
+   "lat": 32.54889,
+   "lon": 35.35694,
+   "qid": "Q603425",
+   "from": "places.json · סיור 19 · מעיין חרוד"
+  },
+  {
+   "id": "shiloh_tabernacle",
+   "year": -1100,
+   "circa": true,
+   "era": "canaanite",
+   "kind": "tradition",
+   "at": "stop:09:שילה",
+   "label": {
+    "he": "תקופת השופטים (מסורת)",
+    "fr": "époque des Juges (tradition)",
+    "en": "period of the Judges (tradition)",
+    "ru": "эпоха Судей (предание)"
+   },
+   "title": {
+    "he": "המשכן בשילה",
+    "fr": "Le Tabernacle à Shilo",
+    "en": "The Tabernacle at Shiloh",
+    "ru": "Скиния в Шило"
+   },
+   "text": {
+    "he": "לפי המקרא עמד המשכן בשילה עד ימי עלי הכהן ושמואל; כאן התפללה חנה.",
+    "fr": "Selon la Bible, le Tabernacle se trouvait à Shilo jusqu’à l’époque du prêtre Éli et de Samuel ; Anne y pria.",
+    "en": "According to the Bible the Tabernacle stood at Shiloh until the days of Eli the priest and Samuel; Hannah prayed here.",
+    "ru": "По Библии, Скиния стояла в Шило до дней священника Илия и Самуила; здесь молилась Анна."
+   },
+   "more": {
+    "he": "בתל שילה נמצא יישוב מתקופת הברזל הקדומה; מקום המשכן המדויק אינו ידוע, ויש הצעות שונות על התל.",
+    "fr": "Le tell de Shilo a livré un village du Fer I ; l’emplacement exact du Tabernacle est inconnu et plusieurs hypothèses existent.",
+    "en": "Tel Shiloh has an Iron Age I settlement; the exact place of the Tabernacle is unknown and several proposals exist.",
+    "ru": "На Тель-Шило найдено поселение раннего железного века; точное место Скинии неизвестно, есть разные гипотезы."
+   },
+   "src": {
+    "he": "יהושע יח; שמואל א׳ א–ד",
+    "fr": "Josué 18 ; 1 Samuel 1–4",
+    "en": "Joshua 18; 1 Samuel 1–4",
+    "ru": "Иисус Навин 18; 1 Цар. 1–4"
+   },
+   "lat": 32.0557,
+   "lon": 35.28954,
+   "qid": "Q985542",
+   "from": "places.json · סיור 09 · שילה"
+  },
+  {
+   "id": "saul_gilboa",
+   "year": -1010,
+   "circa": true,
+   "era": "iron",
+   "kind": "tradition",
+   "at": "stop:04:הר שאול",
+   "label": {
+    "he": "כ-1010 לפנה״ס (מסורת)",
+    "fr": "vers 1010 av. J.-C. (tradition)",
+    "en": "c. 1010 BCE (tradition)",
+    "ru": "ок. 1010 до н. э. (предание)"
+   },
+   "title": {
+    "he": "מות שאול ובניו בגלבוע",
+    "fr": "Mort de Saül et de ses fils au Guilboa",
+    "en": "Death of Saul and his sons on Gilboa",
+    "ru": "Гибель Саула и его сыновей на Гильбоа"
+   },
+   "text": {
+    "he": "לפי המקרא נפלו שאול ויהונתן במלחמה בפלשתים בהר הגלבוע, ודוד קונן: ״הרי בגלבוע אל טל ואל מטר עליכם״.",
+    "fr": "Selon la Bible, Saül et Jonathan tombent face aux Philistins sur le Guilboa ; David se lamente : « Montagnes de Guilboa, ni rosée ni pluie sur vous ».",
+    "en": "According to the Bible, Saul and Jonathan fall fighting the Philistines on Mount Gilboa; David laments: ‘Mountains of Gilboa, let there be no dew nor rain upon you’.",
+    "ru": "По Библии, Саул и Ионафан пали в битве с филистимлянами на горе Гильбоа; Давид оплакивал: «Горы Гильбоа, да не сойдёт на вас ни роса, ни дождь»."
+   },
+   "more": {
+    "he": "הפלשתים תלו את גופותיהם על חומת בית שאן. סיפור מקראי — אין עדות ארכאולוגית ישירה לקרב.",
+    "fr": "Les Philistins exposèrent les corps sur le rempart de Beit Shean. Récit biblique, sans preuve archéologique directe de la bataille.",
+    "en": "The Philistines hung the bodies on the wall of Beit She’an. A biblical story, with no direct archaeological evidence of the battle.",
+    "ru": "Филистимляне повесили тела на стене Бейт-Шеана. Библейский рассказ, без прямых археологических доказательств битвы."
+   },
+   "src": {
+    "he": "שמואל א׳ לא; שמואל ב׳ א",
+    "fr": "1 Samuel 31 ; 2 Samuel 1",
+    "en": "1 Samuel 31; 2 Samuel 1",
+    "ru": "1 Цар. 31; 2 Цар. 1"
+   },
+   "battle": true,
+   "lat": 32.53556,
+   "lon": 35.37472,
+   "qid": "Q12019195",
+   "from": "places.json · סיור 04 · הר שאול"
+  },
+  {
+   "id": "qeiyafa",
+   "year": -1000,
+   "circa": true,
+   "era": "iron",
+   "kind": "fact",
+   "at": "stop:05:חורבת קייאפה",
+   "link": "site3d.html?site=qeiyafa",
+   "label": {
+    "he": "כ-1020–980 לפנה״ס",
+    "fr": "vers 1020–980 av. J.-C.",
+    "en": "c. 1020–980 BCE",
+    "ru": "ок. 1020–980 до н. э."
+   },
+   "title": {
+    "he": "העיר המבוצרת בחורבת קייאפה",
+    "fr": "La ville fortifiée de Khirbet Qeiyafa",
+    "en": "The fortified town of Khirbet Qeiyafa",
+    "ru": "Укреплённый город Хирбет-Кейафа"
+   },
+   "text": {
+    "he": "עיר בעלת שני שערים מעל עמק האלה; השאלה אם הייתה שייכת לממלכת דוד שנויה במחלוקת.",
+    "fr": "Ville à deux portes au-dessus de la vallée d’Elah ; son lien avec le royaume de David est débattu.",
+    "en": "A two-gate town above the Elah Valley; whether it belonged to David’s kingdom is debated.",
+    "ru": "Город с двумя воротами над долиной Эла; связь с царством Давида спорна."
+   },
+   "more": {
+    "he": "העיר יושבת מעל עמק האלה — המקום שבו מספר התנ״ך על מלחמת דוד וגלית (ראו האירוע הקודם). נחפרה בידי יוסף גרפינקל ושאול גנור (2007–2013). נמצאו בה חרס עם כתובת מהעתיקות בעברית/כנענית ושני שערים; יש המזהים אותה עם ״שעריים״ (שמואל א׳ יז, נב).",
+    "fr": "La ville domine la vallée d’Elah, où la Bible place le duel de David et Goliath (voir l’événement voisin). Fouillée par Yossi Garfinkel et Saar Ganor (2007–2013) : un ostracon inscrit parmi les plus anciens textes hébraïques/cananéens et deux portes ; certains l’identifient à « Shaaraïm » (1 Samuel 17,52).",
+    "en": "The town overlooks the Elah Valley, where the Bible sets David’s duel with Goliath (see the neighbouring event). Excavated by Yossi Garfinkel and Saar Ganor (2007–2013): an inscribed ostracon among the oldest Hebrew/Canaanite texts and two gates; some identify it with ‘Shaaraim’ (1 Samuel 17:52).",
+    "ru": "Город возвышается над долиной Эла, где Библия помещает поединок Давида с Голиафом (см. соседнее событие). Раскопки Й. Гарфинкеля и С. Ганора (2007–2013): остракон с одной из древнейших еврейских/ханаанских надписей и двое ворот; некоторые отождествляют его с «Шаараимом» (1 Цар. 17:52)."
+   },
+   "src": {
+    "he": "חפירות גרפינקל וגנור; שמואל א׳ יז",
+    "fr": "Fouilles Garfinkel et Ganor ; 1 Samuel 17",
+    "en": "Garfinkel & Ganor excavations; 1 Samuel 17",
+    "ru": "Раскопки Гарфинкеля и Ганора; 1 Цар. 17"
+   },
+   "lat": 31.69639,
+   "lon": 34.95722,
+   "qid": "Q910323",
+   "from": "places.json · סיור 05 · חורבת קייאפה"
+  },
+  {
+   "id": "david_goliath",
+   "year": -1000,
+   "circa": true,
+   "era": "iron",
+   "kind": "tradition",
+   "at": "stop:05:תל עזקה",
+   "label": {
+    "he": "כ-1000 לפנה״ס (מסורת)",
+    "fr": "vers 1000 av. J.-C. (tradition)",
+    "en": "c. 1000 BCE (tradition)",
+    "ru": "ок. 1000 до н. э. (предание)"
+   },
+   "title": {
+    "he": "דוד וגלית בעמק האלה",
+    "fr": "David et Goliath dans la vallée d’Elah",
+    "en": "David and Goliath in the Elah Valley",
+    "ru": "Давид и Голиаф в долине Эла"
+   },
+   "text": {
+    "he": "לפי המקרא חנו הפלשתים ״בין שוכה ובין עזקה״, וישראל מולם בעמק האלה; הנער דוד הפיל את גלית בקלע ובאבן.",
+    "fr": "Selon la Bible, les Philistins campaient « entre Soco et Azéqa », Israël en face dans la vallée d’Elah ; le jeune David abattit Goliath d’une pierre lancée à la fronde.",
+    "en": "According to the Bible the Philistines camped ‘between Socoh and Azekah’, Israel facing them in the Elah Valley; young David felled Goliath with a sling and a stone.",
+    "ru": "По Библии, филистимляне стояли «между Сокхо и Азекой», Израиль — напротив, в долине Эла; юный Давид сразил Голиафа камнем из пращи."
+   },
+   "more": {
+    "he": "עזקה ושוכה הם תלים אמיתיים מעל העמק. חורבת קייאפה, שנחפרה ביניהם, מתוארכת לאותה תקופה — אך הקרב עצמו הוא סיפור מקראי בלי עדות ארכאולוגית ישירה. בגת הפלשתית (תל צפית) נמצא חרס עם שמות דומים לשם ״גלית״.",
+    "fr": "Azéqa et Soco sont de vrais tells au-dessus de la vallée. Khirbet Qeiyafa, fouillée entre les deux, date de la même époque, mais le combat reste un récit biblique sans preuve archéologique directe. À Gath philistine (Tell es-Safi), un tesson porte des noms proches de « Goliath ».",
+    "en": "Azekah and Socoh are real tells above the valley. Khirbet Qeiyafa, excavated between them, dates to the same period, but the duel itself is a biblical story with no direct archaeological evidence. At Philistine Gath (Tell es-Safi) a sherd bears names similar to ‘Goliath’.",
+    "ru": "Азека и Сокхо — настоящие холмы над долиной. Хирбет-Кейафа между ними датируется тем же временем, но сам поединок — библейский рассказ без прямых археологических доказательств. В филистимском Гате (Тель-Цафит) найден черепок с именами, похожими на «Голиаф»."
+   },
+   "src": {
+    "he": "שמואל א׳ יז",
+    "fr": "1 Samuel 17",
+    "en": "1 Samuel 17",
+    "ru": "1 Цар. 17"
+   },
+   "battle": true,
+   "lat": 31.70028,
+   "lon": 34.93583,
+   "qid": "Q723564",
+   "from": "places.json · סיור 05 · תל עזקה"
+  },
+  {
+   "id": "elijah_carmel",
+   "year": -870,
+   "circa": true,
+   "era": "iron",
+   "kind": "tradition",
+   "at": "stop:02:מוחרקה",
+   "label": {
+    "he": "המאה ה-9 לפנה״ס (מסורת)",
+    "fr": "IXe s. av. J.-C. (tradition)",
+    "en": "9th c. BCE (tradition)",
+    "ru": "IX в. до н. э. (предание)"
+   },
+   "title": {
+    "he": "אליהו ונביאי הבעל",
+    "fr": "Élie et les prophètes de Baal",
+    "en": "Elijah and the prophets of Baal",
+    "ru": "Илия и пророки Ваала"
+   },
+   "text": {
+    "he": "לפי המסורת, כאן ירדה האש על מזבח אליהו (מלכים א׳ יח). מסורת — לא ממצא ארכאולוגי.",
+    "fr": "Selon la tradition, le feu descendit ici sur l’autel d’Élie (1 Rois 18). Tradition, pas une découverte archéologique.",
+    "en": "By tradition, fire fell here on Elijah’s altar (1 Kings 18). A tradition, not an archaeological find.",
+    "ru": "По преданию, здесь огонь сошёл на жертвенник Илии (3 Цар. 18). Предание, а не археологическая находка."
+   },
+   "more": {
+    "he": "המסורת מזהה את המוחרקה (״מקום השריפה״) עם מקום המבחן בין אליהו לנביאי הבעל בימי אחאב ואיזבל. מנזר כרמליתי בן המאה ה-19 עומד במקום, ותצפית ממנו על עמק יזרעאל.",
+    "fr": "La tradition identifie la Mouhraqa (« lieu du brûlé ») au défi entre Élie et les prophètes de Baal sous Achab et Jézabel. Un monastère carmélite du XIXe siècle s’y dresse, avec une vue sur la vallée de Jezreel.",
+    "en": "Tradition identifies the Muhraqa (‘place of burning’) with the contest between Elijah and the prophets of Baal under Ahab and Jezebel. A 19th-century Carmelite monastery stands there, overlooking the Jezreel Valley.",
+    "ru": "Предание связывает Мухраку («место сожжения») с состязанием Илии и пророков Ваала при Ахаве и Иезавели. Там стоит кармелитский монастырь XIX века с видом на Изреельскую долину."
+   },
+   "src": {
+    "he": "מלכים א׳ יח",
+    "fr": "1 Rois 18",
+    "en": "1 Kings 18",
+    "ru": "3 Цар. 18"
+   },
+   "lat": 32.67278,
+   "lon": 35.08861,
+   "qid": "Q2911032",
+   "from": "places.json · סיור 02 · מוחרקה"
+  },
+  {
+   "id": "lachish_siege",
+   "year": -701,
+   "era": "iron",
+   "kind": "fact",
+   "at": "site:lachish:lachish",
+   "link": "site3d.html?site=lachish",
+   "title": {
+    "he": "מצור סנחריב על לכיש",
+    "fr": "Siège de Lakhish par Sennachérib",
+    "en": "Sennacherib’s siege of Lachish",
+    "ru": "Осада Лахиша Синаххерибом"
+   },
+   "text": {
+    "he": "מלך אשור כובש את לכיש; המצור מתואר בתבליטי ארמונו בנינווה.",
+    "fr": "Le roi d’Assyrie prend Lakhish ; le siège est sculpté sur les reliefs de son palais de Ninive.",
+    "en": "The Assyrian king takes Lachish; the siege is carved on the reliefs of his palace at Nineveh.",
+    "ru": "Ассирийский царь берёт Лахиш; осада изображена на рельефах его дворца в Ниневии."
+   },
+   "more": {
+    "he": "לכיש הייתה העיר השנייה בחשיבותה בממלכת יהודה. סוללת המצור האשורית היא העתיקה ביותר שנמצאה בעולם, ועליה סוללת נגד של המגינים. תבליטי המצור מוצגים היום במוזיאון הבריטי.",
+    "fr": "Lakhish était la deuxième ville du royaume de Juda. La rampe de siège assyrienne est la plus ancienne connue au monde, avec la contre-rampe des défenseurs. Les reliefs du siège sont aujourd’hui au British Museum.",
+    "en": "Lachish was the second city of the kingdom of Judah. The Assyrian siege ramp is the oldest known in the world, with the defenders’ counter-ramp. The siege reliefs are now in the British Museum.",
+    "ru": "Лахиш был вторым городом Иудейского царства. Ассирийская осадная насыпь — древнейшая известная в мире, с контрнасыпью защитников. Рельефы осады хранятся в Британском музее."
+   },
+   "src": {
+    "he": "מלכים ב׳ יח; תבליטי לכיש (נינווה)",
+    "fr": "2 Rois 18 ; reliefs de Lakhish (Ninive)",
+    "en": "2 Kings 18; Lachish reliefs (Nineveh)",
+    "ru": "4 Цар. 18; рельефы Лахиша (Ниневия)"
+   },
+   "battle": true,
+   "lat": 31.565,
+   "lon": 34.84888889,
+   "qid": "Q848509",
+   "from": "sites3d/lachish/geo.json · lachish"
+  },
+  {
+   "id": "hezekiah_tunnel",
+   "year": -701,
+   "circa": true,
+   "era": "iron",
+   "kind": "fact",
+   "at": "j3d:hezekiah_tunnel",
+   "link": "jerusalem3d.html?period=2&site=jerusalem_hezekiah_tunnel",
+   "title": {
+    "he": "נקבת חזקיהו",
+    "fr": "Le tunnel d’Ézéchias",
+    "en": "Hezekiah’s Tunnel",
+    "ru": "Тоннель Езекии"
+   },
+   "text": {
+    "he": "לקראת המצור האשורי הוביל חזקיהו את מי הגיחון בנקבה תת־קרקעית אל בריכת השילוח, בתוך העיר.",
+    "fr": "Avant le siège assyrien, Ézéchias conduit l’eau du Gihon par un tunnel souterrain jusqu’au bassin de Siloé, dans la ville.",
+    "en": "Ahead of the Assyrian siege, Hezekiah brought the Gihon’s water through an underground tunnel to the Siloam Pool, inside the city.",
+    "ru": "Перед ассирийской осадой Езекия провёл воду Гихона подземным тоннелем в Силоамскую купель внутри города."
+   },
+   "more": {
+    "he": "אורך הנקבה כ-533 מטר; שתי קבוצות חצבו משני הקצוות ונפגשו באמצע, כפי שמספרת ״כתובת השילוח״ שנמצאה בה ב-1880. אפשר ללכת בה עד היום במים.",
+    "fr": "Long d’environ 533 m, il fut creusé par deux équipes partant des deux bouts, qui se rejoignirent au milieu, comme le raconte l’« inscription de Siloé » trouvée en 1880. On peut encore le parcourir dans l’eau.",
+    "en": "About 533 m long, it was dug by two teams from both ends meeting in the middle, as told by the ‘Siloam inscription’ found in 1880. You can still walk through it in the water.",
+    "ru": "Длина около 533 м; две бригады копали с двух концов и встретились посередине, как рассказывает «Силоамская надпись», найденная в 1880 г. По нему до сих пор можно пройти по воде."
+   },
+   "src": {
+    "he": "מלכים ב׳ כ, כ; דברי הימים ב׳ לב, ל; כתובת השילוח",
+    "fr": "2 Rois 20,20 ; 2 Chroniques 32,30 ; inscription de Siloé",
+    "en": "2 Kings 20:20; 2 Chronicles 32:30; Siloam inscription",
+    "ru": "4 Цар. 20:20; 2 Пар. 32:30; Силоамская надпись"
+   },
+   "lat": 31.772358,
+   "lon": 35.235673,
+   "qid": "Q1620682",
+   "from": "jerusalem3d/geo.json · hezekiah_tunnel"
+  },
+  {
+   "id": "megiddo_609",
+   "year": -609,
+   "era": "iron",
+   "kind": "fact",
+   "battle": true,
+   "at": "site:megiddo:megiddo",
+   "link": "site3d.html?site=megiddo",
+   "title": {
+    "he": "מות המלך יאשיהו במגידו",
+    "fr": "Mort du roi Josias à Megiddo",
+    "en": "Death of King Josiah at Megiddo",
+    "ru": "Гибель царя Иосии при Мегиддо"
+   },
+   "text": {
+    "he": "יאשיהו מלך יהודה יצא לעצור את פרעה נכו, שעלה לעזור לאשור, ונהרג במגידו.",
+    "fr": "Josias, roi de Juda, tente d’arrêter le pharaon Néko qui monte aider l’Assyrie, et est tué à Megiddo.",
+    "en": "Josiah, king of Judah, tries to stop Pharaoh Necho marching to help Assyria, and is killed at Megiddo.",
+    "ru": "Иосия, царь Иудеи, пытается остановить фараона Нехо, идущего на помощь Ассирии, и гибнет при Мегиддо."
+   },
+   "more": {
+    "he": "מותו סימן את סוף העצמאות של יהודה; כעבור פחות מ-25 שנה חרבה ירושלים. ״המספד במגידון״ (זכריה יב) נזכר בעקבותיו.",
+    "fr": "Sa mort marque la fin de l’indépendance de Juda ; moins de 25 ans plus tard, Jérusalem est détruite. Le « deuil de Megiddon » (Zacharie 12) s’y rattache.",
+    "en": "His death marks the end of Judah’s independence; less than 25 years later Jerusalem is destroyed. The ‘mourning of Megiddon’ (Zechariah 12) refers to it.",
+    "ru": "Его смерть положила конец независимости Иудеи; менее чем через 25 лет Иерусалим разрушен. С этим связан «плач в Мегиддоне» (Зах. 12)."
+   },
+   "src": {
+    "he": "מלכים ב׳ כג, כט; דברי הימים ב׳ לה",
+    "fr": "2 Rois 23,29 ; 2 Chroniques 35",
+    "en": "2 Kings 23:29; 2 Chronicles 35",
+    "ru": "4 Цар. 23:29; 2 Пар. 35"
+   },
+   "lat": 32.58527778,
+   "lon": 35.18444444,
+   "qid": "Q208379",
+   "from": "sites3d/megiddo/geo.json · megiddo"
+  },
+  {
+   "id": "lachish_letters",
+   "year": -588,
+   "circa": true,
+   "era": "iron",
+   "kind": "fact",
+   "at": "site:lachish:lachish",
+   "link": "site3d.html?site=lachish",
+   "title": {
+    "he": "מכתבי לכיש",
+    "fr": "Les lettres de Lakhish",
+    "en": "The Lachish letters",
+    "ru": "Письма из Лахиша"
+   },
+   "text": {
+    "he": "בשער לכיש נמצאו מכתבים על חרסים מימי המצור הבבלי: ״אל משאת לכש אנחנו שמרם… כי לא נראה את עזקה״.",
+    "fr": "À la porte de Lakhish, des lettres sur tessons datent du siège babylonien : « Nous guettons les signaux de Lakhish… car nous ne voyons plus Azéqa ».",
+    "en": "At the Lachish gate, letters on potsherds date from the Babylonian siege: ‘We watch for the signals of Lachish… for we cannot see Azekah’.",
+    "ru": "У ворот Лахиша найдены письма на черепках времён вавилонской осады: «Мы следим за сигналами Лахиша… ибо не видим Азеки»."
+   },
+   "more": {
+    "he": "המכתבים נמצאו ב-1935 בחפירות ג׳יימס סטארקי. ירמיהו מזכיר שלכיש ועזקה היו הערים האחרונות שנותרו ביהודה (ירמיהו לד, ז).",
+    "fr": "Découvertes en 1935 dans les fouilles de James Starkey. Jérémie cite Lakhish et Azéqa comme les dernières villes de Juda encore debout (Jérémie 34,7).",
+    "en": "Found in 1935 in James Starkey’s excavations. Jeremiah names Lachish and Azekah as the last cities of Judah still standing (Jeremiah 34:7).",
+    "ru": "Найдены в 1935 г. на раскопках Джеймса Старки. Иеремия называет Лахиш и Азеку последними уцелевшими городами Иудеи (Иер. 34:7)."
+   },
+   "src": {
+    "he": "מכתב לכיש 4; ירמיהו לד, ז",
+    "fr": "Lettre de Lakhish 4 ; Jérémie 34,7",
+    "en": "Lachish letter 4; Jeremiah 34:7",
+    "ru": "Письмо из Лахиша 4; Иер. 34:7"
+   },
+   "lat": 31.565,
+   "lon": 34.84888889,
+   "qid": "Q848509",
+   "from": "sites3d/lachish/geo.json · lachish"
+  },
+  {
+   "id": "first_temple_destroyed",
+   "year": -586,
+   "era": "iron",
+   "kind": "fact",
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=2",
+   "label": {
+    "he": "586 לפנה״ס (או 587)",
+    "fr": "586 av. J.-C. (ou 587)",
+    "en": "586 BCE (or 587)",
+    "ru": "586 до н. э. (или 587)"
+   },
+   "title": {
+    "he": "חורבן בית ראשון",
+    "fr": "Destruction du Premier Temple",
+    "en": "Destruction of the First Temple",
+    "ru": "Разрушение Первого Храма"
+   },
+   "text": {
+    "he": "נבוכדנאצר מלך בבל מחריב את ירושלים ואת המקדש.",
+    "fr": "Nabuchodonosor, roi de Babylone, détruit Jérusalem et le Temple.",
+    "en": "Nebuchadnezzar of Babylon destroys Jerusalem and the Temple.",
+    "ru": "Навуходоносор, царь Вавилона, разрушает Иерусалим и Храм."
+   },
+   "more": {
+    "he": "אחרי מצור של כשנה וחצי פרצו הבבלים את החומה; המקדש והעיר נשרפו, ורבים מתושבי יהודה הוגלו לבבל. ״חץ סקיתי״ ושכבת שריפה מימי החורבן נמצאו בעיר דוד וברובע היהודי.",
+    "fr": "Après un siège d’environ un an et demi, les Babyloniens percent la muraille ; le Temple et la ville brûlent et une grande partie de Juda est exilée à Babylone. Pointes de flèches et couche d’incendie de cette destruction ont été trouvées dans la Cité de David et le quartier juif.",
+    "en": "After a siege of about eighteen months the Babylonians breach the wall; the Temple and city burn and much of Judah is exiled to Babylon. Arrowheads and a burn layer from this destruction were found in the City of David and the Jewish Quarter.",
+    "ru": "После примерно полуторагодовой осады вавилоняне проламывают стену; Храм и город сожжены, многие жители Иудеи угнаны в Вавилон. Наконечники стрел и слой пожара найдены в Городе Давида и Еврейском квартале."
+   },
+   "src": {
+    "he": "מלכים ב׳ כה; ירמיהו לט",
+    "fr": "2 Rois 25 ; Jérémie 39",
+    "en": "2 Kings 25; Jeremiah 39",
+    "ru": "4 Цар. 25; Иеремия 39"
+   },
+   "battle": true,
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "second_temple_dedicated",
+   "year": -516,
+   "circa": true,
+   "era": "persian",
+   "kind": "fact",
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=3",
+   "label": {
+    "he": "כ-516/515 לפנה״ס",
+    "fr": "vers 516/515 av. J.-C.",
+    "en": "c. 516/515 BCE",
+    "ru": "ок. 516/515 до н. э."
+   },
+   "title": {
+    "he": "חנוכת בית שני",
+    "fr": "Inauguration du Second Temple",
+    "en": "Dedication of the Second Temple",
+    "ru": "Освящение Второго Храма"
+   },
+   "text": {
+    "he": "שבי ציון משלימים את בניית המקדש בימי דריווש (עזרא ו).",
+    "fr": "Les exilés revenus achèvent le Temple sous Darius (Esdras 6).",
+    "en": "Returned exiles complete the Temple under Darius (Ezra 6).",
+    "ru": "Вернувшиеся изгнанники завершают Храм при Дарии (Ездра 6)."
+   },
+   "more": {
+    "he": "כורש התיר לגולים לשוב (538 לפנה״ס). הבנייה נעצרה ושוכנעה מחדש בעידוד הנביאים חגי וזכריה, והמקדש הושלם ״בשנת שש למלכות דריווש״.",
+    "fr": "Cyrus autorise le retour des exilés (538 av.). Les travaux, interrompus, reprennent à l’appel des prophètes Aggée et Zacharie ; le Temple est achevé « la sixième année de Darius ».",
+    "en": "Cyrus allows the exiles to return (538 BCE). Work stalls and resumes at the urging of the prophets Haggai and Zechariah; the Temple is finished ‘in the sixth year of Darius’.",
+    "ru": "Кир разрешает изгнанникам вернуться (538 до н. э.). Стройка останавливается и возобновляется по призыву пророков Аггея и Захарии; Храм завершён «в шестой год Дария»."
+   },
+   "src": {
+    "he": "עזרא א, ו; חגי",
+    "fr": "Esdras 1 et 6 ; Aggée",
+    "en": "Ezra 1 and 6; Haggai",
+    "ru": "Ездра 1 и 6; Аггей"
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "maccabees_temple",
+   "year": -164,
+   "era": "hasmonean",
+   "kind": "fact",
+   "battle": true,
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=4",
+   "title": {
+    "he": "יהודה המכבי מטהר את המקדש — חנוכה",
+    "fr": "Judas Maccabée purifie le Temple — Hanoukka",
+    "en": "Judah Maccabee rededicates the Temple — Hanukkah",
+    "ru": "Иуда Маккавей очищает Храм — Ханука"
+   },
+   "text": {
+    "he": "אחרי ניצחונות על צבאות אנטיוכוס הרביעי שחררו המכבים את ירושלים, טיהרו את המקדש וחנכו אותו בכ״ה בכסלו.",
+    "fr": "Après leurs victoires sur les armées d’Antiochos IV, les Maccabées libèrent Jérusalem, purifient le Temple et le rededient le 25 Kislev.",
+    "en": "After victories over Antiochus IV’s armies, the Maccabees free Jerusalem, purify the Temple and rededicate it on 25 Kislev.",
+    "ru": "После побед над войсками Антиоха IV Маккавеи освобождают Иерусалим, очищают Храм и освящают его 25 кислева."
+   },
+   "more": {
+    "he": "המרד פרץ במודיעין (167 לפנה״ס). החקרא הסלווקית בעיר החזיקה מעמד עד 141 לפנה״ס; שרידים שלה זוהו בחניון גבעתי.",
+    "fr": "La révolte éclate à Modiin (167 av.). L’Acra séleucide tient jusqu’en 141 av. ; des restes en ont été identifiés au parking Givati.",
+    "en": "The revolt broke out at Modiin (167 BCE). The Seleucid Akra held out until 141 BCE; remains of it were identified at the Givati Parking Lot.",
+    "ru": "Восстание началось в Модиине (167 до н. э.). Селевкидская Акра держалась до 141 до н. э.; её остатки найдены на стоянке Гивати."
+   },
+   "src": {
+    "he": "מקבים א׳ ד; מקבים ב׳ י",
+    "fr": "1 Maccabées 4 ; 2 Maccabées 10",
+    "en": "1 Maccabees 4; 2 Maccabees 10",
+    "ru": "1 Макк. 4; 2 Макк. 10"
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "gerizim_temple",
+   "year": -111,
+   "circa": true,
+   "era": "hasmonean",
+   "kind": "fact",
+   "at": "stop:09:הר גריזים",
+   "label": {
+    "he": "כ-111/110 לפנה״ס",
+    "fr": "vers 111/110 av. J.-C.",
+    "en": "c. 111/110 BCE",
+    "ru": "ок. 111/110 до н. э."
+   },
+   "title": {
+    "he": "יוחנן הורקנוס הורס את המקדש בהר גריזים",
+    "fr": "Jean Hyrcan détruit le temple du mont Garizim",
+    "en": "John Hyrcanus destroys the temple on Mount Gerizim",
+    "ru": "Иоанн Гиркан разрушает храм на горе Гризим"
+   },
+   "text": {
+    "he": "המלך החשמונאי הורס את מקדש השומרונים בהר גריזים; ההר נשאר קדוש לשומרונים עד היום.",
+    "fr": "Le roi hasmonéen détruit le temple samaritain du Garizim ; la montagne reste sacrée pour les Samaritains jusqu’à aujourd’hui.",
+    "en": "The Hasmonean king destroys the Samaritan temple on Gerizim; the mountain remains holy to the Samaritans to this day.",
+    "ru": "Хасмонейский царь разрушает самаритянский храм на Гризиме; гора священна для самаритян до сих пор."
+   },
+   "more": {
+    "he": "בחפירות יצחק מגן על ההר נמצאו המתחם המקודש והעיר ההלניסטית. השומרונים חוגגים שם עד היום את קורבן הפסח.",
+    "fr": "Les fouilles d’Yitzhak Magen ont dégagé l’enceinte sacrée et la ville hellénistique. Les Samaritains y célèbrent encore le sacrifice de la Pâque.",
+    "en": "Yitzhak Magen’s excavations uncovered the sacred precinct and the Hellenistic town. The Samaritans still hold the Passover sacrifice there.",
+    "ru": "Раскопки Ицхака Магена открыли священный участок и эллинистический город. Самаритяне до сих пор совершают там пасхальное жертвоприношение."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, קדמוניות 13.254–256; חפירות מגן",
+    "fr": "Josèphe, Antiquités 13.254–256 ; fouilles Magen",
+    "en": "Josephus, Antiquities 13.254–256; Magen excavations",
+    "ru": "Иосиф Флавий, Древности 13.254–256; раскопки Магена"
+   },
+   "lat": 32.20086,
+   "lon": 35.27326,
+   "qid": "Q1288751",
+   "from": "places.json · סיור 09 · הר גריזים"
+  },
+  {
+   "id": "pompey_jerusalem",
+   "year": -63,
+   "era": "hasmonean",
+   "kind": "fact",
+   "battle": true,
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=4",
+   "title": {
+    "he": "פומפיוס כובש את ירושלים",
+    "fr": "Pompée prend Jérusalem",
+    "en": "Pompey takes Jerusalem",
+    "ru": "Помпей берёт Иерусалим"
+   },
+   "text": {
+    "he": "המצביא הרומי פומפיוס, שהוזמן להכריע בין האחים הורקנוס ואריסטובולוס, צר על הר הבית שלושה חודשים וכבש אותו.",
+    "fr": "Le général romain Pompée, appelé à arbitrer entre les frères Hyrcan et Aristobule, assiège le mont du Temple trois mois et le prend.",
+    "en": "The Roman general Pompey, called in to arbitrate between the brothers Hyrcanus and Aristobulus, besieges the Temple Mount for three months and takes it.",
+    "ru": "Римский полководец Помпей, призванный рассудить братьев Гиркана и Аристобула, три месяца осаждает Храмовую гору и берёт её."
+   },
+   "more": {
+    "he": "פומפיוס נכנס לקודש הקודשים אך לא נגע באוצרות. זהו סוף העצמאות החשמונאית ותחילת השלטון הרומי ביהודה.",
+    "fr": "Pompée entre dans le Saint des Saints sans toucher aux trésors. C’est la fin de l’indépendance hasmonéenne et le début de la domination romaine.",
+    "en": "Pompey enters the Holy of Holies but leaves the treasures. It is the end of Hasmonean independence and the start of Roman rule.",
+    "ru": "Помпей входит в Святая Святых, не тронув сокровищ. Конец хасмонейской независимости и начало римской власти."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, קדמוניות 14.54–79",
+    "fr": "Josèphe, Antiquités 14.54–79",
+    "en": "Josephus, Antiquities 14.54–79",
+    "ru": "Иосиф Флавий, Древности 14.54–79"
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "herod_takes_jerusalem",
+   "year": -37,
+   "era": "herodian",
+   "kind": "fact",
+   "battle": true,
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=5",
+   "title": {
+    "he": "הורדוס כובש את ירושלים",
+    "fr": "Hérode prend Jérusalem",
+    "en": "Herod takes Jerusalem",
+    "ru": "Ирод берёт Иерусалим"
+   },
+   "text": {
+    "he": "בעזרת הלגיונות של סוסיוס כבש הורדוס את העיר מידי מתתיהו אנטיגונוס, המלך החשמונאי האחרון, ונעשה למלך יהודה.",
+    "fr": "Avec les légions de Sosius, Hérode prend la ville à Mattathias Antigone, dernier roi hasmonéen, et devient roi de Judée.",
+    "en": "With Sosius’ legions, Herod takes the city from Mattathias Antigonus, the last Hasmonean king, and becomes king of Judea.",
+    "ru": "С легионами Сосия Ирод берёт город у Маттафии Антигона, последнего хасмонейского царя, и становится царём Иудеи."
+   },
+   "more": {
+    "he": "אנטיגונוס הוצא להורג באנטיוכיה. מכאן מתחילה תקופת הבנייה הגדולה של הורדוס.",
+    "fr": "Antigone est exécuté à Antioche. Commence alors la grande période de construction d’Hérode.",
+    "en": "Antigonus is executed in Antioch. Herod’s great building period begins.",
+    "ru": "Антигона казнили в Антиохии. Начинается великая строительная эпоха Ирода."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, מלחמת היהודים 1.343–357",
+    "fr": "Josèphe, Guerre des Juifs 1.343–357",
+    "en": "Josephus, Jewish War 1.343–357",
+    "ru": "Иосиф Флавий, Иудейская война 1.343–357"
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "caesarea_founded",
+   "year": -22,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "site:caesarea:caesarea",
+   "link": "site3d.html?site=caesarea",
+   "label": {
+    "he": "22–10/9 לפנה״ס",
+    "fr": "22–10/9 av. J.-C.",
+    "en": "22–10/9 BCE",
+    "ru": "22–10/9 до н. э."
+   },
+   "title": {
+    "he": "הורדוס בונה את קיסריה",
+    "fr": "Hérode bâtit Césarée",
+    "en": "Herod builds Caesarea",
+    "ru": "Ирод строит Кесарию"
+   },
+   "text": {
+    "he": "עיר נמל חדשה עם הנמל המלאכותי סבסטוס, לכבוד הקיסר אוגוסטוס.",
+    "fr": "Nouvelle ville portuaire avec le port artificiel Sébastos, en l’honneur d’Auguste.",
+    "en": "A new port city with the artificial harbour Sebastos, honouring Augustus.",
+    "ru": "Новый портовый город с искусственной гаванью Себастос в честь Августа."
+   },
+   "more": {
+    "he": "במקום ״מגדל סטרטון״ ההלניסטי בנה הורדוס עיר עם תאטרון, היפודרום, ארמון על הים ומקדש לרומא ולאוגוסטוס. הנמל נבנה בים הפתוח בעזרת בטון שהתקשה במים. קיסריה הייתה אחר כך בירת הפרובינציה הרומית.",
+    "fr": "À la place de la « Tour de Straton » hellénistique, Hérode bâtit une ville avec théâtre, hippodrome, palais sur la mer et temple de Rome et d’Auguste. Le port fut construit en pleine mer avec un béton qui durcissait sous l’eau. Césarée devint ensuite la capitale de la province romaine.",
+    "en": "On the site of Hellenistic ‘Straton’s Tower’, Herod built a city with a theatre, hippodrome, sea-side palace and a temple to Roma and Augustus. The harbour was built in open sea with concrete that set under water. Caesarea later became the capital of the Roman province.",
+    "ru": "На месте эллинистической «Башни Стратона» Ирод построил город с театром, ипподромом, дворцом у моря и храмом Ромы и Августа. Гавань строили в открытом море с бетоном, твердевшим под водой. Позже Кесария стала столицей римской провинции."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, קדמוניות 15.331–341",
+    "fr": "Josèphe, Antiquités 15.331–341",
+    "en": "Josephus, Antiquities 15.331–341",
+    "ru": "Иосиф Флавий, Древности 15.331–341"
+   },
+   "lat": 32.5,
+   "lon": 34.89166667,
+   "qid": "Q319242",
+   "from": "sites3d/caesarea/geo.json · caesarea"
+  },
+  {
+   "id": "banias_augusteum",
+   "year": -20,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "site:banias:banias",
+   "link": "site3d.html?site=banias",
+   "title": {
+    "he": "מקדש לאוגוסטוס בפניאס",
+    "fr": "Temple d’Auguste à Panéas",
+    "en": "Temple of Augustus at Paneas",
+    "ru": "Храм Августа в Панеаде"
+   },
+   "text": {
+    "he": "הורדוס מקים מקדש לאוגוסטוס ליד מערת פאן (יוסף בן מתתיהו); מיקומו המדויק נדון.",
+    "fr": "Hérode élève un temple à Auguste près de la grotte de Pan (Josèphe) ; son emplacement exact est discuté.",
+    "en": "Herod erects a temple to Augustus near the cave of Pan (Josephus); its exact location is debated.",
+    "ru": "Ирод возводит храм Августу у пещеры Пана (Иосиф Флавий); точное место спорно."
+   },
+   "more": {
+    "he": "מעיין הבניאס הוא אחד ממקורות הירדן. במערה פעל פולחן לאל פאן מהתקופה ההלניסטית, ומכאן השם פניאס. פיליפוס בן הורדוס ייסד כאן את ״קיסריה פיליפי״.",
+    "fr": "La source de Banias est l’une des sources du Jourdain. La grotte abritait un culte du dieu Pan depuis l’époque hellénistique, d’où le nom Panéas. Philippe, fils d’Hérode, y fonda « Césarée de Philippe ».",
+    "en": "The Banias spring is one of the sources of the Jordan. The cave held a cult of the god Pan from Hellenistic times, hence the name Paneas. Herod’s son Philip founded ‘Caesarea Philippi’ here.",
+    "ru": "Источник Баниас — один из истоков Иордана. В пещере с эллинистической эпохи почитали бога Пана, отсюда имя Панеада. Сын Ирода Филипп основал здесь «Кесарию Филиппову»."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, קדמוניות 15.363",
+    "fr": "Josèphe, Antiquités 15.363",
+    "en": "Josephus, Antiquities 15.363",
+    "ru": "Иосиф Флавий, Древности 15.363"
+   },
+   "lat": 33.24861111,
+   "lon": 35.69444444,
+   "qid": "Q606295",
+   "from": "sites3d/banias/geo.json · banias"
+  },
+  {
+   "id": "machpelah_enclosure",
+   "year": -20,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "stop:06:מערת המכפלה",
+   "label": {
+    "he": "סוף המאה ה-1 לפנה״ס",
+    "fr": "fin du Ier s. av. J.-C.",
+    "en": "late 1st c. BCE",
+    "ru": "конец I в. до н. э."
+   },
+   "title": {
+    "he": "המבנה ההרודיאני מעל מערת המכפלה",
+    "fr": "L’enceinte hérodienne du caveau des Patriarches",
+    "en": "The Herodian enclosure over the Cave of the Patriarchs",
+    "ru": "Иродова ограда над Пещерой Патриархов"
+   },
+   "text": {
+    "he": "חומת אבני גזית ענקיות, המיוחסת להורדוס, עומדת עד היום.",
+    "fr": "Une enceinte de pierres de taille géantes, attribuée à Hérode, toujours debout.",
+    "en": "A wall of giant ashlars, attributed to Herod, still standing today.",
+    "ru": "Стена из огромных тёсаных камней, приписываемая Ироду, стоит до сих пор."
+   },
+   "more": {
+    "he": "לפי המסורת, אברהם קנה את המערה מעפרון החתי לקבורת שרה, ובה קבורים האבות והאמהות (מלבד רחל). המבנה ההרודיאני דומה בסגנונו לחומות הר הבית.",
+    "fr": "Selon la tradition, Abraham acheta la grotte à Éphron le Hittite pour y enterrer Sara ; les patriarches et les matriarches (sauf Rachel) y reposent. L’enceinte hérodienne ressemble par son style aux murs du mont du Temple.",
+    "en": "By tradition Abraham bought the cave from Ephron the Hittite to bury Sarah; the patriarchs and matriarchs (except Rachel) lie there. The Herodian enclosure resembles the Temple Mount walls in style.",
+    "ru": "По преданию, Авраам купил пещеру у Ефрона Хеттеянина, чтобы похоронить Сарру; там покоятся праотцы и праматери (кроме Рахели). Иродова ограда по стилю похожа на стены Храмовой горы."
+   },
+   "src": {
+    "he": "בראשית כג (מסורת); המבנה — ארכאולוגיה",
+    "fr": "Genèse 23 (tradition) ; enceinte : archéologie",
+    "en": "Genesis 23 (tradition); enclosure: archaeology",
+    "ru": "Бытие 23 (предание); ограда — археология"
+   },
+   "lat": 31.5247,
+   "lon": 35.1107,
+   "qid": "Q204200",
+   "from": "places.json · סיור 06 · מערת המכפלה"
+  },
+  {
+   "id": "herod_temple",
+   "year": -20,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=5&site=jerusalem_second_temple",
+   "label": {
+    "he": "20/19 לפנה״ס",
+    "fr": "20/19 av. J.-C.",
+    "en": "20/19 BCE",
+    "ru": "20/19 до н. э."
+   },
+   "title": {
+    "he": "הורדוס מתחיל לבנות מחדש את המקדש",
+    "fr": "Hérode commence la reconstruction du Temple",
+    "en": "Herod begins rebuilding the Temple",
+    "ru": "Ирод начинает перестройку Храма"
+   },
+   "text": {
+    "he": "הורדוס מכפיל את שטח הר הבית ובונה סביבו את החומות הענקיות — הכותל המערבי הוא אחת מהן.",
+    "fr": "Hérode double la surface du mont du Temple et l’entoure de murs géants ; le Mur occidental en est un.",
+    "en": "Herod doubles the area of the Temple Mount and surrounds it with giant walls — the Western Wall is one of them.",
+    "ru": "Ирод удваивает площадь Храмовой горы и окружает её гигантскими стенами — Западная стена одна из них."
+   },
+   "more": {
+    "he": "יוסף בן מתתיהו כותב פעם ״בשנה ה-18 למלכותו״ (קדמוניות) ופעם ״בשנה ה-15״ (מלחמת היהודים). הבנייה נמשכה עשרות שנים. ״מי שלא ראה בניין הורדוס לא ראה בניין נאה מימיו״ (בבא בתרא ד ע״א).",
+    "fr": "Josèphe dit tantôt « la 18e année de son règne » (Antiquités), tantôt « la 15e » (Guerre). Les travaux durèrent des décennies. « Qui n’a pas vu l’édifice d’Hérode n’a jamais vu de bel édifice » (Baba Batra 4a).",
+    "en": "Josephus says ‘in the 18th year of his reign’ (Antiquities) and elsewhere ‘the 15th’ (War). Work lasted decades. ‘Whoever has not seen Herod’s building has never seen a beautiful building’ (Bava Batra 4a).",
+    "ru": "Иосиф Флавий пишет то «на 18-й год царствования» (Древности), то «на 15-й» (Война). Работы шли десятилетиями. «Кто не видел здания Ирода, не видел красивого здания» (Бава Батра 4а)."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, קדמוניות 15.380; מלחמת היהודים 1.401",
+    "fr": "Josèphe, Antiquités 15.380 ; Guerre 1.401",
+    "en": "Josephus, Antiquities 15.380; War 1.401",
+    "ru": "Иосиф Флавий, Древности 15.380; Война 1.401"
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "herod_burial",
+   "year": -4,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "site:herodium:herodium",
+   "link": "site3d.html?site=herodium",
+   "label": {
+    "he": "4 לפנה״ס",
+    "fr": "4 av. J.-C.",
+    "en": "4 BCE",
+    "ru": "4 до н. э."
+   },
+   "title": {
+    "he": "קבורת הורדוס בהרודיון",
+    "fr": "Sépulture d’Hérode à l’Hérodion",
+    "en": "Herod buried at Herodium",
+    "ru": "Погребение Ирода в Иродионе"
+   },
+   "text": {
+    "he": "הורדוס נקבר בהרודיון; אהוד נצר זיהה את קברו ב-2007 (זיהוי שיש החולקים עליו).",
+    "fr": "Hérode est enterré à l’Hérodion ; Ehud Netzer a identifié sa tombe en 2007 (identification discutée).",
+    "en": "Herod is buried at Herodium; Ehud Netzer identified his tomb in 2007 (identification debated).",
+    "ru": "Ирод похоронен в Иродионе; Эхуд Нецер определил его гробницу в 2007 г. (определение спорно)."
+   },
+   "more": {
+    "he": "הורדוס בנה את ההרודיון כמבצר-ארמון וכאתר הנצחה לעצמו, במקום שבו ניצח את רודפיו ב-40 לפנה״ס. יוסף בן מתתיהו מתאר את מסע הלוויה מיריחו. נצר נפצע אנושות באתר ב-2010.",
+    "fr": "Hérode fit de l’Hérodion une forteresse-palais et son mémorial, là où il avait battu ses poursuivants en 40 av. J.-C. Josèphe décrit le cortège funèbre venu de Jéricho. Ehud Netzer est mort d’une chute sur le site en 2010.",
+    "en": "Herod made Herodium a fortress-palace and his own memorial, where he had beaten his pursuers in 40 BCE. Josephus describes the funeral procession from Jericho. Ehud Netzer died after a fall at the site in 2010.",
+    "ru": "Ирод сделал Иродион крепостью-дворцом и своим мемориалом там, где в 40 до н. э. разбил преследователей. Иосиф Флавий описывает похоронную процессию из Иерихона. Эхуд Нецер погиб, упав на раскопках, в 2010 г."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, מלחמת היהודים 1.673",
+    "fr": "Josèphe, Guerre des Juifs 1.673",
+    "en": "Josephus, Jewish War 1.673",
+    "ru": "Иосиф Флавий, Иудейская война 1.673"
+   },
+   "lat": 31.66583333,
+   "lon": 35.24138889,
+   "qid": "Q913099",
+   "from": "sites3d/herodium/geo.json · herodium"
+  },
+  {
+   "id": "crucifixion",
+   "year": 30,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "j3d:holy_sepulchre",
+   "link": "jerusalem3d.html?period=5",
+   "label": {
+    "he": "כ-30/33 לסה״נ",
+    "fr": "vers 30/33 apr. J.-C.",
+    "en": "c. 30/33 CE",
+    "ru": "ок. 30/33 н. э."
+   },
+   "title": {
+    "he": "צליבת ישו",
+    "fr": "Crucifixion de Jésus",
+    "en": "Crucifixion of Jesus",
+    "ru": "Распятие Иисуса"
+   },
+   "text": {
+    "he": "ישו נצלב בירושלים בימי הנציב פונטיוס פילטוס. המקום — גולגולתא — לפי המסורת הנוצרית, בכנסיית הקבר.",
+    "fr": "Jésus est crucifié à Jérusalem sous le préfet Ponce Pilate. Le lieu, le Golgotha, est situé par la tradition chrétienne dans le Saint-Sépulcre.",
+    "en": "Jesus is crucified in Jerusalem under the prefect Pontius Pilate. The place, Golgotha, is located by Christian tradition in the Holy Sepulchre.",
+    "ru": "Иисус распят в Иерусалиме при префекте Понтии Пилате. Место — Голгофа — христианское предание помещает в храм Гроба Господня."
+   },
+   "more": {
+    "he": "השנה המדויקת (30 או 33) נדונה. המקום היה אז מחוץ לחומה השנייה — ולכן רוב החוקרים מקבלים את המסורת כאפשרית, בלי הוכחה.",
+    "fr": "L’année exacte (30 ou 33) est discutée. Le lieu était alors hors de la deuxième muraille ; la plupart des chercheurs jugent la tradition plausible, sans preuve.",
+    "en": "The exact year (30 or 33) is debated. The site was then outside the Second Wall, so most scholars consider the tradition plausible, without proof.",
+    "ru": "Точный год (30 или 33) обсуждается. Место было тогда за второй стеной, поэтому большинство учёных считают предание правдоподобным, без доказательств."
+   },
+   "src": {
+    "he": "הבשורות; טקיטוס, דברי הימים 15.44",
+    "fr": "Évangiles ; Tacite, Annales 15.44",
+    "en": "Gospels; Tacitus, Annals 15.44",
+    "ru": "Евангелия; Тацит, Анналы 15.44"
+   },
+   "lat": 31.77844444,
+   "lon": 35.22975,
+   "qid": "Q187702",
+   "from": "jerusalem3d/geo.json · holy_sepulchre"
+  },
+  {
+   "id": "stepped_street",
+   "year": 31,
+   "circa": true,
+   "era": "herodian",
+   "kind": "fact",
+   "at": "j3d:siloam_pool",
+   "link": "jerusalem3d.html?period=5&site=jerusalem_pilgrim_road",
+   "title": {
+    "he": "רחוב המדרגות מהשילוח להר הבית",
+    "fr": "La rue à degrés de Siloé au mont du Temple",
+    "en": "The stepped street from Siloam to the Temple Mount",
+    "ru": "Ступенчатая улица от Силоама к Храмовой горе"
+   },
+   "text": {
+    "he": "לפי המטבעות נסלל כ-31 לסה״נ, בימי פונטיוס פילטוס; היו שייחסו אותו לאגריפס השני.",
+    "fr": "D’après les monnaies, pavée vers 31 apr. J.-C., sous Ponce Pilate ; d’autres l’ont attribuée à Agrippa II.",
+    "en": "Coins date its paving to c. 31 CE, under Pontius Pilate; others attributed it to Agrippa II.",
+    "ru": "По монетам вымощена ок. 31 г. н. э., при Понтии Пилате; другие приписывали её Агриппе II."
+   },
+   "more": {
+    "he": "הרחוב, ברוחב כ-8 מטרים ובאורך כ-600 מטר, הוביל עולי רגל מבריכת השילוח עד שערי הר הבית. מתחתיו עובר תעלת ניקוז, שבה מצאו כלי בישול שלמים — עדות לאנשים שהתחבאו שם ב-70 לסה״נ.",
+    "fr": "La rue, large d’environ 8 m et longue d’environ 600 m, menait les pèlerins du bassin de Siloé aux portes du mont du Temple. Dessous passe un canal de drainage où l’on a trouvé des marmites intactes : traces de gens cachés là en 70.",
+    "en": "About 8 m wide and 600 m long, the street led pilgrims from the Siloam Pool to the Temple Mount gates. Beneath it runs a drainage channel where intact cooking pots were found — traces of people hiding there in 70 CE.",
+    "ru": "Улица шириной около 8 м и длиной около 600 м вела паломников от Силоамской купели к воротам Храмовой горы. Под ней проходит дренажный канал с целыми горшками — следы людей, прятавшихся там в 70 г."
+   },
+   "src": {
+    "he": "שנטון, הגבי, עוזיאל, אריאל, Tel Aviv 46 (2019)",
+    "fr": "Szanton, Hagbi, Uziel, Ariel, Tel Aviv 46 (2019)",
+    "en": "Szanton, Hagbi, Uziel, Ariel, Tel Aviv 46 (2019)",
+    "ru": "Сантон, Хагби, Узиэль, Ариэль, Tel Aviv 46 (2019)"
+   },
+   "lat": 31.77055556,
+   "lon": 35.235,
+   "qid": "Q1483483",
+   "from": "jerusalem3d/geo.json · siloam_pool"
+  },
+  {
+   "id": "gamla_falls",
+   "year": 67,
+   "era": "roman",
+   "kind": "fact",
+   "at": "site:gamla:gamla",
+   "link": "site3d.html?site=gamla",
+   "title": {
+    "he": "נפילת גמלא",
+    "fr": "Chute de Gamla",
+    "en": "Fall of Gamla",
+    "ru": "Падение Гамлы"
+   },
+   "text": {
+    "he": "הרומאים כובשים את גמלא בתחילת המרד הגדול (יוסף בן מתתיהו).",
+    "fr": "Les Romains prennent Gamla au début de la Grande Révolte (Josèphe).",
+    "en": "The Romans take Gamla early in the Great Revolt (Josephus).",
+    "ru": "Римляне берут Гамлу в начале Великого восстания (Иосиф Флавий)."
+   },
+   "more": {
+    "he": "גמלא, על רכס דמוי גב גמל ברמת הגולן, נכבשה אחרי מצור בידי אספסיאנוס. יוסף בן מתתיהו מספר שרבים מהנצורים קפצו אל התהום. בעיר נמצא אחד מבתי הכנסת העתיקים בארץ, מימי בית שני.",
+    "fr": "Gamla, sur une crête en forme de bosse de chameau dans le Golan, tombe après un siège mené par Vespasien. Josèphe raconte que beaucoup d’assiégés se jetèrent dans le ravin. La ville a l’une des plus anciennes synagogues du pays, de l’époque du Second Temple.",
+    "en": "Gamla, on a camel-hump ridge in the Golan, falls after a siege led by Vespasian. Josephus says many of the besieged leapt into the ravine. The town has one of the oldest synagogues in the land, from the Second Temple period.",
+    "ru": "Гамла на хребте в форме верблюжьего горба на Голанах пала после осады Веспасиана. Иосиф Флавий пишет, что многие осаждённые бросились в пропасть. Здесь одна из древнейших синагог страны, эпохи Второго Храма."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, מלחמת היהודים 4.1–83",
+    "fr": "Josèphe, Guerre des Juifs 4.1–83",
+    "en": "Josephus, Jewish War 4.1–83",
+    "ru": "Иосиф Флавий, Иудейская война 4.1–83"
+   },
+   "battle": true,
+   "lat": 32.90277778,
+   "lon": 35.74055556,
+   "qid": "Q1493165",
+   "from": "sites3d/gamla/geo.json · gamla"
+  },
+  {
+   "id": "second_temple_destroyed",
+   "year": 70,
+   "era": "roman",
+   "kind": "fact",
+   "at": "j3d:burnt_house",
+   "link": "jerusalem3d.html?period=5&site=jerusalem_burnt_house",
+   "title": {
+    "he": "חורבן בית שני",
+    "fr": "Destruction du Second Temple",
+    "en": "Destruction of the Second Temple",
+    "ru": "Разрушение Второго Храма"
+   },
+   "text": {
+    "he": "טיטוס כובש את ירושלים; ״הבית השרוף״ ברובע היהודי נשרף באותה שנה.",
+    "fr": "Titus prend Jérusalem ; la « Maison brûlée » du quartier juif brûle cette année-là.",
+    "en": "Titus takes Jerusalem; the “Burnt House” in the Jewish Quarter burns that year.",
+    "ru": "Тит берёт Иерусалим; «Сожжённый дом» в Еврейском квартале сгорает в тот же год."
+   },
+   "more": {
+    "he": "המקדש נשרף בט׳ באב (לפי המסורת). ברובע היהודי נמצאו ב״בית השרוף״ שכבת אפר, זרוע של אישה צעירה וכלי בית — עדות ישירה ליום החורבן. שער טיטוס ברומא מציג את שלל המקדש, כולל המנורה.",
+    "fr": "Le Temple brûle le 9 Av (selon la tradition). Dans la « Maison brûlée » du quartier juif : une couche de cendres, le bras d’une jeune femme et des objets domestiques, témoins directs de ce jour. L’arc de Titus à Rome montre le butin du Temple, dont la menorah.",
+    "en": "The Temple burns on the 9th of Av (by tradition). In the ‘Burnt House’ in the Jewish Quarter: an ash layer, a young woman’s arm and household objects, direct witnesses of that day. The Arch of Titus in Rome shows the Temple spoils, including the menorah.",
+    "ru": "Храм сгорел 9 ава (по преданию). В «Сожжённом доме» — слой пепла, рука молодой женщины и утварь, прямые свидетели того дня. Арка Тита в Риме изображает добычу из Храма, в том числе менору."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, מלחמת היהודים 6",
+    "fr": "Josèphe, Guerre des Juifs 6",
+    "en": "Josephus, Jewish War 6",
+    "ru": "Иосиф Флавий, Иудейская война 6"
+   },
+   "battle": true,
+   "lat": 31.77557,
+   "lon": 35.23259,
+   "qid": "Q4854786",
+   "from": "jerusalem3d/geo.json · burnt_house"
+  },
+  {
+   "id": "masada_falls",
+   "year": 73,
+   "era": "roman",
+   "kind": "fact",
+   "at": "site:masada:masada",
+   "link": "site3d.html?site=masada",
+   "label": {
+    "he": "73 או 74 לסה״נ",
+    "fr": "73 ou 74 apr. J.-C.",
+    "en": "73 or 74 CE",
+    "ru": "73 или 74 н. э."
+   },
+   "title": {
+    "he": "נפילת מצדה",
+    "fr": "Chute de Massada",
+    "en": "Fall of Masada",
+    "ru": "Падение Масады"
+   },
+   "text": {
+    "he": "הלגיון העשירי בונה סוללה ומבקיע את החומה; לפי יוסף בן מתתיהו המגינים בחרו למות.",
+    "fr": "La Xe légion construit une rampe et perce la muraille ; selon Josèphe, les défenseurs choisirent la mort.",
+    "en": "The Tenth Legion builds a ramp and breaches the wall; according to Josephus the defenders chose death.",
+    "ru": "Десятый легион строит насыпь и проламывает стену; по Иосифу Флавию, защитники избрали смерть."
+   },
+   "more": {
+    "he": "הורדוס בנה במצדה ארמונות ומחסנים; בתחילת המרד תפסו אותה הסיקריים בהנהגת אלעזר בן יאיר. הסוללה הרומית ומחנות המצור נראים עד היום. נאום אלעזר והמוות ההמוני ידועים רק מיוסף בן מתתיהו, וחוקרים דנים במהימנות התיאור.",
+    "fr": "Hérode y avait bâti palais et entrepôts ; au début de la révolte, les sicaires d’Éléazar ben Yaïr s’en emparent. La rampe romaine et les camps de siège se voient encore. Le discours d’Éléazar et le suicide collectif ne sont connus que par Josèphe, dont la fiabilité est discutée.",
+    "en": "Herod had built palaces and storerooms; at the start of the revolt the Sicarii under Eleazar ben Yair seized it. The Roman ramp and siege camps are still visible. Eleazar’s speech and the mass death are known only from Josephus, whose reliability is debated.",
+    "ru": "Ирод построил там дворцы и склады; в начале восстания её захватили сикарии во главе с Элазаром бен Яиром. Римская насыпь и осадные лагеря видны до сих пор. Речь Элазара и массовая гибель известны только от Иосифа Флавия, чья достоверность обсуждается."
+   },
+   "src": {
+    "he": "יוסף בן מתתיהו, מלחמת היהודים 7.252–406",
+    "fr": "Josèphe, Guerre des Juifs 7.252–406",
+    "en": "Josephus, Jewish War 7.252–406",
+    "ru": "Иосиф Флавий, Иудейская война 7.252–406"
+   },
+   "battle": true,
+   "lat": 31.31555556,
+   "lon": 35.35388889,
+   "qid": "Q186312",
+   "from": "sites3d/masada/geo.json · masada"
+  },
+  {
+   "id": "bar_kokhba",
+   "year": 132,
+   "era": "roman",
+   "kind": "fact",
+   "at": "site:herodium:herodium",
+   "link": "site3d.html?site=herodium",
+   "label": {
+    "he": "132–135 לסה״נ",
+    "fr": "132–135 apr. J.-C.",
+    "en": "132–135 CE",
+    "ru": "132–135 н. э."
+   },
+   "title": {
+    "he": "מרד בר כוכבא",
+    "fr": "Révolte de Bar Kokhba",
+    "en": "Bar Kokhba revolt",
+    "ru": "Восстание Бар-Кохбы"
+   },
+   "text": {
+    "he": "ההרודיון משמש מוצב של המורדים; במקום נחפרו מנהרות מסתור.",
+    "fr": "L’Hérodion sert de base aux rebelles ; des galeries-refuges y ont été creusées.",
+    "en": "Herodium serves as a rebel base; hiding tunnels were dug there.",
+    "ru": "Иродион служит базой повстанцев; там вырыты тоннели-убежища."
+   },
+   "more": {
+    "he": "שמעון בר כוסבא הנהיג מרד נגד אדריאנוס; אגרותיו נמצאו במערות מדבר יהודה. בסוף המרד נפלה ביתר, יהודה נהרסה וירושלים נעשתה לאיליה קפיטולינה.",
+    "fr": "Simon bar Kosiba mène la révolte contre Hadrien ; ses lettres ont été trouvées dans les grottes du désert de Judée. À la fin, Béthar tombe, la Judée est ravagée et Jérusalem devient Aelia Capitolina.",
+    "en": "Simon bar Kosiba leads the revolt against Hadrian; his letters were found in the Judean Desert caves. At the end Betar falls, Judea is devastated and Jerusalem becomes Aelia Capitolina.",
+    "ru": "Шимон бар Косиба поднимает восстание против Адриана; его письма найдены в пещерах Иудейской пустыни. В конце пал Бейтар, Иудея опустошена, Иерусалим стал Элией Капитолиной."
+   },
+   "src": {
+    "he": "קסיוס דיו 69; אגרות בר כוכבא",
+    "fr": "Dion Cassius 69 ; lettres de Bar Kokhba",
+    "en": "Cassius Dio 69; Bar Kokhba letters",
+    "ru": "Дион Кассий 69; письма Бар-Кохбы"
+   },
+   "battle": true,
+   "lat": 31.66583333,
+   "lon": 35.24138889,
+   "qid": "Q913099",
+   "from": "sites3d/herodium/geo.json · herodium"
+  },
+  {
+   "id": "meron_rashbi",
+   "year": 160,
+   "circa": true,
+   "era": "roman",
+   "kind": "tradition",
+   "at": "stop:22:מירון",
+   "label": {
+    "he": "המאה ה-2 (מסורת)",
+    "fr": "IIe s. (tradition)",
+    "en": "2nd c. (tradition)",
+    "ru": "II в. (предание)"
+   },
+   "title": {
+    "he": "קבר רבי שמעון בר יוחאי במירון",
+    "fr": "Tombe de Rabbi Shimon bar Yohaï à Méron",
+    "en": "Tomb of Rabbi Shimon bar Yochai at Meron",
+    "ru": "Гробница рабби Шимона бар Йохая в Мероне"
+   },
+   "text": {
+    "he": "לפי המסורת נקבר במירון רשב״י, תלמידו של רבי עקיבא, שהמסורת מייחסת לו את ספר הזוהר. בל״ג בעומר עולים לקברו מאות אלפים.",
+    "fr": "Selon la tradition, Rabbi Shimon bar Yohaï, disciple de Rabbi Akiva, à qui la tradition attribue le Zohar, est enterré à Méron. À Lag BaOmer, des centaines de milliers de personnes s’y rendent.",
+    "en": "By tradition Rabbi Shimon bar Yochai, a disciple of Rabbi Akiva to whom tradition attributes the Zohar, is buried at Meron. On Lag BaOmer hundreds of thousands visit his tomb.",
+    "ru": "По преданию, в Мероне похоронен рабби Шимон бар Йохай, ученик рабби Акивы, которому предание приписывает «Зоар». В Лаг ба-Омер к гробнице приходят сотни тысяч."
+   },
+   "more": {
+    "he": "מקום הקבר מסורתי. חוקרים מתארכים את כתיבת הזוהר לספרד של המאה ה-13 (משה די ליאון). במירון עומדות שרידי בית כנסת עתיק.",
+    "fr": "L’emplacement est traditionnel. Les chercheurs datent la rédaction du Zohar de l’Espagne du XIIIe siècle (Moïse de León). Méron conserve les restes d’une synagogue antique.",
+    "en": "The location is traditional. Scholars date the writing of the Zohar to 13th-century Spain (Moses de León). Meron has the remains of an ancient synagogue.",
+    "ru": "Место гробницы традиционное. Исследователи датируют «Зоар» Испанией XIII века (Моше де Леон). В Мероне сохранились остатки древней синагоги."
+   },
+   "src": {
+    "he": "מסורת; סיור 22",
+    "fr": "Tradition ; sortie 22",
+    "en": "Tradition; tour 22",
+    "ru": "Предание; экскурсия 22"
+   },
+   "lat": 32.98194,
+   "lon": 35.44028,
+   "qid": "Q600912",
+   "from": "places.json · סיור 22 · מירון"
+  },
+  {
+   "id": "mishnah",
+   "year": 200,
+   "circa": true,
+   "era": "roman",
+   "kind": "fact",
+   "at": "stop:16:ציפורי",
+   "link": "site3d.html?site=tzippori",
+   "title": {
+    "he": "חתימת המשנה",
+    "fr": "Rédaction de la Mishna",
+    "en": "Redaction of the Mishnah",
+    "ru": "Составление Мишны"
+   },
+   "text": {
+    "he": "רבי יהודה הנשיא, שישב בציפורי, חותם את המשנה.",
+    "fr": "Rabbi Judah ha-Nassi, qui siégeait à Tsippori, met la Mishna par écrit.",
+    "en": "Rabbi Judah ha-Nasi, based at Sepphoris, compiles the Mishnah.",
+    "ru": "Рабби Иегуда ха-Наси, живший в Ципори, составляет Мишну."
+   },
+   "more": {
+    "he": "אחרי מרד בר כוכבא עבר מרכז החיים היהודיים לגליל. רבי יהודה הנשיא ערך וחתם את המשנה — ששה סדרים — יסוד התלמוד. בציפורי נמצאו פסיפסים מפורסמים, כמו ״המונה ליזה של הגליל״.",
+    "fr": "Après Bar Kokhba, le centre de la vie juive passe en Galilée. Rabbi Judah ha-Nassi rédige la Mishna — six ordres —, base du Talmud. Tsippori a livré des mosaïques célèbres, comme la « Mona Lisa de Galilée ».",
+    "en": "After Bar Kokhba the centre of Jewish life moves to Galilee. Rabbi Judah ha-Nasi edits the Mishnah — six orders —, the basis of the Talmud. Sepphoris has famous mosaics, such as the ‘Mona Lisa of the Galilee’.",
+    "ru": "После Бар-Кохбы центр еврейской жизни переходит в Галилею. Рабби Иегуда ха-Наси редактирует Мишну — шесть разделов, основу Талмуда. В Ципори найдены знаменитые мозаики, например «Мона Лиза Галилеи»."
+   },
+   "src": {
+    "he": "תלמוד בבלי, כתובות קג",
+    "fr": "Talmud de Babylone, Ketoubot 103",
+    "en": "Babylonian Talmud, Ketubot 103",
+    "ru": "Вавилонский Талмуд, Ктубот 103"
+   },
+   "lat": 32.74556,
+   "lon": 35.27861,
+   "qid": "Q1132798",
+   "from": "places.json · סיור 16 · ציפורי"
+  },
+  {
+   "id": "eleutheropolis",
+   "year": 200,
+   "era": "roman",
+   "kind": "fact",
+   "at": "stop:05:בית גוברין",
+   "link": "site3d.html?site=beitguvrin",
+   "title": {
+    "he": "בית גוברין נעשית לאלאותרופוליס",
+    "fr": "Beit Guvrin devient Éleuthéropolis",
+    "en": "Beit Guvrin becomes Eleutheropolis",
+    "ru": "Бейт-Гуврин становится Елевферополем"
+   },
+   "text": {
+    "he": "הקיסר ספטימיוס סוורוס מעניק לעיר מעמד של עיר רומית.",
+    "fr": "L’empereur Septime Sévère lui donne le statut de cité romaine.",
+    "en": "Emperor Septimius Severus grants it the status of a Roman city.",
+    "ru": "Император Септимий Север даёт ему статус римского города."
+   },
+   "more": {
+    "he": "השם פירושו ״עיר בני החורין״. העיר הרומית קמה ליד מרשה ההלניסטית, ובה אמפיתאטרון; מערות הפעמון שבסביבה נחצבו מאוחר יותר.",
+    "fr": "Le nom signifie « ville des hommes libres ». La cité romaine naît près de la Marésha hellénistique, avec un amphithéâtre ; les grottes en cloche des environs ont été creusées plus tard.",
+    "en": "The name means ‘city of the free’. The Roman city grows near Hellenistic Maresha, with an amphitheatre; the bell caves nearby were cut later.",
+    "ru": "Название означает «город свободных». Римский город вырос рядом с эллинистической Марешей, с амфитеатром; колоколообразные пещеры вокруг высечены позже."
+   },
+   "src": {
+    "he": "מטבעות העיר; כתובות",
+    "fr": "Monnaies de la ville ; inscriptions",
+    "en": "City coins; inscriptions",
+    "ru": "Монеты города; надписи"
+   },
+   "lat": 31.59696,
+   "lon": 34.90065,
+   "qid": "Q2407530",
+   "from": "places.json · סיור 05 · בית גוברין"
+  },
+  {
+   "id": "beit_shearim",
+   "year": 220,
+   "circa": true,
+   "era": "roman",
+   "kind": "fact",
+   "at": "stop:16:בית שערים",
+   "link": "site3d.html?site=beitshearim",
+   "label": {
+    "he": "תחילת המאה ה-3",
+    "fr": "début du IIIe s.",
+    "en": "early 3rd c.",
+    "ru": "начало III в."
+   },
+   "title": {
+    "he": "קבורת רבי יהודה הנשיא בבית שערים",
+    "fr": "Rabbi Judah ha-Nassi enterré à Beit She’arim",
+    "en": "Rabbi Judah ha-Nasi buried at Beit She’arim",
+    "ru": "Погребение рабби Иегуды ха-Наси в Бейт-Шеарим"
+   },
+   "text": {
+    "he": "לפי התלמוד נקבר רבי בבית שערים, והעיר נעשתה בית העלמין החשוב של יהודי הארץ והתפוצות.",
+    "fr": "Selon le Talmud, Rabbi fut enterré à Beit She’arim, qui devint la grande nécropole des Juifs du pays et de la diaspora.",
+    "en": "According to the Talmud, Rabbi was buried at Beit She’arim, which became the great necropolis of the Jews of the land and the diaspora.",
+    "ru": "По Талмуду, Рабби похоронен в Бейт-Шеарим, ставшем главным некрополем евреев страны и диаспоры."
+   },
+   "more": {
+    "he": "מערות הקבורה, עם ארונות אבן וכתובות בעברית, ארמית ויוונית, הוכרזו כאתר מורשת עולמית (2015). יש המזהים את מערה 14 עם קבר משפחת הנשיא — זיהוי סביר אך לא ודאי.",
+    "fr": "Les catacombes, avec sarcophages et inscriptions en hébreu, araméen et grec, sont au patrimoine mondial (2015). Certains identifient la catacombe 14 au tombeau de la famille du Patriarche : plausible, pas certain.",
+    "en": "The catacombs, with sarcophagi and inscriptions in Hebrew, Aramaic and Greek, are a World Heritage site (2015). Some identify Catacomb 14 as the tomb of the Patriarch’s family — plausible, not certain.",
+    "ru": "Катакомбы с саркофагами и надписями на иврите, арамейском и греческом — объект Всемирного наследия (2015). Катакомбу 14 связывают с семьёй Патриарха — правдоподобно, но не точно."
+   },
+   "src": {
+    "he": "תלמוד בבלי, כתובות קג ע״ב",
+    "fr": "Talmud de Babylone, Ketoubot 103b",
+    "en": "Babylonian Talmud, Ketubot 103b",
+    "ru": "Вавилонский Талмуд, Ктубот 103б"
+   },
+   "lat": 32.70222,
+   "lon": 35.12694,
+   "qid": "Q830805",
+   "from": "places.json · סיור 16 · בית שערים"
+  },
+  {
+   "id": "holy_sepulchre",
+   "year": 335,
+   "era": "byzantine",
+   "kind": "fact",
+   "at": "j3d:holy_sepulchre",
+   "link": "jerusalem3d.html?period=7&site=jerusalem_holy_sepulchre",
+   "title": {
+    "he": "חנוכת כנסיית הקבר",
+    "fr": "Consécration du Saint-Sépulcre",
+    "en": "Consecration of the Holy Sepulchre",
+    "ru": "Освящение храма Гроба Господня"
+   },
+   "text": {
+    "he": "הכנסייה שבנה הקיסר קונסטנטינוס נחנכת.",
+    "fr": "L’église bâtie par l’empereur Constantin est consacrée.",
+    "en": "The church built by Emperor Constantine is consecrated.",
+    "ru": "Освящена церковь, построенная императором Константином."
+   },
+   "more": {
+    "he": "קונסטנטינוס ואמו הלני בנו את הכנסייה במקום שהמסורת הנוצרית מזהה כגולגולתא וכקבר ישו, על חורבות מקדש רומי של אדריאנוס. מעליה ״מערת הקבר״ ותחת אותו גג חולקים היום כמה זרמים נוצריים.",
+    "fr": "Constantin et sa mère Hélène bâtissent l’église sur le lieu que la tradition chrétienne identifie au Golgotha et au tombeau de Jésus, à la place d’un temple romain d’Hadrien. Plusieurs Églises se partagent aujourd’hui le même toit.",
+    "en": "Constantine and his mother Helena build the church on the site Christian tradition identifies as Golgotha and Jesus’ tomb, replacing a Roman temple of Hadrian. Several churches share the same roof today.",
+    "ru": "Константин и его мать Елена строят церковь там, где христианское предание видит Голгофу и гроб Иисуса, на месте римского храма Адриана. Сегодня под одной крышей несколько церквей."
+   },
+   "src": {
+    "he": "אאוסביוס, חיי קונסטנטינוס 3",
+    "fr": "Eusèbe, Vie de Constantin 3",
+    "en": "Eusebius, Life of Constantine 3",
+    "ru": "Евсевий, Жизнь Константина 3"
+   },
+   "lat": 31.77844444,
+   "lon": 35.22975,
+   "qid": "Q187702",
+   "from": "jerusalem3d/geo.json · holy_sepulchre"
+  },
+  {
+   "id": "beit_alpha",
+   "year": 525,
+   "circa": true,
+   "era": "byzantine",
+   "kind": "fact",
+   "at": "stop:04:בית אלפא",
+   "link": "site3d.html?site=beitalpha",
+   "label": {
+    "he": "המאה ה-6",
+    "fr": "VIe siècle",
+    "en": "6th century",
+    "ru": "VI век"
+   },
+   "title": {
+    "he": "פסיפס בית הכנסת בבית אלפא",
+    "fr": "La mosaïque de la synagogue de Beit Alpha",
+    "en": "The Beit Alpha synagogue mosaic",
+    "ru": "Мозаика синагоги Бейт-Альфа"
+   },
+   "text": {
+    "he": "עקדת יצחק, גלגל המזלות וארון הקודש; הכתובת מזכירה את הקיסר יוסטינוס.",
+    "fr": "Sacrifice d’Isaac, zodiaque et arche sainte ; l’inscription mentionne l’empereur Justin.",
+    "en": "Binding of Isaac, zodiac and Torah shrine; the inscription names Emperor Justin.",
+    "ru": "Жертвоприношение Исаака, зодиак и ковчег; надпись называет императора Юстина."
+   },
+   "more": {
+    "he": "הפסיפס נחשף ב-1929 בידי חברי קיבוץ חפציבה ואלעזר ליפא סוקניק. האמנים, מרינוס וחנינא בנו, חתמו עליו. השילוב של הליוס וגלגל המזלות בבית כנסת מעורר עד היום דיון.",
+    "fr": "La mosaïque fut découverte en 1929 par des membres du kibboutz Heftsiba et Eleazar Sukenik. Les artistes, Marianos et son fils Hanina, l’ont signée. Hélios et le zodiaque dans une synagogue font encore débat.",
+    "en": "The mosaic was found in 1929 by members of Kibbutz Heftziba and Eleazar Sukenik. The artists, Marianos and his son Hanina, signed it. Helios and the zodiac in a synagogue are still debated.",
+    "ru": "Мозаику нашли в 1929 г. члены кибуца Хефциба и Элиэзер Сукеник. Художники Марианос и его сын Ханина подписали её. Гелиос и зодиак в синагоге обсуждаются до сих пор."
+   },
+   "src": {
+    "he": "כתובות הפסיפס; סוקניק 1932",
+    "fr": "Inscriptions de la mosaïque ; Sukenik 1932",
+    "en": "Mosaic inscriptions; Sukenik 1932",
+    "ru": "Надписи мозаики; Сукеник 1932"
+   },
+   "lat": 32.51611,
+   "lon": 35.43028,
+   "qid": "Q2900562",
+   "from": "places.json · סיור 04 · בית אלפא"
+  },
+  {
+   "id": "persian_614",
+   "year": 614,
+   "era": "byzantine",
+   "kind": "fact",
+   "battle": true,
+   "at": "j3d:holy_sepulchre",
+   "link": "jerusalem3d.html?period=7",
+   "title": {
+    "he": "הכיבוש הפרסי של ירושלים",
+    "fr": "Conquête perse de Jérusalem",
+    "en": "Persian conquest of Jerusalem",
+    "ru": "Персидское завоевание Иерусалима"
+   },
+   "text": {
+    "he": "צבא כוסרו השני כבש את ירושלים; כנסיות נשרפו, וה״צלב האמיתי״ נלקח לפרס.",
+    "fr": "L’armée de Khosro II prend Jérusalem ; des églises brûlent et la « Vraie Croix » est emportée en Perse.",
+    "en": "Khosrow II’s army takes Jerusalem; churches burn and the ‘True Cross’ is carried off to Persia.",
+    "ru": "Войско Хосрова II берёт Иерусалим; церкви сожжены, «Животворящий Крест» увезён в Персию."
+   },
+   "more": {
+    "he": "יהודים רבים תמכו בפרסים, וזכו לשלטון קצר בעיר. הקיסר הרקליוס החזיר את העיר ב-629/630.",
+    "fr": "Beaucoup de Juifs soutinrent les Perses et obtinrent brièvement le contrôle de la ville. L’empereur Héraclius la reprit en 629/630.",
+    "en": "Many Jews supported the Persians and briefly gained control of the city. Emperor Heraclius retook it in 629/630.",
+    "ru": "Многие евреи поддержали персов и ненадолго получили власть в городе. Император Ираклий вернул его в 629/630 г."
+   },
+   "src": {
+    "he": "אנטיוכוס סטרטגוס; כרוניקות ביזנטיות",
+    "fr": "Antiochus Strategos ; chroniques byzantines",
+    "en": "Antiochus Strategos; Byzantine chronicles",
+    "ru": "Антиох Стратиг; византийские хроники"
+   },
+   "lat": 31.77844444,
+   "lon": 35.22975,
+   "qid": "Q187702",
+   "from": "jerusalem3d/geo.json · holy_sepulchre"
+  },
+  {
+   "id": "umar_638",
+   "year": 638,
+   "era": "early_islamic",
+   "kind": "fact",
+   "battle": true,
+   "at": "j3d:temple_mount",
+   "link": "jerusalem3d.html?period=8",
+   "label": {
+    "he": "637/638",
+    "fr": "637/638",
+    "en": "637/638",
+    "ru": "637/638"
+   },
+   "title": {
+    "he": "הכיבוש המוסלמי — הח׳ליף עומר בירושלים",
+    "fr": "Conquête musulmane — le calife Omar à Jérusalem",
+    "en": "Muslim conquest — Caliph Umar in Jerusalem",
+    "ru": "Мусульманское завоевание — халиф Умар в Иерусалиме"
+   },
+   "text": {
+    "he": "אחרי מצור נכנעה העיר, והח׳ליף עומר הגיע לקבל את כניעתה מידי הפטריארך סופרוניוס.",
+    "fr": "Après un siège, la ville se rend ; le calife Omar vient recevoir sa reddition du patriarche Sophrone.",
+    "en": "After a siege the city surrenders; Caliph Umar comes to receive its surrender from Patriarch Sophronius.",
+    "ru": "После осады город сдаётся; халиф Умар принимает капитуляцию от патриарха Софрония."
+   },
+   "more": {
+    "he": "לפי המקורות הותר ליהודים לשוב לגור בירושלים. הר הבית, שהיה הרוס, נעשה מקום תפילה מוסלמי.",
+    "fr": "Selon les sources, les Juifs furent autorisés à revenir habiter Jérusalem. Le mont du Temple, en ruine, devint un lieu de prière musulman.",
+    "en": "According to the sources, Jews were allowed to live in Jerusalem again. The ruined Temple Mount became a Muslim place of prayer.",
+    "ru": "По источникам, евреям разрешили вновь жить в Иерусалиме. Разрушенная Храмовая гора стала местом мусульманской молитвы."
+   },
+   "src": {
+    "he": "כרוניקות ערביות וביזנטיות",
+    "fr": "Chroniques arabes et byzantines",
+    "en": "Arabic and Byzantine chronicles",
+    "ru": "Арабские и византийские хроники"
+   },
+   "lat": 31.77861111,
+   "lon": 35.23472222,
+   "qid": "Q193163",
+   "from": "jerusalem3d/geo.json · temple_mount"
+  },
+  {
+   "id": "dome_of_the_rock",
+   "year": 691,
+   "era": "early_islamic",
+   "kind": "fact",
+   "at": "j3d:dome_of_the_rock",
+   "link": "jerusalem3d.html?period=8&site=jerusalem_dome_of_the_rock",
+   "label": {
+    "he": "691/692",
+    "fr": "691/692",
+    "en": "691/692",
+    "ru": "691/692"
+   },
+   "title": {
+    "he": "השלמת כיפת הסלע",
+    "fr": "Achèvement du Dôme du Rocher",
+    "en": "Dome of the Rock completed",
+    "ru": "Завершение Купола Скалы"
+   },
+   "text": {
+    "he": "הח׳ליף עבד אל-מלכ משלים את המבנה על הר הבית.",
+    "fr": "Le calife Abd al-Malik achève l’édifice sur le mont du Temple.",
+    "en": "Caliph Abd al-Malik completes the building on the Temple Mount.",
+    "ru": "Халиф Абд аль-Малик завершает здание на Храмовой горе."
+   },
+   "more": {
+    "he": "המבנה המתומן נבנה מעל ״אבן השתייה״, שבמסורת היהודית קשורה למקדש ובמסורת המוסלמית למסע הלילה של מוחמד. כתובת ההקדשה בפסיפס מציינת את שנת 72 להג׳רה. הכיפה צופתה בזהב רק במאה ה-20.",
+    "fr": "L’édifice octogonal couvre le « Rocher de la fondation », lié au Temple dans la tradition juive et au voyage nocturne de Mahomet dans la tradition musulmane. L’inscription de dédicace donne l’an 72 de l’Hégire. La coupole n’a été dorée qu’au XXe siècle.",
+    "en": "The octagon covers the ‘Foundation Stone’, linked to the Temple in Jewish tradition and to Muhammad’s night journey in Muslim tradition. The dedication inscription gives year 72 of the Hijra. The dome was only gilded in the 20th century.",
+    "ru": "Восьмиугольник стоит над «Камнем основания», связанным с Храмом в еврейской традиции и с ночным путешествием Мухаммада в мусульманской. Посвятительная надпись указывает 72 год хиджры. Купол позолочен лишь в XX веке."
+   },
+   "src": {
+    "he": "כתובת ההקדשה בכיפת הסלע",
+    "fr": "Inscription de dédicace du Dôme",
+    "en": "Dedication inscription of the Dome",
+    "ru": "Посвятительная надпись Купола"
+   },
+   "lat": 31.77805556,
+   "lon": 35.23527778,
+   "qid": "Q172077",
+   "from": "jerusalem3d/geo.json · dome_of_the_rock"
+  },
+  {
+   "id": "earthquake_749",
+   "year": 749,
+   "era": "early_islamic",
+   "kind": "fact",
+   "at": "site:beitshean:tel",
+   "link": "site3d.html?site=beitshean",
+   "title": {
+    "he": "רעידת האדמה של 749",
+    "fr": "Le tremblement de terre de 749",
+    "en": "The earthquake of 749",
+    "ru": "Землетрясение 749 года"
+   },
+   "text": {
+    "he": "בית שאן נהרסת; גם בית הכנסת בעין קשתות קרס ברעידה.",
+    "fr": "Beit Shean est détruite ; la synagogue d’Ein Keshatot s’effondre aussi.",
+    "en": "Beit She’an is destroyed; the Ein Keshatot synagogue also collapses.",
+    "ru": "Бейт-Шеан разрушен; рушится и синагога в Эйн-Кешатот."
+   },
+   "more": {
+    "he": "הרעידה, כנראה בינואר 749, הפילה את עמודי בית שאן שנראים עד היום שוכבים ברחוב. במקורות היהודיים היא נקראת ״רעש שביעית״ כי הייתה בשנת שמיטה.",
+    "fr": "Le séisme, sans doute en janvier 749, renverse les colonnes de Beit Shean, encore couchées dans la rue. Les sources juives l’appellent « séisme de la septième année » (année sabbatique).",
+    "en": "The quake, probably in January 749, toppled the columns of Beit She’an, still lying in the street. Jewish sources call it the ‘earthquake of the Sabbatical year’.",
+    "ru": "Землетрясение, вероятно в январе 749 г., повалило колонны Бейт-Шеана, до сих пор лежащие на улице. Еврейские источники называют его «землетрясением седьмого года» (субботнего)."
+   },
+   "src": {
+    "he": "ארכאולוגיה של בית שאן; מקורות סוריים",
+    "fr": "Archéologie de Beit Shean ; sources syriaques",
+    "en": "Beit She’an archaeology; Syriac sources",
+    "ru": "Археология Бейт-Шеана; сирийские источники"
+   },
+   "lat": 32.50184061,
+   "lon": 35.50156426,
+   "qid": "Q16558174",
+   "from": "sites3d/beitshean/geo.json · tel"
+  },
+  {
+   "id": "crusaders_jerusalem",
+   "year": 1099,
+   "era": "crusader",
+   "kind": "fact",
+   "at": "j3d:herods_gate",
+   "link": "jerusalem3d.html?period=9",
+   "title": {
+    "he": "הצלבנים כובשים את ירושלים",
+    "fr": "Les croisés prennent Jérusalem",
+    "en": "The Crusaders take Jerusalem",
+    "ru": "Крестоносцы берут Иерусалим"
+   },
+   "text": {
+    "he": "15 ביולי 1099; החומה נפרצה בצפון, באזור שער הפרחים של היום.",
+    "fr": "15 juillet 1099 ; la muraille est percée au nord, vers l’actuelle porte d’Hérode.",
+    "en": "15 July 1099; the wall is breached in the north, near today’s Herod’s Gate.",
+    "ru": "15 июля 1099 г.; стена прорвана на севере, у нынешних Ворот Ирода."
+   },
+   "more": {
+    "he": "אחרי מצור של כחמישה שבועות נכנסו הצלבנים לעיר וטבחו רבים מתושביה, מוסלמים ויהודים. ירושלים נעשתה בירת ממלכת ירושלים הצלבנית, וכיפת הסלע הוסבה לכנסייה.",
+    "fr": "Après environ cinq semaines de siège, les croisés entrent et massacrent une grande partie des habitants, musulmans et juifs. Jérusalem devient la capitale du royaume croisé ; le Dôme du Rocher devient une église.",
+    "en": "After about five weeks of siege the Crusaders enter and massacre many inhabitants, Muslims and Jews. Jerusalem becomes the capital of the Crusader kingdom; the Dome of the Rock becomes a church.",
+    "ru": "После примерно пятинедельной осады крестоносцы входят в город и убивают многих жителей, мусульман и евреев. Иерусалим — столица королевства крестоносцев; Купол Скалы стал церковью."
+   },
+   "src": {
+    "he": "כרוניקות צלבניות ומוסלמיות",
+    "fr": "Chroniques croisées et musulmanes",
+    "en": "Crusader and Muslim chronicles",
+    "ru": "Хроники крестоносцев и мусульман"
+   },
+   "battle": true,
+   "lat": 31.783,
+   "lon": 35.23375,
+   "qid": "Q1484405",
+   "from": "jerusalem3d/geo.json · herods_gate"
+  },
+  {
+   "id": "saladin_jerusalem",
+   "year": 1187,
+   "era": "mamluk",
+   "kind": "fact",
+   "at": "j3d:dome_of_the_rock",
+   "link": "jerusalem3d.html?period=10",
+   "title": {
+    "he": "צלאח א-דין כובש את ירושלים",
+    "fr": "Saladin reprend Jérusalem",
+    "en": "Saladin takes Jerusalem",
+    "ru": "Саладин берёт Иерусалим"
+   },
+   "text": {
+    "he": "אחרי ניצחונו בקרני חיטין נכנס צלאח א-דין לירושלים ב-2 באוקטובר 1187; הצלב הוסר מכיפת הסלע.",
+    "fr": "Après sa victoire à Hattin, Saladin entre à Jérusalem le 2 octobre 1187 ; la croix est retirée du Dôme du Rocher.",
+    "en": "After his victory at Hattin, Saladin enters Jerusalem on 2 October 1187; the cross is removed from the Dome of the Rock.",
+    "ru": "После победы при Хаттине Саладин входит в Иерусалим 2 октября 1187 г.; крест снят с Купола Скалы."
+   },
+   "more": {
+    "he": "רוב התושבים הנוצרים שוחררו תמורת כופר, ויהודים הורשו לשוב לעיר. הכיבוש הוביל למסע הצלב השלישי (ריצ׳רד לב הארי).",
+    "fr": "La plupart des chrétiens furent libérés contre rançon et les Juifs autorisés à revenir. La prise provoqua la troisième croisade (Richard Cœur de Lion).",
+    "en": "Most Christian inhabitants were freed for ransom and Jews were allowed back. The conquest triggered the Third Crusade (Richard the Lionheart).",
+    "ru": "Большинство христиан отпустили за выкуп, евреям позволили вернуться. Взятие города вызвало Третий крестовый поход (Ричард Львиное Сердце)."
+   },
+   "src": {
+    "he": "כרוניקות מוסלמיות וצלבניות",
+    "fr": "Chroniques musulmanes et croisées",
+    "en": "Muslim and Crusader chronicles",
+    "ru": "Мусульманские и крестоносные хроники"
+   },
+   "battle": true,
+   "lat": 31.77805556,
+   "lon": 35.23527778,
+   "qid": "Q172077",
+   "from": "jerusalem3d/geo.json · dome_of_the_rock"
+  },
+  {
+   "id": "arsuf_1191",
+   "year": 1191,
+   "era": "crusader",
+   "kind": "fact",
+   "battle": true,
+   "at": "site:apollonia:apollonia",
+   "link": "site3d.html?site=apollonia",
+   "title": {
+    "he": "קרב ארסוף",
+    "fr": "Bataille d’Arsouf",
+    "en": "Battle of Arsuf",
+    "ru": "Битва при Арсуфе"
+   },
+   "text": {
+    "he": "7 בספטמבר 1191: ריצ׳רד לב הארי מנצח את צלאח א-דין בשדה שמצפון לארסוף, בדרכו ליפו.",
+    "fr": "7 septembre 1191 : Richard Cœur de Lion bat Saladin au nord d’Arsouf, en marche vers Jaffa.",
+    "en": "7 September 1191: Richard the Lionheart defeats Saladin north of Arsuf, on his march to Jaffa.",
+    "ru": "7 сентября 1191 г.: Ричард Львиное Сердце разбивает Саладина к северу от Арсуфа по пути в Яффу."
+   },
+   "more": {
+    "he": "הניצחון החזיר לצלבנים את מישור החוף, אבל ירושלים נשארה בידי המוסלמים. ב-1192 נחתם הסכם שאפשר לעולי רגל נוצרים להגיע לעיר.",
+    "fr": "La victoire rend la côte aux croisés, mais Jérusalem reste musulmane. Un accord de 1192 permet aux pèlerins chrétiens d’y accéder.",
+    "en": "The victory returns the coast to the Crusaders, but Jerusalem stays Muslim. A 1192 treaty lets Christian pilgrims visit it.",
+    "ru": "Победа вернула крестоносцам побережье, но Иерусалим остался мусульманским. Договор 1192 г. позволил христианским паломникам посещать его."
+   },
+   "src": {
+    "he": "כרוניקות צלבניות; בהאא א-דין",
+    "fr": "Chroniques croisées ; Baha al-Din",
+    "en": "Crusader chronicles; Baha al-Din",
+    "ru": "Хроники крестоносцев; Баха ад-Дин"
+   },
+   "lat": 32.19527778,
+   "lon": 34.80666667,
+   "qid": "Q1024886",
+   "from": "sites3d/apollonia/geo.json · apollonia"
+  },
+  {
+   "id": "atlit_built",
+   "year": 1218,
+   "era": "crusader",
+   "kind": "fact",
+   "at": "stop:08:עתלית",
+   "title": {
+    "he": "הטמפלרים בונים את מבצר עתלית",
+    "fr": "Les Templiers bâtissent Château-Pèlerin (Atlit)",
+    "en": "The Templars build Château Pèlerin (Atlit)",
+    "ru": "Тамплиеры строят Шато-Пелерин (Атлит)"
+   },
+   "text": {
+    "he": "מבצר הצלבנים האחרון שנפל — ב-1291.",
+    "fr": "Dernière forteresse croisée à tomber, en 1291.",
+    "en": "The last Crusader fortress to fall, in 1291.",
+    "ru": "Последняя крепость крестоносцев, павшая в 1291 г."
+   },
+   "more": {
+    "he": "המבצר, ״טירת עולי הרגל״, נבנה על לשון יבשה בים ונחשב לבלתי ניתן לכיבוש; כמעט נצור בידי בייברס ב-1265 ולא נפל. היום הוא בשטח צבאי סגור.",
+    "fr": "Château-Pèlerin, bâti sur un promontoire, passait pour imprenable ; Baybars l’attaqua sans le prendre. Il est aujourd’hui en zone militaire fermée.",
+    "en": "Château Pèlerin, built on a promontory, was thought impregnable; Baybars attacked it without taking it. It is now inside a closed military zone.",
+    "ru": "Шато-Пелерин на мысу считался неприступным; Бейбарс атаковал его, но не взял. Сейчас он в закрытой военной зоне."
+   },
+   "src": {
+    "he": "כרוניקות צלבניות",
+    "fr": "Chroniques croisées",
+    "en": "Crusader chronicles",
+    "ru": "Хроники крестоносцев"
+   },
+   "lat": 32.69101,
+   "lon": 34.94266,
+   "qid": "Q757398",
+   "from": "places.json · סיור 08 · עתלית"
+  },
+  {
+   "id": "nimrod_built",
+   "year": 1228,
+   "circa": true,
+   "era": "mamluk",
+   "kind": "fact",
+   "at": "site:nimrod:nimrod",
+   "link": "site3d.html?site=nimrod",
+   "title": {
+    "he": "בניית מבצר נמרוד",
+    "fr": "Construction de la forteresse de Nimrod",
+    "en": "Nimrod Fortress built",
+    "ru": "Строительство крепости Нимрод"
+   },
+   "text": {
+    "he": "המושל האיובי אל-עזיז עות׳מאן מקים את המבצר מעל הדרך לדמשק.",
+    "fr": "Le prince ayyoubide al-Aziz Uthman élève la forteresse au-dessus de la route de Damas.",
+    "en": "The Ayyubid prince al-Aziz Uthman raises the fortress above the road to Damascus.",
+    "ru": "Айюбидский правитель аль-Азиз Усман возводит крепость над дорогой в Дамаск."
+   },
+   "more": {
+    "he": "המבצר נבנה לשמור על הדרך מדמשק לצור מפני הצלבנים, והורחב בידי הממלוכים (בייברס). באגדה הוא מיוחס לנמרוד ״הגיבור הצייד״ — ומכאן שמו.",
+    "fr": "La forteresse gardait la route de Damas à Tyr contre les croisés ; les Mamelouks (Baybars) l’agrandirent. La légende l’attribue à Nimrod, « le grand chasseur », d’où son nom.",
+    "en": "The fortress guarded the Damascus–Tyre road against the Crusaders; the Mamluks (Baybars) enlarged it. Legend attributes it to Nimrod ‘the mighty hunter’, hence its name.",
+    "ru": "Крепость охраняла дорогу Дамаск — Тир от крестоносцев; мамлюки (Бейбарс) её расширили. Легенда приписывает её Нимроду, «сильному зверолову», отсюда имя."
+   },
+   "src": {
+    "he": "כתובות בניין ערביות במבצר",
+    "fr": "Inscriptions arabes de construction",
+    "en": "Arabic building inscriptions",
+    "ru": "Арабские строительные надписи"
+   },
+   "lat": 33.252777777778,
+   "lon": 35.714722222222,
+   "qid": "Q1404704",
+   "from": "sites3d/nimrod/geo.json · nimrod"
+  },
+  {
+   "id": "ain_jalut",
+   "year": 1260,
+   "era": "mamluk",
+   "kind": "fact",
+   "battle": true,
+   "at": "stop:19:מעיין חרוד",
+   "title": {
+    "he": "קרב עין ג׳אלות",
+    "fr": "Bataille d’Aïn Jalout",
+    "en": "Battle of Ain Jalut",
+    "ru": "Битва при Айн-Джалуте"
+   },
+   "text": {
+    "he": "3 בספטמבר 1260: הממלוכים בהנהגת קוטוז ובייברס עוצרים את המונגולים ליד מעיין חרוד.",
+    "fr": "3 septembre 1260 : les Mamelouks de Qutuz et Baybars arrêtent les Mongols près de la source de Harod.",
+    "en": "3 September 1260: the Mamluks under Qutuz and Baybars stop the Mongols near the spring of Harod.",
+    "ru": "3 сентября 1260 г.: мамлюки под началом Кутуза и Бейбарса останавливают монголов у источника Харод."
+   },
+   "more": {
+    "he": "זו הייתה התבוסה הגדולה הראשונה של המונגולים במערב, והיא בלמה את התפשטותם למצרים. ״עין ג׳אלות״ פירושו ״מעיין גוליית״.",
+    "fr": "Première grande défaite des Mongols à l’ouest, elle bloque leur avance vers l’Égypte. « Aïn Jalout » signifie « source de Goliath ».",
+    "en": "The Mongols’ first great defeat in the west, it halts their advance toward Egypt. ‘Ain Jalut’ means ‘spring of Goliath’.",
+    "ru": "Первое крупное поражение монголов на западе остановило их продвижение к Египту. «Айн-Джалут» значит «источник Голиафа»."
+   },
+   "src": {
+    "he": "כרוניקות ממלוכיות",
+    "fr": "Chroniques mameloukes",
+    "en": "Mamluk chronicles",
+    "ru": "Мамлюкские хроники"
+   },
+   "lat": 32.54889,
+   "lon": 35.35694,
+   "qid": "Q603425",
+   "from": "places.json · סיור 19 · מעיין חרוד"
+  },
+  {
+   "id": "arsuf_falls",
+   "year": 1265,
+   "era": "mamluk",
+   "kind": "fact",
+   "at": "site:apollonia:apollonia",
+   "link": "site3d.html?site=apollonia",
+   "title": {
+    "he": "בייברס כובש את ארסוף",
+    "fr": "Baybars prend Arsouf",
+    "en": "Baybars takes Arsuf",
+    "ru": "Бейбарс берёт Арсуф"
+   },
+   "text": {
+    "he": "אחרי מצור של 40 יום נכנעים ההוספיטלרים; בייברס מפר את ההסכם.",
+    "fr": "Après 40 jours de siège, les Hospitaliers se rendent ; Baybars rompt l’accord.",
+    "en": "After a 40-day siege the Hospitallers surrender; Baybars breaks the agreement.",
+    "ru": "После 40-дневной осады госпитальеры сдаются; Бейбарс нарушает договор."
+   },
+   "more": {
+    "he": "ב-1191 ניצח כאן ריצ׳רד לב הארי את צלאח א-דין. ב-1261 נמכרה ארסוף להוספיטלרים. אחרי הכיבוש הרס בייברס את העיר, כדי שהצלבנים לא יוכלו לחזור דרך הים.",
+    "fr": "En 1191, Richard Cœur de Lion y bat Saladin. En 1261, Arsouf est vendue aux Hospitaliers. Après la prise, Baybars rase la ville pour que les croisés ne puissent pas revenir par la mer.",
+    "en": "In 1191 Richard the Lionheart defeated Saladin here. In 1261 Arsuf was sold to the Hospitallers. After taking it, Baybars razed the town so the Crusaders could not return by sea.",
+    "ru": "В 1191 г. Ричард Львиное Сердце разбил здесь Саладина. В 1261 г. Арсуф продан госпитальерам. Взяв его, Бейбарс срыл город, чтобы крестоносцы не вернулись с моря."
+   },
+   "src": {
+    "he": "כרוניקות ממלוכיות וצלבניות",
+    "fr": "Chroniques mameloukes et croisées",
+    "en": "Mamluk and Crusader chronicles",
+    "ru": "Мамлюкские и крестоносные хроники"
+   },
+   "battle": true,
+   "lat": 32.19527778,
+   "lon": 34.80666667,
+   "qid": "Q1024886",
+   "from": "sites3d/apollonia/geo.json · apollonia"
+  },
+  {
+   "id": "caesarea_1265",
+   "year": 1265,
+   "era": "mamluk",
+   "kind": "fact",
+   "battle": true,
+   "at": "site:caesarea:caesarea",
+   "link": "site3d.html?site=caesarea",
+   "title": {
+    "he": "בייברס כובש את קיסריה",
+    "fr": "Baybars prend Césarée",
+    "en": "Baybars takes Caesarea",
+    "ru": "Бейбарс берёт Кесарию"
+   },
+   "text": {
+    "he": "בתחילת מסעו של 1265 כבש בייברס את קיסריה הצלבנית אחרי מצור קצר, והרס את ביצוריה.",
+    "fr": "Au début de sa campagne de 1265, Baybars prend la Césarée croisée après un court siège et rase ses fortifications.",
+    "en": "At the start of his 1265 campaign, Baybars takes Crusader Caesarea after a short siege and razes its fortifications.",
+    "ru": "В начале похода 1265 г. Бейбарс после короткой осады берёт Кесарию крестоносцев и срывает её укрепления."
+   },
+   "more": {
+    "he": "החומות שנראות היום בקיסריה הן החומות הצלבניות של לואי התשיעי (1251–1252), עם חפיר ושער.",
+    "fr": "Les murailles visibles aujourd’hui sont celles de Louis IX (1251–1252), avec fossé et porte.",
+    "en": "The walls seen today are those of Louis IX (1251–1252), with moat and gate.",
+    "ru": "Видимые сегодня стены — это стены Людовика IX (1251–1252) с рвом и воротами."
+   },
+   "src": {
+    "he": "כרוניקות ממלוכיות",
+    "fr": "Chroniques mameloukes",
+    "en": "Mamluk chronicles",
+    "ru": "Мамлюкские хроники"
+   },
+   "lat": 32.5,
+   "lon": 34.89166667,
+   "qid": "Q319242",
+   "from": "sites3d/caesarea/geo.json · caesarea"
+  },
+  {
+   "id": "atlit_evacuated",
+   "year": 1291,
+   "era": "crusader",
+   "kind": "fact",
+   "at": "stop:08:עתלית",
+   "title": {
+    "he": "סוף הצלבנים: פינוי עתלית",
+    "fr": "Fin des croisades : évacuation d’Atlit",
+    "en": "End of the Crusades: Atlit evacuated",
+    "ru": "Конец крестоносцев: эвакуация Атлита"
+   },
+   "text": {
+    "he": "אחרי נפילת עכו נוטשים הטמפלרים את עתלית בלי קרב.",
+    "fr": "Après la chute d’Acre, les Templiers abandonnent Atlit sans combat.",
+    "en": "After the fall of Acre, the Templars abandon Atlit without a fight.",
+    "ru": "После падения Акры тамплиеры оставляют Атлит без боя."
+   },
+   "more": {
+    "he": "עכו, בירת הצלבנים האחרונה, נפלה במאי 1291. עתלית פונתה באוגוסט — סוף הנוכחות הצלבנית בארץ אחרי כמעט 200 שנה.",
+    "fr": "Acre, dernière capitale croisée, tombe en mai 1291 ; Atlit est évacuée en août : fin de près de 200 ans de présence croisée.",
+    "en": "Acre, the last Crusader capital, fell in May 1291; Atlit was evacuated in August — the end of almost 200 years of Crusader presence.",
+    "ru": "Акра, последняя столица крестоносцев, пала в мае 1291 г.; Атлит оставлен в августе — конец почти 200-летнего присутствия."
+   },
+   "src": {
+    "he": "כרוניקות צלבניות",
+    "fr": "Chroniques croisées",
+    "en": "Crusader chronicles",
+    "ru": "Хроники крестоносцев"
+   },
+   "lat": 32.69101,
+   "lon": 34.94266,
+   "qid": "Q757398",
+   "from": "places.json · סיור 08 · עתלית"
+  },
+  {
+   "id": "suleiman_walls",
+   "year": 1537,
+   "era": "ottoman",
+   "kind": "fact",
+   "at": "j3d:damascus_gate",
+   "link": "jerusalem3d.html?period=11",
+   "label": {
+    "he": "1537–1541",
+    "fr": "1537–1541",
+    "en": "1537–1541",
+    "ru": "1537–1541"
+   },
+   "title": {
+    "he": "סולימאן בונה את חומות ירושלים",
+    "fr": "Soliman reconstruit les murailles de Jérusalem",
+    "en": "Suleiman rebuilds Jerusalem’s walls",
+    "ru": "Сулейман отстраивает стены Иерусалима"
+   },
+   "text": {
+    "he": "החומות והשערים של העיר העתיקה, כמו שער שכם, עומדים עד היום.",
+    "fr": "Les murailles et les portes de la Vieille Ville, dont la porte de Damas, sont encore debout.",
+    "en": "The Old City walls and gates, including Damascus Gate, still stand.",
+    "ru": "Стены и ворота Старого города, в том числе Дамасские, стоят до сих пор."
+   },
+   "more": {
+    "he": "החומה, באורך כ-4 ק״מ, ובה שבעה שערים פתוחים ושער הרחמים החתום. לפי האגדה הוצאו האדריכלים להורג כי השאירו את הר ציון מחוץ לחומה — אגדה בלבד.",
+    "fr": "La muraille, d’environ 4 km, compte sept portes ouvertes et la porte Dorée murée. Selon une légende, les architectes furent exécutés pour avoir laissé le mont Sion dehors — une légende seulement.",
+    "en": "The wall, about 4 km long, has seven open gates and the sealed Golden Gate. Legend says the architects were executed for leaving Mount Zion outside — only a legend.",
+    "ru": "Стена длиной около 4 км имеет семь открытых ворот и замурованные Золотые. По легенде, архитекторов казнили за то, что гора Сион осталась снаружи, — это лишь легенда."
+   },
+   "src": {
+    "he": "כתובות הבנייה העות׳מאניות בשערים",
+    "fr": "Inscriptions ottomanes des portes",
+    "en": "Ottoman gate inscriptions",
+    "ru": "Османские надписи на воротах"
+   },
+   "lat": 31.781639,
+   "lon": 35.2305,
+   "qid": "Q947597",
+   "from": "jerusalem3d/geo.json · damascus_gate"
+  },
+  {
+   "id": "napoleon_carmel",
+   "year": 1799,
+   "era": "ottoman",
+   "kind": "fact",
+   "at": "stop:07:סטלה מאריס",
+   "title": {
+    "he": "נפוליאון והמנזר בכרמל",
+    "fr": "Napoléon et le monastère du Carmel",
+    "en": "Napoleon and the Carmel monastery",
+    "ru": "Наполеон и монастырь на Кармеле"
+   },
+   "text": {
+    "he": "אחרי כישלון המצור על עכו השאיר נפוליאון במנזר הכרמליתי את פצועיו; חיילי אל-ג׳זאר טבחו בהם.",
+    "fr": "Après l’échec du siège d’Acre, Napoléon laisse ses blessés au monastère carmélite ; les soldats d’al-Jazzar les massacrent.",
+    "en": "After failing to take Acre, Napoleon left his wounded at the Carmelite monastery; al-Jazzar’s soldiers massacred them.",
+    "ru": "После неудачной осады Акры Наполеон оставил раненых в кармелитском монастыре; солдаты аль-Джаззара их перебили."
+   },
+   "more": {
+    "he": "עצמותיהם נקברו בקבר אחים מול המנזר, ומעליו אנדרטת פירמידה עם הפסוק ״איך נפלו גיבורים״. המנזר הנוכחי נבנה ב-1831.",
+    "fr": "Leurs os reposent dans une fosse commune devant le monastère, sous une pyramide portant « Comment sont tombés les héros ». Le monastère actuel date de 1831.",
+    "en": "Their bones lie in a mass grave in front of the monastery, under a pyramid inscribed ‘How the mighty have fallen’. The present monastery dates from 1831.",
+    "ru": "Их кости покоятся в братской могиле перед монастырём под пирамидой с надписью «Как пали сильные». Нынешний монастырь построен в 1831 г."
+   },
+   "src": {
+    "he": "סיכום סיור חיפה (חומר הקורס)",
+    "fr": "Résumé de la sortie Haïfa (cours)",
+    "en": "Haifa tour summary (course)",
+    "ru": "Конспект экскурсии по Хайфе (курс)"
+   },
+   "lat": 32.82667,
+   "lon": 34.97028,
+   "qid": "Q1606585",
+   "from": "places.json · סיור 07 · סטלה מאריס"
+  },
+  {
+   "id": "haifa_templers",
+   "year": 1869,
+   "circa": true,
+   "era": "ottoman",
+   "kind": "fact",
+   "at": "stop:07:המושבה הגרמנית",
+   "label": {
+    "he": "1868/1869",
+    "fr": "1868/1869",
+    "en": "1868/1869",
+    "ru": "1868/1869"
+   },
+   "title": {
+    "he": "המושבה הטמפלרית בחיפה",
+    "fr": "La colonie templière de Haïfa",
+    "en": "The Templer colony in Haifa",
+    "ru": "Колония темплеров в Хайфе"
+   },
+   "text": {
+    "he": "מהמושבות המודרניות הראשונות בארץ, של הטמפלרים הגרמנים — שאינם קשורים לאבירים הצלבנים.",
+    "fr": "L’une des premières colonies modernes du pays, fondée par les Templiers allemands — sans lien avec les chevaliers croisés.",
+    "en": "One of the country’s first modern colonies, founded by the German Templers — unrelated to the Crusader knights.",
+    "ru": "Одна из первых современных колоний в стране, основанная немецкими темплерами — не связанными с рыцарями."
+   },
+   "more": {
+    "he": "הטמפלרים, תנועה נוצרית מדרום גרמניה, האמינו שיש ליישב את ארץ הקודש לקראת אחרית הימים. הם הביאו לארץ עגלות, מכונות ובתים מאבן עם גגות רעפים; במלחמת העולם השנייה גירשו אותם הבריטים.",
+    "fr": "Les Templiers allemands, mouvement chrétien du sud de l’Allemagne, voulaient peupler la Terre sainte avant la fin des temps. Ils apportèrent charrettes, machines et maisons de pierre à toits de tuiles ; les Britanniques les expulsèrent pendant la Seconde Guerre mondiale.",
+    "en": "The Templers, a Christian movement from southern Germany, sought to settle the Holy Land before the end of days. They brought wagons, machines and stone houses with tiled roofs; the British deported them during the Second World War.",
+    "ru": "Темплеры, христианское движение с юга Германии, стремились заселить Святую землю перед концом времён. Они привезли повозки, машины и каменные дома с черепичными крышами; англичане выслали их во время Второй мировой войны."
+   },
+   "src": {
+    "he": "סיכום סיור חיפה (חומר הקורס)",
+    "fr": "Résumé de la sortie Haïfa (cours)",
+    "en": "Haifa tour summary (course)",
+    "ru": "Конспект экскурсии по Хайфе (курс)"
+   },
+   "lat": 32.82,
+   "lon": 34.99056,
+   "qid": "Q2413425",
+   "from": "places.json · סיור 07 · המושבה הגרמנית"
+  },
+  {
+   "id": "rosh_pina",
+   "year": 1882,
+   "era": "ottoman",
+   "kind": "fact",
+   "at": "stop:20:ראש פינה",
+   "title": {
+    "he": "ייסוד ראש פינה",
+    "fr": "Fondation de Rosh Pina",
+    "en": "Rosh Pina founded",
+    "ru": "Основание Рош-Пины"
+   },
+   "text": {
+    "he": "עולים מרומניה מקימים את המושבה במקום גיא אוני.",
+    "fr": "Des immigrants de Roumanie fondent le village sur le site de Gei Oni.",
+    "en": "Immigrants from Romania found the village on the site of Gei Oni.",
+    "ru": "Переселенцы из Румынии основывают поселение на месте Гей-Они."
+   },
+   "more": {
+    "he": "המתיישבים נאבקו בקשיים ונתמכו בידי הברון אדמונד דה רוטשילד. המושבה הייתה בין הראשונות של העלייה הראשונה, ובה נבנה בית הפקידות.",
+    "fr": "Les colons, en grande difficulté, furent soutenus par le baron Edmond de Rothschild. C’est l’une des premières colonies de la première alya.",
+    "en": "The settlers, in great hardship, were supported by Baron Edmond de Rothschild. It is one of the first colonies of the First Aliyah.",
+    "ru": "Поселенцам в трудностях помогал барон Эдмон де Ротшильд. Это одно из первых поселений Первой алии."
+   },
+   "src": {
+    "he": "סיור 20 — ראש פינה",
+    "fr": "Sortie 20 — Rosh Pina",
+    "en": "Tour 20 — Rosh Pina",
+    "ru": "Экскурсия 20 — Рош-Пина"
+   },
+   "lat": 32.97,
+   "lon": 35.54222,
+   "qid": "Q525649",
+   "from": "places.json · סיור 20 · ראש פינה"
+  },
+  {
+   "id": "allenby",
+   "year": 1917,
+   "era": "mandate",
+   "kind": "fact",
+   "at": "j3d:jaffa_gate",
+   "link": "jerusalem3d.html?period=12",
+   "title": {
+    "he": "אלנבי נכנס לירושלים",
+    "fr": "Allenby entre à Jérusalem",
+    "en": "Allenby enters Jerusalem",
+    "ru": "Алленби входит в Иерусалим"
+   },
+   "text": {
+    "he": "11 בדצמבר 1917, ברגל דרך שער יפו: סוף השלטון העות׳מאני בעיר.",
+    "fr": "11 décembre 1917, à pied par la porte de Jaffa : fin du pouvoir ottoman dans la ville.",
+    "en": "11 December 1917, on foot through Jaffa Gate: the end of Ottoman rule in the city.",
+    "ru": "11 декабря 1917 г., пешком через Яффские ворота: конец османской власти в городе."
+   },
+   "more": {
+    "he": "הגנרל הבריטי נכנס ברגל ולא רכוב, כאות כבוד לעיר הקדושה. המנדט הבריטי על ארץ ישראל אושר בחבר הלאומים ב-1922.",
+    "fr": "Le général britannique entre à pied et non à cheval, par respect pour la ville sainte. Le Mandat britannique sur la Palestine est confirmé par la Société des Nations en 1922.",
+    "en": "The British general entered on foot rather than mounted, out of respect for the holy city. The British Mandate for Palestine was confirmed by the League of Nations in 1922.",
+    "ru": "Британский генерал вошёл пешком, а не верхом, в знак уважения к святому городу. Британский мандат на Палестину утверждён Лигой Наций в 1922 г."
+   },
+   "src": {
+    "he": "עיתונות ותצלומים מ-1917",
+    "fr": "Presse et photographies de 1917",
+    "en": "1917 press and photographs",
+    "ru": "Пресса и фотографии 1917 г."
+   },
+   "lat": 31.776528,
+   "lon": 35.227694,
+   "qid": "Q312812",
+   "from": "jerusalem3d/geo.json · jaffa_gate"
+  },
+  {
+   "id": "tel_hai",
+   "year": 1920,
+   "era": "mandate",
+   "kind": "fact",
+   "at": "stop:20:תל חי",
+   "title": {
+    "he": "קרב תל חי",
+    "fr": "Bataille de Tel Haï",
+    "en": "Battle of Tel Hai",
+    "ru": "Бой у Тель-Хая"
+   },
+   "text": {
+    "he": "1 במרץ 1920; יוסף טרומפלדור ועוד שבעה מגינים נופלים.",
+    "fr": "1er mars 1920 ; Joseph Trumpeldor et sept autres défenseurs tombent.",
+    "en": "1 March 1920; Joseph Trumpeldor and seven other defenders fall.",
+    "ru": "1 марта 1920 г.; гибнут Иосиф Трумпельдор и ещё семеро защитников."
+   },
+   "more": {
+    "he": "לפי המסורת אמר טרומפלדור לפני מותו ״אין דבר, טוב למות בעד ארצנו״. אנדרטת ״האריה השואג״ בכפר גלעדי מנציחה את הנופלים; כפר גלעדי, תל חי ומטולה נשארו בגבולות המנדט הבריטי.",
+    "fr": "Selon la tradition, Trumpeldor aurait dit avant de mourir : « Ce n’est rien, il est bon de mourir pour notre pays ». Le monument du « Lion rugissant » à Kfar Giladi honore les morts ; Kfar Giladi, Tel Haï et Metula restèrent dans le Mandat britannique.",
+    "en": "By tradition Trumpeldor said before dying: ‘Never mind, it is good to die for our country’. The ‘Roaring Lion’ monument at Kfar Giladi honours the fallen; Kfar Giladi, Tel Hai and Metula stayed within the British Mandate.",
+    "ru": "По преданию, Трумпельдор перед смертью сказал: «Ничего, хорошо умереть за нашу страну». Памятник «Рычащий лев» в Кфар-Гилади чтит павших; Кфар-Гилади, Тель-Хай и Метула остались в британском мандате."
+   },
+   "src": {
+    "he": "סיור 20 — תל חי",
+    "fr": "Sortie 20 — Tel Haï",
+    "en": "Tour 20 — Tel Hai",
+    "ru": "Экскурсия 20 — Тель-Хай"
+   },
+   "battle": true,
+   "lat": 33.235,
+   "lon": 35.57833,
+   "qid": "Q2094886",
+   "from": "places.json · סיור 20 · תל חי"
+  },
+  {
+   "id": "dead_sea_scrolls",
+   "year": 1947,
+   "era": "mandate",
+   "kind": "fact",
+   "at": "stop:01:קומראן",
+   "link": "site3d.html?site=qumran",
+   "label": {
+    "he": "1946/1947",
+    "fr": "1946/1947",
+    "en": "1946/1947",
+    "ru": "1946/1947"
+   },
+   "title": {
+    "he": "גילוי המגילות הגנוזות",
+    "fr": "Découverte des manuscrits de la mer Morte",
+    "en": "Discovery of the Dead Sea Scrolls",
+    "ru": "Открытие рукописей Мёртвого моря"
+   },
+   "text": {
+    "he": "רועים בדואים מוצאים את המגילות הראשונות במערה ליד קומראן.",
+    "fr": "Des bergers bédouins trouvent les premiers rouleaux dans une grotte près de Qumrân.",
+    "en": "Bedouin shepherds find the first scrolls in a cave near Qumran.",
+    "ru": "Бедуины-пастухи находят первые свитки в пещере у Кумрана."
+   },
+   "more": {
+    "he": "נמצאו כ-900 חיבורים ב-11 מערות, ובהם העותקים העתיקים ביותר של ספרי התנ״ך. רוב החוקרים מקשרים אותם לכת ״היחד״ (האיסיים) שישבה בקומראן, אך יש החולקים. המגילות מוצגות בהיכל הספר בירושלים.",
+    "fr": "Environ 900 textes dans 11 grottes, dont les plus anciennes copies des livres bibliques. La plupart des chercheurs les relient à la communauté du « Yahad » (Esséniens) de Qumrân ; d’autres en doutent. Ils sont exposés au Sanctuaire du Livre à Jérusalem.",
+    "en": "About 900 texts in 11 caves, including the oldest copies of biblical books. Most scholars link them to the ‘Yahad’ community (Essenes) at Qumran; some disagree. They are shown at the Shrine of the Book in Jerusalem.",
+    "ru": "Около 900 текстов в 11 пещерах, в том числе древнейшие копии библейских книг. Большинство учёных связывают их с общиной «Яхад» (ессеями) в Кумране, но не все. Они выставлены в Храме Книги в Иерусалиме."
+   },
+   "src": {
+    "he": "סיור 01 — קומראן",
+    "fr": "Sortie 01 — Qumrân",
+    "en": "Tour 01 — Qumran",
+    "ru": "Экскурсия 01 — Кумран"
+   },
+   "lat": 31.74083,
+   "lon": 35.45861,
+   "qid": "Q223399",
+   "from": "places.json · סיור 01 · קומראן"
+  },
+  {
+   "id": "negev_brigade",
+   "year": 1948,
+   "era": "israel",
+   "kind": "fact",
+   "at": "stop:03:אנדרטת הנגב",
+   "title": {
+    "he": "חטיבת הנגב במלחמת העצמאות",
+    "fr": "La brigade du Néguev dans la guerre d’indépendance",
+    "en": "The Negev Brigade in the War of Independence",
+    "ru": "Бригада «Негев» в Войне за независимость"
+   },
+   "text": {
+    "he": "האנדרטה של דני קרוון מעל באר שבע מנציחה את לוחמי החטיבה.",
+    "fr": "Le monument de Dani Karavan, au-dessus de Beer-Sheva, rend hommage à ses combattants.",
+    "en": "Dani Karavan’s monument above Beersheba honours its fighters.",
+    "ru": "Памятник Дани Каравана над Беэр-Шевой чтит её бойцов."
+   },
+   "more": {
+    "he": "חטיבת הנגב של הפלמ״ח לחמה בנגב הנצור ובמבצעי סוף המלחמה. האנדרטה, בטון בסגנון מודרני, נבנתה בשנים 1963–1968 וכוללת שמות נופלים, מגדל ותעלות.",
+    "fr": "La brigade du Néguev du Palmah combat dans le Néguev assiégé et dans les opérations de fin de guerre. Le monument en béton, bâti de 1963 à 1968, porte les noms des morts, une tour et des tranchées.",
+    "en": "The Palmach’s Negev Brigade fought in the besieged Negev and in the war’s final operations. The concrete monument, built 1963–1968, has the names of the fallen, a tower and trenches.",
+    "ru": "Бригада «Негев» Пальмаха сражалась в осаждённом Негеве и в заключительных операциях войны. Бетонный памятник (1963–1968) включает имена павших, башню и траншеи."
+   },
+   "src": {
+    "he": "סיור 03 — אנדרטת הנגב",
+    "fr": "Sortie 03 — Monument du Néguev",
+    "en": "Tour 03 — Negev Monument",
+    "ru": "Экскурсия 03 — Памятник Негеву"
+   },
+   "battle": true,
+   "lat": 31.26666,
+   "lon": 34.8206,
+   "qid": "Q456424",
+   "from": "places.json · סיור 03 · אנדרטת הנגב"
+  },
+  {
+   "id": "nebi_samuel_1948",
+   "year": 1948,
+   "era": "israel",
+   "kind": "fact",
+   "battle": true,
+   "at": "stop:14:נבי סמואל",
+   "title": {
+    "he": "הקרב על נבי סמואל",
+    "fr": "Bataille de Nabi Samouil",
+    "en": "Battle of Nabi Samwil",
+    "ru": "Бой за Наби-Самуил"
+   },
+   "text": {
+    "he": "באפריל 1948 תקפו לוחמי חטיבת הראל את המשלט בנבי סמואל, ששלט על הדרך לירושלים; ההתקפה נכשלה בקרבנות רבים.",
+    "fr": "En avril 1948, la brigade Harel attaque la position de Nabi Samouil, qui domine la route de Jérusalem ; l’attaque échoue avec de lourdes pertes.",
+    "en": "In April 1948 the Harel Brigade attacked the Nabi Samwil position overlooking the road to Jerusalem; the attack failed with heavy losses.",
+    "ru": "В апреле 1948 г. бригада «Харель» атаковала позицию Наби-Самуил над дорогой в Иерусалим; атака провалилась с большими потерями."
+   },
+   "more": {
+    "he": "המקום נשאר בידי הלגיון הירדני עד 1967. לפי המסורת, שם קבר שמואל הנביא.",
+    "fr": "Le lieu reste aux mains de la Légion jordanienne jusqu’en 1967. La tradition y place la tombe du prophète Samuel.",
+    "en": "The site stayed with the Jordanian Legion until 1967. Tradition places the tomb of the prophet Samuel there.",
+    "ru": "Место оставалось за иорданским легионом до 1967 г. Предание помещает здесь гробницу пророка Самуила."
+   },
+   "src": {
+    "he": "סיור 14 — נבי סמואל",
+    "fr": "Sortie 14 — Nabi Samouil",
+    "en": "Tour 14 — Nabi Samwil",
+    "ru": "Экскурсия 14 — Наби-Самуил"
+   },
+   "lat": 31.83278,
+   "lon": 35.18028,
+   "qid": "Q3532567",
+   "from": "places.json · סיור 14 · נבי סמואל"
+  },
+  {
+   "id": "ramat_rachel_1948",
+   "year": 1948,
+   "era": "israel",
+   "kind": "fact",
+   "battle": true,
+   "at": "stop:14:רמת רחל",
+   "title": {
+    "he": "הקרבות על רמת רחל",
+    "fr": "Les combats de Ramat Rachel",
+    "en": "The battles for Ramat Rachel",
+    "ru": "Бои за Рамат-Рахель"
+   },
+   "text": {
+    "he": "בסוף מאי 1948 עבר הקיבוץ שבדרום ירושלים מיד ליד כמה פעמים בקרבות עם כוחות מצריים וירדניים, ונשאר בידי ישראל.",
+    "fr": "Fin mai 1948, le kibboutz au sud de Jérusalem change plusieurs fois de mains face aux forces égyptiennes et jordaniennes, puis reste israélien.",
+    "en": "In late May 1948 the kibbutz south of Jerusalem changed hands several times against Egyptian and Jordanian forces, and remained Israeli.",
+    "ru": "В конце мая 1948 г. кибуц к югу от Иерусалима несколько раз переходил из рук в руки в боях с египетскими и иорданскими силами и остался израильским."
+   },
+   "more": {
+    "he": "בקיבוץ נחשפו גם שרידי ארמון מימי מלכי יהודה. המקום שולט על הדרך לבית לחם.",
+    "fr": "Le kibboutz a aussi livré les restes d’un palais des rois de Juda. Il domine la route de Bethléem.",
+    "en": "The kibbutz also revealed remains of a palace of the kings of Judah. It overlooks the road to Bethlehem.",
+    "ru": "В кибуце найдены и остатки дворца царей Иудеи. Он господствует над дорогой в Вифлеем."
+   },
+   "src": {
+    "he": "סיור 14 — רמת רחל",
+    "fr": "Sortie 14 — Ramat Rachel",
+    "en": "Tour 14 — Ramat Rachel",
+    "ru": "Экскурсия 14 — Рамат-Рахель"
+   },
+   "lat": 31.74,
+   "lon": 35.21889,
+   "qid": "Q2130036",
+   "from": "places.json · סיור 14 · רמת רחל"
+  },
+  {
+   "id": "zion_gate_1948",
+   "year": 1948,
+   "era": "israel",
+   "kind": "fact",
+   "battle": true,
+   "at": "j3d:zion_gate",
+   "link": "jerusalem3d.html?period=12",
+   "title": {
+    "he": "הפריצה בשער ציון",
+    "fr": "La percée de la porte de Sion",
+    "en": "The Zion Gate breakthrough",
+    "ru": "Прорыв через Сионские ворота"
+   },
+   "text": {
+    "he": "ב-18 במאי 1948 פרצו לוחמי הפלמ״ח בשער ציון והגיעו לרובע היהודי הנצור, אך לא הצליחו להחזיק במעבר.",
+    "fr": "Le 18 mai 1948, le Palmah force la porte de Sion et atteint le quartier juif assiégé, sans pouvoir tenir le passage.",
+    "en": "On 18 May 1948 Palmach fighters broke through Zion Gate and reached the besieged Jewish Quarter, but could not hold the passage.",
+    "ru": "18 мая 1948 г. бойцы Пальмаха прорвались через Сионские ворота в осаждённый Еврейский квартал, но не удержали проход."
+   },
+   "more": {
+    "he": "הרובע היהודי נכנע ב-28 במאי 1948. סימני הפגזים נראים עד היום על השער.",
+    "fr": "Le quartier juif capitule le 28 mai 1948. Les impacts d’obus sont encore visibles sur la porte.",
+    "en": "The Jewish Quarter surrendered on 28 May 1948. Shell marks are still visible on the gate.",
+    "ru": "Еврейский квартал сдался 28 мая 1948 г. Следы снарядов до сих пор видны на воротах."
+   },
+   "src": {
+    "he": "סיפורי הפלמ״ח; היסטוריה צבאית של 1948",
+    "fr": "Récits du Palmah ; histoire militaire de 1948",
+    "en": "Palmach accounts; 1948 military history",
+    "ru": "Свидетельства Пальмаха; военная история 1948 г."
+   },
+   "lat": 31.77286389,
+   "lon": 35.22951667,
+   "qid": "Q205416",
+   "from": "jerusalem3d/geo.json · zion_gate"
+  },
+  {
+   "id": "hula_drained",
+   "year": 1951,
+   "era": "israel",
+   "kind": "fact",
+   "at": "stop:20:שמורת החולה",
+   "label": {
+    "he": "1951–1958",
+    "fr": "1951–1958",
+    "en": "1951–1958",
+    "ru": "1951–1958"
+   },
+   "title": {
+    "he": "ייבוש אגם החולה",
+    "fr": "Assèchement du lac Houla",
+    "en": "Draining of Lake Hula",
+    "ru": "Осушение озера Хула"
+   },
+   "text": {
+    "he": "בשנים 1951–1958 יובשו האגם והביצות כדי להילחם במלריה ולהרחיב את החקלאות.",
+    "fr": "De 1951 à 1958, le lac et les marais sont asséchés pour lutter contre le paludisme et étendre l’agriculture.",
+    "en": "From 1951 to 1958 the lake and marshes were drained to fight malaria and expand farming.",
+    "ru": "В 1951–1958 гг. озеро и болота осушили для борьбы с малярией и расширения сельского хозяйства."
+   },
+   "more": {
+    "he": "הייבוש הביא לאובדן מינים ולשריפות כבול. בעקבותיו קמה תנועת שמירת הטבע בישראל — ושמורת החולה (1964).",
+    "fr": "L’assèchement fit disparaître des espèces et provoqua des feux de tourbe. Il donna naissance au mouvement de protection de la nature en Israël, et à la réserve de la Houla (1964).",
+    "en": "The draining caused species loss and peat fires. It gave rise to Israel’s nature-conservation movement — and the Hula Reserve (1964).",
+    "ru": "Осушение привело к исчезновению видов и торфяным пожарам. Оно породило движение охраны природы в Израиле — и заповедник Хула (1964)."
+   },
+   "src": {
+    "he": "סיור 20 — שמורת החולה",
+    "fr": "Sortie 20 — Réserve de la Houla",
+    "en": "Tour 20 — Hula Reserve",
+    "ru": "Экскурсия 20 — Заповедник Хула"
+   },
+   "lat": 33.07806,
+   "lon": 35.59833,
+   "qid": "Q7022146",
+   "from": "places.json · סיור 20 · שמורת החולה"
+  },
+  {
+   "id": "bahai_shrine",
+   "year": 1953,
+   "era": "israel",
+   "kind": "fact",
+   "at": "stop:07:הגנים הבהאיים",
+   "title": {
+    "he": "כיפת הזהב של מקדש הבאב",
+    "fr": "La coupole d’or du sanctuaire du Báb",
+    "en": "The golden dome of the Shrine of the Báb",
+    "ru": "Золотой купол гробницы Баба"
+   },
+   "text": {
+    "he": "המבנה הנוכחי של קבר הבאב, עם כיפת הזהב, הושלם ב-1953 על מדרון הכרמל.",
+    "fr": "L’édifice actuel du tombeau du Báb, avec sa coupole d’or, est achevé en 1953 sur la pente du Carmel.",
+    "en": "The current building of the Báb’s tomb, with its golden dome, was completed in 1953 on the slope of Mount Carmel.",
+    "ru": "Нынешнее здание гробницы Баба с золотым куполом завершено в 1953 г. на склоне Кармеля."
+   },
+   "more": {
+    "he": "שרידי הבאב הובאו לחיפה ב-1909. הגנים, 19 טרסות מעל העיר, הוכרזו כאתר מורשת עולמית (2008). אין בישראל קהילה בהאית קבועה — רק מתנדבים מכל העולם.",
+    "fr": "Les restes du Báb arrivèrent à Haïfa en 1909. Les jardins, 19 terrasses au-dessus de la ville, sont au patrimoine mondial (2008). Il n’y a pas de communauté baha’ie permanente en Israël, seulement des volontaires du monde entier.",
+    "en": "The Báb’s remains were brought to Haifa in 1909. The gardens, 19 terraces above the city, are a World Heritage site (2008). There is no permanent Bahá’í community in Israel — only volunteers from around the world.",
+    "ru": "Останки Баба доставлены в Хайфу в 1909 г. Сады — 19 террас над городом — объект Всемирного наследия (2008). Постоянной бахаистской общины в Израиле нет — только добровольцы со всего мира."
+   },
+   "src": {
+    "he": "סיכום סיור חיפה (חומר הקורס)",
+    "fr": "Résumé de la sortie Haïfa (cours)",
+    "en": "Haifa tour summary (course)",
+    "ru": "Конспект экскурсии по Хайфе (курс)"
+   },
+   "lat": 32.81444,
+   "lon": 34.98722,
+   "qid": "Q1462314",
+   "from": "places.json · סיור 07 · הגנים הבהאיים"
+  },
+  {
+   "id": "masada_excavations",
+   "year": 1963,
+   "era": "israel",
+   "kind": "fact",
+   "at": "site:masada:masada",
+   "link": "site3d.html?site=masada",
+   "label": {
+    "he": "1963–1965",
+    "fr": "1963–1965",
+    "en": "1963–1965",
+    "ru": "1963–1965"
+   },
+   "title": {
+    "he": "חפירות יגאל ידין במצדה",
+    "fr": "Fouilles de Yigael Yadin à Massada",
+    "en": "Yigael Yadin’s excavations at Masada",
+    "ru": "Раскопки Игаэля Ядина в Масаде"
+   },
+   "text": {
+    "he": "אלפי מתנדבים מהארץ ומהעולם חושפים את הארמונות, המחסנים ובית הכנסת.",
+    "fr": "Des milliers de volontaires du monde entier dégagent palais, entrepôts et synagogue.",
+    "en": "Thousands of volunteers from around the world uncover palaces, storerooms and the synagogue.",
+    "ru": "Тысячи добровольцев со всего мира раскапывают дворцы, склады и синагогу."
+   },
+   "more": {
+    "he": "ידין זיהה את ״הגורל״ — חרסים עם שמות — ושרידי מגילות, ובהם קטע מספר בן סירא. החפירות הפכו את מצדה לסמל לאומי; היום היא אתר מורשת עולמית (2001).",
+    "fr": "Yadin trouva des ostraca portant des noms, peut-être les « sorts », et des fragments de rouleaux, dont Ben Sira. Les fouilles firent de Massada un symbole national ; c’est aujourd’hui un site du patrimoine mondial (2001).",
+    "en": "Yadin found ostraca bearing names, possibly the ‘lots’, and scroll fragments, including Ben Sira. The dig made Masada a national symbol; it is now a World Heritage site (2001).",
+    "ru": "Ядин нашёл остраконы с именами, возможно «жребии», и фрагменты свитков, в том числе Бен-Сиры. Раскопки сделали Масаду национальным символом; сейчас это объект Всемирного наследия (2001)."
+   },
+   "src": {
+    "he": "ידין, מצדה (1966)",
+    "fr": "Yadin, Massada (1966)",
+    "en": "Yadin, Masada (1966)",
+    "ru": "Ядин, «Масада» (1966)"
+   },
+   "lat": 31.31555556,
+   "lon": 35.35388889,
+   "qid": "Q186312",
+   "from": "sites3d/masada/geo.json · masada"
+  },
+  {
+   "id": "hula_reserve",
+   "year": 1964,
+   "era": "israel",
+   "kind": "fact",
+   "at": "stop:20:שמורת החולה",
+   "title": {
+    "he": "שמורת החולה — שמורת הטבע הראשונה",
+    "fr": "La Houla, première réserve naturelle",
+    "en": "Hula, the first nature reserve",
+    "ru": "Хула — первый заповедник"
+   },
+   "text": {
+    "he": "אחרי ייבוש החולה הוכרז שריד הביצה כשמורת הטבע הראשונה בישראל.",
+    "fr": "Après l’assèchement de la Houla, le reste du marais devient la première réserve naturelle d’Israël.",
+    "en": "After the Hula was drained, the remaining marsh became Israel’s first nature reserve.",
+    "ru": "После осушения Хулы остаток болота стал первым заповедником Израиля."
+   },
+   "more": {
+    "he": "השמורה שומרת על שריד של הביצה ושל צמחיית הפפירוס. ייבוש האגם (1951–1958) גרם לנזק אקולוגי, ובשנות ה-90 הוצפה מחדש ״אגמון החולה״ — היום מוקד לנדידת עגורים.",
+    "fr": "La réserve conserve un reste du marais et de ses papyrus. L’assèchement du lac (1951–1958) causa des dégâts écologiques ; dans les années 1990, l’« Agamon » de la Houla fut réinondé et accueille aujourd’hui la migration des grues.",
+    "en": "The reserve keeps a remnant of the marsh and its papyrus. Draining the lake (1951–1958) caused ecological damage; in the 1990s the Hula ‘Agamon’ was reflooded and now hosts the crane migration.",
+    "ru": "Заповедник сохраняет остаток болота с папирусом. Осушение озера (1951–1958) нанесло экологический ущерб; в 1990-х «Агамон» Хулы снова затопили, теперь здесь мигрируют журавли."
+   },
+   "src": {
+    "he": "סיור 20 — שמורת החולה",
+    "fr": "Sortie 20 — Réserve de la Houla",
+    "en": "Tour 20 — Hula Reserve",
+    "ru": "Экскурсия 20 — Заповедник Хула"
+   },
+   "lat": 33.07806,
+   "lon": 35.59833,
+   "qid": "Q7022146",
+   "from": "places.json · סיור 20 · שמורת החולה"
+  },
+  {
+   "id": "lions_gate_1967",
+   "year": 1967,
+   "era": "israel",
+   "kind": "fact",
+   "battle": true,
+   "at": "j3d:lions_gate",
+   "link": "jerusalem3d.html?period=12",
+   "title": {
+    "he": "הצנחנים בשער האריות — ״הר הבית בידינו״",
+    "fr": "Les parachutistes à la porte des Lions — « Le mont du Temple est à nous »",
+    "en": "Paratroopers at Lions’ Gate — ‘The Temple Mount is in our hands’",
+    "ru": "Десантники у Львиных ворот — «Храмовая гора в наших руках»"
+   },
+   "text": {
+    "he": "ב-7 ביוני 1967, ביום השלישי של מלחמת ששת הימים, נכנסה חטיבת הצנחנים של מוטה גור לעיר העתיקה דרך שער האריות.",
+    "fr": "Le 7 juin 1967, troisième jour de la guerre des Six Jours, la brigade parachutiste de Motta Gur entre dans la Vieille Ville par la porte des Lions.",
+    "en": "On 7 June 1967, the third day of the Six-Day War, Motta Gur’s paratroop brigade entered the Old City through Lions’ Gate.",
+    "ru": "7 июня 1967 г., на третий день Шестидневной войны, бригада десантников Мотты Гура вошла в Старый город через Львиные ворота."
+   },
+   "more": {
+    "he": "קודם לכן נלחמו הצנחנים בגבעת התחמושת. בקשר נשמע ״הר הבית בידינו״, והרב גורן תקע בשופר ליד הכותל.",
+    "fr": "Avant, les parachutistes s’étaient battus à la colline des Munitions. À la radio : « Le mont du Temple est à nous » ; le rabbin Goren sonne le shofar au Mur.",
+    "en": "Earlier the paratroopers had fought at Ammunition Hill. Over the radio: ‘The Temple Mount is in our hands’; Rabbi Goren blew the shofar at the Wall.",
+    "ru": "Перед этим десантники сражались на Арсенальной горке. По рации: «Храмовая гора в наших руках»; раввин Горен трубил в шофар у Стены."
+   },
+   "src": {
+    "he": "הקלטות הקשר; היסטוריה צבאית של 1967",
+    "fr": "Enregistrements radio ; histoire militaire de 1967",
+    "en": "Radio recordings; 1967 military history",
+    "ru": "Радиозаписи; военная история 1967 г."
+   },
+   "lat": 31.78083333,
+   "lon": 35.23694444,
+   "qid": "Q129278",
+   "from": "jerusalem3d/geo.json · lions_gate"
+  },
+  {
+   "id": "tel_saki_1973",
+   "year": 1973,
+   "era": "israel",
+   "kind": "fact",
+   "battle": true,
+   "at": "stop:17:תל סאקי",
+   "label": {
+    "he": "6–7 באוקטובר 1973",
+    "fr": "6–7 octobre 1973",
+    "en": "6–7 October 1973",
+    "ru": "6–7 октября 1973"
+   },
+   "title": {
+    "he": "הקרב בתל סאקי",
+    "fr": "Le combat de Tel Saki",
+    "en": "The battle of Tel Saki",
+    "ru": "Бой у Тель-Саки"
+   },
+   "text": {
+    "he": "ביום הראשון של מלחמת יום הכיפורים (6–7 באוקטובר 1973) הסתגרו לוחמים ישראלים בבונקר בתל סאקי, מוקפים בטנקים סוריים.",
+    "fr": "Au premier jour de la guerre de Kippour (6–7 octobre 1973), des soldats israéliens se retranchent dans un bunker de Tel Saki, encerclés par les chars syriens.",
+    "en": "On the first day of the Yom Kippur War (6–7 October 1973), Israeli soldiers held out in a bunker on Tel Saki, surrounded by Syrian tanks.",
+    "ru": "В первый день войны Судного дня (6–7 октября 1973 г.) израильские солдаты укрылись в бункере на Тель-Саки, окружённые сирийскими танками."
+   },
+   "more": {
+    "he": "חלק מהלוחמים נהרגו, וחלקם שרדו בבונקר עד שכוחות ישראליים חזרו לגבעה. היום יש במקום אתר הנצחה ותצפית על דרום הגולן.",
+    "fr": "Une partie tomba, d’autres survécurent dans le bunker jusqu’au retour des forces israéliennes. Le site est aujourd’hui un mémorial avec vue sur le sud du Golan.",
+    "en": "Some were killed; others survived in the bunker until Israeli forces retook the hill. Today it is a memorial overlooking the southern Golan.",
+    "ru": "Часть погибла, другие продержались в бункере до возвращения израильских сил. Сейчас там мемориал с видом на юг Голан."
+   },
+   "src": {
+    "he": "סיור 17 — תל סאקי",
+    "fr": "Sortie 17 — Tel Saki",
+    "en": "Tour 17 — Tel Saki",
+    "ru": "Экскурсия 17 — Тель-Саки"
+   },
+   "lat": 32.86639,
+   "lon": 35.83056,
+   "qid": "Q4327908",
+   "from": "places.json · סיור 17 · תל סאקי"
+  }
+ ]
+}

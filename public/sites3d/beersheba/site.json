@@ -1,0 +1,426 @@
+{
+ "site": "beersheba",
+ "title": {
+  "he": "תל באר שבע",
+  "fr": "Tel Beer-Sheva",
+  "en": "Tel Be'er Sheva",
+  "ru": "Тель Беэр-Шева"
+ },
+ "defaultPeriod": 1,
+ "cubitMeters": 0.5,
+ "stone": "ashlar",
+ "tint": "#ffffff",
+ "home": {
+  "at": "o:tel",
+  "dist": 520,
+  "from": 200,
+  "elev": 38
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "tel": {
+   "osm": "way/96320718"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "iron",
+   "name": {
+    "he": "ימי המקרא",
+    "fr": "Âge du fer — ville administrative",
+    "en": "Iron Age — administrative town",
+    "ru": "Железный век — административный город"
+   },
+   "dates": {
+    "he": "המאות ה-12–7 לפנה״ס",
+    "fr": "XIIe–VIIe s. av. J.-C.",
+    "en": "12th–7th c. BCE",
+    "ru": "XII–VII вв. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "era": "persian",
+   "name": {
+    "he": "תקופות מאוחרות",
+    "fr": "Périodes tardives",
+    "en": "Later periods",
+    "ru": "Поздние периоды"
+   },
+   "dates": {
+    "he": "פרסית עד ערבית קדומה",
+    "fr": "perse à arabe ancienne",
+    "en": "Persian to Early Islamic",
+    "ru": "от персидской до раннеисламской"
+   }
+  },
+  {
+   "n": 3,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "Tel Beer-Sheva aujourd’hui",
+    "en": "Tel Be'er Sheva today",
+    "ru": "Тель Беэр-Шева сегодня"
+   },
+   "dates": {
+    "he": "אתר מורשת עולמית",
+    "fr": "patrimoine mondial",
+    "en": "World Heritage site",
+    "ru": "объект всемирного наследия"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "bsh_city",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "העיר המתוכננת וחומתה",
+    "fr": "La ville planifiée et sa muraille",
+    "en": "The planned town and its wall",
+    "ru": "Спланированный город и его стена"
+   },
+   "text": {
+    "he": "שרידים שלמים של יישוב מתקופת הברזל (המאות ה-12–7 לפנה״ס); מעט בתי מגורים ורוב השטח מבני ציבור, מחסנים ומבני שלטון — כנראה עיר מנהלית. 15 שכבות יישוב, מהכלקולית ועד הערבית הקדומה.",
+    "fr": "Restes complets d’une ville de l’âge du fer (XIIe–VIIe s. av. J.-C.) : peu de maisons, surtout des bâtiments publics, des entrepôts et des bâtiments officiels — sans doute une ville administrative. 15 niveaux, du Chalcolithique à l’époque arabe ancienne.",
+    "en": "Complete remains of an Iron Age town (12th–7th c. BCE): few houses, mostly public buildings, storehouses and official buildings — probably an administrative town. 15 layers, Chalcolithic to Early Islamic.",
+    "ru": "Полные остатки города железного века (XII–VII вв. до н. э.): мало жилых домов, в основном общественные здания, склады и административные постройки — видимо, административный центр. 15 слоёв, от халколита до раннего ислама."
+   },
+   "placementNote": {
+    "he": "החומה מצוירת לאורך קו המתאר של התל ב-OpenStreetMap.",
+    "fr": "Muraille dessinée sur le contour du tell (OpenStreetMap).",
+    "en": "Wall drawn along the mound outline (OpenStreetMap).",
+    "ru": "Стена по контуру холма (OpenStreetMap)."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "wall",
+    "osm": "tel",
+    "h": 4,
+    "thick": 3
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 — תל באר שבע (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי תל באר שבע",
+     "url": "https://drive.google.com/file/d/1Dj3_oRS7EBhKfaYKq-SKTb01ed_5-jqO/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/96320718",
+     "url": "https://www.openstreetmap.org/way/96320718"
+    }
+   ]
+  },
+  {
+   "id": "bsh_gate",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "שער העיר והבאר",
+    "fr": "La porte et le puits",
+    "en": "The gate and the well",
+    "ru": "Ворота и колодец"
+   },
+   "text": {
+    "he": "שער של שלושה זוגות אומנות עם מושבים לזקנים ולשופטים; מחוץ לשער באר לרווחת יושבי המדבר — אולי באר השבועה בין אברהם לאבימלך (בראשית כ״א, כ״ו).",
+    "fr": "Porte à trois paires de piliers avec bancs pour les anciens et les juges ; hors de la porte, un puits pour les nomades — peut-être le puits du serment d’Abraham et d’Abimélek (Gn 21, 26).",
+    "en": "A gate with three pairs of piers and benches for elders and judges; outside it a well for desert dwellers — perhaps the well of the oath of Abraham and Abimelech (Gen 21, 26).",
+    "ru": "Ворота с тремя парами пилонов и скамьями для старейшин и судей; снаружи колодец для кочевников — возможно, колодец клятвы Авраама и Авимелеха (Быт 21, 26)."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 — תל באר שבע (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי תל באר שבע",
+     "url": "https://drive.google.com/file/d/1Dj3_oRS7EBhKfaYKq-SKTb01ed_5-jqO/view"
+    }
+   ]
+  },
+  {
+   "id": "bsh_storehouses",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "המחסנים",
+    "fr": "Les entrepôts",
+    "en": "The storehouses",
+    "ru": "Склады"
+   },
+   "text": {
+    "he": "מבנים ארוכים וצרים ליד השער לפריקת שיירות; בעבר נחשבו לאורוות, אבל הרצפה המרוצפת והאבוסים הקטנים מתאימים לפריקה ולא לאחזקת בהמות. נמצאו כלי אגירה רבים.",
+    "fr": "Longs bâtiments étroits près de la porte, pour décharger les caravanes ; jadis pris pour des écuries, mais le sol dallé et les petites auges conviennent au déchargement, pas à l’élevage. Nombreuses jarres.",
+    "en": "Long narrow buildings by the gate for unloading caravans; once thought to be stables, but the paved floor and small troughs suit unloading, not keeping animals. Many storage jars.",
+    "ru": "Длинные узкие здания у ворот для разгрузки караванов; раньше считались конюшнями, но мощёный пол и маленькие кормушки подходят для разгрузки. Много сосудов."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 — תל באר שבע (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי תל באר שבע",
+     "url": "https://drive.google.com/file/d/1Dj3_oRS7EBhKfaYKq-SKTb01ed_5-jqO/view"
+    }
+   ]
+  },
+  {
+   "id": "bsh_altar",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "מזבח הקרנות",
+    "fr": "L’autel à cornes",
+    "en": "The horned altar",
+    "ru": "Рогатый жертвенник"
+   },
+   "text": {
+    "he": "אין מקדש בתל; מזבח קרנות מפורק נמצא בקירות מבנה מאוחר — כנראה בעקבות הרפורמה של חזקיהו שריכז את הפולחן בירושלים. שחזור שלו בכניסה לגן הלאומי.",
+    "fr": "Aucun temple sur le tell ; un autel à cornes démonté fut retrouvé dans les murs d’un bâtiment plus tardif — sans doute après la réforme d’Ézéchias qui centralisa le culte à Jérusalem. Réplique à l’entrée du parc.",
+    "en": "No temple on the mound; a dismantled horned altar was found reused in a later building — probably after Hezekiah’s reform centralising worship in Jerusalem. A replica stands at the park entrance.",
+    "ru": "Храма на холме нет; разобранный рогатый жертвенник найден в стенах более позднего здания — вероятно, после реформы Езекии. Копия у входа в парк."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 — תל באר שבע (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי תל באר שבע",
+     "url": "https://drive.google.com/file/d/1Dj3_oRS7EBhKfaYKq-SKTb01ed_5-jqO/view"
+    }
+   ]
+  },
+  {
+   "id": "bsh_water",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "מפעל המים",
+    "fr": "Le système d’eau",
+    "en": "The water system",
+    "ru": "Водная система"
+   },
+   "text": {
+    "he": "תעלה הובילה את מי השיטפונות מנחל חברון אל מאגרים תת-קרקעיים מטויחים בתוך העיר, בצמוד לחומה.",
+    "fr": "Un canal menait les crues du Nahal Hébron vers des réservoirs souterrains enduits, dans la ville, contre la muraille.",
+    "en": "A channel led flood water from Nahal Hebron to plastered underground reservoirs inside the town, against the wall.",
+    "ru": "Канал вёл паводковую воду из Нахаль-Хеврона в оштукатуренные подземные резервуары внутри города у стены."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 — תל באר שבע (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ZNYwBfdOQDMA2Qu7-lOCDsn9rx5qIyhr/view"
+    },
+    {
+     "kind": "drive",
+     "label": "עלון גן לאומי תל באר שבע",
+     "url": "https://drive.google.com/file/d/1Dj3_oRS7EBhKfaYKq-SKTb01ed_5-jqO/view"
+    }
+   ]
+  }
+ ]
+}

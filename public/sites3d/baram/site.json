@@ -1,0 +1,464 @@
+{
+ "site": "baram",
+ "title": {
+  "he": "ברעם",
+  "fr": "Baram",
+  "en": "Bar'am",
+  "ru": "Барам"
+ },
+ "defaultPeriod": 1,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#f1e7d2",
+ "home": {
+  "at": {
+   "off": "o:synagogue",
+   "dx": -20,
+   "dz": 40
+  },
+  "dist": 230,
+  "from": 200,
+  "elev": 30
+ },
+ "terrain": {
+  "lo": "#7f8a5c",
+  "mid": "#a3a77a",
+  "hi": "#c3c19a"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "synagogue": {
+   "osm": "node/4825955190"
+  },
+  "church": {
+   "osm": "way/221201207"
+  },
+  "village": {
+   "osm": "node/278475145"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "byzantine",
+   "name": {
+    "he": "הכפר היהודי",
+    "fr": "Le village juif et la synagogue",
+    "en": "The Jewish village and synagogue",
+    "ru": "Еврейская деревня и синагога"
+   },
+   "dates": {
+    "he": "המאות ה-4–6",
+    "fr": "IVe–VIe s.",
+    "en": "4th–6th c.",
+    "ru": "IV–VI вв."
+   }
+  },
+  {
+   "n": 2,
+   "era": "ottoman",
+   "name": {
+    "he": "הכפר המרוני",
+    "fr": "Le village maronite de Kafr Bir’im",
+    "en": "The Maronite village of Kafr Bir’im",
+    "ru": "Маронитская деревня Кафр-Бирим"
+   },
+   "dates": {
+    "he": "עד 1948",
+    "fr": "jusqu’en 1948",
+    "en": "until 1948",
+    "ru": "до 1948 г."
+   }
+  },
+  {
+   "n": 3,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "Baram aujourd’hui",
+    "en": "Bar’am today",
+    "ru": "Барам сегодня"
+   },
+   "dates": {
+    "he": "גן לאומי",
+    "fr": "parc national",
+    "en": "national park",
+    "ru": "национальный парк"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "br_synagogue",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "schematic": true,
+   "name": {
+    "he": "בית הכנסת",
+    "fr": "La synagogue",
+    "en": "The synagogue",
+    "ru": "Синагога"
+   },
+   "text": {
+    "he": "בזיליקה עם ספסלים לאורך הקירות; העמודים הצפופים מעידים על קומה שנייה. החזית פונה דרומה. כתובת ארמית: ״בנוי דאלעזר בר יודן״. הסגנון הזכיר את המאות ה-2–3, אך מתחת לרצפה נמצאו מטבעות עד אמצע המאה ה-5.",
+    "fr": "Basilique à banquettes le long des murs ; les colonnes serrées suggèrent un étage. La façade regarde le sud. Inscription araméenne : « construit par Éléazar fils de Youdan ». Le style évoquait les IIe–IIIe s., mais sous le sol on a trouvé des monnaies jusqu’au milieu du Ve s.",
+    "en": "A basilica with benches along the walls; the close-set columns suggest an upper floor. The façade faces south. Aramaic inscription: “built by Elazar son of Yudan”. The style suggested the 2nd–3rd c., but coins up to the mid-5th c. were found under the floor.",
+    "ru": "Базилика со скамьями вдоль стен; частые колонны указывают на второй этаж. Фасад обращён на юг. Арамейская надпись: «построено Элазаром сыном Юдана». Стиль напоминал II–III вв., но под полом найдены монеты до середины V в."
+   },
+   "debate": {
+    "he": "ההסבר בקורס: בגלל איסור לבנות בתי כנסת חדשים במאה ה-5 בנו מחלקים של מבנים ישנים (ספוליה) — וכך גם חוסר הסימטריה בחזית.",
+    "fr": "Explication du cours : l’interdiction de bâtir de nouvelles synagogues au Ve s. aurait poussé à réutiliser des éléments anciens (spolia) — d’où l’asymétrie de la façade.",
+    "en": "The course’s explanation: a 5th-c. ban on new synagogues led builders to reuse parts of older buildings (spolia) — hence the asymmetric façade.",
+    "ru": "Объяснение курса: запрет V в. на новые синагоги заставлял использовать части старых зданий (сполии) — отсюда асимметрия фасада."
+   },
+   "placementNote": {
+    "he": "החזית ממוקמת בנקודת המפה; רוחבה משוער.",
+    "fr": "Façade placée au point cartographique ; largeur estimée.",
+    "en": "Façade placed at the map point; width estimated.",
+    "ru": "Фасад по точке на карте; ширина оценочная."
+   },
+   "shape": {
+    "type": "facade",
+    "at": "o:synagogue",
+    "W": 15,
+    "h": 9,
+    "apse": false,
+    "bearing": 180,
+    "kind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 22 – גליל עליון – ברעם (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1aba2WZnhEQQUpWN2edNGQ29DkJNHF5Y6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "ברעם — בית הכנסת העתיק והכפר בירעם",
+     "url": "https://drive.google.com/file/d/17XWZJV0d-9uTLybVEf4g_zf0a2RfqU8m/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/4825955190",
+     "url": "https://www.openstreetmap.org/node/4825955190"
+    }
+   ]
+  },
+  {
+   "id": "br_church",
+   "from": 2,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הכנסייה המרונית",
+    "fr": "L’église maronite",
+    "en": "The Maronite church",
+    "ru": "Маронитская церковь"
+   },
+   "text": {
+    "he": "הכנסייה המרונית — כנסייה מזרחית שהתאחדה עם הקתולית במאה ה-18 ומתפללת בסורית. העקורים מבירעם מקיימים בה תפילה שבועית, ובית הקברות ממשיך לפעול.",
+    "fr": "L’Église maronite — Église orientale unie à Rome au XVIIIe s., priant en syriaque. Les déplacés de Bir’im y prient chaque semaine et le cimetière reste en usage.",
+    "en": "The Maronite Church — an Eastern church united with Rome in the 18th c., praying in Syriac. The displaced people of Bir’im hold weekly prayers here, and the cemetery is still in use.",
+    "ru": "Маронитская церковь — восточная церковь, объединившаяся с Римом в XVIII в., молится на сирийском. Изгнанные жители Бирима проводят здесь еженедельную молитву; кладбище действует."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "church",
+    "h": 8,
+    "solid": true,
+    "kind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 22 – גליל עליון – ברעם (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1aba2WZnhEQQUpWN2edNGQ29DkJNHF5Y6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "ברעם — בית הכנסת העתיק והכפר בירעם",
+     "url": "https://drive.google.com/file/d/17XWZJV0d-9uTLybVEf4g_zf0a2RfqU8m/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/221201207",
+     "url": "https://www.openstreetmap.org/way/221201207"
+    }
+   ]
+  },
+  {
+   "id": "br_village",
+   "from": 2,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "כפר בירעם",
+    "fr": "Kafr Bir’im",
+    "en": "Kafr Bir’im",
+    "ru": "Кафр-Бирим"
+   },
+   "text": {
+    "he": "במבצע חירם (אוקטובר 1948) התבקשו התושבים לעזוב, בהבטחה שיחזרו אחרי הקרבות. הם לא הורשו לחזור, ובתי הכפר פוצצו. המדינה מסבירה את סירובה בחשש מתקדים; התושבים ממשיכים במאבקם.",
+    "fr": "Lors de l’opération Hiram (octobre 1948), les habitants furent priés de partir, avec la promesse de revenir après les combats. Ils n’y furent pas autorisés et les maisons furent dynamitées. L’État invoque la crainte d’un précédent ; les habitants poursuivent leur combat.",
+    "en": "In Operation Hiram (October 1948) the residents were asked to leave, with a promise they could return after the fighting. They were not allowed back, and the village houses were blown up. The state cites fear of a precedent; the residents continue their struggle.",
+    "ru": "В ходе операции «Хирам» (октябрь 1948) жителей попросили уйти, пообещав возвращение после боёв. Вернуться им не разрешили, дома взорвали. Государство ссылается на опасение прецедента; жители продолжают борьбу."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:village",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 22 – גליל עליון – ברעם (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1aba2WZnhEQQUpWN2edNGQ29DkJNHF5Y6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "ברעם — בית הכנסת העתיק והכפר בירעם",
+     "url": "https://drive.google.com/file/d/17XWZJV0d-9uTLybVEf4g_zf0a2RfqU8m/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/278475145",
+     "url": "https://www.openstreetmap.org/node/278475145"
+    }
+   ]
+  },
+  {
+   "id": "br_research",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "תולדות המחקר",
+    "fr": "Histoire de la recherche",
+    "en": "Research history",
+    "ru": "История исследований"
+   },
+   "text": {
+    "he": "במאה ה-19 תיארכה משלחת גרמנית את בית הכנסת למאות ה-2–3. בשנות ה-60 נוקה האתר לקראת הגן הלאומי; בשנות ה-90 התגלה שהקירות נבנו מעל הרצפה, ומטבעות עד אמצע המאה ה-5 שינו את התיארוך.",
+    "fr": "Au XIXe s., une mission allemande data la synagogue des IIe–IIIe s. Dans les années 1960 le site fut dégagé pour le parc national ; dans les années 1990 on vit que les murs reposaient sur le sol, et des monnaies jusqu’au milieu du Ve s. changèrent la datation.",
+    "en": "In the 19th c. a German mission dated the synagogue to the 2nd–3rd c. In the 1960s the site was cleared for the national park; in the 1990s it emerged that the walls were built over the floor, and coins up to the mid-5th c. changed the dating.",
+    "ru": "В XIX в. немецкая экспедиция датировала синагогу II–III вв. В 1960-х место расчистили для национального парка; в 1990-х выяснилось, что стены стоят на полу, а монеты до середины V в. изменили датировку."
+   },
+   "placementNote": {
+    "he": "אין סימון — היסטוריה.",
+    "fr": "Pas de repère — histoire.",
+    "en": "No marker — history.",
+    "ru": "Без метки — история."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 22 – גליל עליון – ברעם (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1aba2WZnhEQQUpWN2edNGQ29DkJNHF5Y6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "ברעם — בית הכנסת העתיק והכפר בירעם",
+     "url": "https://drive.google.com/file/d/17XWZJV0d-9uTLybVEf4g_zf0a2RfqU8m/view"
+    }
+   ]
+  },
+  {
+   "id": "br_spolia",
+   "from": 1,
+   "to": 3,
+   "certainty": "hypothesis",
+   "name": {
+    "he": "ספוליה",
+    "fr": "Les spolia",
+    "en": "Spolia",
+    "ru": "Сполии"
+   },
+   "text": {
+    "he": "ספוליה — שימוש משני באבני בנייה. לפי התיאוריה, קהילות העתיקו חלקים ממבנים ישנים כדי לעקוף את איסור הבנייה; כך מוסברים העיטורים השונים מעל שני הפתחים הצדדיים (קשקשים מול עיטור מעוגל), וגם ממצאים בבתי כנסת אחרים בצפון.",
+    "fr": "Spolia : réemploi de pierres. Selon cette théorie, les communautés reprenaient des éléments anciens pour contourner l’interdiction ; ainsi s’expliquent les décors différents au-dessus des deux portes latérales (écailles contre motif arrondi), et d’autres synagogues du nord.",
+    "en": "Spolia — reuse of building stones. On this theory, communities moved parts of older buildings to get around the ban; this explains the different decorations over the two side doors (scales vs a rounded motif), and finds at other northern synagogues.",
+    "ru": "Сполии — вторичное использование камня. По этой теории общины переносили части старых зданий, обходя запрет; так объясняются разные украшения над двумя боковыми входами (чешуя и округлый мотив) и находки в других северных синагогах."
+   },
+   "debate": {
+    "he": "תיאוריה המוצגת בקורס; לא כל החוקרים מקבלים אותה.",
+    "fr": "Théorie présentée au cours ; elle n’est pas admise par tous.",
+    "en": "A theory presented in the course; not all scholars accept it.",
+    "ru": "Теория, изложенная в курсе; принята не всеми."
+   },
+   "placementNote": {
+    "he": "אין סימון — שאלת מחקר.",
+    "fr": "Pas de repère — question de recherche.",
+    "en": "No marker — a research question.",
+    "ru": "Без метки — исследовательский вопрос."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 22 – גליל עליון – ברעם (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1aba2WZnhEQQUpWN2edNGQ29DkJNHF5Y6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "ברעם — בית הכנסת העתיק והכפר בירעם",
+     "url": "https://drive.google.com/file/d/17XWZJV0d-9uTLybVEf4g_zf0a2RfqU8m/view"
+    }
+   ]
+  }
+ ]
+}

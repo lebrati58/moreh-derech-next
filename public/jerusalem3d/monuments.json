@@ -1,0 +1,3795 @@
+{
+ "version": 1,
+ "quiz3dEnabled": false,
+ "_note": "Fiches de la scène 3D de Jérusalem. Texte principal : documents Drive du cours ; « otherView » = autre avis venant d'une source en ligne. Ne jamais présenter une hypothèse comme un fait. quiz3dEnabled reste false jusqu'à l'accord explicite de Lionel (phase 2).",
+ "cubitMeters": 0.5,
+ "cubitNote": {
+  "he": "המרה משוערת: אמה ≈ 0.5 מ׳ (ערך האמה שנוי במחלוקת).",
+  "fr": "Conversion approximative : 1 coudée ≈ 0,5 m (valeur débattue).",
+  "en": "Approximate conversion: 1 cubit ≈ 0.5 m (value debated).",
+  "ru": "Приблизительно: 1 локоть ≈ 0,5 м (значение спорно)."
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "canaanite",
+   "id": "canaanite",
+   "name": {
+    "he": "כנען",
+    "fr": "Cananéenne (Bronze moyen)",
+    "en": "Canaanite (Middle Bronze)",
+    "ru": "Ханаанский (средняя бронза)"
+   },
+   "dates": {
+    "he": "כ-המאות ה-18–16 לפנה״ס",
+    "fr": "vers XVIIIe–XVIe s. av. J.-C.",
+    "en": "c. 18th–16th c. BCE",
+    "ru": "ок. XVIII–XVI вв. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "era": "iron",
+   "id": "first_temple",
+   "name": {
+    "he": "בית ראשון",
+    "fr": "Premier Temple (Fer II)",
+    "en": "First Temple (Iron II)",
+    "ru": "Первый Храм (железный век II)"
+   },
+   "dates": {
+    "he": "המאה ה-10 – 586 לפנה״ס",
+    "fr": "Xe s. – 586 av. J.-C.",
+    "en": "10th c. – 586 BCE",
+    "ru": "X в. – 586 до н. э."
+   }
+  },
+  {
+   "n": 3,
+   "era": "persian",
+   "id": "persian",
+   "name": {
+    "he": "פרס",
+    "fr": "Perse — Retour de Sion",
+    "en": "Persian — Return to Zion",
+    "ru": "Персидский — возвращение в Сион"
+   },
+   "dates": {
+    "he": "המאות ה-5–4 לפנה״ס",
+    "fr": "Ve–IVe s. av. J.-C.",
+    "en": "5th–4th c. BCE",
+    "ru": "V–IV вв. до н. э."
+   }
+  },
+  {
+   "n": 4,
+   "era": "hasmonean",
+   "id": "hasmonean",
+   "name": {
+    "he": "החשמונאים",
+    "fr": "Hasmonéenne",
+    "en": "Hasmonean",
+    "ru": "Хасмонейский"
+   },
+   "dates": {
+    "he": "סוף המאה ה-2 – המאה ה-1 לפנה״ס",
+    "fr": "fin IIe – Ier s. av. J.-C.",
+    "en": "late 2nd – 1st c. BCE",
+    "ru": "конец II – I в. до н. э."
+   }
+  },
+  {
+   "n": 5,
+   "era": "herodian",
+   "id": "herodian",
+   "name": {
+    "he": "הורדוס",
+    "fr": "Hérodienne — Second Temple",
+    "en": "Herodian — Second Temple",
+    "ru": "Иродианский — Второй Храм"
+   },
+   "dates": {
+    "he": "37 לפנה״ס – 70 לסה״נ",
+    "fr": "37 av. – 70 apr. J.-C.",
+    "en": "37 BCE – 70 CE",
+    "ru": "37 до н. э. – 70 н. э."
+   }
+  },
+  {
+   "n": 6,
+   "era": "roman",
+   "id": "aelia",
+   "name": {
+    "he": "רומא",
+    "fr": "Romaine — Aelia Capitolina",
+    "en": "Roman — Aelia Capitolina",
+    "ru": "Римский — Элия Капитолина"
+   },
+   "dates": {
+    "he": "כ-130 – 324 לסה״נ",
+    "fr": "vers 130 – 324",
+    "en": "c. 130 – 324 CE",
+    "ru": "ок. 130 – 324 н. э."
+   }
+  },
+  {
+   "n": 7,
+   "era": "byzantine",
+   "id": "byzantine",
+   "name": {
+    "he": "ביזנטיון",
+    "fr": "Byzantine",
+    "en": "Byzantine",
+    "ru": "Византийский"
+   },
+   "dates": {
+    "he": "324 – 638",
+    "fr": "324 – 638",
+    "en": "324 – 638",
+    "ru": "324 – 638"
+   }
+  },
+  {
+   "n": 8,
+   "era": "early_islamic",
+   "id": "early_islamic",
+   "name": {
+    "he": "האסלאם הקדום",
+    "fr": "Arabe ancienne et fatimide",
+    "en": "Early Islamic and Fatimid",
+    "ru": "Раннеисламский и фатимидский"
+   },
+   "dates": {
+    "he": "638 – 1099",
+    "fr": "638 – 1099",
+    "en": "638 – 1099",
+    "ru": "638 – 1099"
+   }
+  },
+  {
+   "n": 9,
+   "era": "crusader",
+   "id": "crusader",
+   "name": {
+    "he": "הצלבנים",
+    "fr": "Croisée",
+    "en": "Crusader",
+    "ru": "Крестоносцев"
+   },
+   "dates": {
+    "he": "1099 – 1187",
+    "fr": "1099 – 1187",
+    "en": "1099 – 1187",
+    "ru": "1099 – 1187"
+   }
+  },
+  {
+   "n": 10,
+   "era": "mamluk",
+   "id": "ayyubid_mamluk",
+   "name": {
+    "he": "האיובים והממלוכים",
+    "fr": "Ayyoubide et mamelouke",
+    "en": "Ayyubid and Mamluk",
+    "ru": "Айюбидский и мамлюкский"
+   },
+   "dates": {
+    "he": "1187 – 1517",
+    "fr": "1187 – 1517",
+    "en": "1187 – 1517",
+    "ru": "1187 – 1517"
+   }
+  },
+  {
+   "n": 11,
+   "era": "ottoman",
+   "id": "ottoman",
+   "name": {
+    "he": "העות׳מאנים",
+    "fr": "Ottomane",
+    "en": "Ottoman",
+    "ru": "Османский"
+   },
+   "dates": {
+    "he": "1517 – 1917",
+    "fr": "1517 – 1917",
+    "en": "1517 – 1917",
+    "ru": "1517 – 1917"
+   }
+  },
+  {
+   "n": 12,
+   "era": "today",
+   "id": "today",
+   "name": {
+    "he": "היום",
+    "fr": "Jérusalem aujourd’hui",
+    "en": "Jerusalem today",
+    "ru": "Иерусалим сегодня"
+   },
+   "dates": {
+    "he": "היום — מה שנשאר",
+    "fr": "Aujourd’hui — ce qui subsiste",
+    "en": "Today — what remains",
+    "ru": "Сегодня — что сохранилось"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "jerusalem_gihon_spring",
+   "anchor": "gihon_spring",
+   "name": {
+    "he": "מעיין הגיחון",
+    "fr": "La source du Gihon",
+    "en": "The Gihon Spring",
+    "ru": "Источник Гихон"
+   },
+   "text": {
+    "he": "מקור המים הקבוע היחיד של ירושלים הקדומה, למרגלות עיר דוד בצד נחל קדרון. מימיו הובלו בנקבת חזקיהו אל בריכת השילוח.",
+    "fr": "La seule source permanente de Jérusalem antique, au pied de la Cité de David, côté Kidron. Son eau était conduite par le tunnel d’Ézéchias jusqu’au bassin de Siloé.",
+    "en": "The only permanent spring of ancient Jerusalem, at the foot of the City of David on the Kidron side. Its water was led through Hezekiah’s Tunnel to the Pool of Siloam.",
+    "ru": "Единственный постоянный источник древнего Иерусалима у подножия Города Давида со стороны Кедрона. Его вода шла по туннелю Езекии в Силоамскую купель."
+   },
+   "shape": {
+    "type": "marker"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap — Gichon Spring (node 1608094098)",
+     "url": "https://www.openstreetmap.org/node/1608094098"
+    }
+   ],
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_tyropoeon",
+   "name": {
+    "he": "גיא הטירופיאון (הגיא, גיא עושי הגבינה)",
+    "fr": "La vallée du Tyropéon (« des fromagers »)",
+    "en": "The Tyropoeon Valley (“of the cheesemakers”)",
+    "ru": "Долина Тиропеон («сыроделов»)"
+   },
+   "text": {
+    "he": "גיא פנימי המפריד בין הגבעה המזרחית לגבעה המערבית. מתחיל באזור שער שכם של ימינו, עובר ממערב להר הבית ולכותל המערבי, ממשיך דרומה ותוחם את עיר דוד ממערב, עד שהוא נשפך אל נחל קדרון.",
+    "fr": "Vallée intérieure qui sépare la colline est de la colline ouest. Elle commence vers l’actuelle porte de Damas, passe à l’ouest du mont du Temple et du Mur occidental, continue vers le sud en bordant la Cité de David à l’ouest, et se jette dans le Kidron.",
+    "en": "An inner valley separating the eastern and western hills. It begins near today’s Damascus Gate, runs west of the Temple Mount and the Western Wall, continues south along the west side of the City of David and flows into the Kidron.",
+    "ru": "Внутренняя долина между восточным и западным холмами. Начинается у нынешних Дамасских ворот, идёт западнее Храмовой горы и Западной стены, далее на юг вдоль западной стороны Города Давида и впадает в Кедрон."
+   },
+   "debate": {
+    "he": "הגיא מלא היום בעיי חורבות לעומק רב, ולכן הוא כמעט אינו נראה בתבליט של היום מדרום לכותל.",
+    "fr": "La vallée est aujourd’hui comblée de décombres sur une grande profondeur : au sud du Mur occidental, le relief actuel ne la montre presque plus.",
+    "en": "The valley is now filled with deep debris, so south of the Western Wall today’s relief barely shows it.",
+    "ru": "Сегодня долина засыпана толстым слоем обломков, поэтому южнее Западной стены современный рельеф её почти не показывает."
+   },
+   "shape": {
+    "type": "valley",
+    "from": "a:damascus_gate",
+    "until": "a:wilsons_arch",
+    "then": [
+     "a:robinsons_arch",
+     "a:givati",
+     "a:siloam_pool"
+    ],
+    "w": 9,
+    "labelAt": 0.4
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "Relief SRTM 30 m (NASA) via OpenTopoData — écoulement calculé",
+     "url": "https://www.opentopodata.org/datasets/srtm/"
+    }
+   ],
+   "placementNote": {
+    "he": "משער שכם עד קשת וילסון — מחושב מהתבליט. מדרום לכך — לפי תיאור מסמך הקורס, בקווים ישרים (קשת רובינסון ← חניון גבעתי ← בריכת השילוח), מוצג בשקיפות. נחל אכזב: מים זורמים בו רק אחרי גשמים.",
+    "fr": "De la porte de Damas à l’arc de Wilson : calculé sur le relief. Plus au sud : d’après la description du cours, en lignes droites (arc de Robinson → Givati → Siloé), affiché plus transparent. Torrent intermittent : l’eau n’y coule qu’après les pluies.",
+    "en": "From Damascus Gate to Wilson’s Arch: computed from the relief. Further south: after the course description, in straight lines (Robinson’s Arch → Givati → Siloam), shown fainter. Seasonal stream: water flows only after rain.",
+    "ru": "От Дамасских ворот до арки Уилсона — по рельефу. Южнее — по описанию курса, прямыми отрезками (арка Робинсона → Гивати → Силоам), бледнее. Пересыхающий поток: вода течёт только после дождей."
+   },
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_hinnom",
+   "name": {
+    "he": "גיא בן הינום",
+    "fr": "La vallée de Ben Hinnom (Géhenne)",
+    "en": "The Hinnom Valley (Gehenna)",
+    "ru": "Долина Хинном (Геенна)"
+   },
+   "text": {
+    "he": "מתחיל באזור בריכת ממילא של ימינו, עובר מתחת לשער יפו, פונה בתשעים מעלות מצפון לדרום, וממשיך מזרחה עד להתחברותו אל נחל קדרון.",
+    "fr": "Elle commence vers l’actuel bassin de Mamilla, passe sous la porte de Jaffa, tourne à angle droit vers le sud, puis continue vers l’est jusqu’à rejoindre le Kidron.",
+    "en": "It begins near today’s Mamilla Pool, passes below Jaffa Gate, turns at a right angle to the south, then runs east until it joins the Kidron.",
+    "ru": "Начинается у нынешнего бассейна Мамилла, проходит под Яффскими воротами, поворачивает под прямым углом на юг и затем на восток до слияния с Кедроном."
+   },
+   "shape": {
+    "type": "valley",
+    "from": "a:jaffa_gate",
+    "head": true,
+    "maxKm2": 5.5,
+    "w": 11,
+    "labelAt": 0.55
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "Relief SRTM 30 m (NASA) via OpenTopoData — écoulement calculé",
+     "url": "https://www.opentopodata.org/datasets/srtm/"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap — Valley of Hinnom (way 1278537560)",
+     "url": "https://www.openstreetmap.org/way/1278537560"
+    }
+   ],
+   "placementNote": {
+    "he": "התוואי מחושב מהתבליט (SRTM 30 מ׳): כיוון הזרימה ושטח הניקוז. בדיקה מול נחל קדרון ב-OpenStreetMap: סטייה חציונית של 14–18 מ׳. נחל אכזב: מים זורמים בו רק אחרי גשמים.",
+    "fr": "Tracé calculé sur le relief (SRTM 30 m) : sens d’écoulement et surface drainée. Contrôle sur le Kidron d’OpenStreetMap : écart médian 14–18 m. Torrent intermittent : l’eau n’y coule qu’après les pluies.",
+    "en": "Route computed from the relief (SRTM 30 m): flow direction and drained area. Checked against the Kidron in OpenStreetMap: median offset 14–18 m. Seasonal stream: water flows only after rain.",
+    "ru": "Трасса рассчитана по рельефу (SRTM 30 м): направление стока и площадь водосбора. Проверка по Кедрону в OpenStreetMap: медианное отклонение 14–18 м. Пересыхающий поток: вода течёт только после дождей."
+   },
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_kidron",
+   "name": {
+    "he": "נחל קדרון",
+    "fr": "La vallée du Cédron (Kidron)",
+    "en": "The Kidron Valley",
+    "ru": "Кедронская долина"
+   },
+   "text": {
+    "he": "עובר בצדה המזרחי של העיר ותוחם אותה מכיוון מזרח; מדרונותיו התלולים הם גבול טבעי לעיר. בנקודה הדרומית הוא פונה מזרחה לעבר ים המלח.",
+    "fr": "Il longe le côté est de la ville et la borde à l’est ; ses pentes raides sont une limite naturelle. Au sud, il tourne vers l’est, vers la mer Morte.",
+    "en": "It runs along the east side of the city and bounds it on the east; its steep slopes are a natural limit. In the south it turns east toward the Dead Sea.",
+    "ru": "Проходит по восточной стороне города и ограничивает его с востока; крутые склоны — естественная граница. На юге поворачивает на восток, к Мёртвому морю."
+   },
+   "shape": {
+    "type": "valley",
+    "osm": "Nahal Kidron",
+    "w": 13,
+    "labelAt": 0.18
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12) — טופוגרפיה ונחלי העיר",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 12 — מוזאון ישראל (טופוגרפיה)",
+     "url": "https://drive.google.com/file/d/1iibborXcT8YwNqbNHA1d3vWFm-b1Bn3F/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap — Nahal Kidron (way 844849843, 538989205)",
+     "url": "https://www.openstreetmap.org/way/844849843"
+    }
+   ],
+   "placementNote": {
+    "he": "תוואי: OpenStreetMap; התבליט מאשר אותו. נחל אכזב: מים זורמים בו רק אחרי גשמים.",
+    "fr": "Tracé : OpenStreetMap, confirmé par le relief. Torrent intermittent : l’eau n’y coule qu’après les pluies.",
+    "en": "Route: OpenStreetMap, confirmed by the relief. Seasonal stream: water flows only after rain.",
+    "ru": "Трасса: OpenStreetMap, подтверждена рельефом. Пересыхающий поток: вода течёт только после дождей."
+   },
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_canaanite_wall",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "anchor": "city_of_david",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "חומה כנענית בעיר דוד",
+    "fr": "Muraille cananéenne de la Cité de David",
+    "en": "Canaanite wall, City of David",
+    "ru": "Ханаанская стена Города Давида"
+   },
+   "text": {
+    "he": "קטלין קניון חשפה בערך בשליש גובה המדרון המזרחי שרידי חומה מתקופת הברונזה התיכונה, ומעליהם חומה מהמאה ה-8 לפנה״ס.",
+    "fr": "Kathleen Kenyon a dégagé, au tiers de la pente est, une muraille du Bronze moyen, surmontée d'une muraille du VIIIe s. av. J.-C.",
+    "en": "Kathleen Kenyon uncovered, a third of the way up the eastern slope, a Middle Bronze wall with an 8th-century BCE wall above it.",
+    "ru": "Кэтлин Кеньон обнаружила на трети высоты восточного склона стену средней бронзы, а над ней — стену VIII в. до н. э."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום כללי: הסימון מראה את האזור, לא את הנקודה המדויקת.",
+    "fr": "Emplacement général : le repère indique la zone, pas le point exact.",
+    "en": "General location: the marker shows the area, not the exact spot.",
+    "ru": "Общее местоположение: метка указывает район, а не точное место."
+   }
+  },
+  {
+   "id": "jerusalem_gihon_fortress",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "anchor": "gihon_spring",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "ביצורי מעיין הגיחון",
+    "fr": "Fortifications de la source du Gihon",
+    "en": "Gihon Spring fortifications",
+    "ru": "Укрепления источника Гихон"
+   },
+   "text": {
+    "he": "מערכות ביצורים מאבנים ענקיות (קיקלופיות) הגנו על מעיין הגיחון ועל בריכת האגירה החצובה שלצידו. נקבה כנענית הסיטה את המים לבריכה שבתוך המתחם המבוצר.",
+    "fr": "Des fortifications en blocs énormes (« cyclopéens ») protégeaient la source du Gihon et le bassin taillé à côté. Un tunnel cananéen détournait l'eau vers ce bassin, à l'intérieur de l'enceinte.",
+    "en": "Massive ('cyclopean') fortifications protected the Gihon Spring and the rock-cut pool beside it. A Canaanite tunnel diverted the water into the pool inside the fortified area.",
+    "ru": "Массивные («циклопические») укрепления защищали источник Гихон и высеченный рядом бассейн. Ханаанский туннель отводил воду в бассейн внутри укрепления."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Weizmann — תיארוך פחמן 14 של מגדל הגיחון",
+     "url": "https://wis-wander.weizmann.ac.il/node/8596"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "otherView": {
+    "he": "מקורות אחרים: תיארוך פחמן 14 (מכון ויצמן ורשות העתיקות) מציב את אבני הבסיס של המגדל בכ-900–800 לפנה״ס — תקופת הברזל, ולא הברונזה התיכונה.",
+    "fr": "Autre avis : une datation au carbone 14 (Institut Weizmann, Autorité des antiquités) place les pierres de base de la tour vers 900–800 av. J.-C., au Fer II et non au Bronze moyen.",
+    "en": "Other view: radiocarbon dating (Weizmann Institute, IAA) places the tower's base stones c. 900–800 BCE — Iron Age, not Middle Bronze.",
+    "ru": "Другое мнение: радиоуглеродный анализ (Институт Вейцмана, Управление древностей) датирует основание башни ок. 900–800 до н. э. — железный век, а не средняя бронза."
+   }
+  },
+  {
+   "id": "jerusalem_warren_shaft",
+   "from": 1,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "warren_shaft",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "מעבר תת-קרקעי ופיר וורן",
+    "fr": "Passage souterrain et puits de Warren",
+    "en": "Underground passage and Warren's Shaft",
+    "ru": "Подземный ход и шахта Уоррена"
+   },
+   "text": {
+    "he": "בתקופה הכנענית נחצב מעבר תת-קרקעי אל הגיחון. פיר וורן (נחקר ב-1867) הוא פיר קרסטי שנחשף כשהעמיקו את המעבר בתקופה הישראלית; רייך ושוקרון מצאו בתחתיתו חרסים מהמאה ה-8 והסיקו שלא שימש חלק ממפעל המים.",
+    "fr": "Un passage souterrain vers le Gihon fut taillé à l'époque cananéenne. Le puits de Warren (exploré en 1867) est un puits karstique mis au jour quand on approfondit le passage à l'époque israélite ; Reich et Shukron y ont trouvé des tessons du VIIIe s. et en concluent qu'il ne faisait pas partie du système d'eau.",
+    "en": "An underground passage to the Gihon was cut in the Canaanite period. Warren's Shaft (explored 1867) is a karst shaft exposed when the passage was deepened in the Israelite period; Reich and Shukron found 8th-century sherds at its bottom and concluded it was not part of the water system.",
+    "ru": "В ханаанский период был высечен подземный ход к Гихону. Шахта Уоррена (исследована в 1867 г.) — карстовая шахта, вскрытая при углублении хода в израильский период; Райх и Шукрон нашли на её дне черепки VIII в. и пришли к выводу, что она не входила в систему водоснабжения."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_ophel_wall",
+   "from": 2,
+   "to": 2,
+   "certainty": "attested",
+   "anchor": "ophel",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "חומת בית ראשון בעופל",
+    "fr": "Muraille du Premier Temple à l'Ophel",
+    "en": "First Temple wall on the Ophel",
+    "ru": "Стена Первого Храма на Офеле"
+   },
+   "text": {
+    "he": "ליד גן דוידסון מצאה אילת מזר חומה באורך 70 מ׳ ומגדל כניסה בגובה 6 מ׳ מימי בית ראשון. החומה הפרידה בין עיר המגורים, עיר דוד, למתחם הקדוש.",
+    "fr": "Près du parc Davidson, Eilat Mazar a trouvé une muraille de 70 m et une tour d'entrée haute de 6 m du Premier Temple. Elle séparait la ville d'habitation (Cité de David) de l'enceinte sacrée.",
+    "en": "Near the Davidson Center, Eilat Mazar found a 70 m wall and a 6 m gate tower from the First Temple period, separating the residential City of David from the sacred compound.",
+    "ru": "Возле центра Дэвидсона Эйлат Мазар обнаружила стену длиной 70 м и въездную башню высотой 6 м эпохи Первого Храма; она отделяла жилой Город Давида от священной территории."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "חומה 70 מ׳, מגדל 6 מ׳",
+    "fr": "muraille 70 m, tour 6 m",
+    "en": "wall 70 m, tower 6 m",
+    "ru": "стена 70 м, башня 6 м"
+   }
+  },
+  {
+   "id": "jerusalem_broad_wall",
+   "from": 2,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "broad_wall",
+   "shape": {
+    "type": "wall",
+    "w": 7,
+    "h": 8,
+    "len": 30
+   },
+   "name": {
+    "he": "החומה הרחבה",
+    "fr": "La « muraille large »",
+    "en": "The Broad Wall",
+    "ru": "Широкая стена"
+   },
+   "text": {
+    "he": "בחפירות ההצלה ברובע היהודי חשף נחמן אביגד חומה ברוחב 7 מ׳ מימי בית ראשון; לפי יחס רוחב-גובה הוערך גובהה בכ-8 מ׳. לידה מגדל שער וראשי חצים בבליים וישראליים. החומה, המיוחסת לחזקיהו, הקיפה את הגבעה המערבית.",
+    "fr": "Lors des fouilles de sauvetage du quartier juif, Nahman Avigad a dégagé une muraille large de 7 m du Premier Temple ; sa hauteur est estimée à environ 8 m. À côté : une tour-porte et des pointes de flèches babyloniennes et israélites. Attribuée à Ézéchias, elle entourait la colline ouest.",
+    "en": "In rescue excavations in the Jewish Quarter, Nahman Avigad exposed a 7 m wide First Temple wall, estimated about 8 m high, with a gate tower and Babylonian and Israelite arrowheads nearby. Attributed to Hezekiah, it enclosed the Western Hill.",
+    "ru": "При спасательных раскопках в Еврейском квартале Нахман Авигад открыл стену шириной 7 м эпохи Первого Храма (высота оценивается ок. 8 м), рядом — башню ворот и вавилонские и израильские наконечники стрел. Её приписывают Езекии; она окружала Западный холм."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — החומה הרחבה",
+     "url": "https://drive.google.com/file/d/1_XxDGftw_HhDVZ6iPumuldAjZz2_d4uc/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 7 מ׳, גובה משוער 8 מ׳",
+    "fr": "largeur 7 m, hauteur estimée 8 m",
+    "en": "7 m wide, est. 8 m high",
+    "ru": "ширина 7 м, высота ок. 8 м"
+   },
+   "placementNote": {
+    "he": "אורך הקטע בסצנה (30 מ׳) הוא סימון בלבד.",
+    "fr": "La longueur du tronçon dans la scène (30 m) est indicative.",
+    "en": "The segment length shown (30 m) is indicative only.",
+    "ru": "Длина участка в сцене (30 м) условна."
+   }
+  },
+  {
+   "id": "jerusalem_hezekiah_tunnel",
+   "from": 2,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "hezekiah_tunnel",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "נקבת השילוח (נקבת חזקיהו)",
+    "fr": "Tunnel de Siloé (d'Ézéchias)",
+    "en": "Siloam (Hezekiah's) Tunnel",
+    "ru": "Силоамский туннель (туннель Езекии)"
+   },
+   "text": {
+    "he": "הנקבה הישראלית מובילה את מי הגיחון אל הבריכה, ולפי המסורת נחצבה בידי חזקיהו (מלכים ב׳ כ׳, כ׳; דברי הימים ב׳ ל״ב, ל׳). כתובת השילוח, שנמצאה כ-6 מ׳ לפני מוצא הנקבה, מתארת את פגישת החוצבים ואורך של 1,200 אמה; היא שמורה במוזיאון הארכיאולוגי באיסטנבול.",
+    "fr": "Le tunnel israélite mène l'eau du Gihon au bassin ; la tradition l'attribue à Ézéchias (2 R 20,20 ; 2 Ch 32,30). L'inscription de Siloé, trouvée à 6 m de la sortie, raconte la rencontre des deux équipes et donne 1 200 coudées ; elle est au musée archéologique d'Istanbul.",
+    "en": "The Israelite tunnel carries the Gihon water to the pool; tradition attributes it to Hezekiah (2 Kings 20:20; 2 Chr 32:30). The Siloam inscription, found 6 m before the outlet, describes the two crews meeting and gives 1,200 cubits; it is in the Istanbul Archaeology Museum.",
+    "ru": "Израильский туннель ведёт воду Гихона в бассейн; традиция приписывает его Езекии (4 Цар 20:20; 2 Пар 32:30). Силоамская надпись, найденная в 6 м от выхода, описывает встречу двух бригад и длину 1200 локтей; хранится в Археологическом музее Стамбула."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Siloam inscription (Bible Odyssey)",
+     "url": "https://www.bibleodyssey.org/articles/the-siloam-inscription-and-hezekiahs-tunnel/"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "1,200 אמה (לפי הכתובת)",
+    "fr": "1 200 coudées (selon l'inscription)",
+    "en": "1,200 cubits (per the inscription)",
+    "ru": "1200 локтей (по надписи)"
+   }
+  },
+  {
+   "id": "jerusalem_house_bullae",
+   "from": 2,
+   "to": 2,
+   "certainty": "attested",
+   "anchor": "city_of_david",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "בית הבולות ושכבת החורבן",
+    "fr": "Maison des bulles et couche de destruction",
+    "en": "House of the Bullae and destruction layer",
+    "ru": "Дом булл и слой разрушения"
+   },
+   "text": {
+    "he": "יגאל שילה חשף בשטח G שרידי חורבן וקורות עץ שרופות מחורבן בית ראשון, ומבנה ובו כ-50 בולות הנושאות שמות המוכרים מן המקרא.",
+    "fr": "Yigal Shiloh a mis au jour dans l'aire G une couche de destruction et des poutres brûlées de la chute du Premier Temple, et un bâtiment contenant une cinquantaine de bulles portant des noms connus par la Bible.",
+    "en": "Yigal Shiloh exposed in Area G a destruction layer with burnt beams from the fall of the First Temple, and a building with about 50 bullae bearing names known from the Bible.",
+    "ru": "Игаль Шило обнаружил в зоне G слой разрушения с обгоревшими балками времён падения Первого Храма и здание с примерно 50 буллами с библейскими именами."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום כללי: הסימון מראה את האזור, לא את הנקודה המדויקת.",
+    "fr": "Emplacement général : le repère indique la zone, pas le point exact.",
+    "en": "General location: the marker shows the area, not the exact spot.",
+    "ru": "Общее местоположение: метка указывает район, а не точное место."
+   }
+  },
+  {
+   "id": "jerusalem_large_stone_structure",
+   "from": 2,
+   "to": 2,
+   "certainty": "hypothesis",
+   "anchor": "city_of_david",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "״ארמון דוד״ — המבנה הציבורי הגדול",
+    "fr": "« Palais de David » — le grand bâtiment public",
+    "en": "'David's Palace' — the large public building",
+    "ru": "«Дворец Давида» — большое общественное здание"
+   },
+   "text": {
+    "he": "אילת מזר גילתה שרידי בית ציבורי גדול וטענה שזהו ארמון דוד (המאה ה-11 לפנה״ס).",
+    "fr": "Eilat Mazar a découvert un grand bâtiment public et l'a identifié au palais de David (XIe s. av. J.-C.).",
+    "en": "Eilat Mazar uncovered a large public building and identified it as David's palace (11th c. BCE).",
+    "ru": "Эйлат Мазар обнаружила большое общественное здание и отождествила его с дворцом Давида (XI в. до н. э.)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "debate": {
+    "he": "פרופ׳ פינקלשטיין ייחס את המבנה למאות ה-9–8 לפנה״ס. מתוך 4 דגימות פחמן 14 רק אחת התאימה לימי דוד.",
+    "fr": "Le Pr Finkelstein attribue le bâtiment aux IXe–VIIIe s. av. J.-C. Sur 4 échantillons au carbone 14, un seul correspond à l'époque de David.",
+    "en": "Prof. Finkelstein dates the building to the 9th–8th c. BCE. Of 4 radiocarbon samples, only one fits David's time.",
+    "ru": "Проф. Финкельштейн датирует здание IX–VIII вв. до н. э. Из 4 радиоуглеродных образцов лишь один соответствует времени Давида."
+   },
+   "placementNote": {
+    "he": "מיקום כללי: הסימון מראה את האזור, לא את הנקודה המדויקת.",
+    "fr": "Emplacement général : le repère indique la zone, pas le point exact.",
+    "en": "General location: the marker shows the area, not the exact spot.",
+    "ru": "Общее местоположение: метка указывает район, а не точное место."
+   }
+  },
+  {
+   "id": "jerusalem_first_temple",
+   "from": 2,
+   "to": 2,
+   "certainty": "hypothesis",
+   "anchor": "temple_mount",
+   "shape": {
+    "type": "none"
+   },
+   "name": {
+    "he": "בית המקדש הראשון",
+    "fr": "Le Premier Temple",
+    "en": "The First Temple",
+    "ru": "Первый Храм"
+   },
+   "text": {
+    "he": "לפי המקרא עמד בית המקדש הראשון בהר הבית. לא נמצאו ממנו שרידים, ולכן אינו מוצג בסצנה.",
+    "fr": "Selon la Bible, le Premier Temple se dressait sur le mont du Temple. Aucun vestige n'en est connu : il n'est donc pas représenté.",
+    "en": "According to the Bible the First Temple stood on the Temple Mount. No remains are known, so it is not modelled.",
+    "ru": "Согласно Библии, Первый Храм стоял на Храмовой горе. Остатков не найдено, поэтому он не изображён."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_nehemiah_wall",
+   "from": 3,
+   "to": 3,
+   "certainty": "hypothesis",
+   "anchor": "city_of_david",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "חומה מימי נחמיה",
+    "fr": "Muraille du temps de Néhémie",
+    "en": "Wall from Nehemiah's time",
+    "ru": "Стена времён Неемии"
+   },
+   "text": {
+    "he": "בחפירותיה (2005–2011) מצאה אילת מזר, מתחת למגדל הלניסטי, שרידי חומה שייחסה לימי נחמיה, ראשית המאה ה-4 לפנה״ס.",
+    "fr": "Lors de ses fouilles (2005–2011), Eilat Mazar a trouvé sous une tour hellénistique un mur qu'elle attribue à Néhémie, début du IVe s. av. J.-C.",
+    "en": "In her 2005–2011 excavations Eilat Mazar found, beneath a Hellenistic tower, a wall she attributed to Nehemiah, early 4th c. BCE.",
+    "ru": "В раскопках 2005–2011 гг. Эйлат Мазар нашла под эллинистической башней стену, которую отнесла ко времени Неемии (начало IV в. до н. э.)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "debate": {
+    "he": "הייחוס לנחמיה הוא פרשנות של החופרת.",
+    "fr": "L'attribution à Néhémie est l'interprétation de la fouilleuse.",
+    "en": "The attribution to Nehemiah is the excavator's interpretation.",
+    "ru": "Отнесение к Неемии — интерпретация автора раскопок."
+   },
+   "placementNote": {
+    "he": "מיקום כללי: הסימון מראה את האזור, לא את הנקודה המדויקת.",
+    "fr": "Emplacement général : le repère indique la zone, pas le point exact.",
+    "en": "General location: the marker shows the area, not the exact spot.",
+    "ru": "Общее местоположение: метка указывает район, а не точное место."
+   }
+  },
+  {
+   "id": "jerusalem_cod_towers",
+   "from": 4,
+   "to": 4,
+   "certainty": "attested",
+   "anchor": "city_of_david",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "המגדלים בראש עיר דוד",
+    "fr": "Les tours du sommet de la Cité de David",
+    "en": "The towers atop the City of David",
+    "ru": "Башни на вершине Города Давида"
+   },
+   "text": {
+    "he": "המשלחת הבריטית מצאה בשנות ה-20 שני מגדלים שנחשבו מימי דוד; קטלין קניון הוכיחה שהם מהתקופה החשמונאית.",
+    "fr": "La mission britannique des années 1920 a trouvé deux tours crues davidiques ; Kathleen Kenyon a montré qu'elles sont hasmonéennes.",
+    "en": "The British expedition of the 1920s found two towers thought to be Davidic; Kathleen Kenyon showed they are Hasmonean.",
+    "ru": "Британская экспедиция 1920-х гг. нашла две башни, считавшиеся давидовыми; Кэтлин Кеньон доказала, что они хасмонейские."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום כללי: הסימון מראה את האזור, לא את הנקודה המדויקת.",
+    "fr": "Emplacement général : le repère indique la zone, pas le point exact.",
+    "en": "General location: the marker shows the area, not the exact spot.",
+    "ru": "Общее местоположение: метка указывает район, а не точное место."
+   }
+  },
+  {
+   "id": "jerusalem_temple_mount",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": null,
+   "shape": {
+    "type": "osm",
+    "match": "Temple Mount",
+    "h": 12
+   },
+   "name": {
+    "he": "הר הבית ההרודיאני",
+    "fr": "Le mont du Temple hérodien",
+    "en": "The Herodian Temple Mount",
+    "ru": "Иродианская Храмовая гора"
+   },
+   "text": {
+    "he": "הורדוס הכפיל את שטח הר הבית בבניית ארבע חומות תמך אדירות ומילוי עפר וקשתות (כגון ״אורוות שלמה״). זה היה המתחם המקודש הגדול ביותר בעולם הרומי.",
+    "fr": "Hérode doubla la surface du mont du Temple grâce à quatre énormes murs de soutènement, des remblais et des voûtes (comme les « écuries de Salomon »). C'était le plus grand sanctuaire du monde romain.",
+    "en": "Herod doubled the Temple Mount with four huge retaining walls, earth fill and vaults (such as 'Solomon's Stables'). It was the largest sacred precinct in the Roman world.",
+    "ru": "Ирод удвоил площадь Храмовой горы, построив четыре огромные подпорные стены, засыпку и своды (как «Конюшни Соломона»). Это было крупнейшее святилище римского мира."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "Western Wall (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Western_Wall"
+    },
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "הכותל המערבי לכל אורכו: 488 מ׳ (מקור מקוון)",
+    "fr": "mur occidental : 488 m (source en ligne)",
+    "en": "Western wall: 488 m (online source)",
+    "ru": "Западная стена: 488 м (онлайн-источник)"
+   },
+   "remains": {
+    "he": "חומות התמך ההרודיאניות (הכותל המערבי, הדרומי, המזרחי); טרפז של כ-485/280/460/315 מ׳ (מסמך הקורס).",
+    "fr": "Les murs de soutènement hérodiens (Mur occidental, sud, est) ; trapèze d’env. 485/280/460/315 m (cours).",
+    "en": "The Herodian retaining walls (Western, southern, eastern walls); trapezoid of about 485/280/460/315 m (course).",
+    "ru": "Иродианские подпорные стены (Западная, южная, восточная); трапеция ок. 485/280/460/315 м (курс)."
+   },
+   "placementNote": {
+    "he": "הקו הוא קו הרחבה של היום (OpenStreetMap). הגובה (12 מ׳) סמלי.",
+    "fr": "Le contour est celui de l'esplanade actuelle (OpenStreetMap). La hauteur (12 m) est symbolique.",
+    "en": "The outline is today's esplanade (OpenStreetMap). The 12 m height is symbolic.",
+    "ru": "Контур — нынешняя площадь (OpenStreetMap). Высота 12 м условна."
+   },
+   "builder": {
+    "he": "הרחבה: הורדוס (ארבע חומות תמך ומילוי)",
+    "fr": "Agrandissement : Hérode (quatre murs de soutènement et remblai)",
+    "en": "Enlargement: Herod (four retaining walls and fill)",
+    "ru": "Расширение: Ирод (четыре подпорные стены и засыпка)"
+   }
+  },
+  {
+   "id": "jerusalem_second_temple",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "anchor": "dome_of_the_rock",
+   "shape": {
+    "type": "temple"
+   },
+   "name": {
+    "he": "בית המקדש השני",
+    "fr": "Le Second Temple",
+    "en": "The Second Temple",
+    "ru": "Второй Храм"
+   },
+   "text": {
+    "he": "במרכז המתחם עמד בית המקדש. סביב החצר הפנימית עמד הסורג, מחיצה שמעבר לה נאסרה כניסת נוכרים. יוסף בן מתתיהו כותב שגובהו ורוחבו של ההיכל ״מאה אמה״ ושמאחור היה צר ב-40 אמה. הורדוס בנה אותו מחדש ״בשנה ה-15 למלכותו״.",
+    "fr": "Le Temple se dressait au centre de l'enceinte, entouré du soreg, barrière interdite aux non-Juifs. Selon Josèphe, le sanctuaire mesurait « cent coudées » de haut et de large, et 40 de moins à l'arrière. Hérode le reconstruisit « la 15e année de son règne ».",
+    "en": "The Temple stood at the centre of the precinct, surrounded by the soreg, a barrier beyond which gentiles could not pass. Josephus gives the sanctuary 'a hundred cubits' in height and breadth, 40 narrower behind. Herod rebuilt it 'in the fifteenth year of his reign'.",
+    "ru": "Храм стоял в центре святилища, окружённый сорегом — оградой, за которую не допускались иноверцы. По Иосифу Флавию, святилище было «сто локтей» в высоту и ширину и на 40 уже сзади. Ирод перестроил его «в пятнадцатый год своего царствования»."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 1.401–402",
+     "url": "https://lexundria.com/j_bj/1.401-1.402/wst"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.184–247",
+     "url": "https://lexundria.com/j_bj/5.184-5.247/wst"
+    },
+    {
+     "kind": "primary",
+     "label": "משנה, מסכת מידות",
+     "url": "https://www.sefaria.org/Mishnah_Middot.1"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "100 × 100 אמה (לפי יוסף)",
+    "fr": "100 × 100 coudées (Josèphe)",
+    "en": "100 × 100 cubits (Josephus)",
+    "ru": "100 × 100 локтей (Иосиф Флавий)"
+   },
+   "remains": {
+    "he": "אין שרידים של ההיכל. כתובת הסורג שרדה.",
+    "fr": "Aucun vestige du sanctuaire. L'inscription du soreg est conservée.",
+    "en": "No remains of the sanctuary. The soreg inscription survives.",
+    "ru": "Остатков святилища нет. Надпись сорега сохранилась."
+   },
+   "debate": {
+    "he": "מיקומו המדויק ברחבה שנוי במחלוקת. הנפח בסצנה מפושט: קובייה של 100 אמה, ללא פרטים.",
+    "fr": "Son emplacement exact sur l'esplanade est débattu. Le volume est simplifié : un cube de 100 coudées, sans détails.",
+    "en": "Its exact position on the platform is debated. The volume is simplified: a 100-cubit cube, no details.",
+    "ru": "Точное место на площади спорно. Объём упрощён: куб 100 локтей без деталей."
+   },
+   "placementNote": {
+    "he": "מרכז בית קודש הקודשים הוצב במרכז כיפת הסלע — זו אחת ההשערות (יש מיקומים חלופיים). התוכנית לפי מסכת מידות ויוסף בן מתתיהו, ביחידת אמה של 0.5 מ׳; פרטי העיטור משוחזרים.",
+    "fr": "Le Saint des Saints est placé au centre du Dôme du Rocher — c’est une hypothèse parmi d’autres. Plan d’après le traité Middot et Josèphe, coudée de 0,5 m ; décor reconstitué.",
+    "en": "The Holy of Holies is placed at the centre of the Dome of the Rock — one hypothesis among others. Plan after tractate Middot and Josephus, 0.5 m cubit; decoration reconstructed.",
+    "ru": "Святая святых помещена в центр Купола Скалы — это одна из гипотез. План по трактату Мидот и Иосифу Флавию, локоть 0,5 м; декор реконструирован."
+   },
+   "builder": {
+    "he": "שבי ציון (זרובבל), הורחב ונבנה מחדש בידי הורדוס · 20/19 לפנה״ס ואילך",
+    "fr": "Les rapatriés (Zorobabel), reconstruit par Hérode · à partir de 20/19 av. J.-C.",
+    "en": "The returnees (Zerubbabel), rebuilt by Herod · from 20/19 BCE",
+    "ru": "Вернувшиеся (Зоровавель), перестроен Иродом · с 20/19 г. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_royal_stoa",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "anchor": null,
+   "shape": {
+    "type": "royalstoa"
+   },
+   "name": {
+    "he": "הסטיו המלכותי",
+    "fr": "Le Portique royal",
+    "en": "The Royal Stoa",
+    "ru": "Царская стоя"
+   },
+   "text": {
+    "he": "מבנה עמודים מפואר לאורך החומה הדרומית של הר הבית, ששימש למסחר, משפט ומנהלה.",
+    "fr": "Galerie à colonnes le long du mur sud du mont du Temple, pour le commerce, la justice et l'administration.",
+    "en": "A grand colonnaded hall along the southern wall of the Temple Mount, used for commerce, justice and administration.",
+    "ru": "Колоннада вдоль южной стены Храмовой горы для торговли, суда и управления."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.184–247",
+     "url": "https://lexundria.com/j_bj/5.184-5.247/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Wikipedia — Royal Stoa (Jerusalem)",
+     "url": "https://en.wikipedia.org/wiki/Royal_Stoa_(Jerusalem)"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, קדמוניות היהודים 15.410–420",
+     "url": "https://lexundria.com/j_aj/15.410-15.420/wst"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "לאורך הצלע הדרומית של רחבת הר הבית (OpenStreetMap). המידות לפי יוסף בן מתתיהו (קדמוניות 15.411–416): 162 עמודים בארבע שורות, אולם מרכזי גבוה; העיטור משוחזר.",
+    "fr": "Le long du côté sud réel de l’esplanade (OpenStreetMap). Dimensions d’après Josèphe (Antiquités 15.411–416) : 162 colonnes en quatre rangées, nef centrale haute ; décor reconstitué.",
+    "en": "Along the real southern side of the esplanade (OpenStreetMap). Dimensions after Josephus (Antiquities 15.411–416): 162 columns in four rows, tall central nave; decoration reconstructed.",
+    "ru": "Вдоль реальной южной стороны площади (OpenStreetMap). Размеры по Иосифу Флавию (Древности 15.411–416): 162 колонны в четыре ряда, высокий центральный неф; декор реконструирован."
+   },
+   "builder": {
+    "he": "הורדוס · המאה ה-1 לפנה״ס",
+    "fr": "Hérode · Ier s. av. J.-C.",
+    "en": "Herod · 1st c. BCE",
+    "ru": "Ирод · I в. до н. э."
+   },
+   "function": {
+    "he": "מסחר, משפט ומנהלה (מסמך הקורס).",
+    "fr": "Commerce, justice et administration (cours).",
+    "en": "Commerce, justice and administration (course).",
+    "ru": "Торговля, суд и управление (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_hulda_gates",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "hulda_gates",
+   "shape": {
+    "type": "hulda"
+   },
+   "name": {
+    "he": "שערי חולדה",
+    "fr": "Les portes de Houlda",
+    "en": "The Huldah Gates",
+    "ru": "Ворота Хульды"
+   },
+   "text": {
+    "he": "השער הכפול והשער המשולש בחומה הדרומית שימשו כניסה ויציאה עיקריות לעולי הרגל, דרך מחילות תת-קרקעיות אל רחבת הר הבית.",
+    "fr": "La porte double et la porte triple du mur sud étaient l'entrée et la sortie principales des pèlerins, par des passages souterrains vers l'esplanade.",
+    "en": "The Double and Triple Gates in the southern wall were the pilgrims' main entrance and exit, through underground passages up to the platform.",
+    "ru": "Двойные и Тройные ворота в южной стене были главным входом и выходом паломников через подземные проходы на площадь."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דוידסון סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view"
+    },
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "remains": {
+    "he": "השער הכפול והשער המשולש (סתומים) בחומה הדרומית.",
+    "fr": "La porte double et la porte triple (murées) dans le mur sud.",
+    "en": "The Double and Triple Gates (blocked) in the southern wall.",
+    "ru": "Двойные и Тройные ворота (заложены) в южной стене."
+   },
+   "function": {
+    "he": "כניסה ויציאה עיקריות של עולי הרגל דרך מעברים תת-קרקעיים אל רחבת הר הבית (מסמך הקורס).",
+    "fr": "Entrée et sortie principales des pèlerins, par des passages souterrains vers l’esplanade (cours).",
+    "en": "Main entrance and exit of pilgrims through underground passages to the esplanade (course).",
+    "ru": "Главный вход и выход паломников через подземные проходы на площадь (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_southern_steps",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "southern_steps",
+   "shape": {
+    "type": "steps"
+   },
+   "name": {
+    "he": "המדרגות הדרומיות",
+    "fr": "Les escaliers du sud",
+    "en": "The Southern Steps",
+    "ru": "Южные ступени"
+   },
+   "text": {
+    "he": "מדרגות ענקיות שנחשפו בחפירות (דוידסון) והובילו אל שערי חולדה.",
+    "fr": "Escaliers monumentaux dégagés lors des fouilles (Davidson), menant aux portes de Houlda.",
+    "en": "Monumental steps exposed in excavations (Davidson), leading to the Huldah Gates.",
+    "ru": "Монументальная лестница, открытая при раскопках (Дэвидсон), ведущая к воротам Хульды."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דוידסון סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב כ-64 מ׳",
+    "fr": "largeur env. 64 m",
+    "en": "about 64 m wide",
+    "ru": "ширина ок. 64 м"
+   },
+   "remains": {
+    "he": "חלק מהמדרגות נחשף ושוחזר מול שערי חולדה (חפירות דוידסון).",
+    "fr": "Une partie des marches est dégagée et restaurée devant les portes de Houlda (fouilles Davidson).",
+    "en": "Part of the steps is exposed and restored in front of the Huldah Gates (Davidson excavations).",
+    "ru": "Часть ступеней раскрыта и восстановлена перед воротами Хульды (раскопки Дэвидсона)."
+   }
+  },
+  {
+   "id": "jerusalem_robinsons_arch",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "robinsons_arch",
+   "shape": {
+    "type": "robinson"
+   },
+   "name": {
+    "he": "קשת רובינסון",
+    "fr": "L'arche de Robinson",
+    "en": "Robinson's Arch",
+    "ru": "Арка Робинсона"
+   },
+   "text": {
+    "he": "שריד הקשת בפינה הדרום-מערבית של הר הבית.",
+    "fr": "Vestige d'arche à l'angle sud-ouest du mont du Temple.",
+    "en": "Remnant of an arch at the south-west corner of the Temple Mount.",
+    "ru": "Остаток арки у юго-западного угла Храмовой горы."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דוידסון סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/view"
+    },
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
+    },
+    {
+     "kind": "online",
+     "label": "Wikipedia — Robinson's Arch",
+     "url": "https://en.wikipedia.org/wiki/Robinson%27s_Arch"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "remains": {
+    "he": "תחילת הקשת בולטת מהכותל המערבי בפינה הדרום-מערבית (גן דוידסון).",
+    "fr": "Le départ de l’arc saille du Mur occidental à l’angle sud-ouest (parc Davidson).",
+    "en": "The springing of the arch projects from the Western Wall at the south-west corner (Davidson Park).",
+    "ru": "Пята арки выступает из Западной стены у юго-западного угла (парк Дэвидсона)."
+   },
+   "function": {
+    "he": "מחלף מדורג שהוביל מהרחוב ומחנויות עולי הרגל אל הר הבית (מסמך הקורס).",
+    "fr": "Échangeur à degrés menant de la rue et des boutiques des pèlerins au mont du Temple (cours).",
+    "en": "Stepped interchange leading from the street and pilgrims’ shops to the Temple Mount (course).",
+    "ru": "Ступенчатая развязка от улицы и лавок паломников к Храмовой горе (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_wilsons_arch",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "wilsons_arch",
+   "shape": {
+    "type": "wilson"
+   },
+   "name": {
+    "he": "קשת וילסון",
+    "fr": "Arc de Wilson",
+    "en": "Wilson's Arch",
+    "ru": "Арка Уилсона"
+   },
+   "text": {
+    "he": "גשר ענקי על סדרת קשתות שחיבר בין העיר העליונה להר הבית; כיום חלק מאולם התפילה המקורה ליד הכותל. נקרא על שם צ'ארלס וילסון (PEF).",
+    "fr": "Pont géant sur une série d’arches qui reliait la ville haute au mont du Temple ; aujourd’hui partie de la salle de prière couverte du Mur occidental. Nommé d’après Charles Wilson (PEF).",
+    "en": "A huge bridge on a series of arches linking the Upper City to the Temple Mount; today part of the covered prayer hall by the Western Wall. Named after Charles Wilson (PEF).",
+    "ru": "Огромный мост на арках, соединявший Верхний город с Храмовой горой; сегодня часть крытого молитвенного зала у Западной стены. Назван в честь Чарльза Уилсона (PEF)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "מנהרת הכותל סופי (סיור 13)",
+     "url": "https://drive.google.com/file/d/1R4jFoIA8IVfyEAU_eJKSPrJUpHD9Gqsq/view"
+    },
+    {
+     "kind": "online",
+     "label": "Weizmann Institute — When was Wilson's Arch built? (2020)",
+     "url": "https://wis-wander.weizmann.ac.il/node/10785"
+    },
+    {
+     "kind": "online",
+     "label": "Madain Project — Wilson's Arch",
+     "url": "https://madainproject.com/wilsons_arch"
+    }
+   ],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 7.5 מ׳ ואחר כך 15 מ׳; מפתח הקשת כ-13 מ׳",
+    "fr": "Largeur 7,5 m puis 15 m ; portée de l’arc ≈ 13 m",
+    "en": "Width 7.5 m, later 15 m; arch span ≈ 13 m",
+    "ru": "Ширина 7,5 м, затем 15 м; пролёт ≈ 13 м"
+   },
+   "remains": {
+    "he": "הקשת נראית באולם התפילה הצפוני של הכותל.",
+    "fr": "L’arc est visible dans la salle de prière nord du Mur.",
+    "en": "The arch is visible in the northern prayer hall of the Wall.",
+    "ru": "Арка видна в северном молитвенном зале у Стены."
+   },
+   "debate": {
+    "he": "תיארוך: בדיקות פחמן במכון ויצמן (2020) הראו שני שלבים מימי הבית השני; חוקרים אחרים תיארכו אותה בעבר לתקופה האומאית.",
+    "fr": "Datation : les analyses au carbone de l’Institut Weizmann (2020) montrent deux phases du Second Temple ; d’autres chercheurs l’avaient datée de l’époque omeyyade.",
+    "en": "Dating: radiocarbon analyses by the Weizmann Institute (2020) show two Second Temple phases; other scholars had dated it to the Umayyad period.",
+    "ru": "Датировка: радиоуглеродный анализ Института Вейцмана (2020) показал две фазы эпохи Второго Храма; другие исследователи относили её к омейядскому периоду."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. אורך הגשר ומספר הקשתות בדגם — סכמטיים.",
+    "fr": "Position : Wikidata. Longueur du pont et nombre d’arches dans le modèle : schématiques.",
+    "en": "Position: Wikidata. Bridge length and number of arches in the model are schematic.",
+    "ru": "Положение: Wikidata. Длина моста и число арок в модели схематичны."
+   },
+   "function": {
+    "he": "גשר שחיבר בין העיר העליונה להר הבית (מסמך הקורס).",
+    "fr": "Pont reliant la ville haute au mont du Temple (cours).",
+    "en": "Bridge linking the Upper City to the Temple Mount (course).",
+    "ru": "Мост между Верхним городом и Храмовой горой (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_porticoes",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "shape": {
+    "type": "porticoes"
+   },
+   "name": {
+    "he": "סטווים כפולים סביב הר הבית",
+    "fr": "Portiques doubles de l’esplanade",
+    "en": "Double porticoes of the esplanade",
+    "ru": "Двойные портики площади"
+   },
+   "text": {
+    "he": "לפי יוסף בן מתתיהו הקיפו את רחבת הר הבית סטווים כפולים: שתי שורות עמודים, רוחב 30 אמה, עמודים בגובה 25 אמה, תקרת ארז. בצד הדרומי עמד הסטיו המלכותי.",
+    "fr": "Selon Josèphe, l’esplanade était entourée de portiques doubles : deux rangées de colonnes, 30 coudées de large, colonnes de 25 coudées, plafond de cèdre. Au sud se dressait le Portique royal.",
+    "en": "According to Josephus the esplanade was surrounded by double porticoes: two rows of columns, 30 cubits wide, columns 25 cubits high, cedar ceilings. The Royal Stoa stood on the south side.",
+    "ru": "По Иосифу Флавию, площадь окружали двойные портики: два ряда колонн, ширина 30 локтей, колонны высотой 25 локтей, кедровые потолки. На юге стоял Царский портик."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.184–247",
+     "url": "https://lexundria.com/j_bj/5.184-5.247/wst"
+    },
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    }
+   ],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 30 אמה, עמודים 25 אמה (יוסף, מלחמת היהודים 5.190–192)",
+    "fr": "Largeur 30 coudées, colonnes 25 coudées (Josèphe, Guerre 5.190–192)",
+    "en": "Width 30 cubits, columns 25 cubits (Josephus, War 5.190–192)",
+    "ru": "Ширина 30 локтей, колонны 25 локтей (Война 5.190–192)"
+   },
+   "placementNote": {
+    "he": "מוצבים לאורך הצלעות האמיתיות של הרחבה (OpenStreetMap); מרווח העמודים משוער.",
+    "fr": "Placés le long des côtés réels de l’esplanade (OpenStreetMap) ; l’entraxe des colonnes est estimé.",
+    "en": "Placed along the real sides of the esplanade (OpenStreetMap); column spacing is estimated.",
+    "ru": "Размещены вдоль реальных сторон площади (OpenStreetMap); шаг колонн оценочный."
+   },
+   "builder": {
+    "he": "הורדוס · המאה ה-1 לפנה״ס",
+    "fr": "Hérode · Ier s. av. J.-C.",
+    "en": "Herod · 1st c. BCE",
+    "ru": "Ирод · I в. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_antonia",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "anchor": "antonia",
+   "shape": {
+    "type": "antonia"
+   },
+   "name": {
+    "he": "מצודת אנטוניה",
+    "fr": "La forteresse Antonia",
+    "en": "The Antonia Fortress",
+    "ru": "Крепость Антония"
+   },
+   "text": {
+    "he": "מצודה ענקית בעלת ארבעה מגדלים בפינה הצפון-מערבית של הר הבית, ששימשה למגורי חיל המצב הרומי ולפיקוח על הנעשה בתחום המקדש.",
+    "fr": "Immense forteresse à quatre tours à l'angle nord-ouest du mont du Temple, logeant la garnison romaine qui surveillait le sanctuaire.",
+    "en": "A huge four-towered fortress at the north-west corner of the Temple Mount, housing the Roman garrison that watched over the Temple.",
+    "ru": "Огромная крепость с четырьмя башнями у северо-западного угла Храмовой горы, где стоял римский гарнизон, следивший за Храмом."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.184–247",
+     "url": "https://lexundria.com/j_bj/5.184-5.247/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Antonia Fortress (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Antonia_Fortress"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "יוסף: סלע בגובה 50 אמה, מגדל 40 אמה, ארבעה מגדלי פינה בגובה 50 (הדרום-מזרחי 70). שטח לפי השרידים: כ-112 × 40 מ׳ (מקור מקוון).",
+    "fr": "Josèphe : rocher de 50 coudées, tour de 40, quatre tours d'angle de 50 (70 au sud-est). Emprise selon les vestiges : env. 112 × 40 m (source en ligne).",
+    "en": "Josephus: rock 50 cubits, tower 40, four corner towers of 50 (70 at the south-east). Footprint from remains: c. 112 × 40 m (online source).",
+    "ru": "Иосиф: скала 50 локтей, башня 40, четыре угловые башни по 50 (юго-восточная 70). Площадь по остаткам: ок. 112 × 40 м (онлайн-источник)."
+   },
+   "debate": {
+    "he": "צורתה וגודלה שנויים במחלוקת (נצר מול מרפי-או׳קונור). המרצפת במנזר האחיות מציון מתוארכת לימי אדריאנוס ואינה חלק מהאנטוניה. פייר בנואה הציע מצודה קטנה עם מגדל אחד בלבד בפינה הדרום-מזרחית, וטען שאין עדות ארכאולוגית לארבעה מגדלים; ארבעת המגדלים שבשחזור באים מתיאור יוסף בן מתתיהו.",
+    "fr": "Forme et taille débattues (Netzer contre Murphy-O'Connor). Le dallage des Sœurs de Sion date d'Hadrien et n'appartient pas à l'Antonia. Pierre Benoit a proposé une forteresse réduite à une seule tour, à l’angle sud-est, faute de toute preuve archéologique de quatre tours ; les quatre tours de la reconstitution viennent de la description de Josèphe.",
+    "en": "Its shape and size are debated (Netzer vs Murphy-O'Connor). The pavement at the Sisters of Zion is Hadrianic, not part of the Antonia. Pierre Benoit proposed a smaller fortress with a single tower at the south-east corner, finding no archaeological evidence for four towers; the four towers in the reconstruction come from Josephus’ description.",
+    "ru": "Форма и размер спорны (Нецер против Мёрфи-О'Коннора). Мостовая монастыря Сестёр Сиона — времён Адриана, не часть Антонии. Пьер Бенуа предлагал небольшую крепость с одной башней в юго-восточном углу, не найдя археологических доказательств четырёх башен; четыре башни реконструкции взяты из описания Иосифа Флавия."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata, מוסט צפונה כך שהמבצר צמוד לצלע הצפונית של הרחבה ואינו חופף לה. הנפחים סכמטיים.",
+    "fr": "Position : Wikidata, décalée vers le nord pour que la forteresse jouxte le côté nord de l’esplanade sans le recouvrir. Volumes schématiques.",
+    "en": "Position: Wikidata, shifted north so the fortress adjoins the northern side of the esplanade without overlapping it. Volumes are schematic.",
+    "ru": "Положение: Wikidata, смещено к северу, чтобы крепость примыкала к северной стороне площади, не перекрывая её. Объёмы схематичны."
+   },
+   "builder": {
+    "he": "הורדוס · המאה ה-1 לפנה״ס",
+    "fr": "Hérode · Ier s. av. J.-C.",
+    "en": "Herod · 1st c. BCE",
+    "ru": "Ирод · I в. до н. э."
+   },
+   "function": {
+    "he": "מגורי חיל המצב הרומי ופיקוח על הנעשה במתחם המקדש (מסמך הקורס).",
+    "fr": "Caserne de la garnison romaine et surveillance de l’enceinte du Temple (cours).",
+    "en": "Barracks of the Roman garrison and surveillance of the Temple precinct (course).",
+    "ru": "Казармы римского гарнизона и надзор за храмовым двором (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_phasael",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "herodian_tower",
+   "shape": {
+    "type": "phasael"
+   },
+   "name": {
+    "he": "מגדל פצאל (או היפיקוס)",
+    "fr": "Tour de Phasaël (ou Hippicus)",
+    "en": "Phasael (or Hippicus) Tower",
+    "ru": "Башня Фазаеля (или Гиппика)"
+   },
+   "text": {
+    "he": "מצפון לארמונו בנה הורדוס שלושה מגדלים: פצאל על שם אחיו, היפיקוס על שם חברו, ומרים על שם אשתו החשמונאית. בסיס מגדל פצאל/היפיקוס משולב כיום במצודת דוד. שימו לב: ״מגדל דוד״ הוא שם מאוחר של המצודה ושל הצריח העות׳מאני שלה; אין לו קשר למגדלים ההרודיאניים ולא למסורת על דוד המלך. הבסיס ההרודיאני הוא המגדל הצפון-מזרחי של המצודה.",
+    "fr": "Au nord de son palais, Hérode bâtit trois tours : Phasaël (son frère), Hippicus (un ami) et Mariamne (son épouse hasmonéenne). La base de Phasaël ou d'Hippicus est intégrée aujourd'hui dans la citadelle (« Tour de David »). Attention : « tour de David » est un nom tardif de la Citadelle et de son minaret ottoman ; il n’a rien à voir avec les tours d’Hérode ni avec la tradition sur le roi David. La base hérodienne est la tour nord-est de la Citadelle.",
+    "en": "North of his palace Herod built three towers: Phasael (his brother), Hippicus (a friend) and Mariamne (his Hasmonean wife). The base of Phasael or Hippicus is built into today's Citadel ('Tower of David'). Note: 'Tower of David' is a late name of the Citadel and its Ottoman minaret; it has nothing to do with Herod's towers or with the tradition about King David. The Herodian base is the north-east tower of the Citadel.",
+    "ru": "К северу от дворца Ирод построил три башни: Фазаель (брат), Гиппик (друг) и Мариамна (жена-хасмонейка). Основание Фазаеля или Гиппика входит сегодня в Цитадель («Башня Давида»). Внимание: «башня Давида» — позднее название Цитадели и её османского минарета; оно не связано ни с башнями Ирода, ни с преданием о царе Давиде. Иродианское основание — северо-восточная башня Цитадели."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.136–183",
+     "url": "https://lexundria.com/j_bj/5.136-5.183/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Geva 1981, IEJ 31 (via Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Tower_of_David_(northeast_tower)"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "פצאל לפי יוסף: 40 × 40 אמה, גובה כולל כ-90 אמה (כ-45 מ׳ לפי מסמך הקורס)",
+    "fr": "Phasaël selon Josèphe : 40 × 40 coudées, hauteur totale env. 90 (env. 45 m selon le cours)",
+    "en": "Phasael per Josephus: 40 × 40 cubits, total height about 90 (about 45 m per the course)",
+    "ru": "Фазаель по Иосифу: 40 × 40 локтей, общая высота ок. 90 (ок. 45 м по курсу)"
+   },
+   "remains": {
+    "he": "בסיס המגדל ההרודיאני משולב במגדל הצפון-מזרחי של מצודת דוד.",
+    "fr": "La base hérodienne est intégrée à la tour nord-est de la Citadelle.",
+    "en": "The Herodian base is incorporated in the north-east tower of the Citadel.",
+    "ru": "Иродианское основание встроено в северо-восточную башню Цитадели."
+   },
+   "debate": {
+    "he": "זיהוי הבסיס שנוי במחלוקת: פצאל (וורן, קונדר, שיק) או היפיקוס (רובינסון, גבע 1981). הגובה בסצנה הוא של פצאל.",
+    "fr": "Identification débattue : Phasaël (Warren, Conder, Schick) ou Hippicus (Robinson, Geva 1981). La hauteur affichée est celle de Phasaël.",
+    "en": "Identification debated: Phasael (Warren, Conder, Schick) or Hippicus (Robinson, Geva 1981). The height shown is Phasael's.",
+    "ru": "Идентификация спорна: Фазаель (Уоррен, Кондер, Шик) или Гиппик (Робинсон, Гева 1981). Показана высота Фазаеля."
+   },
+   "builder": {
+    "he": "הורדוס · המאה ה-1 לפנה״ס",
+    "fr": "Hérode · Ier s. av. J.-C.",
+    "en": "Herod · 1st c. BCE",
+    "ru": "Ирод · I в. до н. э."
+   },
+   "function": {
+    "he": "מגדל שמירה וביצור צפונית לארמון הורדוס (מסמך הקורס).",
+    "fr": "Tour de garde et de fortification au nord du palais d’Hérode (cours).",
+    "en": "Guard and fortification tower north of Herod’s palace (course).",
+    "ru": "Сторожевая и оборонительная башня к северу от дворца Ирода (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_hippicus",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "anchor": null,
+   "shape": {
+    "type": "hippicus"
+   },
+   "name": {
+    "he": "מגדל היפיקוס",
+    "fr": "Tour d'Hippicus",
+    "en": "Hippicus Tower",
+    "ru": "Башня Гиппика"
+   },
+   "text": {
+    "he": "אחד משלושת מגדלי הורדוס, על שם חברו. לפי יוסף: 25 × 25 אמה, גובה כולל 80. מיקומו המדויק אינו ידוע — ראו מגדל פצאל.",
+    "fr": "L'une des trois tours d'Hérode, nommée d'après un ami. Josèphe : 25 × 25 coudées, hauteur totale 80. Emplacement exact inconnu — voir Phasaël.",
+    "en": "One of Herod's three towers, named after a friend. Josephus: 25 × 25 cubits, total height 80. Exact position unknown — see Phasael.",
+    "ru": "Одна из трёх башен Ирода, названа в честь друга. Иосиф: 25 × 25 локтей, высота 80. Точное место неизвестно — см. Фазаель."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.136–183",
+     "url": "https://lexundria.com/j_bj/5.136-5.183/wst"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "25 × 25 אמה; אטום עד 30 אמה, מעליו בריכה בעומק 20 אמה, בית בן שתי קומות בגובה 25 אמה, צריחים ומעקה — 80 אמה בסך הכול (מלחמת היהודים 5.163–165)",
+    "fr": "25 × 25 coudées ; plein sur 30, réservoir de 20, maison à deux étages de 25, tourelles et créneaux — 80 coudées en tout (Guerre 5.163–165)",
+    "en": "25 × 25 cubits; solid to 30, a 20-cubit reservoir, a two-storey house of 25, turrets and battlements — 80 cubits in all (War 5.163–165)",
+    "ru": "25 × 25 локтей; сплошная до 30, резервуар 20, двухэтажный дом 25, башенки и зубцы — всего 80 локтей (Война 5.163–165)"
+   },
+   "placementNote": {
+    "he": "יוסף: החומה הראשונה ״התחילה במגדל היפיקוס״ והמגדלים עמדו ״סמוכים״ זה לזה, צפונית לארמון. המיקום המדויק אינו ידוע: המגדל מוצב באופן סכמטי כ-36 מ׳ מערבית למצודת דוד, על קו החומה.",
+    "fr": "Josèphe : la première muraille « commençait à la tour Hippicus » et les tours étaient « toutes proches », au nord du palais. Position exacte inconnue : tour placée schématiquement à ~36 m à l’ouest de la tour de David, sur la muraille.",
+    "en": "Josephus: the first wall 'began at the tower Hippicus' and the towers stood 'hard by' each other, north of the palace. Exact position unknown: placed schematically ~36 m west of the Tower of David, on the wall.",
+    "ru": "Иосиф: первая стена «начиналась у башни Гиппик», башни стояли «рядом», к северу от дворца. Точное место неизвестно: башня условно поставлена ~36 м к западу от башни Давида, на линии стены."
+   },
+   "builder": {
+    "he": "הורדוס · המאה ה-1 לפנה״ס",
+    "fr": "Hérode · Ier s. av. J.-C.",
+    "en": "Herod · 1st c. BCE",
+    "ru": "Ирод · I в. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_mariamne",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "anchor": null,
+   "shape": {
+    "type": "mariamne"
+   },
+   "name": {
+    "he": "מגדל מרים",
+    "fr": "Tour de Mariamne",
+    "en": "Mariamne Tower",
+    "ru": "Башня Мариамны"
+   },
+   "text": {
+    "he": "המגדל השלישי, על שם אשתו החשמונאית של הורדוס. לפי יוסף: 20 × 20 אמה, גובה כולל 50. לא זוהו שרידים.",
+    "fr": "La troisième tour, nommée d'après l'épouse hasmonéenne d'Hérode. Josèphe : 20 × 20 coudées, hauteur totale 50. Aucun vestige identifié.",
+    "en": "The third tower, named after Herod's Hasmonean wife. Josephus: 20 × 20 cubits, total height 50. No remains identified.",
+    "ru": "Третья башня, в честь жены-хасмонейки Ирода. Иосиф: 20 × 20 локтей, высота 50. Остатков не найдено."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.136–183",
+     "url": "https://lexundria.com/j_bj/5.136-5.183/wst"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "20 × 20 אמה; אטום עד 20 אמה, גובה כולל 50 אמה; הקומות העליונות מפוארות מאלו של שאר המגדלים (מלחמת היהודים 5.170–171)",
+    "fr": "20 × 20 coudées ; pleine sur 20, 50 coudées en tout ; étages plus richement ornés que ceux des autres tours (Guerre 5.170–171)",
+    "en": "20 × 20 cubits; solid to 20, 50 cubits in all; upper rooms more richly adorned than in the other towers (War 5.170–171)",
+    "ru": "20 × 20 локтей; сплошная до 20, всего 50 локтей; верхние покои богаче, чем в других башнях (Война 5.170–171)"
+   },
+   "placementNote": {
+    "he": "יוסף אינו מציין את סדר המגדלים לאורך החומה. מוצב באופן סכמטי כ-32 מ׳ מזרחית למצודת דוד, על קו החומה הראשונה.",
+    "fr": "Josèphe ne donne pas l’ordre des tours le long de la muraille. Placée schématiquement à ~32 m à l’est de la tour de David, sur la première muraille.",
+    "en": "Josephus does not give the order of the towers along the wall. Placed schematically ~32 m east of the Tower of David, on the first wall.",
+    "ru": "Иосиф не указывает порядок башен вдоль стены. Условно поставлена ~32 м к востоку от башни Давида, на первой стене."
+   },
+   "builder": {
+    "he": "הורדוס · המאה ה-1 לפנה״ס",
+    "fr": "Hérode · Ier s. av. J.-C.",
+    "en": "Herod · 1st c. BCE",
+    "ru": "Ирод · I в. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_herod_palace",
+   "from": 5,
+   "to": 5,
+   "certainty": "reconstruction",
+   "anchor": "kishle",
+   "shape": {
+    "type": "palace"
+   },
+   "name": {
+    "he": "ארמון הורדוס",
+    "fr": "Le palais d'Hérode",
+    "en": "Herod's Palace",
+    "ru": "Дворец Ирода"
+   },
+   "text": {
+    "he": "המתחם השני בגודלו בעיר אחרי הר הבית, בדרום-מערב העיר (מדרום לשער יפו של ימינו). היו בו שני אגפים מרכזיים: קיסריון ואגריפיון.",
+    "fr": "Le deuxième ensemble de la ville après le mont du Temple, au sud-ouest (au sud de l'actuelle porte de Jaffa). Deux ailes principales : le Caesareum et l'Agrippeum.",
+    "en": "The second-largest compound after the Temple Mount, in the south-west of the city (south of today's Jaffa Gate), with two main wings: the Caesareum and the Agrippeum.",
+    "ru": "Второй по величине комплекс после Храмовой горы, на юго-западе (южнее нынешних Яффских ворот), с двумя главными крыльями — Цезареем и Агриппеем."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 1.401–402",
+     "url": "https://lexundria.com/j_bj/1.401-1.402/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Herod's Palace (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Herod%27s_Palace_(Jerusalem)"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "יוסף: מוקף חומה בגובה 30 אמה. במה של כ-300 × 55 מ׳ (מקור מקוון).",
+    "fr": "Josèphe : enceinte de 30 coudées. Plateforme d'env. 300 × 55 m (source en ligne).",
+    "en": "Josephus: walled to 30 cubits. Platform about 300 × 55 m (online source).",
+    "ru": "Иосиф: стена 30 локтей. Платформа ок. 300 × 55 м (онлайн-источник)."
+   },
+   "remains": {
+    "he": "קירות תמך של הבמה (המצודה, הרובע הארמני, הקישלה).",
+    "fr": "Murs de soutènement de la plateforme (citadelle, quartier arménien, Kishle).",
+    "en": "Retaining walls of the platform (Citadel, Armenian Quarter, Kishle).",
+    "ru": "Подпорные стены платформы (Цитадель, Армянский квартал, Кишле)."
+   },
+   "placementNote": {
+    "he": "הבמה משורטטת מהמגדל דרומה; תוכנית הבניינים אינה ידועה.",
+    "fr": "La plateforme est tracée depuis la tour vers le sud ; le plan des bâtiments est inconnu.",
+    "en": "The platform is drawn from the tower southward; the building plan is unknown.",
+    "ru": "Платформа проведена от башни на юг; план зданий неизвестен."
+   },
+   "builder": {
+    "he": "הורדוס · המאה ה-1 לפנה״ס",
+    "fr": "Hérode · Ier s. av. J.-C.",
+    "en": "Herod · 1st c. BCE",
+    "ru": "Ирод · I в. до н. э."
+   },
+   "function": {
+    "he": "ארמון המלך, שני אגפים: קיסריון ואגריפיון (מסמך הקורס).",
+    "fr": "Palais royal, deux ailes : Caesareum et Agrippeum (cours).",
+    "en": "Royal palace, two wings: Caesareum and Agrippeum (course).",
+    "ru": "Царский дворец, два крыла: Цезарион и Агриппион (курс)."
+   },
+   "debate": {
+    "he": "מהבסיס (הפודיום) נשתמרו רק שרידים מפוזרים (חפירות הקישלה, עמית ראם). היקף הארמון — עד שטח הרובע הארמני — הוא שחזור. הזיהוי עם הפרטוריון שבו נשפט ישו מקובל על רבים (למשל ג׳ודי מגנס), אך אינו ודאי.",
+    "fr": "Du podium ne subsistent que des restes épars (fouilles de la Kishlé, Amit Re’em). L’extension du palais, jusqu’au quartier arménien, est une reconstitution. Son identification avec le prétoire du procès de Jésus est admise par beaucoup (p. ex. Jodi Magness), sans être certaine.",
+    "en": "Only scattered remains of the podium survive (Kishle excavations, Amit Re’em). The palace’s extent, as far as the Armenian Quarter, is a reconstruction. Its identification with the praetorium of Jesus’ trial is widely accepted (e.g. Jodi Magness) but not certain.",
+    "ru": "От подиума сохранились лишь разрозненные остатки (раскопки Кишле, Амит Реэм). Протяжённость дворца, вплоть до Армянского квартала, — реконструкция. Отождествление с преторией суда над Иисусом принято многими (напр. Джоди Магнесс), но не бесспорно."
+   }
+  },
+  {
+   "id": "jerusalem_burnt_house",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "burnt_house",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "הבית השרוף",
+    "fr": "La Maison brûlée",
+    "en": "The Burnt House",
+    "ru": "Сожжённый дом"
+   },
+   "text": {
+    "he": "בית מגורים בעיר העליונה שנשרף בחורבן ירושלים בשנת 70 לסה״נ.",
+    "fr": "Maison de la ville haute incendiée lors de la destruction de Jérusalem en 70.",
+    "en": "A house in the Upper City burnt in the destruction of Jerusalem in 70 CE.",
+    "ru": "Дом в Верхнем городе, сожжённый при разрушении Иерусалима в 70 г."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_herodian_quarter",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "herodian_quarter",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "הרובע ההרודיאני",
+    "fr": "Le quartier hérodien",
+    "en": "The Herodian Quarter",
+    "ru": "Иродианский квартал"
+   },
+   "text": {
+    "he": "העיר העליונה: עיר מגורים מפוארת של המעמד האריסטוקרטי, הכהונה הגדולה והעשירים.",
+    "fr": "La ville haute : quartier résidentiel luxueux de l'aristocratie, des grands prêtres et des riches.",
+    "en": "The Upper City: a luxurious residential quarter of the aristocracy, the high priesthood and the wealthy.",
+    "ru": "Верхний город: роскошный жилой квартал аристократии, первосвященников и богачей."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_siloam_pool",
+   "from": 5,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "siloam_pool",
+   "shape": {
+    "type": "siloam"
+   },
+   "name": {
+    "he": "בריכת השילוח",
+    "fr": "Le bassin de Siloé",
+    "en": "The Pool of Siloam",
+    "ru": "Силоамская купель"
+   },
+   "text": {
+    "he": "בנקודה הדרומית ביותר של העיר התחתונה. אליה ניקזו את מי הגיחון, וממנה עלה הרחוב המדורג של עולי הרגל אל הר הבית.",
+    "fr": "Au point le plus au sud de la ville basse. Elle recevait l'eau du Gihon ; de là montait la rue à degrés des pèlerins vers le mont du Temple.",
+    "en": "At the southernmost point of the Lower City. It received the Gihon water; from it the stepped pilgrims' street climbed to the Temple Mount.",
+    "ru": "В самой южной точке Нижнего города. Сюда поступала вода Гихона; отсюда ступенчатая улица паломников поднималась к Храмовой горе."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "השילוח — הדרכה בשטח (החומה מבית שני עברה מדרום למאגר)",
+     "url": "https://drive.google.com/file/d/1ysX_Lz_CvPZytNXnRvp1V5AKNo3665ee/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 12 — הגבעה המזרחית",
+     "url": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view"
+    },
+    {
+     "kind": "online",
+     "label": "Pool of Siloam (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Pool_of_Siloam"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 69 מ׳ (ויקיפדיה); שלוש מערכות של 5 מדרגות עם שני משטחי ביניים (מסמך הקורס)",
+    "fr": "69 m de large (Wikipedia) ; trois volées de 5 marches avec deux paliers (cours)",
+    "en": "69 m wide (Wikipedia); three flights of 5 steps with two landings (course)",
+    "ru": "Ширина 69 м (Википедия); три марша по 5 ступеней с двумя площадками (курс)"
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. מוצגים הצד הצפוני והמזרחי (שנחשפו); אורך ועומק סכמטיים.",
+    "fr": "Position : Wikidata. Côtés nord et est (fouillés) ; longueur et profondeur schématiques.",
+    "en": "Position: Wikidata. North and east sides (excavated) shown; length and depth schematic.",
+    "ru": "Положение: Wikidata. Показаны северная и восточная стороны (раскопанные); длина и глубина схематичны."
+   },
+   "remains": {
+    "he": "מדרגות הבריכה מימי בית שני בצד הצפוני; קיר סכר מימי בית ראשון (פחמן 14).",
+    "fr": "Les marches du Second Temple côté nord ; un mur-barrage du Premier Temple (carbone 14).",
+    "en": "The Second Temple steps on the north side; a First Temple dam wall (carbon-14).",
+    "ru": "Ступени эпохи Второго Храма с северной стороны; плотина эпохи Первого Храма (C-14)."
+   },
+   "function": {
+    "he": "מאגר המים של העיר; לפי השערה — גם מקום הטקס של ניסוך המים בסוכות (מסמך הקורס).",
+    "fr": "Réservoir d’eau de la ville ; selon une hypothèse, aussi le lieu de la cérémonie de libation de l’eau à Souccot (cours).",
+    "en": "The city’s water reservoir; by one hypothesis also the place of the Sukkot water-libation ceremony (course).",
+    "ru": "Городской водоём; по одной гипотезе — место обряда возлияния воды в Суккот (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_pilgrim_road",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "anchor": "siloam_pool",
+   "shape": {
+    "type": "pilgrimroad",
+    "via": [
+     "off:siloam_pool,0,-26",
+     "a:givati",
+     "a:robinsons_arch"
+    ]
+   },
+   "name": {
+    "he": "דרך עולי הרגל (הרחוב המדורג)",
+    "fr": "La rue des pèlerins (rue à degrés)",
+    "en": "The Pilgrims' Road (stepped street)",
+    "ru": "Дорога паломников (ступенчатая улица)"
+   },
+   "text": {
+    "he": "רחוב מדורג ומרוצף שעלה מבריכת השילוח לכיוון הר הבית, ומתחתיו תעלת ניקוז. נבנה כנראה בשנות ה-20/30 לסה״נ (מטבעות מימי פונטיוס פילטוס מתחת לריצוף) ושימש כ-40 שנה עד החורבן. לאורכו חנויות ו״במה״ בת 4 מדרגות. בתעלה נמצאו סירי בישול שלמים — עדות למסתתרים בשנת 70.",
+    "fr": "Rue dallée à degrés qui montait du bassin de Siloé vers le mont du Temple, avec un canal de drainage dessous. Construite sans doute vers 20/30 apr. J.-C. (monnaies de Ponce Pilate sous le dallage), utilisée une quarantaine d’années jusqu’à la destruction. Boutiques et « bema » de 4 marches le long de la rue. Dans le canal, des marmites intactes : traces des gens cachés en 70.",
+    "en": "A paved stepped street climbing from the Pool of Siloam toward the Temple Mount, with a drainage channel beneath. Probably built around 20/30 CE (coins of Pontius Pilate under the paving) and used for about 40 years until the destruction. Shops and a 4-step 'bema' along it. Intact cooking pots in the channel: traces of people hiding in 70.",
+    "ru": "Мощёная ступенчатая улица от Силоамской купели к Храмовой горе, под ней дренажный канал. Построена, вероятно, около 20/30 г. н. э. (монеты Понтия Пилата под мостовой), использовалась около 40 лет до разрушения. Вдоль неё лавки и «бима» из 4 ступеней. В канале — целые горшки: следы укрывавшихся в 70 г."
+   },
+   "dims": {
+    "he": "רחוב ראשי ברוחב 8–10 מ׳ (מסמך הקורס)",
+    "fr": "Rue principale de 8 à 10 m de large (cours)",
+    "en": "Main street 8–10 m wide (course)",
+    "ru": "Главная улица шириной 8–10 м (курс)"
+   },
+   "debate": {
+    "he": "״דרך עולי הרגל״ היא רשת של רחובות ולא רחוב אחד. בחפירות 2023–2024 התברר שהרחוב נפרד מתעלת הניקוז ועולה באלכסון לעבר שערי הר הבית הדרומיים. גם התיארוך שנוי במחלוקת: הרחוב יוחס להורדוס, לתקופה ההרודיאנית או לאגריפס השני (אילת מזר); מחקר המטבעות מ-2019 (שנטון, הגבי, עוזיאל, אריאל) מציע כ-31 לסה\"נ, בימי פונטיוס פילטוס.",
+    "fr": "La « rue des pèlerins » est un réseau de rues, pas une rue unique. Les fouilles de 2023–2024 ont montré que la rue quitte le canal de drainage et monte en diagonale vers les portes sud du mont du Temple. La datation est aussi discutée : la rue a été attribuée à Hérode, à l’époque hérodienne ou à Agrippa II (Eilat Mazar) ; l’étude des monnaies de 2019 (Szanton, Hagbi, Uziel, Ariel) propose vers 31 apr. J.-C., sous Ponce Pilate.",
+    "en": "The 'Pilgrims' Road' is a network of streets, not one street. Excavations in 2023–2024 showed the street leaves the drainage channel and climbs diagonally toward the southern Temple Mount gates. Its date is also debated: the street has been attributed to Herod, to the Herodian period or to Agrippa II (Eilat Mazar); the 2019 coin study (Szanton, Hagbi, Uziel, Ariel) proposes c. 31 CE, under Pontius Pilate.",
+    "ru": "«Дорога паломников» — сеть улиц, а не одна улица. Раскопки 2023–2024 гг. показали, что улица отходит от канала и поднимается наискось к южным воротам Храмовой горы. Датировка тоже спорна: улицу приписывали Ироду, иродианскому периоду или Агриппе II (Эйлат Мазар); исследование монет 2019 г. (Сантон, Хагби, Узиэль, Ариэль) предлагает ок. 31 г. н. э., при Понтии Пилате."
+   },
+   "placementNote": {
+    "he": "תוואי סכמטי בקווים ישרים: בריכת השילוח ← חניון גבעתי ← אזור קשת רובינסון (נקודות Wikidata).",
+    "fr": "Tracé schématique en lignes droites : bassin de Siloé → parking Givati → secteur de l’arc de Robinson (repères Wikidata).",
+    "en": "Schematic route in straight lines: Pool of Siloam → Givati parking lot → Robinson's Arch area (Wikidata points).",
+    "ru": "Схематичная трасса прямыми отрезками: Силоамская купель → стоянка Гивати → район арки Робинсона (точки Wikidata)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דרך עולי הרגל (סיור 12)",
+     "url": "https://drive.google.com/file/d/13pJS8V4vv6LEIw-hY9KVzqzjnQAuYpMI/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 12 — הגבעה המזרחית",
+     "url": "https://drive.google.com/file/d/1JI2fqdwQW-CHAGC7cvmgY1HLARgF4zJI/view"
+    },
+    {
+     "kind": "online",
+     "label": "Pool of Siloam (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Pool_of_Siloam"
+    },
+    {
+     "kind": "online",
+     "label": "Szanton, Hagbi, Uziel, Ariel 2019 — Pontius Pilate in Jerusalem: The Monumental Street from the Siloam Pool to the Temple Mount, Tel Aviv 46/2",
+     "url": "https://www.tandfonline.com/doi/full/10.1080/03344355.2019.1650491"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "remains": {
+    "he": "קטעים חפורים במנהרה מבריכת השילוח צפונה (עיר דוד).",
+    "fr": "Tronçons fouillés en tunnel depuis le bassin de Siloé vers le nord (Cité de David).",
+    "en": "Sections excavated in a tunnel from the Pool of Siloam northwards (City of David).",
+    "ru": "Участки, раскопанные в туннеле от Силоамской купели на север (Город Давида)."
+   },
+   "function": {
+    "he": "הדרך הראשית של עולי הרגל מהשער הדרומי ומבריכת השילוח אל הר הבית; רחוב מסחר.",
+    "fr": "Voie principale des pèlerins, de la porte sud et du bassin de Siloé jusqu’au mont du Temple ; rue commerçante.",
+    "en": "Main pilgrims’ way from the southern gate and the Pool of Siloam up to the Temple Mount; a shopping street.",
+    "ru": "Главный путь паломников от южных ворот и купели к Храмовой горе; торговая улица."
+   },
+   "events": {
+    "he": "קיץ 70 לסה״נ: אחרוני המורדים והתושבים הסתתרו בתעלת הניקוז שמתחת לרחוב; הרומאים עקרו רצפות כדי למצוא אותם (מסמך הקורס, לפי יוסף בן מתתיהו).",
+    "fr": "Été 70 : les derniers insurgés et habitants se cachent dans le canal sous la rue ; les Romains arrachent les dalles pour les trouver (cours, d’après Josèphe).",
+    "en": "Summer 70 CE: the last rebels and residents hid in the drainage channel beneath the street; the Romans tore up paving stones to find them (course, after Josephus).",
+    "ru": "Лето 70 г.: последние повстанцы и жители прятались в канале под улицей; римляне вскрывали плиты, чтобы их найти (курс, по Иосифу)."
+   }
+  },
+  {
+   "id": "jerusalem_hadrian_arch",
+   "from": 6,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "damascus_gate",
+   "shape": {
+    "type": "hadrian"
+   },
+   "name": {
+    "he": "קשת הניצחון של אדריאנוס",
+    "fr": "L'arc de triomphe d'Hadrien",
+    "en": "Hadrian's triumphal arch",
+    "ru": "Триумфальная арка Адриана"
+   },
+   "text": {
+    "he": "אדריאנוס הקים את איליה קפיטולינה. בבסיס שער שכם נראית הקשת הצדדית המזרחית, ומעליה הכתובת CO[LONIA] AEL[IA] CAP[ITOLINA] D[ECRETO] D[ECURIONUM]. מגדלי השמירה שלצידיה רומיים; בתקופה הביזנטית שולבה הקשת בחומה והפכה לשער העיר.",
+    "fr": "Hadrien fonda Aelia Capitolina. À la base de la porte de Damas on voit l'arche latérale est et l'inscription CO[LONIA] AEL[IA] CAP[ITOLINA] D[ECRETO] D[ECURIONUM]. Les tours de garde sont romaines ; à l'époque byzantine l'arc fut intégré à la muraille et devint porte de la ville.",
+    "en": "Hadrian founded Aelia Capitolina. At the base of Damascus Gate the eastern side arch survives with the inscription CO[LONIA] AEL[IA] CAP[ITOLINA] D[ECRETO] D[ECURIONUM]. The flanking towers are Roman; in the Byzantine period the arch was built into the wall and became the city gate.",
+    "ru": "Адриан основал Элию Капитолину. У основания Дамасских ворот сохранилась восточная боковая арка с надписью CO[LONIA] AEL[IA] CAP[ITOLINA] D[ECRETO] D[ECURIONUM]. Башни по сторонам римские; в византийский период арка вошла в стену и стала воротами."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — שער שכם",
+     "url": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view"
+    },
+    {
+     "kind": "online",
+     "label": "Damascus Gate (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Damascus_Gate"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata (שער שכם). קשת בת שלושה פתחים בין שני מגדלים, לפי מסמך הקורס; המידות סכמטיות. מוצגת עד התקופה הצלבנית, שבה שונה השער.",
+    "fr": "Position : Wikidata (porte de Damas). Arc à trois baies entre deux tours, d’après le cours ; dimensions schématiques. Affiché jusqu’à l’époque croisée, qui transforma la porte.",
+    "en": "Position: Wikidata (Damascus Gate). Three-bay arch between two towers, per the course; dimensions schematic. Shown until the Crusader period, which rebuilt the gate.",
+    "ru": "Положение: Wikidata (Дамасские ворота). Трёхпролётная арка между двумя башнями, по курсу; размеры схематичны. Показана до эпохи крестоносцев, перестроивших ворота."
+   },
+   "remains": {
+    "he": "הפתח הצדדי המזרחי והכתובת CO[LONIA] AEL[IA] CAP[ITOLINA], ומגדל השמירה הרומי המזרחי (אתר המגדל).",
+    "fr": "La baie latérale est avec l’inscription CO[LONIA] AEL[IA] CAP[ITOLINA], et la tour de garde romaine est (site du « Migdal »).",
+    "en": "The eastern side bay with the inscription CO[LONIA] AEL[IA] CAP[ITOLINA], and the eastern Roman guard tower.",
+    "ru": "Восточный боковой пролёт с надписью CO[LONIA] AEL[IA] CAP[ITOLINA] и восточная римская башня."
+   },
+   "builder": {
+    "he": "אדריאנוס · כ-130 לסה״נ",
+    "fr": "Hadrien · vers 130 apr. J.-C.",
+    "en": "Hadrian · c. 130 CE",
+    "ru": "Адриан · ок. 130 г. н. э."
+   },
+   "function": {
+    "he": "קשת ניצחון לכבוד אדריאנוס, ובתקופה הביזנטית — שער העיר (מסמך הקורס).",
+    "fr": "Arc de triomphe en l’honneur d’Hadrien, puis porte de la ville à l’époque byzantine (cours).",
+    "en": "Triumphal arch in honour of Hadrian, then the city gate in the Byzantine period (course).",
+    "ru": "Триумфальная арка в честь Адриана, затем городские ворота в византийский период (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_ecce_homo",
+   "from": 6,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "ecce_homo",
+   "shape": {
+    "type": "eccehomo"
+   },
+   "name": {
+    "he": "קשת אקה הומו",
+    "fr": "L’arc de l’Ecce Homo",
+    "en": "The Ecce Homo Arch",
+    "ru": "Арка Ecce Homo"
+   },
+   "text": {
+    "he": "ברחוב ויה דולורוזה, בין התחנות 2 ו-3, קשת מעל הרחוב. היא חלק משער ניצחון נוסף לאדריאנוס. בחפירה להקמת מנזר האחיות מציון התגלתה קשת הצד הצפונית, והובן שמדובר בשער ניצחון לקיסר אדריאנוס (135 לסה״נ). הקשת שולבה בבזיליקה של המנזר.",
+    "fr": "Sur la Via Dolorosa, entre les stations 2 et 3, un arc enjambe la rue. Il fait partie d’un autre arc de triomphe d’Hadrien. Les fouilles du couvent des Sœurs de Sion ont dégagé l’arche latérale nord : c’était un arc de triomphe de l’empereur Hadrien (135). L’arche est intégrée à la basilique du couvent.",
+    "en": "On the Via Dolorosa, between stations 2 and 3, an arch spans the street. It belongs to another triumphal arch of Hadrian. Excavations for the Sisters of Zion convent uncovered the northern side arch, showing it was a triumphal arch of Emperor Hadrian (135 CE). The arch is built into the convent’s basilica.",
+    "ru": "На Виа Долороза, между 2-й и 3-й станциями, над улицей арка. Она — часть ещё одной триумфальной арки Адриана. При строительстве монастыря Сестёр Сиона открыли северный боковой пролёт: это триумфальная арка императора Адриана (135 г.). Пролёт встроен в базилику монастыря."
+   },
+   "builder": {
+    "he": "אדריאנוס · 135 לסה״נ",
+    "fr": "Hadrien · 135 apr. J.-C.",
+    "en": "Hadrian · 135 CE",
+    "ru": "Адриан · 135 г. н. э."
+   },
+   "remains": {
+    "he": "הקשת המרכזית מעל ויה דולורוזה; קשת הצד הצפונית בתוך בזיליקת מנזר האחיות מציון.",
+    "fr": "L’arche centrale au-dessus de la Via Dolorosa ; l’arche nord dans la basilique des Sœurs de Sion.",
+    "en": "The central arch over the Via Dolorosa; the northern side arch inside the Sisters of Zion basilica.",
+    "ru": "Центральная арка над Виа Долороза; северный пролёт — в базилике Сестёр Сиона."
+   },
+   "otherView": {
+    "he": "במסורת הנוצרית: המקום שבו הציג פונטיוס פילטוס את ישו (״אקה הומו״ — ״הנה האיש״); הקשת עצמה מאוחרת בכמאה שנה.",
+    "fr": "Selon la tradition chrétienne, lieu où Ponce Pilate présenta Jésus (« Ecce homo ») ; l’arc lui-même est postérieur d’environ un siècle.",
+    "en": "In Christian tradition, where Pontius Pilate presented Jesus (‘Ecce homo’); the arch itself is about a century later.",
+    "ru": "По христианскому преданию — место, где Пилат показал Иисуса («Ecce homo»); сама арка примерно на век позже."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת שער בן שלוש קשתות לפי מסמך הקורס; המידות סכמטיות. בתקופות המאוחרות מוצגות רק הקשת המרכזית והצפונית.",
+    "fr": "Position : Wikidata. Arc à trois baies d’après le cours ; dimensions schématiques. Aux époques suivantes, seules l’arche centrale et l’arche nord sont montrées.",
+    "en": "Position: Wikidata. Three-bay arch after the course; dimensions schematic. In later periods only the central and northern arches are shown.",
+    "ru": "Положение: Wikidata. Трёхпролётная арка по курсу; размеры схематичны. В поздние эпохи показаны только центральный и северный пролёты."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — מנזר האחיות מציון",
+     "url": "https://drive.google.com/file/d/1cnMZNr9ftON8mP2_-4SC4iNcjOj1JI1e/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_legio_x",
+   "from": 6,
+   "to": 6,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "none"
+   },
+   "name": {
+    "he": "מחנה הלגיון העשירי",
+    "fr": "Le camp de la Xe légion",
+    "en": "The Tenth Legion's camp",
+    "ru": "Лагерь Десятого легиона"
+   },
+   "text": {
+    "he": "הלגיון ה-10 (Fretensis) ישב בירושלים מהחורבן (70) ועד רפורמת דיוקלטיאנוס (כ-300). שלוש דעות על מיקום המפקדה: מגדל דוד / הרובע הארמני (רוב החוקרים), הר הבית / קשת רובינסון, או הרובע הנוצרי — שם נמצאה אבן הלגיון בחומה.",
+    "fr": "La Xe légion (Fretensis) stationna à Jérusalem de 70 à la réforme de Dioclétien (vers 300). Trois avis sur son quartier général : Tour de David / quartier arménien (la majorité), mont du Temple / arche de Robinson, ou quartier chrétien, où la pierre de la légion est remployée dans la muraille.",
+    "en": "The Tenth Legion (Fretensis) was in Jerusalem from 70 to Diocletian's reform (c. 300). Three views on its headquarters: Tower of David / Armenian Quarter (most scholars), Temple Mount / Robinson's Arch, or the Christian Quarter, where the legion's stone is reused in the wall.",
+    "ru": "Десятый легион (Fretensis) стоял в Иерусалиме с 70 г. до реформы Диоклетиана (ок. 300). Три мнения о штабе: Башня Давида / Армянский квартал (большинство), Храмовая гора / арка Робинсона или Христианский квартал, где камень легиона вложен в стену."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סובב חומה",
+     "url": "https://drive.google.com/file/d/16RjnO1fspbc2NtzZGo_ljsmAQjKrco1w/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סיכום קצר",
+     "url": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_holy_sepulchre_byz",
+   "from": 7,
+   "to": 8,
+   "certainty": "attested",
+   "anchor": "holy_sepulchre",
+   "shape": {
+    "type": "sepulchre_byz"
+   },
+   "name": {
+    "he": "כנסיית הקבר הביזנטית",
+    "fr": "Le Saint-Sépulcre byzantin",
+    "en": "The Byzantine Holy Sepulchre",
+    "ru": "Византийский храм Гроба Господня"
+   },
+   "text": {
+    "he": "הלנה, אמו של קונסטנטינוס, הגיעה לירושלים בשנת 326. הכנסייה הביזנטית התחילה בצמוד לקארדו, שם היה האטריום החיצוני שאליו עלו במדרגות מהקארדו.",
+    "fr": "Hélène, mère de Constantin, vint à Jérusalem en 326. L'église byzantine commençait contre le cardo, où un escalier montait à l'atrium extérieur.",
+    "en": "Helena, Constantine's mother, came to Jerusalem in 326. The Byzantine church began right on the Cardo, where steps led up to the outer atrium.",
+    "ru": "Елена, мать Константина, прибыла в Иерусалим в 326 г. Византийская церковь начиналась у кардо, откуда лестница вела во внешний атриум."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — כנסיית הקבר",
+     "url": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view"
+    },
+    {
+     "kind": "online",
+     "label": "Cambridge Encyclopaedia of Late Antique Art — Jerusalem",
+     "url": "https://www.cambridge.org/core/books/cambridge-encyclopaedia-of-late-antique-art-and-archaeology/jerusalem/6E5FF6B4847E0F384A2E8553975AAA90"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "otherView": {
+    "he": "מקורות אחרים: נחנכה בשנת 335.",
+    "fr": "Autre source : consacrée en 335.",
+    "en": "Other source: consecrated in 335.",
+    "ru": "Другой источник: освящён в 335 г."
+   },
+   "placementNote": {
+    "he": "נפח כללי בלבד (40 × 130 מ׳ — סימון); תוכנית הכנסייה אינה משוחזרת.",
+    "fr": "Volume indicatif (40 × 130 m) ; le plan de l'église n'est pas restitué.",
+    "en": "Indicative volume only (40 × 130 m); the church plan is not reconstructed.",
+    "ru": "Условный объём (40 × 130 м); план церкви не восстановлен."
+   }
+  },
+  {
+   "id": "jerusalem_cardo_roman",
+   "from": 6,
+   "to": 6,
+   "certainty": "attested",
+   "anchor": "damascus_gate",
+   "shape": {
+    "type": "cardo",
+    "via": [
+     "a:damascus_gate",
+     "a:alexander_nevsky"
+    ]
+   },
+   "name": {
+    "he": "הקארדו המערבי של איליה קפיטולינה",
+    "fr": "Le cardo occidental d’Aelia Capitolina",
+    "en": "The western cardo of Aelia Capitolina",
+    "ru": "Западное кардо Элии Капитолины"
+   },
+   "text": {
+    "he": "משער שכם יוצאים שני רחובות הקארדו מזמן איליה קפיטולינה: הקארדו המערבי (רחוב בית הבד) והקארדו המזרחי (רחוב הגיא). בתקופה הביזנטית הוארך הקארדו המערבי דרומה.",
+    "fr": "De la porte de Damas partent les deux cardos d’Aelia Capitolina : le cardo occidental (rue Beit HaBad) et le cardo oriental (rue HaGai). À l’époque byzantine, le cardo occidental fut prolongé vers le sud.",
+    "en": "From Damascus Gate run the two cardines of Aelia Capitolina: the western cardo (Beit HaBad Street) and the eastern cardo (HaGai Street). In the Byzantine period the western cardo was extended southwards.",
+    "ru": "От Дамасских ворот шли два кардо Элии Капитолины: западное (ул. Бейт ха-Бад) и восточное (ул. ха-Гай). В византийский период западное кардо продлили на юг."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — שער שכם",
+     "url": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 18 — קארדו",
+     "url": "https://drive.google.com/file/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "תוואי סכמטי בין שער שכם לכנסיית אלכסנדר נייבסקי (נקודות Wikidata); נקודת הסיום בתקופה הרומית אינה מסומנת במקורות הקורס.",
+    "fr": "Tracé schématique entre la porte de Damas et Alexandre-Nevski (repères Wikidata) ; le point d’arrivée à l’époque romaine n’est pas précisé dans le cours.",
+    "en": "Schematic route between Damascus Gate and Alexander Nevsky (Wikidata points); the Roman-period end point is not given in the course.",
+    "ru": "Схематичная трасса между Дамасскими воротами и Александром Невским (точки Wikidata); конечная точка римского периода в курсе не указана."
+   },
+   "builder": {
+    "he": "אדריאנוס · כ-130 לסה״נ",
+    "fr": "Hadrien · vers 130 apr. J.-C.",
+    "en": "Hadrian · c. 130 CE",
+    "ru": "Адриан · ок. 130 г. н. э."
+   }
+  },
+  {
+   "id": "jerusalem_cardo_east",
+   "from": 6,
+   "to": 7,
+   "certainty": "reconstruction",
+   "anchor": "damascus_gate",
+   "shape": {
+    "type": "cardo",
+    "via": [
+     "a:damascus_gate",
+     "a:wilsons_arch"
+    ]
+   },
+   "name": {
+    "he": "הקארדו המזרחי (רחוב הגיא)",
+    "fr": "Le cardo oriental (rue HaGai)",
+    "en": "The eastern cardo (HaGai Street)",
+    "ru": "Восточное кардо (ул. ха-Гай)"
+   },
+   "text": {
+    "he": "הרחוב השני שיצא מרחבת שער שכם, לאורך ערוץ הגיא (הטירופיאון), בתוואי רחוב הגיא של היום.",
+    "fr": "La seconde rue partant de la place de la porte de Damas, le long de la vallée (Tyropéon), sur le tracé de l’actuelle rue HaGai.",
+    "en": "The second street leaving the Damascus Gate plaza, along the valley (Tyropoeon), on the line of today's HaGai Street.",
+    "ru": "Вторая улица от площади Дамасских ворот вдоль долины (Тиропеон), по линии нынешней ул. ха-Гай."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — שער שכם",
+     "url": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "תוואי סכמטי בקו ישר משער שכם לאזור קשת וילסון; העמודים והחנויות בדגם הם לפי חתך הקארדו המערבי.",
+    "fr": "Tracé schématique en ligne droite de la porte de Damas au secteur de l’arc de Wilson ; colonnade et boutiques reprises de la coupe du cardo occidental.",
+    "en": "Schematic straight route from Damascus Gate to the Wilson's Arch area; colonnade and shops copied from the western cardo section.",
+    "ru": "Схематичная прямая от Дамасских ворот к району арки Уилсона; колоннада и лавки по сечению западного кардо."
+   },
+   "builder": {
+    "he": "איליה קפיטולינה · המאה ה-2",
+    "fr": "Aelia Capitolina · IIe s.",
+    "en": "Aelia Capitolina · 2nd c.",
+    "ru": "Элия Капитолина · II в."
+   }
+  },
+  {
+   "id": "jerusalem_cardo",
+   "from": 7,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "cardo",
+   "shape": {
+    "type": "cardo",
+    "via": [
+     "a:damascus_gate",
+     "a:alexander_nevsky",
+     "a:hurva",
+     "a:nea_church"
+    ],
+    "restored": [
+     "a:hurva",
+     "a:nea_church"
+    ]
+   },
+   "name": {
+    "he": "הקארדו",
+    "fr": "Le cardo",
+    "en": "The Cardo",
+    "ru": "Кардо"
+   },
+   "text": {
+    "he": "רחוב ברוחב 20 מ׳ עם חנויות, שדרת עמודים, מדרכת הולכי רגל ורחוב עגלות, שנחשף בחפירות ההצלה ברובע היהודי. משער שכם יצאו שני רחובות קארדו מימי איליה קפיטולינה: המזרחי (רחוב הגיא) והמערבי.",
+    "fr": "Rue large de 20 m avec boutiques, colonnade, trottoir et chaussée, dégagée lors des fouilles du quartier juif. Deux cardos partaient de la porte de Damas dès Aelia Capitolina : l'oriental (rue HaGai) et l'occidental.",
+    "en": "A 20 m wide street with shops, colonnade, sidewalk and carriageway, exposed in the Jewish Quarter excavations. Two cardines left Damascus Gate from Aelia Capitolina onward: the eastern (HaGai Street) and the western.",
+    "ru": "Улица шириной 20 м с лавками, колоннадой, тротуаром и проезжей частью, открытая в Еврейском квартале. От Дамасских ворот со времён Элии Капитолины шли два кардо: восточный (улица ха-Гай) и западный."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — קארדו",
+     "url": "https://drive.google.com/file/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 18 — שער שכם",
+     "url": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "dims": {
+    "he": "רוחב 20 מ׳",
+    "fr": "largeur 20 m",
+    "en": "20 m wide",
+    "ru": "ширина 20 м"
+   },
+   "placementNote": {
+    "he": "התוואי עובר בין שער שכם, כנסיית אלכסנדר נייבסקי, החורבה וכנסיית הנאה (נקודות Wikidata), בקווים ישרים. החתך לפי מסמך הקורס: 20 מ׳ — חנויות, שדרת עמודים, מדרכה ורחוב עגלות. הקארדו המזרחי (רחוב הגיא) אינו מוצג. בתקופת ״היום״: הקטע ברובע היהודי מוצג עם שדרת העמודים ששוחזרה.",
+    "fr": "Tracé en lignes droites entre la porte de Damas, Alexandre-Nevski, la Hourva et la Néa (repères Wikidata). Coupe d’après le cours : 20 m — boutiques, colonnade, trottoir, chaussée. Le cardo oriental (rue HaGai) n’est pas représenté. Période « aujourd’hui » : le tronçon du quartier juif est montré avec sa colonnade restaurée.",
+    "en": "Route in straight lines between Damascus Gate, Alexander Nevsky, the Hurva and the Nea (Wikidata points). Cross-section per the course: 20 m — shops, colonnade, sidewalk, carriageway. The eastern cardo (HaGai Street) is not shown. ‘Today’ period: the Jewish Quarter section is shown with its restored colonnade.",
+    "ru": "Трасса прямыми отрезками между Дамасскими воротами, Александром Невским, Хурвой и Неа (точки Wikidata). Сечение по курсу: 20 м — лавки, колоннада, тротуар, проезжая часть. Восточное кардо (ул. ха-Гай) не показано. Период «сегодня»: участок в Еврейском квартале показан с восстановленной колоннадой."
+   },
+   "remains": {
+    "he": "קטע חפור ומשוחזר ברובע היהודי: חנויות, שדרת עמודים, מדרכה וחלק מרחוב הכרכרות; חלקו מקורה.",
+    "fr": "Tronçon fouillé et restauré dans le quartier juif : boutiques, colonnade, trottoir et une partie de la chaussée ; une partie est couverte.",
+    "en": "Excavated and restored section in the Jewish Quarter: shops, colonnade, sidewalk and part of the carriageway; part is roofed.",
+    "ru": "Раскопанный и восстановленный участок в Еврейском квартале: лавки, колоннада, тротуар и часть проезжей части; часть перекрыта."
+   },
+   "builder": {
+    "he": "הרחבה דרומה בתקופה הביזנטית",
+    "fr": "Prolongement sud à l’époque byzantine",
+    "en": "Southern extension in the Byzantine period",
+    "ru": "Продление на юг в византийский период"
+   },
+   "function": {
+    "he": "הרחוב הראשי של העיר: רחוב כרכרות, מדרכות, שדרות עמודים וחנויות (מסמך הקורס).",
+    "fr": "Rue principale : chaussée, trottoirs, colonnades et boutiques (cours).",
+    "en": "Main street: carriageway, sidewalks, colonnades and shops (course).",
+    "ru": "Главная улица: проезжая часть, тротуары, колоннады и лавки (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_nea",
+   "from": 7,
+   "to": 7,
+   "certainty": "attested",
+   "anchor": "nea_church",
+   "shape": {
+    "type": "nea"
+   },
+   "name": {
+    "he": "כנסיית הנאה (מרים החדשה)",
+    "fr": "L'église Néa (Sainte-Marie-la-Neuve)",
+    "en": "The Nea Church",
+    "ru": "Церковь Неа"
+   },
+   "text": {
+    "he": "מופיעה במפת מידבא לצד כנסיית הקבר וציון הקדושה.",
+    "fr": "Figurée sur la carte de Madaba, avec le Saint-Sépulcre et Sainte-Sion.",
+    "en": "Shown on the Madaba Map with the Holy Sepulchre and Holy Zion.",
+    "ru": "Изображена на карте Мадабы вместе с храмом Гроба Господня и Святым Сионом."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — קארדו",
+     "url": "https://drive.google.com/file/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Madaba Map (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Madaba_Map"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "otherView": {
+    "he": "מקורות אחרים: נחנכה בשנת 542.",
+    "fr": "Autre source : dédiée en 542.",
+    "en": "Other source: dedicated in 542.",
+    "ru": "Другой источник: освящена в 542 г."
+   }
+  },
+  {
+   "id": "jerusalem_madaba_map",
+   "from": 7,
+   "to": 7,
+   "certainty": "attested",
+   "anchor": null,
+   "shape": {
+    "type": "none"
+   },
+   "name": {
+    "he": "מפת מידבא",
+    "fr": "La carte de Madaba",
+    "en": "The Madaba Map",
+    "ru": "Карта Мадабы"
+   },
+   "text": {
+    "he": "במפה נראים הקארדו המזרחי והמערבי, כנסיית הקבר, מרים הנאה וציון הקדושה. הר הבית מופיע בצורה מצומצמת ביותר — עדות לחוסר חשיבותו באותה עת. העתק בפסיפס מוצג בקארדו.",
+    "fr": "On y voit les cardos est et ouest, le Saint-Sépulcre, la Néa et Sainte-Sion. Le mont du Temple y est réduit au minimum, signe de son peu d'importance alors. Une copie en mosaïque est exposée au cardo.",
+    "en": "It shows the eastern and western cardines, the Holy Sepulchre, the Nea and Holy Zion. The Temple Mount is barely shown, a sign of its unimportance then. A mosaic copy is displayed in the Cardo.",
+    "ru": "На ней видны восточный и западный кардо, храм Гроба Господня, Неа и Святой Сион. Храмовая гора почти не показана — знак её незначительности тогда. Мозаичная копия выставлена в кардо."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — קארדו",
+     "url": "https://drive.google.com/file/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Madaba Map (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Madaba_Map"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "otherView": {
+    "he": "במסמך הקורס נכתב שהמפה מתארת את ירושלים ״של התקופה הצלבנית״. לפי מקורות אחרים זו פסיפס מהמאה ה-6 (542–570), כלומר ירושלים הביזנטית.",
+    "fr": "Le document du cours dit que la carte montre la Jérusalem « de l'époque croisée ». D'autres sources la datent du VIe s. (542–570) : Jérusalem byzantine.",
+    "en": "The course document says the map shows Jerusalem 'of the Crusader period'. Other sources date the mosaic to the 6th century (542–570): Byzantine Jerusalem.",
+    "ru": "В документе курса сказано, что карта изображает Иерусалим «эпохи крестоносцев». По другим источникам это мозаика VI в. (542–570), т. е. византийский Иерусалим."
+   }
+  },
+  {
+   "id": "jerusalem_dome_of_the_rock",
+   "from": 8,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "dome_of_the_rock",
+   "shape": {
+    "type": "domerock",
+    "h": 34
+   },
+   "name": {
+    "he": "כיפת הסלע",
+    "fr": "Le Dôme du Rocher",
+    "en": "The Dome of the Rock",
+    "ru": "Купол Скалы"
+   },
+   "text": {
+    "he": "המבנה בעל הכיפה המוזהבת במרכז רחבת הר הבית.",
+    "fr": "L'édifice à la coupole dorée au centre de l'esplanade.",
+    "en": "The gold-domed building at the centre of the Temple Mount platform.",
+    "ru": "Здание с золотым куполом в центре Храмовой горы."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Britannica — Dome of the Rock",
+     "url": "https://britannica.com/topic/Dome-of-the-Rock/Historical-context-and-construction"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "otherView": {
+    "he": "מקורות אחרים: נבנה בידי הח׳ליף עבד אל-מלכ; הכתובת מתוארכת לשנת 72 להג׳רה (691–692).",
+    "fr": "Autre source : bâti par le calife Abd al-Malik ; l'inscription est datée de l'an 72 de l'Hégire (691–692).",
+    "en": "Other source: built by Caliph Abd al-Malik; the inscription is dated AH 72 (691–692).",
+    "ru": "Другой источник: построен халифом Абд аль-Маликом; надпись датирована 72 г. хиджры (691–692)."
+   },
+   "placementNote": {
+    "he": "קו המתאר מ-OpenStreetMap; הגובה (35 מ׳) הוא סימון בלבד.",
+    "fr": "Contour OpenStreetMap ; la hauteur (35 m) est indicative.",
+    "en": "Outline from OpenStreetMap; the 35 m height is indicative.",
+    "ru": "Контур по OpenStreetMap; высота 35 м условна."
+   }
+  },
+  {
+   "id": "jerusalem_al_aqsa",
+   "from": 8,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "al_aqsa",
+   "shape": {
+    "type": "aqsa"
+   },
+   "name": {
+    "he": "מסגד אל-אקצא",
+    "fr": "La mosquée al-Aqsa",
+    "en": "Al-Aqsa Mosque",
+    "ru": "Мечеть аль-Акса"
+   },
+   "text": {
+    "he": "המסגד בעל הכיפה השחורה בדרום רחבת הר הבית.",
+    "fr": "La mosquée à la coupole noire, au sud de l'esplanade.",
+    "en": "The black-domed mosque at the south of the platform.",
+    "ru": "Мечеть с тёмным куполом на юге площади."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "תאריך הבנייה לא נבדק במסמכי הקורס.",
+    "fr": "Date de construction non vérifiée dans les documents du cours.",
+    "en": "Construction date not checked in the course documents.",
+    "ru": "Дата постройки по документам курса не проверена."
+   }
+  },
+  {
+   "id": "jerusalem_holy_sepulchre_crusader",
+   "from": 9,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "holy_sepulchre",
+   "shape": {
+    "type": "sepulchre"
+   },
+   "name": {
+    "he": "כנסיית הקבר הצלבנית",
+    "fr": "Le Saint-Sépulcre des croisés",
+    "en": "The Crusader Holy Sepulchre",
+    "ru": "Храм Гроба Господня крестоносцев"
+   },
+   "text": {
+    "he": "הכנסייה נהרסה ב-1009 בידי הח׳ליף אל-חאכם ושוקמה בידי קונסטנטינוס מונומכוס. הצלבנים הקימו כיפה מעל החצר הפנימית, איחדו את המתחם ובנו את פתח הכניסה במקומו הנוכחי.",
+    "fr": "Détruite en 1009 par le calife al-Hakim, l'église fut restaurée par Constantin Monomaque. Les croisés couvrirent la cour intérieure d'une coupole, réunirent l'ensemble et placèrent l'entrée à son emplacement actuel.",
+    "en": "Destroyed in 1009 by Caliph al-Hakim and restored by Constantine Monomachos. The Crusaders roofed the inner court with a dome, unified the complex and moved the entrance to its present place.",
+    "ru": "Разрушен в 1009 г. халифом аль-Хакимом, восстановлен Константином Мономахом. Крестоносцы перекрыли внутренний двор куполом, объединили комплекс и перенесли вход на нынешнее место."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — כנסיית הקבר",
+     "url": "https://drive.google.com/file/d/1O0ALhzUTLM33Rc57VwyRfnxtwD1fzQ8E/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "קו המתאר של הכנסייה של היום (OpenStreetMap), שבנייתה הצלבנית נשמרה בעיקרה; הגובה סמלי.",
+    "fr": "Contour de l'église actuelle (OpenStreetMap), qui conserve pour l'essentiel le plan croisé ; hauteur symbolique.",
+    "en": "Outline of today's church (OpenStreetMap), which largely keeps the Crusader plan; height symbolic.",
+    "ru": "Контур нынешней церкви (OpenStreetMap), в основном сохранившей план крестоносцев; высота условна."
+   }
+  },
+  {
+   "id": "jerusalem_tancred_tower",
+   "from": 9,
+   "to": 9,
+   "certainty": "attested",
+   "anchor": "tancreds_tower",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "מגדל טנקרד",
+    "fr": "La tour de Tancrède",
+    "en": "Tancred's Tower",
+    "ru": "Башня Танкреда"
+   },
+   "text": {
+    "he": "בפינה הצפון-מערבית (כיכר צה״ל): שרידי מבצר פאטימי ענק, מגדל הפינה והחפיר הצלבני. ההתקפה הראשונה של טנקרד נכשלה; הצלבנים הרחיבו את המגדל וקראו לו על שמו. האיובים הרסו אותו. שמו הערבי: קסר אל-ג׳אלוד.",
+    "fr": "À l'angle nord-ouest (place Tsahal) : restes d'un énorme fort fatimide, de la tour d'angle et du fossé croisé. Après l'échec du premier assaut de Tancrède, les croisés agrandirent la tour et lui donnèrent son nom. Les Ayyoubides la détruisirent. Nom arabe : Qasr al-Jalud.",
+    "en": "At the north-west corner (IDF Square): remains of a huge Fatimid fort, the corner tower and the Crusader moat. After Tancred's first assault failed, the Crusaders enlarged the tower and named it after him. The Ayyubids destroyed it. Arabic name: Qasr al-Jalud.",
+    "ru": "В северо-западном углу (площадь ЦАХАЛ): остатки фатимидской крепости, угловой башни и рва крестоносцев. После неудачного штурма Танкреда крестоносцы расширили башню и назвали её его именем. Айюбиды её разрушили. Арабское название — Каср аль-Джалуд."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סובב חומה",
+     "url": "https://drive.google.com/file/d/16RjnO1fspbc2NtzZGo_ljsmAQjKrco1w/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_crusader_gate",
+   "from": 9,
+   "to": 9,
+   "certainty": "attested",
+   "anchor": "damascus_gate",
+   "shape": {
+    "type": "marker"
+   },
+   "name": {
+    "he": "השער הצלבני בשער שכם",
+    "fr": "La porte croisée sous la porte de Damas",
+    "en": "The Crusader gate at Damascus Gate",
+    "ru": "Ворота крестоносцев у Дамасских ворот"
+   },
+   "text": {
+    "he": "הצלבנים שינו את השער למטרות הגנה: הכניסה עברה לפתח משמאל ויצרה שער זווית שמאלץ את התוקף לפנות ולחשוף את עצמו.",
+    "fr": "Les croisés modifièrent la porte pour la défense : l'entrée fut déplacée à gauche, créant une porte coudée qui oblige l'assaillant à tourner et à s'exposer.",
+    "en": "The Crusaders rebuilt the gate for defence: the entrance moved to the left, creating a bent entrance that forces attackers to turn and expose themselves.",
+    "ru": "Крестоносцы перестроили ворота для обороны: вход перенесён влево, образуя коленчатый проход, вынуждающий нападающих поворачивать и открываться."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — שער שכם",
+     "url": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null
+  },
+  {
+   "id": "jerusalem_walls_razed",
+   "from": 10,
+   "to": 10,
+   "certainty": "attested",
+   "anchor": null,
+   "shape": {
+    "type": "none"
+   },
+   "name": {
+    "he": "עיר ללא חומה",
+    "fr": "Une ville sans muraille",
+    "en": "A city without walls",
+    "ru": "Город без стен"
+   },
+   "text": {
+    "he": "אחרי הממלכה הצלבנית הרסו האיובים את חומת ירושלים, מחשש שהצלבנים ישתמשו בה. לכן בתקופה זו לא מוצגת חומה בסצנה.",
+    "fr": "Après le royaume croisé, les Ayyoubides rasèrent la muraille de peur que les croisés ne s'en servent. Aucune muraille n'est donc affichée pour cette période.",
+    "en": "After the Crusader kingdom the Ayyubids demolished Jerusalem's wall for fear the Crusaders would use it, so no wall is shown for this period.",
+    "ru": "После королевства крестоносцев Айюбиды снесли стену Иерусалима, опасаясь, что ею воспользуются крестоносцы; поэтому стена в этот период не показана."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סובב חומה",
+     "url": "https://drive.google.com/file/d/16RjnO1fspbc2NtzZGo_ljsmAQjKrco1w/view"
+    },
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "otherView": {
+    "he": "מקורות אחרים: שוקמה ב-1202–1212 ונהרסה ב-1219 בידי אל-מועט׳ם עיסא.",
+    "fr": "Autre source : reconstruite en 1202–1212, rasée en 1219 par al-Mu'azzam Isa.",
+    "en": "Other source: rebuilt 1202–1212, razed in 1219 by al-Mu'azzam Isa.",
+    "ru": "Другой источник: восстановлена в 1202–1212, снесена в 1219 г. аль-Муаззамом Исой."
+   }
+  },
+  {
+   "id": "jerusalem_damascus_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "damascus_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "שער שכם",
+    "fr": "La porte de Damas",
+    "en": "Damascus Gate",
+    "ru": "Дамасские ворота"
+   },
+   "text": {
+    "he": "המפואר בשערי ירושלים. סולימאן בנה אותו במקום השערים הקודמים בגלל הנוחות הטופוגרפית, כשער זווית, ועטף את המגדלים הרומיים בבנייה חדשה. מעוטר במוקרנס, ראשו משונן, ומעל הפתח משיקולי לשפיכת נוזלים חמים. שמותיו: שער שכם, שער דמשק, באב אל-עמוד.",
+    "fr": "La plus belle porte de Jérusalem. Soliman la bâtit à l'emplacement des précédentes, en porte coudée, en enveloppant les tours romaines. Décor de muqarnas, créneaux, et un mâchicoulis au-dessus de l'entrée. Ses noms : Sha'ar Shkhem, porte de Damas, Bab al-Amud.",
+    "en": "The grandest of Jerusalem's gates. Suleiman built it on the site of the earlier gates as a bent entrance, encasing the Roman towers. It has muqarnas decoration, crenellations and a machicolation over the entrance. Its names: Shechem Gate, Damascus Gate, Bab al-Amud.",
+    "ru": "Самые великолепные ворота Иерусалима. Сулейман построил их на месте прежних как коленчатые, обстроив римские башни. Украшены мукарнами, зубцами, над входом — машикуль. Названия: Шхемские, Дамасские, Баб аль-Амуд."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — שער שכם",
+     "url": "https://drive.google.com/file/d/1D3PdbJwmFLjQRi0cF-jr412jOmzbBPy9/view"
+    },
+    {
+     "kind": "drive",
+     "label": "נקודת הדרכה — שער שכם (תלמיד)",
+     "url": "https://drive.google.com/file/d/1ByUVaKZxRQNqI7QPwnHNlp2XN-bL25GB/view"
+    },
+    {
+     "kind": "online",
+     "label": "Damascus Gate (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Damascus_Gate"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "otherView": {
+    "he": "תאריך: בטקסט הדרכה של תלמיד נכתב 1561; לפי מקורות אחרים — 1537.",
+    "fr": "Date : 1561 dans le texte de guidage d'un élève ; 1537 selon d'autres sources.",
+    "en": "Date: 1561 in a student's guiding text; 1537 according to other sources.",
+    "ru": "Дата: 1561 в тексте ученика; 1537 по другим источникам."
+   },
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   },
+   "builder": {
+    "he": "סולימאן המפואר · המאה ה-16 (על שערים קודמים)",
+    "fr": "Soliman le Magnifique · XVIe s. (sur les portes antérieures)",
+    "en": "Suleiman the Magnificent · 16th c. (over earlier gates)",
+    "ru": "Сулейман Великолепный · XVI в. (на месте прежних ворот)"
+   },
+   "events": {
+    "he": "הצלבנים הפכו את השער לשער זווית לצורכי הגנה; סולימאן בנה את השער הנוכחי באותו מקום (מסמך הקורס).",
+    "fr": "Les croisés en font une porte coudée défensive ; Soliman bâtit la porte actuelle au même endroit (cours).",
+    "en": "The Crusaders turned it into a defensive bent gate; Suleiman built the present gate on the same spot (course).",
+    "ru": "Крестоносцы сделали ворота коленчатыми; Сулейман построил нынешние ворота на том же месте (курс)."
+   }
+  },
+  {
+   "id": "jerusalem_jaffa_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "jaffa_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "שער יפו",
+    "fr": "Porte de Jaffa",
+    "en": "Jaffa Gate",
+    "ru": "Яффские ворота"
+   },
+   "text": {
+    "he": "שער בחומה העות׳מאנית.",
+    "fr": "Porte de la muraille ottomane.",
+    "en": "Gate in the Ottoman wall.",
+    "ru": "Ворота в османской стене."
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_zion_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "zion_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "שער ציון",
+    "fr": "Porte de Sion",
+    "en": "Zion Gate",
+    "ru": "Сионские ворота"
+   },
+   "text": {
+    "he": "שער בחומה העות׳מאנית.",
+    "fr": "Porte de la muraille ottomane.",
+    "en": "Gate in the Ottoman wall.",
+    "ru": "Ворота в османской стене."
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_dung_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "dung_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "שער האשפות",
+    "fr": "Porte des Immondices",
+    "en": "Dung Gate",
+    "ru": "Мусорные ворота"
+   },
+   "text": {
+    "he": "שער בחומה העות׳מאנית.",
+    "fr": "Porte de la muraille ottomane.",
+    "en": "Gate in the Ottoman wall.",
+    "ru": "Ворота в османской стене."
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_lions_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "lions_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "שער האריות",
+    "fr": "Porte des Lions",
+    "en": "Lions' Gate",
+    "ru": "Львиные ворота"
+   },
+   "text": {
+    "he": "שער בחומה העות׳מאנית.",
+    "fr": "Porte de la muraille ottomane.",
+    "en": "Gate in the Ottoman wall.",
+    "ru": "Ворота в османской стене."
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_herods_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "herods_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "שער הפרחים",
+    "fr": "Porte d'Hérode",
+    "en": "Herod's Gate",
+    "ru": "Ворота Ирода"
+   },
+   "text": {
+    "he": "שער בחומה העות׳מאנית.",
+    "fr": "Porte de la muraille ottomane.",
+    "en": "Gate in the Ottoman wall.",
+    "ru": "Ворота в османской стене."
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_golden_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "golden_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "שער הרחמים",
+    "fr": "Porte Dorée",
+    "en": "Golden Gate",
+    "ru": "Золотые ворота"
+   },
+   "text": {
+    "he": "שער בחומה העות׳מאנית.",
+    "fr": "Porte de la muraille ottomane.",
+    "en": "Gate in the Ottoman wall.",
+    "ru": "Ворота в османской стене."
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_new_gate",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": "new_gate",
+   "shape": {
+    "type": "gate"
+   },
+   "name": {
+    "he": "השער החדש",
+    "fr": "Porte Neuve",
+    "en": "New Gate",
+    "ru": "Новые ворота"
+   },
+   "text": {
+    "he": "נפרץ כדי לאפשר מעבר צליינים ממגרש הרוסים והמתחם הצרפתי אל העיר העתיקה וכנסיית הקבר. נחסם בין מלחמת העצמאות למלחמת ששת הימים ונפרץ מחדש אחריה.",
+    "fr": "Percée pour laisser passer les pèlerins du Complexe russe et du quartier français vers la vieille ville et le Saint-Sépulcre. Bloquée entre 1948 et 1967, puis rouverte.",
+    "en": "Opened so pilgrims from the Russian Compound and the French compound could reach the Old City and the Holy Sepulchre. Blocked between 1948 and 1967, then reopened.",
+    "ru": "Пробиты, чтобы паломники из Русского подворья и французского комплекса могли пройти в Старый город к храму Гроба Господня. Заблокированы в 1948–1967 гг., затем вновь открыты."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סובב חומה",
+     "url": "https://drive.google.com/file/d/16RjnO1fspbc2NtzZGo_ljsmAQjKrco1w/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "placementNote": {
+    "he": "מיקום: Wikidata. צורת השער (מגדל-שער, קשת מחודדת, מרפסת יציקה, משוננת) לפי מסמך הקורס על שער שכם; המידות סכמטיות.",
+    "fr": "Position : Wikidata. Forme de la porte (tour-porte, arc brisé, mâchicoulis, créneaux) d’après le cours sur la porte de Damas ; dimensions schématiques.",
+    "en": "Position: Wikidata. Gate form (gate tower, pointed arch, machicolation, crenellations) per the course on Damascus Gate; dimensions schematic.",
+    "ru": "Положение: Wikidata. Форма ворот (надвратная башня, стрельчатая арка, машикули, зубцы) по курсу о Дамасских воротах; размеры схематичны."
+   }
+  },
+  {
+   "id": "jerusalem_wall_canaanite",
+   "from": 1,
+   "to": 1,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "a:ophel",
+       "a:gihon_spring",
+       "a:hezekiah_tunnel",
+       "a:siloam_pool",
+       "a:givati",
+       "a:ophel"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#b07a4a"
+   },
+   "name": {
+    "he": "חומת העיר הכנענית",
+    "fr": "Muraille de la ville cananéenne",
+    "en": "Canaanite city wall",
+    "ru": "Стена ханаанского города"
+   },
+   "text": {
+    "he": "העיר הכנענית ישבה על שלוחת עיר דוד בלבד. קניון חשפה במדרון המזרחי שרידי חומה מהברונזה התיכונה, ומעיין הגיחון היה מבוצר.",
+    "fr": "La ville cananéenne n'occupait que l'éperon de la Cité de David. Kenyon a trouvé sur la pente est une muraille du Bronze moyen, et la source du Gihon était fortifiée.",
+    "en": "The Canaanite city occupied only the City of David spur. Kenyon found a Middle Bronze wall on the eastern slope, and the Gihon Spring was fortified.",
+    "ru": "Ханаанский город занимал лишь отрог Города Давида. Кеньон нашла на восточном склоне стену средней бронзы; источник Гихон был укреплён."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "otherView": {
+    "he": "מקורות אחרים: שטח העיר כ-50 דונם.",
+    "fr": "Autre source : environ 50 dounams.",
+    "en": "Other source: about 50 dunams.",
+    "ru": "Другой источник: ок. 50 дунамов."
+   },
+   "placementNote": {
+    "he": "קו סכמטי: ישרים בין נקודות מוכרות (שרידים או אתרים מזוהים). התוואי המדויק בין הנקודות אינו ידוע.",
+    "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu.",
+    "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown.",
+    "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна."
+   },
+   "builder": {
+    "he": "הכנענים · ברונזה תיכונה",
+    "fr": "Les Cananéens · Bronze moyen",
+    "en": "The Canaanites · Middle Bronze Age",
+    "ru": "Ханаанеи · средний бронзовый век"
+   }
+  },
+  {
+   "id": "jerusalem_wall_iron",
+   "from": 2,
+   "to": 2,
+   "certainty": "reconstruction",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "a:tower_of_david",
+       "a:broad_wall",
+       "a:israelite_tower",
+       "a:wilsons_arch"
+      ]
+     },
+     {
+      "via": [
+       "a:tower_of_david",
+       "a:kishle",
+       "a:bishop_gobat",
+       "a:protestant_cemetery",
+       "a:siloam_pool",
+       "a:hezekiah_tunnel",
+       "a:gihon_spring",
+       "a:ophel",
+       "a:hulda_gates"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#c9503c"
+   },
+   "name": {
+    "he": "חומת בית ראשון (חזקיהו)",
+    "fr": "Muraille du Premier Temple (Ézéchias)",
+    "en": "First Temple wall (Hezekiah)",
+    "ru": "Стена Первого Храма (Езекия)"
+   },
+   "text": {
+    "he": "בסוף ימי בית ראשון הורחבה העיר אל הגבעה המערבית. החומה יוצאת מחלקה התחתון של עיר דוד, לאורך הגדה הדרומית והמערבית של גיא בן הינום, ועולה מזרחה לאורך נחל צולב אל הר הבית. בצפון, שאינו מוגן טופוגרפית, נבנתה החומה הרחבה (7 מ׳). במזרח עמדה חומה ישראלית מעל הביצור הכנעני, ובעופל חומה באורך 70 מ׳.",
+    "fr": "À la fin du Premier Temple la ville s'étend sur la colline ouest. La muraille part du bas de la Cité de David, longe la rive sud et ouest de la vallée de Hinnom et remonte vers l'est le long de la vallée transversale jusqu'au mont du Temple. Au nord, sans défense naturelle, s'élève la « muraille large » (7 m). À l'est, une muraille israélite surmonte le rempart cananéen ; à l'Ophel, un mur de 70 m.",
+    "en": "At the end of the First Temple period the city spread onto the Western Hill. The wall ran from the lower City of David along the south and west banks of the Hinnom Valley, then east along the Transversal Valley to the Temple Mount. On the north, with no natural defence, stood the 7 m Broad Wall. On the east an Israelite wall topped the Canaanite one; on the Ophel, a 70 m wall.",
+    "ru": "В конце эпохи Первого Храма город распространился на Западный холм. Стена шла от нижней части Города Давида по южному и западному берегу долины Гинном, затем на восток вдоль Поперечной долины к Храмовой горе. На севере, без естественной защиты, — Широкая стена (7 м). На востоке израильская стена поверх ханаанской; на Офеле — стена длиной 70 м."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — החומה הרחבה",
+     "url": "https://drive.google.com/file/d/1_XxDGftw_HhDVZ6iPumuldAjZz2_d4uc/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור ירושלים 1 — בית ראשון (סיכום איתי)",
+     "url": "https://drive.google.com/file/d/1ulITxno64PL1zSi36p5olnMkiv18ufZm/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    },
+    {
+     "kind": "online",
+     "label": "Israelite Tower (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Israelite_Tower"
+    },
+    {
+     "kind": "online",
+     "label": "Broad Wall (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Broad_Wall_(Jerusalem)"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "debate": {
+    "he": "מקום החיבור להר הבית של ימי בית ראשון אינו ידוע. ״החומה הרחבה״ יוחסה לחזקיהו; יש המייחסים אותה לעוזיהו.",
+    "fr": "Le point de jonction avec le mont du Temple de l'époque n'est pas connu. La muraille large est attribuée à Ézéchias ; certains l'attribuent à Ozias.",
+    "en": "Where it joined the Temple Mount of that time is unknown. The Broad Wall is attributed to Hezekiah; some attribute it to Uzziah.",
+    "ru": "Место соединения с Храмовой горой того времени неизвестно. Широкую стену приписывают Езекии, некоторые — Озии."
+   },
+   "placementNote": {
+    "he": "קו סכמטי: ישרים בין נקודות מוכרות (שרידים או אתרים מזוהים). התוואי המדויק בין הנקודות אינו ידוע. שער האיסיים ממוקם לפי בית הקברות הפרוטסטנטי בהר ציון, שבו נחפר.",
+    "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu. La porte des Esséniens est placée au cimetière protestant du mont Sion, où elle a été fouillée.",
+    "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown. The Gate of the Essenes is placed at the Protestant cemetery on Mount Zion, where it was excavated.",
+    "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна. Ворота ессеев помещены на протестантском кладбище на Сионе, где их раскопали."
+   },
+   "builder": {
+    "he": "מלכי יהודה (חזקיהו) · סוף המאה ה-8 לפנה״ס",
+    "fr": "Rois de Juda (Ézéchias) · fin du VIIIe s. av. J.-C.",
+    "en": "Kings of Judah (Hezekiah) · late 8th c. BCE",
+    "ru": "Цари Иудеи (Езекия) · конец VIII в. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_wall_persian",
+   "from": 3,
+   "to": 3,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "a:ophel",
+       "a:gihon_spring",
+       "a:hezekiah_tunnel",
+       "a:siloam_pool",
+       "a:givati",
+       "a:ophel"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#8a6fb8"
+   },
+   "name": {
+    "he": "חומת נחמיה (עיר דוד)",
+    "fr": "Muraille de Néhémie (Cité de David)",
+    "en": "Nehemiah's wall (City of David)",
+    "ru": "Стена Неемии (Город Давида)"
+   },
+   "text": {
+    "he": "בימי שיבת ציון חזרה העיר להצטמצם לשלוחת עיר דוד. אילת מזר ייחסה לנחמיה חומה שנמצאה בשטח G.",
+    "fr": "Au Retour de Sion la ville se resserre sur l'éperon de la Cité de David. Eilat Mazar attribue à Néhémie un mur trouvé dans l'aire G.",
+    "en": "In the Return to Zion period the city shrank back to the City of David spur. Eilat Mazar attributed a wall in Area G to Nehemiah.",
+    "ru": "В эпоху возвращения в Сион город вновь сократился до отрога Города Давида. Эйлат Мазар приписала Неемии стену в зоне G."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 11 — עיר דוד",
+     "url": "https://drive.google.com/file/d/1KhTmAzbyOzCbF82ytCzHX7cvrw83cgSJ/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור ירושלים 1 — בית ראשון (סיכום איתי)",
+     "url": "https://drive.google.com/file/d/1ulITxno64PL1zSi36p5olnMkiv18ufZm/view"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "otherView": {
+    "he": "מקורות אחרים: אין עדות ארכיאולוגית ודאית לבניית חומה בתקופה זו.",
+    "fr": "Autre source : aucune preuve archéologique sûre d'une muraille à cette époque.",
+    "en": "Other source: no certain archaeological evidence of wall building in this period.",
+    "ru": "Другой источник: достоверных археологических свидетельств строительства стен нет."
+   },
+   "placementNote": {
+    "he": "קו סכמטי: ישרים בין נקודות מוכרות (שרידים או אתרים מזוהים). התוואי המדויק בין הנקודות אינו ידוע.",
+    "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu.",
+    "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown.",
+    "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна."
+   },
+   "builder": {
+    "he": "נחמיה (לפי אילת מזר) · המאה ה-5 לפנה״ס",
+    "fr": "Néhémie (selon E. Mazar) · Ve s. av. J.-C.",
+    "en": "Nehemiah (per E. Mazar) · 5th c. BCE",
+    "ru": "Неемия (по Э. Мазар) · V в. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_wall_first",
+   "from": 4,
+   "to": 5,
+   "certainty": "reconstruction",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "herod:hippicus",
+       "a:israelite_tower",
+       "a:wilsons_arch"
+      ]
+     },
+     {
+      "via": [
+       "herod:hippicus",
+       "a:kishle",
+       "a:bishop_gobat",
+       "a:protestant_cemetery",
+       "off:siloam_pool,-44,32",
+       "off:siloam_pool,44,32",
+       "a:hezekiah_tunnel",
+       "a:gihon_spring",
+       "a:stepped_stone",
+       "a:ophel",
+       "tm:SE"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#2f8fd8"
+   },
+   "name": {
+    "he": "החומה הראשונה (חשמונאית)",
+    "fr": "La première muraille (hasmonéenne)",
+    "en": "The First Wall (Hasmonean)",
+    "ru": "Первая стена (хасмонейская)"
+   },
+   "text": {
+    "he": "לפי יוסף בן מתתיהו: מתחילה במגדל היפיקוס, עוברת דרך האכסיסטוס ובית המועצה ומסתיימת בסטיו המערבי של המקדש; בכיוון השני עוברת בבית־סו אל שער האיסיים, פונה דרומה מעל השילוח, מזרחה אל בריכת שלמה, אל העופל ואל הסטיו המזרחי. נבנתה בידי החשמונאים וחופפת בחלקה את חומת חזקיהו. בעיר דוד נראה מגדל הלניסטי שלה.",
+    "fr": "Selon Josèphe : elle part de la tour Hippicus, passe par le Xyste et la salle du conseil et finit au portique ouest du Temple ; dans l'autre sens elle passe par Bethso jusqu'à la porte des Esséniens, tourne au sud au-dessus de Siloé, à l'est vers le bassin de Salomon, puis l'Ophel et le portique est. Hasmonéenne, elle suit en partie la muraille d'Ézéchias ; une tour hellénistique en est visible dans la Cité de David.",
+    "en": "Per Josephus: from the Hippicus tower through the Xystus and the council house to the western portico of the Temple; the other way through Bethso to the Gate of the Essenes, south above Siloam, east to Solomon's pool, to the Ophel and the eastern portico. Hasmonean, partly on Hezekiah's line; a Hellenistic tower of it is visible in the City of David.",
+    "ru": "По Иосифу: от башни Гиппика через Ксист и здание совета к западному портику Храма; в другую сторону — через Бетсо к воротам ессеев, на юг над Силоамом, на восток к пруду Соломона, к Офелу и восточному портику. Хасмонейская, частично по линии Езекии; её эллинистическая башня видна в Городе Давида."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "השילוח — הדרכה בשטח (החומה מבית שני עברה מדרום למאגר)",
+     "url": "https://drive.google.com/file/d/1ysX_Lz_CvPZytNXnRvp1V5AKNo3665ee/view"
+    },
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור ירושלים 1 — בית ראשון (סיכום איתי)",
+     "url": "https://drive.google.com/file/d/1ulITxno64PL1zSi36p5olnMkiv18ufZm/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.142–155",
+     "url": "https://lexundria.com/j_bj/5.136-5.183/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Israelite Tower (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Israelite_Tower"
+    },
+    {
+     "kind": "online",
+     "label": "Hasmonean wall in the Kishle (Archaeology Magazine, 2025)",
+     "url": "https://archaeologymag.com/2025/12/section-of-hasmonean-city-wall-in-jerusalem/"
+    },
+    {
+     "kind": "online",
+     "label": "Gate of the Essenes — excavations on Mount Zion",
+     "url": "https://www.zionsberg-jerusalem.de/gate-of-the-essenes/?lang=en"
+    },
+    {
+     "kind": "online",
+     "label": "Zelinger 2019, The Line of the Southern City Wall of Jerusalem (IAA)",
+     "url": "https://www.academia.edu/41416450/2019_The_Line_of_the_Southern_City_Wall_of_Jerusalem_in_the_Early_Periods"
+    },
+    {
+     "kind": "online",
+     "label": "The Walls of Mount Zion (Archaeology, 2008)",
+     "url": "https://archive.archaeology.org/0811/trenches/mtzion.html"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "placementNote": {
+    "he": "קו סכמטי בין קטעים שנחשפו: מגדל ״פאי״ החשמונאי ליד המגדל הישראלי, 40 מ׳ בקישלה, שער האיסיים, מדרון הר ציון, המגדל ההלניסטי בשטח G. שער האיסיים ממוקם לפי בית הקברות הפרוטסטנטי בהר ציון, שבו נחפר.",
+    "fr": "Tracé schématique entre les tronçons fouillés : tour « pi » près de la tour israélite, 40 m au Kishle, porte des Esséniens, pente du mont Sion, tour hellénistique de l'aire G. La porte des Esséniens est placée au cimetière protestant du mont Sion, où elle a été fouillée.",
+    "en": "Schematic line between excavated sections: the 'pi' tower by the Israelite Tower, 40 m in the Kishle, the Gate of the Essenes, Mount Zion slope, the Hellenistic tower in Area G. The Gate of the Essenes is placed at the Protestant cemetery on Mount Zion, where it was excavated.",
+    "ru": "Схема между раскопанными участками: башня «пи» у Израильской башни, 40 м в Кишле, ворота ессеев, склон Сиона, эллинистическая башня в зоне G. Ворота ессеев помещены на протестантском кладбище на Сионе, где их раскопали."
+   },
+   "builder": {
+    "he": "החשמונאים · סוף המאה ה-2 – ראשית המאה ה-1 לפנה״ס",
+    "fr": "Les Hasmonéens · fin IIe – début Ier s. av. J.-C.",
+    "en": "The Hasmoneans · late 2nd – early 1st c. BCE",
+    "ru": "Хасмонеи · конец II – начало I в. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_wall_second",
+   "from": 5,
+   "to": 5,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "mid:tower_of_david,israelite_tower",
+       "a:muristan",
+       "a:alexander_nevsky",
+       "a:damascus_gate",
+       "a:antonia"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#e08a2c"
+   },
+   "name": {
+    "he": "החומה השנייה",
+    "fr": "La deuxième muraille",
+    "en": "The Second Wall",
+    "ru": "Вторая стена"
+   },
+   "text": {
+    "he": "יוצאת מאזור מגדל פצאל (שער יפו), יוצרת פיתול צפונה ומזרחה ומסתיימת במצודת אנטוניה. יוסף: מתחילה בשער גנת שבחומה הראשונה ומקיפה רק את הרובע הצפוני. מיוחסת להורדוס; לא נמצאו שרידים ודאיים. היא עוקפת את גבעת הגולגולתא, ולכן כנסיית הקבר מחוצה לה.",
+    "fr": "Elle part de la tour Phasaël (porte de Jaffa), fait un détour vers le nord et l'est et finit à l'Antonia. Josèphe : elle part de la porte Gennath de la première muraille et n'enferme que le quartier nord. Attribuée à Hérode ; aucun vestige sûr. Elle contourne le Golgotha : le Saint-Sépulcre reste à l'extérieur.",
+    "en": "It starts near the Phasael tower (Jaffa Gate), bends north and east and ends at the Antonia. Josephus: it began at the Gennath gate of the First Wall and enclosed only the northern quarter. Attributed to Herod; no certain remains. It skirted Golgotha, so the Holy Sepulchre lies outside it.",
+    "ru": "Начинается у башни Фазаеля (Яффские ворота), изгибается на север и восток и кончается у Антонии. Иосиф: от ворот Геннат Первой стены, охватывала лишь северный квартал. Приписывается Ироду; достоверных остатков нет. Обходит Голгофу — храм Гроба Господня вне её."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.142–155",
+     "url": "https://lexundria.com/j_bj/5.136-5.183/wst"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "debate": {
+    "he": "מקום שער גנת והתוואי כולו שנויים במחלוקת. הקו עובר מזרחית לכנסיית הקבר, דרך המוריסטן ומתחם אלכסנדר (שם יש המזהים שרידים), אל שער שכם ואל האנטוניה. לפי המינימליסטים לא הקיפה את האנטוניה.",
+    "fr": "L'emplacement de la porte Gennath et tout le tracé sont débattus. La ligne passe à l'est du Saint-Sépulcre, par le Muristan et le complexe Alexandre (où certains voient des vestiges), vers la porte de Damas et l'Antonia. Selon les minimalistes, elle n'entourait pas l'Antonia.",
+    "en": "The Gennath gate's location and the whole course are debated. The line runs east of the Holy Sepulchre, through the Muristan and the Alexander Compound (where some see remains), to Damascus Gate and the Antonia. Minimalists say it did not enclose the Antonia.",
+    "ru": "Место ворот Геннат и вся трасса спорны. Линия идёт восточнее храма Гроба Господня, через Муристан и Александровское подворье (где некоторые видят остатки), к Дамасским воротам и Антонии. По минималистам, Антонию она не охватывала."
+   },
+   "placementNote": {
+    "he": "קו סכמטי: ישרים בין נקודות מוכרות (שרידים או אתרים מזוהים). התוואי המדויק בין הנקודות אינו ידוע.",
+    "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu.",
+    "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown.",
+    "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна."
+   },
+   "builder": {
+    "he": "מיוחסת להורדוס (יוסף אינו מציין) · המאה ה-1 לפנה״ס",
+    "fr": "Attribuée à Hérode (Josèphe ne le dit pas) · Ier s. av. J.-C.",
+    "en": "Attributed to Herod (Josephus does not say) · 1st c. BCE",
+    "ru": "Приписывается Ироду (Иосиф не указывает) · I в. до н. э."
+   }
+  },
+  {
+   "id": "jerusalem_wall_third_max",
+   "from": 5,
+   "to": 5,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "herod:hippicus",
+       {
+        "itm": [
+         221090,
+         632208
+        ],
+        "ll": [
+         31.782565,
+         35.221689
+        ],
+        "src": "Spiezer 2023 — Helene HaMalka St."
+       },
+       {
+        "itm": [
+         221385,
+         632334
+        ],
+        "ll": [
+         31.783701,
+         35.224804
+        ],
+        "src": "Spiezer 2023 — Shivtei Israel St."
+       },
+       {
+        "itm": [
+         221383,
+         632423
+        ],
+        "ll": [
+         31.784504,
+         35.224783
+        ],
+        "src": "Spiezer 2023 — HaHoma HaShlishit St."
+       },
+       {
+        "itm": [
+         221469,
+         632454
+        ],
+        "ll": [
+         31.784783,
+         35.225691
+        ],
+        "src": "Spiezer 2023 — Sukenik-Mayer, start"
+       },
+       {
+        "itm": [
+         222000,
+         632752
+        ],
+        "ll": [
+         31.787469,
+         35.231298
+        ],
+        "src": "Spiezer 2023 — Sukenik-Mayer, turn"
+       },
+       {
+        "itm": [
+         222429,
+         632756
+        ],
+        "ll": [
+         31.787504,
+         35.235827
+        ],
+        "src": "Spiezer 2023 — NE corner (estimated)"
+       },
+       "tm:NE"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#d43f8d"
+   },
+   "name": {
+    "he": "החומה השלישית — הקו הצפוני (מקסימליסטי)",
+    "fr": "Troisième muraille — ligne nord (maximaliste)",
+    "en": "Third Wall — northern line (maximalist)",
+    "ru": "Третья стена — северная линия (максималисты)"
+   },
+   "text": {
+    "he": "לפי מסמך הקורס: יוצאת ממגדל פסיפינוס בפינה הצפון-מערבית הרחוקה, הולכת מזרחה ומסתיימת בפינה הצפון-מזרחית של חומת הר הבית. החל בה אגריפס הראשון והושלמה בחופזה ערב המרד. הקו כאן הוא קו סוקניק–מאיר, לפי הקואורדינטות שפרסם שפיצר (2023), ומגדל במגרש הרוסים.",
+    "fr": "Selon le cours : elle part de la tour Psephinus, à l'angle nord-ouest lointain, va vers l'est et finit à l'angle nord-est du mont du Temple. Commencée par Agrippa Ier, achevée à la hâte avant la révolte. La ligne affichée est celle de Sukenik–Mayer, d'après les coordonnées publiées par Spiezer (2023), avec la tour du Complexe russe.",
+    "en": "Per the course: from the Psephinus tower at the far north-west corner, east to the north-east corner of the Temple Mount. Begun by Agrippa I, finished hastily before the revolt. The line shown is the Sukenik–Mayer line, using the coordinates published by Spiezer (2023), with the Russian Compound tower.",
+    "ru": "По курсу: от башни Псефин в дальнем северо-западном углу на восток к северо-восточному углу Храмовой горы. Начата Агриппой I, спешно закончена перед восстанием. Показана линия Сукеника–Майера по координатам Шпицера (2023) и башня Русского подворья."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 5.142–155",
+     "url": "https://lexundria.com/j_bj/5.136-5.183/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Spiezer 2023, GIS Re-Mapping the Course of Jerusalem's Third Wall (Strata)",
+     "url": "https://www.academia.edu/118103742/GIS_Re_Mapping_the_Course_of_Jerusalems_Third_Wall_and_the_Northeastern_Sites_Along_it"
+    },
+    {
+     "kind": "online",
+     "label": "The Third Wall of Jerusalem (BAS, Russian Compound)",
+     "url": "https://www.biblicalarchaeology.org/daily/news/third-wall-of-jerusalem/"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "debate": {
+    "he": "מקסימליסטים (כמו הדגם): הקו הצפוני הזה. מינימליסטים: החומה השלישית חפפה בערך את החומה העות׳מאנית (ראו הקו הבא). את השרידים הצפוניים ייחסו גם למרד בר כוכבא, לאיליה קפיטולינה או לסוללת מצור רומית.",
+    "fr": "Maximalistes (comme la maquette) : cette ligne nord. Minimalistes : la troisième muraille suivait à peu près la muraille ottomane (ligne suivante). Les vestiges du nord ont aussi été attribués à la révolte de Bar Kokhba, à Aelia Capitolina ou à un mur de siège romain.",
+    "en": "Maximalists (like the model): this northern line. Minimalists: the Third Wall roughly followed the Ottoman wall (next line). The northern remains have also been attributed to the Bar Kokhba revolt, Aelia Capitolina or a Roman siege wall.",
+    "ru": "Максималисты (как макет): эта северная линия. Минималисты: третья стена примерно совпадала с османской (следующая линия). Северные остатки приписывали также восстанию Бар-Кохбы, Элии Капитолине или римской осадной стене."
+   },
+   "placementNote": {
+    "he": "הנקודות הצפוניות הן קואורדינטות ITM שפורסמו (שפיצר 2023) והומרו ל-WGS84; פינת הצפון-מזרח היא הערכה של המחבר. בדיקה: מכון אולברייט (ויקינתונים) נמצא כ-100 מ׳ מנקודת הפנייה המחושבת — תואם לתיאור (שער ליד המכון).",
+    "fr": "Points nord : coordonnées ITM publiées (Spiezer 2023) converties en WGS84 ; l'angle nord-est est une estimation de l'auteur. Contrôle : l'Institut Albright (Wikidata) est à ~100 m du coude calculé — cohérent avec la description (porte près de l'Institut).",
+    "en": "Northern points: published ITM coordinates (Spiezer 2023) converted to WGS84; the north-east corner is the author's estimate. Check: the Albright Institute (Wikidata) lies ~100 m from the computed turn — consistent with the description (gate near the Institute).",
+    "ru": "Северные точки: опубликованные координаты ITM (Шпицер 2023), переведённые в WGS84; северо-восточный угол — оценка автора. Проверка: Институт Олбрайта (Wikidata) в ~100 м от вычисленного поворота — согласуется с описанием (ворота у Института)."
+   },
+   "builder": {
+    "he": "אגריפס הראשון, הושלמה בידי המורדים · 41–44 / 66 לסה״נ",
+    "fr": "Agrippa Ier, achevée par les insurgés · 41–44 / 66 apr. J.-C.",
+    "en": "Agrippa I, completed by the rebels · 41–44 / 66 CE",
+    "ru": "Агриппа I, достроена повстанцами · 41–44 / 66 н. э."
+   }
+  },
+  {
+   "id": "jerusalem_wall_third_min",
+   "from": 5,
+   "to": 5,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "a:tancreds_tower",
+       "a:new_gate",
+       "a:damascus_gate",
+       "a:herods_gate",
+       "tm:NE"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#f07fb8"
+   },
+   "name": {
+    "he": "החומה השלישית — לפי המינימליסטים",
+    "fr": "Troisième muraille — selon les minimalistes",
+    "en": "Third Wall — minimalist view",
+    "ru": "Третья стена — по минималистам"
+   },
+   "text": {
+    "he": "לפי הגישה המינימליסטית, בהעדר ממצאים מבית שני בשטחים הצפוניים, החומה השלישית חפפה במידה רבה את קו החומה העות׳מאנית הצפונית של ימינו.",
+    "fr": "Selon les minimalistes, faute de vestiges du Second Temple plus au nord, la troisième muraille suivait en grande partie la muraille ottomane nord actuelle.",
+    "en": "For minimalists, with no Second Temple finds farther north, the Third Wall largely followed today's Ottoman northern wall.",
+    "ru": "По минималистам, при отсутствии находок эпохи Второго Храма севернее, третья стена в основном совпадала с нынешней северной османской стеной."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "דגם ירושלים בית שני (סיור 12)",
+     "url": "https://drive.google.com/file/d/1kHJGPj6tyQCQH1uKy4FOgNKZHC4-Qyty/view"
+    },
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "placementNote": {
+    "he": "הקו עובר דרך שערי החומה הצפונית של היום — קירוב בלבד.",
+    "fr": "La ligne passe par les portes du mur nord actuel — approximation.",
+    "en": "The line runs through today's northern gates — an approximation.",
+    "ru": "Линия проходит через нынешние северные ворота — приближение."
+   },
+   "builder": {
+    "he": "אגריפס הראשון, הושלמה בידי המורדים · 41–44 / 66 לסה״נ",
+    "fr": "Agrippa Ier, achevée par les insurgés · 41–44 / 66 apr. J.-C.",
+    "en": "Agrippa I, completed by the rebels · 41–44 / 66 CE",
+    "ru": "Агриппа I, достроена повстанцами · 41–44 / 66 н. э."
+   }
+  },
+  {
+   "id": "jerusalem_wall_aelia",
+   "from": 6,
+   "to": 6,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "osm": "all"
+     }
+    ],
+    "h": 10,
+    "color": "#7d8a96"
+   },
+   "name": {
+    "he": "חומת איליה קפיטולינה",
+    "fr": "Muraille d'Aelia Capitolina",
+    "en": "Wall of Aelia Capitolina",
+    "ru": "Стена Элии Капитолины"
+   },
+   "text": {
+    "he": "העיר הרומית נוסדה בלי חומה. קשת הניצחון של אדריאנוס בשער שכם שולבה מאוחר יותר בחומה.",
+    "fr": "La ville romaine fut fondée sans muraille. L'arc d'Hadrien de la porte de Damas fut intégré plus tard dans la muraille.",
+    "en": "The Roman city was founded unwalled. Hadrian's arch at Damascus Gate was later built into the wall.",
+    "ru": "Римский город был основан без стен. Арка Адриана у Дамасских ворот позже вошла в стену."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סובב חומה",
+     "url": "https://drive.google.com/file/d/16RjnO1fspbc2NtzZGo_ljsmAQjKrco1w/view"
+    },
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "otherView": {
+    "he": "מקורות אחרים: חומה נבנתה כנראה בימי דיוקלטיאנוס (289–כ-300). תוואייה המדויק אינו ידוע; מוצג קו החומה של היום כקירוב.",
+    "fr": "Autre source : une muraille fut probablement bâtie sous Dioclétien (289–vers 300). Tracé exact inconnu ; la ligne actuelle sert d'approximation.",
+    "en": "Other source: a wall was probably built under Diocletian (289–c. 300). Exact course unknown; today's line is shown as an approximation.",
+    "ru": "Другой источник: стена, вероятно, построена при Диоклетиане (289–ок. 300). Точная трасса неизвестна; показана нынешняя линия как приближение."
+   },
+   "builder": {
+    "he": "אדריאנוס ייסד את איליה בלי חומה · תוואי משוער",
+    "fr": "Hadrien fonde Aelia sans muraille · tracé hypothétique",
+    "en": "Hadrian founded Aelia without a wall · hypothetical line",
+    "ru": "Адриан основал Элию без стены · гипотетическая линия"
+   }
+  },
+  {
+   "id": "jerusalem_wall_eudocia",
+   "from": 7,
+   "to": 7,
+   "certainty": "reconstruction",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "a:zion_gate",
+       "a:bishop_gobat",
+       "a:protestant_cemetery",
+       "off:siloam_pool,-44,32",
+       "off:siloam_pool,44,32",
+       "a:hezekiah_tunnel",
+       "a:gihon_spring",
+       "a:ophel",
+       "tm:SE"
+      ]
+     },
+     {
+      "osm": "all"
+     }
+    ],
+    "h": 10,
+    "color": "#3fa86a"
+   },
+   "name": {
+    "he": "חומת אודוקיה (ביזנטית)",
+    "fr": "Muraille d'Eudocie (byzantine)",
+    "en": "Eudocia's wall (Byzantine)",
+    "ru": "Стена Евдокии (византийская)"
+   },
+   "text": {
+    "he": "במאה ה-5 הוחזרו הר ציון ועיר דוד אל תוך העיר. בעיר דוד נראים במדרון קטעים מחומות אודוקיה.",
+    "fr": "Au Ve s., le mont Sion et la Cité de David sont réintégrés dans la ville. Dans la Cité de David, des tronçons des murailles d'Eudocie sont visibles sur la pente.",
+    "en": "In the 5th century Mount Zion and the City of David were brought back inside the city. In the City of David, parts of Eudocia's walls are visible on the slope.",
+    "ru": "В V в. гора Сион и Город Давида снова вошли в город. В Городе Давида на склоне видны участки стен Евдокии."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור ירושלים 1 — בית ראשון (סיכום איתי)",
+     "url": "https://drive.google.com/file/d/1ulITxno64PL1zSi36p5olnMkiv18ufZm/view"
+    },
+    {
+     "kind": "online",
+     "label": "Zelinger 2019, The Line of the Southern City Wall of Jerusalem (IAA)",
+     "url": "https://www.academia.edu/41416450/2019_The_Line_of_the_Southern_City_Wall_of_Jerusalem_in_the_Early_Periods"
+    },
+    {
+     "kind": "online",
+     "label": "Gate of the Essenes — excavations on Mount Zion",
+     "url": "https://www.zionsberg-jerusalem.de/gate-of-the-essenes/?lang=en"
+    },
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "otherView": {
+    "he": "מקורות אחרים: חומה במדרון הדרומי של הר ציון, מתוארכת במטבעות לכ-445–460 (צלינגר, רשות העתיקות); השער העליון בשער האיסיים שייך לה.",
+    "fr": "Autre source : muraille sur la pente sud du mont Sion, datée par les monnaies vers 445–460 (Zelinger, IAA) ; la porte supérieure de la porte des Esséniens lui appartient.",
+    "en": "Other source: a wall on the southern slope of Mount Zion, coin-dated c. 445–460 (Zelinger, IAA); the upper gate at the Gate of the Essenes belongs to it.",
+    "ru": "Другой источник: стена на южном склоне Сиона, по монетам ок. 445–460 (Зелингер, Управление древностей); верхние ворота у ворот ессеев — её."
+   },
+   "placementNote": {
+    "he": "הקטע הדרומי סכמטי בין נקודות מוכרות; שאר הקו מוצג לפי החומה של היום כקירוב. שער האיסיים ממוקם לפי בית הקברות הפרוטסטנטי בהר ציון, שבו נחפר.",
+    "fr": "Le tronçon sud est schématique entre points connus ; le reste suit la muraille actuelle, par approximation. La porte des Esséniens est placée au cimetière protestant du mont Sion, où elle a été fouillée.",
+    "en": "The southern section is schematic between known points; the rest follows today's wall as an approximation. The Gate of the Essenes is placed at the Protestant cemetery on Mount Zion, where it was excavated.",
+    "ru": "Южный участок схематичен; остальное — по нынешней стене как приближение. Ворота ессеев помещены на протестантском кладбище на Сионе, где их раскопали."
+   },
+   "builder": {
+    "he": "הקיסרית אודוקיה · המאה ה-5",
+    "fr": "L’impératrice Eudocie · Ve s.",
+    "en": "Empress Eudocia · 5th c.",
+    "ru": "Императрица Евдокия · V в."
+   }
+  },
+  {
+   "id": "jerusalem_wall_fatimid",
+   "from": 8,
+   "to": 9,
+   "certainty": "reconstruction",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "osm": "all"
+     }
+    ],
+    "h": 10,
+    "color": "#c9a227"
+   },
+   "name": {
+    "he": "החומה הפאטימית",
+    "fr": "La muraille fatimide",
+    "en": "The Fatimid wall",
+    "ru": "Фатимидская стена"
+   },
+   "text": {
+    "he": "החומה העות׳מאנית נבנתה על תוואי החומה הפאטימית (המאה ה-11) והאיובית. בפינה הצפון-מערבית: שרידי המבצר הפאטימי (מגדל הפינה), שם פרצו הצלבנים.",
+    "fr": "La muraille ottomane suit le tracé de la muraille fatimide (XIe s.) et ayyoubide. À l'angle nord-ouest : le fort fatimide (tour d'angle), par où les croisés attaquèrent.",
+    "en": "The Ottoman wall follows the line of the Fatimid (11th c.) and Ayyubid walls. At the north-west corner: the Fatimid fort (corner tower), where the Crusaders attacked.",
+    "ru": "Османская стена идёт по линии фатимидской (XI в.) и айюбидской. В северо-западном углу — фатимидская крепость (угловая башня), где атаковали крестоносцы."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סובב חומה",
+     "url": "https://drive.google.com/file/d/16RjnO1fspbc2NtzZGo_ljsmAQjKrco1w/view"
+    },
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "otherView": {
+    "he": "מקורות אחרים: אחרי רעידת האדמה של 1033 נבנתה בקו מצומצם יותר, שהשאיר בחוץ את הר ציון ואת עיר דוד.",
+    "fr": "Autre source : après le séisme de 1033, rebâtie sur une ligne plus courte laissant dehors le mont Sion et la Cité de David.",
+    "en": "Other source: after the 1033 earthquake it was rebuilt on a shorter line, leaving out Mount Zion and the City of David.",
+    "ru": "Другой источник: после землетрясения 1033 г. перестроена по более короткой линии, без Сиона и Города Давида."
+   },
+   "placementNote": {
+    "he": "מוצג קו החומה של היום, שנבנה על תוואי זה.",
+    "fr": "La ligne actuelle, bâtie sur ce tracé, est affichée.",
+    "en": "Today's line, built on this course, is shown.",
+    "ru": "Показана нынешняя линия, построенная по этой трассе."
+   },
+   "builder": {
+    "he": "הפאטימים, ואחריהם האיובים · המאה ה-11",
+    "fr": "Les Fatimides, puis les Ayyoubides · XIe s.",
+    "en": "The Fatimids, then the Ayyubids · 11th c.",
+    "ru": "Фатимиды, затем Айюбиды · XI в."
+   }
+  },
+  {
+   "id": "jerusalem_wall_ottoman",
+   "from": 11,
+   "to": 12,
+   "certainty": "attested",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "osm": "all"
+     }
+    ],
+    "h": 12,
+    "color": "#2ea36b"
+   },
+   "name": {
+    "he": "חומות סולימאן",
+    "fr": "Les murailles de Soliman",
+    "en": "Suleiman's walls",
+    "ru": "Стены Сулеймана"
+   },
+   "text": {
+    "he": "סולימאן המפואר בנה את חומות העיר במאה ה-16 על תוואי החומה הפאטימית/האיובית, תוך שימוש באבנים ממבנים מפורקים. צפונית לשער יפו משובצת אבן הלגיון ה-10.",
+    "fr": "Soliman le Magnifique bâtit les murailles au XVIe s. sur le tracé fatimide/ayyoubide, avec des pierres de remploi. Au nord de la porte de Jaffa, une pierre de la Xe légion est remployée.",
+    "en": "Suleiman the Magnificent built the walls in the 16th century on the Fatimid/Ayyubid line, with reused stones. North of Jaffa Gate a Tenth Legion stone is reused.",
+    "ru": "Сулейман Великолепный построил стены в XVI в. по фатимидско-айюбидской линии из вторичного камня. Севернее Яффских ворот вложен камень Десятого легиона."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סובב חומה",
+     "url": "https://drive.google.com/file/d/16RjnO1fspbc2NtzZGo_ljsmAQjKrco1w/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 18 — סיכום קצר",
+     "url": "https://drive.google.com/file/d/1ohdpK-WAwJSRw8qRmBcU0v5YEqM7NbhD/view"
+    },
+    {
+     "kind": "online",
+     "label": "Walls of Jerusalem (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "otherView": {
+    "he": "מקורות אחרים: כ-1537–1541, 4,018 מ׳, 34 מגדלים, גובה ממוצע כ-12 מ׳.",
+    "fr": "Autre source : vers 1537–1541, 4 018 m, 34 tours, env. 12 m de haut.",
+    "en": "Other source: c. 1537–1541, 4,018 m, 34 towers, about 12 m high.",
+    "ru": "Другой источник: ок. 1537–1541, 4018 м, 34 башни, высота ок. 12 м."
+   },
+   "placementNote": {
+    "he": "תוואי מ-OpenStreetMap.",
+    "fr": "Tracé OpenStreetMap.",
+    "en": "Line from OpenStreetMap.",
+    "ru": "Линия по OpenStreetMap."
+   },
+   "builder": {
+    "he": "סולימאן המפואר · המאה ה-16",
+    "fr": "Soliman le Magnifique · XVIe s.",
+    "en": "Suleiman the Magnificent · 16th c.",
+    "ru": "Сулейман Великолепный · XVI в."
+   }
+  }
+ ],
+ "wallColors": "Couleur propre à chaque muraille (mode comparaison)."
+}

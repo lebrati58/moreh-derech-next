@@ -1,0 +1,541 @@
+{
+ "site": "arad",
+ "title": {
+  "he": "תל ערד",
+  "fr": "Tel Arad",
+  "en": "Tel Arad",
+  "ru": "Тель Арад"
+ },
+ "defaultPeriod": 2,
+ "cubitMeters": 0.5,
+ "stone": "fieldstone",
+ "tint": "#e6d6b8",
+ "home": {
+  "at": "o:fortress",
+  "dist": 420,
+  "from": 230,
+  "elev": 34
+ },
+ "terrain": {
+  "lo": "#a8946e",
+  "mid": "#cdb990",
+  "hi": "#e6d8b6"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "house": {
+   "osm": "way/88115795"
+  },
+  "fortress": {
+   "osm": "way/88115790"
+  },
+  "temple": {
+   "osm": "way/88115773"
+  },
+  "tower": {
+   "osm": "way/88115792"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "ebronze",
+   "name": {
+    "he": "כנען",
+    "fr": "La ville cananéenne",
+    "en": "The Canaanite city",
+    "ru": "Ханаанский город"
+   },
+   "dates": {
+    "he": "הברונזה הקדומה (האלף ה-3 לפנה״ס)",
+    "fr": "Bronze ancien (IIIe millénaire av. J.-C.)",
+    "en": "Early Bronze Age (3rd millennium BCE)",
+    "ru": "Ранний бронзовый век (III тыс. до н. э.)"
+   }
+  },
+  {
+   "n": 2,
+   "era": "iron",
+   "name": {
+    "he": "ממלכת ישראל",
+    "fr": "La forteresse israélite",
+    "en": "The Israelite fortress",
+    "ru": "Израильская крепость"
+   },
+   "dates": {
+    "he": "המאות ה-10–6 לפנה״ס",
+    "fr": "Xe–VIe s. av. J.-C.",
+    "en": "10th–6th c. BCE",
+    "ru": "X–VI вв. до н. э."
+   }
+  },
+  {
+   "n": 3,
+   "era": "persian",
+   "name": {
+    "he": "פרס עד האסלאם",
+    "fr": "Perse à musulmane",
+    "en": "Persian to Islamic",
+    "ru": "От персидской до исламской"
+   },
+   "dates": {
+    "he": "המאה ה-5 לפנה״ס – המאה ה-8",
+    "fr": "Ve s. av. – VIIIe s.",
+    "en": "5th c. BCE – 8th c.",
+    "ru": "V в. до н. э. – VIII в."
+   }
+  },
+  {
+   "n": 4,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "Tel Arad aujourd’hui",
+    "en": "Tel Arad today",
+    "ru": "Тель Арад сегодня"
+   },
+   "dates": {
+    "he": "גן לאומי",
+    "fr": "parc national",
+    "en": "national park",
+    "ru": "национальный парк"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "ar_house",
+   "from": 1,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הבית הערדי",
+    "fr": "La maison aradienne",
+    "en": "The Arad house",
+    "ru": "Арадский дом"
+   },
+   "text": {
+    "he": "בית עם חצר פנימית ומשטחי עבודה. החדר רוחבי — נכנסים מהקיר הארוך. במרכזו אבן, כנראה פולחנית (פולחן ביתי). הפיטסים עשויים מחומר שהגיע מסיני — עדות לסחר.",
+    "fr": "Maison à cour intérieure avec plans de travail. La pièce est « large » : on y entre par le mur long. Au centre, une pierre probablement cultuelle (culte domestique). Les jarres sont faites d’une argile venue du Sinaï — preuve de commerce.",
+    "en": "A house with an inner courtyard and work surfaces. The room is a broad-room, entered through its long wall. In the middle a stone, probably cultic (household cult). The storage jars are of clay from Sinai — evidence of trade.",
+    "ru": "Дом с внутренним двором и рабочими площадками. Комната «широкая» — вход через длинную стену. В центре камень, вероятно культовый (домашний культ). Пифосы из глины с Синая — свидетельство торговли."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "house",
+    "h": 2.6,
+    "kind": "fieldstone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 – נגב צפוני – תל ערד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/88115795",
+     "url": "https://www.openstreetmap.org/way/88115795"
+    }
+   ]
+  },
+  {
+   "id": "ar_city",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "name": {
+    "he": "העיר ומרכז המים",
+    "fr": "La ville et le centre de l’eau",
+    "en": "The city and the water centre",
+    "ru": "Город и водный центр"
+   },
+   "text": {
+    "he": "עיר מוקפת חומה מאבני גוויל (1–2 מ׳, לפי העלון 2.4 מ׳) עם מגדלים — אחד מרובע במזרח, השאר עגולים. שער מערבי ישר. בשפל העיר באר בעומק 16 מ׳ עד מי התהום, ולידה בית שומר המים. רחוב עולה, ארמון ליד השער וצמד מקדשים עם במה ואגן. העיר ננטשה בסוף הברונזה הקדומה — אולי שינוי אקלים, אולי מסעות מצרים. חפרה: פרופ׳ רות עמירן.",
+    "fr": "Ville entourée d’un mur de moellons (1–2 m, 2,4 m selon la brochure) avec des tours — une carrée à l’est, les autres rondes. Porte ouest droite. Au point bas, un puits de 16 m jusqu’à la nappe et la maison du gardien de l’eau. Une rue montante, un palais près de la porte, deux temples jumeaux avec autel et bassin. Abandonnée à la fin du Bronze ancien — climat ou campagnes égyptiennes. Fouilles : Ruth Amiran.",
+    "en": "A city surrounded by a fieldstone wall (1–2 m, 2.4 m per the brochure) with towers — one square in the east, the rest round. A straight western gate. At the low point, a 16-m well down to the water table and the water keeper’s house. A rising street, a palace near the gate, twin temples with an altar and basin. Abandoned at the end of the Early Bronze Age — climate change or Egyptian campaigns. Excavated by Ruth Amiran.",
+    "ru": "Город, окружённый стеной из бутового камня (1–2 м, по буклету 2,4 м) с башнями — одна квадратная на востоке, остальные круглые. Прямые западные ворота. В низине колодец глубиной 16 м до грунтовых вод и дом смотрителя воды. Восходящая улица, дворец у ворот, парные храмы с алтарём и бассейном. Покинут в конце раннего бронзового века — климат или египетские походы. Раскопки Рут Амиран."
+   },
+   "placementNote": {
+    "he": "קו החומה הכנענית אינו מופיע בנתוני המפה — לא שורטט.",
+    "fr": "Le tracé du mur cananéen n’est pas dans les données cartographiques — non dessiné.",
+    "en": "The Canaanite wall line is not in the map data — not drawn.",
+    "ru": "Линии ханаанской стены нет в картографических данных — не нарисована."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 – נגב צפוני – תל ערד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Arad (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Tel_Arad"
+    }
+   ]
+  },
+  {
+   "id": "ar_fortress",
+   "from": 2,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "המצודה",
+    "fr": "La forteresse",
+    "en": "The fortress",
+    "ru": "Крепость"
+   },
+   "text": {
+    "he": "מצודה מלכותית של ממלכת יהודה בראש הגבעה, מהמאה ה-10 לפנה״ס. חומת סוגרים (שני קירות וחדרים ביניהם) ושער עם פנייה חדה ימינה ושני מגדלים. מאגר מים גדול ומטויח אסף את הגשם מכל שטח המצודה. חפר: פרופ׳ יוחנן אהרוני.",
+    "fr": "Forteresse royale du royaume de Juda au sommet de la colline, dès le Xe s. av. J.-C. Muraille à casemates (deux murs et des pièces entre eux) et porte à virage serré à droite, flanquée de deux tours. Une grande citerne enduite recueillait la pluie de toute la forteresse. Fouilles : Yohanan Aharoni.",
+    "en": "A royal fortress of the Kingdom of Judah on the hilltop, from the 10th c. BCE. A casemate wall (two walls with rooms between) and a gate with a sharp right turn flanked by two towers. A large plastered reservoir collected rain from the whole fortress. Excavated by Yohanan Aharoni.",
+    "ru": "Царская крепость Иудейского царства на вершине холма, с X в. до н. э. Казематная стена (две стены с помещениями между ними) и ворота с резким поворотом направо, с двумя башнями. Большой оштукатуренный резервуар собирал дождь со всей крепости. Раскопки Йоханана Ахарони."
+   },
+   "dims": {
+    "he": "כ-50 × 50 מ׳ (לפי מתאר המפה).",
+    "fr": "Environ 50 × 50 m (d’après le contour cartographique).",
+    "en": "About 50 × 50 m (from the map outline).",
+    "ru": "Около 50 × 50 м (по контуру на карте)."
+   },
+   "otherView": {
+    "he": "קירות המצודה שייכים לשלבים שונים בין המאה ה-10 ל-6 לפנה״ס; כאן הם מוצגים כשלב אחד.",
+    "fr": "Les murs appartiennent à plusieurs phases (Xe–VIe s.) ; ici une seule phase est montrée.",
+    "en": "The walls belong to several phases (10th–6th c.); a single phase is shown here.",
+    "ru": "Стены относятся к разным фазам (X–VI вв.); здесь показана одна."
+   },
+   "shape": {
+    "type": "casemate",
+    "osm": "fortress",
+    "h": 4,
+    "towerEvery": 0,
+    "kind": "fieldstone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 – נגב צפוני – תל ערד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Arad (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Tel_Arad"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/88115790",
+     "url": "https://www.openstreetmap.org/way/88115790"
+    }
+   ]
+  },
+  {
+   "id": "ar_temple",
+   "from": 2,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "המקדש",
+    "fr": "Le temple",
+    "en": "The temple",
+    "ru": "Храм"
+   },
+   "text": {
+    "he": "מקדש בתוך המצודה, בן שלושה חלקים: אולם, היכל ודביר. בהיכל ספסל לאורך הקירות; בדביר שתי מצבות — כנראה לאל ולאשרתו. ממצא דומה: ״ליהוה ואשרתו״ בכונתילת עג׳רוד.",
+    "fr": "Temple dans la forteresse, en trois parties : vestibule, salle (heikhal) et saint des saints (devir). Banquette le long des murs ; dans le devir, deux stèles — sans doute pour Dieu et son Ashéra. Parallèle : « à YHWH et son Ashéra » à Kuntillet Ajrud.",
+    "en": "A temple inside the fortress in three parts: porch, hall (heikhal) and holy of holies (devir). A bench along the walls; in the devir two standing stones — probably for God and his Asherah. Parallel: “to YHWH and his Asherah” at Kuntillet Ajrud.",
+    "ru": "Храм внутри крепости из трёх частей: притвор, зал (хейхал) и святая святых (двир). Скамья вдоль стен; в двире две стелы — вероятно, для Бога и его Ашеры. Параллель: «Яхве и его Ашере» в Кунтиллет-Аджруде."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "temple",
+    "h": 2.5,
+    "kind": "fieldstone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 – נגב צפוני – תל ערד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Arad (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Tel_Arad"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/88115773",
+     "url": "https://www.openstreetmap.org/way/88115773"
+    }
+   ]
+  },
+  {
+   "id": "ar_ostraca",
+   "from": 2,
+   "to": 2,
+   "certainty": "attested",
+   "name": {
+    "he": "מכתבי אלישיב",
+    "fr": "Les ostraca d’Elyashiv",
+    "en": "The Eliashib ostraca",
+    "ru": "Остраконы Элиашива"
+   },
+   "text": {
+    "he": "במצודה נמצאו כתובות רבות: 103 עבריות (רבות מהן לאלישיב), 80 ארמיות, 2 יווניות ו-5 ערביות. בכתובת 24 מופיע השם ערד — ומכאן שם האתר — ובה אזהרה: ״פן תבוא אדום שמה״.",
+    "fr": "La forteresse a livré de nombreuses inscriptions : 103 hébraïques (beaucoup adressées à Elyashiv), 80 araméennes, 2 grecques, 5 arabes. L’ostracon 24 porte le nom d’Arad — d’où le nom du site — et un avertissement : « de peur qu’Édom n’y vienne ».",
+    "en": "The fortress yielded many inscriptions: 103 Hebrew (many addressed to Eliashib), 80 Aramaic, 2 Greek, 5 Arabic. Ostracon 24 names Arad — hence the site’s name — and warns: “lest Edom come there”.",
+    "ru": "В крепости найдено много надписей: 103 еврейских (многие адресованы Элиашиву), 80 арамейских, 2 греческих, 5 арабских. Остракон 24 называет Арад — отсюда название — и предупреждает: «как бы не пришёл туда Эдом»."
+   },
+   "placementNote": {
+    "he": "״בית אלישיב״ נמצא בתוך המצודה; מיקומו המדויק אינו בנתוני המפה.",
+    "fr": "La « maison d’Elyashiv » est dans la forteresse ; sa position exacte n’est pas dans les données.",
+    "en": "“Eliashib’s house” is inside the fortress; its exact position is not in the data.",
+    "ru": "«Дом Элиашива» внутри крепости; точного положения в данных нет."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 – נגב צפוני – תל ערד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/view"
+    },
+    {
+     "kind": "online",
+     "label": "Tel Arad (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Tel_Arad"
+    }
+   ]
+  },
+  {
+   "id": "ar_tower",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "המגדל ההלניסטי",
+    "fr": "La tour hellénistique",
+    "en": "The Hellenistic tower",
+    "ru": "Эллинистическая башня"
+   },
+   "text": {
+    "he": "אחרי ימי בית ראשון המשיכו להשתמש בגבעה: שרידים מהתקופות הפרסית, ההלניסטית, הרומית, הביזנטית והמוסלמית. מן התקופה ההלניסטית נשתמר מגדל בתוך המצודה.",
+    "fr": "Après l’époque du Premier Temple, la colline resta occupée : restes perses, hellénistiques, romains, byzantins et musulmans. De l’époque hellénistique subsiste une tour dans la forteresse.",
+    "en": "After the First Temple period the hill stayed in use: Persian, Hellenistic, Roman, Byzantine and Islamic remains. A Hellenistic tower survives inside the fortress.",
+    "ru": "После эпохи Первого Храма холм продолжали использовать: персидские, эллинистические, римские, византийские и исламские остатки. От эллинистической эпохи сохранилась башня внутри крепости."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "tower",
+    "h": 7,
+    "solid": true,
+    "kind": "fieldstone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 – נגב צפוני – תל ערד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/88115792",
+     "url": "https://www.openstreetmap.org/way/88115792"
+    }
+   ]
+  },
+  {
+   "id": "ar_bible",
+   "from": 2,
+   "to": 4,
+   "certainty": "hypothesis",
+   "name": {
+    "he": "האם זו ערד המקראית?",
+    "fr": "Est-ce l’Arad biblique ?",
+    "en": "Is this biblical Arad?",
+    "ru": "Библейский ли это Арад?"
+   },
+   "text": {
+    "he": "מלך ערד נלחם בישראל בנדודים (במדבר כ״א) ונמנה במלכים שהיכה יהושע — אך בבקעות ערד ובאר שבע אין ממצאים מהברונזה המאוחרת. שישק מזכיר את ערד במסעו (925 לפנה״ס), והיא מופיעה במפת מידבא.",
+    "fr": "Le roi d’Arad combat Israël pendant l’errance (Nombres 21) et figure parmi les rois battus par Josué — mais les vallées d’Arad et de Beer-Sheva n’ont livré aucun reste du Bronze récent. Sheshonq cite Arad (925 av. J.-C.) et elle figure sur la carte de Madaba.",
+    "en": "The king of Arad fights Israel during the wanderings (Numbers 21) and is among the kings defeated by Joshua — yet the Arad and Beersheba valleys have no Late Bronze remains. Shishak lists Arad (925 BCE) and it appears on the Madaba map.",
+    "ru": "Царь Арада воюет с Израилем во время странствий (Числа 21) и входит в число царей, побеждённых Иисусом Навином, — но в долинах Арада и Беэр-Шевы нет находок позднего бронзового века. Шешонк упоминает Арад (925 г. до н. э.), он есть на карте Мадабы."
+   },
+   "debate": {
+    "he": "הפער בין המקרא לממצא נדון בקורס כשאלה פתוחה.",
+    "fr": "L’écart entre texte et terrain est discuté au cours comme une question ouverte.",
+    "en": "The gap between text and finds is discussed in the course as an open question.",
+    "ru": "Расхождение текста и находок обсуждается в курсе как открытый вопрос."
+   },
+   "placementNote": {
+    "he": "אין סימון — שאלה כללית.",
+    "fr": "Pas de repère — question générale.",
+    "en": "No marker — general question.",
+    "ru": "Без метки — общий вопрос."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 3 – נגב צפוני – תל ערד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/view"
+    }
+   ]
+  }
+ ]
+}

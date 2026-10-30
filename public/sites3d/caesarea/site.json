@@ -1,0 +1,1161 @@
+{
+ "site": "caesarea",
+ "title": {
+  "he": "קיסריה",
+  "fr": "Césarée",
+  "en": "Caesarea",
+  "ru": "Кесария"
+ },
+ "defaultPeriod": 2,
+ "cubitMeters": 0.5,
+ "stone": "kurkar",
+ "tint": "#f2dcb4",
+ "sea": true,
+ "home": {
+  "at": {
+   "off": "o:hippo",
+   "dx": 0,
+   "dz": -150
+  },
+  "dist": 1300,
+  "from": 120,
+  "elev": 30
+ },
+ "terrain": {
+  "lo": "#c9b48a",
+  "mid": "#dcc9a0",
+  "hi": "#e9dcbd"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "harbour": {
+   "osm": "node/4260769638"
+  },
+  "theater": {
+   "osm": "way/24578362"
+  },
+  "palace": {
+   "osm": "way/96066573"
+  },
+  "hippo": {
+   "osm": "way/318664239"
+  },
+  "easthippo": {
+   "osm": "way/318664216"
+  },
+  "aqueduct": {
+   "osm": [
+    "way/97344367",
+    "way/924516308",
+    "way/924516309"
+   ]
+  },
+  "synagogue": {
+   "osm": "node/4796874989"
+  },
+  "bath": {
+   "osm": [
+    "way/96065403",
+    "way/96066637"
+   ]
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "hellenistic",
+   "name": {
+    "he": "יוון",
+    "fr": "Tour de Straton (hellénistique)",
+    "en": "Straton’s Tower (Hellenistic)",
+    "ru": "Стратонова башня (эллинизм)"
+   },
+   "dates": {
+    "he": "המאות ה-4–1 לפנה״ס",
+    "fr": "IVe–Ier s. av. J.-C.",
+    "en": "4th–1st c. BCE",
+    "ru": "IV–I вв. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "era": "herodian",
+   "name": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "dates": {
+    "he": "22–4 לפנה״ס",
+    "fr": "22–4 av. J.-C.",
+    "en": "22–4 BCE",
+    "ru": "22–4 гг. до н. э."
+   }
+  },
+  {
+   "n": 3,
+   "era": "roman",
+   "name": {
+    "he": "רומא",
+    "fr": "Romaine — capitale provinciale",
+    "en": "Roman — provincial capital",
+    "ru": "Римская — столица провинции"
+   },
+   "dates": {
+    "he": "6–324 לסה״נ",
+    "fr": "6–324 apr. J.-C.",
+    "en": "6–324 CE",
+    "ru": "6–324 гг. н. э."
+   }
+  },
+  {
+   "n": 4,
+   "era": "byzantine",
+   "name": {
+    "he": "ביזנטיון",
+    "fr": "Byzantine",
+    "en": "Byzantine",
+    "ru": "Византийская"
+   },
+   "dates": {
+    "he": "324–640",
+    "fr": "324–640",
+    "en": "324–640",
+    "ru": "324–640"
+   }
+  },
+  {
+   "n": 5,
+   "era": "early_islamic",
+   "name": {
+    "he": "האסלאם הקדום",
+    "fr": "Arabe ancienne",
+    "en": "Early Islamic",
+    "ru": "Раннеисламская"
+   },
+   "dates": {
+    "he": "640–1101",
+    "fr": "640–1101",
+    "en": "640–1101",
+    "ru": "640–1101"
+   }
+  },
+  {
+   "n": 6,
+   "era": "crusader",
+   "name": {
+    "he": "הצלבנים",
+    "fr": "Croisée",
+    "en": "Crusader",
+    "ru": "Крестоносцы"
+   },
+   "dates": {
+    "he": "1101–1265",
+    "fr": "1101–1265",
+    "en": "1101–1265",
+    "ru": "1101–1265"
+   }
+  },
+  {
+   "n": 7,
+   "era": "ottoman",
+   "name": {
+    "he": "הכפר הבוסני",
+    "fr": "Le village bosniaque",
+    "en": "The Bosnian village",
+    "ru": "Боснийская деревня"
+   },
+   "dates": {
+    "he": "1884–1948",
+    "fr": "1884–1948",
+    "en": "1884–1948",
+    "ru": "1884–1948"
+   }
+  },
+  {
+   "n": 8,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "Césarée aujourd’hui",
+    "en": "Caesarea today",
+    "ru": "Кесария сегодня"
+   },
+   "dates": {
+    "he": "גן לאומי",
+    "fr": "parc national",
+    "en": "national park",
+    "ru": "национальный парк"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "caesarea_straton",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "name": {
+    "he": "מגדל סטרטון",
+    "fr": "La tour de Straton",
+    "en": "Straton’s Tower",
+    "ru": "Стратонова башня"
+   },
+   "text": {
+    "he": "היישוב ההלניסטי שעל חורבותיו ייסד הורדוס את קיסריה.",
+    "fr": "La bourgade hellénistique sur les ruines de laquelle Hérode fonda Césarée.",
+    "en": "The Hellenistic settlement on whose ruins Herod founded Caesarea.",
+    "ru": "Эллинистическое поселение, на руинах которого Ирод основал Кесарию."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques.",
+    "en": "Its exact position is not in the map data.",
+    "ru": "Точного места нет в картографических данных."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "Caesarea Maritima (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Caesarea_Maritima"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_harbour",
+   "from": 2,
+   "to": 4,
+   "certainty": "reconstruction",
+   "pri": 3,
+   "name": {
+    "he": "נמל סבסטוס",
+    "fr": "Le port Sébastos",
+    "en": "Sebastos harbour",
+    "ru": "Гавань Себастос"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "הנמל המלאכותי של הורדוס, על שם אוגוסטוס (״סבסטוס״). שוברי הגלים נבנו בבטון הידראולי מאפר געשי (פוצולנה) שהובא מאיטליה והוטבע בתיבות עץ בים. משקל האבנים הטביע את הנמל, וחלקו הפנימי התמלא בחול.",
+    "fr": "Le port artificiel d’Hérode, nommé d’après Auguste (« Sébastos »). Les môles furent coulés en béton hydraulique de cendre volcanique (pouzzolane) importée d’Italie, dans des caissons de bois. Le poids les fit s’enfoncer ; le bassin intérieur s’est ensablé.",
+    "en": "Herod’s artificial harbour, named after Augustus (“Sebastos”). The breakwaters were poured in hydraulic concrete made with volcanic ash (pozzolana) from Italy, in wooden forms at sea. Their weight made them sink; the inner basin silted up.",
+    "ru": "Искусственная гавань Ирода, названная в честь Августа («Себастос»). Молы отлиты из гидравлического бетона на вулканическом пепле (пуццолане) из Италии в деревянных опалубках. Под тяжестью они осели; внутренний бассейн занесло песком."
+   },
+   "dims": {
+    "he": "שובר הגלים הדרומי כ-500 מ׳, הצפוני כ-275 מ׳; שטח המים כ-100,000 מ״ר (ויקיפדיה). היום בעומק של כ-5–6 מ׳.",
+    "fr": "Môle sud env. 500 m, nord env. 275 m ; env. 100 000 m² d’eau (Wikipédia). Aujourd’hui à 5–6 m de fond.",
+    "en": "Southern breakwater c. 500 m, northern c. 275 m; c. 100,000 m² of water (Wikipedia). Now 5–6 m under water.",
+    "ru": "Южный мол ок. 500 м, северный ок. 275 м; ок. 100 000 м² воды (Википедия). Сейчас на глубине 5–6 м."
+   },
+   "placementNote": {
+    "he": "צורת שוברי הגלים שרטוטית: אורכם לפי המקורות, המסלול מוערך מקו החוף (OpenStreetMap) ומסימון ״נמל קיסריה״. אינה מבוססת על מפת סקר תת-ימי.",
+    "fr": "Tracé des môles schématique : longueurs d’après les sources, parcours estimé depuis le trait de côte (OpenStreetMap) et le point « port de Césarée ». Pas d’après un relevé sous-marin.",
+    "en": "Breakwater layout schematic: lengths from the sources, course estimated from the coastline (OpenStreetMap) and the “Caesarea Harbour” point. Not from an underwater survey.",
+    "ru": "Схема молов: длины по источникам, ход оценён по береговой линии (OpenStreetMap) и точке «гавань Кесарии». Не по подводной съёмке."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "breakwater",
+    "lines": [
+     [
+      {
+       "off": "o:harbour",
+       "dx": -160,
+       "dz": 150
+      },
+      {
+       "off": "o:harbour",
+       "dx": -470,
+       "dz": 140
+      },
+      {
+       "off": "o:harbour",
+       "dx": -540,
+       "dz": -40
+      }
+     ],
+     [
+      {
+       "off": "o:harbour",
+       "dx": -235,
+       "dz": -165
+      },
+      {
+       "off": "o:harbour",
+       "dx": -490,
+       "dz": -130
+      }
+     ]
+    ],
+    "w": 30,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "Caesarea Maritima (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Caesarea_Maritima"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/4260769638",
+     "url": "https://www.openstreetmap.org/node/4260769638"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_temple",
+   "from": 2,
+   "to": 3,
+   "certainty": "hypothesis",
+   "pri": 2,
+   "name": {
+    "he": "מקדש אוגוסטוס ורומא",
+    "fr": "Le temple d’Auguste et de Rome",
+    "en": "Temple of Augustus and Roma",
+    "ru": "Храм Августа и Ромы"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "מקדש על במה מוגבהת שהשקיף על הנמל. בתקופה הביזנטית נבנתה במקומו כנסייה; המוסלמים הפכו אותה למסגד, והצלבנים חזרו והפכו אותה לכנסייה.",
+    "fr": "Temple sur une plate-forme dominant le port. À l’époque byzantine une église le remplaça ; les musulmans en firent une mosquée, les croisés de nouveau une église.",
+    "en": "A temple on a raised platform overlooking the harbour. In Byzantine times a church replaced it; the Muslims turned it into a mosque, the Crusaders back into a church.",
+    "ru": "Храм на платформе над гаванью. В византийское время его заменила церковь; мусульмане сделали её мечетью, крестоносцы — снова церковью."
+   },
+   "dims": {
+    "he": "במה של כ-100 × 90 מ׳ (World History Encyclopedia).",
+    "fr": "Plate-forme d’env. 100 × 90 m (World History Encyclopedia).",
+    "en": "Platform about 100 × 90 m (World History Encyclopedia).",
+    "ru": "Платформа около 100 × 90 м (World History Encyclopedia)."
+   },
+   "placementNote": {
+    "he": "המיקום משוער (ממזרח לנמל הפנימי); אין לבמה קו מתאר בנתוני המפה. המקדש עצמו משוחזר בצורה כללית.",
+    "fr": "Position estimée (à l’est du bassin intérieur) : la plate-forme n’a pas de contour dans les données. Temple restitué de façon générale.",
+    "en": "Position estimated (east of the inner basin): the platform has no outline in the data. Temple reconstructed in general form.",
+    "ru": "Положение оценочное (к востоку от внутреннего бассейна): у платформы нет контура в данных. Храм восстановлен в общих чертах."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "temple",
+    "at": {
+     "off": "o:harbour",
+     "dx": 70,
+     "dz": 0
+    },
+    "bearing": 270,
+    "podiumW": 100,
+    "podiumD": 90,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "online",
+     "label": "The Infrastructure of Caesarea Maritima (World History Encyclopedia)",
+     "url": "https://www.worldhistory.org/article/2313/the-infrastructure-of-caesarea-maritima/"
+    },
+    {
+     "kind": "online",
+     "label": "Caesarea Maritima (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Caesarea_Maritima"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_theater",
+   "from": 2,
+   "to": 8,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "התיאטרון",
+    "fr": "Le théâtre",
+    "en": "The theatre",
+    "ru": "Театр"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "התיאטרון הרומי הקדום ביותר שנחשף בארץ, בדרום העיר, פונה אל הים. במה, קיר סקנה, אורקסטרה וקוויאה; ההצגות נערכו בצהריים תחת יריעות צל (ולאריום). בתקופה הביזנטית הופרד מן העיר בחומה.",
+    "fr": "Le plus ancien théâtre romain mis au jour dans le pays, au sud de la ville, face à la mer : scène, mur de scène, orchestre, cavea ; spectacles à midi sous un velum. À l’époque byzantine, un mur le sépara de la ville.",
+    "en": "The oldest Roman theatre excavated in the country, south of the city, facing the sea: stage, scaena, orchestra, cavea; shows at midday under an awning (velarium). In Byzantine times a wall separated it from the city.",
+    "ru": "Древнейший раскопанный в стране римский театр, на юге города, лицом к морю: сцена, скена, орхестра, кавея; представления в полдень под тентом (веларием). В византийское время его отделила от города стена."
+   },
+   "dims": {
+    "he": "כ-7,000 מקומות; גדול בשליש ממה שנראה היום (סיכום הקורס).",
+    "fr": "Env. 7 000 places ; un tiers plus grand que ce qu’on voit aujourd’hui (cours).",
+    "en": "About 7,000 seats; a third larger than what is seen today (course notes).",
+    "ru": "Около 7000 мест; на треть больше видимого сегодня (материалы курса)."
+   },
+   "otherView": {
+    "he": "World History Encyclopedia: כ-4,000 צופים (התיאטרון המשוחזר).",
+    "fr": "World History Encyclopedia : env. 4 000 spectateurs (théâtre restauré).",
+    "en": "World History Encyclopedia: about 4,000 spectators (restored theatre).",
+    "ru": "World History Encyclopedia: около 4000 зрителей (восстановленный театр)."
+   },
+   "events": {
+    "he": "1961: במהלך חפירות משלחת איטלקית נמצאה כאן ״אבן פילטוס״ — הכתובת היחידה מזמנו הנזכרת בשמו ובתוארו של פונטיוס פילטוס.",
+    "fr": "1961 : une mission italienne y trouve la « pierre de Pilate », seule inscription contemporaine portant le nom et le titre de Ponce Pilate.",
+    "en": "1961: an Italian expedition found the “Pilate stone” here — the only contemporary inscription with Pontius Pilate’s name and title.",
+    "ru": "1961: итальянская экспедиция нашла здесь «камень Пилата» — единственную современную ему надпись с именем и титулом Понтия Пилата."
+   },
+   "placementNote": {
+    "he": "מיקום, רדיוס וכיוון לפי קו המתאר ב-OpenStreetMap; קיר הסקנה משוחזר.",
+    "fr": "Position, rayon et orientation d’après le contour OpenStreetMap ; mur de scène restitué.",
+    "en": "Position, radius and orientation from the OpenStreetMap outline; scaena reconstructed.",
+    "ru": "Положение, радиус и ориентация по контуру OpenStreetMap; скена восстановлена."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "theater",
+    "fit": "theater",
+    "kind": "kurkar",
+    "seatKind": "limestone",
+    "rows": 26,
+    "scaenaH": 16
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "The Infrastructure of Caesarea Maritima (World History Encyclopedia)",
+     "url": "https://www.worldhistory.org/article/2313/the-infrastructure-of-caesarea-maritima/"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/24578362",
+     "url": "https://www.openstreetmap.org/way/24578362"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_palace",
+   "from": 2,
+   "to": 8,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "ארמון השונית",
+    "fr": "Le palais du promontoire",
+    "en": "The Promontory Palace",
+    "ru": "Дворец на мысу"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "ארמון הורדוס על שונית בים, בשני מפלסים: התחתון סביב בריכה חצובה בסלע, העליון סביב גינה עם מסדרונות מקורים. אחרי מות הורדוס — מושב הנציבים (פרטוריום); לפי ספר מעשי השליחים נכלא בו פאולוס שנתיים.",
+    "fr": "Le palais d’Hérode sur un récif, sur deux niveaux : en bas autour d’une piscine taillée dans le roc, en haut autour d’un jardin à portiques. Après Hérode, siège des préfets (prétoire) ; selon les Actes, Paul y fut détenu deux ans.",
+    "en": "Herod’s palace on a reef, on two levels: the lower around a rock-cut pool, the upper around a garden with porticoes. After Herod, the governors’ seat (praetorium); according to Acts, Paul was held here for two years.",
+    "ru": "Дворец Ирода на рифе, в два уровня: нижний вокруг высеченного в скале бассейна, верхний вокруг сада с портиками. После Ирода — резиденция наместников (преторий); по Деяниям, здесь два года содержался Павел."
+   },
+   "dims": {
+    "he": "בריכה של 35 × 18 מ׳ (סיכום הקורס).",
+    "fr": "Piscine de 35 × 18 m (cours).",
+    "en": "Pool 35 × 18 m (course notes).",
+    "ru": "Бассейн 35 × 18 м (материалы курса)."
+   },
+   "placementNote": {
+    "he": "הבריכה ממוקמת במרכז קו המתאר של הארמון (OpenStreetMap); כיוון הבריכה לפי ציר קו המתאר.",
+    "fr": "Piscine au centre du contour du palais (OpenStreetMap), orientée selon son axe.",
+    "en": "Pool at the centre of the palace outline (OpenStreetMap), aligned on its axis.",
+    "ru": "Бассейн в центре контура дворца (OpenStreetMap), по его оси."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "pool",
+    "fit": "palace",
+    "W": 35,
+    "D": 18,
+    "peristyle": 5,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "The Infrastructure of Caesarea Maritima (World History Encyclopedia)",
+     "url": "https://www.worldhistory.org/article/2313/the-infrastructure-of-caesarea-maritima/"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/96066573",
+     "url": "https://www.openstreetmap.org/way/96066573"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_hippostadium",
+   "from": 2,
+   "to": 3,
+   "certainty": "attested",
+   "pri": 2,
+   "name": {
+    "he": "ההיפוסטדיון של הורדוס",
+    "fr": "L’hippo-stade d’Hérode",
+    "en": "Herod’s hippo-stadium",
+    "ru": "Гиппостадион Ирода"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "מבנה רב-תכליתי ליד ארמון השונית: מרוצי סוסים, קרבות גלדיאטורים ותחרויות אתלטיקה. לפי יוסף בן מתתיהו כינס כאן פילטוס את היהודים שהפגינו נגד הצבת סמלי הקיסר בירושלים.",
+    "fr": "Édifice polyvalent près du palais : courses de chevaux, gladiateurs, athlétisme. Selon Josèphe, Pilate y réunit les Juifs qui protestaient contre les enseignes impériales à Jérusalem.",
+    "en": "A multi-purpose venue next to the palace: horse races, gladiators, athletics. According to Josephus, Pilate gathered here the Jews protesting against the imperial standards in Jerusalem.",
+    "ru": "Многоцелевая арена у дворца: скачки, гладиаторы, атлетика. По Иосифу, здесь Пилат собрал иудеев, протестовавших против имперских знамён в Иерусалиме."
+   },
+   "dims": {
+    "he": "זירה באורך כ-300 מ׳ וברוחב כ-50 מ׳ (HolyLandPhotos); ללא ספינה; שערי זינוק מקבילים.",
+    "fr": "Arène d’env. 300 × 50 m (HolyLandPhotos) ; sans spina ; stalles de départ parallèles.",
+    "en": "Arena about 300 × 50 m (HolyLandPhotos); no spina; parallel starting gates.",
+    "ru": "Арена около 300 × 50 м (HolyLandPhotos); без спины; параллельные стартовые ворота."
+   },
+   "otherView": {
+    "he": "קיבולת: כ-13,000 (פטריך) לעומת כ-5,000 (HolyLandPhotos).",
+    "fr": "Capacité : env. 13 000 (Patrich) contre env. 5 000 (HolyLandPhotos).",
+    "en": "Capacity: about 13,000 (Patrich) vs about 5,000 (HolyLandPhotos).",
+    "ru": "Вместимость: около 13 000 (Патрих) против около 5000 (HolyLandPhotos)."
+   },
+   "shape": {
+    "type": "circus",
+    "fit": "hippo",
+    "curved": 180,
+    "kind": "kurkar",
+    "rows": 12
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "J. Patrich — The Herodian hippo-stadium (HUJI)",
+     "url": "https://pluto.huji.ac.il/~patrichj/my_web_site/hippo-stadium.html"
+    },
+    {
+     "kind": "online",
+     "label": "Caesarea seaside circus (HolyLandPhotos)",
+     "url": "https://holylandphotos.org/browse/caesarea-seaside-circushippodrome"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/318664239",
+     "url": "https://www.openstreetmap.org/way/318664239"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_aqueduct",
+   "from": 2,
+   "to": 8,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "אמת המים הגבוהה",
+    "fr": "L’aqueduc haut",
+    "en": "The high-level aqueduct",
+    "ru": "Верхний акведук"
+   },
+   "builder": {
+    "he": "הורדוס; הורחבה בידי לגיונות רומיים",
+    "fr": "Hérode ; agrandi par des légions romaines",
+    "en": "Herod; extended by Roman legions",
+    "ru": "Ирод; расширен римскими легионами"
+   },
+   "text": {
+    "he": "בקיסריה אין מעיינות, ולכן הובאו מים ממעיינות שוני וצברין בקשתות לאורך החוף. על האמה כתובות הקדשה של לגיונות (השישי, העשירי, ה-22 — שמו נמחק לאחר מרד בר כוכבא).",
+    "fr": "Pas de sources à Césarée : l’eau venait des sources de Shuni et Sabarin, sur des arches le long de la côte. Inscriptions de légions (VIe, Xe, XXIIe — nom effacé après la révolte de Bar Kokhba).",
+    "en": "Caesarea has no springs, so water was brought from the Shuni and Sabarin springs on arches along the coast. Legion dedications are carved on it (VI, X, XXII — erased after the Bar Kokhba revolt).",
+    "ru": "В Кесарии нет источников: воду вели от источников Шуни и Сабарин по аркам вдоль берега. На акведуке надписи легионов (VI, X, XXII — имя стёрто после восстания Бар-Кохбы)."
+   },
+   "dims": {
+    "he": "כ-10 ק״מ (World History Encyclopedia).",
+    "fr": "Env. 10 km (World History Encyclopedia).",
+    "en": "About 10 km (World History Encyclopedia).",
+    "ru": "Около 10 км (World History Encyclopedia)."
+   },
+   "placementNote": {
+    "he": "התוואי לפי OpenStreetMap; גובה הקשתות לצורך המחשה.",
+    "fr": "Tracé d’après OpenStreetMap ; hauteur des arches indicative.",
+    "en": "Line from OpenStreetMap; arch height indicative.",
+    "ru": "Трасса по OpenStreetMap; высота арок условная."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "aqueduct",
+    "osm": "aqueduct",
+    "h": 6,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "The Infrastructure of Caesarea Maritima (World History Encyclopedia)",
+     "url": "https://www.worldhistory.org/article/2313/the-infrastructure-of-caesarea-maritima/"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/97344367",
+     "url": "https://www.openstreetmap.org/way/97344367"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_pilate",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "אבן פילטוס",
+    "fr": "La pierre de Pilate",
+    "en": "The Pilate stone",
+    "ru": "Камень Пилата"
+   },
+   "text": {
+    "he": "כתובת לטינית שבה מקדיש ״פונטיוס פילטוס, נציב יהודה״ מבנה בשם טיבריאום לכבוד הקיסר טיבריוס. נמצאה בשימוש משני כמדרגה בתיאטרון (1961).",
+    "fr": "Inscription latine où « Ponce Pilate, préfet de Judée » dédie un Tiberieum à l’empereur Tibère. Retrouvée en remploi comme marche du théâtre (1961).",
+    "en": "A Latin inscription in which “Pontius Pilate, prefect of Judaea” dedicates a Tiberieum to the emperor Tiberius. Found reused as a step in the theatre (1961).",
+    "ru": "Латинская надпись, где «Понтий Пилат, префект Иудеи» посвящает Тиберий императору Тиберию. Найдена как ступень театра (1961)."
+   },
+   "placementNote": {
+    "he": "הסימון בתיאטרון, מקום מציאתה; המקור במוזיאון ישראל.",
+    "fr": "Repère au théâtre, lieu de la découverte ; l’original est au musée d’Israël.",
+    "en": "Marker at the theatre, where it was found; the original is in the Israel Museum.",
+    "ru": "Метка у театра, где камень найден; оригинал в Музее Израиля."
+   },
+   "shape": {
+    "type": "marker",
+    "at": {
+     "off": "o:theater",
+     "dx": 0,
+     "dz": -30
+    },
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_synagogue",
+   "from": 3,
+   "to": 4,
+   "certainty": "attested",
+   "name": {
+    "he": "בית הכנסת העתיק",
+    "fr": "L’ancienne synagogue",
+    "en": "The ancient synagogue",
+    "ru": "Древняя синагога"
+   },
+   "text": {
+    "he": "ברובע היהודי שבקצה הצפוני של העיר, רחוק מהתיאטרון, ההיפודרום והמקדש (סיכום הקורס).",
+    "fr": "Dans le quartier juif, à l’extrémité nord de la ville, loin du théâtre, de l’hippodrome et du temple (cours).",
+    "en": "In the Jewish quarter at the northern end of the city, far from the theatre, hippodrome and temple (course notes).",
+    "ru": "В еврейском квартале на северном краю города, вдали от театра, ипподрома и храма (материалы курса)."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:synagogue",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/4796874989",
+     "url": "https://www.openstreetmap.org/node/4796874989"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_bath",
+   "from": 3,
+   "to": 8,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "בית המרחץ",
+    "fr": "Les thermes",
+    "en": "The bathhouse",
+    "ru": "Бани"
+   },
+   "text": {
+    "he": "בית מרחץ רומי בשלושה אזורים: חם (קלדריום, חימום מתחת לרצפה מתנור), ביניים (טפידריום) וקר (פריגידריום, צינורות חרס ועופרת). לידו חצר עמודים עם פסיפס.",
+    "fr": "Bain romain en trois zones : chaude (caldarium, chauffage par le sol depuis un four), tiède (tepidarium), froide (frigidarium, tuyaux de terre cuite et de plomb). À côté, une cour à colonnes avec mosaïque.",
+    "en": "A Roman bath in three zones: hot (caldarium, underfloor heating from a furnace), warm (tepidarium) and cold (frigidarium, clay and lead pipes). Next to it, a colonnaded court with mosaic.",
+    "ru": "Римская баня в трёх зонах: горячая (кальдарий, подогрев пола от печи), тёплая (тепидарий) и холодная (фригидарий, глиняные и свинцовые трубы). Рядом двор с колоннами и мозаикой."
+   },
+   "placementNote": {
+    "he": "קווי המתאר לפי OpenStreetMap (״Bathhouse״).",
+    "fr": "Contours d’après OpenStreetMap (« Bathhouse »).",
+    "en": "Outlines from OpenStreetMap (“Bathhouse”).",
+    "ru": "Контуры по OpenStreetMap («Bathhouse»)."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "bath",
+    "h": 3.5,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/96065403",
+     "url": "https://www.openstreetmap.org/way/96065403"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_mithraeum",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "המיתראום",
+    "fr": "Le mithraeum",
+    "en": "The Mithraeum",
+    "ru": "Митреум"
+   },
+   "text": {
+    "he": "מקום פולחן לאל מיתרה במרתף מקומר שמתחת לבמה המשקיפה על הנמל; בקיץ חודרת קרן אור דרך פתח בתקרה אל המזבח.",
+    "fr": "Sanctuaire de Mithra dans une voûte sous la plate-forme dominant le port ; en été, un rayon de soleil passe par une ouverture du plafond jusqu’à l’autel.",
+    "en": "A shrine of Mithras in a vault under the platform above the harbour; in summer a sunbeam enters through an opening in the ceiling onto the altar.",
+    "ru": "Святилище Митры в своде под платформой над гаванью; летом луч солнца через отверстие в потолке падает на алтарь."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques.",
+    "en": "Its exact position is not in the map data.",
+    "ru": "Точного места нет в данных."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_east_hippodrome",
+   "from": 4,
+   "to": 8,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "ההיפודרום המזרחי",
+    "fr": "L’hippodrome oriental",
+    "en": "The eastern hippodrome",
+    "ru": "Восточный ипподром"
+   },
+   "text": {
+    "he": "היפודרום ייעודי למרוצי סוסים ומרכבות, ממזרח לעיר (סיכום הקורס מונה אותו בבנייה הביזנטית). בזירה שרידי אובליסק.",
+    "fr": "Hippodrome réservé aux courses de chevaux et de chars, à l’est de la ville (le cours le range dans la construction byzantine). Restes d’un obélisque dans l’arène.",
+    "en": "A hippodrome for horse and chariot races east of the city (the course lists it among the Byzantine works). Remains of an obelisk in the arena.",
+    "ru": "Ипподром для скачек и колесниц к востоку от города (курс относит его к византийскому строительству). В арене остатки обелиска."
+   },
+   "dims": {
+    "he": "World History Encyclopedia: 457 × 76 מ׳, כ-38,000 מקומות.",
+    "fr": "World History Encyclopedia : 457 × 76 m, env. 38 000 places.",
+    "en": "World History Encyclopedia: 457 × 76 m, about 38,000 seats.",
+    "ru": "World History Encyclopedia: 457 × 76 м, около 38 000 мест."
+   },
+   "otherView": {
+    "he": "יש המתארכים את בנייתו לתקופה הרומית (המאה ה-2) ואת השימוש בו גם לתקופה הביזנטית.",
+    "fr": "Certains datent sa construction de l’époque romaine (IIe s.) et son usage jusqu’à l’époque byzantine.",
+    "en": "Some date its construction to the Roman period (2nd c.) with use into Byzantine times.",
+    "ru": "Некоторые датируют постройку римским временем (II в.), а использование — византийским."
+   },
+   "shape": {
+    "type": "circus",
+    "fit": "easthippo",
+    "curved": 180,
+    "kind": "kurkar",
+    "rows": 14,
+    "spina": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "online",
+     "label": "The Infrastructure of Caesarea Maritima (World History Encyclopedia)",
+     "url": "https://www.worldhistory.org/article/2313/the-infrastructure-of-caesarea-maritima/"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/318664216",
+     "url": "https://www.openstreetmap.org/way/318664216"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_byz_wall",
+   "from": 4,
+   "to": 4,
+   "certainty": "attested",
+   "name": {
+    "he": "החומה הביזנטית",
+    "fr": "La muraille byzantine",
+    "en": "The Byzantine wall",
+    "ru": "Византийская стена"
+   },
+   "text": {
+    "he": "בתקופה הביזנטית, כשהעיר הגיעה לשיא גודלה, הוקפה בחומה חדשה ומורחבת; בימי הורדוס לא הייתה לעיר חומה.",
+    "fr": "À l’époque byzantine, au sommet de son extension, la ville reçut une nouvelle muraille élargie ; sous Hérode, elle n’en avait pas.",
+    "en": "In Byzantine times, at its largest, the city received a new, wider wall; under Herod it had none.",
+    "ru": "В византийское время, в пору наибольшего размера, город получил новую расширенную стену; при Ироде стены не было."
+   },
+   "placementNote": {
+    "he": "התוואי אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Le tracé n’est pas dans les données et n’est pas dessiné.",
+    "en": "The line is not in the data and is not drawn.",
+    "ru": "Трассы нет в данных, она не нарисована."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_crusader",
+   "from": 6,
+   "to": 6,
+   "certainty": "attested",
+   "name": {
+    "he": "העיר הצלבנית",
+    "fr": "La ville croisée",
+    "en": "The Crusader town",
+    "ru": "Город крестоносцев"
+   },
+   "text": {
+    "he": "הצלבנים כבשו את העיר ב-1101; העיר הצלבנית קטנה בהרבה מן הביזנטית. ב-1251 ביצר אותה לואי התשיעי בחומות גבוהות ובחפיר עמוק. העיר נחרבה בידי הממלוכים.",
+    "fr": "Les croisés prirent la ville en 1101 ; la ville croisée est bien plus petite que la byzantine. En 1251, Louis IX la fortifia de hauts murs et d’un fossé profond. Elle fut détruite par les Mamelouks.",
+    "en": "The Crusaders took the city in 1101; the Crusader town was much smaller than the Byzantine one. In 1251 Louis IX fortified it with high walls and a deep moat. The Mamluks destroyed it.",
+    "ru": "Крестоносцы взяли город в 1101 г.; их город намного меньше византийского. В 1251 г. Людовик IX укрепил его высокими стенами и глубоким рвом. Мамлюки его разрушили."
+   },
+   "placementNote": {
+    "he": "החומות הצלבניות אינן בנתוני המפה ולכן אינן מצוירות.",
+    "fr": "Les murs croisés ne sont pas dans les données et ne sont pas dessinés.",
+    "en": "The Crusader walls are not in the data and are not drawn.",
+    "ru": "Стен крестоносцев нет в данных, они не нарисованы."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "Caesarea Maritima (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Caesarea_Maritima"
+    }
+   ]
+  },
+  {
+   "id": "caesarea_bosnian",
+   "from": 7,
+   "to": 7,
+   "certainty": "attested",
+   "name": {
+    "he": "הכפר הבוסני",
+    "fr": "Le village bosniaque",
+    "en": "The Bosnian village",
+    "ru": "Боснийская деревня"
+   },
+   "text": {
+    "he": "פליטים מוסלמים מבוסניה יושבו כאן בידי השלטון העות׳מאני (1884–1948) ובנו כפר בסגנון אירופי עם מסגד. בשנות ה-50 פוצצו רוב הבתים, מלבד המסגד ומבנים בודדים.",
+    "fr": "Des réfugiés musulmans de Bosnie furent installés ici par les Ottomans (1884–1948) et bâtirent un village à l’européenne avec une mosquée. Dans les années 1950, la plupart des maisons furent dynamitées, sauf la mosquée et quelques bâtiments.",
+    "en": "Muslim refugees from Bosnia were settled here by the Ottomans (1884–1948) and built a European-style village with a mosque. In the 1950s most houses were blown up, except the mosque and a few buildings.",
+    "ru": "Мусульманские беженцы из Боснии были поселены здесь османами (1884–1948) и построили деревню европейского типа с мечетью. В 1950-е большинство домов взорвали, кроме мечети и немногих зданий."
+   },
+   "placementNote": {
+    "he": "המסגד אינו בנתוני המפה שנאספו ולכן אינו מצויר.",
+    "fr": "La mosquée n’est pas dans les données recueillies et n’est pas dessinée.",
+    "en": "The mosque is not in the collected data and is not drawn.",
+    "ru": "Мечети нет в собранных данных, она не нарисована."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "Caesarea Maritima (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Caesarea_Maritima"
+    }
+   ]
+  }
+ ]
+}

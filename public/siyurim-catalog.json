@@ -1,0 +1,321 @@
+{
+  "asOf": "2026-10-22",
+  "root": "https://drive.google.com/drive/folders/1S5xdXEF4K0AOihsIkxXsZdMngvrXLvdb",
+  "parent": "https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f",
+  "count": 22,
+  "tours": [
+    {
+      "id": "01",
+      "title": "צפון מדבר יהודה",
+      "date": "2026-05-14",
+      "stops": [
+        "קומראן",
+        "נבי מוסא",
+        "השומרוני הטוב",
+        "לידו"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1PNRBWnYYUn8KkPirrd36rdmFkNrV7Xji",
+      "sourceUrl": "https://docs.google.com/document/d/1YQ2Quv-HYBlee-wEO9fi4Qq64xYdvCwP/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "02",
+      "title": "כרמל",
+      "date": "2026-05-21",
+      "stops": [
+        "מוחרקה",
+        "נחל אורן",
+        "משמר הכרמל",
+        "הדרוזים"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1cpDKo14aka3MTbemjs5opW-8BR4lMwhl",
+      "sourceUrl": "https://docs.google.com/document/d/1AgGa4Pa0_4cGKChPSBTiSDROm5q5gQFU/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "03",
+      "title": "הנגב הצפוני",
+      "date": "2026-05-28",
+      "stops": [
+        "תל ערד",
+        "תל באר שבע",
+        "אנדרטת הנגב"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1RhLDlWhG5B_si-itayOHbn-gpG0QER-a",
+      "sourceUrl": "https://docs.google.com/document/d/1ib7eR4fKTudPfTeEWVYLioDaUkaxwxWH/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "04",
+      "title": "מגידו, העמקים והגלבוע",
+      "date": "2026-06-04",
+      "stops": [
+        "תל מגידו",
+        "עין יזרעאל",
+        "בית אלפא",
+        "הר שאול",
+        "הר ברקן"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1kQa3Ag9y5mzDg_r64i6xNmI7QNItgwDf",
+      "sourceUrl": "https://docs.google.com/document/d/1vjkj6RIAhAH6F89E4m4TNj4tz4GkUK8B/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "05",
+      "title": "השפלה",
+      "date": "2026-06-11",
+      "stops": [
+        "תל לכיש",
+        "תל עזקה",
+        "חורבת קייאפה",
+        "בית גוברין",
+        "מרשה"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1bfRPHNOphGIbX4PaPhsT7D3N-1_Vsjfn",
+      "sourceUrl": "https://docs.google.com/document/d/1037KSDmmBTUR_ve8kQ5DAV8ROIxdHUiG/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "06",
+      "title": "סוסיא, חברון והרודיון",
+      "date": "2026-06-18",
+      "stops": [
+        "סוסיא",
+        "מערת המכפלה",
+        "הרודיון"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1VysAYN1DWsO_pMO_NfVtqcReWHKnEP7a",
+      "sourceUrl": "https://docs.google.com/document/d/14N5kQiRONbrmEc5cYH6YAGhapZqOrVKM/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "07",
+      "title": "חיפה",
+      "date": "2026-06-25",
+      "stops": [
+        "הגנים הבהאיים",
+        "סטלה מאריס",
+        "מערת אליהו",
+        "המושבה הגרמנית"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1JPSTs8ImCfJQ5E6LOeHx2gYue-rBQ1PI",
+      "sourceUrl": "https://docs.google.com/document/d/1h5-uXpzhqsLZroJ9xMrbCcsIYIQxv8Pt/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "08",
+      "title": "גיאולוגיה: הכרמל והחוף",
+      "date": "2026-07-02",
+      "stops": [
+        "נחל אורן",
+        "חורבת רקית",
+        "סלע",
+        "קרקע וצומח",
+        "עתלית"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1dZGP2DgShnWjyUqHMhPMrvfCv01sfY_t",
+      "sourceUrl": "https://docs.google.com/document/d/1JLdWbSaqfAeOUd8jUi6ajBc2wORmyGY3/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "09",
+      "title": "השומרון",
+      "date": "2026-07-09",
+      "stops": [
+        "הר גריזים",
+        "שילה",
+        "אלון מורה",
+        "מצפה יוסף"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1v2Wz6GarM191Q5P6NrcXO8DIhhY8PYrg",
+      "sourceUrl": "https://docs.google.com/document/d/1qcSMIwp5zsziPLHKsGiJxUnQ2qDX0V97/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "10",
+      "title": "הרי ירושלים",
+      "date": "2026-07-16",
+      "stops": [
+        "סטף",
+        "שמורת המסרק",
+        "יד השמונה",
+        "אנדרטת הראל",
+        "גווילי האש"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1HrlOBlK9S2XpRe8Xh7hj8K05gwlZKkia",
+      "sourceUrl": "https://docs.google.com/document/d/1yzcek9mtMtKSUTf7IbiW0zq7t30tmbCW/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "11",
+      "title": "ירושלים: בית ראשון",
+      "date": "2026-07-22",
+      "stops": [
+        "כתף הינום",
+        "עיר דוד",
+        "החומה הרחבה",
+        "ארמון הנציב"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1aNCu0Vk8oTaIG1K59GQqE1_umQrz8sK8",
+      "sourceUrl": "https://docs.google.com/document/d/1khNezI5YOBFzoEhoEQrkpd2IzrXYo1d7/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "12",
+      "title": "ירושלים: בית שני א'",
+      "date": "2026-07-30",
+      "stops": [
+        "הבית השרוף",
+        "הרובע ההרודיאני",
+        "היכל הספר",
+        "דגם ירושלים"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1VZztNtwHL3g3looy5v95qLTcUfi7oAq4",
+      "sourceUrl": "https://docs.google.com/document/d/1dJ6Z3bhRmny8M937sk0SJGsnPuGzT34J/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "13",
+      "title": "ירושלים: בית שני ב'",
+      "date": "2026-08-06",
+      "stops": [
+        "גן דוידסון",
+        "מנהרות הכותל",
+        "קברי נחל קדרון",
+        "חניון גבעתי"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1cLHFMh7TnHCdO5_OvUPTAV-1HROK0vKo",
+      "sourceUrl": "https://docs.google.com/document/d/1rcQpA1RCwCDRmKfvMqRKehvWTgcz9neN/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "14",
+      "title": "תצפיות סובב ירושלים",
+      "date": "2026-08-13",
+      "stops": [
+        "רמת רחל",
+        "הר גילה",
+        "נבי סמואל",
+        "אמת המים",
+        "הר הזיתים"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1OW7dTQBQUW1yhRTicp5CrNS_tfRj-PYU",
+      "sourceUrl": "https://docs.google.com/document/d/1YluvVnYpARVw9R3IxuzAmAeWNmDB-_wL/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "15",
+      "title": "קיסריה, נחל תנינים, אפולוניה",
+      "date": "2026-08-20",
+      "stops": [
+        "קיסריה",
+        "בית חנניה",
+        "נחל תנינים",
+        "אפולוניה"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1oFqTPI0QwpuuXR3nVMHTYMA1zxt5NjHU",
+      "sourceUrl": "https://docs.google.com/document/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "16",
+      "title": "בית שערים וציפורי",
+      "date": "2026-08-27",
+      "stops": [
+        "בית שערים",
+        "ציפורי",
+        "טבעון"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/12cYe4au1FC6P5eVkfiUco-64M0Ee8xiK",
+      "sourceUrl": "https://docs.google.com/document/d/1OpFJTv4TR9wysLv-eA6_0KqndZk9wjZ_/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "17",
+      "title": "קמפוס גולן וחרמון",
+      "date": "2026-09-02",
+      "stops": [
+        "בניאס",
+        "מבצר נמרוד",
+        "תל סאקי",
+        "מצפה אופיר",
+        "גמלא",
+        "עין קשתות"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/16mGflWTWpvDlOQkrng589YZMqAd6QHV6",
+      "sourceUrl": "https://docs.google.com/document/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "18",
+      "title": "ירושלים הרומית והביזנטית",
+      "date": "2026-09-10",
+      "stops": [
+        "שער שכם",
+        "קארדו",
+        "כנסיות",
+        "מערת צדקיהו"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/10Dx4xMPJoaqFG4eNCkY5x6MOjkwcOEM7",
+      "sourceUrl": "https://docs.google.com/document/d/1Y2cJKpHE9DcrKc95Nms94Eg2UuXu8SMZ/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "19",
+      "title": "בית שאן וכוכב הירדן",
+      "date": "2026-09-14",
+      "stops": [
+        "בית שאן",
+        "כוכב הירדן",
+        "מעיין חרוד"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1FgQMzG4phl1VjlNOhgmR7WkDDD3hOE_s",
+      "sourceUrl": "https://docs.google.com/document/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "20",
+      "title": "ראש פינה, תל חי והחולה",
+      "date": "2026-10-08",
+      "stops": [
+        "ראש פינה",
+        "תל חי",
+        "אגמון החולה",
+        "שמורת החולה"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1gcsJryCHmkJAqzhFYvRdhufREr-Grqsr",
+      "sourceUrl": "https://docs.google.com/document/d/1QgbLSj1THBCXtORh7Ffg6RkrMIx2TrXU/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "21",
+      "title": "עין גדי והר סדום",
+      "date": "2026-10-15",
+      "stops": [
+        "הר סדום",
+        "נחל דוד",
+        "בית הכנסת העתיק בעין גדי"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/10mk0VvLCEJXnp8k4PB4aldt_BMmtetv4",
+      "sourceUrl": "https://docs.google.com/document/d/1E0C2LVMOm-xmyMaV5xH0jV6Np_JWMX-R/edit",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "22",
+      "title": "קמפוס גליל עליון",
+      "date": "2026-10-21",
+      "stops": [
+        "שיירת יחיעם",
+        "ראש הנקרה",
+        "מערת קשת",
+        "פקיעין",
+        "מירון",
+        "ברעם",
+        "ריחאניה"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1coH6MKSfbbu26RXZMX9SrIevkIsFWwV5",
+      "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
+      "status": "חוברת הכנה (אין אישור ביצוע מהמסמך)"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1230"><meta name="description" content="סיור מודרך, תרגול שאלות וסיפורי תחנות מ-22 תיקי הסיורים — שלוש רמות וקישורים למקורות">
+<title>סיור מודרך | MOREH DERECH NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 0 0,#3046a5 0,transparent 48%),radial-gradient(ellipse at 100% 42%,#352b73 0,transparent 43%),#09112b;color:#f7f8ff;font-family:system-ui,'Arial Hebrew',Arial,sans-serif}
+button,select{font:inherit}button{cursor:pointer}.shell{max-width:860px;margin:auto;padding:0 15px 55px}.top{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:15px 0}.home{color:#fff;text-decoration:none;font-size:13px;font-weight:800;padding:9px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a}.mini{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900;letter-spacing:.5px}.mini img{height:47px;width:47px;object-fit:contain;border-radius:13px;background:#fff;box-shadow:0 3px 0 #040717}
+.hero{border-radius:25px;position:relative;overflow:hidden;padding:21px 20px;background:linear-gradient(115deg,#5c50d6,#2277bb);border:1px solid #b3acff80;box-shadow:0 7px 0 #070c26}.eyebrow{font-size:11px;letter-spacing:3px;color:#ffe49b;font-weight:1000}.hero h1{font-size:clamp(28px,7vw,42px);margin:5px 0 4px}.hero p{font-size:14px;line-height:1.5;max-width:550px;margin:4px 0 0;color:#e5e6ff}.hero .art{position:absolute;left:13px;bottom:8px;font-size:64px;opacity:.6}
+.controls{position:sticky;top:0;background:#0b1432f5;backdrop-filter:blur(16px);border-bottom:1px solid #45578d;margin:21px -15px 13px;padding:11px 15px;z-index:10}
+.setup-bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;width:calc(100% + 30px);margin:10px -15px 12px;padding:10px 15px;border:0;border-bottom:1px solid #45578d;background:#0b1432f5;backdrop-filter:blur(16px);color:#eef3ff;font:inherit;font-weight:800;font-size:14px;text-align:start;cursor:pointer}
+.setup-text{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.setup-edit{flex:none;padding:6px 11px;border-radius:999px;background:#1f2b5c;border:1px solid #5a6db0;color:#a6f5e4;font-size:13px}
+body.setup-collapsed #setupPanel,body.setup-collapsed .hero{display:none}
+.controls h2{font-size:12px;letter-spacing:1px;margin:0 0 8px;color:#b5c8ff}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.levels button{background:#202d58;color:#d9e5ff;border:2px solid #44578c;border-radius:12px;padding:12px 4px;font-weight:900;font-size:clamp(12px,3vw,16px)}
+.levels button[aria-pressed=true]{background:#ffe17b;border-color:#fff0a4;color:#222450;box-shadow:0 4px 0 #a87831}
+.filters{display:flex;gap:8px;margin-top:11px}.filters select{flex:1;min-width:0;background:#1a2953;color:#f4f6ff;border:1px solid #6470af;border-radius:12px;padding:13px;font-size:15px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.mode{display:flex;gap:6px}.mode button{border:1px solid #6579b1;background:#172750;color:#dee8ff;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:800}.mode button[aria-pressed=true]{background:#6fe9d0;color:#123b48;border-color:#a7fff0}
+.metrics{display:flex;justify-content:space-between;gap:9px;align-items:center;margin:23px 0 9px;font-size:14px;font-weight:800;color:#b8c7ef}.metrics strong{color:#ffd477}.track{background:#263662;height:10px;border-radius:30px;overflow:hidden}.track span{display:block;background:linear-gradient(90deg,#33dcbe,#ffe276);height:100%;width:0;transition:width .18s}
+.story{border:1px solid #7673da;background:linear-gradient(140deg,#2d2b6b,#1b2e60);border-radius:18px;padding:16px 19px;margin-top:16px;box-shadow:0 5px 0 #060c25}.story h3{font-size:19px;margin:0 0 9px}.story p{line-height:1.7;margin:0;font-size:15px;color:#e6e7ff}
+#quiz{margin-top:18px}.question{background:#fff;color:#1b2855;border:2px solid #d4daf7;border-radius:25px;padding:20px;box-shadow:0 7px 0 #070b20,0 15px 30px #0006}
+.qtag{font-size:12px;display:flex;align-items:center;gap:6px;color:#5e57a8;font-weight:900}.question h2{font-size:clamp(22px,5vw,30px);line-height:1.5;margin:12px 0 20px;font-weight:1000}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.ans{border:2px solid #d6ddf3;background:#eff2fc;box-shadow:0 4px 0 #bac4df;border-radius:15px;padding:16px 12px;text-align:right;font-size:16px;font-weight:850;color:#202c53;min-height:75px}
+.fx-layer{position:fixed;inset:0;pointer-events:none;z-index:3000;overflow:hidden}.fx-layer i{position:fixed;display:block}.fx-plus{position:fixed;direction:ltr;unicode-bidi:isolate;font-size:22px;font-weight:900;color:#ffd878;text-shadow:0 2px 0 #3a2a00,0 0 12px #ffd87899}.fx-streak{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:3001;pointer-events:none;background:linear-gradient(120deg,#ff8a3d,#ffd878);color:#2a1300;font-weight:900;font-size:17px;padding:11px 20px;border-radius:999px;box-shadow:0 10px 26px #0008;white-space:nowrap}
+.ans:hover:not(:disabled),.ans:focus-visible{border-color:#5b61d9}.ans:disabled{opacity:1;cursor:default}.ans.correct{background:#bffce5;border-color:#18aa7b;box-shadow:0 4px 0 #0b9369}.ans.wrong{background:#ffe1df;border-color:#d85660;box-shadow:0 4px 0 #a23f4d}
+.feedback{background:#f8f2d9;border:2px solid #f6d788;border-radius:15px;padding:15px;margin-top:19px;line-height:1.65;color:#554017}.feedback[hidden]{display:none}.feedback strong{display:block;margin-bottom:4px}.feedback a{color:#403cb0;word-break:break-word;font-weight:800}.source-chip{font-size:12px;font-weight:700;color:#7b78a8;margin-top:13px}
+.actions{display:flex;gap:11px;margin-top:22px}.actions button{flex:1;padding:17px 10px;border-radius:16px;font-size:17px;font-weight:900;border:0}.next{color:#202143;background:#ffda74;box-shadow:0 5px 0 #b77f31}.back{color:#f1f3ff;background:#293866;border:2px solid #546aac}.actions button:disabled{opacity:.4;cursor:default}
+.done{text-align:center;padding:32px 20px;background:#fff;color:#202c60;border-radius:24px;box-shadow:0 8px 0 #050b21}.done strong{display:block;font-size:38px;color:#4a4fc4}.done button{background:#ffda74;border:0;padding:14px 20px;border-radius:13px;font-weight:900}
+.sources-note{font-size:12px;line-height:1.6;color:#a6b7df;margin-top:25px}.sources-note a{color:#a6f5e4}
+@media(max-width:550px){.hero .art{font-size:42px}.hero p{max-width:80%}.filters{flex-wrap:wrap}.filters select{flex-basis:100%}.mode{width:100%}.mode button{flex:1}.question{padding:16px}.answers{grid-template-columns:1fr}.ans{min-height:59px}.controls{padding:10px 15px}.mini span{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* NEXT — carte, étapes et lecture */
+[hidden]{display:none!important}
+.me-chip{white-space:nowrap;background:linear-gradient(120deg,#6a4a00,#3a2f99);border-color:#ffd878}.stars-line{font-size:15px;margin:8px 0 2px}.stars-line b{color:#ffd878;letter-spacing:2px}.report-q{margin-inline-start:8px;border:1px solid #c9a650;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:800}.fb-link{cursor:pointer}.top{flex-wrap:wrap}.top .links{flex-wrap:wrap;max-width:100%;min-width:0}/* petits téléphones (360 px) : les boutons passent à la ligne au lieu d'élargir la page */.top .links{display:flex;gap:7px}.home.map{background:linear-gradient(120deg,#3a2f99,#25307a);border-color:#7c6ff0}
+.mode{flex-wrap:wrap}
+.stepbar{display:flex;gap:5px;margin:16px 0 0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.stepbar::-webkit-scrollbar{display:none}
+.stepbar button{flex:none;border:1px solid #4f62a0;background:#18244f;color:#cdd8ff;border-radius:30px;padding:7px 12px;font-size:13px;font-weight:850}
+.stepbar button[aria-current=step]{background:#6fe9d0;color:#123b48;border-color:#a7fff0}
+.stepbar button.done{border-color:#ffd477}
+.story .step-k{font-size:11px;letter-spacing:2px;color:#ffe49b;font-weight:1000;margin-bottom:5px}
+.story .wiki{margin-top:12px;font-size:14px;line-height:1.7;color:#e6e7ff}.story .attr{display:block;font-size:11.5px;color:#a8b5e2;margin-top:6px}.story .attr a{color:#a6f5e4}
+.story .look{margin-top:10px;font-size:13px;color:#cfd7ff}
+.reader{display:grid;gap:14px;margin-top:18px}
+.rcard{background:linear-gradient(140deg,#2d2b6b,#1b2e60);border:1px solid #7673da;border-radius:20px;padding:17px 18px;box-shadow:0 5px 0 #060c25}
+.rcard h3{margin:0 0 8px;font-size:20px}.rcard .num{font-size:11px;letter-spacing:2px;color:#86f3db;font-weight:900}
+.rcard p{margin:8px 0 0;line-height:1.75;font-size:15px;color:#e6e7ff}.rcard ul{margin:10px 0 0;padding-inline-start:20px;line-height:1.7;color:#f2f0ff}
+.rcard .attr{display:block;font-size:11.5px;color:#a8b5e2;margin-top:8px}.rcard .attr a{color:#a6f5e4}
+.rcard .facts-k{margin-top:12px;font-size:12px;font-weight:900;color:#ffe49b}
+.badge{display:inline-block;margin-top:12px;font-size:15px;font-weight:900;padding:8px 14px;border-radius:30px;background:#fff2c4;color:#6a4a00;border:2px solid #f2c45a}
+.done .again{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}.done .again a,.done .again button{background:#eef1ff;color:#24306b;border:2px solid #c9d1f5;padding:12px 14px;border-radius:13px;font-weight:900;text-decoration:none;font-size:14px}
+/* Sélecteur compact de circuit : panneau mobile recherchable, sans liste native Android. */
+.tour-trigger{flex:1;min-width:0;display:flex;align-items:center;gap:10px;text-align:right;color:#f4f8ff;background:#1a2953;border:1px solid #7d8ec4;border-radius:13px;padding:9px 12px;min-height:58px}
+.tour-trigger:not(:disabled):hover,.tour-trigger:not(:disabled):focus-visible{border-color:#b8ffe9;outline-offset:2px}
+.tour-trigger:disabled{opacity:.65;cursor:default}
+.tour-trigger-icon{font-size:25px}.tour-trigger-copy{display:flex;min-width:0;flex:1;flex-direction:column;gap:2px}.tour-trigger-copy strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tour-trigger-copy small{font-size:11.5px;color:#b6c9f2}.tour-trigger-chevron{font-size:23px;color:#92ffe5}
+body.tour-open{overflow:hidden}
+.tour-overlay{position:fixed;inset:0;z-index:1000}
+.tour-backdrop{position:absolute;inset:0;width:100%;background:#040918c7;border:0;border-radius:0}
+.tour-sheet{position:absolute;bottom:0;inset-inline:0;max-width:720px;max-height:min(81dvh,700px);margin:0 auto;display:flex;flex-direction:column;background:#111d40;color:#fff;border:1px solid #788dce;border-bottom:0;border-radius:24px 24px 0 0;box-shadow:0 -16px 55px #0009;padding:15px 14px max(15px,env(safe-area-inset-bottom))}
+.tour-sheet:before{content:"";height:4px;width:46px;background:#6c81bd;border-radius:9px;align-self:center;margin:-6px 0 10px}
+.tour-sheet-head{display:flex;justify-content:space-between;align-items:center;gap:14px}.tour-sheet-head h2{margin:0;font-size:22px}.tour-sheet-head p{font-size:13px;color:#b4c7f0;margin:4px 0 0}
+.tour-close{width:44px;height:44px;flex:none;border:1px solid #7082b1;border-radius:13px;background:#26355f;color:#fff;font-size:21px}
+.tour-search-wrap{display:flex;align-items:center;gap:10px;margin:13px 0;background:#1a2a54;border:1px solid #667dae;border-radius:13px;padding:0 12px}.tour-search-wrap:focus-within{border-color:#6fe9d0}.tour-search-wrap input{width:100%;min-width:0;min-height:48px;background:transparent;border:0;outline:0;color:#fff;font:inherit;font-size:16px}.tour-search-wrap input::placeholder{color:#abbadf}
+.tour-results{overflow-y:auto;overscroll-behavior:contain;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-content:start;min-height:80px;padding:0 1px 12px;scrollbar-color:#7186bc transparent}
+.tour-option{display:flex;align-items:center;gap:8px;text-align:right;min-width:0;min-height:58px;padding:9px 11px;border-radius:12px;border:1px solid #41598b;background:#1c2b53;color:#f5f7ff}
+.tour-option:hover,.tour-option:focus-visible{border-color:#83eddb}.tour-option[aria-pressed=true]{border-color:#6fe9d0;background:#214968}
+.tour-option .number{flex:none;min-width:27px;color:#ffdc81;font-size:13px;font-weight:900}.tour-option .label{min-width:0;flex:1;font-size:13px;font-weight:800;line-height:1.3}.tour-option .meta{flex:none;color:#b2c6ef;font-size:11px}.tour-option[aria-pressed=true] .meta{color:#92ffdc}
+.tour-option.all{grid-column:1 / -1;background:#293c78;border-color:#768ed4;min-height:52px}.tour-option.all .label{font-size:15px}
+.tour-empty{grid-column:1/-1;text-align:center;padding:26px 8px;color:#bfd0f1}
+.tour-sheet-hint{margin:4px 0 0;font-size:12px;color:#b6c5e8;text-align:center}
+@media(max-width:550px){.filters .tour-trigger{flex-basis:100%}.tour-sheet{max-height:86dvh}.tour-results{gap:7px}.tour-option{padding:9px 8px}.tour-option .label{font-size:12.5px}}
+@media(max-width:360px){.tour-results{grid-template-columns:1fr}}
+.home.j3d{background:#ffd878;color:#1c1f45;border-color:#fff0a4}.home[hidden]{display:none}
+</style>
+</head>
+<body><main class="shell">
+<header class="top"><div class="mini"><img src="assets/moreh-derech-next-driver.webp" alt=""><span>MOREH DERECH NEXT</span></div><div class="links"><a class="home map" id="mapLink" href="map.html">🗺️ מפה</a><a class="home j3d" id="j3dLink" href="jerusalem3d.html" hidden>🏛️ תלת‑ממד</a><a class="home me-chip" id="meChip" href="journey.html">📈 המסע שלי</a><button type="button" class="home fb-link" data-feedback>💡 רעיון/בעיה</button><a class="home" href="index.html">⌂ משחקים</a></div></header>
+<section class="hero"><div class="eyebrow">★ DISCOVER · LEARN · PLAY ★</div><h1 id="heroTitle">🧭 סיור מודרך</h1><p id="heroText">טוען את השאלות…</p></section>
+
+<button type="button" class="setup-bar" id="setupBar" hidden aria-controls="setupPanel" aria-expanded="false"><span class="setup-text" id="setupText"></span><span class="setup-edit">✎ שינוי</span></button>
+<div class="controls" id="setupPanel" role="group" aria-label="בחירת רמה, סיור וצורת לימוד"><h2 id="levelsTitle">⚡ רמת קושי — בוחרים כאן</h2>
+<div class="levels" id="levels"><button type="button" data-level="1" aria-pressed="true">🌱 קל</button><button type="button" data-level="2" aria-pressed="false">⭐ בינוני</button><button type="button" data-level="3" aria-pressed="false">🔥 קשה</button></div>
+<div class="filters"><button type="button" class="tour-trigger" id="tourButton" aria-haspopup="dialog" aria-controls="tourPicker" aria-expanded="false" disabled><span class="tour-trigger-icon" aria-hidden="true">📍</span><span class="tour-trigger-copy"><strong id="tourLabel">בחירת סיור</strong><small id="tourCount">טוען מסלולים…</small></span><span class="tour-trigger-chevron" aria-hidden="true">⌄</span></button>
+<div class="mode"><button type="button" data-mode="tour" aria-pressed="false">🧭 סיור מודרך</button><button type="button" data-mode="quiz" aria-pressed="true">🎮 תרגול</button><button type="button" data-mode="stories" aria-pressed="false">📖 סיפורים</button></div></div></div>
+<div class="tour-overlay" id="tourPicker" hidden>
+  <button type="button" class="tour-backdrop" id="tourBackdrop" aria-label="סגירת רשימת הסיורים"></button>
+  <section class="tour-sheet" role="dialog" aria-modal="true" aria-labelledby="tourPickerTitle">
+    <header class="tour-sheet-head"><div><h2 id="tourPickerTitle">🧭 בוחרים סיור</h2><p>חפשו לפי שם, מקום או מספר הסיור</p></div><button type="button" class="tour-close" id="tourClose" aria-label="סגור">✕</button></header>
+    <div class="tour-search-wrap"><span aria-hidden="true">🔎</span><input id="tourSearch" type="search" inputmode="search" placeholder="למשל: מגידו, ירושלים, 04" aria-label="חיפוש סיור" autocomplete="off"></div>
+    <div class="tour-results" id="tourResults" role="group" aria-label="רשימת הסיורים"></div>
+    <p class="tour-sheet-hint">אפשר לבחור מהרשימה או לחזור למפה לבחירה לפי מיקום.</p>
+  </section>
+</div>
+<nav class="stepbar" id="stepbar" aria-label="תחנות" hidden></nav>
+<div class="metrics" id="metrics"><span id="counter">טוען שאלות…</span><strong id="score">0 נקודות</strong></div><div class="track" id="track" role="progressbar" aria-label="התקדמות" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="fill"></span></div>
+<section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
+<section class="reader" id="reader" hidden></section>
+<div class="actions" id="actions" hidden><button type="button" class="back" id="prev">↩ הקודמת</button><button type="button" class="next" id="next">הבאה ←</button></div>
+<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. תיק 22 (גליל עליון) הוא חוברת הכנה ואינו אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a></p>
+</main>
+<script src="tour-data.js"></script>
+<script>
+(function(){
+"use strict";
+let data=null,catalogue=null,places=null,stats=null,level=1,tour="all",mode="quiz",index=0,answers={},items=[],steps=[],special=null,enterSpecial=false;
+const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>String(s||"").replace(/[֑-ׇ'"״׳\-–—,.()]/g," ").replace(/\s+/g," ").trim();
+const sessionKey="mdl_next_guided_v1",LV={1:"🌱 קל",2:"⭐ בינוני",3:"🔥 קשה"};
+try{const saved=JSON.parse(sessionStorage.getItem(sessionKey)||"null");if(saved){level=[1,2,3].includes(saved.level)?saved.level:1;tour=typeof saved.tour==="string"?saved.tour:"all";mode=["quiz","tour","stories","review","daily"].includes(saved.mode)?saved.mode:"quiz";index=Number(saved.index)||0;answers=saved.answers||{};special=Array.isArray(saved.special)?saved.special:null;}}catch(e){}
+// Paramètres venant de la carte : ?tour=04&level=2&mode=tour (accepte aussi tour04, arad, carmel, galil, road67)
+const qs=new URLSearchParams(location.search);
+const pTour=MDTours.normalizeTourParam(qs.get("tour")),pLevel=Number(qs.get("level")),pMode=qs.get("mode");
+if(pTour&&pTour!==tour){tour=pTour;index=0;}
+if([1,2,3].includes(pLevel)&&pLevel!==level){level=pLevel;index=0;}
+if(["quiz","tour","stories","review","daily"].includes(pMode)&&(pMode!==mode||!special&&(pMode==="review"||pMode==="daily"))){mode=pMode;index=0;enterSpecial=pMode==="review"||pMode==="daily";}
+if(qs.get("new")&&(mode==="review"||mode==="daily")){enterSpecial=true;index=0;}
+// Une fois le niveau ou le type choisi, le panneau de réglages se replie en une ligne.
+let collapsed=(tour!=="all"&&([1,2,3].includes(pLevel)||!!pMode))||index>0||Object.keys(answers).length>0||mode==="review"||mode==="daily";
+function setCollapsed(v){collapsed=v;document.body.classList.toggle("setup-collapsed",v);$("setupBar").hidden=!v;$("setupBar").setAttribute("aria-expanded",String(!v));}
+function setupSummary(){const MD={quiz:"🎮 תרגול",tour:"🧭 סיור מודרך",stories:"📖 סיפורים",review:"🔁 חזרה על טעויות",daily:"☀️ אתגר היום"};$("setupText").textContent=mode==="daily"?MD.daily+" · 5 שאלות מכל הסיורים":"📍 "+tourLabel(tour)+(mode==="stories"||mode==="review"?"":" · "+LV[level])+" · "+MD[mode];}
+function persist(){try{sessionStorage.setItem(sessionKey,JSON.stringify({level,tour,mode,index,answers,special}));}catch(e){}}
+function shuffleOptions(q){let opts=q.options.map((value,i)=>({value,correct:i===q.correct}));let seed=q.id.split("").reduce((n,c)=>(Math.imul(n,31)+c.charCodeAt(0))|0,7);for(let j=opts.length-1;j>0;j--){seed=(Math.imul(1664525,seed)+1013904223)|0;let k=(seed>>>16)%(j+1);/* bits hauts : bonne réponse répartie ~25 % par case */[opts[j],opts[k]]=[opts[k],opts[j]];}return opts;}
+// Petite fête quand la réponse est juste : confettis depuis le bouton, « +100 » vers le score, série de bonnes réponses.
+let streak=0;
+const reduceMotion=()=>window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+const CHEERS=["✅ כל הכבוד!","🎉 מעולה!","⭐ בול!","👏 יפה מאוד!","🚀 מדויק!","💪 אלופים!"];
+function cheer(ok){
+  const card=$("quiz").querySelector(".question");if(!card)return;
+  if(!ok){streak=0;if(!reduceMotion())card.animate([{transform:"translateX(0)"},{transform:"translateX(-7px)"},{transform:"translateX(6px)"},{transform:"translateX(-4px)"},{transform:"translateX(0)"}],{duration:380,easing:"ease-out"});return;}
+  streak++;
+  const head=card.querySelector(".feedback strong");if(head)head.textContent=CHEERS[Math.floor(Math.random()*CHEERS.length)];
+  if(navigator.vibrate)try{navigator.vibrate(18);}catch(e){}
+  const btn=card.querySelector(".ans.correct");
+  if(reduceMotion()||!btn){if(streak>=3)streakBadge();return;}
+  btn.animate([{transform:"scale(1)"},{transform:"scale(1.05)"},{transform:"scale(1)"}],{duration:420,easing:"cubic-bezier(.3,1.6,.5,1)"});
+  const r=btn.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+  const colors=["#ffd878","#6ee9cf","#ff8fb1","#8fa8ff","#ffffff","#ffb347"],layer=document.createElement("div");
+  layer.className="fx-layer";document.body.appendChild(layer);
+  const n=streak>=5?46:30;
+  for(let i=0;i<n;i++){
+    const p=document.createElement("i"),a=Math.random()*Math.PI*2,d=70+Math.random()*130,sz=6+Math.random()*7;
+    p.style.cssText="left:"+cx+"px;top:"+cy+"px;width:"+sz+"px;height:"+(sz*(Math.random()<.5?1:.45))+"px;background:"+colors[i%colors.length]+";border-radius:"+(Math.random()<.4?"50%":"2px");
+    layer.appendChild(p);
+    p.animate([{transform:"translate(-50%,-50%) rotate(0)",opacity:1},{transform:"translate(calc(-50% + "+(Math.cos(a)*d)+"px),calc(-50% + "+(Math.sin(a)*d-40)+"px)) rotate("+(Math.random()*540-270)+"deg)",opacity:1,offset:.6},{transform:"translate(calc(-50% + "+(Math.cos(a)*d*1.15)+"px),calc(-50% + "+(Math.sin(a)*d+90)+"px)) rotate("+(Math.random()*720)+"deg)",opacity:0}],{duration:900+Math.random()*500,easing:"cubic-bezier(.2,.7,.4,1)",fill:"forwards"});
+  }
+  const plus=document.createElement("b");plus.className="fx-plus";plus.textContent="+100";plus.style.left=cx+"px";plus.style.top=(r.top-6)+"px";layer.appendChild(plus);
+  plus.animate([{transform:"translate(-50%,0) scale(.6)",opacity:0},{transform:"translate(-50%,-18px) scale(1.15)",opacity:1,offset:.25},{transform:"translate(-50%,-70px) scale(1)",opacity:0}],{duration:1100,easing:"ease-out",fill:"forwards"});
+  $("score").animate([{transform:"scale(1)"},{transform:"scale(1.3)",color:"#ffd878"},{transform:"scale(1)"}],{duration:520,delay:250,easing:"ease-out"});
+  if(streak>=3)streakBadge();
+  setTimeout(()=>layer.remove(),1700);
+}
+function streakBadge(){
+  const t=document.createElement("div");t.className="fx-streak";t.setAttribute("role","status");
+  t.textContent=streak>=10?"🏆 "+streak+" ברצף! מורה דרך אמיתי":streak>=5?"🔥 "+streak+" ברצף! לא עוצרים":"🔥 "+streak+" ברצף!";
+  document.body.appendChild(t);
+  if(!reduceMotion())t.animate([{transform:"translate(-50%,20px) scale(.8)",opacity:0},{transform:"translate(-50%,0) scale(1.05)",opacity:1,offset:.18},{transform:"translate(-50%,0) scale(1)",opacity:1,offset:.8},{transform:"translate(-50%,-10px)",opacity:0}],{duration:1900,easing:"ease-out",fill:"forwards"});
+  setTimeout(()=>t.remove(),1950);
+}
+// Progression durable (« à la Zelda ») et concours de la classe : voir progress.js.
+function recordProgress(q,ok){
+  if(!window.MDProgress)return;
+  const t=tourOf(q);MDProgress.mark(q.id,ok);
+  MDProgress.saveLevel(t,q.level,data.questions.filter(x=>x.level===q.level&&tourOf(x)===t).map(x=>x.id));
+  if(!MDProgress.player().asked)setTimeout(()=>MDProgress.askName({onClose:updateMe}),1600);
+  updateMe();
+}
+function updateMe(){
+  if(!window.MDProgress||!$("meChip"))return;
+  const p=MDProgress.player(),t=MDProgress.totals();
+  const ds=MDProgress.dayStreak();$("meChip").textContent="📈 "+t.points.toLocaleString("he-IL")+" ⭐"+t.stars+(ds>1?" 🔥"+ds:"");$("meChip").title=(p.name||"")+" — המסע שלי";
+}
+function currentAnswer(q){return Object.prototype.hasOwnProperty.call(answers,q.id)?answers[q.id]:null;}
+const tourOf=q=>MDTours.tourOf(q);
+window.MDL_FEEDBACK_CTX=()=>{const q=mode!=="stories"&&items[index];return {tour,level,mode,question:q?q.id:"",stop:q?(q.stop||""):""};};
+function placeStops(t){return (places&&places.tours[t]&&places.tours[t].stops)||[];}
+function matchStop(t,name){const n=norm(name);if(!n)return null;return placeStops(t).find(s=>{const a=norm(s.name),b=norm(s.he&&s.he.title);return n.includes(a)||a.includes(n)||(b&&(n.includes(b)||b.includes(n)));})||null;}
+function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
+function syncUrl(){const u=new URL(location.href);u.searchParams.delete("new");if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
+  {const J3D={11:"jerusalem3d.html?period=2",12:"jerusalem3d.html?period=5",13:"jerusalem3d.html?period=5",14:"jerusalem3d.html?period=5",18:"jerusalem3d.html?period=7",15:"site3d.html?site=caesarea",19:"site3d.html?site=beitshean",1:"site3d.html?site=qumran",3:"site3d.html?site=arad",4:"site3d.html?site=megiddo",6:"site3d.html?site=herodium",16:"site3d.html?site=tzippori",17:"site3d.html?site=banias",5:"site3d.html?site=beitguvrin",21:"site3d.html?site=eingedi",22:"site3d.html?site=baram"},jp=J3D[Number(tour)],jl=$("j3dLink");if(jl){jl.hidden=!jp;if(jp)jl.href=jp;}} // parcours avec un site 3D : accès direct // parcours de Jérusalem : accès direct à la 3D
+  $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode==="review"||mode==="daily"?"quiz":mode)+(tour!=="all"?"&tour="+tour:"");}
+
+// Sélecteur de סיור sans liste déroulante système : 22 choix en grille compacte + recherche.
+const shortNames={
+  "01":"צפון מדבר יהודה","02":"כרמל","03":"נגב צפוני",
+  "04":"מגידו וגלבוע","05":"השפלה","06":"חברון והרודיון",
+  "07":"חיפה","08":"גיאולוגיה","09":"שומרון",
+  "10":"הרי ירושלים","11":"ירושלים · בית ראשון","12":"ירושלים · בית שני א׳",
+  "13":"ירושלים · בית שני ב׳","14":"תצפיות ירושלים",
+  "15":"קיסריה ואפולוניה","16":"ציפורי ובית שערים",
+  "17":"גולן וחרמון","18":"ירושלים · רומית וביזנטית",
+  "19":"בית שאן וכוכב הירדן","20":"ראש פינה והחולה",
+  "21":"עין גדי והר סדום","22":"גליל עליון"
+};
+function tourLabel(id){
+  if(id==="all")return "כל הסיורים";
+  if(id==="road67")return "כביש 67 · זכרון–יקנעם";
+  const t=catalogue&&catalogue.tours.find(t=>t.id===id);
+  return (t?t.id+" · ":"")+((t&&shortNames[t.id])||(t&&t.title)||id);
+}
+function questionCount(id){return id==="all"?(stats.byLevel[level]||0):((stats.byTour[id]||{})[level]||0);}
+function renderTourPicker(){
+  $("tourButton").disabled=false;
+  $("tourLabel").textContent=tourLabel(tour);
+  $("tourCount").textContent=questionCount(tour)+" שאלות ברמה הנבחרת · שינוי סיור";
+  if(!$("tourPicker").hidden)fillTourRows($("tourSearch").value);
+}
+function fillTourRows(query){
+  const term=norm(query).toLocaleLowerCase("he");
+  const options=[{id:"all",title:"כל הסיורים",stops:[]},...catalogue.tours.map(t=>({id:t.id,title:shortNames[t.id]||t.title,full:t.title,stops:t.stops||[]}))];
+  if(stats.byTour.road67)options.push({id:"road67",title:"כביש 67 · זכרון–יקנעם",stops:[]});
+  const list=$("tourResults");list.replaceChildren();
+  let matches=0;
+  for(const item of options){
+    const haystack=norm([item.id,item.title,item.full||"",...(item.stops||[])].join(" ")).toLocaleLowerCase("he");
+    if(term&&!haystack.includes(term))continue;
+    matches++;
+    const btn=document.createElement("button");btn.type="button";btn.className="tour-option"+(item.id==="all"?" all":"");
+    btn.setAttribute("aria-pressed",String(tour===item.id));
+    const num=document.createElement("span");num.className="number";num.textContent=item.id==="all"?"🗺️":item.id==="road67"?"67":item.id;
+    const label=document.createElement("span");label.className="label";label.textContent=item.title;
+    const meta=document.createElement("span");meta.className="meta";meta.textContent=tour===item.id?"✓":questionCount(item.id)+" שאלות";
+    btn.append(num,label,meta);
+    btn.addEventListener("click",()=>{tour=item.id;index=0;closeTourPicker();render();});
+    list.append(btn);
+  }
+  if(!matches){const no=document.createElement("p");no.className="tour-empty";no.textContent="לא נמצאו סיורים — נסו שם או מספר אחר";list.append(no);}
+  list.scrollTop=0;
+}
+function openTourPicker(){
+  if(!catalogue||!stats)return;
+  $("tourSearch").value="";
+  $("tourPicker").hidden=false;$("tourButton").setAttribute("aria-expanded","true");
+  document.body.classList.add("tour-open");
+  fillTourRows("");
+  // Focus on close control, not search: avoid opening the phone keyboard unnecessarily.
+  $("tourClose").focus({preventScroll:true});
+}
+function closeTourPicker(){
+  $("tourPicker").hidden=true;$("tourButton").setAttribute("aria-expanded","false");
+  document.body.classList.remove("tour-open");$("tourButton").focus({preventScroll:true});
+}
+$("tourButton").addEventListener("click",openTourPicker);
+$("tourBackdrop").addEventListener("click",closeTourPicker);
+$("tourClose").addEventListener("click",closeTourPicker);
+$("tourSearch").addEventListener("input",e=>fillTourRows(e.target.value));
+document.addEventListener("keydown",e=>{
+  if($("tourPicker").hidden)return;
+  if(e.key==="Escape"){e.preventDefault();closeTourPicker();return;}
+  if(e.key!=="Tab")return;
+  const focusables=Array.from($("tourPicker").querySelectorAll("input,button:not(:disabled)")).filter(el=>el.getClientRects().length&&el!==$("tourBackdrop"));
+  if(!focusables.length)return;
+  if(e.shiftKey&&document.activeElement===focusables[0]){e.preventDefault();focusables[focusables.length-1].focus();}
+  else if(!e.shiftKey&&document.activeElement===focusables[focusables.length-1]){e.preventDefault();focusables[0].focus();}
+});
+function heroText(){
+  const c=tour==="all"?stats:{total:(stats.byTour[tour]||{}).total||0};
+  $("heroTitle").textContent=mode==="stories"?"📖 סיפורי הסיור":mode==="tour"?"🧭 סיור מודרך":mode==="review"?"🔁 חזרה על טעויות":mode==="daily"?"☀️ אתגר היום":"🎮 תרגול שאלות";
+  if(mode==="daily"){$("heroText").textContent="5 שאלות מכל הסיורים — אותן שאלות לכל הכיתה היום. הניסיון הראשון נספר!";return;}
+  if(mode==="review"){$("heroText").textContent="השאלות שטעיתם בהן חוזרות — כל תיקון נשמר במסע שלכם.";return;}
+  $("heroText").textContent=(tour==="all"?stats.total+" שאלות מקוריות מ-22 תיקי הסיורים":tourTitle(tour)+" · "+c.total+" שאלות")+(mode==="stories"?". קוראים על התחנות — בלי שאלות ובלי ציון.":mode==="tour"?". תחנה אחרי תחנה: מה המקום, שאלה, והסבר.":". בחרו רמה וסיור — ומתחילים.");
+}
+function render(){
+  if(!data)return;
+  document.querySelectorAll("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.level)===level)));
+  document.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
+  renderTourPicker();heroText();syncUrl();setupSummary();setCollapsed(collapsed);updateMe();
+  const reading=mode==="stories";
+  const fixed=mode==="review"||mode==="daily";
+  ["levels","levelsTitle"].forEach(id=>$(id).hidden=reading||fixed);$("tourButton").hidden=mode==="daily";
+  ["metrics","track","quiz","actions"].forEach(id=>$(id).hidden=reading);
+  $("reader").hidden=!reading;$("story").hidden=true;$("stepbar").hidden=true;
+  if(reading){renderReader();persist();return;}
+  if(fixed){
+    if(enterSpecial||!special){const pick=mode==="daily"?(window.MDProgress?MDProgress.dailyPick(data.questions):[]):(window.MDProgress?MDProgress.mistakes():[]);
+      const ids=new Set(pick.map(x=>typeof x==="string"?x:x.id));
+      special=data.questions.filter(q=>ids.has(q.id)&&(mode==="daily"||tour==="all"||tourOf(q)===tour)).map(q=>q.id);
+      if(mode==="daily")special=pick.map(q=>q.id).filter(id=>special.includes(id));
+      special.forEach(id=>delete answers[id]);index=0;enterSpecial=false;}
+    const byId=new Map(data.questions.map(q=>[q.id,q]));items=special.map(id=>byId.get(id)).filter(Boolean);
+  }else{special=null;items=data.questions.filter(q=>q.level===level&&(tour==="all"||tourOf(q)===tour));}
+  if(mode==="tour")orderByStops();
+  index=Math.max(0,Math.min(index,items.length-1));const n=items.length;
+  const correct=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length,done=items.filter(q=>currentAnswer(q)!==null).length;
+  $("counter").textContent=n?"שאלה "+(index+1)+" מתוך "+n+" · נענו "+done:"אין שאלות ברמה הזו";
+  $("score").textContent=fixed?correct+" נכונות":(correct*100)+" נקודות";const progress=n?Math.round(done/n*100):0;
+  $("fill").style.width=progress+"%";$("track").setAttribute("aria-valuenow",String(progress));
+  if(!n&&mode==="review"){$("quiz").innerHTML='<section class="done"><div style="font-size:55px">🎉</div><h2>אין טעויות לתיקון!</h2><p>'+(tour==="all"?"כל מה שעניתם — נכון. ":"בסיור הזה הכול נכון. ")+'אפשר להמשיך לשאלות חדשות.</p><div class="again"><a href="journey.html">📈 המסע שלי</a><a href="guided-tour.html?mode=daily">☀️ אתגר היום</a><a href="map.html?mode=quiz">🗺️ למפה</a></div></section>';$("actions").hidden=true;$("counter").textContent="0 טעויות";persist();return;}
+  if(!n){$("quiz").innerHTML='<div class="question">אין עדיין שאלות ברמה הזו לסיור הזה. נסו רמה אחרת או <a href="map.html">בחרו מקום אחר במפה</a>.</div>';$("actions").hidden=true;return;}
+  const q=items[index],answered=currentAnswer(q),opts=shuffleOptions(q),src=data.sources[q.source]||{label:tourTitle(tourOf(q)),kind:""};
+  if(mode==="tour")renderStep(q);
+  $("quiz").innerHTML='<article class="question"><div class="qtag">🎯 '+esc(src.label)+' · '+LV[q.level]+'</div><h2>'+esc(q.question)+'</h2><div class="answers">'+opts.map(o=>{const selected=answered===o.value,cl=answered!==null?(o.correct?"correct":selected?"wrong":""):"";return '<button type="button" class="ans '+cl+'" data-option="'+esc(o.value)+'" '+(answered!==null?"disabled":"")+'>'+esc(o.value)+'</button>';}).join("")+'</div><aside class="feedback" '+(answered===null?"hidden":"")+'><strong>'+(answered===null?"":answered===q.options[q.correct]?"✅ תשובה נכונה!":"💡 התשובה הנכונה: "+esc(q.options[q.correct]))+'</strong><div>'+esc(q.explanation)+'</div><p><a href="'+esc(q.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 פתחו את מסמך המקור ↗</a> <button type="button" class="report-q" data-feedback="question">🚩 טעות בשאלה?</button></p></aside></article>';
+  $("quiz").querySelectorAll("[data-option]").forEach(b=>b.addEventListener("click",()=>{if(currentAnswer(q)!==null)return;answers[q.id]=b.dataset.option;const ok=b.dataset.option===q.options[q.correct];recordProgress(q,ok);persist();render();cheer(ok);}));
+  $("actions").hidden=false;$("prev").disabled=index===0;$("next").textContent=index===n-1?"🏁 סיום וסיכום":"הבאה ←";persist();
+}
+// Mode « סיור מודרך » : questions groupées par étape, dans l'ordre des étapes du catalogue.
+function orderByStops(){
+  const key=q=>{const t=tourOf(q),s=matchStop(t,q.stop),list=placeStops(t);return {t,name:s?s.name:q.stop,pos:s?list.indexOf(s):99,place:s};};
+  const withKey=items.map((q,i)=>({q,i,k:key(q)}));
+  withKey.sort((a,b)=>a.k.t.localeCompare(b.k.t)||a.k.pos-b.k.pos||a.i-b.i);
+  items=withKey.map(x=>x.q);steps=[];
+  withKey.forEach((x,i)=>{const last=steps[steps.length-1];if(!last||last.name!==x.k.name||last.t!==x.k.t)steps.push({name:x.k.name,t:x.k.t,place:x.k.place,first:i,qs:[x.q]});else last.qs.push(x.q);});
+}
+function renderStep(q){
+  const si=steps.findIndex(s=>s.qs.includes(q)),st=steps[si];
+  const bar=$("stepbar");bar.hidden=steps.length<2;
+  bar.innerHTML=steps.map((s,i)=>'<button type="button" data-step="'+i+'"'+(i===si?' aria-current="step"':'')+(s.qs.every(x=>currentAnswer(x)!==null)?' class="done"':'')+'>'+(i+1)+'. '+esc(s.name)+'</button>').join("");
+  bar.querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>{index=steps[Number(b.dataset.step)].first;render();});
+  const cur=bar.querySelector("[aria-current]");if(cur)cur.scrollIntoView({block:"nearest",inline:"center"});
+  const p=st.place,story=$("story");story.hidden=false;
+  story.innerHTML='<div class="step-k">תחנה '+(si+1)+' מתוך '+steps.length+(tour==="all"?' · סיור '+esc(st.t):'')+'</div><h3>📍 '+esc(st.name)+'</h3>'+
+    (p&&p.he?'<div class="wiki">'+esc(p.he.extract)+'<span class="attr">ויקיפדיה: <a href="'+esc(p.he.url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.he.title)+' ↗</a> · CC BY-SA</span></div>':'<div class="look">קראו את השאלה, ענו — ואז ההסבר מתוך חומר הקורס יופיע.</div>')+
+    (p&&p.placed?'<div class="look"><a style="color:#b5ffea;font-weight:800" href="map.html?mode=guided&tour='+esc(st.t)+'#t='+esc(st.t)+'">🗺️ הראו לי במפה</a></div>':'');
+}
+// Mode lecture : fiches par étape, sans question ni score.
+function renderReader(){
+  const r=$("reader");
+  if(tour==="all"){r.innerHTML='<div class="rcard"><h3>בחרו סיור</h3><p>הסיפורים מסודרים לפי סיור. בחרו סיור ברשימה למעלה — או <a style="color:#a6f5e4" href="map.html?mode=stories">על המפה</a>.</p></div>';return;}
+  if(tour==="road67"){r.innerHTML='<div class="rcard"><h3>🛣️ מסלול 67</h3><p>לסיפורי מסלול 67 יש מסך קריאה משלהם, בארבע שפות.</p><p><a class="badge" style="text-decoration:none" href="anecdotes.html">📖 לסיפורי הדרך ←</a></p></div>';return;}
+  const qsT=data.questions.filter(q=>tourOf(q)===tour),groups=new Map();
+  placeStops(tour).forEach(s=>groups.set(s.name,{place:s,facts:[]}));
+  qsT.forEach(q=>{const s=matchStop(tour,q.stop),k=s?s.name:q.stop;if(!groups.has(k))groups.set(k,{place:null,facts:[]});const g=groups.get(k);if(!g.facts.some(f=>f.text===q.explanation))g.facts.push({text:q.explanation,url:q.sourceUrl});});
+  const t=catalogue.tours.find(x=>x.id===tour);let i=0,h='';
+  if(t&&tour==="22")h+='<div class="rcard" style="border-color:#b98a2e"><p>📒 החומר בתיק הזה הוא חוברת הכנה ואינו מאשר שהסיור בוצע.</p></div>';
+  for(const [name,g] of groups){const p=g.place;if(!(p&&p.he)&&!g.facts.length)continue;i++;
+    h+='<article class="rcard"><div class="num">תחנה '+i+'</div><h3>📍 '+esc(name)+'</h3>'+
+      (p&&p.he?'<p>'+esc(p.he.extract)+'</p><span class="attr">ויקיפדיה: <a href="'+esc(p.he.url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.he.title)+' ↗</a> · CC BY-SA</span>':'')+
+      (g.facts.length?'<div class="facts-k">💡 מתוך חומר הקורס</div><ul>'+g.facts.map(f=>'<li>'+esc(f.text)+' <a style="color:#a6f5e4;font-size:12px" href="'+esc(f.url)+'" target="_blank" rel="noopener noreferrer">מקור ↗</a></li>').join("")+'</ul>':'')+'</article>';}
+  h+='<div class="rcard"><h3>🎮 מוכנים לשאלות?</h3><p><button type="button" class="badge" style="cursor:pointer" data-go-mode="tour">🧭 לסיור המודרך עם שאלות ←</button></p></div>';
+  r.innerHTML=h;r.querySelector("[data-go-mode]").onclick=()=>{mode="tour";index=0;render();window.scrollTo({top:0,behavior:"smooth"});};
+}
+function endScreen(html){$("quiz").innerHTML=html;$("story").hidden=true;$("stepbar").hidden=true;$("actions").hidden=true;window.scrollTo({top:0,behavior:"smooth"});}
+function finishDaily(right){
+  const P=window.MDProgress,first=P?P.dailyResult():null,res=P?P.saveDaily(right,items.length):{right,total:items.length};
+  const grid=items.map(q=>currentAnswer(q)===q.options[q.correct]?"🟩":"🟥").join(""),streak=P?P.dailyStreak():1;
+  const msg=right===items.length?"🏆 מושלם!":right>=4?"🎉 מצוין!":right>=3?"👏 יפה!":"💪 מחר עוד ניסיון!";
+  const share="☀️ אתגר מורה דרך — "+(P?P.today():"")+"\n"+grid+" "+res.right+"/"+res.total+"\n🔥 "+streak+" ימים ברצף";
+  endScreen('<section class="done"><div style="font-size:55px">☀️</div><h2>'+msg+'</h2><div style="font-size:30px;letter-spacing:4px;margin:6px 0">'+grid+'</div><strong>'+right+' / '+items.length+'</strong>'+
+    (first?'<p>זה היה תרגול — התוצאה של היום נשמרה כבר: '+first.right+'/'+first.total+'</p>':'<p>התוצאה של היום נשמרה.</p>')+
+    '<div class="badge">🔥 '+streak+' '+(streak===1?"יום":"ימים")+' ברצף של אתגרים</div><p style="font-size:14px">אתגר חדש מחכה מחר.</p>'+
+    '<div class="again"><button type="button" id="shareDaily">📤 שיתוף בקבוצה</button><a href="journey.html">📈 המסע שלי</a><button type="button" id="redo">↺ תרגול חוזר</button></div></section>');
+  $("shareDaily").onclick=async()=>{try{if(navigator.share){await navigator.share({text:share+"\n"+location.origin+location.pathname+"?mode=daily"});return;}}catch(e){if(e&&e.name==="AbortError")return;}
+    try{await navigator.clipboard.writeText(share);$("shareDaily").textContent="✅ הועתק — הדביקו בוואטסאפ";}catch(e){location.href="https://wa.me/?text="+encodeURIComponent(share);}};
+  $("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};
+}
+function finishReview(right){
+  const left=window.MDProgress?MDProgress.mistakes().length:0;
+  endScreen('<section class="done"><div style="font-size:55px">'+(right===items.length?"🎯":"🔁")+'</div><h2>'+(right===items.length?"כל הטעויות תוקנו!":"סבב תיקונים הסתיים")+'</h2><strong>'+right+' / '+items.length+'</strong><p>תוקנו בסבב הזה</p>'+
+    (left?'<div class="badge">נשארו '+left+' טעויות לתיקון</div>':'<div class="badge">🎉 אין יותר טעויות פתוחות</div>')+
+    '<div class="again">'+(left?'<button type="button" id="again">🔁 עוד סבב</button>':'')+'<a href="journey.html">📈 המסע שלי</a><a href="map.html?mode=quiz">🗺️ שאלות חדשות</a></div></section>');
+  if(left)$("again").onclick=()=>{enterSpecial=true;render();};
+}
+function goNext(){if(index>=items.length-1){finish();return;}index++;render();document.querySelector(mode==="tour"?"#story":"#quiz").scrollIntoView({block:"nearest"});}
+function finish(){const right=items.filter(q=>currentAnswer(q)===q.options[q.correct]).length;const done=items.filter(q=>currentAnswer(q)!==null).length;
+  if(mode==="daily"){finishDaily(right);return;}if(mode==="review"){finishReview(right);return;}
+  const missed=items.filter(q=>currentAnswer(q)!==null&&currentAnswer(q)!==q.options[q.correct]).length;
+  let badge="";if(tour!=="all"&&items.length>=3&&right===items.length){badge='<div class="badge">🏅 תג מושלם — '+esc(tourTitle(tour))+' · '+LV[level]+'</div>';try{const b=JSON.parse(localStorage.getItem("mdl_next_badges")||"{}");b[tour+"-"+level]=new Date().toISOString().slice(0,10);localStorage.setItem("mdl_next_badges",JSON.stringify(b));}catch(e){}}
+  const other=[1,2,3].filter(l=>l!==level&&(tour==="all"?stats.byLevel[l]:(stats.byTour[tour]||{})[l]));
+  $("quiz").innerHTML='<section class="done"><div style="font-size:55px">🏆</div><h2>סיימנו את המסלול!</h2><strong>'+right+' / '+items.length+'</strong><p>תשובות נכונות · '+done+' שאלות נענו</p>'+badge+(tour!=="all"&&window.MDProgress?'<p class="stars-line">'+(MDProgress.star(tour,level)?'⭐ קיבלתם כוכב על הרמה הזו!':'⭐ כוכב מקבלים כשעונים נכון על 60% ומעלה — נסו שוב!')+' · בסיור הזה: <b>'+MDProgress.starText(MDProgress.stars(tour))+'</b></p>':'')+'<div class="again">'+(missed?'<a href="guided-tour.html?mode=review'+(tour!=="all"?'&tour='+esc(tour):'')+'">🔁 לתקן '+missed+' טעויות</a>':'')+'<a href="journey.html">📈 המסע שלי</a><a href="class.html">🏆 טבלת הכיתה</a><button type="button" id="redo">↺ משחק חדש</button>'+other.map(l=>'<button type="button" data-relevel="'+l+'">'+LV[l]+'</button>').join("")+'<a href="'+esc($("mapLink").href)+'">🗺️ חזרה למפה</a></div></section>';
+  $("story").hidden=true;$("stepbar").hidden=true;$("actions").hidden=true;
+  $("redo").onclick=()=>{items.forEach(q=>delete answers[q.id]);index=0;render();};
+  $("quiz").querySelectorAll("[data-relevel]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.relevel);index=0;render();});}
+document.querySelectorAll("[data-level]").forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);index=0;if(mode==="review"||mode==="daily"){mode="quiz";special=null;}collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;index=0;special=null;collapsed=true;render();window.scrollTo({top:0,behavior:"smooth"});});
+$("setupBar").addEventListener("click",()=>{setCollapsed(false);window.scrollTo({top:0,behavior:"smooth"});});
+$("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
+Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalog.json"),MDTours.getJSON("places.json").catch(()=>null)]).then(([j,c,p])=>{
+  if(!Array.isArray(j.questions)||!Array.isArray(c.tours))throw Error("Invalid data");
+  data=j;catalogue=c;places=p;stats=MDTours.counts(j.questions);
+  if(!["all",...c.tours.map(t=>t.id),...(stats.byTour.road67?["road67"]:[])].includes(tour))tour="all";render();
+}).catch(e=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";console.error(e);});
+})();
+</script><script src="config.js"></script>
+<script src="progress.js"></script>
+<script src="feedback.js" data-float="0"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body></html>

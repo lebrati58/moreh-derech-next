@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b4a6b">
+<meta name="robots" content="noindex, nofollow">
+<title>מסלול חדש אוטומטי — מורה דרך LIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap&subset=hebrew" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="next-theme.css">
+<link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner"><div class="brand"><a class="brand-home" href="index.html" aria-label="Moreh Derech NEXT"><img class="brand-mark" src="assets/moreh-derech-next-driver.webp" alt="" width="44" height="44" decoding="async"></a><span>✨ מסלול חדש אוטומטי</span></div>
+    <a class="chip" href="admin.html" style="text-decoration:none">→ מנהל המשחק</a></div>
+  <svg class="land" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 L40 14 L70 24 L110 6 L150 22 L190 12 L230 26 L260 16 L300 28 L340 18 L400 30 V46 H0Z" fill="#3f6b35" opacity=".9"/>
+    <path d="M0 36 Q100 28 200 36 T400 34 V46 H0Z" fill="#f7f1e5"/>
+  </svg>
+</header>
+<main id="app"></main>
+<div id="toast" class="toast hidden"></div>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script src="gps-engine.js"></script>
+<script src="auto-engine.js"></script>
+<script src="doc-reader.js"></script>
+<script>
+// Création d'un parcours V4 : départ + arrivée → questions générées (OpenStreetMap, Wikipédia, Wikidata)
+// → relecture par le guide → enregistrement (nouvelle banque) → nouvelle partie.
+(function () {
+  const { rpc, esc, store } = window.MDL;
+  const G = window.MDL_GPS, A = window.MDL_AUTO;
+  const app = document.getElementById('app');
+  const token = store.get('mdl_admin');
+  const toast = t => { const el = document.getElementById('toast'); el.textContent = t; el.classList.remove('hidden'); clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.add('hidden'), 3500); };
+  const STEPS = [['geocode', '📍 מאתרים את נקודות ההתחלה והסיום'], ['route', '🛣️ מחשבים את המסלול'], ['places', '🔎 מחפשים מקומות לאורך הדרך'],
+    ['facts', '📚 אוספים עובדות (ויקינתונים)'], ['texts', '🎤 מכינים טקסטים למיקרופון (ויקיפדיה)'], ['build', '❓ בונים את השאלות']];
+  let res = null, keep = new Set(), busy = false, solo = false, docFile = null;
+  const form = store.get('mdl_v4_form') || { from: '', to: '' };
+
+  if (!token) {
+    app.innerHTML = `<div class="card center"><h2>צריך להיכנס קודם</h2><p>כדי לשמור מסלול, נכנסים קודם למסך המנהל.</p>
+      <a class="btn sun" href="admin.html" style="text-decoration:none;display:block">כניסה למנהל המשחק</a></div>`;
+    return;
+  }
+
+  function renderForm(stepsDone, err) {
+    app.innerHTML = `<form class="card" id="cf" autocomplete="off">
+        <h2>רק נקודת התחלה ונקודת סיום</h2>
+        <p class="small muted">המערכת מוצאת לבד את המקומות לאורך הדרך ובונה שאלות מעובדות של ויקיפדיה וויקינתונים — בלי מסמך, בחינם. אחר כך עוברים על השאלות ומוחקים מה שלא מתאים.</p>
+        <label for="from">🚩 נקודת התחלה</label>
+        <div class="row" style="flex-wrap:nowrap"><input type="text" id="from" required placeholder="למשל: זכרון יעקב" value="${esc(form.from)}">
+          <button type="button" class="btn ghost small" id="here" style="flex:none;width:auto" title="המיקום שלי">📍</button></div>
+        <label for="to">🏁 נקודת סיום</label>
+        <input type="text" id="to" required placeholder="למשל: יקנעם עילית" value="${esc(form.to)}">
+        <label for="doc">📄 מסמך הדרכה (לא חובה)</label>
+        <input type="file" id="doc" accept=".docx,.pdf,.txt">
+        <p class="small muted" style="margin:4px 0 0">${esc(docFile ? '✔ ' + docFile.name : 'Word, PDF או טקסט — המקומות שמופיעים בו יקבלו את המשפטים שלכם לתסריט, ושנים יהפכו לשאלות.')}</p>
+        <button class="btn sun" style="margin-top:14px;font-size:20px" ${busy ? 'disabled' : ''}>✨ ליצור את השאלות</button>
+      </form>
+      ${stepsDone ? `<div class="card"><ul class="steps">${STEPS.map(([k, t]) => `<li class="${stepsDone.includes(k) ? (stepsDone[stepsDone.length - 1] === k && busy ? 'cur' : 'done') : ''}">${t}</li>`).join('')}</ul></div>` : ''}
+      ${err ? `<div class="card navstat bad">${err}</div>` : ''}`;
+    document.getElementById('doc').onchange = e => {
+      docFile = e.target.files[0] || null;
+      form.from = document.getElementById('from').value; form.to = document.getElementById('to').value;   // ne pas perdre la saisie
+      renderForm(stepsDone, err);
+    };
+    document.getElementById('cf').onsubmit = e => { e.preventDefault(); go(); };
+    document.getElementById('here').onclick = () => {
+      if (!navigator.geolocation) return toast('אין GPS בדפדפן הזה');
+      navigator.geolocation.getCurrentPosition(p => { document.getElementById('from').value = p.coords.latitude.toFixed(5) + ', ' + p.coords.longitude.toFixed(5); },
+        () => toast('לא קיבלנו מיקום — אפשר להקליד שם'), { enableHighAccuracy: true, timeout: 15000 });
+    };
+  }
+
+  function errText(e) {
+    const m = String(e && e.message || e);
+    if (/^not_found:/.test(m)) return `לא מצאנו את ״${esc(m.slice(10))}״ במפה. נסו שם מלא יותר (למשל עם שם העיר) או קואורדינטות.`;
+    if (/no_route/.test(m)) return 'לא נמצא מסלול נסיעה בין שתי הנקודות.';
+    return 'אחד השירותים החיצוניים (מפה / ויקיפדיה) לא ענה. בדקו את החיבור ונסו שוב בעוד רגע.';
+  }
+
+  async function go() {
+    if (busy) return;
+    form.from = document.getElementById('from').value.trim(); form.to = document.getElementById('to').value.trim();
+    if (!form.from || !form.to) return;
+    store.set('mdl_v4_form', form);
+    busy = true; const done = [];
+    renderForm(done);
+    try {
+      res = await A.generate({ G, from: form.from, to: form.to }, k => { if (!done.includes(k)) done.push(k); renderForm(done); });
+      if (docFile && res.questions.length) {
+        try { A.applyDoc(res, await window.MDL_DOC.readFile(docFile, '')); } catch { toast('לא הצלחנו לקרוא את המסמך (Word ‎.docx, PDF או טקסט) — ממשיכים בלעדיו.'); }
+      }
+      busy = false;
+      if (!res.questions.length) return renderForm(done, 'לא נמצאו מספיק מקומות עם עובדות לאורך המסלול. נסו מסלול אחר או ארוך יותר.');
+      keep = new Set(res.questions.map(q => q.key));
+      renderReview();
+    } catch (e) { busy = false; renderForm(done, errText(e)); }
+  }
+
+  // petite carte : le tracé et les lieux numérotés
+  function mapSvg() {
+    const pts = res.route.geometry, W = 360, H = 200, pad = 16;
+    const P = G.prepare(res.route);
+    const xs = P.pts.map(p => p.x), ys = P.pts.map(p => p.y);
+    const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+    const k = Math.min((W - 2 * pad) / (maxX - minX || 1), (H - 2 * pad) / (maxY - minY || 1));
+    const X = x => pad + (x - minX) * k, Y = y => H - pad - (y - minY) * k;
+    const line = P.pts.map(p => X(p.x).toFixed(1) + ',' + Y(p.y).toFixed(1)).join(' ');
+    const dots = res.route.stops.map((st, i) => { const p = P.proj.fwd(st.anchor[0], st.anchor[1]), on = keep.has(st.id);
+      return `<circle cx="${X(p.x).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="5" fill="${on ? '#0b4a6b' : '#bbb'}"/><text x="${X(p.x).toFixed(1)}" y="${(Y(p.y) - 8).toFixed(1)}" font-size="11" font-weight="700" text-anchor="middle" fill="${on ? '#0b4a6b' : '#999'}">${i + 1}</text>`; }).join('');
+    return `<svg class="routemap" viewBox="0 0 ${W} ${H}"><polyline points="${line}" fill="none" stroke="#0b4a6b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${dots}</svg>`;
+  }
+
+  function renderReview() {
+    const r = res.route, qs = res.questions;
+    const KIND = { named: 'על שם מי', year: 'שנת ייסוד', pop: 'מספר תושבים', type: 'מה זה', doc: '📄 מהמסמך' };
+    app.innerHTML = `<div class="card"><h2>${esc(r.title.he)}</h2>
+        ${res.stats.docMatched != null ? `<p class="small" style="font-weight:700">📄 מהמסמך: ${res.stats.docMatched} מקומות · ${res.stats.docQuestions} שאלות</p>` : ''}
+        <p class="small">${(r.lengthM / 1000).toFixed(1)} ק״מ · כ-${Math.round(r.durationSec / 60)} דק׳ נסיעה · נמצאו ${res.stats.places} מקומות, נבחרו <b>${qs.length}</b> שאלות</p>
+        ${mapSvg()}
+        <p class="small muted">עברו על השאלות ובטלו את הסימון של מה שלא מתאים. הכול מבוסס על ויקיפדיה וויקינתונים — כדאי לבדוק בעין.</p></div>
+      ${qs.map((q, i) => { const st = r.stops.find(s => s.id === q.key), on = keep.has(q.key);
+        return `<div class="card rq ${on ? '' : 'off'}">
+          <label class="optrow" style="font-weight:800;align-items:center"><input type="checkbox" data-k="${q.key}" ${on ? 'checked' : ''} style="width:24px;height:24px;flex:none">
+            <span>${i + 1} · ${esc(st.name.he)} <small class="muted">· ${KIND[q.kind]} · ${st.offRoadM < 60 ? 'על הכביש' : (st.offRoadM >= 1000 ? (st.offRoadM / 1000).toFixed(1) + ' ק״מ' : st.offRoadM + ' מ׳') + (st.side.value ? (st.side.value === 'left' ? ' משמאל' : ' מימין') : '')}</small></span></label>
+          <div class="question-text" style="font-size:19px;margin:8px 0">${esc(q.text)}</div>
+          <ul class="small" style="margin:0 0 8px;padding-inline-start:18px">${q.options.map((o, j) => `<li ${j === q.correct_index ? 'style="color:var(--ok);font-weight:800"' : ''}>${esc(o)}${j === q.correct_index ? ' ✔' : ''}</li>`).join('')}</ul>
+          ${q.guide_i18n.he.script ? `<div class="small">🎤 ${esc(q.guide_i18n.he.script)}</div>` : '<div class="small muted">🎤 אין טקסט בוויקיפדיה למקום הזה</div>'}
+          ${q.guide_sources.map(s => `<a class="small" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}
+        </div>`; }).join('')}
+      <div class="card"><label class="optrow" style="align-items:flex-start"><input type="checkbox" id="solo" ${solo ? 'checked' : ''} style="width:24px;height:24px;flex:none">
+        <span><b>🚗 גם משחק עצמאי</b><br><small class="muted">כל מי שיש לו את הקישור יוכל לשחק לבד עם ה-GPS שלו, בלי מדריך. (הקישור חושף את השאלות והתשובות — לא לשלוח אותו לפני משחק עם מדריך.)</small></span></label></div>
+      <div class="card" style="position:sticky;bottom:8px">
+        <button class="btn sun" id="save" style="font-size:20px" ${keep.size ? '' : 'disabled'}>💾 לשמור ${keep.size} שאלות וליצור משחק חדש</button>
+        <button class="btn ghost small" id="again" style="margin-top:8px">↩️ מסלול אחר</button></div>`;
+    app.querySelectorAll('input[data-k]').forEach(cb => cb.onchange = () => { if (cb.checked) keep.add(cb.dataset.k); else keep.delete(cb.dataset.k); renderReview(); });
+    document.getElementById('solo').onchange = e => { solo = e.target.checked; };
+    document.getElementById('again').onclick = () => { res = null; renderForm(); };
+    document.getElementById('save').onclick = save;
+  }
+
+  async function save() {
+    if (busy || !keep.size) return;
+    busy = true;
+    const btn = document.getElementById('save'); btn.disabled = true; btn.textContent = 'שומרים…';
+    const qs = res.questions.filter(q => keep.has(q.key));
+    const route = Object.assign({}, res.route, { stops: res.route.stops.filter(s => keep.has(s.id)) });
+    const title = res.route.title;
+    try {
+      const r = await rpc('admin_import_route', { p_token: token, p_label: title, p_route: route, p_questions: qs }, { timeout: 20000 });
+      if (!r || r.error) throw new Error(r && r.error || 'save');
+      const g = await rpc('admin_new_game', { p_token: token, p_title: title.he, p_bank: r.code }, { timeout: 10000 });
+      if (!g || g.error) throw new Error(g && g.error || 'game');
+      toast('נשמר ✔ משחק חדש נוצר');
+      if (!solo) { setTimeout(() => { location.href = 'admin.html'; }, 600); return; }
+      await rpc('admin_set_solo', { p_token: token, p_bank: r.code, p_on: true });
+      const link = new URL('solo.html?r=' + r.code, location.href).href;
+      const msg = `🚗 *${title.he}* — משחק עצמאי של מורה דרך LIVE\nפותחים את הקישור, לוחצים ״יוצאים לדרך״ — והשאלות קופצות לבד לפי ה-GPS 👀\n⚠️ רק לנוסעים, לא לנהג/ת!\n${link}`;
+      app.innerHTML = `<div class="card center"><h2>✔ נשמר</h2>
+          <p>קישור למשחק העצמאי:</p><p style="direction:ltr;font-weight:800;word-break:break-all" id="solol">${esc(link)}</p>
+          <a class="btn ok" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(msg)}" style="display:block;text-decoration:none">💬 לשלוח בוואטסאפ</a>
+          <a class="btn ghost small" href="${esc(link)}" target="_blank" rel="noopener" style="display:block;text-decoration:none;margin-top:8px">🚗 לנסות בעצמי</a>
+          <a class="btn sun small" href="admin.html" style="display:block;text-decoration:none;margin-top:8px">→ למשחק עם מדריך (מנהל המשחק)</a></div>`;
+    } catch (e) {
+      busy = false; btn.disabled = false; btn.textContent = `💾 לשמור ${keep.size} שאלות וליצור משחק חדש`;
+      toast(/not_authorized/.test(String(e && e.message)) ? 'פג תוקף הכניסה — היכנסו שוב למנהל המשחק' : 'השמירה נכשלה — ' + (e && e.message || ''));
+    }
+  }
+
+  renderForm();
+})();
+</script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body>
+</html>

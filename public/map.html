@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#081027">
+<title>מפת הסיורים | MOREH DERECH NEXT</title>
+<meta name="description" content="מפת ישראל האינטראקטיבית של 22 הסיורים — בוחרים מקום, רמה ומשחקים.">
+<link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="vendor/leaflet/MarkerCluster.css">
+<style>
+:root{color-scheme:dark;--bg:#081027;--panel:#111a3d;--panel-2:#1a2553;--line:#3f5290;--ink:#f4f6ff;--muted:#a9b8df;--gold:#ffd66e;--gold-d:#b98a2e;--teal:#6ff0d4;--teal-d:#25a58e;--violet:#8f7bff;--danger:#ff8e8e;
+  --r-galil:#6ff0d4;--r-valleys:#9be35f;--r-coast:#5fb8ff;--r-jerusalem:#ffd66e;--r-center:#ff9f6b;--r-south:#f39cff;--r-road:#ffffff;
+  --safe-b:env(safe-area-inset-bottom,0px);--top-h:0px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;overflow:hidden;overscroll-behavior:none}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- top bar ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:1100;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px;background:linear-gradient(180deg,#081027 0%,#081027f2 70%,#08102700);pointer-events:none}
+.top>*{pointer-events:auto}
+.cta-row{display:flex;gap:7px;margin-top:8px}.cta-row a{flex:1;min-width:0;text-align:center;text-decoration:none;font-weight:900;font-size:12.5px;border-radius:11px;padding:7px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cta-add{color:#111d45;background:#ffd878}.cta-lib{color:#a4ffe8;background:#163b61;border:1px solid #5fcca9}.cta-class{flex:.75!important;color:#2a1300;background:linear-gradient(120deg,#ff9a4d,#ffd878)}
+.row{display:flex;align-items:center;gap:8px}
+.search-row{margin-top:9px}.search-row .search{margin-top:0}
+.more-panel{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px;padding:10px;border-radius:16px;background:#111a3df5;border:1px solid var(--line);box-shadow:0 10px 24px #000a}
+.more-panel a,.more-panel button{display:flex;align-items:center;justify-content:center;min-height:44px;padding:6px 8px;border-radius:12px;border:1px solid var(--line);background:var(--panel-2);font-weight:900;font-size:13.5px;text-decoration:none;text-align:center}
+.more-panel button{grid-column:1/-1}
+.more-panel .cta-add{background:#ffd878;color:#111d45;border-color:#ffe7a1}.more-panel .cta-lib{background:#163b61;color:#a4ffe8;border-color:#5fcca9}.more-panel .cta-class{background:linear-gradient(120deg,#ff9a4d,#ffd878);color:#2a1300;border-color:#ffd8a8}
+.icon-btn[aria-expanded=true]{background:var(--teal);color:#0d2a33;border-color:#fff}
+.filt{position:relative}.filt .on-dot{position:absolute;top:6px;inset-inline-end:6px;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 2px #081027}
+.icon-btn{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:15px;background:var(--panel-2);border:1px solid var(--line);box-shadow:0 3px 0 #040919;text-decoration:none;font-size:20px}
+.brand{flex:none;width:46px;height:46px;border-radius:14px;background:#fff;border:2px solid #ffe7a1;box-shadow:0 3px 0 #040919;overflow:hidden}
+.brand img{width:100%;height:100%;object-fit:contain;display:block}
+.mode-chip{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:46px;padding:0 12px;border-radius:15px;border:1px solid #6d5fd8;background:linear-gradient(120deg,#3a2f99,#25307a);box-shadow:0 3px 0 #040919;font-weight:900;text-align:start}
+.mode-chip .mi{font-size:21px}.mode-chip .ml{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15.5px}
+.seg{flex:none;display:flex;padding:4px;gap:3px;height:46px;border-radius:15px;background:var(--panel-2);border:1px solid var(--line)}
+.seg button{border:0;background:transparent;border-radius:11px;padding:0 10px;font-weight:900;font-size:18px;min-width:40px}
+.seg button[aria-pressed=true]{background:var(--teal);color:#0d2a33;box-shadow:0 3px 0 var(--teal-d)}
+.search{position:relative;flex:1;margin-top:9px}
+.search input{width:100%;height:48px;border-radius:16px;border:1px solid #5868a8;background:#101a40ee;padding:0 44px 0 14px;font-size:16px;font-weight:700;box-shadow:inset 0 2px 0 #00000040}
+.search input::placeholder{color:#8f9fca}
+.search .mag{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);font-size:17px;pointer-events:none}
+.chips{display:flex;gap:7px;margin-top:9px;overflow-x:auto;scrollbar-width:none;padding-bottom:3px;margin-inline:-12px;padding-inline:12px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;align-items:center;gap:6px;height:38px;padding:0 13px;border-radius:30px;border:1px solid var(--line);background:#152150ee;font-size:14px;font-weight:800;white-space:nowrap}
+.chip .dot{width:10px;height:10px;border-radius:50%;background:var(--c,#fff);box-shadow:0 0 0 2px #0006}
+.chip[aria-pressed=true]{background:var(--ink);color:#141c45;border-color:#fff}
+.chip select{appearance:none;-webkit-appearance:none;border:0;background:transparent;font-weight:800;font-size:14px;padding:0;max-width:170px}
+.chip select option{color:#111;background:#fff}
+
+/* ---------- map ---------- */
+#map{position:fixed;inset:0;z-index:1;background:#0b1433}
+.leaflet-container{font-family:inherit;background:#0b1433}
+.osm-dark{filter:invert(1) hue-rotate(200deg) brightness(.95) contrast(.9) saturate(.6)}
+.leaflet-control-attribution{font-size:10px;background:#0b1433cc!important;color:#c0cbea}
+.leaflet-control-attribution a{color:#9fe9da}
+.leaflet-bottom{bottom:var(--sheet-gap,0px);transition:bottom .25s}
+.pin{--c:#fff;width:38px;height:38px;border-radius:50% 50% 50% 8px;transform:rotate(-45deg);background:radial-gradient(circle at 35% 30%,#ffffff70,transparent 45%),var(--c);border:3px solid #0a1230;box-shadow:0 4px 0 #050a1f,0 0 0 2px #ffffff55;display:grid;place-items:center;transition:transform .15s,opacity .2s,filter .2s}
+.pin span{transform:rotate(45deg);font-weight:1000;font-size:13px;color:#0a1435;letter-spacing:-.5px}
+.pin.dim{opacity:.33;filter:saturate(.4)}
+.pinwrap{position:relative;width:38px;height:38px}
+.tstars{font-style:normal;color:#ffd878;letter-spacing:1px;font-size:.85em}.lvl.got{border-color:#ffd878!important}
+.pin.gold{box-shadow:0 4px 0 #050a1f,0 0 0 3px #fff3b8,0 0 20px #ffd24acc}
+.pin.started{box-shadow:0 4px 0 #050a1f,0 0 0 2px #0a1230,0 0 0 4px #6ee9cf}
+.pbadge{position:absolute;top:-9px;right:-12px;min-width:22px;height:20px;padding:0 5px;border-radius:999px;background:#1b2552;color:#ffd878;border:2px solid #ffd878;font:900 11px/16px system-ui,sans-serif;text-align:center;box-shadow:0 2px 0 #050a1f;pointer-events:none;direction:ltr}
+.cluster.has-gold{box-shadow:0 4px 0 #050a1f,0 0 0 3px #ffd24a,0 0 18px #ffd24aaa}
+.pbadge.g{background:#ffd24a;border-color:#fff3b8;font-size:12px}
+.pin.on{transform:rotate(-45deg) scale(1.22);box-shadow:0 5px 0 #050a1f,0 0 0 3px #fff,0 0 22px var(--c)}
+.pin.stop-on{box-shadow:0 5px 0 #050a1f,0 0 0 4px var(--gold),0 0 26px var(--gold)}
+.cluster{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#ffffff 0 42%,transparent 43%),conic-gradient(var(--teal),var(--violet),var(--gold),var(--teal));box-shadow:0 4px 0 #050a1f,0 0 16px #6ff0d455;color:#141c45;font-weight:1000;font-size:15px}
+.road-label{background:#fff;color:#0d1640;font-weight:1000;font-size:13px;border-radius:9px;padding:3px 8px;border:2px solid #0d1640;box-shadow:0 3px 0 #050a1f;white-space:nowrap}
+.map-fab{position:fixed;z-index:900;inset-inline-start:12px;bottom:calc(var(--sheet-gap,0px) + 16px + var(--safe-b));transition:bottom .25s;width:50px;height:50px;border-radius:16px;border:1px solid var(--line);background:var(--panel-2);box-shadow:0 4px 0 #040919;font-size:22px}
+.count-pill{position:fixed;z-index:900;inset-inline-end:12px;bottom:calc(var(--sheet-gap,0px) + 20px + var(--safe-b));transition:bottom .25s;background:#0d1640e6;border:1px solid var(--line);border-radius:30px;padding:9px 13px;font-size:13px;font-weight:850;color:#dbe4ff}
+
+/* ---------- list view ---------- */
+#list{position:fixed;inset:0;z-index:50;overflow-y:auto;padding:calc(var(--top-h) + 6px) 12px calc(130px + var(--safe-b));background:radial-gradient(ellipse at 100% 0,#33278066,transparent 50%),var(--bg);display:none}
+body.list-view #list{display:block}
+body.list-view .map-fab,body.list-view .count-pill{display:none}
+.cards{display:grid;gap:11px;max-width:760px;margin:auto}
+.tcard{display:flex;gap:13px;align-items:center;text-align:start;width:100%;padding:13px;border-radius:20px;border:1px solid #42559a;background:linear-gradient(140deg,#1d2860,#141d46);box-shadow:0 5px 0 #050b1e}
+.tcard:active{transform:translateY(3px);box-shadow:0 2px 0 #050b1e}
+.tnum{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-weight:1000;font-size:19px;color:#0b1435;background:var(--c,#fff);box-shadow:0 4px 0 #0007;transform:rotate(-4deg)}
+.tbody{flex:1;min-width:0}
+.tbody b{display:block;font-size:17px;line-height:1.3}
+.tbody small{display:block;color:var(--muted);font-size:13px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tq{flex:none;text-align:center;font-size:12px;color:var(--muted);font-weight:800}
+.tq strong{display:block;font-size:21px;color:var(--gold)}
+.empty{text-align:center;color:var(--muted);padding:40px 10px;font-weight:700}
+
+/* ---------- bottom sheet ---------- */
+.scrim{position:fixed;inset:0;z-index:1150;background:#02061599;opacity:0;pointer-events:none;transition:opacity .25s}
+body.sheet-full .scrim{opacity:1;pointer-events:auto}
+.sheet{position:fixed;z-index:1200;inset-inline:0;bottom:0;max-width:640px;margin:auto;max-height:calc(100dvh - 70px);display:flex;flex-direction:column;border-radius:26px 26px 0 0;background:linear-gradient(180deg,#1c2560,#111a40 140px);border:1px solid #5f6fc0;border-bottom:0;box-shadow:0 -12px 40px #000a;transform:translateY(110%);transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.sheet.peek{transform:translateY(calc(100% - var(--peek,250px)))}
+.sheet.full{transform:translateY(0)}
+.sheet.dragging{transition:none}
+.grab{flex:none;padding:10px 0 4px;display:grid;place-items:center;touch-action:none;cursor:grab;border:0;background:transparent;width:100%}
+.grab span{width:46px;height:5px;border-radius:5px;background:#8d9ad0}
+.sheet-head{flex:none;display:flex;gap:12px;align-items:flex-start;padding:4px 16px 12px;touch-action:none}
+.sheet-head .tnum{width:56px;height:56px;font-size:21px}
+.sheet-head h2{margin:0;font-size:21px;line-height:1.25}
+.sheet-head .sub{color:var(--muted);font-size:13px;margin-top:4px;font-weight:700}
+.close{flex:none;width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:#0f1840;font-size:18px;margin-inline-start:auto}
+.sheet-body{overflow-y:auto;padding:0 16px calc(18px + var(--safe-b));overscroll-behavior:contain}
+.cta-zone{position:sticky;top:0;z-index:2;background:linear-gradient(180deg,#19225a 82%,#19225a00);margin:0 -16px;padding:2px 16px 14px}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.lvl{border:2px solid #4a5c9b;background:#1a2758;border-radius:15px;padding:9px 4px 8px;font-weight:950;font-size:15px;line-height:1.2}
+.lvl small{display:block;font-size:11px;color:var(--muted);font-weight:800;margin-top:2px}
+.lvl[aria-pressed=true]{background:var(--gold);color:#262245;border-color:#fff1b5;box-shadow:0 4px 0 var(--gold-d)}
+.lvl[aria-pressed=true] small{color:#5a4a1b}
+.lvl:disabled{opacity:.35;cursor:not-allowed}
+.play{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:10px;min-height:58px;border-radius:18px;border:0;background:linear-gradient(160deg,#ffe48b,#ffbf4d);color:#221d45;font-size:19px;font-weight:1000;text-decoration:none;box-shadow:0 6px 0 var(--gold-d),0 12px 24px #0006}
+.play:active{transform:translateY(4px);box-shadow:0 2px 0 var(--gold-d)}
+.play.alt{background:linear-gradient(160deg,#7ff6dc,#33c7aa);box-shadow:0 6px 0 var(--teal-d)}
+.notice{margin-top:10px;border-radius:14px;padding:11px 13px;font-size:13.5px;line-height:1.55;background:#2a2462;border:1px solid #6e61d6;color:#e4e0ff}
+.notice.warn{background:#3a2b16;border-color:#b98a2e;color:#ffe7b5}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 12px}
+.tag{font-size:12px;font-weight:800;padding:5px 10px;border-radius:20px;background:#ffffff14;border:1px solid #ffffff26}
+.sec-title{font-size:12px;letter-spacing:1.5px;color:#9fb1e6;font-weight:950;margin:16px 0 8px}
+.stops{display:grid;gap:7px}
+.stop{display:flex;align-items:center;gap:10px;width:100%;text-align:start;padding:11px 12px;border-radius:14px;border:1px solid #3d4f8d;background:#162153;font-weight:800;font-size:15px}
+.stop .si{flex:none;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#0d1640;font-size:15px}
+.stop .sn{flex:1;min-width:0}
+.stop .sn small{display:block;color:var(--muted);font-weight:700;font-size:12px;margin-top:2px}
+.stop[aria-expanded=true]{border-color:var(--gold);background:#2a2c5e}
+.stop.off{opacity:.75;cursor:default}
+.story{margin:-2px 0 4px;padding:12px 13px;border-radius:0 0 14px 14px;background:#0f1840;border:1px solid #3d4f8d;border-top:0;font-size:14.5px;line-height:1.7;color:#e3e8ff}
+.story .attr{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.story a{color:var(--teal);font-weight:800}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.links a,.links button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:8px;border-radius:13px;border:1px solid #4a5c9b;background:#16204e;font-size:13.5px;font-weight:850;text-decoration:none;text-align:center}
+.foot{font-size:11.5px;line-height:1.6;color:#8d9cc7;margin-top:16px}
+
+/* ---------- mode picker ---------- */
+.modes{display:grid;gap:9px}
+.mode-opt{display:flex;align-items:center;gap:12px;width:100%;text-align:start;padding:12px;border-radius:16px;border:2px solid #42559a;background:#16204e}
+.mode-opt .mi{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:25px;background:linear-gradient(145deg,#4c3fc4,#2a2f88)}
+.mode-opt b{display:block;font-size:16px}.mode-opt small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px;line-height:1.4}
+.mode-opt[aria-pressed=true]{border-color:var(--teal);background:#183a52}
+
+.loading{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;background:var(--bg);transition:opacity .3s}
+.loading.gone{opacity:0;pointer-events:none}
+.loading div{text-align:center;font-weight:900;color:#cfd8ff}
+.loading img{width:96px;height:96px;border-radius:24px;background:#fff;animation:bob 1.4s ease-in-out infinite;display:block;margin:0 auto 14px}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-3deg)}}
+@media(min-width:900px){.sheet{inset-inline-start:16px;inset-inline-end:auto;margin:0;width:420px;bottom:16px;border-radius:26px;border-bottom:1px solid #5f6fc0;max-height:calc(100dvh - 190px)}.sheet.peek{transform:translateY(calc(100% + 16px - var(--peek,250px)))}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+.j3d-sign{display:flex;align-items:center;justify-content:center;width:34px;height:20px;border-radius:999px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:1.5px solid #fff6c9;box-shadow:0 2px 6px #0008;font-family:inherit;opacity:.95}
+.j3d-sign b{color:#1c1f45!important;font-size:11px;font-weight:900;line-height:1}
+</style>
+</head>
+<body>
+<div class="loading" id="loading"><div><img src="assets/moreh-derech-next-driver.webp" alt="">טוען את מפת ישראל…</div></div>
+
+<header class="top" id="top">
+  <div class="row">
+    <a class="icon-btn" href="index.html" aria-label="חזרה לבחירת מצב" title="חזרה">→</a>
+    <button type="button" class="mode-chip" id="modeChip" aria-haspopup="dialog" aria-label="מצב משחק"><span class="mi" id="modeIcon">🧭</span><span class="ml" id="modeLabel">סיור מודרך</span><span aria-hidden="true">▾</span></button>
+    <button type="button" class="icon-btn" id="moreBtn" aria-expanded="false" aria-controls="morePanel" aria-label="עוד פעולות" title="עוד">⋯</button>
+    <div class="seg" role="group" aria-label="תצוגה">
+      <button type="button" data-view="map" aria-pressed="true" aria-label="מפה" title="מפה">🗺️</button>
+      <button type="button" data-view="list" aria-pressed="false" aria-label="רשימה" title="רשימה">📋</button>
+    </div>
+  </div>
+  <nav class="more-panel" id="morePanel" hidden aria-label="עוד פעולות">
+    <a class="cta-add" href="contribute.html">➕ הוספת מסמך/מסלול</a>
+    <a href="community.html">🛣️ קטע דרך חדש</a>
+    <a class="cta-lib" href="community-library.html">🌍 קטעי הקהילה</a>
+    <a class="cta-class" href="class.html">🏆 תחרות הכיתה</a>
+    <button type="button" data-feedback>💡 רעיון, בעיה או טעות?</button>
+  </nav>
+  <div class="row search-row">
+    <div class="search"><label class="sr" for="q">חיפוש</label><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="חפשו אתר, סיור או מספר…"><span class="mag" aria-hidden="true">🔎</span></div>
+    <button type="button" class="icon-btn filt" id="filtBtn" aria-expanded="false" aria-controls="chips" aria-label="סינון לפי אזור ונושא" title="סינון">🎚️<b class="on-dot" hidden></b></button>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="סינון" hidden></div>
+</header>
+
+<div id="map" role="application" aria-label="מפת ישראל עם אתרי הסיורים" dir="ltr"></div>
+<section id="list" aria-label="רשימת הסיורים"><div class="cards" id="cards"></div></section>
+<button type="button" class="map-fab" id="fit" aria-label="כל הארץ" title="כל הארץ">🇮🇱</button>
+<div class="count-pill" id="countPill" aria-live="polite"></div>
+
+<div class="scrim" id="scrim"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="false" aria-labelledby="sheetTitle">
+  <button type="button" class="grab" id="grab" aria-label="הרחבה או כיווץ"><span></span></button>
+  <div class="sheet-head" id="sheetHead"></div>
+  <div class="sheet-body" id="sheetBody"></div>
+</section>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/leaflet/leaflet.markercluster.js"></script>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script src="community.js"></script>
+<script src="tour-data.js"></script>
+<script src="progress.js"></script>
+<script type="module" src="israel-timeline.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id);};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+var store={get:function(k){try{return localStorage.getItem(k);}catch(e){return null;}},set:function(k,v){try{localStorage.setItem(k,v);}catch(e){}}};
+
+/* ----- modes : ce que la carte prépare pour chaque mode choisi à l'accueil ----- */
+var MODES={
+  guided:{icon:'🧭',label:'סיור מודרך',desc:'תחנה אחר תחנה: הסבר, שאלה ומשוב. בלי מיקרופון.',levels:true},
+  quiz:{icon:'🎮',label:'תרגול שאלות',desc:'רק השאלות של הסיור, ברמה שבחרתם, עם ניקוד.',levels:true},
+  stories:{icon:'📖',label:'סיפורי דרך',desc:'קוראים על האתרים — בלי שאלות, ציון או שעון.',levels:false},
+  solo:{icon:'🚗',label:'משחק עצמאי (GPS)',desc:'שאלות שנפתחות לפי המיקום לאורך הנסיעה.',levels:false},
+  guide:{icon:'🎤',label:'מדריך LIVE',desc:'מכינים את הסיור ומפרסמים שאלות לתלמידים ידנית.',levels:false},
+  sim:{icon:'🧪',label:'סימולציה',desc:'בודקים מסלול ושאלות בלי לשלוח כלום לתלמידים.',levels:false}
+};
+var params=new URLSearchParams(location.search);
+var mode=params.get('mode');if(!MODES[mode])mode=store.get('mdl_map_mode');if(!MODES[mode])mode='guided';
+var level=Number(store.get('mdl_map_level'))||1;if([1,2,3].indexOf(level)<0)level=1;
+var LEVELS=[{n:1,icon:'🌱',label:'קל'},{n:2,icon:'⭐',label:'בינוני'},{n:3,icon:'🔥',label:'קשה'}];
+
+var catalog,places,counts,road,tours=[],filter={q:'',region:'all',theme:'all'},current=null,openStop=null,map,cluster,focusLayer,markers=[],roadLayer=null;
+
+function regionColor(r){return 'var(--r-'+(r||'road')+')';}
+function norm(s){return String(s||'').toLowerCase().replace(/[֑-ׇ'"״׳\-–—,.]/g,'').replace(/\s+/g,' ').trim();}
+
+/* ----- données ----- */
+Promise.all([MDTours.getJSON('siyurim-catalog.json'),MDTours.getJSON('places.json'),MDTours.getJSON('guided-quiz.json'),MDTours.getJSON('tour-catalog.json').catch(function(){return null;}),MDTours.getJSON('v3/road67-route.json').catch(function(){return null;}),MDCommunity.list().catch(function(){return {routes:[],documents:[]};})])
+.then(function(r){
+  catalog=r[0];places=r[1];counts=MDTours.counts(r[2].questions);road=r[4];
+  var docs={};(r[3]&&r[3].tours||[]).forEach(function(t){docs[String(t.number).padStart(2,'0')]=t;});
+  tours=catalog.tours.map(function(t){
+    var p=places.tours[t.id]||{stops:[]};
+    return {id:t.id,title:t.title,date:t.date,status:t.status,folderUrl:t.folderUrl,sourceUrl:t.sourceUrl,prep:t.id==='22'||/הכנה/.test(t.status||''),
+      region:p.region,themes:p.themes||[],stops:p.stops,placed:p.stops.filter(function(s){return s.placed;}),docs:docs[t.id]?docs[t.id].directDocuments:null,
+      counts:counts.byTour[t.id]||{1:0,2:0,3:0,total:0},
+      search:norm(t.id+' '+Number(t.id)+' '+t.title+' '+p.stops.map(function(s){return s.name+' '+(s.wiki?s.wiki.title:'');}).join(' '))};
+  });
+  if(road)tours.push({id:'road67',road:true,title:'מסלול 67 — זכרון יעקב ← יקנעם',region:'coast',themes:['zionism','nature'],
+    stops:road.stops.map(function(s){return {name:s.name.he,placed:false,approx:true};}),placed:[],counts:counts.byTour.road67||{1:0,2:0,3:0,total:0},
+    search:norm('67 road67 כביש מסלול זכרון יעקב יקנעם ואדי מילק '+road.stops.map(function(s){return s.name.he;}).join(' '))});
+  mergeCommunity(r[5]);
+  buildChips();syncTop();initMap();render();renderMode();
+  setInterval(function(){MDCommunity.list().then(function(x){mergeCommunity(x);render(false);if(current){current=find(current.id);if(current)renderSheet();}}).catch(function(){});},60000);
+  var want=MDTours.normalizeTourParam(params.get('tour')||(location.hash.match(/t=([\w]+)/)||[])[1]);
+  if(want&&want!=='all'&&find(want))openTour(want,{replace:true});
+  $('loading').classList.add('gone');
+})
+.catch(function(e){$('loading').innerHTML='<div>⚠️ לא ניתן לטעון את המפה.<br><small>בדקו את החיבור לאינטרנט ונסו שוב.</small><br><br><a class="icon-btn" style="display:inline-grid;width:auto;padding:0 16px" href="index.html">→ חזרה</a></div>';console.error(e);});
+
+function mergeCommunity(data){
+  data=data||{documents:[],routes:[]};
+  var docsBy={};(data.documents||[]).forEach(function(d){(docsBy[d.tour_id]||(docsBy[d.tour_id]=[])).push(d);});
+  tours=tours.filter(function(t){return !t.community;});
+  tours.forEach(function(t){t.communityDocs=docsBy[t.id]||[];});
+  (data.routes||[]).forEach(function(r){
+    var name=r.place_name||r.title;
+    var valid=Number.isFinite(Number(r.lat))&&Number.isFinite(Number(r.lon));
+    var loc=valid?{name:name,lat:Number(r.lat),lon:Number(r.lon),placed:true,he:{
+      title:name,extract:'נקודת ייחוס שסיפק המשתתף (לא מסלול GPS מדויק).',
+      url:'https://www.openstreetmap.org/?mlat='+encodeURIComponent(r.lat)+'&mlon='+encodeURIComponent(r.lon)
+    }}:{name:name,placed:false};
+    tours.push({id:r.id,community:true,title:r.title,region:'center',themes:[],stops:[loc],placed:valid?[loc]:[],
+      communityDocs:docsBy[r.id]||[],counts:{1:0,2:0,3:0,total:0},search:norm(r.title+' '+name+' '+(docsBy[r.id]||[]).map(function(d){return d.title;}).join(' '))});
+  });
+}
+function find(id){for(var i=0;i<tours.length;i++)if(tours[i].id===id)return tours[i];return null;}
+
+/* ----- filtres ----- */
+function buildChips(){
+  var h='<label class="chip"><span aria-hidden="true">🎨</span><span class="sr">נושא</span><select id="theme"><option value="all">כל הנושאים</option>'+Object.keys(places.themes).map(function(k){return '<option value="'+k+'">'+esc(places.themes[k])+'</option>';}).join('')+'</select></label>';
+  h+='<button type="button" class="chip" data-region="all" aria-pressed="true">✨ כל הארץ</button>';
+  Object.keys(places.regions).forEach(function(k){h+='<button type="button" class="chip" data-region="'+k+'" aria-pressed="false" style="--c:'+regionColor(k)+'"><span class="dot"></span>'+esc(places.regions[k])+'</button>';});
+  $('chips').innerHTML=h;
+  $('chips').addEventListener('click',function(e){var b=e.target.closest('[data-region]');if(!b)return;filter.region=b.dataset.region;
+    $('chips').querySelectorAll('[data-region]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});filterDot();render(true);});
+  $('theme').addEventListener('change',function(e){filter.theme=e.target.value;filterDot();render(true);});
+  var t;$('q').addEventListener('input',function(e){clearTimeout(t);t=setTimeout(function(){filter.q=norm(e.target.value);render(true);},120);});
+  $('q').addEventListener('keydown',function(e){if(e.key==='Enter'){var v=visible();if(v.length===1){$('q').blur();openTour(v[0].id);}else $('q').blur();}});
+}
+/* menu « ⋯ » et filtres repliables : l'en-tête tient sur deux rangées */
+function toggle(btn,panel,open){open=open==null?panel.hidden:open;panel.hidden=!open;btn.setAttribute('aria-expanded',String(open));syncTop&&syncTop();}
+$('moreBtn').addEventListener('click',function(){toggle($('moreBtn'),$('morePanel'));if(!$('morePanel').hidden)toggle($('filtBtn'),$('chips'),false);});
+$('filtBtn').addEventListener('click',function(){toggle($('filtBtn'),$('chips'));if(!$('chips').hidden)toggle($('moreBtn'),$('morePanel'),false);});
+document.addEventListener('click',function(e){if(!$('morePanel').hidden&&!e.target.closest('#morePanel,#moreBtn'))toggle($('moreBtn'),$('morePanel'),false);});
+function filterDot(){$('filtBtn').querySelector('.on-dot').hidden=filter.region==='all'&&filter.theme==='all';}
+function visible(){return tours.filter(function(t){
+  if(filter.region!=='all'&&t.region!==filter.region)return false;
+  if(filter.theme!=='all'&&t.themes.indexOf(filter.theme)<0)return false;
+  if(filter.q&&t.search.indexOf(filter.q)<0)return false;return true;});}
+
+/* ----- carte ----- */
+var ISRAEL=[[29.45,34.25],[33.35,35.9]];
+// marge haute = hauteur réelle du bandeau, pour que le pays ne soit pas caché dessous
+function viewPad(extra){return Object.assign({paddingTopLeft:[12,($('top').offsetHeight||140)+12],paddingBottomRight:[12,56]},extra||{});}
+function initMap(){
+  map=L.map('map',{zoomControl:false,attributionControl:true,minZoom:5,maxZoom:18,maxBounds:[[24,26],[40,46]],maxBoundsViscosity:0.6,bounceAtZoomLimits:false,tap:true});
+  window.MDMap=map; // pour les tests
+  window.MDOpenTour=function(id){openTour(id);}; // frise du temps (israel-timeline.js)
+  map.fitBounds(ISRAEL,viewPad());
+  // Tuiles OpenStreetMap standard (gratuites, sans clé), assombries en CSS pour le thème nuit.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,className:'osm-dark',attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>'}).addTo(map);
+  map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
+  cluster=L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:44,disableClusteringAtZoom:14,
+    iconCreateFunction:function(c){var ids={},g=0;c.getAllChildMarkers().forEach(function(m){ids[m._tour]=1;});Object.keys(ids).forEach(function(id){var t=tours.filter(function(x){return x.id===id;})[0];if(t&&prog(t).stars===3)g++;});
+      return L.divIcon({html:'<div class="pinwrap" style="width:46px;height:46px"><div class="cluster'+(g?' has-gold':'')+'">'+c.getChildCount()+'</div>'+(g?'<b class="pbadge g">👑'+(g>1?g:'')+'</b>':'')+'</div>',className:'',iconSize:[46,46]});}});
+  map.addLayer(cluster);focusLayer=L.layerGroup().addTo(map);
+  addJerusalem3dSign();
+  if(road&&road.geometry){roadLayer=L.layerGroup([
+    L.polyline(road.geometry,{color:'#050a1f',weight:11,opacity:.8,interactive:false}),
+    L.polyline(road.geometry,{color:'#ffffff',weight:6,dashArray:'2 10',lineCap:'round'}).on('click',function(){openTour('road67');}),
+    L.marker(road.geometry[Math.floor(road.geometry.length/2)],{icon:L.divIcon({className:'',html:'<div class="road-label">🛣️ 67</div>',iconSize:[60,26],iconAnchor:[30,13]}),title:'מסלול 67',keyboard:true}).on('click',function(){openTour('road67');})]);}
+  $('fit').addEventListener('click',function(){closeSheet();map.flyToBounds(ISRAEL,viewPad({duration:.6}));});
+  map.on('click',function(){if(current)setSheet('peek');else if(sheetState!=='closed')setSheet('closed');});
+}
+function drawMarkers(fit){
+  cluster.clearLayers();focusLayer.clearLayers();markers=[];
+  var vis=visible(),pts=[],rest=[];
+  vis.forEach(function(t){t.placed.forEach(function(s){
+    var m=L.marker([s.lat,s.lon],{icon:pinIcon(t,s),title:'סיור '+(t.community?t.title:Number(t.id))+' · '+s.name,keyboard:true,riseOnHover:true});
+    m.on('click',function(){openTour(t.id,{stop:s.name});});m._tour=t.id;m._stop=s.name;markers.push(m);pts.push([s.lat,s.lon]);
+    // le סיור choisi reste hors des regroupements : toutes ses étapes sont visibles et mises en avant
+    if(current&&current.id===t.id){m.setZIndexOffset(1000);focusLayer.addLayer(m);}else rest.push(m);});});
+  cluster.addLayers(rest);
+  var showRoad=roadLayer&&vis.some(function(t){return t.road;});
+  if(roadLayer){if(showRoad)roadLayer.addTo(map);else map.removeLayer(roadLayer);if(showRoad)road.geometry.forEach(function(p){pts.push(p);});}
+  var placedStops=vis.reduce(function(n,t){return n+t.placed.length;},0);
+  $('countPill').textContent=vis.length+' סיורים · '+placedStops+' נקודות';
+  if(fit&&pts.length&&!current)map.flyToBounds(L.latLngBounds(pts).pad(.08),viewPad({maxZoom:12,duration:.5}));
+}
+// progression de l'élève (progress.js) : 3 ⭐ = סיור en or, 1–2 ⭐ = badge, commencé = anneau
+function prog(t){var P=window.MDProgress;if(!P||t.community||t.road)return {stars:0,started:false};return {stars:P.stars(t.id),started:P.started(t.id)};}
+function pinIcon(t,s){var g=prog(t),cls='pin'+(current?(current.id===t.id?' on':' dim'):'')+(openStop&&current&&current.id===t.id&&openStop===s.name?' stop-on':'')+(g.stars===3?' gold':g.started?' started':'');
+  var badge=g.stars?'<b class="pbadge'+(g.stars===3?' g':'')+'">'+(g.stars===3?'👑':'★'+g.stars)+'</b>':'';
+  return L.divIcon({className:'',html:'<div class="pinwrap"><div class="'+cls+'" style="--c:'+(g.stars===3?'#ffd24a':regionColor(t.region))+'"><span>'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span></div>'+badge+'</div>',iconSize:[38,38],iconAnchor:[19,36]});}
+function restyle(){if(map)drawMarkers(false);}
+
+/* ----- liste ----- */
+// Panneau « ירושלים בתלת-ממד » posé sur le mont du Temple (coordonnée Wikidata lue dans jerusalem3d/geo.json, jamais saisie à la main).
+// Hors des grappes de marqueurs, toujours visible, un toucher ouvre la 3D.
+// panneaux « 3D » : un petit badge doré sur chaque site modélisé (la liste grandit avec les sites)
+var SITES_3D=[{geo:'jerusalem3d/geo.json',anchor:'temple_mount',href:'jerusalem3d.html?period=5',name:'ירושלים העתיקה'},{geo:'sites3d/masada/geo.json',anchor:'masada',href:'site3d.html?site=masada',name:'מצדה'},{geo:'sites3d/caesarea/geo.json',anchor:'caesarea',href:'site3d.html?site=caesarea',name:'קיסריה'},{geo:'sites3d/beitshean/geo.json',anchor:'tel',href:'site3d.html?site=beitshean',name:'בית שאן'},{geo:'sites3d/herodium/geo.json',anchor:'herodium',href:'site3d.html?site=herodium',name:'הרודיון'},{geo:'sites3d/megiddo/geo.json',anchor:'megiddo',href:'site3d.html?site=megiddo',name:'תל מגידו'},{geo:'sites3d/tzippori/geo.json',anchor:'tzippori',href:'site3d.html?site=tzippori',name:'ציפורי'},{geo:'sites3d/gamla/geo.json',anchor:'gamla',href:'site3d.html?site=gamla',name:'גמלא'},{geo:'sites3d/arad/geo.json',anchor:'arad',href:'site3d.html?site=arad',name:'תל ערד'},{geo:'sites3d/beersheba/geo.json',anchor:'tel',href:'site3d.html?site=beersheba',name:'תל באר שבע'},{geo:'sites3d/qumran/geo.json',anchor:'qumran',href:'site3d.html?site=qumran',name:'קומראן'},{geo:'sites3d/banias/geo.json',anchor:'banias',href:'site3d.html?site=banias',name:'בניאס'},{geo:'sites3d/nimrod/geo.json',anchor:'nimrod',href:'site3d.html?site=nimrod',name:'מבצר נמרוד'},{geo:'sites3d/beitguvrin/geo.json',anchor:'np',href:'site3d.html?site=beitguvrin',name:'בית גוברין ומרשה'},{geo:'sites3d/lachish/geo.json',anchor:'lachish',href:'site3d.html?site=lachish',name:'תל לכיש'},{geo:'sites3d/qeiyafa/geo.json',anchor:'qeiyafa',href:'site3d.html?site=qeiyafa',name:'חורבת קייאפה'},{geo:'sites3d/beitshearim/geo.json',anchor:'necropolis',href:'site3d.html?site=beitshearim',name:'בית שערים'},{geo:'sites3d/apollonia/geo.json',anchor:'apollonia',href:'site3d.html?site=apollonia',name:'אפולוניה'},{geo:'sites3d/eingedi/geo.json',anchor:'synagogue',href:'site3d.html?site=eingedi',name:'עין גדי'},{geo:'sites3d/beitalpha/geo.json',anchor:'synagogue',href:'site3d.html?site=beitalpha',name:'בית אלפא'},{geo:'sites3d/baram/geo.json',anchor:'np',href:'site3d.html?site=baram',name:'ברעם'}];
+function addJerusalem3dSign(){
+  // petit badge « 3D » posé À CÔTÉ du point (en haut à droite) et SOUS les épingles du quiz : il ne cache jamais une question.
+  // Vue pays : seul Jérusalem ; à partir du zoom 10, tous les sites 3D.
+  var signs=[];
+  function sync(){var z=map.getZoom();signs.forEach(function(o){var show=o.always||z>=10;if(show&&!map.hasLayer(o.m))o.m.addTo(map);if(!show&&map.hasLayer(o.m))map.removeLayer(o.m);});}
+  SITES_3D.forEach(function(S){
+    fetch(S.geo).then(function(r){return r.ok?r.json():null;}).then(function(g){
+      var a=g&&g.anchors&&g.anchors[S.anchor];if(!a)return;
+      var m=L.marker([a.lat,a.lon],{icon:L.divIcon({className:'',html:'<a class="j3d-sign" href="'+S.href+'" aria-label="'+S.name+' בתלת-ממד"><b><bdi dir="ltr">3D</bdi></b></a>',iconSize:[34,20],iconAnchor:[-20,44]}),zIndexOffset:-1000,keyboard:true,title:S.name+' בתלת-ממד'})
+        .on('click',function(){location.href=S.href;});
+      signs.push({m:m,always:/jerusalem3d/.test(S.href)});sync();
+    }).catch(function(){});
+  });
+  map.on('zoomend',sync);
+}
+function render(fit){
+  var vis=visible();
+  $('cards').innerHTML=vis.length?vis.map(function(t){
+    var c=t.counts;return '<button type="button" class="tcard" data-tour="'+t.id+'"><span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><span class="tbody"><b>'+esc(t.title)+(prog(t).stars?' <em class="tstars">'+MDProgress.starText(prog(t).stars)+'</em>':'')+'</b><small>'+esc(t.stops.map(function(s){return s.name;}).join(' · '))+'</small></span><span class="tq"><strong>'+c.total+'</strong>שאלות</span></button>';}).join('')
+    :'<p class="empty">לא נמצא סיור. נסו מילה אחרת או בטלו את הסינון.</p>';
+  if(map)drawMarkers(fit);
+}
+$('cards').addEventListener('click',function(e){var b=e.target.closest('[data-tour]');if(b)openTour(b.dataset.tour);});
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){setView(b.dataset.view);});});
+function setView(v){document.body.classList.toggle('list-view',v==='list');document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.view===v));});store.set('mdl_map_view',v);if(v==='map'&&map)setTimeout(function(){map.invalidateSize();},50);}
+if(store.get('mdl_map_view')==='list')setView('list');
+
+/* ----- fiche coulissante ----- */
+var sheet=$('sheet'),sheetState='closed';
+function setSheet(state){
+  sheetState=state;sheet.classList.toggle('peek',state==='peek');sheet.classList.toggle('full',state==='full');
+  document.body.classList.toggle('sheet-full',state==='full');
+  var gap=state==='closed'?0:Math.min(sheet.offsetHeight,peekHeight());document.documentElement.style.setProperty('--sheet-gap',gap+'px');
+}
+function peekHeight(){var head=$('sheetHead').offsetHeight,cta=sheet.querySelector('.cta-zone');return 18+head+(cta?cta.offsetHeight:0)+10;}
+function measure(){sheet.style.setProperty('--peek',peekHeight()+'px');}
+
+function openTour(id,opt){
+  opt=opt||{};var t=find(id);if(!t)return;
+  var first=!current;current=t;openStop=opt.stop||null;
+  renderSheet();measure();setSheet(opt.stop?'peek':(window.innerWidth>=900?'full':'peek'));
+  var h='#t='+id;if(location.hash!==h){if(opt.replace||!first)history.replaceState({tour:id},'',h);else history.pushState({tour:id},'',h);}
+  if(document.body.classList.contains('list-view')){setSheet('full');}
+  restyle();focusTour(t,opt.stop);
+}
+function focusTour(t,stop){
+  if(!map||document.body.classList.contains('list-view'))return;
+  var gapPx=Math.min(sheet.offsetHeight,peekHeight());
+  var pad={paddingTopLeft:[30,($('top').offsetHeight||140)+10],paddingBottomRight:[30,(window.innerWidth>=900?30:gapPx+30)],maxZoom:13,duration:.6};
+  if(stop){var s=t.placed.filter(function(x){return x.name===stop;})[0];if(s){map.flyToBounds(L.latLngBounds([[s.lat,s.lon],[s.lat,s.lon]]).pad(.02),Object.assign({},pad,{maxZoom:14}));return;}}
+  var pts=t.road?road.geometry:t.placed.map(function(s){return [s.lat,s.lon];});
+  if(pts.length)map.flyToBounds(L.latLngBounds(pts),pad);
+}
+function closeSheet(fromPop){
+  if(!current)return;current=null;openStop=null;setSheet('closed');restyle();
+  if(!fromPop&&location.hash){if(history.state&&history.state.tour)history.back();else history.replaceState(null,'',location.pathname+location.search);}
+}
+window.addEventListener('popstate',function(){var m=location.hash.match(/t=([\w]+)/);if(m&&find(m[1]))openTour(m[1],{replace:true});else closeSheet(true);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(sheetState==='full'&&current)setSheet('peek');else closeSheet();}});
+$('scrim').addEventListener('click',function(){if(current)setSheet('peek');else setSheet('closed');});
+
+/* glisser la poignée : vers le haut = plein écran, vers le bas = réduire / fermer */
+(function(){var y0=null,dy=0,base=0;
+  function down(e){if(!current)return;y0=e.clientY;dy=0;base=sheet.getBoundingClientRect().top;sheet.classList.add('dragging');e.target.setPointerCapture&&e.target.setPointerCapture(e.pointerId);}
+  function move(e){if(y0===null)return;dy=e.clientY-y0;var top=Math.max(70,base+dy);sheet.style.transform='translateY('+(top-(window.innerHeight-sheet.offsetHeight))+'px)';}
+  function up(){if(y0===null)return;sheet.classList.remove('dragging');sheet.style.transform='';var moved=Math.abs(dy)>8;y0=null;
+    if(!moved){setSheet(sheetState==='full'?'peek':'full');return;}
+    if(dy<-50)setSheet('full');else if(dy>50)(sheetState==='full'?setSheet('peek'):closeSheet());else setSheet(sheetState);}
+  [$('grab'),$('sheetHead')].forEach(function(el){el.addEventListener('pointerdown',function(e){if(e.target.closest('.close'))return;down(e);});});
+  window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);window.addEventListener('pointercancel',up);
+})();
+
+function levelButtons(t){
+  return '<div class="levels" role="group" aria-label="רמת קושי">'+LEVELS.map(function(l){var n=t.counts[l.n]||0;
+    var P=window.MDProgress,sm=P&&!t.community&&!t.road?P.level(t.id,l.n):null,got=P&&sm&&P.star(t.id,l.n);
+    return '<button type="button" class="lvl'+(got?' got':'')+'" data-level="'+l.n+'" aria-pressed="'+(level===l.n)+'"'+(n?'':' disabled')+'>'+(got?'✅ ':'')+l.icon+' '+l.label+'<small>'+(sm&&sm.answered?sm.correct+'/'+n+' נכונות':n+' שאלות')+'</small></button>';}).join('')+'</div>';
+}
+function pickLevel(t){if(!(t.counts[level]>0)){for(var i=1;i<=3;i++)if(t.counts[i]>0){level=i;break;}}}
+function gt(t,m){return 'guided-tour.html?tour='+t.id+'&level='+level+'&mode='+m;}
+function cta(t){
+  var M=MODES[mode],h='';
+  if(t.community)return '<div class="notice">📚 מסלול שנוסף על ידי משתתף. בשלב זה אפשר לקרוא את מסמכיו; עדיין אין לו שאלות מאומתות או מסלול GPS.</div><a class="play" href="community-document.html?id='+encodeURIComponent((t.communityDocs[0]||{}).id||'')+'">📄 פתיחת מסמך הדרך ←</a>';
+  if(t.road){
+    var dest={guided:gt(t,'tour'),quiz:gt(t,'quiz'),stories:'anecdotes.html',solo:'solo.html',guide:'admin.html?mode=guide',sim:'admin.html?mode=simulation'}[mode];
+    if(M.levels)h+=levelButtons(t);
+    h+='<a class="play" href="'+dest+'">'+M.icon+' '+({guided:'יוצאים לסיור',quiz:'מתחילים לשחק',stories:'קוראים את הסיפורים',solo:'יוצאים לדרך',guide:'פותחים את מסך המדריך',sim:'מריצים סימולציה'})[mode]+' ←</a>';
+    if(mode==='guide'||mode==='sim')h+='<div class="notice">מסלול 67 הוא בנק V3 שמותקן ב-Supabase. במסך המדריך בוחרים את V3 ופותחים משחק. GPS רק מציע — הפרסום תמיד ידני.</div>';
+    return h;
+  }
+  if(mode==='guided'||mode==='quiz'){pickLevel(t);h+=levelButtons(t)+'<a class="play" id="playBtn" href="'+gt(t,mode==='guided'?'tour':'quiz')+'">'+M.icon+' '+(mode==='guided'?'יוצאים לסיור':'מתחילים לשחק')+' ←</a>';}
+  else if(mode==='stories'){h+='<a class="play" href="'+gt(t,'stories')+'">📖 קוראים על התחנות ←</a>';}
+  else{pickLevel(t);
+    var why={solo:'משחק GPS עצמאי זמין כרגע רק במסלול 67, שיש לו מסלול ונקודות עיגון. לסיור הזה אפשר לתרגל אישית:',
+      guide:'פרסום חי לתלמידים פועל כרגע עם הבנקים שמותקנים ב-Supabase (V1, V2, V3 — מסלול 67). את הסיור הזה מכינים עם כרטיסי המדריך:',
+      sim:'סימולציית נסיעה דורשת מסלול GPS — קיימת כרגע רק למסלול 67. לסיור הזה אפשר לעבור על התחנות והשאלות בלי לפרסם:'}[mode];
+    h+='<div class="notice">'+why+'</div>'+levelButtons(t)+'<a class="play alt" id="playBtn" href="'+gt(t,mode==='solo'?'quiz':'tour')+'">'+(mode==='solo'?'🎮 תרגול אישי':'🧭 כרטיסי הכנה')+' ←</a>';
+    if(mode==='guide')h+='<div class="links" style="margin-top:8px"><a href="admin.html?mode=guide">🎤 למסך המדריך</a><button type="button" data-go="road67">🛣️ למסלול 67</button></div>';
+  }
+  return h;
+}
+function renderSheet(){
+  var t=current,M=MODES[mode];
+  $('sheetHead').innerHTML='<span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><div style="min-width:0"><div class="sub">'+(t.community?'מסלול משתתפים':(t.road?'מסלול נסיעה · V3':'סיור '+t.id+' · '+esc(places.regions[t.region]||'')))+'</div><h2 id="sheetTitle">'+esc(t.title)+'</h2><div class="sub">'+t.counts.total+' שאלות'+(t.road?'':' · '+t.placed.length+'/'+t.stops.length+' תחנות במפה')+'</div></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
+  var h='<div class="cta-zone">'+cta(t)+'</div>';
+  // Jérusalem — Vieille Ville en 3D (סיורים 11, 12, 13, 18) : ouvre la scène sur la période du סיור.
+  var J3D={'11':2,'12':5,'13':5,'18':7};
+  // tout parcours dont une étape est dans la Vieille Ville ou ses abords (zone du modèle) ouvre aussi la 3D
+  var inOld=function(s){return s.placed&&s.lat>31.765&&s.lat<31.792&&s.lon>35.219&&s.lon<35.244;};
+  if(!J3D[t.id]&&(t.stops||[]).some(inOld))J3D[t.id]=5;
+  if(J3D[t.id])h+='<a class="play alt j3d" href="jerusalem3d.html?period='+J3D[t.id]+'">🏛️ העיר העתיקה בתלת-ממד ←</a>';
+  if(t.prep)h+='<div class="notice warn">📒 החומר בתיק הזה הוא חוברת הכנה. הוא אינו מאשר שהסיור והתחנות בוצעו בפועל.</div>';
+  if(t.road)h+='<div class="notice warn">🛣️ קו המסלול על המפה משוחזר ממחלפים שפורסמו בוויקיפדיה עם נקודות ביניים משוערות — לא הקלטת GPS.</div>';
+  h+='<div class="tags" style="margin-top:12px">'+t.themes.map(function(k){return '<span class="tag">'+esc(places.themes[k])+'</span>';}).join('')+'</div>';
+  h+='<div class="sec-title">'+(t.road?'תחנות לאורך הדרך':'תחנות הסיור')+'</div><div class="stops">'+t.stops.map(function(s){
+    if(!s.placed)return '<div class="stop off"><span class="si">◌</span><span class="sn">'+esc(s.name)+'<small>'+(s.approx?'נקודת עיגון משוערת — במסך המדריך':'אין נקודה מאומתת — לא מסומן במפה')+'</small></span></div>';
+    var open=openStop===s.name;
+    return '<button type="button" class="stop" data-stop="'+esc(s.name)+'" aria-expanded="'+open+'"><span class="si">📍</span><span class="sn">'+esc(s.name)+(s.he&&s.he.title!==s.name?'<small>'+esc(s.he.title)+'</small>':'')+'</span><span aria-hidden="true">'+(open?'▴':'▾')+'</span></button>'+
+      (open?'<div class="story">'+(s.he?esc(s.he.extract):'אין תקציר.')+'<span class="attr">מקור: <a href="'+esc((s.he||s.wiki).url)+'" target="_blank" rel="noopener noreferrer">ויקיפדיה — '+esc((s.he||s.wiki).title)+' ↗</a> · CC BY-SA · מיקום: Wikidata '+esc(s.qid||'')+'</span></div>':'');
+  }).join('')+'</div>';
+  if(!t.road){
+    h+='<div class="sec-title">מקורות הקורס</div><div class="links">';
+    if(t.folderUrl)h+='<a href="'+esc(t.folderUrl)+'" target="_blank" rel="noopener noreferrer">📁 תיק הסיור'+(t.docs?' · '+t.docs+' מסמכים':'')+'</a>';
+    if(t.sourceUrl)h+='<a href="'+esc(t.sourceUrl)+'" target="_blank" rel="noopener noreferrer">📄 מסמך מקור ↗</a>';
+    h+='</div>';
+    h+='<div class="sec-title">אפשר גם</div><div class="links">'+['guided','quiz','stories'].filter(function(m){return m!==mode;}).map(function(m){return '<a href="'+gt(t,m==='guided'?'tour':m)+'">'+MODES[m].icon+' '+MODES[m].label+'</a>';}).join('')+'</div>';
+  }
+  h+='<div class="sec-title">📄 מסמכי המשתתפים · '+(t.communityDocs||[]).length+'</div>';
+  if((t.communityDocs||[]).length)h+='<div class="links">'+t.communityDocs.map(function(d){return '<a href="community-document.html?id='+encodeURIComponent(d.id)+'">📄 '+esc(d.title)+' · '+esc(d.author||'אורח')+'</a>';}).join('')+'</div>';
+  else h+='<div class="notice">עדיין לא נוספו מסמכים למסלול זה.</div>';
+  h+='<div class="links"><a href="contribute.html?tour='+encodeURIComponent(t.id)+'">➕ הוספת מסמך למסלול הזה</a></div>';
+  h+='<p class="foot">התקצירים מוויקיפדיה בעברית (CC BY-SA). המיקומים מוויקיפדיה/Wikidata; תחנה בלי נקודה מאומתת אינה מסומנת. השאלות מבוססות על סיכומי הקורס — כדאי לאמת לפני הדרכה מקצועית.</p>';
+  $('sheetBody').innerHTML=h;
+  $('closeSheet').addEventListener('click',function(){closeSheet();});
+}
+$('sheetBody').addEventListener('click',function(e){
+  var lv=e.target.closest('[data-level]');
+  if(lv&&!lv.disabled){level=Number(lv.dataset.level);store.set('mdl_map_level',String(level));renderSheet();measure();return;}
+  var st=e.target.closest('[data-stop]');
+  if(st){var n=st.dataset.stop;openStop=openStop===n?null:n;renderSheet();measure();if(openStop){if(sheetState!=='full')setSheet('full');}restyle();if(openStop)focusTour(current,openStop);return;}
+  var go=e.target.closest('[data-go]');if(go){openTour(go.dataset.go);}
+});
+$('sheetBody').addEventListener('click',function(e){var a=e.target.closest('a.play,.links a');if(a&&!a.target)store.set('mdl_map_level',String(level));});
+
+/* ----- choix du mode, sans quitter la carte ----- */
+function renderMode(){$('modeIcon').textContent=MODES[mode].icon;$('modeLabel').textContent=MODES[mode].label;store.set('mdl_map_mode',mode);
+  var u=new URL(location.href);u.searchParams.set('mode',mode);u.searchParams.delete('tour');history.replaceState(history.state,'',u.pathname+u.search+u.hash);}
+$('modeChip').addEventListener('click',function(){
+  current=null;openStop=null;restyle();
+  $('sheetHead').innerHTML='<span class="tnum" style="--c:var(--violet)">🎮</span><div><div class="sub">מה עושים במקום שתבחרו?</div><h2 id="sheetTitle">בחירת מצב</h2></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
+  $('sheetBody').innerHTML='<div class="modes">'+Object.keys(MODES).map(function(k){var m=MODES[k];return '<button type="button" class="mode-opt" data-mode="'+k+'" aria-pressed="'+(k===mode)+'"><span class="mi">'+m.icon+'</span><span><b>'+m.label+'</b><small>'+m.desc+'</small></span></button>';}).join('')+'</div><p class="foot">המצב נשמר. אחרי הבחירה — בוחרים מקום במפה.</p>';
+  $('closeSheet').addEventListener('click',function(){setSheet('closed');});
+  $('sheetBody').querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener('click',function(){mode=b.dataset.mode;renderMode();setSheet('closed');});});
+  measure();setSheet('full');
+});
+
+function syncTop(){document.documentElement.style.setProperty('--top-h',$('top').offsetHeight+'px');}
+window.addEventListener('pageshow',function(e){if(e.persisted&&tours)render(false);});
+window.addEventListener('resize',function(){syncTop();if(current){measure();setSheet(sheetState);}});
+syncTop();
+})();
+</script>
+<script src="feedback.js" data-float="0"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body>
+</html>

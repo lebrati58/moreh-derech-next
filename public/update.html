@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b4a6b">
+<title>Mise à jour — מורה דרך LIVE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><div class="hero-inner"><div class="brand"><span>Mise à jour</span><span class="live">V3</span></div></div></header>
+<main id="app">
+  <form class="card" id="f">
+    <h1>Installer la mise à jour</h1>
+    <p class="small">À faire une seule fois, <b>après</b> avoir collé le petit script dans Supabase.
+      La page envoie la mise à jour à la base, puis le petit script s'efface tout seul.</p>
+    <label for="pw">Mot de passe du guide (celui de la page admin)</label>
+    <input id="pw" type="password" autocomplete="current-password">
+    <button class="btn sun" id="go" style="margin-top:14px">🚀 Installer</button>
+    <div id="log" class="explain small" style="white-space:pre-line;margin-top:14px;display:none"></div>
+  </form>
+</main>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script>
+(function () {
+  const { rpc, store } = MDL;
+  const log = document.getElementById('log'), btn = document.getElementById('go');
+  const say = m => { log.style.display = 'block'; log.textContent += m + '\n'; };
+  document.getElementById('f').addEventListener('submit', async e => {
+    e.preventDefault(); btn.disabled = true; log.textContent = '';
+    try {
+      say('1/4 Connexion…');
+      const l = await rpc('admin_login', { p_password: document.getElementById('pw').value });
+      if (l.error) throw new Error(l.error === 'bad_password' ? 'Mot de passe incorrect.' : l.error);
+      const token = l.token;
+      for (const [i, f] of [[2, '1-schema.sql'], [3, '2-data.sql']]) {
+        say(`${i}/4 Envoi de ${f}…`);
+        const sql = await (await fetch('update/' + f, { cache: 'no-store' })).text();
+        if (sql.length < 1000) throw new Error('Fichier ' + f + ' introuvable.');
+        try { await rpc('mdl_bootstrap', { p_token: token, p_sql: sql }, { timeout: 30000 }); }
+        catch (err) {
+          if (err.status === 404) throw new Error('Le petit script n\'est pas encore dans Supabase (ou la mise à jour est déjà faite).');
+          throw err;
+        }
+        say('   ✔ OK');
+      }
+      say('4/4 Vérification…');
+      await new Promise(r => setTimeout(r, 2500));          // le temps que Supabase recharge ses fonctions
+      const s = await rpc('admin_state', { p_token: token });
+      const v2 = (s.banks || []).find(b => b.code === 'V2'), v3 = (s.banks || []).find(b => b.code === 'V3');
+      if (!v2 || !v3) throw new Error('Vérification impossible : réessayez dans 10 secondes.');
+      say(`   ✔ V2 parcours photographié : ${v2.main} questions + ${v2.spare} de remplacement`);
+      say(`   ✔ V3 route 67 : ${v3.main} questions + ${v3.spare} de remplacement (sans photo)`);
+      say('\n🎉 TERMINÉ ! Ouvrez la page admin, puis « 🔄 משחק חדש ».');
+      store.set('mdl_admin', token);
+      btn.textContent = 'Ouvrir la page admin'; btn.disabled = false;
+      btn.onclick = ev => { ev.preventDefault(); location.href = 'admin.html'; };
+    } catch (err) {
+      say('❌ ' + (err.message || err)); btn.disabled = false;
+    }
+  });
+})();
+</script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body>
+</html>

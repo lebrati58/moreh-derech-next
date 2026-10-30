@@ -1,0 +1,136 @@
+{
+  "about": "Correspondance entre les étapes des 22 סיורים (public/siyurim-catalog.json) et des articles Wikipédia. tools/build-places.mjs lit ces titres, interroge l'API Wikipédia et écrit public/places.json avec les coordonnées publiées par Wikipédia/Wikidata. Une étape sans titre (null) n'est volontairement PAS placée sur la carte : nom générique, lieu ambigu ou thème plutôt qu'un point.",
+  "regions": {
+    "galil": "גליל וגולן",
+    "valleys": "עמקים",
+    "coast": "כרמל וחוף",
+    "jerusalem": "ירושלים והרים",
+    "center": "שומרון ושפלה",
+    "south": "מדבר יהודה ונגב"
+  },
+  "themes": {
+    "arch": "🏺 ארכיאולוגיה",
+    "bible": "📜 תקופת המקרא",
+    "roman": "🏛️ בית שני, רומי וביזנטי",
+    "faith": "🕯️ דתות ומסורות",
+    "nature": "🌿 טבע וגיאולוגיה",
+    "zionism": "🌾 התיישבות ומלחמות"
+  },
+  "tours": {
+    "01": { "region": "south", "themes": ["arch", "roman", "faith", "nature"], "stops": {
+      "קומראן": ["en:Qumran", "he:קומראן"],
+      "נבי מוסא": ["en:Nabi Musa", "he:נבי מוסא"],
+      "השומרוני הטוב": ["en:Museum of the Good Samaritan", "he:מוזיאון השומרוני הטוב"],
+      "לידו": null } },
+    "02": { "region": "coast", "themes": ["nature", "faith", "arch"], "stops": {
+      "מוחרקה": ["en:Muhraqa", "he:מוחרקה"],
+      "נחל אורן": ["en:Nahal Oren", "he:נחל אורן"],
+      "משמר הכרמל": null,
+      "הדרוזים": null } },
+    "03": { "region": "south", "themes": ["arch", "bible", "zionism"], "stops": {
+      "תל ערד": ["en:Tel Arad", "he:תל ערד"],
+      "תל באר שבע": ["en:Tel Be'er Sheva", "he:תל באר שבע"],
+      "אנדרטת הנגב": ["en:Negev Brigade Monument", "he:אנדרטת חטיבת הנגב"] } },
+    "04": { "region": "valleys", "themes": ["arch", "bible", "roman", "nature"], "stops": {
+      "תל מגידו": ["en:Tel Megiddo", "he:תל מגידו"],
+      "עין יזרעאל": ["he:עין יזרעאל"],
+      "בית אלפא": ["en:Beit Alpha", "he:בית הכנסת בית אלפא"],
+      "הר שאול": ["he:הר שאול"],
+      "הר ברקן": ["he:הר ברקן"] } },
+    "05": { "region": "center", "themes": ["arch", "bible", "roman"], "stops": {
+      "תל לכיש": ["en:Lachish", "he:לכיש"],
+      "תל עזקה": ["en:Azekah", "he:עזקה"],
+      "חורבת קייאפה": ["en:Khirbet Qeiyafa", "he:חורבת קייאפה"],
+      "בית גוברין": ["en:Beit Guvrin National Park", "he:גן לאומי בית גוברין"],
+      "מרשה": ["en:Maresha", "he:מרשה"] } },
+    "06": { "region": "south", "themes": ["arch", "faith", "roman"], "stops": {
+      "סוסיא": ["en:Khirbet Susiya", "he:סוסיא העתיקה"],
+      "מערת המכפלה": ["en:Cave of the Patriarchs", "he:מערת המכפלה"],
+      "הרודיון": ["en:Herodium", "he:הרודיון"] } },
+    "07": { "region": "coast", "themes": ["faith", "zionism"], "stops": {
+      "הגנים הבהאיים": ["en:Shrine of the Báb", "he:היכל הבאב"],
+      "סטלה מאריס": ["en:Stella Maris Monastery", "he:סטלה מאריס"],
+      "מערת אליהו": ["en:Elijah's Cave", "he:מערת אליהו"],
+      "המושבה הגרמנית": ["en:German Colony, Haifa", "he:המושבה הגרמנית (חיפה)"] } },
+    "08": { "region": "coast", "themes": ["nature"], "stops": {
+      "נחל אורן": ["en:Nahal Oren", "he:נחל אורן"],
+      "חורבת רקית": ["he:חורבת רקית"],
+      "סלע": null,
+      "קרקע וצומח": null,
+      "עתלית": ["en:Atlit", "he:עתלית"] } },
+    "09": { "region": "center", "themes": ["bible", "faith"], "stops": {
+      "הר גריזים": ["en:Mount Gerizim", "he:הר גריזים"],
+      "שילה": ["en:Tel Shiloh", "he:תל שילה"],
+      "אלון מורה": ["en:Elon Moreh", "he:אלון מורה"],
+      "מצפה יוסף": null } },
+    "10": { "region": "jerusalem", "themes": ["nature", "zionism"], "stops": {
+      "סטף": ["en:Sataf", "he:סטף"],
+      "שמורת המסרק": ["he:שמורת המסרק"],
+      "יד השמונה": ["en:Yad HaShmona", "he:יד השמונה"],
+      "אנדרטת הראל": ["he:אנדרטת חטיבת הראל"],
+      "גווילי האש": ["he:גווילי האש"] } },
+    "11": { "region": "jerusalem", "themes": ["bible", "arch"], "stops": {
+      "כתף הינום": ["en:Ketef Hinnom", "he:כתף הינום"],
+      "עיר דוד": ["en:City of David", "he:עיר דוד"],
+      "החומה הרחבה": ["en:Broad Wall (Jerusalem)", "he:החומה הרחבה"],
+      "ארמון הנציב": ["en:Armon HaNatziv", "he:ארמון הנציב"] } },
+    "12": { "region": "jerusalem", "themes": ["roman", "arch"], "stops": {
+      "הבית השרוף": ["en:Burnt House", "he:הבית השרוף"],
+      "הרובע ההרודיאני": ["en:Wohl Archaeological Museum", "he:הרובע ההרודיאני"],
+      "היכל הספר": ["en:Shrine of the Book", "he:היכל הספר"],
+      "דגם ירושלים": ["en:Holyland Model of Jerusalem", "he:דגם ירושלים בימי בית שני"] } },
+    "13": { "region": "jerusalem", "themes": ["roman", "arch"], "stops": {
+      "גן דוידסון": ["en:Jerusalem Archaeological Park", "he:הגן הארכאולוגי ירושלים"],
+      "מנהרות הכותל": ["en:Western Wall Tunnel", "he:מנהרות הכותל"],
+      "קברי נחל קדרון": ["en:Tomb of Absalom", "he:יד אבשלום"],
+      "חניון גבעתי": ["en:Givati Parking Lot", "he:חניון גבעתי"] } },
+    "14": { "region": "jerusalem", "themes": ["bible", "arch", "zionism"], "stops": {
+      "רמת רחל": ["en:Ramat Rachel", "he:רמת רחל"],
+      "הר גילה": null,
+      "נבי סמואל": ["en:Nebi Samwil", "he:נבי סמואל"],
+      "אמת המים": null,
+      "הר הזיתים": ["en:Mount of Olives", "he:הר הזיתים"] } },
+    "15": { "region": "coast", "themes": ["roman", "arch", "nature"], "stops": {
+      "קיסריה": ["en:Caesarea Maritima", "he:קיסריה העתיקה"],
+      "בית חנניה": ["en:Beit Hanania", "he:בית חנניה"],
+      "נחל תנינים": ["en:Taninim Stream", "he:נחל תנינים"],
+      "אפולוניה": ["en:Apollonia-Arsuf", "he:אפולוניה"] } },
+    "16": { "region": "valleys", "themes": ["roman", "arch"], "stops": {
+      "בית שערים": ["en:Beit She'arim National Park", "he:בית שערים"],
+      "ציפורי": ["en:Sepphoris", "he:ציפורי"],
+      "טבעון": ["en:Kiryat Tiv'on", "he:קריית טבעון"] } },
+    "17": { "region": "galil", "themes": ["nature", "arch", "roman"], "stops": {
+      "בניאס": ["en:Banias", "he:בניאס"],
+      "מבצר נמרוד": ["en:Nimrod Fortress", "he:מבצר נמרוד"],
+      "תל סאקי": ["en:Tel Saki", "he:תל סאקי"],
+      "מצפה אופיר": ["he:מצפה אופיר"],
+      "גמלא": ["en:Gamla", "he:גמלא"],
+      "עין קשתות": ["en:Ein Keshatot", "he:עין קשתות"] } },
+    "18": { "region": "jerusalem", "themes": ["roman", "faith"], "stops": {
+      "שער שכם": ["en:Damascus Gate", "he:שער שכם"],
+      "קארדו": ["he:הקארדו (ירושלים)", "en:Cardo (Jerusalem)"],
+      "כנסיות": null,
+      "מערת צדקיהו": ["en:Zedekiah's Cave", "he:מערת צדקיהו"] } },
+    "19": { "region": "valleys", "themes": ["roman", "arch", "nature"], "stops": {
+      "בית שאן": ["en:Tel Beth-Shean", "he:תל בית שאן"],
+      "כוכב הירדן": ["en:Belvoir Fortress", "he:כוכב הירדן"],
+      "מעיין חרוד": ["en:Ma'ayan Harod", "he:מעיין חרוד"] } },
+    "20": { "region": "galil", "themes": ["zionism", "nature"], "stops": {
+      "ראש פינה": ["en:Rosh Pinna", "he:ראש פינה"],
+      "תל חי": ["en:Tel Hai", "he:תל חי"],
+      "אגמון החולה": ["en:Agamon HaHula", "he:אגמון החולה"],
+      "שמורת החולה": ["en:Hula Nature Reserve", "he:שמורת החולה"] } },
+    "21": { "region": "south", "themes": ["nature", "arch"], "stops": {
+      "הר סדום": ["en:Mount Sodom", "he:הר סדום"],
+      "נחל דוד": ["en:Nahal David", "he:נחל דוד"],
+      "בית הכנסת העתיק בעין גדי": ["en:Ein Gedi Synagogue", "he:בית הכנסת העתיק בעין גדי"] } },
+    "22": { "region": "galil", "themes": ["nature", "faith", "zionism"], "stops": {
+      "שיירת יחיעם": ["en:Yehiam Convoy", "he:שיירת יחיעם"],
+      "ראש הנקרה": ["en:Rosh HaNikra grottoes", "he:נקרות ראש הנקרה"],
+      "מערת קשת": ["en:Keshet Cave", "he:מערת הקשת"],
+      "פקיעין": ["en:Peki'in", "he:פקיעין"],
+      "מירון": ["en:Meron, Israel", "he:מירון"],
+      "ברעם": ["en:Bar'am National Park", "he:ברעם"],
+      "ריחאניה": ["en:Rehaniya", "he:ריחאניה"] } }
+  }
+}

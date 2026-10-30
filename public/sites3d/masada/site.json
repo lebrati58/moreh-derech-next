@@ -1,0 +1,1276 @@
+{
+ "site": "masada",
+ "title": {
+  "he": "מצדה",
+  "fr": "Massada",
+  "en": "Masada",
+  "ru": "Масада"
+ },
+ "defaultPeriod": 3,
+ "cubitMeters": 0.5,
+ "stone": "dolomite",
+ "tint": "#ecd3a2",
+ "home": {
+  "at": "o:site",
+  "dist": 1100,
+  "from": 135,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#9f8a6a",
+  "mid": "#c8b48e",
+  "hi": "#e2d3b2"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "site": {
+   "osm": "way/32231475"
+  },
+  "upper": {
+   "osm": "node/907899983"
+  },
+  "middle": {
+   "osm": "node/7023811683"
+  },
+  "lower": {
+   "osm": "node/7023814710"
+  },
+  "western": {
+   "osm": "way/737549501"
+  },
+  "storerooms": {
+   "osm": "way/737549509"
+  },
+  "bath": {
+   "osm": "way/737549519"
+  },
+  "smallpal": {
+   "osm": [
+    "way/737549499",
+    "way/737549506",
+    "way/737549507"
+   ]
+  },
+  "columb": {
+   "osm": "way/737549498"
+  },
+  "swim": {
+   "osm": "way/737549520"
+  },
+  "watergate": {
+   "osm": "node/913527022"
+  },
+  "snake": {
+   "osm": "way/97602598"
+  },
+  "synagogue": {
+   "osm": "way/737549503"
+  },
+  "mikveh": {
+   "osm": "way/737549505"
+  },
+  "lots": {
+   "osm": "node/6177201789"
+  },
+  "church": {
+   "osm": "way/737549502"
+  },
+  "camps": {
+   "tag": "historic=archaeological_site&archaeological_site=fortification",
+   "name": "Camp|מחנה"
+  },
+  "breach": {
+   "osm": "node/1392658074"
+  },
+  "rampfoot": {
+   "osm": "way/72016893",
+   "end": "west"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "hasmonean",
+   "name": {
+    "he": "החשמונאים",
+    "fr": "Hasmonéenne",
+    "en": "Hasmonean",
+    "ru": "Хасмонейская"
+   },
+   "dates": {
+    "he": "המאה ה-2–1 לפנה״ס",
+    "fr": "IIe–Ier s. av. J.-C.",
+    "en": "2nd–1st c. BCE",
+    "ru": "II–I вв. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "era": "herodian",
+   "name": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "dates": {
+    "he": "37–4 לפנה״ס",
+    "fr": "37–4 av. J.-C.",
+    "en": "37–4 BCE",
+    "ru": "37–4 гг. до н. э."
+   }
+  },
+  {
+   "n": 3,
+   "era": "roman",
+   "name": {
+    "he": "המרד הגדול",
+    "fr": "Grande Révolte et siège",
+    "en": "Great Revolt and siege",
+    "ru": "Великое восстание и осада"
+   },
+   "dates": {
+    "he": "66–73/74 לסה״נ",
+    "fr": "66–73/74 apr. J.-C.",
+    "en": "66–73/74 CE",
+    "ru": "66–73/74 гг. н. э."
+   }
+  },
+  {
+   "n": 4,
+   "era": "byzantine",
+   "name": {
+    "he": "ביזנטיון",
+    "fr": "Byzantine — moines",
+    "en": "Byzantine — monks",
+    "ru": "Византийская — монахи"
+   },
+   "dates": {
+    "he": "המאות ה-5–6 לסה״נ",
+    "fr": "Ve–VIe s.",
+    "en": "5th–6th c. CE",
+    "ru": "V–VI вв."
+   }
+  },
+  {
+   "n": 5,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "Massada aujourd’hui",
+    "en": "Masada today",
+    "ru": "Масада сегодня"
+   },
+   "dates": {
+    "he": "חפירות ידין 1963–1965 · אונסק״ו 2001",
+    "fr": "fouilles Yadin 1963–1965 · UNESCO 2001",
+    "en": "Yadin excavations 1963–65 · UNESCO 2001",
+    "ru": "раскопки Ядина 1963–65 · ЮНЕСКО 2001"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "masada_hasmonean",
+   "from": 1,
+   "to": 1,
+   "certainty": "hypothesis",
+   "pri": 1,
+   "name": {
+    "he": "המבצר החשמונאי",
+    "fr": "La forteresse hasmonéenne",
+    "en": "The Hasmonean fortress",
+    "ru": "Хасмонейская крепость"
+   },
+   "text": {
+    "he": "יוסף בן מתתיהו כותב שיונתן הכהן הגדול בנה ראשון מבצר במקום וקרא לו מצדה; יש המייחסים את הביצור לאלכסנדר ינאי. בחפירות לא זוהו שרידי בנייה חשמונאיים.",
+    "fr": "Josèphe écrit que « Jonathan le grand prêtre » bâtit le premier une forteresse et l’appela Massada ; d’autres l’attribuent à Alexandre Jannée. Les fouilles n’ont identifié aucun bâtiment hasmonéen.",
+    "en": "Josephus writes that “Jonathan the high priest” first built a fortress here and called it Masada; others attribute it to Alexander Jannaeus. Excavations identified no Hasmonean buildings.",
+    "ru": "Иосиф Флавий пишет, что «первосвященник Ионатан» первым построил здесь крепость и назвал её Масадой; другие приписывают её Александру Яннаю. Раскопки не выявили хасмонейских построек."
+   },
+   "placementNote": {
+    "he": "אין שרידים מזוהים ולכן אין סימון בסצנה.",
+    "fr": "Aucun vestige identifié : rien n’est placé dans la scène.",
+    "en": "No identified remains, so nothing is placed in the scene.",
+    "ru": "Опознанных остатков нет, поэтому в сцене ничего не показано."
+   },
+   "debate": {
+    "he": "איזה יונתן? יונתן החשמונאי (אחי יהודה המכבי) או אלכסנדר ינאי (יהונתן) — הדבר שנוי במחלוקת.",
+    "fr": "Quel Jonathan ? Le frère de Judas Maccabée ou Alexandre Jannée (Yehonatan) : la question est débattue.",
+    "en": "Which Jonathan? Judas Maccabeus’ brother or Alexander Jannaeus (Yehonatan) — debated.",
+    "ru": "Какой Ионатан? Брат Иуды Маккавея или Александр Яннай (Иехонатан) — спорно."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.275–319",
+     "url": "https://lexundria.com/j_bj/7.275-7.319/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    }
+   ]
+  },
+  {
+   "id": "masada_casemate_wall",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "חומת הסוגרים",
+    "fr": "La muraille à casemates",
+    "en": "The casemate wall",
+    "ru": "Казематная стена"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "חומה כפולה המקיפה את כל ראש ההר (מלבד הארמון הצפוני), ובין שני הקירות חדרים — ״סוגרים״. בימי המרד גרו המורדים בחדרים אלה.",
+    "fr": "Double mur entourant tout le sommet (sauf le palais du Nord), avec des pièces entre les deux murs — les « casemates ». Pendant la révolte, les rebelles y habitaient.",
+    "en": "A double wall around the whole summit (except the Northern Palace), with rooms between the two walls — the “casemates”. During the revolt the rebels lived in them.",
+    "ru": "Двойная стена вокруг всей вершины (кроме Северного дворца) с помещениями между стенами — «казематами». Во время восстания в них жили повстанцы."
+   },
+   "dims": {
+    "he": "יוסף בן מתתיהו: אורך 7 ריס, גובה 12 אמה, רוחב 8 אמה, 38 מגדלים בגובה 50 אמה (תרגום ויסטון). בחפירות: אורך כ-1,300 מ׳; קיר חיצוני 1.4 מ׳, קיר פנימי כ-1 מ׳, גובה 4–5 מ׳, כ-30 מגדלים במרווחים של 35–90 מ׳.",
+    "fr": "Josèphe : 7 stades de long, 12 coudées de haut, 8 de large, 38 tours de 50 coudées (trad. Whiston). Fouilles : env. 1 300 m ; mur extérieur 1,4 m, intérieur env. 1 m, 4–5 m de haut, env. 30 tours espacées de 35 à 90 m.",
+    "en": "Josephus: 7 stadia long, 12 cubits high, 8 wide, 38 towers 50 cubits high (Whiston). Excavations: c. 1,300 m; outer wall 1.4 m, inner c. 1 m, 4–5 m high, c. 30 towers 35–90 m apart.",
+    "ru": "Иосиф: длина 7 стадий, высота 12 локтей, ширина 8, 38 башен по 50 локтей (пер. Уистона). Раскопки: ок. 1300 м; внешняя стена 1,4 м, внутренняя ок. 1 м, высота 4–5 м, ок. 30 башен через 35–90 м."
+   },
+   "placementNote": {
+    "he": "התוואי לפי היקף האתר ב-OpenStreetMap; המגדלים מצוירים במרווחים קבועים (מיקומם המדויק אינו בנתונים).",
+    "fr": "Tracé : contour du site dans OpenStreetMap ; tours dessinées à intervalle régulier (leurs positions exactes ne sont pas dans les données).",
+    "en": "Line: site outline in OpenStreetMap; towers drawn at regular intervals (exact positions not in the data).",
+    "ru": "Линия: контур памятника в OpenStreetMap; башни нарисованы через равные интервалы (точных мест нет в данных)."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "casemate",
+    "osm": "site",
+    "kind": "dolomite",
+    "h": 5,
+    "towerEvery": 55,
+    "towerH": 7
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.275–319",
+     "url": "https://lexundria.com/j_bj/7.275-7.319/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/32231475",
+     "url": "https://www.openstreetmap.org/way/32231475"
+    }
+   ]
+  },
+  {
+   "id": "masada_northern_palace",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "הארמון הצפוני",
+    "fr": "Le palais du Nord",
+    "en": "The Northern Palace",
+    "ru": "Северный дворец"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "ארמון בשלוש מדרגות התלויות על הצוק הצפוני: למעלה — חדרי המגורים ומרפסת חצי-עגולה; באמצע — מבנה עגול לאירוח; למטה — אולם מוקף עמודים ובית מרחץ קטן. יוסף בן מתתיהו מתאר ארמון ״במעלה המערבי… נוטה לצד צפון״.",
+    "fr": "Palais à trois niveaux accrochés à la falaise nord : en haut les appartements et une exèdre semi-circulaire ; au milieu un pavillon circulaire de réception ; en bas une salle entourée de colonnes et un petit bain. Josèphe décrit un palais « à la montée occidentale… incliné vers le nord ».",
+    "en": "A palace on three levels hanging on the northern cliff: living quarters and a semicircular porch at the top; a circular reception pavilion in the middle; a colonnaded hall and a small bath at the bottom. Josephus describes a palace “at the western ascent… inclining to the north”.",
+    "ru": "Дворец на трёх уровнях на северном утёсе: наверху жилые покои и полукруглая экседра; посередине круглый павильон для приёмов; внизу зал с колоннадой и небольшая баня. Иосиф описывает дворец «у западного подъёма… склоняющийся к северу»."
+   },
+   "dims": {
+    "he": "המדרגה התיכונה נמוכה בכמעט 20 מ׳ מהעליונה, והתחתונה נמוכה בעוד 15 מ׳ (WiBiLex).",
+    "fr": "Terrasse médiane presque 20 m sous la terrasse supérieure, terrasse inférieure 15 m plus bas encore (WiBiLex).",
+    "en": "Middle terrace almost 20 m below the upper one, lower terrace a further 15 m down (WiBiLex).",
+    "ru": "Средняя терраса почти на 20 м ниже верхней, нижняя ещё на 15 м ниже (WiBiLex)."
+   },
+   "remains": {
+    "he": "קירות, ציורי קיר וריצופי פסיפס שוחזרו; בבית המרחץ התחתון נמצאו שרידי שלושה בני אדם.",
+    "fr": "Murs, fresques et mosaïques restaurés ; dans le bain inférieur, les restes de trois personnes.",
+    "en": "Walls, frescoes and mosaics restored; remains of three people were found in the lower bath.",
+    "ru": "Стены, фрески и мозаики восстановлены; в нижней бане найдены останки трёх человек."
+   },
+   "placementNote": {
+    "he": "שלוש המדרגות ממוקמות לפי נקודות OpenStreetMap ״דרגה עליונה / תיכונה / תחתונה״; הבניינים עצמם בצורה פשוטה.",
+    "fr": "Les trois terrasses sont placées sur les points OpenStreetMap « terrasse supérieure / médiane / inférieure » ; bâtiments simplifiés.",
+    "en": "The three terraces sit on the OpenStreetMap points “upper / middle / lower terrace”; buildings simplified.",
+    "ru": "Три террасы поставлены по точкам OpenStreetMap «верхняя / средняя / нижняя»; здания упрощены."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "terraces",
+    "upper": "o:upper",
+    "middle": "o:middle",
+    "lower": "o:lower",
+    "drop1": 20,
+    "drop2": 15
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.275–319",
+     "url": "https://lexundria.com/j_bj/7.275-7.319/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/751256375",
+     "url": "https://www.openstreetmap.org/way/751256375"
+    }
+   ]
+  },
+  {
+   "id": "masada_western_palace",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הארמון המערבי",
+    "fr": "Le palais occidental",
+    "en": "The Western Palace",
+    "ru": "Западный дворец"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "הארמון הגדול ביותר במצדה, מרכז השלטון והאירוח; נבנה בכמה שלבים סביב חצר.",
+    "fr": "Le plus grand palais de Massada, centre administratif et de réception, bâti en plusieurs phases autour d’une cour.",
+    "en": "Masada’s largest palace, the administrative and reception centre, built in several phases around a courtyard.",
+    "ru": "Самый большой дворец Масады, административный и приёмный центр, построенный в несколько этапов вокруг двора."
+   },
+   "placementNote": {
+    "he": "קווי היסוד לפי OpenStreetMap; הגובה לצורך המחשה.",
+    "fr": "Plan au sol d’après OpenStreetMap ; hauteur indicative.",
+    "en": "Footprint from OpenStreetMap; height indicative.",
+    "ru": "План по OpenStreetMap; высота условная."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "western",
+    "h": 6,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549501",
+     "url": "https://www.openstreetmap.org/way/737549501"
+    }
+   ],
+   "dims": {
+    "he": "כ-4,000 מ״ר (WiBiLex).",
+    "fr": "Env. 4 000 m² (WiBiLex).",
+    "en": "About 4,000 m² (WiBiLex).",
+    "ru": "Около 4000 м² (WiBiLex)."
+   }
+  },
+  {
+   "id": "masada_storerooms",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "מכלול המחסנים",
+    "fr": "Les entrepôts",
+    "en": "The storerooms",
+    "ru": "Склады"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "מחסנים ארוכים למזון, יין ושמן. יוסף בן מתתיהו מספר שהמזון נשמר בהם שנים רבות.",
+    "fr": "Longs magasins pour la nourriture, le vin et l’huile ; Josèphe raconte que les vivres s’y conservaient longtemps.",
+    "en": "Long storerooms for food, wine and oil; Josephus says the provisions kept there for a long time.",
+    "ru": "Длинные склады для еды, вина и масла; по Иосифу, припасы хранились там долго."
+   },
+   "placementNote": {
+    "he": "קווי היסוד לפי OpenStreetMap; הגובה לצורך המחשה.",
+    "fr": "Plan au sol d’après OpenStreetMap ; hauteur indicative.",
+    "en": "Footprint from OpenStreetMap; height indicative.",
+    "ru": "План по OpenStreetMap; высота условная."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "storerooms",
+    "h": 4,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549509",
+     "url": "https://www.openstreetmap.org/way/737549509"
+    }
+   ],
+   "dims": {
+    "he": "לפי WiBiLex: מחסן ציבורי אחד בצפון (27 × 3.8 מ׳) ו-11 מחסנים בדרום (27 × 4 מ׳ כל אחד).",
+    "fr": "Selon WiBiLex : un magasin au nord (27 × 3,8 m) et 11 au sud (27 × 4 m chacun).",
+    "en": "Per WiBiLex: one storeroom in the north (27 × 3.8 m) and 11 in the south (27 × 4 m each).",
+    "ru": "По WiBiLex: один склад на севере (27 × 3,8 м) и 11 на юге (по 27 × 4 м)."
+   }
+  },
+  {
+   "id": "masada_bathhouse",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "בית המרחץ",
+    "fr": "Les thermes",
+    "en": "The bathhouse",
+    "ru": "Бани"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "בית מרחץ רומי בסגנונו: חדר הלבשה, חדר קר, חדר פושר וחדר חם מחומם מתחת לרצפה.",
+    "fr": "Bain de style romain : vestiaire, salle froide, tiède et chaude chauffée par le sol.",
+    "en": "A Roman-style bathhouse: changing room, cold, warm and hot rooms heated under the floor.",
+    "ru": "Баня римского типа: раздевалка, холодный, тёплый и горячий залы с подогревом пола."
+   },
+   "placementNote": {
+    "he": "קווי היסוד לפי OpenStreetMap; הגובה לצורך המחשה.",
+    "fr": "Plan au sol d’après OpenStreetMap ; hauteur indicative.",
+    "en": "Footprint from OpenStreetMap; height indicative.",
+    "ru": "План по OpenStreetMap; высота условная."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "bath",
+    "h": 5,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549519",
+     "url": "https://www.openstreetmap.org/way/737549519"
+    }
+   ]
+  },
+  {
+   "id": "masada_small_palaces",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הארמונות הקטנים",
+    "fr": "Les petits palais",
+    "en": "The small palaces",
+    "ru": "Малые дворцы"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "שלושה מבני מגורים מפוארים בדרום-מערב ההר, כנראה לבני משפחת המלך או לנכבדים.",
+    "fr": "Trois résidences au sud-ouest du sommet, probablement pour la famille royale ou des dignitaires.",
+    "en": "Three residences in the south-west of the summit, probably for the royal family or dignitaries.",
+    "ru": "Три резиденции на юго-западе вершины, вероятно для царской семьи или сановников."
+   },
+   "placementNote": {
+    "he": "קווי היסוד לפי OpenStreetMap; הגובה לצורך המחשה.",
+    "fr": "Plan au sol d’après OpenStreetMap ; hauteur indicative.",
+    "en": "Footprint from OpenStreetMap; height indicative.",
+    "ru": "План по OpenStreetMap; высота условная."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "smallpal",
+    "h": 4,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    }
+   ]
+  },
+  {
+   "id": "masada_columbarium",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "מגדל הקולומבריום",
+    "fr": "La tour-columbarium",
+    "en": "The columbarium tower",
+    "ru": "Башня-колумбарий"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "מבנה עגול שקירותיו מלאים גומחות קטנות; כנראה שובך יונים (לבשר ולזבל) או מקום לכדים.",
+    "fr": "Bâtiment rond aux murs creusés de petites niches : probablement un pigeonnier (viande et engrais) ou un dépôt de jarres.",
+    "en": "A round building with walls full of small niches — probably a dovecote (meat and fertiliser) or a jar store.",
+    "ru": "Круглое здание со стенами в нишах — вероятно, голубятня (мясо и удобрение) или хранилище кувшинов."
+   },
+   "placementNote": {
+    "he": "קווי היסוד לפי OpenStreetMap; הגובה לצורך המחשה.",
+    "fr": "Plan au sol d’après OpenStreetMap ; hauteur indicative.",
+    "en": "Footprint from OpenStreetMap; height indicative.",
+    "ru": "План по OpenStreetMap; высота условная."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "columb",
+    "h": 7,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549498",
+     "url": "https://www.openstreetmap.org/way/737549498"
+    }
+   ]
+  },
+  {
+   "id": "masada_pool",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "בריכת השחייה",
+    "fr": "La piscine",
+    "en": "The swimming pool",
+    "ru": "Бассейн"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "בריכה גלויה בדרום ההר, מוקפת מדרגות; עדות לשפע המים שנאגרו בבורות.",
+    "fr": "Bassin à ciel ouvert au sud du sommet, avec des marches — preuve de l’eau abondante stockée dans les citernes.",
+    "en": "An open pool in the south of the summit with steps — evidence of the water stored in the cisterns.",
+    "ru": "Открытый бассейн на юге вершины со ступенями — свидетельство запасов воды в цистернах."
+   },
+   "placementNote": {
+    "he": "קווי היסוד לפי OpenStreetMap; הגובה לצורך המחשה.",
+    "fr": "Plan au sol d’après OpenStreetMap ; hauteur indicative.",
+    "en": "Footprint from OpenStreetMap; height indicative.",
+    "ru": "План по OpenStreetMap; высота условная."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "swim",
+    "h": 1.5,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549520",
+     "url": "https://www.openstreetmap.org/way/737549520"
+    }
+   ]
+  },
+  {
+   "id": "masada_cisterns",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "בורות המים",
+    "fr": "Les citernes",
+    "en": "The cisterns",
+    "ru": "Цистерны"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "הורדוס חצב בסלע בורות מים גדולים (יוסף בן מתתיהו). מי השיטפונות הוזרמו מן הוואדיות בתעלות אל הבורות במדרון הצפון-מערבי, ומשם הועלו המים לראש ההר דרך ״שער המים״.",
+    "fr": "Hérode fit tailler dans le roc de grandes citernes (Josèphe). Les crues des oueds étaient dérivées par des canaux vers les citernes du versant nord-ouest, puis l’eau était montée au sommet par la « porte de l’eau ».",
+    "en": "Herod cut large cisterns in the rock (Josephus). Flash floods from the wadis were channelled to cisterns on the north-west slope; water was then carried up through the “Water Gate”.",
+    "ru": "Ирод высек в скале большие цистерны (Иосиф). Паводки из вади отводились каналами к цистернам на северо-западном склоне, затем вода поднималась наверх через «Водяные ворота»."
+   },
+   "dims": {
+    "he": "כ-40,000 מ״ק בסך הכול (ויקיפדיה).",
+    "fr": "Environ 40 000 m³ au total (Wikipédia).",
+    "en": "About 40,000 m³ in total (Wikipedia).",
+    "ru": "Всего около 40 000 м³ (Википедия)."
+   },
+   "placementNote": {
+    "he": "הסימון ב״שער המים״ (נקודת OpenStreetMap); הבורות עצמם חצובים במדרון ואינם מצוירים.",
+    "fr": "Repère à la « porte de l’eau » (point OpenStreetMap) ; les citernes, taillées dans le versant, ne sont pas dessinées.",
+    "en": "Marker at the “Water Gate” (OpenStreetMap point); the rock-cut cisterns are not drawn.",
+    "ru": "Метка у «Водяных ворот» (точка OpenStreetMap); высеченные цистерны не нарисованы."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:watergate",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.275–319",
+     "url": "https://lexundria.com/j_bj/7.275-7.319/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/913527022",
+     "url": "https://www.openstreetmap.org/node/913527022"
+    }
+   ]
+  },
+  {
+   "id": "masada_snake_path",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "שביל הנחש",
+    "fr": "Le sentier du Serpent",
+    "en": "The Snake Path",
+    "ru": "Змеиная тропа"
+   },
+   "text": {
+    "he": "העלייה המזרחית מכיוון ים המלח. יוסף בן מתתיהו: ״נקראת הנחש״ בשל פיתוליה, ואורך ההליכה בה 30 ריס.",
+    "fr": "La montée orientale depuis la mer Morte. Josèphe : « on l’appelle le Serpent » à cause de ses lacets ; la marche fait 30 stades.",
+    "en": "The eastern ascent from the Dead Sea. Josephus: “it is called the Serpent” for its windings; the walk is 30 stadia.",
+    "ru": "Восточный подъём от Мёртвого моря. Иосиф: «её называют Змеёй» из-за извилин; путь — 30 стадий."
+   },
+   "dims": {
+    "he": "הפרש גובה של כ-300 מ׳ (ויקיפדיה).",
+    "fr": "Dénivelé d’environ 300 m (Wikipédia).",
+    "en": "About 300 m of ascent (Wikipedia).",
+    "ru": "Перепад около 300 м (Википедия)."
+   },
+   "placementNote": {
+    "he": "התוואי של השביל של היום (OpenStreetMap).",
+    "fr": "Tracé du sentier actuel (OpenStreetMap).",
+    "en": "Line of today’s trail (OpenStreetMap).",
+    "ru": "Линия современной тропы (OpenStreetMap)."
+   },
+   "shape": {
+    "type": "path",
+    "osm": "snake",
+    "w": 2.2,
+    "color": "#f6e7c0"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.275–319",
+     "url": "https://lexundria.com/j_bj/7.275-7.319/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/97602598",
+     "url": "https://www.openstreetmap.org/way/97602598"
+    }
+   ]
+  },
+  {
+   "id": "masada_synagogue",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "בית הכנסת",
+    "fr": "La synagogue",
+    "en": "The synagogue",
+    "ru": "Синагога"
+   },
+   "text": {
+    "he": "אולם בצד הצפון-מערבי של החומה. בימי המרד הוסיפו בו המורדים ספסלים לאורך הקירות; ידין זיהה אותו כבית כנסת — מן העתיקים בארץ. נמצאו בו קטעי מגילות (דברים, יחזקאל).",
+    "fr": "Salle contre le mur nord-ouest. Pendant la révolte, les rebelles y ajoutèrent des bancs le long des murs ; Yadin l’identifia comme une synagogue, l’une des plus anciennes du pays. On y trouva des fragments de rouleaux (Deutéronome, Ézéchiel).",
+    "en": "A hall by the north-west wall. During the revolt the rebels added benches along the walls; Yadin identified it as a synagogue, one of the oldest in the land. Scroll fragments (Deuteronomy, Ezekiel) were found.",
+    "ru": "Зал у северо-западной стены. Во время восстания повстанцы добавили скамьи вдоль стен; Ядин определил его как синагогу, одну из древнейших в стране. Найдены фрагменты свитков (Второзаконие, Иезекииль)."
+   },
+   "otherView": {
+    "he": "המבנה עצמו קדום יותר (ימי הורדוס); תפקידו אז אינו ודאי.",
+    "fr": "Le bâtiment lui-même est plus ancien (époque d’Hérode) ; sa fonction d’origine est incertaine.",
+    "en": "The building itself is older (Herod’s time); its original function is uncertain.",
+    "ru": "Само здание древнее (времена Ирода); его первоначальное назначение неясно."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "synagogue",
+    "h": 4,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "drive",
+     "label": "מצדה — לו״ז הסיור (יוסף בן מתתיהו, נאום אלעזר בן יאיר; ידין)",
+     "url": "https://drive.google.com/file/d/1uXt-2ymKuXeOYJb2XXHejki_3tJ1I7Ks/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549503",
+     "url": "https://www.openstreetmap.org/way/737549503"
+    }
+   ]
+  },
+  {
+   "id": "masada_mikveh",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "בריכת הטבילה (מקווה)",
+    "fr": "Le bain rituel (mikvé)",
+    "en": "The ritual bath (mikveh)",
+    "ru": "Ритуальная купальня (миква)"
+   },
+   "text": {
+    "he": "בריכת טבילה שבנו המורדים, עדות לשמירת דיני הטהרה על ראש ההר.",
+    "fr": "Bassin d’immersion construit par les rebelles, témoin du respect des lois de pureté au sommet.",
+    "en": "An immersion pool built by the rebels, evidence of purity laws kept on the summit.",
+    "ru": "Бассейн для омовения, построенный повстанцами, — свидетельство соблюдения законов чистоты."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "mikveh",
+    "h": 1.5,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549505",
+     "url": "https://www.openstreetmap.org/way/737549505"
+    }
+   ]
+  },
+  {
+   "id": "masada_lots",
+   "from": 3,
+   "to": 5,
+   "certainty": "reconstruction",
+   "name": {
+    "he": "מקום מציאת ״הגורלות״",
+    "fr": "Le lieu des « sorts »",
+    "en": "Where the “lots” were found",
+    "ru": "Место находки «жребиев»"
+   },
+   "text": {
+    "he": "כאן נמצאו חרסים ועליהם שמות, ובהם ״בן יאיר״. ידין קשר אותם להגרלה שמתאר יוסף בן מתתיהו בלילה האחרון; הפרשנות שנויה במחלוקת.",
+    "fr": "On y trouva des tessons portant des noms, dont « ben Yaïr ». Yadin les relia au tirage au sort que décrit Josèphe pour la dernière nuit ; l’interprétation est discutée.",
+    "en": "Inscribed sherds with names, including “ben Yair”, were found here. Yadin linked them to the lot-drawing Josephus describes on the last night; the reading is debated.",
+    "ru": "Здесь найдены черепки с именами, в том числе «бен Яир». Ядин связал их с жеребьёвкой последней ночи у Иосифа; толкование спорно."
+   },
+   "debate": {
+    "he": "האם אלה ״הגורלות״ שבסיפור יוסף בן מתתיהו? ידין סבר שכן; חוקרים אחרים מציעים שימוש אחר (למשל חלוקת מזון).",
+    "fr": "Sont-ce les « sorts » du récit de Josèphe ? Yadin le pensait ; d’autres proposent un autre usage (p. ex. le rationnement).",
+    "en": "Are these the “lots” of Josephus’ story? Yadin thought so; others suggest another use (e.g. food rationing).",
+    "ru": "Это ли «жребии» из рассказа Иосифа? Ядин так считал; другие предлагают иное назначение (например, раздачу пищи)."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:lots",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.252–388",
+     "url": "https://lexundria.com/j_bj/7.252-7.388/wst"
+    },
+    {
+     "kind": "drive",
+     "label": "מצדה — לו״ז הסיור (יוסף בן מתתיהו, נאום אלעזר בן יאיר; ידין)",
+     "url": "https://drive.google.com/file/d/1uXt-2ymKuXeOYJb2XXHejki_3tJ1I7Ks/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/6177201789",
+     "url": "https://www.openstreetmap.org/node/6177201789"
+    }
+   ]
+  },
+  {
+   "id": "masada_roman_camps",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "מחנות הצבא הרומי",
+    "fr": "Les camps romains",
+    "en": "The Roman camps",
+    "ru": "Римские лагеря"
+   },
+   "builder": {
+    "he": "הלגיון העשירי בפיקוד פלביוס סילבה",
+    "fr": "La Xe légion, sous Flavius Silva",
+    "en": "The Tenth Legion under Flavius Silva",
+    "ru": "Десятый легион под командованием Флавия Сильвы"
+   },
+   "text": {
+    "he": "שמונה מחנות (א׳–ח׳) כיתרו את ההר; המחנה הראשי (ו׳) ממערב. ביניהם עברה חומת מצור (סוללת הקפה) שמנעה בריחה.",
+    "fr": "Huit camps (A à H) encerclaient la montagne ; le camp principal (F) à l’ouest. Un mur de circonvallation les reliait pour empêcher toute fuite.",
+    "en": "Eight camps (A–H) surrounded the mountain; the main camp (F) lay to the west. A circumvallation wall joined them to prevent escape.",
+    "ru": "Восемь лагерей (A–H) окружали гору; главный (F) — на западе. Их соединяла стена окружения, чтобы никто не сбежал."
+   },
+   "dims": {
+    "he": "חומת ההקפה: רוחב 1.5 מ׳, אורך 4.6 ק״מ, 13 מגדלי שמירה (WiBiLex).",
+    "fr": "Circonvallation : 1,5 m de large, 4,6 km de long, 13 tours de guet (WiBiLex).",
+    "en": "Circumvallation: 1.5 m wide, 4.6 km long, 13 watchtowers (WiBiLex).",
+    "ru": "Стена окружения: ширина 1,5 м, длина 4,6 км, 13 сторожевых башен (WiBiLex)."
+   },
+   "placementNote": {
+    "he": "קווי המחנות לפי OpenStreetMap; חומת ההקפה אינה בנתונים ולכן אינה מצוירת.",
+    "fr": "Contours des camps d’après OpenStreetMap ; le mur de circonvallation n’est pas dans les données et n’est pas dessiné.",
+    "en": "Camp outlines from OpenStreetMap; the circumvallation wall is not in the data and is not drawn.",
+    "ru": "Контуры лагерей по OpenStreetMap; стены окружения нет в данных, она не нарисована."
+   },
+   "shape": {
+    "type": "wall",
+    "osm": "camps",
+    "h": 2.2,
+    "thick": 1.6,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.252–388",
+     "url": "https://lexundria.com/j_bj/7.252-7.388/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Masada — WiBiLex (Deutsche Bibelgesellschaft)",
+     "url": "https://www.die-bibel.de/stichwort/51989"
+    },
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/87684153",
+     "url": "https://www.openstreetmap.org/way/87684153"
+    }
+   ]
+  },
+  {
+   "id": "masada_ramp",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "סוללת המצור",
+    "fr": "La rampe de siège",
+    "en": "The siege ramp",
+    "ru": "Осадная насыпь"
+   },
+   "builder": {
+    "he": "הצבא הרומי (פלביוס סילבה)",
+    "fr": "L’armée romaine (Flavius Silva)",
+    "en": "The Roman army (Flavius Silva)",
+    "ru": "Римская армия (Флавий Сильва)"
+   },
+   "text": {
+    "he": "סוללה שנבנתה על שלוחה טבעית במערב (״הלבן״) עד החומה. עליה הועלה איל ניגוח שפרץ את החומה; המגינים בנו מאחוריה חומת עץ ועפר, והרומאים הציתו אותה.",
+    "fr": "Rampe élevée sur un éperon naturel à l’ouest (le « Blanc ») jusqu’au mur. Un bélier y fut monté et ouvrit une brèche ; les défenseurs bâtirent derrière un mur de bois et de terre, que les Romains incendièrent.",
+    "en": "A ramp built on a natural spur to the west (the “White”) up to the wall. A battering ram was hauled up and breached the wall; the defenders built a wood-and-earth wall behind it, which the Romans set on fire.",
+    "ru": "Насыпь на естественном отроге на западе («Белый») до стены. По ней подняли таран и пробили стену; защитники построили за ней стену из дерева и земли, которую римляне подожгли."
+   },
+   "dims": {
+    "he": "יוסף בן מתתיהו: סוללה בגובה 200 אמה ועליה במה של 50 אמה ומגדל של 60 אמה. ויקיפדיה: גובה 114 מ׳, רובה שלוחת סלע טבעית.",
+    "fr": "Josèphe : remblai de 200 coudées, plate-forme de 50, tour de 60 coudées. Wikipédia : 114 m de haut, surtout un éperon rocheux naturel.",
+    "en": "Josephus: a 200-cubit bank, a 50-cubit platform and a 60-cubit tower. Wikipedia: 114 m high, mostly a natural rock spur.",
+    "ru": "Иосиф: насыпь 200 локтей, платформа 50, башня 60 локтей. Википедия: 114 м, в основном природный скальный отрог."
+   },
+   "events": {
+    "he": "73 (או 74) לסה״נ: פריצת החומה; לפי יוסף בן מתתיהו, 960 המגינים בחרו למות בלילה האחרון (נאום אלעזר בן יאיר).",
+    "fr": "73 (ou 74) apr. J.-C. : brèche ; selon Josèphe, les 960 défenseurs choisirent la mort la dernière nuit (discours d’Éléazar ben Yaïr).",
+    "en": "73 (or 74) CE: the breach; according to Josephus the 960 defenders chose death on the last night (Eleazar ben Yair’s speech).",
+    "ru": "73 (или 74) г. н. э.: пролом; по Иосифу, 960 защитников выбрали смерть в последнюю ночь (речь Элеазара бен Яира)."
+   },
+   "placementNote": {
+    "he": "מתחילת ״שביל הסוללה״ (OpenStreetMap) אל ״נקודת הפריצה״.",
+    "fr": "Du début du « sentier de la rampe » (OpenStreetMap) au « point de la brèche ».",
+    "en": "From the start of the “Ramp path” (OpenStreetMap) to the “Breaching Point”.",
+    "ru": "От начала «тропы насыпи» (OpenStreetMap) до «места пролома»."
+   },
+   "shape": {
+    "type": "ramp",
+    "from": "o:rampfoot",
+    "to": "o:breach",
+    "w": 14,
+    "topInward": 20
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.252–388",
+     "url": "https://lexundria.com/j_bj/7.252-7.388/wst"
+    },
+    {
+     "kind": "primary",
+     "label": "יוסף בן מתתיהו, מלחמת היהודים 7.275–319",
+     "url": "https://lexundria.com/j_bj/7.275-7.319/wst"
+    },
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "drive",
+     "label": "התקופה הרומית הראשונה (סיכום הרצאה)",
+     "url": "https://drive.google.com/file/d/16VZd3J6UNXoADV1hFpMrUoOJi0_y4pRA/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1392658074",
+     "url": "https://www.openstreetmap.org/node/1392658074"
+    }
+   ]
+  },
+  {
+   "id": "masada_byzantine_church",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הכנסייה הביזנטית",
+    "fr": "L’église byzantine",
+    "en": "The Byzantine church",
+    "ru": "Византийская церковь"
+   },
+   "builder": {
+    "he": "נזירים (מנזר מרדה)",
+    "fr": "Des moines (laure de Marda)",
+    "en": "Monks (the Marda laura)",
+    "ru": "Монахи (лавра Марда)"
+   },
+   "text": {
+    "he": "כנסייה קטנה מהמאות ה-5–6, במרכז ההר, עם רצפת פסיפס. הנזירים שישבו במקום קראו לו מרדה ונכנסו דרך ״השער הביזנטי״ שבמערב.",
+    "fr": "Petite église des Ve–VIe s., au centre du sommet, avec une mosaïque. Les moines appelaient le lieu Marda et entraient par la « porte byzantine » à l’ouest.",
+    "en": "A small 5th–6th-century church in the centre of the summit, with a mosaic floor. The monks called the place Marda and entered by the “Byzantine gate” in the west.",
+    "ru": "Небольшая церковь V–VI вв. в центре вершины с мозаичным полом. Монахи называли место Марда и входили через «византийские ворота» на западе."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "church",
+    "h": 7,
+    "kind": "dolomite"
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "Masada (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/737549502",
+     "url": "https://www.openstreetmap.org/way/737549502"
+    }
+   ]
+  }
+ ]
+}

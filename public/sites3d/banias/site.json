@@ -1,0 +1,586 @@
+{
+ "site": "banias",
+ "title": {
+  "he": "בניאס",
+  "fr": "Banias",
+  "en": "Banias",
+  "ru": "Баниас"
+ },
+ "defaultPeriod": 2,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#ffffff",
+ "home": {
+  "at": {
+   "off": "o:pan",
+   "dx": -100,
+   "dz": 120
+  },
+  "dist": 600,
+  "from": 200,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "pan": {
+   "osm": "way/685707762"
+  },
+  "palace": {
+   "osm": "way/734139767"
+  },
+  "cardo": {
+   "osm": "way/734139765"
+  },
+  "bridge": {
+   "osm": "node/6875217789"
+  },
+  "pools": {
+   "osm": [
+    "way/1378884185",
+    "way/1378884186",
+    "way/1378884187",
+    "way/1378884188",
+    "way/1378884189"
+   ]
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "hellenistic",
+   "name": {
+    "he": "יוון",
+    "fr": "Hellénistique — sanctuaire de Pan",
+    "en": "Hellenistic — sanctuary of Pan",
+    "ru": "Эллинистическая — святилище Пана"
+   },
+   "dates": {
+    "he": "המאות ה-3–1 לפנה״ס",
+    "fr": "IIIe–Ier s. av. J.-C.",
+    "en": "3rd–1st c. BCE",
+    "ru": "III–I вв. до н. э."
+   }
+  },
+  {
+   "n": 2,
+   "era": "herodian",
+   "name": {
+    "he": "הורדוס",
+    "fr": "Hérode et ses fils — Césarée de Philippe",
+    "en": "Herod and sons — Caesarea Philippi",
+    "ru": "Ирод и сыновья — Кесария Филиппова"
+   },
+   "dates": {
+    "he": "20 לפנה״ס – המאה ה-1",
+    "fr": "20 av. – Ier s.",
+    "en": "20 BCE – 1st c.",
+    "ru": "20 г. до н. э. – I в."
+   }
+  },
+  {
+   "n": 3,
+   "era": "byzantine",
+   "name": {
+    "he": "ביזנטיון",
+    "fr": "Byzantine",
+    "en": "Byzantine",
+    "ru": "Византийская"
+   },
+   "dates": {
+    "he": "324–636",
+    "fr": "324–636",
+    "en": "324–636",
+    "ru": "324–636"
+   }
+  },
+  {
+   "n": 4,
+   "era": "crusader",
+   "name": {
+    "he": "הצלבנים",
+    "fr": "Croisée et musulmane",
+    "en": "Crusader and Muslim",
+    "ru": "Крестоносцы и ислам"
+   },
+   "dates": {
+    "he": "המאות ה-12–13",
+    "fr": "XIIe–XIIIe s.",
+    "en": "12th–13th c.",
+    "ru": "XII–XIII вв."
+   }
+  },
+  {
+   "n": 5,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "Banias aujourd’hui",
+    "en": "Banias today",
+    "ru": "Баниас сегодня"
+   },
+   "dates": {
+    "he": "שמורת טבע וגן לאומי",
+    "fr": "réserve naturelle",
+    "en": "nature reserve",
+    "ru": "заповедник"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "bn_pan",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "מקדשי פאן והמערה",
+    "fr": "La grotte et les sanctuaires de Pan",
+    "en": "The cave and the shrines of Pan",
+    "ru": "Пещера и святилища Пана"
+   },
+   "text": {
+    "he": "מערה קרסטית שתקרתה קרסה; לידה מקדש לפאן, אל הרועים. בקיר המצוק נחצבו גומחות לפסלים: אקו, הרמס, זאוס, נמסיס ו״מקדש העזים המרקדות״. יוסף בן מתתיהו מתאר את המערה כעמוקה עד אין חקר.",
+    "fr": "Grotte karstique effondrée ; à côté, un sanctuaire de Pan, dieu des bergers. Dans la falaise, des niches pour des statues : Écho, Hermès, Zeus, Némésis et le « temple des chèvres dansantes ». Josèphe décrit une grotte d’une profondeur insondable.",
+    "en": "A collapsed karst cave; next to it a shrine of Pan, god of shepherds. Niches for statues were cut in the cliff: Echo, Hermes, Zeus, Nemesis and the “temple of the dancing goats”. Josephus describes the cave as unfathomably deep.",
+    "ru": "Обрушившаяся карстовая пещера; рядом святилище Пана, бога пастухов. В скале вырублены ниши для статуй: Эхо, Гермес, Зевс, Немезида и «храм пляшущих козлов». Иосиф описывает пещеру как бездонную."
+   },
+   "events": {
+    "he": "200 לפנה״ס: קרב פניאס, שהעביר את ארץ ישראל מבית תלמי לבית סלווקוס.",
+    "fr": "200 av. J.-C. : bataille de Panéas, qui fit passer le pays des Lagides aux Séleucides.",
+    "en": "200 BCE: the battle of Panium, which passed the land from the Ptolemies to the Seleucids.",
+    "ru": "200 г. до н. э.: битва при Панионе, после которой страна перешла от Птолемеев к Селевкидам."
+   },
+   "otherView": {
+    "he": "סיכום הקורס מתארך את הקרב ל-201 לפנה״ס.",
+    "fr": "Le cours date la bataille de 201 av. J.-C.",
+    "en": "The course dates the battle to 201 BCE.",
+    "ru": "Курс датирует битву 201 г. до н. э."
+   },
+   "placementNote": {
+    "he": "קו המתאר ״Pan Temple״ (OpenStreetMap).",
+    "fr": "Contour « Pan Temple » (OSM).",
+    "en": "Outline “Pan Temple” (OSM).",
+    "ru": "Контур «Pan Temple» (OSM)."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "pan",
+    "h": 3,
+    "kind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — בניאס (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/685707762",
+     "url": "https://www.openstreetmap.org/way/685707762"
+    }
+   ]
+  },
+  {
+   "id": "bn_augustus",
+   "from": 2,
+   "to": 2,
+   "certainty": "reconstruction",
+   "pri": 2,
+   "name": {
+    "he": "מקדש אוגוסטוס",
+    "fr": "Le temple d’Auguste",
+    "en": "The temple of Augustus",
+    "ru": "Храм Августа"
+   },
+   "builder": {
+    "he": "הורדוס",
+    "fr": "Hérode",
+    "en": "Herod",
+    "ru": "Ирод"
+   },
+   "text": {
+    "he": "הורדוס בנה על שטח המקדש מקדש לכבוד אוגוסטוס ודחק את מקדש פאן לרחבה שלצד המערה. יוסף בן מתתיהו: ״מקדש שיש מפואר״; בפועל אבן גיר לבנה.",
+    "fr": "Hérode bâtit à l’emplacement du sanctuaire un temple en l’honneur d’Auguste et repoussa le culte de Pan sur l’esplanade à côté de la grotte. Josèphe : « un magnifique temple de marbre » ; en fait du calcaire blanc.",
+    "en": "Herod built a temple in honour of Augustus on the sanctuary and pushed Pan’s cult to the terrace beside the cave. Josephus: “a magnificent temple of white marble”; in fact white limestone.",
+    "ru": "Ирод построил на месте святилища храм в честь Августа и оттеснил культ Пана на площадку у пещеры. Иосиф: «великолепный мраморный храм»; на деле белый известняк."
+   },
+   "placementNote": {
+    "he": "ליד פתח המערה; הצורה כללית.",
+    "fr": "Près de l’entrée de la grotte ; forme générale.",
+    "en": "Near the cave entrance; general form.",
+    "ru": "У входа в пещеру; общая форма."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "temple",
+    "at": {
+     "off": "o:pan",
+     "dx": 0,
+     "dz": 15
+    },
+    "bearing": 180,
+    "podiumW": 26,
+    "podiumD": 34,
+    "podiumH": 2,
+    "L": 26,
+    "W": 15,
+    "H": 12,
+    "kind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — בניאס (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view"
+    }
+   ]
+  },
+  {
+   "id": "bn_palace",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "ארמון אגריפס השני",
+    "fr": "Le palais d’Agrippa II",
+    "en": "The palace of Agrippa II",
+    "ru": "Дворец Агриппы II"
+   },
+   "text": {
+    "he": "בירת פיליפוס בן הורדוס, קיסריה פיליפי; ארמון גדול של אגריפס השני ליד הנחל. מסלול ״הארמון״ עובר דרכו.",
+    "fr": "Capitale de Philippe fils d’Hérode, Césarée de Philippe ; grand palais d’Agrippa II près du ruisseau. Le sentier « du palais » le traverse.",
+    "en": "Capital of Herod’s son Philip, Caesarea Philippi; a large palace of Agrippa II by the stream. The “palace” trail crosses it.",
+    "ru": "Столица сына Ирода Филиппа — Кесария Филиппова; большой дворец Агриппы II у ручья. Через него проходит «дворцовая» тропа."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "palace",
+    "h": 5,
+    "kind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — בניאס (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/734139767",
+     "url": "https://www.openstreetmap.org/way/734139767"
+    }
+   ]
+  },
+  {
+   "id": "bn_cardo",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הקרדו",
+    "fr": "Le cardo",
+    "en": "The cardo",
+    "ru": "Кардо"
+   },
+   "text": {
+    "he": "רחוב העמודים של קיסריה פיליפי.",
+    "fr": "La rue à colonnes de Césarée de Philippe.",
+    "en": "The colonnaded street of Caesarea Philippi.",
+    "ru": "Колоннадная улица Кесарии Филипповой."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "cardo",
+    "h": 1,
+    "kind": "limestone"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — בניאס (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/734139765",
+     "url": "https://www.openstreetmap.org/way/734139765"
+    }
+   ]
+  },
+  {
+   "id": "bn_church",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הכנסייה הביזנטית ומסורת פטרוס",
+    "fr": "L’église byzantine et la tradition de Pierre",
+    "en": "The Byzantine church and Peter’s tradition",
+    "ru": "Византийская церковь и предание о Петре"
+   },
+   "text": {
+    "he": "כנסייה החליפה את המקדש הפגני. כאן לפי מתי ט״ז: ״אתה פטרוס ועל הצור הזה אבנה את קהילתי… ואתן לך את מפתחות מלכות השמיים״; יש כנסיות הממקמות בחרמון גם את ההשתנות.",
+    "fr": "Une église remplaça le temple païen. Ici, selon Matthieu 16 : « Tu es Pierre, et sur cette pierre je bâtirai mon Église… je te donnerai les clés du royaume des cieux » ; certaines Églises situent aussi la Transfiguration à l’Hermon.",
+    "en": "A church replaced the pagan temple. Here, per Matthew 16: “You are Peter, and on this rock I will build my church… I will give you the keys of the kingdom of heaven”; some churches also place the Transfiguration on Hermon.",
+    "ru": "Церковь заменила языческий храм. Здесь, по Матфею 16: «Ты Пётр, и на сем камне Я создам Церковь Мою… и дам тебе ключи Царства Небесного»; некоторые церкви относят к Хермону и Преображение."
+   },
+   "placementNote": {
+    "he": "סימון ליד פתח המערה; מקום הכנסייה המדויק אינו בנתונים.",
+    "fr": "Repère près de la grotte ; position exacte de l’église inconnue des données.",
+    "en": "Marker near the cave; the church’s exact position is not in the data.",
+    "ru": "Метка у пещеры; точного места церкви нет в данных."
+   },
+   "shape": {
+    "type": "marker",
+    "at": {
+     "off": "o:pan",
+     "dx": 25,
+     "dz": 25
+    },
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — בניאס (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view"
+    }
+   ]
+  },
+  {
+   "id": "bn_bridge",
+   "from": 2,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "הגשר הרומי וטחנת הקמח",
+    "fr": "Le pont romain et le moulin",
+    "en": "The Roman bridge and the mill",
+    "ru": "Римский мост и мельница"
+   },
+   "text": {
+    "he": "לאורך מסלול הנחל: גשר רומי וטחנת קמח המונעת במים.",
+    "fr": "Le long du sentier du ruisseau : un pont romain et un moulin à eau.",
+    "en": "Along the stream trail: a Roman bridge and a water-powered flour mill.",
+    "ru": "Вдоль тропы у ручья: римский мост и водяная мельница."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:bridge",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — בניאס (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/6875217789",
+     "url": "https://www.openstreetmap.org/node/6875217789"
+    }
+   ]
+  },
+  {
+   "id": "bn_spring",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "מעיינות הבניאס",
+    "fr": "Les sources du Banias",
+    "en": "The Banias springs",
+    "ru": "Источники Баниаса"
+   },
+   "text": {
+    "he": "המעיין יורד משלוחת החרמון; מקור מרכזי של הירדן. לפי הפולחן ההלניסטי זרקו רועים גדי למעיין: אם טבע — שנה טובה. נמצאו עצמות גדיים רבות.",
+    "fr": "La source jaillit au pied de l’Hermon ; une source majeure du Jourdain. Au culte hellénistique, les bergers jetaient un chevreau dans la source : s’il coulait, l’année serait bonne. Beaucoup d’os de chevreaux retrouvés.",
+    "en": "The spring rises at the foot of Hermon, a main source of the Jordan. In the Hellenistic cult shepherds threw a kid into the spring: if it sank, a good year. Many kid bones were found.",
+    "ru": "Источник у подножия Хермона — один из главных истоков Иордана. По эллинистическому обряду пастухи бросали козлёнка в источник: утонет — год будет хорошим. Найдено много костей козлят."
+   },
+   "shape": {
+    "type": "path",
+    "osm": "pools",
+    "w": 12,
+    "color": "#3c9be6"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — בניאס (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1JmIF31tTtiTJcjQIX-EujVX-2E4-AY_A/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1282821195",
+     "url": "https://www.openstreetmap.org/node/1282821195"
+    }
+   ]
+  }
+ ]
+}

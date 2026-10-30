@@ -1,0 +1,28 @@
+name: Coordonnées de la carte (Wikipédia)
+# Régénère public/places.json depuis Wikipédia/Wikidata. Le résultat est commité sur la branche (si les droits
+# d'écriture d'Actions le permettent) et publié aussi en annotations du job (compressé, base64).
+# Lancement manuel : Actions → « Coordonnées de la carte » → Run workflow.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-places.mjs | tee tools/places-build.log
+      - name: Publish result as annotations
+        run: |
+          gzip -9c public/places.json | base64 -w0 | fold -w 3500 | nl -nln -w1 -s'|' | while IFS= read -r line; do echo "::notice title=places-chunk::$line"; done
+      - name: Commit
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/places.json tools/places-build.log
+          git diff --cached --quiet || git commit -m "data(map): regenerate places.json from Wikipedia"
+          git push

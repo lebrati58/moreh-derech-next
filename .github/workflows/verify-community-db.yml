@@ -1,0 +1,62 @@
+name: Database read check (community + class contest)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-community-db.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify actual Supabase RPC (read only)
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const vm = require('node:vm');
+          const sandbox = {window:{},location:{hostname:'lebrati58.github.io'}};
+          vm.runInNewContext(fs.readFileSync('public/config.js','utf8'),sandbox);
+          const cfg = sandbox.window.MDL_CONFIG;
+          if(!cfg?.url || !cfg?.anonKey)throw Error('Missing application Supabase configuration');
+          (async () => {
+            // Concours de la classe : la fonction de lecture du classement existe-t-elle ? (lecture seule)
+            const cls = await fetch(cfg.url+'/rest/v1/rpc/class_leaderboard',{method:'POST',
+              headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},/^eyJ/.test(cfg.anonKey)?{Authorization:'Bearer '+cfg.anonKey}:{}),
+              body:'{}',signal:AbortSignal.timeout(12000)});
+            const cd = await cls.json().catch(()=>null);
+            console.log('Class contest:',cls.status,cls.ok&&cd&&Array.isArray(cd.items)?('installed, '+cd.items.length+' players'):(cls.status===404?'NOT INSTALLED — run supabase/class_contest.sql once':'unavailable'));
+            if(!cls.ok) process.exitCode=1;
+            // Codes de classe (v2) : information seulement — n'échoue pas tant que class_contest_v2.sql n'est pas installé
+            const v2 = await fetch(cfg.url+'/rest/v1/rpc/class_board',{method:'POST',
+              headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},/^eyJ/.test(cfg.anonKey)?{Authorization:'Bearer '+cfg.anonKey}:{}),
+              body:JSON.stringify({p_class:''}),signal:AbortSignal.timeout(12000)});
+            console.log('Class codes (v2):',v2.status,v2.ok?'installed':(v2.status===404?'NOT INSTALLED — run supabase/class_contest_v2.sql once':'unavailable'));
+            // Accès réservé (teoudat zehout) : information seulement
+            const acc = await fetch(cfg.url+'/rest/v1/rpc/access_required',{method:'POST',
+              headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},/^eyJ/.test(cfg.anonKey)?{Authorization:'Bearer '+cfg.anonKey}:{}),
+              body:'{}',signal:AbortSignal.timeout(12000)});
+            const ad = await acc.json().catch(()=>null);
+            console.log('Access control:',acc.status,acc.ok?('installed, app '+(ad&&ad.required?'RESTRICTED to the list':'OPEN (empty list)')):(acc.status===404?'NOT INSTALLED — run supabase/access_control.sql once':'unavailable'));
+            const rsp = await fetch(cfg.url+'/rest/v1/rpc/community_catalog',{
+              method:'POST',
+              headers:Object.assign({'Content-Type':'application/json',apikey:cfg.anonKey},
+                /^eyJ/.test(cfg.anonKey)?{Authorization:'Bearer '+cfg.anonKey}:{}),
+              body:'{}',signal:AbortSignal.timeout(12000)
+            });
+            const data = await rsp.json().catch(()=>null);
+            const schemaOkay = !!data && Array.isArray(data.routes) && Array.isArray(data.documents);
+            console.log('Server response:',rsp.status,'readable catalog:',schemaOkay,
+              'routes:',schemaOkay?data.routes.length:'unknown','documents:',schemaOkay?data.documents.length:'unknown');
+            if(!rsp.ok || !schemaOkay){
+              console.error('RPC error code:',typeof data?.code==='string'?data.code:'unknown');
+              console.error('RPC diagnosis:',rsp.status===404?'Function missing or schema cache unavailable':rsp.status===401?'Authorization or API key failure':'Database RPC unavailable');
+              process.exitCode=1;
+            }
+          })().catch(e=>{console.error('Read-only check failed:',e.message);process.exitCode=1;});
+          NODE

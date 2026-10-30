@@ -1,0 +1,37 @@
+name: Jérusalem 3D — géographie
+# Régénère public/jerusalem3d/geo.json (repères Wikipédia, tracés OpenStreetMap, relief SRTM).
+# Lancement manuel : Actions → « Jérusalem 3D — géographie » → Run workflow.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-jerusalem3d.mjs | tee tools/jerusalem3d-build.log
+      - name: Publish result as annotations (part 1)
+        run: |
+          gzip -9c public/jerusalem3d/geo.json | base64 -w0 | fold -w 4000 > /tmp/chunks.txt
+          wc -l /tmp/chunks.txt
+          nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '1,9p' | while IFS= read -r line; do echo "::notice title=geo-chunk::$line"; done
+      - name: Publish result as annotations (part 2)
+        run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '10,18p' | while IFS= read -r line; do echo "::notice title=geo-chunk::$line"; done
+      - name: Publish result as annotations (part 3)
+        run: nl -nln -w1 -s'|' /tmp/chunks.txt | sed -n '19,27p' | while IFS= read -r line; do echo "::notice title=geo-chunk::$line"; done
+      - name: Build log summary
+        run: grep -E '^(EAUEL|EAU |OSM :)' tools/jerusalem3d-build.log | head -9 | while IFS= read -r line; do echo "::notice title=geo-log::$line"; done
+      - name: Water log (part 2)
+        run: grep -E '^EAUEL' tools/jerusalem3d-build.log | sed -n '9,17p' | while IFS= read -r line; do echo "::notice title=geo-log::$line"; done
+      - name: Commit
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/jerusalem3d/geo.json tools/jerusalem3d-build.log
+          git diff --cached --quiet || git commit -m "data(jerusalem3d): regenerate geo.json"
+          git pull --rebase && git push

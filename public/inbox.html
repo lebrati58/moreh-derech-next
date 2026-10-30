@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1230">
+<title>הודעות מהתלמידים — Moreh Derech NEXT</title>
+<style>
+:root{--bg:#0b1230;--card:#151f4a;--line:#3d5190;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif}
+.wrap{max-width:780px;margin:auto;padding:16px 16px 60px}
+nav{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:14px}
+nav a,.btn{color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;padding:9px 13px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a;cursor:pointer;font-family:inherit}
+h1{font-size:22px;margin:4px 0 4px}.sub{color:var(--soft);margin:0 0 14px;font-size:14px}
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{flex:1;min-width:90px;padding:10px;border-radius:12px;border:1px solid var(--line);background:#16224a;color:var(--ink);font:800 14px inherit;font-family:inherit;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--gold);color:#111d45;border-color:var(--gold)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.card.done{opacity:.6}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--soft);margin-bottom:8px}
+.tag{padding:3px 9px;border-radius:999px;background:#22306a;color:var(--ink);font-weight:800}
+.msg{white-space:pre-wrap;line-height:1.55;font-size:15.5px;margin:0 0 10px}
+.ctx{font-size:12.5px;color:var(--soft);margin:0 0 10px}.ctx a{color:var(--mint)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.ok{background:#1f5e52;border-color:var(--mint)}
+form.card label{display:block;font-weight:800;margin:0 0 6px}
+input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#0b1232;color:#fff;font:16px inherit;font-family:inherit;margin-bottom:10px}
+.err{color:#ffb4b4;min-height:1.2em;margin:0 0 8px}
+.empty{text-align:center;color:var(--soft);padding:30px 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a href="index.html">⌂ משחקים</a><a href="admin.html">🎤 מסך המדריך</a></nav>
+  <h1>📨 הודעות מהתלמידים</h1>
+  <p class="sub">רעיונות, תקלות וטעויות בשאלות שנשלחו מהכפתור 💡 באפליקציה.</p>
+  <div id="app"></div>
+</div>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script>
+(function(){
+  'use strict';
+  const { rpc, esc, store } = window.MDL;
+  const KEY = 'mdl_admin'; // même session que l'écran du guide
+  const KIND = { idea:'💡 רעיון', bug:'🐞 תקלה', question:'❓ טעות בשאלה', other:'💬 אחר' };
+  let token = store.get(KEY), filter = 'new';
+  const app = document.getElementById('app');
+
+  function login(err){
+    app.innerHTML = `<form class="card" id="lf"><label for="pw">סיסמת מנהל</label>
+      <input id="pw" type="password" autocomplete="current-password" required>
+      <p class="err">${esc(err||'')}</p><button class="btn">כניסה</button></form>`;
+    document.getElementById('pw').focus();
+    document.getElementById('lf').addEventListener('submit', async e => {
+      e.preventDefault();
+      try {
+        const r = await rpc('admin_login', { p_password: document.getElementById('pw').value });
+        if (r.error) return login({ bad_password:'סיסמה שגויה.', too_many_attempts:'יותר מדי ניסיונות. נסו שוב בעוד 15 דקות.' }[r.error] || r.error);
+        token = r.token; store.set(KEY, token); load();
+      } catch { login('אין חיבור לשרת.'); }
+    });
+  }
+  function when(iso){ try { return new Date(iso).toLocaleString('he-IL',{dateStyle:'short',timeStyle:'short'}); } catch { return iso; } }
+  function ctxHtml(f){
+    const c = f.context || {}, parts = [];
+    if (c.tour) parts.push('סיור ' + esc(c.tour));
+    if (c.level) parts.push('רמה ' + esc(c.level));
+    if (c.mode) parts.push(esc(c.mode));
+    if (c.question) parts.push('שאלה <b>' + esc(c.question) + '</b>');
+    if (c.stop) parts.push(esc(c.stop));
+    const page = f.page ? `<a href="${esc(f.page)}" target="_blank" rel="noopener">${esc(f.page.split('?')[0])}</a>` : '';
+    return (page || parts.length) ? `<p class="ctx">📍 ${[page].concat(parts).filter(Boolean).join(' · ')}</p>` : '';
+  }
+  async function load(){
+    if (!token) return login();
+    try {
+      const r = await rpc('admin_feedback_list', { p_token: token, p_status: filter === 'all' ? 'all' : filter }, { timeout: 12000 });
+      const c = r.counts || {};
+      app.innerHTML = `<div class="tabs" role="group" aria-label="סינון">
+          <button type="button" data-f="new" aria-pressed="${filter==='new'}">חדשות (${c.new||0})</button>
+          <button type="button" data-f="done" aria-pressed="${filter==='done'}">טופלו (${c.done||0})</button>
+          <button type="button" data-f="all" aria-pressed="${filter==='all'}">הכול</button>
+          <button type="button" data-f="refresh">↻ רענון</button></div>` +
+        ((r.items||[]).length ? r.items.map(f => `<article class="card ${f.status==='done'?'done':''}">
+          <div class="meta"><span class="tag">${KIND[f.kind]||esc(f.kind)}</span><span>${esc(f.author||'ללא שם')}</span><span>· ${when(f.created_at)}</span></div>
+          <p class="msg">${esc(f.message)}</p>${ctxHtml(f)}
+          <div class="row">${f.status==='done'
+            ? `<button class="btn" data-st="new" data-id="${esc(f.id)}">↩ להחזיר לחדשות</button>`
+            : `<button class="btn ok" data-st="done" data-id="${esc(f.id)}">✓ טופל</button>`}</div></article>`).join('')
+          : `<div class="empty">${filter==='new'?'אין הודעות חדשות 🎉':'אין הודעות כאן.'}</div>`);
+      app.insertAdjacentHTML('beforeend','<div class="card" style="margin-top:22px"><b>🏆 טבלת תחרות הכיתה</b><p class="sub" style="margin:6px 0 10px">התחלת עונה חדשה מוחקת את כל הניקוד המפורסם (ההתקדמות בטלפונים של התלמידים נשארת, והם יופיעו שוב כשימשיכו לשחק).</p><a class="btn" href="class.html">👀 לטבלה</a> <button class="btn" type="button" id="resetBoard">🔄 איפוס הטבלה</button></div>');
+    } catch (e) {
+      if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); }
+      app.innerHTML = `<div class="card"><p>לא ניתן לטעון את ההודעות.</p><p class="sub">אם זו הפעם הראשונה: יש להריץ פעם אחת את הקובץ <b>supabase/feedback.sql</b> ב-Supabase › SQL Editor.</p><button class="btn" data-f="refresh">↻ לנסות שוב</button></div>`;
+    }
+    renderAccess();
+  }
+  // ---- Accès réservé : liste des élèves autorisés (numéros de teoudat zehout) ----
+  // Les numéros partent directement au serveur, qui n'en garde qu'une empreinte chiffrée. Ils ne sont jamais réaffichés.
+  // Même règle que mdl.tz_pick côté serveur : sert seulement à montrer À L'ADMIN, sur son écran, les lignes à corriger.
+  function tzOk(d){ if (d.length < 5 || d.length > 9) return null; d = d.padStart(9, '0'); if (d === '000000000') return null;
+    let s = 0; for (let k = 0; k < 9; k++) { let v = +d[k] * (k % 2 ? 2 : 1); s += v > 9 ? v - 9 : v; } return s % 10 ? null : d; }
+  function tzPick(line){
+    if (/\d[.,]\d*e\+?\d/i.test(line)) return null;
+    let v0, v = line.replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff\u00ad]/g, '').replace(/[\u00a0\u2007\u202f]/g, ' ').replace(/^\s*\d{1,3}[.)]\s+/, '');
+    v0 = v;
+    for (let pass = 1; pass <= 2; pass++) {
+      if (pass === 2) v = v.replace(/(\d)[ .\-]+(?=\d)/g, '$1');
+      for (const m of v.match(/\d+/g) || []) { const r = tzOk(m); if (r) return r; }
+    }
+    // comme mdl.tz_loose : accepté même si le chiffre de contrôle ne tombe pas juste (signalé pour vérification)
+    for (const m of [...(v0.match(/\d+/g) || []), ...(v.match(/\d+/g) || [])])
+      if (m.length >= 5 && m.length <= 9 && !/^0+$/.test(m)) return { loose: m.padStart(9, '0') };
+    return null;
+  }
+  function tzWhy(line){
+    if (/\d[.,]\d*e\+?\d/i.test(line)) return 'אקסל הפך את המספר לכתיב מדעי (E+) — סמנו את העמודה כ„טקסט” והעתיקו שוב';
+    const runs = (line.replace(/(\d)[ .\-]+(?=\d)/g, '$1').match(/\d+/g) || []);
+    if (!runs.length) return 'אין מספר בשורה';
+    if (runs.some(x => x.length > 9)) return 'יותר מ-9 ספרות';
+    if (!runs.some(x => x.length >= 5)) return 'פחות מ-5 ספרות';
+    return 'מספר לא מזוהה';
+  }
+  function tzCheck(list){
+    const bad = [], warn = [], seen = new Set(); let dup = 0, ok = 0;
+    list.split(/\r?\n/).map(l => l.trim()).filter(Boolean).forEach((l, i) => {
+      let t = tzPick(l);
+      if (!t) return bad.push({ n: i + 1, line: l, why: tzWhy(l) });
+      if (t.loose) { t = t.loose; warn.push({ n: i + 1, line: l }); }
+      if (seen.has(t)) dup++; else { seen.add(t); ok++; }
+    });
+    return { bad, warn, dup, ok };
+  }
+  async function renderAccess(){
+    const old = document.getElementById('accessCard'); if (old) old.remove();
+    const box = document.createElement('div'); box.className = 'card'; box.id = 'accessCard'; box.style.marginTop = '22px';
+    box.innerHTML = '<b>🚌 מי יכול להפעיל חידון חי</b><p class="sub" id="accInfo" style="margin:6px 0 10px">טוען…</p>';
+    app.appendChild(box);
+    let info;
+    try { info = await rpc('admin_access_list', { p_token: token }); }
+    catch (e) { if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); }
+      document.getElementById('accInfo').innerHTML = 'יש להריץ פעם אחת את <b>supabase/access_control.sql</b> ב-Supabase › SQL Editor.'; return; }
+    const n = info.allowed || 0;
+    box.innerHTML = `<b>🚌 מי יכול להפעיל חידון חי</b>
+      <p class="sub" style="margin:6px 0 10px">${n ? `🔒 <b>${n}</b> מספרים יכולים להפעיל חידון חי (מדריכים ותלמידי הקורס). כל שאר האפליקציה פתוחה לכולם בלי מספר.` : '📭 הרשימה ריקה: רק המנהל (סיסמה) יכול להפעיל חידון חי. שאר האפליקציה פתוחה לכולם.'}</p>
+      <p class="sub" style="margin:0 0 8px">הדביקו את <b>כל</b> הרשימה (מחליפה את הקודמת): מספר תעודת זהות אחד בכל שורה. אפשר להעתיק עמודה מאקסל. לא נשמר שום שם — רק טביעה מוצפנת של המספר, שלא תוצג כאן שוב.</p>
+      <textarea oninput="delete this.dataset.confirmed" id="accList" rows="7" style="width:100%;box-sizing:border-box;border-radius:12px;background:#101a40;color:var(--ink);border:1px solid var(--line);padding:10px;font:inherit;direction:rtl" placeholder="012345678&#10;123456782"></textarea>
+      <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn ok" id="accSave" type="button">💾 שמירת הרשימה</button>${n ? '<button class="btn" id="accOpen" type="button">🗑️ למחוק את הרשימה</button>' : ''}</div>
+      <p class="sub" id="accMsg" style="margin:8px 0 0"></p>`;
+    const msg = t => { document.getElementById('accMsg').innerHTML = t; };
+    document.getElementById('accSave').onclick = async () => {
+      const ta = document.getElementById('accList'), list = ta.value;
+      if (!list.trim()) return msg('הרשימה ריקה. כדי למחוק את כל המספרים השתמשו בכפתור „למחוק את הרשימה”.');
+      const chk = tzCheck(list);
+      if (chk.bad.length && !ta.dataset.confirmed) {
+        ta.dataset.confirmed = '1';
+        return msg(`⚠️ <b>${chk.bad.length}</b> שורות לא יתקבלו (${chk.ok} תקינים${chk.dup ? `, ${chk.dup} כפולים` : ''}). תקנו אותן ברשימה ולחצו שוב, או לחצו שוב כדי לשמור בלעדיהן:` +
+          '<ul style="margin:6px 0 0;padding-inline-start:18px">' + chk.bad.map(b => `<li>שורה <bdi>${b.n}</bdi>: <bdi dir="ltr">${esc(b.line)}</bdi> — ${b.why}</li>`).join('') + '</ul>');
+      }
+      try {
+        const r = await rpc('admin_access_set', { p_token: token, p_list: list });
+        if (r.error === 'no_valid_lines') { delete ta.dataset.confirmed; return msg('❌ לא נמצא אף מספר תעודת זהות תקין — שום דבר לא שונה.'); }
+        ta.value = ''; // on ne laisse pas les numéros affichés
+        await renderAccess();
+        msg(`✅ נשמר: ${r.allowed} מספרים מורשים.` + (r.duplicates ? ` (${r.duplicates} מספרים הופיעו פעמיים ונספרו פעם אחת)` : '') +
+          (r.bad_lines && r.bad_lines.length ? ` ⚠️ שורות שנדחו: ${r.bad_lines.join(', ')}.` : '') +
+          (chk.warn.length ? `<br>ℹ️ נשמרו גם המספרים האלה, אבל ספרת הביקורת שלהם לא מתאימה — כדאי לוודא עם התלמיד שאין טעות הקלדה:` +
+            '<ul style="margin:6px 0 0;padding-inline-start:18px">' + chk.warn.map(b => `<li>שורה <bdi>${b.n}</bdi>: <bdi dir="ltr">${esc(b.line)}</bdi></li>`).join('') + '</ul>' : ''));
+      } catch (e) { if (e.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } msg('❌ השמירה לא הצליחה.'); }
+    };
+    const op = document.getElementById('accOpen');
+    if (op) op.onclick = async () => {
+      if (!confirm('למחוק את כל המספרים? רק המנהל יוכל להפעיל חידון חי.')) return;
+      try { await rpc('admin_access_set', { p_token: token, p_list: '' }); await renderAccess(); msg('🗑️ הרשימה נמחקה.'); }
+      catch (e) { msg('❌ הפעולה לא הצליחה.'); }
+    };
+  }
+  app.addEventListener('click', async e => {
+    if (e.target.closest('#resetBoard')) {
+      // Une classe précise (code), ou tout le tableau si le code est laissé vide.
+      const code = prompt('איזו כיתה לאפס? כתבו את קוד הכיתה (למשל: יובל-2026).\nהשאירו ריק כדי למחוק את כל הטבלאות.');
+      if (code === null) return;
+      const c = code.trim();
+      if (!confirm(c ? `למחוק את הניקוד של הכיתה „${c}”?` : 'למחוק את כל הניקוד בכל הכיתות?')) return;
+      try {
+        const r = c ? await rpc('admin_class_reset_code', { p_token: token, p_class: c }) : await rpc('admin_class_reset', { p_token: token });
+        alert(c ? `הכיתה „${c}” אופסה (${r && r.deleted != null ? r.deleted : 0} תלמידים).` : 'כל הטבלאות אופסו.');
+      } catch (err) { if (err.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } alert(c ? 'האיפוס לא הצליח — האם הותקן class_contest_v2.sql?' : 'האיפוס לא הצליח — האם הותקן class_contest.sql?'); }
+      return;
+    }
+    const f = e.target.closest('[data-f]');
+    if (f) { if (f.dataset.f !== 'refresh') filter = f.dataset.f; return load(); }
+    const b = e.target.closest('[data-st]');
+    if (b) {
+      b.disabled = true;
+      try { await rpc('admin_feedback_set_status', { p_token: token, p_id: b.dataset.id, p_status: b.dataset.st }); }
+      catch (err) { if (err.auth) { store.del(KEY); token = null; return login('פג תוקף הכניסה.'); } }
+      load();
+    }
+  });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && token) load(); });
+  load();
+})();
+</script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body>
+</html>

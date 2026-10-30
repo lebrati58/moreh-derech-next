@@ -1,0 +1,451 @@
+{
+ "site": "nimrod",
+ "title": {
+  "he": "מבצר נמרוד",
+  "fr": "Forteresse de Nimrod",
+  "en": "Nimrod Fortress",
+  "ru": "Крепость Нимрод"
+ },
+ "defaultPeriod": 1,
+ "cubitMeters": 0.5,
+ "stone": "ashlar",
+ "tint": "#e1d2b6",
+ "home": {
+  "at": "o:park",
+  "dist": 700,
+  "from": 200,
+  "elev": 30
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "park": {
+   "osm": "way/165391691"
+  },
+  "fort": {
+   "osm": "node/679416359"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "mamluk",
+   "name": {
+    "he": "האיובים",
+    "fr": "Ayyoubide",
+    "en": "Ayyubid",
+    "ru": "Айюбидская"
+   },
+   "dates": {
+    "he": "1227–1260",
+    "fr": "1227–1260",
+    "en": "1227–1260",
+    "ru": "1227–1260"
+   }
+  },
+  {
+   "n": 2,
+   "era": "mamluk",
+   "name": {
+    "he": "הממלוכים",
+    "fr": "Mamelouke",
+    "en": "Mamluk",
+    "ru": "Мамлюкская"
+   },
+   "dates": {
+    "he": "1260–המאה ה-15",
+    "fr": "1260–XVe s.",
+    "en": "1260–15th c.",
+    "ru": "1260–XV в."
+   }
+  },
+  {
+   "n": 3,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "La forteresse aujourd’hui",
+    "en": "The fortress today",
+    "ru": "Крепость сегодня"
+   },
+   "dates": {
+    "he": "גן לאומי",
+    "fr": "parc national",
+    "en": "national park",
+    "ru": "национальный парк"
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "nm_walls",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "חומות המבצר ומגדליו",
+    "fr": "Les murailles et les tours",
+    "en": "The walls and towers",
+    "ru": "Стены и башни"
+   },
+   "builder": {
+    "he": "אל-מלכ אל-מעט׳ם עיסא, שליט דמשק האיובי (1227/8–1230)",
+    "fr": "al-Malik al-Mu‘azzam ‘Isa, souverain ayyoubide de Damas (1227/8–1230)",
+    "en": "al-Malik al-Mu‘azzam ‘Isa, Ayyubid ruler of Damascus (1227/8–1230)",
+    "ru": "аль-Малик аль-Муаззам Иса, айюбидский правитель Дамаска (1227/8–1230)"
+   },
+   "text": {
+    "he": "נבנה מחשש לפלישה צלבנית ולברית בין אחיו אל-כאמל לצלבנים. המגדלים המרובעים איוביים, המעוגלים ממלוכיים. בנוי במתכונת צלבנית — לכן ייחסו אותו בעבר לצלבנים, עד שנחשפה הכתובת בשער.",
+    "fr": "Bâti par crainte d’une invasion croisée et de l’alliance de son frère al-Kamil avec les croisés. Tours carrées ayyoubides, tours rondes mameloukes. Construit à la manière croisée — d’où l’attribution erronée aux croisés, jusqu’à la découverte de l’inscription de la porte.",
+    "en": "Built for fear of a Crusader invasion and of his brother al-Kamil’s alliance with the Crusaders. Square towers Ayyubid, round towers Mamluk. Built in Crusader style — hence the old attribution to the Crusaders, until the gate inscription was uncovered.",
+    "ru": "Построена из страха перед крестоносцами и союзом его брата аль-Камиля с ними. Квадратные башни — айюбидские, круглые — мамлюкские. Построена по-крестоносному — поэтому её приписывали крестоносцам, пока не нашли надпись на воротах."
+   },
+   "placementNote": {
+    "he": "החומה מצוירת לאורך גבול הגן הלאומי ב-OpenStreetMap, הקרוב לקו המבצר; המגדלים במרווחים קבועים.",
+    "fr": "Mur dessiné sur la limite du parc national (OSM), proche du contour de la forteresse ; tours à intervalle régulier.",
+    "en": "Wall drawn along the national-park boundary (OSM), close to the fortress outline; towers at regular intervals.",
+    "ru": "Стена по границе нацпарка (OSM), близкой к контуру крепости; башни через равные интервалы."
+   },
+   "schematic": true,
+   "shape": {
+    "type": "wall",
+    "osm": "park",
+    "h": 10,
+    "thick": 3,
+    "towerEvery": 45,
+    "towerW": 10,
+    "towerH": 15,
+    "kind": "ashlar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — מבצר נמרוד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/165391691",
+     "url": "https://www.openstreetmap.org/way/165391691"
+    }
+   ]
+  },
+  {
+   "id": "nm_gate",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "שער המבצר",
+    "fr": "La porte",
+    "en": "The gate",
+    "ru": "Ворота"
+   },
+   "text": {
+    "he": "הדרך לשער חושפת את צד ימין של התוקף (צד המגן ביד שמאל). שער מאבני גזית עם מסילה לסורג ברזל ודלתות מצופות ברזל; אחריו פנייה צרה ימינה ושער נוסף. במגדל השער מעבר תת-קרקעי נסתר אל החפיר.",
+    "fr": "Le chemin d’accès expose le flanc droit de l’assaillant (le bouclier est à gauche). Porte en pierre de taille avec rainure de herse et vantaux bardés de fer ; puis un coude étroit à droite et une seconde porte. Dans la tour, un passage souterrain secret vers le fossé.",
+    "en": "The approach exposes the attacker’s right side (shield in the left hand). A dressed-stone gate with a portcullis groove and iron-clad doors; then a narrow right turn and a second gate. In the gate tower, a secret underground passage to the moat.",
+    "ru": "Подход открывает правый бок нападающего (щит в левой руке). Ворота из тёсаного камня с пазом для решётки и окованными створками; затем узкий поворот направо и вторые ворота. В башне — тайный подземный ход ко рву."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — מבצר נמרוד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view"
+    }
+   ]
+  },
+  {
+   "id": "nm_baybars",
+   "from": 2,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "ביברס ובילבכ׳",
+    "fr": "Baybars et Bilik",
+    "en": "Baybars and Bilik",
+    "ru": "Бейбарс и Билик"
+   },
+   "text": {
+    "he": "ב-1275 מסר ביברס את המבצר לסגנו בילבכ׳, שהשאיר כתובת הוקרה; במבצר תבליטי האריה-ברדלס, סמלו של ביברס. המבצר מעולם לא נכבש; במאה ה-15 שימש כלא, ורעידת האדמה של 1759 וצמחייה מוטטו אותו.",
+    "fr": "En 1275, Baybars confia la forteresse à son lieutenant Bilik, qui laissa une inscription d’hommage ; reliefs du lion-guépard, emblème de Baybars. Jamais prise, elle servit de prison au XVe s. ; le séisme de 1759 et la végétation la ruinèrent.",
+    "en": "In 1275 Baybars gave the fortress to his deputy Bilik, who left a tribute inscription; reliefs of the lion-panther, Baybars’ emblem. Never captured, it was a prison in the 15th c.; the 1759 earthquake and vegetation ruined it.",
+    "ru": "В 1275 г. Бейбарс передал крепость заместителю Билику, оставившему благодарственную надпись; рельефы льва-гепарда — эмблема Бейбарса. Ни разу не взята; в XV в. — тюрьма; землетрясение 1759 г. и растения её разрушили."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — מבצר נמרוד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view"
+    }
+   ]
+  },
+  {
+   "id": "nm_cistern",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "מאגר המים",
+    "fr": "La citerne",
+    "en": "The cistern",
+    "ru": "Цистерна"
+   },
+   "text": {
+    "he": "מאגר מקורה שאסף בתעלות את מי הגשמים מכל רחבי המבצר — מקור המים של אנשי המבצר.",
+    "fr": "Citerne couverte recueillant par des rigoles l’eau de pluie de toute la forteresse — l’eau de la garnison.",
+    "en": "A roofed cistern collecting rainwater through channels from the whole fortress — the garrison’s water.",
+    "ru": "Крытая цистерна, собиравшая по каналам дождевую воду со всей крепости, — вода гарнизона."
+   },
+   "placementNote": {
+    "he": "מקומו המדויק אינו בנתוני המפה ולכן אינו מצויר.",
+    "fr": "Sa position exacte n’est pas dans les données cartographiques : il n’est pas dessiné.",
+    "en": "Its exact position is not in the map data, so it is not drawn.",
+    "ru": "Точного места нет в данных, поэтому не нарисовано."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — מבצר נמרוד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view"
+    }
+   ]
+  },
+  {
+   "id": "nm_name",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "שם המבצר",
+    "fr": "Le nom de la forteresse",
+    "en": "The fortress’s name",
+    "ru": "Название крепости"
+   },
+   "text": {
+    "he": "השם הקדום: קלעת א-צובייבה; במאה ה-19 כבר נקרא קלעת נמרוד. לפי מסורות מוסלמיות נמרוד הענק עקר סלעים מהחרמון לבניית המבצר; מסורות חז״ל מתארות את נמרוד כמורד באל.",
+    "fr": "Nom ancien : Qal‘at as-Subayba ; au XIXe s., Qal‘at Nimrud. Selon des traditions musulmanes, le géant Nimrod arracha des rochers de l’Hermon pour la bâtir ; les traditions rabbiniques font de Nimrod un rebelle contre Dieu.",
+    "en": "Old name: Qal‘at as-Subayba; by the 19th c., Qal‘at Nimrud. In Muslim traditions the giant Nimrod tore rocks from Hermon to build it; rabbinic traditions make Nimrod a rebel against God.",
+    "ru": "Древнее имя — Калъат ас-Субайба; в XIX в. — Калъат Нимруд. По мусульманским преданиям великан Нимрод вырывал скалы с Хермона для постройки; в раввинистических преданиях Нимрод — бунтарь против Бога."
+   },
+   "placementNote": {
+    "he": "אין סימון — מידע כללי.",
+    "fr": "Pas de repère — information générale.",
+    "en": "No marker — general information.",
+    "ru": "Без метки — общая информация."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — מבצר נמרוד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view"
+    }
+   ]
+  },
+  {
+   "id": "nm_view",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "name": {
+    "he": "תצפית מהמגדל הדרומי",
+    "fr": "Le panorama de la tour sud",
+    "en": "The view from the southern tower",
+    "ru": "Вид с южной башни"
+   },
+   "text": {
+    "he": "מגדל התצפית הדרומי משקיף על עמק החולה ובקעת עיון: מורדות החרמון, כפר ע׳ג׳ר, תל דן, מטולה, רכס הרי נפתלי וקריית שמונה.",
+    "fr": "La tour sud domine la Houla et la vallée de l’Iyyon : pentes de l’Hermon, Ghajar, Tel Dan, Metula, crête de Naphtali, Kiryat Shmona.",
+    "en": "The southern tower overlooks the Hula valley and the Iyon valley: Hermon slopes, Ghajar, Tel Dan, Metula, the Naftali ridge, Kiryat Shmona.",
+    "ru": "С южной башни видны долина Хула и долина Ийон: склоны Хермона, Гаджар, Тель-Дан, Метула, хребет Нафтали, Кирьят-Шмона."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:fort",
+    "h": 9
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 17 — מבצר נמרוד (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1n8iDLpei4K4KT0CJLDe9SmJoJ945dC1A/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/679416359",
+     "url": "https://www.openstreetmap.org/node/679416359"
+    }
+   ]
+  }
+ ]
+}

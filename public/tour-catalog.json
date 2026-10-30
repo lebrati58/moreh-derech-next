@@ -1,0 +1,184 @@
+{
+  "catalogVersion": "2026-10-22",
+  "root": "https://drive.google.com/drive/folders/1S5xdXEF4K0AOihsIkxXsZdMngvrXLvdb",
+  "tourFolder": "https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f",
+  "scope": "22 direct subfolders in 2. סיורים. Document counts are direct Word/Google Docs/PDF only; exclude nested contents, recordings and other file types. One document per additional tour read for writing 3 question difficulties; this does not mean all 232 documents underwent fact checking.",
+  "tours": [
+    {
+      "number": 1,
+      "title": "צפון מדבר יהודה",
+      "folderUrl": "https://drive.google.com/drive/folders/1PNRBWnYYUn8KkPirrd36rdmFkNrV7Xji",
+      "directDocuments": 6,
+      "quizSource": "tour01",
+      "note": null
+    },
+    {
+      "number": 2,
+      "title": "כרמל",
+      "folderUrl": "https://drive.google.com/drive/folders/1cpDKo14aka3MTbemjs5opW-8BR4lMwhl",
+      "directDocuments": 10,
+      "quizSource": "carmel",
+      "note": null
+    },
+    {
+      "number": 3,
+      "title": "הנגב הצפוני — תל ערד, תל שבע ואנדרטת הנגב",
+      "folderUrl": "https://drive.google.com/drive/folders/1RhLDlWhG5B_si-itayOHbn-gpG0QER-a",
+      "directDocuments": 13,
+      "quizSource": "arad",
+      "note": null
+    },
+    {
+      "number": 4,
+      "title": "תל מגידו, העמקים והגלבוע",
+      "folderUrl": "https://drive.google.com/drive/folders/1kQa3Ag9y5mzDg_r64i6xNmI7QNItgwDf",
+      "directDocuments": 16,
+      "quizSource": "tour04",
+      "note": null
+    },
+    {
+      "number": 5,
+      "title": "השפלה — תל לכיש, תל עזקה ובית גוברין",
+      "folderUrl": "https://drive.google.com/drive/folders/1bfRPHNOphGIbX4PaPhsT7D3N-1_Vsjfn",
+      "directDocuments": 16,
+      "quizSource": "tour05",
+      "note": null
+    },
+    {
+      "number": 6,
+      "title": "סוסיא, חברון והרודיון",
+      "folderUrl": "https://drive.google.com/drive/folders/1VysAYN1DWsO_pMO_NfVtqcReWHKnEP7a",
+      "directDocuments": 9,
+      "quizSource": "tour06",
+      "note": null
+    },
+    {
+      "number": 7,
+      "title": "חיפה",
+      "folderUrl": "https://drive.google.com/drive/folders/1JPSTs8ImCfJQ5E6LOeHx2gYue-rBQ1PI",
+      "directDocuments": 11,
+      "quizSource": "tour07",
+      "note": null
+    },
+    {
+      "number": 8,
+      "title": "גיאולוגיה — הכרמל והחוף",
+      "folderUrl": "https://drive.google.com/drive/folders/1dZGP2DgShnWjyUqHMhPMrvfCv01sfY_t",
+      "directDocuments": 8,
+      "quizSource": "tour08",
+      "note": null
+    },
+    {
+      "number": 9,
+      "title": "שומרון — שילה, הר גריזים ואלון מורה",
+      "folderUrl": "https://drive.google.com/drive/folders/1v2Wz6GarM191Q5P6NrcXO8DIhhY8PYrg",
+      "directDocuments": 14,
+      "quizSource": "tour09",
+      "note": null
+    },
+    {
+      "number": 10,
+      "title": "הרי ירושלים",
+      "folderUrl": "https://drive.google.com/drive/folders/1HrlOBlK9S2XpRe8Xh7hj8K05gwlZKkia",
+      "directDocuments": 13,
+      "quizSource": "tour10",
+      "note": null
+    },
+    {
+      "number": 11,
+      "title": "ירושלים — בית ראשון",
+      "folderUrl": "https://drive.google.com/drive/folders/1aNCu0Vk8oTaIG1K59GQqE1_umQrz8sK8",
+      "directDocuments": 10,
+      "quizSource": "tour11",
+      "note": null
+    },
+    {
+      "number": 12,
+      "title": "ירושלים — בית שני 1",
+      "folderUrl": "https://drive.google.com/drive/folders/1VZztNtwHL3g3looy5v95qLTcUfi7oAq4",
+      "directDocuments": 11,
+      "quizSource": "tour12",
+      "note": null
+    },
+    {
+      "number": 13,
+      "title": "ירושלים — בית שני 2: דוידסון, מנהרות הכותל ונחל קדרון",
+      "folderUrl": "https://drive.google.com/drive/folders/1cLHFMh7TnHCdO5_OvUPTAV-1HROK0vKo",
+      "directDocuments": 10,
+      "quizSource": "tour13",
+      "note": null
+    },
+    {
+      "number": 14,
+      "title": "תצפיות ירושלים — רמת רחל ונבי סמואל",
+      "folderUrl": "https://drive.google.com/drive/folders/1OW7dTQBQUW1yhRTicp5CrNS_tfRj-PYU",
+      "directDocuments": 10,
+      "quizSource": "tour14",
+      "note": null
+    },
+    {
+      "number": 15,
+      "title": "קיסריה, נחל תנינים ואפולוניה",
+      "folderUrl": "https://drive.google.com/drive/folders/1oFqTPI0QwpuuXR3nVMHTYMA1zxt5NjHU",
+      "directDocuments": 11,
+      "quizSource": "tour15",
+      "note": null
+    },
+    {
+      "number": 16,
+      "title": "בית שערים וציפורי",
+      "folderUrl": "https://drive.google.com/drive/folders/12cYe4au1FC6P5eVkfiUco-64M0Ee8xiK",
+      "directDocuments": 11,
+      "quizSource": "tour16",
+      "note": null
+    },
+    {
+      "number": 17,
+      "title": "גולן וחרמון — קמפוס",
+      "folderUrl": "https://drive.google.com/drive/folders/16mGflWTWpvDlOQkrng589YZMqAd6QHV6",
+      "directDocuments": 16,
+      "quizSource": "tour17",
+      "note": null
+    },
+    {
+      "number": 18,
+      "title": "ירושלים הרומית והביזנטית",
+      "folderUrl": "https://drive.google.com/drive/folders/10Dx4xMPJoaqFG4eNCkY5x6MOjkwcOEM7",
+      "directDocuments": 10,
+      "quizSource": "tour18",
+      "note": null
+    },
+    {
+      "number": 19,
+      "title": "בית שאן, כוכב הירדן ומעין חרוד",
+      "folderUrl": "https://drive.google.com/drive/folders/1FgQMzG4phl1VjlNOhgmR7WkDDD3hOE_s",
+      "directDocuments": 9,
+      "quizSource": "tour19",
+      "note": null
+    },
+    {
+      "number": 20,
+      "title": "ראש פינה, תל חי ועמק החולה",
+      "folderUrl": "https://drive.google.com/drive/folders/1gcsJryCHmkJAqzhFYvRdhufREr-Grqsr",
+      "directDocuments": 9,
+      "quizSource": "tour20",
+      "note": null
+    },
+    {
+      "number": 21,
+      "title": "עין גדי והר סדום",
+      "folderUrl": "https://drive.google.com/drive/folders/10mk0VvLCEJXnp8k4PB4aldt_BMmtetv4",
+      "directDocuments": 8,
+      "quizSource": "tour21",
+      "note": null
+    },
+    {
+      "number": 22,
+      "title": "קמפוס גליל עליון — חוברת הכנה",
+      "folderUrl": "https://drive.google.com/drive/folders/1coH6MKSfbbu26RXZMX9SrIevkIsFWwV5",
+      "directDocuments": 1,
+      "quizSource": "galil",
+      "note": "חוברת הכנה ותיקיית הקלטות; תיעוד הביקור לא אומת."
+    }
+  ]
+}

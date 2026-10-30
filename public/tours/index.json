@@ -1,0 +1,30 @@
+{
+ "v": 1,
+ "builtAt": "2026-10-28T22:15:32.500Z",
+ "tours": [
+  {
+   "id": "road67",
+   "title": "מסלול 67 — זכרון יעקב ← יקנעם",
+   "subtitle": "כביש 67 (ואדי מילק) וכביש 6",
+   "status": "pret",
+   "public": true,
+   "stops": 14,
+   "questions": 14,
+   "map": true,
+   "issues": 0,
+   "warnings": 0
+  },
+  {
+   "id": "01",
+   "title": "סיור 01 — סיפור הדרך: מתל אביב בכביש 443 למדבר יהודה",
+   "subtitle": "איילון ← כביש 443 ← ירושלים (כביש 1) ← מישור אדומים",
+   "status": "a_verifier",
+   "public": false,
+   "stops": 20,
+   "questions": 41,
+   "map": true,
+   "issues": 2,
+   "warnings": 3
+  }
+ ]
+}

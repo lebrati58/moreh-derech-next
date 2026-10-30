@@ -1,0 +1,801 @@
+{
+  "version": 1,
+  "dataVersion": "2026-10-27",
+  "quizId": "history-48-dates",
+  "_note": "Source unique de la frise et du quiz « ציר הזמן והחידון ». Les identifiants (id) sont stables : ne jamais les renommer, ils servent à la progression des joueurs. source = course (même année dans les documents du cours), course-diff (le cours donne une autre année ou une autre formulation : à valider par Lionel), external (absent des documents du cours consultés, date de référence générale). examReady = false → l'événement n'apparaît qu'en entraînement, jamais dans l'examen noté. Audit détaillé : docs/AUDIT_histoire_48.md",
+  "course": {
+    "folder": {
+      "url": "https://drive.google.com/drive/folders/1S5xdXEF4K0AOihsIkxXsZdMngvrXLvdb",
+      "title": "תיקיית הקורס"
+    },
+    "taarichon": {
+      "url": "https://drive.google.com/file/d/1Axk6m7p5k0K0VO8XC35iVoi3o-XOuNlk/view",
+      "title": "תאריכון הקורס (טבלת אתרים, תאריכון, מונחים, אישים)"
+    }
+  },
+  "sites3d": {
+    "masada": "מצדה",
+    "caesarea": "קיסריה",
+    "herodium": "הרודיון",
+    "banias": "בניאס",
+    "tzippori": "ציפורי",
+    "beitshearim": "בית שערים"
+  },
+  "periods": [
+    {
+      "id": "babylon",
+      "name": "סוף בית ראשון וגלות בבל",
+      "short": "בבל",
+      "range": "586–538 לפנה״ס",
+      "icon": "🔥",
+      "color": "#ff9a85",
+      "j3d": 2,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1bxuOGBJZXUgFMUo9JKln0d1JatIiTPUs/view",
+        "title": "תקציר מאורגן — תקופת הברזל / בית ראשון"
+      }
+    },
+    {
+      "id": "persian",
+      "name": "התקופה הפרסית",
+      "short": "פרס",
+      "range": "538–332 לפנה״ס",
+      "icon": "📜",
+      "color": "#ffc65c",
+      "j3d": 3,
+      "doc": {
+        "url": "https://drive.google.com/file/d/16_Wg-t3_CiDn632EuhNrS902sRcPXB4_/view",
+        "title": "תקציר מאורגן — התקופה הפרסית"
+      },
+      "lessons": {
+        "url": "https://drive.google.com/drive/folders/1MCC_nxhX-cNbuHYuNCrQFilAtACd2Lnz",
+        "title": "שיעורים — בית שני, התקופה הפרסית"
+      }
+    },
+    {
+      "id": "hellenistic",
+      "name": "התקופה ההלניסטית",
+      "short": "הלניזם",
+      "range": "332–167 לפנה״ס",
+      "icon": "🏛️",
+      "color": "#6ee9cf",
+      "j3d": null,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1GHlTLq2GURYt-NBwZoXTYRStUsEO_8E2/view",
+        "title": "תקציר מאורגן — התקופה ההלניסטית"
+      },
+      "lessons": {
+        "url": "https://drive.google.com/drive/folders/1LeiF15CjpLmCTwwF8s0q9uDP_V0G2N9_",
+        "title": "שיעורים — בית שני, התקופה ההלניסטית"
+      }
+    },
+    {
+      "id": "hasmonean",
+      "name": "מרד החשמונאים והמדינה החשמונאית",
+      "short": "חשמונאים",
+      "range": "167–63 לפנה״ס",
+      "icon": "🕎",
+      "color": "#94b8ff",
+      "j3d": 4,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1GHlTLq2GURYt-NBwZoXTYRStUsEO_8E2/view",
+        "title": "תקציר מאורגן — התקופה ההלניסטית (כולל מרד החשמונאים)"
+      },
+      "lessons": {
+        "url": "https://drive.google.com/drive/folders/1Xy-0Bafeyt6mA0fjNbsn_IEq18CJhaA-",
+        "title": "שיעורים — בית שני, חשמונאים"
+      }
+    },
+    {
+      "id": "roman",
+      "name": "רומא ובית הורדוס — סוף ימי בית שני",
+      "short": "רומא",
+      "range": "63 לפנה״ס – 70 לספירה",
+      "icon": "🦅",
+      "color": "#d6a6ff",
+      "j3d": 5,
+      "doc": {
+        "url": "https://drive.google.com/file/d/11MWEiV1E2tCfbj7so-XE4b1a3CaMuf4l/view",
+        "title": "תקציר מאורגן — תקופת בית שני"
+      },
+      "lessons": {
+        "url": "https://drive.google.com/drive/folders/1AY-KA5WJxy35iHrQP1yo4JQQZ6AqyMJF",
+        "title": "שיעורים — בית שני, התקופה הרומית"
+      }
+    },
+    {
+      "id": "late_roman",
+      "name": "התקופה הרומית המאוחרת",
+      "short": "רומית מאוחרת",
+      "range": "70–324 לספירה",
+      "icon": "📖",
+      "color": "#ff9fd0",
+      "j3d": 6,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1kcjZ15HGV2r8iiOrFhHvgUfI4WZLFh_2/view",
+        "title": "תקציר מאורגן — התקופה הרומית המאוחרת"
+      },
+      "lessons": {
+        "url": "https://drive.google.com/drive/folders/1YLtbU4V7bduL4P6qjHFA1Iw1BKKMGDNf",
+        "title": "שיעורים — התקופה הרומית-ביזנטית"
+      }
+    },
+    {
+      "id": "byzantine",
+      "name": "התקופה הביזנטית",
+      "short": "ביזנטית",
+      "range": "324–638 לספירה",
+      "icon": "⛪",
+      "color": "#7fd6ff",
+      "j3d": 7,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1LpIdZ-1DLStOiU0ilgkJHVo_Ccao93Gw/view",
+        "title": "תקציר מאורגן — התקופה הביזנטית"
+      },
+      "lessons": {
+        "url": "https://drive.google.com/drive/folders/1YLtbU4V7bduL4P6qjHFA1Iw1BKKMGDNf",
+        "title": "שיעורים — התקופה הרומית-ביזנטית"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "first-temple-destruction",
+      "year": -586,
+      "yearText": "587–586 לפנה״ס",
+      "period": "babylon",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "חורבן בית ראשון",
+      "q": "באיזו שנה חרבו ירושלים ובית המקדש הראשון?",
+      "desc": "מסעו השלישי של נבוכדנצר מלך בבל: גלות צדקיהו, חורבן ירושלים ובית המקדש.",
+      "note": "בתאריכון הקורס: 587–586 לפנה״ס. 586 לפנה״ס הוא התיארוך המקובל.",
+      "alts": [
+        -587
+      ],
+      "j3d": 2
+    },
+    {
+      "id": "cyrus-conquers-babylon",
+      "year": -539,
+      "period": "persian",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "כורש כובש את בבל",
+      "q": "באיזו שנה עברה הארץ משלטון בבל לשלטון פרס, עם כיבושי כורש?",
+      "desc": "האימפריה הפרסית בהנהגת כורש מחליפה את השלטון הבבלי, וארץ ישראל עוברת לשלטון פרס."
+    },
+    {
+      "id": "cyrus-declaration",
+      "year": -538,
+      "period": "persian",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הצהרת כורש ושיבת ציון",
+      "q": "באיזו שנה ניתנה הצהרת כורש ויצאה „שיבת ציון” הראשונה?",
+      "desc": "שיבת ציון הראשונה בהובלת ששבצר, זרובבל בן שאלתיאל ויהושע בן יהוצדק הכהן. ראשית תקופת בית שני.",
+      "note": "בסיכום שיעור אחד מופיעה ההצהרה ב־539 לפנה״ס; בתאריכון ובשאר הסיכומים — 538 לפנה״ס.",
+      "alts": [
+        -539
+      ]
+    },
+    {
+      "id": "second-temple-dedication",
+      "year": -516,
+      "yearText": "516 לפנה״ס (לפי אחרים 515 לפנה״ס)",
+      "period": "persian",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "חנוכת בית המקדש השני",
+      "q": "באיזו שנה, לפי התיארוך המקובל בקורס, נחנך בית המקדש השני?",
+      "desc": "בניית הבית ארכה כעשרים שנה (מ־536 לפנה״ס בקירוב): מחסור בכסף, נבואת שבעים השנה, „צרי יהודה” והבירוקרטיה הפרסית.",
+      "note": "בתאריכון הקורס: 516 לפנה״ס; לפי אייל מירון — 515 לפנה״ס. אין לראות בכך תאריך מדויק.",
+      "alts": [
+        -515
+      ],
+      "j3d": 3
+    },
+    {
+      "id": "ezra",
+      "year": -458,
+      "period": "persian",
+      "certainty": "disputed",
+      "source": "course",
+      "examReady": false,
+      "title": "עליית עזרא הסופר",
+      "q": "לפי התיארוך המסורתי שבקורס, באיזו שנה עלה עזרא לירושלים?",
+      "desc": "עזרא עולה עם כתב תמיכה מארתחשסתא הראשון: חידוש הפולחן, מינוי שופטים וקריאת התורה בציבור.",
+      "note": "458 לפנה״ס הוא התיארוך המסורתי (השנה השביעית לארתחשסתא הראשון). במחקר יש המאחרים את עלייתו לימי ארתחשסתא השני (398 לפנה״ס בקירוב). מופיע רק באימון.",
+      "alts": [
+        -398,
+        -428
+      ]
+    },
+    {
+      "id": "nehemiah",
+      "year": -445,
+      "period": "persian",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "נחמיה בירושלים",
+      "q": "באיזו שנה הגיע נחמיה לירושלים כפחת יהודה?",
+      "desc": "פקיד בכיר בחצר ארתחשסתא מתמנה לפחה, משקם את חומת ירושלים ומארגן את חיי הקהילה.",
+      "alts": [
+        -444
+      ],
+      "j3d": 3
+    },
+    {
+      "id": "alexander-conquest",
+      "year": -332,
+      "period": "hellenistic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "אלכסנדר מוקדון כובש את הארץ",
+      "q": "באיזו שנה כבש אלכסנדר מוקדון את הארץ (המצור על צור ועזה)?",
+      "desc": "אחרי קרב איסוס (333 לפנה״ס) אלכסנדר יורד דרומה: המצור על צור, כיבוש עזה ומצרים. ראשית התקופה ההלניסטית בארץ.",
+      "note": "בחלק מחומרי הקורס התקופה ההלניסטית מתחילה ב־333 לפנה״ס (קרב איסוס).",
+      "alts": [
+        -333
+      ]
+    },
+    {
+      "id": "ptolemaic-rule",
+      "year": -301,
+      "period": "hellenistic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ראשית שלטון בית תלמי",
+      "q": "באיזו שנה, אחרי מלחמות הדיאדוכים, החל שלטון בית תלמי בארץ?",
+      "desc": "אחרי קרב איפסוס מתגבשת החלוקה לממלכות. התלמים שולטים בארץ עד 200 לפנה״ס, בלי לכפות הלניזם."
+    },
+    {
+      "id": "battle-of-panium",
+      "year": -200,
+      "period": "hellenistic",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב פניון — הסלווקים משתלטים",
+      "q": "באיזו שנה, בקירוב, עברה הארץ משלטון בית תלמי לשלטון הסלווקים אחרי קרב פניון?",
+      "desc": "המלחמה הסורית החמישית (203–200 לפנה״ס): אנטיוכוס השלישי מנצח בפניון (בניאס) ומתחיל שלטון הסלווקים בארץ.",
+      "note": "בתאריכון: המלחמה 203–200 לפנה״ס, שלטון הסלווקים מ־200 לפנה״ס. יש מקורות המציינים 198 לפנה״ס לסיום ההשתלטות.",
+      "alts": [
+        -198,
+        -203
+      ],
+      "sites": [
+        "banias"
+      ]
+    },
+    {
+      "id": "antiochus-iv-polis",
+      "year": -175,
+      "period": "hellenistic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "אנטיוכוס הרביעי וירושלים כ„פוליס”",
+      "q": "באיזו שנה עלה אנטיוכוס הרביעי לשלטון, וירושלים הפכה לעיר פוליס?",
+      "desc": "עליית אנטיוכוס הרביעי (אפיפנס). הכהונה הגדולה עוברת מחוניו ליאסון, וירושלים הופכת לעיר פוליס הלניסטית."
+    },
+    {
+      "id": "hasmonean-revolt",
+      "year": -167,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "גזרות אנטיוכוס ופרוץ מרד החשמונאים",
+      "q": "באיזו שנה הוטלו גזרות אנטיוכוס ופרץ מרד מתתיהו ובניו?",
+      "desc": "גזרות דת על יהודה ו„שיקוץ משומם” על המזבח. מתתיהו מסרב להקריב במודיעין והמרד פורץ; קרב מעלה לבונה."
+    },
+    {
+      "id": "temple-rededication",
+      "year": -164,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "טיהור המקדש — חנוכה",
+      "q": "באיזו שנה טיהר יהודה המכבי את בית המקדש וחידש את העבודה בו?",
+      "desc": "אחרי הניצחון בבית צור: ניתוץ המזבח הטמא, בניית מזבח חדש וחידוש הקורבנות — מקור חג החנוכה.",
+      "j3d": 4
+    },
+    {
+      "id": "judah-death-elasa",
+      "year": -160,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מות יהודה המכבי בקרב אלעשה",
+      "q": "באיזו שנה נהרג יהודה המכבי בקרב אלעשה?",
+      "desc": "הקרב השמיני: צבא סלווקי גדול עולה דרך בית חורון, רוב הלוחמים נסים ויהודה נופל. יונתן אחיו יורש את ההנהגה."
+    },
+    {
+      "id": "jonathan-high-priest",
+      "year": -152,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "יונתן מקבל את הכהונה הגדולה",
+      "q": "באיזו שנה תמך יונתן באלכסנדר באלאס וזכה בכהונה הגדולה?",
+      "desc": "במאבקי השלטון הסלווקיים יונתן עובר לתמוך באלכסנדר באלאס, ומעמדו מתחזק — כולל הכהונה הגדולה."
+    },
+    {
+      "id": "simon-independence",
+      "year": -142,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "שמעון — ראשית עצמאות יהודה",
+      "q": "באיזו שנה מתחילה, לפי הקורס, המדינה החשמונאית העצמאית בימי שמעון?",
+      "desc": "אחרי רצח יונתן, שמעון מנהיג את יהודה, כובש את גזר ויפו ומוכר כשליט: ראשית המדינה החשמונאית (142–63 לפנה״ס)."
+    },
+    {
+      "id": "john-hyrcanus",
+      "year": -134,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "יוחנן הורקנוס נשיא וכהן גדול",
+      "q": "באיזו שנה, אחרי רצח שמעון, החל שלטון יוחנן הורקנוס?",
+      "desc": "שמעון נרצח בידי חתנו תלמי בן חבוב. בנו יוחנן הורקנוס שולט עד 104 לפנה״ס ומרחיב את גבולות המדינה."
+    },
+    {
+      "id": "alexander-jannaeus",
+      "year": -103,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "אלכסנדר ינאי עולה למלוכה",
+      "q": "באיזו שנה החל שלטונו של אלכסנדר ינאי, שנטל לעצמו את התואר „מלך”?",
+      "desc": "בנו הצעיר של יוחנן הורקנוס, שולט 103–76 לפנה״ס ומרחיב את הממלכה גם בעבר הירדן ובחוף."
+    },
+    {
+      "id": "salome-alexandra",
+      "year": -76,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "שלומציון המלכה",
+      "q": "באיזו שנה עלתה שלומציון אלכסנדרה, אשת ינאי, לשלטון?",
+      "desc": "שולטת 76–67 לפנה״ס, בתמיכת הפרושים (אחיה שמעון בן שטח). אחרי מותה — מאבקי הירושה בין בניה."
+    },
+    {
+      "id": "pompey-jerusalem",
+      "year": -63,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "פומפיוס כובש את ירושלים",
+      "q": "באיזו שנה כבש פומפיוס את ירושלים והארץ עברה להשפעת רומא?",
+      "desc": "על רקע מאבק הירושה בין הורקנוס השני לאריסטובולוס השני. סוף המדינה החשמונאית העצמאית וראשית התקופה הרומית.",
+      "j3d": 4
+    },
+    {
+      "id": "herod-king",
+      "year": -37,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הורדוס מלך יהודה",
+      "q": "באיזו שנה השתלט הורדוס על ירושלים והחל למלוך בחסות רומא?",
+      "desc": "מלכות הורדוס (37–4 לפנה״ס): ביסוס, שנות שיא ומפעלי בנייה — קיסריה, מצדה, הרודיון והר הבית.",
+      "sites": [
+        "caesarea"
+      ]
+    },
+    {
+      "id": "temple-mount-expansion",
+      "year": -19,
+      "yearText": "19 לפנה״ס בקירוב",
+      "period": "roman",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "הורדוס מתחיל בבניית המקדש והרחבת הר הבית",
+      "q": "באיזו שנה, לפי תאריכון הקורס, החל הורדוס בבניית המקדש והרחבת הר הבית?",
+      "desc": "„בשנת שמונה עשרה למלכותו…” (יוסף בן מתתיהו): הרחבת הר הבית והמקדש ההורדיאני.",
+      "note": "תוקן לפי תאריכון הקורס (באב־טיפוס היה 20 לפנה״ס). התיארוך מקורב: 20/19 לפנה״ס.",
+      "alts": [
+        -20,
+        -22,
+        -23
+      ],
+      "j3d": 5
+    },
+    {
+      "id": "herod-death",
+      "year": -4,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מות הורדוס וחלוקת ממלכתו",
+      "q": "באיזו שנה מת הורדוס וממלכתו חולקה בין בניו?",
+      "desc": "ארכלאוס ביהודה ובשומרון, אנטיפס בגליל ובפריאה, פיליפוס בגולן ובבשן.",
+      "note": "4 לפנה״ס הוא התיארוך המקובל ובקורס; יש חוקרים המציעים 1 לפנה״ס.",
+      "alts": [
+        -1
+      ],
+      "sites": [
+        "herodium"
+      ]
+    },
+    {
+      "id": "judaea-province",
+      "year": 6,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "יהודה פרובינקיה — תקופת הנציבים",
+      "q": "באיזו שנה הודח ארכלאוס ויהודה עברה לשלטון נציבים רומיים?",
+      "desc": "תקופת הנציבים הראשונה (6–41 לספירה): יהודה נשלטת ישירות בידי נציב רומי."
+    },
+    {
+      "id": "pontius-pilate",
+      "year": 26,
+      "period": "roman",
+      "certainty": "approx",
+      "source": "external",
+      "examReady": true,
+      "title": "פונטיוס פילטוס נציב יהודה",
+      "q": "באיזו שנה, בקירוב, החל פונטיוס פילטוס לכהן כנציב יהודה?",
+      "desc": "הנציב שכיהן 26–36 לספירה בקירוב; לפי הבשורות, בימיו נצלב ישו.",
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר.",
+      "alts": [
+        19,
+        36
+      ],
+      "doc": {
+        "url": "https://drive.google.com/file/d/1T7ysMkFpI21KReqBhEtzRPLcn6dRWtG3/view",
+        "title": "תקציר מאורגן — תקופת ישו"
+      }
+    },
+    {
+      "id": "crucifixion",
+      "year": 30,
+      "yearText": "30 לספירה בקירוב (יש המציעים 33 לספירה)",
+      "period": "roman",
+      "certainty": "disputed",
+      "source": "course",
+      "examReady": false,
+      "title": "צליבת ישו",
+      "q": "באיזו שנה, בקירוב לפי הקורס, נצלב ישו?",
+      "desc": "ישו פועל בגליל ובירושלים; הנצרות צומחת כזרם משיחי קטן מתוך היהדות.",
+      "note": "בקורס: „תקופת ישו” 4 לפנה״ס–30 לספירה לערך. התאריך שנוי במחלוקת (30 או 33 לספירה). מופיע רק באימון.",
+      "alts": [
+        33,
+        29
+      ],
+      "doc": {
+        "url": "https://drive.google.com/file/d/1T7ysMkFpI21KReqBhEtzRPLcn6dRWtG3/view",
+        "title": "תקציר מאורגן — תקופת ישו"
+      }
+    },
+    {
+      "id": "great-revolt",
+      "year": 66,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "פרוץ המרד הגדול",
+      "q": "באיזו שנה פרץ המרד הגדול נגד רומא (פלורוס ומסע קסטיוס גאלוס)?",
+      "desc": "הנציב פלורוס „שודד” את כספי המקדש, הלגיון ה־12 של גאלוס פורץ את החומה השלישית ונסוג בפתאומיות.",
+      "note": "בתאריכון הקורס 66 לספירה היא „שנת ההכנה למרד”, ושנות המלחמה עצמה 67–70 לספירה."
+    },
+    {
+      "id": "yodfat",
+      "year": 67,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "כיבוש הגליל ונפילת יודפת",
+      "q": "באיזו שנה כבשו הרומאים את הגליל, ויוסף בן מתתיהו נשבה ביודפת?",
+      "desc": "שנה ראשונה למלחמה: אספסיאנוס מתארגן בעכו וכובש את הגליל; מפקד הגליל, יוסף בן מתתיהו, נשבה."
+    },
+    {
+      "id": "second-temple-destruction",
+      "year": 70,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "חורבן בית שני",
+      "q": "באיזו שנה חרבו ירושלים ובית המקדש השני בידי טיטוס?",
+      "desc": "ט׳ באב: חורבן המקדש. שער טיטוס ברומא מציג את השלל, ובו המנורה.",
+      "j3d": 5
+    },
+    {
+      "id": "masada",
+      "year": 73,
+      "yearText": "73 לספירה (או 74 לספירה)",
+      "period": "late_roman",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "נפילת מצדה",
+      "q": "באיזו שנה, לפי התיארוך המקובל, נפלה מצדה — המבצר האחרון?",
+      "desc": "אחרי הרודיון ומכוור, מצדה נופלת אחרונה. מטבעות IUDAEA CAPTA מבטאים את הניצחון הרומי.",
+      "note": "בתאריכון הקורס: „73 או 74 לספירה”.",
+      "alts": [
+        74
+      ],
+      "sites": [
+        "masada"
+      ]
+    },
+    {
+      "id": "diaspora-revolt",
+      "year": 115,
+      "period": "late_roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מרד התפוצות",
+      "q": "באיזו שנה פרץ מרד התפוצות בימי טריאנוס?",
+      "desc": "מרידות יהודיות בתפוצות (115–117 לספירה). בעקבותיהן מתחזקת הנוכחות הצבאית בארץ — הלגיון השישי בלגיו.",
+      "alts": [
+        116,
+        117
+      ]
+    },
+    {
+      "id": "bar-kokhba",
+      "year": 132,
+      "yearText": "132 לספירה (בתאריכון: 131 לספירה)",
+      "period": "late_roman",
+      "certainty": "approx",
+      "source": "course-diff",
+      "examReady": false,
+      "title": "פרוץ מרד בר כוכבא",
+      "q": "באיזו שנה פרץ מרד בר כוכבא?",
+      "desc": "המרד הגדול האחרון של היהודים נגד רומא, בימי הדריאנוס; דוכא ב־135 לספירה בחורבן רב וגזירות דת.",
+      "note": "חומרי הקורס אינם אחידים: תאריכון הקורס — 131 לספירה; התקציר המאורגן וציר הזמן של הכיתה — 132–135 לספירה. יש לאמת לפני שימוש במבחן.",
+      "alts": [
+        131,
+        135
+      ]
+    },
+    {
+      "id": "aelia-capitolina",
+      "year": 135,
+      "yearText": "בין 130 לספירה ל־135 לספירה בקירוב",
+      "period": "late_roman",
+      "certainty": "disputed",
+      "source": "course",
+      "examReady": false,
+      "title": "ירושלים הופכת לאיליה קפיטולינה",
+      "q": "סוף מרד בר כוכבא: באיזו שנה דוכא המרד וירושלים נעשתה לאיליה קפיטולינה?",
+      "desc": "הדריאנוס בונה על חורבות ירושלים עיר אלילית בשם איליה קפיטולינה, ושם הפרובינקיה הופך ל„סוריה פלשתינה”.",
+      "note": "בקורס: בניית איליה קפיטולינה „לפני/אחרי המרד”; הדריאנוס ביקר בארץ ב־129–131 לספירה. 135 לספירה הוא סיום דיכוי המרד, לא תאריך ייסוד ודאי. מופיע רק באימון.",
+      "alts": [
+        130,
+        131,
+        129
+      ],
+      "j3d": 6
+    },
+    {
+      "id": "mishnah",
+      "year": 200,
+      "yearText": "200 לספירה בקירוב",
+      "period": "late_roman",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "חתימת המשנה",
+      "q": "באיזו שנה, בקירוב, נחתמה המשנה בידי רבי יהודה הנשיא?",
+      "desc": "המשנה נערכה בגליל (ציפורי, בית שערים) בידי רבי יהודה הנשיא; רובה עוסקת בימי בית שני.",
+      "sites": [
+        "tzippori",
+        "beitshearim"
+      ]
+    },
+    {
+      "id": "caracalla-edict",
+      "year": 212,
+      "period": "late_roman",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "צו קרקלה",
+      "q": "באיזו שנה העניק צו קרקלה אזרחות רומית לרוב התושבים החופשיים באימפריה?",
+      "desc": "Constitutio Antoniniana: הרחבת האזרחות הרומית לתושבים החופשיים של האימפריה.",
+      "note": "לא נמצא בחומרי הקורס שנבדקו; תאריך מקובל."
+    },
+    {
+      "id": "edict-of-milan",
+      "year": 313,
+      "period": "late_roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "„האדיקט של מילאנו”",
+      "q": "באיזו שנה הכריז קונסטנטינוס על הנצרות כדת מותרת (האדיקט של מילאנו)?",
+      "desc": "אחרי קרב גשר מילוויוס (312 לספירה), קונסטנטינוס וליקיניוס מכריזים על סובלנות דתית — הנצרות דת מותרת."
+    },
+    {
+      "id": "constantine-sole-ruler",
+      "year": 324,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קונסטנטינוס שולט במזרח — ראשית התקופה הביזנטית",
+      "q": "באיזו שנה משתלט קונסטנטינוס על המזרח, ומתחילה התקופה הביזנטית בארץ?",
+      "desc": "הנצרות הופכת לדת מועדפת; בקירוב מתחילה בניית המקומות הקדושים בירושלים בהובלת הלנה.",
+      "j3d": 7
+    },
+    {
+      "id": "council-of-nicaea",
+      "year": 325,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ועידת ניקיאה",
+      "q": "באיזו שנה התכנסה ועידת ניקיאה, הוועידה הראשונה לכלל הנוצרים?",
+      "desc": "הוועידה הכנסייתית הכללית הראשונה. כשנה אחר כך (326 לספירה בקירוב) מגיעה הלנה לארץ."
+    },
+    {
+      "id": "holy-sepulchre",
+      "year": 335,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "חנוכת כנסיית הקבר",
+      "q": "באיזו שנה נחנך מכלול כנסיית הקבר בירושלים?",
+      "desc": "אחד משלושת המקומות המיוחסים להלנה ולקונסטנטינוס (עם כנסיית המולד ואלוני ממרא).",
+      "note": "בקורס: ביקור הלנה כ־326 לספירה ובניית הכנסיות; שנת החנוכה 335 לספירה לא נמצאה בחומרי הקורס שנבדקו.",
+      "alts": [
+        326
+      ],
+      "j3d": 7
+    },
+    {
+      "id": "edict-of-thessalonica",
+      "year": 380,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הנצרות דת המדינה",
+      "q": "באיזו שנה הכריז תאודוסיוס הראשון על הנצרות כדת המדינה?",
+      "desc": "צו סלוניקי: הנצרות הניקאית הופכת לדת הרשמית; הארץ הופכת ל„ארץ הקודש”."
+    },
+    {
+      "id": "empire-division",
+      "year": 395,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "חלוקת האימפריה למזרח ולמערב",
+      "q": "באיזו שנה, עם מות תאודוסיוס, חולקה האימפריה למזרח ולמערב?",
+      "desc": "חלוקת השלטון בין בני תאודוסיוס הראשון. ארץ ישראל שייכת לאימפריה המזרחית."
+    },
+    {
+      "id": "council-of-chalcedon",
+      "year": 451,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ועידת כלקדון",
+      "q": "באיזו שנה התכנסה ועידת כלקדון?",
+      "desc": "הגדרת טבעו של ישו ופיצול בכנסיות המזרח; ירושלים מקבלת מעמד של פטריארכיה (לצד ועידת אפסוס, 431 לספירה).",
+      "alts": [
+        431
+      ]
+    },
+    {
+      "id": "fall-of-western-empire",
+      "year": 476,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "נפילת האימפריה הרומית המערבית",
+      "q": "באיזו שנה נפלה האימפריה הרומית המערבית?",
+      "desc": "הדחת רומולוס אוגוסטולוס בידי הברברים. האימפריה המזרחית (הביזנטית) ממשיכה ושולטת בארץ."
+    },
+    {
+      "id": "justinian-accession",
+      "year": 527,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "עליית יוסטיניאנוס",
+      "q": "באיזו שנה עלה יוסטיניאנוס לשלטון?",
+      "desc": "„הסמן המרכזי של המאה השישית”: מפעלי בנייה וחקיקה; בירושלים — כנסיית הניאה (543 לספירה) ואולי הקרדו.",
+      "j3d": 7
+    },
+    {
+      "id": "plague-of-justinian",
+      "year": 542,
+      "yearText": "541–542 לספירה",
+      "period": "byzantine",
+      "certainty": "approx",
+      "source": "external",
+      "examReady": true,
+      "title": "מגפת יוסטיניאנוס",
+      "q": "באיזו שנה, בקירוב, הגיעה מגפת יוסטיניאנוס לקונסטנטינופול?",
+      "desc": "גל מגפה (דבר) שפגע קשות באוכלוסיית האימפריה ובכלכלתה.",
+      "note": "לא נמצא בחומרי הקורס שנבדקו; המגפה פרצה במצרים ב־541 לספירה.",
+      "alts": [
+        541,
+        543
+      ]
+    },
+    {
+      "id": "justinian-death",
+      "year": 565,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מות יוסטיניאנוס",
+      "q": "באיזו שנה הסתיים שלטון יוסטיניאנוס?",
+      "desc": "סוף שלטון של כמעט ארבעים שנה (527–565 לספירה)."
+    },
+    {
+      "id": "byzantine-sasanian-war",
+      "year": 602,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "פרוץ המלחמה הגדולה בין ביזנטיון לפרס",
+      "q": "באיזו שנה פרצה המלחמה הגדולה בין האימפריה הביזנטית לפרס הסאסאנית?",
+      "desc": "מלחמה ארוכה (602–628 לספירה) שהתישה את שתי האימפריות, ערב הכיבוש המוסלמי.",
+      "note": "לא נמצא בחומרי הקורס שנבדקו; תאריך מקובל."
+    },
+    {
+      "id": "heraclius",
+      "year": 610,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "הרקליוס קיסר",
+      "q": "באיזו שנה עלה הרקליוס לשלטון באימפריה הביזנטית?",
+      "desc": "הקיסר שבימיו נכבשה ירושלים בידי הפרסים (614 לספירה) ושב אליה הצלב (630 לספירה).",
+      "note": "לא נמצא בחומרי הקורס שנבדקו. שימו לב: בתאריכון הקורס 610 לספירה מופיע כשנת ההתגלות הראשונה למוחמד — אירוע אחר."
+    },
+    {
+      "id": "persian-conquest-jerusalem",
+      "year": 614,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "הכיבוש הפרסי של ירושלים",
+      "q": "באיזו שנה כבשו הפרסים הסאסאנים את ירושלים?",
+      "desc": "צבא פרס כובש את ירושלים; כנסיות נפגעות והצלב נלקח. הביזנטים ישובו לעיר ב־628–630 לספירה לתקופה קצרה.",
+      "note": "החליף את האירוע „612 לספירה — האימפריה הביזנטית” שבאב־הטיפוס, שלא תיאר אירוע. לא נמצא בחומרי הקורס שנבדקו.",
+      "j3d": 7
+    }
+  ]
+}

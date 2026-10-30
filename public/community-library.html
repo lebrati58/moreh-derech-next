@@ -1,0 +1,75 @@
+<!doctype html><html lang="he" dir="rtl"><head>
+<meta charset="utf-8"><link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09132e"><title>קטעי דרך של כולם — Moreh Derech NEXT</title>
+<meta name="description" content="קטעי דרך ושאלות שהכינו חברי הקהילה — חפשו, שחקו ושתפו">
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#3743a3,transparent 48%),#08122b;color:#f6f8ff;font:16px/1.5 system-ui,Arial,sans-serif;min-height:100dvh}a{color:inherit}button,input{font:inherit}button{cursor:pointer}
+.wrap{max-width:960px;padding:15px 15px 60px;margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}.back{font-size:13px;text-decoration:none;padding:10px 14px;border:1px solid #5e75af;background:#1e2c55;border-radius:12px;font-weight:850}.nav img{width:52px;height:52px;object-fit:contain;background:#fff;border:2px solid #ffd773;border-radius:13px}
+.hero{border-radius:24px;background:linear-gradient(115deg,#4935a3,#188bab);padding:24px 22px;box-shadow:0 7px 0 #080d25;margin:19px 0 25px;border:1px solid #aa9fe6}.eyebrow{font-size:12px;letter-spacing:3px;color:#ffde94;font-weight:950}.hero h1{font-size:clamp(28px,6vw,43px);margin:6px 0}.hero p{max-width:720px;margin:5px 0;color:#e2edff}
+.toolbar{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}.search{flex:1;min-width:170px;border-radius:15px;background:#14254e;border:1px solid #7083c0;display:flex;align-items:center;padding:0 12px;gap:8px}.search:focus-within{border-color:#85efda}.search input{width:100%;min-height:51px;background:none;color:#fff;border:0;outline:none;font-size:16px}.search input::placeholder{color:#b3c3e9}.create{color:#171d45;background:#ffda82;border-radius:13px;text-decoration:none;font-weight:950;padding:14px 18px;box-shadow:0 4px 0 #9e702e;text-align:center}
+.status{color:#afc5eb;padding:18px 2px}.status:empty{display:none}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:17px}.card{display:flex;flex-direction:column;background:linear-gradient(140deg,#202e61,#182246);border:1px solid #657aba;border-radius:20px;padding:17px;min-width:0;box-shadow:0 5px 0 #060b20}
+.card .eyebrow{font-size:11px;letter-spacing:1px;color:#76efd2}.card h2{font-size:20px;line-height:1.4;margin:8px 0;overflow-wrap:anywhere}.card p{font-size:13px;color:#c0ceed;margin:0 0 12px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto}.btn{border-radius:11px;padding:10px 12px;background:#83edd7;color:#123c46;text-decoration:none;border:0;font-weight:900;text-align:center;min-height:43px}.btn.alt{background:#2a3c77;color:#fff;border:1px solid #778bce}.btn:disabled{opacity:.6}
+.pager{display:flex;justify-content:center;gap:10px;margin-top:22px}.pager button{border:1px solid #657eb1;border-radius:11px;background:#243666;color:#fff;padding:12px 17px;font-weight:850}
+.footer{margin-top:25px;padding:15px;color:#b3c3e5;font-size:13px;line-height:1.65}.notice{border:1px solid #5b80ae;border-radius:14px;padding:17px;margin-top:17px;background:#193357;color:#e4f4ff}
+@media(max-width:630px){.cards{grid-template-columns:1fr}.hero{padding:20px 16px}.toolbar{flex-direction:column}.search{width:100%}}
+</style>
+</head><body><main class="wrap">
+<nav class="nav"><a class="back" href="index.html">⌂ לכל המשחקים</a><img src="assets/moreh-derech-next-driver.webp" alt="MOREH DERECH NEXT"></nav>
+<header class="hero"><div class="eyebrow">★ COMMUNITY · DISCOVER · PLAY ★</div><h1>🌍 קטעי דרך של כולם</h1><p>כולם יכולים ליצור, לפרסם ולשחק במסלולים עם שאלות — בלי חשבון מנהל. המסלולים כאן נכתבו על ידי משתתפים, ולא נבדקו על ידי צוות הקורס.</p></header>
+<div class="toolbar"><label class="search">🔎 <input type="search" id="search" placeholder="חפשו התחלה או יעד…" aria-label="חיפוש קטע דרך"></label><a class="create" href="community.html">＋ יצירת קטע דרך</a></div>
+<div id="status" class="status" role="status">טוען מסלולים מהקהילה…</div><div id="cards" class="cards"></div>
+<div class="pager"><button id="prev" type="button" hidden>→ לעמוד הקודם</button><button id="next" type="button" hidden>לעמוד הבא ←</button></div>
+<div class="notice"><b>📄 רוצים להוסיף סיכום ולא משחק?</b> <a href="contribute.html">העלאת קטע הדרכה או מסמך למסלול</a>. מסמך אינו הופך אוטומטית לשאלה מאומתת.</div>
+<p class="footer">⚠️ תוכן גולשים: תמיד בדקו את המקורות ואת התשובות לפני שימוש בהדרכה מקצועית. פרסום אוטומטי עלול לכלול טעויות. אפשר לדווח על משחק פוגעני מתוך עמוד המשחק. מסלולים אלו נפרדים מהסיורים הרשמיים של הקורס וממשחק ה-LIVE של המדריך.</p>
+</main>
+<script src="config.js"></script><script src="api.js"></script>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+let offset=0,limit=24,pending=0;let oldTimer=null;
+const message=t=>{$("status").textContent=t;};
+function card(item){
+ const el=document.createElement("article");el.className="card";
+ const cap=document.createElement("div");cap.className="eyebrow";cap.textContent="🚌 מסלול של חברי הקהילה";
+ const h=document.createElement("h2");h.textContent="📍 "+item.from+" ← "+item.to;
+ const p=document.createElement("p");p.textContent=item.count+" שאלות · "+new Date(item.created_at).toLocaleDateString("he-IL")+" · תוכן משתמשים";
+ const actions=document.createElement("div");actions.className="actions";
+ const link=document.createElement("a");link.className="btn";link.href="community.html?id="+encodeURIComponent(item.id);link.textContent="🎮 לשחק במסלול";
+ const copy=document.createElement("button");copy.type="button";copy.className="btn alt";copy.textContent="🔗 שיתוף";
+ copy.onclick=async()=>{const url=new URL(link.getAttribute("href"),location.href).href;try{if(navigator.share)await navigator.share({title:"קטע דרך — Moreh Derech NEXT",url});else{await navigator.clipboard.writeText(url);copy.textContent="✓ הועתק";}}catch(e){if(e.name!=="AbortError"){copy.textContent="פתחו את המשחק והעתיקו את הכתובת";}}};
+ actions.append(link,copy);el.append(cap,h,p,actions);return el;
+}
+async function load(){
+ const serial=++pending;
+ const query=$("search").value.trim();
+ message("טוען…");$("cards").replaceChildren();
+ try{
+  const response=await window.MDL.rpc("community_list_quizzes",{p_search:query,p_limit:limit,p_offset:offset},{timeout:14000});
+  if(serial!==pending)return;
+  if(!response||!Array.isArray(response.items))throw Error("not_ready");
+  const rows=response.items;$("cards").replaceChildren();
+  rows.forEach(item=>$("cards").append(card(item)));
+  message(rows.length?"נמצאו "+rows.length+" מסלולים בעמוד זה"+(query?" · חיפוש: "+query:""):"עדיין אין מסלולים מתאימים. אפשר ליצור את הראשון!");
+  $("prev").hidden=offset===0;$("next").hidden=rows.length<limit;
+ }catch(e){
+  if(serial!==pending)return;
+  message("הספרייה הציבורית עדיין לא זמינה. צריך להפעיל פעם אחת את community_quizzes.sql ב-Supabase. אפשר בינתיים ליצור משחק אישי ולשתף קישור.");
+  $("prev").hidden=true;$("next").hidden=true;
+ }
+}
+$("search").addEventListener("input",()=>{clearTimeout(oldTimer);oldTimer=setTimeout(()=>{offset=0;load();},280);});
+$("prev").onclick=()=>{offset=Math.max(0,offset-limit);load();};
+$("next").onclick=()=>{offset+=limit;load();};
+load();
+})();
+</script><script src="feedback.js"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body></html>

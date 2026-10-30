@@ -1,0 +1,734 @@
+{
+ "source": "https://github.com/openbibleinfo/3D-Temple-Mount",
+ "commit": "f5f35410a57bb579d36fe11fa04e0e15b1ffa642",
+ "license": "MIT — © 2026 OpenBible.info",
+ "period": "vers 30 apr. J.-C. (avant 70)",
+ "glb": "jerusalem3d/models/temple-mount-30ce.glb",
+ "plat": {
+  "NW": [
+   0,
+   0
+  ],
+  "NE": [
+   313.9,
+   26
+  ],
+  "SE": [
+   280,
+   485
+  ],
+  "SW": [
+   0,
+   485
+  ]
+ },
+ "classes": {
+  "A": {
+   "he": "שרידים ארכיאולוגיים",
+   "fr": "Attesté par des vestiges",
+   "en": "Attested by remains",
+   "ru": "Подтверждено остатками"
+  },
+  "B": {
+   "he": "נתמך היטב בכמה מקורות",
+   "fr": "Fortement étayé par plusieurs sources",
+   "en": "Well supported by several sources",
+   "ru": "Хорошо подкреплено источниками"
+  },
+  "C": {
+   "he": "שחזור סביר אך שנוי במחלוקת",
+   "fr": "Reconstitution plausible mais discutée",
+   "en": "Plausible but debated reconstruction",
+   "ru": "Правдоподобная, но спорная реконструкция"
+  },
+  "D": {
+   "he": "השערה להמחשה",
+   "fr": "Hypothèse illustrative",
+   "en": "Illustrative hypothesis",
+   "ru": "Иллюстративная гипотеза"
+  }
+ },
+ "parts": [
+  {
+   "part": "platform",
+   "name": "The Temple Mount platform",
+   "monument": "jerusalem_temple_mount",
+   "cls": "A",
+   "label": {
+    "he": "חומות התמך וקווי המתחם — שרידים קיימים",
+    "fr": "Murs de soutènement et contour — vestiges existants",
+    "en": "Retaining walls and outline — surviving remains",
+    "ru": "Подпорные стены и контур — сохранившиеся остатки"
+   },
+   "center": [
+    157.07,
+    -18.31,
+    242.89
+   ],
+   "size": [
+    320.24,
+    78.31,
+    490.75
+   ]
+  },
+  {
+   "part": "gentiles",
+   "name": "The Court of the Gentiles",
+   "monument": "jerusalem_temple_mount",
+   "cls": "B",
+   "label": {
+    "he": "רחבת הר הבית (חצר הגויים) — יוסף בן מתתיהו",
+    "fr": "Esplanade (parvis des Gentils) — Josèphe",
+    "en": "Esplanade (Court of the Gentiles) — Josephus",
+    "ru": "Площадь (двор язычников) — Иосиф"
+   },
+   "center": [
+    156.95,
+    0,
+    242.5
+   ],
+   "size": [
+    313.9,
+    0,
+    485
+   ]
+  },
+  {
+   "part": "street",
+   "name": "The Herodian Street",
+   "monument": "jerusalem_temple_mount",
+   "cls": "A",
+   "label": {
+    "he": "הרחוב ההרודיאני לאורך הכותל — נחשף בחפירות",
+    "fr": "Rue hérodienne le long du Mur — fouillée",
+    "en": "Herodian street along the Wall — excavated",
+    "ru": "Иродианская улица вдоль Стены — раскопана"
+   },
+   "center": [
+    -4.45,
+    -31.38,
+    279
+   ],
+   "size": [
+    14.6,
+    13.87,
+    522.2
+   ]
+  },
+  {
+   "part": "wilson",
+   "name": "Wilson's Arch and the Causeway",
+   "monument": "jerusalem_wilsons_arch",
+   "cls": "A",
+   "label": {
+    "he": "קשת וילסון — קיימת; אורך הגשר משוחזר",
+    "fr": "Arc de Wilson — conservé ; longueur du pont reconstituée",
+    "en": "Wilson's Arch — survives; bridge length reconstructed",
+    "ru": "Арка Уилсона — сохранилась; длина моста реконструирована"
+   },
+   "center": [
+    -56.8,
+    -16.92,
+    335
+   ],
+   "size": [
+    114.4,
+    35.15,
+    14
+   ]
+  },
+  {
+   "part": "cornerNE",
+   "name": "The northeast corner bay",
+   "monument": "jerusalem_porticoes",
+   "cls": "B",
+   "label": null,
+   "center": [
+    304.56,
+    8.76,
+    33.98
+   ],
+   "size": [
+    27.44,
+    17.52,
+    27.44
+   ]
+  },
+  {
+   "part": "northPortico",
+   "name": "The northern colonnade",
+   "monument": "jerusalem_porticoes",
+   "cls": "B",
+   "label": {
+    "he": "סטווים כפולים — יוסף בן מתתיהו",
+    "fr": "Portiques doubles — Josèphe",
+    "en": "Double porticoes — Josephus",
+    "ru": "Двойные портики — Иосиф"
+   },
+   "center": [
+    184.58,
+    9.06,
+    23.31
+   ],
+   "size": [
+    261.03,
+    18.12,
+    39.76
+   ]
+  },
+  {
+   "part": "solomons",
+   "name": "Solomon's Porch",
+   "monument": "jerusalem_porticoes",
+   "cls": "B",
+   "label": {
+    "he": "סטיו שלמה — יוסף, הברית החדשה",
+    "fr": "Portique de Salomon — Josèphe, Nouveau Testament",
+    "en": "Solomon's Porch — Josephus, New Testament",
+    "ru": "Портик Соломона — Иосиф, Новый Завет"
+   },
+   "center": [
+    288.99,
+    9.06,
+    254.91
+   ],
+   "size": [
+    52.38,
+    18.12,
+    462.55
+   ]
+  },
+  {
+   "part": "westPortico",
+   "name": "The western colonnade",
+   "monument": "jerusalem_porticoes",
+   "cls": "B",
+   "label": null,
+   "center": [
+    7.77,
+    8.81,
+    241.71
+   ],
+   "size": [
+    18.95,
+    18.62,
+    484.59
+   ]
+  },
+  {
+   "part": "royalStoa",
+   "name": "The Royal Stoa",
+   "monument": "jerusalem_royal_stoa",
+   "cls": "B",
+   "label": {
+    "he": "הסטיו המלכותי — יוסף (162 עמודים) ושברי אדריכלות",
+    "fr": "Portique royal — Josèphe (162 colonnes) et fragments d’architecture",
+    "en": "Royal Stoa — Josephus (162 columns) and architectural fragments",
+    "ru": "Царский портик — Иосиф (162 колонны) и фрагменты"
+   },
+   "center": [
+    140,
+    17.1,
+    465.95
+   ],
+   "size": [
+    279.6,
+    34.2,
+    40.7
+   ]
+  },
+  {
+   "part": "antonia",
+   "name": "The Antonia",
+   "monument": "jerusalem_antonia",
+   "cls": "C",
+   "label": {
+    "he": "אנטוניה — צורה ומידות לפי יוסף; הגישה לגגות הסטווים היא פרשנות",
+    "fr": "Antonia — forme et dimensions d’après Josèphe ; l’accès aux toits des portiques est une interprétation",
+    "en": "Antonia — form and size after Josephus; access to the portico roofs is an interpretation",
+    "ru": "Антония — форма по Иосифу; выход на крыши портиков — интерпретация"
+   },
+   "center": [
+    36.94,
+    12.22,
+    -19.53
+   ],
+   "size": [
+    134.3,
+    76.45,
+    67.98
+   ]
+  },
+  {
+   "part": "southSteps",
+   "name": "The Southern Steps",
+   "monument": "jerusalem_southern_steps",
+   "cls": "A",
+   "label": {
+    "he": "המדרגות הדרומיות — 65.5 מ׳ שנחפרו (מזר)",
+    "fr": "Escaliers du sud — 65,5 m fouillés (Mazar)",
+    "en": "Southern Steps — 65.5 m excavated (Mazar)",
+    "ru": "Южные ступени — 65,5 м раскопано (Мазар)"
+   },
+   "center": [
+    158.66,
+    -26.77,
+    517.83
+   ],
+   "size": [
+    252.82,
+    37.95,
+    62.85
+   ]
+  },
+  {
+   "part": "huldah",
+   "name": "The Double Gate",
+   "monument": "jerusalem_hulda_gates",
+   "cls": "A",
+   "label": {
+    "he": "שערי חולדה — השער הכפול והמשולש קיימים",
+    "fr": "Portes de Houlda — portes double et triple conservées",
+    "en": "Huldah Gates — Double and Triple Gates survive",
+    "ru": "Ворота Хульды — Двойные и Тройные сохранились"
+   },
+   "center": [
+    127.7,
+    -5.04,
+    479.58
+   ],
+   "size": [
+    104.4,
+    9.31,
+    16.45
+   ]
+  },
+  {
+   "part": "robinson",
+   "name": "Robinson's Arch",
+   "monument": "jerusalem_robinsons_arch",
+   "cls": "A",
+   "label": {
+    "he": "קשת רובינסון — הזיז והעמוד נחפרו; גרם המדרגות משוחזר",
+    "fr": "Arc de Robinson — départ et pile fouillés ; l’escalier est reconstitué",
+    "en": "Robinson's Arch — springing and pier excavated; the stair is reconstructed",
+    "ru": "Арка Робинсона — пята и опора раскопаны; лестница реконструирована"
+   },
+   "center": [
+    -9.98,
+    -17.36,
+    496.7
+   ],
+   "size": [
+    20.35,
+    37.23,
+    65.4
+   ]
+  },
+  {
+   "part": "wilsonGate",
+   "name": "The gate at Wilson’s Arch",
+   "monument": "jerusalem_temple_mount",
+   "cls": "C",
+   "label": null,
+   "center": [
+    -1.5,
+    8.64,
+    335
+   ],
+   "size": [
+    8,
+    18.17,
+    16.8
+   ]
+  },
+  {
+   "part": "barclay",
+   "name": "Barclay's Gate",
+   "monument": "jerusalem_temple_mount",
+   "cls": "A",
+   "label": {
+    "he": "שער ברקלי — משקוף קיים",
+    "fr": "Porte de Barclay — linteau conservé",
+    "en": "Barclay's Gate — lintel survives",
+    "ru": "Ворота Барклая — сохранилась перемычка"
+   },
+   "center": [
+    -2.6,
+    -22.85,
+    405
+   ],
+   "size": [
+    1.9,
+    10.45,
+    8.8
+   ]
+  },
+  {
+   "part": "warren",
+   "name": "Warren's Gate",
+   "monument": "jerusalem_temple_mount",
+   "cls": "A",
+   "label": {
+    "he": "שער וורן — סתום, נראה במנהרות",
+    "fr": "Porte de Warren — murée, visible dans les tunnels",
+    "en": "Warren's Gate — blocked, visible in the tunnels",
+    "ru": "Ворота Уоррена — заложены, видны в туннелях"
+   },
+   "center": [
+    -2.6,
+    -22.79,
+    295
+   ],
+   "size": [
+    1.9,
+    8.65,
+    8.2
+   ]
+  },
+  {
+   "part": "shushan",
+   "name": "The Shushan Gate",
+   "monument": "jerusalem_temple_mount",
+   "cls": "C",
+   "label": {
+    "he": "שער שושן — מקום לפי מידות; צורה משוחזרת",
+    "fr": "Porte de Suse (Shushan) — emplacement d’après Middot ; forme reconstituée",
+    "en": "Shushan Gate — location after Middot; form reconstructed",
+    "ru": "Сузские ворота — место по Мидот; форма реконструирована"
+   },
+   "center": [
+    298.46,
+    8.61,
+    241.26
+   ],
+   "size": [
+    8.11,
+    18.22,
+    19.73
+   ]
+  },
+  {
+   "part": "causeway",
+   "name": "The causeway to the Mount of Olives",
+   "monument": "jerusalem_temple_mount",
+   "cls": "D",
+   "label": {
+    "he": "גשר להר הזיתים — לפי משנה פרה ג:ו בלבד",
+    "fr": "Chaussée vers le mont des Oliviers — d’après la seule Mishna Para 3:6",
+    "en": "Causeway to the Mount of Olives — from Mishnah Parah 3:6 only",
+    "ru": "Дамба к Масличной горе — только по Мишне Пара 3:6"
+   },
+   "center": [
+    423.01,
+    -30.75,
+    250.46
+   ],
+   "size": [
+    254.67,
+    61.6,
+    27.74
+   ]
+  },
+  {
+   "part": "tadi",
+   "name": "The Tadi Gate",
+   "monument": "jerusalem_temple_mount",
+   "cls": "C",
+   "label": {
+    "he": "שער טדי — לפי מידות",
+    "fr": "Porte Tadi — d’après Middot",
+    "en": "Tadi Gate — after Middot",
+    "ru": "Ворота Тади — по Мидот"
+   },
+   "center": [
+    199.32,
+    7.58,
+    17.91
+   ],
+   "size": [
+    10.25,
+    15.15,
+    3.4
+   ]
+  },
+  {
+   "part": "struthion",
+   "name": "The Struthion Pool",
+   "monument": "jerusalem_antonia",
+   "cls": "A",
+   "label": {
+    "he": "בריכת הסטרותיון — קיימת",
+    "fr": "Bassin du Strouthion — existant",
+    "en": "Struthion Pool — extant",
+    "ru": "Бассейн Струфион — сохранился"
+   },
+   "center": [
+    -7.04,
+    -21.19,
+    -87.08
+   ],
+   "size": [
+    29,
+    20.05,
+    67
+   ]
+  },
+  {
+   "part": "poolIsrael",
+   "name": "The Pool of Israel",
+   "monument": "jerusalem_temple_mount",
+   "cls": "C",
+   "label": {
+    "he": "בריכת ישראל — תיארוך שנוי במחלוקת (הורדוסי, אדריאני או אומאי)",
+    "fr": "Piscine d’Israël — datation contestée (hérodienne, hadrianique ou omeyyade)",
+    "en": "Pool of Israel — disputed date (Herodian, Hadrianic or Umayyad)",
+    "ru": "Бассейн Израиля — спорная датировка"
+   },
+   "center": [
+    258.34,
+    -25.0,
+    -5.13
+   ],
+   "size": [
+    135.34,
+    27.1,
+    64.34
+   ]
+  },
+  {
+   "part": "soreg",
+   "name": "The Soreg",
+   "monument": "jerusalem_second_temple",
+   "cls": "B",
+   "label": {
+    "he": "הסורג — כתובות האזהרה נמצאו; מהלך המחיצה משוחזר",
+    "fr": "Soreg — inscriptions d’avertissement retrouvées ; le tracé est reconstitué",
+    "en": "Soreg — warning inscriptions found; its line is reconstructed",
+    "ru": "Сорег — предупреждающие надписи найдены; линия реконструирована"
+   },
+   "center": [
+    152.97,
+    0.8,
+    230.51
+   ],
+   "size": [
+    195.77,
+    1.59,
+    105.1
+   ]
+  },
+  {
+   "part": "chel",
+   "name": "The Chel",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": null,
+   "center": [
+    152.97,
+    1.58,
+    230.51
+   ],
+   "size": [
+    195.18,
+    3.15,
+    104.5
+   ]
+  },
+  {
+   "part": "easternGate",
+   "name": "The eastern gate of the Court of the Women",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": null,
+   "center": [
+    237.27,
+    13.21,
+    236.74
+   ],
+   "size": [
+    10.1,
+    21.12,
+    17.85
+   ]
+  },
+  {
+   "part": "women",
+   "name": "The Court of the Women",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": {
+    "he": "עזרת הנשים — לפי מידות",
+    "fr": "Parvis des femmes — d’après Middot",
+    "en": "Court of the Women — after Middot",
+    "ru": "Двор женщин — по Мидот"
+   },
+   "center": [
+    201.93,
+    6.45,
+    234.13
+   ],
+   "size": [
+    77.03,
+    9.91,
+    77.03
+   ]
+  },
+  {
+   "part": "nicanor",
+   "name": "The Nicanor Gate",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": {
+    "he": "שער ניקנור — לפי מידות ויוסף",
+    "fr": "Porte de Nicanor — d’après Middot et Josèphe",
+    "en": "Nicanor Gate — after Middot and Josephus",
+    "ru": "Ворота Никанора — по Мидот и Иосифу"
+   },
+   "center": [
+    169.47,
+    13.78,
+    231.52
+   ],
+   "size": [
+    15.22,
+    27.55,
+    75.05
+   ]
+  },
+  {
+   "part": "israel",
+   "name": "The Court of Israel",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": null,
+   "center": [
+    163.71,
+    7.74,
+    231.31
+   ],
+   "size": [
+    10.98,
+    1.31,
+    71.11
+   ]
+  },
+  {
+   "part": "altar",
+   "name": "The Altar of Burnt Offering",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": {
+    "he": "המזבח — 32 אמה לפי מידות (יוסף: 50)",
+    "fr": "Autel — 32 coudées selon Middot (Josèphe : 50)",
+    "en": "Altar — 32 cubits per Middot (Josephus: 50)",
+    "ru": "Жертвенник — 32 локтя по Мидот (Иосиф: 50)"
+   },
+   "center": [
+    146.69,
+    11.34,
+    237.7
+   ],
+   "size": [
+    18.21,
+    6.69,
+    33.5
+   ]
+  },
+  {
+   "part": "shambles",
+   "name": "The slaughtering floor",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": null,
+   "center": [
+    148.51,
+    9.34,
+    210.02
+   ],
+   "size": [
+    15.07,
+    1.88,
+    16.06
+   ]
+  },
+  {
+   "part": "porch",
+   "name": "The Porch and the Golden Vine",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": {
+    "he": "האולם וגפן הזהב — יוסף; ארבעת העמודים לפי מטבעות בר כוכבא",
+    "fr": "Porche et vigne d’or — Josèphe ; quatre colonnes d’après les monnaies de Bar Kokhba",
+    "en": "Porch and golden vine — Josephus; four columns after Bar Kokhba coins",
+    "ru": "Притвор и золотая лоза — Иосиф; четыре колонны по монетам Бар-Кохбы"
+   },
+   "center": [
+    124.27,
+    36.23,
+    228.27
+   ],
+   "size": [
+    15.58,
+    49.35,
+    52.98
+   ]
+  },
+  {
+   "part": "sanctuary",
+   "name": "The Sanctuary",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": {
+    "he": "ההיכל — 100 × 100 × 100 אמה לפי מידות; המיקום המדויק על ההר אינו ידוע",
+    "fr": "Sanctuaire — 100 × 100 × 100 coudées selon Middot ; emplacement exact sur l’esplanade inconnu",
+    "en": "Sanctuary — 100 × 100 × 100 cubits per Middot; exact siting on the Mount unknown",
+    "ru": "Святилище — 100 × 100 × 100 локтей по Мидот; точное место неизвестно"
+   },
+   "center": [
+    100.96,
+    36.75,
+    228.27
+   ],
+   "size": [
+    57.25,
+    50.4,
+    54.69
+   ]
+  },
+  {
+   "part": "hekhal",
+   "name": "The Holy Place",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": null,
+   "center": [
+    99.31,
+    22.4,
+    226.55
+   ],
+   "size": [
+    32.98,
+    21.7,
+    20.66
+   ]
+  },
+  {
+   "part": "debir",
+   "name": "The Holy of Holies",
+   "monument": "jerusalem_second_temple",
+   "cls": "C",
+   "label": null,
+   "center": [
+    88.82,
+    21.45,
+    225.78
+   ],
+   "size": [
+    11.74,
+    20.8,
+    11.28
+   ]
+  }
+ ]
+}

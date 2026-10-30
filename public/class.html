@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מורה דרך">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="תחרות הכיתה — טבלת הניקוד של מורי הדרך">
+<title>🏆 תחרות הכיתה — Moreh Derech NEXT</title>
+<style>
+:root{--bg:#0b1230;--card:#151f4a;--line:#3d5190;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(120% 60% at 50% 0,#2b2a7a 0,var(--bg) 60%) fixed,var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;min-height:100vh}
+.wrap{max-width:640px;margin:auto;padding:14px 16px 70px}
+nav{display:flex;gap:8px;justify-content:space-between;margin-bottom:10px}
+nav a,.btn{color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;padding:9px 13px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a;cursor:pointer;font-family:inherit}
+h1{text-align:center;font-size:27px;margin:8px 0 2px}.lead{text-align:center;color:var(--soft);margin:0 0 18px;font-size:14.5px}
+.me{background:linear-gradient(135deg,#2b2466,#17204d);border:1px solid var(--gold);border-radius:18px;padding:14px;margin-bottom:18px}
+.klass{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid #ffffff22}
+.klass b{flex:1;min-width:120px;font-size:15px}.klass input{flex:1;min-width:0;height:42px;border-radius:12px;border:1px solid #5868a8;background:#101a40;color:var(--ink);padding:0 12px;font:inherit;font-weight:800}
+.board-title{text-align:center;font-size:15px;font-weight:900;margin:14px 0 0;color:#ffe08a}
+.me-top{display:flex;align-items:center;gap:10px}.me-top b{font-size:18px;flex:1}
+.me-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;text-align:center}
+.me-stats div{background:#0f1840;border-radius:13px;padding:9px 4px}.me-stats strong{display:block;font-size:21px;color:var(--gold)}.me-stats span{font-size:12px;color:var(--soft)}
+.me p{margin:10px 0 0;font-size:13px;color:var(--soft)}
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;align-items:end;gap:8px;margin:6px 0 16px}
+.pod{text-align:center;border-radius:16px 16px 8px 8px;padding:10px 6px;background:#1a2459;border:1px solid var(--line)}
+.pod .m{font-size:30px}.pod b{display:block;font-size:15px;margin:2px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pod small{color:var(--gold);font-weight:900}
+.pod.p1{min-height:150px;background:linear-gradient(180deg,#5b4500,#2a2466);border-color:var(--gold)}.pod.p2{min-height:125px}.pod.p3{min-height:110px}
+ol{list-style:none;margin:0;padding:0}
+li{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:14px;background:var(--card);border:1px solid var(--line);margin-bottom:7px}
+li .r{width:28px;text-align:center;font-weight:900;color:var(--soft)}li .n{flex:1;font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+li .s{color:var(--gold);font-weight:900;direction:ltr}li .st{font-size:12.5px;color:var(--soft);white-space:nowrap}
+li.mine{border-color:var(--mint);background:#123a44}
+.live{text-align:center;font-size:13px;font-weight:800;color:var(--soft);margin:6px 0 0}.live b{color:#6ff0d4}
+.empty,.note{text-align:center;color:var(--soft);padding:22px 10px}
+.rules{margin-top:22px;font-size:13px;color:var(--soft);line-height:1.6;background:#111a42;border-radius:14px;padding:12px 14px}
+.rules b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a href="index.html">⌂ משחקים</a><a href="map.html?mode=quiz">🗺️ למפה ולשחק</a></nav>
+  <h1>🏆 תחרות הכיתה</h1>
+  <p class="lead">כל תשובה נכונה מקדמת אותך. מי יצבע ראשון את כל המפה בזהב?</p>
+  <section class="me" id="me"></section>
+  <p class="live" id="live" aria-live="polite"></p>
+  <div id="board"><p class="note">טוען את הטבלה…</p></div>
+  <div class="rules">
+    <b>איך צוברים?</b> כל שאלה שעניתם עליה נכון: קל = 100, בינוני = 200, קשה = 300 נקודות (פעם אחת לכל שאלה).<br>
+    <b>⭐ כוכב</b> = סיימתם רמה בסיור עם 60% תשובות נכונות ומעלה. <b>👑 סיור זהב</b> = 3 כוכבים — והסיור נצבע בזהב על המפה.<br>
+    רק מי שהסכים/ה מופיע/ה בטבלה, ורק בשם פרטי. ההתקדמות נשמרת בטלפון שלכם.
+  </div>
+</div>
+<script src="config.js"></script>
+<script src="progress.js"></script>
+<script>
+(function(){
+  'use strict';
+  const P = window.MDProgress, $ = id => document.getElementById(id);
+  { const c = new URLSearchParams(location.search).get('c'); if (c != null) P.setClassCode(c); }
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+  const fmt = n => Number(n || 0).toLocaleString('he-IL');
+  function me(){
+    const p = P.player(), t = P.totals();
+    $('me').innerHTML = `<div class="me-top"><b>👤 ${p.name ? esc(p.name) : 'אורח/ת'}</b><button class="btn" id="edit" type="button">${p.name ? '✎ שינוי' : 'הצטרפות לתחרות'}</button></div>
+      <div class="me-stats"><div><strong>${fmt(t.points)}</strong><span>נקודות</span></div><div><strong>⭐ ${t.stars}</strong><span>כוכבים</span></div><div><strong>👑 ${t.gold}</strong><span>סיורי זהב</span></div></div>
+      <p>${p.consent && p.name ? '✅ מופיע/ה בטבלת הכיתה' : '🔒 הניקוד שלך נשמר רק אצלך — לא מופיע בטבלה'}</p>
+      <div class="klass" id="klass"></div>`;
+    $('edit').onclick = () => P.askName({ onClose(){ me(); setTimeout(load, 900); } });
+    klass(false);
+  }
+  // Tableau « en direct » : rafraîchi toutes les 20 s tant que la page est visible (et au retour sur l'onglet).
+  const EVERY = 20000; let lastOk = 0;
+  function liveLine(){ const s = lastOk ? Math.round((Date.now() - lastOk) / 1000) : null;
+    $('live').innerHTML = lastOk ? `<b>🟢 בשידור חי</b> · מתעדכן כל 20 שניות · עודכן לפני ${s < 5 ? 'רגע' : s + ' שניות'}` : ''; }
+  // Code de classe : chaque classe a son propre tableau. Le lien « class.html?c=… » le remplit tout seul.
+  function klass(editing){
+    const code = P.classCode(), box = $('klass');
+    box.innerHTML = editing
+      ? `<label class="sr" for="kc">קוד כיתה</label><input id="kc" maxlength="24" placeholder="למשל: יובל-2026" value="${esc(code)}"><button class="btn" id="kSave" type="button">שמירה</button>`
+      : `<b>🏫 הכיתה שלי: ${code ? `<bdi style="white-space:nowrap">${esc(code)}</bdi>` : 'טבלה כללית'}</b><button class="btn" id="kEdit" type="button">${code ? 'שינוי' : 'הצטרפות לכיתה'}</button>${code ? '<button class="btn" id="kShare" type="button">🔗 שיתוף</button>' : ''}`;
+    if (editing) { const save = () => { P.setClassCode($('kc').value); klass(false); setTimeout(load, 1700); }; $('kSave').onclick = save; $('kc').onkeydown = e => { if (e.key === 'Enter') save(); }; $('kc').focus(); return; }
+    $('kEdit').onclick = () => klass(true);
+    if ($('kShare')) $('kShare').onclick = async () => {
+      const url = location.origin + location.pathname + '?c=' + encodeURIComponent(code), text = `🏆 תחרות הכיתה ${code} — מורה דרך NEXT`;
+      try { if (navigator.share) await navigator.share({ title: text, url }); else { await navigator.clipboard.writeText(url); $('kShare').textContent = '✅ הקישור הועתק'; } } catch (e) {}
+    };
+  }
+  async function load(){
+    try {
+      const r = await P.leaderboard(), items = r.items || [], p = P.player(), t = P.totals();
+      lastOk = Date.now(); liveLine();
+      const code = P.classCode(), title = `<p class="board-title">${code ? '🏫 טבלת הכיתה: <bdi>' + esc(code) + '</bdi>' : '🌍 טבלה כללית'}</p>`;
+      const mineIdx = p.consent && p.name ? items.findIndex(x => x.name === p.name && x.points === t.points) : -1;
+      if (!items.length) { $('board').innerHTML = title + '<p class="empty">עוד אין אף אחד בטבלה — היו הראשונים! 🚀</p>'; return; }
+      const medal = ['🥇','🥈','🥉'], top = items.slice(0, 3);
+      const order = [1, 0, 2].filter(i => top[i]);
+      let h = '<div class="podium">' + order.map(i => `<div class="pod p${i+1}"><div class="m">${medal[i]}</div><b>${esc(top[i].name)}</b><small>${fmt(top[i].points)}</small><div style="font-size:12px;color:#b5c3ee">⭐${top[i].stars}${top[i].gold ? ' · 👑' + top[i].gold : ''}</div></div>`).join('') + '</div>';
+      h += '<ol>' + items.map((x, i) => `<li class="${i === mineIdx ? 'mine' : ''}"><span class="r">${i < 3 ? medal[i] : i + 1}</span><span class="n">${esc(x.name)}${i === mineIdx ? ' (את/ה)' : ''}</span><span class="st">⭐${x.stars}${x.gold ? ' · 👑' + x.gold : ''}</span><span class="s">${fmt(x.points)}</span></li>`).join('') + '</ol>';
+      $('board').innerHTML = title + h;
+    } catch (e) {
+      lastOk = 0; liveLine();
+      const missing = /http_404/.test(String(e && e.message));
+      $('board').innerHTML = e && e.v2missing
+        ? '<p class="note">⚙️ קודי כיתה עוד לא הופעלו בשרת (צריך להתקין פעם אחת את class_contest_v2.sql ב-Supabase). אפשר בינתיים להשאיר את הקוד ריק — טבלה כללית.</p>'
+        : missing
+        ? '<p class="note">⚙️ טבלת הכיתה עוד לא הופעלה בשרת (צריך להתקין פעם אחת את class_contest.sql ב-Supabase). הניקוד שלך נשמר בטלפון ויישלח ברגע שהטבלה תופעל.</p>'
+        : '<p class="note">📡 אין חיבור לשרת כרגע. הניקוד שלך נשמר בטלפון ויישלח ברגע שאפשר.</p>';
+    }
+  }
+  const tick = () => { if (!document.hidden) P.submit().finally(load); };
+  me(); tick(); setInterval(() => { if (!document.hidden) load(); }, EVERY); setInterval(liveLine, 5000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
+})();
+</script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+<script src="tabbar.js"></script>
+</body>
+</html>

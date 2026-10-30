@@ -1,0 +1,425 @@
+{
+ "site": "beitalpha",
+ "title": {
+  "he": "בית אלפא",
+  "fr": "Beit Alpha",
+  "en": "Beit Alpha",
+  "ru": "Бейт-Альфа"
+ },
+ "defaultPeriod": 2,
+ "cubitMeters": 0.5,
+ "stone": "basalt",
+ "tint": "#ffffff",
+ "home": {
+  "at": "o:synagogue",
+  "dist": 260,
+  "from": 200,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#8a8a62",
+  "mid": "#a8a57a",
+  "hi": "#c4bf98"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "synagogue": {
+   "osm": "node/1475115327"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "era": "roman",
+   "name": {
+    "he": "ימי התלמוד",
+    "fr": "Le village de Beit Ilfa",
+    "en": "The village of Beit Ilfa",
+    "ru": "Деревня Бейт-Ильфа"
+   },
+   "dates": {
+    "he": "תקופת המשנה והתלמוד",
+    "fr": "époque de la Mishna et du Talmud",
+    "en": "Mishnah and Talmud period",
+    "ru": "эпоха Мишны и Талмуда"
+   }
+  },
+  {
+   "n": 2,
+   "era": "byzantine",
+   "name": {
+    "he": "ביזנטיון",
+    "fr": "La synagogue et la mosaïque",
+    "en": "The synagogue and the mosaic",
+    "ru": "Синагога и мозаика"
+   },
+   "dates": {
+    "he": "המאה ה-6",
+    "fr": "VIe s.",
+    "en": "6th c.",
+    "ru": "VI в."
+   }
+  },
+  {
+   "n": 3,
+   "era": "today",
+   "name": {
+    "he": "היום",
+    "fr": "La découverte et aujourd’hui",
+    "en": "Discovery and today",
+    "ru": "Открытие и сегодня"
+   },
+   "dates": {
+    "he": "מאז 1929",
+    "fr": "depuis 1929",
+    "en": "since 1929",
+    "ru": "с 1929 г."
+   }
+  }
+ ],
+ "monuments": [
+  {
+   "id": "ba_synagogue",
+   "from": 2,
+   "to": 3,
+   "certainty": "reconstruction",
+   "keep": true,
+   "pri": 3,
+   "schematic": true,
+   "name": {
+    "he": "בית הכנסת",
+    "fr": "La synagogue",
+    "en": "The synagogue",
+    "ru": "Синагога"
+   },
+   "text": {
+    "he": "בזיליקה כפרית: חצר (אטריום), מבואה צרה (נרתקס), שלושה פתחים לאולם התפילה, שתי שורות עמודים מרובעים — אולם תווך ושני סטווים — ואפסיס בקיר הדרומי, לכיוון ירושלים, לארון הקודש. מדרגות בסטיו המערבי עלו לגלריה. מבחוץ פשוט, מבפנים פסיפס עשיר.",
+    "fr": "Basilique de village : cour (atrium), vestibule étroit (narthex), trois portes vers la salle, deux rangées de piliers carrés — nef et deux bas-côtés — et une abside au mur sud, vers Jérusalem, pour l’arche. Un escalier du bas-côté ouest menait à une galerie. Sobre dehors, mosaïque riche dedans.",
+    "en": "A village basilica: a courtyard (atrium), a narrow vestibule (narthex), three doors into the hall, two rows of square piers — nave and two aisles — and an apse in the south wall, towards Jerusalem, for the ark. Stairs in the west aisle led to a gallery. Plain outside, rich mosaic inside.",
+    "ru": "Деревенская базилика: двор (атриум), узкий притвор (нартекс), три входа в зал, два ряда квадратных столбов — центральный неф и два боковых — и апсида в южной стене, к Иерусалиму, для ковчега. Лестница в западном нефе вела на галерею. Скромно снаружи, богатая мозаика внутри."
+   },
+   "placementNote": {
+    "he": "המיקום לפי נקודת המפה; המידות משוערות — אינן בסיכומי הקורס.",
+    "fr": "Position d’après le point cartographique ; dimensions estimées — absentes des résumés du cours.",
+    "en": "Position from the map point; size estimated — not in the course summaries.",
+    "ru": "Положение по точке на карте; размеры оценочные — в конспектах их нет."
+   },
+   "shape": {
+    "type": "basilica",
+    "at": "o:synagogue",
+    "L": 22,
+    "W": 13,
+    "H": 8,
+    "bearing": 180
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "בית אלפא — הדרכה בבית הכנסת (תמליל ערוך)",
+     "url": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 4 – עמקים – בית הכנסת העתיק בית אלפא",
+     "url": "https://drive.google.com/file/d/1pUeIvQx31gKuxCqcmWTNnW2Q6VDq1f1l/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/1475115327",
+     "url": "https://www.openstreetmap.org/node/1475115327"
+    }
+   ]
+  },
+  {
+   "id": "ba_mosaic",
+   "from": 2,
+   "to": 3,
+   "certainty": "attested",
+   "pri": 2,
+   "name": {
+    "he": "שלושת שטיחי הפסיפס",
+    "fr": "Les trois tapis de mosaïque",
+    "en": "The three mosaic panels",
+    "ru": "Три мозаичных панно"
+   },
+   "text": {
+    "he": "ליד הכניסה — עקדת יצחק, יד אלוהית ו״אל תשלח״. במרכז — גלגל המזלות עם הליוס במרכבה, 12 המזלות בעברית ונשות העונות בפינות. ליד האפסיס — ארון הקודש, שתי מנורות, אריות, שופרות, לולבים ומחתות.",
+    "fr": "Près de l’entrée — la ligature d’Isaac, la main divine et « N’étends pas ». Au centre — le zodiaque avec Hélios sur son char, les 12 signes en hébreu et les saisons aux angles. Près de l’abside — l’arche, deux menorot, des lions, chofars, loulavim et pelles à encens.",
+    "en": "By the entrance — the Binding of Isaac, the hand of God and “Do not lay”. In the centre — the zodiac with Helios in his chariot, the 12 signs in Hebrew and the seasons in the corners. By the apse — the ark, two menorahs, lions, shofars, lulavs and incense shovels.",
+    "ru": "У входа — жертвоприношение Исаака, длань Божья и «Не поднимай». В центре — зодиак с Гелиосом в колеснице, 12 знаков на иврите и времена года по углам. У апсиды — ковчег, две меноры, львы, шофары, лулавы и совки для благовоний."
+   },
+   "placementNote": {
+    "he": "ברצפת אולם התפילה (ראו בית הכנסת).",
+    "fr": "Au sol de la salle de prière (voir la synagogue).",
+    "en": "On the prayer-hall floor (see the synagogue).",
+    "ru": "На полу молельного зала (см. синагогу)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "בית אלפא — הדרכה בבית הכנסת (תמליל ערוך)",
+     "url": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 4 – עמקים – בית הכנסת העתיק בית אלפא",
+     "url": "https://drive.google.com/file/d/1pUeIvQx31gKuxCqcmWTNnW2Q6VDq1f1l/view"
+    }
+   ]
+  },
+  {
+   "id": "ba_inscriptions",
+   "from": 2,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "כתובות ההקדשה",
+    "fr": "Les inscriptions de dédicace",
+    "en": "The dedication inscriptions",
+    "ru": "Посвятительные надписи"
+   },
+   "text": {
+    "he": "הארמית: הפסיפס נקבע בימי הקיסר יוסטינוס (כנראה יוסטינוס הראשון, ראשית המאה ה-6) מתרומות בני הכפר. היוונית: האומנים מריאנוס וחנינא בנו.",
+    "fr": "L’araméenne : la mosaïque fut posée sous l’empereur Justin (sans doute Justin Ier, début du VIe s.) grâce aux dons des villageois. La grecque : les artisans Marianos et son fils Hanina.",
+    "en": "The Aramaic: the mosaic was laid under Emperor Justin (probably Justin I, early 6th c.) from the villagers’ donations. The Greek: the craftsmen Marianos and his son Hanina.",
+    "ru": "Арамейская: мозаика уложена при императоре Юстине (вероятно, Юстин I, начало VI в.) на пожертвования жителей. Греческая: мастера Марианос и его сын Ханина."
+   },
+   "placementNote": {
+    "he": "ליד פתח האולם (ראו בית הכנסת).",
+    "fr": "Près de l’entrée de la salle (voir la synagogue).",
+    "en": "Near the hall entrance (see the synagogue).",
+    "ru": "У входа в зал (см. синагогу)."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "בית אלפא — הדרכה בבית הכנסת (תמליל ערוך)",
+     "url": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view"
+    }
+   ]
+  },
+  {
+   "id": "ba_helios",
+   "from": 2,
+   "to": 3,
+   "certainty": "hypothesis",
+   "name": {
+    "he": "הליוס בבית כנסת?",
+    "fr": "Hélios dans une synagogue ?",
+    "en": "Helios in a synagogue?",
+    "ru": "Гелиос в синагоге?"
+   },
+   "text": {
+    "he": "גלגל מזלות, דמויות נשים ואל השמש — לכאורה נגד ״לא תעשה לך פסל וכל תמונה״. ההסבר בקורס: קישוט ולא פולחן, כדברי רבן גמליאל על מרחץ אפרודיטה: ״אני לא באתי בגבולה, היא באה בגבולי״.",
+    "fr": "Zodiaque, figures féminines et dieu soleil — apparemment contre « tu ne feras pas d’image taillée ». Explication du cours : décor et non culte, comme le dit Rabban Gamliel des bains d’Aphrodite : « je ne suis pas entré dans son domaine, c’est elle qui est entrée dans le mien ».",
+    "en": "Zodiac, female figures and a sun god — seemingly against “you shall not make a graven image”. The course’s explanation: decoration, not worship, as Rabban Gamliel said of Aphrodite’s bath: “I did not enter her domain, she entered mine”.",
+    "ru": "Зодиак, женские фигуры и бог солнца — вроде бы против «не делай себе кумира». Объяснение курса: украшение, а не культ, как сказал раббан Гамлиэль о бане Афродиты: «не я вошёл в её пределы, она вошла в мои»."
+   },
+   "debate": {
+    "he": "שאלה פרשנית פתוחה.",
+    "fr": "Question d’interprétation ouverte.",
+    "en": "An open question of interpretation.",
+    "ru": "Открытый вопрос толкования."
+   },
+   "placementNote": {
+    "he": "אין סימון — שאלת פרשנות.",
+    "fr": "Pas de repère — question d’interprétation.",
+    "en": "No marker — a question of interpretation.",
+    "ru": "Без метки — вопрос толкования."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "סיור 4 – עמקים – בית הכנסת העתיק בית אלפא",
+     "url": "https://drive.google.com/file/d/1pUeIvQx31gKuxCqcmWTNnW2Q6VDq1f1l/view"
+    },
+    {
+     "kind": "drive",
+     "label": "בית אלפא — הדרכה בבית הכנסת (תמליל ערוך)",
+     "url": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view"
+    }
+   ]
+  },
+  {
+   "id": "ba_discovery",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "הגילוי ב-1929",
+    "fr": "La découverte de 1929",
+    "en": "The 1929 discovery",
+    "ru": "Открытие 1929 года"
+   },
+   "text": {
+    "he": "ב-1929, בחפירת תעלת מים, חשפו חברי קיבוץ חפציבה את קצה הפסיפס. פרופ׳ אלעזר ליפא סוקניק חפר את האתר. השם שמר את ״בית אילפא״ שבמקורות, שהתפרסם בשמן הזית שלו.",
+    "fr": "En 1929, en creusant un canal, des membres du kibboutz Heftziba dégagèrent un bord de la mosaïque. Eleazar Lipa Sukenik fouilla le site. Le nom garde celui de « Beit Ilfa » des sources, réputé pour son huile d’olive.",
+    "en": "In 1929, while digging a water channel, members of Kibbutz Heftziba uncovered the edge of the mosaic. Prof. Eleazar Lipa Sukenik excavated the site. The name preserves “Beit Ilfa” of the sources, famed for its olive oil.",
+    "ru": "В 1929 г., копая водный канал, члены кибуца Хефциба обнаружили край мозаики. Раскопки вёл проф. Элиэзер Липа Сукеник. Название хранит «Бейт-Ильфа» из источников, славившуюся оливковым маслом."
+   },
+   "placementNote": {
+    "he": "אין סימון — היסטוריה.",
+    "fr": "Pas de repère — histoire.",
+    "en": "No marker — history.",
+    "ru": "Без метки — история."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "בית אלפא — הדרכה בבית הכנסת (תמליל ערוך)",
+     "url": "https://drive.google.com/file/d/1XgmUPilFBDRq283cggIznhI27_wGgGW0/view"
+    }
+   ]
+  }
+ ]
+}
