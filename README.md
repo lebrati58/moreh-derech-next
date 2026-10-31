@@ -1,5 +1,14 @@
 > 📋 **Journal de suivi du projet : [SUIVI.md](SUIVI.md)** — état actuel, sessions, prochaines étapes.
 
+## 🏛️ Architecture classique en 3D « אדריכלות קלאסית » (31 octobre 2026)
+
+- Page : `public/architecture.html` (`#/explore[/<maquette>[/<n°>]]`, `#/play[/<maquette>]`, `#/open`, `#/bank`, `#/result`). Entrée depuis l'accueil (sous « הכנה למבחן »).
+- **14 maquettes 3D schématiques** (three.js du dépôt) : ordres + arc/voûte, temple, plan hippodamien et voie romaine, aqueduc, Jérusalem byzantine, Beit Shean, thermes (hypocauste animé), théâtre, amphithéâtre, hippodrome, basilique + baptistère, synagogue + mikvé, בית בד, גת. **162 éléments** avec nom hébreu, terme latin, explication et « où le voir ». Constructeurs : `public/architecture/scenes.js` ; contenu : `public/architecture/data.json` (**seul fichier à modifier** pour corriger un texte ; les repères `p` sont liés aux étiquettes `t` des constructeurs).
+- Sources : leçon 4 du Dr Eyal Miron (4.9.26, architecture classique), leçons 1–3 (Jérusalem), sorties 19 Beit Shean, 6 Sussya, 5 Maresha, 16 Tzippori. **La גת n'a pas de document du cours** : contenu général, signalé dans la page.
+- **Jeu de zihouï** (25 s, 100 + 90 vitesse + 20 × série ≤ 290 par manche) : « גע בחלק » (toucher le bon numéro), « איך קוראים לו? » (élément surligné → nom), « המונח הלטיני ». **83 questions ouvertes** comme à l'examen (rédaction → corrigé → cocher les points cités, ≥ 75 % = réussie), banque consultable.
+- Progression : `MDProgress.saveArch` / `archStats` (meilleur score par élément, compté dans le total et le classement de la classe, erreurs à revoir). Logique pure : `public/architecture/arch-core.js`.
+- Tests : `npm run test:architecture`, `CHROME=… npm run e2e:architecture` (S24 + ordinateur, 14 maquettes, partie complète, questions ouvertes, banque).
+
 ## ⏳ Frise historique et quiz « ציר הזמן והחידון » (27 octobre 2026)
 
 - Page : `public/history.html` (`#/timeline`, `#/event/<id>`, `#/quiz?period=…&mode=exam|practice`, `#/play`, `#/result`). Données : `public/history-events.json` — **seul fichier à modifier** pour corriger une date ; la frise et le quiz le lisent tous les deux. Logique : `public/history-data.js` ; interface : `public/history-app.js`.

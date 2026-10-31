@@ -149,6 +149,36 @@
       mistakes: ids.filter(k => rt.q[k].ok === -1).map(k => k.slice(k.indexOf(':') + 1)), runs: rt.runs.filter(r => !tourId || r.tour === tourId) };
   }
 
+  // ---- « אדריכלות קלאסית » (architecture.html) ----
+  // Par élément (« P:<maquette>:<étiquette> ») ou question ouverte (« A-<thème>-NN ») : ar.it[id] = { ok: 1|-1, best: meilleur score ≤ 290 }.
+  // Toutes les parties comptent (entraînement personnel) ; seul le meilleur score par élément entre dans le total.
+  function adata(g) { g.ar = g.ar || {}; g.ar.it = g.ar.it || {}; g.ar.runs = g.ar.runs || []; g.ar.seen = g.ar.seen || []; return g.ar; }
+  function archPoints(ar) { return Object.values(ar.it).reduce((n, e) => n + (e.best || 0), 0); }
+  function saveArch(rec) {
+    if (!rec || rec.version !== 1 || rec.kind !== 'arch' || !rec.runId || !Array.isArray(rec.answerDetails)) return { saved: false, reason: 'invalid' };
+    const g = data(), ar = adata(g);
+    if (ar.seen.includes(rec.runId)) return { saved: false, reason: 'duplicate' };
+    const before = archPoints(ar); let right = 0;
+    rec.answerDetails.forEach(a => {
+      if (!a || typeof a.itemId !== 'string' || !/^(P:[a-z]+:[A-Za-z0-9]{1,12}|A-[a-z]+-\d{2})$/.test(a.itemId)) return;
+      const e = ar.it[a.itemId] || (ar.it[a.itemId] = {});
+      if (a.correct) { e.ok = 1; right++; } else if (e.ok !== 1) e.ok = -1;
+      const p = Math.max(0, Math.min(HIST_MAX, Number(a.points) || 0)); if (!(e.best >= p)) e.best = p;
+    });
+    g.days = g.days || {}; const k = today(), d = g.days[k] || (g.days[k] = { a: 0, c: 0 });
+    d.a += rec.answerDetails.length; d.c += right;
+    ar.seen.push(rec.runId); while (ar.seen.length > 60) ar.seen.shift();
+    ar.runs.push({ id: rec.runId, at: rec.completedAt, mode: rec.mode, scene: rec.scene, score: rec.score, correct: rec.correct, total: rec.total });
+    while (ar.runs.length > 30) ar.runs.shift();
+    ls.set(GKEY, g); submitSoon();
+    return { saved: true, gained: archPoints(ar) - before, points: archPoints(ar) };
+  }
+  function archStats() {
+    const ar = adata(data()), it = ar.it, ids = Object.keys(it);
+    return { points: archPoints(ar), known: ids.filter(id => it[id].ok === 1), mistakes: ids.filter(id => it[id].ok === -1), runs: ar.runs.slice(),
+      status: id => (it[id] && it[id].ok) || 0, best: id => (it[id] && it[id].best) || 0 };
+  }
+
   function totals() {
     const g = data(); let points = 0, st = 0, answered = 0; const tours = new Set(), gold = new Set();
     Object.entries(g.lv).forEach(([k, s]) => {
@@ -159,6 +189,7 @@
     // Quiz historique : meilleur score d'examen par événement (≤ 290 < 300, donc compatible avec la borne serveur points ≤ answered × 300).
     const h = hdata(g); points += historyPoints(h); answered += Object.values(h.ev).filter(e => e.x).length;
     const rt = rdata(g); points += tourPoints(rt); answered += Object.values(rt.q).filter(e => e.x).length;
+    const ar = adata(g); points += archPoints(ar); answered += Object.keys(ar.it).length;
     return { points, stars: st, gold: gold.size, answered };
   }
   const starText = n => '★'.repeat(n) + '☆'.repeat(3 - n);
@@ -243,5 +274,5 @@
   }
 
   window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, classCode, setClassCode, normCode, askName, PASS,
-    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats, saveTourRun, tourStats };
+    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats, saveTourRun, tourStats, saveArch, archStats };
 })();
