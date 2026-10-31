@@ -45,7 +45,7 @@
     const st = d.st && d.st !== 'text' ? `<span class="bd ${d.st === 'failed' || d.st === 'needs_ocr' ? 'x' : 'w'}">${esc(t('st_' + d.st))}</span>` : '';
     return `<a class="doc ${d.ty === 'guide' ? 'guide' : ''}" href="#/d/${esc(d.id)}"><b>${esc(d.t)}</b>
       <small>${esc(t(d.ty))}${d.pg ? ' · ' + d.pg + ' ' + t('pages') : ''}${d.lg ? ' · ' + esc(LANGS[d.lg] || d.lg) : ''}${regionOf(d) ? ' · ' + esc(regionOf(d)) : ''}</small>
-      <span class="badges">${d.ty === 'guide' ? `<span class="bd g">⭐ ${t('guide')}</span>` : ''}${d.rga && !d.rg ? `<span class="bd w">${t('auto')}</span>` : ''}${st}${d.ln ? `<span class="bd">🔗 ${d.ln.length}</span>` : ''}${d.u ? '' : '<span class="bd x">∅ URL</span>'}</span></a>`;
+      <span class="badges">${d.ty === 'guide' ? `<span class="bd g">⭐ ${t('guide')}</span>` : ''}${d.rga && !d.rg ? `<span class="bd w">${t('auto')}</span>` : ''}${st}${d.ln ? `<span class="bd">🔗 ${d.ln.length}</span>` : ''}${d.fx ? '<span class="bd g">🎮 חידון</span>' : ''}${d.u ? '' : '<span class="bd x">∅ URL</span>'}</span></a>`;
   }
   function renderList() {
     const res = filtered(), types = ['guide', 'brochure', 'map', 'activity', 'article', 'other'];
@@ -102,14 +102,75 @@
     return `${(F.stations || []).length ? `<h3>🚏 תחנות המסלול</h3><ol>${F.stations.map(s => `<li>${esc(s.he)} <small class="note">(${pg(s.page)})</small></li>`).join('')}</ol>` : ''}
       ${groups.map(([k, l]) => `<details ${k === 'stations' ? 'open' : ''}><summary><b>${TOPICS[k]}</b> (${l.length})</summary>${l.map(fact).join('')}</details>`).join('')}
       ${(F.sheet || []).length ? `<details><summary><b>🗒️ דף חזרה</b></summary><ul>${F.sheet.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
-      ${(F.questions || []).length ? `<h3>❓ שאלות לתרגול</h3>${[1, 2, 3].map(lv => F.questions.filter(q => q.level === lv).map(q => `<div class="fact quiz"><span class="bd ${lv === 3 ? 'g' : lv === 2 ? 'w' : ''}">רמה ${lv}</span> ${esc(q.q)}
+      ${(F.questions || []).length ? `<a class="btn" href="#/q/${esc(d.id)}">🎮 חידון רט״ג — ${F.questions.length} שאלות, נקודות למסע</a><h3>❓ שאלות לתרגול</h3>${[1, 2, 3].map(lv => F.questions.filter(q => q.level === lv).map(q => `<div class="fact quiz"><span class="bd ${lv === 3 ? 'g' : lv === 2 ? 'w' : ''}">רמה ${lv}</span> ${esc(q.q)}
         <button type="button" class="more" data-ans>👀 תשובה מצופה</button><div hidden><b>מה צריך להופיע:</b><ul>${(q.expected || []).map(e => `<li>${esc(e)}</li>`).join('')}</ul>${(q.accept || []).length ? `<b>גם מתקבל:</b> ${esc(q.accept.join(' · '))}` : ''}<small>מקור: ${esc(d.t)}, ${(q.refs || []).map(pg).join(', ')}</small></div></div>`).join('')).join('')}` : ''}
       <p class="note">✔ עובדה = מופיעה במסמך בעמוד המצוין · 💡 הצעה = הצעה להדרכה מתוך המסמך עצמו.</p>`;
   }
   function wireQuiz() { $$('[data-ans]').forEach(b => b.addEventListener('click', () => { const box = b.nextElementSibling; box.hidden = !box.hidden; b.textContent = box.hidden ? '👀 תשובה מצופה' : '🙈 להסתיר'; })); }
+  // ---------- חידון רט״ג : réponse ouverte, chrono, auto-vérification des éléments attendus, points au מסע ----------
+  // Niveau 1 : 60 s · niveau 2 : 120 s · niveau 3 : 180 s. Score d'une question = part des éléments attendus trouvés
+  // (mots-clés repérés dans la réponse, puis cases que l'élève confirme honnêtement) × plafond du niveau (100/200/290).
+  const QT = { 1: 60, 2: 120, 3: 180 }, QP = { 1: 100, 2: 200, 3: 290 };
+  const P = () => window.MDProgress || null;
+  const words = s => norm(s).split(' ').filter(w => w.length >= 3);
+  function hits(answer, expected) {   // élément attendu « trouvé » si un de ses mots significatifs (≥4 car.) figure dans la réponse
+    const a = ' ' + norm(answer) + ' ';
+    return expected.map(e => { const ws = words(e).filter(w => w.length >= 4 || /^\d+$/.test(w)); return ws.length > 0 && ws.some(w => a.includes(' ' + w) || a.includes(w + ' ') || a.includes(w)); });
+  }
+  const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g, () => (Math.random() * 16 | 0).toString(16)));
+  function renderQuiz(id) {
+    const d = CAT.docs.find(x => x.id === id);
+    if (!d || !d.fx) { view.innerHTML = `<p class="empty">${t('none')}</p>`; return; }
+    fetch('rtg/facts/' + encodeURIComponent(id) + '.json').then(r => r.json()).then(F => {
+      const qs = (F.questions || []).map((q, i) => Object.assign({ i }, q)).sort((a, b) => a.level - b.level);
+      const Q = { i: 0, answers: [], timer: null, left: 0, runId: uuid(), started: Date.now() };
+      const stats = P() && P().tourStats ? P().tourStats('rtg:' + id) : null;
+      const draw = () => {
+        if (Q.i >= qs.length) return finish();
+        const q = qs[Q.i]; Q.left = QT[q.level] || 90; Q.answered = false;
+        view.innerHTML = `<section class="hero"><div class="eyebrow">חידון רט״ג · ${esc(F.site || d.t)}</div><h1>שאלה ${Q.i + 1} / ${qs.length}</h1><p><span class="bd ${q.level === 3 ? 'g' : q.level === 2 ? 'w' : ''}">רמה ${q.level}</span> ⏱️ <b id="tm">${Q.left}</b> שנ׳ · עד ${QP[q.level]} נק׳</p></section>
+          <section class="card"><h2 style="font-size:17px;line-height:1.5">${esc(q.q)}</h2>
+          <textarea id="ans" rows="5" dir="rtl" style="width:100%;border-radius:12px;border:2px solid var(--line2);background:#0f1840;color:inherit;padding:10px;font:inherit" placeholder="כתבו את התשובה במילים שלכם…"></textarea>
+          <button type="button" class="btn" id="chk">✔ לבדוק</button><div id="res"></div></section>`;
+        const ta = $('#ans'); ta.focus();
+        clearInterval(Q.timer); Q.timer = setInterval(() => { Q.left--; const el = $('#tm'); if (el) el.textContent = Q.left; if (Q.left <= 0) { clearInterval(Q.timer); check(true); } }, 1000);
+        $('#chk').addEventListener('click', () => check(false));
+      };
+      const check = timeout => {
+        if (Q.answered) return; Q.answered = true; clearInterval(Q.timer);
+        const q = qs[Q.i], ans = ($('#ans') || {}).value || '', exp = q.expected || [], h = hits(ans, exp);
+        $('#ans').disabled = true; $('#chk').hidden = true;
+        $('#res').innerHTML = `<div class="fact" style="margin-top:12px">${timeout ? '<p><b>⏰ נגמר הזמן.</b></p>' : ''}<p><b>מה היה צריך להופיע</b> — סמנו ביושר מה כתבתם (הזיהוי האוטומטי מסמן מראש):</p>
+          ${exp.map((e, k) => `<label style="display:flex;gap:8px;align-items:flex-start;min-height:40px;margin:4px 0"><input type="checkbox" data-k="${k}" ${h[k] && !timeout ? 'checked' : ''} style="width:22px;height:22px;flex:none"> <span>${esc(e)}</span></label>`).join('')}
+          ${(q.accept || []).length ? `<p class="note">גם מתקבל: ${esc(q.accept.join(' · '))}</p>` : ''}
+          <p class="note">מקור: ${esc(d.t)}, ${(q.refs || []).map(pg).join(', ')} · <a href="#/d/${esc(id)}">📚 לפתוח את המסמך</a></p>
+          <button type="button" class="btn" id="nxt">${Q.i + 1 < qs.length ? 'לשאלה הבאה ←' : '🏁 לסיים'}</button></div>`;
+        $('#nxt').addEventListener('click', () => {
+          const ticked = $$('#res input[type=checkbox]').filter(c => c.checked).length;
+          const frac = exp.length ? ticked / exp.length : 0, pts = Math.round(frac * QP[q.level]);
+          Q.answers.push({ questionId: 'q' + q.i, correct: frac >= .6, points: pts, frac, level: q.level, timeout });
+          Q.i++; draw();
+        });
+      };
+      const finish = () => {
+        const total = Q.answers.reduce((n, a) => n + a.points, 0), right = Q.answers.filter(a => a.correct).length;
+        let saved = null;
+        if (P() && P().saveTourRun) saved = P().saveTourRun({ version: 1, kind: 'rtg', tourId: 'rtg:' + id, runId: Q.runId, mode: 'exam', completedAt: new Date().toISOString(), score: total, correct: right, total: qs.length, answerDetails: Q.answers.map(a => ({ questionId: a.questionId, correct: a.correct, points: a.points })) });
+        view.innerHTML = `<section class="hero"><div class="eyebrow">חידון רט״ג · ${esc(F.site || d.t)}</div><h1>${right} / ${qs.length}</h1><p>${total} נקודות${saved && saved.saved ? (saved.gained > 0 ? ` · 🏆 +${saved.gained} נקודות חדשות למסע (רק השיא לכל שאלה נספר)` : ' · השיא שלכם כבר גבוה יותר') : ''}</p></section>
+          <section class="card"><h2>📋 סיכום לפי שאלה</h2><ol>${Q.answers.map((a, k) => `<li>${a.correct ? '✅' : a.timeout ? '⏰' : '🔁'} רמה ${a.level} · ${Math.round(a.frac * 100)}% · ${a.points} נק׳ — ${esc(qs[k].q)}</li>`).join('')}</ol>
+          <button type="button" class="btn" id="again">🔁 עוד פעם</button><a class="btn ghost" href="#/d/${esc(id)}">📚 חזרה למסמך</a></section>
+          <p class="note">הניקוד מבוסס על הסימון שלכם — חידון להתאמנות, לא מבחן רשמי. ${esc(t('credit'))}</p>`;
+        $('#again').addEventListener('click', () => renderQuiz(id));
+      };
+      view.innerHTML = `<section class="hero"><div class="eyebrow">חידון רט״ג</div><h1>🎮 ${esc(F.site || d.t)}</h1><p>${qs.length} שאלות בשלוש רמות · תשובה חופשית עם שעון · בסוף כל שאלה מסמנים מה היה בתשובה · הנקודות נכנסות למסע שלכם.${stats && stats.points ? ` שיא נוכחי: ${stats.points} נק׳.` : ''}</p></section>
+        <section class="card"><ul><li>רמה 1 — לזכור עובדה אחת (60 שנ׳)</li><li>רמה 2 — להסביר ולקשר (120 שנ׳)</li><li>רמה 3 — ליישם בהדרכה (180 שנ׳)</li></ul><button type="button" class="btn" id="go">▶ להתחיל</button><a class="btn ghost" href="#/d/${esc(id)}">📚 קודם לקרוא את המסמך</a></section>`;
+      $('#go').addEventListener('click', draw);
+    }).catch(() => { view.innerHTML = `<p class="empty">${t('noFacts')}</p>`; });
+  }
   function route() {
     const h = location.hash.replace(/^#\/?/, '').split('/');
-    $('#back').hidden = h[0] !== 'd';
+    $('#back').hidden = h[0] !== 'd' && h[0] !== 'q';
+    if (h[0] === 'q' && h[1]) return renderQuiz(decodeURIComponent(h[1]));
     if (h[0] === 'd' && h[1]) return renderDoc(decodeURIComponent(h[1]));
     const p = new URLSearchParams(location.search);
     if (p.get('q') && !S.q) S.q = p.get('q');

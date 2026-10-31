@@ -25,12 +25,12 @@ for (const t of (tours.tours || []).filter(t => t.public)) {
   for (const s of (d && d.stops) || []) places.push({ kind: 'tour', tour: t.id, tourHe: t.title, id: s.id, he: s.name || s.he, short: s.name || s.he });
 }
 const norm = s => String(s || '').normalize('NFC').replace(/[״"׳'`(),.:;–—-]/g, ' ').replace(/\s+/g, ' ').trim();
-const STOP = new Set(['תל', 'גן', 'לאומי', 'שמורת', 'שמורה', 'נחל', 'הר', 'עין', 'מצפה', 'בית', 'חורבת', 'מערת', 'כביש', 'אתר', 'העיר', 'הדרכת', 'דרך']);
+const STOP = new Set(['תל', 'גן', 'הגן', 'לאומי', 'הלאומי', 'שמורת', 'שמורה', 'נחל', 'הר', 'עין', 'מצפה', 'בית', 'חורבת', 'מערת', 'כביש', 'אתר', 'העיר', 'הדרכת', 'דרך', 'הגנים', 'הטבע', 'רשות', 'פארק', 'העתיק', 'העתיקה', 'הקדומה', 'תצפית', 'המרחץ', 'הרומי', 'בקיסריה', 'ים', 'המלח', 'הכנסת', 'ישראל', 'ירושלים', 'הגדול', 'מסלול', 'שביל', 'הירדן', 'הצפוני', 'הדרומי', 'שאול', 'דוד', 'אליהו', 'המערות', 'הקשתות']);
 const keyOf = p => {   // nom distinctif d'un lieu (ex. « תל לכיש (גן לאומי) » → « לכיש »)
   const w = norm(p.short).split(' ').filter(x => x.length > 1 && !STOP.has(x));
   return w.length ? w.join(' ') : null;
 };
-const placeKeys = places.map(p => ({ p, k: keyOf(p) })).filter(x => x.k && x.k.length >= 3);
+const placeKeys = places.map(p => ({ p, k: keyOf(p) })).filter(x => x.k && (x.k.includes(' ') ? x.k.length >= 3 : x.k.length >= 5));
 function linksFor(title) {
   const t = ' ' + norm(title) + ' ';
   const out = [];

@@ -16,16 +16,27 @@ for (const r of (await rd('public/exam/regions.json')).regions.filter(r => r.fil
 const ti = await rd('public/tours/index.json');
 for (const t of (ti.tours || []).filter(t => t.public)) for (const s of (await rd('public/tours/' + t.id + '.json')).stops || []) places.push({ key: 'tour:' + t.id + ':' + s.id, he: s.name, short: s.name });
 const norm = s => String(s || '').normalize('NFC').replace(/[״"׳'`(),.:;–—\-]/g, ' ').replace(/\s+/g, ' ').trim();
-const STOP = new Set(['תל', 'גן', 'לאומי', 'שמורת', 'שמורה', 'נחל', 'הר', 'עין', 'מצפה', 'בית', 'חורבת', 'מערת', 'כביש', 'אתר', 'העיר', 'הדרכת', 'דרך']);
-const keys = places.map(p => ({ p, k: norm(p.short).split(' ').filter(w => w.length > 1 && !STOP.has(w)).join(' ') })).filter(x => x.k.length >= 3);
+// mots génériques : jamais une clé à eux seuls (« הגנים » matcherait « רשות הטבע והגנים » dans tous les documents)
+const STOP = new Set(['תל', 'גן', 'הגן', 'לאומי', 'הלאומי', 'שמורת', 'שמורה', 'נחל', 'הר', 'עין', 'מצפה', 'בית', 'חורבת', 'מערת', 'כביש', 'אתר', 'העיר', 'הדרכת', 'דרך', 'הגנים', 'הטבע', 'רשות', 'פארק', 'העתיק', 'העתיקה', 'הקדומה', 'תצפית', 'המרחץ', 'הרומי', 'בקיסריה', 'ים', 'המלח', 'הכנסת', 'בית', 'ישראל', 'ירושלים', 'הגדול', 'מסלול', 'שביל', 'הירדן', 'הצפוני', 'הדרומי', 'שאול', 'דוד', 'אליהו', 'המערות', 'הקשתות']);
+// clé d'un lieu : ses mots distinctifs ; une clé d'UN seul mot doit faire ≥ 5 lettres et être précédée dans le texte
+// d'un mot de lieu (תל / הר / גן לאומי / שמורת / נחל / מצפה / עין / חורבת / מערת / מבצר / קיבוץ / מושב)
+const PLACE = '(?:תל|הר|גן לאומי|גן|שמורת|שמורת טבע|נחל|מצפה|עין|חורבת|מערת|מבצר|קיבוץ|מושב|אתר|גבעת|מנזר|כנסיית|בית הכנסת|מצודת)\\s+ה?';
+const keys = places.map(p => {
+  const w = norm(p.short).split(' ').filter(x => x.length > 1 && !STOP.has(x));
+  if (!w.length) return null;
+  const k = w.join(' ');
+  if (w.length === 1 && w[0].length < 5) return null;
+  return { p, k, single: w.length === 1 };
+}).filter(Boolean);
 const out = {};
 for (const f of (await readdir(TEXT)).filter(f => f.endsWith('.json.gz'))) {
   const J = JSON.parse(gunzipSync(await readFile(TEXT + '/' + f)).toString('utf8'));
   const pages = J.pages || [];
   const first = (pages[0] && pages[0].text || '').split('\n').map(l => norm(l)).filter(l => l.split(' ').length >= 3 && l.length <= 100 && /[א-תA-Za-z]/.test(l));
   const mentions = [];
-  for (const { p, k } of keys) {
-    const re = new RegExp('(^|[\\s])[והבלמש]?' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[\\s])');
+  for (const { p, k, single } of keys) {
+    const esc = k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = single ? new RegExp(PLACE + esc + '($|[\\s])') : new RegExp('(^|[\\s])[והבלמש]?' + esc + '($|[\\s])');
     const hit = pages.filter(pg => re.test(' ' + norm(pg.text) + ' ')).map(pg => pg.n);
     if (hit.length) mentions.push({ place: p.key, he: p.he, pages: hit.slice(0, 30), count: hit.length });
   }

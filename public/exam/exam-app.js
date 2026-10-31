@@ -77,6 +77,7 @@
     if (key === 'guide') return '<span class="src">🧑‍🏫 כלל המדריך</span>';
     if (!s) return key === 'model' ? '<span class="src">📐 תנאי המבחן</span>' : '';
     const href = s.url || ('https://drive.google.com/open?id=' + encodeURIComponent(s.id));
+    if (s.kind === 'official') return `<a class="src official" href="${esc(href)}" target="_blank" rel="noopener" title="${esc(s.title)}">🌿 ${esc(label || 'רט״ג')}</a>${s.rtg ? ` <a class="src" href="rtg.html#/d/${esc(s.rtg)}" title="בספריית רט״ג">📚</a>` : ''}`;
     return `<a class="src" href="${esc(href)}" target="_blank" rel="noopener">📄 ${esc(label || s.title)}</a>`;
   };
   const statusChips = p => (p.status || []).map(s => `<span class="st st-${s}">${esc(DATA.statusLabels[s])}</span>`).join('');
@@ -204,7 +205,8 @@
       ${p.logistics ? `<p>📞 ${esc(p.logistics.he)}</p>` : ''}
       <p class="muted">⏳ משך ביקור: ${p.visit ? esc(p.visit) : 'לא צוין בחומר — לא ממציאים'}</p>
       ${logisticsHtml(p)}
-      <ul class="facts">${(p.facts || []).map(f => `<li>${esc(f.he)} ${srcLink(f.src, '')}</li>`).join('')}</ul>
+      ${(p.facts || []).some(f => f.official) ? '<p class="muted">📄 = חומר הקורס · 🌿 = מסמך רשמי של רשות הטבע והגנים (לא מהקורס), עם מספר העמוד</p>' : ''}
+      <ul class="facts">${(p.facts || []).map(f => `<li class="${f.official ? 'off' : ''}">${esc(f.he)} ${srcLink(f.src, f.official ? 'רט״ג' + (f.page ? ' עמ׳ ' + f.page : '') : '')}</li>`).join('')}</ul>
       <p><a class="mini" href="rtg.html?q=${encodeURIComponent((p.short || p.he).replace(/\s*\(.*\)\s*/g, ' ').trim())}">🌿 מסמכי רט״ג על ${esc(p.short || p.he)}</a></p>
       ${(p.conflicts || []).map(c => `<p class="conf">⚠️ ${esc(c.he)}</p>`).join('')}
       ${p.note ? `<p class="conf">ℹ️ ${esc(p.note)}</p>` : ''}
@@ -305,6 +307,7 @@
       <div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div></div></article>`;
     const catRows = Object.entries(S.cats).filter(([, v]) => v.err + v.ok).sort((a, b) => b[1].err - a[1].err).slice(0, 6);
     shell(`<section class="hero"><div class="eyebrow">MOREH DERECH EXAM · אתגר המבחן</div><h1>🎓 ${t('title')}</h1><p>${t('sub')}</p>
+      <a class="btn tiyul" href="rtg.html" style="margin-top:8px">🌿 ספריית רט״ג וחידוני המדריך למדריך — נקודות למסע</a>
       <a class="btn tiyul" href="#/tiyul">🧑‍🏫 הפוך: אני אומר מה אני רוצה — האפליקציה מציעה מסלול</a>
       <div class="lvl"><div class="lvlt"><b>${t('level')} ${L.n} — ${esc(L.he)}</b><bdi dir="ltr">${S.xp}${L.to ? ' / ' + L.to : ''} XP</bdi></div><div class="lb"><i style="width:${L.pct}%"></i></div></div></section>
       <section class="daily"><div class="eyebrow">☀️ ${t('today')}</div><h2>${daily.emoji} ${esc(daily.he)}</h2><p>${esc(daily.brief)}</p>
