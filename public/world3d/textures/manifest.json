@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-31T22:50:01.090Z",
+ "generatedAt": "2026-10-31T22:53:49.937Z",
  "source": "Poly Haven — https://polyhaven.com",
  "license": "CC0 1.0 (domaine public) — https://polyhaven.com/license",
  "resolution": "1k",
@@ -17,13 +17,26 @@
     "arm": "arm.jpg"
    }
   },
-  "plaster": {
-   "id": "concrete_floor_worn_001",
-   "name": "Concrete Floor Worn 001",
-   "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+  "stone": {
+   "id": "rock_face",
+   "name": "Rock Face",
+   "page": "https://polyhaven.com/a/rock_face",
    "authors": [
-    "Dimitrios Savva",
-    "Rico Cilliers"
+    "Greg Zaal",
+    "Dario Barresi"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "plaster": {
+   "id": "white_plaster_02",
+   "name": "White Plaster 02",
+   "page": "https://polyhaven.com/a/white_plaster_02",
+   "authors": [
+    "Rob Tuytel"
    ],
    "files": {
     "diff": "diff.jpg",
@@ -45,9 +58,9 @@
    }
   },
   "sand": {
-   "id": "coast_sand_rocks_02",
-   "name": "Coast Sand Rocks 02",
-   "page": "https://polyhaven.com/a/coast_sand_rocks_02",
+   "id": "coast_sand_01",
+   "name": "Coast Sand 01",
+   "page": "https://polyhaven.com/a/coast_sand_01",
    "authors": [
     "Rob Tuytel"
    ],
@@ -71,11 +84,12 @@
    }
   },
   "rubble": {
-   "id": "rocky_terrain_02",
-   "name": "Rocky Terrain 02",
-   "page": "https://polyhaven.com/a/rocky_terrain_02",
+   "id": "gravel_floor",
+   "name": "Gravel Floor",
+   "page": "https://polyhaven.com/a/gravel_floor",
    "authors": [
-    "Amal Kumar"
+    "Jenelle van Heerden",
+    "Matterfield"
    ],
    "files": {
     "diff": "diff.jpg",
@@ -84,12 +98,11 @@
    }
   },
   "wood": {
-   "id": "laminate_floor_02",
-   "name": "Laminate Floor 02",
-   "page": "https://polyhaven.com/a/laminate_floor_02",
+   "id": "wood_planks_grey",
+   "name": "Wood Planks Grey",
+   "page": "https://polyhaven.com/a/wood_planks_grey",
    "authors": [
-    "Dario Barresi",
-    "Charlotte Baglioni"
+    "Rob Tuytel"
    ],
    "files": {
     "diff": "diff.jpg",
@@ -103,19 +116,6 @@
    "page": "https://polyhaven.com/a/metal_plate",
    "authors": [
     "Rob Tuytel"
-   ],
-   "files": {
-    "diff": "diff.jpg",
-    "nor": "nor.jpg",
-    "arm": "arm.jpg"
-   }
-  },
-  "rooftile": {
-   "id": "rubber_tiles",
-   "name": "Rubber Tiles",
-   "page": "https://polyhaven.com/a/rubber_tiles",
-   "authors": [
-    "Amal Kumar"
    ],
    "files": {
     "diff": "diff.jpg",
