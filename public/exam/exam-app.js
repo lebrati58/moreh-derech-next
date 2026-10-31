@@ -794,6 +794,10 @@
     const h = location.hash.replace(/\?.*$/, ''), p = h.split('/');
     document.body.classList.remove('print-view');
     if (p[1] === 'tiyul') return viewTiyul();
+    if (p[1] === 's' && p[2]) {   // fiche d'un site ouverte depuis la carte : exam.html#/s/<région>/<site>
+      if (p[2] !== DATA.region && regionById(p[2])) return loadRegion(p[2]).then(route);
+      viewHome(); if (P[p[3]]) siteSheet(p[3]); return;
+    }
     if (p[1] === 'm') {
       // la mission peut appartenir à une autre région : on charge la bonne région d'abord
       const sv = savedList().find(x => x.id === p[2]), want = (sv && sv.region) || (p[2] === 'custom' && S.custom && S.custom.region) || (regionOfMission(p[2]) || {}).id;
