@@ -1,5 +1,12 @@
 > 📋 **Journal de suivi du projet : [SUIVI.md](SUIVI.md)** — état actuel, sessions, prochaines étapes.
 
+## 🎮 Monde 3D jouable — Césarée (branche `feature/caesarea-3d-world`, 1er novembre 2026)
+
+- Page : `public/world3d.html?site=caesarea` ; moteur extensible `public/world3d/` (registre `sites/index.json`, données `sites/caesarea.json`, constructeur `sites/caesarea-theatre.js`).
+- Marche 1re personne (joystick tactile / WASD + souris), collisions (three-mesh-bvh, MIT), vol libre, deux époques alignées (aujourd'hui / vers 30 apr. J.-C.), comparaison avec curseur et transparence, 5 missions, points dans « המסע שלי », hébreu/français/anglais.
+- Textures PBR et ciel HDR **CC0 (Poly Haven)** via le workflow « Monde 3D — textures CC0 ». Détails, sources, incertitudes, assets manquants : `docs/WORLD3D_CAESAREA.md`.
+- Tests : `npm run test:world3d`, `CHROME=… npm run e2e:world3d`.
+
 ## 🏛️ Architecture classique en 3D « אדריכלות קלאסית » (31 octobre 2026)
 
 - Page : `public/architecture.html` (`#/explore[/<maquette>[/<n°>]]`, `#/play[/<maquette>]`, `#/open`, `#/bank`, `#/result`). Entrée depuis l'accueil (sous « הכנה למבחן »).
