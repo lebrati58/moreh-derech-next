@@ -2,36 +2,41 @@
 // Exécuté par le workflow « Monde 3D — textures CC0 » (le bac à sable de développement ne peut pas joindre polyhaven.com).
 // Résultat : public/world3d/textures/<emplacement>/{diff,nor,arm}.jpg + public/world3d/textures/manifest.json (provenance, auteurs, licence).
 // Le moteur utilise une texture procédurale de secours (signalée « procédurale » dans les crédits) si un emplacement manque.
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, rm } from 'node:fs/promises';
 
 const OUT = new URL('../public/world3d/textures/', import.meta.url).pathname;
 const API = 'https://api.polyhaven.com';
 const RES = process.env.RES || '1k';
 // Emplacements → mots-clés par ordre de préférence (recherche dans id, nom, étiquettes, catégories).
 const SLOTS = {
-  kurkar: ['sandstone_blocks', 'sandstone', 'limestone', 'rock_wall', 'stone_wall'],
-  plaster: ['plaster', 'stucco', 'white_plaster'],
-  marble: ['marble'],
-  sand: ['coast_sand', 'sand'],
-  paving: ['paving', 'flagstone', 'stone_tiles', 'cobblestone'],
-  rubble: ['rocky', 'rock_ground', 'gravel', 'dry_ground'],
-  wood: ['wood_planks', 'wood_floor', 'planks'],
-  metal: ['metal_plate', 'painted_metal', 'metal'],
-  rooftile: ['roof_tiles', 'roof']
+  kurkar: { ids: ['sandstone_blocks_05', 'sandstone_blocks_08'], keys: ['sandstone_blocks', 'sandstone', 'limestone'] },
+  stone: { ids: ['rock_face', 'sandstone_cracks', 'rough_block_wall'], keys: ['sandstone', 'limestone', 'rock_face'] },
+  plaster: { ids: ['white_plaster_02', 'painted_plaster_wall', 'plastered_wall_04', 'beige_wall_001', 'plastered_wall'], keys: ['plaster', 'stucco'] },
+  marble: { ids: ['marble_01'], keys: ['marble'] },
+  sand: { ids: ['coast_sand_01', 'aerial_beach_01', 'sand_01', 'sandy_gravel_02'], keys: ['coast_sand', 'beach', 'sand'] },
+  paving: { ids: ['rock_tile_floor'], keys: ['paving', 'flagstone', 'stone_tiles', 'cobblestone'] },
+  rubble: { ids: ['gravel_floor', 'gravel_road', 'dry_riverbed_rock', 'rocky_trail'], keys: ['gravel', 'rocky', 'dirt'] },
+  wood: { ids: ['wood_planks_grey', 'weathered_planks', 'wood_planks'], keys: ['wood_planks', 'planks'] },
+  metal: { ids: ['metal_plate', 'painted_metal_02'], keys: ['painted_metal', 'metal'] }
 };
+// Jamais d'herbe ni de mousse : le site est une côte sableuse.
+const EXCLUDE = /grass|moss|green|leaves|forest|lawn|concrete/;
 const j = async u => { const r = await fetch(u, { headers: { 'user-agent': 'moreh-derech-next world3d (CC0 fetch)' } }); if (!r.ok) throw new Error(u + ' → ' + r.status); return r.json(); };
 const bin = async u => { const r = await fetch(u); if (!r.ok) throw new Error(u + ' → ' + r.status); return Buffer.from(await r.arrayBuffer()); };
 const hay = (id, a) => [id, a.name, ...(a.tags || []), ...(a.categories || [])].join(' ').toLowerCase();
 
+await rm(OUT, { recursive: true, force: true });
 const manifest = { generatedAt: new Date().toISOString(), source: 'Poly Haven — https://polyhaven.com', license: 'CC0 1.0 (domaine public) — https://polyhaven.com/license', resolution: RES, slots: {}, hdri: null };
 const textures = await j(API + '/assets?t=textures');
 const used = new Set();
-for (const [slot, keys] of Object.entries(SLOTS)) {
+for (const [slot, want] of Object.entries(SLOTS)) {
   let pick = null;
-  for (const k of keys) {
-    const cands = Object.entries(textures).filter(([id, a]) => !used.has(id) && (id.includes(k) || hay(id, a).includes(k.replace(/_/g, ' '))));
+  for (const id of want.ids) if (textures[id] && !used.has(id)) { pick = [id, textures[id]]; break; }
+  for (const k of want.keys) {
+    if (pick) break;
+    const cands = Object.entries(textures).filter(([id, a]) => !used.has(id) && !EXCLUDE.test(hay(id, a)) && (id.includes(k) || hay(id, a).includes(k.replace(/_/g, ' '))));
     cands.sort((x, y) => (y[1].download_count || 0) - (x[1].download_count || 0));
-    if (cands.length) { pick = cands[0]; break; }
+    if (cands.length) pick = cands[0];
   }
   if (!pick) { console.log('MANQUE', slot); continue; }
   const [id, a] = pick; used.add(id);

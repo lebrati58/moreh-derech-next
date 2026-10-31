@@ -1,0 +1,12 @@
+{
+ "_doc": "Registre des mondes 3D. Chaque site : fichier sites/<id>.json (périodes, éléments interactifs, missions, questions, sources, fiabilité) + un constructeur ou des GLB. status : playable | planned.",
+ "sites": [
+  { "id": "caesarea", "status": "playable", "names": { "he": "קיסריה — התיאטרון הרומי", "fr": "Césarée — théâtre romain", "en": "Caesarea — Roman theatre" }, "lat": 32.4958, "lon": 34.8913 },
+  { "id": "caesarea-harbour", "status": "planned", "names": { "he": "קיסריה — נמל סבסטוס", "fr": "Césarée — port de Sébastos", "en": "Caesarea — Sebastos harbour" } },
+  { "id": "jerusalem-second-temple", "status": "planned", "names": { "he": "ירושלים בימי בית שני", "fr": "Jérusalem du Second Temple", "en": "Second Temple Jerusalem" } },
+  { "id": "jerusalem-byzantine", "status": "planned", "names": { "he": "ירושלים הביזנטית", "fr": "Jérusalem byzantine", "en": "Byzantine Jerusalem" } },
+  { "id": "beit-shean", "status": "planned", "names": { "he": "בית שאן", "fr": "Beit Shean", "en": "Beit She'an" } },
+  { "id": "masada", "status": "planned", "names": { "he": "מצדה", "fr": "Massada", "en": "Masada" } },
+  { "id": "tzippori", "status": "planned", "names": { "he": "ציפורי", "fr": "Tsippori", "en": "Sepphoris" } }
+ ]
+}
