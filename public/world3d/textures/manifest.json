@@ -1,0 +1,137 @@
+{
+ "generatedAt": "2026-10-31T22:50:01.090Z",
+ "source": "Poly Haven — https://polyhaven.com",
+ "license": "CC0 1.0 (domaine public) — https://polyhaven.com/license",
+ "resolution": "1k",
+ "slots": {
+  "kurkar": {
+   "id": "sandstone_blocks_05",
+   "name": "Sandstone Blocks 05",
+   "page": "https://polyhaven.com/a/sandstone_blocks_05",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "plaster": {
+   "id": "concrete_floor_worn_001",
+   "name": "Concrete Floor Worn 001",
+   "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+   "authors": [
+    "Dimitrios Savva",
+    "Rico Cilliers"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "marble": {
+   "id": "marble_01",
+   "name": "Marble 01",
+   "page": "https://polyhaven.com/a/marble_01",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "sand": {
+   "id": "coast_sand_rocks_02",
+   "name": "Coast Sand Rocks 02",
+   "page": "https://polyhaven.com/a/coast_sand_rocks_02",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "paving": {
+   "id": "rock_tile_floor",
+   "name": "Rock Tile Floor",
+   "page": "https://polyhaven.com/a/rock_tile_floor",
+   "authors": [
+    "Charlotte Baglioni"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "rubble": {
+   "id": "rocky_terrain_02",
+   "name": "Rocky Terrain 02",
+   "page": "https://polyhaven.com/a/rocky_terrain_02",
+   "authors": [
+    "Amal Kumar"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "wood": {
+   "id": "laminate_floor_02",
+   "name": "Laminate Floor 02",
+   "page": "https://polyhaven.com/a/laminate_floor_02",
+   "authors": [
+    "Dario Barresi",
+    "Charlotte Baglioni"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "metal": {
+   "id": "metal_plate",
+   "name": "Metal Plate",
+   "page": "https://polyhaven.com/a/metal_plate",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "rooftile": {
+   "id": "rubber_tiles",
+   "name": "Rubber Tiles",
+   "page": "https://polyhaven.com/a/rubber_tiles",
+   "authors": [
+    "Amal Kumar"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  }
+ },
+ "hdri": {
+  "id": "kloofendal_48d_partly_cloudy_puresky",
+  "name": "Kloofendal 48d Partly Cloudy (Pure Sky)",
+  "page": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+  "authors": [
+   "Greg Zaal",
+   "Jarod Guest"
+  ],
+  "file": "sky.hdr"
+ }
+}
