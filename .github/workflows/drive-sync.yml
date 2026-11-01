@@ -1,0 +1,70 @@
+name: עדכונים אוטומטיים — synchronisation du Drive
+# Lit le Drive de l'école, analyse les documents nouveaux ou modifiés avec Claude, valide, intègre au jeu et publie.
+# Déclenché par :
+#  - le Worker Cloudflare (cron : mardi et vendredi 08:00 heure d'Israël, jusqu'au 31/07/2027) ;
+#  - le bouton « סנכרן עכשיו » de la page d'administration (via le Worker) ;
+#  - un filet de sécurité GitHub (mardi/vendredi ~09:30–10:30 heure d'Israël) qui ne fait rien si la synchronisation du jour a réussi ;
+#  - à la main : Actions → ce workflow → Run workflow.
+# Secrets du dépôt (Settings → Secrets and variables → Actions) : voir docs/AUTO_SYNC.md.
+on:
+  workflow_dispatch:
+    inputs:
+      action: { description: 'sync | publish | rollback', default: 'sync', type: choice, options: [sync, publish, rollback] }
+      mode: { description: 'courses (mardi) | tours (vendredi) | all', default: 'all', type: choice, options: [all, courses, tours] }
+      trigger: { description: 'cron | manual | fallback', default: 'manual' }
+      run_id: { description: 'synchronisation à annuler (rollback)', default: '' }
+      request_id: { description: 'demande admin (interne)', default: '' }
+      dry_run: { description: 'essai : analyser sans rien publier', type: boolean, default: false }
+  schedule:
+    - cron: '30 7 * * 2,5'
+permissions:
+  contents: write
+concurrency:
+  group: drive-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Outils PDF (contrôle des citations)
+        run: command -v pdftotext || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+      - name: Vérifier la configuration
+        id: cfg
+        env:
+          HAS_GOOGLE: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON != '' || secrets.GOOGLE_OAUTH_REFRESH_TOKEN != '' }}
+          HAS_CLAUDE: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+          HAS_SYNC: ${{ secrets.SYNC_SECRET != '' }}
+        run: |
+          ok=1
+          [ "$HAS_GOOGLE" = "true" ] || { echo "::error::Accès Google manquant (GOOGLE_SERVICE_ACCOUNT_JSON ou GOOGLE_OAUTH_*) — voir docs/AUTO_SYNC.md"; ok=0; }
+          [ "$HAS_CLAUDE" = "true" ] || { echo "::error::ANTHROPIC_API_KEY manquante — voir docs/AUTO_SYNC.md"; ok=0; }
+          [ "$HAS_SYNC" = "true" ] || { echo "::error::SYNC_SECRET manquant (page עדכונים אוטומטיים → « מפתח סנכרון »)"; ok=0; }
+          if [ "${{ github.event_name }}" = "schedule" ] && [ $ok = 0 ]; then echo "::warning::Synchronisation pas encore configurée — rien à faire."; echo "skip=1" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "${{ inputs.action || 'sync' }}" != "sync" ]; then [ "$HAS_SYNC" = "true" ] || exit 1; exit 0; fi
+          [ $ok = 1 ]
+      - name: Synchroniser
+        if: steps.cfg.outputs.skip != '1'
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SYNC_SECRET: ${{ secrets.SYNC_SECRET }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+          DRIVE_ROOT_ID: ${{ vars.DRIVE_ROOT_ID }}
+          SYNC_BASELINE_BEFORE: ${{ vars.SYNC_BASELINE_BEFORE }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: >
+          node tools/drive-sync/run.mjs
+          --action "${{ inputs.action || 'sync' }}"
+          --mode "${{ inputs.mode || 'all' }}"
+          --trigger "${{ github.event_name == 'schedule' && 'fallback' || inputs.trigger || 'manual' }}"
+          --run-id "${{ inputs.run_id }}"
+          --request-id "${{ inputs.request_id }}"
+          ${{ inputs.dry_run && '--dry-run' || '' }}

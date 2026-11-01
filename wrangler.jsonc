@@ -1,11 +1,27 @@
-// Cloudflare (Workers Builds) : site 100 % statique — on publie uniquement le dossier public/.
-// Le déploiement GitHub Pages reste inchangé. Les fichiers de public/ sont tous publiés tels quels (dont rtg/).
+// Cloudflare (Workers Builds) : le site reste servi tel quel depuis public/ (les fichiers existants passent AVANT le code).
+// src/worker.js ajoute seulement :
+//  - le déclencheur planifié des synchronisations Drive (mardi et vendredi 08:00, heure d'Israël — voir public/sync-schedule.js) ;
+//  - /api/sync/* (bouton « סנכרן עכשיו » de l'administration).
+// Secret à créer une fois : GITHUB_TOKEN (voir docs/AUTO_SYNC.md). Le déploiement GitHub Pages reste inchangé.
 {
   "name": "moreh-derech-next",
+  "main": "src/worker.js",
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
   "assets": {
     "directory": "./public",
-    "html_handling": "auto-trailing-slash"
-  }
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*"]
+  },
+  // Cron en UTC : 05:00 (heure d'été, UTC+3) et 06:00 (heure d'hiver, UTC+2). Le Worker ne garde que celui qui tombe à 08:00 à Jérusalem.
+  "triggers": { "crons": ["0 5 * * 2,5", "0 6 * * 2,5"] },
+  "vars": {
+    "GITHUB_REPO": "lebrati58/moreh-derech-next",
+    "GITHUB_REF": "main",
+    "SUPABASE_URL": "https://evvutvnfmbhdxeyzmknv.supabase.co",
+    "SUPABASE_ANON_KEY": "sb_publishable_m-hcX-D0rBmO1fLkV09mIg_YmICREKv",
+    "SYNC_END_DATE": "2027-07-31"
+  },
+  "observability": { "enabled": true }
 }

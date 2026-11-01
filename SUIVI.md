@@ -24,9 +24,18 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 58 fiches, monuments modélisés en détail, mode cinéma + vidéo, plan 2D, quiz 3D éteints (phase 2) |
 | **Frise + quiz d'histoire « ציר הזמן והחידון »** | ✅ test navigateur S24 + ordinateur | `history.html` — 48 événements, 7 périodes, quiz chronométré (voir §2, 27 octobre) |
 | **Architecture classique 3D « אדריכלות קלאסית »** | ✅ test navigateur S24 + ordinateur | `architecture.html` — 14 maquettes, 162 termes, jeu de zihouï, 83 questions ouvertes |
+| **עדכונים אוטומטיים (synchronisation du Drive)** | ⛔ | code prêt et testé (PR) ; mise en route : `docs/AUTO_SYNC.md` (SQL, clés Google/Claude/GitHub) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
+
+### 1er novembre 2026 — Synchronisation automatique du Drive (« עדכונים אוטומטיים »)
+- ✅ Demande de Lionel : le jeu s'enrichit seul chaque **mardi 08:00** (cours) et **vendredi 08:00** (סיורים), heure d'Israël, jusqu'au **31/07/2027**.
+- ✅ **Worker Cloudflare** `src/worker.js` : site statique inchangé ; Cron Triggers 05:00 + 06:00 UTC avec garde « 08:00 à Jérusalem » (heure d'été/hiver gérée par le fuseau) ; `POST /api/sync/request` (bouton admin, jeton admin vérifié par Supabase, jeton GitHub côté serveur seulement). Règles communes : `public/sync-schedule.js`.
+- ✅ **Workflow** `.github/workflows/drive-sync.yml` + `tools/drive-sync/` : Drive en lecture seule (compte de service ou OAuth), suivi des fichiers (pas de réimport, 3 essais), extraction (Docs, Word, ivrit.ai, PowerPoint, PDF), analyse Claude structurée, **validation sans confiance** (citation retrouvée mot à mot, nombres présents dans le document, doublons, sources faibles → admin), intégration réversible (`content/drive-questions/auto/`), tests avant publication, commit sur main, filet de sécurité GitHub.
+- ✅ **Supabase** `supabase/auto_sync.sql` : runs, fichiers, éléments (publiés / en attente / annulés), demandes, rapport hébreu. **Admin** `sync.html` (🔄 dans l'écran du guide) : dernière / prochaine synchro, סנכרן עכשיו, validation par lot, rapports, ↶ annulation, pause, mode prévisualisation. **Questions ouvertes** : `open.html`. Questions des cours : « 📚 שיעורים בכיתה » dans le sélecteur.
+- ✅ Tests : `tests/sync.test.mjs` (10), `tests/sync-browser.mjs` (26 vérifications S24 + ordinateur), SQL rejoué sur Postgres 16, simulation complète sur un vrai document de סיור 23 (fait inventé « 22 ans » bloqué ; seconde synchro : 0 réanalyse ; annulation exacte). Non-régression : mêmes 7 échecs Postgres qu'avant.
+- ⛔ À faire par Lionel : fusionner la PR, exécuter `auto_sync.sql`, créer les secrets (voir `docs/AUTO_SYNC.md`). Premiers documents traités : סיור 23 et 24.
 
 ### 31 octobre 2026 — Architecture classique en 3D (« אדריכלות קלאסית »)
 - ✅ Demande de Lionel : « une photo 3D de tout ce qui concerne l'architecture et les noms qu'ils donnent », pas seulement Jérusalem (Beit Shean, pressoirs…), adaptée au jeu, et des questions améliorées. Termes tirés du Drive (leçon 4 du Dr Miron + sorties 5, 6, 16, 19).

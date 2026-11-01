@@ -1,3 +1,7 @@
+## 🔄 Mises à jour automatiques depuis le Drive (1er novembre 2026)
+
+Chaque mardi et vendredi à 08:00 (heure d'Israël), jusqu'au 31/07/2027 : lecture du Drive de l'école, nouvelles questions sourcées, sites et dates, rapport en hébreu et validation dans `sync.html`. Mise en route et fonctionnement : **[docs/AUTO_SYNC.md](docs/AUTO_SYNC.md)**.
+
 > 📋 **Journal de suivi du projet : [SUIVI.md](SUIVI.md)** — état actuel, sessions, prochaines étapes.
 
 ## 🏛️ Architecture classique en 3D « אדריכלות קלאסית » (31 octobre 2026)

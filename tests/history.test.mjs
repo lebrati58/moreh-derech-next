@@ -12,6 +12,9 @@ async function lib() {
   return ctx.MDHistory;
 }
 const DATA = JSON.parse(await read('public/history-events.json'));
+// Les 48 événements faits à la main ; les ajouts de la synchronisation automatique (auto: true, id « drive-… ») viennent en plus.
+const MANUAL = DATA.events.filter(e => !e.auto);
+const AUTO = DATA.events.filter(e => e.auto);
 
 async function progress(now = '2026-10-27T10:00:00') {
   const store = new Map(), RealDate = Date;
@@ -28,10 +31,11 @@ async function progress(now = '2026-10-27T10:00:00') {
 test('référentiel : 48 événements valides, IDs uniques et stables, ordre chronologique', async () => {
   const H = await lib();
   assert.deepEqual([...H.validate(DATA)], []);
-  assert.equal(DATA.events.length, 48);
-  assert.equal(new Set(DATA.events.map(e => e.id)).size, 48);
+  assert.equal(MANUAL.length, 48);
+  assert.equal(new Set(DATA.events.map(e => e.id)).size, DATA.events.length);
+  AUTO.forEach(e => assert.match(e.id, /^drive-[a-f0-9]{10}$/, e.id));
   DATA.events.forEach(e => assert.match(e.id, /^[a-z0-9]+(-[a-z0-9]+)*$/, e.id));
-  for (let i = 1; i < 48; i++) assert.ok(DATA.events[i].year >= DATA.events[i - 1].year, DATA.events[i].id);
+  for (let i = 1; i < DATA.events.length; i++) assert.ok(DATA.events[i].year >= DATA.events[i - 1].year, DATA.events[i].id);
   assert.ok(DATA.events.every(e => e.year !== 0), 'pas d’an 0');
   // Chaque période a des événements, et chaque événement une période connue.
   const per = new Set(DATA.periods.map(p => p.id));
@@ -45,8 +49,8 @@ test('audit : dates contestées / divergentes jamais dans l’examen ; formulati
   const H = await lib();
   const byId = Object.fromEntries(DATA.events.map(e => [e.id, e]));
   DATA.events.filter(e => e.certainty === 'disputed' || e.source === 'course-diff').forEach(e => assert.equal(e.examReady, false, e.id));
-  assert.equal(H.pool(DATA, { mode: 'exam' }).length, 44);
-  assert.equal(H.pool(DATA, { mode: 'practice' }).length, 48);
+  assert.equal(H.pool(DATA, { mode: 'exam' }).length, 44 + AUTO.filter(e => e.examReady).length);
+  assert.equal(H.pool(DATA, { mode: 'practice' }).length, 48 + AUTO.length);
   // Points d'audit explicitement demandés.
   assert.equal(byId['second-temple-dedication'].certainty, 'approx');
   assert.match(byId['second-temple-dedication'].note, /515/);

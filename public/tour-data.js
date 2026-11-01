@@ -15,10 +15,10 @@
   function normalizeTourParam(value) {
     var v = String(value || '').trim().toLowerCase();
     if (!v) return null;
-    if (v === 'road67' || v === 'all') return v;
+    if (v === 'road67' || v === 'all' || v === 'lessons') return v;
     if (ALIAS[v]) return ALIAS[v];
     var m = /^(?:tour)?(\d{1,2})$/.exec(v);
-    if (m) { var n = Number(m[1]); if (n >= 1 && n <= 22) return (n < 10 ? '0' : '') + n; }
+    if (m) { var n = Number(m[1]); if (n >= 1 && n <= 60) return (n < 10 ? '0' : '') + n; }
     return null;
   }
 
@@ -47,7 +47,7 @@
     '06': 'חברון והרודיון', '07': 'חיפה', '08': 'גיאולוגיה', '09': 'שומרון', '10': 'הרי ירושלים',
     '11': 'ירושלים · בית ראשון', '12': 'ירושלים · בית שני א׳', '13': 'ירושלים · בית שני ב׳', '14': 'תצפיות ירושלים',
     '15': 'קיסריה ואפולוניה', '16': 'ציפורי ובית שערים', '17': 'גולן וחרמון', '18': 'ירושלים · רומית וביזנטית',
-    '19': 'בית שאן וכוכב הירדן', '20': 'ראש פינה והחולה', '21': 'עין גדי והר סדום', '22': 'גליל עליון', road67: 'כביש 67 · זכרון–יקנעם'
+    '19': 'בית שאן וכוכב הירדן', '20': 'ראש פינה והחולה', '21': 'עין גדי והר סדום', '22': 'גליל עליון', lessons: 'שיעורים בכיתה', road67: 'כביש 67 · זכרון–יקנעם'
   };
 
   global.MDTours = { tourOf: tourOf, normalizeTourParam: normalizeTourParam, counts: counts, getJSON: getJSON, shortNames: SHORT };
