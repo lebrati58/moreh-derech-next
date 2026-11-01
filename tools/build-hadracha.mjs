@@ -47,12 +47,14 @@ async function resolve(wiki) {
   return null;
 }
 // Tracé OSRM avec les étapes (numéro de route : champ ref d'OSM)
-async function osrm(key, points) {
-  const sig = points.map(p => p.join(',')).join(';');
+async function osrm(key, points, bearings) {
+  // bearings : cap imposé au passage de chaque point (sinon OSRM peut accrocher la mauvaise chaussée et faire demi-tour)
+  const bq = bearings && bearings.some(Boolean) ? '&bearings=' + bearings.map(b => (b ? `${b[0]},${b[1]}` : '')).join(';') + '&radiuses=' + bearings.map(b => (b ? '150' : 'unlimited')).join(';') : '';
+  const sig = points.map(p => p.join(',')).join(';') + bq;
   if (cache[key] && cache[key].pts === sig) return cache[key];
   if (!ONLINE) return cache[key] || null;
   const coords = points.map(([lat, lon]) => `${lon},${lat}`).join(';');
-  const res = await fetch(`https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson&steps=true`, { headers: { 'User-Agent': UA } });
+  const res = await fetch(`https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson&steps=true${bq}`, { headers: { 'User-Agent': UA } });
   if (!res.ok) { console.log(`❌ OSRM ${res.status}`); return null; }
   const j = await res.json();
   if (!j.routes || !j.routes[0]) return null;
@@ -152,9 +154,10 @@ async function build(src) {
   const err = m => out.check.errors.push(m), warn = m => out.check.warnings.push(m);
   if (!start || !end) err('extrémités sans coordonnées (Wikipédia)');
   pois.filter(p => !p.coord).forEach(p => err(`${p.id} : pas de coordonnées vérifiables`));
-  const via = [];
-  for (const v of (src.routing && src.routing.via) || []) { const c = await resolve(v.wiki); if (c) via.push(c); else err(`point de passage sans coordonnées : ${v.name}`); }
-  const r = start && end && !out.check.errors.some(e => e.startsWith('point de passage')) ? await osrm('route:' + src.id, [start, ...via, end].map(c => [c.lat, c.lon])) : null;
+  const via = [], bear = [null];
+  for (const v of (src.routing && src.routing.via) || []) { const c = await resolve(v.wiki); if (c) { via.push(c); bear.push(v.bearing || null); } else err(`point de passage sans coordonnées : ${v.name}`); }
+  bear.push(null);
+  const r = start && end && !out.check.errors.some(e => e.startsWith('point de passage')) ? await osrm('route:' + src.id, [start, ...via, end].map(c => [c.lat, c.lon]), bear) : null;
   if (!r) { err('tracé OSRM absent (lancer le workflow « hadracha » en ligne)'); out.pois = pois.map(p => ({ id: p.id, name: p.name, coord: p.coord })); return out; }
   const runs = roadRuns(r.steps);
   out.route = { geometry: r.geometry, distanceM: r.distanceM, durationS: r.durationS, roads: runs, source: r.source, fetchedAt: r.fetchedAt, status: 'approximate' };
