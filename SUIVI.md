@@ -28,6 +28,13 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 2 novembre 2026 — « הדרכת דרך — מדריך באוטובוס » : audit, plan et prototype Savidor → Jérusalem (branche `feat/hadrachat-derech`)
+- ✅ Audit, API (conditions Google : pas de contenu Routes/Places sur une carte non-Google, pas d'IA sur Street View), coûts (0 $ Google sous les plafonds), plan, base et interface : **`docs/HADRACHAT_DERECH_plan.md`**.
+- ✅ `public/hadracha-engine.js` : `trigger_point` calculé depuis la durée du texte et la vitesse, `observation_point` ≠ passage, versions courtes, pas d'explication tardive, conflits sans chevauchement, lieu invisible (tunnel). Tests : `tests/hadracha.test.mjs` (9).
+- ✅ `content/hadracha/savidor-jerusalem.src.json` : 15 lieux, sources du Drive typées (verbatim סיור 01, feuilles סיפור דרך סיור 5 et ירושלים, notes, IA), textes hébreux complets + courts + retour. Build OSRM/Wikipédia par `.github/workflows/hadracha.yml` → 62,2 km, routes 20 puis 1 ; 9 côtés du prof sur 9 confirmés par le calcul.
+- 🟡 Tout est « estimé » : aucune visibilité vérifiée. Corridor **partiellement analysé**. `supabase/hadracha_draft.sql` : brouillon non exécuté.
+- ⏳ Décisions de Lionel : valider la logique, repérage dans les deux sens, page du mode (phase 2 bis), projet Google Cloud plafonné ou non.
+
 ### 31 octobre 2026 — Architecture classique en 3D (« אדריכלות קלאסית »)
 - ✅ Demande de Lionel : « une photo 3D de tout ce qui concerne l'architecture et les noms qu'ils donnent », pas seulement Jérusalem (Beit Shean, pressoirs…), adaptée au jeu, et des questions améliorées. Termes tirés du Drive (leçon 4 du Dr Miron + sorties 5, 6, 16, 19).
 - ✅ `architecture.html` : 14 maquettes, 162 éléments (hébreu + latin), jeu de zihouï en 3 types de manches, 83 questions ouvertes de type examen, banque ; points dans « המסע שלי ». Lien sur l'accueil (4 langues).
