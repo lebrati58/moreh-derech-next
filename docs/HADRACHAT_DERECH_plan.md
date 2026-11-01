@@ -129,6 +129,15 @@ Tracé OSRM : **62,2 km**, route 20 puis route 1 (vérifié sur les numéros OSM
 - Les **9 lieux où le prof et le calcul peuvent être comparés sont tous d'accord** (Nahal Ayalon, qui longe la route, n'est pas compté). Les désaccords apparus au premier essai venaient d'un tracé faux (demi-tours aux échangeurs) : c'est exactement ce que le contrôle devait attraper.
 - Chaque texte existe en version complète (intro → consigne → regard) et courte ; le côté n'est jamais écrit en dur (`{LOOK}`, `{SIDE}`), et les textes qui dépendent du sens (« on entre dans la Shéfélah », « on monte à Jérusalem ») ont une version retour.
 - À 100 km/h, au retour, Emmaüs passe en version courte (Latrun et Emmaüs se suivent à ≈ 70 m).
+- **Contre-vérification indépendante des faits** (Wikipédia, Britannica, OCSO, Bibliothèque nationale, textes bibliques) : 8 corrections intégrées, chacune notée `correction` dans la source quand elle corrige un document du cours :
+  - l'Ayalon *traverse* la vallée d'Ayalon sans y prendre sa source (erreur de l'enregistrement du סיור 01) ;
+  - Ramla est « la seule ville fondée par les Arabes », plutôt que « la première » ;
+  - la route de Jaffa a été ouverte aux voitures en 1867, et François-Joseph l'a empruntée en 1869 ;
+  - Abou Gosh a coopéré avec le Yichouv en 1948, ce qui va au-delà d'une simple neutralité ;
+  - Kfar Bin Nun tient son nom de l'opération Bin Nun ;
+  - les tunnels de Har'el passent sous la crête du Castel ;
+  - Motza est *l'un des* premiers achats de terres ;
+  - Nicopolis est un nom grec de l'époque romaine.
 - **Statut de toutes les observations : estimées.** Aucune visibilité n'est déclarée vérifiée ; le corridor est « partiellement analysé ».
 
 ---
