@@ -106,7 +106,7 @@ body.tour-open{overflow:hidden}
 <section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
 <section class="reader" id="reader" hidden></section>
 <div class="actions" id="actions" hidden><button type="button" class="back" id="prev">↩ הקודמת</button><button type="button" class="next" id="next">הבאה ←</button></div>
-<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. תיק 22 (גליל עליון) הוא חוברת הכנה ואינו אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a></p>
+<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. תיק 22 (גליל עליון) הוא חוברת הכנה ואינו אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a> · <a href="open.html">✍️ שאלות פתוחות מהקורס</a></p>
 </main>
 <script src="tour-data.js"></script>
 <script>
@@ -184,7 +184,7 @@ const tourOf=q=>MDTours.tourOf(q);
 window.MDL_FEEDBACK_CTX=()=>{const q=mode!=="stories"&&items[index];return {tour,level,mode,question:q?q.id:"",stop:q?(q.stop||""):""};};
 function placeStops(t){return (places&&places.tours[t]&&places.tours[t].stops)||[];}
 function matchStop(t,name){const n=norm(name);if(!n)return null;return placeStops(t).find(s=>{const a=norm(s.name),b=norm(s.he&&s.he.title);return n.includes(a)||a.includes(n)||(b&&(n.includes(b)||b.includes(n)));})||null;}
-function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
+function tourTitle(id){if(id==="road67")return "מסלול 67 — זכרון יעקב–יקנעם";if(id==="lessons")return "שיעורים בכיתה";const t=catalogue&&catalogue.tours.find(x=>x.id===id);return t?t.title:id;}
 function syncUrl(){const u=new URL(location.href);u.searchParams.delete("new");if(tour==="all")u.searchParams.delete("tour");else u.searchParams.set("tour",tour);u.searchParams.set("level",level);u.searchParams.set("mode",mode);history.replaceState(null,"",u.pathname+u.search);
   {const J3D={11:"jerusalem3d.html?period=2",12:"jerusalem3d.html?period=5",13:"jerusalem3d.html?period=5",14:"jerusalem3d.html?period=5",18:"jerusalem3d.html?period=7",15:"site3d.html?site=caesarea",19:"site3d.html?site=beitshean",1:"site3d.html?site=qumran",3:"site3d.html?site=arad",4:"site3d.html?site=megiddo",6:"site3d.html?site=herodium",16:"site3d.html?site=tzippori",17:"site3d.html?site=banias",5:"site3d.html?site=beitguvrin",21:"site3d.html?site=eingedi",22:"site3d.html?site=baram"},jp=J3D[Number(tour)],jl=$("j3dLink");if(jl){jl.hidden=!jp;if(jp)jl.href=jp;}} // parcours avec un site 3D : accès direct // parcours de Jérusalem : accès direct à la 3D
   $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode==="review"||mode==="daily"?"quiz":mode)+(tour!=="all"?"&tour="+tour:"");}
@@ -204,6 +204,7 @@ const shortNames={
 function tourLabel(id){
   if(id==="all")return "כל הסיורים";
   if(id==="road67")return "כביש 67 · זכרון–יקנעם";
+  if(id==="lessons")return "📚 שיעורים בכיתה";
   const t=catalogue&&catalogue.tours.find(t=>t.id===id);
   return (t?t.id+" · ":"")+((t&&shortNames[t.id])||(t&&t.title)||id);
 }
@@ -218,6 +219,7 @@ function fillTourRows(query){
   const term=norm(query).toLocaleLowerCase("he");
   const options=[{id:"all",title:"כל הסיורים",stops:[]},...catalogue.tours.map(t=>({id:t.id,title:shortNames[t.id]||t.title,full:t.title,stops:t.stops||[]}))];
   if(stats.byTour.road67)options.push({id:"road67",title:"כביש 67 · זכרון–יקנעם",stops:[]});
+  if(stats.byTour.lessons)options.push({id:"lessons",title:"📚 שיעורים בכיתה",stops:[]}); // questions des cours (synchronisation automatique)
   const list=$("tourResults");list.replaceChildren();
   let matches=0;
   for(const item of options){
@@ -226,7 +228,7 @@ function fillTourRows(query){
     matches++;
     const btn=document.createElement("button");btn.type="button";btn.className="tour-option"+(item.id==="all"?" all":"");
     btn.setAttribute("aria-pressed",String(tour===item.id));
-    const num=document.createElement("span");num.className="number";num.textContent=item.id==="all"?"🗺️":item.id==="road67"?"67":item.id;
+    const num=document.createElement("span");num.className="number";num.textContent=item.id==="all"?"🗺️":item.id==="road67"?"67":item.id==="lessons"?"📚":item.id;
     const label=document.createElement("span");label.className="label";label.textContent=item.title;
     const meta=document.createElement("span");meta.className="meta";meta.textContent=tour===item.id?"✓":questionCount(item.id)+" שאלות";
     btn.append(num,label,meta);
@@ -376,7 +378,7 @@ $("prev").onclick=()=>{if(index>0){index--;render();}};$("next").onclick=goNext;
 Promise.all([MDTours.getJSON("guided-quiz.json"),MDTours.getJSON("siyurim-catalog.json"),MDTours.getJSON("places.json").catch(()=>null)]).then(([j,c,p])=>{
   if(!Array.isArray(j.questions)||!Array.isArray(c.tours))throw Error("Invalid data");
   data=j;catalogue=c;places=p;stats=MDTours.counts(j.questions);
-  if(!["all",...c.tours.map(t=>t.id),...(stats.byTour.road67?["road67"]:[])].includes(tour))tour="all";render();
+  if(!["all",...c.tours.map(t=>t.id),...(stats.byTour.road67?["road67"]:[]),...(stats.byTour.lessons?["lessons"]:[])].includes(tour))tour="all";render();
 }).catch(e=>{$("quiz").textContent="⚠️ לא ניתן לטעון את השאלות. נסו שוב עם חיבור לאינטרנט.";console.error(e);});
 })();
 </script><script src="config.js"></script>

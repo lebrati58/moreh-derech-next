@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="description" content="שאלות פתוחות ממסמכי הקורס — כותבים תשובה, משווים לתשובת הייחוס ומסמנים את נקודות המפתח.">
+<title>שאלות פתוחות — Moreh Derech NEXT</title>
+<style>
+:root{--bg:#0b1230;--card:#151f4a;--line:#3d5190;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--mint:#6ee9cf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif}
+.wrap{max-width:760px;margin:auto;padding:16px 16px 60px}
+nav{display:flex;gap:8px;justify-content:space-between;margin-bottom:12px}
+nav a,.btn{color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;padding:10px 14px;border-radius:12px;background:#1d2a56;border:1px solid #4c5e9a;cursor:pointer;font-family:inherit}
+.btn.gold{background:var(--gold);color:#111d45;border-color:var(--gold)}.btn:disabled{opacity:.5}
+h1{font-size:22px;margin:4px 0}.sub{color:var(--soft);font-size:14px;margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#0b1232;color:#fff;font:16px/1.5 inherit;font-family:inherit}
+select{width:auto}textarea{min-height:130px;margin:10px 0}
+.q{font-size:18px;font-weight:800;line-height:1.5;margin:6px 0}.muted{color:var(--soft);font-size:13px}
+.key{background:#0f1840;border-radius:12px;padding:12px;margin-top:10px}.key label{display:flex;gap:8px;align-items:flex-start;margin:8px 0;font-size:15px}
+.key input{width:22px;height:22px;flex:none}.ans{color:var(--mint);line-height:1.6}
+.score{font-size:28px;font-weight:900;color:var(--gold)}
+a{color:var(--mint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a href="index.html">⌂ משחקים</a><a href="guided-tour.html">🧭 תרגול</a></nav>
+  <h1>✍️ שאלות פתוחות מהקורס</h1>
+  <p class="sub">כותבים תשובה כמו במבחן, ואז משווים לתשובת הייחוס ומסמנים אילו נקודות מפתח כתבתם. השאלות נוצרו ממסמכי הקורס ב-Drive, ולכל אחת קישור למקור.</p>
+  <div id="app" class="card">טוען…</div>
+</div>
+<script>
+(function () {
+  'use strict';
+  const app = document.getElementById('app');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const LV = { 1: 'קל', 2: 'בינוני', 3: 'קשה' };
+  let all = [], pool = [], i = 0, total = 0, got = 0, filt = { tour: 'all', level: 'all' };
+  function setPool() {
+    pool = all.filter(q => (filt.tour === 'all' || (q.tourId || 'lessons') === filt.tour) && (filt.level === 'all' || String(q.level) === filt.level))
+      .map(q => [Math.random(), q]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+    i = 0; total = 0; got = 0;
+  }
+  function picker() {
+    const tours = [...new Set(all.map(q => q.tourId || 'lessons'))].sort();
+    return `<div class="row"><select id="ft" aria-label="נושא"><option value="all">כל הנושאים</option>${tours.map(t => `<option value="${esc(t)}" ${filt.tour === t ? 'selected' : ''}>${t === 'lessons' ? 'שיעורים בכיתה' : 'סיור ' + esc(t)}</option>`).join('')}</select>
+      <select id="fl" aria-label="רמה"><option value="all">כל הרמות</option>${[1, 2, 3].map(l => `<option value="${l}" ${filt.level === String(l) ? 'selected' : ''}>${LV[l]}</option>`).join('')}</select>
+      <span class="muted">${pool.length} שאלות</span></div>`;
+  }
+  function render() {
+    if (!all.length) { app.innerHTML = '<p>עדיין אין שאלות פתוחות. הן יתווספו אוטומטית מהעדכונים השבועיים של מסמכי הקורס.</p>'; return; }
+    if (i >= pool.length) {
+      app.innerHTML = picker() + (pool.length ? `<p class="score">${got.toFixed(1)} / ${total}</p><p>נקודות מפתח שכתבתם בסבב הזה.</p><button class="btn gold" id="again">סבב חדש</button>` : '<p>אין שאלות בבחירה הזו.</p>');
+      return bind();
+    }
+    const q = pool[i];
+    app.innerHTML = picker() + `<p class="muted">שאלה ${i + 1} מתוך ${pool.length} · ${LV[q.level] || ''} · ${esc(q.stop || '')}</p>
+      <p class="q">${esc(q.question)}</p>
+      <textarea id="ans" placeholder="כתבו כאן את התשובה…" aria-label="התשובה שלי"></textarea>
+      <button class="btn gold" id="show">הצג תשובת ייחוס</button>
+      <div class="key" id="key" hidden>
+        <p class="ans"><b>תשובת ייחוס:</b> ${esc(q.answer)}</p>
+        <p class="muted">סמנו את נקודות המפתח שמופיעות בתשובה שלכם:</p>
+        ${(q.points || []).map((p, k) => `<label><input type="checkbox" data-k="${k}"> <span>${esc(p)}</span></label>`).join('')}
+        ${q.explanation ? `<p class="muted">${esc(q.explanation)}</p>` : ''}
+        ${q.sourceUrl ? `<p class="muted">📄 <a href="${esc(q.sourceUrl)}" target="_blank" rel="noopener">${esc(q.sourceDoc || 'מקור')}</a>${q.quote ? ` — „${esc(q.quote)}”` : ''}</p>` : ''}
+        <button class="btn gold" id="next">הבא ←</button>
+      </div>`;
+    bind();
+  }
+  function bind() {
+    const ft = document.getElementById('ft'), fl = document.getElementById('fl');
+    if (ft) ft.onchange = () => { filt.tour = ft.value; setPool(); render(); };
+    if (fl) fl.onchange = () => { filt.level = fl.value; setPool(); render(); };
+    const s = document.getElementById('show'), n = document.getElementById('next'), a = document.getElementById('again');
+    if (s) s.onclick = () => { document.getElementById('key').hidden = false; s.hidden = true; document.getElementById('ans').readOnly = true; };
+    if (n) n.onclick = () => {
+      const q = pool[i], boxes = app.querySelectorAll('#key input'), c = [...boxes].filter(b => b.checked).length;
+      total += 1; got += boxes.length ? c / boxes.length : 0; i++; render();
+    };
+    if (a) a.onclick = () => { setPool(); render(); };
+  }
+  fetch('auto/open-questions.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : { questions: [] }).catch(() => ({ questions: [] }))
+    .then(d => { all = d.questions || []; setPool(); render(); });
+})();
+</script>
+</body>
+</html>
