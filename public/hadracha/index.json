@@ -1,6 +1,6 @@
 {
  "v": 1,
- "builtAt": "2026-11-01T23:42:32.098Z",
+ "builtAt": "2026-11-01T23:43:46.629Z",
  "routes": [
   {
    "id": "savidor-jerusalem",
@@ -9,10 +9,10 @@
    "status": "a_verifier",
    "public": false,
    "pois": 15,
-   "km": 67.4,
+   "km": 62.2,
    "analysis": "partiel",
    "errors": 0,
-   "warnings": 15
+   "warnings": 12
   }
  ]
 }
