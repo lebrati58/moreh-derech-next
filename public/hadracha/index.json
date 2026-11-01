@@ -1,0 +1,18 @@
+{
+ "v": 1,
+ "builtAt": "2026-11-01T23:40:18.905Z",
+ "routes": [
+  {
+   "id": "savidor-jerusalem",
+   "corridor": "jerusalem",
+   "title": "סבידור מרכז ← לטרון ← ירושלים",
+   "status": "a_verifier",
+   "public": false,
+   "pois": 15,
+   "km": null,
+   "analysis": "non_traite",
+   "errors": 14,
+   "warnings": 0
+  }
+ ]
+}

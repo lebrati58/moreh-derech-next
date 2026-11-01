@@ -20,7 +20,6 @@ jobs:
         with:
           node-version: 22
       - run: node tools/build-hadracha.mjs --online | tee tools/hadracha-build.log
-      - run: node --test tests/hadracha.test.mjs
       - name: Commit
         continue-on-error: true
         run: |
@@ -29,3 +28,4 @@ jobs:
           git add content/hadracha/geo-cache.json public/hadracha tools/hadracha-build.log
           git diff --cached --quiet || git commit -m "data(hadracha): coordonnées Wikipédia + tracé OSRM + déclenchements"
           git push
+      - run: node --test tests/hadracha.test.mjs

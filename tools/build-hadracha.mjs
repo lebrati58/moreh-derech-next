@@ -85,12 +85,23 @@ function roadRuns(steps) {
 const refAt = (runs, s) => (runs.find(r => s >= r.from - 1 && s <= r.to + 1) || {}).ref || null;
 const sideFrom = loc => (loc.d >= 50 && loc.d <= 4000 ? loc.side : null);
 const angDiff = (a, b) => { const d = Math.abs(a - b) % 360; return d > 180 ? 360 - d : d; };
-const bearingTo = (P, s, ll) => { const a = G.pointAt(P, s), p = P.proj.fwd(ll[0], ll[1]); return (Math.atan2(p.x - a.x, p.y - a.y) * 180 / Math.PI + 360) % 360; };
+const llOf = p => [+p.lat.toFixed(5), +p.lon.toFixed(5)];
 
-function directionView(P, pois, dir, runs) {
-  const L = P.length;
+// Un « repère » = le tracé aller vu dans un sens. Le retour n'est PAS un second tracé reprojeté (la projection locale de
+// gps-engine dépend du premier point et ferait varier les longueurs de ~0,2 %) : c'est le miroir exact de l'aller,
+// s' = L − s, côté inversé, cap + 180°. Ainsi un même lieu a toujours la même géométrie dans les deux sens.
+function frame(P, rev) {
+  const L = P.length, toF = s => (rev ? L - s : s);
+  return { L, rev,
+    locate: ll => { const c = G.locate(P, ll); return { s: toF(c.s), d: c.d, side: rev ? (c.side === 'right' ? 'left' : 'right') : c.side }; },
+    at: s => llOf(G.pointAt(P, Math.max(0, Math.min(L, toF(s))))),
+    bearing: s => (G.pointAt(P, Math.max(0, Math.min(L, toF(s)))).bearing + (rev ? 180 : 0)) % 360,
+    bearingTo: (s, ll) => { const a = G.pointAt(P, Math.max(0, Math.min(L, toF(s)))), p = P.proj.fwd(ll[0], ll[1]); return (Math.atan2(p.x - a.x, p.y - a.y) * 180 / Math.PI + 360) % 360; } };
+}
+
+function directionView(F, pois, dir, runs) {
   const list = pois.filter(p => p.coord).map(p => {
-    const loc = G.locate(P, [p.coord.lat, p.coord.lon]);
+    const loc = F.locate([p.coord.lat, p.coord.lon]);
     const computed = p.sideRule === 'along' ? 'along' : sideFrom(loc);
     const teacher = p.teacherSide ? (dir === 'fwd' ? p.teacherSide.value : ({ right: 'left', left: 'right' }[p.teacherSide.value] || p.teacherSide.value)) : null;
     const side = teacher || computed;
@@ -100,31 +111,30 @@ function directionView(P, pois, dir, runs) {
   }).sort((a, b) => a.sAbeam - b.sAbeam);
   const triggers = list.map(p => {
     const byV = {};
-    for (const k of SPEEDS_KMH) { const t = H.trigger(p, dir, k / 3.6); byV[k] = { trigger_s: Math.round(t.sTrig), trigger_point: ll(P, t.sTrig), observation_s: Math.round(t.sObs), observation_point: ll(P, t.sObs), lead_m: t.leadM, lead_sec: t.leadSec }; }
+    for (const k of SPEEDS_KMH) { const t = H.trigger(p, dir, k / 3.6); byV[k] = { trigger_s: Math.round(t.sTrig), trigger_point: F.at(t.sTrig), observation_s: Math.round(t.sObs), observation_point: F.at(t.sObs), lead_m: t.leadM, lead_sec: t.leadSec }; }
     const t80 = H.trigger(p, dir, 80 / 3.6);
     return { id: p.id, side: p.side, visibility: t80.visibility, noLook: t80.noLook, durations: t80.dur, totalSec: Math.round(t80.totalSec), byKmh: byV };
   });
   const plans = {};
   for (const k of SPEEDS_KMH) plans[k] = H.schedule(list, dir, k / 3.6).map(x => ({ id: x.poi.id, mode: x.mode, shifted: !!x.shifted, start_s: x.start == null ? null : Math.round(x.start), end_s: x.end == null ? null : Math.round(x.end) }));
-  return { list, triggers, plans, L };
+  return { list, triggers, plans };
 }
-const ll = (P, s) => { const p = G.pointAt(P, Math.max(0, Math.min(P.length, s))); return [+p.lat.toFixed(5), +p.lon.toFixed(5)]; };
 
-// Intervalles : 1 km, affinés à 250 m quand un lieu est « actif » (fenêtre élargie de 1 km)
-function segments(P, list, dir, runs) {
-  const L = P.length, hot = list.map(p => [p.sAbeam - 1500, p.sAbeam + 1000]);
+// Intervalles : 1 km, affinés à 250 m autour des lieux (de 1,5 km avant à 1 km après)
+function segments(F, list, dir, runs) {
+  const L = F.L, hot = list.map(p => [p.sAbeam - 1500, p.sAbeam + 1000]);
   const cuts = [0]; let s = 0;
   while (s < L) { const step = hot.some(([a, b]) => s >= a && s <= b) ? 250 : 1000; s = Math.min(L, s + step); cuts.push(s); }
   const out = [];
   for (let i = 0; i < cuts.length - 1; i++) {
-    const a = cuts[i], b = cuts[i + 1], mid = (a + b) / 2, pm = G.pointAt(P, mid);
-    const seg = { dir, from_s: Math.round(a), to_s: Math.round(b), lengthM: Math.round(b - a), road: refAt(runs, mid), bearing: Math.round(pm.bearing), start: ll(P, a), end: ll(P, b), right: [], left: [], ahead: [] };
+    const a = cuts[i], b = cuts[i + 1], mid = (a + b) / 2, brg = F.bearing(mid);
+    const seg = { dir, from_s: Math.round(a), to_s: Math.round(b), lengthM: Math.round(b - a), road: refAt(runs, mid), bearing: Math.round(brg), start: F.at(a), end: F.at(b), right: [], left: [], ahead: [] };
     for (const p of list) {
       const w = H.visWindow(p, dir);
       if (w.status === 'not_visible') continue;
       const dist = p.sAbeam - mid;
       // devant : dans l'axe (±25°) et encore loin ; sinon à droite / gauche pendant la fenêtre de visibilité
-      if (dist > 600 && dist < 6000 && angDiff(bearingTo(P, mid, [p.coord.lat, p.coord.lon]), pm.bearing) < 25) seg.ahead.push(p.id);
+      if (dist > 600 && dist < 6000 && angDiff(F.bearingTo(mid, [p.coord.lat, p.coord.lon]), brg) < 25) seg.ahead.push(p.id);
       else if (b >= w.sObs && a <= w.sVisEnd && (p.side === 'right' || p.side === 'left')) seg[p.side].push(p.id);
     }
     out.push(seg);
@@ -142,17 +152,20 @@ async function build(src) {
   const err = m => out.check.errors.push(m), warn = m => out.check.warnings.push(m);
   if (!start || !end) err('extrémités sans coordonnées (Wikipédia)');
   pois.filter(p => !p.coord).forEach(p => err(`${p.id} : pas de coordonnées vérifiables`));
-  const r = start && end ? await osrm('route:' + src.id, [[start.lat, start.lon], [end.lat, end.lon]]) : null;
+  const via = [];
+  for (const v of (src.routing && src.routing.via) || []) { const c = await resolve(v.wiki); if (c) via.push(c); else err(`point de passage sans coordonnées : ${v.name}`); }
+  const r = start && end && !out.check.errors.some(e => e.startsWith('point de passage')) ? await osrm('route:' + src.id, [start, ...via, end].map(c => [c.lat, c.lon])) : null;
   if (!r) { err('tracé OSRM absent (lancer le workflow « hadracha » en ligne)'); out.pois = pois.map(p => ({ id: p.id, name: p.name, coord: p.coord })); return out; }
   const runs = roadRuns(r.steps);
   out.route = { geometry: r.geometry, distanceM: r.distanceM, durationS: r.durationS, roads: runs, source: r.source, fetchedAt: r.fetchedAt, status: 'approximate' };
   const P = G.prepare({ geometry: r.geometry });
-  const Prev = G.prepare({ geometry: r.geometry.slice().reverse() });
-  for (const [dir, PP] of [['fwd', P], ['rev', Prev]]) {
-    const view = directionView(PP, pois, dir, dir === 'fwd' ? runs : runs.map(x => ({ ref: x.ref, name: x.name, from: PP.length - x.to, to: PP.length - x.from })).reverse());
+  const runsRev = runs.map(x => ({ ref: x.ref, name: x.name, from: P.length - x.to, to: P.length - x.from })).reverse();
+  for (const dir of ['fwd', 'rev']) {
+    const F = frame(P, dir === 'rev'), rr = dir === 'fwd' ? runs : runsRev;
+    const view = directionView(F, pois, dir, rr);
     out.directions[dir] = { label: dir === 'fwd' ? `${src.endpoints.start.name} → ${src.endpoints.end.name}` : `${src.endpoints.end.name} → ${src.endpoints.start.name}`,
-      lengthM: Math.round(PP.length), order: view.list.map(p => p.id), triggers: view.triggers, plans: view.plans,
-      segments: segments(PP, view.list, dir, dir === 'fwd' ? runs : runs.map(x => ({ ref: x.ref, from: PP.length - x.to, to: PP.length - x.from })).reverse()),
+      lengthM: Math.round(F.L), order: view.list.map(p => p.id), triggers: view.triggers, plans: view.plans,
+      segments: segments(F, view.list, dir, rr),
       pois: view.list.map(p => ({ id: p.id, sAbeam: p.sAbeam, offRoadM: p.offRoadM, side: p.side, sideCheck: p.sideCheck, road: p.road,
         text: { intro: H.render(p.commentary.intro, p.side), cue: H.render(p.commentary.cue, p.side), look: H.render(p.commentary.look, p.side), short: H.render(p.commentary.short, p.side) } })) };
     view.list.forEach(p => {
