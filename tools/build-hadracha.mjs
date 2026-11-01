@@ -107,7 +107,8 @@ function directionView(F, pois, dir, runs) {
     const computed = p.sideRule === 'along' ? 'along' : sideFrom(loc);
     const teacher = p.teacherSide ? (dir === 'fwd' ? p.teacherSide.value : ({ right: 'left', left: 'right' }[p.teacherSide.value] || p.teacherSide.value)) : null;
     const side = teacher || computed;
-    return Object.assign({}, p, { sAbeam: Math.round(loc.s), offRoadM: loc.d, side,
+    const commentary = Object.assign({}, p.commentary, dir === 'rev' ? p.commentary.rev || {} : {}); delete commentary.rev;
+    return Object.assign({}, p, { commentary, sAbeam: Math.round(loc.s), offRoadM: loc.d, side,
       sideCheck: { teacher, computed, agree: teacher && computed ? teacher === computed : null, from: teacher ? 'teacher' : computed ? 'computed' : 'unknown' },
       road: refAt(runs, loc.s) });
   }).sort((a, b) => a.sAbeam - b.sAbeam);
@@ -144,6 +145,11 @@ function segments(F, list, dir, runs) {
   return out;
 }
 
+// Texte d'un sens : la version aller, remplacée champ par champ par commentary.rev au retour, puis côté rendu.
+function textFor(p) {
+  const c = p.commentary;   // déjà fusionné pour le sens par directionView
+  return { intro: H.render(c.intro, p.side), cue: H.render(c.cue, p.side), look: H.render(c.look, p.side), short: H.render(c.short, p.side) };
+}
 async function build(src) {
   const start = await resolve(src.endpoints.start.wiki), end = await resolve(src.endpoints.end.wiki);
   const pois = [];
@@ -153,7 +159,7 @@ async function build(src) {
     route: null, directions: {}, pois: [], check: { errors: [], warnings: [] } };
   const err = m => out.check.errors.push(m), warn = m => out.check.warnings.push(m);
   if (!start || !end) err('extrémités sans coordonnées (Wikipédia)');
-  pois.filter(p => !p.coord).forEach(p => err(`${p.id} : pas de coordonnées vérifiables`));
+  pois.filter(p => !p.coord && !p.anchorAlong).forEach(p => err(`${p.id} : pas de coordonnées vérifiables`));
   const via = [], bear = [null];
   for (const v of (src.routing && src.routing.via) || []) { const c = v.point ? { lat: v.point[0], lon: v.point[1], source: v.source } : await resolve(v.wiki); if (c) { via.push(c); bear.push(v.bearing || null); } else err(`point de passage sans coordonnées : ${v.name}`); }
   bear.push(null);
@@ -162,6 +168,15 @@ async function build(src) {
   const runs = roadRuns(r.steps);
   out.route = { geometry: r.geometry, distanceM: r.distanceM, durationS: r.durationS, roads: runs, source: r.source, fetchedAt: r.fetchedAt, status: 'approximate' };
   const P = G.prepare({ geometry: r.geometry });
+  // Lieux ancrés sur le tracé lui-même (un nahal le long de la route, des blindés dispersés) : position = abscisse,
+  // jamais une coordonnée tapée ; confiance de position « basse » tant qu'aucun repérage ne l'a remplacée.
+  for (const p of pois) if (p.anchorAlong) {
+    const ref = p.anchorAlong.from === 'start' ? 0 : (pois.find(x => x.id === p.anchorAlong.from) || {}).coord;
+    const s0 = ref === 0 ? 0 : ref ? G.locate(P, [ref.lat, ref.lon]).s : null;
+    if (s0 == null) { err(`${p.id} : ancre « ${p.anchorAlong.from} » introuvable`); continue; }
+    const pt = G.pointAt(P, Math.min(P.length, s0 + p.anchorAlong.m));
+    p.coord = { lat: +pt.lat.toFixed(5), lon: +pt.lon.toFixed(5), source: `sur le tracé, ${p.anchorAlong.m} m après ${p.anchorAlong.from}`, url: null, alongRoute: true };
+  }
   const runsRev = runs.map(x => ({ ref: x.ref, name: x.name, from: P.length - x.to, to: P.length - x.from })).reverse();
   for (const dir of ['fwd', 'rev']) {
     const F = frame(P, dir === 'rev'), rr = dir === 'fwd' ? runs : runsRev;
@@ -170,10 +185,11 @@ async function build(src) {
       lengthM: Math.round(F.L), order: view.list.map(p => p.id), triggers: view.triggers, plans: view.plans,
       segments: segments(F, view.list, dir, rr),
       pois: view.list.map(p => ({ id: p.id, sAbeam: p.sAbeam, offRoadM: p.offRoadM, side: p.side, sideCheck: p.sideCheck, road: p.road,
-        text: { intro: H.render(p.commentary.intro, p.side), cue: H.render(p.commentary.cue, p.side), look: H.render(p.commentary.look, p.side), short: H.render(p.commentary.short, p.side) } })) };
+        text: textFor(p) })) };
     view.list.forEach(p => {
       if (p.sideCheck.agree === false) warn(`${dir} ${p.id} : côté du prof (${p.sideCheck.teacher}) ≠ côté calculé (${p.sideCheck.computed}) à ${p.offRoadM} m — à trancher en repérage`);
       if (!p.side) warn(`${dir} ${p.id} : côté inconnu (lieu à ${p.offRoadM} m de la route) — pas de consigne droite/gauche`);
+      { const tt = view.triggers.find(x => x.id === p.id); if (tt && tt.byKmh[80].trigger_s < 0) warn(`${dir} ${p.id} : déclenchement avant le départ — à dire avant de partir`); }
       if (p.offRoadM > 4000) warn(`${dir} ${p.id} : à ${(p.offRoadM / 1000).toFixed(1)} km du tracé — visibilité douteuse`);
     });
     for (const k of SPEEDS_KMH) view.plans[k].filter(x => x.mode !== 'full').forEach(x => warn(`${dir} ${k} km/h ${x.id} : ${x.mode === 'short' ? 'version courte (conflit)' : 'écarté (conflit)'}`));
@@ -193,7 +209,7 @@ function confidence(p, out) {
   const vis = (p.visibility && p.visibility.fwd && p.visibility.fwd.status) || 'estimated';
   const kinds = new Set((p.facts || []).map(x => (out.sources[x.source] || { kind: x.source }).kind));
   const content = kinds.has('transcript') ? 'high' : kinds.has('course-doc') ? 'medium' : 'low';
-  return { position: p.coord ? (p.anchorNote ? 'low' : 'medium') : 'none', side, visibility: vis === 'verified' ? 'high' : vis === 'not_visible' ? 'n/a' : 'low', content, verified: false };
+  return { position: p.coord ? (p.anchorNote || p.coord.alongRoute ? 'low' : 'medium') : 'none', side, visibility: vis === 'verified' ? 'high' : vis === 'not_visible' ? 'n/a' : 'low', content, verified: false };
 }
 
 const files = (await readdir(new URL('content/hadracha/', ROOT))).filter(f => f.endsWith('.src.json')).sort();

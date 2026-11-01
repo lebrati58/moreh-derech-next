@@ -96,7 +96,7 @@ test('source Savidor → Jérusalem : ≥ 10 lieux, sources du Drive, aucun côt
     const c = p.commentary;
     assert.ok(c.intro && c.look && c.short, p.id);
     // le côté ne doit jamais être écrit en clair : sinon le sens retour dirait le contraire de la réalité
-    for (const k of ['intro', 'cue', 'look', 'short']) assert.ok(!/ימינה|שמאלה|מימין|משמאל/.test(c[k] || ''), `${p.id}.${k} : côté écrit en dur`);
+    for (const v of [c, c.rev || {}]) for (const k of ['intro', 'cue', 'look', 'short']) assert.ok(!/ימינה|שמאלה|מימין|משמאל|בצד השני/.test(v[k] || ''), `${p.id}.${k} : côté écrit en dur`);
     const notVisible = p.visibility && p.visibility.fwd && p.visibility.fwd.status === 'not_visible';
     if (!notVisible && p.sideRule !== 'along') assert.ok(/\{LOOK\}/.test(c.cue), p.id + ' : consigne de regard');
     assert.ok(p.facts.length, p.id);
