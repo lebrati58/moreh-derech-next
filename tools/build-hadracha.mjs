@@ -155,7 +155,7 @@ async function build(src) {
   if (!start || !end) err('extrémités sans coordonnées (Wikipédia)');
   pois.filter(p => !p.coord).forEach(p => err(`${p.id} : pas de coordonnées vérifiables`));
   const via = [], bear = [null];
-  for (const v of (src.routing && src.routing.via) || []) { const c = await resolve(v.wiki); if (c) { via.push(c); bear.push(v.bearing || null); } else err(`point de passage sans coordonnées : ${v.name}`); }
+  for (const v of (src.routing && src.routing.via) || []) { const c = v.point ? { lat: v.point[0], lon: v.point[1], source: v.source } : await resolve(v.wiki); if (c) { via.push(c); bear.push(v.bearing || null); } else err(`point de passage sans coordonnées : ${v.name}`); }
   bear.push(null);
   const r = start && end && !out.check.errors.some(e => e.startsWith('point de passage')) ? await osrm('route:' + src.id, [start, ...via, end].map(c => [c.lat, c.lon]), bear) : null;
   if (!r) { err('tracé OSRM absent (lancer le workflow « hadracha » en ligne)'); out.pois = pois.map(p => ({ id: p.id, name: p.name, coord: p.coord })); return out; }
