@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "מורה דרך LIVE — חידון חי לסיור באוטובוס",
   "scripts": {
-    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/access.test.mjs tests/journey.test.mjs tests/jerusalem3d.test.mjs tests/sites3d.test.mjs tests/history.test.mjs tests/exam.test.mjs tests/tours.test.mjs tests/architecture.test.mjs tests/hadracha.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/access.test.mjs tests/journey.test.mjs tests/jerusalem3d.test.mjs tests/sites3d.test.mjs tests/history.test.mjs tests/exam.test.mjs tests/tours.test.mjs tests/architecture.test.mjs tests/hadracha.test.mjs tests/world3d.test.mjs",
     "build:sql": "node tools/build-route-sql.mjs",
     "dev": "node tests/dev-server.mjs 8787 mdl_dev",
     "scenario": "node tests/scenario.mjs",
@@ -22,6 +22,8 @@
     "e2e:history": "node tests/history-browser.mjs screens-history",
     "test:architecture": "node --test tests/architecture.test.mjs",
     "e2e:architecture": "node tests/architecture-browser.mjs screens-architecture",
+    "test:world3d": "node --test tests/world3d.test.mjs",
+    "e2e:world3d": "node tests/world3d-browser.mjs screens-world3d",
     "build:sites3d": "node tools/build-site3d.mjs",
     "build:jerusalem3d": "node tools/build-jerusalem3d.mjs",
     "build:places": "node tools/build-places.mjs",

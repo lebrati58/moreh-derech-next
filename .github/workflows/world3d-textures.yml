@@ -1,0 +1,28 @@
+name: Monde 3D — textures CC0 (Poly Haven)
+# Télécharge les textures PBR et le ciel HDR CC0 utilisés par world3d.html, puis les ajoute à la branche.
+# Se lance seul quand l'outil change sur une branche, ou à la main (Actions → Run workflow).
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/fetch-world3d-textures.mjs
+      - .github/workflows/world3d-textures.yml
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/fetch-world3d-textures.mjs
+      - name: Ajouter les textures à la branche
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add public/world3d/textures
+          git diff --cached --quiet && echo "rien de nouveau" && exit 0
+          git commit -m "assets(world3d): textures PBR et ciel HDR CC0 (Poly Haven)"
+          git push origin HEAD:${GITHUB_REF_NAME}

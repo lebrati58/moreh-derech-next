@@ -1,0 +1,137 @@
+{
+ "generatedAt": "2026-10-31T22:53:49.937Z",
+ "source": "Poly Haven — https://polyhaven.com",
+ "license": "CC0 1.0 (domaine public) — https://polyhaven.com/license",
+ "resolution": "1k",
+ "slots": {
+  "kurkar": {
+   "id": "sandstone_blocks_05",
+   "name": "Sandstone Blocks 05",
+   "page": "https://polyhaven.com/a/sandstone_blocks_05",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "stone": {
+   "id": "rock_face",
+   "name": "Rock Face",
+   "page": "https://polyhaven.com/a/rock_face",
+   "authors": [
+    "Greg Zaal",
+    "Dario Barresi"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "plaster": {
+   "id": "white_plaster_02",
+   "name": "White Plaster 02",
+   "page": "https://polyhaven.com/a/white_plaster_02",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "marble": {
+   "id": "marble_01",
+   "name": "Marble 01",
+   "page": "https://polyhaven.com/a/marble_01",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "sand": {
+   "id": "coast_sand_01",
+   "name": "Coast Sand 01",
+   "page": "https://polyhaven.com/a/coast_sand_01",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "paving": {
+   "id": "rock_tile_floor",
+   "name": "Rock Tile Floor",
+   "page": "https://polyhaven.com/a/rock_tile_floor",
+   "authors": [
+    "Charlotte Baglioni"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "rubble": {
+   "id": "gravel_floor",
+   "name": "Gravel Floor",
+   "page": "https://polyhaven.com/a/gravel_floor",
+   "authors": [
+    "Jenelle van Heerden",
+    "Matterfield"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "wood": {
+   "id": "wood_planks_grey",
+   "name": "Wood Planks Grey",
+   "page": "https://polyhaven.com/a/wood_planks_grey",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  },
+  "metal": {
+   "id": "metal_plate",
+   "name": "Metal Plate",
+   "page": "https://polyhaven.com/a/metal_plate",
+   "authors": [
+    "Rob Tuytel"
+   ],
+   "files": {
+    "diff": "diff.jpg",
+    "nor": "nor.jpg",
+    "arm": "arm.jpg"
+   }
+  }
+ },
+ "hdri": {
+  "id": "kloofendal_48d_partly_cloudy_puresky",
+  "name": "Kloofendal 48d Partly Cloudy (Pure Sky)",
+  "page": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+  "authors": [
+   "Greg Zaal",
+   "Jarod Guest"
+  ],
+  "file": "sky.hdr"
+ }
+}

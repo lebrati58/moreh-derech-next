@@ -37,6 +37,12 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 - ⛔ Cloudflare Workers Builds échoue sur toutes les branches, `main` comprise (déjà avant cette session) — à regarder dans le tableau de bord Cloudflare.
 - ⏳ Lionel : tester la simulation à la maison, puis faire le repérage pendant une sortie vers Jérusalem (après fusion, ou via l'aperçu).
 
+### 1er novembre 2026 — Monde 3D jouable : Césarée (branche `feature/caesarea-3d-world`, PR, non déployé)
+- ✅ Recherche d'assets : aucun modèle 3D du théâtre réutilisable légalement → théâtre modélisé dans le code à partir des publications (Frova/Weiss/theatrum.de/NEAEHL), textures et ciel CC0 Poly Haven (workflow dédié).
+- ✅ `world3d.html` : marche, collisions, vol, 2 époques alignées, comparaison/transparence, sélection avec sources et certitude, 5 missions, progression, 3 langues, qualité graphique, pause/reprise.
+- ✅ Tests unitaires (7) + navigateur S24/ordinateur (tous verts). ⚠️ i/s non mesurées sur un vrai téléphone (rendu logiciel en test).
+- ⏳ Plans de Frova/Segal/Sear, photogrammétrie de l'état actuel, GLB Blender + KTX2, validation de l'enseignant, mesure sur S24/iPhone. Voir `docs/WORLD3D_CAESAREA.md`.
+
 ### 31 octobre 2026 — Architecture classique en 3D (« אדריכלות קלאסית »)
 - ✅ Demande de Lionel : « une photo 3D de tout ce qui concerne l'architecture et les noms qu'ils donnent », pas seulement Jérusalem (Beit Shean, pressoirs…), adaptée au jeu, et des questions améliorées. Termes tirés du Drive (leçon 4 du Dr Miron + sorties 5, 6, 16, 19).
 - ✅ `architecture.html` : 14 maquettes, 162 éléments (hébreu + latin), jeu de zihouï en 3 types de manches, 83 questions ouvertes de type examen, banque ; points dans « המסע שלי ». Lien sur l'accueil (4 langues).

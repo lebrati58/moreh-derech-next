@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="עולם תלת-ממד: התיאטרון הרומי בקיסריה — מסתובבים ברגל, עוברים בין היום לימי פונטיוס פילטוס, ומשלימים משימות">
+<title>🏛️ קיסריה — עולם תלת-ממד · Moreh Derech NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<link rel="manifest" href="manifest.webmanifest">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/jsm/"}}</script>
+<style>
+:root{--bg:#0b1230;--panel:#0d1636e6;--panel2:#152050f0;--line:#4a5c99;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--gold2:#f0b44c;--mint:#6ee9cf;--ok:#18aa7b;--bad:#d85660;--hyp:#e0607e;--prob:#f0b44c;--att:#3fbf8a;
+  --st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);--sl:env(safe-area-inset-left,0px);--sr:env(safe-area-inset-right,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;touch-action:none}
+button,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+#stage{position:fixed;inset:0}
+#stage canvas{display:block;width:100%;height:100%}
+/* HUD discret */
+.hud{position:fixed;z-index:5;pointer-events:none}
+.hud>*{pointer-events:auto}
+.top{top:calc(8px + var(--st));inset-inline:calc(8px + var(--sr)) calc(8px + var(--sl));display:flex;align-items:flex-start;gap:8px}
+.rb{display:grid;place-items:center;min-width:46px;height:46px;border-radius:14px;border:1px solid #ffffff2e;background:var(--panel);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:20px;font-weight:900;padding:0 10px;box-shadow:0 3px 10px #0006}
+.rb[aria-pressed=true]{background:var(--gold);color:#1c1f45;border-color:#fff}
+.title{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none}
+.title b{font-size:15px;font-weight:900;text-shadow:0 1px 3px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.era{display:inline-flex;gap:6px;align-items:center;font-size:12px;font-weight:900;border-radius:999px;padding:3px 10px;background:var(--panel);border:1px solid #ffffff30}
+.era i{width:9px;height:9px;border-radius:50%;background:var(--mint);display:inline-block}
+.era.ancient i{background:var(--gold)}
+.prog{font-size:12px;font-weight:900;color:var(--gold)}
+.mapbox{position:fixed;z-index:5;top:calc(62px + var(--st));inset-inline-end:calc(8px + var(--sl));width:118px;height:118px;border-radius:50%;overflow:hidden;border:2px solid #ffffff55;background:#0b1230cc;box-shadow:0 3px 12px #0007}
+.mapbox canvas{width:100%;height:100%;display:block}
+@media(max-width:640px){.mapbox{width:88px;height:88px}.hint{display:none}}
+.side{position:fixed;z-index:5;inset-inline-start:calc(8px + var(--sr));top:calc(62px + var(--st));display:flex;flex-direction:column;gap:8px}
+.side .rb{font-size:21px}
+.side .rb small{display:block;font-size:9.5px;font-weight:800;line-height:1;margin-top:-2px;opacity:.9}
+.obj{position:fixed;z-index:5;top:calc(62px + var(--st));left:50%;transform:translateX(-50%);max-width:min(560px,calc(100vw - 280px));min-width:200px;background:var(--panel2);border:1px solid var(--gold);border-radius:14px;padding:8px 12px;font-size:13.5px;line-height:1.4;box-shadow:0 4px 14px #0008}
+@media(max-width:640px){.obj{top:auto;bottom:calc(150px + var(--sb));max-width:calc(100vw - 24px)}}
+.obj b{color:var(--gold)}
+.obj .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.obj .chips span{font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 8px;background:#ffffff18}
+.obj .chips span.on{background:var(--ok)}
+.cross{position:fixed;z-index:4;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;pointer-events:none;opacity:.8}
+.cross:before,.cross:after{content:'';position:absolute;background:#fff;box-shadow:0 0 2px #000}
+.cross:before{left:7px;top:0;width:2px;height:16px}.cross:after{top:7px;left:0;height:2px;width:16px}
+.slider{position:fixed;z-index:5;bottom:calc(16px + var(--sb));left:50%;transform:translateX(-50%);width:min(520px,calc(100vw - 32px));background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:8px 12px;display:flex;flex-direction:column;gap:4px}
+.slider .lb{display:flex;justify-content:space-between;font-size:12px;font-weight:900}
+.slider input[type=range]{width:100%;accent-color:var(--gold);height:30px;direction:ltr}
+.slider label{display:flex;gap:6px;align-items:center;font-size:12.5px;font-weight:800}
+.joy{position:fixed;z-index:6;left:0;top:0;width:120px;height:120px;border-radius:50%;border:2px solid #ffffff60;background:#ffffff14;pointer-events:none}
+.joy i{position:absolute;left:35px;top:35px;width:50px;height:50px;border-radius:50%;background:#ffffffa0;box-shadow:0 2px 8px #0006}
+.hint{position:fixed;z-index:4;bottom:calc(14px + var(--sb));inset-inline-end:calc(14px + var(--sl));font-size:11.5px;font-weight:800;color:#e6ecff;text-shadow:0 1px 3px #000;max-width:260px;pointer-events:none;line-height:1.45}
+/* panneaux */
+.sheet{position:fixed;z-index:8;inset-inline:0;bottom:0;max-height:62vh;overflow-y:auto;background:var(--panel2);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);border-radius:20px 20px 0 0;padding:14px calc(16px + var(--sr)) calc(16px + var(--sb)) calc(16px + var(--sl));user-select:text;-webkit-user-select:text;touch-action:pan-y}
+@media(min-width:900px){.sheet{inset-inline-end:auto;inset-inline-start:calc(70px + var(--sr));top:calc(70px + var(--st));bottom:auto;width:400px;max-height:calc(100vh - 100px);border:1px solid var(--line);border-radius:20px}}
+.sheet h2{margin:2px 0 4px;font-size:21px;line-height:1.25}
+.sheet .x{position:absolute;inset-inline-end:10px;top:10px;width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:#ffffff10;font-size:18px}
+.sheet p{margin:6px 0;line-height:1.6;font-size:14.5px}
+.la{font-family:'Times New Roman',Georgia,serif;letter-spacing:.06em;color:#ffb9cf;direction:ltr;unicode-bidi:isolate}
+.cert{display:inline-block;font-size:11.5px;font-weight:900;border-radius:999px;padding:2px 9px;color:#0b1230;margin-inline-end:6px}
+.cert.attested{background:var(--att)}.cert.probable{background:var(--prob)}.cert.hypothetical{background:var(--hyp);color:#fff}.cert.modern{background:#8fa3ff}.cert.error{background:var(--bad);color:#fff}
+.srcs{font-size:12.5px;color:var(--soft);border-top:1px dashed var(--line);padding-top:8px;margin-top:8px;line-height:1.55}
+.srcs a{color:var(--mint)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:46px;border-radius:13px;border:0;background:var(--gold);color:#1c1f45;font-weight:900;font-size:15px;padding:9px 14px;box-shadow:0 3px 0 #b98a2e}
+.btn.alt{background:#1d2a56;color:#fff;border:1px solid var(--line);box-shadow:none}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.opts{display:grid;gap:7px;margin-top:8px}
+.opts button{min-height:48px;border-radius:13px;border:1px solid var(--line);background:#1d2a56;font-weight:850;font-size:15px;text-align:start;padding:8px 12px}
+.opts button.good{background:var(--ok)}.opts button.bad{background:var(--bad)}
+.mlist{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.mlist button{display:flex;gap:10px;align-items:center;text-align:start;min-height:58px;border-radius:14px;border:1px solid var(--line);background:#1b2757;padding:9px 12px}
+.mlist button .i{font-size:24px}.mlist button b{display:block;font-size:15px}.mlist button small{color:var(--soft);font-size:12.5px}
+.mlist button.done{border-color:var(--ok)}
+textarea{width:100%;min-height:110px;border-radius:12px;border:1px solid var(--line);background:#0b1430;padding:10px;font-size:15.5px;line-height:1.55;resize:vertical}
+.kp{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.kp label{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;border-radius:11px;border:1px solid var(--line);background:#121c46;line-height:1.45;font-size:14px}
+.kp input{width:20px;height:20px;flex:none;accent-color:var(--ok)}
+.set{display:flex;flex-direction:column;gap:12px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{min-height:42px;border-radius:11px;padding:7px 12px;border:1px solid var(--line);background:#18244f;font-weight:850}
+.seg button[aria-pressed=true]{background:var(--mint);color:#123b48}
+.toast{position:fixed;z-index:9;left:50%;top:calc(120px + var(--st));transform:translateX(-50%);background:var(--ok);color:#fff;font-weight:900;border-radius:14px;padding:10px 16px;box-shadow:0 6px 18px #0008;max-width:calc(100vw - 30px);text-align:center}
+/* chargement */
+#load{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:radial-gradient(ellipse at 30% 0,#2c3f9c,transparent 55%),#0b1230;padding:20px}
+#load .box{width:min(420px,100%);text-align:center}
+#load h1{font-size:26px;margin:6px 0}
+#load p{color:var(--soft);font-size:14px;line-height:1.5;margin:6px 0}
+.bar{height:12px;border-radius:12px;background:#1a2552;overflow:hidden;margin:14px 0 6px;direction:ltr}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--gold));transition:width .2s}
+#loadStep{font-size:12.5px;color:var(--soft);font-variant-numeric:tabular-nums}
+.pause{position:fixed;inset:0;z-index:15;display:grid;place-items:center;background:#0b1230b0}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div class="cross" id="cross" hidden></div>
+<div class="joy" id="joy" hidden><i id="knob"></i></div>
+
+<div class="hud top">
+  <a class="rb" id="back" href="architecture.html" aria-label="חזרה">↩</a>
+  <div class="title"><b id="monName"></b><span class="era" id="eraBadge"><i></i><span id="eraTxt"></span></span><span class="prog" id="prog"></span></div>
+  <button type="button" class="rb" id="btnSet" aria-label="הגדרות">⚙️</button>
+</div>
+<div class="mapbox" id="mapbox"><canvas id="mini" width="236" height="236"></canvas></div>
+<div class="side" id="side">
+  <button type="button" class="rb" id="btnEra"><span>🕰️<small id="lEra">תקופה</small></span></button>
+  <button type="button" class="rb" id="btnCmp" aria-pressed="false"><span>🔀<small id="lCmp">השוואה</small></span></button>
+  <button type="button" class="rb" id="btnMis"><span>🎯<small id="lMis">משימה</small></span></button>
+  <button type="button" class="rb" id="btnInfo"><span>ℹ️<small id="lInfo">מידע</small></span></button>
+  <button type="button" class="rb" id="btnFly" aria-pressed="false"><span>🦅<small id="lFly">מעוף</small></span></button>
+</div>
+<div class="obj" id="obj" hidden></div>
+<div class="slider" id="cmp" hidden>
+  <div class="lb"><span id="cmpL"></span><span id="cmpR"></span></div>
+  <input type="range" id="cmpRange" min="0" max="100" value="50" aria-label="השוואה">
+  <label><input type="checkbox" id="ghost"> <span id="ghostTxt"></span></label>
+</div>
+<div class="hint" id="hint"></div>
+<div class="sheet" id="sheet" hidden><button type="button" class="x" id="sheetX" aria-label="סגירה">✕</button><div id="sheetBody"></div></div>
+<div class="toast" id="toast" hidden></div>
+<div class="pause" id="pause" hidden><button type="button" class="btn" id="resume">▶</button></div>
+
+<div id="load"><div class="box">
+  <div style="font-size:48px">🏛️</div>
+  <h1 id="loadTitle">קיסריה</h1>
+  <p id="loadSub"></p>
+  <div class="bar"><i id="loadBar"></i></div>
+  <div id="loadStep"></div>
+</div></div>
+
+<script src="world3d/world-core.js"></script>
+<script src="config.js"></script>
+<script src="progress.js"></script>
+<script type="module" src="world3d/app.js"></script>
+</body>
+</html>
