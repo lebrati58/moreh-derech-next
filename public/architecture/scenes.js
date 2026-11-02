@@ -2,6 +2,7 @@
 // Chaque constructeur remplit le groupe G ; les maillages étiquetés (TAGS[étiquette]) sont surlignés quand on choisit un élément.
 // Les étiquettes et positions des repères sont dans architecture/data.json (champ t / p).
 import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 // ---------- helpers ----------
 const C={lime:0xE8DFCC,lime2:0xD2C4A8,lime3:0xBFAF90,marble:0xF4F1EA,basalt:0x55535A,terra:0xB5653F,sand:0xDCC48F,water:0x4F8FA8,dark:0x2A2522,bronze:0x8C6A3A,olive:0x8E9A62,red:0x9A3B3B,blue:0x3E6E8E,wood:0x7A5A3C,straw:0xC9A35E,must:0x5A1E3A,oil:0xC9A227,mash:0x5D5A2E,grape:0x5B2A55};
 const MAT={};const mat=c=>MAT[c]||(MAT[c]=new THREE.MeshStandardMaterial({color:c,roughness:.85}));
@@ -46,6 +47,79 @@ function flowParticles(path,n,color,speed,size=.11){const pm=new THREE.MeshBasic
   const P=[];for(let i=0;i<n;i++){const s=new THREE.Mesh(pg,pm);G.add(s);P.push({s,o:i/n})}
   return t=>{for(const p of P){const d=((t*speed/L+p.o)%1)*L;const sg=segs.find(q=>d>=q.s&&d<=q.s+q.l)||segs[segs.length-1];p.s.position.copy(sg.a).lerp(sg.b,(d-sg.s)/sg.l)}}}
 
+// ---------- chapiteau corinthien (canon de Vitruve IV,1 : hauteur ≈ diamètre ; 2 couronnes de 8 feuilles d'acanthe,
+// caulicoles, volutes d'angle, hélices centrales, abaque à côtés concaves avec fleuron) ----------
+// Feuille d'acanthe : surface courbée (pointe qui se recourbe vers l'extérieur), bords à lobes, nervure centrale.
+function acanthusLeaf(w, h, curl, phi0, wrapR) {
+  const NU = 10, NV = 26, pos = [], uv = [], idx = [];
+  let y = 0, z = 0; const P = [];
+  for (let j = 0; j <= NV; j++) { const v = j / NV, phi = phi0 + curl * v * v * v; P.push([y, z, phi]); y += Math.cos(phi) * h / NV; z += Math.sin(phi) * h / NV; }
+  for (let j = 0; j <= NV; j++) {
+    const v = j / NV, [py, pz, phi] = P[j];
+    // silhouette : large à la base, pointe effilée ; 4 paires de lobes dentelés
+    let half = w / 2 * Math.pow(Math.sin(Math.PI * Math.min(.97, .12 + v * .88)), .8);
+    half *= 1 - .3 * Math.pow(Math.max(0, Math.sin(v * Math.PI * 4.5 - .4)), 6);
+    const ny = -Math.sin(phi), nz = Math.cos(phi);
+    for (let i = 0; i <= NU; i++) {
+      const u = i / NU * 2 - 1, x = u * half;
+      const off = half * .32 * u * u + w * .035 * Math.exp(-u * u * 40) - w * .02; // bords relevés + nervure
+      let X = x, Z = pz + off * nz; const Y = py + off * ny;
+      const a = X / wrapR; X = wrapR * Math.sin(a); Z += wrapR * (Math.cos(a) - 1); // épouse la corbeille
+      pos.push(X, Y, Z); uv.push(i / NU, v);
+    }
+  }
+  for (let j = 0; j < NV; j++) for (let i = 0; i < NU; i++) { const a = j * (NU + 1) + i, b = a + NU + 1; idx.push(a, b, a + 1, a + 1, b, b + 1); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeVertexNormals(); return g;
+}
+function spiral(lead, cx, cy, z, r0, th0, dir, turns, tubeR) {
+  const pts = lead.map(p => new THREE.Vector3(...p));
+  const N = 40; for (let k = 0; k <= N; k++) { const t = k / N, r = r0 * (1 - .78 * t), th = th0 + dir * t * turns * Math.PI * 2; pts.push(new THREE.Vector3(cx + Math.cos(th) * r, cy + Math.sin(th) * r, z)); }
+  return new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 70, tubeR, 6);
+}
+function corinthianCapital(x, y0, z, H, rBot, rTop, A, tag) {
+  const parts = [], rAt = yy => rBot + (rTop - rBot) * Math.min(1, Math.max(0, yy / (H * .86)));
+  const phi0 = Math.atan2(rTop - rBot, H * .86);
+  parts.push(new THREE.LatheGeometry([[rBot * .98, 0], [rBot, H * .02], [rTop * .97, H * .84], [rTop * 1.04, H * .86], [rTop * 1.04, H * .87], [0, H * .87]].map(p => new THREE.Vector2(p[0], p[1])), 40));
+  const astr = new THREE.TorusGeometry(rBot * 1.03, H * .025, 8, 40); astr.rotateX(Math.PI / 2); astr.translate(0, H * .02, 0); parts.push(astr);
+  const ring = (n, off, hgt, w, curl, yb) => { for (let i = 0; i < n; i++) { const r = rAt(yb) + .005, g = acanthusLeaf(w, hgt, curl, phi0, r); g.translate(0, yb, r); g.rotateY(off + i * Math.PI * 2 / n); parts.push(g); } };
+  ring(8, 0, H * .42, 2 * Math.PI * rBot / 8 * 1.32, 1.35, H * .03);           // 1re couronne
+  ring(8, Math.PI / 8, H * .66, 2 * Math.PI * rBot / 8 * 1.3, 1.45, H * .04);    // 2e couronne (alternée)
+  for (let f = 0; f < 4; f++) {
+    const face = [];
+    for (const s of [-1, 1]) {
+      const cx = s * rBot * .42, yTop = H * .62, zs = Math.sqrt(Math.max(0, rAt(yTop) ** 2 - cx * cx)) + .02;
+      // caulicole (tige cannelée) + nœud
+      const c = new THREE.CylinderGeometry(H * .03, H * .04, H * .16, 10); c.translate(cx, H * .54, zs - .01); face.push(c);
+      const kn = new THREE.TorusGeometry(H * .036, H * .013, 6, 14); kn.rotateX(Math.PI / 2); kn.translate(cx, yTop, zs); face.push(kn);
+      // calice : deux petites feuilles qui s'ouvrent
+      for (const t of [-1, 1]) { const l = acanthusLeaf(H * .12, H * .16, 1.6, .2, 1); l.rotateZ(-t * s * .55); l.rotateY(t * .5); l.translate(cx, yTop, zs + .01); face.push(l); }
+      // volute d'angle : monte vers l'extérieur sous la corne de l'abaque, puis s'enroule
+      const vr = H * .095, vcx = s * A * .87, vcy = H * .79, vz = A * .87;
+      face.push(spiral([[cx, yTop, zs], [s * A * .5, H * .78, (zs + vz) / 2]], vcx, vcy + 0, vz, vr, Math.PI / 2, -s, 1.6, H * .026));
+      const eye = new THREE.SphereGeometry(H * .03, 10, 8); eye.translate(vcx, vcy, vz); face.push(eye);
+      // hélice : s'enroule vers l'axe, sous le fleuron
+      const hr = H * .06, hcx = s * A * .2, hcy = H * .79, hz = rTop + .02;
+      face.push(spiral([[cx, yTop, zs], [s * A * .3, H * .76, (zs + hz) / 2]], hcx, hcy, hz, hr, Math.PI / 2, s, 1.4, H * .018));
+    }
+    for (const g of face) { g.rotateY(f * Math.PI / 2); parts.push(g); }
+  }
+  // abaque à côtés concaves (cornes aux angles) + moulure
+  const ab = new THREE.Shape(), c = A, k = A * .2, cut = A * .12;
+  ab.moveTo(-c + cut, -c); ab.quadraticCurveTo(0, -c + k, c - cut, -c); ab.lineTo(c, -c + cut); ab.quadraticCurveTo(c - k, 0, c, c - cut); ab.lineTo(c - cut, c);
+  ab.quadraticCurveTo(0, c - k, -c + cut, c); ab.lineTo(-c, c - cut); ab.quadraticCurveTo(-c + k, 0, -c, -c + cut); ab.closePath();
+  const abg = new THREE.ExtrudeGeometry(ab, { depth: H * .13, bevelEnabled: true, bevelSize: H * .012, bevelThickness: H * .012, bevelSegments: 2, curveSegments: 12 });
+  abg.rotateX(-Math.PI / 2); abg.translate(0, H * .87 + H * .012, 0); parts.push(abg);
+  // fleuron (rosette à 6 pétales) au milieu de chaque face de l'abaque
+  for (let f = 0; f < 4; f++) {
+    const zf = A - k * .5 + H * .02, yf = H * .94;
+    const core = new THREE.SphereGeometry(H * .03, 10, 8); core.translate(0, yf, zf + .01); core.rotateY(f * Math.PI / 2); parts.push(core);
+    for (let p = 0; p < 6; p++) { const pt = new THREE.SphereGeometry(H * .028, 8, 6); pt.scale(.55, 1.2, .45); pt.translate(0, H * .04, 0); pt.rotateZ(p * Math.PI / 3); pt.translate(0, yf, zf); pt.rotateY(f * Math.PI / 2); parts.push(pt); }
+  }
+  const geo = mergeGeometries(parts.map(g => { const n = g.index ? g.toNonIndexed() : g; for (const a of Object.keys(n.attributes)) if (!['position', 'normal', 'uv'].includes(a)) n.deleteAttribute(a); if (!n.attributes.normal) n.computeVertexNormals(); return n; }));
+  const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: 0xF1ECE1, roughness: .62, side: THREE.DoubleSide, shadowSide: THREE.BackSide }));
+  m.position.set(x, y0, z); return add(m, tag);
+}
+
 // ======================= BUILDERS =======================
 const BUILD={
 orders(){
@@ -68,9 +142,7 @@ orders(){
   // Corinthian
   cyl(.55,.15,6,.7,0,C.marble,"",24);cyl(.46,.12,6,.85,0,C.marble,"",24);cyl(.52,.15,6,.97,0,C.marble,"",24);
   const cs=new THREE.Mesh(new THREE.CylinderGeometry(.36,.4,4.6,20),fl.clone());cs.position.set(6,1.12+2.3,0);add(cs);
-  cyl(.56,1.0,6,5.72,0,C.marble,"acan",20,.38);
-  for(const[y,r,off]of[[5.75,.43,0],[6.1,.5,.2]])for(let i=0;i<8;i++){const a=i/8*Math.PI*2+off;const lf=box(.2,.5,.06,6+Math.cos(a)*r,y,Math.sin(a)*r,0xE9E2D2,"acan");lf.rotation.y=-a+Math.PI/2;lf.rotateX(-.35)}
-  box(1.3,.18,1.3,6,6.72,0,C.marble,"acan");box(2.4,.5,1.2,6,6.9,0,C.marble);
+  corinthianCapital(6,5.72,0,1.18,.365,.5,.65,"acan");box(2.4,.5,1.2,6,6.9,0,C.marble);
   // Arch
   const ar=extr(archShape(4.4,5.5,[{c:0,ow:2.2,sh:2.8}]),1.2,C.lime,"arcus");ar.position.set(16,0,0);
   box(.5,.55,1.3,16,3.6,0,C.lime3,"key");
