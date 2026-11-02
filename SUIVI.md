@@ -23,9 +23,25 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | Bibliothèque communautaire | ⛔ | exécuter `supabase/community_quizzes.sql` et `community_documents.sql` |
 | **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 58 fiches, monuments modélisés en détail, mode cinéma + vidéo, plan 2D, quiz 3D éteints (phase 2) |
 | **Frise + quiz d'histoire « ציר הזמן והחידון »** | ✅ test navigateur S24 + ordinateur | `history.html` — 48 événements, 7 périodes, quiz chronométré (voir §2, 27 octobre) |
+| **Architecture classique 3D « אדריכלות קלאסית »** | ✅ test navigateur S24 + ordinateur | `architecture.html` — 14 maquettes, 162 termes, jeu de zihouï, 83 questions ouvertes |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
+
+### 2 novembre 2026 — « הדרכת דרך — מדריך באוטובוס » : audit, plan et prototype Savidor → Jérusalem (branche `feat/hadrachat-derech`)
+- ✅ Audit, API (conditions Google : pas de contenu Routes/Places sur une carte non-Google, pas d'IA sur Street View), coûts (0 $ Google sous les plafonds), plan, base et interface : **`docs/HADRACHAT_DERECH_plan.md`**.
+- ✅ `public/hadracha-engine.js` : `trigger_point` calculé depuis la durée du texte et la vitesse, `observation_point` ≠ passage, versions courtes, pas d'explication tardive, conflits sans chevauchement, lieu invisible (tunnel). Tests : `tests/hadracha.test.mjs` (9).
+- ✅ `content/hadracha/savidor-jerusalem.src.json` : 15 lieux, sources du Drive typées (verbatim סיור 01, feuilles סיפור דרך סיור 5 et ירושלים, notes, IA), textes hébreux complets + courts + retour. Build OSRM/Wikipédia par `.github/workflows/hadracha.yml` → 62,2 km, routes 20 puis 1 ; 9 côtés du prof sur 9 confirmés par le calcul.
+- 🟡 Tout est « estimé » : aucune visibilité vérifiée. Corridor **partiellement analysé**. `supabase/hadracha_draft.sql` : brouillon non exécuté.
+- ✅ Phase 2 bis : page `hadracha.html` (aperçu seulement : `?preview=1`, non liée depuis l'accueil, `noindex`) — simulation 30–110 km/h ×1/×4/×10, GPS (`gps-engine.js`), mode manuel « הבא », מצב לימוד / תרגול (texte masqué puis révélé), voix hébraïque du téléphone si disponible, repérage « 👁️ רואים / 🚫 לא רואים » stocké dans le téléphone + export. Test navigateur `tests/hadracha-browser.mjs` (33 vérifications, S24 + ordinateur).
+- ⛔ Cloudflare Workers Builds échoue sur toutes les branches, `main` comprise (déjà avant cette session) — à regarder dans le tableau de bord Cloudflare.
+- ⏳ Lionel : tester la simulation à la maison, puis faire le repérage pendant une sortie vers Jérusalem (après fusion, ou via l'aperçu).
+
+### 31 octobre 2026 — Architecture classique en 3D (« אדריכלות קלאסית »)
+- ✅ Demande de Lionel : « une photo 3D de tout ce qui concerne l'architecture et les noms qu'ils donnent », pas seulement Jérusalem (Beit Shean, pressoirs…), adaptée au jeu, et des questions améliorées. Termes tirés du Drive (leçon 4 du Dr Miron + sorties 5, 6, 16, 19).
+- ✅ `architecture.html` : 14 maquettes, 162 éléments (hébreu + latin), jeu de zihouï en 3 types de manches, 83 questions ouvertes de type examen, banque ; points dans « המסע שלי ». Lien sur l'accueil (4 langues).
+- ✅ Tests : `tests/architecture.test.mjs` (5) et `tests/architecture-browser.mjs` (S24 + ordinateur). Les 53 échecs de `npm test` liés à Postgres existaient déjà avant (identiques avec et sans ce changement).
+- ⏳ La גת : aucun document du cours trouvé — contenu général à valider. Maquettes schématiques (pas de restitution exacte d'un site). Page en hébreu seulement, comme les autres pages de jeu.
 
 ### 28–29 octobre 2026 — Généraliser la route 67 à tous les סיורים (« סיפורי דרך »)
 - ✅ **Audit Drive** : 23 dossiers (le n° 23 est apparu le 28/10), audio dans 20 d'entre eux (≈ 7,5 Go). Les `.docx` placés à côté des MP3 sont des **transcriptions ivrit.ai**, illisibles dans l'aperçu Drive. Les « Copy of … סיפור דרך » ajoutés le 28/10 sont soit des transcriptions brutes (01, 03), soit des **réécritures IA enrichies** (06, 09, 15, 17, 20, 22), soit des notes ou exercices d'élèves (02, 19). Tout est classé dans `content/tours/registry.json`.

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="אדריכלות קלאסית בתלת-ממד — 14 דגמים, 162 מונחים (עברית ולטינית), משחק זיהוי ו-83 שאלות פתוחות כמו במבחן">
+<title>🏛️ אדריכלות קלאסית — Moreh Derech NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/jsm/"}}</script>
+<style>
+/* Tokens du jeu (history.html / journey.html) : fond nuit, cartes indigo, or, menthe. */
+:root{--bg:#0b1230;--bg2:#09112b;--card:#151f4a;--card2:#1b2757;--line:#3d5190;--line2:#4c5e9a;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--gold2:#f0b44c;--mint:#6ee9cf;--red:#ff8f8f;--ok:#18aa7b;--bad:#d85660;--mid:#f0b44c;--porph:#e0607e;
+  --safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);--safe-l:env(safe-area-inset-left,0px);--safe-r:env(safe-area-inset-right,0px)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 0 0,#2c3f9c 0,transparent 46%),radial-gradient(ellipse at 100% 38%,#5a2b5f 0,transparent 42%),var(--bg2);background-attachment:fixed;color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+a{color:inherit}button,input,textarea,select{font:inherit;color:inherit}button{cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.shell{max-width:1100px;margin:auto;padding:0 calc(14px + var(--safe-r)) calc(40px + var(--safe-b)) calc(14px + var(--safe-l))}
+.la{font-family:'Times New Roman',Georgia,serif;letter-spacing:.06em;direction:ltr;unicode-bidi:isolate}
+
+.top{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:calc(12px + var(--safe-t)) 0 10px;flex-wrap:wrap}
+.mini{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900;letter-spacing:.5px;text-decoration:none}
+.mini img{height:44px;width:44px;object-fit:contain;border-radius:12px;background:#fff;box-shadow:0 3px 0 #040717}
+.links{display:flex;gap:7px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:5px;min-height:44px;color:#fff;text-decoration:none;font-size:13px;font-weight:800;padding:9px 11px;border-radius:12px;background:#1d2a56;border:1px solid var(--line2)}
+.chip.me{background:linear-gradient(120deg,#6a4a00,#3a2f99);border-color:var(--gold)}
+
+.tabs{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:4px calc(-14px - var(--safe-r)) 0 calc(-14px - var(--safe-l));padding:8px calc(14px + var(--safe-r)) 8px calc(14px + var(--safe-l));background:#0b1432f2;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #45578d}
+.tabs a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;border-radius:14px;text-decoration:none;font-weight:900;font-size:15px;background:#172750;border:1px solid #4f62a0;color:#dee8ff;text-align:center;line-height:1.15;padding:4px}
+.tabs a[aria-current=page]{background:var(--mint);color:#123b48;border-color:#a7fff0;box-shadow:0 4px 0 #1b8b78}
+
+.hero{border-radius:24px;position:relative;overflow:hidden;padding:18px 18px 16px;margin-top:14px;background:linear-gradient(115deg,#8a3f6c,#4a3fb8 55%,#2277bb);border:1px solid #ffb3d380;box-shadow:0 7px 0 #070c26}
+.eyebrow{font-size:11px;letter-spacing:3px;color:#ffe49b;font-weight:1000}
+.hero h1{font-size:clamp(25px,6.5vw,38px);margin:4px 0;line-height:1.15}
+.hero p{font-size:14px;line-height:1.5;margin:0;color:#ffeefc;max-width:620px}
+@media(max-width:700px){.hero{padding:13px 14px 12px}.hero p{display:none}.hero h1{font-size:24px}.stats{margin-top:8px}.stats span{font-size:12px;padding:4px 9px}}
+body:not([data-view=explore]) .hero{display:none}
+.hero .art{position:absolute;inset-inline-start:14px;bottom:4px;font-size:58px;opacity:.45}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.stats span{background:#0b123066;border:1px solid #ffffff33;border-radius:999px;padding:6px 11px;font-size:13px;font-weight:800}
+
+/* sélecteur de maquettes */
+.groups{display:flex;flex-direction:column;gap:8px;margin:14px 0 10px}
+@media(max-width:700px){.groups{flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:10px;margin:10px calc(-14px - var(--safe-r)) 8px calc(-14px - var(--safe-l));padding:0 calc(14px + var(--safe-r)) 0 calc(14px + var(--safe-l))}.groups::-webkit-scrollbar{display:none}.grp{flex:none}.srow{overflow:visible}}
+.grp{display:flex;gap:8px;align-items:center;min-width:0}
+.grp>b{flex:none;width:96px;font-size:12.5px;color:var(--soft);font-weight:900}
+.srow{display:flex;gap:7px;overflow-x:auto;padding:2px 1px 4px;scrollbar-width:none;overscroll-behavior-x:contain;min-width:0}
+.srow::-webkit-scrollbar{display:none}
+.srow button{flex:none;display:flex;align-items:center;gap:6px;min-height:44px;border-radius:13px;padding:7px 12px;font-size:14px;font-weight:850;background:#18244f;border:1px solid #4f62a0;color:#dbe5ff;white-space:nowrap}
+.srow button .ok{font-size:11px;color:var(--mint);font-weight:900}
+.srow button[aria-pressed=true]{background:var(--gold);color:#1c1f45;border-color:#fff;box-shadow:0 3px 0 #b98a2e}
+.srow button[aria-pressed=true] .ok{color:#1c5a3f}
+@media(max-width:700px){.grp{flex-direction:column;align-items:stretch;gap:4px}.grp>b{width:auto}}
+
+/* scène 3D */
+.stagebox{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media(min-width:900px){.stagebox{grid-template-columns:minmax(0,1fr) 360px}}
+.stage{position:relative;height:min(62vh,640px);min-height:340px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#1a2350;touch-action:none;box-shadow:0 6px 0 #050b1c}
+.playing .stage{height:min(46vh,560px);min-height:280px}
+.stage canvas{display:block;width:100%;height:100%}
+.pins{position:absolute;inset:0;pointer-events:none}
+.pin{position:absolute;left:0;top:0;pointer-events:auto;display:flex;align-items:center;gap:5px;border:0;background:none;padding:0}
+.pin b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;color:#7a2350;border:3px solid #e0607e;font:900 13px system-ui,sans-serif;box-shadow:0 2px 6px #0009;font-variant-numeric:tabular-nums}
+.pin span{display:none;background:#0b1230ee;color:#fff;font-weight:900;font-size:14px;padding:3px 9px;border-radius:8px;white-space:nowrap;border:1px solid var(--gold)}
+.pin.sel b{background:var(--gold);color:#1c1f45;border-color:#fff}
+.pin.sel span,.explore .pin:hover span{display:block}
+.pin.good b{background:var(--ok);color:#fff;border-color:#bfffe6}
+.pin.badp b{background:var(--bad);color:#fff;border-color:#ffd0d0}
+.pin.target b{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.25)}}
+.hud{position:absolute;inset-inline:10px;bottom:10px;display:flex;justify-content:space-between;align-items:end;gap:8px;pointer-events:none;font-size:12px;font-weight:800;color:#d9e2ff;text-shadow:0 1px 2px #000}
+.hud button{pointer-events:auto;min-height:40px;border-radius:11px;background:#0b1230cc;border:1px solid var(--line2);font-size:13px;font-weight:900;padding:6px 11px;text-shadow:none}
+.nogl{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--soft);font-weight:800}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;display:flex;flex-direction:column;gap:8px}
+.card h2{margin:0;font-size:24px;line-height:1.2}
+.card .meta{font-size:12px;color:var(--soft);font-weight:800;letter-spacing:.5px}
+.card p{margin:0;line-height:1.6;font-size:15px}
+.card .la{color:#ffb9cf;font-weight:700;font-size:15px}
+.where{font-size:14px;color:var(--soft);border-top:1px dashed var(--line);padding-top:8px}
+.where b{color:var(--ink)}
+.src{font-size:12.5px;color:var(--soft)}
+.src a{color:var(--mint)}
+.plist{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);max-height:380px;overflow-y:auto}
+.plist button{width:100%;display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:9px;align-items:center;text-align:start;padding:9px 12px;border:0;border-bottom:1px solid #2b3a72;background:transparent;min-height:46px}
+.plist li:last-child button{border-bottom:0}
+.plist button.sel{background:#2a2f6a}
+.plist .n{font-weight:900;color:#ff9ab9;font-variant-numeric:tabular-nums}
+.plist .h{font-weight:850}
+.plist .l{font-size:12px;color:var(--soft)}
+.plist .st{font-size:13px}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:14px;border:0;background:var(--gold);color:#1c1f45;font-weight:1000;font-size:16px;padding:10px 16px;box-shadow:0 4px 0 #b98a2e;text-decoration:none}
+.cta.alt{background:#1d2a56;color:#fff;border:1px solid var(--line2);box-shadow:0 4px 0 #050b1c}
+.cta.mint{background:var(--mint);color:#123b48;box-shadow:0 4px 0 #1b8b78}
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.btngrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+
+/* réglages */
+.set{margin-top:14px;display:flex;flex-direction:column;gap:14px}
+.set h3{margin:0 0 6px;font-size:14px;color:var(--soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{min-height:44px;border-radius:12px;padding:8px 13px;font-weight:850;background:#18244f;border:1px solid #4f62a0;color:#dbe5ff}
+.seg button[aria-pressed=true]{background:var(--mint);color:#123b48;border-color:#a7fff0}
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.mode{display:flex;flex-direction:column;gap:6px;text-align:start;padding:14px;border-radius:18px;background:linear-gradient(150deg,#222a55,#111a3d);border:2px solid #46598d;box-shadow:0 5px 0 #050b1c}
+.mode[aria-pressed=true]{border-color:var(--gold)}
+.mode .i{font-size:28px}.mode b{font-size:17px}.mode small{color:var(--soft);font-size:13px;line-height:1.45}
+
+/* jeu */
+.qbar{display:flex;align-items:center;gap:8px;justify-content:space-between;margin:12px 0 8px;font-weight:900;font-size:14px}
+.qbar .sc{color:var(--gold)}.qbar .stk{color:var(--mint)}
+.timer{height:8px;border-radius:8px;background:#1a2552;overflow:hidden;margin-bottom:10px}
+.timer i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--mint),var(--gold));transform-origin:right;}
+.prompt{border-radius:18px;padding:14px;background:linear-gradient(120deg,#3a2f99,#1b2757);border:1px solid var(--line2);margin-bottom:10px}
+.prompt small{display:block;color:#ffe49b;font-weight:900;font-size:12px;letter-spacing:1px}
+.prompt b{display:block;font-size:24px;line-height:1.25;margin-top:3px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+@media(max-width:420px){.opts{grid-template-columns:1fr}}
+.opts button{min-height:52px;border-radius:14px;border:1px solid var(--line2);background:#1d2a56;font-weight:900;font-size:16px;padding:8px 10px;text-align:center}
+.opts button.good{background:var(--ok);border-color:#bfffe6}.opts button.badp{background:var(--bad);border-color:#ffd0d0}
+.fb{border-radius:16px;padding:12px 14px;margin-top:10px;background:#0f1a40;border:1px solid var(--line)}
+.fb b{display:block;font-size:17px;margin-bottom:3px}.fb.good{border-color:var(--ok)}.fb.badp{border-color:var(--bad)}
+.fb p{margin:4px 0 0;line-height:1.55;font-size:14.5px;color:#dfe7ff}
+
+/* questions ouvertes */
+.oq{font-size:21px;font-weight:900;line-height:1.45;margin:4px 0 10px}
+textarea{width:100%;min-height:150px;border-radius:14px;border:1px solid var(--line2);background:#0f1a40;padding:12px;font-size:17px;line-height:1.6;resize:vertical}
+.kp{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.kp label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:13px;border:1px solid var(--line);background:#121c46;cursor:pointer;line-height:1.5;font-size:15.5px}
+.kp input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:var(--ok)}
+.kp label.on{border-color:var(--ok);background:#123a3a}
+.ostatic{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.ostatic li{padding:7px 11px;border-inline-start:3px solid var(--gold);background:#121c46;border-radius:8px;font-size:14.5px;line-height:1.5}
+.tag{display:inline-block;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-inline-end:6px}
+
+/* résultat */
+.big{font-size:64px;font-weight:1000;line-height:1}
+.big.good{color:var(--mint)}.big.mid{color:var(--gold)}.big.bad{color:var(--red)}
+.rev{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.rev details{border:1px solid var(--line);border-radius:13px;background:#121c46}
+.rev summary{cursor:pointer;padding:10px 12px;display:flex;gap:9px;align-items:center;list-style:none;font-weight:800}
+.rev summary::-webkit-details-marker{display:none}
+.pill{flex:none;font-size:12px;font-weight:900;border-radius:999px;padding:2px 9px;color:#fff;font-variant-numeric:tabular-nums;direction:ltr}
+.pill.good{background:var(--ok)}.pill.mid{background:#b07d1c}.pill.bad{background:var(--bad)}
+.rev .in{padding:0 12px 12px;display:flex;flex-direction:column;gap:6px}
+.mine{white-space:pre-wrap;color:var(--soft);border-inline-start:2px solid var(--line);padding-inline-start:9px;font-size:14px}
+.empty{color:var(--soft);font-size:14px}
+.foot{margin-top:24px;font-size:12.5px;color:var(--soft);line-height:1.6}
+@media (prefers-reduced-motion:reduce){.pin.target b{animation:none}}
+</style>
+</head>
+<body>
+<div class="shell" id="app">
+  <header class="top">
+    <a class="mini" href="index.html" aria-label="Moreh Derech NEXT — משחקים"><img src="assets/moreh-derech-next-driver.webp" alt="" width="44" height="44"><span>MOREH DERECH NEXT</span></a>
+    <div class="links">
+      <a class="chip me" href="journey.html">📈 המסע שלי</a>
+      <button type="button" class="chip" data-feedback>💡 רעיון/בעיה</button>
+      <a class="chip" href="index.html">⌂ משחקים</a>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="אדריכלות קלאסית">
+    <a href="#/explore" id="tabExplore">🧭 חקירה בתלת-ממד</a>
+    <a href="#/play" id="tabPlay">🎯 משחק זיהוי</a>
+    <a href="#/open" id="tabOpen">✍️ שאלות פתוחות</a>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">ARCHITECTURA · ROMA &amp; BYZANTIUM</div>
+    <h1>אדריכלות קלאסית</h1>
+    <p>מסובבים את הדגם, נוגעים במספר ולומדים את השם בעברית, את המונח הלטיני ומה לומר במבחן. אחר כך משחקים — ובסוף עונים על שאלות פתוחות כמו במבחן.</p>
+    <div class="stats" id="stats"></div>
+    <div class="art" aria-hidden="true">🏛️</div>
+  </section>
+
+  <!-- 3D partagée : déplacée dans la vue active -->
+  <div id="stageHome" hidden>
+    <div class="stage" id="stage" aria-label="דגם תלת-ממד">
+      <div class="pins" id="pins"></div>
+      <div class="hud"><span id="hudNote"></span><button type="button" id="recenter">⟲ מרכז</button></div>
+    </div>
+  </div>
+
+  <!-- חקירה -->
+  <section id="vExplore" class="explore" hidden>
+    <div class="groups" id="groups"></div>
+    <div class="stagebox">
+      <div id="slotExplore"></div>
+      <div class="side" style="display:flex;flex-direction:column;gap:10px;min-width:0">
+        <div class="card" id="detail" aria-live="polite"></div>
+        <ol class="plist" id="plist"></ol>
+        <a class="cta" id="playThis" href="#/play">🎯 לשחק בדגם הזה</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- משחק זיהוי : réglages -->
+  <section id="vPlaySet" hidden>
+    <div class="set">
+      <div><h3>דגם</h3><div class="seg" id="pScene"></div></div>
+      <div><h3>סוג המשימה</h3>
+        <div class="modes" id="pKinds">
+          <button type="button" class="mode" data-k="find" aria-pressed="true"><span class="i">👆</span><b>גע בחלק</b><small>מופיע שם — נוגעים במספר הנכון בדגם</small></button>
+          <button type="button" class="mode" data-k="name" aria-pressed="true"><span class="i">🔦</span><b>איך קוראים לו?</b><small>חלק מסומן בדגם — בוחרים את שמו</small></button>
+          <button type="button" class="mode" data-k="latin" aria-pressed="true"><span class="i">🏺</span><b>המונח הלטיני</b><small>שם בעברית — בוחרים את המונח בלטינית</small></button>
+        </div>
+      </div>
+      <div><h3>מספר שאלות</h3><div class="seg" id="pN"><button type="button" data-n="5">5</button><button type="button" data-n="10" aria-pressed="true">10</button><button type="button" data-n="15">15</button></div></div>
+      <div class="row"><button type="button" class="cta" id="pStart">▶ להתחיל</button><button type="button" class="cta alt" id="pReview" hidden>🔁 תיקון טעויות</button></div>
+      <p class="empty">25 שניות לכל שאלה · 100 נק׳ על תשובה נכונה, עד 90 על מהירות ו-20 על כל תשובה נכונה ברצף. רק התוצאה הטובה ביותר לכל חלק נכנסת לניקוד במסע שלי.</p>
+    </div>
+  </section>
+
+  <!-- משחק זיהוי : jeu -->
+  <section id="vPlay" hidden>
+    <div class="qbar"><span id="pNum"></span><span class="stk" id="pStreak"></span><span class="sc" id="pScore"></span></div>
+    <div class="timer"><i id="pTimer"></i></div>
+    <div class="prompt" id="pPrompt"></div>
+    <div id="slotPlay"></div>
+    <div class="opts" id="pOpts"></div>
+    <div class="fb" id="pFb" hidden></div>
+    <div class="row" style="margin-top:10px"><button type="button" class="cta" id="pNext" hidden>הבא ◀</button><button type="button" class="cta alt" id="pQuit">יציאה</button></div>
+  </section>
+
+  <!-- שאלות פתוחות : réglages -->
+  <section id="vOpenSet" hidden>
+    <div class="set">
+      <div><h3>נושאים</h3><div class="seg" id="oCats"></div></div>
+      <div><h3>מספר שאלות</h3><div class="seg" id="oN"><button type="button" data-n="5">5</button><button type="button" data-n="10" aria-pressed="true">10</button><button type="button" data-n="20">20</button><button type="button" data-n="all">הכול</button></div></div>
+      <div><h3>רמה</h3><div class="seg" id="oL"><button type="button" data-l="all" aria-pressed="true">הכול</button><button type="button" data-l="1">בסיס</button><button type="button" data-l="2">מתקדם</button></div></div>
+      <p class="empty" id="oPool"></p>
+      <div class="row"><button type="button" class="cta" id="oStart">▶ להתחיל מבחן</button><button type="button" class="cta alt" id="oReview" hidden>🔁 שאלות שלא הצלחתי</button><a class="cta alt" href="#/bank">📚 כל השאלות והתשובות</a></div>
+      <p class="empty">כותבים תשובה, פותחים את התשובה המלאה ומסמנים אילו נקודות הזכרתם. 75% ומעלה = שאלה שהצלחת. <span class="tag">קורס</span>= שאלה מהשאלון או מהשיעור.</p>
+    </div>
+  </section>
+
+  <section id="vOpen" hidden>
+    <div class="qbar"><span id="oNum"></span><span class="sc" id="oCat"></span></div>
+    <div class="card">
+      <div class="oq" id="oQ"></div>
+      <label class="sr" for="oAns">התשובה שלך</label>
+      <textarea id="oAns" placeholder="כתבו כאן את התשובה…"></textarea>
+      <div id="oKey" hidden><div class="meta">סמנו מה הזכרתם</div><ul class="kp" id="oKp"></ul></div>
+      <div class="row"><button type="button" class="cta mint" id="oReveal">פתיחת התשובה</button><button type="button" class="cta" id="oNext" hidden>הבא ◀</button><button type="button" class="cta alt" id="oQuit">סיום</button></div>
+    </div>
+  </section>
+
+  <section id="vBank" hidden>
+    <div class="set"><label class="sr" for="bSearch">חיפוש</label><input id="bSearch" type="search" placeholder="🔎 חיפוש: קארדו, אודוקיה, בית בד…" style="min-height:48px;border-radius:13px;border:1px solid var(--line2);background:#1a2a54;padding:0 12px;font-size:16px"></div>
+    <div class="rev" id="bank"></div>
+  </section>
+
+  <section id="vResult" hidden>
+    <div class="card" style="margin-top:14px">
+      <div class="meta" id="rKind"></div>
+      <div class="big" id="rBig"></div>
+      <p id="rTxt"></p>
+      <div class="row"><button type="button" class="cta" id="rAgain">🔄 שוב</button><button type="button" class="cta alt" id="rFix" hidden>🔁 לתקן טעויות</button><a class="cta alt" href="journey.html">📈 המסע שלי</a></div>
+      <div class="rev" id="rRev"></div>
+    </div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+<script src="architecture/arch-core.js"></script>
+<script src="config.js"></script>
+<script src="progress.js"></script>
+<script src="feedback.js" data-float="0"></script>
+<script type="module" src="architecture/app.js"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+</body>
+</html>
