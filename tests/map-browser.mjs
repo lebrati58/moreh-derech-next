@@ -54,8 +54,37 @@ await page.waitForTimeout(900);
 const places = JSON.parse(await readFile(join(ROOT, 'places.json'), 'utf8'));
 ok(places.stats.placed > 50, `places.json : ${places.stats.placed}/${places.stats.stops} étapes placées`);
 ok(await page.locator('.cluster, .pin').count() > 5, 'carte : pins/regroupements affichés');
-ok((await page.locator('#countPill').textContent()).startsWith('23 סיורים'), 'carte : 22 סיורים + מסלול 67');
+ok((await page.locator('#countPill').textContent()).startsWith('22 סיורים'), 'carte : calque חידונים seul par défaut → 22 סיורים (מסלול 67 dans son calque)');
+ok(await page.locator('.j3d-sign').count() === 0 && await page.locator('.road-label').count() === 0, 'carte lisible : ni panneaux 3D ni route 67 tant que leurs calques sont décochés');
 await shot('02-map');
+// Calques : une seule carte, on coche ce qu'on veut voir
+ok(await page.locator('#layers [data-layer]').count() === 5, 'barre des calques : חידונים, מבחן, רט״ג, 3D, 67');
+await page.click('[data-layer="exam"]'); await page.waitForFunction(() => /אתרי מבחן/.test(document.getElementById('countPill').textContent) && !/0 אתרי מבחן/.test(document.getElementById('countPill').textContent));
+const nEx = Number((await page.locator('#countPill').textContent()).match(/(\d+) אתרי מבחן/)[1]);
+ok(nEx >= 40, `calque מבחן : ${nEx} sites de l'examen (13 régions) ajoutés`);
+await page.click('[data-layer="rtg"]'); await page.waitForFunction(() => /\d+ אתרי רט״ג/.test(document.getElementById('countPill').textContent) && !/ 0 אתרי רט״ג/.test(document.getElementById('countPill').textContent));
+const rtgPlaces = JSON.parse(await readFile(join(ROOT, 'rtg/places.json'), 'utf8')).places;
+ok((await page.locator('#countPill').textContent()).includes(rtgPlaces.length + ' אתרי רט״ג'), `calque רט״ג : ${rtgPlaces.length} sites avec documents officiels`);
+await page.click('[data-layer="d3"]'); await page.waitForTimeout(600);
+ok(await page.locator('.j3d-sign').count() >= 10, 'calque 3D : panneaux « 3D » visibles même en vue pays');
+await page.click('[data-layer="road"]'); await page.waitForTimeout(300);
+ok(await page.locator('.road-label').count() === 1 && (await page.locator('#countPill').textContent()).startsWith('22 סיורים'), 'calque 67 : la route apparaît, sans gonfler le compteur des סיורים');
+await shot('02a-layers');
+// fiche d'un site de l'examen : lien vers le cartel + documents רט״ג + quiz
+const lak = rtgPlaces.find(p => p.key === 'exam:shfela:lachish') || rtgPlaces.find(p => p.kind === 'exam' && p.docs.some(d => d.fx));
+await page.evaluate(k => location.hash = '#p=' + encodeURIComponent('exam:' + k), lak.region + ':' + lak.site);
+await page.waitForSelector('#sheet.peek, #sheet.full');
+const sheetTxt = await page.locator('#sheet').textContent();
+ok(/אתגר המבחן/.test(sheetTxt) && await page.locator('#sheet a[href^="exam.html#/s/"]').count() >= 1, 'fiche מבחן : lien vers le cartel du site');
+ok(await page.locator('#sheet a[href^="rtg.html#/q/"]').count() === 1 && await page.locator('#sheet .doclist a').count() >= 1, 'fiche מבחן : חידון רט״ג + documents officiels du site');
+await shot('02c-fiche-exam');
+await page.evaluate(() => history.back()); await page.waitForTimeout(300);
+ok(JSON.parse(await page.evaluate(() => localStorage.getItem('mdl_map_layers'))).length === 5, 'calques mémorisés');
+await page.reload(); await page.waitForSelector('#loading.gone'); await page.waitForTimeout(600);
+ok(await page.locator('#layers [aria-pressed="true"]').count() === 5, 'après rechargement : les calques cochés restent cochés');
+// retour à la vue par défaut pour la suite du parcours
+for (const k of ['exam', 'rtg', 'd3', 'road']) await page.click(`[data-layer="${k}"]`);
+await page.waitForTimeout(300);
 
 // 3. Recherche → ouverture d'un סיור
 await page.fill('#q', 'מגידו');
@@ -106,7 +135,7 @@ const hdr = await page.evaluate(() => ({ top: document.getElementById('top').off
 await shot('02b-menu');
 await page.click('#moreBtn');
 const hdr2 = await page.evaluate(() => document.getElementById('top').offsetHeight);
-ok(hdr2 < 160, 'en-tête compact : ' + hdr2 + ' px (avant ≈ 250)');
+ok(hdr2 < 205, 'en-tête compact avec la barre des calques : ' + hdr2 + ' px (avant ≈ 250)');
 ok(hdr.mode, 'nom du mode affiché en entier (plus de « מ… ס… »)');
 await page.click('[data-view="map"]');
 

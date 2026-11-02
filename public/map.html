@@ -157,6 +157,14 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 @keyframes bob{50%{transform:translateY(-8px) rotate(-3deg)}}
 @media(min-width:900px){.sheet{inset-inline-start:16px;inset-inline-end:auto;margin:0;width:420px;bottom:16px;border-radius:26px;border-bottom:1px solid #5f6fc0;max-height:calc(100dvh - 190px)}.sheet.peek{transform:translateY(calc(100% + 16px - var(--peek,250px)))}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+.layers{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none;margin-inline:-12px;padding-inline:12px;padding-bottom:2px}.layers::-webkit-scrollbar{display:none}
+.lyr{flex:none;display:flex;align-items:center;gap:5px;height:34px;padding:0 11px;border-radius:30px;border:1px solid var(--line);background:#152150cc;font-size:13px;font-weight:800;white-space:nowrap;color:#aeb9e6;opacity:.85}
+.lyr[aria-pressed=true]{background:var(--c,#fff);color:#0f1740;border-color:#fff;opacity:1}
+.pin.exam{border-radius:12px;transform:rotate(0);--c:#9be3ff}.pin.exam span{transform:none;font-size:17px}.pin.exam.on{transform:scale(1.22)}
+.pin.rtg{--c:#5fd18b;border-radius:50%;transform:rotate(0)}.pin.rtg span{transform:none;font-size:17px}.pin.rtg.on{transform:scale(1.22)}
+.pin.rtg.fx{box-shadow:0 4px 0 #050a1f,0 0 0 3px #bff7d4}
+.doclist{display:grid;gap:7px;margin-top:6px}.doclist a{display:block;text-decoration:none;padding:10px 12px;border-radius:12px;background:#0f1840;border:1px solid var(--line);font-size:14px}.doclist a small{display:block;color:var(--muted);font-size:12px}
+.doclist a.g{border-inline-start:5px solid #5fd18b}
 .j3d-sign{display:flex;align-items:center;justify-content:center;width:34px;height:20px;border-radius:999px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:1.5px solid #fff6c9;box-shadow:0 2px 6px #0008;font-family:inherit;opacity:.95}
 .j3d-sign b{color:#1c1f45!important;font-size:11px;font-weight:900;line-height:1}
 </style>
@@ -186,6 +194,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
     <button type="button" class="icon-btn filt" id="filtBtn" aria-expanded="false" aria-controls="chips" aria-label="סינון לפי אזור ונושא" title="סינון">🎚️<b class="on-dot" hidden></b></button>
   </div>
   <div class="chips" id="chips" role="group" aria-label="סינון" hidden></div>
+  <div class="layers" id="layers" role="group" aria-label="מה מציגים במפה"></div>
 </header>
 
 <div id="map" role="application" aria-label="מפת ישראל עם אתרי הסיורים" dir="ltr"></div>
@@ -230,6 +239,12 @@ var level=Number(store.get('mdl_map_level'))||1;if([1,2,3].indexOf(level)<0)leve
 var LEVELS=[{n:1,icon:'🌱',label:'קל'},{n:2,icon:'⭐',label:'בינוני'},{n:3,icon:'🔥',label:'קשה'}];
 
 var catalog,places,counts,road,tours=[],filter={q:'',region:'all',theme:'all'},current=null,openStop=null,map,cluster,focusLayer,markers=[],roadLayer=null;
+/* ----- calques : une seule carte, on coche ce qu'on veut voir (le choix est mémorisé) ----- */
+var LAYERS=[{id:'quiz',icon:'🎯',label:'חידונים',c:'#ffd878'},{id:'exam',icon:'📝',label:'מבחן',c:'#9be3ff'},{id:'rtg',icon:'🌿',label:'רט״ג',c:'#5fd18b'},{id:'d3',icon:'🏛️',label:'3D',c:'#f0b44c'},{id:'road',icon:'🛣️',label:'67',c:'#ffffff'}];
+var layers={};try{(JSON.parse(store.get('mdl_map_layers')||'null')||['quiz']).forEach(function(k){layers[k]=true;});}catch(e){layers={quiz:true};}
+if(params.get('layers'))params.get('layers').split(',').forEach(function(k){layers[k]=true;});
+var examSites=null,rtgPlaces=null,examLoading=null,rtgLoading=null,signs=[];
+function on(k){return !!layers[k];}
 
 function regionColor(r){return 'var(--r-'+(r||'road')+')';}
 function norm(s){return String(s||'').toLowerCase().replace(/[֑-ׇ'"״׳\-–—,.]/g,'').replace(/\s+/g,' ').trim();}
@@ -250,10 +265,11 @@ Promise.all([MDTours.getJSON('siyurim-catalog.json'),MDTours.getJSON('places.jso
     stops:road.stops.map(function(s){return {name:s.name.he,placed:false,approx:true};}),placed:[],counts:counts.byTour.road67||{1:0,2:0,3:0,total:0},
     search:norm('67 road67 כביש מסלול זכרון יעקב יקנעם ואדי מילק '+road.stops.map(function(s){return s.name.he;}).join(' '))});
   mergeCommunity(r[5]);
-  buildChips();syncTop();initMap();render();renderMode();
-  setInterval(function(){MDCommunity.list().then(function(x){mergeCommunity(x);render(false);if(current){current=find(current.id);if(current)renderSheet();}}).catch(function(){});},60000);
+  buildChips();buildLayers();syncTop();initMap();render();renderMode();ensureLayers();
+  setInterval(function(){MDCommunity.list().then(function(x){mergeCommunity(x);render(false);if(current&&!current.kind){current=find(current.id);if(current)renderSheet();}}).catch(function(){});},60000);
   var want=MDTours.normalizeTourParam(params.get('tour')||(location.hash.match(/t=([\w]+)/)||[])[1]);
   if(want&&want!=='all'&&find(want))openTour(want,{replace:true});
+  var wp=(location.hash.match(/p=([^&]+)/)||[])[1];if(wp)openPlaceKey(decodeURIComponent(wp),{replace:true});
   $('loading').classList.add('gone');
 })
 .catch(function(e){$('loading').innerHTML='<div>⚠️ לא ניתן לטעון את המפה.<br><small>בדקו את החיבור לאינטרנט ונסו שוב.</small><br><br><a class="icon-btn" style="display:inline-grid;width:auto;padding:0 16px" href="index.html">→ חזרה</a></div>';console.error(e);});
@@ -276,6 +292,31 @@ function mergeCommunity(data){
 }
 function find(id){for(var i=0;i<tours.length;i++)if(tours[i].id===id)return tours[i];return null;}
 
+/* ----- calques ----- */
+function buildLayers(){
+  $('layers').innerHTML=LAYERS.map(function(l){return '<button type="button" class="lyr" data-layer="'+l.id+'" aria-pressed="'+on(l.id)+'" style="--c:'+l.c+'">'+l.icon+' '+l.label+'</button>';}).join('');
+  $('layers').addEventListener('click',function(e){var b=e.target.closest('[data-layer]');if(!b)return;var k=b.dataset.layer;layers[k]=!layers[k];
+    b.setAttribute('aria-pressed',String(!!layers[k]));store.set('mdl_map_layers',JSON.stringify(Object.keys(layers).filter(on)));
+    if(current&&current.kind&&!on(current.kind))closeSheet();
+    ensureLayers();render(true);});
+}
+// les données d'un calque ne sont chargées qu'à la première activation
+function ensureLayers(){
+  if(on('exam')&&!examSites&&!examLoading){examLoading=MDTours.getJSON('exam/regions.json').then(function(rg){
+    return Promise.all((rg.regions||[]).filter(function(r){return r.file;}).map(function(r){return MDTours.getJSON('exam/'+r.file).then(function(d){
+      return (d.sites||[]).filter(function(s){return Number.isFinite(s.lat)&&Number.isFinite(s.lon);}).map(function(s){return {kind:'exam',key:'exam:'+r.id+':'+s.id,id:'exam:'+r.id+':'+s.id,region:r.id,regionHe:r.he,emoji:r.emoji||'📝',site:s,title:s.short||s.he,lat:s.lat,lon:s.lon,
+        placed:[{name:s.short||s.he,lat:s.lat,lon:s.lon}],search:norm((s.he||'')+' '+(s.short||'')+' '+r.he+' '+(s.periods||[]).join(' '))};});}).catch(function(){return [];});}));
+  }).then(function(a){examSites=[].concat.apply([],a);render(false);}).catch(function(){examSites=[];});}
+  if(on('rtg')&&!rtgPlaces&&!rtgLoading){rtgLoading=MDTours.getJSON('rtg/places.json').then(function(j){
+    rtgPlaces=(j.places||[]).map(function(p){return {kind:'rtg',key:p.key,id:'rtg:'+p.key,p:p,title:p.short||p.he,lat:p.lat,lon:p.lon,fx:p.docs.some(function(d){return d.fx;}),
+      placed:[{name:p.short||p.he,lat:p.lat,lon:p.lon}],search:norm(p.he+' '+(p.short||'')+' '+(p.regionHe||p.tourHe||'')+' '+p.docs.map(function(d){return d.t;}).join(' '))};});
+    render(false);}).catch(function(){rtgPlaces=[];});}
+}
+function visExam(){return on('exam')&&examSites?examSites.filter(function(s){return !filter.q||s.search.indexOf(filter.q)>=0;}):[];}
+function visRtg(){return on('rtg')&&rtgPlaces?rtgPlaces.filter(function(s){return !filter.q||s.search.indexOf(filter.q)>=0;}):[];}
+function findRtg(key){return (rtgPlaces||[]).filter(function(x){return x.key===key;})[0]||null;}
+function findPlace(key){var all=(examSites||[]).concat(rtgPlaces||[]);for(var i=0;i<all.length;i++)if(all[i].key===key||all[i].id===key)return all[i];return null;}
+
 /* ----- filtres ----- */
 function buildChips(){
   var h='<label class="chip"><span aria-hidden="true">🎨</span><span class="sr">נושא</span><select id="theme"><option value="all">כל הנושאים</option>'+Object.keys(places.themes).map(function(k){return '<option value="'+k+'">'+esc(places.themes[k])+'</option>';}).join('')+'</select></label>';
@@ -295,6 +336,7 @@ $('filtBtn').addEventListener('click',function(){toggle($('filtBtn'),$('chips'))
 document.addEventListener('click',function(e){if(!$('morePanel').hidden&&!e.target.closest('#morePanel,#moreBtn'))toggle($('moreBtn'),$('morePanel'),false);});
 function filterDot(){$('filtBtn').querySelector('.on-dot').hidden=filter.region==='all'&&filter.theme==='all';}
 function visible(){return tours.filter(function(t){
+  if(t.road?!on('road'):!on('quiz'))return false;
   if(filter.region!=='all'&&t.region!==filter.region)return false;
   if(filter.theme!=='all'&&t.themes.indexOf(filter.theme)<0)return false;
   if(filter.q&&t.search.indexOf(filter.q)<0)return false;return true;});}
@@ -331,15 +373,26 @@ function drawMarkers(fit){
     m.on('click',function(){openTour(t.id,{stop:s.name});});m._tour=t.id;m._stop=s.name;markers.push(m);pts.push([s.lat,s.lon]);
     // le סיור choisi reste hors des regroupements : toutes ses étapes sont visibles et mises en avant
     if(current&&current.id===t.id){m.setZIndexOffset(1000);focusLayer.addLayer(m);}else rest.push(m);});});
+  var ex=visExam(),rt=visRtg(),rtAll=rt.length;
+  // même site dans les deux calques : une seule épingle (מבחן) avec un badge 🌿 ; la fiche réunit les deux
+  var exKeys={};ex.forEach(function(p){exKeys[p.key]=1;});rt=rt.filter(function(p){return !exKeys[p.key];});
+  ex.concat(rt).forEach(function(p){
+    var isCur=current&&current.id===p.id,cls='pin '+p.kind+(p.fx?' fx':'')+(current?(isCur?' on':' dim'):'');
+    var badge=p.kind==='exam'&&on('rtg')&&findRtg(p.key)?'<b class="pbadge g">🌿</b>':'';
+    var m=L.marker([p.lat,p.lon],{icon:L.divIcon({className:'',html:'<div class="pinwrap"><div class="'+cls+'"><span>'+(p.kind==='exam'?'📝':'🌿')+'</span></div>'+badge+'</div>',iconSize:[38,38],iconAnchor:[19,36]}),title:p.title,keyboard:true,riseOnHover:true});
+    m.on('click',function(){openPlace(p);});m._tour=p.id;markers.push(m);pts.push([p.lat,p.lon]);
+    if(isCur){m.setZIndexOffset(1000);focusLayer.addLayer(m);}else rest.push(m);});
   cluster.addLayers(rest);
+  syncSigns();
   var showRoad=roadLayer&&vis.some(function(t){return t.road;});
   if(roadLayer){if(showRoad)roadLayer.addTo(map);else map.removeLayer(roadLayer);if(showRoad)road.geometry.forEach(function(p){pts.push(p);});}
   var placedStops=vis.reduce(function(n,t){return n+t.placed.length;},0);
-  $('countPill').textContent=vis.length+' סיורים · '+placedStops+' נקודות';
+  var parts=[];if(on('quiz'))parts.push(vis.filter(function(t){return !t.road;}).length+' סיורים · '+placedStops+' נקודות');if(on('exam'))parts.push(ex.length+' אתרי מבחן');if(on('rtg'))parts.push(rtAll+' אתרי רט״ג');
+  $('countPill').textContent=parts.join(' · ')||'בחרו שכבה למעלה';
   if(fit&&pts.length&&!current)map.flyToBounds(L.latLngBounds(pts).pad(.08),viewPad({maxZoom:12,duration:.5}));
 }
 // progression de l'élève (progress.js) : 3 ⭐ = סיור en or, 1–2 ⭐ = badge, commencé = anneau
-function prog(t){var P=window.MDProgress;if(!P||t.community||t.road)return {stars:0,started:false};return {stars:P.stars(t.id),started:P.started(t.id)};}
+function prog(t){var P=window.MDProgress;if(!P||t.community||t.road||t.kind)return {stars:0,started:false};return {stars:P.stars(t.id),started:P.started(t.id)};}
 function pinIcon(t,s){var g=prog(t),cls='pin'+(current?(current.id===t.id?' on':' dim'):'')+(openStop&&current&&current.id===t.id&&openStop===s.name?' stop-on':'')+(g.stars===3?' gold':g.started?' started':'');
   var badge=g.stars?'<b class="pbadge'+(g.stars===3?' g':'')+'">'+(g.stars===3?'👑':'★'+g.stars)+'</b>':'';
   return L.divIcon({className:'',html:'<div class="pinwrap"><div class="'+cls+'" style="--c:'+(g.stars===3?'#ffd24a':regionColor(t.region))+'"><span>'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span></div>'+badge+'</div>',iconSize:[38,38],iconAnchor:[19,36]});}
@@ -353,8 +406,8 @@ var SITES_3D=[{geo:'jerusalem3d/geo.json',anchor:'temple_mount',href:'jerusalem3
 function addJerusalem3dSign(){
   // petit badge « 3D » posé À CÔTÉ du point (en haut à droite) et SOUS les épingles du quiz : il ne cache jamais une question.
   // Vue pays : seul Jérusalem ; à partir du zoom 10, tous les sites 3D.
-  var signs=[];
-  function sync(){var z=map.getZoom();signs.forEach(function(o){var show=o.always||z>=10;if(show&&!map.hasLayer(o.m))o.m.addTo(map);if(!show&&map.hasLayer(o.m))map.removeLayer(o.m);});}
+  // calque « 🏛️ תלת-ממד » coché : tous les panneaux, à tout zoom ; décoché : aucun
+  var sync=syncSigns;
   SITES_3D.forEach(function(S){
     fetch(S.geo).then(function(r){return r.ok?r.json():null;}).then(function(g){
       var a=g&&g.anchors&&g.anchors[S.anchor];if(!a)return;
@@ -365,14 +418,20 @@ function addJerusalem3dSign(){
   });
   map.on('zoomend',sync);
 }
+function syncSigns(){if(!map)return;signs.forEach(function(o){var show=on('d3');if(show&&!map.hasLayer(o.m))o.m.addTo(map);if(!show&&map.hasLayer(o.m))map.removeLayer(o.m);});}
 function render(fit){
   var vis=visible();
   $('cards').innerHTML=vis.length?vis.map(function(t){
     var c=t.counts;return '<button type="button" class="tcard" data-tour="'+t.id+'"><span class="tnum" style="--c:'+regionColor(t.region)+'">'+(t.community?'＋':(t.road?'67':Number(t.id)))+'</span><span class="tbody"><b>'+esc(t.title)+(prog(t).stars?' <em class="tstars">'+MDProgress.starText(prog(t).stars)+'</em>':'')+'</b><small>'+esc(t.stops.map(function(s){return s.name;}).join(' · '))+'</small></span><span class="tq"><strong>'+c.total+'</strong>שאלות</span></button>';}).join('')
-    :'<p class="empty">לא נמצא סיור. נסו מילה אחרת או בטלו את הסינון.</p>';
+    :'';
+  var ex=visExam(),rt=visRtg(),h='',exK={};ex.forEach(function(p){exK[p.key]=1;});rt=rt.filter(function(p){return !exK[p.key];});
+  if(ex.length)h+='<div class="sec-title">📝 אתרי אתגר המבחן</div>'+ex.map(function(p){return '<button type="button" class="tcard" data-place="'+esc(p.id)+'"><span class="tnum" style="--c:#9be3ff">📝</span><span class="tbody"><b>'+esc(p.title)+'</b><small>'+esc(p.regionHe)+(p.site.periods?' · '+esc(p.site.periods.slice(0,2).join(' · ')):'')+'</small></span></button>';}).join('');
+  if(rt.length)h+='<div class="sec-title">🌿 אתרים עם מסמכי רט״ג</div>'+rt.map(function(p){return '<button type="button" class="tcard" data-place="'+esc(p.id)+'"><span class="tnum" style="--c:#5fd18b">🌿</span><span class="tbody"><b>'+esc(p.title)+'</b><small>'+p.p.docs.length+' מסמכים'+(p.fx?' · יש חידון':'')+'</small></span></button>';}).join('');
+  $('cards').insertAdjacentHTML('beforeend',h);
+  if(!vis.length&&!ex.length&&!rt.length)$('cards').innerHTML='<p class="empty">'+(Object.keys(layers).some(on)?'לא נמצא דבר. נסו מילה אחרת או בטלו את הסינון.':'בחרו למעלה מה להציג: חידונים, מבחן, רט״ג…')+'</p>';
   if(map)drawMarkers(fit);
 }
-$('cards').addEventListener('click',function(e){var b=e.target.closest('[data-tour]');if(b)openTour(b.dataset.tour);});
+$('cards').addEventListener('click',function(e){var b=e.target.closest('[data-tour]');if(b)return openTour(b.dataset.tour);var p=e.target.closest('[data-place]');if(p)openPlaceKey(p.dataset.place);});
 document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){setView(b.dataset.view);});});
 function setView(v){document.body.classList.toggle('list-view',v==='list');document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.view===v));});store.set('mdl_map_view',v);if(v==='map'&&map)setTimeout(function(){map.invalidateSize();},50);}
 if(store.get('mdl_map_view')==='list')setView('list');
@@ -396,18 +455,56 @@ function openTour(id,opt){
   restyle();focusTour(t,opt.stop);
 }
 function focusTour(t,stop){
-  if(!map||document.body.classList.contains('list-view'))return;
+  if(!map||document.body.classList.contains('list-view')||t.kind)return;
   var gapPx=Math.min(sheet.offsetHeight,peekHeight());
   var pad={paddingTopLeft:[30,($('top').offsetHeight||140)+10],paddingBottomRight:[30,(window.innerWidth>=900?30:gapPx+30)],maxZoom:13,duration:.6};
   if(stop){var s=t.placed.filter(function(x){return x.name===stop;})[0];if(s){map.flyToBounds(L.latLngBounds([[s.lat,s.lon],[s.lat,s.lon]]).pad(.02),Object.assign({},pad,{maxZoom:14}));return;}}
   var pts=t.road?road.geometry:t.placed.map(function(s){return [s.lat,s.lon];});
   if(pts.length)map.flyToBounds(L.latLngBounds(pts),pad);
 }
+/* ----- fiche d'un site du מבחן ou d'un site רט״ג ----- */
+function openPlaceKey(key,opt){var p=findPlace(key);if(p)openPlace(p,opt);else{var w=function(){var q=findPlace(key);if(q)openPlace(q,opt);};(examLoading||Promise.resolve()).then(function(){return rtgLoading;}).then(w);}}
+function openPlace(p,opt){
+  opt=opt||{};var first=!current;current=p;openStop=null;
+  renderPlaceSheet(p);measure();setSheet(window.innerWidth>=900?'full':'peek');
+  var h='#p='+encodeURIComponent(p.id);if(location.hash!==h){if(opt.replace||!first)history.replaceState({place:p.id},'',h);else history.pushState({place:p.id},'',h);}
+  if(document.body.classList.contains('list-view'))setSheet('full');
+  restyle();
+  if(map&&!document.body.classList.contains('list-view'))map.flyToBounds(L.latLngBounds([[p.lat,p.lon],[p.lat,p.lon]]).pad(.02),{paddingTopLeft:[30,($('top').offsetHeight||140)+10],paddingBottomRight:[30,(window.innerWidth>=900?30:Math.min(sheet.offsetHeight,peekHeight())+30)],maxZoom:14,duration:.6});
+}
+function docLink(d){return '<a class="'+(d.ty==='guide'?'g':'')+'" href="rtg.html#/d/'+esc(d.id)+'">'+(d.ty==='guide'?'📗':'📄')+' '+esc(d.t)+'<small>'+esc({guide:'מדריך למדריך',brochure:'עלון',map:'מפה',activity:'פעילות',article:'מאמר',other:'מסמך'}[d.ty]||'מסמך')+(d.pages?' · עמ׳ '+d.pages.join(', '):'')+(d.fx?' · ✔ נוסחה כרטיסייה וחידון':'')+'</small></a>';}
+function renderPlaceSheet(p){
+  var isEx=p.kind==='exam',color=isEx?'#9be3ff':'#5fd18b';
+  $('sheetHead').innerHTML='<span class="tnum" style="--c:'+color+'">'+(isEx?'📝':'🌿')+'</span><div style="min-width:0"><div class="sub">'+(isEx?'אתגר המבחן · '+esc(p.regionHe):(p.p.regionHe?'רט״ג · '+esc(p.p.regionHe):'רט״ג · '+esc(p.p.tourHe||'')))+'</div><h2 id="sheetTitle">'+esc(isEx?p.site.he:p.p.he)+'</h2></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
+  var h='<div class="cta-zone">';
+  var rtgHere=isEx?findRtg(p.key):p, exHere=isEx?p:(p.p.kind==='exam'?findPlace('exam:'+p.p.region+':'+p.p.site):null);
+  var fxDoc=rtgHere&&rtgHere.p?rtgHere.p.docs.filter(function(d){return d.fx;})[0]:null;
+  if(isEx)h+='<a class="play" href="exam.html#/s/'+esc(p.region)+'/'+esc(p.site.id)+'">📝 לכרטיס האתר באתגר המבחן ←</a>';
+  if(fxDoc)h+='<a class="play'+(isEx?' alt':'')+'" href="rtg.html#/q/'+esc(fxDoc.id)+'">🌿 חידון רט״ג על האתר ←</a>';
+  if(!isEx&&exHere)h+='<a class="play alt" href="exam.html#/s/'+esc(exHere.region)+'/'+esc(exHere.site.id)+'">📝 האתר באתגר המבחן ←</a>';
+  h+='</div>';
+  if(isEx){
+    var st=p.site,labels={taught:'נלמד בכיתה',visited:'ביקרנו בשטח',material:'מופיע בחומר',unverified:'טרם אומת'};
+    h+='<div class="tags" style="margin-top:12px">'+(st.status||[]).map(function(k){return '<span class="tag">'+esc(labels[k]||k)+'</span>';}).join('')+'</div>';
+    if(st.periods&&st.periods.length)h+='<p class="notice">🕰️ '+esc(st.periods.join(' · '))+'</p>';
+    var fc=(st.facts||[]),off=fc.filter(function(f){return f.official;}).length;
+    h+='<div class="sec-title">מה יש בכרטיס</div><div class="notice">'+fc.length+' עובדות מחומר הקורס'+(off?' · מהן '+off+' ממסמכי רט״ג 🌿':'')+(st.hours?'<br>🕘 '+esc(st.hours.he||st.hours):'')+'</div>';
+    if(rtgHere&&rtgHere.p){h+='<div class="sec-title">🌿 מסמכי רט״ג על האתר · '+rtgHere.p.docs.length+'</div><div class="doclist">'+rtgHere.p.docs.slice(0,6).map(docLink).join('')+'</div>';}
+    else h+='<div class="links" style="margin-top:8px"><a href="rtg.html?q='+encodeURIComponent((st.short||st.he).replace(/\s*\(.*\)\s*/g,' ').trim())+'">🌿 לחפש מסמכי רט״ג על האתר</a></div>';
+    h+='<p class="foot">התוכן נבנה רק ממסמכי הקורס (ללא תמונות) וממסמכים רשמיים של רט״ג; מיקום: ויקיפדיה. תשובות המודל הן דוגמאות ולא פתרון רשמי.</p>';
+  }else{
+    h+='<div class="sec-title">מסמכים רשמיים של רשות הטבע והגנים · '+p.p.docs.length+'</div><div class="doclist">'+p.p.docs.slice(0,8).map(docLink).join('')+'</div>';
+    if(p.p.docs.length>8)h+='<div class="links" style="margin-top:8px"><a href="rtg.html?q='+encodeURIComponent(p.p.short||p.p.he)+'">📚 כל המסמכים בספרייה</a></div>';
+    h+='<p class="foot">הקבצים אינם מאוחסנים באפליקציה — הקישור מוביל לאתר הרשמי parks.org.il. הקישור בין מסמך לאתר נעשה אוטומטית לפי הטקסט; מסמכים שנוסחה להם כרטיסייה סומנו ✔.</p>';
+  }
+  $('sheetBody').innerHTML=h;
+  $('closeSheet').addEventListener('click',function(){closeSheet();});
+}
 function closeSheet(fromPop){
   if(!current)return;current=null;openStop=null;setSheet('closed');restyle();
-  if(!fromPop&&location.hash){if(history.state&&history.state.tour)history.back();else history.replaceState(null,'',location.pathname+location.search);}
+  if(!fromPop&&location.hash){if(history.state&&(history.state.tour||history.state.place))history.back();else history.replaceState(null,'',location.pathname+location.search);}
 }
-window.addEventListener('popstate',function(){var m=location.hash.match(/t=([\w]+)/);if(m&&find(m[1]))openTour(m[1],{replace:true});else closeSheet(true);});
+window.addEventListener('popstate',function(){var m=location.hash.match(/t=([\w]+)/),pm=location.hash.match(/p=([^&]+)/);if(m&&find(m[1]))openTour(m[1],{replace:true});else if(pm&&findPlace(decodeURIComponent(pm[1])))openPlace(findPlace(decodeURIComponent(pm[1])),{replace:true});else closeSheet(true);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(sheetState==='full'&&current)setSheet('peek');else closeSheet();}});
 $('scrim').addEventListener('click',function(){if(current)setSheet('peek');else setSheet('closed');});
 
@@ -486,9 +583,9 @@ function renderSheet(){
 }
 $('sheetBody').addEventListener('click',function(e){
   var lv=e.target.closest('[data-level]');
-  if(lv&&!lv.disabled){level=Number(lv.dataset.level);store.set('mdl_map_level',String(level));renderSheet();measure();return;}
+  if(lv&&!lv.disabled){level=Number(lv.dataset.level);store.set('mdl_map_level',String(level));if(current&&!current.kind)renderSheet();measure();return;}
   var st=e.target.closest('[data-stop]');
-  if(st){var n=st.dataset.stop;openStop=openStop===n?null:n;renderSheet();measure();if(openStop){if(sheetState!=='full')setSheet('full');}restyle();if(openStop)focusTour(current,openStop);return;}
+  if(st&&current&&!current.kind){var n=st.dataset.stop;openStop=openStop===n?null:n;renderSheet();measure();if(openStop){if(sheetState!=='full')setSheet('full');}restyle();if(openStop)focusTour(current,openStop);return;}
   var go=e.target.closest('[data-go]');if(go){openTour(go.dataset.go);}
 });
 $('sheetBody').addEventListener('click',function(e){var a=e.target.closest('a.play,.links a');if(a&&!a.target)store.set('mdl_map_level',String(level));});
@@ -507,6 +604,7 @@ $('modeChip').addEventListener('click',function(){
 
 function syncTop(){document.documentElement.style.setProperty('--top-h',$('top').offsetHeight+'px');}
 window.addEventListener('pageshow',function(e){if(e.persisted&&tours)render(false);});
+window.MDMapLayers=function(){return Object.keys(layers).filter(on);}; // pour les tests
 window.addEventListener('resize',function(){syncTop();if(current){measure();setSheet(sheetState);}});
 syncTop();
 })();
