@@ -6,6 +6,7 @@
 import { createServer } from 'node:http';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
+const NQ = JSON.parse(await (await import('node:fs/promises')).readFile(new URL('../public/world3d/sites/caesarea.json', import.meta.url), 'utf8')).questions.length; // examen : toutes les questions ouvertes
 import { chromium } from 'playwright-core';
 
 const ROOT = new URL('../public/', import.meta.url).pathname;
@@ -118,8 +119,8 @@ async function run(label, opts, mobile) {
   for (const it of items) { await pick(it.element, it.era); await page.click(`[data-c="${it.answer}"]`); await page.click('#chNext'); }
   ok((await page.evaluate(S)).mission === null, `${label} : mission chronologique accomplie (${items.length} éléments)`);
   await page.click('#btnMis'); await page.click('[data-m="exam"]');
-  for (let i = 0; i < 5; i++) { await page.fill('#exA', 'קוואה, אורכסטרה, סקנה'); await page.click('#exR'); await page.$$eval('#exK input', xs => xs.slice(0, 4).forEach(x => x.click())); if (i === 0) await page.screenshot({ path: `${OUT}/${label}-7-examen.png` }); await page.click('#exN'); }
-  ok((await page.evaluate(S)).mission === null, `${label} : examen מורה דרך (5 questions ouvertes, sans note automatique)`);
+  for (let i = 0; i < NQ; i++) { await page.fill('#exA', 'קוואה, אורכסטרה, סקנה'); await page.click('#exR'); await page.$$eval('#exK input', xs => xs.slice(0, 4).forEach(x => x.click())); if (i === 0) await page.screenshot({ path: `${OUT}/${label}-7-examen.png` }); await page.click('#exN'); }
+  ok((await page.evaluate(S)).mission === null, `${label} : examen מורה דרך (${NQ} questions ouvertes, sans note automatique)`);
   const prog = await page.evaluate(() => ({ p: window.MDProgress.archStats().points, tot: window.MDProgress.totals().points, done: Object.keys(window.MDWorldApp.state().done).length }));
   ok(prog.p > 0 && prog.tot >= prog.p && prog.done === 5, `${label} : 5/5 missions, ${prog.p} points dans « המסע שלי »`);
   ok((await page.textContent('#prog')).includes('5/5'), `${label} : indicateur de progression 5/5`);
