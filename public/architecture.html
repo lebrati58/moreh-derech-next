@@ -49,7 +49,7 @@ body:not([data-view=explore]) .hero{display:none}
 
 /* sélecteur de maquettes */
 .groups{display:flex;flex-direction:column;gap:8px;margin:14px 0 10px}
-@media(max-width:700px){.groups{flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:10px;margin:10px calc(-14px - var(--safe-r)) 8px calc(-14px - var(--safe-l));padding:0 calc(14px + var(--safe-r)) 0 calc(14px + var(--safe-l))}.groups::-webkit-scrollbar{display:none}.grp{flex:none}.srow{overflow:visible}}
+@media(max-width:700px){.groups{flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:10px;margin:10px calc(-14px - var(--safe-r)) 8px calc(-14px - var(--safe-l));padding:0 calc(14px + var(--safe-r)) 0 calc(14px + var(--safe-l))}.groups::-webkit-scrollbar{display:none}.grp{flex:none}.groups .srow{overflow:visible;overscroll-behavior-x:auto}}
 .grp{display:flex;gap:8px;align-items:center;min-width:0}
 .grp>b{flex:none;width:96px;font-size:12.5px;color:var(--soft);font-weight:900}
 .srow{display:flex;gap:7px;overflow-x:auto;padding:2px 1px 4px;scrollbar-width:none;overscroll-behavior-x:contain;min-width:0}
