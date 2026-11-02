@@ -31,7 +31,8 @@
     "build:tours": "node tools/build-tours.mjs --online",
     "tours:status": "node tools/tours-registry.mjs",
     "test:hadracha": "node --test tests/hadracha.test.mjs",
-    "build:hadracha": "node tools/build-hadracha.mjs --online"
+    "build:hadracha": "node tools/build-hadracha.mjs --online",
+    "e2e:hadracha": "node tests/hadracha-browser.mjs screens-hadracha"
   },
   "license": "UNLICENSED",
   "devDependencies": {
