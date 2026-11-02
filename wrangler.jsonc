@@ -1,11 +1,19 @@
-// Cloudflare (Workers Builds) : site 100 % statique — on publie uniquement le dossier public/.
-// Le déploiement GitHub Pages reste inchangé. Les fichiers de public/ sont tous publiés tels quels (dont rtg/).
+// Cloudflare (Workers Builds) : le site statique public/ + une petite API (/api/grade) qui appelle Claude.
+// Le déploiement GitHub Pages reste inchangé (sans l'API : le bouton « בדיקה עם קלוד » y appelle l'adresse workers.dev).
+// Secret à poser UNE FOIS dans Cloudflare › Workers › moreh-derech-next › Settings › Variables and Secrets :
+//   ANTHROPIC_API_KEY  (type Secret)      — jamais dans ce dépôt.
 {
   "name": "moreh-derech-next",
+  "main": "worker/index.mjs",
   "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "assets": {
     "directory": "./public",
-    "html_handling": "auto-trailing-slash"
-  }
+    "html_handling": "auto-trailing-slash",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  // 20 corrections par minute et par adresse (protège le coût de l'API)
+  "ratelimits": [{ "name": "GRADE_LIMIT", "namespace_id": "1001", "simple": { "limit": 20, "period": 60 } }]
 }
