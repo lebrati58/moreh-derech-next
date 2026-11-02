@@ -263,7 +263,7 @@ export function buildCaesarea(opt = {}) {
     for (let i = 0; i < N; i += 2) { const s0 = a0 + (a1 - a0) * i / N, s1 = a0 + (a1 - a0) * (i + 1) / N;
       put('ancient', 'velarium', 'linen', ringBlock(30, OUT_R - 0.6, SUM_TOP + 7.2, SUM_TOP + 7.3, s0, s1, 8)); } }
   // Proedria : rangs d'honneur au bas de la cavea, face à la scène (sièges à dossier : HYPOTHÈSE de forme).
-  { const r = IMA_R0 + ROW_D; put('ancient', 'proedria', 'marble', ringBlock(r - 0.14, r, IMA_Y0 + ROW_H, IMA_Y0 + ROW_H + 0.55, angStart(r), angEnd(r)), { collide: true }); }
+  { const r = IMA_R0 + ROW_D; for (const [a0, a1] of spans(r, gaps(r, imaStairs))) put('ancient', 'proedria', 'marble', ringBlock(r - 0.14, r, IMA_Y0 + ROW_H, IMA_Y0 + ROW_H + 0.55, a0, a1), { collide: true }); } // escaliers laissés libres
 
   // ===================== ERREURS VOLONTAIRES (mission « trouve les erreurs », cachées sinon) =====================
   { const p = pointedPortal(7, 10.5, 4, 4.6, 1.5); p.rotateY(Math.PI / 2); p.translate(OUT_R + 0.9, 0, 0); put('ancient', 'errGothic', 'stoneWarm', p, { collide: true });
