@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="robots" content="noindex">
+<meta name="description" content="הדרכת דרך — מדריך באוטובוס: ההסבר מתחיל לפני האתר, ואומר מתי להסתכל ימינה או שמאלה">
+<title>🚌 הדרכת דרך — מדריך באוטובוס</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<style>
+:root{--bg2:#09112b;--card:#151f4a;--line:#3d5190;--line2:#4c5e9a;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--gold2:#f0b44c;--mint:#6ee9cf;--red:#ff8f8f;
+  --safe-b:env(safe-area-inset-bottom,0px);--safe-t:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 0 0,#2c3f9c 0,transparent 46%),radial-gradient(ellipse at 100% 38%,#352b73 0,transparent 42%),var(--bg2);background-attachment:fixed;color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+a{color:inherit}button,select{font:inherit;color:inherit;cursor:pointer}[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
+.shell{max-width:820px;margin:auto;padding:0 14px calc(96px + var(--safe-b))}
+.top{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:calc(12px + var(--safe-t)) 0 10px;flex-wrap:wrap}
+.mini{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900;text-decoration:none}.mini img{height:44px;width:44px;border-radius:12px;background:#fff;box-shadow:0 3px 0 #040717}
+.chip{display:inline-flex;align-items:center;gap:5px;min-height:44px;text-decoration:none;font-size:13px;font-weight:800;padding:9px 11px;border-radius:12px;background:#1d2a56;border:1px solid var(--line2)}
+.hero{border-radius:22px;padding:16px 18px;margin-top:6px;background:linear-gradient(115deg,#0f6f7a,#2b3fa8 60%,#5b37b8);border:1px solid #7fe9dc80;box-shadow:0 7px 0 #070c26}
+.eyebrow{font-size:11px;letter-spacing:3px;color:#ffe49b;font-weight:1000}
+.hero h1{font-size:clamp(21px,6vw,30px);margin:4px 0;line-height:1.2}.hero p{margin:0;color:#e3ecff;font-size:14px;line-height:1.5}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:12px;box-shadow:0 5px 0 #050b1c}
+.card h2{margin:0 0 8px;font-size:17px}
+.draft{margin-top:12px;border-radius:14px;padding:11px 13px;background:#3a2a00;border:2px solid #f0b44c;color:#ffe9b8;font-size:13.5px;line-height:1.55}
+.ritem{display:flex;gap:12px;align-items:center;text-decoration:none;background:var(--card);border:1px solid var(--line);border-bottom:3px solid #2b3a73;border-radius:18px;padding:13px;margin-top:10px}
+.ritem .n{flex:none;width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:26px;background:var(--gold);color:#1c1f45}
+.ritem b{display:block;font-size:16px}.ritem small{display:block;color:var(--soft);font-size:12.5px;margin-top:2px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.seg button{min-height:46px;border-radius:13px;border:1px solid #4f62a0;background:#18244f;font-weight:900;font-size:14px;padding:6px 8px}
+.seg button[aria-pressed=true]{background:var(--mint);color:#123b48;border-color:#a7fff0}
+#map{height:min(38vh,300px);border-radius:18px;border:1px solid var(--line);margin-top:12px;background:#0d1838;z-index:1}
+.osm-dark{filter:invert(1) hue-rotate(200deg) brightness(.95) contrast(.9) saturate(.6)}
+.pin{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:1000;font-size:12px;background:#1d2a56;color:#fff;border:3px solid #ffd878;box-shadow:0 3px 0 #050a1f}
+.pin.cur{background:#ffd878;color:#1c1f45;transform:scale(1.25)}.pin.done{border-color:#6ee9cf;opacity:.55}
+.trg{width:12px;height:12px;border-radius:50%;background:#ffd878;border:2px solid #1c1f45}
+.obs{font-size:16px;filter:drop-shadow(0 2px 1px #000a)}
+.bus{font-size:26px;filter:drop-shadow(0 3px 2px #0009)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--soft);margin-top:6px}
+/* panneau « maintenant » */
+.now{margin-top:12px;border-radius:20px;padding:15px;background:#101a42;border:2px solid var(--line2);box-shadow:0 6px 0 #050b1c;min-height:150px}
+.now.intro{border-color:var(--gold)}.now.cue{border-color:var(--mint);background:#0c2a3a}.now.missed{border-color:var(--red)}
+.now .k{font-size:12px;letter-spacing:2px;font-weight:1000;color:var(--gold)}
+.now h3{margin:4px 0 6px;font-size:20px;line-height:1.3}
+.now .meta{display:flex;gap:6px;flex-wrap:wrap;font-size:12.5px;color:var(--soft)}
+.tag{display:inline-block;border-radius:999px;padding:3px 9px;border:1px solid var(--line);background:#0f1840;font-weight:800}
+.tag.warn{border-color:#f0b44c;color:#ffe2a6}.tag.nv{border-color:#ff8f8f;color:#ffd0d0}
+.say{font-size:17.5px;line-height:1.75;margin:10px 0 0}
+.say.look{color:#d8fff6}
+.side{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0 4px;padding:12px;border-radius:16px;background:var(--mint);color:#0d3540;font-size:clamp(24px,8vw,36px);font-weight:1000}
+.side.left{flex-direction:row-reverse}
+.hide{margin-top:10px;border:1px dashed var(--line2);border-radius:14px;padding:14px;text-align:center;color:var(--soft)}
+.hide button{margin-top:8px}
+.bar{height:8px;border-radius:9px;background:#22305f;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:var(--gold);width:0}
+.btn{min-height:46px;border-radius:13px;border:1px solid #4f62a0;background:#18244f;font-weight:900;font-size:14px;padding:8px 13px}
+.btn.big{background:var(--gold);color:#1c1f45;border-color:#ffe9b0}
+.btn.mint{background:var(--mint);color:#123b48;border-color:#a7fff0}
+.ctl{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:10px;font-size:13.5px;color:var(--soft)}
+.ctl label{display:flex;align-items:center;gap:8px;flex:1;min-width:220px}
+.ctl input[type=range]{flex:1;accent-color:var(--gold)}
+.status{margin-top:8px;font-size:13px;color:var(--soft);line-height:1.5}
+.status.bad{color:#ffd0d0}
+.list{display:grid;gap:7px;margin-top:8px}
+.li{display:flex;gap:10px;align-items:center;padding:9px 11px;border-radius:13px;background:#0f1840;border:1px solid var(--line);font-size:14px}
+.li .s{flex:none;font-weight:1000;min-width:62px;text-align:center;border-radius:9px;padding:3px 6px;background:#1d2a56;font-size:12.5px}
+.li.done{opacity:.45}.li.cur{border-color:var(--gold)}
+.li b{display:block}.li small{color:var(--soft);font-size:12px}
+.li .d{margin-inline-start:auto;flex:none;font-size:12.5px;color:var(--soft);text-align:end}
+.srcs{display:grid;gap:6px;margin-top:8px}
+.srcs a,.srcs div{display:block;text-decoration:none;font-size:13px;line-height:1.5;padding:8px 10px;border-radius:12px;background:#0f1840;border:1px solid var(--line)}
+details summary{cursor:pointer;font-weight:900;min-height:40px;display:flex;align-items:center}
+.scout{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.foot{font-size:12px;color:var(--soft);margin-top:14px;line-height:1.6}
+@media (min-width:760px){#map{height:340px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <a class="mini" href="index.html"><img src="assets/moreh-derech-next-logo.webp" alt="">Moreh Derech NEXT</a>
+    <a class="chip" id="back" href="#/">🗺️ מסלולים</a>
+  </header>
+  <main id="app" aria-live="off"></main>
+  <div id="live" class="sr" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></div>
+</div>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="gps-engine.js"></script>
+<script src="hadracha-engine.js"></script>
+<script src="hadracha-app.js"></script>
+<script src="tabbar.js"></script>
+</body>
+</html>
