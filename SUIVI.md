@@ -33,7 +33,9 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 - ✅ `public/hadracha-engine.js` : `trigger_point` calculé depuis la durée du texte et la vitesse, `observation_point` ≠ passage, versions courtes, pas d'explication tardive, conflits sans chevauchement, lieu invisible (tunnel). Tests : `tests/hadracha.test.mjs` (9).
 - ✅ `content/hadracha/savidor-jerusalem.src.json` : 15 lieux, sources du Drive typées (verbatim סיור 01, feuilles סיפור דרך סיור 5 et ירושלים, notes, IA), textes hébreux complets + courts + retour. Build OSRM/Wikipédia par `.github/workflows/hadracha.yml` → 62,2 km, routes 20 puis 1 ; 9 côtés du prof sur 9 confirmés par le calcul.
 - 🟡 Tout est « estimé » : aucune visibilité vérifiée. Corridor **partiellement analysé**. `supabase/hadracha_draft.sql` : brouillon non exécuté.
-- ⏳ Décisions de Lionel : valider la logique, repérage dans les deux sens, page du mode (phase 2 bis), projet Google Cloud plafonné ou non.
+- ✅ Phase 2 bis : page `hadracha.html` (aperçu seulement : `?preview=1`, non liée depuis l'accueil, `noindex`) — simulation 30–110 km/h ×1/×4/×10, GPS (`gps-engine.js`), mode manuel « הבא », מצב לימוד / תרגול (texte masqué puis révélé), voix hébraïque du téléphone si disponible, repérage « 👁️ רואים / 🚫 לא רואים » stocké dans le téléphone + export. Test navigateur `tests/hadracha-browser.mjs` (33 vérifications, S24 + ordinateur).
+- ⛔ Cloudflare Workers Builds échoue sur toutes les branches, `main` comprise (déjà avant cette session) — à regarder dans le tableau de bord Cloudflare.
+- ⏳ Lionel : tester la simulation à la maison, puis faire le repérage pendant une sortie vers Jérusalem (après fusion, ou via l'aperçu).
 
 ### 31 octobre 2026 — Architecture classique en 3D (« אדריכלות קלאסית »)
 - ✅ Demande de Lionel : « une photo 3D de tout ce qui concerne l'architecture et les noms qu'ils donnent », pas seulement Jérusalem (Beit Shean, pressoirs…), adaptée au jeu, et des questions améliorées. Termes tirés du Drive (leçon 4 du Dr Miron + sorties 5, 6, 16, 19).
