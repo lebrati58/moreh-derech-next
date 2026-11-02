@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import { initMaterials, credits } from './materials.js';
 import { buildEnvironment } from './environment.js';
 import { Player } from './player.js';
+import { loadPalette, applyOriginal, wanted, mountToggle } from '../polychromy.js';
 
 const W = window.MDWorld, P = window.MDProgress;
 const $ = id => document.getElementById(id);
@@ -88,7 +89,7 @@ async function boot() {
   player = new Player(camera, renderer.domElement, { bounds: site.bounds, height: env.height });
   player.joyEl = $('joy'); player.knobEl = $('knob'); player.wantLock = !matchMedia('(pointer:coarse)').matches;
   player.onSelect = pt => select(pt);
-  applyEra();
+  applyEra(); setupPoly();
   const sp = S.pos && S.pos.length === 3 ? S.pos : site.spawn.pos;
   player.place(sp, S.yaw ?? site.spawn.yaw, S.pitch ?? -0.05);
   setLoad(6); await frame();
@@ -98,6 +99,23 @@ async function boot() {
   applyLang(); bindUI(); minimapInit();
   renderer.setAnimationLoop(loop);
   document.body.dataset.ready = '1';
+}
+
+// ======================= צבעים מקוריים (polychromy.json) =======================
+// Seulement l'état antique : l'état actuel montre déjà la pierre telle qu'on la voit aujourd'hui. Les erreurs volontaires ne changent pas.
+let POLY = null, polyUsed = [];
+function polyKeys(m) {
+  const tag = m.userData.tag, slot = m.material && m.material.userData && m.material.userData.slot, sid = site.id;
+  if (!tag || String(tag).startsWith('err')) return [];
+  return [sid + ':' + tag, slot && sid + ':slot:' + slot, slot && 'slot:' + slot];
+}
+function applyPoly() { if (!world || !POLY) return; polyUsed = applyOriginal(world.eras.ancient, 'world3d', polyKeys, POLY.on, { clone: true }); applyEra(); POLY.refresh(); }
+function setupPoly() {
+  if (POLY) return;
+  const lang = document.documentElement.lang || 'he';
+  POLY = mountToggle($('side'), { className: 'rb', lang, label: '<span>🎨<small>' + ({ he: 'צבעים', fr: 'Couleurs', en: 'Colours' }[lang] || 'צבעים') + '</small></span>', used: () => polyUsed,
+    onChange: on => { if (on && state.era === 'present' && !state.compare) { state.era = 'ancient'; } loadPalette().then(applyPoly); } });
+  if (wanted()) loadPalette().then(() => POLY.set(true));
 }
 
 // ======================= époques =======================

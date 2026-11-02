@@ -77,6 +77,7 @@ function texPair(key, make) {
 
 // Projection de texture en coordonnées monde (fonctionne aussi pour les InstancedMesh).
 function worldProject(material, world) {
+  material.userData.worldProjected = true;
   material.onBeforeCompile = sh => {
     sh.uniforms.uWorldScale = { value: 1 / world };
     sh.vertexShader = 'uniform float uWorldScale;\n' + sh.vertexShader.replace('#include <uv_vertex>', `#include <uv_vertex>
@@ -127,6 +128,7 @@ export function stone(kind = 'ashlar', { tint = '#ffffff', rough = 0.92, bump = 
   if (matCache[key]) return matCache[key];
   const t = (KINDS[kind] || KINDS.ashlar)();
   const m = new THREE.MeshStandardMaterial({ color: tint, map: t.map, bumpMap: t.bump, bumpScale: bump, roughness: rough, metalness: 0, transparent, opacity, depthWrite: !transparent || opacity > 0.7 });
+  m.userData.kind = kind;
   return (matCache[key] = worldProject(m, t.world));
 }
 export function gold() { return matCache.gold || (matCache.gold = new THREE.MeshStandardMaterial({ color: '#e6b84d', metalness: 1, roughness: 0.28 })); }
