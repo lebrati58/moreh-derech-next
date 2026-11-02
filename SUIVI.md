@@ -28,6 +28,15 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 2 novembre 2026 — « הדרכת דרך — מדריך באוטובוס » : audit, plan et prototype Savidor → Jérusalem (branche `feat/hadrachat-derech`)
+- ✅ Audit, API (conditions Google : pas de contenu Routes/Places sur une carte non-Google, pas d'IA sur Street View), coûts (0 $ Google sous les plafonds), plan, base et interface : **`docs/HADRACHAT_DERECH_plan.md`**.
+- ✅ `public/hadracha-engine.js` : `trigger_point` calculé depuis la durée du texte et la vitesse, `observation_point` ≠ passage, versions courtes, pas d'explication tardive, conflits sans chevauchement, lieu invisible (tunnel). Tests : `tests/hadracha.test.mjs` (9).
+- ✅ `content/hadracha/savidor-jerusalem.src.json` : 15 lieux, sources du Drive typées (verbatim סיור 01, feuilles סיפור דרך סיור 5 et ירושלים, notes, IA), textes hébreux complets + courts + retour. Build OSRM/Wikipédia par `.github/workflows/hadracha.yml` → 62,2 km, routes 20 puis 1 ; 9 côtés du prof sur 9 confirmés par le calcul.
+- 🟡 Tout est « estimé » : aucune visibilité vérifiée. Corridor **partiellement analysé**. `supabase/hadracha_draft.sql` : brouillon non exécuté.
+- ✅ Phase 2 bis : page `hadracha.html` (aperçu seulement : `?preview=1`, non liée depuis l'accueil, `noindex`) — simulation 30–110 km/h ×1/×4/×10, GPS (`gps-engine.js`), mode manuel « הבא », מצב לימוד / תרגול (texte masqué puis révélé), voix hébraïque du téléphone si disponible, repérage « 👁️ רואים / 🚫 לא רואים » stocké dans le téléphone + export. Test navigateur `tests/hadracha-browser.mjs` (33 vérifications, S24 + ordinateur).
+- ⛔ Cloudflare Workers Builds échoue sur toutes les branches, `main` comprise (déjà avant cette session) — à regarder dans le tableau de bord Cloudflare.
+- ⏳ Lionel : tester la simulation à la maison, puis faire le repérage pendant une sortie vers Jérusalem (après fusion, ou via l'aperçu).
+
 ### 1er novembre 2026 — Monde 3D jouable : Césarée (branche `feature/caesarea-3d-world`, PR, non déployé)
 - ✅ Recherche d'assets : aucun modèle 3D du théâtre réutilisable légalement → théâtre modélisé dans le code à partir des publications (Frova/Weiss/theatrum.de/NEAEHL), textures et ciel CC0 Poly Haven (workflow dédié).
 - ✅ `world3d.html` : marche, collisions, vol, 2 époques alignées, comparaison/transparence, sélection avec sources et certitude, 5 missions, progression, 3 langues, qualité graphique, pause/reprise.
