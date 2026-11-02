@@ -17,12 +17,12 @@ const places = [];
 const regions = (await rd('public/exam/regions.json', { regions: [] })).regions.filter(r => r.file);
 for (const r of regions) {
   const d = await rd('public/exam/' + r.file, null); if (!d) continue;
-  for (const s of d.sites || []) places.push({ kind: 'exam', region: r.id, regionHe: r.he, id: s.id, he: s.he, short: s.short || s.he, mission: (d.missions || []).find(m => (m.slots || []).some(sl => sl.best === s.id) || (m.long || {}).best === s.id)?.id || null });
+  for (const s of d.sites || []) places.push({ kind: 'exam', region: r.id, regionHe: r.he, id: s.id, he: s.he, short: s.short || s.he, lat: s.lat, lon: s.lon, mission: (d.missions || []).find(m => (m.slots || []).some(sl => sl.best === s.id) || (m.long || {}).best === s.id)?.id || null });
 }
 const tours = await rd('public/tours/index.json', { tours: [] });
 for (const t of (tours.tours || []).filter(t => t.public)) {
   const d = await rd('public/tours/' + t.id + '.json', null);
-  for (const s of (d && d.stops) || []) places.push({ kind: 'tour', tour: t.id, tourHe: t.title, id: s.id, he: s.name || s.he, short: s.name || s.he });
+  for (const s of (d && d.stops) || []) places.push({ kind: 'tour', tour: t.id, tourHe: t.title, id: s.id, he: s.name || s.he, short: s.name || s.he, lat: s.coord && s.coord.lat, lon: s.coord && s.coord.lon });
 }
 const norm = s => String(s || '').normalize('NFC').replace(/[״"׳'`(),.:;–—-]/g, ' ').replace(/\s+/g, ' ').trim();
 const STOP = new Set(['תל', 'גן', 'הגן', 'לאומי', 'הלאומי', 'שמורת', 'שמורה', 'נחל', 'הר', 'עין', 'מצפה', 'בית', 'חורבת', 'מערת', 'כביש', 'אתר', 'העיר', 'הדרכת', 'דרך', 'הגנים', 'הטבע', 'רשות', 'פארק', 'העתיק', 'העתיקה', 'הקדומה', 'תצפית', 'המרחץ', 'הרומי', 'בקיסריה', 'ים', 'המלח', 'הכנסת', 'ישראל', 'ירושלים', 'הגדול', 'מסלול', 'שביל', 'הירדן', 'הצפוני', 'הדרומי', 'שאול', 'דוד', 'אליהו', 'המערות', 'הקשתות']);
@@ -88,10 +88,18 @@ for (const id of factIds) {
   const F = await rd('content/rtg/facts/' + id + '.json', null); if (!F) continue;
   await writeFile(new URL('public/rtg/facts/' + id + '.json', ROOT), JSON.stringify(F) + '\n');
 }
+await mkdir(new URL('public/rtg/', ROOT), { recursive: true });
+// lieux du jeu qui ont au moins un document רט״ג, avec coordonnées → calque « 🌿 רט״ג » de la carte (map.html)
+const docById = Object.fromEntries(docs.map(d => [d.id, d]));
+const placeDocs = {};
+for (const d of docs) for (const l of d.ln || []) { const k = l.k === 'exam' ? `exam:${l.region}:${l.site}` : `tour:${l.tour}:${l.stop}`; (placeDocs[k] = placeDocs[k] || []).push({ id: d.id, t: d.t, ty: d.ty, fx: d.fx || undefined, pages: l.pages }); }
+const pr = { guide: 0, brochure: 1, map: 2, activity: 3, article: 4, other: 5 };
+const mapPlaces = Object.entries(placeDocs).map(([k, ds]) => { const p = byKey[k]; if (!p || !Number.isFinite(p.lat)) return null; ds.sort((a, b) => (b.fx ? 1 : 0) - (a.fx ? 1 : 0) || (pr[a.ty] ?? 9) - (pr[b.ty] ?? 9));
+  return Object.assign({ key: k, kind: p.kind, he: p.he, short: p.short, lat: p.lat, lon: p.lon, docs: ds }, p.kind === 'exam' ? { region: p.region, regionHe: p.regionHe, site: p.id } : { tour: p.tour, tourHe: p.tourHe, stop: p.id }); }).filter(Boolean);
+await writeFile(new URL('public/rtg/places.json', ROOT), JSON.stringify({ v: 1, places: mapPlaces }) + '\n');
 const prio = { guide: 0, brochure: 1, map: 2, activity: 3, article: 4, other: 5 };
 docs.sort((a, b) => (prio[a.ty] ?? 9) - (prio[b.ty] ?? 9) || a.t.localeCompare(b.t, 'he'));
 const s = inv.summary || {};
-await mkdir(new URL('public/rtg/', ROOT), { recursive: true });
 await writeFile(new URL('public/rtg/catalog.json', ROOT), JSON.stringify({
   v: 1, built: new Date().toISOString().slice(0, 10), importDate: s.date || null,
   note: 'רשות הטבע והגנים — הקבצים אינם מאוחסנים באפליקציה; הקישור הוא לאתר הרשמי. אזורים ותקופות שסומנו ״אוטומטי״ טרם אומתו.',
