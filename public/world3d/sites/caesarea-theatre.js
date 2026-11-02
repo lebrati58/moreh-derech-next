@@ -254,6 +254,17 @@ export function buildCaesarea(opt = {}) {
     for (let x = -58; x < 88; x += 1.6) { if (rnd() < 0.18) continue; put('present', 'cityWall', 'ruin', box(1.55, 0.3 + rnd() * 1.4, 1.8, x, -0.15, WALL_Z + (rnd() - .5) * .1), { collide: true }); }
     const ts = new THREE.CylinderGeometry(5.5, 5.8, 1.3, 28); ts.translate(TOWER_X, 0.5, WALL_Z + 1); put('present', 'cityWall', 'ruin', ts, { collide: true }); }
 
+  // ===================== VELARIUM et PROEDRIA (cours : סיור 15, guide de Jorge) =====================
+  // Velarium : toiles tendues au-dessus du public pour l'ombre (spectacles à midi). Mâts au sommet de la cavea et bandes de toile :
+  // disposition HYPOTHÉTIQUE (aucun trou de mât publié en accès libre pour Césarée).
+  { const N = 14, a0 = angStart(OUT_R), a1 = angEnd(OUT_R);
+    for (let i = 0; i <= N; i++) { const a = a0 + (a1 - a0) * i / N, [x, z] = polar(OUT_R - 0.6, a);
+      const m = new THREE.CylinderGeometry(0.16, 0.22, 10, 8); m.translate(x, SUM_TOP + 5, z); put('ancient', 'velarium', 'woodOld', m); }
+    for (let i = 0; i < N; i += 2) { const s0 = a0 + (a1 - a0) * i / N, s1 = a0 + (a1 - a0) * (i + 1) / N;
+      put('ancient', 'velarium', 'linen', ringBlock(30, OUT_R - 0.6, SUM_TOP + 7.2, SUM_TOP + 7.3, s0, s1, 8)); } }
+  // Proedria : rangs d'honneur au bas de la cavea, face à la scène (sièges à dossier : HYPOTHÈSE de forme).
+  { const r = IMA_R0 + ROW_D; put('ancient', 'proedria', 'marble', ringBlock(r - 0.14, r, IMA_Y0 + ROW_H, IMA_Y0 + ROW_H + 0.55, angStart(r), angEnd(r)), { collide: true }); }
+
   // ===================== ERREURS VOLONTAIRES (mission « trouve les erreurs », cachées sinon) =====================
   { const p = pointedPortal(7, 10.5, 4, 4.6, 1.5); p.rotateY(Math.PI / 2); p.translate(OUT_R + 0.9, 0, 0); put('ancient', 'errGothic', 'stoneWarm', p, { collide: true });
     const g = half(ORCH_R - 0.4); g.translate(0, 0.045, 0); put('ancient', 'errMarble', 'sectile', g);
@@ -301,7 +312,7 @@ function materials() {
     paving: pbr('paving', { tile: 3, tint: '#efe4d0' }), rubble: pbr('rubble', { tile: 3 }), woodOld: pbr('wood', { tile: 2.5, tint: '#c79d6c' }), woodDark: pbr('wood', { tile: 2.5, tint: '#6b6157' }),
     door: pbr('wood', { tile: 1.5, tint: '#8a5a2e' }), granite: pbr('marble', { tile: 1.2, tint: '#8f8b93', roughness: .55 }), marble: pbr('marble', { tile: 0.8, tint: '#f1ede5', roughness: .6 }),
     metal: pbr('metal', { tile: 1, tint: '#41454b', metalness: 0.7, metalMap: true }), lamp, dark, black, sectile: opusSectile(), column: col, capital: pbr('plaster', { tile: 0.8, tint: '#f6f1e7', gain: 1.45 }),
-    pilate: pilateMat()
+    pilate: pilateMat(), linen: new THREE.MeshStandardMaterial({ color: '#efe3c8', roughness: 1, side: THREE.DoubleSide, transparent: true, opacity: 0.93 })
   };
 }
 function pilateMat() {
