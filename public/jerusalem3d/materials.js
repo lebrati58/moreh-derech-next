@@ -122,6 +122,7 @@ const KINDS = {
   paving: () => texPair('paving', () => ashlarCanvas({ world: 6, courses: [0.9, 1.0, 0.8], minL: 0.8, maxL: 1.6, margin: 0.0, base: [216, 204, 178], vary: 14, seed: 13, boss: false, joint: 0.02 }))
 };
 const matCache = {};
+const tagKind = (k, m) => { m.userData.kind = k; return m; };
 // Matériau pierre : type ∈ herodian | ashlar | ottoman | limestone | plaster | marble | paving ; tint = couleur multiplicatrice.
 export function stone(kind = 'ashlar', { tint = '#ffffff', rough = 0.92, bump = 0.06, transparent = false, opacity = 1 } = {}) {
   const key = [kind, tint, rough, bump, transparent, opacity].join('|');
@@ -131,10 +132,10 @@ export function stone(kind = 'ashlar', { tint = '#ffffff', rough = 0.92, bump = 
   m.userData.kind = kind;
   return (matCache[key] = worldProject(m, t.world));
 }
-export function gold() { return matCache.gold || (matCache.gold = new THREE.MeshStandardMaterial({ color: '#e6b84d', metalness: 1, roughness: 0.28 })); }
-export function bronze() { return matCache.bronze || (matCache.bronze = new THREE.MeshStandardMaterial({ color: '#b07a3f', metalness: 0.9, roughness: 0.35 })); }
-export function lead() { return matCache.lead || (matCache.lead = new THREE.MeshStandardMaterial({ color: '#8f959a', metalness: 0.35, roughness: 0.55 })); }
-export function wood() { return matCache.wood || (matCache.wood = new THREE.MeshStandardMaterial({ color: '#6b4a2f', roughness: 0.8 })); }
+export function gold() { return matCache.gold || (matCache.gold = tagKind('gold', new THREE.MeshStandardMaterial({ color: '#e6b84d', metalness: 1, roughness: 0.28 }))); }
+export function bronze() { return matCache.bronze || (matCache.bronze = tagKind('bronze', new THREE.MeshStandardMaterial({ color: '#b07a3f', metalness: 0.9, roughness: 0.35 }))); }
+export function lead() { return matCache.lead || (matCache.lead = tagKind('lead', new THREE.MeshStandardMaterial({ color: '#8f959a', metalness: 0.35, roughness: 0.55 }))); }
+export function wood() { return matCache.wood || (matCache.wood = tagKind('wood', new THREE.MeshStandardMaterial({ color: '#6b4a2f', roughness: 0.8 }))); }
 export function tiles() { // faïence bleue (Dôme du Rocher, époque ottomane)
   if (matCache.tiles) return matCache.tiles;
   const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'), r = rng(31);

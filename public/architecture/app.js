@@ -84,7 +84,7 @@ function applyPoly() {
   if (!current || !POLY) return;
   const rev = new Map(); Object.entries(current.tags).forEach(([t, ms]) => ms.forEach(m => rev.set(m, t)));
   const sid = S.scene.id;
-  polyUsed = applyOriginal(current.group, 'architecture', m => { const t = rev.get(m); return t ? [sid + ':' + t, t, sid + ':*'] : [sid + ':*']; }, POLY.on, { clone: true });
+  polyUsed = applyOriginal(current.group, 'architecture', m => { const t = rev.get(m), r = m.userData.role; return t ? [r && sid + ':' + t + ':' + r, sid + ':' + t, sid + ':*'] : [sid + ':*']; }, POLY.on, { clone: true });
   if (S.sel >= 0) highlight(S.sel); POLY.refresh();
 }
 POLY = mountToggle(document.querySelector('#stage .hudR') || document.body, { className: 'poly-btn', used: () => polyUsed, onChange: () => loadPalette().then(applyPoly) });

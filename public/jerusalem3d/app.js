@@ -525,7 +525,9 @@ function polyKeys(o) {
   let p = o, id = null, now = false; while (p) { if (p.userData && p.userData.id) { id = p.userData.id; now = !!p.userData.now; break; } p = p.parent; }
   if (!id || !now) return [];
   const kind = o.material && o.material.userData && o.material.userData.kind, per = (DATA.periods || []).find(x => x.n === period), era = per && per.era, S = 'jerusalem';
-  return [kind && S + ':' + id + ':' + kind, S + ':' + id, kind && era && S + ':' + era + ':' + kind, kind && era && 'era:' + era + ':' + kind, kind && S + ':kind:' + kind];
+  if (era === 'today') return [];
+  if (kind === 'gold' || kind === 'bronze' || kind === 'lead' || kind === 'tiles') return [S + ':' + id + ':' + kind]; // métaux et faïence : seulement si une entrée les vise
+  return [kind && era && S + ':' + id + ':' + era + ':' + kind, kind && S + ':' + id + ':' + kind, S + ':' + id, kind && era && S + ':' + era + ':' + kind, kind && era && 'era:' + era + ':' + kind, kind && S + ':kind:' + kind];
 }
 function applyPoly() { if (!world || !POLY) return; polyUsed = applyOriginal(world, 'jerusalem', polyKeys, POLY.on && realistic); POLY.refresh(); }
 function setupPoly() {

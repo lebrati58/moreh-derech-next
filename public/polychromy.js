@@ -31,6 +31,11 @@ const PATTERNS = {
     for (let y = 0; y < s; y += 6 + r() * 10) { g.strokeStyle = cols[1 + (Math.floor(r() * 2) % Math.max(1, cols.length - 1))] || cols[0]; g.globalAlpha = .45; g.lineWidth = 2 + r() * 4;
       g.beginPath(); g.moveTo(0, y); for (let x = 0; x <= s; x += 16) g.lineTo(x, y + Math.sin(x / 30 + y) * 4); g.stroke(); }
   }, 256, 1),
+  // bandes peintes alternées (moulures : oves, méandres) — colors[0] fond, puis les couleurs en alternance
+  stripes: (cols) => canvasTex((g, s) => {
+    g.fillStyle = cols[0]; g.fillRect(0, 0, s, s); const acc = cols.slice(1); if (!acc.length) return; const w = s / 8;
+    for (let i = 0; i < 8; i++) { if (i % 2) continue; g.fillStyle = acc[(i / 2) % acc.length]; g.fillRect(i * w, 0, w, s); }
+  }, 128, 1),
   // granit moucheté
   speckled: (cols, seed) => canvasTex((g, s) => {
     const r = rng(seed); g.fillStyle = cols[0]; g.fillRect(0, 0, s, s);
@@ -86,7 +91,7 @@ export function originalMaterial(entry, base) {
 // Résout une entrée pour une liste de clés dans la table `mapName` (première clé trouvée).
 export function resolve(mapName, keys) {
   if (!PAL) return null; const map = (PAL.maps || {})[mapName] || {};
-  for (const k of keys) { if (k == null) continue; const id = map[k]; if (id && PAL.entries[id]) return Object.assign({ id }, PAL.entries[id]); }
+  for (const k of keys) { if (!k || !(k in map)) continue; const id = map[k]; if (id === null) return null; /* null = garder la pierre */ if (PAL.entries[id]) return Object.assign({ id }, PAL.entries[id]); }
   return null;
 }
 
