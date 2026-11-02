@@ -28,7 +28,7 @@
     done: new Set(), cur: null, revealed: false, audio: false, follow: true, trk: null, watch: null, gps: 'off', timer: null, last: 0, wake: null };
   const pref = store.get(PREF_KEY, {});
   if (pref.kmh) S.v = pref.kmh / 3.6;
-  if (pref.mul) S.mul = pref.mul;
+  S.mul = pref.mul || 4;
 
   const getJSON = url => fetch(url, { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); });
   async function loadRoute(id) {
@@ -74,12 +74,14 @@
 
   async function showList() {
     $('back').hidden = true;
+    try { if (location.hash === '#/') sessionStorage.setItem('mdh_listed', '1'); } catch (e) {}
     const app = $('app');
     app.innerHTML = `<section class="hero"><div class="eyebrow">הדרכת דרך</div><h1>🚌 מדריך באוטובוס</h1>
       <p>ההסבר מתחיל <b>לפני</b> האתר, כדי שיהיה זמן לספר — ואז: «תסתכלו ימינה». בוחרים יעד מסבידור מרכז, כיוון, ומצב.</p></section>
       <div id="rl"><div class="card">טוען…</div></div>`;
     try { INDEX = INDEX || await getJSON('hadracha/index.json'); } catch (e) { $('rl').innerHTML = '<div class="card">לא ניתן לטעון את רשימת המסלולים.</div>'; return; }
     const rows = INDEX.routes.filter(r => r.public || PREVIEW);
+    if (rows.length === 1 && !sessionStorage.getItem('mdh_listed')) { try { sessionStorage.setItem('mdh_listed', '1'); } catch (e) {} location.replace(link(rows[0].id, { dir: 'fwd', mode: 'study' })); return; }
     $('rl').innerHTML = rows.length ? rows.map(r => `<a class="ritem" href="${link(r.id, { dir: 'fwd', mode: 'study' })}">
         <span class="n">🛣️</span><span><b>${esc(r.title)}</b><small>${r.km} ק״מ · ${r.pois} אתרים · ${r.analysis === 'analyse' ? '✅ נבדק בשטח' : r.analysis === 'partiel' ? '🟡 נבדק חלקית — נראוּת משוערת' : '⏳ לא נותח'}</small>
         ${r.public ? '' : '<small>🧪 טיוטה — תצוגה מקדימה בלבד</small>'}</span></a>`).join('')
@@ -99,53 +101,38 @@
     POIS = poisFor(S.dir);
     resetRide();
     const D = R.directions[S.dir];
+    const title = S.dir === 'fwd' ? R.title : R.title.split(' ← ').reverse().join(' ← ');
     app.innerHTML = `
-      <section class="hero"><div class="eyebrow">הדרכת דרך · ${S.dir === 'fwd' ? 'הלוך' : 'חזור'}</div><h1>${esc(D.label)}</h1>
-        <p>${esc(R.roads)} · ${(D.lengthM / 1000).toFixed(1)} ק״מ · ${POIS.length} אתרים</p></section>
-      ${R.isPublic ? '' : `<div class="draft">🧪 <b>טיוטה לבדיקה.</b> הצדדים ונקודות ההפעלה מחושבים מהתוואי; הנראוּת <b>משוערת</b> — לא נבדקה בנסיעה. ${esc(R.statusNote || '')}</div>`}
-      <div class="seg" role="group" aria-label="כיוון">
-        <button data-dir="fwd" aria-pressed="${S.dir === 'fwd'}">➡️ הלוך</button><button data-dir="rev" aria-pressed="${S.dir === 'rev'}">⬅️ חזור</button></div>
-      <div class="seg" role="group" aria-label="מצב">
-        <button data-mode="study" aria-pressed="${S.mode === 'study'}">📖 מצב לימוד</button><button data-mode="practice" aria-pressed="${S.mode === 'practice'}">🎤 תרגול הדרכה</button></div>
+      <section class="hero slim"><div class="eyebrow">🚌 מדריך באוטובוס · ${S.dir === 'fwd' ? 'הלוך' : 'חזור'}</div><h1>${esc(title)}</h1>
+        <p>${(D.lengthM / 1000).toFixed(0)} ק״מ · ${POIS.length} אתרים · ${esc(R.roads)}</p></section>
+      ${R.isPublic ? '' : `<details class="draft"><summary>🧪 טיוטה — הנראוּת עדיין משוערת</summary>${esc(R.statusNote || '')}</details>`}
+      <div class="chips" role="group" aria-label="הגדרות הנסיעה">
+        <button data-dir="${S.dir === 'fwd' ? 'rev' : 'fwd'}" class="chipb">${S.dir === 'fwd' ? '➡️ הלוך' : '⬅️ חזור'} <small>החלפה</small></button>
+        <button data-mode="${S.mode === 'study' ? 'practice' : 'study'}" class="chipb">${S.mode === 'study' ? '📖 לימוד' : '🎤 תרגול'} <small>החלפה</small></button></div>
       <section id="now" class="now" aria-live="polite"></section>
+      <div class="status" id="st"></div>
       <div id="map" role="img" aria-label="מפת המסלול"></div>
       <div class="legend"><span>🚌 האוטובוס</span><span>🟡 מתחילים לדבר</span><span>👁️ מסתכלים</span><span>① האתר</span></div>
-      <section class="card" aria-label="נסיעה">
-        <div class="seg" role="group" aria-label="תנועה" style="grid-template-columns:1fr 1fr 1fr;margin-top:0">
-          <button data-ride="sim" aria-pressed="${S.ride === 'sim'}">🧪 סימולציה</button>
-          <button data-ride="gps" aria-pressed="${S.ride === 'gps'}">📍 GPS</button>
-          <button data-ride="manual" aria-pressed="${S.ride === 'manual'}">👆 ידני</button></div>
-        <div class="ctl" id="simctl">
-          <button class="btn big" id="play">▶️ התחלה</button>
-          <button class="btn" id="restart" aria-label="מההתחלה">⏮️</button>
-          <button class="btn" id="mul">⏩ ×${S.mul}</button>
-          <label>מהירות <input type="range" id="kmh" min="30" max="110" step="5" value="${Math.round(S.v * 3.6)}"><b id="kmhv">${Math.round(S.v * 3.6)}</b> קמ״ש</label></div>
-        <div class="ctl" id="manctl" hidden><button class="btn big" id="next">⏭️ הבא</button><span>כל לחיצה מקדמת לשלב הבא: התחלת ההסבר ← «תסתכלו» ← האתר הבא.</span></div>
-        <div class="ctl"><button class="btn" id="audio" aria-pressed="${S.audio}">${S.audio ? '🔊 קריינות פועלת' : '🔈 קריינות'}</button>
-          <button class="btn" id="follow" aria-pressed="${S.follow}">${S.follow ? '🎯 המפה עוקבת' : '🗺️ מפה חופשית'}</button></div>
-        <div class="status" id="st"></div>
-      </section>
+      <section class="card"><h2>🗒️ האתרים בדרך</h2><div class="list" id="list"></div></section>
+      <section class="card"><details><summary>⚙️ הגדרות</summary>
+        <div class="ctl"><label>מהירות האוטובוס בנסיעה המדומה <input type="range" id="kmh" min="30" max="110" step="5" value="${Math.round(S.v * 3.6)}"><b id="kmhv">${Math.round(S.v * 3.6)}</b> קמ״ש</label></div>
+        <div class="ctl"><button class="btn" id="follow" aria-pressed="${S.follow}">${S.follow ? '🎯 המפה עוקבת' : '🗺️ מפה חופשית'}</button></div></details></section>
       <section class="card" id="scoutc" aria-label="סיור הכנה">
         <details><summary>🛰️ סיור הכנה — מה באמת רואים מהכביש</summary>
-          <p class="status">בנסיעה אמיתית (GPS), כשהאתר <b>מופיע</b> — לוחצים «👁️ רואים עכשיו». אם הוא מוסתר — «🚫 לא רואים». זה הופך את הנראוּת המשוערת לנראוּת שנבדקה. הנתונים נשמרים בטלפון בלבד, עד הייצוא.</p>
+          <p class="status">בנסיעה אמיתית (📍 אני באוטובוס), כשהאתר <b>מופיע</b> — לוחצים «👁️ רואים עכשיו». אם הוא מוסתר — «🚫 לא רואים». הנתונים נשמרים בטלפון בלבד, עד הייצוא.</p>
           <div class="scout"><button class="btn mint" id="seeY">👁️ רואים עכשיו</button><button class="btn" id="seeN">🚫 לא רואים</button></div>
           <div class="status" id="scoutst"></div>
           <div class="ctl"><button class="btn" id="exp">⬇️ ייצוא</button><button class="btn" id="clr">🗑️ מחיקה</button></div></details>
       </section>
-      <section class="card"><h2>🗒️ האתרים בדרך</h2><div class="list" id="list"></div></section>
       <p class="foot">תוואי: ${esc(R.route.source)}. קואורדינטות: ויקיפדיה/ויקינתונים. נקודות ההפעלה מחושבות לפי אורך ההסבר ומהירות האוטובוס (כ-2.2 מילים בשנייה). המערכת לא קובעת שאתר נראה — רק סיור בשטח קובע.</p>`;
     app.querySelectorAll('[data-dir]').forEach(b => b.onclick = () => { location.hash = link(R.id, { dir: b.dataset.dir }); });
     app.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { location.hash = link(R.id, { mode: b.dataset.mode }); });
-    app.querySelectorAll('[data-ride]').forEach(b => b.onclick = () => setRide(b.dataset.ride));
-    $('play').onclick = togglePlay; $('restart').onclick = () => { stopRide(); resetRide(); paint(true); };
-    $('mul').onclick = () => { S.mul = { 1: 4, 4: 10, 10: 1 }[S.mul] || 1; $('mul').textContent = '⏩ ×' + S.mul; savePref(); if (S.mul > 1 && S.audio) note('🔊 הקריינות מתאימה למהירות ×1.'); };
     $('kmh').oninput = e => { S.v = +e.target.value / 3.6; $('kmhv').textContent = e.target.value; savePref(); drawTriggers(); paint(true); };
-    $('next').onclick = manualNext;
-    $('audio').onclick = () => { S.audio = !S.audio; if (!S.audio) speak(null); $('audio').setAttribute('aria-pressed', S.audio); $('audio').textContent = S.audio ? '🔊 קריינות פועלת' : '🔈 קריינות'; if (S.audio && !heVoice()) note('לא נמצא קול עברי בטלפון — ייתכן שהקריינות לא תעבוד.'); };
     $('follow').onclick = () => { S.follow = !S.follow; $('follow').setAttribute('aria-pressed', S.follow); $('follow').textContent = S.follow ? '🎯 המפה עוקבת' : '🗺️ מפה חופשית'; };
     $('seeY').onclick = () => scout(true); $('seeN').onclick = () => scout(false);
     $('exp').onclick = exportScout; $('clr').onclick = () => { store.set(SCOUT_KEY, []); scoutStatus(); };
-    drawMap(); setRide(S.ride, true); scoutStatus(); paint(true);
+    S.started = false;
+    drawMap(); scoutStatus(); paint(true);
   }
   const savePref = () => store.set(PREF_KEY, { kmh: Math.round(S.v * 3.6), mul: S.mul });
   const note = t => { const e = $('st'); if (e) { e.textContent = t; e.className = 'status'; } };
@@ -186,20 +173,30 @@
     S.s = 0; S.clock = 0; S.done = new Set(); S.cur = null; S.revealed = false; S.running = false; S.gps = 'off';
     if (S.ride === 'gps') S.trk = new G.Tracker(S.dir === 'rev' ? Prev : P);
   }
-  function setRide(r, silent) {
-    stopRide(); S.ride = r;
-    document.querySelectorAll('[data-ride]').forEach(b => b.setAttribute('aria-pressed', b.dataset.ride === r));
-    if ($('simctl')) $('simctl').hidden = r !== 'sim';
-    if ($('manctl')) $('manctl').hidden = r !== 'manual';
-    if (r === 'gps') startGPS(); else if (r === 'manual') { startClock(); note('👆 מצב ידני: «הבא» מקדם בין השלבים. מתאים כשאין GPS.'); }
-    else if (!silent) note('🧪 סימולציה: האוטובוס הווירטואלי נוסע במהירות שבחרתם.');
+  // Un seul geste pour démarrer : 🏠 nasiya mdumé (×4), 📍 GPS, 👆 pas à pas
+  function start(r) {
+    stopRide(); S.ride = r; resetRide(); S.started = true;
+    if (r === 'sim') { S.running = true; startClock(); }
+    else if (r === 'gps') startGPS();
+    else { startClock(); note(''); }
     paint(true);
+    const n = $('now'); if (n && n.scrollIntoView) n.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
+  function quit() { stopRide(); resetRide(); S.started = false; note(''); paint(true); }
   function togglePlay() {
     if (S.ride !== 'sim') return;
-    if (S.running) { stopRide(); $('play').textContent = '▶️ המשך'; }
-    else { if (S.s >= LEN() - 1) resetRide(); S.running = true; startClock(); $('play').textContent = '⏸️ עצירה'; }
+    if (S.running) { S.running = false; clearInterval(S.timer); speak(null); }
+    else { if (S.s >= LEN() - 1) resetRide(); S.running = true; startClock(); }
+    paint(true);
   }
+  // ⏭️ : passer directement à l'explication du lieu suivant (simulation et GPS en arrêt)
+  function skip() {
+    if (S.ride === 'manual') return manualNext();
+    if (S.cur) finish();
+    const nx = nextUp(vEff()); if (!nx) return;
+    S.s = Math.max(S.s, nx.t.sTrig); step(); paint(true);
+  }
+  function cycleMul() { S.mul = { 1: 4, 4: 10, 10: 1 }[S.mul] || 1; savePref(); paint(true); }
   function startClock() {
     clearInterval(S.timer); S.last = performance.now();
     S.timer = setInterval(() => { const n = performance.now(), dt = Math.min(1, (n - S.last) / 1000); S.last = n; tick(dt); }, 250);
@@ -231,7 +228,7 @@
     S.clock += sdt;
     if (S.ride === 'sim' && S.running) {
       S.s = Math.min(LEN(), S.s + S.v * sdt);
-      if (S.s >= LEN()) { S.running = false; clearInterval(S.timer); $('play').textContent = '▶️ שוב'; }
+      if (S.s >= LEN()) { S.running = false; clearInterval(S.timer); }
     } else if (S.ride === 'gps' && S.trk) {
       const st = S.trk.status(Date.now());
       S.gps = st;
@@ -314,7 +311,7 @@
   function paint(force) {
     if (!$('now')) return;
     if (busM) { const ll = at(S.s); busM.setLatLng(ll); if (S.follow && (S.running || S.ride !== 'sim')) map.panTo(ll, { animate: false }); }
-    const v = vEff(), key = [S.cur && S.cur.poi.id, S.cur && S.cur.phase, S.revealed, S.mode, S.done.size, S.missed && S.missed.poi.id].join('|');
+    const v = vEff(), key = [S.started, S.ride, S.running, S.ride === 'gps' ? S.gps : '', S.mul, S.audio, S.cur && S.cur.poi.id, S.cur && S.cur.phase, S.revealed, S.mode, S.done.size, S.missed && S.missed.poi.id].join('|');
     if (force || key !== lastKey) { lastKey = key; drawNow(v); drawList(v); pins(); }
     else updateCountdown(v);
   }
@@ -340,7 +337,47 @@
   function hidden(what) {
     return S.revealed ? '' : `<div class="hide">🎤 <b>תורכם להדריך</b> — ${what}<br><button class="btn" id="reveal">👁️ להציג את הטקסט</button></div>`;
   }
+  // Panneau principal : écran de départ (un seul geste), puis le commentaire + la barre de commande
   function drawNow(v) {
+    const box = $('now');
+    if (!S.started) {
+      document.body.classList.remove('riding');
+      box.className = 'now';
+      box.innerHTML = `<div class="k">▶️ מתחילים</div><h3>איך נוסעים?</h3>
+        <div class="go">
+          <button data-start="sim"><span>🏠</span><b>נסיעה מדומה</b><small>מהבית: האוטובוס נוסע לבד, וההסברים מופיעים בזמן</small></button>
+          <button data-start="gps"><span>🚌</span><b>אני באוטובוס</b><small>ה-GPS של הטלפון מוביל את ההסברים</small></button>
+          <button data-start="manual"><span>👆</span><b>צעד אחר צעד</b><small>בלי GPS: לוחצים «הבא» בכל אתר</small></button></div>
+        <p class="status">${S.mode === 'practice' ? '🎤 מצב תרגול: הטקסט מוסתר — אתם מדריכים, ואז בודקים.' : '📖 מצב לימוד: הטקסט מוצג.'} כדי להחליף, לחצו על הכפתורים למעלה.</p>`;
+      box.querySelectorAll('[data-start]').forEach(b => b.onclick = () => start(b.dataset.start));
+      return;
+    }
+    drawNowBody(v);
+    box.insertAdjacentHTML('beforeend', controls());
+    // barre de commande fixée en bas, au-dessus de la barre d'onglets du site (absente dans l'aperçu)
+    const tb = document.querySelector('.md-tabbar'), h = tb ? tb.offsetHeight : 0;
+    document.documentElement.style.setProperty('--tb', h + 'px');
+    document.documentElement.style.setProperty('--tbpad', h ? '0px' : 'env(safe-area-inset-bottom, 0px)');
+    document.body.classList.add('riding');
+    const on = (id, f) => { const e = $(id); if (e) e.onclick = f; };
+    on('play', togglePlay); on('skip', skip); on('next', manualNext); on('mul', cycleMul); on('audio', toggleAudio); on('quit', quit);
+  }
+  function controls() {
+    const audio = `<button class="btn" id="audio" aria-pressed="${S.audio}" aria-label="קריינות">${S.audio ? '🔊' : '🔈'}</button>`;
+    const quitB = '<button class="btn" id="quit">✖️ סיום</button>';
+    if (S.ride === 'manual') return `<div class="ctrls"><button class="btn big" id="next">⏭️ הבא</button>${audio}${quitB}</div>`;
+    if (S.ride === 'gps') return `<div class="ctrls"><button class="btn" id="skip">⏭️ לאתר הבא</button>${audio}${quitB}</div>`;
+    const end = S.s >= LEN() - 1;
+    return `<div class="ctrls"><button class="btn big" id="play">${S.running ? '⏸️ עצירה' : end ? '🔁 שוב' : '▶️ המשך'}</button>
+      <button class="btn" id="skip">⏭️ לאתר הבא</button><button class="btn" id="mul" aria-label="מהירות הנסיעה המדומה">⏩ ×${S.mul}</button>${audio}${quitB}</div>`;
+  }
+  function toggleAudio() {
+    S.audio = !S.audio; if (!S.audio) speak(null);
+    if (S.audio && !heVoice()) note('לא נמצא קול עברי בטלפון — ייתכן שהקריינות לא תעבוד.');
+    else if (S.audio && S.ride === 'sim' && S.mul > 1) note('🔊 לקריינות, עדיף מהירות ×1.');
+    paint(true);
+  }
+  function drawNowBody(v) {
     const box = $('now'), prac = S.mode === 'practice';
     box.className = 'now';
     if (S.cur) {
@@ -372,7 +409,7 @@
     if (!nx) { box.innerHTML = `<div class="k">🏁 סוף המסלול</div><h3>${S.s >= LEN() - 50 ? 'הגענו' : 'אין עוד אתרים בדרך'}</h3><p class="say">${S.done.size} אתרים הוסברו.</p>`; return; }
     box.innerHTML = `<div class="k">⏳ האתר הבא</div><h3>${esc(nx.p.name.he)} · ${esc(SIDE_HE[nx.p.side] || '')}</h3>${tags(nx.p, nx.t)}
       <p class="say" id="cd2"></p><p class="status">🟡 ההסבר יתחיל ${fmtM(nx.t.leadM)} לפני האתר, כדי לסיים את ההקדמה לפני שהוא נראה.</p>
-      ${S.ride === 'manual' ? '<p class="status">👆 לחצו «הבא» כשהגעתם לנקודה הצהובה.</p>' : ''}`;
+      ${S.ride === 'manual' ? '<p class="status">👆 לחצו «הבא» כשהגעתם לנקודה הצהובה.</p>' : ''}${S.ride === 'gps' && S.gps !== 'ok' ? `<p class="status bad">${esc(GPS_MSG[S.gps] || '📍 מחפשים GPS…')} — אפשר ללחוץ ✖️ ולבחור «צעד אחר צעד».</p>` : ''}`;
     updateCountdown(v);
   }
   const nextUp = v => POIS.filter(p => !S.done.has(p.id)).map(p => ({ p, t: H.trigger(p, S.dir, v) }))

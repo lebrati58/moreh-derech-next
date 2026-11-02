@@ -36,7 +36,7 @@ const noHScroll = p => p.evaluate(() => document.documentElement.scrollWidth <= 
 // Simulation complète dans la page : on avance par pas de 0,5 s et on note où chaque explication commence et où l'on dit « regardez ».
 const ride = (page, kmh) => page.evaluate(kmh => {
   const A = window.MDHadrachaApp, S = A.state(), H = window.MDHadracha;
-  S.v = kmh / 3.6; S.mul = 1; S.running = true; S.s = 0; S.clock = 0; S.done = new Set(); S.cur = null;
+  S.started = true; S.ride = 'sim'; S.v = kmh / 3.6; S.mul = 1; S.running = true; S.s = 0; S.clock = 0; S.done = new Set(); S.cur = null;
   const log = {}; let prev = null, overlaps = 0, guard = 0;
   while (S.s < A.route().directions[S.dir].lengthM - 1 && guard++ < 20000) {
     A.tick(0.5);
@@ -44,7 +44,7 @@ const ride = (page, kmh) => page.evaluate(kmh => {
     if (c && !log[c.poi.id]) { const t = H.trigger(c.poi, S.dir, S.v); log[c.poi.id] = { start: S.s, short: c.short, sObs: t.sObs, sAbeam: c.poi.sAbeam, noLook: t.noLook, sVisEnd: t.sVisEnd }; if (prev && prev !== c.poi.id && S.cur && !S.done.has(prev)) overlaps++; prev = c.poi.id; }
     if (c && c.phase === 'look' && log[c.poi.id] && log[c.poi.id].look == null) log[c.poi.id].look = S.s;
   }
-  S.running = false;
+  S.running = false; S.started = false; A.goto(S.s);
   return { log, overlaps, n: A.pois().length, done: S.done.size };
 }, kmh);
 
@@ -54,22 +54,34 @@ const ride = (page, kmh) => page.evaluate(kmh => {
   await page.waitForSelector('#rl .card, #rl .ritem');
   ok(await page.locator('.ritem').count() === 0, 'sans ?preview=1 : le brouillon n’est pas listé');
   await page.goto(base + 'hadracha.html#/r/savidor-jerusalem?dir=fwd&mode=study');
-  await page.waitForSelector('#app .card');
+  await page.waitForFunction(() => /בבדיקה/.test(document.querySelector('#app')?.textContent || ''), null, { timeout: 5000 }).catch(() => {});
   ok(/בבדיקה/.test(await page.textContent('#app')), 'lien direct vers un brouillon sans aperçu : bloqué');
 
   await page.goto(base + 'hadracha.html?preview=1');
-  await page.waitForSelector('.ritem');
-  ok(await page.locator('.ritem').count() === 1, 'aperçu : Savidor → Jérusalem listé');
-  await page.screenshot({ path: `${OUT}/01-liste.png` });
-  await page.click('.ritem');
-  await page.waitForSelector('#now .k');
-  ok(await page.locator('.draft').count() === 1, 'bandeau « טיוטה »');
+  await page.waitForSelector('#now [data-start]');
+  ok(await page.locator('#now [data-start]').count() === 3, 'aperçu : un seul parcours → il s’ouvre directement sur « איך נוסעים? » (3 gros boutons)');
+  ok(await page.locator('.draft').count() === 1, 'bandeau « טיוטה » (replié)');
   ok(await page.locator('.leaflet-container').count() === 1, 'carte Leaflet');
   ok(await page.locator('#list .li').count() === 15, '15 lieux listés');
-  ok(/האתר הבא/.test(await page.textContent('#now')), 'avant le départ : « האתר הבא » avec compte à rebours');
   ok(await noHScroll(page), 'pas de défilement horizontal (360 px)');
-  await page.screenshot({ path: `${OUT}/02-parcours.png`, fullPage: true });
-
+  const startBox = await page.locator('[data-start=sim]').boundingBox();
+  ok(startBox && startBox.y + startBox.height < 780, 'le bouton « נסיעה מדומה » est visible sans faire défiler');
+  await page.screenshot({ path: `${OUT}/01-depart.png` });
+  await page.click('[data-start=sim]');
+  await page.waitForSelector('#play');
+  ok(/האתר הבא|מתחילים להסביר/.test(await page.textContent('#now')) && /עצירה/.test(await page.textContent('#play')), 'un tap : la nasiya démarre (⏸️ עצירה + האתר הבא)');
+  await page.click('#skip');
+  ok(/מתחילים להסביר/.test(await page.textContent('#now')), '⏭️ לאתר הבא : l’explication suivante commence tout de suite');
+  await page.screenshot({ path: `${OUT}/02-en-route.png` });
+  const bar = await page.locator('.ctrls').boundingBox(), tab = await page.locator('.md-tabbar').boundingBox().catch(() => null);
+  ok(bar && bar.y + bar.height <= 780 && (!tab || bar.y + bar.height <= tab.y + 1), 'la barre ⏸️ ⏭️ est toujours visible, au-dessus des onglets');
+  await page.click('#play');
+  ok(/המשך/.test(await page.textContent('#play')), '⏸️ met en pause');
+  await page.click('#back');
+  await page.waitForSelector('.ritem');
+  ok(await page.locator('.ritem').count() === 1, 'retour à la liste : Savidor → Jérusalem listé');
+  await page.click('.ritem');
+  await page.waitForSelector('#now [data-start]');
   for (const kmh of [50, 80, 100]) {
     const r = await ride(page, kmh);
     const L = Object.entries(r.log);
@@ -82,6 +94,7 @@ const ride = (page, kmh) => page.evaluate(kmh => {
   }
 
   // moment « regardez » à l'écran
+  await page.click('[data-start=sim]'); await page.click('#play');
   await page.evaluate(() => { const A = window.MDHadrachaApp, S = A.state(), H = window.MDHadracha; S.done = new Set(); S.cur = null; S.v = 80 / 3.6;
     const p = A.pois().find(x => x.id === 'latrunpolice'); const t = H.trigger(p, 'fwd', S.v);
     A.pois().filter(x => x.sAbeam < p.sAbeam).forEach(x => S.done.add(x.id)); S.running = true; A.goto(t.sTrig + 5); });
@@ -107,7 +120,8 @@ const ride = (page, kmh) => page.evaluate(kmh => {
 
   // mode תרגול
   await page.evaluate(() => { location.hash = '#/r/savidor-jerusalem?dir=fwd&mode=practice'; });
-  await page.waitForFunction(() => document.querySelector('[data-mode=practice]')?.getAttribute('aria-pressed') === 'true');
+  await page.waitForFunction(() => /תרגול/.test(document.querySelector('.chips')?.textContent || '') && !!document.querySelector('[data-start]'));
+  await page.click('[data-start=sim]'); await page.click('#play');
   await page.evaluate(() => { const A = window.MDHadrachaApp, S = A.state(), H = window.MDHadracha; S.running = true; S.v = 80 / 3.6; const p = A.pois().find(x => x.id === 'emmaus');
     A.pois().filter(x => x.sAbeam < p.sAbeam).forEach(x => S.done.add(x.id)); A.goto(H.trigger(p, 'fwd', S.v).sTrig + 5); });
   ok(await page.locator('#reveal').count() === 1 && await page.locator('#now .say').count() === 0, 'תרגול : texte masqué, bouton « להציג »');
@@ -117,8 +131,8 @@ const ride = (page, kmh) => page.evaluate(kmh => {
 
   // mode manuel
   await page.evaluate(() => { location.hash = '#/r/savidor-jerusalem?dir=fwd&mode=study'; });
-  await page.waitForFunction(() => document.querySelector('[data-mode=study]')?.getAttribute('aria-pressed') === 'true');
-  await page.click('[data-ride=manual]');
+  await page.waitForFunction(() => /לימוד/.test(document.querySelector('.chips')?.textContent || '') && !!document.querySelector('[data-start]'));
+  await page.click('[data-start=manual]');
   await page.click('#next');
   ok(/מתחילים להסביר/.test(await page.textContent('#now')), 'manuel : « הבא » lance l’explication du premier lieu');
   await page.click('#next');
@@ -129,7 +143,7 @@ const ride = (page, kmh) => page.evaluate(kmh => {
 {
   const { ctx, page } = await newPage({ viewport: { width: 1280, height: 800 } });
   await page.goto(base + 'hadracha.html?preview=1#/r/savidor-jerusalem?dir=fwd&mode=study');
-  await page.waitForSelector('#now .k');
+  await page.waitForSelector('#now [data-start]');
   ok(await noHScroll(page), 'ordinateur : mise en page sans débordement');
   await page.screenshot({ path: `${OUT}/06-ordinateur.png`, fullPage: true });
   await ctx.close();
