@@ -25,13 +25,15 @@ def put(m):
 def upd(id, **k): M[id].update(k)
 
 # ---------- corrections d'après le dépliant RTG ----------
-upd("caesarea_bath", **{"from": 4},
+upd("caesarea_bath", **{"from": 4}, pri=2,
+    shape={"type": "footprint", "osm": "bath", "h": 6, "kind": "kurkar", "solid": True},
     text=L("בית מרחץ שנבנה במאה ה-5 לספירה מעל מושבי ההיפודרום, אחרי שזה יצא משימוש (רט״ג). שלושה אזורים: חם (קלדריום, חימום מתחת לרצפה מתנור), ביניים (טפידריום) וקר (פריגידריום, צינורות חרס ועופרת). מאות פיסות שיש צבעוני הוחזרו לרצפה; מצפון — חצר עמודים לאימון ולמפגשים.",
            "Thermes bâtis au Ve s. sur les gradins de l’hippodrome, après son abandon (RTG). Trois zones : chaude (caldarium, chauffage sous le sol), tiède (tepidarium) et froide (frigidarium, tuyaux de terre cuite et de plomb). Des centaines de plaques de marbre coloré ont été remises en place ; au nord, une cour à colonnes pour l’exercice et les rencontres.",
            "A bathhouse built in the 5th century CE over the hippodrome seats, after the hippodrome went out of use (Parks Authority). Three zones: hot (caldarium, underfloor heating), warm (tepidarium) and cold (frigidarium, clay and lead pipes). Hundreds of coloured marble pieces were reset in the floor; to the north, a colonnaded court for exercise and meeting.",
            "Баня V в. н. э., построенная на трибунах ипподрома после того, как он вышел из употребления (Управление парков). Три зоны: горячая (кальдарий), тёплая (тепидарий) и холодная (фригидарий). В пол возвращены сотни плиток цветного мрамора; к северу — двор с колоннами."),
     sources=[RTG, D15, DJ, OSM("way/96065403")])
-upd("caesarea_hippostadium",
+upd("caesarea_hippostadium", **{"to": 8},
+    placementNote=L("קווי המתאר לפי OpenStreetMap (״Herodian Hippodrome״). אחרי שיצא משימוש נשארו מושביו, ועליהם נבנה בית המרחץ במאה ה-5 (רט״ג); היום ניתן לראות את הזירה הארוכה ליד ארמון השונית.", "Contour d’après OpenStreetMap. Après son abandon, ses gradins restent et les thermes y sont bâtis au Ve s. (RTG) ; on voit aujourd’hui la longue arène près du palais.", "Outline from OpenStreetMap. After it went out of use its seats remained and the bathhouse was built on them in the 5th century (Parks Authority); the long arena can be seen today next to the palace.", "Контур по OpenStreetMap. После запустения на его трибунах в V в. построили баню; длинную арену видно и сегодня."),
     dims=L("זירה באורך כ-250–300 מ׳ (חורחה; HolyLandPhotos); כ-10,000 מקומות (רט״ג, חורחה); המושבים נבנו רק משלושה צדדים — ממערב הים.", "Arène d’env. 250–300 m (Jorge ; HolyLandPhotos) ; env. 10 000 places (RTG, Jorge) ; gradins sur trois côtés seulement — la mer à l’ouest.", "Arena about 250–300 m long (Jorge; HolyLandPhotos); about 10,000 seats (Parks Authority, Jorge); seats on three sides only — the sea to the west.", "Арена около 250–300 м; около 10 000 мест; трибуны только с трёх сторон — с запада море."),
     sources=M["caesarea_hippostadium"]["sources"] + [RTG, DJX])
 th = M["caesarea_theater"]

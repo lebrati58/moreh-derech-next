@@ -602,10 +602,10 @@
     "ru": "World History Encyclopedia: около 4000 зрителей (восстановленный театр)."
    },
    "events": {
-    "he": "1961: במהלך חפירות משלחת איטלקית נמצאה כאן ״אבן פילטוס״ — הכתובת היחידה מזמנו הנזכרת בשמו ובתוארו של פונטיוס פילטוס. במאה ה-3 נוסף קיר סקנה בגובה שלוש קומות; מאוחר יותר הפך השטח שלפני הבמה לבריכה להצגות מים. בתקופה הביזנטית הוקף התיאטרון במצודה, אולי מפני מרד השומרונים (529). היום כ-3,700 מקומות לקונצרטים (רט״ג).",
-    "fr": "1961 : une mission italienne y trouve la « pierre de Pilate », seule inscription contemporaine portant le nom et le titre de Ponce Pilate. Au IIIe s., mur de scène de trois étages ; plus tard, l’espace devant la scène devient un bassin pour des spectacles d’eau. À l’époque byzantine, le théâtre est entouré d’une forteresse, peut-être contre la révolte samaritaine (529). Aujourd’hui env. 3 700 places pour des concerts (RTG).",
-    "en": "1961: an Italian expedition found the “Pilate stone” here — the only contemporary inscription with Pontius Pilate’s name and title. In the 3rd century a three-storey scaenae frons was added; later the area in front of the stage became a pool for water shows. In Byzantine times the theatre was enclosed in a fortress, perhaps against the Samaritan revolt (529). Today about 3,700 seats for concerts (Parks Authority).",
-    "ru": "1961: итальянская экспедиция нашла здесь «камень Пилата» — единственную современную ему надпись с именем и титулом Понтия Пилата. В III в. добавлена трёхъярусная скена; позднее площадка перед сценой стала бассейном для водных представлений. В византийское время театр обнесли крепостью, возможно из-за самаритянского восстания (529)."
+    "he": "1961: במהלך חפירות משלחת איטלקית נמצאה כאן ״אבן פילטוס״ — הכתובת היחידה מזמנו הנזכרת בשמו ובתוארו של פונטיוס פילטוס. במאה ה-3 נוסף קיר סקנה בגובה שלוש קומות; מאוחר יותר הפך השטח שלפני הבמה לבריכה להצגות מים. בתקופה הביזנטית הוקף התיאטרון במצודה, אולי מפני מרד השומרונים (529). היום כ-3,700 מקומות לקונצרטים (רט״ג). במאה ה-3 נוסף קיר סקנה בגובה שלוש קומות; מאוחר יותר הפך השטח שלפני הבמה לבריכה להצגות מים. בתקופה הביזנטית הוקף התיאטרון במצודה, אולי מפני מרד השומרונים (529). היום כ-3,700 מקומות לקונצרטים (רט״ג).",
+    "fr": "1961 : une mission italienne y trouve la « pierre de Pilate », seule inscription contemporaine portant le nom et le titre de Ponce Pilate. Au IIIe s., mur de scène de trois étages ; plus tard, l’espace devant la scène devient un bassin pour des spectacles d’eau. À l’époque byzantine, le théâtre est entouré d’une forteresse, peut-être contre la révolte samaritaine (529). Aujourd’hui env. 3 700 places pour des concerts (RTG). Au IIIe s., mur de scène de trois étages ; plus tard, l’espace devant la scène devient un bassin pour des spectacles d’eau. À l’époque byzantine, le théâtre est entouré d’une forteresse, peut-être contre la révolte samaritaine (529). Aujourd’hui env. 3 700 places pour des concerts (RTG).",
+    "en": "1961: an Italian expedition found the “Pilate stone” here — the only contemporary inscription with Pontius Pilate’s name and title. In the 3rd century a three-storey scaenae frons was added; later the area in front of the stage became a pool for water shows. In Byzantine times the theatre was enclosed in a fortress, perhaps against the Samaritan revolt (529). Today about 3,700 seats for concerts (Parks Authority). In the 3rd century a three-storey scaenae frons was added; later the area in front of the stage became a pool for water shows. In Byzantine times the theatre was enclosed in a fortress, perhaps against the Samaritan revolt (529). Today about 3,700 seats for concerts (Parks Authority).",
+    "ru": "1961: итальянская экспедиция нашла здесь «камень Пилата» — единственную современную ему надпись с именем и титулом Понтия Пилата. В III в. добавлена трёхъярусная скена; позднее площадка перед сценой стала бассейном для водных представлений. В византийское время театр обнесли крепостью, возможно из-за самаритянского восстания (529). В III в. добавлена трёхъярусная скена; позднее площадка перед сценой стала бассейном для водных представлений. В византийское время театр обнесли крепостью, возможно из-за самаритянского восстания (529)."
    },
    "placementNote": {
     "he": "מיקום, רדיוס וכיוון לפי קו המתאר ב-OpenStreetMap; קיר הסקנה משוחזר.",
@@ -642,6 +642,11 @@
      "kind": "online",
      "label": "OpenStreetMap way/24578362",
      "url": "https://www.openstreetmap.org/way/24578362"
+    },
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — דפדפת גן לאומי קיסריה",
+     "url": "https://drive.google.com/file/d/1tCvFvM5lKnyi8x6Jzeh-q4je-4a56e85/view"
     },
     {
      "kind": "drive",
@@ -722,7 +727,7 @@
   {
    "id": "caesarea_hippostadium",
    "from": 2,
-   "to": 3,
+   "to": 8,
    "certainty": "attested",
    "pri": 2,
    "name": {
@@ -797,8 +802,24 @@
      "kind": "drive",
      "label": "קיסריה — מחברת בחינה (חורחה)",
      "url": "https://drive.google.com/file/d/1gFAPO41YN1puCzNwh8gAiCVF7qasPuJb/view"
+    },
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — דפדפת גן לאומי קיסריה",
+     "url": "https://drive.google.com/file/d/1tCvFvM5lKnyi8x6Jzeh-q4je-4a56e85/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה — מחברת בחינה (חורחה)",
+     "url": "https://drive.google.com/file/d/1gFAPO41YN1puCzNwh8gAiCVF7qasPuJb/view"
     }
-   ]
+   ],
+   "placementNote": {
+    "he": "קווי המתאר לפי OpenStreetMap (״Herodian Hippodrome״). אחרי שיצא משימוש נשארו מושביו, ועליהם נבנה בית המרחץ במאה ה-5 (רט״ג); היום ניתן לראות את הזירה הארוכה ליד ארמון השונית.",
+    "fr": "Contour d’après OpenStreetMap. Après son abandon, ses gradins restent et les thermes y sont bâtis au Ve s. (RTG) ; on voit aujourd’hui la longue arène près du palais.",
+    "en": "Outline from OpenStreetMap. After it went out of use its seats remained and the bathhouse was built on them in the 5th century (Parks Authority); the long arena can be seen today next to the palace.",
+    "ru": "Контур по OpenStreetMap. После запустения на его трибунах в V в. построили баню; длинную арену видно и сегодня."
+   }
   },
   {
    "id": "caesarea_aqueduct",
@@ -974,8 +995,9 @@
    "shape": {
     "type": "footprint",
     "osm": "bath",
-    "h": 3.5,
-    "kind": "kurkar"
+    "h": 6,
+    "kind": "kurkar",
+    "solid": true
    },
    "sources": [
     {
@@ -998,7 +1020,8 @@
      "label": "OpenStreetMap way/96065403",
      "url": "https://www.openstreetmap.org/way/96065403"
     }
-   ]
+   ],
+   "pri": 2
   },
   {
    "id": "caesarea_mithraeum",
