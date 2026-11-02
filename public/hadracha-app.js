@@ -9,7 +9,8 @@
   const G = window.MDL_GPS, H = window.MDHadracha;
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const PREVIEW = /[?&]preview=1\b/.test(location.search);
+  // window.MDH_PREVIEW / MDH_NOTILES : copie d'aperçu hors du site (pas de ?preview=1 possible, pas de tuiles OSM)
+  const PREVIEW = /[?&]preview=1\b/.test(location.search) || window.MDH_PREVIEW === true;
   const SCOUT_KEY = 'mdl_hadracha_scout_v1', PREF_KEY = 'mdl_hadracha_pref_v1';
   const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
@@ -155,7 +156,7 @@
     if (!window.L) return;
     const L = window.L;
     map = L.map('map', { zoomControl: true, attributionControl: true });
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, className: 'osm-dark', attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · OSRM · Wikidata' }).addTo(map);
+    if (!window.MDH_NOTILES) L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, className: 'osm-dark', attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · OSRM · Wikidata' }).addTo(map);
     const line = L.polyline(R.route.geometry, { color: '#ffd878', weight: 5, opacity: .85 }).addTo(map);
     map.fitBounds(line.getBounds(), { padding: [18, 18] });
     lay = { pins: {}, trg: L.layerGroup().addTo(map) };
