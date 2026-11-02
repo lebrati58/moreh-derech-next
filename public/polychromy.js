@@ -72,8 +72,8 @@ export function originalMaterial(entry, base) {
   const cols = entry.colors || ['#cccccc'], fin = entry.finish || 'matte';
   const m = new THREE.MeshStandardMaterial({
     color: entry.pattern ? '#ffffff' : cols[0],
-    roughness: fin === 'gilded' ? .3 : fin === 'polished' ? .35 : fin === 'glazed' ? .3 : .82,
-    metalness: fin === 'gilded' ? .95 : fin === 'metal' ? .7 : 0
+    roughness: fin === 'gilded' ? .38 : fin === 'polished' ? .35 : fin === 'glazed' ? .3 : .82,
+    metalness: fin === 'gilded' ? .35 : fin === 'metal' ? .5 : 0 // sans carte d'environnement, un métal pur paraît noir
   });
   if (entry.pattern && PATTERNS[entry.pattern]) m.map = TCACHE.get(entry.id) || TCACHE.set(entry.id, PATTERNS[entry.pattern](cols, entry.id.length * 131 + 7)).get(entry.id);
   if (base) {
@@ -84,6 +84,7 @@ export function originalMaterial(entry, base) {
     if (base.onBeforeCompile && base.userData && base.userData.worldProjected) { m.onBeforeCompile = base.onBeforeCompile; m.customProgramCacheKey = base.customProgramCacheKey; m.userData.worldProjected = true; }
     if (base.emissive) { m.emissive.copy(base.emissive); m.emissiveIntensity = base.emissiveIntensity; }
   }
+  if (fin === 'gilded') { m.emissive = new THREE.Color(cols[0]); m.emissiveIntensity = .18; }
   m.userData.poly = entry.id;
   MCACHE.set(key, m); return m;
 }
