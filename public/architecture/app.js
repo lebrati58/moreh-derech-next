@@ -4,6 +4,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { buildScene } from './scenes.js';
+import { loadPalette, applyOriginal, wanted, mountToggle } from '../polychromy.js';
 
 const A = window.MDArch, P = window.MDProgress;
 const $ = id => document.getElementById(id);
@@ -60,7 +61,7 @@ function loadScene(id) {
   S.scene = s; S.sel = -1;
   if (renderer) {
     if (current) { scene3.remove(current.group); current.group.traverse(o => { if (o.geometry) o.geometry.dispose(); }); }
-    current = buildScene(id); scene3.add(current.group); camReset(); clock.start();
+    current = buildScene(id); scene3.add(current.group); camReset(); clock.start(); applyPoly();
   }
   $('pins').innerHTML = s.parts.map((p, k) => `<button type="button" class="pin" data-k="${k}" aria-label="${k + 1}"><b>${k + 1}</b><span>${esc(p.he)}</span></button>`).join('');
   $('pins').querySelectorAll('.pin').forEach(b => b.onclick = () => pinClick && pinClick(+b.dataset.k));
@@ -77,6 +78,17 @@ function highlight(k, color) {
 }
 function pinClass(k, cls) { const el = $('pins').children[k]; if (el) el.className = 'pin ' + (cls || ''); }
 function mountStage(slot) { $(slot).appendChild($('stage')); resize(); }
+// ---- צבעים מקוריים (polychromy.json) ----
+let polyUsed = [], POLY = null;
+function applyPoly() {
+  if (!current || !POLY) return;
+  const rev = new Map(); Object.entries(current.tags).forEach(([t, ms]) => ms.forEach(m => rev.set(m, t)));
+  const sid = S.scene.id;
+  polyUsed = applyOriginal(current.group, 'architecture', m => { const t = rev.get(m), r = m.userData.role; return t ? [r && sid + ':' + t + ':' + r, sid + ':' + t, sid + ':*'] : [sid + ':*']; }, POLY.on, { clone: true });
+  if (S.sel >= 0) highlight(S.sel); POLY.refresh();
+}
+POLY = mountToggle(document.querySelector('#stage .hudR') || document.body, { className: 'poly-btn', used: () => polyUsed, onChange: () => loadPalette().then(applyPoly) });
+if (wanted()) loadPalette().then(() => POLY.set(true));
 $('recenter').onclick = () => { camReset(); if (S.view === 'explore') { S.sel = -1; highlight(-1); markExplore(); showIntro(); } };
 
 // ======================= vues =======================

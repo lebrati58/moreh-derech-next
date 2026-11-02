@@ -5,6 +5,7 @@
 // Quiz 3D : préparés (API window.MDJerusalem3D) mais NON affichés tant que monuments.quiz3dEnabled === false.
 import { renderTimeline, markTimeline, pickStyle } from '../era-timeline.js';
 import * as THREE from 'three';
+import { loadPalette, applyOriginal, wanted, mountToggle } from '../polychromy.js';
 import { install as installMuseumTools } from './museum-tools.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
@@ -401,7 +402,7 @@ function disposeTree(o) { o.traverse(c => { if (c.geometry) c.geometry.dispose()
 function clearWorld() { while (world.children.length) { const o = world.children.pop(); disposeTree(o); } pickables = []; placed = new Set(); labels.forEach(l => l.el.remove()); labels = []; if (hlBox) { scene.remove(hlBox); hlBox = null; } }
 // Ajoute un objet (maillage ou groupe) lié à une fiche. En mode « couleurs de certitude », remplace les matériaux.
 function add(obj, m, now, certColor) {
-  obj.userData.id = m.id; obj.traverse(c => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
+  obj.userData.id = m.id; obj.userData.now = !!now; obj.traverse(c => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
   // Mode réaliste : un édifice encore debout garde ses vrais matériaux (le Dôme du Rocher reste doré à l'époque ottomane) ;
   // l'étiquette grise et la fiche indiquent la période d'origine. Seuls les repères simples passent en pierre grise.
   if (realistic && !now && certColor === 'plain') { const gm = stone('ashlar', { tint: '#bdb5a6' }); obj.traverse(c => { if (c.isMesh) c.material = gm; }); }
@@ -517,7 +518,26 @@ function buildModel(m, sh, now) {
   }
   return null;
 }
-function rebuildScene() {
+
+// ---- צבעים מקוריים (polychromy.json) : seulement les monuments de la période affichée, en mode matériaux réels ----
+let POLY = null, polyUsed = [];
+function polyKeys(o) {
+  let p = o, id = null, now = false; while (p) { if (p.userData && p.userData.id) { id = p.userData.id; now = !!p.userData.now; break; } p = p.parent; }
+  if (!id || !now) return [];
+  const kind = o.material && o.material.userData && o.material.userData.kind, per = (DATA.periods || []).find(x => x.n === period), era = per && per.era, S = 'jerusalem';
+  if (era === 'today') return [];
+  if (kind === 'gold' || kind === 'bronze' || kind === 'lead' || kind === 'tiles') return [S + ':' + id + ':' + kind]; // métaux et faïence : seulement si une entrée les vise
+  return [kind && era && S + ':' + id + ':' + era + ':' + kind, kind && S + ':' + id + ':' + kind, S + ':' + id, kind && era && S + ':' + era + ':' + kind, kind && era && 'era:' + era + ':' + kind, kind && S + ':kind:' + kind];
+}
+function applyPoly() { if (!world || !POLY) return; polyUsed = applyOriginal(world, 'jerusalem', polyKeys, POLY.on && realistic); POLY.refresh(); }
+function setupPoly() {
+  if (POLY) return; const menu = $('toolsMenu'); if (!menu) return;
+  POLY = mountToggle(menu, { used: () => polyUsed, label: '<span class="ti">🏺</span><span class="tl">צבעים מקוריים</span>',
+    onChange: on => loadPalette().then(() => { if (on && !realistic) { realistic = true; store.set('mdl_j3d_real', '1'); $('bColors').setAttribute('aria-pressed', 'false'); renderPeriod(); } else applyPoly(); }) });
+  if (wanted()) loadPalette().then(() => POLY.set(true));
+}
+function rebuildScene() { rebuildScene0(); setupPoly(); applyPoly(); }
+function rebuildScene0() {
   if (!world) return; clearWorld(); TM = tmFrame(); styleCity();
   if (period === 5 && realistic && MUSEUM.state === 'idle') loadMuseum();
   if (MUSEUM.group) { if (TM) placeMuseum(); MUSEUM.group.visible = museumActive(); }

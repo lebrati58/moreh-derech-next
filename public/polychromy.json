@@ -1,0 +1,795 @@
+{
+ "version": 1,
+ "note": "Couleurs d'origine — chaque entrée cite ses sources et son degré de certitude (attested = trouvé sur le site ou décrit par une source antique ; typical = usage courant de l'époque ; hypothesis = restitution). Les codes couleur sont des approximations d'écran, pas des mesures.",
+ "entries": {
+  "stucco_white": {
+   "name_he": "גוף העמוד, בסיס וקורות",
+   "name_fr": "Fût, base, poutres",
+   "material_he": "אבן או טיח סיד לבן חלק",
+   "material_fr": "Pierre ou stuc blanc lisse",
+   "colors": [
+    "#ece6d6"
+   ],
+   "certainty": "typical",
+   "note_he": "הגוף נשאר בצבע האבן או הטיח; הצבע התרכז בכותרות ובעיטורים.",
+   "note_fr": "Le fût reste couleur pierre ou stuc ; la couleur se concentre sur chapiteaux et moulures.",
+   "sources": [
+    {
+     "ref": "Vitruve, De architectura VII.3 (enduits et stucs)",
+     "url": null
+    },
+    {
+     "ref": "Brinkmann V. & Wuensche R., 2007, Gods in Color",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    }
+   ]
+  },
+  "marble_white": {
+   "name_he": "שיש לבן (פרוקונסי)",
+   "name_fr": "Marbre blanc (proconnésien)",
+   "material_he": "שיש לבן עם עורקים אפורים מהאי מרמרה",
+   "material_fr": "Marbre blanc veiné de gris (Marmara)",
+   "colors": [
+    "#e9ebe8",
+    "#b8bcc0"
+   ],
+   "certainty": "attested",
+   "note_he": "רוב השיש האדריכלי בקיסריה ובבית שאן הובא מפרוקונסוס.",
+   "note_fr": "La majorité du marbre architectural de Césarée et Beit Shéan vient de Proconnèse.",
+   "sources": [
+    {
+     "ref": "Introduction: White marble in Roman Palestine, Archaeological and Anthropological Sciences, 2022 (citant Pearl & Magaritz 1991; Fischer 2007)",
+     "url": "https://link.springer.com/article/10.1007/s12520-022-01518-1"
+    }
+   ],
+   "pattern": "veined",
+   "finish": "polished"
+  },
+  "triglyph_blue": {
+   "name_he": "טריגליף",
+   "name_fr": "Triglyphe",
+   "material_he": "צבע כחול (כחול מצרי) על האבן",
+   "material_fr": "Bleu (bleu égyptien) sur la pierre",
+   "colors": [
+    "#1f5fa8"
+   ],
+   "certainty": "typical",
+   "note_he": "הטריגליפים נצבעו בכחול או בשחור כדי להבליט אותם — כך במקדשים יווניים רבים.",
+   "note_fr": "Triglyphes peints en bleu ou noir pour les détacher, sur de nombreux temples grecs.",
+   "sources": [
+    {
+     "ref": "Brinkmann V. & Wuensche R. (dir.), 2007, Gods in Color: Painted Sculpture of Classical Antiquity (Munich / Harvard)",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    },
+    {
+     "ref": "Vitruve, De architectura IV.2 (triglyphes peints a la cire bleue)",
+     "url": null
+    }
+   ]
+  },
+  "metope_red": {
+   "name_he": "מטופה",
+   "name_fr": "Métope",
+   "material_he": "רקע אדום או כחול, דמויות בצבעי אוקר",
+   "material_fr": "Fond rouge ou bleu, figures ocre",
+   "colors": [
+    "#a8322d"
+   ],
+   "certainty": "typical",
+   "note_he": "רקע המטופות נצבע אדום או כחול כדי שהתבליט יבלוט.",
+   "note_fr": "Fond des métopes peint en rouge ou bleu pour faire ressortir le relief.",
+   "sources": [
+    {
+     "ref": "Brinkmann V. & Wuensche R., 2007, Gods in Color",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    },
+    {
+     "ref": "Gurewitsch M., Smithsonian Magazine, True Colors (pigments: malachite, azurite, cinabre, ocres)",
+     "url": "https://www.smithsonianmag.com/arts-culture/true-colors-17888/"
+    }
+   ]
+  },
+  "molding_redblue": {
+   "name_he": "עיטורי כותרת וכרכוב",
+   "name_fr": "Moulures de chapiteau et corniche",
+   "material_he": "עיטורים בצבעים אדום וכחול לסירוגין",
+   "material_fr": "Ornements alternés rouge et bleu",
+   "colors": [
+    "#ece6d6",
+    "#a8322d",
+    "#1f5fa8"
+   ],
+   "certainty": "typical",
+   "note_he": "עיטורי ביצה וחץ, מאנדרים ופלמטות נצבעו לסירוגין באדום ובכחול.",
+   "note_fr": "Oves, méandres et palmettes peints en alternance rouge et bleu.",
+   "sources": [
+    {
+     "ref": "Brinkmann V. & Wuensche R., 2007, Gods in Color",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    }
+   ],
+   "pattern": "stripes"
+  },
+  "ionic_volute": {
+   "name_he": "כותרת יונית",
+   "name_fr": "Chapiteau ionique",
+   "material_he": "שיש, תעלות הוולוטה בכחול ואדום",
+   "material_fr": "Marbre, canal des volutes rehaussé de bleu et rouge",
+   "colors": [
+    "#ece6d6",
+    "#1f5fa8",
+    "#a8322d"
+   ],
+   "certainty": "typical",
+   "note_he": "רק חריצי הוולוטות וקישוט הביצים קיבלו צבע; הרקע נשאר שיש.",
+   "note_fr": "Seuls le canal des volutes et les oves sont colorés ; le fond reste marbre.",
+   "sources": [
+    {
+     "ref": "Brinkmann V. & Wuensche R., 2007, Gods in Color",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    },
+    {
+     "ref": "Tracking Colour project, Ny Carlsberg Glyptotek (Ostergaard J.S. et al.)",
+     "url": "https://www.trackingcolour.com/about"
+    }
+   ],
+   "pattern": "stripes"
+  },
+  "acanthus": {
+   "name_he": "כותרת קורינתית — אקנתוס",
+   "name_fr": "Chapiteau corinthien — acanthe",
+   "material_he": "שיש בהיר; ירוק בחריצי העלים (השערה)",
+   "material_fr": "Marbre clair ; vert dans les creux (hypothèse)",
+   "colors": [
+    "#ece6d6",
+    "#6f9a62"
+   ],
+   "certainty": "hypothesis",
+   "note_he": "בתקופה הרומית רוב הכותרות הקורינתיות נשארו בהירות; ירוק בחריצים — אפשרי אבל כמעט לא מתועד.",
+   "note_fr": "À l’époque romaine, les chapiteaux corinthiens restent souvent clairs ; le vert dans les creux est possible mais peu documenté.",
+   "sources": [
+    {
+     "ref": "Brinkmann V. & Wuensche R., 2007, Gods in Color",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    }
+   ],
+   "pattern": "stripes"
+  },
+  "pediment_blue": {
+   "name_he": "טימפנון (גמלון)",
+   "name_fr": "Tympan du fronton",
+   "material_he": "רקע כחול לפסלים",
+   "material_fr": "Fond bleu derrière les statues",
+   "colors": [
+    "#2a64a6"
+   ],
+   "certainty": "typical",
+   "note_he": "רקע הגמלון נצבע כחול כדי שהפסלים הבהירים יבלטו.",
+   "note_fr": "Fond du fronton peint en bleu pour détacher les statues claires.",
+   "sources": [
+    {
+     "ref": "Brinkmann V. & Wuensche R., 2007, Gods in Color",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    },
+    {
+     "ref": "Gurewitsch M., Smithsonian Magazine, True Colors (pigments: malachite, azurite, cinabre, ocres)",
+     "url": "https://www.smithsonianmag.com/arts-culture/true-colors-17888/"
+    },
+    {
+     "ref": "Brinkmann V. & Wuensche R. (dir.), 2007, Gods in Color: Painted Sculpture of Classical Antiquity (Munich / Harvard)",
+     "url": "https://search.worldcat.org/oclc/982089362"
+    }
+   ]
+  },
+  "vault_stucco": {
+   "name_he": "קמרון וקשת מטויחים",
+   "name_fr": "Voûte et arc en stuc",
+   "material_he": "טיח סיד ואבקת שיש, תאים מעוטרים",
+   "material_fr": "Stuc de chaux et poudre de marbre, caissons",
+   "colors": [
+    "#f2ede2",
+    "#c9a43b",
+    "#a0412d"
+   ],
+   "certainty": "typical",
+   "note_he": "ויטרוביוס מתאר כמה שכבות טיח ואבקת שיש; הקמרונות קיבלו תאים מטויחים וצבועים.",
+   "note_fr": "Vitruve décrit plusieurs couches d’enduit et de poudre de marbre ; voûtes à caissons stuqués et peints.",
+   "sources": [
+    {
+     "ref": "Vitruve, De architectura VII.2-3",
+     "url": null
+    }
+   ]
+  },
+  "wall_painting": {
+   "name_he": "ציורי קיר רומיים",
+   "name_fr": "Peintures murales romaines",
+   "material_he": "פרסקו: אוקר אדום, אוקר צהוב, שחור",
+   "material_fr": "Fresque : ocre rouge, ocre jaune, noir",
+   "colors": [
+    "#c9a43b",
+    "#9e2b25",
+    "#1a1a1a"
+   ],
+   "certainty": "typical",
+   "note_he": "לוחות באדום פומפיאני ובצהוב אוקר, עם פסים שחורים.",
+   "note_fr": "Panneaux rouge pompéien et ocre jaune, bandes noires.",
+   "sources": [
+    {
+     "ref": "Vitruve, De architectura VII.5-14 (pigments, cinabre, caeruleum)",
+     "url": null
+    },
+    {
+     "ref": "Rozenberg S., 2009, Wall Paintings of the Hellenistic and Herodian Period in the Land of Israel, in Herod and Augustus (Brill)",
+     "url": "https://cris.huji.ac.il/en/publications/wall-paintings-of-the-hellenistic-and-herodian-period-in-the-land/"
+    }
+   ],
+   "pattern": "panels"
+  },
+  "hypocaust_brick": {
+   "name_he": "עמודוני חימר והיפוקאוסט",
+   "name_fr": "Pilettes et hypocauste",
+   "material_he": "לבני חרס שרופות",
+   "material_fr": "Briques cuites",
+   "colors": [
+    "#b5653f"
+   ],
+   "certainty": "typical",
+   "note_he": "מתחת לרצפה — לבנים בצבע החרס, לא נראו לרוחצים.",
+   "note_fr": "Sous le sol : briques couleur terre cuite, invisibles des baigneurs.",
+   "sources": [
+    {
+     "ref": "Vitruve, De architectura V.10 (bains)",
+     "url": null
+    },
+    {
+     "ref": "Jewish Virtual Library, Caesarea (bains du IVe s. avec salles dallees de marbre et mosaiques)",
+     "url": "https://jewishvirtuallibrary.org/jsource/Archaeology/Caesarea.html"
+    }
+   ]
+  },
+  "mosaic_floor": {
+   "name_he": "רצפת פסיפס",
+   "name_fr": "Sol en mosaïque",
+   "material_he": "אבנים מקומיות: לבן, אדום, צהוב, שחור",
+   "material_fr": "Tesselles de pierre locale blanc, rouge, jaune, noir",
+   "colors": [
+    "#ede4d0",
+    "#9e3b2a",
+    "#c9a43b"
+   ],
+   "certainty": "typical",
+   "note_he": "פסיפסי הרצפה בארץ עשויים אבן מקומית על רקע לבן.",
+   "note_fr": "Les mosaïques de sol du pays sont en pierre locale sur fond blanc.",
+   "sources": [
+    {
+     "ref": "Center for Online Judaic Studies, Sepphoris mosaic (fond blanc, champ colore)",
+     "url": "https://cojs.org/sepphoris_mosaic-_3rd_century_ce/"
+    }
+   ],
+   "pattern": "mosaic"
+  },
+  "apse_gold": {
+   "name_he": "פסיפס זהב באפסיס",
+   "name_fr": "Mosaïque d’or de l’abside",
+   "material_he": "אבני זכוכית עם עלה זהב",
+   "material_fr": "Tesselles de verre à feuille d’or",
+   "colors": [
+    "#c9a227",
+    "#1f4f8f",
+    "#2e6b4a"
+   ],
+   "certainty": "typical",
+   "note_he": "באפסיסים של כנסיות ביזנטיות גדולות היו פסיפסי קיר על רקע זהב; בארץ כמעט לא השתמרו.",
+   "note_fr": "Les absides des grandes églises byzantines portaient des mosaïques à fond d’or ; presque rien n’a survécu ici.",
+   "sources": [
+    {
+     "ref": "Pratique byzantine generale (ex. Ravenne, Sinai); pas d'abside doree conservee in situ dans les sites de l'app",
+     "url": null
+    }
+   ],
+   "pattern": "mosaic",
+   "finish": "gilded"
+  },
+  "granite_aswan": {
+   "name_he": "גרניט אסואן",
+   "name_fr": "Granite d’Assouan",
+   "material_he": "גרניט ורוד עם גרגרים שחורים",
+   "material_fr": "Granite rose à grains noirs",
+   "colors": [
+    "#9b5e55",
+    "#3a3030"
+   ],
+   "certainty": "typical",
+   "note_he": "עמודים ואובליסקים מגרניט מצרי הובאו לכל אגן הים התיכון.",
+   "note_fr": "Colonnes et obélisques en granite égyptien diffusés dans toute la Méditerranée.",
+   "sources": [
+    {
+     "ref": "Williams-Thorpe O., 2008, A thousand and one columns: observations on the Roman granite trade in the Mediterranean area, Oxford Journal of Archaeology 27(1)",
+     "url": "https://oro.open.ac.uk/17911"
+    }
+   ],
+   "pattern": "speckled",
+   "finish": "polished"
+  },
+  "white_limestone_syn": {
+   "name_he": "בית כנסת מאבן גיר לבנה",
+   "name_fr": "Synagogue en calcaire blanc",
+   "material_he": "אבן גיר לבנה (על יסודות בזלת)",
+   "material_fr": "Calcaire blanc (sur fondations de basalte)",
+   "colors": [
+    "#efe9dc"
+   ],
+   "certainty": "attested",
+   "note_he": "בכפר נחום בית הכנסת מאבן גיר לבנה בולט בין בתי הבזלת השחורים.",
+   "note_fr": "À Capharnaüm, la synagogue en calcaire blanc tranche sur les maisons de basalte noir.",
+   "sources": [
+    {
+     "ref": "Jewish Virtual Library, The Synagogue at Capernaum (d'apres MFA Israel)",
+     "url": "https://www.jewishvirtuallibrary.org/the-synagogue-at-capernaum"
+    }
+   ]
+  },
+  "kurkar_stucco": {
+   "name_he": "כורכר מטויח בלבן",
+   "name_fr": "Kurkar stuqué blanc",
+   "material_he": "כורכר מכוסה טיח סיד לבן",
+   "material_fr": "Kurkar couvert de stuc blanc",
+   "colors": [
+    "#efe8da"
+   ],
+   "certainty": "typical",
+   "note_he": "יוספוס כותב שקיסריה נבנתה „מאבן לבנה“: הכורכר הנקבובי כוסה בטיח לבן.",
+   "note_fr": "Josèphe dit Césarée bâtie « en pierre blanche » : le kurkar poreux était couvert de stuc blanc.",
+   "sources": [
+    {
+     "ref": "Josephus, Antiquities XV.331 (Caesarea built of white stone)",
+     "url": "https://penelope.uchicago.edu/josephus/ant-15.html"
+    },
+    {
+     "ref": "Gleason K. et al., 1998, The Promontory Palace at Caesarea Maritima: preliminary evidence for Herod's Praetorium, JRA 11",
+     "url": "https://structurae.info/fr/litterature/article-de-revue/promontory-palace-at-caesarea-maritima-preliminary-evidence-for-herod-s-praetorium"
+    }
+   ]
+  },
+  "caesarea_orchestra": {
+   "name_he": "רצפת האורכסטרה (הורדוס)",
+   "name_fr": "Sol de l’orchestra (Hérode)",
+   "material_he": "טיח צבוע באדום וכחול, צבוע מחדש פעמים רבות",
+   "material_fr": "Enduit peint rouge et bleu, repeint plusieurs fois",
+   "colors": [
+    "#e8dccb",
+    "#a8322d",
+    "#1f5fa8"
+   ],
+   "certainty": "attested",
+   "note_he": "המשלחת האיטלקית מצאה רצפת טיח צבועה באדום ובכחול; הדוגמה המדויקת כאן משוערת.",
+   "note_fr": "La mission italienne a trouvé un sol d’enduit peint rouge et bleu ; le motif exact est ici restitué.",
+   "sources": [
+    {
+     "ref": "Frova A. et al., 1966, Scavi di Caesarea Maritima (Rome)",
+     "url": null
+    },
+    {
+     "ref": "World History Encyclopedia, Roman Theater, Caesarea Maritima (stuc peint rouge et bleu)",
+     "url": "https://www.worldhistory.org/image/21687/roman-theater-caesarea-maritima/"
+    }
+   ],
+   "pattern": "sectile"
+  },
+  "caesarea_orchestra_marble": {
+   "name_he": "רצפת האורכסטרה (שלב מאוחר)",
+   "name_fr": "Sol de l’orchestra (phase tardive)",
+   "material_he": "לוחות שיש",
+   "material_fr": "Dallage de marbre",
+   "colors": [
+    "#e9ebe8",
+    "#b8bcc0"
+   ],
+   "certainty": "attested",
+   "note_he": "מאוחר יותר הוחלפה רצפת הטיח בריצוף שיש.",
+   "note_fr": "Le sol peint fut ensuite remplacé par un dallage de marbre.",
+   "sources": [
+    {
+     "ref": "Jewish Virtual Library, Caesarea",
+     "url": "https://jewishvirtuallibrary.org/jsource/Archaeology/Caesarea.html"
+    }
+   ],
+   "pattern": "veined",
+   "finish": "polished"
+  },
+  "caesarea_stage": {
+   "name_he": "חזית הבמה",
+   "name_fr": "Front de scène",
+   "material_he": "אבן מטויחת וצבועה כחיקוי שיש",
+   "material_fr": "Pierre enduite peinte en faux marbre",
+   "colors": [
+    "#d9a98a",
+    "#e8dccb",
+    "#4f7f4a"
+   ],
+   "certainty": "attested",
+   "note_he": "בימי הורדוס חזית הבמה הייתה אבן צבועה שמחקה שיש; הגוונים המדויקים משוערים.",
+   "note_fr": "Sous Hérode, le front de scène était en pierre peinte imitant le marbre ; teintes approximatives.",
+   "sources": [
+    {
+     "ref": "That the World May Know, The Theater at Caesarea",
+     "url": "https://www.thattheworldmayknow.com/the-theater-at-caesarea"
+    }
+   ],
+   "pattern": "veined"
+  },
+  "caesarea_scaenae": {
+   "name_he": "חזית הסצנה",
+   "name_fr": "Scaenae frons",
+   "material_he": "עמודי שיש וגרניט מיובאים",
+   "material_fr": "Colonnes de marbre et granite importés",
+   "colors": [
+    "#e9ebe8",
+    "#b8bcc0"
+   ],
+   "certainty": "typical",
+   "note_he": "בשיקום של המאות ה-2–3 השתמשו בשיש מיובא, בעיקר פרוקונסי.",
+   "note_fr": "La reconstruction des IIe–IIIe s. utilise du marbre importé, surtout proconnésien.",
+   "sources": [
+    {
+     "ref": "White marble in Roman Palestine, 2022 (Cesaree, plus gros importateur de marbre de la province)",
+     "url": "https://link.springer.com/article/10.1007/s12520-022-01518-1"
+    },
+    {
+     "ref": "Frova A. et al., 1966, Scavi di Caesarea Maritima",
+     "url": null
+    }
+   ],
+   "pattern": "veined",
+   "finish": "polished"
+  },
+  "caesarea_palace": {
+   "name_he": "ארמון הורדוס על הלשון",
+   "name_fr": "Palais du promontoire",
+   "material_he": "טיח, ציורי קיר ורצפות אופוס סקטילה",
+   "material_fr": "Enduits, fresques, sols en opus sectile",
+   "colors": [
+    "#efe8da",
+    "#9e2b25",
+    "#c9a43b"
+   ],
+   "certainty": "typical",
+   "note_he": "ציורי קיר בסגנון רומי אופייניים לארמונות הורדוס.",
+   "note_fr": "Le décor peint de style romain est typique des palais d’Hérode.",
+   "sources": [
+    {
+     "ref": "Gleason K. et al., 1998, The Promontory Palace at Caesarea Maritima: preliminary evidence for Herod's Praetorium, JRA 11",
+     "url": "https://structurae.info/fr/litterature/article-de-revue/promontory-palace-at-caesarea-maritima-preliminary-evidence-for-herod-s-praetorium"
+    },
+    {
+     "ref": "Rozenberg S., 2009, Wall Paintings of the Hellenistic and Herodian Period",
+     "url": "https://cris.huji.ac.il/en/publications/wall-paintings-of-the-hellenistic-and-herodian-period-in-the-land/"
+    }
+   ],
+   "pattern": "panels"
+  },
+  "caesarea_harbour": {
+   "name_he": "נמל סבסטוס",
+   "name_fr": "Port de Sébastos",
+   "material_he": "בטון הידראולי עם פוצולנה איטלקית",
+   "material_fr": "Béton hydraulique à pouzzolane italienne",
+   "colors": [
+    "#9a9488"
+   ],
+   "certainty": "attested",
+   "note_he": "מזחי הורדוס יוצקו מבטון רומי עם אפר וולקני מאיטליה — אפור-בז׳ גס.",
+   "note_fr": "Jetées coulées en béton romain à pouzzolane d’Italie, gris-beige brut.",
+   "sources": [
+    {
+     "ref": "Dilaria S. et al., 2023, Early exploitation of Neapolitan pozzolan in the Roman theatre of Aquileia, Scientific Reports 13:4110 (rappel pour Cesaree)",
+     "url": "https://www.nature.com/articles/s41598-023-30692-y"
+    },
+    {
+     "ref": "Oleson J.P. & Branton G., 1992, The technology of King Herod's harbour, in Caesarea Papers (JRA Suppl. 5)",
+     "url": null
+    }
+   ]
+  },
+  "meleke_fresh": {
+   "name_he": "אבן מלכה חדשה",
+   "name_fr": "Pierre meleke fraîche",
+   "material_he": "אבן גיר מלכה — לבנה-שמנתית בזמן החציבה",
+   "material_fr": "Calcaire meleke, blanc-crème à l’extraction",
+   "colors": [
+    "#ece2c8"
+   ],
+   "certainty": "attested",
+   "note_he": "האבן ההרודיאנית הייתה לבנה הרבה יותר מהצבע הזהוב של היום.",
+   "note_fr": "La pierre hérodienne était bien plus blanche que sa patine dorée actuelle.",
+   "sources": [
+    {
+     "ref": "Josephe, Guerre des Juifs V.223 (parties non dorees 'extremement blanches')",
+     "url": "https://lexundria.com/j_bj/5.222-5.226/wst"
+    }
+   ]
+  },
+  "temple_white": {
+   "name_he": "בית המקדש — „לבן כשלג“",
+   "name_fr": "Le Temple — « blanc comme neige »",
+   "material_he": "אבן לבנה; החזית בלוחות זהב",
+   "material_fr": "Pierre blanche ; façade plaquée d’or",
+   "colors": [
+    "#f4efe2"
+   ],
+   "certainty": "attested",
+   "note_he": "יוספוס: החזית מכוסה לוחות זהב כבדים והשאר „לבן מאוד“ — עדות כתובה, לא ממצא.",
+   "note_fr": "Josèphe : façade couverte de lourdes plaques d’or, le reste « extrêmement blanc » — témoignage écrit.",
+   "sources": [
+    {
+     "ref": "Josephe, Guerre des Juifs V.222-223",
+     "url": "https://lexundria.com/j_bj/5.222-5.226/wst"
+    }
+   ]
+  },
+  "opus_sectile_tm": {
+   "name_he": "ריצוף אופוס סקטילה",
+   "name_fr": "Pavement en opus sectile",
+   "material_he": "גיר ביטומני שחור, גיר מקומי ושיש צבעוני",
+   "material_fr": "Craie bitumineuse noire, calcaire et marbres colorés",
+   "colors": [
+    "#2b2622",
+    "#f1ece1",
+    "#d9b65a",
+    "#6b3a5a"
+   ],
+   "certainty": "attested",
+   "note_he": "פרויקט סינון עפר הר הבית שחזר דוגמאות גאומטריות הרודיאניות מאריחים כהים ובהירים.",
+   "note_fr": "Le projet de tamisage a reconstitué des motifs géométriques hérodiens en carreaux sombres et clairs.",
+   "sources": [
+    {
+     "ref": "Snyder F., Barkay G., Dvira Z., 2016, What the Temple Mount Floor Looked Like, BAR 42:6",
+     "url": "https://www.biblicalarchaeology.org/daily/biblical-sites-places/temple-at-jerusalem/what-the-temple-mount-floor-looked-like/"
+    },
+    {
+     "ref": "Dvira Z., 2026, Visualizing the Splendor: New 3D Reconstructions of the Temple Mount Courts, TMSP",
+     "url": "https://tmsifting.org/en/2026/08/05/visualizing-the-splendor-new-3d-reconstructions-of-the-temple-mount-courts/"
+    }
+   ],
+   "pattern": "sectile",
+   "finish": "polished"
+  },
+  "royal_stoa": {
+   "name_he": "הסטיו המלכותי",
+   "name_fr": "Portique royal",
+   "material_he": "עמודי גיר מקומי, כותרות קורינתיות, תקרת עץ מגולפת",
+   "material_fr": "Colonnes de calcaire local, chapiteaux corinthiens, plafond de bois sculpté",
+   "colors": [
+    "#f1ebdc"
+   ],
+   "certainty": "attested",
+   "note_he": "יוספוס מתאר 162 עמודים קורינתיים, קיר מאבן מלוטשת ותקרות עץ מגולפות.",
+   "note_fr": "Josèphe décrit 162 colonnes corinthiennes, un mur de pierre polie et des plafonds de bois sculpté.",
+   "sources": [
+    {
+     "ref": "Josephe, Antiquites juives XV.410-420",
+     "url": "https://en.wikipedia.org/wiki/Royal_Stoa_(Jerusalem)"
+    },
+    {
+     "ref": "Snyder F., Barkay G., Dvira Z., 2016, BAR 42:6",
+     "url": "https://www.biblicalarchaeology.org/daily/biblical-sites-places/temple-at-jerusalem/what-the-temple-mount-floor-looked-like/"
+    }
+   ]
+  },
+  "royal_stoa_ceiling": {
+   "name_he": "תקרת עץ",
+   "name_fr": "Plafond de bois",
+   "material_he": "עץ ארז מגולף",
+   "material_fr": "Bois de cèdre sculpté",
+   "colors": [
+    "#7a5232"
+   ],
+   "certainty": "attested",
+   "note_he": "תקרות עץ מגולפות לפי יוספוס.",
+   "note_fr": "Plafonds de bois sculpté selon Josèphe.",
+   "sources": [
+    {
+     "ref": "Josephe, Antiquites juives XV.410-420",
+     "url": "https://en.wikipedia.org/wiki/Royal_Stoa_(Jerusalem)"
+    },
+    {
+     "ref": "Snyder F., Barkay G., Dvira Z., 2016, BAR 42:6",
+     "url": "https://www.biblicalarchaeology.org/daily/biblical-sites-places/temple-at-jerusalem/what-the-temple-mount-floor-looked-like/"
+    }
+   ]
+  },
+  "masada_np": {
+   "name_he": "מצדה — הארמון הצפוני",
+   "name_fr": "Massada — palais nord",
+   "material_he": "טיח צבוע כחיקוי לוחות שיש",
+   "material_fr": "Enduit peint imitant des plaques de marbre",
+   "colors": [
+    "#efe7d6",
+    "#c9a43b",
+    "#9e2b25"
+   ],
+   "certainty": "attested",
+   "note_he": "בקירות המדרגה התחתונה לוחות צבועים שמחקים שיש, ועמודי טיח מחורצים.",
+   "note_fr": "Panneaux peints imitant le marbre et colonnes en stuc cannelé sur la terrasse inférieure.",
+   "sources": [
+    {
+     "ref": "Netzer E., 1991, Masada III: The Buildings (IES, Jerusalem)",
+     "url": null
+    },
+    {
+     "ref": "That the World May Know, Column and Fresco (Masada)",
+     "url": "https://www.thattheworldmayknow.com/column-and-fresco"
+    }
+   ],
+   "pattern": "panels"
+  },
+  "masada_plaster": {
+   "name_he": "מבני הורדוס במצדה — טיח",
+   "name_fr": "Bâtiments hérodiens de Massada — enduit",
+   "material_he": "דולומיט מכוסה טיח סיד בהיר",
+   "material_fr": "Dolomie couverte d’enduit de chaux clair",
+   "colors": [
+    "#ece4d2"
+   ],
+   "certainty": "typical",
+   "note_he": "בנייני הורדוס במצדה טויחו; שרידי טיח רבים נמצאו בחפירות.",
+   "note_fr": "Les bâtiments d’Hérode à Massada étaient enduits ; de nombreux restes d’enduit ont été fouillés.",
+   "sources": [
+    {
+     "ref": "Netzer E., 1991, Masada III: The Buildings (IES, Jerusalem)",
+     "url": null
+    }
+   ]
+  },
+  "herodium_box": {
+   "name_he": "הרודיון — תא המלך",
+   "name_fr": "Hérodion — loge royale",
+   "material_he": "ציורי קיר וטיח מעוצב, חלונות מצוירים",
+   "material_fr": "Fresques et stucs, fausses fenêtres peintes",
+   "colors": [
+    "#f2ede2",
+    "#9e2b25",
+    "#1f5fa8"
+   ],
+   "certainty": "attested",
+   "note_he": "בתא המלך חלונות מצוירים עם נופים וספינה.",
+   "note_fr": "Loge royale à fausses fenêtres peintes ouvrant sur paysages et marine.",
+   "sources": [
+    {
+     "ref": "Netzer E. et al., 2010, Preliminary report on Herod's mausoleum and theatre with a royal box at Herodium, JRA 23",
+     "url": "https://resolve.cambridge.org/core/journals/journal-of-roman-archaeology/article/preliminary-report-on-herods-mausoleum-and-theatre-with-a-royal-box-at-herodium/0EA4DF8289DA11F544F4A73B4405072A"
+    },
+    {
+     "ref": "Phys.org, 2010, Archaeologists find theater box at Herod's palace",
+     "url": "https://phys.org/news/2010-09-archaeologists-theater-herod-palace.html"
+    }
+   ],
+   "pattern": "panels"
+  },
+  "sepphoris_mosaic": {
+   "name_he": "ציפורי — פסיפסים",
+   "name_fr": "Sepphoris — mosaïques",
+   "material_he": "אבני פסיפס צבעוניות על רקע לבן",
+   "material_fr": "Tesselles polychromes sur fond blanc",
+   "colors": [
+    "#ede4d0",
+    "#9e3b2a",
+    "#c9a43b",
+    "#3a3a3a"
+   ],
+   "certainty": "attested",
+   "note_he": "פסיפס דיוניסוס (מאה 3) — רקע לבן ושדה צבעוני מאוד.",
+   "note_fr": "Mosaïque de Dionysos (IIIe s.) : fond blanc, champ très polychrome.",
+   "sources": [
+    {
+     "ref": "Center for Online Judaic Studies, Sepphoris Mosaic, 3rd century CE",
+     "url": "https://cojs.org/sepphoris_mosaic-_3rd_century_ce/"
+    },
+    {
+     "ref": "Talgam R. & Weiss Z., 2004, The Mosaics of the House of Dionysos at Sepphoris (Qedem 44)",
+     "url": null
+    }
+   ],
+   "pattern": "mosaic"
+  }
+ },
+ "maps": {
+  "architecture": {
+   "orders:styl": "stucco_white",
+   "orders:dshaft": "stucco_white",
+   "orders:ech": "molding_redblue",
+   "orders:abac": "molding_redblue",
+   "orders:darch": "stucco_white",
+   "orders:trig": "triglyph_blue",
+   "orders:met": "metope_red",
+   "orders:ibase": "stucco_white",
+   "orders:vol": "ionic_volute",
+   "orders:acan": "acanthus",
+   "orders:arcus": "vault_stucco",
+   "orders:key": "vault_stucco",
+   "orders:vault": "vault_stucco",
+   "temple:krep": "stucco_white",
+   "temple:styl": "stucco_white",
+   "temple:shaft": "stucco_white",
+   "temple:cap": "molding_redblue",
+   "temple:arch": "stucco_white",
+   "temple:trig": "triglyph_blue",
+   "temple:met": "metope_red",
+   "temple:cornice": "molding_redblue",
+   "temple:entab": "stucco_white",
+   "temple:ped": "pediment_blue",
+   "temple:ped:roof": null,
+   "temple:acro": "molding_redblue",
+   "temple:pronaos": "stucco_white",
+   "temple:cella": "stucco_white",
+   "cardo:port": "marble_white",
+   "cardo:tet": "marble_white",
+   "cardo:arcT": "marble_white",
+   "cardo:forum": "marble_white",
+   "cardo:tab": "wall_painting",
+   "bsh:fall": "marble_white",
+   "bsh:nym": "marble_white",
+   "bsh:rtem": "marble_white",
+   "bsh:mon": "marble_white",
+   "bath:apo": "mosaic_floor",
+   "bath:tep": "mosaic_floor",
+   "bath:cal": "mosaic_floor",
+   "bath:vault": "vault_stucco",
+   "bath:pilae": "hypocaust_brick",
+   "bath:hyp": "hypocaust_brick",
+   "bath:pf": "hypocaust_brick",
+   "bath:tub": "hypocaust_brick",
+   "bath:susp": "mosaic_floor",
+   "bath:pal": "stucco_white",
+   "theatre:orch": "caesarea_orchestra",
+   "theatre:pulp": "caesarea_stage",
+   "theatre:scaen": "caesarea_scaenae",
+   "theatre:regia": "caesarea_scaenae",
+   "hipp:obel": "granite_aswan",
+   "hipp:spina": "marble_white",
+   "church:mos": "mosaic_floor",
+   "church:apse": "apse_gold",
+   "church:col": "marble_white",
+   "church:chan": "marble_white",
+   "church:alt": "marble_white",
+   "church:font": "marble_white",
+   "syn:hall": "white_limestone_syn",
+   "syn:col": "white_limestone_syn",
+   "syn:prop": "white_limestone_syn"
+  },
+  "world3d": {
+   "caesarea:proscaenium": "caesarea_stage",
+   "caesarea:hospitalia": "caesarea_stage",
+   "caesarea:scaenaeFrons": "caesarea_scaenae",
+   "caesarea:substructure": "kurkar_stucco"
+  },
+  "sites": {
+   "caesarea:caesarea_harbour": "caesarea_harbour",
+   "caesarea:caesarea_temple": "kurkar_stucco",
+   "caesarea:caesarea_palace": "caesarea_palace",
+   "caesarea:caesarea_theater:herodian:paving": "caesarea_orchestra",
+   "caesarea:caesarea_theater:roman:paving": "caesarea_orchestra_marble",
+   "caesarea:caesarea_theater:byzantine:paving": "caesarea_orchestra_marble",
+   "caesarea:caesarea_theater:marble": "caesarea_scaenae",
+   "caesarea:caesarea_theater:ashlar": "kurkar_stucco",
+   "caesarea:caesarea_theater:kurkar": "kurkar_stucco",
+   "caesarea:herodian:kurkar": "kurkar_stucco",
+   "masada:masada_northern_palace": "masada_np",
+   "masada:herodian:dolomite": "masada_plaster",
+   "herodium:hr_theater": "herodium_box",
+   "tzippori:tz_dionysus": "sepphoris_mosaic",
+   "tzippori:tz_nile": "sepphoris_mosaic",
+   "beitshean:kind:marble": "marble_white",
+   "kind:marble": "marble_white"
+  },
+  "jerusalem": {
+   "jerusalem:herodian:herodian": "meleke_fresh",
+   "jerusalem:jerusalem_second_temple": "temple_white",
+   "jerusalem:jerusalem_royal_stoa:paving": "opus_sectile_tm",
+   "jerusalem:jerusalem_porticoes:paving": "opus_sectile_tm",
+   "jerusalem:jerusalem_royal_stoa:wood": "royal_stoa_ceiling",
+   "jerusalem:jerusalem_royal_stoa": "royal_stoa",
+   "kind:marble": "marble_white"
+  }
+ }
+}

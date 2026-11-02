@@ -226,7 +226,7 @@ temple(){
   for(let x=-5.6;x<=5.7;x+=1.12)box(.35,.58,.06,x,7.66,10.02,C.lime3,"trig");
   box(12.8,.3,20.8,0,8.25,0,C.marble,"cornice");
   const sh=new THREE.Shape();sh.moveTo(-6.4,0);sh.lineTo(6.4,0);sh.lineTo(0,1.8);sh.closePath();
-  const roof=new THREE.Mesh(new THREE.ExtrudeGeometry(sh,{depth:20.8,bevelEnabled:false}),mat(C.lime));roof.position.set(0,8.55,-10.4);add(roof,"ped");
+  const roof=new THREE.Mesh(new THREE.ExtrudeGeometry(sh,{depth:20.8,bevelEnabled:false}),mat(C.lime));roof.position.set(0,8.55,-10.4);roof.userData.role="roof";add(roof,"ped");
   const sh2=new THREE.Shape();sh2.moveTo(-5.6,.15);sh2.lineTo(5.6,.15);sh2.lineTo(0,1.5);sh2.closePath();
   const ty=new THREE.Mesh(new THREE.ExtrudeGeometry(sh2,{depth:.05,bevelEnabled:false}),mat(C.lime3));ty.position.set(0,8.55,10.4);add(ty,"ped");
   box(.5,.6,.3,0,10.3,10.4,C.marble,"acro");box(.45,.5,.3,-6.2,8.55,10.4,C.marble,"acro");box(.45,.5,.3,6.2,8.55,10.4,C.marble,"acro");

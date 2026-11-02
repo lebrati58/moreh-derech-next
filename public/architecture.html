@@ -77,7 +77,7 @@ body:not([data-view=explore]) .hero{display:none}
 .pin.target b{animation:pulse 1s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(1.25)}}
 .hud{position:absolute;inset-inline:10px;bottom:10px;display:flex;justify-content:space-between;align-items:end;gap:8px;pointer-events:none;font-size:12px;font-weight:800;color:#d9e2ff;text-shadow:0 1px 2px #000}
-.hud button{pointer-events:auto;min-height:40px;border-radius:11px;background:#0b1230cc;border:1px solid var(--line2);font-size:13px;font-weight:900;padding:6px 11px;text-shadow:none}
+.hudR{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.hud button[aria-pressed=true]{background:#7B1E3Ecc}.hud button{pointer-events:auto;min-height:40px;border-radius:11px;background:#0b1230cc;border:1px solid var(--line2);font-size:13px;font-weight:900;padding:6px 11px;text-shadow:none}
 .nogl{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--soft);font-weight:800}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;display:flex;flex-direction:column;gap:8px}
@@ -187,7 +187,7 @@ textarea{width:100%;min-height:150px;border-radius:14px;border:1px solid var(--l
   <div id="stageHome" hidden>
     <div class="stage" id="stage" aria-label="דגם תלת-ממד">
       <div class="pins" id="pins"></div>
-      <div class="hud"><span id="hudNote"></span><button type="button" id="recenter">⟲ מרכז</button></div>
+      <div class="hud"><span id="hudNote"></span><span class="hudR"><button type="button" id="recenter">⟲ מרכז</button></span></div>
     </div>
   </div>
 

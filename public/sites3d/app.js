@@ -3,6 +3,7 @@
 // (cours d'abord), trois niveaux de certitude. Données : sites3d/<site>/site.json (fiches) + sites3d/<site>/geo.json (géographie).
 import { renderTimeline, markTimeline, pickStyle } from '../era-timeline.js';
 import * as THREE from 'three';
+import { loadPalette, applyOriginal, wanted, mountToggle } from '../polychromy.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Sky } from 'three/addons/objects/Sky.js';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
@@ -238,7 +239,7 @@ function flyTo(id) {
 function disposeTree(o) { o.traverse(c => { if (c.geometry) c.geometry.dispose(); }); }
 function clearWorld() { while (world.children.length) { const o = world.children.pop(); disposeTree(o); } placed = new Set(); labels.forEach(l => l.el.remove()); labels = []; }
 function add(obj, m, now) {
-  obj.userData.id = m.id; obj.traverse(c => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
+  obj.userData.id = m.id; obj.userData.now = !!now; obj.traverse(c => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
   if (!realistic || !now) {
     const colr = now ? DATA.certainty[m.certainty].color : '#bdb5a6', fm = flat(colr, m.certainty === 'hypothesis' && now ? { transparent: true, opacity: 0.6 } : {});
     if (!realistic || DATA.greyOld) obj.traverse(c => { if (c.isMesh && !c.userData.keep) c.material = fm; });
@@ -325,7 +326,26 @@ function buildModel(m, sh) {
   }
 }
 
-function rebuildScene() {
+
+// ---- צבעים מקוריים (polychromy.json) : seulement les monuments de la période affichée, en mode matériaux réels ----
+let POLY = null, polyUsed = [];
+function polyKeys(o) {
+  let p = o, id = null, now = false; while (p) { if (p.userData && p.userData.id) { id = p.userData.id; now = !!p.userData.now; break; } p = p.parent; }
+  if (!id || !now) return [];
+  const kind = o.material && o.material.userData && o.material.userData.kind, per = (DATA.periods || []).find(x => x.n === period), era = per && per.era, S = SITE;
+  if (era === 'today') return [];
+  if (kind === 'gold' || kind === 'bronze' || kind === 'lead' || kind === 'tiles') return [S + ':' + id + ':' + kind]; // métaux et faïence : seulement si une entrée les vise
+  return [kind && era && S + ':' + id + ':' + era + ':' + kind, kind && S + ':' + id + ':' + kind, S + ':' + id, kind && era && S + ':' + era + ':' + kind, kind && era && 'era:' + era + ':' + kind, kind && S + ':kind:' + kind];
+}
+function applyPoly() { if (!world || !POLY) return; polyUsed = applyOriginal(world, 'sites', polyKeys, POLY.on && realistic); POLY.refresh(); }
+function setupPoly() {
+  if (POLY) return; const menu = $('toolsMenu'); if (!menu) return;
+  POLY = mountToggle(menu, { used: () => polyUsed, label: '<span class="ti">🏺</span><span class="tl">צבעים מקוריים</span>',
+    onChange: on => loadPalette().then(() => { if (on && !realistic) { realistic = true; store.set('mdl_j3d_real', '1'); applyUI(); rebuildScene(); } else applyPoly(); }) });
+  if (wanted()) loadPalette().then(() => POLY.set(true));
+}
+function rebuildScene() { rebuildScene0(); setupPoly(); applyPoly(); }
+function rebuildScene0() {
   if (!world) return; clearWorld();
   for (const m of DATA.monuments) {
     if (!inPeriod(m) || !m.shape) continue; const now = isNow(m) || (m.keep && m.from <= period);
