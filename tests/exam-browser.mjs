@@ -118,12 +118,31 @@ ok(/25\/20/.test(await page.textContent('[data-c="method"]')), 'אמצעים : 2
 await page.click('#chk');
 await page.waitForSelector('#out .checks');
 ok(/חריגה של 10/.test(await page.textContent('#out')), 'vérification : « חריגה של 10 » + règle du cahier');
-await page.click('#mdl');
+await page.$eval('#mdl', el => el.click());
 await page.waitForSelector('#out .mtext');
 ok(/כורסי/.test(await page.textContent('#out .mtext')) && /לא תשובה רשמית/.test(await page.textContent('#out')), 'réponse modèle (כביש 789) affichée, marquée « pas officielle »');
-await page.click('#cmp');
+await page.$eval('#cmp', el => el.click());
 await page.waitForSelector('.cmp');
 ok(true, 'comparaison côte à côte');
+// correction par Claude : serveur SIMULÉ (la vraie clé n'existe que sur Cloudflare)
+let gradeBody = null;
+await page.route(/\/api\/grade$/, route => { gradeBody = JSON.parse(route.request().postData()); route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true, result: { score: 6.5, max: 8, summary: 'הדרכה טובה, חסר סיום.', strengths: ['פתיחה ברורה'], issues: [{ cat: 'structure', he: 'אין משפט מעבר', fix: 'סיימו ב״עכשיו נעלה…״' }], facts_to_verify: ['שנת 1905'], corrected_text: 'גרסה מתוקנת לדוגמה. '.repeat(20).trim(), corrected_words: 60, indicative: true, model: 'claude-opus-5-5' } }) }); });
+await page.fill('#ed textarea', Array(120).fill('מילה').join(' '));
+await page.$eval('#ai', el => el.click());
+await page.waitForSelector('.panel.claude .cscore');
+ok(gradeBody && gradeBody.unit.kind === 'short' && gradeBody.site && Array.isArray(gradeBody.site.facts) && gradeBody.model.limits.shortWords === 180, 'Claude reçoit le texte, les faits sourcés du site et les limites du cours');
+ok(!/api_key|sk-ant/.test(JSON.stringify(gradeBody)), 'aucune clé envoyée depuis le téléphone');
+const cl = await page.textContent('.panel.claude');
+ok(/6\.5/.test(cl) && /הערכה פדגוגית/.test(cl) && /אין משפט מעבר/.test(cl) && /שנת 1905/.test(cl), 'résultat : note, « pédagogique », problème + correction, fait à vérifier');
+await page.$eval('[data-usefix]', el => el.click());
+await page.waitForFunction(() => /גרסה מתוקנת/.test(document.querySelector('#ed textarea').value));
+ok(true, 'la version corrigée peut remplacer le texte de l’élève (après confirmation)');
+await page.unroute(/\/api\/grade$/);
+await page.route(/\/api\/grade$/, route => route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ error: 'not_configured', he: 'הבדיקה עם קלוד עוד לא הופעלה: חסר המפתח בשרת.' }) }));
+await page.$eval('#ai', el => el.click());
+await page.waitForSelector('.panel.claude.err');
+ok(/חסר המפתח/.test(await page.textContent('.panel.claude.err')), 'sans clé sur le serveur : message clair, rien ne casse');
+await page.unroute(/\/api\/grade$/);
 await shot('3-editor');
 
 // MODE 2 — trouve les erreurs
@@ -170,7 +189,7 @@ const longPart = await page.textContent('details.part:last-of-type');
 ok(/749/.test(longPart) && /לא לימי הבית השני/.test(longPart), 'correction : erreurs historiques détectées (749, pas le Second Temple)');
 await shot('6-result');
 const st = await page.evaluate(() => window.MDExamApp.state());
-ok(st.badges.includes('examdone') && st.history.length === 1, 'badge + historique enregistrés dans le téléphone');
+ok(st.badges.includes('examdone') && st.history.filter(h => h.pct != null).length === 1, 'badge + historique enregistrés dans le téléphone');
 
 // « À l'envers » : le guide décrit, l'app propose
 await page.goto(base + 'exam.html#/tiyul');

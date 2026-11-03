@@ -536,3 +536,13 @@ Module d'entraînement à la 2e partie de l'examen : choisir les sites, construi
 - **Logique pure** : `public/exam/exam-core.js` (tests : `tests/exam.test.mjs`). Le score est **indicatif** : aucune grille officielle n'a été trouvée.
 - **Progression** (XP, niveaux, badges, erreurs par catégorie) : enregistrée uniquement dans le téléphone (`mdl_exam_v1`). **Aucun numéro demandé.**
 - **Audit des documents** : `docs/EXAM_audit_2026-10-28.md`. Test navigateur : `npm run e2e:exam`.
+
+### 🤖 Correction par Claude (« בדיקה עם קלוד »)
+
+Dans « אתגר המבחן », un bouton **🤖 בדיקה עם קלוד** envoie l'intervention de l'élève à Claude, qui la corrige **uniquement à partir du matériel du cours** (règles 180 / 20 / 400, structure, faits sourcés du site). Il renvoie une note indicative, les points forts, les problèmes avec leur correction, les affirmations à vérifier, et une version corrigée.
+
+- **Où tourne Claude ?** Dans le Worker Cloudflare du site (`worker/index.mjs`, route `/api/grade`). La clé **n'est jamais dans le dépôt ni dans le téléphone**. Depuis GitHub Pages, l'app appelle `https://moreh-derech-next.lebrati.workers.dev/api/grade`.
+- **Activer (une fois)** : Cloudflare › Workers & Pages › `moreh-derech-next` › Settings › Variables and Secrets › **Add** › type *Secret*, nom `ANTHROPIC_API_KEY`, valeur = une clé créée sur https://console.anthropic.com (Settings › API Keys). Puis **Deploy** (ou attendre le prochain déploiement). Tant que le secret manque, le bouton affiche « חסר המפתח בשרת » et le reste de l'app fonctionne.
+- **Coût** : l'API Claude est payante (modèle `claude-opus-5-5`, environ 0,02–0,05 $ par correction). Limite de 20 corrections / minute / adresse (`ratelimits` dans `wrangler.jsonc`). Surveiller la consommation dans la console Anthropic et y fixer un plafond mensuel.
+- **Vie privée** : seuls le texte de l'intervention, les champs du formulaire et les faits du site partent au serveur. Aucun nom, numéro ni position GPS.
+- Tests : `tests/grader.test.mjs` (prompt, garde-fous, nettoyage de la sortie) et `tests/exam-browser.mjs` (serveur simulé). L'appel réel n'est pas testé automatiquement.

@@ -244,6 +244,32 @@
     }));
   }
 
+  // ---------- Correction par Claude (via le Worker Cloudflare ; la clé reste sur le serveur) ----------
+  const GRADE_URL = /workers\.dev$|^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? '/api/grade' : 'https://moreh-derech-next.lebrati.workers.dev/api/grade';
+  function claudeGrade(unit, site, slot, m) {
+    const model = MODELS.models.school5;
+    const ctl = window.AbortController ? new AbortController() : null, t = ctl && setTimeout(() => ctl.abort(), 75000);
+    return fetch(GRADE_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, signal: ctl && ctl.signal,
+      body: JSON.stringify({ unit: { kind: unit.kind, text: unit.text, place: unit.place, minutes: unit.minutes, method: unit.method, topic: unit.topic }, site: site ? { he: site.he, periods: site.periods, status: site.status, facts: site.facts, conflicts: site.conflicts, note: site.note } : null, model: { limits: model.limits }, mission: m ? { brief: m.brief } : null, slot: slot ? { he: slot.he } : null }) })
+      .then(r => { if (t) clearTimeout(t); return r.json().then(j => Object.assign({ status: r.status }, j)); });
+  }
+  const CAT_HE = { fit: 'התאמה להנחיה', structure: 'מבנה', facts: 'עובדות', words: 'מילים', fields: 'שדות', language: 'לשון', guiding: 'הדרכה' };
+  function claudeHtml(g, long) {
+    const r = g.result;
+    return `<div class="panel claude"><h3>🤖 בדיקה עם קלוד <span class="muted">— הערכה פדגוגית, לא ציון רשמי</span></h3>
+      <div class="cscore"><b>${r.score}</b> / ${r.max}</div><p>${esc(r.summary)}</p>
+      ${r.strengths.length ? `<p class="good">✔ ${r.strengths.map(esc).join(' · ')}</p>` : ''}
+      ${r.issues.length ? `<ul class="tips">${r.issues.map(i => `<li><b>${esc(CAT_HE[i.cat] || i.cat)}:</b> ${esc(i.he)} <span class="fixit">→ ${esc(i.fix)}</span></li>`).join('')}</ul>` : ''}
+      ${r.facts_to_verify.length ? `<p class="conf">🔎 לא בחומר הקורס — לבדוק לפני המבחן: ${r.facts_to_verify.map(esc).join(' · ')}</p>` : ''}
+      <details class="mo"><summary>✍️ הגרסה המתוקנת של קלוד (${r.corrected_words} מילים${r.corrected_words > (long ? 400 : 180) ? ' ⚠️ חורג' : ''})</summary><div class="mtext"><p>${esc(r.corrected_text).replace(/\n\n/g, '</p><p>')}</p></div>
+        <div class="acts"><button type="button" class="btn ghost" data-usefix>📋 להחליף את הטקסט שלי בגרסה המתוקנת</button></div></details>
+      <p class="muted">הגרסה המתוקנת היא הצעה: קראו, השוו למקורות, והחליטו בעצמכם. קלוד בודק רק לפי חומר הקורס.</p></div>`;
+  }
+  function claudeError(g) {
+    const he = g.he || ({ not_configured: 'הבדיקה עם קלוד עוד לא הופעלה (חסר המפתח בשרת).', too_short: 'כתבו לפחות 20 מילים לפני הבדיקה.', too_long: 'הטקסט ארוך מדי לבדיקה.', rate_limited: 'יותר מדי בקשות — נסו שוב בעוד דקה.' })[g.error] || 'הבדיקה עם קלוד לא הצליחה. בדקו את החיבור ונסו שוב.';
+    return `<div class="panel claude err"><h3>🤖 בדיקה עם קלוד</h3><p>${esc(he)}</p></div>`;
+  }
+
   // ---------- Éditeur d'intervention ----------
   function wordBadge(n, kind) {
     const w = C.wordState(n, kind, MODELS.models.school5.limits);
@@ -590,7 +616,7 @@
       const modelFor = () => C.modelFor(DATA, u.site, sl.need, long);
       body.innerHTML = `${long ? '' : `<div class="unitsel">${m.slots.map((s, i) => `<button type="button" class="${s.id === slotId ? 'on' : ''}" data-u="${s.id}">${i + 1}</button>`).join('')}</div>`}
         <p class="lead"><b>${esc(sl.he)}</b>${!u.site ? ' — בחרו אתר (או חזרו לשלב 1).' : ''}</p><div id="ed"></div>
-        <div class="acts"><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn ghost" id="imp">✨ ${t('improve')}</button><button type="button" class="btn ghost" id="mdl">👀 ${t('model')}</button><button type="button" class="btn ghost" id="cmp">⚖️ ${t('compare')}</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
+        <div class="acts"><button type="button" class="btn" id="chk">✔ ${t('check')}</button><button type="button" class="btn claudebtn" id="ai">🤖 בדיקה עם קלוד</button><button type="button" class="btn ghost" id="imp">✨ ${t('improve')}</button><button type="button" class="btn ghost" id="mdl">👀 ${t('model')}</button><button type="button" class="btn ghost" id="cmp">⚖️ ${t('compare')}</button><button type="button" class="btn ghost" id="rst">↺ ${t('reset')}</button></div>
         <div id="out">${res ? `<div class="panel"><h3>תוצאה: ${Math.round(res.frac * 100)}%</h3>${checklist(res, true)}</div>` : ''}${extra || ''}</div>`;
       editor($('#ed', body), u, { kind, siteChoices: placeChoices(), onChange: save });
       $$('[data-u]', body).forEach(b => b.addEventListener('click', () => { D.cur = b.dataset.u; save(); unitStep(m, D, body, kind); }));
@@ -607,6 +633,19 @@
         draw(r);
       });
       $('#imp', body).addEventListener('click', () => { const r = C.checkUnit(Object.assign({ kind }, u), ctx()); draw(r, `<div class="panel"><h3>✨ ${t('improve')}</h3>${improveTips(r)}</div>`); });
+      $('#ai', body).addEventListener('click', async () => {
+        const b = $('#ai', body); b.disabled = true; b.textContent = '🤖 קלוד בודק…';
+        $('#out', body).innerHTML = '<div class="panel claude"><h3>🤖 קלוד קורא את ההדרכה שלכם…</h3><p class="muted">בדרך כלל 20–40 שניות.</p></div>';
+        try {
+          const g = await claudeGrade(Object.assign({ kind }, u), P[u.site], sl, m);
+          if (!g.ok) { draw(null, claudeError(g)); return; }
+          g.result.issues.forEach(i => noteErr({ fit: 'site', facts: 'period', words: 'words', structure: 'structure', fields: 'fields' }[i.cat] || 'structure'));
+          if (g.result.score / g.result.max >= .75) award(`${m.id}:${slotId}:${u.site}:ai`, long ? 40 : 20);
+          S.history.push({ m: m.id, at: Date.now(), ai: g.result.score + '/' + g.result.max }); save();
+          draw(null, claudeHtml(g, long));
+          const uf = $('[data-usefix]', body); if (uf) uf.addEventListener('click', () => { if (!confirm('להחליף את הטקסט שלכם בגרסה המתוקנת? הטקסט הנוכחי יאבד.')) return; u.text = g.result.corrected_text; save(); draw(); toast('✍️ הטקסט הוחלף'); });
+        } catch (e) { draw(null, claudeError({})); }
+      });
       const modelHtml = mo => mo ? `<p class="meta">📍 ${esc(mo.place)} · ⏱️ ${mo.minutes} דק׳ · 🧰 ${esc(mo.method)}</p><div class="mtext">${esc(mo.text).replace(/\n\n/g, '</p><p>').replace(/^/, '<p>') + '</p>'}</div><p class="muted">${C.wordCount(mo.text)} מילים · תשובה לדוגמה שנכתבה מחומר הקורס — לא תשובה רשמית.${mo.limited ? ' ⚠️ החומר על האתר הזה חלקי (טרם אומת).' : ''}</p><div class="srcs">${(mo.src || []).map(k => srcLink(k)).join('')}</div>` : '<p class="muted">אין עדיין תשובה לדוגמה לאתר הזה במשימה הזו.</p>';
       $('#mdl', body).addEventListener('click', () => { draw(null, `<div class="panel"><h3>👀 ${t('model')}</h3>${modelHtml(modelFor())}</div>`); });
       $('#cmp', body).addEventListener('click', () => { draw(null, `<div class="cmp"><div class="panel"><h3>${t('mine')} (${C.wordCount(u.text)})</h3><div class="mtext"><p>${esc(u.text || '—').replace(/\n\n/g, '</p><p>')}</p></div></div><div class="panel"><h3>👀 ${t('model')}</h3>${modelHtml(modelFor())}</div></div>`); });
@@ -725,10 +764,19 @@
     const slots = C.examSlots(m, model);
     const modelFor = p => { if (p.id === 'long') return C.modelFor(DATA, m.long.best, m.long.need, true); const sl = p.slot && m.slots.find(s => s.id === p.slot); return sl ? C.modelFor(DATA, sl.best, sl.need) : null; };
     shell(missionHead(m, 'exam') + `<section class="score"><div class="big"><bdi dir="ltr">${r.total ? `${r.got} / ${r.max}` : `${r.pct}%`}</bdi></div><p>${r.total ? r.pct + '% · ' : ''}${esc(model.he)}</p><p class="muted">⚠️ ${t('indicative')}${model.pointsNote ? ' ' + esc(model.pointsNote) : ''}</p></section>
-      ${r.parts.map(p => { const mo = modelFor(p); return `<details class="panel part"><summary><b>${esc(p.he)}</b><bdi dir="ltr">${p.got} / ${p.max}</bdi></summary>${checklist(p.res, true)}${mo ? `<details class="mo"><summary>👀 ${t('model')}</summary><p class="meta">📍 ${esc(mo.place)} · 🧰 ${esc(mo.method)}</p><div class="mtext"><p>${esc(mo.text).replace(/\n\n/g, '</p><p>')}</p></div><div class="srcs">${(mo.src || []).map(k => srcLink(k)).join('')}</div></details>` : ''}</details>`; }).join('')}
+      ${r.parts.map(p => { const mo = modelFor(p); return `<details class="panel part" data-part="${p.id}"><summary><b>${esc(p.he)}</b><bdi dir="ltr">${p.got} / ${p.max}</bdi></summary>${checklist(p.res, true)}${p.id !== 'plan' ? `<div class="acts"><button type="button" class="btn claudebtn" data-ai="${p.id}">🤖 בדיקה עם קלוד</button></div><div class="aiout"></div>` : ''}${mo ? `<details class="mo"><summary>👀 ${t('model')}</summary><p class="meta">📍 ${esc(mo.place)} · 🧰 ${esc(mo.method)}</p><div class="mtext"><p>${esc(mo.text).replace(/\n\n/g, '</p><p>')}</p></div><div class="srcs">${(mo.src || []).map(k => srcLink(k)).join('')}</div></details>` : ''}</details>`; }).join('')}
       <div class="acts"><button type="button" class="btn" id="again">↺ סימולציה חדשה</button><a class="btn ghost" href="#/m/${m.id}/guided">🧭 ${t('guided')}</a></div>
       <p class="foot">${t('sources')}: ${MODELS.models.school5.sources.map(s => `<a href="https://drive.google.com/open?id=${esc(s.id)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</p>`, { back: '#/' });
     $('#again').addEventListener('click', () => { delete S.exams[m.id]; save(); location.hash = `#/m/${m.id}/exam`; viewExam(m); });
+    $$('[data-ai]').forEach(b => b.addEventListener('click', async () => {
+      const part = r.parts.find(p => p.id === b.dataset.ai), box = b.closest('details').querySelector('.aiout');
+      const u = part.id === 'long' ? Object.assign({ kind: 'long' }, E.long) : Object.assign({ kind: 'short' }, E.units[part.slot] || {});
+      const sl = part.id === 'long' ? m.long : slots.find(s => s.id === part.slot);
+      b.disabled = true; b.textContent = '🤖 קלוד בודק…'; box.innerHTML = '<p class="muted">בדרך כלל 20–40 שניות…</p>';
+      try { const g = await claudeGrade(u, P[u.site], sl, m); box.innerHTML = g.ok ? claudeHtml(g, part.id === 'long') : claudeError(g); const uf = $('[data-usefix]', box); if (uf) uf.remove(); }
+      catch (e) { box.innerHTML = claudeError({}); }
+      b.disabled = false; b.textContent = '🤖 לבדוק שוב';
+    }));
     void slots;
   }
 
