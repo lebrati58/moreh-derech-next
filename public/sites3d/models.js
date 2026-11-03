@@ -167,11 +167,11 @@ export function breakwater(lines, seaY, { w = 30, h = 3, kind = 'kurkar', towers
 }
 
 // TEMPLE sur podium (prostyle hexastyle) avec plate-forme.
-export function templeOnPodium({ podiumW = 100, podiumD = 90, podiumH = 4, L = 46, W = 28, H = 16, kind = 'kurkar' } = {}) {
+export function templeOnPodium({ podiumW = 100, podiumD = 90, podiumH = 4, L = 46, W = 28, H = 16, kind = 'kurkar', cols = 6, rows = 2 } = {}) {
   const g = new THREE.Group(), m = stone(kind), pl = stone('plaster', { tint: '#f1e8d6' }), cm = stone('marble', { rough: 0.5 });
   g.add(box(podiumW, podiumH, podiumD, m));
   const y = podiumH; g.add(box(W, 3, L, pl, 0, y, 0)); g.add(box(W - 6, H - 3, L - 10, pl, 0, y + 3, 4));
-  const pts = []; for (let i = 0; i < 6; i++) pts.push([-W / 2 + 2 + i * (W - 4) / 5, -L / 2 + 2]); for (let i = 0; i < 6; i++) pts.push([-W / 2 + 2 + i * (W - 4) / 5, -L / 2 + 6]);
+  const pts = []; for (let r = 0; r < rows; r++) for (let i = 0; i < cols; i++) pts.push([-W / 2 + 2 + i * (W - 4) / (cols - 1), -L / 2 + 2 + r * 4]);
   g.add(columns(pts, H - 5, 0.75, cm, y + 3)); g.add(box(W, 1.6, L, pl, 0, y + H - 2, 0));
   const s = new THREE.Shape([V2(-W / 2, 0), V2(W / 2, 0), V2(0, 4.5)]); const gb = mesh(new THREE.ExtrudeGeometry(s, { depth: L, bevelEnabled: false }), stone('ashlar', { tint: '#b4704c' })); gb.position.set(0, y + H - 0.4, -L / 2); g.add(gb);
   for (let i = 0; i < 9; i++) g.add(box(W * 0.8, 0.35, 0.8, m, 0, i * 0.35, -podiumD / 2 - 1 - i * 0.8 + 6)); // escalier de façade
@@ -322,7 +322,7 @@ function bathMats() {
   });
   return BATH_MAT;
 }
-export function bathhouse({ W = 30, D = 25, h = 7, kind = 'kurkar', ruin = false } = {}) {
+export function bathhouse({ W = 30, D = 25, h = 7, kind = 'kurkar', ruin = false, palaestra = true } = {}) {
   const g = new THREE.Group(), M = bathMats(), wallM = stone(kind), plaster = stone('plaster', { tint: '#f1e8d6' }), marble = stone('marble', { rough: 0.45 });
   const x0 = -W / 2, x1 = W / 2, z0 = -D / 2, z1 = D / 2, T = 1.1;                 // murs de 1,1 m
   const H = ruin ? null : h, rnd = (() => { let s = 11; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
@@ -372,20 +372,86 @@ export function bathhouse({ W = 30, D = 25, h = 7, kind = 'kurkar', ruin = false
   g.add(box(W - 2.4, 0.08, zMid - z0 - 2, M.mosaic, 0, 0, (z0 + zMid) / 2));
   // ---- palestre au nord : cour à colonnes, sol de mosaïque
   const cw = W - 2, cd = 18, cz = z0 - cd / 2 - 0.6;
+  if (!palaestra) { g.userData.parts = bathParts(x0, xC, xT, x1, z0, zMid, z1, null); return g; }
   g.add(box(cw, 0.12, cd, M.mosaic, 0, 0, cz));
   const pts = []; for (let x = -cw / 2 + 1.5; x <= cw / 2 - 1.4; x += 3) pts.push([x, cz - cd / 2 + 1.5], [x, cz + cd / 2 - 1.5]);
   for (let z = cz - cd / 2 + 4.5; z < cz + cd / 2 - 2; z += 3) pts.push([-cw / 2 + 1.5, z], [cw / 2 - 1.5, z]);
   if (!ruin) { g.add(columns(pts, 5, 0.3, marble, 0.12)); for (const [w, d, x, z] of [[cw, 3.2, 0, cz - cd / 2 + 1.5], [cw, 3.2, 0, cz + cd / 2 - 1.5], [3.2, cd, -cw / 2 + 1.5, cz], [3.2, cd, cw / 2 - 1.5, cz]]) g.add(box(w, 0.35, d, stone('ashlar', { tint: '#c98f68' }), x, 5.3, z)); }
   else { const stumps = pts.filter(() => rnd() > 0.25).map(([x, z]) => [x, z, 0.12]); g.add(columns(stumps, 1.1, 0.32, marble, 0.12)); g.add(columns(pts.filter((_, i) => i % 7 === 3), 4.2, 0.3, marble, 0.12)); }
   wall(-cw / 2, cz - cd / 2, cw / 2, cz - cd / 2, 0.8); wall(-cw / 2, cz - cd / 2, -cw / 2, z0, 0.8); wall(cw / 2, cz - cd / 2, cw / 2, z0, 0.8);
-  // repères des parties (repère local), affichés de près
-  g.userData.parts = [
+  g.userData.parts = bathParts(x0, xC, xT, x1, z0, zMid, z1, cz);
+  return g;
+}
+// repères des parties (repère local), affichés de près
+function bathParts(x0, xC, xT, x1, z0, zMid, z1, cz) {
+  return [
     { he: 'קלדריום (חם)', fr: 'Caldarium (chaud)', en: 'Caldarium (hot)', p: [(x0 + xC) / 2, 3, (zMid + z1) / 2] },
     { he: 'טפידריום', fr: 'Tepidarium', en: 'Tepidarium', p: [(xC + xT) / 2, 3, (zMid + z1) / 2] },
     { he: 'פריג׳ידריום (קר)', fr: 'Frigidarium (froid)', en: 'Frigidarium (cold)', p: [(xT + x1) / 2, 3, (zMid + z1) / 2] },
     { he: 'היפוקאוסט', fr: 'Hypocauste', en: 'Hypocaust', p: [xC - 2, 1.6, z1 - 2] },
     { he: 'תנור (פרפורניום)', fr: 'Four (praefurnium)', en: 'Furnace (praefurnium)', p: [x0 - 2.4, 3.6, zMid + 1.6] },
     { he: 'חדר הלבשה', fr: 'Vestiaire (apodyterium)', en: 'Changing room (apodyterium)', p: [0, 2.4, (z0 + zMid) / 2] },
-    { he: 'חצר עמודים (פלסטרה) ופסיפס', fr: 'Palestre à colonnes et mosaïque', en: 'Colonnaded palaestra and mosaic', p: [0, 3, cz] }];
+    ...(cz == null ? [] : [{ he: 'חצר עמודים (פלסטרה) ופסיפס', fr: 'Palestre à colonnes et mosaïque', en: 'Colonnaded palaestra and mosaic', p: [0, 3, cz] }])];
+}
+
+// GRANDS THERMES (bain occidental de Beit Shéan, fin du IVe s.) — dépliant RTG : env. 9 dounams ; bâtiment central de huit salles
+// (coupoles et voûtes ; hypocauste sous les salles chaudes ; murs à enduit coloré ; sols de marbre et de mosaïque), entouré sur trois côtés
+// de portiques ouvrant sur des salles et des exèdres ; aux extrémités des portiques, bassins et fontaines décoratives.
+// Partition, dimensions et nombre de salles : HYPOTHÈSE de restitution. Toits retirés (vue en coupe).
+export function grandBath({ W = 48, D = 38, h = 8, kind = 'basalt', ruin = false, stoa = 7, rooms = 7 } = {}) {
+  const g = bathhouse({ W, D, h, kind: 'plaster', ruin, palaestra: false }), M = bathMats(), marble = stone('marble', { rough: 0.45 }), wallM = stone(kind);
+  const x0 = -W / 2 - stoa, x1 = W / 2 + stoa, z0 = -D / 2 - stoa, z1 = D / 2;           // portiques : ouest, est, nord (le sud = façade du bâtiment)
+  const rnd = (() => { let s = 23; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+  // sols des portiques (mosaïque) et colonnades
+  for (const [w, d, x, z] of [[W + 2 * stoa, stoa, 0, -D / 2 - stoa / 2], [stoa, D, -W / 2 - stoa / 2, 0], [stoa, D, W / 2 + stoa / 2, 0]]) g.add(box(w, 0.12, d, M.mosaic, x, 0, z));
+  const pts = []; for (let x = x0 + 1.5; x <= x1 - 1.4; x += 3.2) pts.push([x, z0 + 1.2]); for (let z = z0 + 4.4; z <= z1 - 1; z += 3.2) pts.push([x0 + 1.2, z], [x1 - 1.2, z]);
+  if (!ruin) g.add(columns(pts, 6, 0.33, marble, 0.12));
+  else { g.add(columns(pts.filter(() => rnd() > 0.3), 1 + rnd() * 0.4, 0.34, marble, 0.12)); g.add(columns(pts.filter((_, i) => i % 6 === 2), 5.2, 0.33, marble, 0.12)); }
+  // salles et exèdres derrière les portiques (rangée extérieure), murs bas si ruine
+  const rH = ruin ? 1.2 : h - 2, rw = rooms;
+  for (const [w, d, x, z] of [[x1 - x0 + 2 * rw, rw, 0, z0 - rw / 2], [rw, z1 - z0, x0 - rw / 2, (z0 + z1) / 2], [rw, z1 - z0, x1 + rw / 2, (z0 + z1) / 2]]) {
+    for (const [ww, dd, xx, zz] of [[w, 0.9, x, z - d / 2], [0.9, d, x - w / 2, z], [0.9, d, x + w / 2, z]]) g.add(box(ww, rH * (ruin ? 0.6 + rnd() * 0.6 : 1), dd, wallM, xx, 0, zz)); }
+  // cloisons des salles et exèdres semi-circulaires au milieu de chaque aile
+  for (let x = x0 - rw + 6; x < x1 + rw - 2; x += 8) g.add(box(0.7, rH, rw, wallM, x, 0, z0 - rw / 2));
+  for (let z = z0 + 6; z < z1 - 2; z += 8) { g.add(box(rw, rH, 0.7, wallM, x0 - rw / 2, 0, z)); g.add(box(rw, rH, 0.7, wallM, x1 + rw / 2, 0, z)); }
+  const ex = new THREE.Shape(); ex.absarc(0, 0, 4, 0, Math.PI, false); ex.absarc(0, 0, 3.2, Math.PI, 0, true);
+  const exG = new THREE.ExtrudeGeometry(ex, { depth: rH, bevelEnabled: false, curveSegments: 16 });
+  for (const [x, z, ry] of [[0, z0 - rw, 0], [x0 - rw, (z0 + z1) / 2, Math.PI / 2], [x1 + rw, (z0 + z1) / 2, -Math.PI / 2]]) { const e = mesh(exG, wallM); e.rotation.x = -Math.PI / 2; e.rotation.z = ry; e.position.set(x, 0, z); g.add(e); }
+  // bassins et fontaines aux extrémités des portiques (côté sud)
+  for (const x of [x0 + stoa / 2, x1 - stoa / 2]) { g.add(box(stoa - 1, 0.8, 6, marble, x, 0, z1 + 3.4)); const w = box(stoa - 2, 0.2, 5, M.water, x, ruin ? 0.1 : 0.5, z1 + 3.4); w.visible = !ruin; g.add(w);
+    if (!ruin) g.add(mesh(new THREE.CylinderGeometry(0.35, 0.5, 1.8, 12).translate(x, 1.4, z1 + 3.4), marble)); }
+  g.add(box(x1 - x0 + 2 * rw, 0.3, z1 - z0 + rw + 8, stone('paving', { tint: '#c9c2b3' }), 0, -0.35, (z0 - rw + z1 + 7) / 2 ));
+  g.userData.parts = (g.userData.parts || []).concat([
+    { he: 'סטווים (אכסדרות עמודים)', fr: 'Portiques', en: 'Porticoes', p: [x0 + stoa / 2, 3.5, 0] },
+    { he: 'חדרים ואקסדרות', fr: 'Salles et exèdres', en: 'Rooms and exedrae', p: [0, 3.5, z0 - rw / 2] },
+    { he: 'בריכות ומזרקות', fr: 'Bassins et fontaines', en: 'Pools and fountains', p: [x1 - stoa / 2, 2.5, z1 + 3.4] }]);
+  return g;
+}
+
+// LATRINES PUBLIQUES (Beit Shéan) — RTG + cours : bâtiment près des thermes, cour centrale à colonnes ; bancs de pierre percés
+// au-dessus d'une rigole d'eau courante, rigole de rinçage devant (éponge sur un bâton). Dimensions : HYPOTHÈSE.
+export function latrine({ W = 14, D = 12, h = 5, kind = 'basalt', ruin = false } = {}) {
+  const g = new THREE.Group(), m = stone(kind), marble = stone('marble', { rough: 0.5 }), M = bathMats(), H = ruin ? 1.3 : h;
+  for (const [w, d, x, z] of [[W, 0.8, 0, -D / 2], [W, 0.8, 0, D / 2], [0.8, D, -W / 2, 0], [0.8, D, W / 2, 0]]) g.add(box(w, H, d, m, x, 0, z));
+  g.add(box(W - 1, 0.1, D - 1, stone('paving', { tint: '#d9d2c4' }), 0, 0, 0));
+  const ins = 1.6;   // bancs sur trois côtés, rigole devant
+  for (const [w, d, x, z] of [[W - 2, 0.6, 0, -D / 2 + ins - 0.2], [0.6, D - 2 * ins, -W / 2 + ins - 0.2, 0], [0.6, D - 2 * ins, W / 2 - ins + 0.2, 0]]) g.add(box(w, 0.5, d, marble, x, 0, z));
+  for (const [w, d, x, z] of [[W - 4, 0.3, 0, -D / 2 + ins + 0.4], [0.3, D - 2 * ins - 1, -W / 2 + ins + 0.4, 0], [0.3, D - 2 * ins - 1, W / 2 - ins - 0.4, 0]]) g.add(box(w, 0.06, d, M.water, x, 0.05, z));
+  const c = []; for (const x of [-2.4, 0, 2.4]) c.push([x, -1.6], [x, 1.6]); g.add(columns(c, ruin ? 2.2 : 3.8, 0.22, marble, 0.1));
+  g.userData.parts = [{ he: 'מושבי אבן מעל תעלת מים', fr: 'Bancs au-dessus de l’eau courante', en: 'Seats over running water', p: [0, 2, -D / 2 + 1.4] }];
+  return g;
+}
+
+// SIGMA (Beit Shéan, époque byzantine) — RTG : place semi-circulaire, salles ouvrant sur la place, sols de mosaïque (Tyché) ;
+// sous la sigma, restes d'un odéon romain. Rayon et nombre de salles : HYPOTHÈSE.
+export function sigma({ R = 22, depth = 6, h = 5, kind = 'basalt', ruin = false, rooms = 12 } = {}) {
+  const g = new THREE.Group(), m = stone(kind), M = bathMats(), H = ruin ? 1.1 : h;
+  const ring = (r0, r1, hh, mat) => { const s = new THREE.Shape(); s.absarc(0, 0, r1, 0, Math.PI, false); s.absarc(0, 0, r0, Math.PI, 0, true);
+    const e = mesh(new THREE.ExtrudeGeometry(s, { depth: hh, bevelEnabled: false, curveSegments: 40 }), mat); e.rotation.x = -Math.PI / 2; return e; };
+  g.add(ring(R + depth, R + depth + 0.9, H, m)); g.add(ring(R, R + 0.7, H, m));               // mur extérieur et façade des salles
+  const fl = ring(R + 0.7, R + depth, 0.12, M.mosaic); fl.position.y = 0.2; g.add(fl);                               // sols de mosaïque des salles
+  for (let i = 0; i <= rooms; i++) { const a = Math.PI * i / rooms, r = R + depth / 2; const b = box(0.6, H, depth, m, Math.cos(a) * r, 0, -Math.sin(a) * r); b.rotation.y = Math.PI / 2 - a; g.add(b); }
+  const pl = new THREE.Mesh(new THREE.CircleGeometry(R, 40, 0, Math.PI).rotateX(-Math.PI / 2), stone('paving', { tint: '#bfb8aa' })); pl.position.y = 0.25; g.add(pl);
+  g.userData.parts = [{ he: 'פסיפס טיכה', fr: 'Mosaïque de Tyché', en: 'Tyche mosaic', p: [0, 2, -(R + depth / 2)] }];
   return g;
 }

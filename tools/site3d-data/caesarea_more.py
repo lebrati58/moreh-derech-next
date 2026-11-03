@@ -26,7 +26,7 @@ def upd(id, **k): M[id].update(k)
 
 # ---------- corrections d'après le dépliant RTG ----------
 upd("caesarea_bath", **{"from": 4}, pri=2,
-    shape={"type": "bathhouse", "at": "o:bathS", "bearing": 10, "W": 30, "D": 25, "h": 7, "kind": "kurkar", "ruinFrom": 5},
+    shape={"type": "bathhouse", "at": "o:bathS", "bearing": 10, "level": "max", "W": 30, "D": 25, "h": 7, "kind": "kurkar", "ruinFrom": 5},
     dims=L("כ-30 × 25 מ׳ (קווי המתאר ב-OpenStreetMap), ובצפון חצר עמודים.", "Env. 30 × 25 m (contour OpenStreetMap), avec une cour à colonnes au nord.", "About 30 × 25 m (OpenStreetMap outline), with a colonnaded court to the north.", "Около 30 × 25 м, к северу двор с колоннами."),
     placementNote=L("מיקום וכיוון לפי קווי המתאר ב-OpenStreetMap. חלוקת החדרים, הגבהים ומספר הבריכות הם שחזור (השערה); הגגות הוסרו כדי לראות פנימה. מתועד: החם במערב והקר במזרח, תנור והיפוקאוסט, שתי מערכות מים (חרס ועופרת), רצפת שיש שהוחזרה למקומה, וחצר עמודים עם פסיפס מצפון. מועד הנטישה אינו במקורות — מהתקופה הערבית הקדומה מוצגים השרידים כפי שהם היום.",
                     "Position et orientation d’après le contour OpenStreetMap. Partition des salles, hauteurs et nombre de bassins : restitution (hypothèse) ; toits retirés pour voir l’intérieur. Documenté : chaud à l’ouest, froid à l’est, four et hypocauste, deux réseaux d’eau (terre cuite et plomb), sol de marbre remis en place, cour à colonnes et mosaïque au nord. La date d’abandon n’est pas dans les sources : à partir de l’époque arabe ancienne, on montre les vestiges tels qu’aujourd’hui.",
