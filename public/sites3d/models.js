@@ -287,3 +287,105 @@ export function silo({ D = 11, depth = 7, kind = 'ashlar' } = {}) { const g = ne
 export function roundTower({ D = 10, h = 12, kind = 'ashlar', tint = '#ffffff' } = {}) { const g = new THREE.Group(), m = stone(kind, { tint }); g.add(mesh(new THREE.CylinderGeometry(D / 2, D / 2 + 0.3, h, 32).translate(0, h / 2, 0), m)); return g; }
 
 export { mergeGeometries };
+
+// BAIN BYZANTIN DÉTAILLÉ (Césarée, sur les gradins de l'hippodrome d'Hérode, Ve s.) — repère : +x = est, −z = nord.
+// Ce qui est documenté (dépliant RTG, cours סיור 15, guide de Jorge) : chaud à l'ouest et froid à l'est ; four (praefurnium) ;
+// hypocauste (sol suspendu sur des piles de briques) ; tubuli dans les murs ; frigidarium avec deux réseaux d'eau (terre cuite et plomb) ;
+// sol de marbre restauré (centaines de plaques) ; au nord, cour à colonnes (palestre) à sol de mosaïque.
+// HYPOTHÈSES de restitution : partition exacte des salles, hauteurs, nombre de bassins, place de l'apodyterium. Toits retirés (vue en coupe).
+// ruin = true : état actuel (murs arasés, piles de l'hypocauste à nu, sol de marbre restauré, bases de colonnes).
+function canvasMat(draw, { rep = 1, rough = 0.8 } = {}) {
+  const c = document.createElement('canvas'); c.width = c.height = 256; draw(c.getContext('2d'), 256);
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.repeat.set(rep, rep);
+  return new THREE.MeshStandardMaterial({ map: t, roughness: rough });
+}
+const BATH_MAT = {};
+function bathMats() {
+  if (BATH_MAT.ok) return BATH_MAT;
+  Object.assign(BATH_MAT, {
+    ok: true,
+    brick: new THREE.MeshStandardMaterial({ color: '#b5653f', roughness: 0.95 }),
+    water: new THREE.MeshStandardMaterial({ color: '#3f9fd8', emissive: '#0d4c80', emissiveIntensity: 0.2, roughness: 0.08, metalness: 0.1, transparent: true, opacity: 0.88 }),
+    fire: new THREE.MeshStandardMaterial({ color: '#ff8a2a', emissive: '#ff5a10', emissiveIntensity: 1.4 }),
+    lead: new THREE.MeshStandardMaterial({ color: '#8f959a', metalness: 0.4, roughness: 0.5 }),
+    clay: new THREE.MeshStandardMaterial({ color: '#c0703f', roughness: 0.9 }),
+    soot: new THREE.MeshStandardMaterial({ color: '#3a2e27', roughness: 1 }),
+    // sol de marbre de couleurs (le dépliant RTG : marbre, granite, porphyre, plaques restaurées)
+    marbleFloor: canvasMat((g, s) => { const C = ['#ece7dc', '#c9c3b6', '#7d2f3a', '#3b5d4a', '#9b5e55', '#e4dccb', '#5c5f73'], u = s / 8; let k = 7;
+      for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) { k = (k * 31 + 17) % 97; g.fillStyle = C[(i + j) % 2 ? 0 : 1 + k % 6]; g.fillRect(i * u, j * u, u, u);
+        g.fillStyle = C[(k >> 2) % 7]; g.beginPath(); g.moveTo(i * u + u / 2, j * u + 3); g.lineTo(i * u + u - 3, j * u + u / 2); g.lineTo(i * u + u / 2, j * u + u - 3); g.lineTo(i * u + 3, j * u + u / 2); g.fill();
+        g.strokeStyle = '#00000022'; g.strokeRect(i * u, j * u, u, u); } }, { rep: 3, rough: 0.35 }),
+    // mosaïque de la cour : fond blanc, bordure et motifs géométriques en pierre locale (rouge, noir, ocre)
+    mosaic: canvasMat((g, s) => { g.fillStyle = '#ede4d0'; g.fillRect(0, 0, s, s); const u = s / 32;
+      for (let i = 0; i < 32; i++) for (let j = 0; j < 32; j++) { const b = i < 2 || j < 2 || i > 29 || j > 29, m = (Math.abs(i % 8 - 4) + Math.abs(j % 8 - 4)) === 3;
+        if (b || m) { g.fillStyle = b ? '#7a2d22' : ((i + j) % 16 < 8 ? '#2b2622' : '#b07a3a'); g.fillRect(i * u + .5, j * u + .5, u - 1, u - 1); } } }, { rep: 2, rough: 0.7 })
+  });
+  return BATH_MAT;
+}
+export function bathhouse({ W = 30, D = 25, h = 7, kind = 'kurkar', ruin = false } = {}) {
+  const g = new THREE.Group(), M = bathMats(), wallM = stone(kind), plaster = stone('plaster', { tint: '#f1e8d6' }), marble = stone('marble', { rough: 0.45 });
+  const x0 = -W / 2, x1 = W / 2, z0 = -D / 2, z1 = D / 2, T = 1.1;                 // murs de 1,1 m
+  const H = ruin ? null : h, rnd = (() => { let s = 11; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+  const wallH = () => H ?? (0.5 + rnd() * 1.2);
+  // segment de mur, découpé en tronçons de hauteur variable si ruine
+  const wall = (ax, az, bx, bz, t = T, mat = wallM) => {
+    const len = Math.hypot(bx - ax, bz - az), n = ruin ? Math.max(1, Math.round(len / 2.2)) : 1;
+    for (let i = 0; i < n; i++) { const f0 = i / n, f1 = (i + 1) / n, hh = wallH(); if (ruin && rnd() < 0.08) continue;
+      const cx = ax + (bx - ax) * (f0 + f1) / 2, cz = az + (bz - az) * (f0 + f1) / 2, b = box(len / n + (ruin ? 0 : t), hh, t, mat, 0, 0, 0);
+      b.position.set(cx, hh / 2, cz); b.rotation.y = -Math.atan2(bz - az, bx - ax); g.add(b); } };
+  // ---- plan (HYPOTHÈSE) : rangée sud = caldarium (O) | tepidarium | frigidarium (E) ; rangée nord = apodyterium ; cour au nord
+  const zMid = z0 + D * 0.42, xC = x0 + W * 0.36, xT = x0 + W * 0.6;
+  // socle et sols
+  g.add(box(W + 2, 0.4, D + 2, stone('paving', { tint: '#e2d4b8' }), 0, -0.4, 0));
+  // ---- hypocauste (caldarium + tepidarium) : piles de briques sous le sol suspendu
+  const pilae = []; for (let x = x0 + 1.6; x < xT - 0.8; x += 1.1) for (let z = zMid + 1.2; z < z1 - 0.8; z += 1.1) pilae.push([x, z]);
+  const pg = new THREE.BoxGeometry(0.42, 0.75, 0.42).translate(0, 0.375, 0), im = new THREE.InstancedMesh(pg, M.brick, pilae.length), m4 = new THREE.Matrix4();
+  pilae.forEach(([x, z], i) => { m4.makeTranslation(x, 0, z); im.setMatrixAt(i, m4); }); im.castShadow = im.receiveShadow = true; g.add(im);
+  g.add(box(xT - x0 - 1, 0.05, z1 - zMid - 1, M.soot, (x0 + xT) / 2, 0.01, (zMid + z1) / 2));          // fond noirci par la fumée
+  // sol suspendu (suspensura) : entier dans le bain en usage, en partie effondré dans la ruine
+  if (!ruin) g.add(box(xT - x0 - 1.2, 0.3, z1 - zMid - 1.2, M.marbleFloor, (x0 + xT) / 2, 0.75, (zMid + z1) / 2));
+  else g.add(box((xT - x0) * 0.32, 0.3, (z1 - zMid) * 0.45, M.marbleFloor, xT - (xT - x0) * 0.2, 0.75, z1 - (z1 - zMid) * 0.27));
+  // frigidarium : sol de marbre restauré + bassin froid ; deux réseaux d'eau (terre cuite et plomb)
+  g.add(box(x1 - xT - 1.2, 0.12, z1 - zMid - 1.2, M.marbleFloor, (xT + x1) / 2, 0, (zMid + z1) / 2));
+  const pw = 5.5, pd = 4; g.add(box(pw + 1, 0.9, pd + 1, marble, x1 - 4.6, 0, z1 - 4)); g.add(box(pw, 0.2, pd, M.water, x1 - 4.6, ruin ? 0.15 : 0.55, z1 - 4));
+  if (ruin) g.children.at(-1).visible = false;                                       // bassin vide aujourd'hui
+  const pipe = (mat, r, dz) => { const p = new THREE.Mesh(new THREE.CylinderGeometry(r, r, x1 - xT - 2, 10), mat); p.rotation.z = Math.PI / 2; p.position.set((xT + x1) / 2, 0.25, z1 - 0.9 - dz); p.castShadow = true; g.add(p); };
+  pipe(M.clay, 0.12, 0); pipe(M.lead, 0.07, 0.35);
+  // caldarium : deux bassins chauds (alvei) et abside à l'ouest ; tepidarium : banquettes
+  if (!ruin) { g.add(box(4, 0.8, 3, marble, x0 + 3.5, 1.05, z1 - 2.6)); g.add(box(3.4, 0.2, 2.4, M.water, x0 + 3.5, 1.6, z1 - 2.6));
+    g.add(box(4, 0.8, 3, marble, x0 + 3.5, 1.05, zMid + 2.6)); g.add(box(3.4, 0.2, 2.4, M.water, x0 + 3.5, 1.6, zMid + 2.6)); }
+  else { g.add(box(4, 0.35, 3, marble, x0 + 3.5, 0, z1 - 2.6)); }
+  g.add(box(0.6, ruin ? 0.4 : 0.5, z1 - zMid - 2.4, marble, xT - 1, ruin ? 0 : 1.05, (zMid + z1) / 2));
+  const s = new THREE.Shape(); s.absarc(0, 0, 3.4, Math.PI / 2, -Math.PI / 2, false); s.absarc(0, 0, 2.3, -Math.PI / 2, Math.PI / 2, true);
+  const ap = new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: ruin ? 1.4 : h, bevelEnabled: false, curveSegments: 18 }), wallM); ap.rotation.x = -Math.PI / 2; ap.rotation.z = Math.PI;
+  ap.position.set(x0, 0, (zMid + z1) / 2); ap.castShadow = ap.receiveShadow = true; g.add(ap);
+  // praefurnium (four) contre le mur ouest, avec le feu dans le bain en usage
+  g.add(box(3.4, ruin ? 1 : 3.2, 3, wallM, x0 - 2.4, 0, zMid + 1.6)); g.add(box(1.2, 0.9, 1.6, ruin ? M.soot : M.fire, x0 - 1.1, 0.1, zMid + 1.6));
+  // tubuli (conduits de chaleur dans les murs) : visibles sur la face intérieure du mur sud, côté chaud
+  if (!ruin) for (let x = x0 + 1.5; x < xT - 1; x += 0.9) g.add(box(0.28, h - 1.2, 0.18, M.clay, x, 1.05, z1 - T / 2 - 0.12));
+  // murs extérieurs et cloisons ; enduit clair à l'intérieur du bain en usage
+  wall(x0, z0, x1, z0); wall(x1, z0, x1, z1); wall(x1, z1, x0, z1); wall(x0, z1, x0, z0);
+  wall(x0, zMid, x1, zMid, 0.8); wall(xC, zMid, xC, z1, 0.8); wall(xT, zMid, xT, z1, 0.8);
+  if (!ruin) g.add(box(x1 - x0 - 2.4, 0.08, 0.05, plaster, 0, h - 0.6, zMid + 0.45));
+  // apodyterium (vestiaire) au nord : banquettes le long des murs
+  g.add(box(W - 3, ruin ? 0.35 : 0.5, 0.6, marble, 0, 0, z0 + 1.0)); g.add(box(W - 3, ruin ? 0.35 : 0.5, 0.6, marble, 0, 0, zMid - 0.9));
+  g.add(box(W - 2.4, 0.08, zMid - z0 - 2, M.mosaic, 0, 0, (z0 + zMid) / 2));
+  // ---- palestre au nord : cour à colonnes, sol de mosaïque
+  const cw = W - 2, cd = 18, cz = z0 - cd / 2 - 0.6;
+  g.add(box(cw, 0.12, cd, M.mosaic, 0, 0, cz));
+  const pts = []; for (let x = -cw / 2 + 1.5; x <= cw / 2 - 1.4; x += 3) pts.push([x, cz - cd / 2 + 1.5], [x, cz + cd / 2 - 1.5]);
+  for (let z = cz - cd / 2 + 4.5; z < cz + cd / 2 - 2; z += 3) pts.push([-cw / 2 + 1.5, z], [cw / 2 - 1.5, z]);
+  if (!ruin) { g.add(columns(pts, 5, 0.3, marble, 0.12)); for (const [w, d, x, z] of [[cw, 3.2, 0, cz - cd / 2 + 1.5], [cw, 3.2, 0, cz + cd / 2 - 1.5], [3.2, cd, -cw / 2 + 1.5, cz], [3.2, cd, cw / 2 - 1.5, cz]]) g.add(box(w, 0.35, d, stone('ashlar', { tint: '#c98f68' }), x, 5.3, z)); }
+  else { const stumps = pts.filter(() => rnd() > 0.25).map(([x, z]) => [x, z, 0.12]); g.add(columns(stumps, 1.1, 0.32, marble, 0.12)); g.add(columns(pts.filter((_, i) => i % 7 === 3), 4.2, 0.3, marble, 0.12)); }
+  wall(-cw / 2, cz - cd / 2, cw / 2, cz - cd / 2, 0.8); wall(-cw / 2, cz - cd / 2, -cw / 2, z0, 0.8); wall(cw / 2, cz - cd / 2, cw / 2, z0, 0.8);
+  // repères des parties (repère local), affichés de près
+  g.userData.parts = [
+    { he: 'קלדריום (חם)', fr: 'Caldarium (chaud)', en: 'Caldarium (hot)', p: [(x0 + xC) / 2, 3, (zMid + z1) / 2] },
+    { he: 'טפידריום', fr: 'Tepidarium', en: 'Tepidarium', p: [(xC + xT) / 2, 3, (zMid + z1) / 2] },
+    { he: 'פריג׳ידריום (קר)', fr: 'Frigidarium (froid)', en: 'Frigidarium (cold)', p: [(xT + x1) / 2, 3, (zMid + z1) / 2] },
+    { he: 'היפוקאוסט', fr: 'Hypocauste', en: 'Hypocaust', p: [xC - 2, 1.6, z1 - 2] },
+    { he: 'תנור (פרפורניום)', fr: 'Four (praefurnium)', en: 'Furnace (praefurnium)', p: [x0 - 2.4, 3.6, zMid + 1.6] },
+    { he: 'חדר הלבשה', fr: 'Vestiaire (apodyterium)', en: 'Changing room (apodyterium)', p: [0, 2.4, (z0 + zMid) / 2] },
+    { he: 'חצר עמודים (פלסטרה) ופסיפס', fr: 'Palestre à colonnes et mosaïque', en: 'Colonnaded palaestra and mosaic', p: [0, 3, cz] }];
+  return g;
+}
