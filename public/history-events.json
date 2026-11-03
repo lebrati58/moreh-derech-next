@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "dataVersion": "2026-10-27",
+  "dataVersion": "2026-11-03",
   "quizId": "history-48-dates",
-  "_note": "Source unique de la frise et du quiz « ציר הזמן והחידון ». Les identifiants (id) sont stables : ne jamais les renommer, ils servent à la progression des joueurs. source = course (même année dans les documents du cours), course-diff (le cours donne une autre année ou une autre formulation : à valider par Lionel), external (absent des documents du cours consultés, date de référence générale). examReady = false → l'événement n'apparaît qu'en entraînement, jamais dans l'examen noté. Audit détaillé : docs/AUDIT_histoire_48.md",
+  "_note": "Source unique de la frise et du quiz « ציר הזמן והחידון ». Les identifiants (id) sont stables : ne jamais les renommer, ils servent à la progression des joueurs. source = course (même année dans les documents du cours), course-diff (le cours donne une autre année ou une autre formulation : à valider par Lionel), external (absent des documents du cours consultés, date de référence générale). examReady = false → l'événement n'apparaît qu'en entraînement, jamais dans l'examen noté. Extension à tout le cours (תאריכון + תקצירים 01–14) : tools/history-more.py. Extension à tout le cours (תאריכון + תקצירים 01–14) : tools/history-more.py. Extension à tout le cours (תאריכון + תקצירים 01–14) : tools/history-more.py. Extension à tout le cours (תאריכון + תקצירים 01–14) : tools/history-more.py. Extension à tout le cours (תאריכון + תקצירים 01–14) : tools/history-more.py. Extension à tout le cours (תאריכון + תקצירים 01–14) : tools/history-more.py. Audit détaillé : docs/AUDIT_histoire_48.md",
   "course": {
     "folder": {
       "url": "https://drive.google.com/drive/folders/1S5xdXEF4K0AOihsIkxXsZdMngvrXLvdb",
@@ -19,9 +19,52 @@
     "herodium": "הרודיון",
     "banias": "בניאס",
     "tzippori": "ציפורי",
-    "beitshearim": "בית שערים"
+    "beitshearim": "בית שערים",
+    "arad": "תל ערד",
+    "megiddo": "תל מגידו",
+    "beitshean": "בית שאן",
+    "lachish": "תל לכיש",
+    "qeiyafa": "ח׳ורבת קייאפה"
   },
   "periods": [
+    {
+      "id": "chalcolithic",
+      "name": "התקופה הכלקוליתית (נחושת-אבן)",
+      "short": "כלקוליתית",
+      "range": "4500–3500 לפנה״ס",
+      "icon": "🪨",
+      "color": "#c9a37a",
+      "doc": {
+        "url": "https://drive.google.com/file/d/1iaQqGP7Gr_BKb3pWNCMSI3Xe8-WZslg2/view",
+        "title": "תקציר מאורגן — התקופה הכלקוליתית"
+      }
+    },
+    {
+      "id": "bronze",
+      "name": "תקופת הברונזה (הכנענית)",
+      "short": "ברונזה",
+      "range": "3500–1200 לפנה״ס",
+      "icon": "🏺",
+      "color": "#e0b45c",
+      "j3d": 1,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1gAfe-lBSeVDgvywhusFYwZOEvRHVuzym/view",
+        "title": "תקציר מאורגן — תקופת הברונזה (הכנענית)"
+      }
+    },
+    {
+      "id": "iron",
+      "name": "תקופת הברזל — ימי בית ראשון",
+      "short": "ברזל",
+      "range": "1200–586 לפנה״ס",
+      "icon": "⚔️",
+      "color": "#d98c5f",
+      "j3d": 2,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1bxuOGBJZXUgFMUo9JKln0d1JatIiTPUs/view",
+        "title": "תקציר מאורגן — תקופת הברזל / בית ראשון"
+      }
+    },
     {
       "id": "babylon",
       "name": "סוף בית ראשון וגלות בבל",
@@ -136,9 +179,395 @@
         "url": "https://drive.google.com/drive/folders/1YLtbU4V7bduL4P6qjHFA1Iw1BKKMGDNf",
         "title": "שיעורים — התקופה הרומית-ביזנטית"
       }
+    },
+    {
+      "id": "early_islamic",
+      "name": "התקופה המוסלמית הקדומה",
+      "short": "מוסלמית קדומה",
+      "range": "638–1099 לספירה",
+      "icon": "🕌",
+      "color": "#7fd69a",
+      "j3d": 8,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1Axk6m7p5k0K0VO8XC35iVoi3o-XOuNlk/view",
+        "title": "תאריכון הקורס"
+      }
+    },
+    {
+      "id": "crusader",
+      "name": "התקופה הצלבנית",
+      "short": "צלבנית",
+      "range": "1099–1291 לספירה",
+      "icon": "🛡️",
+      "color": "#c7a0ff",
+      "j3d": 9,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1fsw544HbLk-xpgzKzepeA4pH9GUTeAlR/view",
+        "title": "תקציר מאורגן — התקופה הצלבנית"
+      }
+    },
+    {
+      "id": "mamluk_ottoman",
+      "name": "התקופה הממלוכית-עות׳מאנית",
+      "short": "ממלוכית-עות׳מאנית",
+      "range": "1291–1800 לספירה",
+      "icon": "🌙",
+      "color": "#9fc4a8",
+      "j3d": 10,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1Reuecke_XjijOxgjHCvljf_6eUrFBFFh/view",
+        "title": "תקציר מאורגן — התקופה הממלוכית-עות׳מאנית"
+      }
+    },
+    {
+      "id": "c19",
+      "name": "המאה ה־19 (התקופה העות׳מאנית המאוחרת)",
+      "short": "המאה ה־19",
+      "range": "1800–1917 לספירה",
+      "icon": "🚂",
+      "color": "#ffc8a0",
+      "j3d": 11,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1HpCR5Mm4ZlAvi5fksttUBae-h4AXEj9H/view",
+        "title": "תקציר מאורגן — המאה ה־19"
+      }
+    },
+    {
+      "id": "mandate",
+      "name": "תקופת המנדט הבריטי",
+      "short": "מנדט",
+      "range": "1917–1948 לספירה",
+      "icon": "🇬🇧",
+      "color": "#b8c4d8",
+      "doc": {
+        "url": "https://drive.google.com/file/d/1_jzQ6ubaAm8E9U5zcDZB_pc6KXq21OkV/view",
+        "title": "תקציר מאורגן — תקופת המנדט הבריטי"
+      }
+    },
+    {
+      "id": "israel",
+      "name": "מדינת ישראל — מלחמות ושינויי שטחים",
+      "short": "מדינת ישראל",
+      "range": "מ־1948 לספירה",
+      "icon": "🇮🇱",
+      "color": "#8fc4ff",
+      "j3d": 12,
+      "doc": {
+        "url": "https://drive.google.com/file/d/1Qzm75ur5j1BL_H2Py_bkDQsLspP1XMLd/view",
+        "title": "תקציר מאורגן — מלחמות ישראל והעת החדשה"
+      }
     }
   ],
   "events": [
+    {
+      "id": "chalcolithic-start",
+      "year": -4500,
+      "period": "chalcolithic",
+      "certainty": "approx",
+      "source": "course-diff",
+      "examReady": false,
+      "title": "ראשית התקופה הכלקוליתית",
+      "q": "מתי, בקירוב, מתחילה התקופה הכלקוליתית (תקופת הנחושת-אבן)?",
+      "desc": "מעבר מתרבויות האבן לראשית השימוש בנחושת: יישובי קבע חקלאיים, קדרות ואריגה. תרבות ע׳סול, תרבות באר שבע (מגורים במחילות), מטמון נחל משמר.",
+      "yearText": "כ־4500 לפנה״ס (במצגת המבוא: 5100 לפנה״ס)",
+      "alts": [
+        -5100,
+        -5800
+      ],
+      "note": "חומרי הקורס אינם אחידים: התקציר — 4500 לפנה״ס, מצגת המבוא לארכאולוגיה — 5100 לפנה״ס, התאריכון — 5800 לפנה״ס."
+    },
+    {
+      "id": "early-bronze",
+      "year": -3500,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course-diff",
+      "examReady": false,
+      "title": "ראשית הברונזה הקדומה — העיור הראשון",
+      "q": "מתי, בקירוב, מתחילה תקופת הברונזה הקדומה, מהפכת העיור הראשונה בארץ?",
+      "desc": "ערים מבוצרות גדולות ובהן אזורי תפקוד: ערד, בית ירח, העי. בסוף התקופה נטישה ודלדול.",
+      "yearText": "כ־3500 לפנה״ס (בתאריכון: 3600 לפנה״ס)",
+      "alts": [
+        -3600
+      ],
+      "note": "התקציר המאורגן: 3500 לפנה״ס; התאריכון: 3600 לפנה״ס.",
+      "sites": [
+        "arad"
+      ]
+    },
+    {
+      "id": "narmer",
+      "year": -3100,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "איחוד מצרים בידי נערמר",
+      "q": "מתי, בקירוב, אוחדה מצרים בידי נערמר?",
+      "desc": "ראשית ממלכת מצרים. ״סרך נערמר״ נחרט על חרס שנמצא בתל ערד.",
+      "yearText": "כ־3100 לפנה״ס",
+      "sites": [
+        "arad"
+      ]
+    },
+    {
+      "id": "middle-bronze",
+      "year": -2000,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "ראשית הברונזה התיכונה — ערי המדינה הכנעניות",
+      "q": "מתי, בקירוב, מתחילה תקופת הברונזה התיכונה?",
+      "desc": "ערי ענק עם סוללות עפר ושערים (תל דן, חצור, אשקלון). מזוהה עם ״ימי האבות״.",
+      "yearText": "כ־2000 לפנה״ס"
+    },
+    {
+      "id": "hyksos-expulsion",
+      "year": -1570,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "גירוש החיקסוס — ראשית הברונזה המאוחרת",
+      "q": "מתי, בקירוב, גורשו החיקסוס ממצרים ונפתחה הברונזה המאוחרת?",
+      "desc": "יעחמס מייסד את ״הממלכה החדשה״ במצרים; מסע לכנען ומצור על שרוחן. כנען עוברת לחסות מצרים.",
+      "yearText": "כ־1570 לפנה״ס"
+    },
+    {
+      "id": "thutmose-iii",
+      "year": -1450,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "תחותמס השלישי כובש את מגידו",
+      "q": "מתי, בקירוב, ערך תחותמס השלישי את מסעותיו לכנען וכבש את מגידו?",
+      "desc": "שישה-עשר מסעות לכנען; אחרי מעבר ערונה (ואדי ערה) כבש את מגידו. תבליט במקדש כרנך ממסעו הראשון.",
+      "yearText": "אמצע המאה ה־15 לפנה״ס (כ־1450 לפנה״ס)",
+      "sites": [
+        "megiddo"
+      ]
+    },
+    {
+      "id": "amarna-letters",
+      "year": -1350,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "מכתבי אל-עמארנה (אחנאתן)",
+      "q": "מתי, בקירוב, נכתבו מכתבי אל-עמארנה בין מלכי כנען לפרעה?",
+      "desc": "ארכיון אמנחותפ הרביעי (אחנאתן): מכתבי מלכי ערי כנען לפרעה, ורפורמה דתית קצרת ימים.",
+      "yearText": "אמצע המאה ה־14 לפנה״ס (כ־1350 לפנה״ס)"
+    },
+    {
+      "id": "seti-i",
+      "year": -1300,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "סתי הראשון — האסטלה מבית שאן",
+      "q": "מתי, בקירוב, ערך סתי הראשון את מסעו לכנען (האסטלה מבית שאן)?",
+      "desc": "מסע מתועד במקדש כרנך; אסטלה בבית שאן, מושב השלטון המצרי בעמק.",
+      "yearText": "סוף המאה ה־14 / תחילת ה־13 לפנה״ס (כ־1300 לפנה״ס)",
+      "sites": [
+        "beitshean"
+      ]
+    },
+    {
+      "id": "ramesses-ii",
+      "year": -1250,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "רעמסס השני",
+      "q": "מתי, בקירוב, מלך רעמסס השני, שכבש את אשקלון ולחם בחיתים?",
+      "desc": "מלך עשרות שנים, בנייה מסיבית, מלחמות בחיתים; כבש את אשקלון במאמץ.",
+      "yearText": "אמצע המאה ה־13 לפנה״ס (כ־1250 לפנה״ס)"
+    },
+    {
+      "id": "merneptah-stele",
+      "year": -1212,
+      "period": "bronze",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "״מצבת ישראל״ של מרנפתח",
+      "q": "מתי, בקירוב, מלך מרנפתח, שב״מצבת ישראל״ שלו מוזכר השם ״ישראל״?",
+      "desc": "״ישראל הושם, אין לו זרע״. מרנפתח, יורש רעמסס, כבש את אשקלון, גזר וינועם.",
+      "yearText": "מלכות מרנפתח 1212–1202 לפנה״ס"
+    },
+    {
+      "id": "iron-age-settlement",
+      "year": -1200,
+      "period": "iron",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "ראשית תקופת הברזל — ההתנחלות והשופטים",
+      "q": "מתי, בקירוב, מתחילה תקופת הברזל 1, ימי ההתנחלות והשופטים?",
+      "desc": "מצרים נחלשת, החיתים מתמוטטים, ו״גויי הים״ (ובהם הפלשתים) מתיישבים בחוף.",
+      "yearText": "כ־1200 לפנה״ס"
+    },
+    {
+      "id": "david",
+      "year": -1000,
+      "period": "iron",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "מלכות דוד",
+      "q": "מתי, בקירוב, מלך דוד, בראשית הממלכה המאוחדת?",
+      "desc": "ראשית ברזל 2: ירושלים בירה. ח׳ורבת קייאפה (שעריים) מתוארכת לכ־1000 לפנה״ס — חומת הסוגרים הקדומה בארץ.",
+      "yearText": "כ־1000 לפנה״ס",
+      "sites": [
+        "qeiyafa"
+      ],
+      "j3d": 2
+    },
+    {
+      "id": "kingdom-split",
+      "year": -928,
+      "period": "iron",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "פילוג הממלכה",
+      "q": "מתי, בקירוב, התפלגה הממלכה לישראל וליהודה?",
+      "desc": "ירבעם מורד ברחבעם ומייסד את ממלכת ישראל; רחבעם מבצר את ערי הדרום.",
+      "yearText": "כ־928 לפנה״ס"
+    },
+    {
+      "id": "shishak",
+      "year": -925,
+      "period": "iron",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "מסע שישק",
+      "q": "מתי, בקירוב, עלה שישק (שושנק) מלך מצרים על הארץ?",
+      "desc": "שושנק הראשון יוצא מצרימה לכנען; המסע מתועד במקורות מצריים ובמקרא.",
+      "yearText": "כ־925 לפנה״ס (בתאריכון: 925–924 לפנה״ס)",
+      "alts": [
+        -934
+      ],
+      "note": "בתקציר המאורגן: 934–925 לפנה״ס."
+    },
+    {
+      "id": "qarqar",
+      "year": -853,
+      "period": "iron",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב קרקר",
+      "q": "באיזו שנה נערך קרב קרקר — ברית המלכים בראשות אחאב מול שלמנאסר השלישי?",
+      "desc": "לפי התיעוד האשורי הביא אחאב מלך ישראל אלפיים מרכבות ועשרת אלפים חיילים."
+    },
+    {
+      "id": "hazael",
+      "year": -840,
+      "period": "iron",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "כיבושי חזאל מלך ארם — ״בית דוד״",
+      "q": "מתי, בקירוב, כבש חזאל מלך ארם שטחים מישראל?",
+      "desc": "בערך אז מתוארכות מצבת מישע וכתובת הניצחון הארמית מתל דן שבה מופיע ״בית דוד״.",
+      "yearText": "840–800 לפנה״ס"
+    },
+    {
+      "id": "tiglath-pileser",
+      "year": -732,
+      "period": "iron",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מסע תגלת פלאסר השלישי",
+      "q": "באיזו שנה כבש תגלת פלאסר השלישי את הגליל והגלה חלק מתושבי ישראל?",
+      "desc": "הגליל וחוף הכרמל והשרון נכבשים; הרי שומרון נשארים מובלעת."
+    },
+    {
+      "id": "fall-of-israel",
+      "year": -722,
+      "period": "iron",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "חורבן ממלכת ישראל",
+      "q": "באיזו שנה חרבה ממלכת ישראל ושומרון נכבשה בידי אשור?",
+      "desc": "סרגון מלך אשור מגלה את תושבי ישראל ומביא במקומם עמים אחרים."
+    },
+    {
+      "id": "sennacherib",
+      "year": -701,
+      "period": "iron",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מסע סנחריב",
+      "q": "באיזו שנה עלה סנחריב מלך אשור על יהודה והחריב את לכיש?",
+      "desc": "חורבן ערי השפלה ובהן לכיש (״מנסרת סנחריב״); ירושלים לא נכבשה, וחזקיהו שילם מס.",
+      "sites": [
+        "lachish"
+      ]
+    },
+    {
+      "id": "fall-of-assyria",
+      "year": -610,
+      "period": "iron",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "נפילת אשור ועליית בבל",
+      "q": "מתי, בקירוב, נפלה אשור ועלתה בבל?",
+      "desc": "האימפריה האשורית קורסת, ובבל תופסת את מקומה במזרח.",
+      "yearText": "כ־610 לפנה״ס",
+      "alts": [
+        -612
+      ],
+      "note": "נפילת נינוה מתוארכת לרוב ל־612 לפנה״ס; התאריכון: 610 לפנה״ס."
+    },
+    {
+      "id": "josiah-megiddo",
+      "year": -609,
+      "period": "iron",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מסע פרעה נכו — מות יאשיהו",
+      "q": "באיזו שנה נהרג יאשיהו מלך יהודה במגידו, מול פרעה נכו?",
+      "desc": "נכו עולה צפונה; יאשיהו נהרג במגידו, ויהודה עוברת לשלטון מצרי קצר.",
+      "sites": [
+        "megiddo"
+      ]
+    },
+    {
+      "id": "nebuchadnezzar-1",
+      "year": -604,
+      "period": "iron",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "מסעו הראשון של נבוכדנצר",
+      "q": "באיזו שנה ערך נבוכדנצר את מסעו הראשון לארץ, שבו קץ לערי הפלשתים?",
+      "desc": "סוף קיומן העצמאי של ערי הפלשתים והפיניקים; האזור מוכפף לבבל.",
+      "yearText": "604–603 לפנה״ס"
+    },
+    {
+      "id": "jehoiachin-exile",
+      "year": -597,
+      "period": "iron",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "גלות יהויכין",
+      "q": "באיזו שנה הוגלה יהויכין מלך יהודה לבבל?",
+      "desc": "מסעו השני של נבוכדנצר: הגליית המלך והאליטה; יהודה מוכפפת לבבל."
+    },
     {
       "id": "first-temple-destruction",
       "year": -586,
@@ -246,6 +675,17 @@
       ]
     },
     {
+      "id": "alexander-death",
+      "year": -323,
+      "period": "hellenistic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מות אלכסנדר מוקדון",
+      "q": "באיזו שנה מת אלכסנדר מוקדון ופרצו מלחמות הדיאדוכים?",
+      "desc": "ממלכתו מתפצלת בין יורשיו (הדיאדוכים); הארץ במחלוקת בין בית תלמי לבית סלווקוס."
+    },
+    {
       "id": "ptolemaic-rule",
       "year": -301,
       "period": "hellenistic",
@@ -255,6 +695,17 @@
       "title": "ראשית שלטון בית תלמי",
       "q": "באיזו שנה, אחרי מלחמות הדיאדוכים, החל שלטון בית תלמי בארץ?",
       "desc": "אחרי קרב איפסוס מתגבשת החלוקה לממלכות. התלמים שולטים בארץ עד 200 לפנה״ס, בלי לכפות הלניזם."
+    },
+    {
+      "id": "raphia",
+      "year": -217,
+      "period": "hellenistic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב רפיח",
+      "q": "באיזו שנה נערך קרב רפיח, בין תלמי הרביעי לאנטיוכוס השלישי?",
+      "desc": "המלחמה הסורית הרביעית; ניצחון בית תלמי — הארץ נשארת בידיו עוד כעשרים שנה."
     },
     {
       "id": "battle-of-panium",
@@ -276,6 +727,19 @@
       ]
     },
     {
+      "id": "antiochus-iii-charter",
+      "year": -198,
+      "period": "hellenistic",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": false,
+      "title": "״כתב הזכויות״ של אנטיוכוס השלישי",
+      "q": "מתי, בקירוב, העניק אנטיוכוס השלישי ליהודים את ״כתב הזכויות״?",
+      "desc": "אחרי כיבוש הארץ מבית תלמי: הכרה בזכות היהודים לחיות לפי תורתם והקלות לירושלים.",
+      "yearText": "198 לפנה״ס (בתאריכון: 198 לפנה״ס, בסימן שאלה)",
+      "note": "בתאריכון הקורס התאריך מסומן בסימן שאלה."
+    },
+    {
       "id": "antiochus-iv-polis",
       "year": -175,
       "period": "hellenistic",
@@ -285,6 +749,17 @@
       "title": "אנטיוכוס הרביעי וירושלים כ„פוליס”",
       "q": "באיזו שנה עלה אנטיוכוס הרביעי לשלטון, וירושלים הפכה לעיר פוליס?",
       "desc": "עליית אנטיוכוס הרביעי (אפיפנס). הכהונה הגדולה עוברת מחוניו ליאסון, וירושלים הופכת לעיר פוליס הלניסטית."
+    },
+    {
+      "id": "temple-looting",
+      "year": -168,
+      "period": "hellenistic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ביזת כלי המקדש",
+      "q": "באיזו שנה בזז אנטיוכוס הרביעי את כלי המקדש בירושלים?",
+      "desc": "אחרי המלחמה הסורית השישית; שנה לפני הגזרות ופרוץ מרד החשמונאים."
     },
     {
       "id": "hasmonean-revolt",
@@ -298,6 +773,28 @@
       "desc": "גזרות דת על יהודה ו„שיקוץ משומם” על המזבח. מתתיהו מסרב להקריב במודיעין והמרד פורץ; קרב מעלה לבונה."
     },
     {
+      "id": "beth-horon",
+      "year": -166,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב בית חורון",
+      "q": "באיזו שנה ניצח יהודה המכבי בקרב בית חורון?",
+      "desc": "הקרב השני של המרד: יהודה המכבי מנצח את הצבא הסלווקי במעלה בית חורון."
+    },
+    {
+      "id": "emmaus",
+      "year": -165,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב אמאוס",
+      "q": "באיזו שנה ניצח יהודה המכבי בקרב אמאוס?",
+      "desc": "הקרב השלישי של המרד: ניצחון על מחנה הצבא הסלווקי באמאוס, שנה לפני טיהור המקדש."
+    },
+    {
       "id": "temple-rededication",
       "year": -164,
       "period": "hasmonean",
@@ -308,6 +805,28 @@
       "q": "באיזו שנה טיהר יהודה המכבי את בית המקדש וחידש את העבודה בו?",
       "desc": "אחרי הניצחון בבית צור: ניתוץ המזבח הטמא, בניית מזבח חדש וחידוש הקורבנות — מקור חג החנוכה.",
       "j3d": 4
+    },
+    {
+      "id": "beth-zechariah",
+      "year": -163,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב בית זכריה",
+      "q": "באיזו שנה הובס יהודה המכבי בקרב בית זכריה?",
+      "desc": "הקרב החמישי: מול צבא גדול עם פילים; אלעזר אחי יהודה נהרג תחת פיל."
+    },
+    {
+      "id": "adasa-rome",
+      "year": -161,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב חדשה (יום ניקנור) והברית עם רומא",
+      "q": "באיזו שנה ניצח יהודה המכבי את ניקנור בקרב חדשה, וכרת ברית עם רומא?",
+      "desc": "הקרב השביעי — ״יום ניקנור״; באותה שנה נכרתת ברית ראשונה עם רומא."
     },
     {
       "id": "judah-death-elasa",
@@ -376,6 +895,18 @@
       "desc": "שולטת 76–67 לפנה״ס, בתמיכת הפרושים (אחיה שמעון בן שטח). אחרי מותה — מאבקי הירושה בין בניה."
     },
     {
+      "id": "brothers-war",
+      "year": -67,
+      "period": "hasmonean",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מלחמת הירושה בין בני שלומציון",
+      "q": "מתי פרצה מלחמת הירושה בין הורקנוס השני לאריסטובולוס השני?",
+      "desc": "אחרי מות שלומציון המלכה; המאבק מזמין את התערבות רומא ואת פומפיוס.",
+      "yearText": "67–63 לפנה״ס"
+    },
+    {
       "id": "pompey-jerusalem",
       "year": -63,
       "period": "roman",
@@ -397,6 +928,20 @@
       "title": "הורדוס מלך יהודה",
       "q": "באיזו שנה השתלט הורדוס על ירושלים והחל למלוך בחסות רומא?",
       "desc": "מלכות הורדוס (37–4 לפנה״ס): ביסוס, שנות שיא ומפעלי בנייה — קיסריה, מצדה, הרודיון והר הבית.",
+      "sites": [
+        "caesarea"
+      ]
+    },
+    {
+      "id": "actium",
+      "year": -31,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב אקטיום — עליית אוגוסטוס",
+      "q": "באיזו שנה נערך קרב אקטיום, שבעקבותיו עלה אוגוסטוס?",
+      "desc": "אוקטביאנוס מנצח את אנטוניוס וקלאופטרה; הורדוס עובר לצדו ומאושר כמלך — ראשית ״שנות השיא״.",
       "sites": [
         "caesarea"
       ]
@@ -489,6 +1034,18 @@
         "url": "https://drive.google.com/file/d/1T7ysMkFpI21KReqBhEtzRPLcn6dRWtG3/view",
         "title": "תקציר מאורגן — תקופת ישו"
       }
+    },
+    {
+      "id": "agrippa-i",
+      "year": 41,
+      "period": "roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מלכות אגריפס הראשון",
+      "q": "באיזו שנה החל אגריפס הראשון למלוך על יהודה?",
+      "desc": "41–44 לספירה: הפוגה בתקופת הנציבים, בין התקופה הראשונה לשנייה.",
+      "yearText": "41–44 לספירה"
     },
     {
       "id": "great-revolt",
@@ -596,6 +1153,17 @@
       "j3d": 6
     },
     {
+      "id": "septimius-severus",
+      "year": 193,
+      "period": "late_roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הקיסר ספטימיוס סוורוס",
+      "q": "באיזו שנה עלה ספטימיוס סוורוס לשלטון ברומא?",
+      "desc": "193–211 לספירה: ראשית השושלת הסוורית, לאחר תום עידן ״השלום הרומי״ (180 לספירה)."
+    },
+    {
       "id": "mishnah",
       "year": 200,
       "yearText": "200 לספירה בקירוב",
@@ -622,6 +1190,28 @@
       "q": "באיזו שנה העניק צו קרקלה אזרחות רומית לרוב התושבים החופשיים באימפריה?",
       "desc": "Constitutio Antoniniana: הרחבת האזרחות הרומית לתושבים החופשיים של האימפריה.",
       "note": "לא נמצא בחומרי הקורס שנבדקו; תאריך מקובל."
+    },
+    {
+      "id": "diocletian",
+      "year": 284,
+      "period": "late_roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "דיוקלטיאנוס",
+      "q": "באיזו שנה עלה דיוקלטיאנוס לשלטון וארגן מחדש את האימפריה?",
+      "desc": "284–305 לספירה: רפורמות במנהל ובצבא ורדיפת נוצרים."
+    },
+    {
+      "id": "milvian-bridge",
+      "year": 312,
+      "period": "late_roman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "קרב גשר מילוויוס",
+      "q": "באיזו שנה ניצח קונסטנטינוס בקרב גשר מילוויוס?",
+      "desc": "הניצחון שהביא את קונסטנטינוס לשלטון במערב; שנה אחר כך — ״האדיקט של מילאנו״."
     },
     {
       "id": "edict-of-milan",
@@ -658,6 +1248,17 @@
       "desc": "הוועידה הכנסייתית הכללית הראשונה. כשנה אחר כך (326 לספירה בקירוב) מגיעה הלנה לארץ."
     },
     {
+      "id": "constantinople",
+      "year": 330,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ייסוד קונסטנטינופול",
+      "q": "באיזו שנה נוסדה קונסטנטינופול כבירה החדשה של האימפריה?",
+      "desc": "קונסטנטינוס מעביר את הבירה לביזנטיון ומשנה את שמה."
+    },
+    {
       "id": "holy-sepulchre",
       "year": 335,
       "period": "byzantine",
@@ -672,6 +1273,31 @@
         326
       ],
       "j3d": 7
+    },
+    {
+      "id": "gallus-revolt",
+      "year": 351,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מרד גאלוס",
+      "q": "באיזו שנה פרץ מרד היהודים בגליל בימי גאלוס קיסר?",
+      "desc": "מרד יהודי נגד השלטון הרומי-הנוצרי; דוכא, וערי הגליל נפגעו.",
+      "sites": [
+        "tzippori"
+      ]
+    },
+    {
+      "id": "julian",
+      "year": 361,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "יוליאנוס ״הכופר״",
+      "q": "באיזו שנה עלה יוליאנוס ״הכופר״ לשלטון — הקיסר שהתיר לבנות מחדש את המקדש?",
+      "desc": "361–363 לספירה: ניסה להחזיר את הדת הרומית; התוכנית לבנות את המקדש נעצרה עם מותו."
     },
     {
       "id": "edict-of-thessalonica",
@@ -694,6 +1320,46 @@
       "title": "חלוקת האימפריה למזרח ולמערב",
       "q": "באיזו שנה, עם מות תאודוסיוס, חולקה האימפריה למזרח ולמערב?",
       "desc": "חלוקת השלטון בין בני תאודוסיוס הראשון. ארץ ישראל שייכת לאימפריה המזרחית."
+    },
+    {
+      "id": "jerusalem-talmud",
+      "year": 400,
+      "period": "byzantine",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "חתימת התלמוד הירושלמי",
+      "q": "מתי, בקירוב, נחתם התלמוד הירושלמי?",
+      "desc": "סיכום תורת אמוראי ארץ ישראל, בעיקר בטבריה, בציפורי ובקיסריה.",
+      "yearText": "כ־400 לספירה"
+    },
+    {
+      "id": "sanhedrin-end",
+      "year": 429,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ביטול הסנהדרין",
+      "q": "באיזו שנה בוטלה הסנהדרין — סוף ההנהגה היהודית המרכזית בארץ?",
+      "desc": "השלטון הביזנטי מבטל את מוסד הנשיאות והסנהדרין."
+    },
+    {
+      "id": "eudocia",
+      "year": 444,
+      "period": "byzantine",
+      "certainty": "approx",
+      "source": "external",
+      "examReady": false,
+      "title": "הקיסרית אודוקיה בירושלים",
+      "q": "מתי, בקירוב, השתקעה הקיסרית אודוקיה בירושלים?",
+      "desc": "אשת תאודוסיוס השני; הרחיבה את חומת ירושלים דרומה ובנתה כנסיות, ובהן כנסיית סטפנוס הקדוש.",
+      "yearText": "המאה ה־5 (עלתה לירושלים ב־438 לספירה, השתקעה בה ב־444 לספירה)",
+      "alts": [
+        438
+      ],
+      "note": "בתאריכון הקורס: ״מאה חמישית״ בלבד; השנים מן המחקר.",
+      "j3d": 7
     },
     {
       "id": "council-of-chalcedon",
@@ -731,6 +1397,20 @@
       "q": "באיזו שנה עלה יוסטיניאנוס לשלטון?",
       "desc": "„הסמן המרכזי של המאה השישית”: מפעלי בנייה וחקיקה; בירושלים — כנסיית הניאה (543 לספירה) ואולי הקרדו.",
       "j3d": 7
+    },
+    {
+      "id": "samaritan-revolt",
+      "year": 529,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מרד השומרונים",
+      "q": "באיזו שנה פרץ מרד השומרונים, שבעקבותיו הוקף התיאטרון בקיסריה במצודה?",
+      "desc": "אחד מחמישה מרדי שומרונים במאות ה־5–6 (תאריכון); השנה מתוך עלון רט״ג לקיסריה.",
+      "sites": [
+        "caesarea"
+      ]
     },
     {
       "id": "plague-of-justinian",
@@ -796,6 +1476,478 @@
       "desc": "צבא פרס כובש את ירושלים; כנסיות נפגעות והצלב נלקח. הביזנטים ישובו לעיר ב־628–630 לספירה לתקופה קצרה.",
       "note": "החליף את האירוע „612 לספירה — האימפריה הביזנטית” שבאב־הטיפוס, שלא תיאר אירוע. לא נמצא בחומרי הקורס שנבדקו.",
       "j3d": 7
+    },
+    {
+      "id": "hijra",
+      "year": 622,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ההג׳רה",
+      "q": "באיזו שנה יצא מוחמד ממכה למדינה — ראשית הלוח המוסלמי?",
+      "desc": "״ההג׳רה״; שמונה שנים לפני כיבוש מכה (630 לספירה)."
+    },
+    {
+      "id": "muhammad-death",
+      "year": 632,
+      "period": "byzantine",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מות מוחמד",
+      "q": "באיזו שנה מת מוחמד, ואבו בכר נעשה הח׳ליף הראשון?",
+      "desc": "ראשית הח׳ליפות; תוך שנים ספורות יוצאים הכיבושים המוסלמיים מחצי האי ערב."
+    },
+    {
+      "id": "muslim-conquest",
+      "year": 638,
+      "period": "early_islamic",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "הכיבוש המוסלמי של ירושלים",
+      "q": "באיזו שנה נכנעה ירושלים לח׳ליף עומר — ראשית התקופה המוסלמית הקדומה?",
+      "desc": "עומר בן אל-ח׳טאב (634–644 לספירה) נכנס לירושלים; סוף השלטון הביזנטי בארץ.",
+      "alts": [
+        637
+      ],
+      "note": "בחלק מהמקורות: 637 לספירה.",
+      "j3d": 8
+    },
+    {
+      "id": "umayyads",
+      "year": 661,
+      "period": "early_islamic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ראשית שלטון בית אומיה",
+      "q": "באיזו שנה עלה מועאויה ונוסדה השושלת האומיית?",
+      "desc": "661–750 לספירה: בירת הח׳ליפות בדמשק; בימיהם נבנו כיפת הסלע ומסגד אל-אקצא."
+    },
+    {
+      "id": "dome-of-rock",
+      "year": 691,
+      "period": "early_islamic",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "בניית כיפת הסלע",
+      "q": "באיזו שנה הושלמה כיפת הסלע בירושלים?",
+      "desc": "בידי הח׳ליף האומיי עבד אל-מלכ, על הסלע שבמרכז הר הבית.",
+      "j3d": 8,
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר."
+    },
+    {
+      "id": "earthquake-749",
+      "year": 749,
+      "period": "early_islamic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "רעידת האדמה הגדולה (רעש השביעית)",
+      "q": "באיזו שנה החריבה רעידת אדמה את בית שאן, טבריה וסוסיתא?",
+      "desc": "כ״ג בשבט (בחודש ינואר 749 לספירה) — ״רעש השביעית״; בית שאן נקברה בשכבת סחף ולא שוקמה.",
+      "sites": [
+        "beitshean"
+      ]
+    },
+    {
+      "id": "abbasids",
+      "year": 750,
+      "period": "early_islamic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ראשית שלטון בית עבאס",
+      "q": "באיזו שנה עלתה השושלת העבאסית?",
+      "desc": "750–1258 לספירה; בקיסריה נבנה מסגד על במת המקדש, והנמל נסתם.",
+      "sites": [
+        "caesarea"
+      ]
+    },
+    {
+      "id": "fatimids",
+      "year": 969,
+      "period": "early_islamic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "השושלת הפאטימית בארץ",
+      "q": "באיזו שנה השתלטו הפאטימים ממצרים על הארץ?",
+      "desc": "שושלת שיעית ממצרים; בימי הח׳ליף אל-חאכם (996–1021 לספירה) נהרסה כנסיית הקבר."
+    },
+    {
+      "id": "holy-sepulchre-1048",
+      "year": 1048,
+      "period": "early_islamic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "שיפוץ כנסיית הקבר",
+      "q": "באיזו שנה שופצה כנסיית הקבר, אחרי שהחריבה אל-חאכם?",
+      "desc": "השיפוץ בהסכמת השלטון הפאטימי; הכנסייה שהצלבנים ימצאו."
+    },
+    {
+      "id": "great-schism",
+      "year": 1054,
+      "period": "early_islamic",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הפילוג בנצרות",
+      "q": "באיזו שנה התפלגה הנצרות לכנסייה הקתולית ולכנסייה האורתודוקסית?",
+      "desc": "הקרע בין רומא לקונסטנטינופול — רקע למסעות הצלב."
+    },
+    {
+      "id": "seljuks",
+      "year": 1071,
+      "period": "early_islamic",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "הסלג׳וקים",
+      "q": "מתי, בקירוב, השתלטו הטורקים הסלג׳וקים על הארץ?",
+      "desc": "1071–1098 לספירה: שלטון סלג׳וקי, עד המעבר הקצר לפאטימים ערב בוא הצלבנים.",
+      "yearText": "1071–1098 לספירה"
+    },
+    {
+      "id": "crusaders-jerusalem",
+      "year": 1099,
+      "period": "crusader",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הצלבנים כובשים את ירושלים",
+      "q": "באיזו שנה כבשו הצלבנים את ירושלים?",
+      "desc": "סיום מסע הצלב הראשון (1095–1099 לספירה) והקמת ממלכת ירושלים הצלבנית.",
+      "j3d": 9
+    },
+    {
+      "id": "crusaders-caesarea",
+      "year": 1101,
+      "period": "crusader",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הצלבנים כובשים את קיסריה",
+      "q": "באיזו שנה כבשו הצלבנים את קיסריה?",
+      "desc": "בלדווין הראשון כובש את העיר; מקדש אוגוסטוס שעל הבמה נעשה כנסייה.",
+      "sites": [
+        "caesarea"
+      ]
+    },
+    {
+      "id": "hattin",
+      "year": 1187,
+      "period": "crusader",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "קרב קרני חיטין",
+      "q": "באיזו שנה הביס צלאח א-דין את הצלבנים בקרני חיטין?",
+      "desc": "תבוסת ממלכת ירושלים; ירושלים נכבשת בידי צלאח א-דין באותה שנה.",
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר."
+    },
+    {
+      "id": "louis-ix-caesarea",
+      "year": 1251,
+      "period": "crusader",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "לואי התשיעי מבצר את קיסריה",
+      "q": "באיזו שנה ביצר לואי התשיעי מלך צרפת את קיסריה?",
+      "desc": "חומות גבוהות, חמישה-עשר מגדלים וחפיר עמוק סביב העיר הצלבנית (עלון רט״ג).",
+      "sites": [
+        "caesarea"
+      ]
+    },
+    {
+      "id": "baybars-caesarea",
+      "year": 1265,
+      "period": "crusader",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "בייברס כובש את קיסריה",
+      "q": "באיזו שנה כבש הסולטן הממלוכי בייברס את קיסריה והחריבה?",
+      "desc": "המצודה הצלבנית נפלה; שרידיה נראים עד היום ליד הנמל.",
+      "sites": [
+        "caesarea"
+      ]
+    },
+    {
+      "id": "fall-of-acre",
+      "year": 1291,
+      "period": "mamluk_ottoman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "נפילת עכו — סוף הממלכה הצלבנית",
+      "q": "באיזו שנה נפלה עכו בידי הממלוכים, וקץ לממלכה הצלבנית?",
+      "desc": "הממלוכים מחריבים את ערי החוף כדי למנוע את שיבת הצלבנים."
+    },
+    {
+      "id": "ottoman-conquest",
+      "year": 1516,
+      "period": "mamluk_ottoman",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "הכיבוש העות׳מאני",
+      "q": "באיזו שנה כבשו העות׳מאנים את הארץ מידי הממלוכים?",
+      "desc": "סלים הראשון מביס את הממלוכים ב־1516 לספירה ונכנס לירושלים ב־1517 לספירה.",
+      "alts": [
+        1517
+      ],
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר."
+    },
+    {
+      "id": "suleiman-walls",
+      "year": 1537,
+      "period": "mamluk_ottoman",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "חומות סולימאן",
+      "q": "מתי נבנו חומות העיר העתיקה בירושלים בידי סולימאן המפואר?",
+      "desc": "1537–1541 לספירה: החומות והשערים הנראים היום.",
+      "yearText": "1537–1541 לספירה",
+      "j3d": 11,
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר."
+    },
+    {
+      "id": "napoleon",
+      "year": 1799,
+      "period": "mamluk_ottoman",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מסע נפוליאון",
+      "q": "באיזו שנה הגיע נפוליאון לארץ במסעו המזרחי?",
+      "desc": "המסע פתח את הארץ למחקר האירופי; באותו מסע נמצאה אבן רוזטה, שבעזרתה פוענח כתב החרטומים."
+    },
+    {
+      "id": "david-roberts",
+      "year": 1838,
+      "period": "c19",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "ציורי דיוויד רוברטס",
+      "q": "באיזו שנה תיעד הצייר דיוויד רוברטס את הארץ?",
+      "desc": "מן הנוסעים והציירים שבאו לארץ אחרי מסע נפוליאון ושלטון מצרים."
+    },
+    {
+      "id": "pef-survey",
+      "year": 1865,
+      "period": "c19",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "הסקר של ה־PEF",
+      "q": "מתי, בקירוב, ערך צ׳ארלס וילסון את הסקר המדעי של החברה הבריטית לחקר ארץ ישראל?",
+      "desc": "צ׳ארלס וילסון עמד בראש הסקר; ״קשת וילסון״ בכותל המערבי קרויה על שמו.",
+      "yearText": "1864–1865 לספירה"
+    },
+    {
+      "id": "first-aliyah",
+      "year": 1882,
+      "period": "c19",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "העלייה הראשונה",
+      "q": "באיזו שנה החלה העלייה הראשונה והוקמו המושבות הראשונות?",
+      "desc": "ראשית ההתיישבות הציונית: ראשון לציון, זכרון יעקב, ראש פינה ועוד.",
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר."
+    },
+    {
+      "id": "jaffa-jerusalem-railway",
+      "year": 1892,
+      "period": "c19",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "רכבת יפו–ירושלים",
+      "q": "באיזו שנה נחנכה מסילת הרכבת יפו–ירושלים?",
+      "desc": "המסילה הראשונה בארץ; אחריה רכבת העמק (1905 לספירה).",
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר."
+    },
+    {
+      "id": "valley-railway",
+      "year": 1905,
+      "period": "c19",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "רכבת העמק",
+      "q": "באיזו שנה נחנכה רכבת העמק, שלוחת הרכבת החיג׳אזית?",
+      "desc": "פעלה עד קום המדינה; בתחנות נשמרו מבני אבן ומגדל מים."
+    },
+    {
+      "id": "british-conquest",
+      "year": 1917,
+      "period": "mandate",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הכיבוש הבריטי",
+      "q": "באיזו שנה כבשו הבריטים את הארץ במלחמת העולם הראשונה?",
+      "desc": "ראשית תקופת המנדט (1917–1948 לספירה): מחלקת העתיקות המנדטורית, נמל חיפה, כבישים ובתי זיקוק."
+    },
+    {
+      "id": "independence",
+      "year": 1948,
+      "period": "israel",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "הקמת מדינת ישראל ומלחמת העצמאות",
+      "q": "באיזו שנה קמה מדינת ישראל?",
+      "desc": "קביעת ״הקו הירוק״; הגדה המערבית בשלטון ירדן ורצועת עזה בשלטון מצרים."
+    },
+    {
+      "id": "masada-excavations",
+      "year": 1963,
+      "period": "israel",
+      "certainty": "approx",
+      "source": "course",
+      "examReady": true,
+      "title": "חפירות מצדה בידי יגאל ידין",
+      "q": "מתי, בקירוב, ניהל יגאל ידין את חפירות מצדה?",
+      "desc": "הארכאולוגיה ככלי בעיצוב הזהות הלאומית (מצדה, חצור).",
+      "yearText": "1963–1965 לספירה (״שנות ה־60״)",
+      "sites": [
+        "masada"
+      ],
+      "note": "בתקציר: ״שנות ה־60״; השנים 1963–1965 לספירה מן המחקר."
+    },
+    {
+      "id": "six-day-war",
+      "year": 1967,
+      "period": "israel",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "מלחמת ששת הימים",
+      "q": "באיזו שנה פרצה מלחמת ששת הימים?",
+      "desc": "ישראל שולטת ביהודה ושומרון, מזרח ירושלים, עזה, סיני ורמת הגולן; נפתחות חפירות הרובע היהודי והכותל הדרומי.",
+      "j3d": 12
+    },
+    {
+      "id": "sinai-evacuation",
+      "year": 1982,
+      "period": "israel",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "פינוי סיני",
+      "q": "באיזו שנה פונה חצי האי סיני?",
+      "desc": "בעקבות הסכם השלום עם מצרים."
+    },
+    {
+      "id": "oslo",
+      "year": 1993,
+      "period": "israel",
+      "certainty": "firm",
+      "source": "external",
+      "examReady": true,
+      "title": "הסכמי אוסלו",
+      "q": "באיזו שנה נחתמו הסכמי אוסלו הראשונים?",
+      "desc": "בשנות ה־90 הועברו סמכויות, גם ארכאולוגיות, בחלק מהשטחים לרשות הפלסטינית.",
+      "note": "לא נמצא תאריך מפורש בחומרי הקורס שנבדקו; תאריך מקובל במחקר."
+    },
+    {
+      "id": "disengagement",
+      "year": 2005,
+      "period": "israel",
+      "certainty": "firm",
+      "source": "course",
+      "examReady": true,
+      "title": "תוכנית ההתנתקות",
+      "q": "באיזו שנה יצאה ישראל מרצועת עזה בתוכנית ההתנתקות?",
+      "desc": "פינוי היישובים ברצועת עזה ובצפון השומרון."
     }
+  ],
+  "addedIds": [
+    "chalcolithic-start",
+    "early-bronze",
+    "narmer",
+    "middle-bronze",
+    "hyksos-expulsion",
+    "thutmose-iii",
+    "amarna-letters",
+    "seti-i",
+    "ramesses-ii",
+    "merneptah-stele",
+    "iron-age-settlement",
+    "david",
+    "kingdom-split",
+    "shishak",
+    "qarqar",
+    "hazael",
+    "tiglath-pileser",
+    "fall-of-israel",
+    "sennacherib",
+    "fall-of-assyria",
+    "josiah-megiddo",
+    "nebuchadnezzar-1",
+    "jehoiachin-exile",
+    "alexander-death",
+    "raphia",
+    "antiochus-iii-charter",
+    "temple-looting",
+    "beth-horon",
+    "emmaus",
+    "beth-zechariah",
+    "adasa-rome",
+    "brothers-war",
+    "actium",
+    "agrippa-i",
+    "septimius-severus",
+    "diocletian",
+    "milvian-bridge",
+    "constantinople",
+    "gallus-revolt",
+    "julian",
+    "jerusalem-talmud",
+    "sanhedrin-end",
+    "eudocia",
+    "samaritan-revolt",
+    "hijra",
+    "muhammad-death",
+    "muslim-conquest",
+    "umayyads",
+    "dome-of-rock",
+    "earthquake-749",
+    "abbasids",
+    "fatimids",
+    "holy-sepulchre-1048",
+    "great-schism",
+    "seljuks",
+    "crusaders-jerusalem",
+    "crusaders-caesarea",
+    "hattin",
+    "louis-ix-caesarea",
+    "baybars-caesarea",
+    "fall-of-acre",
+    "ottoman-conquest",
+    "suleiman-walls",
+    "napoleon",
+    "david-roberts",
+    "pef-survey",
+    "first-aliyah",
+    "jaffa-jerusalem-railway",
+    "valley-railway",
+    "british-conquest",
+    "independence",
+    "masada-excavations",
+    "six-day-war",
+    "sinai-evacuation",
+    "oslo",
+    "disengagement"
   ]
 }

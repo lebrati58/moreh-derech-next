@@ -18,7 +18,7 @@
         ['שלום, אני ליונל! 👋', 'אני אהיה המורה דרך שלכם באפליקציה. בחצי דקה אראה לכם איך מתכוננים כאן למבחן.'],
         ['כל יום מתחילים כאן ☀️', 'אתגר היום: כמה שאלות קצרות מכל הסיורים. 5 דקות ביום, ושומרים על רצף 🔥.'],
         ['המסע שלי 📈', 'כאן רואים את הכוכבים, ואת הטעויות שצריך לתקן. כל טעות חוזרת אליכם עד שהיא נלמדת.'],
-        ['תאריכים ותקופות ⏳', 'חידון האירועים וציר הזמן: מחורבן הבית הראשון ועד הכיבוש הפרסי.'],
+        ['תאריכים ותקופות ⏳', 'חידון האירועים וציר הזמן: מהתקופה הכלקוליתית ועד מדינת ישראל — לפי חומרי הקורס.'],
         ['22 הסיורים על המפה 🧭', 'בוחרים סיור, עוברים בין האתרים על המפה, ועונים על שאלות בכל תחנה. בשלוש רמות קושי.'],
         ['הכנה למבחן 🎓', 'מתכננים יום טיול וכותבים הדרכה, כמו בפרק השני של המבחן. עם תשובות לדוגמה.'],
         ['האתרים בתלת-ממד 🏛️', 'ירושלים, מצדה, קיסריה ועוד: מסובבים את המודל ולוחצים על כל חלק.'],
@@ -37,7 +37,7 @@
         ['Salut, moi c’est Lionel ! 👋', 'Je suis votre guide dans l’appli. En 30 secondes, je vous montre comment réviser l’examen ici.'],
         ['Chaque jour, on commence ici ☀️', 'Le défi du jour : quelques questions rapides sur tous les סיורים. 5 minutes par jour, et on garde sa série 🔥.'],
         ['Mon parcours 📈', 'Vos étoiles et les erreurs à corriger. Chaque erreur revient jusqu’à ce qu’elle soit acquise.'],
-        ['Dates et périodes ⏳', 'Le quiz des événements et la frise : de la destruction du Premier Temple à la conquête perse.'],
+        ['Dates et périodes ⏳', 'Le quiz des événements et la frise : de l’époque chalcolithique à l’État d’Israël, d’après le cours.'],
         ['Les 22 סיורים sur la carte 🧭', 'Choisissez un סיור, avancez de site en site sur la carte et répondez à chaque étape. Trois niveaux.'],
         ['Préparer l’examen 🎓', 'Planifier une journée et rédiger le guidage, comme dans la 2e partie de l’examen, avec des réponses modèles.'],
         ['Les sites en 3D 🏛️', 'Jérusalem, Massada, Césarée… Tournez la maquette et touchez chaque élément.'],
@@ -56,7 +56,7 @@
         ['Hi, I’m Lionel! 👋', 'I’ll be your guide in the app. In 30 seconds I’ll show you how to prepare for the exam here.'],
         ['Start here every day ☀️', 'Today’s challenge: a few quick questions from all the tours. 5 minutes a day keeps your streak 🔥.'],
         ['My journey 📈', 'Your stars and the mistakes to fix. Each mistake comes back until you’ve learned it.'],
-        ['Dates and periods ⏳', 'The events quiz and the timeline: from the First Temple’s destruction to the Persian conquest.'],
+        ['Dates and periods ⏳', 'The events quiz and the timeline: from the Chalcolithic to the State of Israel, following the course.'],
         ['The 22 tours on the map 🧭', 'Pick a tour, move from site to site on the map and answer at each stop. Three levels.'],
         ['Exam prep 🎓', 'Plan a tour day and write your guiding, like part two of the exam, with model answers.'],
         ['Sites in 3D 🏛️', 'Jerusalem, Masada, Caesarea… Spin the model and tap each part.'],
@@ -254,6 +254,7 @@
   function init() {
     replayButton();
     if (/[?&]tour=1/.test(location.search)) { setTimeout(start, 500); return; }
+    if (navigator.webdriver && get('mdl_guide_test') !== '1') return;   // tests automatisés : pas de guide, sauf demande explicite
     if (get(NEVER) === '1' || get(SESSION, sessionStorage) === '1') return;   // déjà vu pendant cette ouverture de l'appli
     set(SESSION, '1', sessionStorage);
     setTimeout(seen() ? welcome : start, 500);

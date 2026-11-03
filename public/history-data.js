@@ -16,7 +16,7 @@
     3: { id: 3, icon: '🔥', label: 'קשה', desc: 'קרוב מאוד · 20 שנ׳', minGap: 3, window: 60, spacing: 2, steps: [3, 4, 6, 8, 10, 12, 15, 20], far: 5, century: [-2, -1, 1, 2], ms: 20000, multiMs: 35000, mult: 1 }
   };
   function lvl(n) { return LEVELS[n] || LEVELS[2]; }
-  var PERIOD_IDS = ['babylon', 'persian', 'hellenistic', 'hasmonean', 'roman', 'late_roman', 'byzantine'];
+  var PERIOD_IDS = ['chalcolithic', 'bronze', 'iron', 'babylon', 'persian', 'hellenistic', 'hasmonean', 'roman', 'late_roman', 'byzantine', 'early_islamic', 'crusader', 'mamluk_ottoman', 'c19', 'mandate', 'israel'];
   var CERTAINTY = ['firm', 'approx', 'disputed'];
   var SOURCES = ['course', 'course-diff', 'external'];
 

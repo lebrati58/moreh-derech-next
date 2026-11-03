@@ -160,7 +160,7 @@ h2{font-size:16px;margin:24px 0 10px;color:#dfe6ff}
   function historyCard(){
     const el = $('history'); if (!P.historyStats) { el.hidden = true; return; }
     const h = P.historyStats(), k = h.mastered.length, m = h.mistakes.length;
-    el.innerHTML = `<span class="ico" aria-hidden="true">⏳</span><span><b>ציר הזמן והחידון${k ? ` · ✅ ${k}/48` : ''}</b><small>${h.points ? '🏆 ' + fmt(h.points) + ' נק׳ שיא במבחנים · ' : ''}${m ? '🔁 ' + m + ' אירועים לחזרה' : k ? 'ממשיכים לשפר את השיא' : '48 אירועים מבבל ועד הכיבוש הפרסי — חידון עם שעון'}</small></span><span class="go" aria-hidden="true">←</span>`;
+    el.innerHTML = `<span class="ico" aria-hidden="true">⏳</span><span><b>ציר הזמן והחידון${k ? ` · ✅ ${k}/${h.total || 124}` : ''}</b><small>${h.points ? '🏆 ' + fmt(h.points) + ' נק׳ שיא במבחנים · ' : ''}${m ? '🔁 ' + m + ' אירועים לחזרה' : k ? 'ממשיכים לשפר את השיא' : '48 אירועים מבבל ועד הכיבוש הפרסי — חידון עם שעון'}</small></span><span class="go" aria-hidden="true">←</span>`;
   }
   header(); daily(); chart(); historyCard();
   Promise.all([MDTours.getJSON('guided-quiz.json'), MDTours.getJSON('siyurim-catalog.json')]).then(([data, catalogue]) => {

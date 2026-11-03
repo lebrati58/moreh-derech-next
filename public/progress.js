@@ -108,10 +108,11 @@
     return { saved: true, gained: after - before, points: after };
   }
   function historyPoints(h) { return Object.values(h.ev).reduce((n, e) => n + (e.best || 0), 0); }
+  function setHistoryTotal(n) { const g = data(), h = hdata(g); if (h.total !== n) { h.total = n; ls.set(GKEY, g); } }
   function historyStats() {
     const h = hdata(data()), ev = h.ev, ids = Object.keys(ev);
     return { points: historyPoints(h), tried: ids.filter(id => ev[id].x).length, mastered: ids.filter(id => ev[id].ok === 1),
-      mistakes: ids.filter(id => ev[id].ok === -1), runs: h.runs.slice(), best: id => (ev[id] && ev[id].best) || 0, status: id => (ev[id] && ev[id].ok) || 0 };
+      mistakes: ids.filter(id => ev[id].ok === -1), runs: h.runs.slice(), total: h.total || 0, best: id => (ev[id] && ev[id].best) || 0, status: id => (ev[id] && ev[id].ok) || 0 };
   }
 
   // ---- parcours « סיפור דרך » (parcours.html) ----
@@ -304,5 +305,5 @@
   }
 
   window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, classCode, setClassCode, normCode, askName, PASS,
-    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats, saveTourRun, tourStats, saveArch, archStats, savePartA, partAStats };
+    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats, setHistoryTotal, saveTourRun, tourStats, saveArch, archStats, savePartA, partAStats };
 })();

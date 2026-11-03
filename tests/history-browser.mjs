@@ -5,6 +5,8 @@
 import { createServer } from 'node:http';
 import { readFile, mkdir } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
+const HD = JSON.parse(await (await import('node:fs/promises')).readFile(new URL('../public/history-events.json', import.meta.url), 'utf8'));
+const N = HD.events.length, NP = HD.periods.length; // tout le cours (tools/history-more.py)
 import { chromium } from 'playwright-core';
 
 const ROOT = new URL('../public/', import.meta.url).pathname;
@@ -53,8 +55,8 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await shot('01-accueil');
   await page.tap('a.hist-tl');
   await page.waitForSelector('#list .ev');
-  ok(await page.locator('#list .ev').count() === 48, 'frise : 48 événements');
-  ok(await page.locator('#list .period').count() === 7, 'frise : 7 périodes');
+  ok(await page.locator('#list .ev').count() === N, `frise : ${N} événements`);
+  ok(await page.locator('#list .period').count() === NP, `frise : ${NP} périodes`);
   ok(await noHScroll(page), 'frise : pas de défilement horizontal à 360 px');
   await shot('02-frise');
 
@@ -66,11 +68,11 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await page.fill('#q', 'נפילת מצדה');
   ok(await page.locator('#list .ev').count() === 1, 'recherche « נפילת מצדה » : 1 résultat');
   await page.fill('#q', 'מצדה');
-  ok(await page.locator('#list .ev').count() === 2, 'recherche « מצדה » : Massada + Hérode (texte)');
+  ok(await page.locator('#list .ev').count() === 3, 'recherche « מצדה » : Massada + Hérode + fouilles de Yadin (texte)');
   await page.fill('#q', '445');
   ok(await page.locator('#list .ev').count() === 1, 'recherche par année « 445 »');
   await page.tap('#qClear');
-  ok(await page.locator('#list .ev').count() === 48, 'effacement de la recherche');
+  ok(await page.locator('#list .ev').count() === N, 'effacement de la recherche');
   await page.tap('#pchips [data-p="persian"]');
   await page.mouse.wheel(0, 400);
 
@@ -181,7 +183,8 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await page.tap('#start');
   await page.waitForSelector('#vPlay:not([hidden]) .ans');
   let total = 0;
-  for (let k = 0; k < 8; k++) {
+  const NQ = await page.evaluate(() => window.MDHistoryApp.state().questions.length); // toute la période choisie
+  for (let k = 0; k < NQ; k++) {
     ci = await correctIndex(page);
     await page.clock.runFor(2000);
     await page.tap(`.ans[data-i="${ci}"]`);
@@ -191,7 +194,7 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   }
   await page.waitForSelector('#vResult:not([hidden])');
   const res = await page.textContent('#resultCard');
-  ok(res.includes('8 / 8'), 'examen : 8 / 8');
+  ok(res.includes(`${NQ} / ${NQ}`), `examen : ${NQ} / ${NQ}`);
   ok(res.includes('נקודות חדשות'), 'examen : points ajoutés au parcours');
   await shot('11-resultat-examen');
   const t1 = await page.evaluate(() => window.MDProgress.totals().points);
@@ -199,12 +202,12 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   // Rejouer le même examen ne double pas les points
   await page.tap('[data-act="again"]');
   // Rejouer en se trompant partout : rien n'est retiré ni ajouté (seul le meilleur score par événement compte).
-  for (let k = 0; k < 8; k++) { ci = await correctIndex(page); await page.tap(`.ans[data-i="${(ci + 1) % 4}"]`); await page.tap('#next'); }
+  for (let k = 0; k < NQ; k++) { ci = await correctIndex(page); await page.tap(`.ans[data-i="${(ci + 1) % 4}"]`); await page.tap('#next'); }
   await page.waitForSelector('#vResult:not([hidden])');
   const t2 = await page.evaluate(() => window.MDProgress.totals().points);
   ok(t2 === t1, `rejouer (toutes fausses) : total inchangé, pas de double comptage (${t2} vs ${t1})`);
   const last = await page.evaluate(() => JSON.parse(localStorage.getItem('mdl_hist_last_v1')).record);
-  ok(last.version === 1 && last.quizId === 'history-48-dates' && last.eventIds.length === 8 && last.answerDetails.length === 8 && last.mode === 'exam' && last.period === 'hasmonean' && typeof last.durationMs === 'number' && last.completedAt, 'résultat structuré complet');
+  ok(last.version === 1 && last.quizId === 'history-48-dates' && last.eventIds.length === NQ && last.answerDetails.length === NQ && last.mode === 'exam' && last.period === 'hasmonean' && typeof last.durationMs === 'number' && last.completedAt, 'résultat structuré complet');
   // Retour Android depuis le résultat → réglages (pas la partie terminée)
   await page.goBack();
   ok(!page.url().includes('#/play'), 'retour depuis le résultat : pas de retour dans la partie finie');
@@ -218,7 +221,7 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await shot('12-mon-parcours');
   // Accueil : sous-titre de la tuile mis à jour
   await page.goto(base + 'index.html');
-  ok((await page.textContent('#historySub')).includes('/48'), 'accueil : progression affichée sur la tuile');
+  ok((await page.textContent('#historySub')).includes('/' + N), 'accueil : progression affichée sur la tuile');
   // Événement de fin de partie
   await page.goto(base + 'history.html#/quiz?period=babylon&mode=practice');
   await page.waitForSelector('#vQuiz:not([hidden])');
