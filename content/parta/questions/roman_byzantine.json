@@ -168,6 +168,34 @@
         "title": "Kathisma Church – Jewish Virtual Library",
         "url": "https://www.jewishvirtuallibrary.org/jsource/Archaeology/Kathisma.html"
       }
+    },
+    {
+      "id": "Q-roman_byzantine-009",
+      "level": 1,
+      "q": "אילו ערים חיברה ויה נובה טראיאנה?",
+      "options": [
+        "בוצרה ואילה (עקבה של ימינו)",
+        "ירושלים וקיסריה",
+        "רומא וברינדיזי",
+        "אנטיוכיה ואלכסנדריה"
+      ],
+      "correct": 0,
+      "explanation": "ויה נובה טראיאנה נסללה בימי הקיסר טראיאנוס בשנים 111–114 לספירה. היא חיברה את בוצרה שבדרום סוריה עם אילה, באזור עקבה של ימינו, לאורך הפרובינקיה ערביה. האיור להמחשה בלבד; המפה והכתובות שבו אינן מקור היסטורי.",
+      "tags": [
+        "ויה נובה טראיאנה",
+        "טראיאנוס",
+        "דרכים רומיות"
+      ],
+      "source": {
+        "title": "Aarhus University — Revisiting the Via Nova Traiana",
+        "url": "https://urbnet.au.dk/news/nyhed/artikel/revisiting-the-via-nova-traiana"
+      },
+      "illustration": {
+        "src": "assets/learning/via-nova-traiana.png",
+        "alt": "איור דמיוני של דרך רומית, עגלה ונוסעים",
+        "caption": "איור להמחשה בלבד — אינו שחזור או מפה מדויקת.",
+        "url": "https://www.canva.com/M/MAHZ2X7HiGc"
+      }
     }
   ]
 }

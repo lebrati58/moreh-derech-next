@@ -115,12 +115,18 @@
     run.answers[it.id] = { choice: k, ms }; ss.set(RUN, run);
     reveal(it, k, ms, false);
   }
+  function illustrationHTML(it) {
+    const img = it.illustration;
+    if (!img || !/^assets\/learning\/[a-z0-9-]+\.(png|webp|jpg)$/.test(img.src)) return '';
+    const link = /^https:\/\/www\.canva\.com\/M\/[A-Za-z0-9_-]+$/.test(img.url || '') ? img.url : null;
+    return `<figure class="learning-illustration"><img src="${esc(img.src)}" alt="${esc(img.alt || '')}" width="200" height="200" loading="lazy"><figcaption>${esc(img.caption || '')}${link ? `<br><a href="${esc(link)}" target="_blank" rel="noopener noreferrer">🖼️ פתיחת האיור ב־Canva</a>` : ''}</figcaption></figure>`;
+  }
   function reveal(it, k, ms, restored) {
     const ok = k === it.correct;
     document.querySelectorAll('.ans').forEach(b => { const i = +b.dataset.k; b.disabled = true; b.classList.add(i === it.correct ? 'ok' : i === k ? 'bad' : 'dim'); });
     const streak = (() => { let s = 0; for (let j = run.i - 1; j >= 0; j--) { const a = run.answers[run.items[j].id]; if (a && a.choice === run.items[j].correct) s++; else break; } return s + (ok ? 1 : 0); })();
     const p = C.points(ok, ms, it.level, streak);
-    $('expl').innerHTML = `<div class="expl ${ok ? 'ok' : 'bad'}"><b>${ok ? '✅ נכון!' : k === -1 ? '⏰ נגמר הזמן' : '❌ לא נכון'}</b> ${ok ? `<span class="pts">+${p}</span>` : `— התשובה: <b>${esc(it.options[it.correct])}</b>`}<br>${esc(it.explanation)}
+    $('expl').innerHTML = `<div class="expl ${ok ? 'ok' : 'bad'}"><b>${ok ? '✅ נכון!' : k === -1 ? '⏰ נגמר הזמן' : '❌ לא נכון'}</b> ${ok ? `<span class="pts">+${p}</span>` : `— התשובה: <b>${esc(it.options[it.correct])}</b>`}<br>${esc(it.explanation)}${illustrationHTML(it)}
       ${it.source && it.source.url ? `<br><a href="${esc(it.source.url)}" target="_blank" rel="noopener">📚 ${esc(it.source.title || 'מקור')}</a>` : ''}
       ${it.tags.length ? `<div class="tags">${it.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}</div>`;
     if (!restored) { say(ok ? 'נכון' : 'לא נכון'); if (navigator.vibrate && !ok) try { navigator.vibrate(80); } catch (e) {} }

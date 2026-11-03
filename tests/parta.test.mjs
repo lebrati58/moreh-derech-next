@@ -70,3 +70,12 @@ test('banque construite : valide, ≥ 6 questions par thème publié, thèmes du
   const ref = process.env.PARTA_REF_TXT;
   if (ref) { const txt = C.norm(await readFile(ref, 'utf8')); const dup = bank.questions.filter(q => txt.includes(C.norm(q.q))); assert.deepEqual(dup.map(q => q.id), [], 'énoncés copiés du document de référence'); }
 });
+
+
+test('Via Nova Traiana: illustration stays attached after answer shuffling', async () => {
+  const bank = await json('public/parta/bank.json');
+  const item = C.pick(bank, { ids: ['Q-roman_byzantine-009'], seed: 'via-nova' })[0];
+  assert.ok(item.options[item.correct].includes('בוצרה'));
+  assert.equal(item.illustration.src, 'assets/learning/via-nova-traiana.png');
+  assert.ok(await exists('public/' + item.illustration.src));
+});
