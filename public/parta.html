@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1230">
+<meta name="description" content="מבחן חלק א׳ — שאלות אמריקאיות לפי נושאי בחינת משרד התיירות, עם הסברים ומקורות">
+<title>🎓 מבחן חלק א׳ — Moreh Derech NEXT</title>
+<link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
+<style>
+:root{--bg2:#09112b;--card:#151f4a;--line:#3d5190;--line2:#4c5e9a;--ink:#eef3ff;--soft:#b5c3ee;--gold:#ffd878;--gold2:#f0b44c;--mint:#6ee9cf;--red:#ff8f8f;--ok:#18aa7b;--bad:#d85660;
+  --safe-b:env(safe-area-inset-bottom,0px);--safe-t:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 0 0,#2c3f9c 0,transparent 46%),radial-gradient(ellipse at 100% 38%,#352b73 0,transparent 42%),var(--bg2);background-attachment:fixed;color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
+.shell{max-width:820px;margin:auto;padding:0 14px calc(96px + var(--safe-b))}
+.top{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:calc(12px + var(--safe-t)) 0 10px;flex-wrap:wrap}
+.mini{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900;text-decoration:none}.mini img{height:44px;width:44px;border-radius:12px;background:#fff;box-shadow:0 3px 0 #040717}
+.chip{display:inline-flex;align-items:center;gap:5px;min-height:44px;text-decoration:none;font-size:13px;font-weight:800;padding:9px 11px;border-radius:12px;background:#1d2a56;border:1px solid var(--line2)}
+.hero{border-radius:22px;padding:14px 18px;margin-top:6px;background:linear-gradient(115deg,#6b2a8f,#2b3fa8 60%,#0f6f7a);border:1px solid #c9a6ff80;box-shadow:0 7px 0 #070c26}
+.eyebrow{font-size:11px;letter-spacing:3px;color:#ffe49b;font-weight:1000}
+.hero h1{font-size:clamp(21px,6vw,30px);margin:4px 0;line-height:1.2}.hero p{margin:0;color:#e3ecff;font-size:13.5px;line-height:1.5}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:12px;box-shadow:0 5px 0 #050b1c}
+.card h2{margin:0 0 8px;font-size:16px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.stats span{background:#0b123066;border:1px solid #ffffff33;border-radius:999px;padding:5px 10px;font-size:12.5px;font-weight:800}
+.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.levels button{background:#202d58;color:#d9e5ff;border:2px solid #44578c;border-radius:12px;padding:11px 4px;font-weight:900;font-size:clamp(12px,3.4vw,15px)}
+.levels button[aria-pressed=true]{background:var(--gold);border-color:#fff0a4;color:#222450;box-shadow:0 4px 0 #a87831}
+.grp{font-size:12px;letter-spacing:2px;color:var(--soft);font-weight:1000;margin:12px 0 6px}
+.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:600px){.topics{grid-template-columns:repeat(3,1fr)}}
+.tp{display:flex;gap:9px;align-items:center;text-align:start;min-height:60px;border-radius:15px;padding:9px 11px;border:2px solid #44578c;background:#202d58}
+.tp[aria-pressed=true]{background:var(--mint);color:#123b48;border-color:#a7fff0}
+.tp .e{font-size:22px;flex:none}.tp b{display:block;font-size:14px;line-height:1.25}.tp small{display:block;font-size:11.5px;color:var(--soft)}.tp[aria-pressed=true] small{color:#1c5a3f}
+.tp:disabled{opacity:.4}
+.tp .bar{height:4px;border-radius:4px;background:#0f1840;margin-top:4px;overflow:hidden}.tp .bar i{display:block;height:100%;background:var(--gold)}
+.go{position:fixed;z-index:55;inset-inline:0;bottom:var(--tb,0px);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + var(--tbpad,0px)) max(14px,env(safe-area-inset-left,0px));background:#0b1433f2;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line2);display:flex;gap:8px;align-items:center}
+.go .btn{flex:1}
+.btn{min-height:50px;border-radius:14px;border:1px solid #4f62a0;background:#18244f;font-weight:900;font-size:16px;padding:8px 14px}
+.btn.big{background:var(--gold);color:#1c1f45;border-color:#ffe9b0;box-shadow:0 4px 0 #8a6a1d}
+.btn.mint{background:var(--mint);color:#123b48;border-color:#a7fff0}
+.btn:disabled{opacity:.45}
+/* question */
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--soft);font-weight:800}
+.timer{height:8px;border-radius:9px;background:#22305f;overflow:hidden;margin-top:8px}.timer i{display:block;height:100%;background:var(--mint);width:100%;transition:width .25s linear}
+.timer.low i{background:var(--red)}
+.q{font-size:clamp(18px,5vw,22px);line-height:1.45;font-weight:900;margin:12px 0}
+.answers{display:grid;gap:8px}
+.ans{display:flex;gap:10px;align-items:center;text-align:start;min-height:56px;border-radius:14px;padding:10px 12px;border:2px solid #44578c;background:#202d58;font-size:16px;line-height:1.35}
+.ans .k{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:1000;background:#0f1840;font-size:13px}
+.ans.ok{background:#124a3a;border-color:#3fbf8a}.ans.bad{background:#4a1a22;border-color:#ff8f8f}.ans.dim{opacity:.45}
+.ans:disabled{cursor:default}
+.expl{margin-top:12px;border-radius:14px;padding:12px;background:#0f1840;border:1px solid var(--line);font-size:14.5px;line-height:1.6}
+.expl.ok{border-color:#3fbf8a}.expl.bad{border-color:#ff8f8f}
+.expl a{color:#c9d8ff;font-size:12.5px;display:inline-block;margin-top:6px}
+.pts{font-weight:1000;color:var(--gold)}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.tags span{font-size:11.5px;border-radius:999px;padding:2px 8px;background:#1d2a56;border:1px solid var(--line)}
+/* résultat */
+.res{text-align:center;padding:18px 14px}.res .big{font-size:52px;line-height:1}.res h2{font-size:22px;margin:8px 0 2px}.res p{color:var(--soft);margin:4px 0}
+.res .score{font-size:40px;font-weight:1000;color:var(--gold)}
+.rev{display:grid;gap:7px;margin-top:10px}.rev div{display:flex;gap:8px;align-items:flex-start;padding:9px 11px;border-radius:12px;background:#0f1840;border:1px solid var(--line);font-size:13.5px;line-height:1.4}
+.foot{font-size:12px;color:var(--soft);margin-top:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <a class="mini" href="index.html"><img src="assets/moreh-derech-next-logo.webp" alt="">Moreh Derech NEXT</a>
+    <a class="chip" id="back" href="#/">🎓 נושאים</a>
+  </header>
+  <main id="app"></main>
+  <div id="live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" aria-live="polite"></div>
+</div>
+<script src="parta-core.js"></script>
+<script src="progress.js"></script>
+<script src="feedback.js" data-float="0"></script>
+<script src="parta-app.js"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+<script src="tabbar.js"></script>
+</body>
+</html>

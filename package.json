@@ -32,9 +32,12 @@
     "e2e:tours": "node tests/tours-browser.mjs screens-tours",
     "build:tours": "node tools/build-tours.mjs --online",
     "tours:status": "node tools/tours-registry.mjs",
-    "test:hadracha": "node --test tests/hadracha.test.mjs",
+    "test:hadracha": "node --test tests/hadracha.test.mjs tests/parta.test.mjs",
     "build:hadracha": "node tools/build-hadracha.mjs --online",
-    "e2e:hadracha": "node tests/hadracha-browser.mjs screens-hadracha"
+    "e2e:hadracha": "node tests/hadracha-browser.mjs screens-hadracha",
+    "build:parta": "node tools/build-parta.mjs",
+    "test:parta": "node --test tests/parta.test.mjs",
+    "e2e:parta": "node tests/parta-browser.mjs screens-parta"
   },
   "license": "UNLICENSED",
   "devDependencies": {
