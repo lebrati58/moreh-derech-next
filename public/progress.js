@@ -179,6 +179,35 @@
       status: id => (it[id] && it[id].ok) || 0, best: id => (it[id] && it[id].best) || 0 };
   }
 
+  // ---- « מבחן חלק א׳ » (parta.html) : questions à choix multiples par thème ----
+  // pa.it[« Q-<thème>-NNN »] = { ok: 1|-1, best: meilleur score ≤ 290 } ; seul le meilleur score par question compte.
+  function pdata(g) { g.pa = g.pa || {}; g.pa.it = g.pa.it || {}; g.pa.runs = g.pa.runs || []; g.pa.seen = g.pa.seen || []; return g.pa; }
+  function paPoints(pa) { return Object.values(pa.it).reduce((n, e) => n + (e.best || 0), 0); }
+  function savePartA(rec) {
+    if (!rec || rec.version !== 1 || rec.kind !== 'parta' || !rec.runId || !Array.isArray(rec.answerDetails)) return { saved: false, reason: 'invalid' };
+    const g = data(), pa = pdata(g);
+    if (pa.seen.includes(rec.runId)) return { saved: false, reason: 'duplicate' };
+    const before = paPoints(pa); let right = 0;
+    rec.answerDetails.forEach(a => {
+      if (!a || typeof a.itemId !== 'string' || !/^Q-[a-z_]+-\d{3}$/.test(a.itemId)) return;
+      const e = pa.it[a.itemId] || (pa.it[a.itemId] = {});
+      if (a.correct) { e.ok = 1; right++; } else if (e.ok !== 1) e.ok = -1;
+      const p = Math.max(0, Math.min(HIST_MAX, Number(a.points) || 0)); if (!(e.best >= p)) e.best = p;
+    });
+    g.days = g.days || {}; const k = today(), d = g.days[k] || (g.days[k] = { a: 0, c: 0 });
+    d.a += rec.answerDetails.length; d.c += right;
+    pa.seen.push(rec.runId); while (pa.seen.length > 60) pa.seen.shift();
+    pa.runs.push({ id: rec.runId, at: rec.completedAt, topic: rec.topic, level: rec.level, score: rec.score, correct: rec.correct, total: rec.total });
+    while (pa.runs.length > 40) pa.runs.shift();
+    ls.set(GKEY, g); submitSoon();
+    return { saved: true, gained: paPoints(pa) - before, points: paPoints(pa) };
+  }
+  function partAStats() {
+    const pa = pdata(data()), it = pa.it, ids = Object.keys(it);
+    return { points: paPoints(pa), known: ids.filter(id => it[id].ok === 1), mistakes: ids.filter(id => it[id].ok === -1), seen: ids.slice(), runs: pa.runs.slice(),
+      status: id => (it[id] && it[id].ok) || 0 };
+  }
+
   function totals() {
     const g = data(); let points = 0, st = 0, answered = 0; const tours = new Set(), gold = new Set();
     Object.entries(g.lv).forEach(([k, s]) => {
@@ -190,6 +219,7 @@
     const h = hdata(g); points += historyPoints(h); answered += Object.values(h.ev).filter(e => e.x).length;
     const rt = rdata(g); points += tourPoints(rt); answered += Object.values(rt.q).filter(e => e.x).length;
     const ar = adata(g); points += archPoints(ar); answered += Object.keys(ar.it).length;
+    const pa = pdata(g); points += paPoints(pa); answered += Object.keys(pa.it).length;
     return { points, stars: st, gold: gold.size, answered };
   }
   const starText = n => '★'.repeat(n) + '☆'.repeat(3 - n);
@@ -274,5 +304,5 @@
   }
 
   window.MDProgress = { player, setPlayer, mark, saveLevel, level, star, stars, started, totals, starText, submit, leaderboard, classCode, setClassCode, normCode, askName, PASS,
-    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats, saveTourRun, tourStats, saveArch, archStats };
+    today, mistakes, result, history, dayStreak, accuracy, dailyPick, dailyResult, saveDaily, dailyStreak, saveHistory, historyStats, saveTourRun, tourStats, saveArch, archStats, savePartA, partAStats };
 })();
