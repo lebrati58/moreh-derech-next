@@ -317,7 +317,7 @@
         var box = g.answers[g.i] || {};
         st.got = Object.keys(box);                     // accusés de réception (identifiants seulement)
       } else {
-        st.q.correct = q.correct; st.q.explanation = q.explanation; st.q.qid = q.id; st.dist = distribution(g);
+        st.q.correct = q.correct; st.q.explanation = q.explanation; st.q.qid = q.id; st.q.url = q.sourceUrl || ''; st.dist = distribution(g);
       }
     }
     if (g.phase === 'reveal' || g.phase === 'board' || g.phase === 'podium') {

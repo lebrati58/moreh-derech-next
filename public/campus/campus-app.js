@@ -52,6 +52,7 @@
     }
     setTimeout(function () { box.innerHTML = ''; }, 7000);
   }
+  function srcLink(u) { return /^https:\/\/(drive|docs)\.google\.com\//.test(u || '') ? '<br><a href="' + esc(u) + '" target="_blank" rel="noopener" style="color:var(--soft);font-size:13px">📄 למסמך בדרייב</a>' : ''; }
   function fmtS(ms) { return (ms / 1000).toFixed(ms < 10000 ? 2 : 1); }
   function joinLink(pin) { return location.origin + location.pathname + '?pin=' + pin + netKeep; }
 
@@ -250,7 +251,7 @@
         '<div class="result ' + cls + '"><div class="em">' + (mine == null ? '😶' : ok ? '🎉' : '😬') + '</div>' +
         '<div style="font-weight:1000;font-size:20px">' + (mine == null ? 'לא הספקת לענות' : ok ? 'נכון!' : 'לא נכון') + '</div>' +
         (my ? '<div class="pts">+' + my.last + '</div><div class="det">' + (ok && my.ms >= 0 ? '<span>⚡ ' + fmtS(my.ms) + ' שנ׳</span>' : '') + (my.streak > 1 ? '<span>🔥 רצף ' + my.streak + '</span>' : '') + '<span>🏅 מקום ' + my.rank + ' מתוך ' + st.players + '</span></div>' : '') + '</div>' +
-        '<div class="expl"><b>✔ ' + esc(st.q.options[st.q.correct]) + '</b>' + (st.q.explanation ? '<br>' + esc(st.q.explanation) : '') + '</div>';
+        '<div class="expl"><b>✔ ' + esc(st.q.options[st.q.correct]) + '</b>' + (st.q.explanation ? '<br>' + esc(st.q.explanation) : '') + srcLink(st.q.url) + '</div>';
       return;
     }
     if (st.phase === 'board') {
@@ -489,7 +490,7 @@
       var d = C.distribution(g), tot = d.reduce(function (a, b) { return a + b; }, 0) || 1;
       app.innerHTML = '<div class="host">' + qhead + '<div class="qtext" style="font-size:19px">' + esc(q.text) + '</div><div class="ans">' + q.options.map(function (o, i) {
         return '<div class="o' + i + (i === q.correct ? ' good' : ' dim') + '"><span class="s" aria-hidden="true">' + SHAPES[i] + '</span>' + esc(o) + '<span class="n">' + d[i] + '</span><span class="bar" style="transform:scaleX(' + (d[i] / tot).toFixed(2) + ')"></span></div>';
-      }).join('') + '</div><div class="expl"><b>✔ ' + esc(q.options[q.correct]) + '</b>' + (q.explanation ? '<br>' + esc(q.explanation) : '') + '</div>' + bar + '</div>';
+      }).join('') + '</div><div class="expl"><b>✔ ' + esc(q.options[q.correct]) + '</b>' + (q.explanation ? '<br>' + esc(q.explanation) : '') + srcLink(q.sourceUrl) + '</div>' + bar + '</div>';
     } else if (g.phase === 'board') {
       app.innerHTML = '<div class="host"><h2 style="text-align:center;margin-top:12px">📊 הטבלה אחרי ' + (g.i + 1) + ' שאלות</h2>' + boardHtml(st, '') +
         (g.i + 1 === g.questions.length - 1 && g.questions[g.i + 1].double ? '<div class="double" style="margin-top:14px">👑 השאלה הבאה: שאלת האלוף — כפול נקודות!</div>' : '') + bar + '</div>';

@@ -29,6 +29,11 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 3 novembre 2026 (suite) — אלוף הקורס : tout le Drive + géologie
+- ✅ Demande de Lionel : choisir les סיורים par thème (pas par numéro) ; ajouter la géologie et « tout ce qui concerne le Drive ».
+- ✅ 745 questions écrites d'après ~150 documents des cours de théorie (13 thèmes, dont 86 en géologie), chacune avec son lien Drive ; contrôles automatiques (`tools/build-campus-lessons.mjs`) ; banque totale ≈ 2 570 questions.
+- ⚠️ Dossiers maigres dans le Drive : préhistoire = seulement chalcolithique ; Moyen Âge = surtout croisés (1er cours seulement). Transcriptions .docx vides et audio non exploités. À refaire quand le Drive s'enrichit (relancer la rédaction du thème, puis le script).
+
 ### 3 novembre 2026 — « 🏆 אלוף הקורס » : jeu de campus en direct façon Kahoot (branche `feat/campus-champion`)
 - ✅ Demande de Lionel : un « Kahoot » chronométré quand la classe est ensemble (campus ou bus), questions sur tout le cours, style « Questions pour un champion », vitesse décisive, podium.
 - ✅ `campus.html` + `campus/` : salle à code 5 chiffres (QR, WhatsApp), lancement sans mot de passe, ~1 830 questions (סיורים + frise + architecture), difficulté croissante, lecture puis chrono, 1 000 → 500 pts selon la vitesse, séries, question finale ×2, classement après chaque question, podium animé, nouveau tour.
