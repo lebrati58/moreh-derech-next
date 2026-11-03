@@ -179,10 +179,10 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
     function txt(){var T=IT[lang]||IT.he;document.getElementById('installTxt').textContent=T[0];document.getElementById('iosTipTxt').textContent=T[1];}
     window.MDInstallText=txt;txt();
     if(standalone)return;
-    if(ios)btn.hidden=false;
+    btn.hidden=false; // toujours proposé : sans fenêtre d'installation du navigateur → page install.html
     addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;btn.hidden=false;});
     addEventListener('appinstalled',function(){btn.hidden=true;deferred=null;});
-    btn.addEventListener('click',function(){if(deferred){deferred.prompt();deferred.userChoice.finally(function(){deferred=null;});}else{txt();tip.hidden=false;}});
+    btn.addEventListener('click',function(){if(deferred){deferred.prompt();deferred.userChoice.finally(function(){deferred=null;});}else if(ios){txt();tip.hidden=false;}else{location.href='install.html';}});
     document.getElementById('iosTipOk').addEventListener('click',function(){tip.hidden=true;});
   })();
   (function(){var bt=document.getElementById('langTop'),mn=document.getElementById('langMenu');function close(){mn.hidden=true;bt.setAttribute('aria-expanded','false');}
