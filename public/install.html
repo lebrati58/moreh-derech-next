@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081027">
+<title>התקנת מורה דרך NEXT</title>
+<meta name="description" content="קישור ישיר להתקנת האפליקציה מורה דרך NEXT בטלפון — אנדרואיד ואייפון.">
+<meta property="og:title" content="📲 להתקין את מורה דרך NEXT">
+<meta property="og:description" content="לחיצה אחת — והאפליקציה על מסך הבית. סיורים, מפה, תאריכים ושחזורים בתלת-ממד למבחן מורי הדרך.">
+<meta property="og:image" content="https://moreh-derech-next.lebrati.workers.dev/assets/icon-512.png">
+<meta property="og:url" content="https://moreh-derech-next.lebrati.workers.dev/install.html">
+<style>
+:root{--bg:#081027;--card:#111a3d;--line:#3f5290;--soft:#a9b8df;--gold:#ffd66e;--mint:#6ee9cf}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0,#2c2a7a,var(--bg) 70%);color:#fff;font-family:system-ui,-apple-system,'Segoe UI','Assistant','Arial Hebrew',Arial,sans-serif;display:flex;justify-content:center;padding:calc(20px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))}
+main{width:100%;max-width:440px;text-align:center}
+.icon{width:104px;height:104px;border-radius:26px;box-shadow:0 10px 30px #0009;margin:6px auto 12px;display:block;background:#fff}
+h1{font-size:26px;margin:0 0 6px;font-weight:900}
+.sub{margin:0 0 20px;color:var(--soft);font-size:15.5px;line-height:1.5}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 16px;margin-bottom:14px;text-align:start}
+.big{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;border:0;border-radius:18px;background:var(--gold);color:#1c1f45;font:inherit;font-size:20px;font-weight:900;box-shadow:0 5px 0 #b98a2e;cursor:pointer;text-decoration:none}
+.big:active{transform:translateY(3px);box-shadow:0 2px 0 #b98a2e}
+.alt{background:transparent;color:#fff;border:1px solid var(--line);box-shadow:none;font-size:16px;min-height:50px;margin-top:10px}
+ol{margin:6px 0 0;padding-inline-start:22px;line-height:1.7;font-size:16px}
+ol b{color:var(--gold)}
+.k{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:7px;background:#22306a;border:1px solid var(--line);font-size:15px;vertical-align:middle}
+.ok{color:var(--mint);font-weight:900;font-size:18px;margin:0 0 12px}
+h2{font-size:16px;margin:0 0 6px}
+.qr{display:flex;gap:14px;align-items:center}
+.qr canvas{flex:none;width:132px;height:132px;background:#fff;border-radius:12px;padding:6px}
+.qr p{margin:0;color:var(--soft);font-size:14px;line-height:1.5}
+.link{direction:ltr;display:block;margin-top:8px;font-size:12.5px;color:var(--mint);word-break:break-all}
+small.note{display:block;color:#8f9fca;font-size:12.5px;line-height:1.5;margin-top:10px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="assets/icon-192.png" alt="" width="104" height="104">
+  <h1>מורה דרך NEXT</h1>
+  <p class="sub">סיורים, מפה, תאריכים ושחזורים בתלת-ממד — מוכנים למבחן מורי הדרך. מתקינים פעם אחת, וזה על מסך הבית, גם בלי אינטרנט.</p>
+
+  <!-- כבר מותקן -->
+  <section class="card" id="sDone" hidden>
+    <p class="ok">✅ האפליקציה כבר מותקנת בטלפון הזה</p>
+    <a class="big" href="index.html">▶ לפתוח את האפליקציה</a>
+  </section>
+
+  <!-- אנדרואיד / כרום: התקנה בלחיצה -->
+  <section class="card" id="sOne" hidden>
+    <button type="button" class="big" id="bInstall">📲 להתקין עכשיו</button>
+    <small class="note">החלון של הטלפון יבקש אישור — לוחצים „התקנה”.</small>
+  </section>
+
+  <!-- דפדפן בתוך אפליקציה (וואטסאפ, אינסטגרם…) -->
+  <section class="card" id="sInApp" hidden>
+    <h2>⚠️ הקישור נפתח בתוך וואטסאפ</h2>
+    <ol><li>לוחצים על <span class="k">⋮</span> למעלה</li><li>בוחרים <b>„פתיחה בדפדפן”</b> (Chrome או Safari)</li><li>חוזרים לדף הזה ולוחצים „להתקין”</li></ol>
+    <a class="big alt" id="bChrome" href="#" hidden>🌐 לפתוח ב-Chrome</a>
+  </section>
+
+  <!-- אנדרואיד בלי חלון התקנה (סמסונג, פיירפוקס…) -->
+  <section class="card" id="sAndroid" hidden>
+    <h2>התקנה באנדרואיד</h2>
+    <ol><li>לוחצים על <span class="k">⋮</span> או <span class="k">≡</span> בדפדפן</li><li>בוחרים <b>„התקנת אפליקציה”</b> או <b>„הוספה למסך הבית”</b></li><li>מאשרים — והאייקון מופיע על מסך הבית</li></ol>
+    <a class="big alt" id="bChrome2" href="#">🌐 קל יותר ב-Chrome</a>
+  </section>
+
+  <!-- אייפון -->
+  <section class="card" id="sIos" hidden>
+    <h2>התקנה באייפון (Safari)</h2>
+    <ol><li>לוחצים על כפתור השיתוף <span class="k">⬆️</span> בתחתית Safari</li><li>גוללים ובוחרים <b>„הוספה למסך הבית”</b></li><li>לוחצים <b>„הוסף”</b> למעלה</li></ol>
+    <small class="note">בכרום לאייפון: כפתור השיתוף נמצא בשורת הכתובת.</small>
+  </section>
+
+  <!-- מחשב -->
+  <section class="card" id="sDesk" hidden>
+    <div class="qr"><canvas id="qr" width="132" height="132" aria-label="קוד QR להתקנה"></canvas>
+      <p><b>סורקים במצלמת הטלפון</b> — הדף הזה ייפתח בטלפון, ומשם מתקינים בלחיצה.</p></div>
+  </section>
+
+  <section class="card">
+    <h2>🔗 לשתף עם החברים לקורס</h2>
+    <button type="button" class="big alt" id="bShare" style="margin-top:4px">📤 לשלוח את קישור ההתקנה</button>
+    <a class="link" id="lnk" href="#"></a>
+  </section>
+  <a class="big alt" href="index.html" id="bOpen">להמשיך באתר בלי להתקין</a>
+</main>
+<script src="vendor/qrcode.js"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var url = new URL('install.html', location.href).href.split('#')[0].split('?')[0];
+  var ua = navigator.userAgent;
+  var ios = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /android/i.test(ua);
+  var inApp = /FBAN|FBAV|Instagram|WhatsApp|Line\/|; wv\)|Telegram|TikTok/i.test(ua);
+  var standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  var show = function (id) { $(id).hidden = false; };
+  var deferred = null;
+  $('lnk').textContent = url; $('lnk').href = url;
+  var chromeIntent = 'intent://' + url.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end';
+  $('bChrome').href = chromeIntent; $('bChrome2').href = chromeIntent;
+
+  if (standalone) { show('sDone'); $('bOpen').hidden = true; }
+  else if (inApp) { show('sInApp'); if (android) $('bChrome').hidden = false; }
+  else if (ios) show('sIos');
+  else if (android) show('sAndroid');           // remplacé par le bouton dès que le navigateur propose l'installation
+  else show('sDesk');
+
+  addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); deferred = e;
+    if (standalone || inApp) return;
+    show('sOne'); $('sAndroid').hidden = true;
+    if (!android && !ios) { $('sDesk').hidden = false; }
+  });
+  $('bInstall').onclick = function () {
+    if (!deferred) return;
+    deferred.prompt();
+    deferred.userChoice.then(function (r) { if (r && r.outcome === 'accepted') { $('sOne').hidden = true; show('sDone'); } }).finally(function () { deferred = null; });
+  };
+  addEventListener('appinstalled', function () { $('sOne').hidden = true; $('sAndroid').hidden = true; show('sDone'); });
+
+  // QR (ordinateur)
+  try {
+    var q = window.qrcode(0, 'M'); q.addData(url); q.make();
+    var n = q.getModuleCount(), cv = $('qr'), c = cv.getContext('2d'), cell = Math.floor(cv.width / (n + 2)), off = Math.floor((cv.width - cell * n) / 2);
+    c.fillStyle = '#fff'; c.fillRect(0, 0, cv.width, cv.height); c.fillStyle = '#081027';
+    for (var r = 0; r < n; r++) for (var k = 0; k < n; k++) if (q.isDark(r, k)) c.fillRect(off + k * cell, off + r * cell, cell, cell);
+  } catch (e) { $('sDesk').hidden = true; }
+
+  // partage
+  var msg = '📲 מורה דרך NEXT — האפליקציה להכנה למבחן מורי הדרך (סיורים, מפה, תאריכים, תלת-ממד). מתקינים בלחיצה:';
+  $('bShare').onclick = function () {
+    if (navigator.share) { navigator.share({ title: 'מורה דרך NEXT', text: msg, url: url }).catch(function () {}); return; }
+    location.href = 'https://wa.me/?text=' + encodeURIComponent(msg + ' ' + url);
+  };
+})();
+</script>
+</body>
+</html>
