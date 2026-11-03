@@ -64,7 +64,7 @@
       // les réponses sont mélangées à l'affichage ; on garde l'index de la bonne réponse
       const order = shuffle([0, 1, 2, 3], rnd);
       return { id: q.id, topic: q.topic, level: q.level, q: q.q, options: order.map(i => q.options[i]), correct: order.indexOf(q.correct),
-        explanation: q.explanation, source: q.source, tags: q.tags || [] };
+        explanation: q.explanation, source: q.source, tags: q.tags || [], illustration: q.illustration || null };
     });
   }
 
