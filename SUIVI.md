@@ -24,9 +24,17 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 58 fiches, monuments modélisés en détail, mode cinéma + vidéo, plan 2D, quiz 3D éteints (phase 2) |
 | **Frise + quiz d'histoire « ציר הזמן והחידון »** | ✅ test navigateur S24 + ordinateur | `history.html` — 48 événements, 7 périodes, quiz chronométré (voir §2, 27 octobre) |
 | **Architecture classique 3D « אדריכלות קלאסית »** | ✅ test navigateur S24 + ordinateur | `architecture.html` — 14 maquettes, 162 termes, jeu de zihouï, 83 questions ouvertes |
+| **Jeu de campus « 🏆 אלוף הקורס »** | 🟡 tests navigateur OK, à essayer en vrai | `campus.html` — Kahoot du cours, code + QR, podium (voir §2, 3 novembre) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
+
+### 3 novembre 2026 — « 🏆 אלוף הקורס » : jeu de campus en direct façon Kahoot (branche `feat/campus-champion`)
+- ✅ Demande de Lionel : un « Kahoot » chronométré quand la classe est ensemble (campus ou bus), questions sur tout le cours, style « Questions pour un champion », vitesse décisive, podium.
+- ✅ `campus.html` + `campus/` : salle à code 5 chiffres (QR, WhatsApp), lancement sans mot de passe, ~1 830 questions (סיורים + frise + architecture), difficulté croissante, lecture puis chrono, 1 000 → 500 pts selon la vitesse, séries, question finale ×2, classement après chaque question, podium animé, nouveau tour.
+- ✅ Temps réel par Supabase Realtime Broadcast (clé publique, **pas de SQL**), robuste aux coupures (état renvoyé toutes les 2 s, réponses renvoyées jusqu'à confirmation, reprise après rechargement).
+- ✅ Tests : `tests/campus.test.mjs` (5) et `tests/campus-browser.mjs` (hôte + 3 téléphones, tout vert). Non-régression histoire, journey, architecture OK.
+- 🟡 Pas encore vérifié contre le vrai Supabase depuis l'environnement de travail (accès bloqué) → workflow `campus-realtime.yml` lancé sur GitHub ; puis **partie test avec 2–3 vrais téléphones**.
 
 ### 2 novembre 2026 — « הדרכת דרך — מדריך באוטובוס » : audit, plan et prototype Savidor → Jérusalem (branche `feat/hadrachat-derech`)
 - ✅ Audit, API (conditions Google : pas de contenu Routes/Places sur une carte non-Google, pas d'IA sur Street View), coûts (0 $ Google sous les plafonds), plan, base et interface : **`docs/HADRACHAT_DERECH_plan.md`**.

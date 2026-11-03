@@ -1,0 +1,1 @@
+supabase-js 2.118.0 (MIT) — dist/umd/supabase.js, utilisé seulement par campus.html (Realtime Broadcast).

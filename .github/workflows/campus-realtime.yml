@@ -1,0 +1,56 @@
+name: Campus — vérification temps réel (Supabase Broadcast)
+# Vérifie avec la clé PUBLIQUE de config.js que deux « téléphones » se parlent sur un canal Realtime :
+# l'hôte diffuse un état, le joueur répond, l'hôte reçoit. Aucun secret, aucune table, rien d'écrit en base.
+on:
+  push:
+    paths:
+      - 'public/campus/**'
+      - 'public/campus.html'
+      - 'public/config.js'
+      - '.github/workflows/campus-realtime.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  realtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i --no-save @supabase/supabase-js@2.118.0
+      - name: Aller-retour hôte ↔ joueur
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs'), vm = require('node:vm');
+          const sb = { window: {}, location: { hostname: 'lebrati58.github.io' } };
+          vm.runInNewContext(fs.readFileSync('public/config.js', 'utf8'), sb);
+          const cfg = sb.window.MDL_CONFIG;
+          const { createClient } = require('@supabase/supabase-js');
+          const mk = () => createClient(cfg.url, cfg.anonKey, { auth: { persistSession: false } });
+          const pin = String(10000 + Math.floor(Math.random() * 90000));
+          const sub = (c, onMsg) => new Promise((ok, ko) => {
+            const ch = c.channel('mdcampus-' + pin, { config: { broadcast: { self: false } } });
+            ch.on('broadcast', { event: '*' }, m => onMsg(m.event, m.payload));
+            ch.subscribe(s => { if (s === 'SUBSCRIBED') ok(ch); else if (s !== 'CLOSED') ko(new Error('subscribe: ' + s)); });
+          });
+          (async () => {
+            let gotState, gotAnswer;
+            const pState = new Promise(r => gotState = r), pAnswer = new Promise(r => gotAnswer = r);
+            const host = await sub(mk(), (ev, p) => { if (ev === 'answer') gotAnswer(p); });
+            const player = await sub(mk(), (ev, p) => { if (ev === 'state') gotState(p); });
+            const t0 = Date.now();
+            const timer = setInterval(() => host.send({ type: 'broadcast', event: 'state', payload: { phase: 'question', i: 0 } }), 500);
+            const st = await Promise.race([pState, new Promise((_, ko) => setTimeout(() => ko(new Error('state non reçu')), 15000))]);
+            clearInterval(timer);
+            console.log('état reçu par le joueur en', Date.now() - t0, 'ms', JSON.stringify(st));
+            const t1 = Date.now();
+            const r = await player.send({ type: 'broadcast', event: 'answer', payload: { id: 'test', i: 0, c: 2 } });
+            const a = await Promise.race([pAnswer, new Promise((_, ko) => setTimeout(() => ko(new Error('réponse non reçue (' + r + ')')), 15000))]);
+            console.log('réponse reçue par l\'hôte en', Date.now() - t1, 'ms', JSON.stringify(a));
+            console.log('✅ Realtime Broadcast fonctionne avec la clé publique');
+            process.exit(0);
+          })().catch(e => { console.error('❌', e.message); process.exit(1); });
+          NODE
