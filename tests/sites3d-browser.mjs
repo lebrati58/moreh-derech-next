@@ -29,8 +29,8 @@ page.on('console', m => { if (m.type() === 'error' && !/supabase|ERR_|net::|Fail
 const ok = (c, msg) => { if (!c) { errors.push('ASSERT: ' + msg); console.log('❌', msg); } else console.log('✅', msg); };
 const shot = async n => { await page.evaluate(() => { const A = window.MDSite3D; if (A && document.querySelector('#stage canvas')) { A.pause(true); A.snapshot(); } }); await page.screenshot({ path: `${OUT}/${n}.png`, timeout: 300000 }); await page.evaluate(() => window.MDSite3D && window.MDSite3D.pause(false)); };
 
-const EXPECT = { masada: ['masada_northern_palace', 'masada_casemate_wall', 'masada_ramp', 'masada_roman_camps', 'masada_western_palace'], caesarea: ['caesarea_theater', 'caesarea_harbour', 'caesarea_palace', 'caesarea_hippostadium', 'caesarea_aqueduct'], beitshean: ['bs_theater', 'bs_palladius', 'bs_amphitheater', 'bs_temple', 'bs_nymphaeum'] };
-const PERIOD = { masada: 3, caesarea: 2, beitshean: 5 };
+const EXPECT = { masada: ['masada_northern_palace', 'masada_casemate_wall', 'masada_ramp', 'masada_roman_camps', 'masada_western_palace'], caesarea: ['caesarea_theater', 'caesarea_harbour', 'caesarea_palace', 'caesarea_hippostadium', 'caesarea_aqueduct'], beitshean: ['bs_theater', 'bs_palladius', 'bs_amphitheater', 'bs_nymphaeum', 'bs_bath'] };
+const PERIOD = { masada: 3, caesarea: 2, beitshean: 5 }; // Beit Shéan : le temple romain est détruit à l'époque byzantine (RTG)
 // autres sites : chargement, au moins 2 monuments placés, étiquettes, aucune erreur (SITES=a,b pour limiter)
 const idx = await readFile(join(ROOT, 'index.html'), 'utf8');
 const LIVE = [...idx.matchAll(/site3d\.html\?site=(\w+)/g)].map(m => m[1]).filter((x, i, a) => a.indexOf(x) === i);

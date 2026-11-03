@@ -777,9 +777,9 @@
   {
    "id": "bs_temple",
    "from": 4,
-   "to": 7,
+   "to": 4,
    "certainty": "attested",
-   "keep": true,
+   "keep": false,
    "pri": 2,
    "name": {
     "he": "המקדש הרומי (דיוניסוס?)",
@@ -807,10 +807,17 @@
    },
    "schematic": true,
    "shape": {
-    "type": "tholos",
+    "type": "temple",
     "at": "o:temple",
-    "R": 6,
-    "h": 9,
+    "bearing": 218,
+    "podiumW": 22,
+    "podiumD": 30,
+    "podiumH": 2.5,
+    "L": 22,
+    "W": 13,
+    "H": 13,
+    "cols": 4,
+    "rows": 1,
     "kind": "basalt"
    },
    "sources": [
@@ -833,8 +840,35 @@
      "kind": "online",
      "label": "OpenStreetMap node/3849660571",
      "url": "https://www.openstreetmap.org/node/3849660571"
+    },
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
     }
-   ]
+   ],
+   "dims": {
+    "he": "בחזית ארבעה עמודים וכותרות שנשאו גג גמלוני, עד גובה כ-15 מ׳; הוקם על במה מוגבהת מול רחוב הגיא (רט״ג).",
+    "fr": "Façade à quatre colonnes et chapiteaux portant un toit à deux pentes, jusqu’à env. 15 m ; sur une plate-forme surélevée face à la rue de la Vallée (RTG).",
+    "en": "A façade of four columns and capitals carrying a gabled roof, up to about 15 m; on a raised platform facing Valley Street (Parks Authority).",
+    "ru": "Фасад из четырёх колонн под двускатной крышей, до ~15 м, на подиуме."
+   },
+   "events": {
+    "he": "נבנה במאה ה-2; נהרס בתקופה הביזנטית — רק יסודותיו שרדו (רט״ג).",
+    "fr": "Bâti au IIe s. ; détruit à l’époque byzantine — seules ses fondations subsistent (RTG).",
+    "en": "Built in the 2nd century; destroyed in the Byzantine period — only its foundations survive (Parks Authority).",
+    "ru": "Построен во II в.; разрушен в византийское время — сохранились лишь основания."
+   }
   },
   {
    "id": "bs_nymphaeum",
@@ -1055,41 +1089,47 @@
    "certainty": "attested",
    "keep": true,
    "name": {
-    "he": "בית המרחץ",
-    "fr": "Les thermes",
-    "en": "The baths",
-    "ru": "Бани"
+    "he": "בית המרחץ המערבי",
+    "fr": "Les thermes occidentaux",
+    "en": "The western bathhouse",
+    "ru": "Западные бани"
    },
    "text": {
-    "he": "בית מרחץ גדול: פלאיסטרה, חדר קר, פושר וחם, עמודי היפוקאוסט מחומר וחדר תנורים; לידו לטרינה ציבורית ומים זורמים מתחת למושבים.",
-    "fr": "Grands thermes : palestre, salles froide, tiède et chaude, pilettes d’hypocauste en terre cuite, chaufferie ; à côté, des latrines publiques avec eau courante sous les sièges.",
-    "en": "Large baths: palaestra, cold, warm and hot rooms, clay hypocaust pillars and a furnace room; next to them public latrines with running water under the seats.",
-    "ru": "Большие бани: палестра, холодный, тёплый и горячий залы, глиняные столбики гипокауста и топочная; рядом общественная уборная с проточной водой под сиденьями."
+    "he": "נבנה בסוף המאה ה-4 על יסודות אולמות קדומים ועבר שינויים בתקופה הביזנטית. מבנה מרכזי של שמונה אולמות שקורו בכיפות ובקמרונות; מתחת לרצפות האולמות החמים מערכת הסקה (היפוקאוסט) — עמודוני חימר — ותנור (פרפורניום) סמוך. הקירות צופו בטיח צבעוני, והרצפות בלוחות שיש ובפסיפסים. משלושה עבריו סטווים הפתוחים לחדרים ולאקסדרות; בקצות הסטווים בריכות ומזרקות נוי. שינויים במימון מושלי הפרובינציה תועדו בכתובות יווניות (רט״ג). הקלדריום היה מקורה בכיפה שהאדים התעבו עליה וזלגו לאורך הקירות (סיכום הקורס).",
+    "fr": "Bâtis à la fin du IVe s. sur des salles plus anciennes, modifiés à l’époque byzantine. Bâtiment central de huit salles couvertes de coupoles et de voûtes ; sous les salles chaudes, l’hypocauste (pilettes de terre cuite) et un four (praefurnium). Murs à enduit coloré, sols de marbre et de mosaïque. Sur trois côtés, des portiques ouvrant sur des salles et des exèdres ; aux extrémités, bassins et fontaines. Les travaux financés par les gouverneurs sont rappelés par des inscriptions grecques (RTG). Le caldarium avait une coupole où la vapeur se condensait et ruisselait le long des murs (cours).",
+    "en": "Built at the end of the 4th century over earlier halls and altered in the Byzantine period. A central building of eight halls roofed with domes and vaults; under the hot halls a hypocaust (clay pillars) and a furnace (praefurnium). Walls coated with coloured plaster, floors of marble slabs and mosaics. Porticoes on three sides opened onto rooms and exedrae; at their ends, pools and ornamental fountains. Works funded by provincial governors are recorded in Greek inscriptions (Parks Authority). The caldarium had a dome where steam condensed and ran down the walls (course notes).",
+    "ru": "Построены в конце IV в., изменены в византийское время: восемь залов под куполами и сводами, гипокауст, печь; стены в цветной штукатурке, полы из мрамора и мозаики; с трёх сторон портики с комнатами и экседрами, бассейны и фонтаны."
    },
    "dims": {
-    "he": "הבית המערבי נבנה במאה ה-4 (Following Hadrian).",
-    "fr": "Les thermes ouest datent du IVe s. (Following Hadrian).",
-    "en": "The western baths date from the 4th century (Following Hadrian).",
-    "ru": "Западные бани — IV в. (Following Hadrian)."
+    "he": "כ-9 דונם (רט״ג).",
+    "fr": "Env. 9 dounams (RTG).",
+    "en": "About 9 dunams (Parks Authority).",
+    "ru": "Около 9 дунамов."
    },
    "placementNote": {
-    "he": "בנקודת ״Byzantine Bathhouse״ (OpenStreetMap); המבנה מצויר בצורה כללית — אין קו מתאר בנתונים.",
-    "fr": "Au point « Byzantine Bathhouse » (OpenStreetMap) ; bâtiment dessiné de façon générale — pas de contour dans les données.",
-    "en": "At the “Byzantine Bathhouse” point (OpenStreetMap); building drawn in general form — no outline in the data.",
-    "ru": "В точке «Byzantine Bathhouse» (OpenStreetMap); здание в общих чертах — контура нет."
+    "he": "בנקודת ״Byzantine Bathhouse״ (OpenStreetMap), בכיוון רשת הרחובות. חלוקת החדרים, המידות ומספר האולמות בדגם הם שחזור (השערה); הגגות הוסרו כדי לראות פנימה. מתועד: שמונה אולמות, היפוקאוסט ותנור, שיש ופסיפס, סטווים משלושה עברים, חדרים ואקסדרות, בריכות ומזרקות בקצות הסטווים. היום מוצגים השרידים.",
+    "fr": "Au point « Byzantine Bathhouse » (OpenStreetMap), dans l’axe des rues. Partition, dimensions et nombre de salles : restitution (hypothèse) ; toits retirés. Documenté : huit salles, hypocauste et four, marbre et mosaïque, portiques sur trois côtés, salles et exèdres, bassins et fontaines aux extrémités. Aujourd’hui : les vestiges.",
+    "en": "At the “Byzantine Bathhouse” point (OpenStreetMap), aligned with the street grid. Room layout, sizes and number of halls are a reconstruction (hypothesis); roofs removed. Documented: eight halls, hypocaust and furnace, marble and mosaics, porticoes on three sides, rooms and exedrae, pools and fountains at their ends. Today: the remains.",
+    "ru": "По точке OpenStreetMap; планировка — реконструкция; крыши сняты."
    },
    "schematic": true,
    "shape": {
-    "type": "hall",
+    "type": "grandbath",
     "at": "o:bath",
-    "W": 40,
-    "D": 34,
-    "h": 7,
-    "court": true,
-    "domeR": 6,
-    "kind": "basalt"
+    "bearing": 38,
+    "W": 48,
+    "D": 38,
+    "level": "max",
+    "h": 8,
+    "kind": "basalt",
+    "ruinFrom": 7
    },
    "sources": [
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    },
     {
      "kind": "drive",
      "label": "סיור 19 — בית שאן (סיכום הקורס)",
@@ -1102,15 +1142,11 @@
     },
     {
      "kind": "online",
-     "label": "Scythopolis/Nysa (Following Hadrian)",
-     "url": "https://followinghadrianphotography.com/2016/06/06/scythopolisnysa-beit-shean/"
-    },
-    {
-     "kind": "online",
      "label": "OpenStreetMap node/3849660569",
      "url": "https://www.openstreetmap.org/node/3849660569"
     }
-   ]
+   ],
+   "pri": 2
   },
   {
    "id": "bs_wall",
@@ -1198,6 +1234,244 @@
      "kind": "drive",
      "label": "מבית שאן אל סקיטופוליס — מדריך סיור",
      "url": "https://drive.google.com/file/d/1GcS8nx9JzfBMrEpGTCX9OQ9t23sIw8Vn/view"
+    }
+   ]
+  },
+  {
+   "id": "bs_latrine",
+   "from": 5,
+   "to": 7,
+   "keep": true,
+   "certainty": "attested",
+   "name": {
+    "he": "הלטרינה",
+    "fr": "Les latrines",
+    "en": "The latrine",
+    "ru": "Латрина"
+   },
+   "text": {
+    "he": "מבנה שירותים ציבורי שנבנה ליד בית המרחץ לבאי התיאטרון והמרחץ, ובמרכזו חצר עם עמודים (רט״ג). מרחב משותף: ישיבה בין לוחות אבן מעל מים זורמים שסילקו את היציאות; תעלה קדמית למים נקיים לטבילת מקל עם ספוג (קסילוספונגיום). על הקירות קרום טרוורטין מן המים (סיכום הקורס). ״כסף אינו מסריח״ — אספסיאנוס.",
+    "fr": "Latrines publiques bâties près des thermes pour le public du théâtre et des bains, avec une cour centrale à colonnes (RTG). Espace partagé : bancs de pierre percés au-dessus d’une eau courante ; une rigole devant pour tremper l’éponge sur un bâton (xylospongium). Dépôts de travertin sur les murs (cours). « L’argent n’a pas d’odeur » — Vespasien.",
+    "en": "Public toilets built next to the baths for theatre-goers and bathers, with a central colonnaded court (Parks Authority). A shared space: stone seats over running water; a channel in front for rinsing the sponge on a stick (xylospongium). Travertine crust on the walls (course notes). “Money does not stink” — Vespasian.",
+    "ru": "Общественная уборная у бань с двором на колоннах; сиденья над проточной водой, желоб для губки на палке."
+   },
+   "placementNote": {
+    "he": "מיקום משוער בין בית המרחץ לתיאטרון; צורה ומידות — השערה.",
+    "fr": "Position approximative entre les thermes et le théâtre ; forme et dimensions : hypothèse.",
+    "en": "Approximate position between the baths and the theatre; shape and size are a hypothesis.",
+    "ru": "Примерное место между банями и театром."
+   },
+   "shape": {
+    "type": "latrine",
+    "at": {
+     "off": "o:bath",
+     "dx": 42,
+     "dz": 38
+    },
+    "bearing": 38,
+    "level": "max",
+    "kind": "basalt",
+    "ruinFrom": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 19 — בית שאן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view"
+    },
+    {
+     "kind": "drive",
+     "label": "מבית שאן אל סקיטופוליס — מדריך סיור",
+     "url": "https://drive.google.com/file/d/1GcS8nx9JzfBMrEpGTCX9OQ9t23sIw8Vn/view"
+    }
+   ]
+  },
+  {
+   "id": "bs_sigma",
+   "from": 5,
+   "to": 7,
+   "keep": true,
+   "certainty": "attested",
+   "pri": 1,
+   "name": {
+    "he": "הסיגמה ופסיפס טיכה",
+    "fr": "La Sigma et la mosaïque de Tyché",
+    "en": "The Sigma and the Tyche mosaic",
+    "ru": "Сигма и мозаика Тихе"
+   },
+   "text": {
+    "he": "רחבה חצי-עגולה מהתקופה הביזנטית, שכתובת בחזיתה מכנה אותה ״סיגמה״. סביבה חדרים שנפתחו אל הרחבה, בחלקם פסיפסים בדגמים גאומטריים וצמחיים, בדמויות בעלי חיים ובכתובות יווניות; באחד מהם, במדליון, טיכה אלת העיר — כתר דמוי חומה לראשה וקרן שפע בידה. מתחת לסיגמה שרידי אודאון — תיאטרון קטן ומקורה מהתקופה הרומית (רט״ג). לפי סיכום הקורס — חנויות שבהן גם זונות; כאן אפשר לספר את ויכוח רבי יהודה, רשב״י ורבי יוסי.",
+    "fr": "Place semi-circulaire byzantine, nommée « Sigma » par une inscription de sa façade. Tout autour, des salles ouvertes sur la place, certaines à mosaïques géométriques et végétales, animaux et inscriptions grecques ; dans l’une, en médaillon, Tyché, déesse de la ville, couronnée d’un mur et tenant la corne d’abondance. Sous la sigma, les restes d’un odéon, petit théâtre couvert romain (RTG). Selon le cours, des boutiques — où se trouvaient aussi des prostituées : le lieu pour raconter le débat de R. Yehouda, R. Shimon bar Yohaï et R. Yossi.",
+    "en": "A Byzantine semicircular plaza, named “Sigma” by an inscription on its façade. Around it, rooms opening onto the plaza, some with mosaics of geometric and plant designs, animals and Greek inscriptions; in one, in a medallion, Tyche, goddess of the city, crowned with a wall and holding a cornucopia. Under the Sigma, remains of an odeon — a small roofed Roman theatre (Parks Authority). According to the course notes, shops where prostitutes also worked: the place to tell the debate of R. Yehuda, R. Shimon bar Yochai and R. Yossi.",
+    "ru": "Византийская полукруглая площадь «Сигма» с комнатами и мозаиками (Тихе с короной-стеной и рогом изобилия); под ней остатки римского одеона."
+   },
+   "placementNote": {
+    "he": "מיקום משוער לצד רחוב פלאדיוס, ממערב לו; רדיוס ומספר החדרים — השערה.",
+    "fr": "Position approximative le long de la rue Palladius, à l’ouest ; rayon et nombre de salles : hypothèse.",
+    "en": "Approximate position along Palladius Street, to its west; radius and number of rooms are a hypothesis.",
+    "ru": "Примерное место у улицы Палладия."
+   },
+   "shape": {
+    "type": "sigma",
+    "at": {
+     "off": "o:palladius",
+     "dx": -24,
+     "dz": 6
+    },
+    "bearing": 308,
+    "R": 20,
+    "W": 54,
+    "D": 54,
+    "level": "max",
+    "kind": "basalt",
+    "ruinFrom": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 19 — בית שאן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view"
+    },
+    {
+     "kind": "drive",
+     "label": "מבית שאן אל סקיטופוליס — מדריך סיור",
+     "url": "https://drive.google.com/file/d/1GcS8nx9JzfBMrEpGTCX9OQ9t23sIw8Vn/view"
+    }
+   ]
+  },
+  {
+   "id": "bs_east_bath",
+   "from": 4,
+   "to": 7,
+   "keep": true,
+   "certainty": "attested",
+   "name": {
+    "he": "בית המרחץ המזרחי",
+    "fr": "Les thermes orientaux",
+    "en": "The eastern bathhouse",
+    "ru": "Восточные бани"
+   },
+   "text": {
+    "he": "נבנה בתקופה הרומית ושופץ בתקופה הביזנטית. בצדו המזרחי נמצאו קלדריום (אולם חם) והיפוקאוסט; במערבו מבנה מרובע עם ארבע גומחות בפינותיו, שעליהן נשענה כיפת אבן, ובו בריכות מים קרים — כנראה הפריג׳ידריום (רט״ג).",
+    "fr": "Bâtis à l’époque romaine, rénovés à l’époque byzantine. À l’est, caldarium (salle chaude) et hypocauste ; à l’ouest, un bâtiment carré à quatre niches d’angle portant une coupole de pierre, avec des bassins d’eau froide — sans doute le frigidarium (RTG).",
+    "en": "Built in the Roman period and renovated in the Byzantine period. To the east, a caldarium (hot hall) and hypocaust; to the west, a square building with four corner niches carrying a stone dome, with cold-water pools — probably the frigidarium (Parks Authority).",
+    "ru": "Римские бани, перестроенные в византийское время: на востоке кальдарий и гипокауст, на западе квадратный зал с четырьмя нишами и каменным куполом — фригидарий."
+   },
+   "placementNote": {
+    "he": "מקומו אינו בנתוני המפה — סימון משוער בלבד, ממזרח לרחוב פלאדיוס.",
+    "fr": "Sa position n’est pas dans les données : simple repère approximatif, à l’est de la rue Palladius.",
+    "en": "Its position is not in the map data: an approximate marker only, east of Palladius Street.",
+    "ru": "Места нет в данных — лишь примерная отметка."
+   },
+   "shape": {
+    "type": "marker",
+    "at": {
+     "off": "o:palladius",
+     "dx": 45,
+     "dz": 25
+    },
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    }
+   ]
+  },
+  {
+   "id": "bs_agora",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "האגורה הביזנטית",
+    "fr": "L’agora byzantine",
+    "en": "The Byzantine agora",
+    "ru": "Византийская агора"
+   },
+   "text": {
+    "he": "רחבה בלב העיר שנבנתה בתקופה הביזנטית — מרכז מסחרי מוקף סטווים; הסטיו המערבי מרוצף פסיפסים ובהם תיאורי חיות (רט״ג).",
+    "fr": "Une place au cœur de la ville, bâtie à l’époque byzantine : centre commercial entouré de portiques ; le portique ouest est pavé de mosaïques à animaux (RTG).",
+    "en": "A plaza in the heart of the city built in the Byzantine period: a commercial centre surrounded by porticoes; the western portico is paved with mosaics showing animals (Parks Authority).",
+    "ru": "Площадь-рынок в центре города, окружённая портиками; в западном портике мозаики с животными."
+   },
+   "placementNote": {
+    "he": "מקומה אינו בנתוני המפה — סימון משוער בלבד, בלב העיר.",
+    "fr": "Sa position n’est pas dans les données : simple repère approximatif, au centre.",
+    "en": "Its position is not in the map data: an approximate marker only, in the centre.",
+    "ru": "Места нет в данных."
+   },
+   "shape": {
+    "type": "marker",
+    "at": {
+     "off": "o:palladius",
+     "dx": 10,
+     "dz": 55
+    },
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    }
+   ]
+  },
+  {
+   "id": "bs_cult",
+   "from": 4,
+   "to": 4,
+   "certainty": "attested",
+   "name": {
+    "he": "מתחם פולחני",
+    "fr": "Le complexe cultuel",
+    "en": "The cult compound",
+    "ru": "Культовый комплекс"
+   },
+   "text": {
+    "he": "מכלול דתי מהמאות ה-1–2 לספירה: מקדש, מזבחות ונימפאון, על פודיום מוגבה מרובע שעלו אליו במדרגות; על המזבחות נחרתו כתובות (רט״ג). ממקדש דיוניסוס עלה מעבר מקורה בן שלוש קשתות אל מקדש זאוס בראש התל (סיכום הקורס).",
+    "fr": "Complexe religieux des Ier–IIe s. : temple, autels et nymphée sur un podium carré surélevé, desservi par des marches ; inscriptions gravées sur les autels (RTG). Depuis le temple de Dionysos, un passage couvert à trois arcs montait au temple de Zeus au sommet du tell (cours).",
+    "en": "A 1st–2nd-century religious complex: a temple, altars and a nymphaeum on a raised square podium reached by steps; inscriptions carved on the altars (Parks Authority). From the temple of Dionysus a covered three-arched passage climbed to the temple of Zeus on top of the mound (course notes).",
+    "ru": "Культовый комплекс I–II вв. на квадратном подиуме: храм, алтари, нимфей."
+   },
+   "placementNote": {
+    "he": "סימון משוער למרגלות התל; מקומו המדויק אינו בנתוני המפה.",
+    "fr": "Repère approximatif au pied du tell ; position exacte absente des données.",
+    "en": "Approximate marker at the foot of the mound; exact position not in the data.",
+    "ru": "Примерная отметка у подножия холма."
+   },
+   "shape": {
+    "type": "marker",
+    "at": {
+     "off": "o:temple",
+     "dx": 30,
+     "dz": -35
+    },
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — עלון גן לאומי בית שאן",
+     "url": "https://drive.google.com/file/d/1_MUPjPqabSJk9HpkO1OG_ub9-3Pk6Fl6/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 19 — בית שאן (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1kyiKzCCWHc1_Y7M0xyO6d81k1B15KSz3/view"
     }
    ]
   }

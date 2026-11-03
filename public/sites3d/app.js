@@ -251,6 +251,12 @@ function label(m, x, y, z, now) {
   el.style.setProperty('--c', now ? DATA.certainty[m.certainty].color : '#bdb5a6'); el.onclick = () => openSheet(m.id); labelsEl.appendChild(el);
   labels.push({ id: m.id, el, p: new THREE.Vector3(x, y, z), pri: (now ? 2 : 1) + (m.pri || 0) });
 }
+// repères des parties d'un édifice (ex. salles du bain) : petits, visibles seulement de près (ou quand la fiche est ouverte)
+function partLabel(m, pt, now) {
+  const el = document.createElement('div'); el.className = 'lb part'; el.textContent = tx(pt.name);
+  el.style.setProperty('--c', now ? DATA.certainty[m.certainty].color : '#bdb5a6'); el.onclick = () => openSheet(m.id); labelsEl.appendChild(el);
+  labels.push({ id: m.id, el, p: pt.p.clone(), pri: 0, near: 260, part: true });
+}
 function updateLabelSel() { labels.forEach(l => l.el.classList.toggle('sel', l.id === selected)); }
 function place(o, x, y, z, yaw) { o.position.set(x, y, z); o.rotation.y = yaw || 0; return o; }
 const lines = sh => (sh.lines ? sh.lines.map(L => L.map(wpt).filter(Boolean)) : osmShapes(sh.osm).map(xzPts)).filter(L => L.length > 1);
@@ -311,17 +317,19 @@ function buildModel(m, sh) {
     default: { // modèles posés en un point, orientés selon un cap
       let c = at, bearing = sh.bearing ?? 0; if (F) { c = c || F.c; if (sh.bearing == null) bearing = (Math.atan2(F.u[0], -F.u[1]) * 180 / Math.PI + 360) % 360; }
       if (!c) return null;
-      const make = { pool: () => SM.pool({ W: sh.W || 35, D: sh.D || 18, peristyle: sh.peristyle ?? 6, kind: K, pavilion: sh.pavilion || 0 }), temple: () => SM.templeOnPodium({ podiumW: sh.podiumW || 100, podiumD: sh.podiumD || 90, podiumH: sh.podiumH || 4, L: sh.L || 46, W: sh.W || 28, H: sh.H || 16, kind: K }),
+      const make = { pool: () => SM.pool({ W: sh.W || 35, D: sh.D || 18, peristyle: sh.peristyle ?? 6, kind: K, pavilion: sh.pavilion || 0 }), temple: () => SM.templeOnPodium({ podiumW: sh.podiumW || 100, podiumD: sh.podiumD || 90, podiumH: sh.podiumH || 4, L: sh.L || 46, W: sh.W || 28, H: sh.H || 16, kind: K , cols: sh.cols || 6, rows: sh.rows || 2}),
         storerooms: () => SM.storerooms({ n: sh.n || 11, L: sh.L || 27, w: sh.w || 4, kind: K }), hall: () => SM.hall({ W: sh.W || 15, D: sh.D || 12, h: sh.h || 6, kind: K, court: sh.court, domeR: sh.domeR || 0, cols: sh.cols || 0, tint: sh.tint }),
         basilica: () => JM.basilica(sh.L || 30, sh.W || 16, sh.H || 10, { apse: true, atrium: sh.atrium || 0 }), mosque: () => SM.mosque({}), facade: () => SM.facade({ W: sh.W || 22, h: sh.h || 12, apse: sh.apse !== false, kind: K }),
-        marker: () => SM.marker({ h: sh.h || 8 }), fortress: () => SM.roundFortress({ R: sh.R || 31, gap: sh.gap || 2.5, h: sh.h || 30, eastD: sh.eastD || 18, towerD: sh.towerD || 16, kind: K, tint: sh.tint || DATA.tint }), gate: () => SM.chamberGate({ W: sh.W || 18, L: sh.L || 20, chambers: sh.chambers || 3, h: sh.h || 6, kind: K, tint: sh.tint || DATA.tint, towers: sh.towers !== false }),
+        marker: () => SM.marker({ h: sh.h || 8 }), grandbath: () => SM.grandBath({ W: sh.W || 48, D: sh.D || 38, h: sh.h || 8, kind: K, ruin: period >= (sh.ruinFrom || 99) }), latrine: () => SM.latrine({ W: sh.W || 14, D: sh.D || 12, kind: K, ruin: period >= (sh.ruinFrom || 99) }), sigma: () => SM.sigma({ R: sh.R || 22, kind: K, ruin: period >= (sh.ruinFrom || 99) }), bathhouse: () => SM.bathhouse({ W: sh.W || 30, D: sh.D || 25, h: sh.h || 7, kind: K, ruin: period >= (sh.ruinFrom || 99) }), fortress: () => SM.roundFortress({ R: sh.R || 31, gap: sh.gap || 2.5, h: sh.h || 30, eastD: sh.eastD || 18, towerD: sh.towerD || 16, kind: K, tint: sh.tint || DATA.tint }), gate: () => SM.chamberGate({ W: sh.W || 18, L: sh.L || 20, chambers: sh.chambers || 3, h: sh.h || 6, kind: K, tint: sh.tint || DATA.tint, towers: sh.towers !== false }),
         stables: () => SM.pillaredHall({ units: sh.units || 5, L: sh.L || 21, w: sh.w || 11, h: sh.h || 4, kind: K, tint: sh.tint || DATA.tint }), altar: () => SM.roundAltar({ D: sh.D || 8.5, h: sh.h || 1.5, kind: K }), silo: () => SM.silo({ D: sh.D || 11, kind: K }), roundtower: () => SM.roundTower({ D: sh.D || 10, h: sh.h || 12, kind: K, tint: sh.tint || DATA.tint }), tholos: () => SM.tholos({ R: sh.R || 6, h: sh.h || 9, kind: K }), tower: () => SM.tower({ W: sh.W || 8, h: sh.h || 14, kind: K }), box: () => JM.box(sh.W || 10, sh.h || 5, sh.D || 10, stone(K, { tint: sh.tint || '#ffffff' })) }[sh.type];
       if (!make) return null; const g = make();
       // bassins et plates-formes : posés au point le plus haut de leur emprise (sinon le relief les recouvre)
       const hw = (sh.W || 10) / 2 + 4, hd = (sh.D || sh.podiumD || 10) / 2 + 4, [bx, bz] = bearingVec(bearing), corners = [[1, 1], [1, -1], [-1, 1], [-1, -1]].map(([i, j]) => ground(c[0] + (-bz) * hw * i + bx * hd * j, c[1] + bx * hw * i + bz * hd * j));
       const y = (sh.y != null ? sh.y - demMin : (sh.type === 'pool' || sh.type === 'temple' || sh.level === 'max') ? Math.max(...corners) : ground(c[0], c[1])) - (sh.sink ?? 0.2);
       place(g, c[0], y, c[1], yawFor(bearing)); if (sh.type === 'basilica') g.rotation.y += Math.PI / 2; // basilique construite selon x (abside à l'est)
-      const bb = new THREE.Box3().setFromObject(g); return [g, [c[0], bb.max.y + 5, c[1]]];
+      const bb = new THREE.Box3().setFromObject(g); g.updateMatrixWorld(true);
+      const parts = (g.userData.parts || []).map(pt => ({ name: pt, p: g.localToWorld(new THREE.Vector3(...pt.p)) }));
+      return [g, [c[0], bb.max.y + 5, c[1]], parts];
     }
   }
 }
@@ -350,7 +358,7 @@ function rebuildScene0() {
   for (const m of DATA.monuments) {
     if (!inPeriod(m) || !m.shape) continue; const now = isNow(m) || (m.keep && m.from <= period);
     let r = null; try { r = buildModel(m, m.shape); } catch (e) { console.warn('modèle', m.id, e); }
-    if (!r) continue; const [obj, lp] = r; add(obj, m, now); label(m, lp[0], lp[1], lp[2], now);
+    if (!r) continue; const [obj, lp, parts] = r; add(obj, m, now); label(m, lp[0], lp[1], lp[2], now); (parts || []).forEach(pt => partLabel(m, pt, now));
   }
   updateLabelSel();
 }
@@ -365,7 +373,7 @@ function loop(now) {
   const W = innerWidth, H = innerHeight, boxes = [];
   labels.map(l => { vtmp.copy(l.p).project(camera); return { l, x: (vtmp.x + 1) / 2 * W, y: (1 - vtmp.y) / 2 * H, ok: vtmp.z < 1 && vtmp.z > -1, d: camera.position.distanceTo(l.p) }; })
     .sort((a, b) => (b.l.id === selected) - (a.l.id === selected) || b.l.pri - a.l.pri || a.d - b.d)
-    .forEach(o => { const el = o.l.el; if (!o.ok || o.x < -50 || o.x > W + 50 || o.y < 40 || o.y > H - 120) { el.style.display = 'none'; return; }
+    .forEach(o => { const el = o.l.el; if (o.l.near && o.d > o.l.near && o.l.id !== selected) { el.style.display = 'none'; return; } if (!o.ok || o.x < -50 || o.x > W + 50 || o.y < 40 || o.y > H - 120) { el.style.display = 'none'; return; }
       const w = el.offsetWidth || 90, h = el.offsetHeight || 24, bx = [o.x - w / 2, o.y - h, o.x + w / 2, o.y];
       if (boxes.some(b => bx[0] < b[2] && bx[2] > b[0] && bx[1] < b[3] && bx[3] > b[1]) && o.l.id !== selected) { el.style.display = 'none'; return; }
       boxes.push(bx); el.style.display = ''; el.style.left = o.x + 'px'; el.style.top = o.y + 'px'; });

@@ -7,7 +7,7 @@ import { existsSync } from 'node:fs';
 const read = p => readFile(new URL('../' + p, import.meta.url), 'utf8');
 const SITES = Object.keys(JSON.parse(await read('tools/site3d-sites.json'))).filter(k => !k.startsWith('_') && existsSync(new URL(`../public/sites3d/${k}/site.json`, import.meta.url)));
 const LANGS = ['he', 'fr', 'en', 'ru'];
-const TYPES = new Set(['theater', 'circus', 'amphi', 'casemate', 'wall', 'aqueduct', 'path', 'street', 'footprint', 'terraces', 'ramp', 'breakwater', 'pool', 'temple', 'storerooms', 'hall', 'basilica', 'mosque', 'facade', 'marker', 'tholos', 'tower', 'box', 'fortress', 'gate', 'stables', 'altar', 'silo', 'roundtower']);
+const TYPES = new Set(['theater', 'bathhouse', 'grandbath', 'latrine', 'sigma', 'circus', 'amphi', 'casemate', 'wall', 'aqueduct', 'path', 'street', 'footprint', 'terraces', 'ramp', 'breakwater', 'pool', 'temple', 'storerooms', 'hall', 'basilica', 'mosque', 'facade', 'marker', 'tholos', 'tower', 'box', 'fortress', 'gate', 'stables', 'altar', 'silo', 'roundtower']);
 
 for (const s of SITES) {
   test(`${s} : périodes, fiches 4 langues, sources, certitude`, async () => {

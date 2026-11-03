@@ -16,7 +16,7 @@ APPROX = L("מיקום משוער", "Position approximative", "Approximate posit
 
 D["osm"].update({"timetrek": {"osm": "node/1113039357"}, "postern": {"osm": "node/4746415246"}, "nymph": {"osm": "way/659568251"},
                  "govpalace": {"osm": "way/659568250"}, "birds": {"osm": "way/318663938"}, "lowaq": {"osm": ["way/956404750", "way/956404751"]},
-                 "bosnian": {"osm": "way/1119857280"}})
+                 "bosnian": {"osm": "way/1119857280"}, "bathS": {"osm": "way/96065403"}})
 PLAT = {"off": "o:harbour", "dx": 70, "dz": 0}   # même point que le temple d'Auguste (במת המקדש)
 M = {m["id"]: m for m in D["monuments"]}
 def put(m):
@@ -26,7 +26,12 @@ def upd(id, **k): M[id].update(k)
 
 # ---------- corrections d'après le dépliant RTG ----------
 upd("caesarea_bath", **{"from": 4}, pri=2,
-    shape={"type": "footprint", "osm": "bath", "h": 6, "kind": "kurkar", "solid": True},
+    shape={"type": "bathhouse", "at": "o:bathS", "bearing": 10, "level": "max", "W": 30, "D": 25, "h": 7, "kind": "kurkar", "ruinFrom": 5},
+    dims=L("כ-30 × 25 מ׳ (קווי המתאר ב-OpenStreetMap), ובצפון חצר עמודים.", "Env. 30 × 25 m (contour OpenStreetMap), avec une cour à colonnes au nord.", "About 30 × 25 m (OpenStreetMap outline), with a colonnaded court to the north.", "Около 30 × 25 м, к северу двор с колоннами."),
+    placementNote=L("מיקום וכיוון לפי קווי המתאר ב-OpenStreetMap. חלוקת החדרים, הגבהים ומספר הבריכות הם שחזור (השערה); הגגות הוסרו כדי לראות פנימה. מתועד: החם במערב והקר במזרח, תנור והיפוקאוסט, שתי מערכות מים (חרס ועופרת), רצפת שיש שהוחזרה למקומה, וחצר עמודים עם פסיפס מצפון. מועד הנטישה אינו במקורות — מהתקופה הערבית הקדומה מוצגים השרידים כפי שהם היום.",
+                    "Position et orientation d’après le contour OpenStreetMap. Partition des salles, hauteurs et nombre de bassins : restitution (hypothèse) ; toits retirés pour voir l’intérieur. Documenté : chaud à l’ouest, froid à l’est, four et hypocauste, deux réseaux d’eau (terre cuite et plomb), sol de marbre remis en place, cour à colonnes et mosaïque au nord. La date d’abandon n’est pas dans les sources : à partir de l’époque arabe ancienne, on montre les vestiges tels qu’aujourd’hui.",
+                    "Position and orientation from the OpenStreetMap outline. Room layout, heights and number of pools are a reconstruction (hypothesis); roofs removed to show the inside. Documented: hot to the west, cold to the east, furnace and hypocaust, two water systems (clay and lead), the marble floor reset in place, and a colonnaded court with mosaic to the north. The date of abandonment is not in the sources: from the Early Islamic period on, the remains are shown as they are today.",
+                    "Положение по OpenStreetMap; планировка — реконструкция; крыши сняты. С раннеисламского периода показаны руины, как сегодня."),
     text=L("בית מרחץ שנבנה במאה ה-5 לספירה מעל מושבי ההיפודרום, אחרי שזה יצא משימוש (רט״ג). שלושה אזורים: חם (קלדריום, חימום מתחת לרצפה מתנור), ביניים (טפידריום) וקר (פריגידריום, צינורות חרס ועופרת). מאות פיסות שיש צבעוני הוחזרו לרצפה; מצפון — חצר עמודים לאימון ולמפגשים.",
            "Thermes bâtis au Ve s. sur les gradins de l’hippodrome, après son abandon (RTG). Trois zones : chaude (caldarium, chauffage sous le sol), tiède (tepidarium) et froide (frigidarium, tuyaux de terre cuite et de plomb). Des centaines de plaques de marbre coloré ont été remises en place ; au nord, une cour à colonnes pour l’exercice et les rencontres.",
            "A bathhouse built in the 5th century CE over the hippodrome seats, after the hippodrome went out of use (Parks Authority). Three zones: hot (caldarium, underfloor heating), warm (tepidarium) and cold (frigidarium, clay and lead pipes). Hundreds of coloured marble pieces were reset in the floor; to the north, a colonnaded court for exercise and meeting.",
