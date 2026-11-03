@@ -9,6 +9,7 @@ await new Promise(r => srv.listen(0, r)); const base = `http://127.0.0.1:${srv.a
 const br = await chromium.launch({ executablePath: process.env.CHROME || '/opt/pw-browsers/chromium-1243/chrome-linux64/chrome', args: ['--no-sandbox'] });
 const ctx = await br.newContext({ viewport: { width: 360, height: 780 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'he-IL' });
 await ctx.route(/supabase|tile/, r => r.abort());
+await ctx.addInitScript(() => { try { localStorage.setItem('mdl_guide_test', '1'); } catch (e) {} });
 const errs = []; let ok = 0, bad = 0; const check = (c, m) => { if (c) { ok++; console.log('✅', m); } else { bad++; console.log('❌', m); } };
 const page = async () => { const pg = await ctx.newPage(); pg.on('pageerror', e => errs.push(e.message)); await pg.goto(base + 'index.html'); await pg.waitForTimeout(1600); return pg; };
 // 1) première fois

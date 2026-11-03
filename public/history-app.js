@@ -28,7 +28,7 @@
   fetch('history-events.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
     const errs = H.validate(d);
     if (errs.length) console.error('history-events.json', errs);
-    DATA = d; H.setPeriods(d.periods); d.periods.forEach(p => { PER[p.id] = p; }); d.events.forEach(e => { EV[e.id] = e; });
+    DATA = d; H.setPeriods(d.periods); if (window.MDProgress && MDProgress.setHistoryTotal) MDProgress.setHistoryTotal(d.events.length); d.periods.forEach(p => { PER[p.id] = p; }); d.events.forEach(e => { EV[e.id] = e; });
     run = loadRun();
     buildStatic();
     window.addEventListener('hashchange', route);
@@ -94,7 +94,7 @@
     const ids = DATA.periods.map(p => p.id), out = {};
     ids.forEach((id, i) => {
       const evs = DATA.events.filter(e => e.period === id), from = evs[0].year;
-      const nextFirst = i < ids.length - 1 ? DATA.events.find(e => e.period === ids[i + 1]).year : 638;
+      const nextFirst = i < ids.length - 1 ? DATA.events.find(e => e.period === ids[i + 1]).year : Math.max(new Date().getFullYear(), DATA.events[DATA.events.length - 1].year + 1);
       out[id] = { from, to: nextFirst };
     });
     return out;
@@ -103,9 +103,9 @@
     const n = DATA.events.length, first = DATA.events[0], last = DATA.events[n - 1];
     $('heroSub').textContent = `${n} אירועים · מ־${H.formatYear(first.year)} ועד ${H.formatYear(last.year)} · בוחרים תקופה, פותחים כרטיס ומתאמנים`;
     const sp = spans(), total = sp[DATA.periods[DATA.periods.length - 1].id].to - sp[DATA.periods[0].id].from;
-    $('eras').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.id}" style="${styleP(p.id)};flex:${Math.max(4, Math.round((sp[p.id].to - sp[p.id].from) / total * 100))}" aria-pressed="false" aria-label="${esc(p.name)} · ${esc(p.range)}" title="${esc(p.name)} · ${esc(p.range)}"><span aria-hidden="true">${p.icon}</span></button>`).join('');
+    $('eras').innerHTML = DATA.periods.map(p => `<button type="button" data-p="${p.id}" style="${styleP(p.id)};flex:1" aria-pressed="false" aria-label="${esc(p.name)} · ${esc(p.range)}" title="${esc(p.name)} · ${esc(p.range)}"><span aria-hidden="true">${p.icon}</span></button>`).join('');
     $('eraFrom').textContent = H.formatYear(sp[DATA.periods[0].id].from);
-    $('eraTo').textContent = '638 לספירה';
+    $('eraTo').textContent = 'היום';
     $('eras').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (!b) return; setTlPeriod(tl.period === b.dataset.p ? 'all' : b.dataset.p); });
     const chips = [`<button type="button" data-p="all" aria-pressed="true">כל התקופות</button>`].concat(DATA.periods.map(p => `<button type="button" data-p="${p.id}" style="${styleP(p.id)}" aria-pressed="false"><span class="dot" aria-hidden="true"></span>${esc(p.short)}</button>`)).join('');
     $('pchips').innerHTML = chips;

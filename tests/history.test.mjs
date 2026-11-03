@@ -1,4 +1,4 @@
-// « ציר הזמן והחידון » : données (48 événements), questions, score, chronomètre, résultat, intégration au système de points.
+// « ציר הזמן והחידון » : données (tout le cours, de la période chalcolithique à l'État d'Israël), questions, score, chronomètre, résultat, intégration au système de points.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
@@ -25,13 +25,13 @@ async function progress(now = '2026-10-27T10:00:00') {
   return { P: window.MDProgress, store };
 }
 
-test('référentiel : 48 événements valides, IDs uniques et stables, ordre chronologique', async () => {
+test('référentiel : événements valides (≥ 120, 16 périodes), IDs uniques et stables, ordre chronologique', async () => {
   const H = await lib();
   assert.deepEqual([...H.validate(DATA)], []);
-  assert.equal(DATA.events.length, 48);
-  assert.equal(new Set(DATA.events.map(e => e.id)).size, 48);
+  const N = DATA.events.length; assert.ok(N >= 120, 'nombre d’événements : ' + N); assert.equal(DATA.periods.length, 16);
+  assert.equal(new Set(DATA.events.map(e => e.id)).size, N);
   DATA.events.forEach(e => assert.match(e.id, /^[a-z0-9]+(-[a-z0-9]+)*$/, e.id));
-  for (let i = 1; i < 48; i++) assert.ok(DATA.events[i].year >= DATA.events[i - 1].year, DATA.events[i].id);
+  for (let i = 1; i < N; i++) assert.ok(DATA.events[i].year >= DATA.events[i - 1].year, DATA.events[i].id);
   assert.ok(DATA.events.every(e => e.year !== 0), 'pas d’an 0');
   // Chaque période a des événements, et chaque événement une période connue.
   const per = new Set(DATA.periods.map(p => p.id));
@@ -45,8 +45,8 @@ test('audit : dates contestées / divergentes jamais dans l’examen ; formulati
   const H = await lib();
   const byId = Object.fromEntries(DATA.events.map(e => [e.id, e]));
   DATA.events.filter(e => e.certainty === 'disputed' || e.source === 'course-diff').forEach(e => assert.equal(e.examReady, false, e.id));
-  assert.equal(H.pool(DATA, { mode: 'exam' }).length, 44);
-  assert.equal(H.pool(DATA, { mode: 'practice' }).length, 48);
+  assert.equal(H.pool(DATA, { mode: 'exam' }).length, DATA.events.filter(e => e.examReady).length); assert.ok(DATA.events.filter(e => e.examReady).length >= 100);
+  assert.equal(H.pool(DATA, { mode: 'practice' }).length, DATA.events.length);
   // Points d'audit explicitement demandés.
   assert.equal(byId['second-temple-dedication'].certainty, 'approx');
   assert.match(byId['second-temple-dedication'].note, /515/);
