@@ -3,7 +3,7 @@
    Se lance seul à la première visite ; se relance avec ?tour=1 ou window.MDOnboarding.start(). */
 (function () {
   'use strict';
-  var KEY = 'mdl_onboarded_v1';
+  var KEY = 'mdl_onboarded_v2'; // v2 : + barre du bas et menu ☰ (tout le monde revoit la visite une fois)
   var AVATAR = 'assets/guide-lionel.webp';
 
   var T = {
@@ -18,6 +18,8 @@
         ['22 הסיורים על המפה 🧭', 'בוחרים סיור, עוברים בין האתרים על המפה, ועונים על שאלות בכל תחנה. בשלוש רמות קושי.'],
         ['הכנה למבחן 🎓', 'מתכננים יום טיול וכותבים הדרכה, כמו בפרק השני של המבחן. עם תשובות לדוגמה.'],
         ['האתרים בתלת-ממד 🏛️', 'ירושלים, מצדה, קיסריה ועוד: מסובבים את המודל ולוחצים על כל חלק.'],
+        ['הסרגל למטה 🧭', 'בכל עמוד: 🏠 בית, 🗺️ מפה, 📈 המסע שלי ו-🏆 הכיתה — תחרות הכיתה ולוח המובילים.'],
+        ['שלושת הקווים ☰ עוד', 'כאן כל השאר: 🎓 אתגר המבחן, 🌿 ספריית רט״ג, ספריית הסיורים, קטעי דרך של הקהילה, הוספת מסמך, יצירת מסלול, חידון חי לקבוצה, ו-💡 רעיון או טעות לצוות.'],
         ['זהו, אתם מוכנים! 🚌', 'ההמלצה שלי: מתחילים עכשיו באתגר היום. אפשר לראות את ההדרכה שוב בתחתית העמוד.']
       ]
     },
@@ -32,6 +34,8 @@
         ['Les 22 סיורים sur la carte 🧭', 'Choisissez un סיור, avancez de site en site sur la carte et répondez à chaque étape. Trois niveaux.'],
         ['Préparer l’examen 🎓', 'Planifier une journée et rédiger le guidage, comme dans la 2e partie de l’examen, avec des réponses modèles.'],
         ['Les sites en 3D 🏛️', 'Jérusalem, Massada, Césarée… Tournez la maquette et touchez chaque élément.'],
+        ['La barre du bas 🧭', 'Sur chaque page : 🏠 Accueil, 🗺️ Carte, 📈 Mon parcours et 🏆 Classe — le concours et le classement.'],
+        ['Les trois traits ☰ Plus', 'Tout le reste est ici : 🎓 Défi de l’examen, 🌿 Bibliothèque RTG, bibliothèque des סיורים, parcours de la communauté, ajouter un document, créer un parcours, quiz en direct pour un groupe, et 💡 une idée ou une erreur à signaler.'],
         ['C’est parti ! 🚌', 'Mon conseil : commencez maintenant par le défi du jour. La visite se relance en bas de la page.']
       ]
     },
@@ -46,6 +50,8 @@
         ['The 22 tours on the map 🧭', 'Pick a tour, move from site to site on the map and answer at each stop. Three levels.'],
         ['Exam prep 🎓', 'Plan a tour day and write your guiding, like part two of the exam, with model answers.'],
         ['Sites in 3D 🏛️', 'Jerusalem, Masada, Caesarea… Spin the model and tap each part.'],
+        ['The bottom bar 🧭', 'On every page: 🏠 Home, 🗺️ Map, 📈 My journey and 🏆 Class — the class contest and leaderboard.'],
+        ['The three lines ☰ More', 'Everything else is here: 🎓 Exam challenge, 🌿 Parks Authority library, tour library, community routes, add a document, create a route, live group quiz, and 💡 an idea or mistake to report.'],
         ['You’re ready! 🚌', 'My tip: start with today’s challenge now. You can replay this tour at the bottom of the page.']
       ]
     }
@@ -53,7 +59,7 @@
   T.ru = T.en;
 
   // Cible de chaque étape (null = bulle centrée, sans projecteur)
-  var TARGETS = [null, '.qt-daily', '.qt-journey', '.hist', 'a.map-banner[href*="guided"]', '.exam-box', '.j3d', null];
+  var TARGETS = [null, '.qt-daily', '.qt-journey', '.hist', 'a.map-banner[href*="guided"]', '.exam-box', '.j3d', '#mdTabbar', '#mdMore', null];
 
   function lang() { var l = document.documentElement.lang || 'he'; return T[l] ? l : 'he'; }
   function txt() { return T[lang()]; }
