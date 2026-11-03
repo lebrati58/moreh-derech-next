@@ -11,7 +11,9 @@ vm.createContext(ctx);
 vm.runInContext(await read('public/history-data.js'), ctx);
 vm.runInContext(await read('public/campus/campus-core.js'), ctx);
 const C = ctx.MDCampus;
-const BANK = C.buildBank({ tours: await json('public/guided-quiz.json'), H: ctx.MDHistory, history: await json('public/history-events.json'), arch: await json('public/architecture/data.json') });
+const LESSONS = await json('public/campus/lessons.json');
+const BANK = C.buildBank({ tours: await json('public/guided-quiz.json'), H: ctx.MDHistory, history: await json('public/history-events.json'), arch: await json('public/architecture/data.json'),
+  catalog: await json('public/siyurim-catalog.json'), lessons: LESSONS });
 
 test('banque : les trois sources, 4 réponses distinctes, une bonne réponse, identifiants uniques', () => {
   const by = s => BANK.filter(q => q.src === s).length;
@@ -29,6 +31,25 @@ test('banque : les trois sources, 4 réponses distinctes, une bonne réponse, id
   }
   // la réponse n'est jamais écrite dans la question d'architecture « quel terme ? »
   for (const q of BANK.filter(x => x.src === 'arch' && x.id.endsWith(':name'))) assert.ok(!q.text.includes(q.options[q.correct]), q.id);
+});
+
+test('סיורים par thème (pas par numéro) et cours de théorie du Drive par sujet', () => {
+  const t03 = BANK.find(q => q.src === 'tours' && q.tour === '03');
+  assert.match(t03.cat, /^הנגב הצפוני/);
+  assert.ok(!BANK.some(q => q.src === 'tours' && /^סיור \d/.test(q.cat)), 'aucun « סיור 03 » sans thème');
+  const lessons = BANK.filter(q => q.src === 'lessons');
+  assert.ok(lessons.length >= 300, 'cours de théorie : ' + lessons.length);
+  const topics = new Set(lessons.map(q => q.sub));
+  assert.ok(topics.has('geology'), 'géologie présente');
+  assert.ok(lessons.filter(q => q.sub === 'geology').length >= 50, 'au moins 50 questions de géologie');
+  // chaque question renvoie à son document du Drive
+  for (const q of LESSONS.questions) { assert.match(q.url, /^https:\/\/(drive|docs)\.google\.com\//, q.id); assert.ok(q.source, q.id); }
+  for (const t of LESSONS.topics) assert.equal(t.count, LESSONS.questions.filter(q => q.topic === t.id).length, t.id);
+  // filtre par sujet
+  const g = C.buildGame(BANK, { count: 20, seed: 'g', sources: ['lessons'], subs: { lessons: ['geology'] } });
+  assert.equal(g.length, 20); assert.ok(g.every(q => q.id.startsWith('l:') && /גאולוגיה/.test(q.cat)));
+  const two = C.poolFor(BANK, { sources: ['tours', 'lessons'], subs: { tours: ['08'], lessons: ['geology'] } });
+  assert.ok(two.length && two.every(q => (q.src === 'tours' && q.sub === '08') || (q.src === 'lessons' && q.sub === 'geology')));
 });
 
 test('tirage : nombre, sans doublon, du plus facile au plus difficile, dernière question ×2, filtres', () => {
@@ -140,7 +161,7 @@ test('code de partie, intégration dans le site et hors ligne', async () => {
   const html = await read('public/campus.html');
   for (const s of ['config.js', 'vendor/supabase/supabase.js', 'campus/campus-core.js', 'campus/campus-net.js', 'campus/campus-app.js', 'history-data.js', 'progress.js']) assert.ok(html.includes(`src="${s}"`), s);
   const sw = await read('public/sw.js');
-  for (const f of ['./campus.html', './campus/campus-core.js', './campus/campus-net.js', './campus/campus-app.js', './vendor/supabase/supabase.js', './architecture/data.json']) assert.ok(sw.includes(`'${f}'`), f);
+  for (const f of ['./campus/lessons.json', './campus.html', './campus/campus-core.js', './campus/campus-net.js', './campus/campus-app.js', './vendor/supabase/supabase.js', './architecture/data.json']) assert.ok(sw.includes(`'${f}'`), f);
   assert.ok((await read('public/index.html')).includes('href="campus.html"'));
   assert.ok((await read('public/vendor/supabase/LICENSE')).includes('MIT'));
 });

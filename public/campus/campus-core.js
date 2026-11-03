@@ -11,9 +11,9 @@
   var STREAK_STEP = 50;           // bonus de série : +50 par bonne réponse d'affilée (à partir de la 2e)
   var STREAK_CAP = 250;
   var LATE_MS = 1200;             // une réponse partie à temps peut arriver un peu après la fin du chrono
-  var SOURCES = ['tours', 'history', 'arch'];
-  var SOURCE_WEIGHT = { tours: 1, history: 1, arch: 0.7 };
-  var SOURCE_LABEL = { tours: '🧭 22 הסיורים', history: '⏳ ציר הזמן', arch: '🏛️ אדריכלות קלאסית' };
+  var SOURCES = ['tours', 'lessons', 'history', 'arch'];
+  var SOURCE_WEIGHT = { tours: 1, lessons: 1.15, history: 0.9, arch: 0.6 };
+  var SOURCE_LABEL = { tours: '🧭 הסיורים', lessons: '📚 שיעורי התיאוריה', history: '⏳ ציר הזמן', arch: '🏛️ אדריכלות קלאסית' };
 
   // ---------- hasard reproductible ----------
   function hash(str) { var h = 2166136261; str = String(str); for (var i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
@@ -24,15 +24,17 @@
 
   // ---------- banques ----------
   // 1. Les 22 סיורים : questions déjà vérifiées et sourcées, niveaux 1–3.
-  function fromTours(data) {
-    var out = [];
+  // titles : { '03': 'הנגב הצפוני', … } (siyurim-catalog.json) — on affiche le thème, pas le numéro.
+  function tourTitles(catalog) { var t = {}; ((catalog && catalog.tours) || []).forEach(function (x) { if (x && x.id) t[x.id] = clean(x.title); }); t.road67 = t.road67 || 'כביש 67 — זכרון יעקב–יקנעם'; return t; }
+  function fromTours(data, titles) {
+    var out = []; titles = titles || {};
     ((data && data.questions) || []).forEach(function (q) {
       if (!q || !Array.isArray(q.options) || !distinct4(q.options) || !(q.correct >= 0 && q.correct < 4)) return;
       var tour = q.tourId || '';
       out.push({
-        id: 't:' + q.id, src: 'tours', tour: tour, level: [1, 2, 3].indexOf(q.level) >= 0 ? q.level : 2,
+        id: 't:' + q.id, src: 'tours', tour: tour, sub: tour, level: [1, 2, 3].indexOf(q.level) >= 0 ? q.level : 2,
         text: clean(q.question), options: q.options.map(clean), correct: q.correct,
-        explanation: clean(q.explanation), cat: (tour === 'road67' ? 'כביש 67' : 'סיור ' + tour) + (q.stop ? ' · ' + clean(q.stop) : ''),
+        explanation: clean(q.explanation), cat: (titles[tour] || (tour === 'road67' ? 'כביש 67' : 'סיור ' + tour)) + (q.stop ? ' · ' + clean(q.stop) : ''),
         sourceUrl: q.sourceUrl || ''
       });
     });
@@ -96,18 +98,35 @@
     return out;
   }
 
+  // 4. Les cours de théorie du Drive (public/campus/lessons.json, construit par tools/build-campus-lessons.mjs).
+  function fromLessons(data) {
+    var out = [], topics = {};
+    ((data && data.topics) || []).forEach(function (t) { topics[t.id] = t; });
+    ((data && data.questions) || []).forEach(function (q) {
+      var t = topics[q.topic];
+      if (!t || !Array.isArray(q.options) || !distinct4(q.options) || !(q.correct >= 0 && q.correct < 4)) return;
+      out.push({ id: 'l:' + q.id, src: 'lessons', sub: q.topic, level: [1, 2, 3].indexOf(q.level) >= 0 ? q.level : 2,
+        text: clean(q.q), options: q.options.map(clean), correct: q.correct, explanation: clean(q.explanation),
+        cat: (t.emoji ? t.emoji + ' ' : '') + clean(t.he), sourceUrl: q.url || '' });
+    });
+    return out;
+  }
+
   function buildBank(parts) {
     parts = parts || {};
-    var bank = [].concat(fromTours(parts.tours), fromHistory(parts.H, parts.history), fromArch(parts.arch)), seen = {};
+    var bank = [].concat(fromTours(parts.tours, tourTitles(parts.catalog)), fromLessons(parts.lessons), fromHistory(parts.H, parts.history), fromArch(parts.arch)), seen = {};
     return bank.filter(function (q) { if (seen[q.id]) return false; seen[q.id] = 1; return true; });
   }
   function countBy(bank, filter) { return bank.filter(filter).length; }
   function poolFor(bank, opts) {
     opts = opts || {};
-    var srcs = (opts.sources && opts.sources.length) ? opts.sources : SOURCES, tours = opts.tours && opts.tours.length ? opts.tours : null;
+    // subs : { tours: ['03', …], lessons: ['geology', …] } — liste vide ou absente = tout
+    var srcs = (opts.sources && opts.sources.length) ? opts.sources : SOURCES, subs = Object.assign({}, opts.subs || {});
+    if (opts.tours && opts.tours.length) subs.tours = opts.tours;
     return bank.filter(function (q) {
       if (srcs.indexOf(q.src) < 0) return false;
-      if (q.src === 'tours' && tours && tours.indexOf(q.tour) < 0) return false;
+      var only = subs[q.src];
+      if (only && only.length && only.indexOf(q.sub) < 0) return false;
       return true;
     });
   }
@@ -318,7 +337,7 @@
     MAX_POINTS: MAX_POINTS, MIN_POINTS: MIN_POINTS, GRACE_MS: GRACE_MS, LATE_MS: LATE_MS, STREAK_STEP: STREAK_STEP, STREAK_CAP: STREAK_CAP,
     SOURCES: SOURCES, SOURCE_LABEL: SOURCE_LABEL, AVATARS: AVATARS,
     hash: hash, rng: rng, shuffle: shuffle,
-    fromTours: fromTours, fromHistory: fromHistory, fromArch: fromArch, buildBank: buildBank, poolFor: poolFor, countBy: countBy,
+    fromTours: fromTours, tourTitles: tourTitles, fromLessons: fromLessons, fromHistory: fromHistory, fromArch: fromArch, buildBank: buildBank, poolFor: poolFor, countBy: countBy,
     plannedLevel: plannedLevel, readMs: readMs, buildGame: buildGame, speedPoints: speedPoints, scoreAnswer: scoreAnswer, ranking: ranking,
     createGame: createGame, join: join, removePlayer: removePlayer, startQuestion: startQuestion, answer: answer, everyoneAnswered: everyoneAnswered,
     reveal: reveal, showBoard: showBoard, finish: finish, distribution: distribution, finalStats: finalStats, publicState: publicState, current: current,

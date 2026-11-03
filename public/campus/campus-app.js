@@ -60,8 +60,12 @@
   function loadBank() {
     if (bankP) return bankP;
     var get = function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }).catch(function () { return null; }); };
-    bankP = Promise.all([get('guided-quiz.json'), get('history-events.json'), get('architecture/data.json')]).then(function (r) {
-      return C.buildBank({ tours: r[0], H: window.MDHistory, history: r[1], arch: r[2] });
+    bankP = Promise.all([get('guided-quiz.json'), get('history-events.json'), get('architecture/data.json'), get('siyurim-catalog.json'), get('campus/lessons.json')]).then(function (r) {
+      var bank = C.buildBank({ tours: r[0], H: window.MDHistory, history: r[1], arch: r[2], catalog: r[3], lessons: r[4] });
+      var topics = (r[4] && r[4].topics) || [], label = {};
+      topics.forEach(function (t) { label[t.id] = (t.emoji ? t.emoji + ' ' : '') + t.he; });
+      bank.meta = { tourTitles: C.tourTitles(r[3]), lessonOrder: topics.map(function (t) { return t.id; }), lessonLabel: label };
+      return bank;
     });
     return bankP;
   }
@@ -286,27 +290,40 @@
   // =====================================================================
   var H = null;
   function hostSetup() {
-    var prev = ls.get(HKEY, {}) || {}, s = Object.assign({ count: 15, seconds: 20, sources: C.SOURCES.slice(), tours: [], double: true, auto: true }, prev.settings || {});
+    var prev = ls.get(HKEY, {}) || {}, s = Object.assign({ count: 15, seconds: 20, sources: C.SOURCES.slice(), subs: null, double: true, auto: true }, prev.settings || {});
+    if (!s.subs) { s.subs = { tours: [], lessons: [] }; s.sources = C.SOURCES.slice(); }     // anciens réglages : tout le cours
+    s.subs.tours = s.subs.tours || []; s.subs.lessons = s.subs.lessons || [];
+    var SUBS = { tours: 'אילו סיורים?', lessons: 'אילו שיעורים?' };
     app.innerHTML = '<div class="card"><h2>🎤 משחק חדש</h2><p class="sub" id="bankInfo">טוען את בנק השאלות…</p>' +
       '<label class="f">נושאים</label><div class="chips" id="srcs"></div>' +
-      '<div id="toursBox"><label class="f">אילו סיורים? <small style="color:var(--soft);font-weight:700">(ריק = כולם)</small></label><div class="tours" id="tours"></div>' +
-      '<div class="row" style="margin-top:6px"><button class="chip" type="button" id="tAll">כולם</button><button class="chip" type="button" id="tNone">לנקות</button></div></div>' +
+      Object.keys(SUBS).map(function (k) {
+        return '<div id="box-' + k + '"><label class="f">' + SUBS[k] + ' <small style="color:var(--soft);font-weight:700">(בלי בחירה = הכול)</small></label><div class="chips subs" data-src="' + k + '" id="sub-' + k + '"></div>' +
+          '<div class="row" style="margin-top:6px"><button class="chip" type="button" data-none="' + k + '">לנקות את הבחירה</button></div></div>';
+      }).join('') +
       '<label class="f">כמה שאלות?</label><div class="chips" id="cnt"></div>' +
       '<label class="f">זמן לכל שאלה</label><div class="chips" id="sec"></div>' +
       '<label class="switch"><span>👑 שאלת האלוף בסוף (נקודות כפולות)</span><input type="checkbox" id="dbl"' + (s.double ? ' checked' : '') + '></label>' +
       '<label class="switch"><span>⏩ מעבר אוטומטי בין השאלות</span><input type="checkbox" id="auto"' + (s.auto ? ' checked' : '') + '></label>' +
-      '<p class="note">השאלות מסודרות מהקל לקשה. לפני כל שאלה יש כמה שניות קריאה, ורק אז מופיעות התשובות והשעון מתחיל — כך נמדדת מהירות הידיעה, לא מהירות הקריאה. תשובה נכונה: 500–1000 נק׳ לפי המהירות, +50 לכל תשובה ברצף.</p>' +
+      '<p class="note">השאלות מסודרות מהקל לקשה. לפני כל שאלה יש כמה שניות קריאה, ורק אז מופיעות התשובות והשעון מתחיל — כך נמדדת מהירות הידיעה, לא מהירות הקריאה. תשובה נכונה: 500–1000 נק׳ לפי המהירות, +50 לכל תשובה ברצף. כל השאלות לקוחות מחומרי הקורס בדרייב.</p>' +
       '<button class="btn" id="open" type="button" disabled>לפתוח חדר 🚪</button><button class="btn ghost" id="back" type="button">חזרה</button></div>';
     document.getElementById('back').onclick = home;
     loadBank().then(function (bank) {
       var info = document.getElementById('bankInfo'); if (!info) return;
       var cnt = function (src) { return C.countBy(bank, function (q) { return q.src === src; }); };
-      var tourIds = []; bank.forEach(function (q) { if (q.src === 'tours' && tourIds.indexOf(q.tour) < 0) tourIds.push(q.tour); });
-      tourIds.sort(function (a, b) { return (a === 'road67') - (b === 'road67') || a.localeCompare(b); });
+      // sous-thèmes : nom affiché + nombre de questions, dans l'ordre du cours
+      var subList = { tours: [], lessons: [] };
+      Object.keys(subList).forEach(function (k) {
+        var n = {}; bank.forEach(function (q) { if (q.src === k) n[q.sub] = (n[q.sub] || 0) + 1; });
+        var order = k === 'tours' ? Object.keys(n).sort(function (a, b) { return (a === 'road67') - (b === 'road67') || a.localeCompare(b); }) : (bank.meta.lessonOrder || []).filter(function (id) { return n[id]; });
+        subList[k] = order.map(function (id) { return { id: id, n: n[id], label: k === 'tours' ? (bank.meta.tourTitles[id] || id) : bank.meta.lessonLabel[id] || id }; });
+        s.subs[k] = s.subs[k].filter(function (id) { return n[id]; });
+      });
       function draw() {
-        document.getElementById('srcs').innerHTML = C.SOURCES.map(function (k) { return '<button type="button" class="chip" data-k="' + k + '" aria-pressed="' + (s.sources.indexOf(k) >= 0) + '">' + C.SOURCE_LABEL[k] + ' <small>' + cnt(k) + '</small></button>'; }).join('');
-        document.getElementById('toursBox').hidden = s.sources.indexOf('tours') < 0;
-        document.getElementById('tours').innerHTML = tourIds.map(function (t) { return '<button type="button" class="chip" data-t="' + t + '" aria-pressed="' + (s.tours.indexOf(t) >= 0) + '">' + (t === 'road67' ? '67' : t) + '</button>'; }).join('');
+        document.getElementById('srcs').innerHTML = C.SOURCES.filter(function (k) { return cnt(k); }).map(function (k) { return '<button type="button" class="chip" data-k="' + k + '" aria-pressed="' + (s.sources.indexOf(k) >= 0) + '">' + C.SOURCE_LABEL[k] + ' <small>' + cnt(k) + '</small></button>'; }).join('');
+        Object.keys(subList).forEach(function (k) {
+          document.getElementById('box-' + k).hidden = s.sources.indexOf(k) < 0 || !subList[k].length;
+          document.getElementById('sub-' + k).innerHTML = subList[k].map(function (x) { return '<button type="button" class="chip" data-sub="' + esc(x.id) + '" aria-pressed="' + (s.subs[k].indexOf(x.id) >= 0) + '">' + esc(x.label) + ' <small>' + x.n + '</small></button>'; }).join('');
+        });
         document.getElementById('cnt').innerHTML = [10, 15, 20, 30].map(function (n) { return '<button type="button" class="chip" data-n="' + n + '" aria-pressed="' + (s.count === n) + '">' + n + '</button>'; }).join('');
         document.getElementById('sec').innerHTML = [10, 15, 20, 30].map(function (n) { return '<button type="button" class="chip" data-s="' + n + '" aria-pressed="' + (s.seconds === n) + '">' + n + ' שנ׳</button>'; }).join('');
         var avail = C.poolFor(bank, s).length;
@@ -315,20 +332,22 @@
       }
       draw();
       document.getElementById('srcs').onclick = function (e) { var b = e.target.closest('[data-k]'); if (!b) return; var k = b.dataset.k, i = s.sources.indexOf(k); if (i >= 0) { if (s.sources.length > 1) s.sources.splice(i, 1); } else s.sources.push(k); draw(); };
-      document.getElementById('tours').onclick = function (e) { var b = e.target.closest('[data-t]'); if (!b) return; var t = b.dataset.t, i = s.tours.indexOf(t); if (i >= 0) s.tours.splice(i, 1); else s.tours.push(t); draw(); };
-      document.getElementById('tAll').onclick = function () { s.tours = tourIds.slice(); draw(); };
-      document.getElementById('tNone').onclick = function () { s.tours = []; draw(); };
+      [].forEach.call(document.querySelectorAll('.subs'), function (box) {
+        box.onclick = function (e) { var b = e.target.closest('[data-sub]'); if (!b) return; var L = s.subs[box.dataset.src], i = L.indexOf(b.dataset.sub); if (i >= 0) L.splice(i, 1); else L.push(b.dataset.sub); draw(); };
+      });
+      [].forEach.call(document.querySelectorAll('[data-none]'), function (b) { b.onclick = function () { s.subs[b.dataset.none] = []; draw(); }; });
       document.getElementById('cnt').onclick = function (e) { var b = e.target.closest('[data-n]'); if (b) { s.count = +b.dataset.n; draw(); } };
       document.getElementById('sec').onclick = function (e) { var b = e.target.closest('[data-s]'); if (b) { s.seconds = +b.dataset.s; draw(); } };
       document.getElementById('open').onclick = function () {
         s.double = document.getElementById('dbl').checked; s.auto = document.getElementById('auto').checked;
-        if (s.tours.length === tourIds.length) s.tours = [];
-        var qs = C.buildGame(bank, { count: s.count, sources: s.sources, tours: s.tours, seed: uid(), avoid: ls.get(UKEY, []), finalDouble: s.double });
+        Object.keys(subList).forEach(function (k) { if (s.subs[k].length === subList[k].length) s.subs[k] = []; });
+        var qs = newQuestions(bank, s);
         if (!qs.length) { toast('אין מספיק שאלות בבחירה הזאת'); return; }
         hostOpen(s, qs);
       };
     });
   }
+  function newQuestions(bank, s) { return C.buildGame(bank, { count: s.count, sources: s.sources, subs: s.subs, tours: s.tours, seed: uid(), avoid: ls.get(UKEY, []), finalDouble: s.double }); }
 
   function hostOpen(settings, questions, keepPin, keepPlayers) {
     var pin = keepPin || C.makePin(), hid = (H && H.hid) || uid();
@@ -482,7 +501,7 @@
       if (!H.cheered) { H.cheered = true; confetti(); jingle(true); }
       document.getElementById('again').onclick = function () {
         loadBank().then(function (bank) {
-          var s = H.settings, qs = C.buildGame(bank, { count: s.count, sources: s.sources, tours: s.tours, seed: uid(), avoid: ls.get(UKEY, []), finalDouble: s.double });
+          var s = H.settings, qs = newQuestions(bank, s);
           H.cheered = false; hostOpen(s, qs, H.pin, H.game.players);
         });
       };

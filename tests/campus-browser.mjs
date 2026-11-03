@@ -50,10 +50,18 @@ await host.waitForFunction(() => /בבנק/.test(document.getElementById('bankIn
 const info = await host.locator('#bankInfo').innerText();
 ok(+info.match(/(\d+)/)[1] > 1500, 'banque chargée : ' + info);
 // filtre : seulement la frise → moins de questions, puis retour à tout
-await host.click('[data-k="tours"]'); await host.click('[data-k="arch"]');
-ok(/ציר הזמן/.test(await host.locator('#srcs [aria-pressed="true"]').innerText()) && await host.locator('#toursBox').isHidden(), 'filtre de sources');
-await host.click('[data-k="tours"]'); await host.click('[data-k="arch"]');
-await host.click('[data-t="03"]'); await host.click('#tNone');
+await host.click('[data-k="tours"]'); await host.click('[data-k="arch"]'); await host.click('[data-k="lessons"]');
+ok(/ציר הזמן/.test(await host.locator('#srcs [aria-pressed="true"]').innerText()) && await host.locator('#box-tours').isHidden(), 'filtre de sources');
+await host.click('[data-k="tours"]'); await host.click('[data-k="arch"]'); await host.click('[data-k="lessons"]');
+// les סיורים par thème, pas par numéro
+ok(/הנגב הצפוני/.test(await host.locator('#sub-tours').innerText()), 'סיורים affichés par thème : ' + (await host.locator('#sub-tours [data-sub]').first().innerText()));
+ok(await host.locator('#sub-lessons [data-sub="geology"]').count() === 1, 'thème géologie proposé');
+// géologie seule → toutes les questions des cours viennent de la géologie
+await host.click('#sub-lessons [data-sub="geology"]');
+const geo = await host.evaluate(() => document.getElementById('bankInfo').innerText);
+ok(/\d+ בבחירה/.test(geo), 'sélection géologie : ' + geo);
+await host.click('[data-none="lessons"]');
+await host.click('#sub-tours [data-sub="03"]'); await host.click('[data-none="tours"]');
 await host.click('[data-n="10"]'); await host.click('[data-s="10"]');
 await host.screenshot({ path: `${OUT}/pc-1-setup.png`, fullPage: true });
 await host.click('#open');
