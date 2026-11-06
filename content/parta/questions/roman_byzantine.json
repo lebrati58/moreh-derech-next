@@ -196,6 +196,90 @@
         "caption": "איור להמחשה בלבד — אינו שחזור או מפה מדויקת.",
         "url": "https://www.canva.com/M/MAHZ2X7HiGc"
       }
+    },
+    {
+      "id": "Q-roman_byzantine-010",
+      "level": 1,
+      "q": "איזה שם רומי החליף את שם הפרובינקיה יודיאה לאחר המרידות?",
+      "options": [
+        "סיריה פלשתינה",
+        "ערביה פטריאה",
+        "אסיה",
+        "אכיאה"
+      ],
+      "correct": 0,
+      "explanation": "שם הפרובינקיה שונה לסיריה פלשתינה.",
+      "tags": [
+        "אדריאנוס וסיריה פלשתינה",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Oxford Classical Dictionary — Judaea-Palaestina",
+        "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548064842"
+      }
+    },
+    {
+      "id": "Q-roman_byzantine-011",
+      "level": 2,
+      "q": "מה ההבחנה הנכונה כשעוסקים בשם סיריה פלשתינה?",
+      "options": [
+        "זהו שם שושלת חשמונאית",
+        "זהו שם מקדש בירושלים",
+        "זהו שמו המקורי של הקוראן",
+        "זהו שם פרובינקיה רומית"
+      ],
+      "correct": 3,
+      "explanation": "סיריה פלשתינה הוא מונח מנהלי רומי המתייחס לפרובינקיה.",
+      "tags": [
+        "אדריאנוס וסיריה פלשתינה",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Oxford Classical Dictionary — Judaea-Palaestina",
+        "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548064842"
+      }
+    },
+    {
+      "id": "Q-roman_byzantine-012",
+      "level": 2,
+      "q": "איזה רצף מתאר את שינוי שמה של הפרובינקיה באזור יהודה?",
+      "options": [
+        "יודיאה ולאחר מכן ממלכת אשור",
+        "פחוות יהד ולאחר מכן כנען המצרית",
+        "יודיאה ולאחר מכן סיריה פלשתינה",
+        "סיריה פלשתינה ולאחר מכן פחוות יהד הפרסית"
+      ],
+      "correct": 2,
+      "explanation": "הפרובינקיה הרומית יודיאה קיבלה בהמשך את השם סיריה פלשתינה.",
+      "tags": [
+        "אדריאנוס וסיריה פלשתינה",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Oxford Classical Dictionary — Judaea-Palaestina",
+        "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548064842"
+      }
+    },
+    {
+      "id": "Q-roman_byzantine-013",
+      "level": 3,
+      "q": "אילו ראיות מתאימות במיוחד לחקר שינוי שם של פרובינקיה רומית?",
+      "options": [
+        "מסורת עממית מודרנית ללא תיעוד",
+        "כתובות ומסמכים מנהליים רומיים",
+        "פסיפס מקראי בלבד ללא כתובת",
+        "כלי צור פרהיסטוריים בלבד"
+      ],
+      "correct": 1,
+      "explanation": "שינוי מנהלי נבחן באמצעות תיעוד היסטורי ואפיגרפי, ולא באמצעות ממצא בלתי קשור.",
+      "tags": [
+        "אדריאנוס וסיריה פלשתינה",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Oxford Classical Dictionary — Judaea-Palaestina",
+        "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548064842"
+      }
     }
   ]
 }

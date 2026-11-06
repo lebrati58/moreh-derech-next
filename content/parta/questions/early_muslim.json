@@ -168,6 +168,90 @@
         "title": "אל-חאכם באמר אללה – ויקיפדיה",
         "url": "https://he.wikipedia.org/wiki/אל-חאכם_באמר_אללה"
       }
+    },
+    {
+      "id": "Q-early_muslim-009",
+      "level": 1,
+      "q": "איזה ח׳ליף הזמין את הקמת כיפת הסלע?",
+      "options": [
+        "עבד אל־מלכ אבן מרואן",
+        "צלאח א־דין",
+        "סולימאן המפואר",
+        "אל־חאכם"
+      ],
+      "correct": 0,
+      "explanation": "כיפת הסלע נבנתה בחסות עבד אל־מלכ האומיי.",
+      "tags": [
+        "בנייה אומיאית",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Metropolitan Museum — The Dome of the Rock",
+        "url": "https://www.metmuseum.org/exhibitions/listings/2012/byzantium-and-islam/blog/where-in-the-world/posts/dome-of-the-rock"
+      }
+    },
+    {
+      "id": "Q-early_muslim-010",
+      "level": 2,
+      "q": "איזה צירוף ממחיש נוכחות אסלאמית מונומנטלית בירושלים האומיאית?",
+      "options": [
+        "כנסיית הניאה — קיסריה",
+        "הקולוסאום — רמלה",
+        "מקדש ארטמיס — לוד",
+        "כיפת הסלע — הר הבית"
+      ],
+      "correct": 3,
+      "explanation": "כיפת הסלע היא מפעל בנייה אומיי בולט בהר הבית.",
+      "tags": [
+        "בנייה אומיאית",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Metropolitan Museum — The Dome of the Rock",
+        "url": "https://www.metmuseum.org/exhibitions/listings/2012/byzantium-and-islam/blog/where-in-the-world/posts/dome-of-the-rock"
+      }
+    },
+    {
+      "id": "Q-early_muslim-011",
+      "level": 1,
+      "q": "באיזו תקופה הושלמה כיפת הסלע המקורית?",
+      "options": [
+        "במאה השנייה לספירה",
+        "במאה השש־עשרה לספירה",
+        "בסוף המאה השביעית לספירה",
+        "במאה השלישית לפנה״ס"
+      ],
+      "correct": 2,
+      "explanation": "המבנה הושלם בשנת 691/692, בתקופה האומיאית.",
+      "tags": [
+        "בנייה אומיאית",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Metropolitan Museum — The Dome of the Rock",
+        "url": "https://www.metmuseum.org/exhibitions/listings/2012/byzantium-and-islam/blog/where-in-the-world/posts/dome-of-the-rock"
+      }
+    },
+    {
+      "id": "Q-early_muslim-012",
+      "level": 2,
+      "q": "מהו הביטוי האדריכלי המתאים למושג אסלאום הנוף בירושלים?",
+      "options": [
+        "בניית תיאטראות יווניים בלבד",
+        "הצבת מבנה פולחני אסלאמי בולט במרחב קדוש קיים",
+        "החלפת כל יישובי הארץ במחנות אוהלים",
+        "הפסקת הבנייה הדתית לחלוטין"
+      ],
+      "correct": 1,
+      "explanation": "כיפת הסלע מעניקה ביטוי חזותי מונומנטלי לנוכחות האסלאם במרחב הקדוש.",
+      "tags": [
+        "בנייה אומיאית",
+        "תרגול המשך"
+      ],
+      "source": {
+        "title": "Metropolitan Museum — The Dome of the Rock",
+        "url": "https://www.metmuseum.org/exhibitions/listings/2012/byzantium-and-islam/blog/where-in-the-world/posts/dome-of-the-rock"
+      }
     }
   ]
 }
