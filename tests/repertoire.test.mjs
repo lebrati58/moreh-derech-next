@@ -82,3 +82,23 @@ test('faits du cours : la phrase originale du document accompagne le fait (affic
   const ng = load('negev.json'), ar = ng.sites.find(s => s.id === 'arad_fortress');
   assert.ok(ar.facts.every(f => f.q), 'מצודת ערד : chaque fait a sa phrase');
 });
+
+test('conditions réelles : un lieu écrit librement est reconnu à la remise (et seulement un lieu du cours)', () => {
+  const ng = load('negev.json'), je = load('jerusalem.json');
+  const cases = [[ng.sites, 'השער בתל שבע', 'tel_beer_sheva'], [ng.sites, 'מצודת ערד', 'arad_fortress'], [ng.sites, 'בתל ערד, הבית הערדי', 'tel_arad_city'],
+    [ng.sites, 'גן אלנבי בבאר שבע', 'old_beer_sheva'], [ng.sites, 'התחנה הטורקית', 'turkish_station'], [ng.sites, 'מסעדה בדרך', null],
+    [je.sites, 'דגם ירושלים', 'israel_museum_model'], [je.sites, 'בריכת השילוח', 'siloam_pilgrim_road'], [je.sites, 'גן דוידסון', 'davidson'], [ng.roads, 'כביש 31 משוקת לערד', 'r_lehavim_arad']];
+  for (const [pool, t, want] of cases) assert.equal(R.matchPlace(t, pool), want, t);
+  // chaque lieu publié est reconnu par son propre nom court (sauf homonymes connus)
+  const regs = load('regions.json').regions.filter(r => r.file); let miss = 0, n = 0;
+  for (const r of regs) { const d = load(r.file); for (const pool of [d.sites, d.roads || []]) for (const p of pool) { n++; if (R.matchPlace(p.short, pool) !== p.id) miss++; } }
+  assert.ok(miss <= 2, `${miss}/${n} lieux non reconnus par leur nom`);
+});
+
+test('révision face au cours : faits couverts et nombres absents du cours signalés', () => {
+  const f = load('negev.json').sites.find(s => s.id === 'tel_beer_sheva').facts;
+  const r = R.factCoverage(f, 'שער העיר בנוי משלושה זוגות אומנות, ובמחסנים נמצאו כלי אגירה. בתל 17 שכבות יישוב.');
+  assert.ok(r.covered.length >= 2 && r.missed.length > r.covered.length);
+  assert.deepEqual(r.stray, ['17']);
+  assert.deepEqual(R.factCoverage(f, 'בתל 15 שכבות יישוב').stray, []);
+});

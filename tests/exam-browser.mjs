@@ -142,6 +142,7 @@ await shot('4-errors');
 await page.goto(base + 'exam.html#/m/g1/exam');
 await page.waitForSelector('#go');
 await page.selectOption('#durSel', '45');
+await page.uncheck('#realChk');   // ce test couvre le mode classique (liste des sites) ; les conditions réelles : tests/repertoire-browser.mjs
 await page.click('#go');
 await page.waitForSelector('#tm');
 ok(/^0:4[45]:\d\d$/.test(await page.textContent('#tm')), 'chronomètre 45 min');
