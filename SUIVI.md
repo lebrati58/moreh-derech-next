@@ -24,10 +24,21 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 58 fiches, monuments modélisés en détail, mode cinéma + vidéo, plan 2D, quiz 3D éteints (phase 2) |
 | **Frise + quiz d'histoire « ציר הזמן והחידון »** | ✅ test navigateur S24 + ordinateur | `history.html` — 48 événements, 7 périodes, quiz chronométré (voir §2, 27 octobre) |
 | **Architecture classique 3D « אדריכלות קלאסית »** | ✅ test navigateur S24 + ordinateur | `architecture.html` — 14 maquettes, 162 termes, jeu de zihouï, 83 questions ouvertes |
+| **Examen de mi-parcours « 📝 בחינת מחצית »** | ✅ test navigateur S24 + ordinateur | `parta.html#/mt` — la vraie épreuve מועד ב׳ (45 QCM + 45 השלמה), règle 40/45, note /40, simulation 90′ ou תרגול (voir §2, 6 novembre) |
 | **Jeu de campus « 🏆 אלוף הקורס »** | 🟡 tests navigateur OK, à essayer en vrai | `campus.html` — Kahoot du cours, code + QR, podium (voir §2, 3 novembre) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
+
+### 6 novembre 2026 — « 📝 בחינת מחצית » : la vraie épreuve de la partie A dans l'app
+
+Source : dossier Drive « מבחני אמצע ». Le format (`מחברת בחינה`) et les sujets du ministère y étaient déjà utilisés par אתגר המבחן ; **les 3 autres fichiers ne l'étaient pas**. Ajouté ici : l'épreuve חלק א׳ מועד ב׳ et son corrigé.
+- **Contenu** : `content/parta/midterm/2026-b.txt` (une ligne par question, format en tête du fichier) → `public/parta/midterm-2026-b.json` par `npm run build:parta`. Énoncés tels quels ; **explications réécrites**.
+- **Corrigé** : les 40+40 réponses du fichier de la classe ont été vérifiées (QCM : 40/40 identiques) ; **השלמה 36 corrigée** (la stèle de Tel Dan mentionne « בית דוד », Joram et Ahazias ; Hazaël n'y est pas nommé) ; **QCM 41–45 et השלמה 41–45 ajoutées**. Deux réponses non trouvées dans le matériel du cours sont marquées ⚠️ (השלמה 42 סלע הסימון, 43 מצדה), ainsi que QCM 5 (Beit Guvrin).
+- **Jeu** (`public/parta-midterm.js`, logique dans `parta-core.js`) : feuille complète comme sur papier ; **règle de l'énoncé : 40 sur 45, au-delà seules les 40 premières comptent** (alerte en direct) ; 0,5 pt → note /40 ; réponses libres reconnues avec variantes (sans ה, contenues dans la phrase) et sinon **auto-vérification** « צדקתי / טעיתי » (jamais « faux » automatique) ; points perdus par thème avec lien vers la banque par thème ; « תרגול הטעויות » ; brouillon conservé.
+- **Accueil** : la case « לפי נושא » (doublon de « מעורב ») de la tuile מבחן חלק א׳ devient « 📝 בחינת מחצית ».
+- **Tests** : `tests/parta.test.mjs` (+4) ; `npm run e2e:midterm` (360×780 + 1280×860) ✔ ; `npm run e2e:parta` ✔.
+- ⏳ **Partie B de ce même dossier** (`בחינת מחצית חלק ב מועד ב`) : barème différent (60 pts : לו״ז 12 + 3 courtes × 12 au choix parmi 4 + développée 12, un mercredi) et 3 sujets (בקעת הירדן בית שאן→קליה · תנ״ך חיפה→בית שאן/מגידו · ירושלים עות׳מאנית ומנדט, התחנה הראשונה→שער יפו). À intégrer dans אתגר המבחן **après la PR #71**, qui modifie les mêmes fichiers.
 
 ### 3 novembre 2026 (suite) — אלוף הקורס : tout le Drive + géologie
 - ✅ Demande de Lionel : choisir les סיורים par thème (pas par numéro) ; ajouter la géologie et « tout ce qui concerne le Drive ».

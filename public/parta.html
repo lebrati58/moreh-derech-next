@@ -66,6 +66,29 @@ a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}[hidden]{displa
 .res .score{font-size:40px;font-weight:1000;color:var(--gold)}
 .rev{display:grid;gap:7px;margin-top:10px}.rev div{display:flex;gap:8px;align-items:flex-start;padding:9px 11px;border-radius:12px;background:#0f1840;border:1px solid var(--line);font-size:13.5px;line-height:1.4}
 .foot{font-size:12px;color:var(--soft);margin-top:14px;line-height:1.6}
+/* מבחן מחצית */
+.mtcard{display:flex;gap:12px;align-items:center;margin-top:12px;padding:14px;border-radius:18px;text-decoration:none;background:linear-gradient(110deg,#8a4b12,#7b3fa8 70%);border:1px solid #ffd87880;box-shadow:0 5px 0 #050b1c}
+.mtcard .e{font-size:30px;flex:none}.mtcard b{display:block;font-size:16px}.mtcard small{display:block;color:#ffeccc;font-size:12.5px;margin-top:3px;line-height:1.4}.mtcard .arr{flex:none;font-weight:1000;font-size:20px;color:var(--gold)}
+.rules{margin:0;padding-inline-start:20px;line-height:1.6;font-size:14.5px}.rules li+li{margin-top:6px}
+.modes{display:grid;gap:8px}.mode{display:flex;gap:10px;align-items:center;text-align:start;min-height:64px;border-radius:15px;padding:10px 12px;border:2px solid #44578c;background:#202d58}.mode .e{font-size:26px}.mode b{display:block;font-size:15.5px}.mode small{display:block;color:var(--soft);font-size:12.5px}
+.resume{margin:10px 0 0;font-weight:800}.resume a{color:var(--gold)}
+.sbar{position:sticky;top:0;z-index:20;margin:0 -14px;padding:calc(6px + var(--safe-t)) 14px 8px;background:#0b1433f2;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2)}
+.tabs2{display:grid;grid-template-columns:1fr 1fr;gap:6px}.tabs2 a{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:12px;text-decoration:none;font-weight:900;background:#1d2a56;border:1px solid var(--line2)}.tabs2 a[aria-current=true]{background:var(--gold);color:#1c1f45;border-color:#ffe9b0}
+.sline{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;font-size:13.5px;color:var(--soft)}.sline b{color:var(--ink)}
+.clock{font-weight:1000;color:var(--mint);font-variant-numeric:tabular-nums}.clock.low{color:var(--red)}
+.over{color:var(--gold);font-weight:800}
+.sheet{padding:6px 14px}.qq{padding:14px 0;border-bottom:1px solid #ffffff1c}.qq:last-child{border-bottom:0}
+.qt{display:flex;gap:9px;align-items:flex-start;margin:0 0 9px;font-weight:800;font-size:16px;line-height:1.45}
+.num{flex:none;min-width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#0f1840;border:1px solid var(--line2);font-size:13px;font-weight:1000}
+.opts{display:grid;gap:6px}.opt{display:flex;gap:9px;align-items:center;text-align:start;min-height:48px;border-radius:12px;padding:8px 10px;border:2px solid #3a4b80;background:#1b2752;font-size:15px;line-height:1.35}
+.opt .k{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#0f1840;font-weight:1000;font-size:12.5px}
+.opt.on{background:#ffd87826;border-color:var(--gold)}.opt.on .k{background:var(--gold);color:#1c1f45}
+.opt.ok{background:#124a3a;border-color:#3fbf8a}.opt.bad{background:#4a1a22;border-color:#ff8f8f}.opt.dim{opacity:.45}.opt:disabled{cursor:default}
+.frow{display:flex;gap:6px}.fin{flex:1;min-width:0;min-height:48px;border-radius:12px;border:2px solid #3a4b80;background:#0f1840;color:var(--ink);font:inherit;font-size:16px;padding:8px 12px}.fin:focus{border-color:var(--gold);outline:none}.frow .btn{min-height:48px;font-size:14px}
+.selfck{display:flex;gap:6px;margin-top:8px}.selfck .btn{flex:1;min-height:44px;font-size:14px}
+.flag{font-size:11.5px;border-radius:999px;padding:2px 8px;background:#2a2f5a;border:1px solid #6c74b8;display:inline-block;margin-inline-start:4px}.flag.warn{background:#4a3a12;border-color:var(--gold2)}
+.lead{margin:0 0 8px;color:var(--soft);font-size:13.5px}
+details summary{cursor:pointer;font-weight:800;min-height:40px;display:flex;align-items:center}
 </style>
 </head>
 <body>
@@ -80,6 +103,7 @@ a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}[hidden]{displa
 <script src="parta-core.js"></script>
 <script src="progress.js"></script>
 <script src="feedback.js" data-float="0"></script>
+<script src="parta-midterm.js"></script>
 <script src="parta-app.js"></script>
 <script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
 <script src="tabbar.js"></script>

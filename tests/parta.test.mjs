@@ -79,3 +79,49 @@ test('Via Nova Traiana: illustration stays attached after answer shuffling', asy
   assert.equal(item.illustration.src, 'assets/learning/via-nova-traiana.png');
   assert.ok(await exists('public/' + item.illustration.src));
 });
+
+// ---------- מבחן מחצית (simulation de l'épreuve réelle) ----------
+test('מבחן מחצית : règle 40/45 — au-delà de 40 réponses, seules les 40 premières comptent', () => {
+  const all = Array.from({ length: 45 }, (_, i) => i + 1);
+  const c = C.countable(all, 40);
+  assert.equal(c.counted.length, 40); assert.deepEqual([...c.ignored], [41, 42, 43, 44, 45]);
+  const some = C.countable([3, 1, 2], 40); assert.deepEqual([...some.counted], [1, 2, 3]); assert.equal(some.ignored.length, 0);
+});
+
+test('מבחן מחצית : réponses libres — variantes, article ה, jamais « faux » automatique', () => {
+  assert.equal(C.matchFill('נהר הירדן', ['הירדן']), true);
+  assert.equal(C.matchFill('ירדן', ['הירדן']), true);
+  assert.equal(C.matchFill('  רבי עקיבא ', ['רבי עקיבא']), true);
+  assert.equal(C.matchFill('כביש 90 (הערבה)', ['כביש 90', '90']), true);
+  assert.equal(C.matchFill('200 מ"מ', ['200 מ״מ', '200']), true);
+  assert.equal(C.matchFill('הלל', ['רבי עקיבא']), null, 'formulation inconnue → vérification par l’élève, pas une erreur');
+  assert.equal(C.matchFill('', ['x']), null);
+});
+
+test('מבחן מחצית : le fichier construit est complet et cohérent', async () => {
+  const m = await json('public/parta/midterm-2026-b.json');
+  assert.deepEqual([...C.validateMidterm(m).errors], []);
+  assert.equal(m.mcq.length, 45); assert.equal(m.fill.length, 45);
+  assert.equal(m.rules.answer * m.rules.points * 2, 40, 'note sur 40');
+  const bank = await json('public/parta/bank.json');
+  [...m.mcq, ...m.fill].forEach(q => assert.ok(bank.topics.some(t => t.id === q.topic), 'thème connu ' + q.topic));
+  // contrôles du corrigé contre l'énoncé
+  assert.equal(m.mcq[14].options[m.mcq[14].correct].includes('סוריה'), true, 'Q15 : Syrie');
+  assert.equal(m.mcq[1].options[m.mcq[1].correct], 'בלדווין הראשון');
+  assert.ok(m.fill[35].flags.includes('fixed'), 'השלמה 36 corrigée (בית דוד)');
+  assert.ok(m.sources.every(s => /^[\w-]{20,}$/.test(s.id)));
+});
+
+test('מבחן מחצית : note — 0,5 par bonne réponse comptée, réponses en trop ignorées, auto-vérification', async () => {
+  const m = await json('public/parta/midterm-2026-b.json');
+  const st = { mcq: {}, fill: {}, self: {} };
+  m.mcq.forEach(q => { st.mcq[q.n] = q.correct; });             // 45 réponses justes → 40 comptées
+  let r = C.scoreMidterm(m, st);
+  assert.equal(r.mcq.got, 20); assert.equal(r.mcq.ignored.length, 5); assert.equal(r.fill.got, 0);
+  st.mcq[1] = (m.mcq[0].correct + 1) % 4;                         // une faute
+  r = C.scoreMidterm(m, st); assert.equal(r.mcq.got, 19.5);
+  st.fill[16] = 'רבי עקיבא'; st.fill[1] = 'משהו אחר';
+  r = C.scoreMidterm(m, st); assert.equal(r.fill.got, 0.5); assert.equal(r.pending, 1);
+  st.self[1] = true; r = C.scoreMidterm(m, st); assert.equal(r.fill.got, 1); assert.equal(r.pending, 0);
+  assert.equal(r.max, 40);
+});

@@ -92,5 +92,65 @@
   }
   const grade = (right, total) => (total ? right / total : 0) >= 0.9 ? { he: 'מצוין — רמת מבחן!', emoji: '🏆' } : (right / total) >= 0.7 ? { he: 'טוב מאוד — עוד קצת ואתם שם', emoji: '⭐' } : (right / total) >= 0.5 ? { he: 'בסדר — כדאי לחזור על ההסברים', emoji: '📖' } : { he: 'לא נורא — זה בדיוק בשביל זה מתאמנים', emoji: '💪' };
 
-  return { LEVELS, ROUND, MAX_POINTS, ID_RE, validate, pick, points, record, grade, rng, shuffle, norm };
+  // ---------- « מבחן מחצית » : simulation d'une vraie épreuve (45 QCM + 45 השלמה, 40 comptées par partie) ----------
+  // Règle de l'énoncé : on répond à 40 questions sur 45 ; si on répond à plus, seules les 40 premières (dans l'ordre) comptent.
+  function countable(answered, limit) {
+    const lim = limit || 40, ns = answered.map(Number).sort((a, b) => a - b);
+    return { counted: ns.slice(0, lim), ignored: ns.slice(lim) };
+  }
+  // Variante sans article défini (ה) en tête de mot : « הירדן » = « ירדן ».
+  const bare = s => norm(s).split(' ').map(w => (w.length > 3 && w[0] === 'ה' ? w.slice(1) : w)).join(' ');
+  // Réponse libre : true = acceptée, null = à vérifier soi-même (jamais false : une formulation différente peut être juste).
+  function matchFill(input, answers) {
+    const a = bare(input); if (!a) return null;
+    for (const x of answers || []) {
+      const b = bare(x); if (!b) continue;
+      if (a === b) return true;
+      if ((' ' + a + ' ').includes(' ' + b + ' ')) return true;              // « נהר הירדן הצפוני » contient « ירדן »
+    }
+    return null;
+  }
+  function validateMidterm(m) {
+    const errors = [];
+    if (!m || !Array.isArray(m.mcq) || !Array.isArray(m.fill)) return { errors: ['structure: mcq/fill manquants'] };
+    [['mcq', m.mcq], ['fill', m.fill]].forEach(([k, list]) => {
+      list.forEach((q, i) => {
+        const w = `${k} #${q.n}`;
+        if (q.n !== i + 1) errors.push(w + ' : numérotation non continue');
+        if (!q.q || !/[֐-׿]/.test(q.q)) errors.push(w + ' : énoncé manquant');
+        if (!q.explanation) errors.push(w + ' : explication manquante');
+        if (k === 'mcq') {
+          if ((q.options || []).length !== 4) errors.push(w + ' : 4 réponses attendues');
+          if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4)) errors.push(w + ' : bonne réponse invalide');
+        } else if (!(q.answers || []).length) errors.push(w + ' : aucune réponse acceptée');
+      });
+    });
+    if (m.mcq.length !== m.rules.questions || m.fill.length !== m.rules.questions) errors.push('nombre de questions ≠ ' + m.rules.questions);
+    return { errors };
+  }
+  // st : { mcq: {n: choix}, fill: {n: texte}, self: {n: true|false} }
+  function scoreMidterm(m, st) {
+    const R = m.rules, part = (list, kind) => {
+      const ans = kind === 'mcq' ? st.mcq || {} : st.fill || {};
+      const answered = list.filter(q => kind === 'mcq' ? Number.isInteger(ans[q.n]) : String(ans[q.n] || '').trim()).map(q => q.n);
+      const c = countable(answered, R.answer), set = new Set(c.counted);
+      let right = 0, pending = 0;
+      const items = list.map(q => {
+        const counted = set.has(q.n), given = ans[q.n];
+        let ok;
+        if (kind === 'mcq') ok = Number.isInteger(given) ? given === q.correct : null;
+        else if (!String(given || '').trim()) ok = null;
+        else { const auto = matchFill(given, q.answers); ok = auto === true ? true : (st.self && typeof st.self[q.n] === 'boolean' ? st.self[q.n] : 'pending'); }
+        if (counted && ok === true) right++;
+        if (counted && ok === 'pending') pending++;
+        return { n: q.n, counted, ok, given };
+      });
+      return { items, right, pending, answered: answered.length, counted: c.counted.length, ignored: c.ignored, got: right * R.points, max: R.answer * R.points };
+    };
+    const mcq = part(m.mcq, 'mcq'), fill = part(m.fill, 'fill');
+    const got = mcq.got + fill.got, max = mcq.max + fill.max;
+    return { mcq, fill, got, max, pct: Math.round(100 * got / max), pending: mcq.pending + fill.pending };
+  }
+
+  return { LEVELS, ROUND, MAX_POINTS, ID_RE, validate, pick, points, record, grade, rng, shuffle, norm, countable, matchFill, validateMidterm, scoreMidterm };
 });

@@ -38,6 +38,7 @@
     "build:parta": "node tools/build-parta.mjs",
     "test:parta": "node --test tests/parta.test.mjs tests/ai-grader.test.mjs",
     "e2e:parta": "node tests/parta-browser.mjs screens-parta",
+    "e2e:midterm": "node tests/midterm-browser.mjs screens-midterm",
     "test:campus": "node --test tests/campus.test.mjs",
     "e2e:campus": "node tests/campus-browser.mjs screens-campus"
   },
