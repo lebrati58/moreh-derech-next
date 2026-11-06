@@ -57,13 +57,16 @@ test('progress.savePartA : meilleur score par question, jamais deux fois le mêm
   assert.ok(P.totals().points >= 540);
 });
 
-test('banque construite : valide, ≥ 6 questions par thème publié, thèmes du fichier topics.json', async () => {
+test('banque construite : valide, couverture complète ou limite explicitement documentée', async () => {
   if (!(await exists('public/parta/bank.json'))) return;
   const bank = await json('public/parta/bank.json'), T = await json('content/parta/topics.json');
   const v = C.validate(bank);
   assert.deepEqual([...v.errors], []);
   assert.deepEqual(bank.topics.map(t => t.id), T.topics.map(t => t.id));
-  bank.topics.filter(t => t.count).forEach(t => assert.ok(t.count >= 6, t.id));
+  bank.topics.filter(t => t.count).forEach(t => {
+    if (t.coverageStatus === 'limited') { assert.ok(t.coverageNote); assert.ok(t.count >= 3, t.id); }
+    else assert.ok(t.count >= 6, t.id);
+  });
   const files = (await readdir(new URL('../content/parta/questions/', import.meta.url))).filter(f => f.endsWith('.json'));
   assert.equal(files.length, bank.topics.filter(t => t.count).length);
   // Pas de copie d'un bank payant : si le document de référence est fourni (hors dépôt), aucun énoncé ne doit y figurer tel quel.
@@ -78,4 +81,35 @@ test('Via Nova Traiana: illustration stays attached after answer shuffling', asy
   assert.ok(item.options[item.correct].includes('בוצרה'));
   assert.equal(item.illustration.src, 'assets/learning/via-nova-traiana.png');
   assert.ok(await exists('public/' + item.illustration.src));
+});
+
+test('Drive-only bank: rejects missing evidence, mismatched file IDs and unequal choices', async () => {
+  const bank = await json('public/parta/bank.json');
+  assert.equal(bank.evidencePolicy, 'drive-only');
+  const q = bank.questions[0];
+  const check = patch => C.validate({ evidencePolicy: 'drive-only', topics: bank.topics, questions: [Object.assign({}, q, patch)] }).errors;
+  assert.equal(check({}).length, 0);
+  assert.ok(check({ source: Object.assign({}, q.source, { quote: '' }) }).length);
+  assert.ok(check({ source: Object.assign({}, q.source, { driveFileId: 'different-file' }) }).length);
+  assert.ok(check({ options: ['א', 'ב'.repeat(50), 'ג', 'ד'] }).length);
+  const picked = C.pick(bank, { ids: [q.id], seed: 'drive-proof' })[0];
+  assert.equal(picked.source.quote, q.source.quote, 'evidence survives shuffled answer order');
+});
+
+test('reviewed coverage: held questions stay out of draws and choice length gives no systematic shortcut', async () => {
+  const bank = await json('public/parta/bank.json');
+  const report = await json('content/parta/review/coverage-20261106.json');
+  const held = await json('content/parta/review/held-questions-20261106.json');
+  const active = new Set(bank.questions.map(q => q.id));
+  assert.equal(bank.questions.length, report.activeCount);
+  assert.equal(report.retainedAndReviewed + report.heldCount, report.previousCount);
+  assert.equal(report.retainedAndReviewed + report.newCount, report.activeCount);
+  assert.ok(held.every(q => !active.has(q.id)));
+  const longest = bank.questions.filter(q => q.options.every((o, i) => i === q.correct || o.length < q.options[q.correct].length)).length;
+  assert.ok(longest / bank.questions.length < .35, 'longest choice must not predict the answer');
+  bank.topics.forEach(t => {
+    const qs = bank.questions.filter(q => q.topic === t.id), positions = [0, 0, 0, 0];
+    qs.forEach(q => positions[q.correct]++);
+    assert.ok(Math.max(...positions) - Math.min(...positions) <= 1, t.id);
+  });
 });

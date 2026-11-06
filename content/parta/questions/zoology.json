@@ -2,171 +2,526 @@
   "topic": "zoology",
   "questions": [
     {
-      "id": "Q-zoology-001",
-      "level": 1,
-      "q": "איזה יונק מזוהה במיוחד עם שמורת עין גדי ומטפס במצוקיה?",
-      "options": [
-        "צבי הנגב",
-        "יעל נובי",
-        "יחמור פרסי",
-        "ראם לבן"
-      ],
-      "correct": 1,
-      "explanation": "היעל הנובי חי במצוקי מדבר יהודה והנגב, וניתן לראותו בקלות בעין גדי. גם השפנים בשמורה הם «אטרקציה», והפסוק «הרים הגבוהים ליעלים, סלעים מחסה לשפנים» מתאר אותם.",
-      "tags": [
-        "יונקים",
-        "עין גדי"
-      ],
-      "source": {
-        "title": "ויקיפדיה – יעל נובי",
-        "url": "https://he.wikipedia.org/wiki/יעל_נובי"
-      }
-    },
-    {
-      "id": "Q-zoology-002",
-      "level": 1,
-      "q": "איזה עוף נודד מתרכז באלפיו בחורף באגמון החולה?",
-      "options": [
-        "חסידה לבנה",
-        "שקנאי מצוי",
-        "עגור אפור",
-        "פלמינגו"
-      ],
-      "correct": 2,
-      "explanation": "עשרות אלפי עגורים אפורים חורפים באגמון החולה, שם מאכילים אותם בתירס כדי להרחיקם משדות החקלאים. האגמון הוקם בשנות ה-90 כתיקון לייבוש החולה.",
-      "tags": [
-        "ציפורים",
-        "חולה"
-      ],
-      "source": {
-        "title": "ויקיפדיה – אגמון החולה",
-        "url": "https://he.wikipedia.org/wiki/אגמון_החולה"
-      }
-    },
-    {
-      "id": "Q-zoology-003",
-      "level": 1,
-      "q": "«השפן» הנזכר בתנ״ך הוא למעשה…",
-      "options": [
-        "ארנב בר",
-        "חולד",
-        "נברן",
-        "שפן סלע"
-      ],
-      "correct": 3,
-      "explanation": "שפן הסלע הוא יונק קטן החי בלהקות בין סלעים, וקרוביו הקרובים ביותר הם דווקא הפיל והתחש הימי. הארנבת והשפן נמנים בתורה עם מעלי הגירה האסורים באכילה.",
-      "tags": [
-        "יונקים",
-        "חיות המקרא"
-      ],
-      "source": {
-        "title": "ויקיפדיה – שפן סלע",
-        "url": "https://he.wikipedia.org/wiki/שפן_סלע"
-      }
-    },
-    {
       "id": "Q-zoology-004",
       "level": 2,
       "q": "איזה מין הושב לטבע בישראל מגרעין הרבייה שבחי-בר כרמל?",
       "options": [
-        "ראם לבן",
         "יחמור פרסי",
+        "ראם לבן",
         "פרא",
         "יען"
       ],
-      "correct": 1,
-      "explanation": "היחמור הפרסי נכחד מהארץ והובא מאיראן ב-1978 לחי-בר כרמל. מאז שנות ה-90 שוחררו יחמורים לנחל כזיב ולהרי ירושלים. חי-בר יטבתה עוסק במיני המדבר.",
+      "correct": 0,
+      "explanation": "לפי סיכום הקורס: יחמור פרסי.",
       "tags": [
         "השבה לטבע",
         "חי-בר"
       ],
       "source": {
-        "title": "ויקיפדיה – יחמור פרסי",
-        "url": "https://he.wikipedia.org/wiki/יחמור_פרסי"
-      }
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "have become extinct. But herds from the breeding nuclei fostered at Hai-Bar Carmel have been reintroduced to the wild: the fallow deer in the Upper Galilee, the Jerusalem Mountains and the Carmel and the roe deer on Mount Horshan. The reintroduction of these two species in Israel is one of the country’s greatest conservation",
+        "locator": "קטע במקור, תו 2829",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "reintroduced to the wild"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
     },
     {
-      "id": "Q-zoology-005",
-      "level": 2,
-      "q": "באיזו שמורה נמצאת מושבת הקינון הגדולה של הנשרים בישראל?",
+      "id": "Q-zoology-009",
+      "level": 1,
+      "q": "מהי המטרה המרכזית של חי־בר כרמל לפי הדפדפת?",
       "options": [
-        "שמורת גמלא",
-        "שמורת החולה",
-        "שמורת עין אפק",
-        "שמורת נחל מערות"
+        "אילוף מינים לצורכי קרקס",
+        "רבייה והשבת מינים לטבע",
+        "גידול מינים לצורכי מזון",
+        "ייבוא מינים לצורכי ציד"
       ],
-      "correct": 0,
-      "explanation": "במצוקי גמלא שבגולן מקננת מושבת נשרים, ומנקודת התצפית רואים אותם דואים מעל העיר העתיקה. הנשר בסכנת הכחדה בשל הרעלות, ורט״ג מפעילה תוכנית שימור.",
+      "correct": 1,
+      "explanation": "גרעיני הרבייה נועדו לאפשר השבת בעלי חיים לטבע.",
       "tags": [
-        "ציפורים",
-        "גולן"
+        "קורס מורי דרך",
+        "מאומת בדרייב"
       ],
       "source": {
-        "title": "ויקיפדיה – שמורת גמלא",
-        "url": "https://he.wikipedia.org/wiki/שמורת_גמלא"
-      }
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "to correct this situation as much as possible. The main goal of Hai-Bar Carmel is to create breeding nuclei of herbivores and raptors and provide conditions for them to reproduce that are as close as can be to their natural habitat. Animals from these breeding nuclei are reintroduced to the wild in Israel. Another Hai-Bar, with a similar objective,",
+        "locator": "קטע במקור, תו 3977",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "breeding nuclei of herbivores and raptors"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
     },
     {
-      "id": "Q-zoology-006",
-      "level": 2,
-      "q": "לאיזו קבוצת בעלי חיים שייך החרדון המצוי?",
+      "id": "Q-zoology-010",
+      "level": 1,
+      "q": "איזה צמד מינים הושב לטבע מגרעיני הרבייה בכרמל?",
       "options": [
-        "דו-חיים",
-        "נחשים",
-        "צבים",
-        "לטאות"
-      ],
-      "correct": 3,
-      "explanation": "החרדון המצוי הוא לטאה ממשפחת החרדוניים, נפוצה על סלעים וקירות ברחבי הארץ. הזכר מתהדר בעונת הרבייה בצבעים עזים ומנענע בראשו.",
-      "tags": [
-        "זוחלים"
-      ],
-      "source": {
-        "title": "ויקיפדיה – חרדון מצוי",
-        "url": "https://he.wikipedia.org/wiki/חרדון_מצוי"
-      }
-    },
-    {
-      "id": "Q-zoology-007",
-      "level": 3,
-      "q": "לאיזה אזור הושבו הפראים (חמורי הבר) שגודלו בחי-בר יטבתה?",
-      "options": [
-        "הר הנגב באזור מכתש רמון",
-        "רמת הגולן",
-        "הרי הכרמל",
-        "בקעת החולה"
-      ],
-      "correct": 0,
-      "explanation": "הפרא הסורי נכחד, ופרטים מתת-מינים קרובים הובאו בשנות ה-60 ליטבתה. משנות ה-80 שוחררו פראים בהר הנגב, וכיום עדרים חופשיים נראים סביב מכתש רמון.",
-      "tags": [
-        "השבה לטבע",
-        "נגב"
-      ],
-      "source": {
-        "title": "Wanderlust – Rare animal spotted in the wild in Israel",
-        "url": "https://www.wanderlustmagazine.com/inspiration/rare-animal-spotted-in-wild-israel/"
-      }
-    },
-    {
-      "id": "Q-zoology-008",
-      "level": 3,
-      "q": "כמה ציפורים נודדות חולפות מעל ישראל בקירוב בכל עונת נדידה?",
-      "options": [
-        "כ-5 מיליון",
-        "כ-50 מיליון",
-        "כ-500 מיליון",
-        "כ-5 מיליארד"
+        "ראם לבן ופרא אסייתי",
+        "נמר מדבר ואריה אפריקאי",
+        "יחמור פרסי ואייל כרמל",
+        "יען מצוי וגמל חד־דבשתי"
       ],
       "correct": 2,
-      "explanation": "ישראל יושבת על צוואר הבקבוק בין אירופה, אסיה ואפריקה, וכחצי מיליארד ציפורים חולפות בה בכל עונה. מוקדי הצפייה: אגמון החולה, אילת וכפר רופין.",
+      "explanation": "הדפדפת מציינת את השבת היחמור ואייל הכרמל.",
       "tags": [
-        "נדידה",
-        "ציפורים"
+        "קורס מורי דרך",
+        "מאומת בדרייב"
       ],
       "source": {
-        "title": "Wikipedia – Hula Valley",
-        "url": "https://en.wikipedia.org/wiki/Hula_Valley"
-      }
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "herds from the breeding nuclei fostered at Hai-Bar Carmel have been reintroduced to the wild: the fallow deer in the Upper Galilee, the Jerusalem Mountains and the Carmel and the roe deer on Mount Horshan. The reintroduction of these two species in Israel is one of the country’s greatest conservation achievements. The connection of the Cretan goat",
+        "locator": "קטע במקור, תו 2854",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "fallow deer in the Upper Galilee"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-011",
+      "level": 1,
+      "q": "באיזה אזור החלה השבת היחמורים בשנת 1996 לפי הדפדפת?",
+      "options": [
+        "נחל צין",
+        "נחל פרת",
+        "נחל גרר",
+        "נחל כזיב"
+      ],
+      "correct": 3,
+      "explanation": "הדפדפת מתארת שחרור ראשון בנחל כזיב בשנת 1996.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "a large enough breeding nucleus was created, fallow deer were released to the wild, first in the Kziv Stream (1996) and then in the Sorek Stream and elsewhere. Persian fallow deer are very important in the Mediterranean ecosystem; as herbivores they can help reduce the spread of forest fires by grazing on the undergrowth. Roe deer:",
+        "locator": "קטע במקור, תו 9965",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "Kziv Stream (1996)"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-012",
+      "level": 1,
+      "q": "איזה אזור מצוין להשבת איילי כרמל?",
+      "options": [
+        "רמת הנדיב והר חורשן",
+        "הר הנגב ומכתש רמון",
+        "רמת הגולן ועמק הבכא",
+        "מדבר יהודה ונחל דרגה"
+      ],
+      "correct": 0,
+      "explanation": "איילי הכרמל שוחררו ברמת הנדיב ובהר חורשן.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "the animals can’t see them. The Israel Nature and Parks Authority has so far released roe deer at Ramat HaNadiv in the southern Carmel and on Mount Horshan, east of Zichron Ya‘akov. Cretan goat: The Cretan goat resembles the ibex that lives in the Judean Desert and the Negev. It was domesticated in antiquity and intentionally",
+        "locator": "קטע במקור, תו 10770",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "Ramat HaNadiv"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-013",
+      "level": 2,
+      "q": "מדוע פגרים מורעלים מסוכנים במיוחד לנשרים?",
+      "options": [
+        "כל נשר טורף נחש ארסי",
+        "נשרים רבים אוכלים מאותו פגר",
+        "הנשרים אוכלים רק גרעינים",
+        "הרעל עובר דרך נוצות בלבד"
+      ],
+      "correct": 1,
+      "explanation": "נשרים אוכלים פגרים ולעיתים מתקבצים רבים סביב אותו מקור מזון.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "illegal and have very serious consequences for the entire food chain. Vultures are flocking birds; dozens can sometimes be seen surrounding a single carcass, and so the potential damage to many individuals is high if the carcass is poisoned. Griffon vultures live in pairs; if one dies, the other cannot raise a chick on its own, sealing that",
+        "locator": "קטע במקור, תו 8398",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "dozens can sometimes be seen"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-014",
+      "level": 2,
+      "q": "מדוע שיקום אוכלוסיית נשרים הוא תהליך ממושך?",
+      "options": [
+        "הנשרים אינם מתרבים בשבי",
+        "הגוזלים עוזבים לפני בקיעה",
+        "הזוג מגדל גוזל יחיד בשנה",
+        "כל זוג מטיל עשרות ביצים"
+      ],
+      "correct": 2,
+      "explanation": "קצב הרבייה האיטי מגביל את מהירות שיקום האוכלוסייה.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "other cannot raise a chick on its own, sealing that offspring’s fate. Because this species raises only one chick a year, strengthening the population of Griffon vultures is a long process that requires many resources. The breeding enclosure at Hai-Bar Carmel produces a few chicks every year and they are released to the wild, increasing",
+        "locator": "קטע במקור, תו 8689",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "only one chick a year"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-015",
+      "level": 1,
+      "q": "איזו פעולה מסייעת לצמצם התחשמלות של דורסים?",
+      "options": [
+        "הגבהת גדרות מכלאה",
+        "האכלת דורסים בדגנים",
+        "העתקת כל העצים לנחלים",
+        "בידוד תשתיות חשמל"
+      ],
+      "correct": 3,
+      "explanation": "הדפדפת מונה בידוד חוטי מתח כאמצעי למניעת התחשמלות.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "of the project, as are efforts to preserve important habitats. Raptors are also being protected by insulation of high-tension wires to prevent electrocution, among other measures. The project has already chalked up some important achievements. Vultures are nesting on Mount Carmel and a pair of white-tailed sea eagles born at Hai-Bar Carmel is",
+        "locator": "קטע במקור, תו 592",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "insulation of high-tension wires"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-016",
+      "level": 2,
+      "q": "מדוע מציבים תיבות קינון לדורסי לילה בשדות?",
+      "options": [
+        "לצמצום מכרסמים והדברה כימית",
+        "להגדלת מספר המכרסמים",
+        "לשמירה על דגים בבריכות",
+        "להרחקת כל הציפורים מהשדה"
+      ],
+      "correct": 0,
+      "explanation": "הדורסים אוכלים מכרסמים וכך מסייעים להפחית שימוש בחומרי הדברה.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "nocturnal raptors have been placed in fields. The birds feed on rodents that damage crops, thus reducing the need for pesticides. Two types of large and impressive raptors – Griffon vultures and sea eagles – are on display at the Hai-Bar in all their glory. The Griffon vultures share their enclosure with Egyptian vultures. The sea eagle",
+        "locator": "קטע במקור, תו 13028",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "reducing the need for pesticides"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-017",
+      "level": 1,
+      "q": "איזה בית גידול מזוהה עם עיטם לבן־זנב בדפדפת?",
+      "options": [
+        "דיונות חול יבשות",
+        "שולי מקווי מים",
+        "מצוקי מדבר ללא מים",
+        "שדות לבה חשופים"
+      ],
+      "correct": 1,
+      "explanation": "הדפדפת מתארת את זיקת העיטם לגדות מקווי מים.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "with Egyptian vultures. The sea eagle enclosure: This bird’s name reveals its favorite habitat – on the banks of bodies of water. The white tail of this large bird is one of its most prominent identifying features. Sea eagles live in pairs; the female is larger than the male. They feed on fish and aquatic second fire (known as the Carmel",
+        "locator": "קטע במקור, תו 13329",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "on the banks of bodies of water"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-018",
+      "level": 1,
+      "q": "מהו תפקידה של תחנת האכלה לנשרים בחי־בר?",
+      "options": [
+        "אילוף הנשרים לשירות דואר",
+        "הפרדתם ממקורות מזון טבעיים",
+        "אספקת פגרים כמקור מזון",
+        "גידול מכרסמים למכירה"
+      ],
+      "correct": 2,
+      "explanation": "תחנת האכלה מספקת מזון לאוכלי הפגרים ומסייעת לשימורם.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "and farm animals. And so the Israel Nature and Parks Authority cooperates with cattle ranchers who give animal carcasses to the feeding station and thus help the vulture community to flourish on Mount Carmel. Israel in a special operation during the Islamic revolution in Iran (1978) on the last El Al plane to leave Iran. Four females from Iran and a male from",
+        "locator": "קטע במקור, תו 9500",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "give animal carcasses to the feeding station"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-019",
+      "level": 2,
+      "q": "למה מקפידים על שקט ליד מכלאות היונקים?",
+      "options": [
+        "רעש מונע נביטה של צמחים",
+        "רעש משנה את מליחות המים",
+        "רעש פוגע בעיטורי המכלאה",
+        "רעש עלול לגרום לבריחה ולפציעה"
+      ],
+      "correct": 3,
+      "explanation": "הדפדפת מזהירה שתנועת בריחה בעקבות רעש עלולה להסתיים בהתנגשות בגדר.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "sensitive to human activity. Loud noises can cause them to attempt to flee. If they do, they might collide with fences, leading to serious injuries or even death. 3. The trail at the Hai-Bar is a loop trail about 1.5 km long. The trails are paved and suitable for strollers. Visitor Trail Visitor Center This is the place to get",
+        "locator": "קטע במקור, תו 1154",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "collide with fences"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-020",
+      "level": 2,
+      "q": "מדוע אין כוונה לשחרר לטבע בארץ את כבש הבר הארמני לפי הדפדפת?",
+      "options": [
+        "לא ברור שהיה חלק מן החי המקומי",
+        "הוא אינו מסוגל לאכול צומח",
+        "אין אפשרות להחזיקו ברבייה",
+        "הוא חי רק במים עמוקים"
+      ],
+      "correct": 0,
+      "explanation": "הדפדפת מציינת שספק אם התקיים כאן בטבע, ולכן אינו מיועד להשבה.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "of the Cretan goat and the Armenian wild sheep to Israel’s natural world is less clear. They probably never lived in the wild in this country, and so the Israel Nature and Parks Authority does not intend to release these species to the wild. Welcome to Hai-Bar Carmel Large mammals and raptors are the most sensitive link in nature. Animals",
+        "locator": "קטע במקור, תו 3185",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "probably never lived in the wild"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-021",
+      "level": 1,
+      "q": "איזה מין מתואר בדפדפת כאייל קטן החי בדרך כלל ביחידות?",
+      "options": [
+        "יחמור פרסי",
+        "אייל כרמל",
+        "כבש בר ארמני",
+        "עז כרתית"
+      ],
+      "correct": 1,
+      "explanation": "אייל הכרמל מתואר כבעל חיים יחידאי ולא כמי שחי בעדרים.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "Roe deer: The roe deer became extinct in this country in 1912. This is a small deer, which lives in the woods on its own, not in herds. The breeding nucleus at the Hai-Bar was created from individuals brought from Hungary. It grew rapidly, in no small measure due its high natural rate of reproduction – females can produce twins and",
+        "locator": "קטע במקור, תו 10289",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "lives in the woods on its own"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-022",
+      "level": 1,
+      "q": "מהו הייעוד העיקרי של מכלאות הדורסים בחי־בר?",
+      "options": [
+        "הופעות לפני רבייה",
+        "ציד לפני מחקר",
+        "רבייה לפני תצוגה",
+        "מסחר לפני שימור"
+      ],
+      "correct": 2,
+      "explanation": "הדפדפת מדגישה שהמכלאות נועדו קודם כול לרבייה.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "for the sea eagle are globally engendered to some extent. The raptor enclosures are intended first and foremost for breeding and not for display. Thus, species that are sensitive to human proximity are not shown to the public, and are monitored by cameras at the Hai\u0002Bar. Generations of vultures, sea eagles, Bonelli’s eagles and Lanner",
+        "locator": "קטע במקור, תו 12361",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "first and foremost for breeding"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-023",
+      "level": 2,
+      "q": "מדוע מסתירים חלק מתצפיות המבקרים ליד איילי הכרמל?",
+      "options": [
+        "כדי לאפשר האכלה מידי כל מבקר",
+        "כדי להרגיל את האייל לכלבים",
+        "כדי לחסום את כל האור במכלאה",
+        "כדי לצמצם הפרעה לבעל חיים חששן"
+      ],
+      "correct": 3,
+      "explanation": "המחסות מאפשרים לצפות בלי לחשוף את בעלי החיים במישרין לקהל.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "high natural rate of reproduction – females can produce twins and sometimes triplets. Roe deer are particularly shy, and so the lookouts on their enclosures are built as blinds so visitors can see the animals but the animals can’t see them. The Israel Nature and Parks Authority has so far released roe deer at Ramat HaNadiv in the",
+        "locator": "קטע במקור, תו 10557",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "particularly shy"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-024",
+      "level": 1,
+      "q": "מהו הקשר בין רעיית אוכלי עשב לניהול סכנת שרפות לפי הדפדפת?",
+      "options": [
+        "צמצום הצומח בתת־היער",
+        "הגדלת כמות העלים היבשים",
+        "האצת הצטברות ענפים מתים",
+        "חסימת הנחלים בפני זרימה"
+      ],
+      "correct": 0,
+      "explanation": "רעייה מפחיתה צומח נמוך שעלול לשמש חומר בעירה.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "in the Mediterranean ecosystem; as herbivores they can help reduce the spread of forest fires by grazing on the undergrowth. Roe deer: The roe deer became extinct in this country in 1912. This is a small deer, which lives in the woods on its own, not in herds. The breeding nucleus at the Hai-Bar was created from individuals brought from",
+        "locator": "קטע במקור, תו 10164",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "grazing on the undergrowth"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
+    },
+    {
+      "id": "Q-zoology-025",
+      "level": 3,
+      "q": "איזה צירוף נכון בין מין לאזור השבה הנזכר בדפדפת?",
+      "options": [
+        "יחמור–הר חורשן, אייל כרמל–מכתש רמון",
+        "יחמור–נחל כזיב, אייל כרמל–הר חורשן",
+        "יחמור–נחל צין, אייל כרמל–נחל ערוגות",
+        "יחמור–נחל דרגה, אייל כרמל–הרי אילת"
+      ],
+      "correct": 1,
+      "explanation": "הדפדפת מציינת את נחל כזיב ליחמורים ואת הר חורשן לאיילי כרמל.",
+      "tags": [
+        "קורס מורי דרך",
+        "מאומת בדרייב"
+      ],
+      "source": {
+        "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel_ee084b.pdf",
+        "url": "https://drive.google.com/file/d/1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv/view",
+        "driveFileId": "1sUBDiixvBJgdtOqnz5ZMj0ghrvs-HVsv",
+        "quote": "herds from the breeding nuclei fostered at Hai-Bar Carmel have been reintroduced to the wild: the fallow deer in the Upper Galilee, the Jerusalem Mountains and the Carmel and the roe deer on Mount Horshan. The reintroduction of these two species in Israel is one of the country’s greatest conservation achievements. The connection of the Cretan goat",
+        "locator": "קטע במקור, תו 2854",
+        "verifiedAt": "2026-11-06",
+        "sourceDigest": "38a2167d928f6d6f17ceddc8f5d5758a3f02685864845afb3e101a960109620f",
+        "anchor": "fallow deer in the Upper Galilee"
+      },
+      "reviewedAt": "2026-11-06",
+      "reviewStatus": "drive-verified"
     }
   ]
 }

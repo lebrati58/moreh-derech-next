@@ -37,6 +37,15 @@
       if (o.some(x => /כל התשובות|אף תשובה|כל הנ״ל|כל הנ"ל/.test(String(x)))) errors.push(w + ' : « toutes les réponses » interdit');
       if (!q.explanation || norm(q.explanation).split(' ').length > 60) errors.push(w + ' : explication manquante ou trop longue');
       if (!q.source || !/^https?:\/\//.test(q.source.url || '')) errors.push(w + ' : source sans URL');
+      if (bank.evidencePolicy === 'drive-only') {
+        const s = q.source || {};
+        const m = /^https:\/\/(?:docs|drive)\.google\.com\/(?:document\/d|file\/d)\/([^/?#]+)/.exec(s.url || '');
+        if (!m || m[1] !== s.driveFileId) errors.push(w + ' : référence Drive incohérente');
+        if (!s.quote || !s.anchor || !s.quote.includes(s.anchor) || !s.locator || !s.verifiedAt || !/^[a-f0-9]{64}$/.test(s.sourceDigest || '')) errors.push(w + ' : preuve Drive manquante');
+        if (q.reviewStatus !== 'drive-verified' || !q.reviewedAt) errors.push(w + ' : relecture non validée');
+        const lengths = o.map(x => String(x).length);
+        if (lengths.length === 4 && Math.max(...lengths) > 2 * Math.min(...lengths) && Math.max(...lengths) - Math.min(...lengths) > 12) errors.push(w + ' : longueurs des choix déséquilibrées');
+      }
       const k = norm(q.q);
       if (stems.has(k)) errors.push(w + ' : même énoncé que ' + stems.get(k)); stems.set(k, q.id);
     });

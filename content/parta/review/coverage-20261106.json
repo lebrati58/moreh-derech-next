@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-06",
+  "previousCount": 217,
+  "retainedAndReviewed": 87,
+  "heldCount": 130,
+  "newCount": 358,
+  "activeCount": 445,
+  "topics": {
+    "admin": 18,
+    "archaeology": 19,
+    "architecture": 19,
+    "ayyubid_mamluk": 18,
+    "botany": 17,
+    "christianity": 18,
+    "crusader": 20,
+    "early_muslim": 24,
+    "figures": 19,
+    "first_temple": 28,
+    "geography": 19,
+    "geology": 20,
+    "holocaust": 3,
+    "islam": 26,
+    "israel": 17,
+    "judaism": 20,
+    "minorities": 22,
+    "ottoman_mandate": 17,
+    "prehistory": 18,
+    "roman_byzantine": 25,
+    "second_temple": 40,
+    "zoology": 18
+  },
+  "sourceCount": 30,
+  "limitations": [
+    "השואה: נמצאו רק מקורות קורס מצומצמים בנושא הנצחה; אין כאן כיסוי היסטורי מלא של התחום.",
+    "שאלות ללא ראיה מספקת הועברו להמתנה, לא נמחקו."
+  ]
+}

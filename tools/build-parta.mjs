@@ -17,7 +17,7 @@ for (const f of files) {
   const topic = d.topic || f.replace(/\.json$/, '');
   for (const q of d.questions || []) questions.push(Object.assign({ topic }, q, { topic }));
 }
-const bank = { v: 1, builtAt: new Date().toISOString().slice(0, 10), about: T.about, levels: T.levels,
+const bank = { v: 1, evidencePolicy: 'drive-only', builtAt: new Date().toISOString().slice(0, 10), about: T.about, levels: T.levels,
   topics: T.topics.map(t => Object.assign({}, t, { count: questions.filter(q => q.topic === t.id).length })), questions };
 const v = C.validate(bank);
 v.warnings.forEach(w => console.log('⚠️ ' + w));

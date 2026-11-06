@@ -44,15 +44,18 @@
     const app = $('app'); app.innerHTML = '<div class="card">טוען…</div>';
     try { await load(); } catch (e) { app.innerHTML = '<div class="card">לא ניתן לטעון את בנק השאלות.</div>'; return; }
     const st = P && P.partAStats ? P.partAStats() : { points: 0, known: [], mistakes: [], seen: [], status: () => 0 };
+    const active = new Set(BANK.questions.map(q => q.id));
+    st.known = st.known.filter(id => active.has(id));
+    st.mistakes = st.mistakes.filter(id => active.has(id));
     const total = BANK.questions.length, known = st.known.length;
     const groups = [...new Set(BANK.topics.map(t => t.group))];
     const topicBtn = t => {
       const qs = BANK.questions.filter(q => q.topic === t.id), k = qs.filter(q => st.status(q.id) === 1).length;
-      return `<button class="tp" data-topic="${t.id}" aria-pressed="${pref.topic === t.id}" ${qs.length ? '' : 'disabled'}><span class="e">${t.emoji}</span><span style="flex:1;min-width:0"><b>${esc(t.he)}</b><small>${qs.length ? `${k}/${qs.length} ידועות` : 'בקרוב'}</small>${qs.length ? `<span class="bar"><i style="width:${Math.round(100 * k / qs.length)}%"></i></span>` : ''}</span></button>`;
+      return `<button class="tp" data-topic="${t.id}" aria-pressed="${pref.topic === t.id}" ${qs.length ? '' : 'disabled'}><span class="e">${t.emoji}</span><span style="flex:1;min-width:0"><b>${esc(t.he)}</b><small>${qs.length ? `${k}/${qs.length} ידועות` : 'בקרוב'}</small>${t.coverageNote ? `<small>${esc(t.coverageNote)}</small>` : ''}${qs.length ? `<span class="bar"><i style="width:${Math.round(100 * k / qs.length)}%"></i></span>` : ''}</span></button>`;
     };
     app.innerHTML = `
       <section class="hero"><div class="eyebrow">הכנה למבחן · חלק א׳</div><h1>🎓 מבחן חלק א׳ — לפי נושאים</h1>
-        <p>שאלות אמריקאיות בנושאי הבחינה, עם הסבר ומקור אחרי כל תשובה. 10 שאלות בכל סבב.</p>
+        <p>שאלות אמריקאיות בנושאי הבחינה, עם הסבר וקטע מאומת ממסמכי הקורס אחרי כל תשובה. עד 10 שאלות בסבב.</p>
         <div class="stats"><span>📚 ${total} שאלות</span><span>✅ ${known} ידועות</span><span>🏆 ${st.points.toLocaleString('he-IL')} נק׳</span>${st.mistakes.length ? `<span>🔁 ${st.mistakes.length} לתיקון</span>` : ''}</div></section>
       <section class="card"><h2>⚡ רמת קושי</h2>
         <div class="levels" role="group">${[[0, '🎲 הכול'], [1, '🌱 קל'], [2, '⭐ בינוני'], [3, '🔥 קשה']].map(([l, t]) => `<button data-level="${l}" aria-pressed="${pref.level === l}">${t}</button>`).join('')}</div></section>
@@ -128,6 +131,7 @@
     const p = C.points(ok, ms, it.level, streak);
     $('expl').innerHTML = `<div class="expl ${ok ? 'ok' : 'bad'}"><b>${ok ? '✅ נכון!' : k === -1 ? '⏰ נגמר הזמן' : '❌ לא נכון'}</b> ${ok ? `<span class="pts">+${p}</span>` : `— התשובה: <b>${esc(it.options[it.correct])}</b>`}<br>${esc(it.explanation)}${illustrationHTML(it)}
       ${it.source && it.source.url ? `<br><a href="${esc(it.source.url)}" target="_blank" rel="noopener">📚 ${esc(it.source.title || 'מקור')}</a>` : ''}
+      ${it.source && it.source.quote ? `<details class="source-evidence"><summary>📖 הקטע בקורס שמבסס את התשובה</summary><blockquote dir="auto">${esc(it.source.quote)}</blockquote><small>נבדק מול מסמך הקורס: ${esc(it.source.verifiedAt || '')}</small></details>` : ''}
       ${it.tags.length ? `<div class="tags">${it.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}</div>`;
     if (!restored) { say(ok ? 'נכון' : 'לא נכון'); if (navigator.vibrate && !ok) try { navigator.vibrate(80); } catch (e) {} }
     $('next').hidden = false; $('next').textContent = run.i + 1 >= run.items.length ? '🏁 לתוצאה' : 'הבא ⏭️';
