@@ -74,11 +74,19 @@ for (const vp of [{ width: 360, height: 780, mobile: true }, { width: 1280, heig
   await noHScroll('révision');
   await shot('3-review');
 
-  // préparation d'un sujet à travers le répertoire
+  // préparation : le sujet d'abord, la réponse ensuite
   await page.goto(base + 'exam.html#/rep/m/ng2');
   await page.waitForSelector('.brief h1');
   ok(/מלחמה, מים/.test(await page.textContent('.brief h1')), `${tag} préparation : sujet ng2 ouvert`);
-  ok(/תל באר שבע/.test(await page.textContent('#app')), `${tag} préparation : l'unité « מים » montre le site du répertoire`);
+  ok(!/בחומר הקורס:/.test(await page.textContent('#app')), `${tag} préparation : aucune réponse visible avant d'essayer`);
+  await page.click('[data-reveal="d"]');
+  ok(!/בחומר הקורס:/.test(await page.textContent('#app')), `${tag} préparation : impossible de révéler sans avoir écrit un site`);
+  await page.fill('[data-guess="d"]', 'תל שבע');
+  await page.click('[data-reveal="d"]');
+  await page.waitForFunction(() => /בחומר הקורס:/.test(document.body.textContent));
+  const txt4 = await page.textContent('#app');
+  ok(/«תל שבע» ✔/.test(txt4), `${tag} préparation : « תל שבע » reconnu comme Tel Beer Sheva ✔`);
+  ok(/ברפרטואר שלכם: תל באר שבע/.test(txt4), `${tag} préparation : rappel du site du répertoire après coup`);
   await shot('4-prep');
 
   // verrouiller un sujet jusqu'à maîtrise
@@ -89,7 +97,29 @@ for (const vp of [{ width: 360, height: 780, mobile: true }, { width: 1280, heig
   await page.waitForFunction(() => /מתחלף כל יום/.test(document.body.textContent));
   ok(true, `${tag} accueil : déverrouillage`);
 
+  // conditions réelles : nom du site écrit de mémoire, carte sans points, reconnaissance à la remise
+  await page.evaluate(() => { const k = 'mdl_exam_v1', s = JSON.parse(localStorage.getItem(k)); delete (s.exams || {}).ng2; localStorage.setItem(k, JSON.stringify(s)); });
+  await page.goto(base + 'exam.html#/'); await page.reload(); await page.waitForSelector('.hero');
+  await page.goto(base + 'exam.html#/m/ng2/exam');
+  await page.waitForSelector('#realChk');
+  ok(await page.isChecked('#realChk'), `${tag} examen blanc : « conditions réelles » coché par défaut`);
+  await page.click('#go');
+  await page.waitForSelector('#bareMap');
+  ok(!(await page.$('#sugg')) && !(await page.$('.pr select[data-k="site"]')), `${tag} conditions réelles : ni suggestion d'itinéraire ni liste de sites dans le לו״ז`);
+  await page.click('.xtabs [data-t="ud"]');
+  await page.waitForSelector('[data-f="siteText"]');
+  ok(!(await page.$('select[data-f="site"]')), `${tag} conditions réelles : le site s'écrit, il ne se choisit pas dans une liste`);
+  await page.fill('[data-f="siteText"]', 'מפעל המים בתל שבע');
+  await page.fill('[data-f="text"]', 'חברים, אנחנו בתל באר שבע. מפעל המים אסף את מי השיטפונות מנחל חברון.');
+  await page.click('#sub');
+  await page.waitForSelector('.score .big');
+  await page.$$eval('details.part', ds => ds.forEach(d => { d.open = true; }));
+  ok(/זוהה: <b>תל באר שבע<\/b>/.test(await page.innerHTML('#app')), `${tag} correction : « מפעל המים בתל שבע » reconnu (תל באר שבע)`);
+  await shot('6-real-result');
+
   // chrono par unité dans l'examen blanc
+  await page.evaluate(() => { const k = 'mdl_exam_v1', s = JSON.parse(localStorage.getItem(k)); delete (s.exams || {}).ng2; localStorage.setItem(k, JSON.stringify(s)); });
+  await page.goto(base + 'exam.html#/'); await page.reload(); await page.waitForSelector('.hero');
   await page.goto(base + 'exam.html#/m/ng2/exam');
   const start = await page.$('#go, #start, button.btn');
   if (start) { await page.evaluate(() => { const b = [...document.querySelectorAll('button')].find(x => /להתחיל|Commencer/.test(x.textContent)); if (b) b.click(); }); }

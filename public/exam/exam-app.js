@@ -259,7 +259,7 @@
     const long = o.kind === 'long';
     const opt = id => `<option value="${id}" ${u.site === id ? 'selected' : ''}>${esc(P[id].short)}</option>`;
     box.innerHTML = `<div class="ed">
-      ${o.fixedSite ? `<p class="edsite">📍 <b>${esc(P[o.fixedSite].he)}</b></p>` : `<label>האתר<select data-f="site"><option value="">— בחירה —</option>${o.siteChoices.map(opt).join('')}</select></label>`}
+      ${o.fixedSite ? `<p class="edsite">📍 <b>${esc(P[o.fixedSite].he)}</b></p>` : o.freeSite ? `<label>האתר — מהזיכרון, כמו במבחן<input data-f="siteText" value="${esc(u.siteText)}" placeholder="למשל: תל באר שבע — השער" autocomplete="off"></label>` : `<label>האתר<select data-f="site"><option value="">— בחירה —</option>${o.siteChoices.map(opt).join('')}</select></label>`}
       ${long ? `<label>הנושא<input data-f="topic" value="${esc(u.topic)}" placeholder="למשל: בית הכנסת והמעיין"></label>` : ''}
       <label>${long ? 'מיקום מדויק' : 'הנקודה'} — היכן המדריך והיכן המודרכים<input data-f="place" value="${esc(u.place)}" placeholder="${long ? '1) … 2) … 3) …' : 'למשל: ברחבה מול החזית, הקבוצה בחצי גורן'}"></label>
       <div class="row2"><label>משך ההדרכה (דק׳)<input data-f="minutes" type="number" inputmode="numeric" min="0" max="240" value="${esc(u.minutes)}"></label>
@@ -505,7 +505,7 @@
       <div class="prh"><span class="prn">${i + 1}</span>${timeButton('start:' + i, r.start, 'שעת התחלה')}<span class="arr">←</span>${timeButton('end:' + i, r.end, 'שעת סיום')}<span class="dur">${dur}</span><button type="button" class="del" data-del="${i}" aria-label="מחיקה">🗑️</button></div>
       <input aria-label="פירוט המסלול" data-k="what" value="${esc(r.what)}" placeholder="מה עושים: נסיעה / הדרכה / ארוחה…">
       <input aria-label="תיאומים ומנהלות" data-k="log" value="${esc(r.log)}" placeholder="תיאומים ומנהלות: תשלום, שירותים, תיאום…">
-      <select aria-label="אתר" data-k="site"><option value="">📍 אתר (אם זו הדרכה באתר)</option>${sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select></div>`;
+      ${sites ? `<select aria-label="אתר" data-k="site"><option value="">📍 אתר (אם זו הדרכה באתר)</option>${sites.map(s => `<option value="${s.id}" ${r.site === s.id ? 'selected' : ''}>${esc(s.short)}</option>`).join('')}</select>` : ''}</div>`;
   }
   // Infos pour construire le programme : sites choisis à l'étape 1 (heures, toilettes, parking) + trajets à vérifier.
   // Ordre des visites (modifiable avec ▲ ▼) : D.order, complété par les sites choisis à l'étape 1.
@@ -660,6 +660,25 @@
 
   // ===== MODE 3 : examen blanc =====
   let tick = null;
+  // 🎯 Conditions réelles : à la remise seulement, on reconnaît les lieux écrits de mémoire (unités et lignes du לו״ז).
+  function recognize(E, m, slots) {
+    const sites = DATA.sites, roads = DATA.roads || [];
+    slots.forEach(sl => { const u = E.units[sl.id]; if (!u) return; const road = (sl.need || []).includes('road'); u.site = R.matchPlace(u.siteText, road ? roads : sites) || R.matchPlace(u.siteText, road ? sites : roads) || ''; });
+    if (E.long) E.long.site = R.matchPlace(E.long.siteText, sites) || '';
+    (E.plan || []).forEach(r => { r.site = R.matchPlace(r.what, sites) || ''; });
+  }
+  // La carte de l'examen : fond de carte seul (villes, routes, relief), échelle, AUCUN point du cours.
+  function bareMap(el) {
+    el.innerHTML = '<div class="mapwrap"><div class="map" role="application" aria-label="מפה"></div><div class="maplegend">🗺️ כמו המפה המודפסת: ערים וכבישים, בלי נקודות הקורס · 1 ס״מ במפה 1:250,000 = 2.5 ק״מ</div></div>';
+    const holder = $('.map', el);
+    loadMapLibre().then(ml => {
+      const bb = DATA.sites.concat(DATA.anchors || []);
+      const map = new ml.Map({ container: holder, style: 'https://tiles.openfreemap.org/styles/liberty', bounds: [[Math.min(...bb.map(p => p.lon)) - .15, Math.min(...bb.map(p => p.lat)) - .1], [Math.max(...bb.map(p => p.lon)) + .15, Math.max(...bb.map(p => p.lat)) + .1]], attributionControl: { compact: true } });
+      map.addControl(new ml.NavigationControl({ showCompass: false }), 'top-left');
+      map.addControl(new ml.ScaleControl({ maxWidth: 120, unit: 'metric' }), 'bottom-left');
+      map.on('error', () => {});
+    }).catch(() => { holder.innerHTML = '<p class="panel">המפה לא נטענה (אין חיבור). השתמשו במפה המודפסת — כמו במבחן.</p>'; });
+  }
   function viewExam(m) {
     const E = S.exams[m.id];
     if (!E || E.done) return examSetup(m, E);
@@ -667,11 +686,13 @@
     const left = () => Math.max(0, E.startedAt + E.minutes * 60000 - Date.now());
     const tabs = [['plan', 'תוכנית']].concat(slots.map((s, i) => ['u' + s.id, String(i + 1)])).concat([['long', 'מורחבת']]);
     const cur = E.tab || 'plan';
-    shell(`<section class="brief exam"><div class="timer" id="tmr" aria-live="off"><span class="hg">⏳</span><b id="tm"></b></div><h1>⏱️ ${esc(m.he)}</h1><p>${esc(m.brief)} ${esc(model.day.he)}</p><p class="muted">${esc(model.he)} · ללא עזרה</p>
+    shell(`<section class="brief exam"><div class="timer" id="tmr" aria-live="off"><span class="hg">⏳</span><b id="tm"></b></div><h1>⏱️ ${esc(m.he)}</h1><p>${esc(m.brief)} ${esc(model.day.he)}</p><p class="muted">${esc(model.he)} · ללא עזרה${E.real ? ' · 🎯 תנאים אמיתיים' : ''}</p>
       <p class="pace" id="pace" aria-live="off"></p>
+      ${E.real ? '<button type="button" class="btn ghost" id="bareMap">🗺️ המפה (בלי נקודות הקורס)</button><div id="bareBox" hidden></div>' : ''}
       <nav class="xtabs">${tabs.map(([k, l]) => `<button type="button" data-t="${k}" class="${cur === k ? 'on' : ''}">${l}</button>`).join('')}</nav></section><div id="xb"></div>
       <div class="acts"><button type="button" class="btn" id="sub">📝 ${t('submit')}</button></div>`, { back: '#/' });
     const body = $('#xb');
+    const bm = $('#bareMap'); if (bm) bm.addEventListener('click', () => { const box = $('#bareBox'); box.hidden = !box.hidden; if (!box.hidden && !box.firstChild) bareMap(box); });
     const showT = () => { const ms = left(), mm = Math.floor(ms / 60000), ss = Math.floor(ms / 1000) % 60; $('#tm').textContent = `${Math.floor(mm / 60)}:${String(mm % 60).padStart(2, '0')}:${String(ss).padStart(2, '0')}`; $('#tmr').classList.toggle('low', ms < 10 * 60000); showPace(); if (!ms) submit(true); };
     const showPace = () => { const el = $('#pace'); if (!el) return; const el2 = (Date.now() - E.startedAt) / 60000, pc = R.pace(E.minutes, el2, slots.length); el.innerHTML = `⏱️ עכשיו: <b>${esc(pc.part.he)}</b> · עוד ${pc.left} דק׳ לשלב · <span class="muted">${pc.parts.filter(x => x.id !== 'review').map(x => `${esc(x.he)} ${x.min}′`).join(' · ')}</span>`; };
     clearInterval(tick); tick = setInterval(() => { if (!document.getElementById('tm')) return clearInterval(tick); showT(); }, 1000); showT();
@@ -681,8 +702,8 @@
       // éditeur de programme sans aide
       const draw = () => {
         const chosen = [...new Set(Object.values(E.units).map(u => u.site).concat([E.long.site]).filter(id => id && P[id] && P[id].type === 'site'))];
-        body.innerHTML = `${chosen.length ? `<div class="panel sugg"><b>🧭 מסלול הגיוני</b><p class="muted">לפי האתרים שבחרתם ביחידות (${chosen.length}): סדר לפי קרבה מ${esc((DATA.anchors || [{}])[0].he || 'נקודת המפגש')}. השעות — שלכם.</p><button type="button" class="btn" id="sugg">📋 למלא את הלוח בסדר המוצע</button></div>` : '<p class="muted">בחרו אתרים ביחידות הקצרות והמורחבת — ואז האפליקציה תציע כאן את סדר המסלול ההגיוני.</p>'}
-          <div class="plan">${E.plan.map((r, i) => planRow(r, i, DATA.sites)).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
+        body.innerHTML = `${E.real ? '<p class="muted">🎯 תנאים אמיתיים: הסדר, זמני הנסיעה והשעות — שלכם, לפי המפה. כתבו בכל שורה מה עושים ואיפה.</p>' : chosen.length ? `<div class="panel sugg"><b>🧭 מסלול הגיוני</b><p class="muted">לפי האתרים שבחרתם ביחידות (${chosen.length}): סדר לפי קרבה מ${esc((DATA.anchors || [{}])[0].he || 'נקודת המפגש')}. השעות — שלכם.</p><button type="button" class="btn" id="sugg">📋 למלא את הלוח בסדר המוצע</button></div>` : '<p class="muted">בחרו אתרים ביחידות הקצרות והמורחבת — ואז האפליקציה תציע כאן את סדר המסלול ההגיוני.</p>'}
+          <div class="plan">${E.plan.map((r, i) => planRow(r, i, E.real ? null : DATA.sites)).join('')}</div><div class="acts"><button type="button" class="btn ghost" id="add">➕ שורה</button></div>`;
         const sg = $('#sugg', body); if (sg) sg.addEventListener('click', () => {
           const filled = E.plan.filter(r => r.what && !/^מפגש/.test(r.what)).length;
           if (filled && !confirm('להחליף את הלוח הנוכחי בסדר המוצע?')) return;
@@ -699,16 +720,17 @@
       draw(); void D;
     } else if (cur === 'long') {
       body.innerHTML = `<p class="lead"><b>${esc(m.long.he)}</b></p><div id="ed"></div>`;
-      editor($('#ed', body), E.long, { kind: 'long', siteChoices: DATA.sites.map(s => s.id), onChange: save });
+      editor($('#ed', body), E.long, { kind: 'long', freeSite: E.real, siteChoices: DATA.sites.map(s => s.id), onChange: save });
     } else {
       const s = slots.find(x => 'u' + x.id === cur), u = E.units[s.id] || (E.units[s.id] = {});
       body.innerHTML = `<p class="lead"><b>${esc(s.he)}</b></p><div id="ed"></div>`;
-      editor($('#ed', body), u, { kind: 'short', siteChoices: placeChoices(), onChange: save });
+      editor($('#ed', body), u, { kind: 'short', freeSite: E.real, siteChoices: placeChoices(), onChange: save });
     }
     $('#sub').addEventListener('click', () => submit(false));
     function submit(auto) {
       if (!auto && !confirm('להגיש את המבחן?')) return;
       clearInterval(tick);
+      if (E.real) recognize(E, m, slots);
       const res = C.scoreExam(E, model, m, DATA);
       E.done = true; E.result = res; E.finishedAt = Date.now(); save();
       res.parts.forEach(p => p.res.items.forEach(x => { if (!x.ok) noteErr(x.cat); }));
@@ -722,13 +744,15 @@
     shell(missionHead(m, 'exam') + `<section class="panel"><h3>⏱️ ${t('exam')}</h3><p>תוכנית יום, יחידות קצרות ויחידה מורחבת. בלי רמזים ובלי תשובות לדוגמה. בסוף — תיקון מפורט, ציון ומקורות.</p>
       ${MODELS.examRules ? `<h4>📋 כללי המבחן</h4><ul class="tips">${MODELS.examRules.tips.map(x => `<li>${esc(x)}</li>`).join('')}</ul><p class="muted">מקור: ${esc(MODELS.examRules.source.title)}</p>` : ''}
       <label class="fl">מודל<select id="mdlSel">${Object.entries(MODELS.models).map(([k, v]) => `<option value="${k}" ${k === MODELS.default ? 'selected' : ''}>${esc(v.he)}</option>`).join('')}</select></label>
+      <label class="chk"><input type="checkbox" id="realChk" checked> 🎯 <b>תנאי מבחן אמיתיים</b> — שם האתר נכתב מהזיכרון, אין הצעת מסלול ואין רשימת אתרים. רק מפה בלי נקודות הקורס, כמו המפה המודפסת 1:250,000.</label>
       <label class="fl">זמן<select id="durSel"><option value="180">3 שעות — כמו במבחן</option><option value="90">90 דקות — תרגול</option><option value="45">45 דקות — קצר</option></select></label>
       <p class="muted">${t('indicative')}</p><div class="acts"><button type="button" class="btn" id="go">▶ ${t('start')}</button>${prev && prev.done ? `<a class="btn ghost" href="#/m/${m.id}/result">📊 התוצאה הקודמת</a>` : ''}</div></section>`, { back: '#/' });
     $('#go').addEventListener('click', () => {
-      S.exams[m.id] = { model: $('#mdlSel').value, minutes: +$('#durSel').value, startedAt: Date.now(), plan: [], units: {}, long: {}, tab: 'plan' }; save();
+      S.exams[m.id] = { model: $('#mdlSel').value, minutes: +$('#durSel').value, real: $('#realChk').checked, startedAt: Date.now(), plan: [], units: {}, long: {}, tab: 'plan' }; save();
       viewExam(m);
     });
   }
+  const recogLine = u => !u ? '' : `<p class="recog">✍️ כתבתם: «${esc(u.siteText || '—')}» → ${u.site && P[u.site] ? `זוהה: <b>${esc(P[u.site].short)}</b>` : '⚠️ לא זוהה אתר מהחומר — בדקו את השם'}</p>`;
   function viewResult(m) {
     const E = S.exams[m.id];
     if (!E || !E.result) { location.hash = `#/m/${m.id}/exam`; return; }
@@ -737,7 +761,7 @@
     const slots = C.examSlots(m, model);
     const modelFor = p => { if (p.id === 'long') return C.modelFor(DATA, m.long.best, m.long.need, true); const sl = p.slot && m.slots.find(s => s.id === p.slot); return sl ? C.modelFor(DATA, sl.best, sl.need) : null; };
     shell(missionHead(m, 'exam') + `<section class="score"><div class="big"><bdi dir="ltr">${r.total ? `${r.got} / ${r.max}` : `${r.pct}%`}</bdi></div><p>${r.total ? r.pct + '% · ' : ''}${esc(model.he)}</p><p class="muted">⚠️ ${t('indicative')}${model.pointsNote ? ' ' + esc(model.pointsNote) : ''}</p></section>
-      ${r.parts.map(p => { const mo = modelFor(p); return `<details class="panel part"><summary><b>${esc(p.he)}</b><bdi dir="ltr">${p.got} / ${p.max}</bdi></summary>${checklist(p.res, true)}${mo ? `<details class="mo"><summary>👀 ${t('model')}</summary><p class="meta">📍 ${esc(mo.place)} · 🧰 ${esc(mo.method)}</p><div class="mtext"><p>${esc(mo.text).replace(/\n\n/g, '</p><p>')}</p></div><div class="srcs">${(mo.src || []).map(k => srcLink(k)).join('')}</div></details>` : ''}</details>`; }).join('')}
+      ${r.parts.map(p => { const mo = modelFor(p); return `<details class="panel part"><summary><b>${esc(p.he)}</b><bdi dir="ltr">${p.got} / ${p.max}</bdi></summary>${E.real ? recogLine(p.id === 'long' ? E.long : p.slot ? E.units[p.slot] : null) : ''}${checklist(p.res, true)}${mo ? `<details class="mo"><summary>👀 ${t('model')}</summary><p class="meta">📍 ${esc(mo.place)} · 🧰 ${esc(mo.method)}</p><div class="mtext"><p>${esc(mo.text).replace(/\n\n/g, '</p><p>')}</p></div><div class="srcs">${(mo.src || []).map(k => srcLink(k)).join('')}</div></details>` : ''}</details>`; }).join('')}
       <div class="acts"><button type="button" class="btn" id="again">↺ סימולציה חדשה</button><a class="btn ghost" href="#/m/${m.id}/guided">🧭 ${t('guided')}</a></div>
       <p class="foot">${t('sources')}: ${MODELS.models.school5.sources.map(s => `<a href="https://drive.google.com/open?id=${esc(s.id)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</p>`, { back: '#/' });
     $('#again').addEventListener('click', () => { delete S.exams[m.id]; save(); location.hash = `#/m/${m.id}/exam`; viewExam(m); });
@@ -829,7 +853,7 @@
       <section class="panel ed"><h3>3. היחידה שלי (עד 180 מילים)</h3>
         <textarea id="rText" rows="10" dir="rtl" placeholder="פתיחה — מה רואים — סיום ושאלה לקבוצה">${esc(k.text || '')}</textarea>
         <p id="rWc"></p>
-        <div class="acts"><button type="button" class="btn" id="rSave">💾 לשמור את היחידה</button>${mo ? '<button type="button" class="btn ghost" id="rModel">👀 תשובה לדוגמה</button>' : ''}</div>
+        <div class="acts"><button type="button" class="btn" id="rSave">💾 לשמור את היחידה</button>${mo && k.text ? '<button type="button" class="btn ghost" id="rModel">👀 תשובה לדוגמה</button>' : ''}</div>${mo && !k.text ? '<p class="muted">👀 התשובה לדוגמה תיפתח אחרי שתשמרו גרסה ראשונה משלכם — קודם מנסים לבד.</p>' : ''}
         <div id="rMo" hidden>${mo ? `<p class="meta">📍 ${esc(mo.place)} · 🧰 ${esc(mo.method)}</p><div class="mtext"><p>${esc(mo.text)}</p></div><div class="srcs">${(mo.src || []).map(s => srcLink(s)).join('')}</div>` : ''}</div>
         ${k.text ? `<p class="muted">חזרה הבאה: ${esc(dueText(k))} · שלב ${k.step || 0}/${R.STEPS.length}</p>` : ''}</section>` : ''}
       <div class="acts"><a class="btn ghost" href="#/rep">↩ לכל הרפרטואר</a></div>`, { back: '#/rep' });
@@ -860,6 +884,8 @@
     const now = Date.now(), list = R.dueList(REP(), now);
     if (!list.length) { shell(`<section class="brief"><div class="eyebrow">📚 חזרה</div><h1>✨ אין חזרות היום</h1><p>כל היחידות שלכם מתוזמנות לימים הבאים.</p><div class="acts"><a class="btn" href="#/rep">לרפרטואר</a></div></section>`, { back: '#/rep' }); return; }
     const k = list[0], c = REP().cards[k], cat = R.CAT[c.cat] || { emoji: '', he: c.cat };
+    if (c.region && c.region !== DATA.region && regionById(c.region)) return loadRegion(c.region).then(viewReview);
+    const site = P[c.site];
     shell(`<section class="brief"><div class="eyebrow">🔔 חזרה ${1} מתוך ${list.length} · ${esc(c.regionHe || '')}</div><h1>${cat.emoji} ${esc(cat.he)}: ${esc(c.siteName)}</h1>
       <p>כתבו מהזיכרון את היחידה שלכם, בלי להציץ. אחר כך נשווה למה שכתבתם בפעם הקודמת.</p></section>
       <section class="panel ed"><textarea id="vText" rows="10" dir="rtl" placeholder="מהזיכרון…"></textarea><p id="vWc"></p>
@@ -869,13 +895,16 @@
     ta.addEventListener('input', wc); wc();
     $('#vCheck').addEventListener('click', () => {
       if (!ta.value.trim()) return toast('כתבו קודם מהזיכרון');
-      const r = R.compare(c.text, ta.value), next = R.schedule(c, r.pct, Date.now());
+      const r = R.compare(c.text, ta.value), next = R.schedule(c, r.pct, Date.now()), fc = site ? R.factCoverage(site.facts, ta.value) : null;
       REP().cards[k] = next; save();
       gain(r.pct >= R.PASS ? 10 : 3);
       if (next.step >= R.MASTER && (c.step || 0) < R.MASTER) celebrate('🟢 שולטים ביחידה: ' + c.siteName);
       $('#vCheck').disabled = true; ta.readOnly = true;
       $('#vOut').innerHTML = `<section class="score"><div class="big"><bdi dir="ltr">${r.pct}%</bdi></div><p>${r.pct >= R.PASS ? '✔ עברתם — החזרה הבאה ' : '↺ נחזור על זה '}${esc(dueText(next))}</p><p class="muted">אחוז מילות המפתח מהיחידה שלכם שחזרו בכתיבה מהזיכרון (${r.found.length}/${r.total}). הערכה טכנית בלבד.</p></section>
-        ${r.missed.length ? `<section class="panel"><h3>❓ מה נשכח</h3><p class="miss">${r.missed.slice(0, 40).map(w => `<span class="chip">${esc(w)}</span>`).join(' ')}</p></section>` : ''}
+        ${fc ? `<section class="panel"><h3>📚 מול חומר הקורס</h3><p>הזכרתם <b>${fc.covered.length}</b> מתוך ${fc.covered.length + fc.missed.length} עובדות על ${esc(site.short)}.</p>
+          ${fc.stray.length ? `<p class="conf">⚠️ מספרים שלא מופיעים בחומר הקורס: ${fc.stray.map(esc).join(', ')} — במבחן לא כותבים מה שלא בטוחים בו.</p>` : ''}
+          ${fc.missed.length ? `<details><summary>עובדות שלא הזכרתם (${fc.missed.length}) — זווית אחרת לפעם הבאה</summary>${factList(fc.missed.slice(0, 8))}</details>` : ''}</section>` : ''}
+        ${r.missed.length ? `<section class="panel"><h3>❓ מה נשכח מהיחידה שלכם</h3><p class="miss">${r.missed.slice(0, 40).map(w => `<span class="chip">${esc(w)}</span>`).join(' ')}</p></section>` : ''}
         <details class="panel"><summary><b>📄 היחידה המקורית שלכם</b></summary><div class="mtext"><p>${esc(c.text)}</p></div></details>
         <div class="acts"><button type="button" class="btn" id="vNext">${list.length > 1 ? '➡️ ' + t('next') : '✔ סיום'}</button><button type="button" class="btn ghost" id="vKeep">✍️ לעדכן את היחידה שלי בגרסה הזו</button></div>`;
       $('#vNext').addEventListener('click', () => (list.length > 1 ? viewReview() : (location.hash = '#/rep')));
@@ -886,15 +915,34 @@
   // Un sujet d'examen vu à travers le répertoire
   function viewRepMission(m) {
     const now = Date.now(), units = R.missionPrep(m, REP(), DATA.region, now);
-    const seen = {}; units.forEach(u => { if (u.cat) seen[u.cat] = (seen[u.cat] || 0) + 1; });
-    const ready = units.filter(u => u.card && u.card.text).length;
-    shell(`<section class="brief"><div class="eyebrow">🎯 הכנה מהרפרטואר · ${esc(DATA.he)}</div><h1>${esc(m.he)}</h1><p>${esc(m.brief)}</p>
-      <p><b>${ready}/${units.length}</b> יחידות כבר כתובות ברפרטואר שלכם.</p></section>
-      ${units.map((u, i) => { const c = R.CAT[u.cat], [ic, lab] = STATE_HE[u.state]; return `<section class="panel"><h3>${u.long ? '📜' : i + 1 + '.'} ${esc(u.he)}</h3>
-        <p>${c ? `${c.emoji} ${esc(c.he)} · ` : ''}${u.card && u.card.site ? `האתר שלכם: <b>${esc(u.card.siteName)}</b> · ${ic} ${esc(lab)}` : '⚪ אין עדיין אתר ברפרטואר'}</p>
-        ${seen[u.cat] > 1 ? '<p class="muted">⚠️ כמה יחידות באותו סוג: אפשר נקודה אחרת באותו אתר, או להכין אתר שני.</p>' : ''}
-        ${c ? `<a class="btn ghost" href="#/rep/c/${u.cat}">${u.card && u.card.text ? '✍️ לפתוח את היחידה' : '➕ לבחור ולכתוב'}</a>` : ''}</section>`; }).join('')}
-      <div class="acts"><a class="btn" href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a><a class="btn ghost" href="#/focus/${m.id}">📌 לנעול עד שליטה</a></div>`, { back: '#/rep' });
+    const G = (REP().guess || (REP().guess = {}))[m.id] || (REP().guess[m.id] = {});
+    const shown = units.filter(u => G[u.id] && G[u.id].shown).length;
+    const pool = u => (u.need || []).includes('road') ? (DATA.roads || []) : DATA.sites;
+    const answerOf = u => u.long ? m.long : m.slots.find(s => s.id === u.id);
+    const card = (u, i) => {
+      const g = G[u.id] || {}, c = R.CAT[u.cat], [ic, lab] = STATE_HE[u.state], a = answerOf(u) || {};
+      const head = `<h3>${u.long ? '📜' : i + 1 + '.'} ${esc(u.he)}</h3>`;
+      if (!g.shown) return `<section class="panel">${head}<label class="fl">איזה אתר תבחרו? (מהזיכרון)<input data-guess="${u.id}" value="${esc(g.text || '')}" placeholder="שם האתר" autocomplete="off"></label><button type="button" class="btn ghost" data-reveal="${u.id}">👀 לגלות</button></section>`;
+      const mine = R.matchPlace(g.text, pool(u)), ok = mine && (mine === a.best || (a.alt || []).includes(mine) || (P[mine] && R.fitsCat(P[mine], u.cat)));
+      const names = [a.best].concat(a.alt || []).filter(id => id && P[id]).map(id => P[id].short);
+      return `<section class="panel">${head}
+        <p>✍️ בחרתם: «${esc(g.text || '—')}» ${mine ? (ok ? '✔' : '— ⚠️ לא בטוח שמתאים לניסוח') : '— ⚠️ לא זוהה אתר מהחומר'}</p>
+        <p>📚 בחומר הקורס: ${names.length ? names.map(esc).join(' / ') : 'אין אתר מתאים בחומר'}</p>
+        ${a.why ? `<p class="muted">${esc(a.why)}</p>` : ''}
+        <p>${c ? `${c.emoji} ${esc(c.he)} · ` : ''}${u.card && u.card.site ? `ברפרטואר שלכם: <b>${esc(u.card.siteName)}</b> · ${ic} ${esc(lab)}` : '⚪ אין עדיין אתר ברפרטואר לסוג הזה'}</p>
+        ${c ? `<a class="btn ghost" href="#/rep/c/${u.cat}">${u.card && u.card.text ? '✍️ לפתוח את היחידה' : '➕ לבחור ולכתוב'}</a>` : ''}</section>`;
+    };
+    shell(`<section class="brief"><div class="eyebrow">🎯 הכנה · ${esc(DATA.he)}</div><h1>${esc(m.he)}</h1><p>${esc(m.brief)}</p>
+      <p>כמו במבחן: קודם כותבים לכל יחידה איזה אתר הייתם בוחרים, ורק אז מגלים מה בחומר. (${shown}/${units.length} נחשפו)</p></section>
+      ${units.map(card).join('')}
+      <div class="acts"><a class="btn" href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a><a class="btn ghost" href="#/focus/${m.id}">📌 לנעול עד שליטה</a>${shown ? '<button type="button" class="btn ghost" id="pReset">↺ לנסות שוב</button>' : ''}</div>`, { back: '#/rep' });
+    $$('[data-guess]').forEach(inp => inp.addEventListener('input', () => { (G[inp.dataset.guess] || (G[inp.dataset.guess] = {})).text = inp.value; save(); }));
+    $$('[data-reveal]').forEach(b => b.addEventListener('click', () => {
+      const g = G[b.dataset.reveal] || (G[b.dataset.reveal] = {});
+      if (!(g.text || '').trim()) return toast('כתבו קודם אתר — גם ניחוש');
+      g.shown = true; save(); const y = window.scrollY; viewRepMission(m); window.scrollTo(0, y);
+    }));
+    const pr = $('#pReset'); if (pr) pr.addEventListener('click', () => { REP().guess[m.id] = {}; save(); viewRepMission(m); });
   }
 
   // ===== 📌 Mission fixe jusqu'à maîtrise (2 examens blancs ≥ 80 %) =====
@@ -937,6 +985,7 @@
 
   // ---------- Routeur ----------
   function route() {
+    if (!DATA || !MODELS) return;   // contenu pas encore chargé : le premier route() suivra le chargement
     const h = location.hash.replace(/\?.*$/, ''), p = h.split('/');
     document.body.classList.remove('print-view');
     if (p[1] === 'tiyul') return viewTiyul();
