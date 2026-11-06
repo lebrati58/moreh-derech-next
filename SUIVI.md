@@ -30,6 +30,11 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 6 novembre 2026 (suite) — Visite guidée de Lionel refaite avec les nouveautés
+- ✅ `onboarding.js` : 14 étapes au lieu de 10, en hébreu, français et anglais. Nouvelles étapes : 🏆 אלוף הקורס, 🚌 סיפורי דרך, 📝 מבחן חלק א׳, ✍️ סדנת 180 · 400 (dans l'étape אתגר המבחן), 🏛️ אדריכלות קלאסית, 🌍 Césarée 3D. Le menu ☰ ne liste plus l'examen (il a son étape).
+- ✅ Clé `mdl_onboarded_v3` : la nouvelle visite s'affiche une fois à ceux qui avaient déjà vu l'ancienne (sauf « לא להציג שוב »).
+- ✅ `tests/guide-browser.mjs` parcourt les 14 étapes et vérifie que chacune trouve son bloc sur l'accueil (S24, 24 vérifications, tout vert).
+
 ### 6 novembre 2026 — « ✍️ סדנת 180 · 400 » : atelier d'écriture des יחידות הדרכה (branche `feat/sadna-180-400`)
 - ✅ Demande de Lionel : une version plus facile à lire et à retenir des exercices 180 / 400 mots du dossier « קטעי כתיבה קצרים וארוכים », visuelle, **tout en hébreu**, intégrée au jeu.
 - ✅ `sadna.html` + `sadna/sadna-data.js` : barème de la partie 2, squelettes 180 (4 temps) et 400 (3 stations) en barres de budget, en-tête du cahier, 8 réflexes, phrases clés, 18 fiches (accroche, clés, chute, אמצעי, « זהירות »), mode révision (clés floutées), entraînement avec chrono 15/30 min, compteur identique au cahier (`MDExamCore.wordCount`), repères cochés automatiquement, brouillon gardé dans le téléphone.

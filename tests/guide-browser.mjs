@@ -20,7 +20,14 @@ await pg.fill('#obName', 'נועה'); await pg.click('#obNext'); await pg.waitFo
 const t2 = await pg.textContent('#obT'); check(t2.startsWith('נועה,'), 'étape 2 personnalisée : « ' + t2 + ' »');
 check(await pg.evaluate(() => localStorage.getItem('mdl_guide_name')) === 'נועה', 'prénom gardé dans le téléphone');
 check(await pg.evaluate(() => !JSON.stringify(JSON.parse(localStorage.getItem('mdl_player_v1') || '{}')).includes('נועה')), 'prénom PAS copié dans le profil envoyé au classement');
-for (let k = 1; k < 10; k++) { await pg.click('#obNext'); await pg.waitForTimeout(350); if (!(await pg.$('#obNext'))) break; }
+// visite complète : 14 étapes, chaque étape ciblée trouve son bloc sur l'accueil (projecteur visible)
+const N = await pg.locator('#obDots i').count(); check(N === 14, 'visite : 14 étapes (nouveautés incluses)');
+for (let k = 1; k < N; k++) {
+  const spotOn = await pg.isVisible('.ob-spot'), last = k === N - 1;
+  check(last ? !spotOn : spotOn, 'étape ' + (k + 1) + ' : ' + (await pg.textContent('#obT')) + (last ? ' (bulle centrée)' : ' (bloc ciblé)'));
+  if ([3, 7, 8, 10].includes(k)) await pg.screenshot({ path: OUT + '/p1-etape' + (k + 1) + '.png' });
+  await pg.click('#obNext'); await pg.waitForTimeout(450); if (!(await pg.$('#obNext'))) break;
+}
 await pg.close();
 // 2) ouverture suivante (nouvelle session)
 pg = await page();

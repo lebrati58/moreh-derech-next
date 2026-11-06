@@ -1,10 +1,10 @@
 /* Moreh Derech NEXT — le guide Lionel.
-   1re visite : il demande le prénom (gardé dans le téléphone seulement, jamais envoyé) puis présente l'accueil étape par étape.
+   1re visite (ou nouvelle version de la visite, clé v3) : il demande le prénom (gardé dans le téléphone seulement, jamais envoyé) puis présente l'accueil étape par étape.
    Ensuite, à chaque ouverture de l'appli (une fois par session) : un accueil personnalisé (prénom, défi du jour, série, erreurs à corriger)
    avec accès à la visite complète. Case « לא להציג שוב » pour ne plus le voir ; le bouton en bas de l'accueil et ?tour=1 le relancent. */
 (function () {
   'use strict';
-  var KEY = 'mdl_onboarded_v2', NEVER = 'mdl_guide_never', NAME = 'mdl_guide_name', SESSION = 'mdl_guide_session';
+  var KEY = 'mdl_onboarded_v3', NEVER = 'mdl_guide_never', NAME = 'mdl_guide_name', SESSION = 'mdl_guide_session';
   var AVATAR = 'assets/guide-lionel.webp';
 
   var T = {
@@ -15,15 +15,19 @@
       name: 'ליונל · המורה דרך שלכם', next: 'הבא', back: 'הקודם', skip: 'דלגו', done: 'יאללה, מתחילים!', later: 'אחר כך',
       step: '{i} מתוך {n}', replay: 'הדרכה: איך משתמשים באפליקציה',
       s: [
-        ['שלום, אני ליונל! 👋', 'אני אהיה המורה דרך שלכם באפליקציה. בחצי דקה אראה לכם איך מתכוננים כאן למבחן.'],
+        ['שלום, אני ליונל! 👋', 'אני אהיה המורה דרך שלכם באפליקציה. בדקה אחת אראה לכם את הדברים הכי חשובים, כולל כל מה שחדש.'],
         ['כל יום מתחילים כאן ☀️', 'אתגר היום: כמה שאלות קצרות מכל הסיורים. 5 דקות ביום, ושומרים על רצף 🔥.'],
         ['המסע שלי 📈', 'כאן רואים את הכוכבים, ואת הטעויות שצריך לתקן. כל טעות חוזרת אליכם עד שהיא נלמדת.'],
+        ['חדש: אלוף הקורס 🏆', 'כשכל הכיתה ביחד, בקמפוס או באוטובוס: משחק חי עם קוד, שעון ופודיום. מי שעונה מהר מקבל יותר נקודות.'],
         ['תאריכים ותקופות ⏳', 'חידון האירועים וציר הזמן: מהתקופה הכלקוליתית ועד מדינת ישראל — לפי חומרי הקורס.'],
+        ['חדש: סיפורי דרך 🚌', 'מה המורה אמר בדרך, על המפה ולפי צד האוטובוס. מצב לימוד ומצב מבחן עם שעון.'],
         ['22 הסיורים על המפה 🧭', 'בוחרים סיור, עוברים בין האתרים על המפה, ועונים על שאלות בכל תחנה. בשלוש רמות קושי.'],
-        ['הכנה למבחן 🎓', 'מתכננים יום טיול וכותבים הדרכה, כמו בפרק השני של המבחן. עם תשובות לדוגמה.'],
-        ['האתרים בתלת-ממד 🏛️', 'ירושלים, מצדה, קיסריה ועוד: מסובבים את המודל ולוחצים על כל חלק.'],
+        ['חדש: מבחן חלק א׳ 📝', 'שאלות אמריקאיות לפי 22 נושאי הבחינה, עם הסבר ומקור לכל תשובה, ותיקון טעויות.'],
+        ['אתגר המבחן — חלק ב׳ 🎓', 'מתכננים יום טיול וכותבים הדרכות, עם הרפרטואר שלי. חדש: ✍️ סדנת 180 · 400 — שיטה, כרטיסי אתרים ותרגול עם מונה מילים.'],
+        ['חדש: אדריכלות קלאסית 🏛️', '14 דגמים בתלת-ממד: סטילובט, קארדו, היפוקאוסט, בית בד… משחק זיהוי ושאלות פתוחות כמו במבחן.'],
+        ['האתרים בתלת-ממד 🌍', 'חדש: הולכים בתוך התיאטרון של קיסריה, היום ובימי פילטוס. וגם ירושלים, מצדה ועוד אתרים לסובב וללחוץ.'],
         ['הסרגל למטה 🧭', 'בכל עמוד: 🏠 בית, 🗺️ מפה, 📈 המסע שלי ו-🏆 הכיתה — תחרות הכיתה ולוח המובילים.'],
-        ['שלושת הקווים ☰ עוד', 'כאן כל השאר: 🎓 אתגר המבחן, 🌿 ספריית רט״ג, ספריית הסיורים, קטעי דרך של הקהילה, הוספת מסמך, יצירת מסלול, חידון חי לקבוצה, ו-💡 רעיון או טעות לצוות.'],
+        ['שלושת הקווים ☰ עוד', 'כאן כל השאר: 🌿 ספריית רט״ג, ספריית הסיורים, קטעי דרך של הקהילה, הוספת מסמך, יצירת מסלול, חידון חי לקבוצה, ו-💡 רעיון או טעות לצוות.'],
         ['זהו, אתם מוכנים! 🚌', 'ההמלצה שלי: מתחילים עכשיו באתגר היום. אפשר לראות את ההדרכה שוב בתחתית העמוד.']
       ]
     },
@@ -34,15 +38,19 @@
       name: 'Lionel · votre guide', next: 'Suivant', back: 'Retour', skip: 'Passer', done: 'Allez, on commence !', later: 'Plus tard',
       step: '{i} sur {n}', replay: 'Visite guidée : comment utiliser l’appli',
       s: [
-        ['Salut, moi c’est Lionel ! 👋', 'Je suis votre guide dans l’appli. En 30 secondes, je vous montre comment réviser l’examen ici.'],
+        ['Salut, moi c’est Lionel ! 👋', 'Je suis votre guide dans l’appli. En une minute, je vous montre l’essentiel, et tout ce qui est nouveau.'],
         ['Chaque jour, on commence ici ☀️', 'Le défi du jour : quelques questions rapides sur tous les סיורים. 5 minutes par jour, et on garde sa série 🔥.'],
         ['Mon parcours 📈', 'Vos étoiles et les erreurs à corriger. Chaque erreur revient jusqu’à ce qu’elle soit acquise.'],
+        ['Nouveau : Champion du cours 🏆', 'Quand toute la classe est ensemble, au campus ou dans le bus : un jeu en direct avec code, chrono et podium. Plus on répond vite, plus on marque.'],
         ['Dates et périodes ⏳', 'Le quiz des événements et la frise : de l’époque chalcolithique à l’État d’Israël, d’après le cours.'],
+        ['Nouveau : récits de route 🚌', 'Ce que le prof a dit en route, sur la carte et selon le côté du bus. Mode étude et mode examen chronométré.'],
         ['Les 22 סיורים sur la carte 🧭', 'Choisissez un סיור, avancez de site en site sur la carte et répondez à chaque étape. Trois niveaux.'],
-        ['Préparer l’examen 🎓', 'Planifier une journée et rédiger le guidage, comme dans la 2e partie de l’examen, avec des réponses modèles.'],
-        ['Les sites en 3D 🏛️', 'Jérusalem, Massada, Césarée… Tournez la maquette et touchez chaque élément.'],
+        ['Nouveau : examen partie A 📝', 'QCM sur les 22 thèmes de l’examen, avec explication et source pour chaque réponse, et correction des erreurs.'],
+        ['Défi de l’examen — partie B 🎓', 'Planifier une journée et rédiger les interventions, avec mon répertoire. Nouveau : ✍️ atelier 180 · 400 — méthode, fiches de sites et entraînement avec compteur de mots.'],
+        ['Nouveau : architecture classique 🏛️', '14 maquettes en 3D : stylobate, cardo, hypocauste, pressoir… Jeu d’identification et questions ouvertes comme à l’examen.'],
+        ['Les sites en 3D 🌍', 'Nouveau : marchez dans le théâtre de Césarée, aujourd’hui et au temps de Pilate. Et aussi Jérusalem, Massada et d’autres sites à tourner et toucher.'],
         ['La barre du bas 🧭', 'Sur chaque page : 🏠 Accueil, 🗺️ Carte, 📈 Mon parcours et 🏆 Classe — le concours et le classement.'],
-        ['Les trois traits ☰ Plus', 'Tout le reste est ici : 🎓 Défi de l’examen, 🌿 Bibliothèque RTG, bibliothèque des סיורים, parcours de la communauté, ajouter un document, créer un parcours, quiz en direct pour un groupe, et 💡 une idée ou une erreur à signaler.'],
+        ['Les trois traits ☰ Plus', 'Tout le reste : 🌿 Bibliothèque RTG, bibliothèque des סיורים, parcours de la communauté, ajouter un document, créer un parcours, quiz en direct pour un groupe, et 💡 une idée ou une erreur à signaler.'],
         ['C’est parti ! 🚌', 'Mon conseil : commencez maintenant par le défi du jour. La visite se relance en bas de la page.']
       ]
     },
@@ -53,15 +61,19 @@
       name: 'Lionel · your guide', next: 'Next', back: 'Back', skip: 'Skip', done: 'Let’s go!', later: 'Later',
       step: '{i} of {n}', replay: 'Tour: how to use the app',
       s: [
-        ['Hi, I’m Lionel! 👋', 'I’ll be your guide in the app. In 30 seconds I’ll show you how to prepare for the exam here.'],
+        ['Hi, I’m Lionel! 👋', 'I’ll be your guide in the app. In one minute I’ll show you the essentials, including everything new.'],
         ['Start here every day ☀️', 'Today’s challenge: a few quick questions from all the tours. 5 minutes a day keeps your streak 🔥.'],
         ['My journey 📈', 'Your stars and the mistakes to fix. Each mistake comes back until you’ve learned it.'],
+        ['New: Course champion 🏆', 'When the whole class is together, on campus or on the bus: a live game with a code, a timer and a podium. Faster answers score more.'],
         ['Dates and periods ⏳', 'The events quiz and the timeline: from the Chalcolithic to the State of Israel, following the course.'],
+        ['New: road stories 🚌', 'What the teacher said on the road, on the map and by side of the bus. Study mode and timed exam mode.'],
         ['The 22 tours on the map 🧭', 'Pick a tour, move from site to site on the map and answer at each stop. Three levels.'],
-        ['Exam prep 🎓', 'Plan a tour day and write your guiding, like part two of the exam, with model answers.'],
-        ['Sites in 3D 🏛️', 'Jerusalem, Masada, Caesarea… Spin the model and tap each part.'],
+        ['New: Part A exam 📝', 'Multiple choice on the 22 exam topics, with an explanation and source for every answer, and mistake review.'],
+        ['Exam challenge — Part B 🎓', 'Plan a tour day and write guiding units, with my repertoire. New: ✍️ 180 · 400 workshop — method, site cards and practice with a word counter.'],
+        ['New: classical architecture 🏛️', '14 models in 3D: stylobate, cardo, hypocaust, oil press… An identification game and exam-style open questions.'],
+        ['Sites in 3D 🌍', 'New: walk inside the theatre of Caesarea, today and in Pilate’s time. Plus Jerusalem, Masada and more sites to spin and tap.'],
         ['The bottom bar 🧭', 'On every page: 🏠 Home, 🗺️ Map, 📈 My journey and 🏆 Class — the class contest and leaderboard.'],
-        ['The three lines ☰ More', 'Everything else is here: 🎓 Exam challenge, 🌿 Parks Authority library, tour library, community routes, add a document, create a route, live group quiz, and 💡 an idea or mistake to report.'],
+        ['The three lines ☰ More', 'Everything else: 🌿 Parks Authority library, tour library, community routes, add a document, create a route, live group quiz, and 💡 an idea or mistake to report.'],
         ['You’re ready! 🚌', 'My tip: start with today’s challenge now. You can replay this tour at the bottom of the page.']
       ]
     }
@@ -69,7 +81,7 @@
   T.ru = T.en;
 
   // Cible de chaque étape (null = bulle centrée, sans projecteur)
-  var TARGETS = [null, '.qt-daily', '.qt-journey', '.hist', 'a.map-banner[href*="guided"]', '.exam-box', '.j3d', '#mdTabbar', '#mdMore', null];
+  var TARGETS = [null, '.qt-daily', '.qt-journey', 'a.campus', '.hist', 'a.map-banner.roads', 'a.map-banner[href*="guided"]', '.parta-box', '.exam-box:not(.parta-box)', '.arch-box', 'a.j3d[href*="world3d"]', '#mdTabbar', '#mdMore', null];
 
   function lang() { var l = document.documentElement.lang || 'he'; return T[l] ? l : 'he'; }
   function txt() { return T[lang()]; }
