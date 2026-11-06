@@ -2376,6 +2376,86 @@
     }
    ],
    "note": "גשר א-זיב (יחידה מורחבת) נמצא בין ראש הנקרה למונפורט; ההחלטה לא לפוצץ את הגשר בראש הנקרה ב-1946 מקשרת בין יחידה a ליחידה המורחבת."
+  },
+  {
+   "id": "ug3",
+   "he": "תרגול אמצע 2 – הגליל העליון מנהריה למירון",
+   "emoji": "📝",
+   "level": 2,
+   "source": "prof",
+   "group": "קבוצת ישראלים בגילאי 51",
+   "brief": "דף התרגול של הקורס (תרגול מבחן 2 אמצע): קבוצת ישראלים בגילאי 51, מעוניינת להכיר את אזור הגליל העליון. התחלה בשעה 8 אחרי ארוחת בוקר בנהריה, וסיום במירון בשעה 18.00.",
+   "start": "nahariya",
+   "end": "meron",
+   "slots": [
+    {
+     "id": "a",
+     "he": "1. אתר מתקופת מלחמת העצמאות",
+     "need": [
+      "battle"
+     ],
+     "best": "yehiam_convoy",
+     "alt": [
+      "metzudat_koach"
+     ],
+     "why": "אנדרטת שיירת יחיעם – בדרך מנהריה מזרחה."
+    },
+    {
+     "id": "b",
+     "he": "2. שביל סובב מירון",
+     "need": [
+      "nature"
+     ],
+     "best": null,
+     "alt": [],
+     "why": "⚠️ אין בחומר הקורס דף על שביל סובב מירון – חסר. להשלים מהסיור או ממקור רשמי לפני המבחן."
+    },
+    {
+     "id": "c",
+     "he": "3. מערת קשת",
+     "need": [
+      "caves"
+     ],
+     "best": "keshet_cave",
+     "alt": [],
+     "why": "קשת הסלע מעל הנוף, גאולוגיה של מערה שהתמוטטה."
+    },
+    {
+     "id": "d",
+     "he": "4. בית הכנסת בברעם",
+     "need": [
+      "synagogue"
+     ],
+     "best": "baram",
+     "alt": [],
+     "why": "בית כנסת מהתקופה הביזנטית; הכפר המרוני."
+    },
+    {
+     "id": "e",
+     "he": "5. הדרכת דרך לאורך כ-25 ק\"מ, לבחירתך במסלול",
+     "need": [
+      "road"
+     ],
+     "best": null,
+     "alt": [],
+     "why": "⚠️ אין בחומר דף הדרכת דרך לגליל העליון המערבי (נהריה–מירון) – להכין מקטע של כ-25 ק\"מ."
+    }
+   ],
+   "long": {
+    "he": "נקודת כתיבה רחבה: ראש הנקרה",
+    "need": [
+     "geology",
+     "border"
+    ],
+    "best": "rosh_hanikra"
+   },
+   "tips": [
+    {
+     "he": "בלו\"ז לא חובה ללכת לפי סדר הנקודות שבשאלה – אבל לשמור על המספור שלה.",
+     "src": "model"
+    }
+   ],
+   "note": "נושא מדף התרגול של המרצה (06.11.2026), כלשונו. שתי יחידות (סובב מירון, הדרכת דרך) בלי חומר בקורס."
   }
  ],
  "models": {
@@ -2693,11 +2773,23 @@
    "hours": null,
    "visit": null,
    "access": null
+  },
+  {
+   "id": "meron",
+   "he": "מירון",
+   "short": "מירון",
+   "lat": 32.98708,
+   "lon": 35.44003,
+   "coordSource": "wiki",
+   "coordRef": "he:מירון (מושב)",
+   "hours": null,
+   "visit": null,
+   "access": null
   }
  ],
  "drive": {
   "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
-  "fetchedAt": "2026-10-29",
+  "fetchedAt": "2026-11-06",
   "legs": {
    "tel_aviv>kiryat_shmona": {
     "min": 146,
@@ -2718,6 +2810,10 @@
    "tel_aviv>golani_jct": {
     "min": 95,
     "km": 123.2
+   },
+   "tel_aviv>meron": {
+    "min": 119,
+    "km": 151.3
    },
    "tel_aviv>rosh_pina": {
     "min": 121,
@@ -2791,6 +2887,10 @@
     "min": 60,
     "km": 65.4
    },
+   "kiryat_shmona>meron": {
+    "min": 42,
+    "km": 40.1
+   },
    "kiryat_shmona>rosh_pina": {
     "min": 28,
     "km": 30.1
@@ -2862,6 +2962,10 @@
    "nahariya>golani_jct": {
     "min": 51,
     "km": 57
+   },
+   "nahariya>meron": {
+    "min": 44,
+    "km": 43.1
    },
    "nahariya>rosh_pina": {
     "min": 56,
@@ -2935,6 +3039,10 @@
     "min": 45,
     "km": 44.8
    },
+   "safed>meron": {
+    "min": 14,
+    "km": 11.6
+   },
    "safed>rosh_pina": {
     "min": 11,
     "km": 8.9
@@ -3006,6 +3114,10 @@
    "yokneam>golani_jct": {
     "min": 36,
     "km": 39.9
+   },
+   "yokneam>meron": {
+    "min": 61,
+    "km": 67.9
    },
    "yokneam>rosh_pina": {
     "min": 62,
@@ -3079,6 +3191,10 @@
     "min": 37,
     "km": 43.1
    },
+   "golani_jct>meron": {
+    "min": 37,
+    "km": 33.4
+   },
    "golani_jct>rosh_pina": {
     "min": 29,
     "km": 33.8
@@ -3131,6 +3247,82 @@
     "min": 60,
     "km": 65.1
    },
+   "meron>tel_aviv": {
+    "min": 117,
+    "km": 150
+   },
+   "meron>kiryat_shmona": {
+    "min": 42,
+    "km": 40.2
+   },
+   "meron>nahariya": {
+    "min": 44,
+    "km": 43.2
+   },
+   "meron>safed": {
+    "min": 12,
+    "km": 10.9
+   },
+   "meron>yokneam": {
+    "min": 60,
+    "km": 67.5
+   },
+   "meron>golani_jct": {
+    "min": 42,
+    "km": 36
+   },
+   "meron>rosh_pina": {
+    "min": 18,
+    "km": 19
+   },
+   "meron>tel_hai": {
+    "min": 46,
+    "km": 43.3
+   },
+   "meron>hula_reserve": {
+    "min": 48,
+    "km": 35.9
+   },
+   "meron>agamon": {
+    "min": 58,
+    "km": 39.8
+   },
+   "meron>metzudat_koach": {
+    "min": 27,
+    "km": 25.6
+   },
+   "meron>rihaniya": {
+    "min": 15,
+    "km": 12.7
+   },
+   "meron>rashbi_meron": {
+    "min": 2,
+    "km": 0.8
+   },
+   "meron>baram": {
+    "min": 15,
+    "km": 11.4
+   },
+   "meron>keshet_cave": {
+    "min": 39,
+    "km": 38.9
+   },
+   "meron>peqiin": {
+    "min": 33,
+    "km": 25.2
+   },
+   "meron>yehiam_convoy": {
+    "min": 40,
+    "km": 34.8
+   },
+   "meron>montfort": {
+    "min": 42,
+    "km": 31.8
+   },
+   "meron>rosh_hanikra": {
+    "min": 45,
+    "km": 45.5
+   },
    "rosh_pina>tel_aviv": {
     "min": 118,
     "km": 153.4
@@ -3154,6 +3346,10 @@
    "rosh_pina>golani_jct": {
     "min": 34,
     "km": 37
+   },
+   "rosh_pina>meron": {
+    "min": 18,
+    "km": 19
    },
    "rosh_pina>tel_hai": {
     "min": 32,
@@ -3227,6 +3423,10 @@
     "min": 64,
     "km": 68.6
    },
+   "tel_hai>meron": {
+    "min": 45,
+    "km": 43.3
+   },
    "tel_hai>rosh_pina": {
     "min": 32,
     "km": 33.3
@@ -3298,6 +3498,10 @@
    "hula_reserve>golani_jct": {
     "min": 64,
     "km": 53.7
+   },
+   "hula_reserve>meron": {
+    "min": 48,
+    "km": 35.8
    },
    "hula_reserve>rosh_pina": {
     "min": 32,
@@ -3371,6 +3575,10 @@
     "min": 74,
     "km": 57.6
    },
+   "agamon>meron": {
+    "min": 58,
+    "km": 39.7
+   },
    "agamon>rosh_pina": {
     "min": 42,
     "km": 22.2
@@ -3442,6 +3650,10 @@
    "metzudat_koach>golani_jct": {
     "min": 54,
     "km": 59.9
+   },
+   "metzudat_koach>meron": {
+    "min": 27,
+    "km": 25.6
    },
    "metzudat_koach>rosh_pina": {
     "min": 22,
@@ -3515,6 +3727,10 @@
     "min": 50,
     "km": 54.5
    },
+   "rihaniya>meron": {
+    "min": 15,
+    "km": 12.7
+   },
    "rihaniya>rosh_pina": {
     "min": 21,
     "km": 22.8
@@ -3586,6 +3802,10 @@
    "rashbi_meron>golani_jct": {
     "min": 41,
     "km": 35.9
+   },
+   "rashbi_meron>meron": {
+    "min": 2,
+    "km": 0.8
    },
    "rashbi_meron>rosh_pina": {
     "min": 17,
@@ -3659,6 +3879,10 @@
     "min": 53,
     "km": 46.8
    },
+   "baram>meron": {
+    "min": 15,
+    "km": 11.4
+   },
    "baram>rosh_pina": {
     "min": 29,
     "km": 28.9
@@ -3730,6 +3954,10 @@
    "keshet_cave>golani_jct": {
     "min": 62,
     "km": 70.9
+   },
+   "keshet_cave>meron": {
+    "min": 39,
+    "km": 38.8
    },
    "keshet_cave>rosh_pina": {
     "min": 54,
@@ -3803,6 +4031,10 @@
     "min": 46,
     "km": 37.9
    },
+   "peqiin>meron": {
+    "min": 33,
+    "km": 25.4
+   },
    "peqiin>rosh_pina": {
     "min": 38,
     "km": 35.2
@@ -3874,6 +4106,10 @@
    "yehiam_convoy>golani_jct": {
     "min": 62,
     "km": 54
+   },
+   "yehiam_convoy>meron": {
+    "min": 40,
+    "km": 34.8
    },
    "yehiam_convoy>rosh_pina": {
     "min": 54,
@@ -3947,6 +4183,10 @@
     "min": 64,
     "km": 51.1
    },
+   "montfort>meron": {
+    "min": 42,
+    "km": 31.8
+   },
    "montfort>rosh_pina": {
     "min": 56,
     "km": 48.4
@@ -4018,6 +4258,10 @@
    "rosh_hanikra>golani_jct": {
     "min": 61,
     "km": 67.1
+   },
+   "rosh_hanikra>meron": {
+    "min": 45,
+    "km": 45.5
    },
    "rosh_hanikra>rosh_pina": {
     "min": 59,

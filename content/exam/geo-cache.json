@@ -7207,8 +7207,8 @@
  },
  "drive:negev": {
   "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
-  "fetchedAt": "2026-10-29",
-  "sig": "tel_aviv@32.07632,34.78947;beer_sheva@31.25311,34.78671;shoket@31.31556,34.89231;tel_beer_sheva@31.24472,34.84083;negev_memorial@31.26666,34.8206;tel_tzafit@31.69937,34.84669;joe_alon@31.37931,34.86486",
+  "fetchedAt": "2026-11-06",
+  "sig": "tel_aviv@32.07632,34.78947;beer_sheva@31.25311,34.78671;shoket@31.31556,34.89231;arad@31.25893,35.21389;tel_beer_sheva@31.24472,34.84083;negev_memorial@31.26666,34.8206;tel_tzafit@31.69937,34.84669;joe_alon@31.37931,34.86486;tel_arad_city@31.28083,35.125;arad_fortress@31.28083,35.125;old_beer_sheva@31.25311,34.78671;british_cemetery@31.24417,34.78391;turkish_station@31.24537,34.78488",
   "legs": {
    "tel_aviv>beer_sheva": {
     "min": 81,
@@ -7217,6 +7217,10 @@
    "tel_aviv>shoket": {
     "min": 74,
     "km": 98.5
+   },
+   "tel_aviv>arad": {
+    "min": 103,
+    "km": 132.7
    },
    "tel_aviv>tel_beer_sheva": {
     "min": 89,
@@ -7234,6 +7238,26 @@
     "min": 74,
     "km": 90.9
    },
+   "tel_aviv>tel_arad_city": {
+    "min": 102,
+    "km": 126.9
+   },
+   "tel_aviv>arad_fortress": {
+    "min": 102,
+    "km": 126.9
+   },
+   "tel_aviv>old_beer_sheva": {
+    "min": 81,
+    "km": 101.7
+   },
+   "tel_aviv>british_cemetery": {
+    "min": 83,
+    "km": 102.1
+   },
+   "tel_aviv>turkish_station": {
+    "min": 82,
+    "km": 101.9
+   },
    "beer_sheva>tel_aviv": {
     "min": 82,
     "km": 101.7
@@ -7241,6 +7265,10 @@
    "beer_sheva>shoket": {
     "min": 23,
     "km": 24.4
+   },
+   "beer_sheva>arad": {
+    "min": 43,
+    "km": 47.9
    },
    "beer_sheva>tel_beer_sheva": {
     "min": 17,
@@ -7258,6 +7286,26 @@
     "min": 28,
     "km": 27.5
    },
+   "beer_sheva>tel_arad_city": {
+    "min": 42,
+    "km": 42
+   },
+   "beer_sheva>arad_fortress": {
+    "min": 42,
+    "km": 42
+   },
+   "beer_sheva>old_beer_sheva": {
+    "min": 0,
+    "km": 0
+   },
+   "beer_sheva>british_cemetery": {
+    "min": 4,
+    "km": 2.3
+   },
+   "beer_sheva>turkish_station": {
+    "min": 4,
+    "km": 2.2
+   },
    "shoket>tel_aviv": {
     "min": 76,
     "km": 100.1
@@ -7265,6 +7313,10 @@
    "shoket>beer_sheva": {
     "min": 16,
     "km": 16.1
+   },
+   "shoket>arad": {
+    "min": 29,
+    "km": 34.2
    },
    "shoket>tel_beer_sheva": {
     "min": 18,
@@ -7282,6 +7334,74 @@
     "min": 15,
     "km": 13.9
    },
+   "shoket>tel_arad_city": {
+    "min": 28,
+    "km": 28.4
+   },
+   "shoket>arad_fortress": {
+    "min": 28,
+    "km": 28.4
+   },
+   "shoket>old_beer_sheva": {
+    "min": 16,
+    "km": 16.1
+   },
+   "shoket>british_cemetery": {
+    "min": 15,
+    "km": 15.8
+   },
+   "shoket>turkish_station": {
+    "min": 15,
+    "km": 15.6
+   },
+   "arad>tel_aviv": {
+    "min": 104,
+    "km": 132.5
+   },
+   "arad>beer_sheva": {
+    "min": 44,
+    "km": 48
+   },
+   "arad>shoket": {
+    "min": 38,
+    "km": 42.8
+   },
+   "arad>tel_beer_sheva": {
+    "min": 46,
+    "km": 44.7
+   },
+   "arad>negev_memorial": {
+    "min": 40,
+    "km": 43.8
+   },
+   "arad>tel_tzafit": {
+    "min": 92,
+    "km": 89
+   },
+   "arad>joe_alon": {
+    "min": 42,
+    "km": 46.3
+   },
+   "arad>tel_arad_city": {
+    "min": 17,
+    "km": 13.1
+   },
+   "arad>arad_fortress": {
+    "min": 17,
+    "km": 13.1
+   },
+   "arad>old_beer_sheva": {
+    "min": 44,
+    "km": 48
+   },
+   "arad>british_cemetery": {
+    "min": 43,
+    "km": 47.7
+   },
+   "arad>turkish_station": {
+    "min": 43,
+    "km": 47.5
+   },
    "tel_beer_sheva>tel_aviv": {
     "min": 90,
     "km": 106.4
@@ -7293,6 +7413,10 @@
    "tel_beer_sheva>shoket": {
     "min": 26,
     "km": 22.4
+   },
+   "tel_beer_sheva>arad": {
+    "min": 46,
+    "km": 45.9
    },
    "tel_beer_sheva>negev_memorial": {
     "min": 15,
@@ -7306,6 +7430,26 @@
     "min": 31,
     "km": 25.5
    },
+   "tel_beer_sheva>tel_arad_city": {
+    "min": 45,
+    "km": 40.1
+   },
+   "tel_beer_sheva>arad_fortress": {
+    "min": 45,
+    "km": 40.1
+   },
+   "tel_beer_sheva>old_beer_sheva": {
+    "min": 18,
+    "km": 10.8
+   },
+   "tel_beer_sheva>british_cemetery": {
+    "min": 17,
+    "km": 10.6
+   },
+   "tel_beer_sheva>turkish_station": {
+    "min": 17,
+    "km": 10.4
+   },
    "negev_memorial>tel_aviv": {
     "min": 82,
     "km": 102
@@ -7317,6 +7461,10 @@
    "negev_memorial>shoket": {
     "min": 19,
     "km": 20.2
+   },
+   "negev_memorial>arad": {
+    "min": 39,
+    "km": 43.7
    },
    "negev_memorial>tel_beer_sheva": {
     "min": 13,
@@ -7330,6 +7478,26 @@
     "min": 24,
     "km": 23.3
    },
+   "negev_memorial>tel_arad_city": {
+    "min": 38,
+    "km": 37.9
+   },
+   "negev_memorial>arad_fortress": {
+    "min": 38,
+    "km": 37.9
+   },
+   "negev_memorial>old_beer_sheva": {
+    "min": 10,
+    "km": 5.6
+   },
+   "negev_memorial>british_cemetery": {
+    "min": 9,
+    "km": 6.8
+   },
+   "negev_memorial>turkish_station": {
+    "min": 9,
+    "km": 6.6
+   },
    "tel_tzafit>tel_aviv": {
     "min": 65,
     "km": 51.8
@@ -7341,6 +7509,10 @@
    "tel_tzafit>shoket": {
     "min": 73,
     "km": 53.3
+   },
+   "tel_tzafit>arad": {
+    "min": 102,
+    "km": 87.6
    },
    "tel_tzafit>tel_beer_sheva": {
     "min": 88,
@@ -7354,6 +7526,26 @@
     "min": 72,
     "km": 45.8
    },
+   "tel_tzafit>tel_arad_city": {
+    "min": 101,
+    "km": 81.7
+   },
+   "tel_tzafit>arad_fortress": {
+    "min": 101,
+    "km": 81.7
+   },
+   "tel_tzafit>old_beer_sheva": {
+    "min": 80,
+    "km": 56.6
+   },
+   "tel_tzafit>british_cemetery": {
+    "min": 81,
+    "km": 57
+   },
+   "tel_tzafit>turkish_station": {
+    "min": 81,
+    "km": 56.8
+   },
    "joe_alon>tel_aviv": {
     "min": 74,
     "km": 91
@@ -7366,6 +7558,10 @@
     "min": 13,
     "km": 12.8
    },
+   "joe_alon>arad": {
+    "min": 42,
+    "km": 46.5
+   },
    "joe_alon>tel_beer_sheva": {
     "min": 29,
     "km": 24.3
@@ -7377,6 +7573,266 @@
    "joe_alon>tel_tzafit": {
     "min": 62,
     "km": 47.5
+   },
+   "joe_alon>tel_arad_city": {
+    "min": 41,
+    "km": 40.6
+   },
+   "joe_alon>arad_fortress": {
+    "min": 41,
+    "km": 40.6
+   },
+   "joe_alon>old_beer_sheva": {
+    "min": 27,
+    "km": 27.5
+   },
+   "joe_alon>british_cemetery": {
+    "min": 26,
+    "km": 27.2
+   },
+   "joe_alon>turkish_station": {
+    "min": 26,
+    "km": 27
+   },
+   "tel_arad_city>tel_aviv": {
+    "min": 102,
+    "km": 126.6
+   },
+   "tel_arad_city>beer_sheva": {
+    "min": 42,
+    "km": 42.1
+   },
+   "tel_arad_city>shoket": {
+    "min": 36,
+    "km": 36.9
+   },
+   "tel_arad_city>arad": {
+    "min": 17,
+    "km": 13.2
+   },
+   "tel_arad_city>tel_beer_sheva": {
+    "min": 44,
+    "km": 38.9
+   },
+   "tel_arad_city>negev_memorial": {
+    "min": 38,
+    "km": 37.9
+   },
+   "tel_arad_city>tel_tzafit": {
+    "min": 90,
+    "km": 83.2
+   },
+   "tel_arad_city>joe_alon": {
+    "min": 41,
+    "km": 40.4
+   },
+   "tel_arad_city>arad_fortress": {
+    "min": 0,
+    "km": 0
+   },
+   "tel_arad_city>old_beer_sheva": {
+    "min": 42,
+    "km": 42.1
+   },
+   "tel_arad_city>british_cemetery": {
+    "min": 41,
+    "km": 41.8
+   },
+   "tel_arad_city>turkish_station": {
+    "min": 41,
+    "km": 41.7
+   },
+   "arad_fortress>tel_aviv": {
+    "min": 102,
+    "km": 126.6
+   },
+   "arad_fortress>beer_sheva": {
+    "min": 42,
+    "km": 42.1
+   },
+   "arad_fortress>shoket": {
+    "min": 36,
+    "km": 36.9
+   },
+   "arad_fortress>arad": {
+    "min": 17,
+    "km": 13.2
+   },
+   "arad_fortress>tel_beer_sheva": {
+    "min": 44,
+    "km": 38.9
+   },
+   "arad_fortress>negev_memorial": {
+    "min": 38,
+    "km": 37.9
+   },
+   "arad_fortress>tel_tzafit": {
+    "min": 90,
+    "km": 83.2
+   },
+   "arad_fortress>joe_alon": {
+    "min": 41,
+    "km": 40.4
+   },
+   "arad_fortress>tel_arad_city": {
+    "min": 0,
+    "km": 0
+   },
+   "arad_fortress>old_beer_sheva": {
+    "min": 42,
+    "km": 42.1
+   },
+   "arad_fortress>british_cemetery": {
+    "min": 41,
+    "km": 41.8
+   },
+   "arad_fortress>turkish_station": {
+    "min": 41,
+    "km": 41.7
+   },
+   "old_beer_sheva>tel_aviv": {
+    "min": 82,
+    "km": 101.7
+   },
+   "old_beer_sheva>beer_sheva": {
+    "min": 0,
+    "km": 0
+   },
+   "old_beer_sheva>shoket": {
+    "min": 23,
+    "km": 24.4
+   },
+   "old_beer_sheva>arad": {
+    "min": 43,
+    "km": 47.9
+   },
+   "old_beer_sheva>tel_beer_sheva": {
+    "min": 17,
+    "km": 9.5
+   },
+   "old_beer_sheva>negev_memorial": {
+    "min": 9,
+    "km": 5.4
+   },
+   "old_beer_sheva>tel_tzafit": {
+    "min": 70,
+    "km": 58.2
+   },
+   "old_beer_sheva>joe_alon": {
+    "min": 28,
+    "km": 27.5
+   },
+   "old_beer_sheva>tel_arad_city": {
+    "min": 42,
+    "km": 42
+   },
+   "old_beer_sheva>arad_fortress": {
+    "min": 42,
+    "km": 42
+   },
+   "old_beer_sheva>british_cemetery": {
+    "min": 4,
+    "km": 2.3
+   },
+   "old_beer_sheva>turkish_station": {
+    "min": 4,
+    "km": 2.2
+   },
+   "british_cemetery>tel_aviv": {
+    "min": 83,
+    "km": 102.8
+   },
+   "british_cemetery>beer_sheva": {
+    "min": 3,
+    "km": 2.1
+   },
+   "british_cemetery>shoket": {
+    "min": 22,
+    "km": 24.3
+   },
+   "british_cemetery>arad": {
+    "min": 42,
+    "km": 47.8
+   },
+   "british_cemetery>tel_beer_sheva": {
+    "min": 16,
+    "km": 9.4
+   },
+   "british_cemetery>negev_memorial": {
+    "min": 10,
+    "km": 7.1
+   },
+   "british_cemetery>tel_tzafit": {
+    "min": 71,
+    "km": 59.4
+   },
+   "british_cemetery>joe_alon": {
+    "min": 27,
+    "km": 27.4
+   },
+   "british_cemetery>tel_arad_city": {
+    "min": 42,
+    "km": 42
+   },
+   "british_cemetery>arad_fortress": {
+    "min": 42,
+    "km": 42
+   },
+   "british_cemetery>old_beer_sheva": {
+    "min": 3,
+    "km": 2.1
+   },
+   "british_cemetery>turkish_station": {
+    "min": 1,
+    "km": 0.8
+   },
+   "turkish_station>tel_aviv": {
+    "min": 84,
+    "km": 103.1
+   },
+   "turkish_station>beer_sheva": {
+    "min": 4,
+    "km": 2.5
+   },
+   "turkish_station>shoket": {
+    "min": 22,
+    "km": 24.1
+   },
+   "turkish_station>arad": {
+    "min": 42,
+    "km": 47.6
+   },
+   "turkish_station>tel_beer_sheva": {
+    "min": 16,
+    "km": 9.3
+   },
+   "turkish_station>negev_memorial": {
+    "min": 10,
+    "km": 6.9
+   },
+   "turkish_station>tel_tzafit": {
+    "min": 72,
+    "km": 59.7
+   },
+   "turkish_station>joe_alon": {
+    "min": 27,
+    "km": 27.3
+   },
+   "turkish_station>tel_arad_city": {
+    "min": 42,
+    "km": 41.8
+   },
+   "turkish_station>arad_fortress": {
+    "min": 42,
+    "km": 41.8
+   },
+   "turkish_station>old_beer_sheva": {
+    "min": 4,
+    "km": 2.5
+   },
+   "turkish_station>british_cemetery": {
+    "min": 1,
+    "km": 0.3
    }
   }
  },
@@ -7496,8 +7952,8 @@
  },
  "drive:upper_galilee": {
   "source": "OSRM (router.project-osrm.org), © OpenStreetMap — voiture, sans trafic",
-  "fetchedAt": "2026-10-29",
-  "sig": "tel_aviv@32.07632,34.78947;kiryat_shmona@33.21163,35.5732;nahariya@33.00863,35.09753;safed@32.96476,35.50458;yokneam@32.65944,35.11;golani_jct@32.77489,35.40789;rosh_pina@32.96908,35.54246;tel_hai@33.235,35.57833;hula_reserve@33.07806,35.59833;agamon@33.10583,35.60361;metzudat_koach@33.11472,35.55611;rihaniya@33.04947,35.48741;rashbi_meron@32.98103,35.44095;baram@33.04348,35.41404;keshet_cave@33.07622,35.19169;peqiin@32.97309,35.32671;yehiam_convoy@32.99686,35.22081;montfort@33.04472,35.22611;rosh_hanikra@33.09312,35.10477",
+  "fetchedAt": "2026-11-06",
+  "sig": "tel_aviv@32.07632,34.78947;kiryat_shmona@33.21163,35.5732;nahariya@33.00863,35.09753;safed@32.96476,35.50458;yokneam@32.65944,35.11;golani_jct@32.77489,35.40789;meron@32.98708,35.44003;rosh_pina@32.96908,35.54246;tel_hai@33.235,35.57833;hula_reserve@33.07806,35.59833;agamon@33.10583,35.60361;metzudat_koach@33.11472,35.55611;rihaniya@33.04947,35.48741;rashbi_meron@32.98103,35.44095;baram@33.04348,35.41404;keshet_cave@33.07622,35.19169;peqiin@32.97309,35.32671;yehiam_convoy@32.99686,35.22081;montfort@33.04472,35.22611;rosh_hanikra@33.09312,35.10477",
   "legs": {
    "tel_aviv>kiryat_shmona": {
     "min": 146,
@@ -7518,6 +7974,10 @@
    "tel_aviv>golani_jct": {
     "min": 95,
     "km": 123.2
+   },
+   "tel_aviv>meron": {
+    "min": 119,
+    "km": 151.3
    },
    "tel_aviv>rosh_pina": {
     "min": 121,
@@ -7591,6 +8051,10 @@
     "min": 60,
     "km": 65.4
    },
+   "kiryat_shmona>meron": {
+    "min": 42,
+    "km": 40.1
+   },
    "kiryat_shmona>rosh_pina": {
     "min": 28,
     "km": 30.1
@@ -7662,6 +8126,10 @@
    "nahariya>golani_jct": {
     "min": 51,
     "km": 57
+   },
+   "nahariya>meron": {
+    "min": 44,
+    "km": 43.1
    },
    "nahariya>rosh_pina": {
     "min": 56,
@@ -7735,6 +8203,10 @@
     "min": 45,
     "km": 44.8
    },
+   "safed>meron": {
+    "min": 14,
+    "km": 11.6
+   },
    "safed>rosh_pina": {
     "min": 11,
     "km": 8.9
@@ -7806,6 +8278,10 @@
    "yokneam>golani_jct": {
     "min": 36,
     "km": 39.9
+   },
+   "yokneam>meron": {
+    "min": 61,
+    "km": 67.9
    },
    "yokneam>rosh_pina": {
     "min": 62,
@@ -7879,6 +8355,10 @@
     "min": 37,
     "km": 43.1
    },
+   "golani_jct>meron": {
+    "min": 37,
+    "km": 33.4
+   },
    "golani_jct>rosh_pina": {
     "min": 29,
     "km": 33.8
@@ -7931,6 +8411,82 @@
     "min": 60,
     "km": 65.1
    },
+   "meron>tel_aviv": {
+    "min": 117,
+    "km": 150
+   },
+   "meron>kiryat_shmona": {
+    "min": 42,
+    "km": 40.2
+   },
+   "meron>nahariya": {
+    "min": 44,
+    "km": 43.2
+   },
+   "meron>safed": {
+    "min": 12,
+    "km": 10.9
+   },
+   "meron>yokneam": {
+    "min": 60,
+    "km": 67.5
+   },
+   "meron>golani_jct": {
+    "min": 42,
+    "km": 36
+   },
+   "meron>rosh_pina": {
+    "min": 18,
+    "km": 19
+   },
+   "meron>tel_hai": {
+    "min": 46,
+    "km": 43.3
+   },
+   "meron>hula_reserve": {
+    "min": 48,
+    "km": 35.9
+   },
+   "meron>agamon": {
+    "min": 58,
+    "km": 39.8
+   },
+   "meron>metzudat_koach": {
+    "min": 27,
+    "km": 25.6
+   },
+   "meron>rihaniya": {
+    "min": 15,
+    "km": 12.7
+   },
+   "meron>rashbi_meron": {
+    "min": 2,
+    "km": 0.8
+   },
+   "meron>baram": {
+    "min": 15,
+    "km": 11.4
+   },
+   "meron>keshet_cave": {
+    "min": 39,
+    "km": 38.9
+   },
+   "meron>peqiin": {
+    "min": 33,
+    "km": 25.2
+   },
+   "meron>yehiam_convoy": {
+    "min": 40,
+    "km": 34.8
+   },
+   "meron>montfort": {
+    "min": 42,
+    "km": 31.8
+   },
+   "meron>rosh_hanikra": {
+    "min": 45,
+    "km": 45.5
+   },
    "rosh_pina>tel_aviv": {
     "min": 118,
     "km": 153.4
@@ -7954,6 +8510,10 @@
    "rosh_pina>golani_jct": {
     "min": 34,
     "km": 37
+   },
+   "rosh_pina>meron": {
+    "min": 18,
+    "km": 19
    },
    "rosh_pina>tel_hai": {
     "min": 32,
@@ -8027,6 +8587,10 @@
     "min": 64,
     "km": 68.6
    },
+   "tel_hai>meron": {
+    "min": 45,
+    "km": 43.3
+   },
    "tel_hai>rosh_pina": {
     "min": 32,
     "km": 33.3
@@ -8098,6 +8662,10 @@
    "hula_reserve>golani_jct": {
     "min": 64,
     "km": 53.7
+   },
+   "hula_reserve>meron": {
+    "min": 48,
+    "km": 35.8
    },
    "hula_reserve>rosh_pina": {
     "min": 32,
@@ -8171,6 +8739,10 @@
     "min": 74,
     "km": 57.6
    },
+   "agamon>meron": {
+    "min": 58,
+    "km": 39.7
+   },
    "agamon>rosh_pina": {
     "min": 42,
     "km": 22.2
@@ -8242,6 +8814,10 @@
    "metzudat_koach>golani_jct": {
     "min": 54,
     "km": 59.9
+   },
+   "metzudat_koach>meron": {
+    "min": 27,
+    "km": 25.6
    },
    "metzudat_koach>rosh_pina": {
     "min": 22,
@@ -8315,6 +8891,10 @@
     "min": 50,
     "km": 54.5
    },
+   "rihaniya>meron": {
+    "min": 15,
+    "km": 12.7
+   },
    "rihaniya>rosh_pina": {
     "min": 21,
     "km": 22.8
@@ -8386,6 +8966,10 @@
    "rashbi_meron>golani_jct": {
     "min": 41,
     "km": 35.9
+   },
+   "rashbi_meron>meron": {
+    "min": 2,
+    "km": 0.8
    },
    "rashbi_meron>rosh_pina": {
     "min": 17,
@@ -8459,6 +9043,10 @@
     "min": 53,
     "km": 46.8
    },
+   "baram>meron": {
+    "min": 15,
+    "km": 11.4
+   },
    "baram>rosh_pina": {
     "min": 29,
     "km": 28.9
@@ -8530,6 +9118,10 @@
    "keshet_cave>golani_jct": {
     "min": 62,
     "km": 70.9
+   },
+   "keshet_cave>meron": {
+    "min": 39,
+    "km": 38.8
    },
    "keshet_cave>rosh_pina": {
     "min": 54,
@@ -8603,6 +9195,10 @@
     "min": 46,
     "km": 37.9
    },
+   "peqiin>meron": {
+    "min": 33,
+    "km": 25.4
+   },
    "peqiin>rosh_pina": {
     "min": 38,
     "km": 35.2
@@ -8674,6 +9270,10 @@
    "yehiam_convoy>golani_jct": {
     "min": 62,
     "km": 54
+   },
+   "yehiam_convoy>meron": {
+    "min": 40,
+    "km": 34.8
    },
    "yehiam_convoy>rosh_pina": {
     "min": 54,
@@ -8747,6 +9347,10 @@
     "min": 64,
     "km": 51.1
    },
+   "montfort>meron": {
+    "min": 42,
+    "km": 31.8
+   },
    "montfort>rosh_pina": {
     "min": 56,
     "km": 48.4
@@ -8818,6 +9422,10 @@
    "rosh_hanikra>golani_jct": {
     "min": 61,
     "km": 67.1
+   },
+   "rosh_hanikra>meron": {
+    "min": 45,
+    "km": 45.5
    },
    "rosh_hanikra>rosh_pina": {
     "min": 59,
@@ -9696,5 +10304,48 @@
   "title": "he:עין גדי (שמורה)",
   "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%9F_%D7%92%D7%93%D7%99_(%D7%A9%D7%9E%D7%95%D7%A8%D7%94)",
   "qid": "Q1011544"
+ },
+ "wiki:he:ערד": {
+  "lat": 31.25893,
+  "lon": 35.21389,
+  "title": "he:ערד",
+  "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%A8%D7%93",
+  "qid": "Q152473"
+ },
+ "wiki:he:תל ערד": {
+  "lat": 31.28083,
+  "lon": 35.125,
+  "title": "he:תל ערד",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%A2%D7%A8%D7%93",
+  "qid": "Q2063578"
+ },
+ "wiki:he:העיר העתיקה של באר שבע": {
+  "none": true,
+  "at": "2026-11-06"
+ },
+ "wiki:en:Old City of Beersheba": {
+  "none": true,
+  "at": "2026-11-06"
+ },
+ "wiki:he:בית הקברות הצבאי הבריטי בבאר שבע": {
+  "lat": 31.24417,
+  "lon": 34.78391,
+  "title": "he:בית הקברות הצבאי הבריטי בבאר שבע",
+  "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%94%D7%A7%D7%91%D7%A8%D7%95%D7%AA_%D7%94%D7%A6%D7%91%D7%90%D7%99_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99_%D7%91%D7%91%D7%90%D7%A8_%D7%A9%D7%91%D7%A2",
+  "qid": "Q12404551"
+ },
+ "wiki:he:תחנת הרכבת הטורקית (באר שבע)": {
+  "lat": 31.24537,
+  "lon": 34.78488,
+  "title": "he:תחנת הרכבת הטורקית בבאר שבע",
+  "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%97%D7%A0%D7%AA_%D7%94%D7%A8%D7%9B%D7%91%D7%AA_%D7%94%D7%98%D7%95%D7%A8%D7%A7%D7%99%D7%AA_%D7%91%D7%91%D7%90%D7%A8_%D7%A9%D7%91%D7%A2",
+  "qid": "Q12412038"
+ },
+ "wiki:he:מירון (מושב)": {
+  "lat": 32.98708,
+  "lon": 35.44003,
+  "title": "he:מירון (מושב)",
+  "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A8%D7%95%D7%9F_(%D7%9E%D7%95%D7%A9%D7%91)",
+  "qid": "Q600912"
  }
 }
