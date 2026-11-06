@@ -1,8 +1,8 @@
 {
-  "asOf": "2026-10-22",
+  "asOf": "2026-11-06",
   "root": "https://drive.google.com/drive/folders/1S5xdXEF4K0AOihsIkxXsZdMngvrXLvdb",
   "parent": "https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f",
-  "count": 22,
+  "count": 24,
   "tours": [
     {
       "id": "01",
@@ -315,7 +315,43 @@
       ],
       "folderUrl": "https://drive.google.com/drive/folders/1coH6MKSfbbu26RXZMX9SrIevkIsFWwV5",
       "sourceUrl": "https://docs.google.com/document/d/1_22ZS05X4c5qGnxVBGrp0hbtdlRPIotsNS0tj7H6rMQ/edit",
-      "status": "חוברת הכנה (אין אישור ביצוע מהמסמך)"
+      "status": "חומר סיור בתיק הקורס (חוברת הכנה + תיעוד הביקור)"
+    },
+    {
+      "id": "23",
+      "title": "גשר, נהריים וכינרת",
+      "date": "2026-10-29",
+      "stops": [
+        "גשר הישנה",
+        "חאן גשר",
+        "נהריים",
+        "תחנת צמח",
+        "חצר כנרת",
+        "בית המוטור",
+        "בית הקברות כנרת"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/11rQyWSY_kHruyeRM5con1sSR1-aDxe9X",
+      "sourceUrl": "https://drive.google.com/file/d/1Yjw4u0iI_vyy90c_h0DVXBi3oFE4QOBY/view",
+      "status": "חומר סיור בתיק הקורס"
+    },
+    {
+      "id": "24",
+      "title": "רמלה ולוד",
+      "date": "2026-11-05",
+      "stops": [
+        "רמלה",
+        "המסגד הגדול",
+        "שוק רמלה",
+        "בריכת הקשתות",
+        "המסגד הלבן",
+        "כנסיית סנט ג'ורג'",
+        "מוזיאון הפסיפס",
+        "גשר ג'ינדס",
+        "בית הקברות הבריטי"
+      ],
+      "folderUrl": "https://drive.google.com/drive/folders/1ArqpyQAW0MkEBgY1S2sThM5BvRWtbRm4",
+      "sourceUrl": "https://drive.google.com/file/d/12Tz8FQ-ZPVn5vP4dbUdonrcTQ1PG54z_/view",
+      "status": "חומר סיור בתיק הקורס"
     }
   ]
 }

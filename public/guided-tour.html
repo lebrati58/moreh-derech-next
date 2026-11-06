@@ -106,7 +106,7 @@ body.tour-open{overflow:hidden}
 <section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
 <section class="reader" id="reader" hidden></section>
 <div class="actions" id="actions" hidden><button type="button" class="back" id="prev">↩ הקודמת</button><button type="button" class="next" id="next">הבאה ←</button></div>
-<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. תיק 22 (גליל עליון) הוא חוברת הכנה ואינו אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a></p>
+<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a></p>
 </main>
 <script src="tour-data.js"></script>
 <script>
@@ -330,7 +330,7 @@ function renderReader(){
   placeStops(tour).forEach(s=>groups.set(s.name,{place:s,facts:[]}));
   qsT.forEach(q=>{const s=matchStop(tour,q.stop),k=s?s.name:q.stop;if(!groups.has(k))groups.set(k,{place:null,facts:[]});const g=groups.get(k);if(!g.facts.some(f=>f.text===q.explanation))g.facts.push({text:q.explanation,url:q.sourceUrl});});
   const t=catalogue.tours.find(x=>x.id===tour);let i=0,h='';
-  if(t&&tour==="22")h+='<div class="rcard" style="border-color:#b98a2e"><p>📒 החומר בתיק הזה הוא חוברת הכנה ואינו מאשר שהסיור בוצע.</p></div>';
+  if(t&&tour==="22")h+='<div class="rcard" style="border-color:#b98a2e"><p>📒 בתיק הזה: חוברת ההכנה ותיעוד הביקור (21–22/10).</p></div>';
   for(const [name,g] of groups){const p=g.place;if(!(p&&p.he)&&!g.facts.length)continue;i++;
     h+='<article class="rcard"><div class="num">תחנה '+i+'</div><h3>📍 '+esc(name)+'</h3>'+
       (p&&p.he?'<p>'+esc(p.he.extract)+'</p><span class="attr">ויקיפדיה: <a href="'+esc(p.he.url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.he.title)+' ↗</a> · CC BY-SA</span>':'')+
