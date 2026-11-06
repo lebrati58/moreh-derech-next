@@ -11,6 +11,8 @@ const dir = new URL('content/drive-questions/', ROOT);
 const quiz = JSON.parse(await readFile(quizPath, 'utf8'));
 const errors = [];
 const kept = quiz.questions.filter(q => !/^N\d\d-/.test(q.id));
+// Corrections faites à la main dans guided-quiz.json (réponses retravaillées, « * תוקן ») : conservées tant que la question n'a pas changé.
+const previous = new Map(quiz.questions.filter(q => /^N\d\d-/.test(q.id)).map(q => [q.id, q]));
 const known = new Set(kept.map(q => q.question.trim()));
 const added = [];
 
@@ -27,7 +29,9 @@ for (const f of (await readdir(dir)).filter(f => /^tour\d\d\.json$/.test(f)).sor
     if (known.has(x.q.trim())) errors.push(`${where} : question en double « ${x.q} »`);
     known.add(x.q.trim());
     n[x.level]++;
-    added.push({ id: `N${tid}-${x.level}-${String(n[x.level]).padStart(2, '0')}`, tourId: tid, level: x.level, source: 'tour' + tid, stop: x.stop,
+    const id = `N${tid}-${x.level}-${String(n[x.level]).padStart(2, '0')}`, prev = previous.get(id);
+    if (prev && prev.question === x.q.trim()) { added.push(prev); return; }
+    added.push({ id, tourId: tid, level: x.level, source: 'tour' + tid, stop: x.stop,
       question: x.q.trim(), options: x.a.map(s => s.trim()), correct: 0, explanation: x.e.trim(), sourceUrl: src && src.url, sourceDoc: src && src.label });
   });
 }

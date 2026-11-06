@@ -62,7 +62,7 @@ await page.waitForSelector('.tour .lv a');
 const stats = await page.textContent('#stats');
 ok(/1/.test(stats) && stats.includes('ימים ברצף'), 'suivi : 1 jour de série');
 ok((await page.textContent('#daily')).includes('/5'), 'suivi : résultat du défi du jour');
-ok((await page.locator('.tour').count()) >= 22, 'suivi : 22 סיורים listés');
+ok((await page.locator('.tour').count()) >= 24, 'suivi : 24 סיורים listés');
 const review = await page.textContent('#review');
 console.log('   ↳', review.trim().replace(/\s+/g, ' '));
 ok((await page.locator('.bar.today i:not(.zero)').count()) === 1, 'suivi : barre d’activité du jour');

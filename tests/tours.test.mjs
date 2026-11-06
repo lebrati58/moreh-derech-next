@@ -93,10 +93,10 @@ test('côté calculé sur le tracé : un lieu à l’est d’une route vers le n
   assert.equal(G.locate(P, [32.05, 34.99]).side, 'left');
 });
 
-test('registre : 23 סיורים + route 67, statuts valides, nouveau dossier → « à importer » (jamais « prêt »)', async () => {
+test('registre : 24 סיורים + route 67, statuts valides, nouveau dossier → « à importer » (jamais « prêt »)', async () => {
   const reg = await json('content/tours/registry.json');
-  assert.equal(reg.tours.length, 24);
-  assert.deepEqual(reg.tours.map(t => t.id), ['road67', ...Array.from({ length: 23 }, (_, i) => String(i + 1).padStart(2, '0'))]);
+  assert.equal(reg.tours.length, 25);
+  assert.deepEqual(reg.tours.map(t => t.id), ['road67', ...Array.from({ length: 24 }, (_, i) => String(i + 1).padStart(2, '0'))]);
   reg.tours.forEach(t => assert.ok(E.STATUSES.includes(t.status), t.id));
   assert.deepEqual(reg.tours.filter(t => t.status === 'pret').map(t => t.id), ['road67']);
   assert.equal(reg.tours.find(t => t.id === '23').status, 'a_importer');
@@ -104,11 +104,11 @@ test('registre : 23 סיורים + route 67, statuts valides, nouveau dossier �
   reg.tours.forEach(t => (t.transcripts || []).forEach(x => assert.ok(Object.keys(reg.transcriptKinds).includes(x.kind), t.id + ' ' + x.kind)));
   const copy = JSON.parse(JSON.stringify(reg));
   const added = mergeFolders(copy, [
-    { id: '1vhraDtYeTiLNzcdaKBa2kMsTmlImnaQh', title: 'סיור 23 - ישובי עמק הירדן', mimeType: 'application/vnd.google-apps.folder' },
-    { id: 'NEWFOLDERID000000000000000', title: 'סיור 24 - נגב מערבי', mimeType: 'application/vnd.google-apps.folder' },
+    { id: '11rQyWSY_kHruyeRM5con1sSR1-aDxe9X', title: 'סיור 23- גשר, נהריים, כינרת', mimeType: 'application/vnd.google-apps.folder' },
+    { id: 'NEWFOLDERID000000000000000', title: 'סיור 25 - נגב מערבי', mimeType: 'application/vnd.google-apps.folder' },
     { id: 'x', title: 'משהו אחר.pdf', mimeType: 'application/pdf' }], '2026-11-01');
-  assert.equal(added.length, 1); assert.equal(added[0].id, '24'); assert.equal(added[0].status, 'a_importer');
-  assert.equal(copy.tours.length, 25);
+  assert.equal(added.length, 1); assert.equal(added[0].id, '25'); assert.equal(added[0].status, 'a_importer');
+  assert.equal(copy.tours.length, 26);
 });
 
 // ---- ivrit.ai : un .docx dont le texte est dans word/afchunk.mht (HTML quoted-printable) ----

@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="מורה דרך">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1230"><meta name="description" content="סיור מודרך, תרגול שאלות וסיפורי תחנות מ-22 תיקי הסיורים — שלוש רמות וקישורים למקורות">
+<meta name="theme-color" content="#0b1230"><meta name="description" content="סיור מודרך, תרגול שאלות וסיפורי תחנות מ-24 תיקי הסיורים — שלוש רמות וקישורים למקורות">
 <title>סיור מודרך | MOREH DERECH NEXT</title>
 <link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
 <style>
@@ -106,7 +106,7 @@ body.tour-open{overflow:hidden}
 <section class="story" id="story" hidden></section><section id="quiz" aria-live="polite"><div class="question">טוען את השאלות…</div></section>
 <section class="reader" id="reader" hidden></section>
 <div class="actions" id="actions" hidden><button type="button" class="back" id="prev">↩ הקודמת</button><button type="button" class="next" id="next">הבאה ←</button></div>
-<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. תיק 22 (גליל עליון) הוא חוברת הכנה ואינו אישור שהסיור התקיים. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a></p>
+<p class="sources-note">📚 השאלות מבוססות על מסמכי Drive של הקורס, והמקור מופיע מתחת לכל תשובה. הספירות מחושבות ישירות מקובץ השאלות: בכל סיור מוצג רק מה שקיים בו בפועל. חלק מהחומר הוא סיכומי תלמידים — לא תחליף לבדיקה היסטורית עצמאית. תקצירי האתרים מוויקיפדיה בעברית (CC BY-SA). המשחק כאן מקומי ואינו מפרסם שאלות לתלמידים. <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1wftSSyA-eiLSadoxXMsJmsnqWjlUQrHsqtGSrpwK614/edit">📘 60 השאלות הראשונות ב-Google Drive ↗</a></p>
 </main>
 <script src="tour-data.js"></script>
 <script>
@@ -189,7 +189,7 @@ function syncUrl(){const u=new URL(location.href);u.searchParams.delete("new");i
   {const J3D={11:"jerusalem3d.html?period=2",12:"jerusalem3d.html?period=5",13:"jerusalem3d.html?period=5",14:"jerusalem3d.html?period=5",18:"jerusalem3d.html?period=7",15:"site3d.html?site=caesarea",19:"site3d.html?site=beitshean",1:"site3d.html?site=qumran",3:"site3d.html?site=arad",4:"site3d.html?site=megiddo",6:"site3d.html?site=herodium",16:"site3d.html?site=tzippori",17:"site3d.html?site=banias",5:"site3d.html?site=beitguvrin",21:"site3d.html?site=eingedi",22:"site3d.html?site=baram"},jp=J3D[Number(tour)],jl=$("j3dLink");if(jl){jl.hidden=!jp;if(jp)jl.href=jp;}} // parcours avec un site 3D : accès direct // parcours de Jérusalem : accès direct à la 3D
   $("mapLink").href="map.html?mode="+(mode==="tour"?"guided":mode==="review"||mode==="daily"?"quiz":mode)+(tour!=="all"?"&tour="+tour:"");}
 
-// Sélecteur de סיור sans liste déroulante système : 22 choix en grille compacte + recherche.
+// Sélecteur de סיור sans liste déroulante système : 24 choix en grille compacte + recherche.
 const shortNames={
   "01":"צפון מדבר יהודה","02":"כרמל","03":"נגב צפוני",
   "04":"מגידו וגלבוע","05":"השפלה","06":"חברון והרודיון",
@@ -199,7 +199,7 @@ const shortNames={
   "15":"קיסריה ואפולוניה","16":"ציפורי ובית שערים",
   "17":"גולן וחרמון","18":"ירושלים · רומית וביזנטית",
   "19":"בית שאן וכוכב הירדן","20":"ראש פינה והחולה",
-  "21":"עין גדי והר סדום","22":"גליל עליון"
+  "21":"עין גדי והר סדום","22":"גליל עליון","23":"גשר, נהריים וכינרת","24":"רמלה ולוד"
 };
 function tourLabel(id){
   if(id==="all")return "כל הסיורים";
@@ -267,7 +267,7 @@ function heroText(){
   $("heroTitle").textContent=mode==="stories"?"📖 סיפורי הסיור":mode==="tour"?"🧭 סיור מודרך":mode==="review"?"🔁 חזרה על טעויות":mode==="daily"?"☀️ אתגר היום":"🎮 תרגול שאלות";
   if(mode==="daily"){$("heroText").textContent="5 שאלות מכל הסיורים — אותן שאלות לכל הכיתה היום. הניסיון הראשון נספר!";return;}
   if(mode==="review"){$("heroText").textContent="השאלות שטעיתם בהן חוזרות — כל תיקון נשמר במסע שלכם.";return;}
-  $("heroText").textContent=(tour==="all"?stats.total+" שאלות מקוריות מ-22 תיקי הסיורים":tourTitle(tour)+" · "+c.total+" שאלות")+(mode==="stories"?". קוראים על התחנות — בלי שאלות ובלי ציון.":mode==="tour"?". תחנה אחרי תחנה: מה המקום, שאלה, והסבר.":". בחרו רמה וסיור — ומתחילים.");
+  $("heroText").textContent=(tour==="all"?stats.total+" שאלות מקוריות מ-24 תיקי הסיורים":tourTitle(tour)+" · "+c.total+" שאלות")+(mode==="stories"?". קוראים על התחנות — בלי שאלות ובלי ציון.":mode==="tour"?". תחנה אחרי תחנה: מה המקום, שאלה, והסבר.":". בחרו רמה וסיור — ומתחילים.");
 }
 function render(){
   if(!data)return;
@@ -330,7 +330,7 @@ function renderReader(){
   placeStops(tour).forEach(s=>groups.set(s.name,{place:s,facts:[]}));
   qsT.forEach(q=>{const s=matchStop(tour,q.stop),k=s?s.name:q.stop;if(!groups.has(k))groups.set(k,{place:null,facts:[]});const g=groups.get(k);if(!g.facts.some(f=>f.text===q.explanation))g.facts.push({text:q.explanation,url:q.sourceUrl});});
   const t=catalogue.tours.find(x=>x.id===tour);let i=0,h='';
-  if(t&&tour==="22")h+='<div class="rcard" style="border-color:#b98a2e"><p>📒 החומר בתיק הזה הוא חוברת הכנה ואינו מאשר שהסיור בוצע.</p></div>';
+  if(t&&tour==="22")h+='<div class="rcard" style="border-color:#b98a2e"><p>📒 בתיק הזה: חוברת ההכנה ותיעוד הביקור (21–22/10).</p></div>';
   for(const [name,g] of groups){const p=g.place;if(!(p&&p.he)&&!g.facts.length)continue;i++;
     h+='<article class="rcard"><div class="num">תחנה '+i+'</div><h3>📍 '+esc(name)+'</h3>'+
       (p&&p.he?'<p>'+esc(p.he.extract)+'</p><span class="attr">ויקיפדיה: <a href="'+esc(p.he.url)+'" target="_blank" rel="noopener noreferrer">'+esc(p.he.title)+' ↗</a> · CC BY-SA</span>':'')+

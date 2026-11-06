@@ -54,7 +54,7 @@ await page.waitForTimeout(900);
 const places = JSON.parse(await readFile(join(ROOT, 'places.json'), 'utf8'));
 ok(places.stats.placed > 50, `places.json : ${places.stats.placed}/${places.stats.stops} étapes placées`);
 ok(await page.locator('.cluster, .pin').count() > 5, 'carte : pins/regroupements affichés');
-ok((await page.locator('#countPill').textContent()).startsWith('22 סיורים'), 'carte : calque חידונים seul par défaut → 22 סיורים (מסלול 67 dans son calque)');
+ok((await page.locator('#countPill').textContent()).startsWith('24 סיורים'), 'carte : calque חידונים seul par défaut → 24 סיורים (מסלול 67 dans son calque)');
 ok(await page.locator('.j3d-sign').count() === 0 && await page.locator('.road-label').count() === 0, 'carte lisible : ni panneaux 3D ni route 67 tant que leurs calques sont décochés');
 await shot('02-map');
 // Calques : une seule carte, on coche ce qu'on veut voir
@@ -68,7 +68,7 @@ ok((await page.locator('#countPill').textContent()).includes(rtgPlaces.length + 
 await page.click('[data-layer="d3"]'); await page.waitForTimeout(600);
 ok(await page.locator('.j3d-sign').count() >= 10, 'calque 3D : panneaux « 3D » visibles même en vue pays');
 await page.click('[data-layer="road"]'); await page.waitForTimeout(300);
-ok(await page.locator('.road-label').count() === 1 && (await page.locator('#countPill').textContent()).startsWith('22 סיורים'), 'calque 67 : la route apparaît, sans gonfler le compteur des סיורים');
+ok(await page.locator('.road-label').count() === 1 && (await page.locator('#countPill').textContent()).startsWith('24 סיורים'), 'calque 67 : la route apparaît, sans gonfler le compteur des סיורים');
 await shot('02a-layers');
 // fiche d'un site de l'examen : lien vers le cartel + documents רט״ג + quiz
 const lak = rtgPlaces.find(p => p.key === 'exam:shfela:lachish') || rtgPlaces.find(p => p.kind === 'exam' && p.docs.some(d => d.fx));

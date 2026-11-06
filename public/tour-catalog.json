@@ -1,8 +1,8 @@
 {
-  "catalogVersion": "2026-10-22",
+  "catalogVersion": "2026-11-06",
   "root": "https://drive.google.com/drive/folders/1S5xdXEF4K0AOihsIkxXsZdMngvrXLvdb",
   "tourFolder": "https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f",
-  "scope": "22 direct subfolders in 2. סיורים. Document counts are direct Word/Google Docs/PDF only; exclude nested contents, recordings and other file types. One document per additional tour read for writing 3 question difficulties; this does not mean all 232 documents underwent fact checking.",
+  "scope": "24 direct subfolders in 2. סיורים. Document counts are direct Word/Google Docs/PDF only; exclude nested contents, recordings and other file types. One document per additional tour read for writing 3 question difficulties; this does not mean all 232 documents underwent fact checking.",
   "tours": [
     {
       "number": 1,
@@ -174,11 +174,27 @@
     },
     {
       "number": 22,
-      "title": "קמפוס גליל עליון — חוברת הכנה",
+      "title": "קמפוס גליל עליון",
       "folderUrl": "https://drive.google.com/drive/folders/1coH6MKSfbbu26RXZMX9SrIevkIsFWwV5",
-      "directDocuments": 1,
+      "directDocuments": 28,
       "quizSource": "galil",
-      "note": "חוברת הכנה ותיקיית הקלטות; תיעוד הביקור לא אומת."
+      "note": "חוברת הכנה ותיעוד הביקור (21–22/10)."
+    },
+    {
+      "number": 23,
+      "title": "גשר, נהריים וכינרת",
+      "folderUrl": "https://drive.google.com/drive/folders/11rQyWSY_kHruyeRM5con1sSR1-aDxe9X",
+      "directDocuments": 17,
+      "quizSource": "tour23",
+      "note": null
+    },
+    {
+      "number": 24,
+      "title": "רמלה ולוד",
+      "folderUrl": "https://drive.google.com/drive/folders/1ArqpyQAW0MkEBgY1S2sThM5BvRWtbRm4",
+      "directDocuments": 8,
+      "quizSource": "tour24",
+      "note": null
     }
   ]
 }

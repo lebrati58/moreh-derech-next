@@ -1,5 +1,5 @@
 // « 🏆 אלוף הקורס » — jeu de campus en direct (façon Kahoot) : logique pure, sans réseau ni DOM.
-// Banque : les 22 סיורים (guided-quiz.json), la frise (history-events.json via MDHistory) et
+// Banque : les סיורים (guided-quiz.json), la frise (history-events.json via MDHistory) et
 // l'architecture classique (architecture/data.json). L'hôte est l'arbitre : il mesure lui-même
 // le temps de réponse (heure de réception), calcule les points et le classement.
 (function (global) {
@@ -23,7 +23,7 @@
   function distinct4(opts) { var seen = {}; return opts.length === 4 && opts.every(function (o) { var k = clean(o); if (!k || seen[k]) return false; seen[k] = 1; return true; }); }
 
   // ---------- banques ----------
-  // 1. Les 22 סיורים : questions déjà vérifiées et sourcées, niveaux 1–3.
+  // 1. Les סיורים : questions déjà vérifiées et sourcées, niveaux 1–3.
   // titles : { '03': 'הנגב הצפוני', … } (siyurim-catalog.json) — on affiche le thème, pas le numéro.
   function tourTitles(catalog) { var t = {}; ((catalog && catalog.tours) || []).forEach(function (x) { if (x && x.id) t[x.id] = clean(x.title); }); t.road67 = t.road67 || 'כביש 67 — זכרון יעקב–יקנעם'; return t; }
   function fromTours(data, titles) {

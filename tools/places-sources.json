@@ -1,5 +1,5 @@
 {
-  "about": "Correspondance entre les étapes des 22 סיורים (public/siyurim-catalog.json) et des articles Wikipédia. tools/build-places.mjs lit ces titres, interroge l'API Wikipédia et écrit public/places.json avec les coordonnées publiées par Wikipédia/Wikidata. Une étape sans titre (null) n'est volontairement PAS placée sur la carte : nom générique, lieu ambigu ou thème plutôt qu'un point.",
+  "about": "Correspondance entre les étapes des סיורים (public/siyurim-catalog.json) et des articles Wikipédia. tools/build-places.mjs lit ces titres, interroge l'API Wikipédia et écrit public/places.json avec les coordonnées publiées par Wikipédia/Wikidata. Une étape sans titre (null) n'est volontairement PAS placée sur la carte : nom générique, lieu ambigu ou thème plutôt qu'un point.",
   "regions": {
     "galil": "גליל וגולן",
     "valleys": "עמקים",
@@ -131,6 +131,24 @@
       "פקיעין": ["en:Peki'in", "he:פקיעין"],
       "מירון": ["en:Meron, Israel", "he:מירון"],
       "ברעם": ["en:Bar'am National Park", "he:ברעם"],
-      "ריחאניה": ["en:Rehaniya", "he:ריחאניה"] } }
+      "ריחאניה": ["en:Rehaniya", "he:ריחאניה"] } },
+    "23": { "region": "galil", "themes": ["zionism", "nature", "arch"], "stops": {
+      "גשר הישנה": ["he:גשר הישנה", "en:Old Gesher"],
+      "חאן גשר": ["en:Jisr al-Majami", "he:גשר אל-מג'אמע"],
+      "נהריים": ["en:Naharayim", "he:נהריים"],
+      "תחנת צמח": ["en:Samakh railway station", "he:תחנת הרכבת צמח"],
+      "חצר כנרת": ["he:חצר כנרת"],
+      "בית המוטור": null,
+      "בית הקברות כנרת": ["en:Kinneret Cemetery", "he:בית הקברות כנרת"] } },
+    "24": { "region": "center", "themes": ["faith", "arch", "roman"], "stops": {
+      "רמלה": ["en:Ramla", "he:רמלה"],
+      "המסגד הגדול": ["en:Great Mosque of Ramla", "he:המסגד הגדול (רמלה)"],
+      "שוק רמלה": ["he:שוק רמלה"],
+      "בריכת הקשתות": ["en:Pool of the Arches", "he:בריכת הקשתות"],
+      "המסגד הלבן": ["en:White Mosque, Ramla", "he:המסגד הלבן (רמלה)"],
+      "כנסיית סנט ג'ורג'": ["en:Church of Saint George, Lod", "he:כנסיית גאורגיוס הקדוש (לוד)"],
+      "מוזיאון הפסיפס": ["en:Lod Mosaic", "he:פסיפס לוד"],
+      "גשר ג'ינדס": ["en:Jisr Jindas", "he:גשר ג'ינדאס"],
+      "בית הקברות הבריטי": ["en:Ramleh War Cemetery", "he:בית הקברות הצבאי הבריטי ברמלה"] } }
   }
 }
