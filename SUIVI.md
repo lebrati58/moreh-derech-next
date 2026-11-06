@@ -6,11 +6,11 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ---
 
-## 1. État actuel du jeu (24 octobre 2026)
+## 1. État actuel du jeu (6 novembre 2026)
 
 | Domaine | État | Détail |
 | --- | --- | --- |
-| Banque des 22 סיורים | ✅ | 1 343 questions (au moins 20 par niveau dans chacun des 22 סיורים, + 15 pour la route 67), sources Drive liées à chaque question |
+| Banque des 24 סיורים | ✅ | 1 610 questions (au moins 20 par niveau dans chacun des 24 סיורים, + 15 pour la route 67), sources Drive liées à chaque question |
 | Jeu סיור מודרך / תרגול / סיפורים | ✅ | `guided-tour.html` |
 | Carte d'Israël | ✅ | `map.html`, 79 étapes sur 93 placées (Wikipédia/Wikidata) |
 | Progression ⭐ / 👑 (« Zelda ») | 🟡 | `progress.js`, sur le téléphone |
@@ -28,6 +28,17 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
+
+### 6 novembre 2026 — Nouveaux סיורים du Drive : 23, 24 + visite du 22 (branche `feat/siyurim-23-24`)
+- ✅ **סיור 23 — גשר, נהריים, כינרת** (29/10) : 95 questions (24/34/37) tirées de 17 documents ; 7 étapes, 6 placées sur la carte (בית המוטור sans article).
+- ✅ **סיור 24 — רמלה–לוד** (05/11) : 97 questions (24/33/40) tirées des 8 documents ; 9 étapes, 8 placées (שוק רמלה sans article).
+- ✅ **סיור 22** : 75 questions de plus d'après la documentation de visite (Kahana + fiches) → 135 ; l'avertissement « חוברת הכנה seulement » est retiré.
+- ⚠️ Faits contradictoires entre documents **laissés hors questions** (ex. : Meron 1911 9/11 morts, יד לי"ד 1955/1966, mosquée de Ramla : Jean-Baptiste/Joseph d'Arimathie, dates 1947/1948 à Gesher, nombre de Yéménites à Kinneret). Le doc « נקודה קצרה נהרים בגשר » est à la corbeille.
+- ✅ Catalogues (`siyurim-catalog.json`, `tour-catalog.json`), carte (`places-sources.json` → workflow `places.yml`), registre des parcours (23 : nouveau dossier ; 24 ajouté, audio à transcrire), libellés « 24 סיורים », cache hors ligne v93.
+- ✅ `merge-drive-questions.mjs` conserve désormais les corrections faites à la main dans `guided-quiz.json` (avant : la fusion les écrasait) ; les 8 corrections « * תוקן » sont recopiées dans les fichiers sources. Après une fusion, relancer `node tools/apply-distractors.mjs`.
+- ✅ `build-places.mjs` ne plante plus sur une limite de débit Wikipédia ; le workflow commite sans le log ignoré.
+- ✅ Tests : mêmes 7 échecs Postgres préexistants, le reste vert ; navigateur carte (50) et suivi OK.
+- ⏳ Synchronisation automatique du Drive (branche `feat/drive-auto-sync`) toujours non fusionnée → mise à jour faite à la main.
 
 ### 3 novembre 2026 (suite) — אלוף הקורס : tout le Drive + géologie
 - ✅ Demande de Lionel : choisir les סיורים par thème (pas par numéro) ; ajouter la géologie et « tout ce qui concerne le Drive ».
