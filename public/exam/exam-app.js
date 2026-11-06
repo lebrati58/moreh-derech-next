@@ -314,6 +314,7 @@
     const catRows = Object.entries(S.cats).filter(([, v]) => v.err + v.ok).sort((a, b) => b[1].err - a[1].err).slice(0, 6);
     shell(`<section class="hero"><div class="eyebrow">MOREH DERECH EXAM · אתגר המבחן</div><h1>🎓 ${t('title')}</h1><p>${t('sub')}</p>
       <a class="btn tiyul" href="rtg.html" style="margin-top:8px">🌿 ספריית רט״ג וחידוני המדריך למדריך — נקודות למסע</a>
+      <a class="btn tiyul" href="sadna.html">✍️ סדנת 180 · 400 — שיטה, כרטיסי אתרים ותרגול כתיבה</a>
       <a class="btn tiyul" href="#/tiyul">🧑‍🏫 הפוך: אני אומר מה אני רוצה — האפליקציה מציעה מסלול</a>
       <div class="lvl"><div class="lvlt"><b>${t('level')} ${L.n} — ${esc(L.he)}</b><bdi dir="ltr">${S.xp}${L.to ? ' / ' + L.to : ''} XP</bdi></div><div class="lb"><i style="width:${L.pct}%"></i></div></div></section>
       <a class="btn rep-cta" href="#/rep">📚 הרפרטואר שלי${repDue ? ` — <b>${repDue}</b> לחזור היום` : ' — אתר קבוע לכל סוג יחידה'}</a>

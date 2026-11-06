@@ -24,10 +24,19 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | **Jérusalem 3D (העיר העתיקה)** | ✅ test navigateur mobile | `jerusalem3d.html` — 11 périodes, 58 fiches, monuments modélisés en détail, mode cinéma + vidéo, plan 2D, quiz 3D éteints (phase 2) |
 | **Frise + quiz d'histoire « ציר הזמן והחידון »** | ✅ test navigateur S24 + ordinateur | `history.html` — 48 événements, 7 périodes, quiz chronométré (voir §2, 27 octobre) |
 | **Architecture classique 3D « אדריכלות קלאסית »** | ✅ test navigateur S24 + ordinateur | `architecture.html` — 14 maquettes, 162 termes, jeu de zihouï, 83 questions ouvertes |
+| **Atelier d’écriture « ✍️ סדנת 180 · 400 »** | ✅ test navigateur S24 + ordinateur | `sadna.html` — méthode, phrases clés, 18 fiches de sites, entraînement chronométré avec compteur du cahier (voir §2, 6 novembre) |
 | **Jeu de campus « 🏆 אלוף הקורס »** | 🟡 tests navigateur OK, à essayer en vrai | `campus.html` — Kahoot du cours, code + QR, podium (voir §2, 3 novembre) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
+
+### 6 novembre 2026 — « ✍️ סדנת 180 · 400 » : atelier d'écriture des יחידות הדרכה (branche `feat/sadna-180-400`)
+- ✅ Demande de Lionel : une version plus facile à lire et à retenir des exercices 180 / 400 mots du dossier « קטעי כתיבה קצרים וארוכים », visuelle, **tout en hébreu**, intégrée au jeu.
+- ✅ `sadna.html` + `sadna/sadna-data.js` : barème de la partie 2, squelettes 180 (4 temps) et 400 (3 stations) en barres de budget, en-tête du cahier, 8 réflexes, phrases clés, 18 fiches (accroche, clés, chute, אמצעי, « זהירות »), mode révision (clés floutées), entraînement avec chrono 15/30 min, compteur identique au cahier (`MDExamCore.wordCount`), repères cochés automatiquement, brouillon gardé dans le téléphone.
+- ✅ Corrections vérifiées dans les textes des élèves : Agrippa à Hérodion en 15 **av.** (peinture **à sec**, peintres italiens selon Netzer), synagogue d'Ein Gedi **byzantine**, 11 Adar = יום תל חי (Yom HaZikaron = 4 Iyar), Gédéon : 22 000 **rentrent chez eux**, Nimrod **ayyoubide**, ״יהוה ואשרתו״ à Kuntillet Ajrud.
+- ✅ Entrées : 4e bouton sous « אתגר המבחן » sur l'accueil (4 langues) + bouton sur l'accueil de l'examen ; hors ligne (`sw.js`, cache v94).
+- ✅ Tests : `tests/sadna.test.mjs` (6) et `tests/sadna-browser.mjs` (S24 + ordinateur, tout vert). Non-régression exam + repertoire OK.
+- ⏳ Ajouter les fiches botaniques d'Inbar et les autres 180 d'Itaï (Nebi Moussa, Maresha, Nahal Prat…).
 
 ### 3 novembre 2026 (suite) — אלוף הקורס : tout le Drive + géologie
 - ✅ Demande de Lionel : choisir les סיורים par thème (pas par numéro) ; ajouter la géologie et « tout ce qui concerne le Drive ».
