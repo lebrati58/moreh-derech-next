@@ -1,6 +1,6 @@
 {
  "v": 1,
- "asOf": "2026-10-28",
+ "asOf": "2026-11-06",
  "root": "https://drive.google.com/drive/folders/1Oy9J-sALWmaILT-amR1wvrs9RdhykB_f",
  "statuses": {
   "a_importer": "dossier détecté, rien d’analysé",
@@ -835,14 +835,28 @@
   },
   {
    "id": "23",
-   "title": "ישובי עמק הירדן ודרום הכנרת",
-   "folder": "https://drive.google.com/drive/folders/1vhraDtYeTiLNzcdaKBa2kMsTmlImnaQh",
+   "title": "גשר, נהריים וכינרת",
+   "folder": "https://drive.google.com/drive/folders/11rQyWSY_kHruyeRM5con1sSR1-aDxe9X",
    "status": "a_importer",
-   "statusNote": "Nouveau dossier (28/10) : seulement une חוברת הכנה. Le סיור n’a pas encore eu lieu.",
+   "statusNote": "סיור du 29/10 : nouveau dossier (l’ancien dossier « ישובי עמק הירדן » n’existe plus). 10 enregistrements à transcrire (ivrit.ai) ; résumés de visite par étape présents.",
    "recordings": {
-    "audioFiles": 0,
-    "audioMB": 0,
-    "folder": null
+    "audioFiles": 10,
+    "audioMB": 366,
+    "folder": "https://drive.google.com/drive/folders/1DZpX6f38mjvvBiaHgtKfAjp6whGfx0Ra"
+   },
+   "transcripts": [],
+   "source": null
+  },
+  {
+   "id": "24",
+   "title": "רמלה ולוד",
+   "folder": "https://drive.google.com/drive/folders/1ArqpyQAW0MkEBgY1S2sThM5BvRWtbRm4",
+   "status": "a_importer",
+   "statusNote": "סיור du 05/11 : 7 enregistrements à transcrire (ivrit.ai) ; fiches par site présentes.",
+   "recordings": {
+    "audioFiles": 7,
+    "audioMB": 275,
+    "folder": "https://drive.google.com/drive/folders/1jkhd4m77HdXHIZ32P-37KHvYFkxok2oh"
    },
    "transcripts": [],
    "source": null
