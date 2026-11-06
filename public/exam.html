@@ -114,11 +114,32 @@ body.print-view{background:#e9ecf3;color:#111}body.print-view .md-tabbar,body.pr
 @media print{@page{size:A4;margin:14mm}body,body.print-view{background:#fff!important;padding:0!important}.noprint,.md-tabbar,#xToast,.confetti{display:none!important}#app{max-width:none;padding:0}.printdoc{border-radius:0;padding:0;font-size:11.5pt}.printdoc table{font-size:10pt}.printdoc tr,.plog{break-inside:avoid}.printdoc h2{break-after:avoid}}
 .regions{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.regions::-webkit-scrollbar{display:none}.regions button,.regions .soonr{flex:none;min-height:40px;padding:6px 12px;border-radius:999px;border:1px solid #34478a;background:#0e1736;color:inherit;font:inherit;font-size:14px;white-space:nowrap;display:inline-flex;align-items:center}.regions button{cursor:pointer}.regions button.on{background:var(--mint);color:#08122e;border-color:var(--mint);font-weight:800}.regions .soonr{opacity:.55;font-size:13px}
 .facts li.off{border-inline-start:3px solid #5fd18b;padding-inline-start:8px}.src.official{color:#bff7d4}
+
+/* 📚 הרפרטואר שלי */
+.btn.rep-cta{display:flex;width:100%;margin-top:12px;box-sizing:border-box;text-align:center}
+.rgrid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+@media(min-width:620px){.rgrid{grid-template-columns:1fr 1fr}}
+.rcell{display:flex;align-items:center;gap:10px;min-height:58px;padding:10px 12px;border-radius:14px;background:var(--card);border:1px solid var(--line);text-decoration:none}
+.rcell .rc-e{font-size:24px}.rcell .rc-t{flex:1;min-width:0;display:grid}.rcell .rc-t small{color:var(--soft);font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rcell .rc-s{display:grid;justify-items:center;font-size:18px}.rcell .rc-s small{font-size:11px;color:var(--soft)}
+.rcell.st-due{border-color:#ffd878}.rcell.st-mastered{border-color:var(--mint)}
+.rsum{margin:8px 0 0}
+a.mcard{text-decoration:none;color:inherit}
+.modes.sm a,.modes.sm .pinned{font-size:12.5px;min-height:40px;font-weight:700}.pinned{display:flex;align-items:center;justify-content:center;padding:6px 10px;border-radius:12px;border:1px dashed #ffd878}
+.prof{display:inline-block;margin-top:6px;font-size:12px;font-weight:800;color:#ffd878}
+.chip{display:inline-block;padding:2px 8px;margin:2px;border-radius:99px;background:#1d2a56;border:1px solid var(--line);font-size:13px}
+.lnk{background:none;border:0;color:var(--soft);text-decoration:underline;min-height:40px;padding:0}
+.pace{font-size:13px;margin:6px 0 0;line-height:1.5}
+.fx-list{list-style:none;padding:0}.fx-list li{margin:0}
+.fx summary{cursor:pointer;list-style:none;padding:8px 2px;border-bottom:1px dashed var(--line);font-size:14px;line-height:1.55}
+.fx summary::-webkit-details-marker{display:none}.fx summary::before{content:'📄 ';opacity:.55}.fx[open] summary::before{content:'📖 ';opacity:1}
+.fq{background:#0e1736;border-inline-start:3px solid #ffd878;border-radius:10px;padding:8px 10px;margin:6px 0 8px}.fq p{margin:0 0 4px;font-size:14px;line-height:1.6}.fq small{color:var(--soft);font-size:12px}
 </style>
 </head>
 <body>
 <main id="app"><p class="panel">טוען…</p></main>
 <script src="exam/exam-core.js"></script>
+<script src="exam/repertoire-core.js"></script>
 <script src="exam/exam-app.js"></script>
 <script src="tabbar.js"></script>
 </body>

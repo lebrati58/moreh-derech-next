@@ -80,6 +80,9 @@
     if (s.kind === 'official') return `<a class="src official" href="${esc(href)}" target="_blank" rel="noopener" title="${esc(s.title)}">🌿 ${esc(label || 'רט״ג')}</a>${s.rtg ? ` <a class="src" href="rtg.html#/d/${esc(s.rtg)}" title="בספריית רט״ג">📚</a>` : ''}`;
     return `<a class="src" href="${esc(href)}" target="_blank" rel="noopener">📄 ${esc(label || s.title)}</a>`;
   };
+  // Un fait du cours : on le touche → la phrase originale du document s'affiche juste en dessous (pas de lien à suivre).
+  const srcTitle = k => { const s = DATA.sources[k]; return s ? s.title : ''; };
+  const factList = (facts, cls) => `<ul class="${cls || 'facts'} fx-list">${(facts || []).map(f => `<li class="${f.official ? 'off' : ''}"><details class="fx"><summary>${esc(f.he)}</summary><div class="fq">${f.q ? `<p>«${esc(f.q)}»</p>` : ''}<small>${f.official ? '🌿' : '📄'} ${esc(srcTitle(f.src))}${f.page ? ' · עמ׳ ' + esc(f.page) : ''}</small></div></details></li>`).join('')}</ul>`;
   const statusChips = p => (p.status || []).map(s => `<span class="st st-${s}">${esc(DATA.statusLabels[s])}</span>`).join('');
 
   // ---------- Carte (MapLibre + relief si possible, sinon plan schématique) ----------
@@ -206,7 +209,8 @@
       <p class="muted">⏳ משך ביקור: ${p.visit ? esc(p.visit) : 'לא צוין בחומר — לא ממציאים'}</p>
       ${logisticsHtml(p)}
       ${(p.facts || []).some(f => f.official) ? '<p class="muted">📄 = חומר הקורס · 🌿 = מסמך רשמי של רשות הטבע והגנים (לא מהקורס), עם מספר העמוד</p>' : ''}
-      <ul class="facts">${(p.facts || []).map(f => `<li class="${f.official ? 'off' : ''}">${esc(f.he)} ${srcLink(f.src, f.official ? 'רט״ג' + (f.page ? ' עמ׳ ' + f.page : '') : '')}</li>`).join('')}</ul>
+      <p class="muted">👆 נוגעים במשפט כדי לראות את המשפט המקורי מהמסמך.</p>
+      ${factList(p.facts)}
       <p><a class="mini" href="rtg.html?q=${encodeURIComponent((p.short || p.he).replace(/\s*\(.*\)\s*/g, ' ').trim())}">🌿 מסמכי רט״ג על ${esc(p.short || p.he)}</a></p>
       ${(p.conflicts || []).map(c => `<p class="conf">⚠️ ${esc(c.he)}</p>`).join('')}
       ${p.note ? `<p class="conf">ℹ️ ${esc(p.note)}</p>` : ''}
@@ -302,16 +306,20 @@
 
   function viewHome() {
     const L = C.level(S.xp), daily = C.dailyMission(new Date(), DATA.missions);
+    const repDue = R.dueList(REP(), Date.now()).length;
     const rec = C.recommend(Object.fromEntries(Object.entries(S.cats).map(([k, v]) => [k, v.err])), DATA);
     const card = m => `<article class="mcard"><div class="me">${m.emoji}</div><div class="mt"><h3>${esc(m.he)}</h3><p>${esc(m.group)}${m.level > 1 ? ` · <span class="lk">${'⭐'.repeat(m.level)} ${t('harder')}</span>` : ''}</p>
-      <div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div></div></article>`;
+      <div class="modes"><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div>
+      <div class="modes sm"><a href="#/rep/m/${m.id}">📚 הכנה מהרפרטואר</a>${S.focus === m.id ? '<span class="pinned">📌 נעול</span>' : `<a href="#/focus/${m.id}">📌 לנעול עד שליטה</a>`}</div>${m.source === 'prof' ? '<span class="prof">📝 מדף התרגול של המרצה</span>' : ''}</div></article>`;
     const catRows = Object.entries(S.cats).filter(([, v]) => v.err + v.ok).sort((a, b) => b[1].err - a[1].err).slice(0, 6);
     shell(`<section class="hero"><div class="eyebrow">MOREH DERECH EXAM · אתגר המבחן</div><h1>🎓 ${t('title')}</h1><p>${t('sub')}</p>
       <a class="btn tiyul" href="rtg.html" style="margin-top:8px">🌿 ספריית רט״ג וחידוני המדריך למדריך — נקודות למסע</a>
       <a class="btn tiyul" href="#/tiyul">🧑‍🏫 הפוך: אני אומר מה אני רוצה — האפליקציה מציעה מסלול</a>
       <div class="lvl"><div class="lvlt"><b>${t('level')} ${L.n} — ${esc(L.he)}</b><bdi dir="ltr">${S.xp}${L.to ? ' / ' + L.to : ''} XP</bdi></div><div class="lb"><i style="width:${L.pct}%"></i></div></div></section>
-      <section class="daily"><div class="eyebrow">☀️ ${t('today')}</div><h2>${daily.emoji} ${esc(daily.he)}</h2><p>${esc(daily.brief)}</p>
-        <div class="modes big"><a href="#/m/${daily.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${daily.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${daily.id}/exam">⏱️ ${t('exam')}</a></div></section>
+      <a class="btn rep-cta" href="#/rep">📚 הרפרטואר שלי${repDue ? ` — <b>${repDue}</b> לחזור היום` : ' — אתר קבוע לכל סוג יחידה'}</a>
+      ${focusHtml() || `<section class="daily"><div class="eyebrow">☀️ ${t('today')}</div><h2>${daily.emoji} ${esc(daily.he)}</h2><p>${esc(daily.brief)}</p>
+        <div class="modes big"><a href="#/m/${daily.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${daily.id}/errors">🔎 ${t('errors')}</a><a href="#/m/${daily.id}/exam">⏱️ ${t('exam')}</a></div>
+        <p class="muted">💡 הנושא מתחלף כל יום. כדי להתקדם באמת: 📌 נועלים נושא אחד עד שליטה.</p></section>`}
       <h2 class="sec">🗺️ ${t('missions')} — ${esc(DATA.he)}</h2>
       ${regionNav()}
       <div id="homeMap"></div>
@@ -324,6 +332,7 @@
       <p class="foot">${t('indicative')}<br>📄 ${MODELS.models.school5.sources.map(s => `<a href="https://drive.google.com/open?id=${esc(s.id)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</p>`);
     mapBox($('#homeMap'), {});
     wireSaved(); wireRegions();
+    const uf = $('#unfocus'); if (uf) uf.addEventListener('click', () => { S.focus = null; save(); viewHome(); });
   }
 
   function missionHead(m, mode) {
@@ -659,10 +668,12 @@
     const tabs = [['plan', 'תוכנית']].concat(slots.map((s, i) => ['u' + s.id, String(i + 1)])).concat([['long', 'מורחבת']]);
     const cur = E.tab || 'plan';
     shell(`<section class="brief exam"><div class="timer" id="tmr" aria-live="off"><span class="hg">⏳</span><b id="tm"></b></div><h1>⏱️ ${esc(m.he)}</h1><p>${esc(m.brief)} ${esc(model.day.he)}</p><p class="muted">${esc(model.he)} · ללא עזרה</p>
+      <p class="pace" id="pace" aria-live="off"></p>
       <nav class="xtabs">${tabs.map(([k, l]) => `<button type="button" data-t="${k}" class="${cur === k ? 'on' : ''}">${l}</button>`).join('')}</nav></section><div id="xb"></div>
       <div class="acts"><button type="button" class="btn" id="sub">📝 ${t('submit')}</button></div>`, { back: '#/' });
     const body = $('#xb');
-    const showT = () => { const ms = left(), mm = Math.floor(ms / 60000), ss = Math.floor(ms / 1000) % 60; $('#tm').textContent = `${Math.floor(mm / 60)}:${String(mm % 60).padStart(2, '0')}:${String(ss).padStart(2, '0')}`; $('#tmr').classList.toggle('low', ms < 10 * 60000); if (!ms) submit(true); };
+    const showT = () => { const ms = left(), mm = Math.floor(ms / 60000), ss = Math.floor(ms / 1000) % 60; $('#tm').textContent = `${Math.floor(mm / 60)}:${String(mm % 60).padStart(2, '0')}:${String(ss).padStart(2, '0')}`; $('#tmr').classList.toggle('low', ms < 10 * 60000); showPace(); if (!ms) submit(true); };
+    const showPace = () => { const el = $('#pace'); if (!el) return; const el2 = (Date.now() - E.startedAt) / 60000, pc = R.pace(E.minutes, el2, slots.length); el.innerHTML = `⏱️ עכשיו: <b>${esc(pc.part.he)}</b> · עוד ${pc.left} דק׳ לשלב · <span class="muted">${pc.parts.filter(x => x.id !== 'review').map(x => `${esc(x.he)} ${x.min}′`).join(' · ')}</span>`; };
     clearInterval(tick); tick = setInterval(() => { if (!document.getElementById('tm')) return clearInterval(tick); showT(); }, 1000); showT();
     $$('[data-t]').forEach(b => b.addEventListener('click', () => { E.tab = b.dataset.t; save(); viewExam(m); }));
     if (cur === 'plan') {
@@ -721,6 +732,7 @@
   function viewResult(m) {
     const E = S.exams[m.id];
     if (!E || !E.result) { location.hash = `#/m/${m.id}/exam`; return; }
+    noteMastery(m, E);
     const r = E.result, model = MODELS.models[E.model];
     const slots = C.examSlots(m, model);
     const modelFor = p => { if (p.id === 'long') return C.modelFor(DATA, m.long.best, m.long.need, true); const sl = p.slot && m.slots.find(s => s.id === p.slot); return sl ? C.modelFor(DATA, sl.best, sl.need) : null; };
@@ -771,6 +783,140 @@
     });
   }
 
+
+  // ===== 📚 « הרפרטואר שלי » : un site de référence par région × catégorie, fiche ≤ 180 mots, révision espacée =====
+  // Les lieux d'un sujet changent, les catégories reviennent : on apprend SES sites, pas une nouvelle liste à chaque fois.
+  const R = window.MDRepertoire;
+  const REP = () => (S.rep || (S.rep = { cards: {} }));
+  const repCard = cat => REP().cards[R.key(DATA.region, cat)] || null;
+  const STATE_HE = { empty: ['⚪', 'ריק'], chosen: ['📍', 'נבחר — לכתוב'], learning: ['🟡', 'בלמידה'], due: ['🔔', 'לחזור היום'], mastered: ['🟢', 'שולט'] };
+  const dueText = c => { if (!c || c.due == null) return ''; const d = Math.round((c.due - Date.now()) / 864e5); return d <= 0 ? 'היום' : d === 1 ? 'מחר' : `בעוד ${d} ימים`; };
+  function repRegionNav() {
+    return `<nav class="regions" aria-label="אזורים">${REGIONS.filter(r => r.file).map(r => `<button type="button" data-rregion="${r.id}" class="${DATA.region === r.id ? 'on' : ''}" aria-pressed="${DATA.region === r.id}">${r.emoji || '📍'} ${esc(r.he)}</button>`).join('')}</nav>`;
+  }
+  function wireRepRegions() { $$('[data-rregion]').forEach(b => b.addEventListener('click', () => loadRegion(b.dataset.rregion).then(viewRep))); }
+
+  function viewRep() {
+    const now = Date.now(), due = R.dueList(REP(), now), st = R.stats(REP(), DATA.region, now);
+    const cell = c => {
+      const k = repCard(c.id), s = R.state(k, now), n = R.candidates(DATA, c.id).length, [ic, lab] = STATE_HE[s];
+      return `<a class="rcell st-${s}" href="#/rep/c/${c.id}"><span class="rc-e">${c.emoji}</span><span class="rc-t"><b>${esc(c.he)}</b><small>${k && k.site ? esc(k.siteName) : n ? `${n} אתרים אפשריים` : 'אין אתר בחומר'}</small></span><span class="rc-s" title="${esc(lab)}">${ic}<small>${k && k.text && s !== 'due' ? esc(dueText(k)) : esc(lab)}</small></span></a>`;
+    };
+    shell(`<section class="brief"><div class="eyebrow">📚 הרפרטואר שלי · ${esc(DATA.he)}</div><h1>אתר אחד לכל סוג יחידה</h1>
+      <p>במבחן המקומות מתחלפים, אבל סוגי היחידות חוזרים: מים, קבורה, חומות, הדרכת דרך, בית כנסת… בוחרים <b>פעם אחת</b> אתר קבוע לכל סוג, כותבים לו יחידה של 180 מילים, וכותבים אותה שוב מהזיכרון: אחרי יום, 3 ימים, שבוע, 3 שבועות.</p>
+      ${due.length ? `<a class="btn" href="#/rep/review">🔔 ${due.length} יחידות לחזור עליהן היום</a>` : '<p class="good">✨ אין חזרות היום.</p>'}</section>
+      ${repRegionNav()}
+      <p class="muted rsum">🟢 ${st.mastered} שולט · 🟡 ${st.learning + st.due} בלמידה · 📍 ${st.chosen} לכתוב · ⚪ ${st.empty} ריק</p>
+      <div class="rgrid">${R.CATS.map(cell).join('')}</div>
+      <h2 class="sec">🎯 הכנה לנושא מבחן</h2>
+      <p class="muted">בוחרים נושא: האפליקציה מראה לכל יחידה את האתר שלכם ואם היחידה מוכנה.</p>
+      <div class="mlist">${DATA.missions.map(m => `<a class="mcard" href="#/rep/m/${m.id}"><div class="me">${m.emoji}</div><div class="mt"><h3>${esc(m.he)}</h3><p>${esc(m.group)}</p></div></a>`).join('')}</div>`, { back: '#/' });
+    wireRepRegions();
+  }
+
+  function viewRepCard(cat) {
+    const c = R.CAT[cat]; if (!c) return viewRep();
+    const k = REP().cards[R.key(DATA.region, cat)] || { cat, region: DATA.region };
+    const cands = R.candidates(DATA, cat), site = k.site && P[k.site];
+    const limits = MODELS.models.school5.limits;
+    const factsHtml = p => `<p class="muted">👆 נוגעים במשפט כדי לראות את המשפט המקורי מהמסמך.</p>${factList(p.facts)}<div class="srcs">${[...new Set((p.facts || []).map(f => f.src))].map(k => srcLink(k)).join('')}</div>`;
+    const mo = site ? C.modelFor(DATA, site.id, c.tags) : null;
+    shell(`<section class="brief"><div class="eyebrow">${c.emoji} ${esc(DATA.he)} · הרפרטואר שלי</div><h1>${esc(c.he)}</h1>
+      <p>${site ? `האתר שלכם: <b>${esc(site.short || site.he)}</b>` : 'בחרו את האתר שתשתמשו בו בכל פעם שהמבחן יבקש יחידה מהסוג הזה באזור.'}</p></section>
+      ${cands.length ? `<section class="panel"><h3>1. האתר הקבוע שלי</h3><div class="tagpick">${cands.map(p => `<button type="button" data-pick="${p.id}" class="${k.site === p.id ? 'on' : ''}" aria-pressed="${k.site === p.id}">${esc(p.short || p.he)}</button>`).join('')}</div>
+        <p class="muted">מסודר לפי כמות החומר בקורס. אפשר להחליף — החזרות יתחילו מחדש.</p></section>` : `<section class="panel"><p>⚠️ אין בחומר הקורס אתר מהסוג הזה ב${esc(DATA.he)}. כדאי להכין אחד מהסיור או ממקור רשמי.</p></section>`}
+      ${site ? `<section class="panel"><h3>2. מה אומר החומר</h3>${factsHtml(site)}${(site.conflicts || []).map(x => `<p class="muted">⚠️ ${esc(x.he)}</p>`).join('')}</section>
+      <section class="panel ed"><h3>3. היחידה שלי (עד 180 מילים)</h3>
+        <textarea id="rText" rows="10" dir="rtl" placeholder="פתיחה — מה רואים — סיום ושאלה לקבוצה">${esc(k.text || '')}</textarea>
+        <p id="rWc"></p>
+        <div class="acts"><button type="button" class="btn" id="rSave">💾 לשמור את היחידה</button>${mo ? '<button type="button" class="btn ghost" id="rModel">👀 תשובה לדוגמה</button>' : ''}</div>
+        <div id="rMo" hidden>${mo ? `<p class="meta">📍 ${esc(mo.place)} · 🧰 ${esc(mo.method)}</p><div class="mtext"><p>${esc(mo.text)}</p></div><div class="srcs">${(mo.src || []).map(s => srcLink(s)).join('')}</div>` : ''}</div>
+        ${k.text ? `<p class="muted">חזרה הבאה: ${esc(dueText(k))} · שלב ${k.step || 0}/${R.STEPS.length}</p>` : ''}</section>` : ''}
+      <div class="acts"><a class="btn ghost" href="#/rep">↩ לכל הרפרטואר</a></div>`, { back: '#/rep' });
+    $$('[data-pick]').forEach(b => b.addEventListener('click', () => {
+      const p = P[b.dataset.pick]; if (!p) return;
+      const changed = k.site && k.site !== p.id;
+      if (changed && k.text && !confirm('להחליף אתר? היחידה הכתובה תימחק והחזרות יתחילו מחדש.')) return;
+      REP().cards[R.key(DATA.region, cat)] = Object.assign({}, changed ? { cat, region: DATA.region } : k, { site: p.id, siteName: p.short || p.he, regionHe: DATA.he, cat, region: DATA.region }, changed ? { text: '', step: 0, due: null, hist: [] } : {});
+      save(); award('rep:pick:' + R.key(DATA.region, cat), 5); viewRepCard(cat);
+    }));
+    const ta = $('#rText');
+    if (ta) {
+      const wc = () => { const n = C.wordCount(ta.value), w = C.wordState(n, 'short', limits); $('#rWc').innerHTML = `<span class="wc wc-${w.state}">${n}/${w.max} ${t('words')}</span>`; };
+      ta.addEventListener('input', wc); wc();
+      $('#rSave').addEventListener('click', () => {
+        const txt = ta.value.trim(); if (!txt) return toast('כתבו קודם את היחידה');
+        const cur = REP().cards[R.key(DATA.region, cat)], first = !cur.text;
+        cur.text = txt; cur.at = Date.now();
+        if (first) { cur.step = 0; cur.due = Date.now() + 864e5 - 1; cur.hist = []; }
+        save(); first ? (gain(15), celebrate('📚 יחידה נוספה לרפרטואר — חזרה ראשונה מחר')) : toast('נשמר'); viewRepCard(cat);
+      });
+      const bm = $('#rModel'); if (bm) bm.addEventListener('click', () => { const el = $('#rMo'); el.hidden = !el.hidden; });
+    }
+  }
+
+  // Révision : réécrire de mémoire, puis comparer avec sa propre fiche
+  function viewReview() {
+    const now = Date.now(), list = R.dueList(REP(), now);
+    if (!list.length) { shell(`<section class="brief"><div class="eyebrow">📚 חזרה</div><h1>✨ אין חזרות היום</h1><p>כל היחידות שלכם מתוזמנות לימים הבאים.</p><div class="acts"><a class="btn" href="#/rep">לרפרטואר</a></div></section>`, { back: '#/rep' }); return; }
+    const k = list[0], c = REP().cards[k], cat = R.CAT[c.cat] || { emoji: '', he: c.cat };
+    shell(`<section class="brief"><div class="eyebrow">🔔 חזרה ${1} מתוך ${list.length} · ${esc(c.regionHe || '')}</div><h1>${cat.emoji} ${esc(cat.he)}: ${esc(c.siteName)}</h1>
+      <p>כתבו מהזיכרון את היחידה שלכם, בלי להציץ. אחר כך נשווה למה שכתבתם בפעם הקודמת.</p></section>
+      <section class="panel ed"><textarea id="vText" rows="10" dir="rtl" placeholder="מהזיכרון…"></textarea><p id="vWc"></p>
+      <div class="acts"><button type="button" class="btn" id="vCheck">🔍 ${t('check')}</button></div></section><div id="vOut"></div>`, { back: '#/rep' });
+    const ta = $('#vText'), lim = MODELS.models.school5.limits;
+    const wc = () => { const n = C.wordCount(ta.value), w = C.wordState(n, 'short', lim); $('#vWc').innerHTML = `<span class="wc wc-${w.state}">${n}/${w.max} ${t('words')}</span>`; };
+    ta.addEventListener('input', wc); wc();
+    $('#vCheck').addEventListener('click', () => {
+      if (!ta.value.trim()) return toast('כתבו קודם מהזיכרון');
+      const r = R.compare(c.text, ta.value), next = R.schedule(c, r.pct, Date.now());
+      REP().cards[k] = next; save();
+      gain(r.pct >= R.PASS ? 10 : 3);
+      if (next.step >= R.MASTER && (c.step || 0) < R.MASTER) celebrate('🟢 שולטים ביחידה: ' + c.siteName);
+      $('#vCheck').disabled = true; ta.readOnly = true;
+      $('#vOut').innerHTML = `<section class="score"><div class="big"><bdi dir="ltr">${r.pct}%</bdi></div><p>${r.pct >= R.PASS ? '✔ עברתם — החזרה הבאה ' : '↺ נחזור על זה '}${esc(dueText(next))}</p><p class="muted">אחוז מילות המפתח מהיחידה שלכם שחזרו בכתיבה מהזיכרון (${r.found.length}/${r.total}). הערכה טכנית בלבד.</p></section>
+        ${r.missed.length ? `<section class="panel"><h3>❓ מה נשכח</h3><p class="miss">${r.missed.slice(0, 40).map(w => `<span class="chip">${esc(w)}</span>`).join(' ')}</p></section>` : ''}
+        <details class="panel"><summary><b>📄 היחידה המקורית שלכם</b></summary><div class="mtext"><p>${esc(c.text)}</p></div></details>
+        <div class="acts"><button type="button" class="btn" id="vNext">${list.length > 1 ? '➡️ ' + t('next') : '✔ סיום'}</button><button type="button" class="btn ghost" id="vKeep">✍️ לעדכן את היחידה שלי בגרסה הזו</button></div>`;
+      $('#vNext').addEventListener('click', () => (list.length > 1 ? viewReview() : (location.hash = '#/rep')));
+      $('#vKeep').addEventListener('click', () => { REP().cards[k].text = ta.value.trim(); save(); toast('היחידה עודכנה'); });
+    });
+  }
+
+  // Un sujet d'examen vu à travers le répertoire
+  function viewRepMission(m) {
+    const now = Date.now(), units = R.missionPrep(m, REP(), DATA.region, now);
+    const seen = {}; units.forEach(u => { if (u.cat) seen[u.cat] = (seen[u.cat] || 0) + 1; });
+    const ready = units.filter(u => u.card && u.card.text).length;
+    shell(`<section class="brief"><div class="eyebrow">🎯 הכנה מהרפרטואר · ${esc(DATA.he)}</div><h1>${esc(m.he)}</h1><p>${esc(m.brief)}</p>
+      <p><b>${ready}/${units.length}</b> יחידות כבר כתובות ברפרטואר שלכם.</p></section>
+      ${units.map((u, i) => { const c = R.CAT[u.cat], [ic, lab] = STATE_HE[u.state]; return `<section class="panel"><h3>${u.long ? '📜' : i + 1 + '.'} ${esc(u.he)}</h3>
+        <p>${c ? `${c.emoji} ${esc(c.he)} · ` : ''}${u.card && u.card.site ? `האתר שלכם: <b>${esc(u.card.siteName)}</b> · ${ic} ${esc(lab)}` : '⚪ אין עדיין אתר ברפרטואר'}</p>
+        ${seen[u.cat] > 1 ? '<p class="muted">⚠️ כמה יחידות באותו סוג: אפשר נקודה אחרת באותו אתר, או להכין אתר שני.</p>' : ''}
+        ${c ? `<a class="btn ghost" href="#/rep/c/${u.cat}">${u.card && u.card.text ? '✍️ לפתוח את היחידה' : '➕ לבחור ולכתוב'}</a>` : ''}</section>`; }).join('')}
+      <div class="acts"><a class="btn" href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a><a class="btn ghost" href="#/focus/${m.id}">📌 לנעול עד שליטה</a></div>`, { back: '#/rep' });
+  }
+
+  // ===== 📌 Mission fixe jusqu'à maîtrise (2 examens blancs ≥ 80 %) =====
+  function focusMission() { const id = S.focus; if (!id) return null; const r = regionOfMission(id); return r ? { id, region: r.id } : null; }
+  function noteMastery(m, E) {
+    if (!E || !E.result || !E.startedAt) return;
+    const L = S.mastery || (S.mastery = {}), arr = L[m.id] || (L[m.id] = []);
+    if (arr.some(x => x.at === E.startedAt)) return;
+    arr.push({ at: E.startedAt, pct: E.result.pct }); save();
+    const ms = R.mastery(arr);
+    if (S.focus === m.id && ms.done) { S.focus = null; save(); celebrate('🏆 שולטים בנושא! אפשר לנעול נושא חדש'); }
+  }
+  function focusHtml() {
+    const f = focusMission(); if (!f || f.region !== DATA.region) return '';
+    const m = DATA.missions.find(x => x.id === f.id); if (!m) return '';
+    const ms = R.mastery((S.mastery || {})[m.id]);
+    return `<section class="daily"><div class="eyebrow">📌 הנושא הנעול — עד ${ms.need} סימולציות של ${R.MASTERY.min}%+</div><h2>${m.emoji} ${esc(m.he)}</h2><p>${esc(m.brief)}</p>
+      <p><b>${ms.ok}/${ms.need}</b> ✔</p>
+      <div class="modes big"><a href="#/rep/m/${m.id}">📚 הכנה</a><a href="#/m/${m.id}/guided">🧭 ${t('guided')}</a><a href="#/m/${m.id}/exam">⏱️ ${t('exam')}</a></div>
+      <p><button type="button" class="lnk" id="unfocus">🔓 לשחרר את הנעילה</button></p></section>`;
+  }
+
   // ---------- Régions (tout Israël, une région à la fois : exam/regions.json → un fichier par région) ----------
   const readyRegions = () => REGIONS.filter(r => r.file);
   const regionById = id => readyRegions().find(r => r.id === id) || null;
@@ -794,6 +940,22 @@
     const h = location.hash.replace(/\?.*$/, ''), p = h.split('/');
     document.body.classList.remove('print-view');
     if (p[1] === 'tiyul') return viewTiyul();
+    if (p[1] === 'rep') {
+      if (p[2] === 'review') return viewReview();
+      if (p[2] === 'c' && p[3]) return viewRepCard(p[3]);
+      if (p[2] === 'm' && p[3]) {
+        const want = (regionOfMission(p[3]) || {}).id;
+        if (want && want !== DATA.region) return loadRegion(want).then(route);
+        const m = DATA.missions.find(x => x.id === p[3]); return m ? viewRepMission(m) : viewRep();
+      }
+      return viewRep();
+    }
+    if (p[1] === 'focus' && p[2]) {
+      const want = (regionOfMission(p[2]) || {}).id;
+      if (!want) { location.hash = '#/'; return; }
+      S.focus = p[2]; save(); toast('📌 הנושא ננעל עד שליטה');
+      return loadRegion(want).then(() => { location.hash = '#/'; viewHome(); });
+    }
     if (p[1] === 's' && p[2]) {   // fiche d'un site ouverte depuis la carte : exam.html#/s/<région>/<site>
       if (p[2] !== DATA.region && regionById(p[2])) return loadRegion(p[2]).then(route);
       viewHome(); if (P[p[3]]) siteSheet(p[3]); return;

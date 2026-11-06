@@ -69,7 +69,8 @@
       "file": "jerusalem.json",
       "missions": [
         "je1",
-        "je2"
+        "je2",
+        "je3"
       ]
     },
     {
@@ -110,7 +111,8 @@
       "file": "negev.json",
       "missions": [
         "ng1",
-        "ng2"
+        "ng2",
+        "ng3"
       ]
     },
     {
@@ -177,7 +179,8 @@
       "file": "upper-galilee.json",
       "missions": [
         "ug1",
-        "ug2"
+        "ug2",
+        "ug3"
       ]
     }
   ]
