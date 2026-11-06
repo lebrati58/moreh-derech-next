@@ -29,6 +29,7 @@
     const h = location.hash || '#/';
     if (h === '#/play') return showPlay();
     if (h === '#/result') return showResult();
+    if (h === '#/mt' || h.startsWith('#/mt/')) return window.MDPartAMidterm ? (load().catch(() => {}), window.MDPartAMidterm.show(h)) : showHome();
     return showHome();
   }
   addEventListener('hashchange', route);
@@ -40,7 +41,7 @@
 
   // ------------------------------------------------------------------ accueil
   async function showHome() {
-    $('back').hidden = true;
+    $('back').hidden = true; $('back').href = '#/'; $('back').textContent = '🎓 נושאים';
     const app = $('app'); app.innerHTML = '<div class="card">טוען…</div>';
     try { await load(); } catch (e) { app.innerHTML = '<div class="card">לא ניתן לטעון את בנק השאלות.</div>'; return; }
     const st = P && P.partAStats ? P.partAStats() : { points: 0, known: [], mistakes: [], seen: [], status: () => 0 };
@@ -54,6 +55,7 @@
       <section class="hero"><div class="eyebrow">הכנה למבחן · חלק א׳</div><h1>🎓 מבחן חלק א׳ — לפי נושאים</h1>
         <p>שאלות אמריקאיות בנושאי הבחינה, עם הסבר ומקור אחרי כל תשובה. 10 שאלות בכל סבב.</p>
         <div class="stats"><span>📚 ${total} שאלות</span><span>✅ ${known} ידועות</span><span>🏆 ${st.points.toLocaleString('he-IL')} נק׳</span>${st.mistakes.length ? `<span>🔁 ${st.mistakes.length} לתיקון</span>` : ''}</div></section>
+      <a class="mtcard" href="#/mt"><span class="e">📝</span><span><b>בחינת מחצית — מועד ב׳, כלשונה</b><small>45 אמריקאיות + 45 השלמה · עונים על 40 · ציון מתוך 40 · סימולציה או תרגול</small></span><span class="arr">←</span></a>
       <section class="card"><h2>⚡ רמת קושי</h2>
         <div class="levels" role="group">${[[0, '🎲 הכול'], [1, '🌱 קל'], [2, '⭐ בינוני'], [3, '🔥 קשה']].map(([l, t]) => `<button data-level="${l}" aria-pressed="${pref.level === l}">${t}</button>`).join('')}</div></section>
       <section class="card"><h2>📚 נושא</h2>
@@ -78,7 +80,7 @@
 
   // ------------------------------------------------------------------ manche
   async function showPlay() {
-    $('back').hidden = false;
+    $('back').hidden = false; $('back').href = '#/'; $('back').textContent = '🎓 נושאים';
     try { await load(); } catch (e) { $('app').innerHTML = '<div class="card">לא ניתן לטעון את בנק השאלות.</div>'; return; }
     if (!run || !run.items.length) { newRun(); if (!run.items.length) { $('app').innerHTML = '<div class="card">אין עדיין שאלות בנושא הזה. <a href="#/">חזרה</a></div>'; return; } }
     if (run.i >= run.items.length) { location.hash = '#/result'; return; }
@@ -146,7 +148,7 @@
 
   // ------------------------------------------------------------------ résultat
   async function showResult() {
-    $('back').hidden = false;
+    $('back').hidden = false; $('back').href = '#/'; $('back').textContent = '🎓 נושאים';
     try { await load(); } catch (e) {}
     const app = $('app');
     if (!run || !run.rec) { app.innerHTML = '<div class="card">לא נענו שאלות. <a href="#/">חזרה לנושאים</a></div>'; return; }
