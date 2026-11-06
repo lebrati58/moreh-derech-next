@@ -1,4 +1,4 @@
-// Construit public/places.json : coordonnées des étapes des 22 סיורים, telles que publiées par Wikipédia/Wikidata.
+// Construit public/places.json : coordonnées des étapes des סיורים, telles que publiées par Wikipédia/Wikidata.
 // Aucune coordonnée n'est saisie à la main : chaque point provient de l'API Wikipédia (prop=coordinates),
 // avec le titre de l'article, son lien et l'identifiant Wikidata, pour vérification.
 // Usage : node tools/build-places.mjs   (nécessite un accès Internet ; exécuté par .github/workflows/places.yml)
@@ -12,7 +12,7 @@ const BOX = { minLat: 29.4, maxLat: 33.45, minLon: 34.2, maxLon: 35.95 };
 
 async function api(lang, params) {
   const url = `https://${lang}.wikipedia.org/w/api.php?` + new URLSearchParams({ format: 'json', formatversion: '2', redirects: '1', ...params });
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 5; attempt++) {
     const res = await fetch(url, { headers: { 'User-Agent': UA } });
     if (res.ok) return res.json();
     await sleep(1500 * (attempt + 1));
@@ -31,7 +31,9 @@ async function lookup(lang, title) {
 
 async function heSummary(title) {
   if (!title) return null;
-  const j = await api('he', { action: 'query', prop: 'extracts|info', inprop: 'url', exintro: '1', explaintext: '1', exsentences: '2', titles: title });
+  // un résumé indisponible (limite de débit Wikipédia) ne doit pas faire échouer toute la carte
+  const j = await api('he', { action: 'query', prop: 'extracts|info', inprop: 'url', exintro: '1', explaintext: '1', exsentences: '2', titles: title }).catch(() => null);
+  if (!j) return null;
   const p = j.query && j.query.pages && j.query.pages[0];
   if (!p || p.missing || !p.extract) return null;
   return { title: p.title, url: p.fullurl, extract: p.extract.replace(/\s+/g, ' ').trim() };
