@@ -46,7 +46,10 @@ for (const vp of [{ width: 360, height: 780, mobile: true }, { width: 1280, heig
   ok(await page.$('[data-pick="tel_beer_sheva"]'), `${tag} מים / Néguev : Tel Beer Sheva proposé`);
   await page.click('[data-pick="tel_beer_sheva"]');
   await page.waitForSelector('#rText');
-  ok((await page.$$('.tips li')).length >= 3, `${tag} fiche : faits du cours avec sources`);
+  ok((await page.$$('.fx-list .fx')).length >= 3, `${tag} fiche : faits du cours`);
+  ok(!(await page.$('.fx-list a.src')), `${tag} fiche : plus de lien à côté de chaque phrase`);
+  await page.click('.fx-list .fx summary');
+  ok(/«.+»/.test(await page.textContent('.fx[open] .fq')), `${tag} fiche : au toucher, la phrase originale du cours s'affiche dessous`);
   const txt = 'חברים, אנחנו בתל באר שבע. מפעל המים אסף את מי השיטפונות מנחל חברון. תעלת הולכה הובילה את המים למאגרים תת-קרקעיים בתוך המצודה, צמוד לחומת העיר. הבורות מטויחים, ורואים שהטיח נמרח בידיים.';
   await page.fill('#rText', txt);
   ok(/wc-low/.test(await page.innerHTML('#rWc')), `${tag} fiche : compteur de mots (jaune sous 170)`);

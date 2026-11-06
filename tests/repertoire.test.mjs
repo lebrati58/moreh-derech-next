@@ -71,3 +71,14 @@ test('chrono : 3 h = לו"ז 20 + 5 × 15 + 40 + relecture 45 ; proportionnel en
   assert.equal(R.paceBudget(90, 5)[0].min, 10);
   assert.equal(R.pace(180, 999, 5).left, 0);
 });
+
+test('faits du cours : la phrase originale du document accompagne le fait (affichée au toucher)', () => {
+  const regs = load('regions.json').regions.filter(r => r.file && r.file !== 'golan-south.json');
+  for (const r of regs) {
+    const d = load(r.file), fs = d.sites.concat(d.roads || []).flatMap(s => s.facts || []).filter(f => !f.official);
+    const withQ = fs.filter(f => f.q).length;
+    assert.ok(withQ / fs.length >= 0.9, `${r.id} : ${withQ}/${fs.length} faits avec la phrase originale`);
+  }
+  const ng = load('negev.json'), ar = ng.sites.find(s => s.id === 'arad_fortress');
+  assert.ok(ar.facts.every(f => f.q), 'מצודת ערד : chaque fait a sa phrase');
+});

@@ -80,6 +80,9 @@
     if (s.kind === 'official') return `<a class="src official" href="${esc(href)}" target="_blank" rel="noopener" title="${esc(s.title)}">🌿 ${esc(label || 'רט״ג')}</a>${s.rtg ? ` <a class="src" href="rtg.html#/d/${esc(s.rtg)}" title="בספריית רט״ג">📚</a>` : ''}`;
     return `<a class="src" href="${esc(href)}" target="_blank" rel="noopener">📄 ${esc(label || s.title)}</a>`;
   };
+  // Un fait du cours : on le touche → la phrase originale du document s'affiche juste en dessous (pas de lien à suivre).
+  const srcTitle = k => { const s = DATA.sources[k]; return s ? s.title : ''; };
+  const factList = (facts, cls) => `<ul class="${cls || 'facts'} fx-list">${(facts || []).map(f => `<li class="${f.official ? 'off' : ''}"><details class="fx"><summary>${esc(f.he)}</summary><div class="fq">${f.q ? `<p>«${esc(f.q)}»</p>` : ''}<small>${f.official ? '🌿' : '📄'} ${esc(srcTitle(f.src))}${f.page ? ' · עמ׳ ' + esc(f.page) : ''}</small></div></details></li>`).join('')}</ul>`;
   const statusChips = p => (p.status || []).map(s => `<span class="st st-${s}">${esc(DATA.statusLabels[s])}</span>`).join('');
 
   // ---------- Carte (MapLibre + relief si possible, sinon plan schématique) ----------
@@ -206,7 +209,8 @@
       <p class="muted">⏳ משך ביקור: ${p.visit ? esc(p.visit) : 'לא צוין בחומר — לא ממציאים'}</p>
       ${logisticsHtml(p)}
       ${(p.facts || []).some(f => f.official) ? '<p class="muted">📄 = חומר הקורס · 🌿 = מסמך רשמי של רשות הטבע והגנים (לא מהקורס), עם מספר העמוד</p>' : ''}
-      <ul class="facts">${(p.facts || []).map(f => `<li class="${f.official ? 'off' : ''}">${esc(f.he)} ${srcLink(f.src, f.official ? 'רט״ג' + (f.page ? ' עמ׳ ' + f.page : '') : '')}</li>`).join('')}</ul>
+      <p class="muted">👆 נוגעים במשפט כדי לראות את המשפט המקורי מהמסמך.</p>
+      ${factList(p.facts)}
       <p><a class="mini" href="rtg.html?q=${encodeURIComponent((p.short || p.he).replace(/\s*\(.*\)\s*/g, ' ').trim())}">🌿 מסמכי רט״ג על ${esc(p.short || p.he)}</a></p>
       ${(p.conflicts || []).map(c => `<p class="conf">⚠️ ${esc(c.he)}</p>`).join('')}
       ${p.note ? `<p class="conf">ℹ️ ${esc(p.note)}</p>` : ''}
@@ -815,7 +819,7 @@
     const k = REP().cards[R.key(DATA.region, cat)] || { cat, region: DATA.region };
     const cands = R.candidates(DATA, cat), site = k.site && P[k.site];
     const limits = MODELS.models.school5.limits;
-    const factsHtml = p => `<ul class="tips">${(p.facts || []).slice(0, 14).map(f => `<li>${esc(f.he)} ${srcLink(f.src, '📄')}</li>`).join('')}</ul>`;
+    const factsHtml = p => `<p class="muted">👆 נוגעים במשפט כדי לראות את המשפט המקורי מהמסמך.</p>${factList(p.facts)}<div class="srcs">${[...new Set((p.facts || []).map(f => f.src))].map(k => srcLink(k)).join('')}</div>`;
     const mo = site ? C.modelFor(DATA, site.id, c.tags) : null;
     shell(`<section class="brief"><div class="eyebrow">${c.emoji} ${esc(DATA.he)} · הרפרטואר שלי</div><h1>${esc(c.he)}</h1>
       <p>${site ? `האתר שלכם: <b>${esc(site.short || site.he)}</b>` : 'בחרו את האתר שתשתמשו בו בכל פעם שהמבחן יבקש יחידה מהסוג הזה באזור.'}</p></section>
