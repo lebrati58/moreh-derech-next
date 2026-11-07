@@ -16,18 +16,19 @@
 4. Verify each claim against source passages; reject missing, conflicting, or uncertain claims.
 5. Check Hebrew clarity, exactly one answer, balanced distractors, duplicate detection, and source traceability.
 6. Run existing build/validation scripts and applicable test suites.
-7. Open a pull request for human review; never automatically merge or publish questions.
-8. On approval, merge through normal review, then observe existing Pages deployment and check game functionality.
+7. For source-verified, schema-valid, duplicate-checked questions with all relevant tests passing, allow unattended publication after the automation is explicitly configured and tested end to end.
+8. Use an isolated staging branch and an automated validation gate before merging; deploy only validated content through the existing Pages process. Keep a rollback commit and monitor deployment.
+9. If any source is missing, contradictory, uncertain, or any test fails, hold the affected questions and do not publish them.
 
 ## Open decisions
 - Confirm which Google Drive folders are authorized and whether any documents have sharing/copyright restrictions.
-- Confirm preferred schedule and whether automatic PR creation is desired.
+- User preference confirmed on 7 November: publish validated questions automatically, without routine manual review. Schedule remains to be configured.
 - Determine how Drive credentials can be securely accessed from the chosen runner; never copy personal tokens into source.
 - Audit all existing workflows and branch protection before altering write permissions.
 - Verify build scripts and tests in an isolated checkout before enabling scheduled runs.
 
 ## Explicit non-goals for this audit
 - No production schema migration.
-- No direct push to main.
-- No new question publication or unverified claims.
+- No uncontrolled direct push to main; a gated automation may merge validated content after implementation and end-to-end verification.
+- This audit does not itself publish questions; unverified claims must never be published.
 - No change to game runtime or live Supabase setup.
