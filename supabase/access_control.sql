@@ -111,7 +111,7 @@ begin
   v_token := gen_random_uuid()::text;
   delete from mdl.access_sessions where expires_at < now();
   insert into mdl.access_sessions (token_hash, tz_hash, expires_at)
-    values (encode(sha256(convert_to(v_token, 'UTF8')), 'hex'), v_hash, now() + interval '180 days');
+    values (encode(sha256(convert_to(v_token, 'UTF8')), 'hex'), v_hash, now() + interval '30 days');
   return jsonb_build_object('ok', true, 'token', v_token);
 end $$;
 

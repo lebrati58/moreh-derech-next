@@ -1,0 +1,398 @@
+[
+  {
+    "schema": "mdl",
+    "proname": "active_game",
+    "args": "",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "bump",
+    "args": "p_game bigint",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "calc_points",
+    "args": "p_correct boolean, p_elapsed_ms integer, p_base integer, p_max_bonus integer, p_window_sec numeric, p_grace_sec numeric",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "check_admin",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "check_host",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "class_code_norm",
+    "args": "p text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "final_stats",
+    "args": "p_game bigint",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "leaderboard",
+    "args": "p_game bigint",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "pub_i18n",
+    "args": "p jsonb",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "set_admin_password",
+    "args": "p_password text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "tick",
+    "args": "p_game bigint",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "too_early_ms",
+    "args": "g mdl.games",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "tz_hash",
+    "args": "p_tz text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "tz_loose",
+    "args": "p text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "tz_norm",
+    "args": "p text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "tz_pick",
+    "args": "p_line text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "mdl",
+    "proname": "valid_lang",
+    "args": "p text",
+    "acl": "{postgres=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "access_check",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "access_login",
+    "args": "p_tz text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "access_required",
+    "args": "",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_access_list",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_access_set",
+    "args": "p_token text, p_list text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_bank_questions",
+    "args": "p_token text, p_bank text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_class_reset",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_class_reset_code",
+    "args": "p_token text, p_class text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_close_question",
+    "args": "p_token text, p_force boolean",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_delete_question",
+    "args": "p_token text, p_id bigint",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_export",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_feedback_list",
+    "args": "p_token text, p_status text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_feedback_set_status",
+    "args": "p_token text, p_id uuid, p_status text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_finish",
+    "args": "p_token text, p_force boolean",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_import_route",
+    "args": "p_token text, p_label jsonb, p_route jsonb, p_questions jsonb",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_login",
+    "args": "p_password text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_new_game",
+    "args": "p_token text, p_title text, p_bank text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_open_question",
+    "args": "p_token text, p_question_id bigint",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_pause",
+    "args": "p_token text, p_paused boolean",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_photos",
+    "args": "p_token text, p_collection text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_remove_community_document",
+    "args": "p_token text, p_id uuid",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_remove_player",
+    "args": "p_token text, p_player_id bigint",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_reorder",
+    "args": "p_token text, p_ids bigint[]",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_resume_game",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_reveal",
+    "args": "p_token text, p_force boolean",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_save_question",
+    "args": "p_token text, p_q jsonb",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_set_solo",
+    "args": "p_token text, p_bank text, p_on boolean",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_settings",
+    "args": "p_token text, p_s jsonb",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_state",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "admin_toggle_spare",
+    "args": "p_token text, p_question_id bigint, p_on boolean",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "class_board",
+    "args": "p_class text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "class_leaderboard",
+    "args": "",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "class_score_delete",
+    "args": "p_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "class_score_submit",
+    "args": "p_token text, p_name text, p_points integer, p_stars integer, p_gold integer, p_answered integer",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "class_submit",
+    "args": "p_token text, p_name text, p_points integer, p_stars integer, p_gold integer, p_answered integer, p_class text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_catalog",
+    "args": "",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_delete_quiz",
+    "args": "p_id uuid, p_owner_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_document",
+    "args": "p_id uuid",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_get_quiz",
+    "args": "p_id uuid",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_list_quizzes",
+    "args": "p_search text, p_limit integer, p_offset integer",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_publish_quiz",
+    "args": "p_payload jsonb, p_owner_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_report_quiz",
+    "args": "p_id uuid, p_reporter_token text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "community_submit_document",
+    "args": "p_tour_id text, p_title text, p_author text, p_body text, p_source_url text, p_file_name text, p_new_route_title text, p_place_name text, p_lat double precision, p_lon double precision",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "feedback_submit",
+    "args": "p_kind text, p_message text, p_author text, p_page text, p_context jsonb, p_sender text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "get_state",
+    "args": "p_token text, p_since bigint",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "join_game",
+    "args": "p_name text, p_token text, p_code text, p_new_name_ok boolean, p_lang text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "set_language",
+    "args": "p_token text, p_lang text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "solo_route",
+    "args": "p_code text",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  },
+  {
+    "schema": "public",
+    "proname": "submit_answer",
+    "args": "p_token text, p_question_id bigint, p_choice integer",
+    "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+  }
+]

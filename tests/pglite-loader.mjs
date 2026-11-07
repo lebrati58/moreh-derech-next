@@ -1,0 +1,1 @@
+export async function resolve(spec,ctx,next){if(spec==='./helpers.mjs'&&ctx.parentURL?.includes('/tests/'))return {url:new URL('./pglite-helpers.mjs',import.meta.url).href,shortCircuit:true};return next(spec,ctx);}

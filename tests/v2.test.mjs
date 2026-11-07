@@ -331,7 +331,7 @@ test('migration depuis l\'ancienne version (main) : données conservées, tout d
   } finally { await d.end(); }
 });
 
-test('simulation : 48 élèves, 4 langues, réseau instable, reconnexions, 6 questions V2', async () => {
+test('simulation : 48 élèves, 4 langues, réseau instable, reconnexions, 6 questions V2', { skip: process.env.MDL_PGLITE === '1' ? 'Requires native Postgres TCP connections; runs in Pages CI' : false }, async () => {
   await newGame('V2', 'סימולציה 48');
   const pool = new pg.Pool({ host: PGHOST, port: PGPORT, user: 'postgres', database: 'mdl_v2', max: 16 });
   const prpc = async (fn, args) => { const k = await pool.connect(); try { return await rpc(k, fn, args); } finally { k.release(); } };

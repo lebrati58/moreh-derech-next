@@ -82,7 +82,7 @@ async function init(){
     {id:'new',title:'➕ יצירת מסלול חדש'}];
  $('tour').replaceChildren(...opts.map(o=>{const el=document.createElement('option');el.value=o.id;el.textContent=o.title;return el;}));
  const target=params.get('tour');if(opts.some(o=>o.id===target))$('tour').value=target;toggleNew();
- $('status').textContent='✔ הספרייה מחוברת. ניתן להוסיף מסמכים בלי סיסמת מנהל.';
+ $('status').textContent='✔ הספרייה מחוברת. אפשר לשלוח מסמכים לבדיקה לפני פרסום.';
  $('form').hidden=false;ready=true;
  }catch(e){$('status').textContent='⚠️ מערכת ההוספה עדיין לא הופעלה בבסיס הנתונים. צריך להתקין את supabase/community_documents.sql בפרויקט Supabase לפני שאפשר לשמור.';}
 }
@@ -110,11 +110,11 @@ $('form').addEventListener('submit',async e=>{
   const r=await MDCommunity.submit(data);
   $('form').hidden=true;$('status').classList.add('hidden');
   $('result').classList.remove('hidden');
-  const h=document.createElement('h2');h.textContent='✅ המסמך נשמר במסלול!';
-  const p=document.createElement('p');p.textContent='המסמך נוסף לספרייה המשותפת. עכשיו אפשר לקרוא אותו מתוך המסלול.';
+  const h=document.createElement('h2');h.textContent='✅ המסמך נשלח לבדיקה';
+  const p=document.createElement('p');p.textContent='המסמך יופיע בספרייה לאחר בדיקה ואישור מנהל.';
   const a=document.createElement('a');a.className='button';a.href='map.html?tour='+encodeURIComponent(r.tour_id);a.textContent='🗺️ הצגת המסלול במפה';
   const d=document.createElement('p');const link=document.createElement('a');link.href='community-document.html?id='+encodeURIComponent(r.id);link.textContent='📄 פתיחת המסמך';d.append(link);
-  $('result').replaceChildren(h,p,a,d);
+  if(r.status==='approved'){h.textContent='✅ המסמך כבר פורסם';p.textContent='המסמך כבר נמצא בספרייה.';$('result').replaceChildren(h,p,a,d);}else{if(r.status==='rejected'){h.textContent='המסמך לא אושר';p.textContent='מסמך זה כבר נבדק ולא אושר לפרסום.';}$('result').replaceChildren(h,p);}
  }catch(ex){err('השמירה נכשלה: '+eMessage(ex));}
  finally{loading=false;$('save').disabled=false;$('save').textContent='💾 שמירה במסלולים';}
 });

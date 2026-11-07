@@ -580,7 +580,7 @@ end $$;
 -- ---------------------------------------------------------------------
 
 create or replace function public.admin_login(p_password text)
-returns jsonb language plpgsql security definer set search_path = mdl, public as $$
+returns jsonb language plpgsql security definer set search_path = '' as $$
 declare s mdl.settings; v_token uuid;
 begin
   delete from mdl.login_failures where at < clock_timestamp() - interval '15 minutes';
