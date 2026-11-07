@@ -203,5 +203,78 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
 <script src="tabbar.js"></script>
 <script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});</script>
 <script src="onboarding.js"></script>
+<!-- Progressive home modes: only hide navigation, never delete content or progress. -->
+<style>
+.mode-picker{margin:8px 0 18px;padding:14px;border:1px solid #6e87ce;border-radius:18px;background:#15254e}
+.mode-picker label{display:block;font-size:14px;font-weight:900;color:#dbe8ff;margin-bottom:9px}
+.mode-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mode-options button{min-height:52px;border:1px solid #7186b8;border-radius:12px;background:#23345d;color:#fff;font:800 14px inherit;cursor:pointer}
+.mode-options button[aria-pressed="true"]{background:#94f5de;color:#101c3a;border-color:#94f5de}
+.mode-note{margin:10px 2px 0;color:#c8d6f4;font-size:13px;line-height:1.4}
+.mode-hidden{display:none!important}
+</style>
+<script>
+(function(){
+'use strict';
+var KEY='mdl_home_mode_v1';
+var names={
+ he:{title:'בחרו את הדרך שלכם',note:'אפשר לשנות מצב בכל רגע. כל התוכן וההתקדמות נשמרים.',modes:['🎯 חובב · חידונים','🧭 חוקר · מפות','🏛️ דוקטורנט · תלת־ממד','🎓 מורה דרך · הכול']},
+ fr:{title:'Choisis ton expérience',note:'Change de mode à tout moment. Rien ne sera perdu.',modes:['🎯 Amateur · Quiz','🧭 Explorateur · Cartes','🏛️ Doctorant · 3D','🎓 Guide · Tout']},
+ en:{title:'Choose your experience',note:'Switch anytime. Your progress and content stay intact.',modes:['🎯 Amateur · Quizzes','🧭 Explorer · Maps','🏛️ Scholar · 3D','🎓 Tour guide · All']},
+ ru:{title:'Выберите режим',note:'Меняйте режим когда угодно. Прогресс сохранится.',modes:['🎯 Любитель · Тесты','🧭 Исследователь · Карты','🏛️ Эксперт · 3D','🎓 Гид · Всё']}
+};
+var main=document.querySelector('main'),daily=main&&main.querySelector('.today');
+if(!main||!daily)return;
+var box=document.createElement('section');box.className='mode-picker';box.setAttribute('aria-label','Experience mode');
+box.innerHTML='<label id="modeTitle"></label><div class="mode-options" role="group" aria-labelledby="modeTitle"></div><p class="mode-note"></p>';
+main.insertBefore(box,daily);
+var buttons=box.querySelector('.mode-options');
+['amateur','explorer','doctorant','guide'].forEach(function(mode,i){
+ var b=document.createElement('button');b.type='button';b.dataset.mode=mode;b.addEventListener('click',function(){setMode(mode);});buttons.appendChild(b);
+});
+var sec=Array.from(main.querySelectorAll('h2.sec'));
+var play=sec[0],exam=sec[1],explore=sec[2];
+var items={
+ campus:main.querySelector('a.campus'),
+ history:main.querySelector('section.hist'),
+ roads:main.querySelector('a.map-banner.roads'),
+ guided:main.querySelector('a.map-banner[href^="map.html?mode=guided"]'),
+ duo:main.querySelector('.duo'),
+ parta:main.querySelector('section.parta-box'),
+ exam:main.querySelector('section.exam-box:not(.parta-box)'),
+ arch:main.querySelector('section.arch-box'),
+ caesarea:main.querySelector('a.j3d[href^="world3d.html"]'),
+ jerusalem:main.querySelector('a.j3d[href^="jerusalem3d.html"]'),
+ chips:main.querySelector('.s3d-row'),
+ guide:main.querySelector('a.guide-link'),
+ timeline:main.querySelector('a.hist-tl')
+};
+var visible={
+ amateur:['campus','history','parta'],
+ explorer:['campus','history','roads','guided','duo','parta','timeline'],
+ doctorant:['campus','history','roads','guided','duo','parta','arch','caesarea','jerusalem','chips','timeline'],
+ guide:Object.keys(items)
+};
+function setMode(mode){
+ if(!visible[mode])mode='amateur';
+ try{localStorage.setItem(KEY,mode);}catch(e){}
+ Object.keys(items).forEach(function(k){if(items[k])items[k].classList.toggle('mode-hidden',visible[mode].indexOf(k)===-1);});
+ if(play)play.classList.remove('mode-hidden');
+ if(exam)exam.classList.toggle('mode-hidden',mode!=='guide');
+ if(explore)explore.classList.toggle('mode-hidden',mode!=='doctorant'&&mode!=='guide');
+ buttons.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});
+}
+function translate(){
+ var lang='he';try{lang=localStorage.getItem('mdl_lang')||'he';}catch(e){}
+ var t=names[lang]||names.he;
+ box.querySelector('label').textContent=t.title;
+ box.querySelector('.mode-note').textContent=t.note;
+ buttons.querySelectorAll('button').forEach(function(b,i){b.textContent=t.modes[i];});
+}
+var selected='amateur';try{selected=localStorage.getItem(KEY)||'amateur';}catch(e){}
+translate();setMode(selected);
+document.addEventListener('click',function(e){if(e.target.closest('#langMenu'))setTimeout(translate,0);});
+})();
+</script>
 </body>
 </html>
