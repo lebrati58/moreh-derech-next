@@ -48,7 +48,7 @@ test('données publiées : valides, chaque question pointe vers son PDF et le bo
   const T = await json('content/parta/topics.json');
   const data = await json('public/parta/rishui.json');
   const v = C.validateRishui(data, T.topics.map(t => t.id));
-  assert.deepEqual(v.errors, []);
+  assert.deepEqual([...v.errors], []);
   assert.ok(data.questions.length >= 500, 'au moins 500 questions publiées : ' + data.questions.length);
   const bank = await json('public/parta/bank.json');
   const bankIds = new Set(bank.questions.map(q => q.id));
