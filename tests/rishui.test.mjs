@@ -13,7 +13,7 @@ const SRC = [{ key: 'judaism', title: 'יהדות', url: 'https://www.efratnakas
 const Q = (i, o = {}) => Object.assign({ id: `Q-rishui_judaism-${String(i).padStart(3, '0')}`, topic: 'judaism', src: 'judaism', n: i, q: 'שאלה ' + i,
   options: ['אחת ' + i, 'שתיים ' + i, 'שלוש ' + i, 'תשובות א + ב נכונות'], correct: 3, why: 'הסבר קצר.', conf: 'high' }, o);
 
-test('validation : 2 à 5 réponses, solution sûre seulement, source Efrat Nakash, id lié au thème', () => {
+test('validation : 2 à 6 réponses, solution sûre seulement, source Efrat Nakash, id lié au thème', () => {
   const ok = { sources: SRC, questions: [Q(1), Q(2, { options: ['א1', 'ב1', 'ג1', 'ד1', 'ה1'], correct: 4 })] };
   assert.deepEqual([...C.validateRishui(ok, ['judaism']).errors], []);
   const bad = patch => C.validateRishui({ sources: SRC, questions: [Q(1, patch)] }, ['judaism']).errors.length;
