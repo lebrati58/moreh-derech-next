@@ -39,7 +39,7 @@ for (const f of files) {
     if (!idMap[ref] || !idMap[ref].startsWith('Q-rishui_' + q.topic + '-')) idMap[ref] = nextId(q.topic);
     questions.push({ id: idMap[ref], topic: q.topic, src: d.key, n: q.n,
       ...(q.year ? { year: String(q.year) } : {}), ...(q.origin === 'web' ? { origin: 'web' } : {}),
-      q: String(q.q).trim(), options, correct: q.correct, why: String(q.why || '').trim(), conf: q.conf });
+      q: String(q.q).trim(), options, correct: q.correct, why: String(q.why || '').trim(), conf: q.conf, ...(q.check ? { check: q.check } : {}) });
   }
 }
 const data = { v: 1, builtAt: new Date().toISOString().slice(0, 10),

@@ -117,7 +117,7 @@
     const avoid = new Set(o.avoid || []);
     const list = shuffle(pool.filter(q => !avoid.has(q.id)), rnd).concat(shuffle(pool.filter(q => avoid.has(q.id)), rnd)).slice(0, o.n || ROUND);
     return list.map(q => { const s = kind.get(q.src) || {};
-      return { id: q.id, topic: q.topic, level: 2, q: q.q, options: q.options.slice(), correct: q.correct, explanation: q.why, conf: q.conf,
+      return { id: q.id, topic: q.topic, level: 2, q: q.q, options: q.options.slice(), correct: q.correct, explanation: q.why, conf: q.conf, check: q.check || '',
         rishui: { n: q.n, year: q.year || s.year || '', title: s.title || '', url: s.url || '', kind: s.kind || 'topic' }, tags: [] }; });
   }
 
