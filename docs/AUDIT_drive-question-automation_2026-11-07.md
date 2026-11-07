@@ -22,7 +22,7 @@
 
 ## Open decisions
 - Confirm which Google Drive folders are authorized and whether any documents have sharing/copyright restrictions.
-- User preference confirmed on 7 November: publish validated questions automatically, without routine manual review. Schedule remains to be configured.
+- User preference confirmed on 7 November: publish validated questions automatically, without routine manual review. Schedule preference confirmed: Tuesday and Friday, Israel local time (Asia/Jerusalem); exact hour and implementation remain to be configured.
 - Determine how Drive credentials can be securely accessed from the chosen runner; never copy personal tokens into source.
 - Audit all existing workflows and branch protection before altering write permissions.
 - Verify build scripts and tests in an isolated checkout before enabling scheduled runs.
