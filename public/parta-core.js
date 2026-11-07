@@ -79,7 +79,7 @@
 
 
   // ---------- « ממבחני רישוי » : vraies questions d'examens de licence (recueil d'Efrat Nakash), solution non officielle ----------
-  // Données : parta/rishui.json { sources:[{key,title,url,kind,year?}], questions:[{id,topic,src,n,year?,q,options[2–5],correct,why,conf}] }
+  // Données : parta/rishui.json { sources:[{key,title,url,kind,year?}], questions:[{id,topic,src,n,year?,q,options[2–6],correct,why,conf}] }
   const RID_RE = /^Q-rishui_[a-z_]+-\d{3}$/;
   function validateRishui(data, topicIds) {
     const errors = [], warnings = [];
@@ -96,7 +96,7 @@
       if (!(Number.isInteger(q.n) && q.n > 0)) errors.push(w + ' : numéro dans le PDF manquant');
       if (!q.q || !/[\u0590-\u05ff]/.test(q.q)) errors.push(w + ' : énoncé manquant ou pas en hébreu');
       const o = q.options || [];
-      if (o.length < 2 || o.length > 5) errors.push(w + ' : 2 à 5 réponses attendues');
+      if (o.length < 2 || o.length > 6) errors.push(w + ' : 2 à 6 réponses attendues');
       if (o.some(x => !x || !String(x).trim())) errors.push(w + ' : réponse vide');
       if (new Set(o.map(norm)).size !== o.length) errors.push(w + ' : réponses en double');
       if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < o.length)) errors.push(w + ' : index de la bonne réponse invalide');
