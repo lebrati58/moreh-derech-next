@@ -30,6 +30,15 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 7 novembre 2026 — « 📜 ממבחני רישוי » : vraies questions d'examens dans מבחן חלק א׳ (branche `feat/rishui`)
+- ✅ Source : le document d'Efrat Nakash « קישורים לשאלות על נושאי הלימוד » (Drive) → 23 PDF par thème (examens 2000–2017 + « שאלות נוספות מהרשת ») et 12 examens complets (juin 2018 → juillet 2024). Les PDF n'ont **pas de corrigé** (le lien « לפתרון » est inaccessible) et le site bloque le téléchargement direct : extraction par WebFetch, texte hébreu mot pour mot.
+- ✅ Choix de Lionel : un **mode à part** avec solution non officielle ; la banque du cours (`bank.json`, politique drive-only) n'est pas touchée.
+- ✅ Contrôle qualité : 3 338 questions extraites → écartées si carte/photo, réponse ouverte, texte coupé, fait périmé (dont 7 premiers secours qui ne suivent plus les gestes actuels), doublons entre PDF, ou solution peu sûre. Chaque question a été **résolue deux fois à l'aveugle** ; 284 désaccords/hésitations arbitrés avec sources → 258 gardées, 26 écartées. Résultat : **3 041 questions** (2 698 « נפתר פעמיים », 258 « נבדק מול מקורות »).
+- ✅ Données : `content/parta/rishui/<pdf>.json` → `node tools/build-rishui.mjs` → `public/parta/rishui.json`. Ids stables dans `content/parta/rishui-ids.json` ((PDF, numéro) → id) pour que la progression ne se mélange pas quand on ajoute un PDF.
+- ✅ Écran (`parta.html#/rishui`) : lien depuis l'accueil du quiz, filtre 2018–2024 / jusqu'à 2017, thème, tableau des erreurs ; ordre des réponses conservé (les choix « ב + ג נכונות ») ; après chaque réponse : numéro, examen, lien vers le PDF, mention « פתרון לא רשמי ». Points dans « המסע שלי » (même circuit que חלק א׳). Hors ligne (cache v95).
+- ✅ Tests : `tests/rishui.test.mjs` (5) et `tests/rishui-browser.mjs` (S24, 12 vérifications, tout vert).
+- ⏳ Signalements des élèves (💡) à reporter dans `content/parta/rishui/` puis reconstruire.
+
 ### 6 novembre 2026 (suite) — Visite guidée de Lionel refaite avec les nouveautés
 - ✅ `onboarding.js` : 14 étapes au lieu de 10, en hébreu, français et anglais. Nouvelles étapes : 🏆 אלוף הקורס, 🚌 סיפורי דרך, 📝 מבחן חלק א׳, ✍️ סדנת 180 · 400 (dans l'étape אתגר המבחן), 🏛️ אדריכלות קלאסית, 🌍 Césarée 3D. Le menu ☰ ne liste plus l'examen (il a son étape).
 - ✅ Clé `mdl_onboarded_v3` : la nouvelle visite s'affiche une fois à ceux qui avaient déjà vu l'ancienne (sauf « לא להציג שוב »).
