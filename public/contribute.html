@@ -76,6 +76,7 @@ async function init(){
    fetch('siyurim-catalog.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('catalog');return r.json();}),
    MDCommunity.list()
  ]);
+ if(community.moderation!==true){$('status').textContent='שליחת מסמכים תיפתח לאחר הפעלת בדיקת התוכן בשרת.';return;}
  const opts=[{id:'',title:'בחרו מסלול…'},...catalog.tours.map(t=>({id:t.id,title:t.id+' — '+t.title})),
     {id:'road67',title:'🛣️ מסלול 67 — זכרון יעקב ← יקנעם'},
     ...community.routes.map(r=>({id:r.id,title:'📚 '+r.title})),

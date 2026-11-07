@@ -12,6 +12,7 @@ alter table mdl.community_routes enable row level security;
 create or replace function public.community_catalog()
 returns jsonb language sql stable security definer set search_path = '' as $$
  select jsonb_build_object(
+  'moderation', true,
   'routes', coalesce((select jsonb_agg(jsonb_build_object(
     'id', r.id, 'title', r.title, 'place_name', r.place_name, 'lat', r.lat, 'lon', r.lon
   ) order by r.created_at desc) from mdl.community_routes r where r.moderation_status='approved'), '[]'::jsonb),
