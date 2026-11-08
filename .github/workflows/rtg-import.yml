@@ -8,13 +8,15 @@ on:
     inputs:
       ocr_max: { description: 'Pages OCR max pour cette exécution', default: '2500' }
   push:
-    paths: ['tools/rtg/import.py', 'tools/rtg/list_drive.py', 'tools/rtg/derive.mjs', 'tools/rtg/build-catalog.mjs', '.github/workflows/rtg-import.yml']
+    paths: ['tools/rtg/import.py', 'tools/rtg/list_drive.py', 'tools/rtg/derive.mjs', '.github/workflows/rtg-import.yml']
 concurrency: { group: rtg-import, cancel-in-progress: true }
 permissions:
   contents: write
   actions: read
 jobs:
   import:
+    # Catalog-only edits are local transformations, not a new corpus collection.
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip rtg-import]')
     runs-on: ubuntu-latest
     timeout-minutes: 340
     steps:
@@ -44,7 +46,7 @@ jobs:
         if: always()
         with: { name: rtg-text, path: rtg-text/, retention-days: 14, if-no-files-found: ignore }
       - name: Commit de l'inventaire
-        if: always()
+        if: always() && !cancelled()
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

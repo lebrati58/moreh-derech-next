@@ -41,6 +41,10 @@ Le site RTG de Beit Guvrin indique également que la grotte de la cloche sud est
 
 Valeurs lues dans les sources citées et identités recoupées avec les pages RTG officielles. La précision décimale publiée n'est pas une garantie de précision terrain. Chaque point et lien Google Maps reste nommé `site_reference_not_entrance`, avec statut `published_source_checked`. Aucune interpolation, aucun point de parking inventé. Restent sans coordonnées : Shaar Hagai, Beit Yanai, Palmachim, sources du Yarkon.
 
+## Déclenchement du réimport
+
+Une modification du seul générateur de catalogue déclenchait un import complet du corpus Drive. Ce chemin a été retiré du déclencheur ; les modifications des collecteurs et les lancements manuels restent possibles. Le marqueur `[skip rtg-import]` permet une correction de maintenance sans relancer la collecte, et une exécution annulée ne doit plus pousser un inventaire partiel. Le réimport involontaire de ce lot est suivi dans #80 ; il ne fait pas partie des sources validées.
+
 ## Intégration et mesure
 
 Le générateur de catalogue transporte désormais la relation explicite document–fiche (`gs`) vers la bibliothèque et les références cartographiques. Les boutons utilisent cette relation, sans liste de documents codée en dur ; les simples mentions restent exclues. La carte du jeu peut ainsi ouvrir la fiche Hula depuis sa brochure, comme elle le faisait pour les guides. Aucun changement des règles, scores ou données de jeu ; aucun fichier/migration Supabase modifié.
