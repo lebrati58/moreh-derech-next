@@ -1,0 +1,122 @@
+{
+  "id": "9b6c301b71c8",
+  "title": "דפדפת חי בר כרמל",
+  "site": "שמורת טבע חי־בר כרמל",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-08",
+    "pages": [
+      1,
+      2
+    ]
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "חי־בר כרמל נוסד בשנת 1973 בתוך שמורת הר הכרמל.",
+      "page": 1,
+      "quote": "בשנת 1973",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "guiding",
+      "he": "מטרת חי־בר כרמל היא ליצור גרעיני רבייה של בעלי חיים ולהכינם להשבה לטבע.",
+      "page": 1,
+      "quote": "גרעיני רבייה",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "לפי הדפדפת, יחמורים פרסיים הובאו מאיראן לחי־בר כרמל בשנת 1978.",
+      "page": 2,
+      "quote": "1978",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "guiding",
+      "he": "נשרים מגדלים גוזל אחד בשנה, ולכן חיזוק אוכלוסייתם באמצעות רבייה דורש זמן ומשאבים.",
+      "page": 2,
+      "quote": "גוזל אחד",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "guiding",
+      "he": "רשות הטבע והגנים, חברת החשמל והחברה להגנת הטבע שותפות למיזם הדורסים; בידוד עמודי חשמל מסייע למנוע התחשמלות.",
+      "page": 1,
+      "quote": "עמודי חשמל",
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "he": "מרכז המבקרים",
+      "page": 1
+    },
+    {
+      "he": "מרפסת התצפית העליונה",
+      "page": 1
+    },
+    {
+      "he": "כלובי הדורסים",
+      "page": 2
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "באיזו שנה נוסד חי־בר כרמל ומהי מטרתו העיקרית?",
+      "expected": [
+        "1973",
+        "יצירת גרעיני רבייה והכנת בעלי חיים להשבה לטבע"
+      ],
+      "accept": [],
+      "refs": [
+        1
+      ],
+      "evidenceItems": [
+        0,
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 2,
+      "q": "מדוע חיזוק אוכלוסיית הנשרים באמצעות רבייה הוא תהליך ממושך?",
+      "expected": [
+        "נשרים מגדלים גוזל אחד בשנה",
+        "קצב הרבייה מחייב השקעת זמן ומשאבים"
+      ],
+      "accept": [],
+      "refs": [
+        2
+      ],
+      "evidenceItems": [
+        3
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "מי שותף למיזם הדורסים, ואיזה סיכון מצמצם בידוד עמודי החשמל?",
+      "expected": [
+        "רשות הטבע והגנים, חברת החשמל והחברה להגנת הטבע",
+        "התחשמלות דורסים"
+      ],
+      "accept": [],
+      "refs": [
+        1
+      ],
+      "evidenceItems": [
+        4
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}

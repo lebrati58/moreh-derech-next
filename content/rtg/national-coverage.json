@@ -1,16 +1,16 @@
 {
   "version": 2,
   "reviewedCoverage": {
-    "groups": 14,
+    "groups": 17,
     "primaryGuides": 10,
-    "associatedDocuments": 23,
-    "sourceCheckedCoordinates": 10,
+    "associatedDocuments": 28,
+    "sourceCheckedCoordinates": 13,
     "missingCoordinates": 4,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 4,
+    "selectedPassagesChecked": 6,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 10,
+      "brochure": 15,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -18,18 +18,18 @@
       {
         "id": "golan_south",
         "label": "דרום רמת הגולן",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
       {
         "id": "golan_north",
         "label": "מרכז וצפון הגולן והחרמון",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "shfela",
@@ -42,10 +42,10 @@
       {
         "id": "haifa_carmel",
         "label": "חיפה והכרמל",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "jerusalem",
@@ -149,8 +149,8 @@
   "scope": "Existing RTG catalog only; not an exhaustive inventory of Israel",
   "totals": {
     "documents": 727,
-    "documentsWithStructuredContent": 25,
-    "documentsLinkedToGame": 195,
+    "documentsWithStructuredContent": 27,
+    "documentsLinkedToGame": 194,
     "registryEntries": 46,
     "auditedSiteEntries": 0,
     "documentsByType": {
@@ -862,7 +862,6 @@
       "region": "golan_north",
       "regionLabel": "מרכז וצפון הגולן והחרמון",
       "sourceDocumentIds": [
-        "159ca3f67084",
         "444d5ecc791b",
         "3f52c4cabd76",
         "7cbf115f7140",
@@ -1719,7 +1718,7 @@
       "id": "9b6c301b71c8",
       "title": "דפדפת חי בר כרמל",
       "type": "brochure",
-      "structured": false,
+      "structured": true,
       "source": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-heb-for-internet2017.pdf",
       "reviewStatus": "not_audited"
     },
@@ -1831,7 +1830,7 @@
       "id": "159ca3f67084",
       "title": "דפדפת שמורת הטבע נחל חרמון (בניאס)",
       "type": "brochure",
-      "structured": false,
+      "structured": true,
       "source": "https://static.parks.org.il/wp-content/uploads/2025/03/banias.pdf",
       "reviewStatus": "not_audited"
     },

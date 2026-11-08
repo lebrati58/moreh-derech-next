@@ -4,16 +4,16 @@
   "scope": "Ten initial guide sites and four brochure sites, with explicit primary sources. Not an exhaustive inventory of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "coverage": {
-    "groups": 14,
+    "groups": 17,
     "primaryGuides": 10,
-    "associatedDocuments": 23,
-    "sourceCheckedCoordinates": 10,
+    "associatedDocuments": 28,
+    "sourceCheckedCoordinates": 13,
     "missingCoordinates": 4,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 4,
+    "selectedPassagesChecked": 6,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 10,
+      "brochure": 15,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -21,18 +21,18 @@
       {
         "id": "golan_south",
         "label": "דרום רמת הגולן",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
       {
         "id": "golan_north",
         "label": "מרכז וצפון הגולן והחרמון",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "shfela",
@@ -45,10 +45,10 @@
       {
         "id": "haifa_carmel",
         "label": "חיפה והכרמל",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "jerusalem",
@@ -922,6 +922,196 @@
         "validFrom": "2026-11-08",
         "validThrough": "2026-11-12",
         "scope": "safari_route_only"
+      }
+    },
+    {
+      "id": "hai-bar-carmel",
+      "name": "שמורת טבע חי־בר כרמל",
+      "region": "haifa_carmel",
+      "regionLabel": "חיפה והכרמל",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "9b6c301b71c8",
+      "sources": [
+        {
+          "id": "9b6c301b71c8",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_pages_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-heb-for-internet2017.pdf",
+            "pdfSha256": "9b6c301b71c88b4959281495ab1af9e9130be83ed5283dd1c99b2e8fa2e21ae2"
+          },
+          "title": "דפדפת חי בר כרמל",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-heb-for-internet2017.pdf",
+          "structured": true
+        },
+        {
+          "id": "ee084bcc4f9d",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_pages_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-eng.pdf",
+            "pdfSha256": "ee084bcc4f9d1febd2abdac8126c2f2c6589f9c0c0e80480bff175bd416d1641"
+          },
+          "driveCopyIdentityChecked": true,
+          "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-eng.pdf",
+          "structured": false
+        },
+        {
+          "id": "3fe1375b1177",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_pages_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-arab.pdf",
+            "pdfSha256": "3fe1375b1177d08efb9c5d6d1f6a39c5875d97e067a871c3d9b78dbb174f6a4c"
+          },
+          "title": "דפדפת חי בר כרמל בערבית الكرمل حاي بار",
+          "type": "brochure",
+          "language": "ar",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-arab.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "coordinate": {
+        "lat": 32.74994444,
+        "lon": 34.99959167,
+        "status": "published_source_checked",
+        "source": "https://he.wikipedia.org/wiki/חי-בר_כרמל",
+        "evidence": "32.74994444; 34.99959167",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%97%d7%99-%d7%91%d7%a8-%d7%91%d7%9b%d7%a8%d7%9e%d7%9c/",
+      "practicalNotice": {
+        "text": "חי־בר כרמל וחי־בר יטבתה הם שמורות שונות. שלוש מהדורות הדפדפת שייכות לכרמל; רק הקטעים המפורטים מהמהדורה העברית נבדקו לתוכן לימודי. לפני ביקור יש לבדוק בעמוד רט״ג את תנאי הכניסה העדכניים.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%97%d7%99-%d7%91%d7%a8-%d7%91%d7%9b%d7%a8%d7%9e%d7%9c/",
+        "checkedAt": "2026-11-08"
+      },
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "banias",
+      "name": "שמורת טבע נחל חרמון — בניאס",
+      "region": "golan_north",
+      "regionLabel": "מרכז וצפון הגולן והחרמון",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "159ca3f67084",
+      "sources": [
+        {
+          "id": "159ca3f67084",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_pages_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/banias.pdf",
+            "pdfSha256": "159ca3f67084410b6b74cd7cb9b917498fea4d7472d5e7fc6695f70711421a54"
+          },
+          "title": "דפדפת שמורת הטבע נחל חרמון (בניאס)",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/03/banias.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "coordinate": {
+        "lat": 33.24861,
+        "lon": 35.69444,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Banias",
+        "evidence": "33.24861; 35.69444",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%a0%d7%97%d7%9c-%d7%97%d7%a8%d7%9e%d7%95%d7%9f-%d7%91%d7%a0%d7%99%d7%90%d7%a1/",
+      "practicalNotice": {
+        "text": "לשמורה שני מתחמי ביקור: המעיינות והעתיקות, והמפל והשביל התלוי. הנקודה במפה היא באזור המעיינות והעתיקות, לא במפל ולא בחניון מאומת. יש לבדוק בעמוד רט״ג את הכניסה וההזמנה לכל מתחם בנפרד; תחנות ההדרכה אינן מסלול ניווט מחייב.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%a0%d7%97%d7%9c-%d7%97%d7%a8%d7%9e%d7%95%d7%9f-%d7%91%d7%a0%d7%99%d7%90%d7%a1/",
+        "checkedAt": "2026-11-08"
+      },
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "kursi",
+      "name": "גן לאומי כורסי",
+      "region": "golan_south",
+      "regionLabel": "דרום רמת הגולן",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "6ec9f0263969",
+      "sources": [
+        {
+          "id": "6ec9f0263969",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_pages_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2026/01/kursi.pdf",
+            "pdfSha256": "6ec9f0263969fe33e0607017d303f20c9ce5e6fc5ffa8c4303018485df35fced"
+          },
+          "title": "kursi brochure דפדפת כורסי באנגלית",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2026/01/kursi.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": {
+        "lat": 32.8260861,
+        "lon": 35.6503778,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Kursi,_Sea_of_Galilee",
+        "evidence": "32.8260861; 35.6503778",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%9b%d7%95%d7%a8%d7%a1%d7%99/",
+      "practicalNotice": {
+        "text": "זהות הדפדפת והנקודה הגאוגרפית נבדקו; התוכן הלימודי הקיים עדיין דורש קריאה ובדיקת תשובות מול המקור. אין לראות בהוספת הכרטיס אישור לכל החילוץ האוטומטי. יש לבדוק תנאי ביקור בעמוד רט״ג העדכני.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%9b%d7%95%d7%a8%d7%a1%d7%99/",
+        "checkedAt": "2026-11-08"
       }
     }
   ]

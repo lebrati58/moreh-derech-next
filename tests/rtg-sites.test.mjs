@@ -2,16 +2,16 @@ import {test} from 'node:test';import assert from 'node:assert/strict';import fs
 const root=new URL('../',import.meta.url),read=p=>JSON.parse(fs.readFileSync(new URL(p,root),'utf8'));
 const data=read('public/rtg/sites.json'),catalog=read('public/rtg/catalog.json'),docs=new Map(catalog.docs.map(d=>[d.id,d]));
 test('primary guides and brochure groups exclude reports and mere mentions',()=>{
- assert.equal(data.sites.length,14);assert.equal(new Set(data.sites.map(s=>s.id)).size,14);const included=[];
+ assert.equal(data.sites.length,17);assert.equal(new Set(data.sites.map(s=>s.id)).size,17);const included=[];
  for(const s of data.sites){assert.ok(s.sources.some(d=>d.id===s.primaryDocumentId&&(s.guideId?d.type==='guide':d.type==='brochure')));assert.ok(['extraction_to_review','selected_passages_checked'].includes(s.contentStatus));assert.equal(s.fullyAudited,false);for(const d of s.sources){assert.ok(docs.has(d.id));assert.equal(docs.get(d.id).gs,s.id);assert.ok(['guide','brochure','map'].includes(d.type));assert.equal(d.associationStatus,'source_identity_checked');assert.match(d.evidence.pdfSha256,/^[a-f0-9]{64}$/);assert.ok(d.evidence.page>0);assert.equal(new URL(d.evidence.source).hostname.endsWith('parks.org.il'),true);included.push(d.id);}}
- assert.equal(new Set(included).size,23);assert.ok(!included.includes('efad1c0e33c3'),'Nahal Prat activity mentioning Apollonia is not a primary source');
+ assert.equal(new Set(included).size,28);assert.ok(!included.includes('efad1c0e33c3'),'Nahal Prat activity mentioning Apollonia is not a primary source');
 });
 test('map coordinates carry explicit evidence and are never represented as entrances',()=>{
- const checked=data.sites.filter(s=>s.coordinate);assert.equal(checked.length,10);for(const s of checked){let c=s.coordinate;assert.equal(c.status,'published_source_checked');assert.equal(c.purpose,'site_reference_not_entrance');assert.ok(c.lat>=29&&c.lat<=34&&c.lon>=34&&c.lon<=36.8);assert.ok(c.evidence&&c.checkedAt&&c.source);assert.match(c.source,/^https:\/\/(?:en|he)\.wikipedia\.org\//);}
+ const checked=data.sites.filter(s=>s.coordinate);assert.equal(checked.length,13);for(const s of checked){let c=s.coordinate;assert.equal(c.status,'published_source_checked');assert.equal(c.purpose,'site_reference_not_entrance');assert.ok(c.lat>=29&&c.lat<=34&&c.lon>=34&&c.lon<=36.8);assert.ok(c.evidence&&c.checkedAt&&c.source);assert.match(c.source,/^https:\/\/(?:en|he)\.wikipedia\.org\//);}
  assert.equal(data.sites.filter(s=>!s.coordinate).length,4);assert.equal(data.sites.find(s=>s.id==='apollonia').navigation.query,'גן לאומי מבצר אפולוניה חניה');
 });
 test('regional coverage exposes zero coverage and separates geographic checks from content audit',()=>{
- const c=data.coverage;assert.equal(c.groups,14);assert.equal(c.associatedDocuments,23);assert.equal(c.priorityDocumentsTotal,100);assert.equal(c.sourceCheckedCoordinates,10);assert.equal(c.fullyAuditedContent,0);assert.equal(c.regions.reduce((n,r)=>n+r.groups,0),14);assert.ok(c.regions.find(r=>r.id==='golan_north').groups===0);assert.ok(c.regions.every(r=>r.fullyAuditedContent===0));
+ const c=data.coverage;assert.equal(c.groups,17);assert.equal(c.associatedDocuments,28);assert.equal(c.priorityDocumentsTotal,100);assert.equal(c.sourceCheckedCoordinates,13);assert.equal(c.fullyAuditedContent,0);assert.equal(c.regions.reduce((n,r)=>n+r.groups,0),17);assert.ok(c.regions.find(r=>r.id==='jerusalem').groups===0);assert.ok(c.regions.every(r=>r.fullyAuditedContent===0));
  assert.deepEqual(read('content/rtg/national-coverage.json').reviewedCoverage,c);
 });
 test('verified regional corrections persist independently of automatic reclassification',()=>{
@@ -32,11 +32,11 @@ test('north and south expansions distinguish Avdat from Ein Avdat and remove the
  assert.equal(avdat.region,'negev_south');assert.equal(dan.region,'upper_galilee');
  assert.ok(!avdat.sources.some(s=>s.id==='393d6fabdc5e'));
  assert.ok(!docs.get('08d4706c710e').ln);assert.equal(docs.get('989314676c9f').rg,'הנגב הדרומי');
- assert.deepEqual(data.coverage.associatedDocumentsByType,{guide:10,brochure:10,map:3});
- assert.equal(data.coverage.selectedPassagesChecked,4);
+ assert.deepEqual(data.coverage.associatedDocumentsByType,{guide:10,brochure:15,map:3});
+ assert.equal(data.coverage.selectedPassagesChecked,6);
 });
 test('new summaries and answers carry bounded page evidence, without a whole-document verification claim',()=>{
- for(const id of ['08d4706c710e','989314676c9f','04fbdfd52b59','11e950d9cf0b']){
+ for(const id of ['08d4706c710e','989314676c9f','04fbdfd52b59','11e950d9cf0b','9b6c301b71c8','159ca3f67084']){
   const f=read('public/rtg/facts/'+id+'.json'),d=docs.get(id);
   assert.equal(f.items.length,5);assert.equal(f.questions.length,3);assert.equal(f.stations.length,3);
   assert.equal(f.review.status,'selected_passages_checked');
@@ -68,4 +68,15 @@ test('catalog and game map expose grouped brochure links without hard-coded docu
  const unrelated=places.find(p=>p.key==='exam:upper_galilee:rosh_pina');
  assert.ok(!unrelated.docs.some(d=>d.id==='04fbdfd52b59'));
  for(const d of catalog.docs.filter(d=>d.gs))assert.ok(data.sites.some(s=>s.id===d.gs&&s.sources.some(x=>x.id===d.id)));
+});
+
+test('Carmel editions form one place distinct from Yotvata and Kursi retains its unreviewed content status',()=>{
+ const s=data.sites.find(s=>s.id==='hai-bar-carmel');assert.equal(s.region,'haifa_carmel');assert.deepEqual(s.sources.map(d=>d.language).sort(),['ar','en','he']);
+ assert.ok(!s.sources.some(d=>d.id==='11e950d9cf0b'));assert.equal(s.sources.find(d=>d.language==='en').driveCopyIdentityChecked,true);
+ const k=data.sites.find(s=>s.id==='kursi');assert.equal(k.region,'golan_south');assert.equal(k.contentStatus,'extraction_to_review');assert.ok(!k.contentReview);assert.ok(!read('content/rtg/facts/6ec9f0263969.json').review);
+});
+test('Banias removes the nearby Nimrod association and distinguishes the springs marker from the waterfall sector',()=>{
+ const s=data.sites.find(s=>s.id==='banias');assert.ok(!docs.get(s.primaryDocumentId).ln);assert.match(s.practicalNotice.text,/לא במפל/);
+ assert.equal(s.coordinate.source,'https://en.wikipedia.org/wiki/Banias');assert.equal(s.region,'golan_north');assert.ok(s.practicalNotice.source.includes('parks.org.il'));
+ assert.equal(data.coverage.regions.filter(r=>r.groups>0).length,10);assert.equal(data.coverage.regions.filter(r=>r.groups===0).length,6);
 });
