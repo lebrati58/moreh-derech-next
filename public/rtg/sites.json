@@ -1,0 +1,591 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-08",
+  "scope": "First ten RTG guide sites. Primary sources only; not an exhaustive list of Israel.",
+  "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
+  "coverage": {
+    "groups": 10,
+    "primaryGuides": 10,
+    "associatedDocuments": 16,
+    "sourceCheckedCoordinates": 3,
+    "missingCoordinates": 7,
+    "fullyAuditedContent": 0,
+    "priorityDocumentsTotal": 100,
+    "regions": [
+      {
+        "id": "golan_south",
+        "label": "דרום רמת הגולן",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "golan_north",
+        "label": "מרכז וצפון הגולן והחרמון",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "shfela",
+        "label": "השפלה",
+        "groups": 2,
+        "sourceCheckedCoordinates": 1,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "haifa_carmel",
+        "label": "חיפה והכרמל",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "jerusalem",
+        "label": "ירושלים",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "jerusalem_hills",
+        "label": "הרי ירושלים וסובב ירושלים",
+        "groups": 2,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "judean_desert",
+        "label": "מדבר יהודה וים המלח",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "negev",
+        "label": "הנגב הצפוני",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "judea_samaria",
+        "label": "הר חברון והשומרון",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "coast",
+        "label": "מישור החוף",
+        "groups": 4,
+        "sourceCheckedCoordinates": 1,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "valleys",
+        "label": "העמקים, הגלבוע ובית שאן",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "lower_galilee",
+        "label": "הגליל התחתון",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "upper_galilee",
+        "label": "הגליל העליון והחולה",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "central",
+        "label": "מרכז הארץ",
+        "groups": 2,
+        "sourceCheckedCoordinates": 1,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "negev_south",
+        "label": "הנגב הדרומי",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      },
+      {
+        "id": "arava_eilat",
+        "label": "הערבה ואילת",
+        "groups": 0,
+        "sourceCheckedCoordinates": 0,
+        "fullyAuditedContent": 0
+      }
+    ]
+  },
+  "sites": [
+    {
+      "id": "migdal-tzedek",
+      "name": "גן לאומי מגדל צדק",
+      "region": "central",
+      "regionLabel": "מרכז הארץ",
+      "regionStatus": "source_checked",
+      "guideId": "7ceae8bd0b7f",
+      "sources": [
+        {
+          "id": "7ceae8bd0b7f",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2022/05/מדריך-למדריך-מגדל-צדק.pdf",
+            "pdfSha256": "7ceae8bd0b7fa3a555901ab4531a18dd422e15866d35da95d61c41b3be829067"
+          },
+          "title": "מדריך למדריך - גן לאומי מגדל צדק",
+          "type": "guide",
+          "language": "he",
+          "pages": 33,
+          "url": "https://static.parks.org.il/wp-content/uploads/2022/05/מדריך-למדריך-מגדל-צדק.pdf",
+          "structured": true
+        },
+        {
+          "id": "5be92ea21a0e",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2022/04/דף-מידע-מגדל-צדק.pdf",
+            "pdfSha256": "5be92ea21a0e58798d3b7c448d8be47c9aab056fdc2f350238d054dc17c71eb2"
+          },
+          "title": "דפדפת ומפת גן לאומי מגדל צדק",
+          "type": "map",
+          "language": "he",
+          "pages": 3,
+          "url": "https://static.parks.org.il/wp-content/uploads/2022/04/דף-מידע-מגדל-צדק.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": {
+        "lat": 32.08083,
+        "lon": 34.95694,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Migdal_Afek",
+        "evidence": "32.08083; 34.95694",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/migdal-tzedek/"
+    },
+    {
+      "id": "ashkelon",
+      "name": "גן לאומי תל אשקלון",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "regionStatus": "provisional",
+      "guideId": "a755bcb21bd4",
+      "sources": [
+        {
+          "id": "a755bcb21bd4",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2020/10/מדריך-למדריך-תל-אשקלון.pdf",
+            "pdfSha256": "a755bcb21bd4a5975db737d5fb816a5616f6e21871a2e6142bc8424cbaf711bb"
+          },
+          "title": "מדריך למדריך - גן לאומי תל אשקלון",
+          "type": "guide",
+          "language": "he",
+          "pages": 24,
+          "url": "https://static.parks.org.il/wp-content/uploads/2020/10/מדריך-למדריך-תל-אשקלון.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": null
+    },
+    {
+      "id": "beit-guvrin",
+      "name": "גן לאומי בית גוברין–מרשה",
+      "region": "shfela",
+      "regionLabel": "השפלה",
+      "regionStatus": "provisional",
+      "guideId": "02311ff968b7",
+      "sources": [
+        {
+          "id": "02311ff968b7",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2018/06/5d1c92d33c537.pdf",
+            "pdfSha256": "02311ff968b70afe62bce61576c19a32974533156daae9b4d6ce06c7af997001"
+          },
+          "driveCopyIdentityChecked": true,
+          "title": "מדריך למדריך בית גוברין שביל המערות",
+          "type": "guide",
+          "language": "he",
+          "pages": 43,
+          "url": "https://static.parks.org.il/wp-content/uploads/2018/06/5d1c92d33c537.pdf",
+          "structured": true
+        },
+        {
+          "id": "7484daa8964e",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2021/01/beit-govrin_heb.pdf",
+            "pdfSha256": "7484daa8964e5afb027ea110f7e0b0067dfb7907710ee78458ea62645d5cbfec"
+          },
+          "title": "דפדפת גן לאומי בית גוברין - עברית",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2021/01/beit-govrin_heb.pdf",
+          "structured": false
+        },
+        {
+          "id": "03aeec9afc0b",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2026/01/Bet-Guvrin-en.pdf",
+            "pdfSha256": "03aeec9afc0b3012a6a21d6cce4435ad5d18c16d8cdf3aa3a883a3f73b88b16b"
+          },
+          "title": "דפדפת בית גוברין באנגלית Bet Guvrin",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2026/01/Bet-Guvrin-en.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": null
+    },
+    {
+      "id": "apollonia",
+      "name": "גן לאומי אפולוניה",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "regionStatus": "source_checked",
+      "guideId": "84ac7ba1e956",
+      "sources": [
+        {
+          "id": "84ac7ba1e956",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2023/08/מדריך-למדריך-גן-לאומי-אפולוניה-מונגש.pdf",
+            "pdfSha256": "84ac7ba1e95613324f87ac3829c75a3db9c8ea484548e39f8db9fd91c068c3c9"
+          },
+          "title": "מדריך למדריך גן לאומי אפולוניה",
+          "type": "guide",
+          "language": "he",
+          "pages": 46,
+          "url": "https://static.parks.org.il/wp-content/uploads/2023/08/מדריך-למדריך-גן-לאומי-אפולוניה-מונגש.pdf",
+          "structured": true
+        },
+        {
+          "id": "c5c6df1c8fef",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/04/apolonia.pdf",
+            "pdfSha256": "c5c6df1c8fefe349f968163df38292088a3b51d50dbce48ca364605511350676"
+          },
+          "title": "דפדפת גן לאומי אפולוניה",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/04/apolonia.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": {
+        "lat": 32.19528,
+        "lon": 34.80667,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Apollonia%E2%80%93Arsuf",
+        "evidence": "32.19528; 34.80667",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/גן-לאומי-אפולוניה-תל-ארשף/",
+      "navigation": {
+        "query": "גן לאומי מבצר אפולוניה חניה",
+        "source": "https://www.parks.org.il/reserve-park/גן-לאומי-אפולוניה-תל-ארשף/",
+        "checkedAt": "2026-11-08",
+        "note": "בדף רט״ג נכתב כי חיפוש לפי שם האתר בלבד עלול להוביל לחולות; יש לחפש את החניה."
+      }
+    },
+    {
+      "id": "shaar-hagai",
+      "name": "חאן שער הגיא",
+      "region": "jerusalem_hills",
+      "regionLabel": "הרי ירושלים וסובב ירושלים",
+      "regionStatus": "provisional",
+      "guideId": "7561e969b354",
+      "sources": [
+        {
+          "id": "7561e969b354",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://www.parks.org.il/wp-content/uploads/2025/10/מדריך-למדריך-חאן-שער-הגיא.pdf",
+            "pdfSha256": "7561e969b3542e27a54dbbbc2b5dc13081d1d3478d323f27df1c224b4a4e55c2"
+          },
+          "driveCopyIdentityChecked": true,
+          "title": "מדריך למדריך חאן שער הגיא",
+          "type": "guide",
+          "language": "he",
+          "pages": 18,
+          "url": "https://www.parks.org.il/wp-content/uploads/2025/10/מדריך-למדריך-חאן-שער-הגיא.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": null,
+      "officialSite": "https://www.parks.org.il/reserve-park/gay-2/",
+      "practicalNotice": {
+        "text": "נמצאו הבדלים בין המדריך הישן לדף האתר בנוהלי ההגעה. לפני ביקור יש לבדוק את דף רט״ג העדכני.",
+        "source": "https://www.parks.org.il/reserve-park/gay-2/",
+        "checkedAt": "2026-11-08"
+      }
+    },
+    {
+      "id": "beit-yanai",
+      "name": "גן לאומי נחל אלכסנדר – חוף בית ינאי",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "regionStatus": "provisional",
+      "guideId": "694d7c79feee",
+      "sources": [
+        {
+          "id": "694d7c79feee",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2023/06/bet-yanay.pdf",
+            "pdfSha256": "694d7c79feee39467eac00965d821f9c1dac77b02a74d1620b4c83c3dcc7f116"
+          },
+          "title": "מדריך למדריך חוף בית ינאי",
+          "type": "guide",
+          "language": "he",
+          "pages": 26,
+          "url": "https://static.parks.org.il/wp-content/uploads/2023/06/bet-yanay.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": null
+    },
+    {
+      "id": "palmachim",
+      "name": "גן לאומי חוף פלמחים",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "regionStatus": "provisional",
+      "guideId": "4e67c0fdb83d",
+      "sources": [
+        {
+          "id": "4e67c0fdb83d",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2023/02/palmachim.pdf",
+            "pdfSha256": "4e67c0fdb83d28c769f06deab0172f5f3830e692be0f24bb5025c9e0ac20e1f9"
+          },
+          "title": "מדריך למדריך חוף פלמחים",
+          "type": "guide",
+          "language": "he",
+          "pages": 22,
+          "url": "https://static.parks.org.il/wp-content/uploads/2023/02/palmachim.pdf",
+          "structured": true
+        },
+        {
+          "id": "3d147944563b",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "visual_map_title",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2017/09/מפת-פלמחים-כניסה-ראשית.pdf",
+            "pdfSha256": "3d147944563bc0b144411e0c6b5e966488740cd8cf7f0dbe53ab4e4066aa9ccf"
+          },
+          "title": "מפת גן לאומי חוף פלמחים - כניסה ראשית",
+          "type": "map",
+          "language": "en",
+          "pages": 1,
+          "url": "https://static.parks.org.il/wp-content/uploads/2017/09/מפת-פלמחים-כניסה-ראשית.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": null
+    },
+    {
+      "id": "yarkon-sources",
+      "name": "גן לאומי ירקון – מקורות הירקון",
+      "region": "central",
+      "regionLabel": "מרכז הארץ",
+      "regionStatus": "provisional",
+      "guideId": "40132a61a194",
+      "sources": [
+        {
+          "id": "40132a61a194",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2023/05/guide-yarkon.pdf",
+            "pdfSha256": "40132a61a19470b321ef3632816ff2250a382830e52e8b965f636d42780f1edc"
+          },
+          "title": "מדריך למדריך מקורות הירקון",
+          "type": "guide",
+          "language": "he",
+          "pages": 55,
+          "url": "https://static.parks.org.il/wp-content/uploads/2023/05/guide-yarkon.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": null
+    },
+    {
+      "id": "ein-hanya",
+      "name": "עין חניה",
+      "region": "jerusalem_hills",
+      "regionLabel": "הרי ירושלים וסובב ירושלים",
+      "regionStatus": "provisional",
+      "guideId": "d5b4cc4e18d3",
+      "sources": [
+        {
+          "id": "d5b4cc4e18d3",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2022/03/מדריך-למדריך-עין-חניה.pdf",
+            "pdfSha256": "d5b4cc4e18d30f4d31b0fde73b987cec42e8d70d24f001e873bfdd211a4c2315"
+          },
+          "title": "מדריך למדריך עין חניה",
+          "type": "guide",
+          "language": "he",
+          "pages": 18,
+          "url": "https://static.parks.org.il/wp-content/uploads/2022/03/מדריך-למדריך-עין-חניה.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": null
+    },
+    {
+      "id": "lachish",
+      "name": "גן לאומי תל לכיש",
+      "region": "shfela",
+      "regionLabel": "השפלה",
+      "regionStatus": "source_checked",
+      "guideId": "359f22ca4c1d",
+      "sources": [
+        {
+          "id": "359f22ca4c1d",
+          "role": "primary_guide",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "document_title_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2023/05/lachish-nagish.pdf",
+            "pdfSha256": "359f22ca4c1d629388ee7b1797c6d8b4beaa64facbe34498f97ab56aba860d7e"
+          },
+          "driveCopyIdentityChecked": true,
+          "title": "מדריך למדריך תל לכיש",
+          "type": "guide",
+          "language": "he",
+          "pages": 58,
+          "url": "https://static.parks.org.il/wp-content/uploads/2023/05/lachish-nagish.pdf",
+          "structured": true
+        },
+        {
+          "id": "547ee8eb808f",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "visual_map_and_official_page_link",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2018/07/מפת-תל-לכיש.pdf",
+            "pdfSha256": "547ee8eb808f6f0b5bfa763cfb55bb395784e971e603ca3ee972675c41be757e"
+          },
+          "title": "מפת הגן הלאומי תל לכיש",
+          "type": "map",
+          "language": "mixed",
+          "pages": 1,
+          "url": "https://static.parks.org.il/wp-content/uploads/2018/07/מפת-תל-לכיש.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "extraction_to_review",
+      "fullyAudited": false,
+      "coordinate": {
+        "lat": 31.565,
+        "lon": 34.84889,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Lachish",
+        "evidence": "31.56500; 34.84889",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/lachish/"
+    }
+  ]
+}

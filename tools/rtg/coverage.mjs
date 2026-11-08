@@ -22,7 +22,9 @@ for(const p of registry.places){
   note:'Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred.'});
 }
 const regions={};for(const s of sites){const k=s.region||'unassigned';const r=regions[k]||={entries:0,entriesWithProcessedDocuments:0};r.entries++;if(s.processedDocumentIds.length)r.entriesWithProcessedDocuments++;}
-const report={version:1,catalogBuilt:catalog.built,scope:'Existing RTG catalog only; not an exhaustive inventory of Israel',
+let reviewedCoverage=null;
+try { reviewedCoverage=(await read('public/rtg/sites.json')).coverage; } catch(e) { if(e.code!=='ENOENT')throw e; }
+const report={version:2,reviewedCoverage,catalogBuilt:catalog.built,scope:'Existing RTG catalog only; not an exhaustive inventory of Israel',
  totals:{documents:catalog.docs.length,documentsWithStructuredContent:catalog.docs.filter(d=>d.fx).length,
  documentsLinkedToGame:catalog.docs.filter(d=>d.ln?.length).length,registryEntries:sites.length,
  auditedSiteEntries:0,documentsByType:catalog.docs.reduce((a,d)=>(a[d.ty]=(a[d.ty]||0)+1,a),{})},

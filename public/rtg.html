@@ -17,7 +17,7 @@ body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 0 0,#1f6b4
 a{color:inherit}button,input,select{font:inherit;color:inherit}[hidden]{display:none!important}
 :focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
 .shell{max-width:860px;margin:auto;padding:0 14px calc(90px + var(--safe-b))}
-.top{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:calc(12px + var(--safe-t)) 0 10px}
+.top{flex-wrap:wrap;display:flex;gap:8px;align-items:center;justify-content:space-between;padding:calc(12px + var(--safe-t)) 0 10px}
 .mini{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900;text-decoration:none}.mini img{height:44px;width:44px;border-radius:12px;background:#fff}
 .chip{display:inline-flex;align-items:center;gap:5px;min-height:44px;text-decoration:none;font-size:13px;font-weight:800;padding:9px 11px;border-radius:12px;background:#1d2a56;border:1px solid var(--line2)}
 .hero{border-radius:22px;padding:16px 18px;margin-top:6px;background:linear-gradient(115deg,#11744f,#1f5f86 55%,#3b3fa8);border:1px solid #8ff0c080;box-shadow:0 7px 0 #04121a}
@@ -51,6 +51,7 @@ details{margin-top:10px}details summary{cursor:pointer;min-height:40px;display:f
 <body>
 <div class="shell">
   <header class="top"><a class="mini" href="index.html"><img src="assets/moreh-derech-next-driver.webp" alt="" width="44" height="44"><span>Moreh Derech NEXT</span></a><a class="chip" id="back" href="#/">📚 <span data-t="all">כל הספרייה</span></a></header>
+  <p><a class="chip" href="rtg-sites.html">🗺️ מקורות וכרטיסים לפי מקום</a></p>
   <main id="view"><p class="empty">טוען…</p></main>
 </div>
 <script src="config.js"></script>

@@ -185,6 +185,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
   <nav class="more-panel" id="morePanel" hidden aria-label="עוד פעולות">
     <a class="cta-add" href="contribute.html">➕ הוספת מסמך/מסלול</a>
     <a href="community.html">🛣️ קטע דרך חדש</a>
+    <a href="rtg-sites.html">🌿 מקורות רט״ג לפי מקום · שיוך בדוק</a>
     <a class="cta-lib" href="community-library.html">🌍 קטעי הקהילה</a>
     <a class="cta-class" href="class.html">🏆 תחרות הכיתה</a>
     <button type="button" data-feedback>💡 רעיון, בעיה או טעות?</button>
@@ -480,6 +481,7 @@ function renderPlaceSheet(p){
   var rtgHere=isEx?findRtg(p.key):p, exHere=isEx?p:(p.p.kind==='exam'?findPlace('exam:'+p.p.region+':'+p.p.site):null);
   var fxDoc=rtgHere&&rtgHere.p?rtgHere.p.docs.filter(function(d){return d.fx;})[0]:null;
   if(isEx)h+='<a class="play" href="exam.html#/s/'+esc(p.region)+'/'+esc(p.site.id)+'">📝 לכרטיס האתר באתגר המבחן ←</a>';
+  if(fxDoc&&fxDoc.ty==='guide')h+='<a class="play alt" href="rtg-sites.html?doc='+esc(fxDoc.id)+'">🪪 כל מקורות המקום והכנה להדרכה ←</a>';
   if(fxDoc)h+='<a class="play'+(isEx?' alt':'')+'" href="rtg.html#/q/'+esc(fxDoc.id)+'">🌿 חידון רט״ג על האתר ←</a>';
   if(!isEx&&exHere)h+='<a class="play alt" href="exam.html#/s/'+esc(exHere.region)+'/'+esc(exHere.site.id)+'">📝 האתר באתגר המבחן ←</a>';
   h+='</div>';
