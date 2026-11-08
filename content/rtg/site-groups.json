@@ -1,7 +1,7 @@
 {
   "version": 1,
   "checkedAt": "2026-11-08",
-  "scope": "First ten RTG guide sites. Primary sources only; not an exhaustive list of Israel.",
+  "scope": "Ten initial guide sites plus Tel Dan and Avdat brochure sites. Primary sources only; not an exhaustive list of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "sites": [
     {
@@ -367,6 +367,133 @@
         "purpose": "site_reference_not_entrance"
       },
       "officialSite": "https://www.parks.org.il/reserve-park/lachish/"
+    },
+    {
+      "id": "tel-dan",
+      "name": "שמורת טבע תל דן",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "regionStatus": "provisional",
+      "primaryDocumentId": "08d4706c710e",
+      "sources": [
+        {
+          "id": "08d4706c710e",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/tel-dan.pdf",
+            "pdfSha256": "08d4706c710ee2b08d18b96038e17dd7c5bde07e9fa2e4d576c8341c5f8491ca"
+          }
+        },
+        {
+          "id": "26a06883880b",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/11/tel-dan-en.pdf",
+            "pdfSha256": "26a06883880bf6f5c95306a81d26f9b76164c3015eb5d4fe5fa7442c7fc24266"
+          }
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          2
+        ]
+      },
+      "coordinate": {
+        "lat": 33.249,
+        "lon": 35.652,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Tel_Dan",
+        "evidence": "33.249; 35.652",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%aa%d7%9c-%d7%93%d7%9f/"
+    },
+    {
+      "id": "avdat",
+      "name": "גן לאומי עבדת",
+      "region": "negev_south",
+      "regionLabel": "הנגב הדרומי",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "989314676c9f",
+      "sources": [
+        {
+          "id": "989314676c9f",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/ovdat.pdf",
+            "pdfSha256": "989314676c9fccaabc38cc72f51aa3098bbbb38739874b7321b23288764ef794"
+          },
+          "driveCopyIdentityChecked": true
+        },
+        {
+          "id": "a243ff4c35eb",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2017/08/Avdat_eng_26.3.pdf",
+            "pdfSha256": "a243ff4c35eb0b99553b258d757c6c522e1e883cc553f64f672cd907e71cf5e0"
+          }
+        },
+        {
+          "id": "30c4d3c4a317",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2026/01/ovdat.pdf",
+            "pdfSha256": "30c4d3c4a317e8cf17a61e4537d789baff2dbaf7fa4ab165647cc93f014547ea"
+          }
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      "coordinate": {
+        "lat": 30.794,
+        "lon": 34.773,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Avdat",
+        "evidence": "30.794; 34.773",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a2%d7%91%d7%93%d7%aa/",
+      "practicalNotice": {
+        "text": "עבדת ועין עבדת הם שני גנים לאומיים נפרדים. המקורות בכרטיס הזה עוסקים בעיר העתיקה עבדת.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a2%d7%91%d7%93%d7%aa/",
+        "checkedAt": "2026-11-08"
+      }
     }
   ]
 }

@@ -1,15 +1,21 @@
 {
   "version": 1,
   "checkedAt": "2026-11-08",
-  "scope": "First ten RTG guide sites. Primary sources only; not an exhaustive list of Israel.",
+  "scope": "Ten initial guide sites plus Tel Dan and Avdat brochure sites. Primary sources only; not an exhaustive list of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "coverage": {
-    "groups": 10,
+    "groups": 12,
     "primaryGuides": 10,
-    "associatedDocuments": 16,
-    "sourceCheckedCoordinates": 3,
+    "associatedDocuments": 21,
+    "sourceCheckedCoordinates": 5,
     "missingCoordinates": 7,
     "fullyAuditedContent": 0,
+    "selectedPassagesChecked": 2,
+    "associatedDocumentsByType": {
+      "guide": 10,
+      "brochure": 8,
+      "map": 3
+    },
     "priorityDocumentsTotal": 100,
     "regions": [
       {
@@ -17,112 +23,128 @@
         "label": "דרום רמת הגולן",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "golan_north",
         "label": "מרכז וצפון הגולן והחרמון",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "shfela",
         "label": "השפלה",
         "groups": 2,
         "sourceCheckedCoordinates": 1,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "haifa_carmel",
         "label": "חיפה והכרמל",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "jerusalem",
         "label": "ירושלים",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "jerusalem_hills",
         "label": "הרי ירושלים וסובב ירושלים",
         "groups": 2,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "judean_desert",
         "label": "מדבר יהודה וים המלח",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "negev",
         "label": "הנגב הצפוני",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "judea_samaria",
         "label": "הר חברון והשומרון",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "coast",
         "label": "מישור החוף",
         "groups": 4,
         "sourceCheckedCoordinates": 1,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "valleys",
         "label": "העמקים, הגלבוע ובית שאן",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "lower_galilee",
         "label": "הגליל התחתון",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "upper_galilee",
         "label": "הגליל העליון והחולה",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 1
       },
       {
         "id": "central",
         "label": "מרכז הארץ",
         "groups": 2,
         "sourceCheckedCoordinates": 1,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       },
       {
         "id": "negev_south",
         "label": "הנגב הדרומי",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 1
       },
       {
         "id": "arava_eilat",
         "label": "הערבה ואילת",
         "groups": 0,
         "sourceCheckedCoordinates": 0,
-        "fullyAuditedContent": 0
+        "fullyAuditedContent": 0,
+        "selectedPassagesChecked": 0
       }
     ]
   },
@@ -183,7 +205,8 @@
         "checkedAt": "2026-11-08",
         "purpose": "site_reference_not_entrance"
       },
-      "officialSite": "https://www.parks.org.il/reserve-park/migdal-tzedek/"
+      "officialSite": "https://www.parks.org.il/reserve-park/migdal-tzedek/",
+      "primaryDocumentId": "7ceae8bd0b7f"
     },
     {
       "id": "ashkelon",
@@ -214,7 +237,8 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null
+      "coordinate": null,
+      "primaryDocumentId": "a755bcb21bd4"
     },
     {
       "id": "beit-guvrin",
@@ -282,7 +306,8 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null
+      "coordinate": null,
+      "primaryDocumentId": "02311ff968b7"
     },
     {
       "id": "apollonia",
@@ -346,7 +371,8 @@
         "source": "https://www.parks.org.il/reserve-park/גן-לאומי-אפולוניה-תל-ארשף/",
         "checkedAt": "2026-11-08",
         "note": "בדף רט״ג נכתב כי חיפוש לפי שם האתר בלבד עלול להוביל לחולות; יש לחפש את החניה."
-      }
+      },
+      "primaryDocumentId": "84ac7ba1e956"
     },
     {
       "id": "shaar-hagai",
@@ -384,7 +410,8 @@
         "text": "נמצאו הבדלים בין המדריך הישן לדף האתר בנוהלי ההגעה. לפני ביקור יש לבדוק את דף רט״ג העדכני.",
         "source": "https://www.parks.org.il/reserve-park/gay-2/",
         "checkedAt": "2026-11-08"
-      }
+      },
+      "primaryDocumentId": "7561e969b354"
     },
     {
       "id": "beit-yanai",
@@ -415,7 +442,8 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null
+      "coordinate": null,
+      "primaryDocumentId": "694d7c79feee"
     },
     {
       "id": "palmachim",
@@ -464,7 +492,8 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null
+      "coordinate": null,
+      "primaryDocumentId": "4e67c0fdb83d"
     },
     {
       "id": "yarkon-sources",
@@ -495,7 +524,8 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null
+      "coordinate": null,
+      "primaryDocumentId": "40132a61a194"
     },
     {
       "id": "ein-hanya",
@@ -526,7 +556,8 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null
+      "coordinate": null,
+      "primaryDocumentId": "d5b4cc4e18d3"
     },
     {
       "id": "lachish",
@@ -585,7 +616,165 @@
         "checkedAt": "2026-11-08",
         "purpose": "site_reference_not_entrance"
       },
-      "officialSite": "https://www.parks.org.il/reserve-park/lachish/"
+      "officialSite": "https://www.parks.org.il/reserve-park/lachish/",
+      "primaryDocumentId": "359f22ca4c1d"
+    },
+    {
+      "id": "tel-dan",
+      "name": "שמורת טבע תל דן",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "regionStatus": "provisional",
+      "primaryDocumentId": "08d4706c710e",
+      "sources": [
+        {
+          "id": "08d4706c710e",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/tel-dan.pdf",
+            "pdfSha256": "08d4706c710ee2b08d18b96038e17dd7c5bde07e9fa2e4d576c8341c5f8491ca"
+          },
+          "title": "דפדפת שמורת הטבע תל דן",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/03/tel-dan.pdf",
+          "structured": true
+        },
+        {
+          "id": "26a06883880b",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/11/tel-dan-en.pdf",
+            "pdfSha256": "26a06883880bf6f5c95306a81d26f9b76164c3015eb5d4fe5fa7442c7fc24266"
+          },
+          "title": "דפדפת שמורת תל דן באנגלית",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/11/tel-dan-en.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          2
+        ]
+      },
+      "coordinate": {
+        "lat": 33.249,
+        "lon": 35.652,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Tel_Dan",
+        "evidence": "33.249; 35.652",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%aa%d7%9c-%d7%93%d7%9f/"
+    },
+    {
+      "id": "avdat",
+      "name": "גן לאומי עבדת",
+      "region": "negev_south",
+      "regionLabel": "הנגב הדרומי",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "989314676c9f",
+      "sources": [
+        {
+          "id": "989314676c9f",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/ovdat.pdf",
+            "pdfSha256": "989314676c9fccaabc38cc72f51aa3098bbbb38739874b7321b23288764ef794"
+          },
+          "driveCopyIdentityChecked": true,
+          "title": "דפדפת גן לאומי עבדת",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/03/ovdat.pdf",
+          "structured": true
+        },
+        {
+          "id": "a243ff4c35eb",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2017/08/Avdat_eng_26.3.pdf",
+            "pdfSha256": "a243ff4c35eb0b99553b258d757c6c522e1e883cc553f64f672cd907e71cf5e0"
+          },
+          "title": "דפדפת גן לאומי עבדת - באנגלית",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2017/08/Avdat_eng_26.3.pdf",
+          "structured": false
+        },
+        {
+          "id": "30c4d3c4a317",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2026/01/ovdat.pdf",
+            "pdfSha256": "30c4d3c4a317e8cf17a61e4537d789baff2dbaf7fa4ab165647cc93f014547ea"
+          },
+          "title": "Avdat brochure דפדפת גן לאומי עבדת באנגלית",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2026/01/ovdat.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      "coordinate": {
+        "lat": 30.794,
+        "lon": 34.773,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Avdat",
+        "evidence": "30.794; 34.773",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a2%d7%91%d7%93%d7%aa/",
+      "practicalNotice": {
+        "text": "עבדת ועין עבדת הם שני גנים לאומיים נפרדים. המקורות בכרטיס הזה עוסקים בעיר העתיקה עבדת.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a2%d7%91%d7%93%d7%aa/",
+        "checkedAt": "2026-11-08"
+      }
     }
   ]
 }
