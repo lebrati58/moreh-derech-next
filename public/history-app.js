@@ -268,6 +268,7 @@
 
   // ======================= quiz : partie =======================
   function startRun(cfg) {
+    if (cfg.mode !== 'exam' && window.MDComfort && MDComfort.noTimer()) cfg = Object.assign({}, cfg, { timed: false }); // mode Confort : entraînement sans chronomètre
     const seed = uuid();
     const types = H.TYPE_GROUPS[cfg.types] ? cfg.types : 'mix';
     const level = H.LEVELS[cfg.level] ? cfg.level : 2;

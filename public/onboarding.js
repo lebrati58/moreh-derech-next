@@ -207,6 +207,7 @@
     document.removeEventListener('keydown', onKey);
     removeEventListener('resize', place); removeEventListener('scroll', place);
     if (root) root.remove(); root = null;
+    document.documentElement.classList.remove('ob-touring');
     if (startDaily) { var d = document.querySelector('.qt-daily'); if (d) { location.href = d.getAttribute('href'); return; } }
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
@@ -214,6 +215,7 @@
   function start() {
     if (root) return;
     lastFocus = document.activeElement;
+    document.documentElement.classList.add('ob-touring'); // modes de l'accueil : la visite montre tous les blocs
     scrollTo(0, 0);
     build(); go(0);
   }

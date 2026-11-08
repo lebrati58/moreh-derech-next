@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#081027">
 <title>Moreh Derech NEXT</title>
+<script src="comfort.js" data-scope="home"></script>
 <meta name="description" content="Moreh Derech NEXT — le jeu de révision des 22 סיורים : défi du jour, visite guidée sur la carte, sites en 3D.">
 <link rel="stylesheet" href="style.css">
 <style>
@@ -206,34 +207,40 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
 <!-- Progressive home modes: only hide navigation, never delete content or progress. -->
 <style>
 .mode-picker{margin:8px 0 18px;padding:14px;border:1px solid #6e87ce;border-radius:18px;background:#15254e}
-.mode-picker label{display:block;font-size:14px;font-weight:900;color:#dbe8ff;margin-bottom:9px}
+.mode-picker .mode-title{display:block;font-size:14px;font-weight:900;color:#dbe8ff;margin-bottom:9px}
 .mode-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.mode-options button{min-height:52px;border:1px solid #7186b8;border-radius:12px;background:#23345d;color:#fff;font:800 14px inherit;cursor:pointer}
+.mode-options button{min-height:52px;border:1px solid #7186b8;border-radius:12px;background:#23345d;color:#fff;font-family:inherit;font-weight:800;font-size:14px;line-height:1.25;padding:6px 8px;cursor:pointer}
 .mode-options button[aria-pressed="true"]{background:#94f5de;color:#101c3a;border-color:#94f5de}
+.mode-options button:focus-visible,.mode-comfort:focus-visible{outline:2px solid #ffd878;outline-offset:2px}
 .mode-note{margin:10px 2px 0;color:#c8d6f4;font-size:13px;line-height:1.4}
-.mode-hidden{display:none!important}
+.mode-comfort{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-top:10px;min-height:48px;padding:8px 12px;border:1px dashed #94f5de;border-radius:12px;background:transparent;color:#e6fff8;font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;text-align:start}
+.mode-comfort .st{flex:none;border-radius:100px;padding:3px 10px;font-size:12.5px;background:#2b3a66;color:#dbe8ff}
+.mode-comfort[aria-pressed="true"] .st{background:#94f5de;color:#101c3a}
+/* La visite guidée montre toujours tout l'accueil, quel que soit le mode. */
+html:not(.ob-touring) .mode-hidden{display:none!important}
 </style>
 <script>
 (function(){
 'use strict';
-var KEY='mdl_home_mode_v1';
+var KEY='mdl_home_mode_v1',MODES=['amateur','explorer','doctorant','guide'];
 var names={
- he:{title:'בחרו את הדרך שלכם',note:'אפשר לשנות מצב בכל רגע. כל התוכן וההתקדמות נשמרים.',modes:['🎯 חובב · חידונים','🧭 חוקר · מפות','🏛️ דוקטורנט · תלת־ממד','🎓 מורה דרך · הכול']},
- fr:{title:'Choisis ton expérience',note:'Change de mode à tout moment. Rien ne sera perdu.',modes:['🎯 Amateur · Quiz','🧭 Explorateur · Cartes','🏛️ Doctorant · 3D','🎓 Guide · Tout']},
- en:{title:'Choose your experience',note:'Switch anytime. Your progress and content stay intact.',modes:['🎯 Amateur · Quizzes','🧭 Explorer · Maps','🏛️ Scholar · 3D','🎓 Tour guide · All']},
- ru:{title:'Выберите режим',note:'Меняйте режим когда угодно. Прогресс сохранится.',modes:['🎯 Любитель · Тесты','🧭 Исследователь · Карты','🏛️ Эксперт · 3D','🎓 Гид · Всё']}
+ he:{title:'בחרו את הדרך שלכם',note:'אפשר לשנות מצב בכל רגע. כל התוכן וההתקדמות נשמרים.',modes:['🎯 חובב · חידונים','🧭 חוקר · מפות','🏛️ דוקטורנט · תלת־ממד','🎓 מורה דרך · הכול'],comfort:'♿ מצב נוחות',on:'פועל',off:'כבוי'},
+ fr:{title:'Choisis ton expérience',note:'Change de mode à tout moment. Rien ne sera perdu.',modes:['🎯 Amateur · Quiz','🧭 Explorateur · Cartes','🏛️ Doctorant · 3D','🎓 Guide · Tout'],comfort:'♿ Mode Confort',on:'activé',off:'désactivé'},
+ en:{title:'Choose your experience',note:'Switch anytime. Your progress and content stay intact.',modes:['🎯 Amateur · Quizzes','🧭 Explorer · Maps','🏛️ Scholar · 3D','🎓 Tour guide · All'],comfort:'♿ Comfort mode',on:'on',off:'off'},
+ ru:{title:'Выберите режим',note:'Меняйте режим когда угодно. Прогресс сохранится.',modes:['🎯 Любитель · Тесты','🧭 Исследователь · Карты','🏛️ Эксперт · 3D','🎓 Гид · Всё'],comfort:'♿ Режим комфорта',on:'вкл.',off:'выкл.'}
 };
 var main=document.querySelector('main'),daily=main&&main.querySelector('.today');
 if(!main||!daily)return;
-var box=document.createElement('section');box.className='mode-picker';box.setAttribute('aria-label','Experience mode');
-box.innerHTML='<label id="modeTitle"></label><div class="mode-options" role="group" aria-labelledby="modeTitle"></div><p class="mode-note"></p>';
+function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+var box=document.createElement('section');box.className='mode-picker';box.setAttribute('aria-labelledby','modeTitle');
+box.innerHTML='<span class="mode-title" id="modeTitle"></span><div class="mode-options" role="group" aria-labelledby="modeTitle"></div><p class="mode-note"></p><button type="button" class="mode-comfort" id="modeComfort" aria-pressed="false"><span class="lb"></span><span class="st"></span></button>';
 main.insertBefore(box,daily);
-var buttons=box.querySelector('.mode-options');
-['amateur','explorer','doctorant','guide'].forEach(function(mode,i){
- var b=document.createElement('button');b.type='button';b.dataset.mode=mode;b.addEventListener('click',function(){setMode(mode);});buttons.appendChild(b);
+var buttons=box.querySelector('.mode-options'),comfortBtn=box.querySelector('#modeComfort');
+MODES.forEach(function(mode){
+ var b=document.createElement('button');b.type='button';b.dataset.mode=mode;b.addEventListener('click',function(){setMode(mode,true);});buttons.appendChild(b);
 });
-var sec=Array.from(main.querySelectorAll('h2.sec'));
-var play=sec[0],exam=sec[1],explore=sec[2];
+comfortBtn.addEventListener('click',function(){if(window.MDComfort)window.MDComfort.open(comfortBtn);});
+var heads=Array.from(main.querySelectorAll('h2.sec'));
 var items={
  campus:main.querySelector('a.campus'),
  history:main.querySelector('section.hist'),
@@ -249,31 +256,42 @@ var items={
  guide:main.querySelector('a.guide-link'),
  timeline:main.querySelector('a.hist-tl')
 };
+// Chaque titre de rubrique suit ses blocs : jamais de bloc sous le mauvais titre, jamais de titre vide.
+var groups=[['campus','history','roads','guided','duo'],['parta','exam','arch'],['caesarea','jerusalem','chips']];
 var visible={
  amateur:['campus','history','parta'],
  explorer:['campus','history','roads','guided','duo','parta','timeline'],
  doctorant:['campus','history','roads','guided','duo','parta','arch','caesarea','jerusalem','chips','timeline'],
  guide:Object.keys(items)
 };
-function setMode(mode){
- if(!visible[mode])mode='amateur';
- try{localStorage.setItem(KEY,mode);}catch(e){}
+var current='guide';
+function setMode(mode,save){
+ if(!visible[mode])mode='guide';
+ current=mode;
+ if(save){try{localStorage.setItem(KEY,mode);}catch(e){}}
  Object.keys(items).forEach(function(k){if(items[k])items[k].classList.toggle('mode-hidden',visible[mode].indexOf(k)===-1);});
- if(play)play.classList.remove('mode-hidden');
- if(exam)exam.classList.toggle('mode-hidden',mode!=='guide');
- if(explore)explore.classList.toggle('mode-hidden',mode!=='doctorant'&&mode!=='guide');
+ heads.forEach(function(h,i){var g=groups[i];if(!h||!g)return;h.classList.toggle('mode-hidden',!g.some(function(k){return visible[mode].indexOf(k)!==-1;}));});
  buttons.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});
+ document.documentElement.dataset.homeMode=mode;
 }
+function lang(){var l=document.documentElement.lang||'he';return names[l]?l:'he';}
 function translate(){
- var lang='he';try{lang=localStorage.getItem('mdl_lang')||'he';}catch(e){}
- var t=names[lang]||names.he;
- box.querySelector('label').textContent=t.title;
+ var t=names[lang()];
+ box.querySelector('.mode-title').textContent=t.title;
  box.querySelector('.mode-note').textContent=t.note;
  buttons.querySelectorAll('button').forEach(function(b,i){b.textContent=t.modes[i];});
+ var on=!!(window.MDComfort&&window.MDComfort.get().on);
+ comfortBtn.querySelector('.lb').textContent=t.comfort;comfortBtn.querySelector('.st').textContent=on?t.on:t.off;comfortBtn.setAttribute('aria-pressed',String(on));
 }
-var selected='amateur';try{selected=localStorage.getItem(KEY)||'amateur';}catch(e){}
-translate();setMode(selected);
-document.addEventListener('click',function(e){if(e.target.closest('#langMenu'))setTimeout(translate,0);});
+// Choix enregistré → on le garde. Sinon : ceux qui utilisaient déjà le jeu voient tout, comme avant (mode Guide) ;
+// un tout nouveau joueur commence en Amateur.
+var saved=get(KEY),returning=!!(get('mdl_onboarded_v3')||get('mdl_onboarded_v2')||get('mdl_onboarded')||get('mdl_player_v1')||get('mdl_mode_lang')||get('mdl_guide_name'));
+if(!saved){try{for(var j=0;j<localStorage.length;j++){var k=localStorage.key(j);if(/^mdl_(progress|daily|history|journey|mistakes)/.test(k)){returning=true;break;}}}catch(e){}}
+setMode(saved&&visible[saved]?saved:returning?'guide':'amateur',false);
+translate();
+window.addEventListener('md-lang',translate);
+window.addEventListener('md-comfort',translate);
+window.MDHomeMode={get:function(){return current;},set:function(m){setMode(m,true);}};
 })();
 </script>
 </body>
