@@ -187,7 +187,8 @@ function playRound() {
   }
   tStart = performance.now(); clearInterval(timer);
   const bar = $('pTimer'); bar.style.transform = 'scaleX(1)';
-  timer = setInterval(() => { const left = 1 - (performance.now() - tStart) / A.ROUND_MS; bar.style.transform = `scaleX(${Math.max(0, left)})`; if (left <= 0) answer(null); }, 100);
+  const noTimer = !!(window.MDComfort && MDComfort.noTimer()); bar.parentNode.hidden = noTimer; // mode Confort : sans chronomètre
+  if (!noTimer) timer = setInterval(() => { const left = 1 - (performance.now() - tStart) / A.ROUND_MS; bar.style.transform = `scaleX(${Math.max(0, left)})`; if (left <= 0) answer(null); }, 100);
 }
 function answer(a, pinIdx) {
   if (answered) return; answered = true; clearInterval(timer);

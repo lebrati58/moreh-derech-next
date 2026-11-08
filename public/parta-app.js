@@ -152,6 +152,7 @@
     run.t0 = Date.now(); ss.set(RUN, run);
     app.querySelectorAll('.ans').forEach(b => b.onclick = () => answer(it, +b.dataset.k));
     clearInterval(timer);
+    if (window.MDComfort && MDComfort.noTimer()) { $('timer').hidden = true; return; } // mode Confort : sans chronomètre
     timer = setInterval(() => {
       const left = Math.max(0, L.ms - (Date.now() - run.t0));
       const bar = $('tbar'), tm = $('timer'); if (!bar) { clearInterval(timer); return; }

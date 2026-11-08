@@ -26,10 +26,27 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 | **Architecture classique 3D « אדריכלות קלאסית »** | ✅ test navigateur S24 + ordinateur | `architecture.html` — 14 maquettes, 162 termes, jeu de zihouï, 83 questions ouvertes |
 | **Atelier d’écriture « ✍️ סדנת 180 · 400 »** | ✅ test navigateur S24 + ordinateur | `sadna.html` — méthode, phrases clés, 18 fiches de sites, entraînement chronométré avec compteur du cahier (voir §2, 6 novembre) |
 | **Jeu de campus « 🏆 אלוף הקורס »** | 🟡 tests navigateur OK, à essayer en vrai | `campus.html` — Kahoot du cours, code + QR, podium (voir §2, 3 novembre) |
+| **Accueil en 4 modes (Amateur / Explorateur / Doctorant / Guide)** | ✅ test navigateur S24 + ordinateur | PR #78 corrigée et reprise dans la PR « modes + Confort » (voir §2, 8 novembre) |
+| **Mode Confort ♿** | ✅ test navigateur S24 + ordinateur · 🟡 voix réelle à écouter sur téléphone | `comfort.js` sur 11 pages (voir §2, 8 novembre) |
 | Langues | 🟡 | accueil en 4 langues ; **les pages de jeu et de suivi sont en hébreu seulement** (questions en hébreu) |
 
 ## 2. Journal des sessions
 
+### 8 novembre 2026 — Vérification de la PR #78 (4 modes) + mode Confort (branche `feat/modes-confort`)
+- ✅ **PR #78 vérifiée** (4 modes × 4 langues × S24 + ordinateur). Défauts trouvés et corrigés :
+  - langue : le sélecteur restait **en hébreu** en français, anglais et russe (il lisait `mdl_lang`, l'accueil enregistre `mdl_mode_lang`) → suit maintenant la langue affichée (évènement `md-lang`) ;
+  - police des boutons de mode ignorée (`font:800 14px inherit` est invalide) ;
+  - un joueur **déjà inscrit** se retrouvait en Amateur avec un accueil réduit à 3 blocs → sans choix enregistré : **Guide (tout, comme avant)** pour les joueurs existants, Amateur pour les nouveaux ;
+  - la **visite guidée** de Lionel pointait des blocs cachés (projecteur vide) → pendant la visite, tous les blocs s'affichent (`ob-touring`), puis le mode revient ;
+  - l'examen partie A apparaissait sous le titre « לשחק » quand son titre était caché → chaque titre de rubrique suit ses blocs.
+- ✅ **Mode Confort** (`public/comfort.js`), indépendant du mode choisi, réglages gardés dans le téléphone (`mdl_comfort_v1`, rien n'est envoyé) :
+  - gros caractères 100 / 125 / 150 % (la mise en page garde au moins 320 px utiles sur téléphone, le reste agrandit le texte des questions et réponses) ;
+  - boutons élargis (une réponse par ligne, 64 px de haut) ; contraste élevé noir / blanc / jaune, bonne réponse en vert, mauvaise en rouge, choix en jaune ;
+  - lecture vocale des questions puis des réponses numérotées (voix du téléphone, hébreu / français / anglais / russe selon le texte), lecture automatique facultative, bouton 🔊 / ⏹, vitesse ×0,6 à ×1,6 avec bouton d'essai ;
+  - « sans chronomètre » dans les quiz d'entraînement : examen partie A, frise (entraînement), architecture. **Restent chronométrés** : mode examen de la frise, simulation d'examen, אלוף הקורס (jeu de classe en direct).
+  - Accès : bouton « ♿ » dans le sélecteur de l'accueil, bouton flottant « Aa » sur les pages de jeu. 4 langues.
+- ✅ Tests : `tests/modes-browser.mjs` (104 vérifications, S24 + ordinateur, tout vert, `npm run e2e:modes`), `tests/comfort.test.mjs` (5). Suite complète Postgres (avec `main` à jour, ממבחני רישוי compris) : **226/226**. Non-régression navigateur : guide, install, journey, parta, history, architecture, exam, repertoire, campus, map OK. `sadna-browser` : 2 échecs **identiques sur `main`** (déjà présents) ; `solo`/`v4` demandent le serveur de dev (identique sur `main`).
+- ⏳ Écouter la voix hébraïque sur un vrai S24 / iPhone (si aucune voix hébraïque n'est installée, le panneau le signale).
 ### 7 novembre 2026 — « 📜 ממבחני רישוי » : vraies questions d'examens dans מבחן חלק א׳ (branche `feat/rishui`)
 - ✅ Source : le document d'Efrat Nakash « קישורים לשאלות על נושאי הלימוד » (Drive) → 23 PDF par thème (examens 2000–2017 + « שאלות נוספות מהרשת ») et 12 examens complets (juin 2018 → juillet 2024). Les PDF n'ont **pas de corrigé** (le lien « לפתרון » est inaccessible) et le site bloque le téléchargement direct : extraction par WebFetch, texte hébreu mot pour mot.
 - ✅ Choix de Lionel : un **mode à part** avec solution non officielle ; la banque du cours (`bank.json`, politique drive-only) n'est pas touchée.
