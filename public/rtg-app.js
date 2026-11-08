@@ -177,8 +177,8 @@
           <p class="note">הניקוד מבוסס על הסימון שלכם — חידון להתאמנות, לא מבחן רשמי. ${esc(t('credit'))}</p>`;
         $('#again').addEventListener('click', () => renderQuiz(id));
       };
-      view.innerHTML = `<section class="hero"><div class="eyebrow">חידון רט״ג</div><h1>🎮 ${esc(F.site || d.t)}</h1><p>${qs.length} שאלות בשלוש רמות · תשובה חופשית עם שעון · בסוף כל שאלה מסמנים מה היה בתשובה · הנקודות נכנסות למסע שלכם.${stats && stats.points ? ` שיא נוכחי: ${stats.points} נק׳.` : ''}</p></section>
-        <section class="card"><ul><li>רמה 1 — לזכור עובדה אחת (60 שנ׳)</li><li>רמה 2 — להסביר ולקשר (120 שנ׳)</li><li>רמה 3 — ליישם בהדרכה (180 שנ׳)</li></ul><button type="button" class="btn" id="go">▶ להתחיל</button><a class="btn ghost" href="#/d/${esc(id)}">📚 קודם לקרוא את המסמך</a></section>`;
+      view.innerHTML = `<section class="hero"><div class="eyebrow">חידון רט״ג</div><h1>🎮 ${esc(F.site || d.t)}</h1><p>${qs.length} שאלות · רמות קיימות: ${[...new Set(qs.map(q=>q.level))].join(', ')} · תשובה חופשית עם שעון · בסוף כל שאלה מסמנים מה היה בתשובה · הנקודות נכנסות למסע שלכם.${stats && stats.points ? ` שיא נוכחי: ${stats.points} נק׳.` : ''}</p></section>
+        <section class="card"><ul>${[[1,'לזכור עובדה אחת'],[2,'להסביר ולקשר'],[3,'ליישם בהדרכה']].filter(([level])=>qs.some(q=>q.level===level)).map(([level,label])=>`<li>רמה ${level} — ${label} (${QT[level]} שנ׳)</li>`).join('')}</ul><button type="button" class="btn" id="go">▶ להתחיל</button><a class="btn ghost" href="#/d/${esc(id)}">📚 קודם לקרוא את המסמך</a></section>`;
       $('#go').addEventListener('click', draw);
     }).catch(() => { view.innerHTML = `<p class="empty">${t('noFacts')}</p>`; });
   }
