@@ -1,0 +1,2007 @@
+{
+  "version": 1,
+  "catalogBuilt": "2026-11-02",
+  "scope": "Existing RTG catalog only; not an exhaustive inventory of Israel",
+  "totals": {
+    "documents": 727,
+    "documentsWithStructuredContent": 21,
+    "documentsLinkedToGame": 196,
+    "registryEntries": 46,
+    "auditedSiteEntries": 0,
+    "documentsByType": {
+      "guide": 10,
+      "brochure": 77,
+      "map": 13,
+      "activity": 49,
+      "article": 293,
+      "other": 285
+    }
+  },
+  "regions": {
+    "golan_south": {
+      "entries": 3,
+      "entriesWithProcessedDocuments": 1
+    },
+    "coast": {
+      "entries": 5,
+      "entriesWithProcessedDocuments": 2
+    },
+    "upper_galilee": {
+      "entries": 5,
+      "entriesWithProcessedDocuments": 2
+    },
+    "jerusalem_hills": {
+      "entries": 3,
+      "entriesWithProcessedDocuments": 0
+    },
+    "jerusalem": {
+      "entries": 6,
+      "entriesWithProcessedDocuments": 0
+    },
+    "negev": {
+      "entries": 1,
+      "entriesWithProcessedDocuments": 0
+    },
+    "judea_samaria": {
+      "entries": 4,
+      "entriesWithProcessedDocuments": 0
+    },
+    "judean_desert": {
+      "entries": 2,
+      "entriesWithProcessedDocuments": 1
+    },
+    "unassigned": {
+      "entries": 3,
+      "entriesWithProcessedDocuments": 0
+    },
+    "haifa_carmel": {
+      "entries": 2,
+      "entriesWithProcessedDocuments": 0
+    },
+    "shfela": {
+      "entries": 3,
+      "entriesWithProcessedDocuments": 2
+    },
+    "valleys": {
+      "entries": 3,
+      "entriesWithProcessedDocuments": 3
+    },
+    "golan_north": {
+      "entries": 1,
+      "entriesWithProcessedDocuments": 0
+    },
+    "lower_galilee": {
+      "entries": 5,
+      "entriesWithProcessedDocuments": 5
+    }
+  },
+  "sites": [
+    {
+      "key": "exam:golan_south:kursi",
+      "name": "כורסי (גן לאומי)",
+      "region": "golan_south",
+      "regionLabel": "דרום רמת הגולן",
+      "sourceDocumentIds": [
+        "6ec9f0263969",
+        "d1096975ac76"
+      ],
+      "processedDocumentIds": [
+        "6ec9f0263969"
+      ],
+      "extractedItemsInLinkedDocuments": 20,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.8261,
+        "lon": 35.6504,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:coast:taninim",
+      "name": "גן לאומי נחל תנינים — מערכות מים, טחנות ויבוש הביצות",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "sourceDocumentIds": [
+        "56fe96942b3a",
+        "bcc6e6a0ee55",
+        "7a7765facbe1",
+        "c4bede814958",
+        "9b9a3de57dd1",
+        "29b5d48a36d1",
+        "e6ca740536b7",
+        "1392a3811e0d",
+        "f22c7f5e1898",
+        "6e9cc7a899b9",
+        "5156a43b39db",
+        "b2e219bc3764",
+        "b3da212046b0",
+        "cee702d2c815",
+        "35709938064a"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.5475,
+        "lon": 34.915,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:upper_galilee:hula_reserve",
+      "name": "שמורת החולה וסיפור ייבוש האגם",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "sourceDocumentIds": [
+        "563d230b8eb1",
+        "04fbdfd52b59",
+        "044e46fb0bc3",
+        "0e629ccff520",
+        "1723bc74bbc3",
+        "58f140cba51d",
+        "95ec03ea734c",
+        "17dead43c3d1",
+        "7dda539e65d9",
+        "9043eb0fb7fc",
+        "d6cf25a488b6",
+        "91d298c1b890",
+        "69eaedfa8425",
+        "cbd378bca03e",
+        "ff175d7b874f",
+        "bd6596358fae",
+        "5156a43b39db",
+        "411eea9def3d"
+      ],
+      "processedDocumentIds": [
+        "563d230b8eb1"
+      ],
+      "extractedItemsInLinkedDocuments": 23,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 33.07806,
+        "lon": 35.59833,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem_hills:nebi_samuel",
+      "name": "נבי סמואל — קבר שמואל, המבצר הצלבני והתצפית",
+      "region": "jerusalem_hills",
+      "regionLabel": "הרי ירושלים וסובב ירושלים",
+      "sourceDocumentIds": [
+        "8362e2930888",
+        "460488f7b373",
+        "a8138087f1cf",
+        "f22c7f5e1898",
+        "b2e219bc3764",
+        "68a01dbb8966"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.8327,
+        "lon": 35.1801,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem:holy_sepulchre",
+      "name": "כנסיית הקבר וכנסיית אלכסנדר נבסקי",
+      "region": "jerusalem",
+      "regionLabel": "ירושלים",
+      "sourceDocumentIds": [
+        "3ece7cdf5366"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.77844,
+        "lon": 35.22975,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:negev:tel_beer_sheva",
+      "name": "תל באר שבע — עיר מנהלית מתקופת הברזל",
+      "region": "negev",
+      "regionLabel": "הנגב הצפוני",
+      "sourceDocumentIds": [
+        "413d75c28ab3",
+        "7484daa8964e",
+        "f2c2f399a654",
+        "393d6fabdc5e",
+        "05006cbba25a",
+        "bafd94da80bd",
+        "cee6972fa1b0",
+        "f5307c696ee8",
+        "bcc6e6a0ee55",
+        "5fff06e8b1b5",
+        "e342d66113d6",
+        "e73531d38ea2",
+        "3884259b0ab9",
+        "7adbc7c14c61",
+        "1378425783f5",
+        "3a34d1228541",
+        "3b41f6491d08",
+        "cc78a268c40c",
+        "94aff5a4b0dc",
+        "e901b39d077a",
+        "9a2a7f65fd84",
+        "29b5d48a36d1",
+        "8edddb304aa5",
+        "9d6bbcc51f81",
+        "9f2dcaccb066",
+        "0dd09488d78d",
+        "fe9cb68f04d3",
+        "320e2547f6a8",
+        "aa1d2a24d5e2",
+        "b2e219bc3764",
+        "54f2202a787c",
+        "699a54f5e180",
+        "d78968e08e73",
+        "4091c5e9e87d",
+        "d77c431709c2",
+        "6de795ca27be",
+        "358d9153a4bd",
+        "6b1d77bcdc6b",
+        "c0e80a585647",
+        "d01df389b7f1",
+        "bd1c0136a82d"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.24472,
+        "lon": 34.84083,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:upper_galilee:rosh_pina",
+      "name": "ראש פינה — מושבת העלייה הראשונה ופקידות הברון",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "sourceDocumentIds": [
+        "f5e93e7c2977",
+        "04fbdfd52b59",
+        "a4e274aabeaf",
+        "a636abfd68ac"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.96908,
+        "lon": 35.54246,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:coast:apollonia_city",
+      "name": "אפולוניה — ארשף הצידונית והעיר העתיקה",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "sourceDocumentIds": [
+        "84ac7ba1e956",
+        "c5c6df1c8fef",
+        "efad1c0e33c3",
+        "3f52c4cabd76",
+        "7cbf115f7140",
+        "946ecd689749",
+        "30fcd17a1c7b",
+        "4a8a63b4e54a",
+        "4551e8012d1c",
+        "6c11b59a8ff7",
+        "d639a7a2cc7c",
+        "121cf3cc8a17",
+        "68e4f34a6aa9",
+        "387415e8c41c",
+        "2755317780a0",
+        "a73bdcc93b11",
+        "15d487e5ab7d",
+        "e530ad2f9d55",
+        "b0b05bcc6f74",
+        "0974910a8600",
+        "9f1c33084a14",
+        "14ad19fcd920",
+        "38b5786c1163",
+        "a48f5dc2c877",
+        "71a91361e744"
+      ],
+      "processedDocumentIds": [
+        "84ac7ba1e956"
+      ],
+      "extractedItemsInLinkedDocuments": 60,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.19528,
+        "lon": 34.80667,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:judea_samaria:herodium",
+      "name": "הרודיון — ארמון-מבצר ואחוזת הקבר של הורדוס",
+      "region": "judea_samaria",
+      "regionLabel": "הר חברון והשומרון",
+      "sourceDocumentIds": [
+        "6c9188fcb4cc",
+        "0be4807f5402",
+        "444d5ecc791b",
+        "efad1c0e33c3",
+        "7cbf115f7140",
+        "946ecd689749",
+        "30fcd17a1c7b",
+        "4a8a63b4e54a",
+        "6c11b59a8ff7",
+        "d639a7a2cc7c",
+        "121cf3cc8a17",
+        "68e4f34a6aa9",
+        "387415e8c41c",
+        "2755317780a0",
+        "71a921f021c1",
+        "15d487e5ab7d",
+        "a6aa714a7411",
+        "07eb3b98c398",
+        "5156a43b39db"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.66583,
+        "lon": 35.24139,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:judean_desert:ein_gedi_synagogue",
+      "name": "עין גדי — בית הכנסת העתיק ותולדות היישוב",
+      "region": "judean_desert",
+      "regionLabel": "מדבר יהודה וים המלח",
+      "sourceDocumentIds": [
+        "d5f1465bbdfb",
+        "ac246cedd84c",
+        "354b4d2911ef",
+        "76c910837228",
+        "812f33b4c8ad",
+        "89bf49f30f41",
+        "cb8d83ccaa1c",
+        "0ef5d2d59e0e",
+        "910b76520608",
+        "82dba6ee9f44",
+        "30b36b393391"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.46147,
+        "lon": 35.3925,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:upper_galilee:agamon",
+      "name": "אגמון החולה — העגורים והציפורים",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "sourceDocumentIds": [
+        "d6cf25a488b6",
+        "94aff5a4b0dc",
+        "c73ce78d32fd",
+        "49ef258e5149",
+        "d5157ae582fa",
+        "be9bf4d11b45"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 33.10583,
+        "lon": 35.60361,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem_hills:mesrek",
+      "name": "שמורת המסרק — יער אורנים טבעי וקבר שייח",
+      "region": "jerusalem_hills",
+      "regionLabel": "הרי ירושלים וסובב ירושלים",
+      "sourceDocumentIds": [
+        "fff4751e70ec"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.79925,
+        "lon": 35.04563,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "tour:road67:s13",
+      "name": "עולים על כביש 6",
+      "region": null,
+      "regionLabel": null,
+      "sourceDocumentIds": [
+        "a5083c2ed3ce",
+        "5fb1a7ab5624",
+        "f9026a4ba12d"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.623,
+        "lon": 35.056,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:judea_samaria:gerizim",
+      "name": "הר גריזים — השומרונים והמקדש השומרוני",
+      "region": "judea_samaria",
+      "regionLabel": "הר חברון והשומרון",
+      "sourceDocumentIds": [
+        "ee260656f802",
+        "88664f5a5694",
+        "c41877c33532",
+        "a8138087f1cf",
+        "f22c7f5e1898",
+        "5c62045876e4",
+        "4091c5e9e87d"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.20714,
+        "lon": 35.26568,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:haifa_carmel:daliyat",
+      "name": "הדרוזים בדליית אל-כרמל — בית יד לבנים (בית אוליפנט)",
+      "region": "haifa_carmel",
+      "regionLabel": "חיפה והכרמל",
+      "sourceDocumentIds": [
+        "db0579b955ae"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.69371,
+        "lon": 35.05088,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:upper_galilee:rosh_hanikra",
+      "name": "ראש הנקרה — הנקרות, המנהרות והגבול",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "sourceDocumentIds": [
+        "1ebda64a977e",
+        "1a0952da32c0",
+        "a2d88f672110",
+        "d488d5e69dd2",
+        "e51e677b00e3",
+        "f31289ffb638",
+        "fb2a952d5dbe",
+        "9a2a7f65fd84",
+        "b24a1ea1fded",
+        "d133335e8c60",
+        "2be4b4f12db1",
+        "bec5c7e710c5",
+        "8fc296b31e5a",
+        "f3b3b03d491d",
+        "03d8ce15c05e",
+        "54519a4d57aa",
+        "afc818cde69f",
+        "35709938064a",
+        "9d0532443cbb",
+        "1a6f9ffcbddd",
+        "4318905bc5ea"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 33.09312,
+        "lon": 35.10477,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:coast:caesarea_herod",
+      "name": "קיסריה של הורדוס — תכנון העיר, הנמל ומקדש אוגוסטוס",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "sourceDocumentIds": [
+        "6c9188fcb4cc",
+        "56fe96942b3a",
+        "1b90f7b74a80",
+        "c5274f3a21ad"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.5,
+        "lon": 34.89167,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem:givati",
+      "name": "חניון גבעתי — חפירות על המדרון המערבי של עיר דוד",
+      "region": "jerusalem",
+      "regionLabel": "ירושלים",
+      "sourceDocumentIds": [
+        "1bb681769bc3",
+        "63e002db96de"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.77453,
+        "lon": 35.23509,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:judean_desert:qumran",
+      "name": "קומראן — האיסיים ומגילות מדבר יהודה",
+      "region": "judean_desert",
+      "regionLabel": "מדבר יהודה וים המלח",
+      "sourceDocumentIds": [
+        "03b66af6bd03",
+        "84d347146f52",
+        "6e06ec1214cf",
+        "a5740160b045",
+        "ef9051849be2",
+        "ff33a1e19a72",
+        "5f16b8a71822",
+        "76c910837228",
+        "50dacfb2f4f6",
+        "699a54f5e180",
+        "f9026a4ba12d"
+      ],
+      "processedDocumentIds": [
+        "03b66af6bd03"
+      ],
+      "extractedItemsInLinkedDocuments": 21,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 31.7419,
+        "lon": 35.45994,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:shfela:qeiyafa",
+      "name": "חורבת קיאפה (שעריים?)",
+      "region": "shfela",
+      "regionLabel": "השפלה",
+      "sourceDocumentIds": [
+        "88664f5a5694",
+        "8fc296b31e5a"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.6963,
+        "lon": 34.9575,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:golan_south:ein_keshatot",
+      "name": "עין קשתות (אום אל-קנאטיר)",
+      "region": "golan_south",
+      "regionLabel": "דרום רמת הגולן",
+      "sourceDocumentIds": [
+        "f5e93e7c2977",
+        "afa9c94e3d34"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.8497,
+        "lon": 35.73783,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "tour:road67:s3",
+      "name": "בת שלמה",
+      "region": null,
+      "regionLabel": null,
+      "sourceDocumentIds": [
+        "d1cc2078a0d5",
+        "b8a814e18840"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.59828,
+        "lon": 35.00458,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:valleys:ein_harod",
+      "name": "מעיין חרוד — גדעון, עין ג'אלות ובית חנקין",
+      "region": "valleys",
+      "regionLabel": "העמקים, הגלבוע ובית שאן",
+      "sourceDocumentIds": [
+        "e60cb805a743",
+        "5b4c68359f9f",
+        "ddc684d20674",
+        "67b4cfa99ad3",
+        "ade524b44774",
+        "0a7d433e203f",
+        "9c1c90b7978d"
+      ],
+      "processedDocumentIds": [
+        "e60cb805a743"
+      ],
+      "extractedItemsInLinkedDocuments": 20,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.54861,
+        "lon": 35.35583,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:golan_north:nimrod",
+      "name": "מבצר נמרוד (קלעת נמרוד)",
+      "region": "golan_north",
+      "regionLabel": "מרכז וצפון הגולן והחרמון",
+      "sourceDocumentIds": [
+        "159ca3f67084",
+        "08d4706c710e",
+        "444d5ecc791b",
+        "3f52c4cabd76",
+        "7cbf115f7140",
+        "946ecd689749",
+        "30fcd17a1c7b",
+        "4a8a63b4e54a",
+        "4551e8012d1c",
+        "6c11b59a8ff7",
+        "d639a7a2cc7c",
+        "121cf3cc8a17",
+        "202bb5d7c9ed",
+        "68e4f34a6aa9",
+        "387415e8c41c",
+        "2755317780a0",
+        "240cd3214af0",
+        "5156a43b39db",
+        "0c28cf48b0e5",
+        "28662b2bb5c6",
+        "9e80cf759216"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 33.25278,
+        "lon": 35.71472,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:shfela:beit_guvrin",
+      "name": "בית גוברין – מערות הפעמון, האמפיתיאטרון והכנסייה הצלבנית",
+      "region": "shfela",
+      "regionLabel": "השפלה",
+      "sourceDocumentIds": [
+        "02311ff968b7",
+        "bf531381af9b",
+        "03aeec9afc0b",
+        "7484daa8964e"
+      ],
+      "processedDocumentIds": [
+        "02311ff968b7",
+        "bf531381af9b"
+      ],
+      "extractedItemsInLinkedDocuments": 78,
+      "questionsInLinkedDocuments": 19,
+      "coordinates": {
+        "lat": 31.59696,
+        "lon": 34.90065,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:valleys:beit_shean",
+      "name": "הגן הלאומי בית שאן — תל בית שאן וסקיטופוליס",
+      "region": "valleys",
+      "regionLabel": "העמקים, הגלבוע ובית שאן",
+      "sourceDocumentIds": [
+        "05b66ff5f227"
+      ],
+      "processedDocumentIds": [
+        "05b66ff5f227"
+      ],
+      "extractedItemsInLinkedDocuments": 34,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.5022,
+        "lon": 35.5022,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem_hills:ramat_rachel",
+      "name": "רמת רחל — הקיבוץ והתל",
+      "region": "jerusalem_hills",
+      "regionLabel": "הרי ירושלים וסובב ירושלים",
+      "sourceDocumentIds": [
+        "6c9188fcb4cc",
+        "8c52605be785"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.73981,
+        "lon": 35.21837,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem:shrine_of_book",
+      "name": "היכל הספר — מגילות קומראן וכתר ארם צובא",
+      "region": "jerusalem",
+      "regionLabel": "ירושלים",
+      "sourceDocumentIds": [
+        "a5740160b045"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.77333,
+        "lon": 35.20278,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:coast:caesarea_palace",
+      "name": "ארמון השונית וההיפוסטדיום בקיסריה",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "sourceDocumentIds": [
+        "56fe96942b3a",
+        "c5274f3a21ad"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.5,
+        "lon": 34.89167,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:judea_samaria:machpela",
+      "name": "מערת המכפלה",
+      "region": "judea_samaria",
+      "regionLabel": "הר חברון והשומרון",
+      "sourceDocumentIds": [
+        "0be4807f5402"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.52463,
+        "lon": 35.1107,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:upper_galilee:baram",
+      "name": "גן לאומי ברעם — בית הכנסת העתיק והכפר בירעם",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "sourceDocumentIds": [
+        "643683e69710"
+      ],
+      "processedDocumentIds": [
+        "643683e69710"
+      ],
+      "extractedItemsInLinkedDocuments": 35,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 33.04348,
+        "lon": 35.41404,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_city",
+      "name": "ציפורי — העיר המעורבת, התיאטרון והרובע היהודי",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "90876ff110fe",
+        "36bb4ac302c1"
+      ],
+      "processedDocumentIds": [
+        "90876ff110fe",
+        "36bb4ac302c1"
+      ],
+      "extractedItemsInLinkedDocuments": 47,
+      "questionsInLinkedDocuments": 19,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem:damascus_gate",
+      "name": "שער שכם — מהשער הרומי ועד העות'מאני",
+      "region": "jerusalem",
+      "regionLabel": "ירושלים",
+      "sourceDocumentIds": [
+        "63e002db96de"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.78164,
+        "lon": 35.2305,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem:broad_wall",
+      "name": "החומה הרחבה ברובע היהודי",
+      "region": "jerusalem",
+      "regionLabel": "ירושלים",
+      "sourceDocumentIds": [
+        "699a54f5e180"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.77608,
+        "lon": 35.23189,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem:haas_promenade",
+      "name": "טיילת ארמון הנציב — תצפית על ירושלים",
+      "region": "jerusalem",
+      "regionLabel": "ירושלים",
+      "sourceDocumentIds": [
+        "8c52605be785"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.75567,
+        "lon": 35.23442,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:valleys:kokhav_hayarden",
+      "name": "כוכב הירדן — מבצר בלבואר ותצפית לבקעת הירדן",
+      "region": "valleys",
+      "regionLabel": "העמקים, הגלבוע ובית שאן",
+      "sourceDocumentIds": [
+        "11e710201393",
+        "30dc0a371282"
+      ],
+      "processedDocumentIds": [
+        "11e710201393",
+        "30dc0a371282"
+      ],
+      "extractedItemsInLinkedDocuments": 40,
+      "questionsInLinkedDocuments": 15,
+      "coordinates": {
+        "lat": 32.59556,
+        "lon": 35.52139,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_synagogue",
+      "name": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "90876ff110fe"
+      ],
+      "processedDocumentIds": [
+        "90876ff110fe"
+      ],
+      "extractedItemsInLinkedDocuments": 30,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_water",
+      "name": "ציפורי — אמות המים והמאגר התת-קרקעי",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "90876ff110fe"
+      ],
+      "processedDocumentIds": [
+        "90876ff110fe"
+      ],
+      "extractedItemsInLinkedDocuments": 30,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_villas",
+      "name": "ציפורי — וילת דיוניסוס ובית חג הנילוס",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "90876ff110fe"
+      ],
+      "processedDocumentIds": [
+        "90876ff110fe"
+      ],
+      "extractedItemsInLinkedDocuments": 30,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_citadel",
+      "name": "ציפורי — המצודה, סנטה אנה, ציון רבי ותצפית הגליל התחתון",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "90876ff110fe"
+      ],
+      "processedDocumentIds": [
+        "90876ff110fe"
+      ],
+      "extractedItemsInLinkedDocuments": 30,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:haifa_carmel:stella_maris",
+      "name": "סטלה מאריס — מנזר הכרמליתים",
+      "region": "haifa_carmel",
+      "regionLabel": "חיפה והכרמל",
+      "sourceDocumentIds": [
+        "03d8ce15c05e"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.82667,
+        "lon": 34.97028,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:coast:apollonia_fortress",
+      "name": "אפולוניה — המצודה הצלבנית, כלי המצור ומסדרי האבירים",
+      "region": "coast",
+      "regionLabel": "מישור החוף",
+      "sourceDocumentIds": [
+        "84ac7ba1e956"
+      ],
+      "processedDocumentIds": [
+        "84ac7ba1e956"
+      ],
+      "extractedItemsInLinkedDocuments": 60,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 32.19528,
+        "lon": 34.80667,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:shfela:lachish",
+      "name": "תל לכיש (גן לאומי)",
+      "region": "shfela",
+      "regionLabel": "השפלה",
+      "sourceDocumentIds": [
+        "359f22ca4c1d"
+      ],
+      "processedDocumentIds": [
+        "359f22ca4c1d"
+      ],
+      "extractedItemsInLinkedDocuments": 60,
+      "questionsInLinkedDocuments": 10,
+      "coordinates": {
+        "lat": 31.565,
+        "lon": 34.84889,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:golan_south:hippos",
+      "name": "סוסיתא (היפוס)",
+      "region": "golan_south",
+      "regionLabel": "דרום רמת הגולן",
+      "sourceDocumentIds": [
+        "c57830c6b701",
+        "f9026a4ba12d"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.7789,
+        "lon": 35.66,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "tour:road67:s11",
+      "name": "זכרון יעקב",
+      "region": null,
+      "regionLabel": null,
+      "sourceDocumentIds": [
+        "20e2fe4056c6"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.589,
+        "lon": 34.929,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:judea_samaria:maale_levona",
+      "name": "תצפית מעלה לבונה — מבנה השומרון ודרכיו",
+      "region": "judea_samaria",
+      "regionLabel": "הר חברון והשומרון",
+      "sourceDocumentIds": [
+        "a8138087f1cf"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 32.0549,
+        "lon": 35.24045,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    }
+  ],
+  "priorityDocuments": [
+    {
+      "id": "7ceae8bd0b7f",
+      "title": "מדריך למדריך - גן לאומי מגדל צדק",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/05/מדריך-למדריך-מגדל-צדק.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "a755bcb21bd4",
+      "title": "מדריך למדריך - גן לאומי תל אשקלון",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2020/10/מדריך-למדריך-תל-אשקלון.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "02311ff968b7",
+      "title": "מדריך למדריך בית גוברין שביל המערות",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2018/06/5d1c92d33c537.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "84ac7ba1e956",
+      "title": "מדריך למדריך גן לאומי אפולוניה",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2023/08/מדריך-למדריך-גן-לאומי-אפולוניה-מונגש.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "7561e969b354",
+      "title": "מדריך למדריך חאן שער הגיא",
+      "type": "guide",
+      "structured": true,
+      "source": "https://www.parks.org.il/wp-content/uploads/2025/10/מדריך-למדריך-חאן-שער-הגיא.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "694d7c79feee",
+      "title": "מדריך למדריך חוף בית ינאי",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2023/06/bet-yanay.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "4e67c0fdb83d",
+      "title": "מדריך למדריך חוף פלמחים",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2023/02/palmachim.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "40132a61a194",
+      "title": "מדריך למדריך מקורות הירקון",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2023/05/guide-yarkon.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "d5b4cc4e18d3",
+      "title": "מדריך למדריך עין חניה",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/03/מדריך-למדריך-עין-חניה.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "359f22ca4c1d",
+      "title": "מדריך למדריך תל לכיש",
+      "type": "guide",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2023/05/lachish-nagish.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "523e7810c433",
+      "title": "בטיחה פלאייר",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/10/בטיחה-פלאייר-1.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "9d6f7de93689",
+      "title": "דפדפת ארבל - אנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/08/arbel_eng.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "03aeec9afc0b",
+      "title": "דפדפת בית גוברין באנגלית Bet Guvrin",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/01/Bet-Guvrin-en.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "45c1e3f33344",
+      "title": "דפדפת גן הלאומי בית שערים",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochure-2.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "c5c6df1c8fef",
+      "title": "דפדפת גן לאומי אפולוניה",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/apolonia.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "413d75c28ab3",
+      "title": "דפדפת גן לאומי אשכול - פארק הבשור",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/04/eshkol-heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "5b4c68359f9f",
+      "title": "דפדפת גן לאומי בית אלפא",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/bet-alfa.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "7484daa8964e",
+      "title": "דפדפת גן לאומי בית גוברין - עברית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/01/beit-govrin_heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "05b66ff5f227",
+      "title": "דפדפת גן לאומי בית שאן",
+      "type": "brochure",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/bet-sheean.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "99df2734a062",
+      "title": "דפדפת גן לאומי בית שאן - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2018/06/bet_shean_eng.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "450d9885d25b",
+      "title": "דפדפת גן לאומי בית שערים - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/betShearim-eng.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "6c9188fcb4cc",
+      "title": "דפדפת גן לאומי הרודיון",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/herodion.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "87008ee28bf6",
+      "title": "דפדפת גן לאומי ושמורת טבע ארבל",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/arbel.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "0765cccde748",
+      "title": "דפדפת גן לאומי חורשת טל — 36 בונגולו 1 37 35 44 43 38 34 צוות חדרי 45",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/08/horshat-tal-heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "63795299d22b",
+      "title": "דפדפת גן לאומי חורשת טל — ובגנים הלאומיים הוא שהעניק את ההשראה לשם חורשת« » טל כמאמר הפסוק חורשת אלונים",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/churshat-tal.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "4168d3fc3933",
+      "title": "דפדפת גן לאומי ירקון",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochure-21.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "f5e93e7c2977",
+      "title": "דפדפת גן לאומי כורזים",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/02/כורזים-עברית.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "f2c2f399a654",
+      "title": "דפדפת גן לאומי מגידו",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/megido.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "95964979d943",
+      "title": "דפדפת גן לאומי מגידו באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/11/megido-en.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "5e6a5842db94",
+      "title": "דפדפת גן לאומי ממשית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/mamshit.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "735fdb1dd8a1",
+      "title": "דפדפת גן לאומי מעין חרוד",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2020/06/maayan-harod_heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "989314676c9f",
+      "title": "דפדפת גן לאומי עבדת",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/ovdat.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "a243ff4c35eb",
+      "title": "דפדפת גן לאומי עבדת - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/Avdat_eng_26.3.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "34c2f675a074",
+      "title": "דפדפת גן לאומי עין חמד",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochure-20.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "393d6fabdc5e",
+      "title": "דפדפת גן לאומי עין עבדת",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/en-Avedat.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "30acb401a568",
+      "title": "דפדפת גן לאומי ציפורי",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/zipori.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "8aea669f3849",
+      "title": "דפדפת גן לאומי ציפורי - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochureEn-5.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "84d347146f52",
+      "title": "דפדפת גן לאומי קומראן - איטלקית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/11/qumran_ital-16.11.21.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "6e06ec1214cf",
+      "title": "דפדפת גן לאומי קומראן - אנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/11/Qumran-eng-16.11.21.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "a5740160b045",
+      "title": "דפדפת גן לאומי קומראן - עברית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/11/Qumran-heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "ef9051849be2",
+      "title": "דפדפת גן לאומי קומראן באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/11/kumeran-en.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "56fe96942b3a",
+      "title": "דפדפת גן לאומי קיסריה",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/09/Caesarea.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "4edafd6a2d48",
+      "title": "דפדפת גן לאומי שבטה",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/Shivtat.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "05006cbba25a",
+      "title": "דפדפת גן לאומי תל באר שבע",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/Tel-BeerSheva.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "bafd94da80bd",
+      "title": "דפדפת גן לאומי תל חצור",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/12/chatzor-heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "cee6972fa1b0",
+      "title": "דפדפת גן לאומי תל ערד",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/tel-arad.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "9b6c301b71c8",
+      "title": "דפדפת חי בר כרמל",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-heb-for-internet2017.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "ee084bcc4f9d",
+      "title": "דפדפת חי בר כרמל באנגלית Hai-Bar Carmel",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-eng.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "3fe1375b1177",
+      "title": "דפדפת חי בר כרמל בערבית الكرمل حاي بار",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2024/02/chai-bar-carmel-arab.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "e37700b9fa58",
+      "title": "דפדפת חמת טבריה - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/07/חמת-טבריה-אנגלית-אוגוסט-2016.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "f5307c696ee8",
+      "title": "דפדפת מכתש רמון",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/ramon.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "7dc9a6404a54",
+      "title": "דפדפת מנזר אבתימיוס",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/12/דפדפת-מנזר-אבתימיוס.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "ff33a1e19a72",
+      "title": "דפדפת עין פרת",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2020/06/דפדפת-עין-פרת-עברית.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "75634f93b441",
+      "title": "דפדפת עין פרת - אנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2020/06/דפדפת-עין-פרת-אנגלית.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "5f16b8a71822",
+      "title": "דפדפת קומראן - צרפתית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2021/11/qumran_french.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "04fbdfd52b59",
+      "title": "דפדפת שמורת החולה",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/hachula.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "11e950d9cf0b",
+      "title": "דפדפת שמורת הטבע חי-בר יטבתה",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/yotveta.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "331a9d546a1e",
+      "title": "דפדפת שמורת הטבע יער יהודיה",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/yahudiya.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "0a26bd209faa",
+      "title": "דפדפת שמורת הטבע כוכב הירדן",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/kochav-hyarden.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "bcc6e6a0ee55",
+      "title": "דפדפת שמורת הטבע נחל המערות",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/mearot.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "159ca3f67084",
+      "title": "דפדפת שמורת הטבע נחל חרמון (בניאס)",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/banias.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "e3d5ccf57917",
+      "title": "דפדפת שמורת הטבע נחל שניר",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/snir.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "7a7765facbe1",
+      "title": "דפדפת שמורת הטבע נחל תנינים",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/nachal-Taninim.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "ecf21b0f48b7",
+      "title": "דפדפת שמורת הטבע עיינות צוקים",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/einot-tzukim.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "08d4706c710e",
+      "title": "דפדפת שמורת הטבע תל דן",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/tel-dan.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "9613e8d5d341",
+      "title": "דפדפת שמורת טבע מכתש רמון - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochureEn-15.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "8bcb392094bc",
+      "title": "דפדפת שמורת טבע מערת הנטיפים",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochure-22.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "37462f3d178d",
+      "title": "דפדפת שמורת טבע מערת הנטיפים - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochureEn-6.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "722c7924b3ad",
+      "title": "דפדפת שמורת טבע מערת הנטיפים - בערבית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochureAr.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "8d082e0cae9e",
+      "title": "דפדפת שמורת טבע מערת הנטיפים - ברוסית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochureR.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "98746d240150",
+      "title": "דפדפת שמורת טבע נחל אל-על",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/07/שמורת-טבע-נחל-אל-על.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "c94d126a79ec",
+      "title": "דפדפת שמורת טבע נחל גילבון",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/07/שמורת-טבע-נחל-גילבון.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "1773119b64b0",
+      "title": "דפדפת שמורת טבע נחל עיון",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/05/nachal-ayun-heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "044e46fb0bc3",
+      "title": "דפדפת שמורת טבע עין אפק",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochure-1-5.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "d5f1465bbdfb",
+      "title": "דפדפת שמורת טבע עין גדי",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/01/en-gedi-heb.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "58883400d515",
+      "title": "דפדפת שמורת טבע עין גדי - באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/12/engedi-eng.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "26a06883880b",
+      "title": "דפדפת שמורת תל דן באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/11/tel-dan-en.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "0be4807f5402",
+      "title": "דפדפת תל חברון",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/03/tel-hebron.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "1da1fb8fcaff",
+      "title": "דפדפת תל חצור באנגלית tel hatzor",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/01/tel-hatzor-en.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "8737051b869b",
+      "title": "מסמך גן לאומי כורזים — Korazim brochure",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/11/Korazim_brochure.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "69c3148dde4d",
+      "title": "מסמך גן לאומי תל חצור — Tel Hazor brochure",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/12/chatzor-en.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "d3402bbc8f85",
+      "title": "עלון אבטח הרחבה דיגיטלי- מונגש",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/07/עלון-אבטח-הרחבה-דיגיטלי-מונגש.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "30c4d3c4a317",
+      "title": "Avdat brochure דפדפת גן לאומי עבדת באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/01/ovdat.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "8d19bbb9a175",
+      "title": "Bet Alpha brochure דפדפת בית אלפא באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/01/bet-alfa.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "5f3dda0a6f30",
+      "title": "Gamla brochure דפדפת גמלא באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/01/gamla.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "6ec9f0263969",
+      "title": "kursi brochure דפדפת כורסי באנגלית",
+      "type": "brochure",
+      "structured": true,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/01/kursi.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "9af299fd328a",
+      "title": "Maayan harod brochure דפדפת מעין חרוד באנגלית",
+      "type": "brochure",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2026/01/maayan-charod.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "5be92ea21a0e",
+      "title": "דפדפת ומפת גן לאומי מגדל צדק",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/04/דף-מידע-מגדל-צדק.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "948af1b9d21a",
+      "title": "להורדת המפה בקובץ PDF – לחצו כאן >>",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/05/tzafit-map.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "83c414767fc4",
+      "title": "מסמך שמורת טבע מערת הנטיפים — Netifim map -eng2023",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/09/netifim-eng2023.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "056f3878e7cf",
+      "title": "מסמך שמורת טבע מערת הנטיפים — Netifim Map-rusit",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/09/netifim-rusit.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "c57830c6b701",
+      "title": "מפה מאויירת של גן לאומי סוסיתא",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2023/03/susita-map.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "4f493ca84e2d",
+      "title": "מפה שמורת טבע נחל פרת",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/%D7%9E%D7%A4%D7%94-%D7%A9%D7%9E%D7%95%D7%A8%D7%AA-%D7%98%D7%91%D7%A2-%D7%A0%D7%97%D7%9C-%D7%A4%D7%A8%D7%AA.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "3d147944563b",
+      "title": "מפת גן לאומי חוף פלמחים - כניסה ראשית",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/09/מפת-פלמחים-כניסה-ראשית.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "547ee8eb808f",
+      "title": "מפת הגן הלאומי תל לכיש",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2018/07/מפת-תל-לכיש.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "287c5f89d080",
+      "title": "מפת המסלול לשימושכם >>",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/08/פלייר-בניאס-תחתון-סופי-A5-טקסט-1.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "73b2a78b4ccb",
+      "title": "מפת חניוני לילה",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2023/02/מפת-החניונים.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "c558e27670ec",
+      "title": "מפת מסלול הטיול לחצו כאן >>",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2022/12/חוף-השרון-שלט-דרום-120721.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "1904cfac519f",
+      "title": "מפת מערת הנטיפים",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2017/09/netifim-2023-con.-Converte.pdf",
+      "reviewStatus": "not_audited"
+    },
+    {
+      "id": "101ad2817c8d",
+      "title": "מפת שמורת הטבע עינות צוקים",
+      "type": "map",
+      "structured": false,
+      "source": "https://static.parks.org.il/wp-content/uploads/2025/04/map-einotzukim.pdf",
+      "reviewStatus": "not_audited"
+    }
+  ]
+}
