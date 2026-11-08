@@ -11,6 +11,13 @@ const rd = async (p, d) => { try { return JSON.parse(await readFile(new URL(p, R
 const inv = await rd('content/rtg/inventory.json', null);
 if (!inv) { console.error('pas d’inventaire (content/rtg/inventory.json) — lancer l’import d’abord'); process.exit(1); }
 const corr = (await rd('content/rtg/corrections.json', { documents: {} })).documents || {};
+// Explicit source-to-place assignments only; never promote text mentions.
+const groupedSources=new Map();
+for(const s of (await rd('content/rtg/site-groups.json',{sites:[]})).sites)for(const r of s.sources||[])if(r.associationStatus==='source_identity_checked'){
+ if(groupedSources.has(r.id))throw Error('Document assigned to multiple primary places: '+r.id);
+ groupedSources.set(r.id,s.id);
+}
+
 
 // lieux du jeu : sites des 13 régions de l'examen + lieux des parcours
 const places = [];
@@ -79,7 +86,7 @@ for (const d of inv.documents) {
     per: c.periods || null, pera: c.periods ? null : (d.periodsAuto || null),
     th: c.themes || [], site: c.site || (d.site && !/לא זוהה/.test(d.site) ? d.site : null), sitea: !c.site && d.site && !/לא זוהה/.test(d.site) ? true : undefined,
     u: c.officialUrl || d.officialUrl || null, sp: d.sourcePage || null,
-    ln: links.length ? links : undefined, fx: factIds.has(d.id) || undefined
+    ln: links.length ? links : undefined, fx: factIds.has(d.id) || undefined, gs: groupedSources.get(d.id) || undefined
   });
 }
 // faits / fiches / questions par document → public/rtg/facts/<id>.json (chargés à la demande dans la fiche)
@@ -92,7 +99,7 @@ await mkdir(new URL('public/rtg/', ROOT), { recursive: true });
 // lieux du jeu qui ont au moins un document רט״ג, avec coordonnées → calque « 🌿 רט״ג » de la carte (map.html)
 const docById = Object.fromEntries(docs.map(d => [d.id, d]));
 const placeDocs = {};
-for (const d of docs) for (const l of d.ln || []) { const k = l.k === 'exam' ? `exam:${l.region}:${l.site}` : `tour:${l.tour}:${l.stop}`; (placeDocs[k] = placeDocs[k] || []).push({ id: d.id, t: d.t, ty: d.ty, fx: d.fx || undefined, pages: l.pages }); }
+for (const d of docs) for (const l of d.ln || []) { const k = l.k === 'exam' ? `exam:${l.region}:${l.site}` : `tour:${l.tour}:${l.stop}`; (placeDocs[k] = placeDocs[k] || []).push({ id: d.id, t: d.t, ty: d.ty, fx: d.fx || undefined, gs: d.gs || undefined, pages: l.pages }); }
 const pr = { guide: 0, brochure: 1, map: 2, activity: 3, article: 4, other: 5 };
 const mapPlaces = Object.entries(placeDocs).map(([k, ds]) => { const p = byKey[k]; if (!p || !Number.isFinite(p.lat)) return null; ds.sort((a, b) => (b.fx ? 1 : 0) - (a.fx ? 1 : 0) || (pr[a.ty] ?? 9) - (pr[b.ty] ?? 9));
   return Object.assign({ key: k, kind: p.kind, he: p.he, short: p.short, lat: p.lat, lon: p.lon, docs: ds }, p.kind === 'exam' ? { region: p.region, regionHe: p.regionHe, site: p.id } : { tour: p.tour, tourHe: p.tourHe, stop: p.id }); }).filter(Boolean);

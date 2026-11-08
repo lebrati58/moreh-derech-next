@@ -1,0 +1,121 @@
+{
+  "id": "04fbdfd52b59",
+  "title": "דפדפת שמורת החולה",
+  "site": "שמורת טבע החולה",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-08",
+    "pages": [
+      2,
+      3
+    ]
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "ייבוש אגם החולה והביצות התחיל בשנת 1951 כחלק מהפיכת שטחים לחקלאות.",
+      "page": 2,
+      "quote": "בשנת 1951",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "שמורת החולה הוכרזה כשמורת טבע בשנת 1964, לאחר שהושאר חלק קטן מהאגם לשימור.",
+      "page": 2,
+      "quote": "בשנת 1964",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "בשיקום שהחל ב־1971 שופרו הסוללות, נוספה בריכת אגירה והותקנה מערכת תעלות וסכרים לשליטה במפלס המים ובאיכותם.",
+      "page": 2,
+      "quote": "בשנת 1971",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "הנימפיאה הלבנה הושבה לשמורה בשנת 1994; זהו אחד מצמחי המים המתוארים בעלון.",
+      "page": 2,
+      "quote": "בשנת 1994",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "guiding",
+      "he": "מסתור התצפית שבשביל הביצה מאפשר להתבונן בעופות בלי להפריע להם; מגדל התצפית מסיים את הסיור המתואר בעלון.",
+      "page": 2,
+      "quote": "בלי להטרידם",
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "he": "מרכז המבקרים עופוריה",
+      "page": 2
+    },
+    {
+      "he": "שביל הביצה ומסתור התצפית",
+      "page": 2
+    },
+    {
+      "he": "מגדל התצפית",
+      "page": 3
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "איזה תהליך בעמק החולה התחיל ב־1951, ובאיזו שנה הוכרזה השמורה?",
+      "expected": [
+        "ייבוש אגם החולה והביצות",
+        "הכרזת שמורת החולה בשנת 1964"
+      ],
+      "accept": [],
+      "refs": [
+        2
+      ],
+      "evidenceItems": [
+        0,
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 2,
+      "q": "אילו מתקנים נוספו או שופרו בשיקום שמורת החולה ב־1971, ומה הייתה מטרתם?",
+      "expected": [
+        "סוללות, בריכת אגירה, תעלות וסכרים",
+        "שליטה במפלס המים ובאיכותם"
+      ],
+      "accept": [],
+      "refs": [
+        2
+      ],
+      "evidenceItems": [
+        2
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "איזה צמח מים הושב לשמורת החולה ב־1994 לפי העלון?",
+      "expected": [
+        "נימפיאה לבנה"
+      ],
+      "accept": [],
+      "refs": [
+        2
+      ],
+      "evidenceItems": [
+        3
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}

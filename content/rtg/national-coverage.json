@@ -1,16 +1,16 @@
 {
   "version": 2,
   "reviewedCoverage": {
-    "groups": 12,
+    "groups": 14,
     "primaryGuides": 10,
-    "associatedDocuments": 21,
-    "sourceCheckedCoordinates": 5,
-    "missingCoordinates": 7,
+    "associatedDocuments": 23,
+    "sourceCheckedCoordinates": 10,
+    "missingCoordinates": 4,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 2,
+    "selectedPassagesChecked": 4,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 8,
+      "brochure": 10,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -35,7 +35,7 @@
         "id": "shfela",
         "label": "השפלה",
         "groups": 2,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -59,7 +59,7 @@
         "id": "jerusalem_hills",
         "label": "הרי ירושלים וסובב ירושלים",
         "groups": 2,
-        "sourceCheckedCoordinates": 0,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -91,7 +91,7 @@
         "id": "coast",
         "label": "מישור החוף",
         "groups": 4,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -114,10 +114,10 @@
       {
         "id": "upper_galilee",
         "label": "הגליל העליון והחולה",
-        "groups": 1,
-        "sourceCheckedCoordinates": 1,
+        "groups": 2,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "central",
@@ -138,10 +138,10 @@
       {
         "id": "arava_eilat",
         "label": "הערבה ואילת",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       }
     ]
   },
@@ -149,7 +149,7 @@
   "scope": "Existing RTG catalog only; not an exhaustive inventory of Israel",
   "totals": {
     "documents": 727,
-    "documentsWithStructuredContent": 23,
+    "documentsWithStructuredContent": 25,
     "documentsLinkedToGame": 195,
     "registryEntries": 46,
     "auditedSiteEntries": 0,
@@ -282,8 +282,8 @@
       "region": "upper_galilee",
       "regionLabel": "הגליל העליון והחולה",
       "sourceDocumentIds": [
-        "563d230b8eb1",
         "04fbdfd52b59",
+        "563d230b8eb1",
         "044e46fb0bc3",
         "0e629ccff520",
         "1723bc74bbc3",
@@ -302,10 +302,11 @@
         "411eea9def3d"
       ],
       "processedDocumentIds": [
+        "04fbdfd52b59",
         "563d230b8eb1"
       ],
-      "extractedItemsInLinkedDocuments": 23,
-      "questionsInLinkedDocuments": 10,
+      "extractedItemsInLinkedDocuments": 28,
+      "questionsInLinkedDocuments": 13,
       "coordinates": {
         "lat": 33.07806,
         "lon": 35.59833,
@@ -423,7 +424,6 @@
       "regionLabel": "הגליל העליון והחולה",
       "sourceDocumentIds": [
         "f5e93e7c2977",
-        "04fbdfd52b59",
         "a4e274aabeaf",
         "a636abfd68ac"
       ],
@@ -1791,7 +1791,7 @@
       "id": "04fbdfd52b59",
       "title": "דפדפת שמורת החולה",
       "type": "brochure",
-      "structured": false,
+      "structured": true,
       "source": "https://static.parks.org.il/wp-content/uploads/2025/03/hachula.pdf",
       "reviewStatus": "not_audited"
     },
@@ -1799,7 +1799,7 @@
       "id": "11e950d9cf0b",
       "title": "דפדפת שמורת הטבע חי-בר יטבתה",
       "type": "brochure",
-      "structured": false,
+      "structured": true,
       "source": "https://static.parks.org.il/wp-content/uploads/2025/03/yotveta.pdf",
       "reviewStatus": "not_audited"
     },

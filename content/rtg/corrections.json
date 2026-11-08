@@ -299,6 +299,44 @@
     "checkedAt": "2026-11-08",
     "note": "בלב הר הנגב; אינו עין עבדת או ירושלים"
    }
+  },
+  "04fbdfd52b59": {
+   "site": "שמורת טבע החולה",
+   "regionVerified": "הגליל העליון והחולה",
+   "regionEvidence": {
+    "scope": "region_only",
+    "source": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%94%d7%97%d7%95%d7%9c%d7%94/",
+    "checkedAt": "2026-11-08",
+    "section": "איך להגיע",
+    "note": "עמק החולה"
+   },
+   "links": [
+    {
+     "kind": "exam",
+     "region": "upper_galilee",
+     "id": "hula_reserve",
+     "he": "שמורת החולה וסיפור ייבוש האגם",
+     "mission": "ug1",
+     "pages": [
+      2,
+      3
+     ]
+    }
+   ],
+   "linksNote": "נבדק נושא המסמך: שמורת החולה בלבד. אזכור ראש פינה בהכוונת הדרך אינו קישור לאתר ביקור, ואגמון החולה הוא אתר נפרד."
+  },
+  "11e950d9cf0b": {
+   "site": "שמורת טבע חי־בר יטבתה",
+   "regionVerified": "הערבה ואילת",
+   "regionEvidence": {
+    "scope": "region_only",
+    "source": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%97%d7%99-%d7%91%d7%a8-%d7%99%d7%95%d7%98%d7%91%d7%aa%d7%94-2/",
+    "checkedAt": "2026-11-08",
+    "section": "איך להגיע",
+    "note": "כביש 90 בין יטבתה לסמר, צפונית לאילת"
+   },
+   "links": [],
+   "linksNote": "אין אתר תואם במשחק הקיים; אין להחליף אותו בחי־בר כרמל או באתר סמוך."
   }
  }
 }

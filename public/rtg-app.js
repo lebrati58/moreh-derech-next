@@ -84,7 +84,7 @@
         ${(d.th || []).length ? `<dt>#</dt><dd>${esc(d.th.join(' · '))}</dd>` : ''}
         <dt>${t('file')}</dt><dd style="word-break:break-all">${esc(d.f)}</dd>
       </dl>
-      ${(d.ty === 'guide' || ['08d4706c710e','26a06883880b','989314676c9f','a243ff4c35eb','30c4d3c4a317'].includes(d.id)) ? `<a class="btn ghost" href="rtg-sites.html?doc=${esc(d.id)}">🗺️ כרטיס המקום · מקורות, מפה והדרכה</a>` : ''}
+      ${d.gs ? `<a class="btn ghost" href="rtg-sites.html?doc=${esc(d.id)}">🗺️ כרטיס המקום · מקורות, מפה והדרכה</a>` : ''}
       ${d.u ? `<a class="btn" href="${esc(d.u)}" target="_blank" rel="noopener noreferrer">${t('open')}</a>` : `<p class="empty">${t('noUrl')}</p>`}
       ${d.sp ? `<a class="btn ghost" href="${esc(d.sp)}" target="_blank" rel="noopener noreferrer">🔗 ${t('source')}</a>` : ''}</section>
       ${d.ln ? `<section class="card"><h2>🔗 ${t('linked')}</h2><div class="links">${d.ln.map(l => `<a href="${linkHref(l)}">${l.k === 'exam' ? '🎓' : '🛣️'} ${esc(l.he)}${l.auto ? ' <small>(' + t('auto') + ')</small>' : ''}</a>`).join('')}</div></section>` : ''}

@@ -1,0 +1,121 @@
+{
+  "id": "11e950d9cf0b",
+  "title": "דפדפת שמורת הטבע חי-בר יטבתה",
+  "site": "שמורת טבע חי־בר יטבתה",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-08",
+    "pages": [
+      1,
+      2
+    ]
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "חי־בר יטבתה נוסד בשנות ה־70 כדי לשקם אוכלוסיות של חיות בר ולהשיב מינים שנעלמו מנופי הארץ.",
+      "page": 1,
+      "quote": "בשנות ה-70",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "guiding",
+      "he": "השבה לטבע כוללת גידול ורבייה, בחירת פרטים, העברה לאזור ההשבה, אקלום, שחרור וניטור לאחר השחרור.",
+      "page": 1,
+      "quote": "בחזרה אל הטבע",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "השמורה נמצאת במדבר צחיח ללא מקורות מים קבועים; אגן סגור אוסף מי שיטפונות מהרי אדום ומהנגב, וחלקם מצטברים בחורף כאגם עונתי.",
+      "page": 1,
+      "quote": "מקורות מים",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "הראם הלבן מסוגל להסתפק בנוזלים שבמזונו במשך שבועות בלי שתייה; פעילותו הלילית מסייעת לו לשמור על מאזן המים.",
+      "page": 1,
+      "quote": "פעיל בעיקר בלילה",
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "לפי העלון הובאו לחי־בר 11 פראים מאיראן בשנת 1968; ב־1982 שוחררה קבוצת ההשבה הראשונה ובה 14 פרטים.",
+      "page": 2,
+      "quote": "בשנת 1982",
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "he": "הכניסה לסיור הרכוב",
+      "page": 2
+    },
+    {
+      "he": "השטח הדרומי: ראם לבן וצבי הנגב",
+      "page": 2
+    },
+    {
+      "he": "השטח הצפוני: ראם סהרה",
+      "page": 2
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "מהי מטרתו של חי־בר יטבתה בתחום שמירת בעלי החיים?",
+      "expected": [
+        "שיקום אוכלוסיות ורבייה של חיות בר",
+        "השבת מינים שנעלמו מנופי הארץ"
+      ],
+      "accept": [],
+      "refs": [
+        1
+      ],
+      "evidenceItems": [
+        0
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 2,
+      "q": "מדוע שחרור בעלי חיים הוא רק חלק מתהליך ההשבה לטבע המתואר בעלון?",
+      "expected": [
+        "לפני השחרור נדרשים גידול ורבייה, בחירת פרטים ואקלום באזור ההשבה",
+        "לאחר השחרור נדרש ניטור"
+      ],
+      "accept": [],
+      "refs": [
+        1
+      ],
+      "evidenceItems": [
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "מתי הובאו הפראים מאיראן לחי־בר, ומתי שוחררה קבוצת ההשבה הראשונה?",
+      "expected": [
+        "הבאה בשנת 1968",
+        "שחרור בשנת 1982"
+      ],
+      "accept": [],
+      "refs": [
+        2
+      ],
+      "evidenceItems": [
+        4
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}

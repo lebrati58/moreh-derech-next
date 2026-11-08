@@ -1,19 +1,19 @@
 {
   "version": 1,
   "checkedAt": "2026-11-08",
-  "scope": "Ten initial guide sites plus Tel Dan and Avdat brochure sites. Primary sources only; not an exhaustive list of Israel.",
+  "scope": "Ten initial guide sites and four brochure sites, with explicit primary sources. Not an exhaustive inventory of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "coverage": {
-    "groups": 12,
+    "groups": 14,
     "primaryGuides": 10,
-    "associatedDocuments": 21,
-    "sourceCheckedCoordinates": 5,
-    "missingCoordinates": 7,
+    "associatedDocuments": 23,
+    "sourceCheckedCoordinates": 10,
+    "missingCoordinates": 4,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 2,
+    "selectedPassagesChecked": 4,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 8,
+      "brochure": 10,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -38,7 +38,7 @@
         "id": "shfela",
         "label": "השפלה",
         "groups": 2,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -62,7 +62,7 @@
         "id": "jerusalem_hills",
         "label": "הרי ירושלים וסובב ירושלים",
         "groups": 2,
-        "sourceCheckedCoordinates": 0,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -94,7 +94,7 @@
         "id": "coast",
         "label": "מישור החוף",
         "groups": 4,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -117,10 +117,10 @@
       {
         "id": "upper_galilee",
         "label": "הגליל העליון והחולה",
-        "groups": 1,
-        "sourceCheckedCoordinates": 1,
+        "groups": 2,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "central",
@@ -141,10 +141,10 @@
       {
         "id": "arava_eilat",
         "label": "הערבה ואילת",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       }
     ]
   },
@@ -237,7 +237,16 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null,
+      "coordinate": {
+        "lat": 31.66389,
+        "lon": 34.54583,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Ashkelon_National_Park",
+        "evidence": "31.66389; 34.54583",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/גן-לאומי-אשקלון/",
       "primaryDocumentId": "a755bcb21bd4"
     },
     {
@@ -306,7 +315,21 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null,
+      "coordinate": {
+        "lat": 31.5969611,
+        "lon": 34.9006472,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Beit_Guvrin-Maresha_National_Park",
+        "evidence": "31.5969611; 34.9006472",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/גן-לאומי-בית-גוברין/",
+      "practicalNotice": {
+        "text": "לפי דף רט״ג שנבדק ב־8.11.2026, הפעמון הדרומי נסגר בימי גשם וב־48 השעות שלאחר סיומו. לפני ביקור יש לבדוק את ההודעה העדכנית.",
+        "source": "https://www.parks.org.il/reserve-park/גן-לאומי-בית-גוברין/",
+        "checkedAt": "2026-11-08"
+      },
       "primaryDocumentId": "02311ff968b7"
     },
     {
@@ -556,7 +579,16 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null,
+      "coordinate": {
+        "lat": 31.7435417,
+        "lon": 35.1566845,
+        "status": "published_source_checked",
+        "source": "https://he.wikipedia.org/wiki/עין_חניה",
+        "evidence": "31.7435417; 35.1566845",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/enchinya-2/",
       "primaryDocumentId": "d5b4cc4e18d3"
     },
     {
@@ -774,6 +806,122 @@
         "text": "עבדת ועין עבדת הם שני גנים לאומיים נפרדים. המקורות בכרטיס הזה עוסקים בעיר העתיקה עבדת.",
         "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a2%d7%91%d7%93%d7%aa/",
         "checkedAt": "2026-11-08"
+      }
+    },
+    {
+      "id": "hula-reserve",
+      "name": "שמורת טבע החולה",
+      "region": "upper_galilee",
+      "regionLabel": "הגליל העליון והחולה",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "04fbdfd52b59",
+      "sources": [
+        {
+          "id": "04fbdfd52b59",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_pages_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/hachula.pdf",
+            "pdfSha256": "04fbdfd52b59efe02dcbe54c92aebfaa804b8d5387367ee6a14a4699756cba0e"
+          },
+          "title": "דפדפת שמורת החולה",
+          "type": "brochure",
+          "language": "he",
+          "pages": 3,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/03/hachula.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          2,
+          3
+        ]
+      },
+      "coordinate": {
+        "lat": 33.078055555556,
+        "lon": 35.598333333333,
+        "status": "published_source_checked",
+        "source": "https://he.wikipedia.org/wiki/שמורת_החולה",
+        "evidence": "33.078055555556; 35.598333333333",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%94%d7%97%d7%95%d7%9c%d7%94/",
+      "practicalNotice": {
+        "text": "שמורת החולה של רט״ג ואגמון החולה הם אתרי ביקור שונים. הכרטיס הזה עוסק בשמורת רט״ג, לא באגמון שאליו מתייחס סיור הקורס שנבדק.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%94%d7%97%d7%95%d7%9c%d7%94/",
+        "checkedAt": "2026-11-08"
+      },
+      "relatedSiteDistinction": {
+        "name": "אגמון החולה",
+        "source": "https://agamon-hula.co.il/",
+        "relation": "different_visit_site_not_a_primary_source"
+      }
+    },
+    {
+      "id": "hai-bar-yotvata",
+      "name": "שמורת טבע חי־בר יטבתה",
+      "region": "arava_eilat",
+      "regionLabel": "הערבה ואילת",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "11e950d9cf0b",
+      "sources": [
+        {
+          "id": "11e950d9cf0b",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_pages_checked",
+            "page": 1,
+            "checkedAt": "2026-11-08",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/yotveta.pdf",
+            "pdfSha256": "11e950d9cf0b680360a4997f69f09962466b317685af921cdb3fd5ef8bc4d9b6"
+          },
+          "title": "דפדפת שמורת הטבע חי-בר יטבתה",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/03/yotveta.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-08",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      "coordinate": {
+        "lat": 29.871406,
+        "lon": 35.050292,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Yotvata_Hai-Bar_Nature_Reserve",
+        "evidence": "29.871406; 35.050292",
+        "checkedAt": "2026-11-08",
+        "purpose": "site_reference_not_entrance"
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%a9%d7%9e%d7%95%d7%a8%d7%aa-%d7%98%d7%91%d7%a2-%d7%97%d7%99-%d7%91%d7%a8-%d7%99%d7%95%d7%98%d7%91%d7%aa%d7%94-2/",
+      "practicalNotice": {
+        "text": "בהודעת רט״ג שנבדקה ב־8.11.2026 נקבעה סגירת מסלול הספארי ב־8–12.11.2026 לעבודות שיקום. זו הודעה מתוארכת, לא בדיקת פתיחה בזמן אמת; יש לבדוק את העדכון הרשמי לפני הגעה.",
+        "source": "https://www.parks.org.il/category/newsflash",
+        "checkedAt": "2026-11-08",
+        "validFrom": "2026-11-08",
+        "validThrough": "2026-11-12",
+        "scope": "safari_route_only"
       }
     }
   ]
