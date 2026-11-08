@@ -89,7 +89,7 @@
       ${d.ln ? `<section class="card"><h2>🔗 ${t('linked')}</h2><div class="links">${d.ln.map(l => `<a href="${linkHref(l)}">${l.k === 'exam' ? '🎓' : '🛣️'} ${esc(l.he)}${l.auto ? ' <small>(' + t('auto') + ')</small>' : ''}</a>`).join('')}</div></section>` : ''}
       <section class="card"><h2>📌 ${t('facts')}</h2><div id="facts">${d.fx ? '…' : `<p class="note">${t('noFacts')}</p>`}</div></section>
       <p class="note">${esc(t('credit'))}</p>`;
-    if (d.fx) fetch('rtg/facts/' + encodeURIComponent(d.id) + '.json').then(r => r.json()).then(F => { $('#facts').innerHTML = factsHtml(F, d); wireQuiz(); })
+    if (d.fx) fetch('rtg/facts/' + encodeURIComponent(d.id) + '.json').then(r => r.json()).then(F => { if (!$('#facts') || location.hash.replace(/^#\/?/, '') !== 'd/' + d.id) return; $('#facts').innerHTML = factsHtml(F, d); wireQuiz(); })
       .catch(() => { $('#facts').innerHTML = `<p class="note">${t('noFacts')}</p>`; });
     window.scrollTo(0, 0);
   }
@@ -97,14 +97,28 @@
   const pg = n => `עמ׳ ${esc(n)}`;
   function factsHtml(F, d) {
     const items = F.items || [];
+    const mini = miniSheetHtml(F, d);
     const groups = Object.keys(TOPICS).map(k => [k, items.filter(x => x.topic === k)]).filter(([, l]) => l.length);
     const fact = x => `<div class="fact">${x.kind === 'tip' ? '💡 ' : ''}${esc(x.he)}<small>${x.kind === 'tip' ? t('tip') : t('fact')} · ${pg(x.page)}${x.quote ? ' · ״' + esc(x.quote) + '״' : ''}</small></div>`;
-    return `${(F.stations || []).length ? `<h3>🚏 תחנות המסלול</h3><ol>${F.stations.map(s => `<li>${esc(s.he)} <small class="note">(${pg(s.page)})</small></li>`).join('')}</ol>` : ''}
+    return `${mini}${(F.stations || []).length ? `<h3>🚏 תחנות המסלול</h3><ol>${F.stations.map(s => `<li>${esc(s.he)} <small class="note">(${pg(s.page)})</small></li>`).join('')}</ol>` : ''}
       ${groups.map(([k, l]) => `<details ${k === 'stations' ? 'open' : ''}><summary><b>${TOPICS[k]}</b> (${l.length})</summary>${l.map(fact).join('')}</details>`).join('')}
       ${(F.sheet || []).length ? `<details><summary><b>🗒️ דף חזרה</b></summary><ul>${F.sheet.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
       ${(F.questions || []).length ? `<a class="btn" href="#/q/${esc(d.id)}">🎮 חידון רט״ג — ${F.questions.length} שאלות, נקודות למסע</a><h3>❓ שאלות לתרגול</h3>${[1, 2, 3].map(lv => F.questions.filter(q => q.level === lv).map(q => `<div class="fact quiz"><span class="bd ${lv === 3 ? 'g' : lv === 2 ? 'w' : ''}">רמה ${lv}</span> ${esc(q.q)}
         <button type="button" class="more" data-ans>👀 תשובה מצופה</button><div hidden><b>מה צריך להופיע:</b><ul>${(q.expected || []).map(e => `<li>${esc(e)}</li>`).join('')}</ul>${(q.accept || []).length ? `<b>גם מתקבל:</b> ${esc(q.accept.join(' · '))}` : ''}<small>מקור: ${esc(d.t)}, ${(q.refs || []).map(pg).join(', ')}</small></div></div>`).join('')).join('')}` : ''}
       <p class="note">✔ עובדה = מופיעה במסמך בעמוד המצוין · 💡 הצעה = הצעה להדרכה מתוך המסמך עצמו.</p>`;
+  }
+  function miniSheetHtml(F, d) {
+    const M = window.MDRtgSheet.build(d, F), fr = lang === 'fr';
+    const pageLink = f => f.source ? `<a href="${esc(f.source)}" target="_blank" rel="noopener noreferrer">${fr ? 'Source, page' : 'מקור, עמ׳'} ${f.page}</a>` : `${pg(f.page)}`;
+    return `<section class="card" aria-label="${fr ? 'Mini-fiche de révision' : 'כרטיס חזרה קצר'}" style="border-color:var(--mint)">
+      <h2>🪪 ${fr ? 'Mini-fiche de révision' : 'כרטיס חזרה קצר'} — ${esc(M.title)}</h2>
+      <span class="bd w">${fr ? 'Extraction à relire — pas encore vérifiée' : 'תמצית שחולצה — טרם אומתה'}</span>
+      <p class="note">${fr ? 'Repères sélectionnés dans ce document. Les données pratiques peuvent être anciennes ; vérifiez les conditions actuelles auprès du site officiel.' : 'נקודות שנבחרו מתוך המסמך. פרטים מעשיים עשויים להיות ישנים; יש לבדוק תנאים עדכניים באתר הרשמי.'}</p>
+      ${M.facts.length ? `<ol>${M.facts.map(f => `<li class="fact">${esc(f.text)}<small>${pageLink(f)}</small><details><summary>${fr ? 'Voir l’extrait source' : 'הצגת הקטע במקור'}</summary><blockquote>${esc(f.quote)}</blockquote></details></li>`).join('')}</ol>` : `<p class="note">${fr ? 'Aucun repère avec citation et page disponible.' : 'אין עדיין נקודות עם ציטוט ועמוד.'}</p>`}
+      ${M.stations.length ? `<p>🚏 ${M.stations.length} ${fr ? 'stations décrites dans le document ci-dessous' : 'תחנות מתוארות בהמשך המסמך'}</p>` : ''}
+      ${M.questions ? `<a class="btn" href="#/q/${esc(d.id)}">🎮 ${fr ? 'S’entraîner' : 'תרגול'} · ${M.questions} ${fr ? 'questions' : 'שאלות'}</a>` : ''}
+      ${M.mapSearch ? `<a class="btn ghost" href="${esc(M.mapSearch)}" target="_blank" rel="noopener noreferrer">🗺️ ${fr ? 'Rechercher le lieu dans Google Maps' : 'חיפוש המקום ב־Google Maps'}</a><p class="note">${fr ? 'Recherche par nom : ce lien ne valide ni la position ni le parcours.' : 'חיפוש לפי שם בלבד: הקישור אינו מאמת מיקום או מסלול.'}</p>` : ''}
+    </section>`;
   }
   function wireQuiz() { $$('[data-ans]').forEach(b => b.addEventListener('click', () => { const box = b.nextElementSibling; box.hidden = !box.hidden; b.textContent = box.hidden ? '👀 תשובה מצופה' : '🙈 להסתיר'; })); }
   // ---------- חידון רט״ג : réponse ouverte, chrono, auto-vérification des éléments attendus, points au מסע ----------
