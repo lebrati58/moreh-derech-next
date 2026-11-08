@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-08",
-  "scope": "Ten initial guide sites and four brochure sites, with explicit primary sources. Not an exhaustive inventory of Israel.",
+  "checkedAt": "2026-11-09",
+  "scope": "Ten initial guide sites and explicitly associated brochure groups. Not an exhaustive inventory of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "coverage": {
     "groups": 17,
     "primaryGuides": 10,
     "associatedDocuments": 28,
-    "sourceCheckedCoordinates": 13,
-    "missingCoordinates": 4,
+    "sourceCheckedCoordinates": 17,
+    "missingCoordinates": 0,
     "fullyAuditedContent": 0,
     "selectedPassagesChecked": 6,
     "associatedDocumentsByType": {
@@ -62,7 +62,7 @@
         "id": "jerusalem_hills",
         "label": "הרי ירושלים וסובב ירושלים",
         "groups": 2,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -94,7 +94,7 @@
         "id": "coast",
         "label": "מישור החוף",
         "groups": 4,
-        "sourceCheckedCoordinates": 2,
+        "sourceCheckedCoordinates": 4,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -126,7 +126,7 @@
         "id": "central",
         "label": "מרכז הארץ",
         "groups": 2,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -427,12 +427,24 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null,
+      "coordinate": {
+        "lat": 31.814626487108,
+        "lon": 35.02362072263,
+        "status": "published_source_checked",
+        "source": "https://amudanan.co.il/w/P11242",
+        "evidence": "31.814626487108; 35.02362072263",
+        "checkedAt": "2026-11-09",
+        "purpose": "site_reference_not_entrance",
+        "label": "חאן שער הגיא — מבנה החאן",
+        "referenceKind": "site",
+        "identitySource": "https://www.parks.org.il/reserve-park/gay-2/",
+        "identityEvidence": "זהות המקום נבדקה מול עמוד רט״ג והכותרת במדריך הרשמי; אין אימות כניסה או מסלול."
+      },
       "officialSite": "https://www.parks.org.il/reserve-park/gay-2/",
       "practicalNotice": {
-        "text": "נמצאו הבדלים בין המדריך הישן לדף האתר בנוהלי ההגעה. לפני ביקור יש לבדוק את דף רט״ג העדכני.",
+        "text": "הנקודה מציינת את מבנה החאן, לא את שער הכניסה או החניה. באתר הרשמי מפורטת ההגעה דרך כביש השירות המתחיל בתחנת פז מסילת ציון. יש לבדוק את ההנחיות ואת ההזמנה העדכנית לפני נסיעה.",
         "source": "https://www.parks.org.il/reserve-park/gay-2/",
-        "checkedAt": "2026-11-08"
+        "checkedAt": "2026-11-09"
       },
       "primaryDocumentId": "7561e969b354"
     },
@@ -441,7 +453,7 @@
       "name": "גן לאומי נחל אלכסנדר – חוף בית ינאי",
       "region": "coast",
       "regionLabel": "מישור החוף",
-      "regionStatus": "provisional",
+      "regionStatus": "source_checked",
       "guideId": "694d7c79feee",
       "sources": [
         {
@@ -465,7 +477,31 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null,
+      "coordinate": {
+        "lat": 32.3873,
+        "lon": 34.86428,
+        "status": "published_source_checked",
+        "source": "https://www.hefer.org.il/uploads/n/1689849107.9614.pdf#page=6",
+        "evidence": "32.3873; 34.86428",
+        "checkedAt": "2026-11-09",
+        "purpose": "site_reference_not_entrance",
+        "label": "חוף בית ינאי — נקודת חוף מתוך פרסום המועצה",
+        "referenceKind": "site",
+        "identitySource": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a0%d7%97%d7%9c-%d7%90%d7%9c%d7%9b%d7%a1%d7%a0%d7%93%d7%a8-%d7%97%d7%95%d7%a3-%d7%91%d7%99%d7%aa-%d7%99%d7%a0%d7%90%d7%99/",
+        "identityEvidence": "זהות המקום נבדקה מול עמוד רט״ג והכותרת במדריך הרשמי; אין אימות כניסה או מסלול.",
+        "sourceLocator": {
+          "page": 6,
+          "row": 8,
+          "label": "חוף בית ינאי",
+          "scope": "coordinate_only_not_pedagogical_source"
+        }
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a0%d7%97%d7%9c-%d7%90%d7%9c%d7%9b%d7%a1%d7%a0%d7%93%d7%a8-%d7%97%d7%95%d7%a3-%d7%91%d7%99%d7%aa-%d7%99%d7%a0%d7%90%d7%99/",
+      "practicalNotice": {
+        "text": "הנקודה מתייחסת לחוף בית ינאי, לא למרכז המושב ולא לכל גן לאומי נחל אלכסנדר. זו נקודת ייחוס מתוך פרסום מועצת עמק חפר, לא חניה מאומתת. יש לבדוק בעמוד רט״ג את תנאי הביקור ושירותי ההצלה; אין להסיק מהופעת סמן שמותר לרחוץ.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a0%d7%97%d7%9c-%d7%90%d7%9c%d7%9b%d7%a1%d7%a0%d7%93%d7%a8-%d7%97%d7%95%d7%a3-%d7%91%d7%99%d7%aa-%d7%99%d7%a0%d7%90%d7%99/",
+        "checkedAt": "2026-11-09"
+      },
       "primaryDocumentId": "694d7c79feee"
     },
     {
@@ -473,7 +509,7 @@
       "name": "גן לאומי חוף פלמחים",
       "region": "coast",
       "regionLabel": "מישור החוף",
-      "regionStatus": "provisional",
+      "regionStatus": "source_checked",
       "guideId": "4e67c0fdb83d",
       "sources": [
         {
@@ -515,7 +551,25 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null,
+      "coordinate": {
+        "lat": 31.930277777778,
+        "lon": 34.700833333333,
+        "status": "published_source_checked",
+        "source": "https://he.wikipedia.org/wiki/חוף_פלמחים",
+        "evidence": "31.930277777778; 34.700833333333",
+        "checkedAt": "2026-11-09",
+        "purpose": "site_reference_not_entrance",
+        "label": "חוף פלמחים — נקודת אתר כללית",
+        "referenceKind": "site",
+        "identitySource": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%97%d7%95%d7%a3-%d7%a4%d7%9c%d7%9e%d7%97%d7%99%d7%9d/",
+        "identityEvidence": "זהות המקום נבדקה מול עמוד רט״ג והכותרת במדריך הרשמי; אין אימות כניסה או מסלול."
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%97%d7%95%d7%a3-%d7%a4%d7%9c%d7%9e%d7%97%d7%99%d7%9d/",
+      "practicalNotice": {
+        "text": "הנקודה מתייחסת לחוף הגן הלאומי, לא לקיבוץ פלמחים ולא לשער חניה מאומת. יש לבדוק בעמוד רט״ג את הוראות ההגעה ותנאי הביקור. הופעת החוף במפה אינה אישור לרחצה או דיווח על נוכחות מצילים.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%97%d7%95%d7%a3-%d7%a4%d7%9c%d7%9e%d7%97%d7%99%d7%9d/",
+        "checkedAt": "2026-11-09"
+      },
       "primaryDocumentId": "4e67c0fdb83d"
     },
     {
@@ -523,7 +577,7 @@
       "name": "גן לאומי ירקון – מקורות הירקון",
       "region": "central",
       "regionLabel": "מרכז הארץ",
-      "regionStatus": "provisional",
+      "regionStatus": "source_checked",
       "guideId": "40132a61a194",
       "sources": [
         {
@@ -547,7 +601,30 @@
       ],
       "contentStatus": "extraction_to_review",
       "fullyAudited": false,
-      "coordinate": null,
+      "coordinate": {
+        "lat": 32.11325319,
+        "lon": 34.91520802,
+        "status": "published_source_checked",
+        "source": "https://amudanan.co.il/w/P913410",
+        "evidence": "32.11325319; 34.91520802",
+        "checkedAt": "2026-11-09",
+        "purpose": "site_reference_not_entrance",
+        "label": "טחנת הקמח אל־מיר — תחנה במתחם מקורות הירקון",
+        "referenceKind": "station",
+        "identitySource": "https://www.parks.org.il/reserve-park/yarkon-2/",
+        "identityEvidence": "זהות המקום נבדקה מול עמוד רט״ג והכותרת במדריך הרשמי; אין אימות כניסה או מסלול.",
+        "identityDocument": {
+          "id": "40132a61a194",
+          "page": 19,
+          "section": "תחנה 4 — טחנת הקמח אל־מיר"
+        }
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/yarkon-2/",
+      "practicalNotice": {
+        "text": "הסמן מציין את תחנת טחנת אל־מיר בתוך מתחם מקורות הירקון, לא את תל אפק ולא שער כניסה. שני המתחמים נפרדים; יש לבדוק את ההגעה וההרשמה בעמוד רט״ג של מתחם מקורות הירקון. אין להסיק מהסמן מסלול רציף או פתוח.",
+        "source": "https://www.parks.org.il/reserve-park/yarkon-2/",
+        "checkedAt": "2026-11-09"
+      },
       "primaryDocumentId": "40132a61a194"
     },
     {

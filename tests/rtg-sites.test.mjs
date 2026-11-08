@@ -7,11 +7,11 @@ test('primary guides and brochure groups exclude reports and mere mentions',()=>
  assert.equal(new Set(included).size,28);assert.ok(!included.includes('efad1c0e33c3'),'Nahal Prat activity mentioning Apollonia is not a primary source');
 });
 test('map coordinates carry explicit evidence and are never represented as entrances',()=>{
- const checked=data.sites.filter(s=>s.coordinate);assert.equal(checked.length,13);for(const s of checked){let c=s.coordinate;assert.equal(c.status,'published_source_checked');assert.equal(c.purpose,'site_reference_not_entrance');assert.ok(c.lat>=29&&c.lat<=34&&c.lon>=34&&c.lon<=36.8);assert.ok(c.evidence&&c.checkedAt&&c.source);assert.match(c.source,/^https:\/\/(?:en|he)\.wikipedia\.org\//);}
- assert.equal(data.sites.filter(s=>!s.coordinate).length,4);assert.equal(data.sites.find(s=>s.id==='apollonia').navigation.query,'גן לאומי מבצר אפולוניה חניה');
+ const checked=data.sites.filter(s=>s.coordinate);assert.equal(checked.length,17);for(const s of checked){let c=s.coordinate;assert.equal(c.status,'published_source_checked');assert.equal(c.purpose,'site_reference_not_entrance');assert.ok(c.lat>=29&&c.lat<=34&&c.lon>=34&&c.lon<=36.8);assert.ok(c.evidence&&c.checkedAt&&c.source);assert.ok(['en.wikipedia.org','he.wikipedia.org','amudanan.co.il','www.hefer.org.il'].includes(new URL(c.source).hostname));}
+ assert.equal(data.sites.filter(s=>!s.coordinate).length,0);assert.equal(data.sites.find(s=>s.id==='apollonia').navigation.query,'גן לאומי מבצר אפולוניה חניה');
 });
 test('regional coverage exposes zero coverage and separates geographic checks from content audit',()=>{
- const c=data.coverage;assert.equal(c.groups,17);assert.equal(c.associatedDocuments,28);assert.equal(c.priorityDocumentsTotal,100);assert.equal(c.sourceCheckedCoordinates,13);assert.equal(c.fullyAuditedContent,0);assert.equal(c.regions.reduce((n,r)=>n+r.groups,0),17);assert.ok(c.regions.find(r=>r.id==='jerusalem').groups===0);assert.ok(c.regions.every(r=>r.fullyAuditedContent===0));
+ const c=data.coverage;assert.equal(c.groups,17);assert.equal(c.associatedDocuments,28);assert.equal(c.priorityDocumentsTotal,100);assert.equal(c.sourceCheckedCoordinates,17);assert.equal(c.fullyAuditedContent,0);assert.equal(c.regions.reduce((n,r)=>n+r.groups,0),17);assert.ok(c.regions.find(r=>r.id==='jerusalem').groups===0);assert.ok(c.regions.every(r=>r.fullyAuditedContent===0));
  assert.deepEqual(read('content/rtg/national-coverage.json').reviewedCoverage,c);
 });
 test('verified regional corrections persist independently of automatic reclassification',()=>{
@@ -58,7 +58,7 @@ test('Yotvata safari closure stays dated practical information, separate from le
  assert.equal(n.validFrom,'2026-11-08');assert.equal(n.validThrough,'2026-11-12');assert.equal(n.checkedAt,'2026-11-08');
  assert.equal(n.source,'https://www.parks.org.il/category/newsflash');
  const f=read('public/rtg/facts/'+s.primaryDocumentId+'.json');assert.ok(!JSON.stringify(f.questions).includes('2026'));
- assert.equal(data.coverage.missingCoordinates,4);assert.equal(data.coverage.regions.find(r=>r.id==='arava_eilat').groups,1);
+ assert.equal(data.coverage.missingCoordinates,0);assert.equal(data.coverage.regions.find(r=>r.id==='arava_eilat').groups,1);
 });
 
 test('catalog and game map expose grouped brochure links without hard-coded document allowlists',()=>{
@@ -79,4 +79,19 @@ test('Banias removes the nearby Nimrod association and distinguishes the springs
  const s=data.sites.find(s=>s.id==='banias');assert.ok(!docs.get(s.primaryDocumentId).ln);assert.match(s.practicalNotice.text,/לא במפל/);
  assert.equal(s.coordinate.source,'https://en.wikipedia.org/wiki/Banias');assert.equal(s.region,'golan_north');assert.ok(s.practicalNotice.source.includes('parks.org.il'));
  assert.equal(data.coverage.regions.filter(r=>r.groups>0).length,10);assert.equal(data.coverage.regions.filter(r=>r.groups===0).length,6);
+});
+
+test('four guide reference points distinguish beach, khan and internal station identities',()=>{
+ const byId=id=>data.sites.find(s=>s.id===id);
+ for(const id of ['shaar-hagai','beit-yanai','palmachim','yarkon-sources']){const s=byId(id),c=s.coordinate;assert.ok(c.label&&c.identityEvidence);assert.equal(c.identitySource,s.officialSite);assert.equal(c.checkedAt,'2026-11-09');assert.equal(s.contentStatus,'extraction_to_review');assert.equal(s.fullyAudited,false);}
+ const beach=byId('beit-yanai').coordinate;assert.deepEqual([beach.lat,beach.lon],[32.3873,34.86428]);assert.equal(beach.sourceLocator.scope,'coordinate_only_not_pedagogical_source');assert.equal(beach.sourceLocator.page,6);assert.equal(beach.sourceLocator.row,8);
+ const mill=byId('yarkon-sources').coordinate;assert.equal(mill.referenceKind,'station');assert.equal(mill.source,'https://amudanan.co.il/w/P913410');assert.deepEqual(mill.identityDocument,{id:'40132a61a194',page:19,section:'תחנה 4 — טחנת הקמח אל־מיר'});
+ assert.match(byId('yarkon-sources').practicalNotice.text,/לא את תל אפק/);assert.equal(byId('shaar-hagai').regionStatus,'provisional');
+ assert.equal(data.sites.filter(s=>s.guideId&&s.contentStatus==='extraction_to_review').length,10);
+});
+test('regional map totals do not turn geographic completion into national content coverage',()=>{
+ assert.equal(data.coverage.sourceCheckedCoordinates,17);assert.equal(data.coverage.missingCoordinates,0);assert.equal(data.coverage.regions.find(r=>r.id==='coast').sourceCheckedCoordinates,4);
+ assert.equal(data.coverage.regions.find(r=>r.id==='central').sourceCheckedCoordinates,2);assert.equal(data.coverage.regions.find(r=>r.id==='jerusalem_hills').sourceCheckedCoordinates,2);
+ assert.equal(data.coverage.selectedPassagesChecked,6);assert.equal(data.coverage.fullyAuditedContent,0);assert.equal(data.coverage.regions.filter(r=>r.groups===0).length,6);
+ const corr=read('content/rtg/corrections.json').documents;for(const id of ['694d7c79feee','4e67c0fdb83d','40132a61a194']){assert.equal(docs.get(id).rg,corr[id].regionVerified);assert.equal(corr[id].regionEvidence.scope,'region_only');}
 });

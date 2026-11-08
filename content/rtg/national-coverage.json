@@ -4,8 +4,8 @@
     "groups": 17,
     "primaryGuides": 10,
     "associatedDocuments": 28,
-    "sourceCheckedCoordinates": 13,
-    "missingCoordinates": 4,
+    "sourceCheckedCoordinates": 17,
+    "missingCoordinates": 0,
     "fullyAuditedContent": 0,
     "selectedPassagesChecked": 6,
     "associatedDocumentsByType": {
@@ -59,7 +59,7 @@
         "id": "jerusalem_hills",
         "label": "הרי ירושלים וסובב ירושלים",
         "groups": 2,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -91,7 +91,7 @@
         "id": "coast",
         "label": "מישור החוף",
         "groups": 4,
-        "sourceCheckedCoordinates": 2,
+        "sourceCheckedCoordinates": 4,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
@@ -123,7 +123,7 @@
         "id": "central",
         "label": "מרכז הארץ",
         "groups": 2,
-        "sourceCheckedCoordinates": 1,
+        "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
         "selectedPassagesChecked": 0
       },
