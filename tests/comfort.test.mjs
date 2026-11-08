@@ -14,7 +14,7 @@ test('comfort.js chargé dans le <head> des pages de jeu (avant l’affichage)',
 test('comfort.js disponible hors ligne (service worker)', () => {
   const sw = read('sw.js');
   assert.match(sw, /'\.\/comfort\.js'/);
-  assert.match(sw, /const CACHE = 'mdl-next-v96-confort'/);
+  assert.match(sw, /const CACHE = 'mdl-next-v97-confort'/);
 });
 
 test('le chronomètre n’est désactivable que dans les quiz d’entraînement', () => {

@@ -77,6 +77,50 @@
     });
   }
 
+
+  // ---------- « ממבחני רישוי » : vraies questions d'examens de licence (recueil d'Efrat Nakash), solution non officielle ----------
+  // Données : parta/rishui.json { sources:[{key,title,url,kind,year?}], questions:[{id,topic,src,n,year?,q,options[2–6],correct,why,conf}] }
+  const RID_RE = /^Q-rishui_[a-z_]+-\d{3}$/;
+  function validateRishui(data, topicIds) {
+    const errors = [], warnings = [];
+    if (!data || !Array.isArray(data.sources) || !Array.isArray(data.questions)) return { errors: ['structure: sources/questions manquants'], warnings };
+    const topics = new Set(topicIds || []), srcs = new Map(data.sources.map(s => [s.key, s])), ids = new Set();
+    data.sources.forEach(s => { if (!s.key || !s.title || !/^https:\/\/www\.efratnakash\.com\//.test(s.url || '')) errors.push('source invalide ' + (s.key || '?')); });
+    data.questions.forEach((q, i) => {
+      const w = `rishui #${i + 1} (${q.id || '?'})`;
+      if (!RID_RE.test(q.id || '')) errors.push(w + ' : id invalide');
+      if (ids.has(q.id)) errors.push(w + ' : id en double'); ids.add(q.id);
+      if (!topics.has(q.topic)) errors.push(w + ' : thème inconnu ' + q.topic);
+      if (q.id && q.topic && !q.id.startsWith('Q-rishui_' + q.topic + '-')) errors.push(w + ' : id et thème ne concordent pas');
+      if (!srcs.has(q.src)) errors.push(w + ' : source inconnue ' + q.src);
+      if (!(Number.isInteger(q.n) && q.n > 0)) errors.push(w + ' : numéro dans le PDF manquant');
+      if (!q.q || !/[\u0590-\u05ff]/.test(q.q)) errors.push(w + ' : énoncé manquant ou pas en hébreu');
+      const o = q.options || [];
+      if (o.length < 2 || o.length > 6) errors.push(w + ' : 2 à 6 réponses attendues');
+      if (o.some(x => !x || !String(x).trim())) errors.push(w + ' : réponse vide');
+      if (new Set(o.map(norm)).size !== o.length) errors.push(w + ' : réponses en double');
+      if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < o.length)) errors.push(w + ' : index de la bonne réponse invalide');
+      if (!q.why || norm(q.why).split(' ').length > 45) errors.push(w + ' : explication manquante ou trop longue');
+      if (!['high', 'medium'].includes(q.conf)) errors.push(w + ' : seules les solutions sûres (high/medium) sont publiées');
+    });
+    topicIds && topicIds.forEach(t => { if (!data.questions.some(q => q.topic === t)) warnings.push('rishui : aucune question pour ' + t); });
+    return { errors, warnings };
+  }
+  // Tirage : l'ordre des réponses est GARDÉ (les choix « ב + ג נכונות » renvoient aux lettres).
+  // era : 'all' | 'old' (recueil par thèmes, examens ≤ 2017) | 'new' (examens complets 2018–2024)
+  function pickRishui(data, o) {
+    o = o || {};
+    const rnd = rng(o.seed || String(Date.now())), kind = new Map(data.sources.map(s => [s.key, s]));
+    let pool = data.questions.filter(q => (!o.topic || o.topic === 'all' || q.topic === o.topic) &&
+      (!o.era || o.era === 'all' || (o.era === 'new') === ((kind.get(q.src) || {}).kind === 'exam')));
+    if (o.ids) pool = data.questions.filter(q => o.ids.includes(q.id));
+    const avoid = new Set(o.avoid || []);
+    const list = shuffle(pool.filter(q => !avoid.has(q.id)), rnd).concat(shuffle(pool.filter(q => avoid.has(q.id)), rnd)).slice(0, o.n || ROUND);
+    return list.map(q => { const s = kind.get(q.src) || {};
+      return { id: q.id, topic: q.topic, level: 2, q: q.q, options: q.options.slice(), correct: q.correct, explanation: q.why, conf: q.conf, check: q.check || '',
+        rishui: { n: q.n, year: q.year || s.year || '', title: s.title || '', url: s.url || '', kind: s.kind || 'topic' }, tags: [] }; });
+  }
+
   // ---------- score ----------
   // 100 points pour une bonne réponse + bonus de rapidité (≤ 90) + série (≤ 100), × coefficient du niveau, plafonné à 290.
   function points(correct, elapsedMs, level, streak) {
@@ -101,5 +145,5 @@
   }
   const grade = (right, total) => (total ? right / total : 0) >= 0.9 ? { he: 'מצוין — רמת מבחן!', emoji: '🏆' } : (right / total) >= 0.7 ? { he: 'טוב מאוד — עוד קצת ואתם שם', emoji: '⭐' } : (right / total) >= 0.5 ? { he: 'בסדר — כדאי לחזור על ההסברים', emoji: '📖' } : { he: 'לא נורא — זה בדיוק בשביל זה מתאמנים', emoji: '💪' };
 
-  return { LEVELS, ROUND, MAX_POINTS, ID_RE, validate, pick, points, record, grade, rng, shuffle, norm };
+  return { LEVELS, ROUND, MAX_POINTS, ID_RE, RID_RE, validate, validateRishui, pickRishui, pick, points, record, grade, rng, shuffle, norm };
 });
