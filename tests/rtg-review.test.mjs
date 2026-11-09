@@ -20,7 +20,7 @@ test('review validation rejects missing page evidence, unsupported stations and 
 test('reviewed questions preserve original bank identity and level, without adding a duplicate bank',()=>{
  for(const q of review.questions){const old=original.questions[q.sourceQuestionIndex];assert.equal(q.q,old.q);assert.deepEqual(q.expected,old.expected);assert.equal(q.level,old.level);assert.ok(q.refs.every(p=>review.items.some(x=>x.page===p)));}
  const files=fs.readdirSync(new URL('../content/rtg/facts/',import.meta.url)).filter(x=>x.endsWith('.json'));
- assert.equal(files.length,27);assert.equal(files.reduce((n,f)=>n+read('content/rtg/facts/'+f).questions.length,0),226);
+ assert.equal(files.length,28);assert.equal(files.reduce((n,f)=>n+read('content/rtg/facts/'+f).questions.length,0),229);
 });
 
 // Minimal DOM adapter exercises the actual reader/quiz code without a browser or production writes.
@@ -54,7 +54,7 @@ for(const [id,group,indices] of [['84ac7ba1e956','apollonia',[0,1,2]],['359f22ca
  const r=read('content/rtg/reviews/'+id+'.json'),o=read('content/rtg/facts/'+id+'.json'),data=read('public/rtg/sites.json'),s=data.sites.find(s=>s.id===group),source=s.sources.find(x=>x.id===id);
  assert.equal(validateSelectedReview(r,o,source.pages),true);assert.equal(o.items.length,60);assert.equal(o.questions.length,10);assert.ok(!o.review);assert.equal(r.items.length,5);assert.equal(r.stations.length,3);assert.equal(r.questions.length,3);
  assert.deepEqual(r.questions.map(q=>q.sourceQuestionIndex),indices);assert.deepEqual(read('public/rtg/reviews/'+id+'.json'),r);assert.equal(s.reviewedExtract,true);assert.equal(s.fullyAudited,false);assert.deepEqual(s.contentReview.pages,r.review.pages);
- assert.equal(data.coverage.groups,17);assert.equal(data.coverage.selectedPassagesChecked,16);assert.equal(data.coverage.fullyAuditedContent,0);assert.equal(data.coverage.primaryGuidesSelectedPassagesChecked,10);
+ assert.equal(data.coverage.groups,19);assert.equal(data.coverage.selectedPassagesChecked,18);assert.equal(data.coverage.fullyAuditedContent,0);assert.equal(data.coverage.primaryGuidesSelectedPassagesChecked,10);
 });
 
 test('Migdal Tzedek bounded review preserves twelve original questions and physical PDF page references',()=>{
@@ -98,4 +98,17 @@ for(const [id,group,indices,pages,stations] of [
  assert.equal(s.contentStatus,'selected_passages_checked');assert.equal(s.fullyAudited,false);assert.equal(s.coordinate.checkedAt,'2026-11-09');
  if(group==='shaar-hagai'){assert.equal(r.stations.length,2);assert.ok(r.stations.every(x=>[1,8].includes(x.sourceStationIndex)));assert.match(s.practicalNotice.text,/מחוץ למבנה בלבד/);assert.match(r.items[0].he,/מחוץ למבנה/);}
  else {assert.deepEqual(r.questions.map(q=>q.level),[1,2,3]);assert.ok(!r.questions.some(q=>[0,5,9].includes(q.sourceQuestionIndex)));assert.ok(r.questions.every(q=>q.accept.length===0));assert.match(r.items[2].he,/2006/);assert.match(r.items[3].he,/מחלות/);}
+});
+
+test('Beit Shean keeps the original extraction and only checks three traceable existing answers',()=>{
+ const id='05b66ff5f227',o=read('content/rtg/facts/'+id+'.json'),r=read('content/rtg/reviews/'+id+'.json'),s=read('public/rtg/sites.json').sites.find(x=>x.id==='beit-shean');
+ assert.equal(o.items.length,34);assert.equal(o.questions.length,10);assert.ok(!o.review);assert.equal(validateSelectedReview(r,o,2),true);
+ assert.deepEqual(r.questions.map(q=>q.sourceQuestionIndex),[0,1,2]);assert.deepEqual(r.stations.map(x=>x.sourceStationIndex),[0,2,10]);assert.equal(r.items.filter(x=>x.kind==='fact').length,5);assert.deepEqual(r.review.pages,[1,2]);assert.equal(s.fullyAudited,false);assert.equal(s.reviewedExtract,true);assert.deepEqual(read('public/rtg/reviews/'+id+'.json'),r);
+});
+
+test('Tzippori new recall exercises have answer evidence and keep five facts separate from a guiding tip',()=>{
+ const id='30acb401a568',f=read('content/rtg/facts/'+id+'.json'),s=read('public/rtg/sites.json').sites.find(x=>x.id==='tzippori');
+ assert.deepEqual(f,read('public/rtg/facts/'+id+'.json'));assert.equal(f.review.method,'manual_read_of_rendered_pdf_pages');assert.equal(f.items.filter(x=>x.kind==='fact').length,5);assert.equal(f.items.filter(x=>x.kind==='tip').length,1);assert.deepEqual(f.questions.map(q=>q.level),[1,2,3]);assert.equal(f.questions.length,3);
+ for(const q of f.questions){assert.equal(q.reviewStatus,'answer_source_checked');assert.ok(q.expected.length>0);for(const i of q.evidenceItems){assert.equal(f.items[i].reviewStatus,'source_passage_checked');assert.ok(q.refs.includes(f.items[i].page));assert.ok(f.items[i].quote);}}
+ assert.ok(f.stations.every(x=>f.review.pages.includes(x.page)));assert.ok(!f.stations.some(x=>/אורפיאוס|מאגר/.test(x.he)));assert.match(s.practicalNotice.text,/אורפיאוס סגורה/);assert.match(s.practicalNotice.text,/פתוח חלקית/);assert.equal(s.practicalNotice.checkedAt,'2026-11-10');assert.equal(s.fullyAudited,false);
 });

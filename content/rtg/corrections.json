@@ -130,7 +130,15 @@
      "mission": "va1"
     }
    ],
-   "linksNote": "קישור ידני (נבדק) לאתרי המשחק שהמסמך עוסק בהם; ריק = אין אתר מתאים במשחק"
+   "linksNote": "שיוך ידני למקטעי מקום המתוארים בעלון; אינו אימות כולל של תשובות המשחק או של גישה עדכנית.",
+   "site": "גן לאומי בית שאן",
+   "regionVerified": "העמקים, הגלבוע ובית שאן",
+   "regionEvidence": {
+    "source": "https://www.parks.org.il/article/לומדים-גיאוגרפיה-בגן-לאומי-בית-שאן/",
+    "checkedAt": "2026-11-10",
+    "scope": "region_only",
+    "note": "מפגש עמק בית שאן ועמק חרוד"
+   }
   },
   "6ec9f0263969": {
    "links": [
@@ -417,6 +425,90 @@
    },
    "links": [],
    "linksNote": "אין אתר תואם במשחק הקיים; אזכור של אתר סמוך אינו מקור ראשי עבורו. בניאס אינו מבצר נמרוד וחי־בר כרמל אינו חי־בר יטבתה."
+  },
+  "99df2734a062": {
+   "site": "גן לאומי בית שאן",
+   "regionVerified": "העמקים, הגלבוע ובית שאן",
+   "regionEvidence": {
+    "source": "https://www.parks.org.il/article/לומדים-גיאוגרפיה-בגן-לאומי-בית-שאן/",
+    "checkedAt": "2026-11-10",
+    "scope": "region_only",
+    "note": "מפגש עמק בית שאן ועמק חרוד"
+   },
+   "links": [
+    {
+     "kind": "exam",
+     "region": "valleys",
+     "id": "beit_shean",
+     "he": "הגן הלאומי בית שאן — תל בית שאן וסקיטופוליס",
+     "mission": "va1"
+    }
+   ],
+   "linksNote": "שיוך ידני למקטעי מקום המתוארים בעלון; אינו אימות כולל של תשובות המשחק או של גישה עדכנית."
+  },
+  "30acb401a568": {
+   "site": "גן לאומי ציפורי",
+   "regionVerified": "הגליל התחתון",
+   "regionEvidence": {
+    "source": "https://static.parks.org.il/wp-content/uploads/2025/04/zipori.pdf",
+    "checkedAt": "2026-11-10",
+    "scope": "region_only",
+    "note": "מבוא העלון: הגליל התחתון המערבי",
+    "page": 1
+   },
+   "links": [
+    {
+     "kind": "exam",
+     "region": "lower_galilee",
+     "id": "tzippori_synagogue",
+     "he": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'"
+    },
+    {
+     "kind": "exam",
+     "region": "lower_galilee",
+     "id": "tzippori_city",
+     "he": "ציפורי — העיר המעורבת, התיאטרון והרובע היהודי"
+    },
+    {
+     "kind": "exam",
+     "region": "lower_galilee",
+     "id": "tzippori_villas",
+     "he": "ציפורי — וילת דיוניסוס ובית חג הנילוס"
+    }
+   ],
+   "linksNote": "שיוך ידני למקטעי מקום המתוארים בעלון; אינו אימות כולל של תשובות המשחק או של גישה עדכנית."
+  },
+  "8aea669f3849": {
+   "site": "גן לאומי ציפורי",
+   "regionVerified": "הגליל התחתון",
+   "regionEvidence": {
+    "source": "https://static.parks.org.il/wp-content/uploads/2025/04/zipori.pdf",
+    "checkedAt": "2026-11-10",
+    "scope": "region_only",
+    "note": "מבוא העלון: הגליל התחתון המערבי",
+    "page": 1
+   },
+   "links": [
+    {
+     "kind": "exam",
+     "region": "lower_galilee",
+     "id": "tzippori_synagogue",
+     "he": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'"
+    },
+    {
+     "kind": "exam",
+     "region": "lower_galilee",
+     "id": "tzippori_city",
+     "he": "ציפורי — העיר המעורבת, התיאטרון והרובע היהודי"
+    },
+    {
+     "kind": "exam",
+     "region": "lower_galilee",
+     "id": "tzippori_villas",
+     "he": "ציפורי — וילת דיוניסוס ובית חג הנילוס"
+    }
+   ],
+   "linksNote": "שיוך ידני למקטעי מקום המתוארים בעלון; אינו אימות כולל של תשובות המשחק או של גישה עדכנית."
   }
  }
 }

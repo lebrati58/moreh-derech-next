@@ -1,18 +1,18 @@
 {
   "version": 2,
   "reviewedCoverage": {
-    "groups": 17,
+    "groups": 19,
     "primaryGuides": 10,
     "primaryGuidesSelectedPassagesChecked": 10,
     "primaryGuidesExtractionToReview": 0,
-    "associatedDocuments": 28,
-    "sourceCheckedCoordinates": 17,
+    "associatedDocuments": 32,
+    "sourceCheckedCoordinates": 19,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 16,
+    "selectedPassagesChecked": 18,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 15,
+      "brochure": 19,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -100,18 +100,18 @@
       {
         "id": "valleys",
         "label": "העמקים, הגלבוע ובית שאן",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "lower_galilee",
         "label": "הגליל התחתון",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "upper_galilee",
@@ -147,12 +147,12 @@
       }
     ]
   },
-  "catalogBuilt": "2026-11-08",
+  "catalogBuilt": "2026-11-09",
   "scope": "Existing RTG catalog only; not an exhaustive inventory of Israel",
   "totals": {
     "documents": 727,
-    "documentsWithStructuredContent": 27,
-    "documentsLinkedToGame": 194,
+    "documentsWithStructuredContent": 28,
+    "documentsLinkedToGame": 197,
     "registryEntries": 46,
     "auditedSiteEntries": 0,
     "documentsByType": {
@@ -926,7 +926,8 @@
       "region": "valleys",
       "regionLabel": "העמקים, הגלבוע ובית שאן",
       "sourceDocumentIds": [
-        "05b66ff5f227"
+        "05b66ff5f227",
+        "99df2734a062"
       ],
       "processedDocumentIds": [
         "05b66ff5f227"
@@ -956,6 +957,80 @@
       "coordinates": {
         "lat": 31.73981,
         "lon": 35.21837,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_synagogue",
+      "name": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "30acb401a568",
+        "90876ff110fe",
+        "8aea669f3849"
+      ],
+      "processedDocumentIds": [
+        "30acb401a568",
+        "90876ff110fe"
+      ],
+      "extractedItemsInLinkedDocuments": 36,
+      "questionsInLinkedDocuments": 13,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_city",
+      "name": "ציפורי — העיר המעורבת, התיאטרון והרובע היהודי",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "30acb401a568",
+        "90876ff110fe",
+        "36bb4ac302c1",
+        "8aea669f3849"
+      ],
+      "processedDocumentIds": [
+        "30acb401a568",
+        "90876ff110fe",
+        "36bb4ac302c1"
+      ],
+      "extractedItemsInLinkedDocuments": 53,
+      "questionsInLinkedDocuments": 22,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:lower_galilee:tzippori_villas",
+      "name": "ציפורי — וילת דיוניסוס ובית חג הנילוס",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "sourceDocumentIds": [
+        "30acb401a568",
+        "90876ff110fe",
+        "8aea669f3849"
+      ],
+      "processedDocumentIds": [
+        "30acb401a568",
+        "90876ff110fe"
+      ],
+      "extractedItemsInLinkedDocuments": 36,
+      "questionsInLinkedDocuments": 13,
+      "coordinates": {
+        "lat": 32.74556,
+        "lon": 35.27861,
         "status": "existing_unverified"
       },
       "reviewStatus": "not_audited",
@@ -1035,29 +1110,6 @@
       "coordinates": {
         "lat": 33.04348,
         "lon": 35.41404,
-        "status": "existing_unverified"
-      },
-      "reviewStatus": "not_audited",
-      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
-    },
-    {
-      "key": "exam:lower_galilee:tzippori_city",
-      "name": "ציפורי — העיר המעורבת, התיאטרון והרובע היהודי",
-      "region": "lower_galilee",
-      "regionLabel": "הגליל התחתון",
-      "sourceDocumentIds": [
-        "90876ff110fe",
-        "36bb4ac302c1"
-      ],
-      "processedDocumentIds": [
-        "90876ff110fe",
-        "36bb4ac302c1"
-      ],
-      "extractedItemsInLinkedDocuments": 47,
-      "questionsInLinkedDocuments": 19,
-      "coordinates": {
-        "lat": 32.74556,
-        "lon": 35.27861,
         "status": "existing_unverified"
       },
       "reviewStatus": "not_audited",
@@ -1144,50 +1196,8 @@
       "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
     },
     {
-      "key": "exam:lower_galilee:tzippori_synagogue",
-      "name": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'",
-      "region": "lower_galilee",
-      "regionLabel": "הגליל התחתון",
-      "sourceDocumentIds": [
-        "90876ff110fe"
-      ],
-      "processedDocumentIds": [
-        "90876ff110fe"
-      ],
-      "extractedItemsInLinkedDocuments": 30,
-      "questionsInLinkedDocuments": 10,
-      "coordinates": {
-        "lat": 32.74556,
-        "lon": 35.27861,
-        "status": "existing_unverified"
-      },
-      "reviewStatus": "not_audited",
-      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
-    },
-    {
       "key": "exam:lower_galilee:tzippori_water",
       "name": "ציפורי — אמות המים והמאגר התת-קרקעי",
-      "region": "lower_galilee",
-      "regionLabel": "הגליל התחתון",
-      "sourceDocumentIds": [
-        "90876ff110fe"
-      ],
-      "processedDocumentIds": [
-        "90876ff110fe"
-      ],
-      "extractedItemsInLinkedDocuments": 30,
-      "questionsInLinkedDocuments": 10,
-      "coordinates": {
-        "lat": 32.74556,
-        "lon": 35.27861,
-        "status": "existing_unverified"
-      },
-      "reviewStatus": "not_audited",
-      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
-    },
-    {
-      "key": "exam:lower_galilee:tzippori_villas",
-      "name": "ציפורי — וילת דיוניסוס ובית חג הנילוס",
       "region": "lower_galilee",
       "regionLabel": "הגליל התחתון",
       "sourceDocumentIds": [
@@ -1632,7 +1642,7 @@
       "id": "30acb401a568",
       "title": "דפדפת גן לאומי ציפורי",
       "type": "brochure",
-      "structured": false,
+      "structured": true,
       "source": "https://static.parks.org.il/wp-content/uploads/2025/04/zipori.pdf",
       "reviewStatus": "not_audited"
     },

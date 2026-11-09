@@ -4,18 +4,18 @@
   "scope": "Ten initial guide sites and explicitly associated brochure groups. Not an exhaustive inventory of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "coverage": {
-    "groups": 17,
+    "groups": 19,
     "primaryGuides": 10,
     "primaryGuidesSelectedPassagesChecked": 10,
     "primaryGuidesExtractionToReview": 0,
-    "associatedDocuments": 28,
-    "sourceCheckedCoordinates": 17,
+    "associatedDocuments": 32,
+    "sourceCheckedCoordinates": 19,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 16,
+    "selectedPassagesChecked": 18,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 15,
+      "brochure": 19,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -103,18 +103,18 @@
       {
         "id": "valleys",
         "label": "העמקים, הגלבוע ובית שאן",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "lower_galilee",
         "label": "הגליל התחתון",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "upper_galilee",
@@ -1361,6 +1361,173 @@
         "text": "זהות הדפדפת והנקודה הגאוגרפית נבדקו; התוכן הלימודי הקיים עדיין דורש קריאה ובדיקת תשובות מול המקור. אין לראות בהוספת הכרטיס אישור לכל החילוץ האוטומטי. יש לבדוק תנאי ביקור בעמוד רט״ג העדכני.",
         "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%9b%d7%95%d7%a8%d7%a1%d7%99/",
         "checkedAt": "2026-11-08"
+      }
+    },
+    {
+      "id": "beit-shean",
+      "name": "גן לאומי בית שאן",
+      "region": "valleys",
+      "regionLabel": "העמקים, הגלבוע ובית שאן",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "05b66ff5f227",
+      "sources": [
+        {
+          "id": "05b66ff5f227",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-10",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/04/bet-sheean.pdf",
+            "pdfSha256": "05b66ff5f2278f4d3bdae207c6923b4ea6c166a537f147658937fc2cdcc23d43"
+          },
+          "title": "דפדפת גן לאומי בית שאן",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/04/bet-sheean.pdf",
+          "structured": true
+        },
+        {
+          "id": "99df2734a062",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-10",
+            "source": "https://static.parks.org.il/wp-content/uploads/2018/06/bet_shean_eng.pdf",
+            "pdfSha256": "99df2734a062e4413e2f07a2012787382ee16ebb0f177131f5c54af053303ad2"
+          },
+          "title": "דפדפת גן לאומי בית שאן - באנגלית",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2018/06/bet_shean_eng.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "listed_facts_stations_and_three_answers_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-10",
+        "pages": [
+          1,
+          2
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו חמש נקודות ידע, שלוש תחנות ושלוש שאלות קיימות בלבד בעמודי PDF 1–2 של העלון העברי. עשר השאלות והחילוץ המקוריים נשמרו ללא שינוי, ויתר התוכן דורש בדיקה. מסמכי הקורס בדרייב שנבדקו עוסקים בהקשר כללי ובתקופה הכנענית, ואינם מאמתים את שלוש התשובות. העלון האנגלי משויך לאותו מקום אך לא עבר בדיקת תוכן מלאה."
+      },
+      "coordinate": {
+        "lat": 32.501509302816,
+        "lon": 35.501524046134,
+        "status": "published_source_checked",
+        "source": "https://amudanan.co.il/w/P534865",
+        "evidence": "32.501509302816; 35.501524046134",
+        "checkedAt": "2026-11-10",
+        "purpose": "site_reference_not_entrance",
+        "label": "התיאטרון הרומי — תחנה בגן לאומי בית שאן",
+        "referenceKind": "station",
+        "identitySource": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%91%d7%99%d7%aa-%d7%a9%d7%90%d7%9f/",
+        "identityDocument": {
+          "id": "05b66ff5f227",
+          "page": 1,
+          "section": "התיאטרון"
+        },
+        "identityEvidence": "התחנה מזוהה בעלון הרשמי ובעמוד הגן; הנקודה היא נקודת ייחוס, לא שער כניסה."
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%91%d7%99%d7%aa-%d7%a9%d7%90%d7%9f/",
+      "reviewedExtract": true,
+      "practicalNotice": {
+        "text": "הסמן מציין את התיאטרון בתוך הגן הלאומי, לא את מרכז העיר המודרנית ולא שער הכניסה. תחנות ההדרכה הן נקודות לימוד מהעלון ולא מסלול GPS; יש לבדוק גישה, תיאום ופעילות עדכניים בעמוד רט״ג.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%91%d7%99%d7%aa-%d7%a9%d7%90%d7%9f/",
+        "checkedAt": "2026-11-10"
+      }
+    },
+    {
+      "id": "tzippori",
+      "name": "גן לאומי ציפורי",
+      "region": "lower_galilee",
+      "regionLabel": "הגליל התחתון",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "30acb401a568",
+      "sources": [
+        {
+          "id": "30acb401a568",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-10",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/04/zipori.pdf",
+            "pdfSha256": "30acb401a568adea9dce92b70974ee8c9cc5e17c41b95947c34e7bff42b083f4"
+          },
+          "title": "דפדפת גן לאומי ציפורי",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/04/zipori.pdf",
+          "structured": true
+        },
+        {
+          "id": "8aea669f3849",
+          "role": "site_source",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-10",
+            "source": "https://static.parks.org.il/wp-content/uploads/2017/08/brochureEn-5.pdf",
+            "pdfSha256": "8aea669f384974bb889444e83fe226109d6f53442e54044ebea70966c53a6216"
+          },
+          "title": "דפדפת גן לאומי ציפורי - באנגלית",
+          "type": "brochure",
+          "language": "en",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2017/08/brochureEn-5.pdf",
+          "structured": false
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "listed_facts_stations_and_three_answers_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-10",
+        "pages": [
+          1,
+          2
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו חמש נקודות ידע, עצת הדרכה אחת, שלוש תחנות ושלושה תרגילי חזרה שנוסחו לפי עמודי PDF 1–2 של העלון העברי. אין אלה שאלות מבחן מקוריות. סיכומי הקורס בדרייב תומכים בהקשר של חתימת המשנה בגליל ובציפורי, אך אינם מאמתים את התאריך וכל פרטי התשובות. יתר תוכן העלון, תנאי הגישה והעלון האנגלי לא אומתו במלואם."
+      },
+      "coordinate": {
+        "lat": 32.752222,
+        "lon": 35.281111,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Tzippori_Synagogue",
+        "evidence": "32.752222; 35.281111",
+        "checkedAt": "2026-11-10",
+        "purpose": "site_reference_not_entrance",
+        "label": "בית הכנסת העתיק — תחנה בגן לאומי ציפורי",
+        "referenceKind": "station",
+        "identitySource": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a6%d7%99%d7%a4%d7%95%d7%a8%d7%99/",
+        "identityDocument": {
+          "id": "30acb401a568",
+          "page": 1,
+          "section": "בית הכנסת"
+        },
+        "identityEvidence": "התחנה מזוהה בעלון הרשמי ובעמוד הגן; הנקודה היא נקודת ייחוס, לא שער כניסה."
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a6%d7%99%d7%a4%d7%95%d7%a8%d7%99/",
+      "practicalNotice": {
+        "text": "נכון לבדיקה מ־10.11.2026, עמוד רט״ג מודיע שהתצפית על פסיפס אורפיאוס סגורה לעבודות בטיחות ותחזוקה ומאגר המים פתוח חלקית. הם אינם תחנות במבחר ההדרכה כאן. הסמן הוא בית הכנסת העתיק, לא המושב ציפורי ולא שער כניסה; יש לבדוק גישה והרשמה לפני נסיעה.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a6%d7%99%d7%a4%d7%95%d7%a8%d7%99/",
+        "checkedAt": "2026-11-10"
       }
     }
   ]
