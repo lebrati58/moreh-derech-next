@@ -1,0 +1,145 @@
+{
+  "id": "4e67c0fdb83d",
+  "title": "מדריך למדריך חוף פלמחים",
+  "site": "גן לאומי חוף פלמחים – שביל האטד ושביל המצוק",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-09",
+    "pages": [
+      6,
+      11,
+      12,
+      13,
+      14,
+      18
+    ],
+    "pageNumbering": "pdf_file_pages"
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "רכס הכורכר יצר מפרץ טבעי שהתאים למעגן; לפי המדריך, המקום תפקד כנמל כבר בתקופת הברונזה.",
+      "page": 11,
+      "quote": "מפרץ טבעי",
+      "sourceItemIndex": 26,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "ההשוואה במדריך: אוניות מודרניות עמוקות מדי למפרצי הכורכר הרדודים וזקוקות למעגנים מלאכותיים, כגון נמל אשדוד.",
+      "page": 12,
+      "quote": "האוניות המודרניות",
+      "sourceItemIndex": 31,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "בתקופה האסלאמית הקדומה עמדה בחצי האי מצודת ריבאט; המדריך מזכיר גם פדיון שבויים בנמל.",
+      "page": 13,
+      "quote": "ריבאט",
+      "sourceItemIndex": 39,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "archaeology",
+      "he": "בכתובת מיבנה־ים אישר המלך אנטיוכוס החמישי הקלה במיסים לצידונים, המזוהים במדריך כפיניקים.",
+      "page": 13,
+      "quote": "אנטיוכוס",
+      "sourceItemIndex": 45,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "archaeology",
+      "he": "בחפירות 2011 במצודה האסלאמית נחשף בית מרחץ מטיפוס רומי: זו צורת המרחץ, לא תיארוך המצודה לתקופה הרומית.",
+      "page": 14,
+      "quote": "2011",
+      "sourceItemIndex": 47,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "n": 1,
+      "he": "תחילת שביל האטד: רכס הכורכר",
+      "page": 6,
+      "sourceStationIndex": 0,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 4,
+      "he": "תל ים־יבנה: העיר ים־יבנה",
+      "page": 11,
+      "sourceStationIndex": 3,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 6,
+      "he": "חורשת האשלים: סיכום, חשיבות הגן הלאומי ותוכניות לעתיד",
+      "page": 18,
+      "sourceStationIndex": 5,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "מה אישר המלך אנטיוכוס בכתובת שנמצאה בים־יבנה?",
+      "expected": [
+        "הקלה במיסים",
+        "לצידונים (פיניקים) בים־יבנה"
+      ],
+      "accept": [],
+      "refs": [
+        13
+      ],
+      "sourceQuestionIndex": 1,
+      "evidenceItems": [
+        3
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "מהו הממצא הייחודי שנחשף במצודה האסלאמית בשנת 2011?",
+      "expected": [
+        "בית מרחץ מטיפוס רומי בתוך מצודה צבאית"
+      ],
+      "accept": [],
+      "refs": [
+        14
+      ],
+      "sourceQuestionIndex": 2,
+      "evidenceItems": [
+        4
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 3,
+      "q": "על תל ים־יבנה, איך תשתמשו בנוף הנמל של אשדוד כדי להסביר את הנמל העתיק?",
+      "expected": [
+        "להפנות את המבט דרומה לנמל אשדוד",
+        "אוניות מודרניות עמוקות ודורשות נמל מלאכותי",
+        "מפרצי כורכר רדודים התאימו לספינות העת העתיקה"
+      ],
+      "accept": [],
+      "refs": [
+        11,
+        12
+      ],
+      "sourceQuestionIndex": 9,
+      "evidenceItems": [
+        0,
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}

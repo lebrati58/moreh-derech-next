@@ -3,13 +3,13 @@
   "reviewedCoverage": {
     "groups": 17,
     "primaryGuides": 10,
-    "primaryGuidesSelectedPassagesChecked": 6,
-    "primaryGuidesExtractionToReview": 4,
+    "primaryGuidesSelectedPassagesChecked": 8,
+    "primaryGuidesExtractionToReview": 2,
     "associatedDocuments": 28,
     "sourceCheckedCoordinates": 17,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 12,
+    "selectedPassagesChecked": 14,
     "associatedDocumentsByType": {
       "guide": 10,
       "brochure": 15,
@@ -95,7 +95,7 @@
         "groups": 4,
         "sourceCheckedCoordinates": 4,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 2
+        "selectedPassagesChecked": 4
       },
       {
         "id": "valleys",

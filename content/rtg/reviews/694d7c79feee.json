@@ -1,0 +1,142 @@
+{
+  "id": "694d7c79feee",
+  "title": "מדריך למדריך חוף בית ינאי",
+  "site": "גן לאומי נחל אלכסנדר – חוף בית ינאי",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-09",
+    "pages": [
+      3,
+      6,
+      10,
+      11,
+      14,
+      16
+    ],
+    "pageNumbering": "pdf_file_pages"
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "חוף בית ינאי הוא חלק מגן לאומי נחל אלכסנדר, המשלב נופש עם שימור טבע, מורשת ונוף.",
+      "page": 3,
+      "quote": "חלק מגן",
+      "sourceItemIndex": 0,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "לפי המדריך, גן לאומי נחל אלכסנדר הוכרז בשנת 1982.",
+      "page": 6,
+      "quote": "1982",
+      "sourceItemIndex": 5,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "המדריך מציין כי ולוס, אוניית המעפילים הראשונה שעגנה בחוף, הגיעה בקיץ 1934.",
+      "page": 11,
+      "quote": "ולוס",
+      "sourceItemIndex": 23,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "בעקבות המרד הערבי וההימנעות מנמל יפו, אישר המנדט להקים מזח חלופי בעמק חפר.",
+      "page": 11,
+      "quote": "מזח חלופי",
+      "sourceItemIndex": 24,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "אגם בית ינאי נוצר ממי תהום מליחים שנחשפו בחפירות להקמת המחלף בשנת 1991; לפי המדריך, הוא בית גידול שנוצר מפעילות אדם.",
+      "page": 14,
+      "quote": "1991",
+      "sourceItemIndex": 30,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "n": 1,
+      "he": "מצפה ההעפלה – בית גידול של מצוק כורכר",
+      "page": 10,
+      "sourceStationIndex": 0,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 2,
+      "he": "האגם – בית גידול מימי",
+      "page": 14,
+      "sourceStationIndex": 1,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 3,
+      "he": "חוף ים – בית גידול של חוף חולי",
+      "page": 16,
+      "sourceStationIndex": 2,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "מה שמה של אוניית המעפילים הראשונה שעגנה בחוף, ומתי הגיעה?",
+      "expected": [
+        "ולוס",
+        "קיץ 1934"
+      ],
+      "accept": [],
+      "refs": [
+        11
+      ],
+      "sourceQuestionIndex": 0,
+      "evidenceItems": [
+        2
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "באיזו שנה הוכרז גן לאומי נחל אלכסנדר?",
+      "expected": [
+        "1982"
+      ],
+      "accept": [],
+      "refs": [
+        6
+      ],
+      "sourceQuestionIndex": 1,
+      "evidenceItems": [
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "איך נוצר אגם בית ינאי?",
+      "expected": [
+        "מי תהום מליחים שנחשפו",
+        "בחפירות להקמת המחלף בשנת 1991"
+      ],
+      "accept": [],
+      "refs": [
+        14
+      ],
+      "sourceQuestionIndex": 2,
+      "evidenceItems": [
+        4
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}
