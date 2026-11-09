@@ -61,3 +61,10 @@ Six régions sans groupe dans cette couche : Jérusalem ; désert de Judée/mer 
 33/33 tests ciblés RTG réussis. Suite complète locale : 264 tests, 263 réussis, 0 échec, 1 test TCP natif sauté sous PGlite ; ce test doit passer en CI Postgres. Deux tests ajoutés : pages physiques et identité des questions, stations extérieures de Shaar Hagai, niveaux et exclusion des débits actuels au Yarkon. Reconstruction déterministe. Suite complète, CI native, commit, déploiement et parcours publics consignés après vérification dans #80.
 
 Prochaine reprise : brochures puis cartes, en ciblant les régions à zéro ; vérifier les titres et pages avant toute association et distinguer plan de visite, rapport et simple mention. Continuer les recoupements Drive et la relecture des parties exclues des dix guides. La couverture nationale exploitable demandée pour le 10 novembre **n'est pas acquise**. Dix sélections partielles ne constituent pas la vérification exhaustive de dix guides ni de tous les sites d'Israël.
+
+
+## Incident de publication et correctif du workflow
+
+La première publication du commit pédagogique `e27db86f90e7fffadcb32002666937a43d215226` a expiré après dix minutes en `syncing_files` (run `42718649000`, tentative 1). La relance du seul job deploy a échoué car deux artefacts `github-pages` existaient dans le même run (tentative 2). Les 264 tests Postgres avaient réussi.
+
+Le workflow nomme désormais l'artefact avec `github.run_id` et `github.run_attempt`, et transmet exactement le même nom à `deploy-pages`. Ainsi une relance sélectionne son propre artefact sans suppression d'anciens artefacts, sans changement de permissions et sans contourner les tests. Entrées `name` et `artifact_name` contrôlées dans les fichiers officiels `action.yml` aux versions utilisées : [upload-pages-artifact v3](https://github.com/actions/upload-pages-artifact/blob/v3/action.yml), [deploy-pages v4](https://github.com/actions/deploy-pages/blob/v4/action.yml). Cette correction traite le doublon des relances ; elle ne prétend pas réparer la synchronisation du service Pages. Résultat de la nouvelle publication dans #80.
