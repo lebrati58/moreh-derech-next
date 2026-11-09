@@ -43,7 +43,7 @@ Page RTG de Tsipori consultée le 10 novembre : belvédère de la mosaïque d'Or
 
 Les 27 extractions préexistantes et leurs copies publiques, les dix sélections précédentes et leurs copies, les 20 fichiers Supabase sont inchangés octet pour octet par rapport à la base. Ajout d'une extraction manuelle limitée de Tsipori et d'une sélection séparée de Beit Shean. Total : 28 documents structurés et 229 questions uniques (226 existantes + 3 nouvelles). Aucun changement de calcul de score, aucune migration ni écriture dans `evvutvnfmbhdxeyzmknv`. Les questions de Beit Shean gardent leurs indices et leur progression commune.
 
-Suite complète locale : 267 tests, 266 réussis, 0 échec, 1 test TCP natif sauté sous PGlite. 36/36 tests RTG ciblés, dont trois nouveaux contrôles des régions, sources/éditions, conservation des identités, contraintes de visite et preuves des réponses. Construction déterministe des sites ; suite complète et résultats CI/publication consignés dans #80 après contrôle.
+Suite complète locale : 268 tests, 267 réussis, 0 échec, 1 test TCP natif sauté sous PGlite. 37/37 tests RTG ciblés, dont quatre nouveaux contrôles des régions, sources/éditions, conservation des identités, contraintes de visite et preuves des réponses. Construction déterministe des sites ; suite complète et résultats CI/publication consignés dans #80 après contrôle.
 
 ## Bilan national réel
 
@@ -99,3 +99,6 @@ Suite complète locale : 267 tests, 266 réussis, 0 échec, 1 test TCP natif sau
 Continuer les brochures dans les quatre régions sans groupe : Mamshit `5e6a5842db94`, Tel Arad `cee6972fa1b0`, Ein Gedi `d5f1465bbdfb`, Herodion `6c9188fcb4cc` restent des candidats de catalogue non validés. Vérifier d'abord l'identité du lieu, le texte, les pages et les coordonnées ; ne pas confondre synagogue/antiquités d'Ein Gedi et réserve naturelle. Poursuivre ensuite les cartes, le recoupement Drive et les parties exclues des dix guides. Kursi reste sans sélection contrôlée.
 
 **La couverture nationale exploitable demandée pour le 10 novembre n'est pas acquise.** Dix guides partiellement relus, dix-neuf groupes et dix-neuf points ne garantissent pas l'exhaustivité des sites d'Israël. Commits, tests CI, déploiement et parcours publics : résultats détaillés dans #80.
+
+
+Contrôle du lecteur : les réserves `contentReview.note` sont maintenant affichées pour toute fiche qui en possède, y compris une nouvelle sélection manuelle sans extraction antérieure. Le lien vers l'extraction complète reste réservé aux sélections séparées ; Tsipori ne prétend pas disposer d'un texte intégral contrôlé. Un test du vrai lecteur avec adaptateur DOM vérifie ce cas et le maintien du lien pour Beit Shean.

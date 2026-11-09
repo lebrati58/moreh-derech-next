@@ -104,3 +104,14 @@ test('new valley and Lower Galilee groups distinguish station markers, editions 
  }
  assert.equal(data.coverage.associatedDocumentsByType.brochure,19);assert.equal(data.coverage.regions.filter(r=>r.groups===0).length,4);assert.equal(data.coverage.fullyAuditedContent,0);
 });
+
+test('place reader shows course-review limits for new manual brochures and retains legacy links only for separate selections',async()=>{
+ const {default:vm}=await import('node:vm');
+ for(const slug of ['tzippori','beit-shean']){
+  const nodes=new Map(),node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',hidden:false,value:'',append(){}});return nodes.get(id);};
+  const context={document:{getElementById:node,createElement(){return {}; }},window:{scrollTo(){},addEventListener(){}},location:{hash:'#/s/'+slug,search:''},URL,URLSearchParams,fetch:async url=>({ok:true,json:async()=>read('public/'+url)})};
+  vm.runInNewContext(fs.readFileSync(new URL('public/rtg-sheet.js',root),'utf8'),context);context.MDRtgSheet=context.window.MDRtgSheet;vm.runInNewContext(fs.readFileSync(new URL('public/rtg-sites.js',root),'utf8'),context);
+  await new Promise(resolve=>setImmediate(resolve));const s=data.sites.find(s=>s.id===slug),html=node('detail').innerHTML;
+  assert.ok(html.includes(s.contentReview.note));assert.equal(html.includes('לכל החילוץ הקיים'),slug==='beit-shean');assert.ok(node('site-content').innerHTML.includes('3 שאלות'));
+ }
+});
