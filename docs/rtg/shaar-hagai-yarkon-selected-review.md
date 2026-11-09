@@ -9,7 +9,7 @@ Les dix pages physiques suivantes ont été rendues et lues visuellement sur les
 | Guide | Pages PDF relues | Items originaux, base zéro | Stations originales, base zéro | Questions originales, base zéro |
 | --- | --- | --- | --- | --- |
 | Shaar Hagai, 7561e969b354 | 2, 4, 5, 6, 17 | 2, 14, 20, 23, 52 | 1 cour du khan, 8 bosquet et véhicules | 1, 4, 3 ; niveaux 1, 2, 1 |
-| Sources du Yarkon, 40132a61a194 | 21, 24, 26, 27, 38 | 29, 35, 41, 47, 48 | 4 confluence du Mir, 6 ponton des nénuphars, 10 ponton des poissons | 2, 4, 7 ; niveaux 1, 2, 3 |
+| Sources du Yarkon, 40132a61a194 | 21, 24, 26, 27, 38 | 29, 35, 41, 47, 48, 40 | 4 confluence du Mir, 6 ponton des nénuphars, 10 ponton des poissons | 2, 4, 7 ; niveaux 1, 2, 3 |
 
 - [PDF officiel Shaar Hagai](https://www.parks.org.il/wp-content/uploads/2025/10/מדריך-למדריך-חאן-שער-הגיא.pdf), 7 070 622 octets, SHA-256 `7561e969b3542e27a54dbbbc2b5dc13081d1d3478d323f27df1c224b4a4e55c2`.
 - [PDF officiel Yarkon](https://static.parks.org.il/wp-content/uploads/2023/05/guide-yarkon.pdf), 21 284 874 octets, SHA-256 `40132a61a19470b321ef3632816ff2250a382830e52e8b965f636d42780f1edc`.
@@ -68,3 +68,6 @@ Prochaine reprise : brochures puis cartes, en ciblant les régions à zéro ; v�
 La première publication du commit pédagogique `e27db86f90e7fffadcb32002666937a43d215226` a expiré après dix minutes en `syncing_files` (run `42718649000`, tentative 1). La relance du seul job deploy a échoué car deux artefacts `github-pages` existaient dans le même run (tentative 2). Les 264 tests Postgres avaient réussi.
 
 Le workflow nomme désormais l'artefact avec `github.run_id` et `github.run_attempt`, et transmet exactement le même nom à `deploy-pages`. Ainsi une relance sélectionne son propre artefact sans suppression d'anciens artefacts, sans changement de permissions et sans contourner les tests. Entrées `name` et `artifact_name` contrôlées dans les fichiers officiels `action.yml` aux versions utilisées : [upload-pages-artifact v3](https://github.com/actions/upload-pages-artifact/blob/v3/action.yml), [deploy-pages v4](https://github.com/actions/deploy-pages/blob/v4/action.yml). Cette correction traite le doublon des relances ; elle ne prétend pas réparer la synchronisation du service Pages. Résultat de la nouvelle publication dans #80.
+
+
+Contrôle final du lecteur : le Yarkon sépare désormais cinq faits et un conseil pédagogique (six items sélectionnés). Le cinquième fait provient de l'item original 40, page PDF 26 déjà relue : endémisme de לבנון הירקון et sensibilité à l'eau. Le conseil de non-nourrissage reste de type `tip`, visible en mode guide ; il n'est pas compté parmi les cinq faits de la mini-fiche. Questions et preuves de réponse inchangées. Le test vérifie cinq items `fact` malgré les six items sélectionnés au total.

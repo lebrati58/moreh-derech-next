@@ -94,7 +94,7 @@ for(const [id,group,indices,pages,stations] of [
 ])test(group+' bounded selection preserves bank and constrains guiding to sourced stations',()=>{
  const r=read('content/rtg/reviews/'+id+'.json'),o=read('content/rtg/facts/'+id+'.json'),data=read('public/rtg/sites.json'),s=data.sites.find(s=>s.id===group);
  assert.equal(validateSelectedReview(r,o,s.sources.find(d=>d.id===id).pages),true);assert.equal(o.questions.length,10);assert.ok(!o.review);
- assert.equal(r.items.length,5);assert.deepEqual(r.questions.map(q=>q.sourceQuestionIndex),indices);assert.deepEqual(r.review.pages,pages);assert.deepEqual(r.stations.map(s=>s.sourceStationIndex),stations);assert.deepEqual(read('public/rtg/reviews/'+id+'.json'),r);
+ assert.equal(r.items.length,group==='yarkon-sources'?6:5);assert.equal(r.items.filter(x=>x.kind==='fact').length,5);assert.deepEqual(r.questions.map(q=>q.sourceQuestionIndex),indices);assert.deepEqual(r.review.pages,pages);assert.deepEqual(r.stations.map(s=>s.sourceStationIndex),stations);assert.deepEqual(read('public/rtg/reviews/'+id+'.json'),r);
  assert.equal(s.contentStatus,'selected_passages_checked');assert.equal(s.fullyAudited,false);assert.equal(s.coordinate.checkedAt,'2026-11-09');
  if(group==='shaar-hagai'){assert.equal(r.stations.length,2);assert.ok(r.stations.every(x=>[1,8].includes(x.sourceStationIndex)));assert.match(s.practicalNotice.text,/מחוץ למבנה בלבד/);assert.match(r.items[0].he,/מחוץ למבנה/);}
  else {assert.deepEqual(r.questions.map(q=>q.level),[1,2,3]);assert.ok(!r.questions.some(q=>[0,5,9].includes(q.sourceQuestionIndex)));assert.ok(r.questions.every(q=>q.accept.length===0));assert.match(r.items[2].he,/2006/);assert.match(r.items[3].he,/מחלות/);}

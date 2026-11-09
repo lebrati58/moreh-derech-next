@@ -61,6 +61,15 @@
       "quote": "שמונה",
       "sourceItemIndex": 48,
       "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "לבנון הירקון הוא דג אנדמי לנחלי מישור החוף בישראל, הרגיש לאיכות המים; זהו הרקע למבצע ההצלה המתואר במדריך.",
+      "page": 26,
+      "quote": "מין דג",
+      "sourceItemIndex": 40,
+      "reviewStatus": "source_passage_checked"
     }
   ],
   "stations": [
