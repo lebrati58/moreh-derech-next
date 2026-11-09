@@ -3,11 +3,13 @@
   "reviewedCoverage": {
     "groups": 17,
     "primaryGuides": 10,
+    "primaryGuidesSelectedPassagesChecked": 1,
+    "primaryGuidesExtractionToReview": 9,
     "associatedDocuments": 28,
     "sourceCheckedCoordinates": 17,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 6,
+    "selectedPassagesChecked": 7,
     "associatedDocumentsByType": {
       "guide": 10,
       "brochure": 15,
@@ -61,7 +63,7 @@
         "groups": 2,
         "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "judean_desert",

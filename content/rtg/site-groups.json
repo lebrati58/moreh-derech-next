@@ -414,10 +414,11 @@
             "checkedAt": "2026-11-08",
             "source": "https://static.parks.org.il/wp-content/uploads/2022/03/מדריך-למדריך-עין-חניה.pdf",
             "pdfSha256": "d5b4cc4e18d30f4d31b0fde73b987cec42e8d70d24f001e873bfdd211a4c2315"
-          }
+          },
+          "driveCopyIdentityChecked": true
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 31.7435417,
@@ -428,7 +429,23 @@
         "checkedAt": "2026-11-08",
         "purpose": "site_reference_not_entrance"
       },
-      "officialSite": "https://www.parks.org.il/reserve-park/enchinya-2/"
+      "officialSite": "https://www.parks.org.il/reserve-park/enchinya-2/",
+      "reviewedExtract": true,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-09",
+        "pages": [
+          2,
+          5,
+          6,
+          8,
+          10,
+          11
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "הבדיקה מתייחסת לבחירה המוצגת בלבד. ההפניות הן למספרי עמודי קובץ ה־PDF, לא למספרים המודפסים. תיארוך הנימפאון אינו כלול בבדיקה בשל הבדלים בין המקורות הרשמיים."
+      }
     },
     {
       "id": "lachish",

@@ -133,11 +133,12 @@
     return expected.map(e => { const ws = words(e).filter(w => w.length >= 4 || /^\d+$/.test(w)); return ws.length > 0 && ws.some(w => a.includes(' ' + w) || a.includes(w + ' ') || a.includes(w)); });
   }
   const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g, () => (Math.random() * 16 | 0).toString(16)));
-  function renderQuiz(id) {
+  function renderQuiz(id, reviewed = false) {
     const d = CAT.docs.find(x => x.id === id);
     if (!d || !d.fx) { view.innerHTML = `<p class="empty">${t('none')}</p>`; return; }
-    fetch('rtg/facts/' + encodeURIComponent(id) + '.json').then(r => r.json()).then(F => {
-      const qs = (F.questions || []).map((q, i) => Object.assign({ i }, q)).sort((a, b) => a.level - b.level);
+    fetch('rtg/' + (reviewed ? 'reviews/' : 'facts/') + encodeURIComponent(id) + '.json').then(r => r.json()).then(F => {
+      const qs = (F.questions || []).map((q, i) => Object.assign({ i: reviewed ? q.sourceQuestionIndex : i }, q)).sort((a, b) => a.level - b.level);
+      if (reviewed && (F.review?.status !== 'selected_passages_checked' || qs.some(q=>!Number.isInteger(q.i)||q.i<0))) throw Error('Invalid reviewed selection');
       const Q = { i: 0, answers: [], timer: null, left: 0, runId: uuid(), started: Date.now() };
       const stats = P() && P().tourStats ? P().tourStats('rtg:' + id) : null;
       const draw = () => {
@@ -158,7 +159,7 @@
         $('#res').innerHTML = `<div class="fact" style="margin-top:12px">${timeout ? '<p><b>⏰ נגמר הזמן.</b></p>' : ''}<p><b>מה היה צריך להופיע</b> — סמנו ביושר מה כתבתם (הזיהוי האוטומטי מסמן מראש):</p>
           ${exp.map((e, k) => `<label style="display:flex;gap:8px;align-items:flex-start;min-height:40px;margin:4px 0"><input type="checkbox" data-k="${k}" ${h[k] && !timeout ? 'checked' : ''} style="width:22px;height:22px;flex:none"> <span>${esc(e)}</span></label>`).join('')}
           ${(q.accept || []).length ? `<p class="note">גם מתקבל: ${esc(q.accept.join(' · '))}</p>` : ''}
-          <p class="note">מקור: ${esc(d.t)}, ${(q.refs || []).map(pg).join(', ')} · <a href="#/d/${esc(id)}">📚 לפתוח את המסמך</a></p>
+          <p class="note">מקור: ${esc(d.t)}, ${reviewed?'עמודי PDF: ':''}${(q.refs || []).map(pg).join(', ')} · <a href="#/d/${esc(id)}">📚 לפתוח את המסמך</a></p>
           <button type="button" class="btn" id="nxt">${Q.i + 1 < qs.length ? 'לשאלה הבאה ←' : '🏁 לסיים'}</button></div>`;
         $('#nxt').addEventListener('click', () => {
           const ticked = $$('#res input[type=checkbox]').filter(c => c.checked).length;
@@ -175,17 +176,17 @@
           <section class="card"><h2>📋 סיכום לפי שאלה</h2><ol>${Q.answers.map((a, k) => `<li>${a.correct ? '✅' : a.timeout ? '⏰' : '🔁'} רמה ${a.level} · ${Math.round(a.frac * 100)}% · ${a.points} נק׳ — ${esc(qs[k].q)}</li>`).join('')}</ol>
           <button type="button" class="btn" id="again">🔁 עוד פעם</button><a class="btn ghost" href="#/d/${esc(id)}">📚 חזרה למסמך</a></section>
           <p class="note">הניקוד מבוסס על הסימון שלכם — חידון להתאמנות, לא מבחן רשמי. ${esc(t('credit'))}</p>`;
-        $('#again').addEventListener('click', () => renderQuiz(id));
+        $('#again').addEventListener('click', () => renderQuiz(id, reviewed));
       };
-      view.innerHTML = `<section class="hero"><div class="eyebrow">חידון רט״ג</div><h1>🎮 ${esc(F.site || d.t)}</h1><p>${qs.length} שאלות · רמות קיימות: ${[...new Set(qs.map(q=>q.level))].join(', ')} · תשובה חופשית עם שעון · בסוף כל שאלה מסמנים מה היה בתשובה · הנקודות נכנסות למסע שלכם.${stats && stats.points ? ` שיא נוכחי: ${stats.points} נק׳.` : ''}</p></section>
-        <section class="card"><ul>${[[1,'לזכור עובדה אחת'],[2,'להסביר ולקשר'],[3,'ליישם בהדרכה']].filter(([level])=>qs.some(q=>q.level===level)).map(([level,label])=>`<li>רמה ${level} — ${label} (${QT[level]} שנ׳)</li>`).join('')}</ul><button type="button" class="btn" id="go">▶ להתחיל</button><a class="btn ghost" href="#/d/${esc(id)}">📚 קודם לקרוא את המסמך</a></section>`;
+      view.innerHTML = `<section class="hero"><div class="eyebrow">חידון רט״ג${reviewed?' · קטעים נבחרים שנבדקו בלבד':''}</div><h1>🎮 ${esc(F.site || d.t)}</h1><p>${qs.length} שאלות · רמות קיימות: ${[...new Set(qs.map(q=>q.level))].join(', ')} · תשובה חופשית עם שעון · בסוף כל שאלה מסמנים מה היה בתשובה · הנקודות נכנסות למסע שלכם.${stats && stats.points ? ` שיא נוכחי: ${stats.points} נק׳.` : ''}</p></section>
+        <section class="card">${reviewed?`<p class="note">${qs.length} שאלות קיימות שנבדקו מול עמודי ה־PDF. יתר החילוץ דורש בדיקה. השיא לכל שאלה משותף לתרגול המלא ולבחירה.</p><a class="btn ghost" href="#/q/${esc(id)}">לכל השאלות הקיימות — טרם אומתו במלואן</a>`:''}<ul>${[[1,'לזכור עובדה אחת'],[2,'להסביר ולקשר'],[3,'ליישם בהדרכה']].filter(([level])=>qs.some(q=>q.level===level)).map(([level,label])=>`<li>רמה ${level} — ${label} (${QT[level]} שנ׳)</li>`).join('')}</ul><button type="button" class="btn" id="go">▶ להתחיל</button><a class="btn ghost" href="#/d/${esc(id)}">📚 קודם לקרוא את המסמך</a></section>`;
       $('#go').addEventListener('click', draw);
     }).catch(() => { view.innerHTML = `<p class="empty">${t('noFacts')}</p>`; });
   }
   function route() {
     const h = location.hash.replace(/^#\/?/, '').split('/');
     $('#back').hidden = h[0] !== 'd' && h[0] !== 'q';
-    if (h[0] === 'q' && h[1]) return renderQuiz(decodeURIComponent(h[1]));
+    if (h[0] === 'q' && h[1]) return renderQuiz(decodeURIComponent(h[1]), h[2] === 'reviewed');
     if (h[0] === 'd' && h[1]) return renderDoc(decodeURIComponent(h[1]));
     const p = new URLSearchParams(location.search);
     if (p.get('q') && !S.q) S.q = p.get('q');
