@@ -43,7 +43,8 @@ for (const src of DOC.sites) {
   const facts = (o.facts || []).filter(f => he(f.he) && words(f.he) <= 30 && inText(f.q, 'fact')).map(f => ({ he: norm(f.he), q: norm(f.q) }));
   sites.push({ id: src.id, he: norm(src.he), route: rid, routeHe: r, region: o.region, regHe: REG[o.region].he, t: o.t === '400' ? '400' : '180',
     per: norm(o.per), where: norm(o.where), hook: norm(o.hook), keys, close: norm(o.close), tool: norm(o.tool),
-    cats: (o.cats || []).filter(c => CATS.has(c)), facts });
+    cats: (o.cats || []).filter(c => CATS.has(c)), facts,
+    ...((o.doubts || []).length ? { check: o.doubts.map(norm).filter(he) } : {}) });
   (o.quiz || []).forEach((q, i) => {
     const opts = (q.options || []).map(norm);
     const good = he(q.q) && opts.length === 4 && opts.every(he) && new Set(opts).size === 4 && Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4
@@ -54,16 +55,29 @@ for (const src of DOC.sites) {
 }
 
 // ---- répertoire de l'examen : faits ajoutés aux lieux du même nom (idempotent : les anciens faits « ezer » sont remplacés) ----
-const key = s => norm(s).replace(/["'()\-–,.]/g, ' ').replace(/^(ה|ב|ל)(?=[א-ת]{3})/, '').replace(/\s+/g, ' ').trim();
-const strip = s => key(s).split(' ').filter(w => !/^(גן|לאומי|שמורת|הטבע|אתר|תל|חורבת|מצודת|כנסיית|בית|הכנסת)$/.test(w)).join(' ');
+const STOP = new Set(['גן', 'לאומי', 'שמורת', 'הטבע', 'אתר', 'תל', 'חורבת', 'מצודת', 'כנסיית', 'בית', 'הכנסת', 'בימי', 'כנסת', 'של', 'על', 'עם', 'ו', 'מתחם', 'פארק', 'גבעת', 'העיר', 'הכפר']);
+const toks = s => norm(s).replace(/["'()\-–,.:;]/g, ' ').split(' ').filter(Boolean)
+  .map(w => w.length > 3 ? w.replace(/^[הוב](?=[\u05d0-\u05ea]{3})/, '') : w).filter(w => w.length >= 2 && !STOP.has(w));
+// Même lieu : les mots significatifs du nom le plus court sont presque tous dans l'autre (≥ 75 %, au moins 1 mot de 3 lettres).
+function same(a, b) {
+  const A = new Set(toks(a)), B = new Set(toks(b)); if (!A.size || !B.size) return false;
+  const inter = [...A].filter(w => B.has(w)); const small = Math.min(A.size, B.size);
+  return inter.some(w => w.length >= 3) && inter.length / small >= 0.75 && (small > 1 || inter[0].length >= 4);
+}
+const OVR = (await rj('content/ezer/repertoire-overrides.json').catch(() => ({ map: {} }))).map;
 let added = 0;
 const regionFiles = {};
 for (const r of R.regions.filter(r => r.file)) regionFiles[r.id] = await rj('public/exam/' + r.file);
 for (const d of Object.values(regionFiles)) for (const s of d.sites) s.facts = (s.facts || []).filter(f => f.src !== 'ezer');
 for (const s of sites) {
-  const d = regionFiles[s.region]; if (!d || !s.facts.length) { report.unmatched.push({ id: s.id, he: s.he, region: s.region }); continue; }
-  const a = strip(s.he);
-  const hit = d.sites.find(x => { const b = strip(x.short || x.he); return a.length >= 3 && b.length >= 3 && (a === b || a.includes(b) || b.includes(a)); });
+  if (!s.facts.length) { report.unmatched.push({ id: s.id, he: s.he, region: s.region }); continue; }
+  // d'abord la région proposée, puis les autres (un lieu peut être classé dans une région voisine)
+  const order = [s.region, ...Object.keys(regionFiles).filter(r => r !== s.region)];
+  let hit = null;
+  if (s.id in OVR) {
+    if (OVR[s.id]) for (const d of Object.values(regionFiles)) hit = hit || d.sites.find(x => x.id === OVR[s.id]);
+    if (!hit) { report.unmatched.push({ id: s.id, he: s.he, region: s.region }); continue; }
+  } else for (const r of order) { const d = regionFiles[r]; if (!d) continue; hit = d.sites.find(x => same(s.he, x.short || x.he) || same(s.he, x.he)); if (hit) break; }
   if (!hit) { report.unmatched.push({ id: s.id, he: s.he, region: s.region }); continue; }
   s.repertoire = hit.id;
   const have = new Set(hit.facts.map(f => norm(f.he)));

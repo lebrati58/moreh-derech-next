@@ -1,0 +1,12 @@
+{
+ "about": "Corrections manuelles du rapprochement fiche → lieu du répertoire : null = ne pas rattacher (lieu général ≠ lieu précis).",
+ "map": {
+  "ez049": null,
+  "ez089": null,
+  "ez122": "tzippori_city",
+  "ez123": null,
+  "ez142": null,
+  "ez237": null,
+  "ez238": null
+ }
+}

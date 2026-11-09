@@ -88,6 +88,8 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
 .checks li{display:flex;gap:8px;align-items:center;font-size:14px;background:#0e1736;border:1px solid var(--line);border-radius:12px;padding:7px 10px}
 .checks .st{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center;font-size:12px}
 .checks li.ok .st{background:var(--ok);border-color:var(--ok)}.checks li.ok .st::after{content:"✓";color:#fff}
+.bar select,#cq{flex:1 1 200px;min-width:0;width:100%;text-overflow:ellipsis}
+#v-cards .panel,#v-review .panel,#v-quiz .panel{min-width:0;overflow:hidden}
 .ev{margin:3px 0 0;font-size:12.5px;color:var(--soft);border-inline-start:2px solid var(--line);padding-inline-start:8px}
 .keys li details summary{cursor:pointer;list-style:none;display:inline}.keys li details summary::-webkit-details-marker{display:none}
 .st-chip{font-size:12px;border-radius:8px;padding:2px 7px;background:#0e1736;border:1px solid var(--line)}
@@ -314,6 +316,7 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
       '<div class="close"><div class="lbl">סיום</div><b>'+esc(s.close)+'</b></div>'+
       (s.tool?'<div><span class="lbl">אמצעי הדרכה</span> · '+esc(s.tool)+'</div>':'')+
       (s.trap?'<div class="trap"><b>זהירות:</b> '+s.trap+'</div>':'')+
+      (s.check&&s.check.length?'<details class="trap"><summary><b>⚠️ לבדוק בחומר העזר ('+s.check.length+')</b></summary><ul style="margin:6px 0 0;padding-inline-start:18px">'+s.check.map(function(c){return '<li>'+esc(c)+'</li>';}).join('')+'</ul><small>הנקודות האלה הושמטו מהכרטיס: נראה שבחומר יש טעות או סתירה. כדאי לבדוק מול חומר הקורס.</small></details>':'')+
       '<div class="row"><a class="btn" href="#train" data-train="'+esc(s.id)+'">✍️ לתרגל</a><button class="btn ghost" type="button" data-mark="ok">✅ ידעתי</button><button class="btn ghost" type="button" data-mark="todo">🔁 לחזור</button></div></article>';
   }
   function render(){

@@ -28,8 +28,39 @@ for (const [name, vp] of [['s24', { width: 360, height: 780 }], ['desktop', { wi
   ok(await page.locator('#skel180 div').count() === 4 && await page.locator('#skel400 div').count() === 5, name + ' : barres de budget');
   if (OUT) await page.screenshot({ path: `${OUT}/sadna-${name}-methode.png`, fullPage: true });
 
-  await page.click('.tabs a[data-v=cards]');
-  ok(await page.locator('.card').count() === 18, name + ' : 18 fiches');
+  await page.click('.tabs a[data-v=cards]'); await page.waitForSelector('.card');
+  // חומר עזר : par défaut, 24 fiches affichées, filtre par itinéraire, recherche, « להציג עוד », extrait d'origine
+  ok(await page.inputValue('#csrc') === 'ezer' && await page.locator('.card').count() === 24, name + ' : חומר עזר, 24 premières fiches');
+  const nRoutes = await page.locator('#croute option').count();
+  ok(nRoutes > 20, name + ' : ' + (nRoutes - 1) + ' itinéraires');
+  await page.selectOption('#croute', { index: 1 }); await page.waitForTimeout(150);
+  const inRoute = await page.locator('.card').count(); ok(inRoute > 0 && inRoute <= 24, name + ' : filtre itinéraire (' + inRoute + ')');
+  await page.selectOption('#croute', 'all'); await page.fill('#cq', 'מצדה'); await page.waitForTimeout(150);
+  ok((await page.locator('.card h3').allTextContents()).every(t => t.includes('מצדה')) && await page.locator('.card').count() >= 1, name + ' : recherche « מצדה »');
+  await page.click('.card .keys summary'); ok(await page.isVisible('.card .keys .ev'), name + ' : 📄 montre la phrase d’origine');
+  await page.click('.card [data-mark="todo"]'); await page.waitForTimeout(100);
+  ok(await page.locator('.card .st-chip.todo').count() === 1, name + ' : marqué « לחזור »');
+  await page.fill('#cq', ''); await page.click('.chip[data-f="todo"]'); await page.waitForTimeout(100);
+  ok(await page.locator('.card').count() === 1, name + ' : filtre « לחזור »');
+  await page.click('.chip[data-f="all"]'); await page.click('#cmore'); await page.waitForTimeout(100);
+  ok(await page.locator('.card').count() === 48, name + ' : « להציג עוד »');
+  if (OUT) await page.screenshot({ path: `${OUT}/sadna-${name}-ezer.png` });
+  // ⏱ 🔁 חזרה מרווחת
+  await page.click('.tabs a[data-v=review]'); await page.waitForSelector('#rshow');
+  ok(/לחזרה עכשיו/.test(await page.textContent('#rstat')), name + ' : compteur de révision');
+  await page.click('#rshow'); await page.waitForSelector('#rok');
+  const site1 = await page.textContent('.rc-site'); await page.click('#rok'); await page.waitForTimeout(100);
+  ok((await page.textContent('.rc-site')) !== site1, name + ' : « ידעתי » passe à la fiche suivante');
+  if (OUT) await page.screenshot({ path: `${OUT}/sadna-${name}-review.png` });
+  // ❓ חידון
+  await page.click('.tabs a[data-v=quiz]'); await page.click('#qstart'); await page.waitForSelector('.qopt');
+  ok(await page.locator('.qopt').count() === 4, name + ' : 4 réponses');
+  await page.click('.qopt >> nth=0'); await page.waitForSelector('#qnext');
+  ok(await page.locator('.qopt.right').count() === 1 && /״/.test(await page.textContent('#qexp')), name + ' : bonne réponse + phrase d’origine');
+  if (OUT) await page.screenshot({ path: `${OUT}/sadna-${name}-quiz.png` });
+  // כרטיסי הסדנה (18 fiches d'origine)
+  await page.click('.tabs a[data-v=cards]'); await page.selectOption('#csrc', 'sadna'); await page.waitForTimeout(150);
+  ok(await page.locator('.card').count() === 18, name + ' : 18 fiches de la סדנה');
   await page.click('.chip[data-f="400"]');
   ok(await page.locator('.card').count() === 8, name + ' : filtre 400 (8 sites longs)');
   await page.check('#hidek');
@@ -37,8 +68,8 @@ for (const [name, vp] of [['s24', { width: 360, height: 780 }], ['desktop', { wi
   ok(/blur/.test(blur), name + ' : mode révision floute les clés');
   if (OUT) await page.screenshot({ path: `${OUT}/sadna-${name}-fiches.png` });
 
-  await page.click('.chip[data-f="180"]');
-  await page.click('.card [data-train="herodion"]');
+  await page.click('.chip[data-f="180"]'); await page.waitForSelector('.card [data-train="herodion"]');
+  await page.click('.card [data-train="herodion"]'); await page.waitForSelector('#v-train:not([hidden])');
   ok(await page.isVisible('#v-train') && await page.inputValue('#tsite') === 'herodion', name + ' : « לתרגל » ouvre l’entraînement sur le site');
   ok((await page.textContent('#tprompt')).includes('תיאטרון'), name + ' : phrase de départ');
 

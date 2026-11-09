@@ -32,6 +32,14 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 9 novembre 2026 — « חומר עזר למבחן » dans l'atelier, le répertoire et un quiz (branche `claude/chomer-ezer`)
+- ✅ Source : document Word envoyé par Lionel (« חומר עזר למבחן — תקצירים לטבלה / נקודות הרחבה », ~125 p., 243 sites rangés par itinéraire). Pas dans le Drive du cours. **Texte intégral non versionné** (dépôt public, `.gitignore`) : seules des citations courtes entrent dans l'appli ; les tests vérifient les citations quand le texte est présent en local (`content/ezer/chomer-ezer.json`).
+- ✅ `tools/build-ezer.mjs` : `content/ezer/out/*.json` (fiche, faits, questions rédigés depuis le texte de chaque site) → `public/sadna/ezer.json`. Toute citation doit être **mot pour mot** dans le texte du site, sinon écartée (0 écart). 89 passages douteux du document (dates, attributions, contradictions) ont été **retirés des fiches** et s'affichent en « ⚠️ לבדוק » sur 71 fiches.
+- ✅ Atelier 180·400 : 240 fiches filtrables par itinéraire (36) + recherche + « להציג עוד », 📄 phrase d'origine sous chaque point clé, ✅ ידעתי / 🔁 לחזור ; onglet **🔁 חזרה** (révision espacée, boîtes 1·3·7·21 jours, `MDSadna.grade/dueList`) ; onglet **❓ חידון** (452 questions, preuve citée). Lien depuis l'accueil de מבחן חלק א׳.
+- ✅ Répertoire de « אתגר המבחן » : 215 faits (source `ezer`, citation exacte) ajoutés aux lieux existants du même nom ; corrections manuelles dans `content/ezer/repertoire-overrides.json`. 200 fiches sans lieu équivalent (le répertoire n'a que 5–19 lieux par région) : listées dans `content/ezer/report.json`.
+- ✅ Tests : `tests/ezer.test.mjs` (5), `tests/sadna-browser.mjs` étendu (S24 + ordinateur, 49 vérifications, 3 passages verts).
+- ⏳ Créer dans le répertoire les lieux manquants (il faut des coordonnées vérifiées).
+
 ### 8 novembre 2026 — Vérification de la PR #78 (4 modes) + mode Confort (branche `feat/modes-confort`)
 - ✅ **PR #78 vérifiée** (4 modes × 4 langues × S24 + ordinateur). Défauts trouvés et corrigés :
   - langue : le sélecteur restait **en hébreu** en français, anglais et russe (il lisait `mdl_lang`, l'accueil enregistre `mdl_mode_lang`) → suit maintenant la langue affichée (évènement `md-lang`) ;

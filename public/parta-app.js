@@ -62,6 +62,7 @@
         <p>שאלות אמריקאיות בנושאי הבחינה, עם הסבר וקטע מאומת ממסמכי הקורס אחרי כל תשובה. עד 10 שאלות בסבב.</p>
         <div class="stats"><span>📚 ${total} שאלות</span><span>✅ ${known} ידועות</span><span>🏆 ${st.points.toLocaleString('he-IL')} נק׳</span>${st.mistakes.length ? `<span>🔁 ${st.mistakes.length} לתיקון</span>` : ''}</div></section>
       <a class="tp rishui-link" href="#/rishui" style="margin-top:12px;text-decoration:none"><span class="e">📜</span><span style="flex:1;min-width:0"><b>חדש: ממבחני רישוי</b><small>שאלות אמיתיות ממבחני משרד התיירות, 2000–2024, לפי נושא או לפי מבחן</small></span><span aria-hidden="true">⬅️</span></a>
+      <a class="tp rishui-link" href="sadna.html#quiz" style="margin-top:8px;text-decoration:none"><span class="e">📘</span><span style="flex:1;min-width:0"><b>חידון חומר העזר</b><small>שאלות על האתרים מתוך ״חומר עזר למבחן״, עם המשפט המקורי</small></span><span aria-hidden="true">⬅️</span></a>
       <section class="card"><h2>⚡ רמת קושי</h2>
         <div class="levels" role="group">${[[0, '🎲 הכול'], [1, '🌱 קל'], [2, '⭐ בינוני'], [3, '🔥 קשה']].map(([l, t]) => `<button data-level="${l}" aria-pressed="${pref.level === l}">${t}</button>`).join('')}</div></section>
       <section class="card"><h2>📚 נושא</h2>
