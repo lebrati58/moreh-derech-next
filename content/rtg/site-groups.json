@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-09",
+  "checkedAt": "2026-11-10",
   "scope": "Ten initial guide sites and explicitly associated brochure groups. Not an exhaustive inventory of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "sites": [
@@ -286,7 +286,7 @@
           "driveCopyIdentityChecked": true
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 31.814626487108,
@@ -303,9 +303,33 @@
       },
       "officialSite": "https://www.parks.org.il/reserve-park/gay-2/",
       "practicalNotice": {
-        "text": "הנקודה מציינת את מבנה החאן, לא את שער הכניסה או החניה. באתר הרשמי מפורטת ההגעה דרך כביש השירות המתחיל בתחנת פז מסילת ציון. יש לבדוק את ההנחיות ואת ההזמנה העדכנית לפני נסיעה.",
+        "text": "הנקודה מציינת את מבנה החאן, לא את שער הכניסה או החניה. באתר הרשמי מפורטת ההגעה דרך כביש השירות המתחיל בתחנת פז מסילת ציון. יש לבדוק את ההנחיות ואת ההזמנה העדכנית לפני נסיעה. לפי המדריך הרשמי (עמודי PDF 2, 4): מבוא וסיכום מחוץ למבנה בלבד; אין לשלב הדרכה במהלך המיצג. המערות סגורות לביקור בשל סכנת התמוטטות.",
         "source": "https://www.parks.org.il/reserve-park/gay-2/",
-        "checkedAt": "2026-11-09"
+        "checkedAt": "2026-11-09",
+        "guideEvidence": {
+          "source": "https://www.parks.org.il/wp-content/uploads/2025/10/מדריך-למדריך-חאן-שער-הגיא.pdf",
+          "pages": [
+            2,
+            4
+          ],
+          "pageNumbering": "pdf_file_pages",
+          "checkedAt": "2026-11-10"
+        }
+      },
+      "reviewedExtract": true,
+      "contentReview": {
+        "scope": "five_facts_two_outdoor_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-10",
+        "pages": [
+          2,
+          4,
+          5,
+          6,
+          17
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו חמישה נקודות ידע, שתי תחנות חוץ ושלוש שאלות קיימות בלבד בעמודי PDF 2, 4, 5, 6, 17. המבוא והסיכום מחוץ למבנה; אין הדרכה במהלך המיצג ואין כניסה למערות. עותק המדריך בדרייב תואם בתוכן הנבחר; תמליל סיפור הדרך שנבדק אינו מאמת את התשובות באופן עצמאי. יתר התוכן והמסלול לא נבדקו."
       }
     },
     {
@@ -465,7 +489,7 @@
           }
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 32.11325319,
@@ -490,6 +514,21 @@
         "text": "הסמן מציין את תחנת טחנת אל־מיר בתוך מתחם מקורות הירקון, לא את תל אפק ולא שער כניסה. שני המתחמים נפרדים; יש לבדוק את ההגעה וההרשמה בעמוד רט״ג של מתחם מקורות הירקון. אין להסיק מהסמן מסלול רציף או פתוח.",
         "source": "https://www.parks.org.il/reserve-park/yarkon-2/",
         "checkedAt": "2026-11-09"
+      },
+      "reviewedExtract": true,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-10",
+        "pages": [
+          21,
+          24,
+          26,
+          27,
+          38
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו חמישה נקודות ידע, שלוש תחנות ושלוש שאלות קיימות בלבד בעמודי PDF 21, 24, 26, 27, 38. הקטעים עוסקים בנופר, בהשבת לבנון הירקון ובהימנעות מהאכלת דגים; לא נבדקו נתוני ספיקה עכשוויים. חוברת הפעילות בדרייב אינה מדריך זה והטקסט שנשלף ממנה אינו קריא; תמליל קורס שנבדק מזכיר את הירקון אך אינו מאמת את התשובות. יתר התוכן והמסלול לא נבדקו."
       }
     },
     {

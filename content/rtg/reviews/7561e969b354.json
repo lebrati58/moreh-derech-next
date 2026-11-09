@@ -1,0 +1,138 @@
+{
+  "id": "7561e969b354",
+  "title": "מדריך למדריך חאן שער הגיא",
+  "site": "חאן שער הגיא – מרכז מורשת למבקיעי הדרך לירושלים",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-10",
+    "pages": [
+      2,
+      4,
+      5,
+      6,
+      17
+    ],
+    "pageNumbering": "pdf_file_pages"
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "guiding",
+      "he": "הביקור במרכז המורשת רציף ומתוזמן; לפי המדריך, מבוא וסיכום של מדריך הקבוצה נערכים מחוץ למבנה, ואין משלבים הדרכה בתוך המיצג.",
+      "page": 2,
+      "quote": "מחוץ למבנה",
+      "sourceItemIndex": 2,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "במדריך נמנות שלוש השיירות שכשלו בסוף מרץ 1948: יחיעם, נבי דניאל וחולדה.",
+      "page": 5,
+      "quote": "שיירת יחיעם",
+      "sourceItemIndex": 14,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "שער הגיא מחבר את השפלה אל הרי ירושלים. הדרך נעשית צרה ותלולה, ולכן שליטה במעבר אפשרה שליטה בתנועה אל העיר.",
+      "page": 6,
+      "quote": "שערה החיצוני של ירושלים",
+      "sourceItemIndex": 20,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "תיאורו של ויקטור גרן ממחיש את יתרון השולט במיצר: גם כוח קטן יכול לחסום בו צבא.",
+      "page": 6,
+      "quote": "קומץ אנשים",
+      "sourceItemIndex": 23,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "guiding",
+      "he": "בעיצוב מרכז המורשת, פס הפלדה מדמה את הדרך והאור מסמל חיים ואספקה הממשיכים לירושלים.",
+      "page": 17,
+      "quote": "הפס מהווה דימוי לדרך",
+      "sourceItemIndex": 52,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "n": 2,
+      "he": "חצר החאן",
+      "page": 4,
+      "sourceStationIndex": 1,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 9,
+      "he": "החורשה ושיירת הרכבים",
+      "page": 5,
+      "sourceStationIndex": 8,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "אילו שלוש שיירות נפלו בסוף מרץ 1948?",
+      "expected": [
+        "יחיעם",
+        "נבי דניאל",
+        "חולדה"
+      ],
+      "accept": [],
+      "refs": [
+        5
+      ],
+      "sourceQuestionIndex": 1,
+      "evidenceItems": [
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 2,
+      "q": "מדוע הייתה לשער הגיא חשיבות אסטרטגית לאורך הדורות?",
+      "expected": [
+        "שער הגיא הוא שערה החיצוני של ירושלים – המעבר מהשפלה להר",
+        "הדרך הופכת צרה ותלולה – מיצר",
+        "מי ששלט במעבר שלט בתנועה לירושלים"
+      ],
+      "accept": [],
+      "refs": [
+        6
+      ],
+      "sourceQuestionIndex": 4,
+      "evidenceItems": [
+        2,
+        3
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "מה מסמל פס הפלדה והאור שמלווה את הביקור?",
+      "expected": [
+        "הפס – הדרך",
+        "האור – החיים והאספקה לירושלים"
+      ],
+      "accept": [],
+      "refs": [
+        17
+      ],
+      "sourceQuestionIndex": 3,
+      "evidenceItems": [
+        4
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}

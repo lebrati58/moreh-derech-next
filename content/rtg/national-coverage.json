@@ -3,13 +3,13 @@
   "reviewedCoverage": {
     "groups": 17,
     "primaryGuides": 10,
-    "primaryGuidesSelectedPassagesChecked": 8,
-    "primaryGuidesExtractionToReview": 2,
+    "primaryGuidesSelectedPassagesChecked": 10,
+    "primaryGuidesExtractionToReview": 0,
     "associatedDocuments": 28,
     "sourceCheckedCoordinates": 17,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 14,
+    "selectedPassagesChecked": 16,
     "associatedDocumentsByType": {
       "guide": 10,
       "brochure": 15,
@@ -63,7 +63,7 @@
         "groups": 2,
         "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "judean_desert",
@@ -127,7 +127,7 @@
         "groups": 2,
         "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "negev_south",
