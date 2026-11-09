@@ -181,7 +181,7 @@
           }
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 32.19528,
@@ -198,6 +198,21 @@
         "source": "https://www.parks.org.il/reserve-park/גן-לאומי-אפולוניה-תל-ארשף/",
         "checkedAt": "2026-11-08",
         "note": "בדף רט״ג נכתב כי חיפוש לפי שם האתר בלבד עלול להוביל לחולות; יש לחפש את החניה."
+      },
+      "reviewedExtract": true,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-09",
+        "pages": [
+          5,
+          12,
+          23,
+          34,
+          36
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "הבדיקה מוגבלת לחמש הנקודות, לשלוש התחנות ולשלוש השאלות המוצגות. ההפניות הן לעמודי קובץ ה־PDF. תנאי הגישה והפתיחה והמשך החילוץ לא נבדקו כאן; לפני ביקור יש לעיין בעדכוני רט״ג."
       }
     },
     {
@@ -481,7 +496,7 @@
           }
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 31.565,
@@ -492,7 +507,25 @@
         "checkedAt": "2026-11-08",
         "purpose": "site_reference_not_entrance"
       },
-      "officialSite": "https://www.parks.org.il/reserve-park/lachish/"
+      "officialSite": "https://www.parks.org.il/reserve-park/lachish/",
+      "reviewedExtract": true,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-09",
+        "pages": [
+          5,
+          6,
+          7,
+          18,
+          25,
+          26,
+          27,
+          30
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "הבדיקה מוגבלת לבחירה המוצגת ולהפניות לעמודי קובץ ה־PDF. כיסאות המלכים הם מיצב מודרני. פרשנות הממצא בשער מוצגת כמחלוקת, לא כהכרעה. מקדשי החפיר הכנעניים שנזכרו בקורס הם נושא נפרד ממקדש השער של תקופת הברזל."
+      }
     },
     {
       "id": "tel-dan",

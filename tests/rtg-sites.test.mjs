@@ -33,7 +33,7 @@ test('north and south expansions distinguish Avdat from Ein Avdat and remove the
  assert.ok(!avdat.sources.some(s=>s.id==='393d6fabdc5e'));
  assert.ok(!docs.get('08d4706c710e').ln);assert.equal(docs.get('989314676c9f').rg,'הנגב הדרומי');
  assert.deepEqual(data.coverage.associatedDocumentsByType,{guide:10,brochure:15,map:3});
- assert.equal(data.coverage.selectedPassagesChecked,7);
+ assert.equal(data.coverage.selectedPassagesChecked,9);
 });
 test('new summaries and answers carry bounded page evidence, without a whole-document verification claim',()=>{
  for(const id of ['08d4706c710e','989314676c9f','04fbdfd52b59','11e950d9cf0b','9b6c301b71c8','159ca3f67084']){
@@ -87,11 +87,11 @@ test('four guide reference points distinguish beach, khan and internal station i
  const beach=byId('beit-yanai').coordinate;assert.deepEqual([beach.lat,beach.lon],[32.3873,34.86428]);assert.equal(beach.sourceLocator.scope,'coordinate_only_not_pedagogical_source');assert.equal(beach.sourceLocator.page,6);assert.equal(beach.sourceLocator.row,8);
  const mill=byId('yarkon-sources').coordinate;assert.equal(mill.referenceKind,'station');assert.equal(mill.source,'https://amudanan.co.il/w/P913410');assert.deepEqual(mill.identityDocument,{id:'40132a61a194',page:19,section:'תחנה 4 — טחנת הקמח אל־מיר'});
  assert.match(byId('yarkon-sources').practicalNotice.text,/לא את תל אפק/);assert.equal(byId('shaar-hagai').regionStatus,'provisional');
- assert.equal(data.sites.filter(s=>s.guideId&&s.contentStatus==='extraction_to_review').length,9);
+ assert.equal(data.sites.filter(s=>s.guideId&&s.contentStatus==='extraction_to_review').length,7);
 });
 test('regional map totals do not turn geographic completion into national content coverage',()=>{
  assert.equal(data.coverage.sourceCheckedCoordinates,17);assert.equal(data.coverage.missingCoordinates,0);assert.equal(data.coverage.regions.find(r=>r.id==='coast').sourceCheckedCoordinates,4);
  assert.equal(data.coverage.regions.find(r=>r.id==='central').sourceCheckedCoordinates,2);assert.equal(data.coverage.regions.find(r=>r.id==='jerusalem_hills').sourceCheckedCoordinates,2);
- assert.equal(data.coverage.selectedPassagesChecked,7);assert.equal(data.coverage.fullyAuditedContent,0);assert.equal(data.coverage.regions.filter(r=>r.groups===0).length,6);
+ assert.equal(data.coverage.selectedPassagesChecked,9);assert.equal(data.coverage.fullyAuditedContent,0);assert.equal(data.coverage.regions.filter(r=>r.groups===0).length,6);
  const corr=read('content/rtg/corrections.json').documents;for(const id of ['694d7c79feee','4e67c0fdb83d','40132a61a194']){assert.equal(docs.get(id).rg,corr[id].regionVerified);assert.equal(corr[id].regionEvidence.scope,'region_only');}
 });

@@ -1,0 +1,140 @@
+{
+  "id": "84ac7ba1e956",
+  "title": "מדריך למדריך גן לאומי אפולוניה",
+  "site": "גן לאומי אפולוניה",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-09",
+    "pages": [
+      5,
+      12,
+      23,
+      34,
+      36
+    ],
+    "pageNumbering": "pdf_file_pages"
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "אפולוניה שוכנת על מצוק כורכר שגובהו מגיע לכ־30 מטר מעל הים.",
+      "page": 5,
+      "quote": "30",
+      "sourceItemIndex": 2,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "לפי המדריך, הפיניקים קראו למקום ארשוף על שם האל רשף.",
+      "page": 23,
+      "quote": "רשף",
+      "sourceItemIndex": 28,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "archaeology",
+      "he": "המדריך מציין את שנת 1241 כשנת בניית המבצר הצלבני.",
+      "page": 34,
+      "quote": "1241",
+      "sourceItemIndex": 44,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "archaeology",
+      "he": "בחדר המטמון נחשף אוצר ובו 108 מטבעות זהב.",
+      "page": 36,
+      "quote": "108",
+      "sourceItemIndex": 49,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "ייצור זכוכית גולמית היה ענף כלכלי מרכזי בעיר הביזנטית, שהתאימה לכך בשל חול הים שבסביבתה.",
+      "page": 12,
+      "quote": "הביזנטית",
+      "sourceItemIndex": 10,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "n": 1,
+      "he": "כבשן הזכוכית",
+      "page": 12,
+      "sourceStationIndex": 0,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 5,
+      "he": "הווילה הרומית",
+      "page": 23,
+      "sourceStationIndex": 4,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 9,
+      "he": "תצפית על המבצר ממרפסת הגשר",
+      "page": 34,
+      "sourceStationIndex": 8,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "באיזו שנה נבנה המבצר הצלבני באפולוניה?",
+      "expected": [
+        "1241"
+      ],
+      "accept": [],
+      "refs": [
+        34
+      ],
+      "sourceQuestionIndex": 0,
+      "evidenceItems": [
+        2
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "כמה מטבעות זהב נמצאו במטמון שבחדר המטמון?",
+      "expected": [
+        "108"
+      ],
+      "accept": [],
+      "refs": [
+        36
+      ],
+      "sourceQuestionIndex": 1,
+      "evidenceItems": [
+        3
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "על שם איזה אל נקרא היישוב בידי הפיניקים, ומה היה שמו?",
+      "expected": [
+        "רשף",
+        "ארשוף"
+      ],
+      "accept": [],
+      "refs": [
+        23
+      ],
+      "sourceQuestionIndex": 2,
+      "evidenceItems": [
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}

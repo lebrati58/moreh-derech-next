@@ -9,7 +9,7 @@ test('Ein Hanya keeps the full extraction and publishes a separately bounded, ma
  assert.equal(review.items.length,5);assert.equal(review.questions.length,3);assert.equal(review.stations.length,3);assert.deepEqual(read('public/rtg/reviews/'+id+'.json'),review);
  const s=read('public/rtg/sites.json'),g=s.sites.find(g=>g.id==='ein-hanya');assert.equal(g.reviewedExtract,true);assert.equal(g.fullyAudited,false);assert.equal(g.contentStatus,'selected_passages_checked');
  assert.equal(g.contentReview.pageNumbering,'pdf_file_pages');assert.deepEqual(g.contentReview.pages,review.review.pages);
- assert.equal(s.coverage.primaryGuidesSelectedPassagesChecked,1);assert.equal(s.coverage.primaryGuidesExtractionToReview,9);assert.equal(s.coverage.regions.find(r=>r.id==='jerusalem_hills').selectedPassagesChecked,1);
+ assert.equal(s.coverage.primaryGuidesSelectedPassagesChecked,3);assert.equal(s.coverage.primaryGuidesExtractionToReview,7);assert.equal(s.coverage.regions.find(r=>r.id==='jerusalem_hills').selectedPassagesChecked,1);
 });
 test('review validation rejects invented or duplicate original question identities and altered expected answers',()=>{
  for(const mutate of [r=>r.questions[0].sourceQuestionIndex=90,r=>r.questions[1].sourceQuestionIndex=0,r=>r.questions[0].expected=['invented answer'],r=>r.questions[0].q='invented question',r=>r.questions[0].level=3]){const r=structuredClone(review);mutate(r);assert.throws(()=>validateSelectedReview(r,original,18),/question identity/);}
@@ -48,4 +48,11 @@ test('review quiz retains original question IDs, shared progress scope and selec
  assert.deepEqual(Array.from(app.saved[0].answerDetails,x=>x.questionId),['q2','q0','q1']);
  app.node('#again').handlers.click();await new Promise(resolve=>setImmediate(resolve));assert.ok(app.node('#view').innerHTML.includes('קטעים נבחרים שנבדקו בלבד'));
  const legacy=await reader('#/q/'+id);assert.ok(legacy.node('#view').innerHTML.includes('10 שאלות'));assert.ok(!legacy.node('#view').innerHTML.includes('קטעים נבחרים שנבדקו בלבד'));
+});
+
+for(const [id,group,indices] of [['84ac7ba1e956','apollonia',[0,1,2]],['359f22ca4c1d','lachish',[2,4,5]]])test(group+' selected review retains original questions, stations, levels and page evidence',()=>{
+ const r=read('content/rtg/reviews/'+id+'.json'),o=read('content/rtg/facts/'+id+'.json'),data=read('public/rtg/sites.json'),s=data.sites.find(s=>s.id===group),source=s.sources.find(x=>x.id===id);
+ assert.equal(validateSelectedReview(r,o,source.pages),true);assert.equal(o.items.length,60);assert.equal(o.questions.length,10);assert.ok(!o.review);assert.equal(r.items.length,5);assert.equal(r.stations.length,3);assert.equal(r.questions.length,3);
+ assert.deepEqual(r.questions.map(q=>q.sourceQuestionIndex),indices);assert.deepEqual(read('public/rtg/reviews/'+id+'.json'),r);assert.equal(s.reviewedExtract,true);assert.equal(s.fullyAudited,false);assert.deepEqual(s.contentReview.pages,r.review.pages);
+ assert.equal(data.coverage.groups,17);assert.equal(data.coverage.selectedPassagesChecked,9);assert.equal(data.coverage.fullyAuditedContent,0);assert.equal(data.coverage.primaryGuidesSelectedPassagesChecked,3);
 });
