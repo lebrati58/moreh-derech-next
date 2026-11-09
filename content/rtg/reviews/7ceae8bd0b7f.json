@@ -1,0 +1,147 @@
+{
+  "id": "7ceae8bd0b7f",
+  "title": "מדריך למדריך - גן לאומי מגדל צדק",
+  "site": "גן לאומי מגדל צדק",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-09",
+    "pages": [
+      4,
+      8,
+      9,
+      10,
+      11
+    ],
+    "pageNumbering": "pdf_file_pages"
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "מיקומה של המצודה קשור למעבר שבין ביצות הירקון להרי השומרון, על דרך הים ההיסטורית.",
+      "page": 4,
+      "quote": "דרך הים",
+      "sourceItemIndex": 3,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "המדריך מסביר שביצות הירקון אילצו את העוברים בדרך להתרחק מהחוף ולעבור במעבר אפק.",
+      "page": 8,
+      "quote": "במעבר אפק",
+      "sourceItemIndex": 12,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "הגבעה ששלטה על המעבר שימשה נקודה אסטרטגית להגנה, להתקפה ולגביית מיסים.",
+      "page": 8,
+      "quote": "גביית מיסים",
+      "sourceItemIndex": 13,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "archaeology",
+      "he": "במדריך מובחנים שני שלבי בנייה: אבנים גדולות וכהות מהמצודה הצלבנית בראשית המאה ה־12, וקטנות ובהירות מבית האחוזה העות׳מאני במאה ה־19 שנבנה על שרידיה.",
+      "page": 10,
+      "quote": "מיראבל",
+      "sourceItemIndex": 22,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "לפי המדריך, הצבא האיובי כבש את המצודה בשנת 1187.",
+      "page": 11,
+      "quote": "1187",
+      "sourceItemIndex": 24,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "n": 3,
+      "he": "דרך המצודה – בפיצול השביל",
+      "page": 8,
+      "sourceStationIndex": 2,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 7,
+      "he": "דרך המצודה – לפני הכניסה למצודה",
+      "page": 9,
+      "sourceStationIndex": 6,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 8,
+      "he": "המצודה – בחזית מול הכניסה למצודה",
+      "page": 11,
+      "sourceStationIndex": 7,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "באיזו שנה כבש הצבא האיובי את המצודה הצלבנית?",
+      "expected": [
+        "1187"
+      ],
+      "accept": [],
+      "refs": [
+        11
+      ],
+      "sourceQuestionIndex": 0,
+      "evidenceItems": [
+        4
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 2,
+      "q": "כיצד אפשר להבחין במצודה בין שני שלבי הבנייה העיקריים, ולאילו תקופות הם שייכים?",
+      "expected": [
+        "אבנים גדולות וכהות – צלבני, המאה ה-12 (מיראבל)",
+        "אבנים קטנות ובהירות – עות׳מאני, המאה ה-19",
+        "בית אחוזה של השייח׳ים נבנה על שרידי המצודה"
+      ],
+      "accept": [],
+      "refs": [
+        9,
+        10
+      ],
+      "sourceQuestionIndex": 4,
+      "evidenceItems": [
+        3
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 2,
+      "q": "מדוע עברה דרך הים דווקא כאן, ומה משמעות הדבר לגבעה שעליה המצודה?",
+      "expected": [
+        "ביצות הירקון חסמו מעבר נוח לאורך החוף",
+        "המעבר במעבר אפק, למרגלות הרי השומרון",
+        "הגבעה נקודה אסטרטגית להגנה, התקפה וגביית מיסים"
+      ],
+      "accept": [],
+      "refs": [
+        4,
+        8
+      ],
+      "sourceQuestionIndex": 5,
+      "evidenceItems": [
+        0,
+        1,
+        2
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}

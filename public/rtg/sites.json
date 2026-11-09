@@ -6,13 +6,13 @@
   "coverage": {
     "groups": 17,
     "primaryGuides": 10,
-    "primaryGuidesSelectedPassagesChecked": 3,
-    "primaryGuidesExtractionToReview": 7,
+    "primaryGuidesSelectedPassagesChecked": 4,
+    "primaryGuidesExtractionToReview": 6,
     "associatedDocuments": 28,
     "sourceCheckedCoordinates": 17,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 9,
+    "selectedPassagesChecked": 10,
     "associatedDocumentsByType": {
       "guide": 10,
       "brochure": 15,
@@ -130,7 +130,7 @@
         "groups": 2,
         "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "negev_south",
@@ -196,7 +196,7 @@
           "structured": false
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 32.08083,
@@ -208,6 +208,21 @@
         "purpose": "site_reference_not_entrance"
       },
       "officialSite": "https://www.parks.org.il/reserve-park/migdal-tzedek/",
+      "reviewedExtract": true,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-09",
+        "pages": [
+          4,
+          8,
+          9,
+          10,
+          11
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו רק חמש הנקודות, שלוש התחנות ושלוש השאלות המוצגות מול עמודי קובץ ה־PDF. לא נבדקו תנאי הגישה והפתיחה כיום. הקורס שנבדק ב־Drive מזכיר את תל אפק בתקופות קדומות; אין בכך אימות לתולדות מצודת מגדל צדק. יתר החילוץ דורש בדיקה."
+      },
       "primaryDocumentId": "7ceae8bd0b7f"
     },
     {
