@@ -3,3 +3,6 @@ node_modules/
 *.log
 .DS_Store
 screens-*/
+
+# Texte intégral du document « חומר עזר למבחן » (non publié : seules les citations courtes entrent dans l’appli)
+content/ezer/chomer-ezer.json

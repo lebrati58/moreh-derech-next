@@ -34,6 +34,25 @@
     return { state: 'low', left: lim - n, he: 'נשארו ' + (lim - n) + ' מילים.' };
   }
 
+
+  // Révision espacée des fiches (boîtes de Leitner) : « ידעתי » fait monter d'une boîte, « לחזור » renvoie à la boîte 0.
+  // État par fiche : { b: boîte 0–4, due: horodatage de la prochaine révision }. Intervalles en jours.
+  var BOX_DAYS = [0, 1, 3, 7, 21], DAY = 864e5;
+  function grade(st, ok, now) {
+    var b = st && Number.isInteger(st.b) ? st.b : 0;
+    b = ok ? Math.min(BOX_DAYS.length - 1, b + 1) : 0;
+    return { b: b, due: now + BOX_DAYS[b] * DAY, seen: (st && st.seen || 0) + 1 };
+  }
+  // Ordre de révision : d'abord les fiches à revoir dont l'échéance est passée (boîte la plus basse en premier),
+  // puis les fiches jamais vues, dans l'ordre donné. Les fiches pas encore dues sont exclues.
+  function dueList(ids, states, now) {
+    var due = [], fresh = [];
+    ids.forEach(function (id) { var st = states[id]; if (!st) fresh.push(id); else if (st.due <= now) due.push(id); });
+    due.sort(function (a, b) { return states[a].b - states[b].b || states[a].due - states[b].due; });
+    return due.concat(fresh);
+  }
+  function mastered(st) { return !!st && st.b >= 3; }
+
   var SITES = [
 {id:"herodion",he:"הרודיון · התיאטרון",sub:"תא המלכות בתיאטרון",t:"180",reg:"יהודה",per:"הורדוס, המאה ה־1 לפנה״ס",where:"ביציאה ממחילות המורדים, באמצע המדרון",
  hook:"יצאנו ממחילות המורדים אל תיאטרון קטן, שנבנה למשפחת המלוכה בלבד.",
@@ -127,7 +146,8 @@
  trap:"שופטים ז׳: <b>22 אלף חוזרים הביתה</b>, 10 אלף נשארים, ואז 300.",tool:"תנ״ך, שופטים ו׳–ח׳"}
 ];
 
-  var api = { PLAN: PLAN, MINUTES: MINUTES, CHECKS: CHECKS, SITES: SITES, checks: checks, wordCount: wordCount, wordState: wordState };
+  var api = { PLAN: PLAN, MINUTES: MINUTES, CHECKS: CHECKS, SITES: SITES, checks: checks, wordCount: wordCount, wordState: wordState,
+    BOX_DAYS: BOX_DAYS, grade: grade, dueList: dueList, mastered: mastered };
   if (typeof module === 'object' && module.exports) module.exports = api;
   root.MDSadna = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

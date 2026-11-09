@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1230">
-<meta name="description" content="סדנת 180 · 400 — שיטת הכתיבה של יחידות ההדרכה, משפטי מפתח, כרטיסי אתרים לחזרה ותרגול עם מונה מילים.">
+<meta name="description" content="סדנת 180 · 400 — שיטת הכתיבה של יחידות ההדרכה, משפטי מפתח, כרטיסי אתרים מחומר העזר, חזרה מרווחת, חידון ותרגול עם מונה מילים.">
 <title>✍️ סדנת 180 · 400 — Moreh Derech NEXT</title>
 <script src="comfort.js"></script>
 <link rel="icon" href="assets/moreh-derech-next-driver.webp" type="image/webp">
@@ -88,6 +88,14 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
 .checks li{display:flex;gap:8px;align-items:center;font-size:14px;background:#0e1736;border:1px solid var(--line);border-radius:12px;padding:7px 10px}
 .checks .st{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center;font-size:12px}
 .checks li.ok .st{background:var(--ok);border-color:var(--ok)}.checks li.ok .st::after{content:"✓";color:#fff}
+.ev{margin:3px 0 0;font-size:12.5px;color:var(--soft);border-inline-start:2px solid var(--line);padding-inline-start:8px}
+.keys li details summary{cursor:pointer;list-style:none;display:inline}.keys li details summary::-webkit-details-marker{display:none}
+.st-chip{font-size:12px;border-radius:8px;padding:2px 7px;background:#0e1736;border:1px solid var(--line)}
+.st-chip.ok{border-color:var(--ok);color:#9ff0cf}.st-chip.todo{border-color:var(--gold2);color:var(--gold)}
+.card .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rc-site{font-size:22px;font-weight:900;margin:0}.rc-hook{font-size:17px;font-weight:700;margin:6px 0}
+.qopt{display:block;width:100%;text-align:right;min-height:48px;margin:6px 0;padding:10px 12px;border-radius:13px;background:#0e1736;border:1px solid var(--line);font-size:16px}
+.qopt.right{background:#0f4c3a;border-color:var(--ok)}.qopt.wrong{background:var(--redbg);border-color:var(--red)}
 .foot{font-size:12.5px;color:var(--soft);margin-top:18px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -105,6 +113,8 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
     <a href="#method" data-v="method">📐 השיטה</a>
     <a href="#phrases" data-v="phrases">💬 משפטי מפתח</a>
     <a href="#cards" data-v="cards">🗂️ כרטיסי אתרים</a>
+    <a href="#review" data-v="review">🔁 חזרה</a>
+    <a href="#quiz" data-v="quiz">❓ חידון</a>
     <a href="#train" data-v="train">⏱️ תרגול</a>
   </nav>
 
@@ -181,14 +191,42 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
   </section>
 
   <section id="v-cards" hidden>
-    <div class="filters" id="filters">
-      <button class="chip" aria-pressed="true" data-f="all">הכול</button>
-      <button class="chip" aria-pressed="false" data-f="180">180</button>
-      <button class="chip" aria-pressed="false" data-f="400">400</button>
-      <label class="sw"><input type="checkbox" id="hidek"> מצב חזרה</label>
+    <div class="panel" style="display:grid;gap:8px">
+      <div class="bar">
+        <select id="csrc" aria-label="מקור"><option value="ezer">📘 חומר עזר למבחן</option><option value="sadna">✍️ כרטיסי הסדנה</option><option value="all">הכול</option></select>
+        <select id="croute" aria-label="מסלול"></select>
+      </div>
+      <input id="cq" type="search" placeholder="🔎 חיפוש אתר…" aria-label="חיפוש אתר" style="min-height:44px;border-radius:12px;background:#0e1736;border:1px solid var(--line);padding:6px 12px;font-size:15px">
+      <div class="filters" id="filters" style="margin-top:0">
+        <button class="chip" aria-pressed="true" data-f="all">הכול</button>
+        <button class="chip" aria-pressed="false" data-f="180">180</button>
+        <button class="chip" aria-pressed="false" data-f="400">400</button>
+        <button class="chip" aria-pressed="false" data-f="todo">🔁 לחזור</button>
+        <label class="sw"><input type="checkbox" id="hidek"> מצב חזרה</label>
+      </div>
+      <p class="muted" id="ccount" style="margin:0"></p>
     </div>
-    <p class="muted">במצב חזרה נקודות המפתח מטושטשות: אמרו אותן בעל פה, ואז הקישו על הכרטיס לבדיקה.</p>
+    <p class="muted">במצב חזרה נקודות המפתח מטושטשות: אמרו אותן בעל פה, ואז הקישו על הכרטיס לבדיקה. 📄 מציג את המשפט המקורי מחומר העזר.</p>
     <div class="cards" id="cardsBox"></div>
+    <div style="display:flex;justify-content:center;margin-top:12px"><button class="btn ghost" id="cmore" type="button" hidden>להציג עוד</button></div>
+  </section>
+
+  <section id="v-review" hidden>
+    <div class="panel">
+      <h2>🔁 חזרה מרווחת</h2>
+      <p class="muted">רואים את שם האתר ואת הפתיחה, אומרים בעל פה את נקודות המפתח, ואז בודקים. ״ידעתי״ — הכרטיס יחזור בעוד 1, 3, 7 ואז 21 יום. ״לחזור״ — הוא יחזור עוד היום.</p>
+      <div class="bar"><select id="rroute" aria-label="מסלול"></select><span class="muted" id="rstat"></span></div>
+    </div>
+    <div class="panel" id="rcard"></div>
+  </section>
+
+  <section id="v-quiz" hidden>
+    <div class="panel">
+      <h2>❓ חידון אתרים</h2>
+      <p class="muted">שאלות מתוך חומר העזר. אחרי כל תשובה מוצג המשפט המקורי שממנו נלקחה.</p>
+      <div class="bar"><select id="qroute" aria-label="מסלול"></select><button class="btn" id="qstart" type="button">▶ 10 שאלות</button><span class="muted" id="qscore"></span></div>
+    </div>
+    <div class="panel" id="qbox" hidden></div>
   </section>
 
   <section id="v-train" hidden>
@@ -213,7 +251,7 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
     </div>
   </section>
   </main>
-  <p class="foot">מקורות: קטעי הכתיבה של חברי הקורס, ושיעורים 23 ו־26 של בני פרנקל (תיקיית ״קטעי כתיבה קצרים וארוכים״). סעיף ״זהירות״ מסמן טעויות שנמצאו בקטעים אלה.</p>
+  <p class="foot">מקורות: קטעי הכתיבה של חברי הקורס, ושיעורים 23 ו־26 של בני פרנקל (תיקיית ״קטעי כתיבה קצרים וארוכים״); ״חומר עזר למבחן — תקצירים לטבלה / נקודות הרחבה״ (כל נקודה מלווה במשפט המקורי). סעיף ״זהירות״ מסמן טעויות שנמצאו בקטעים אלה.</p>
 </div>
 
 <script src="sadna/sadna-data.js"></script>
@@ -229,49 +267,139 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
   function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
 
   // ---- onglets (ancre, le bouton retour Android fonctionne) ----
-  var VIEWS=['method','phrases','cards','train'];
+  var VIEWS=['method','phrases','cards','review','quiz','train'];
   function route(){
     var v=(location.hash||'').replace('#','');
     if(VIEWS.indexOf(v)<0)v='method';
     VIEWS.forEach(function(x){document.getElementById('v-'+x).hidden=x!==v;});
     document.querySelectorAll('.tabs a').forEach(function(a){if(a.dataset.v===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+    if(v==='review')showReview();
   }
   window.addEventListener('hashchange',function(){route();window.scrollTo(0,0);});
-  route();
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function jget(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}}
+  function jset(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+
+  // ---- données : כרטיסי הסדנה (18) + חומר עזר (chargé à part) ----
+  var EZ={sites:[],quiz:[],routes:[]};
+  var ALL=S.map(function(s){return Object.assign({src:'sadna',route:'',keys2:s.keys.map(function(k){return{he:k};})},s);});
+  var REV=jget('mdl_sadna_review',{});
+  function byId(id){return ALL.find(function(x){return x.id===id;});}
+  function routeOpts(withAll){return (withAll?'<option value="all">🗺️ כל המסלולים</option>':'')+EZ.routes.map(function(r){return '<option value="'+esc(r.id)+'">'+esc(r.he)+' ('+r.n+')</option>';}).join('');}
 
   // ---- כרטיסי אתרים ----
-  var box=document.getElementById('cardsBox'), filt='all';
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function render(){
-    box.innerHTML=S.filter(function(s){return filt==='all'||s.t===filt;}).map(function(s){
-      return '<article class="card t'+s.t+'">'+
-        '<div class="head"><div><h3>'+esc(s.he)+'</h3><div class="sub">'+esc(s.sub)+'</div></div><span class="badge b'+s.t+'">'+s.t+' מילים</span></div>'+
-        '<div class="meta"><span>'+esc(s.reg)+'</span><span>'+esc(s.per)+'</span></div>'+
-        '<div><div class="lbl">איפה עומדים</div>'+esc(s.where)+'</div>'+
-        '<div><div class="lbl">פתיחה</div><p class="hook">'+esc(s.hook)+'</p></div>'+
-        '<div><div class="lbl">נקודות מפתח</div><ul class="keys">'+s.keys.map(function(k){return '<li>'+esc(k)+'</li>';}).join('')+'</ul></div>'+
-        '<div class="close"><div class="lbl">סיום</div><b>'+esc(s.close)+'</b></div>'+
-        '<div><span class="lbl">אמצעי הדרכה</span> · '+esc(s.tool)+'</div>'+
-        '<div class="trap"><b>זהירות:</b> '+s.trap+'</div>'+
-        '<a class="btn" href="#train" data-train="'+s.id+'">✍️ לתרגל את האתר הזה</a></article>';
-    }).join('');
+  var box=document.getElementById('cardsBox'), filt='all', shown=24;
+  var csrc=document.getElementById('csrc'), croute=document.getElementById('croute'), cq=document.getElementById('cq');
+  var pref=jget('mdl_sadna_pref',{src:'ezer',route:'all'});
+  function stChip(id){var st=REV[id];if(!st)return '';return D.mastered(st)?'<span class="st-chip ok">✅ ידוע</span>':'<span class="st-chip todo">🔁 לחזור</span>';}
+  function list(){
+    var q=(cq.value||'').trim(), src=csrc.value, r=croute.value, now=Date.now();
+    return ALL.filter(function(s){
+      if(src!=='all'&&s.src!==src)return false;
+      if(src!=='sadna'&&r&&r!=='all'&&s.src==='ezer'&&s.route!==r)return false;
+      if(filt==='180'||filt==='400'){if(s.t!==filt)return false;}
+      if(filt==='todo'){var st=REV[s.id];if(!st||D.mastered(st))return false;}
+      if(q&&(s.he+' '+(s.sub||'')+' '+s.hook).indexOf(q)<0)return false;
+      return true;});
   }
+  function cardHTML(s){
+    var keys=s.keys2.map(function(k){return '<li>'+(k.ev?'<details><summary>'+esc(k.he)+' <span aria-label="המשפט המקורי">📄</span></summary><p class="ev">״'+esc(k.ev)+'״</p></details>':esc(k.he))+'</li>';}).join('');
+    return '<article class="card t'+s.t+'" data-id="'+esc(s.id)+'">'+
+      '<div class="head"><div><h3>'+esc(s.he)+'</h3><div class="sub">'+esc(s.sub)+'</div></div><span class="badge b'+s.t+'">'+s.t+' מילים</span></div>'+
+      '<div class="meta"><span>'+esc(s.reg)+'</span>'+(s.per?'<span>'+esc(s.per)+'</span>':'')+stChip(s.id)+'</div>'+
+      (s.where?'<div><div class="lbl">איפה עומדים</div>'+esc(s.where)+'</div>':'')+
+      '<div><div class="lbl">פתיחה</div><p class="hook">'+esc(s.hook)+'</p></div>'+
+      '<div><div class="lbl">נקודות מפתח</div><ul class="keys">'+keys+'</ul></div>'+
+      '<div class="close"><div class="lbl">סיום</div><b>'+esc(s.close)+'</b></div>'+
+      (s.tool?'<div><span class="lbl">אמצעי הדרכה</span> · '+esc(s.tool)+'</div>':'')+
+      (s.trap?'<div class="trap"><b>זהירות:</b> '+s.trap+'</div>':'')+
+      '<div class="row"><a class="btn" href="#train" data-train="'+esc(s.id)+'">✍️ לתרגל</a><button class="btn ghost" type="button" data-mark="ok">✅ ידעתי</button><button class="btn ghost" type="button" data-mark="todo">🔁 לחזור</button></div></article>';
+  }
+  function render(){
+    jset('mdl_sadna_pref',{src:csrc.value,route:croute.value});
+    croute.hidden=csrc.value==='sadna';
+    var L=list();
+    document.getElementById('ccount').textContent=L.length+' כרטיסים'+(L.length?' · '+L.filter(function(s){return D.mastered(REV[s.id]);}).length+' ידועים':'');
+    box.innerHTML=L.slice(0,shown).map(cardHTML).join('')||'<div class="panel muted">אין כרטיסים בסינון הזה.</div>';
+    document.getElementById('cmore').hidden=L.length<=shown;
+  }
+  function reset(){shown=24;render();}
+  csrc.addEventListener('change',reset);croute.addEventListener('change',reset);cq.addEventListener('input',reset);
+  document.getElementById('cmore').addEventListener('click',function(){shown+=24;render();});
   document.getElementById('filters').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;filt=b.dataset.f;
-    document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',String(c===b));});render();});
+    document.querySelectorAll('#filters .chip').forEach(function(c){c.setAttribute('aria-pressed',String(c===b));});reset();});
   document.getElementById('hidek').addEventListener('change',function(e){document.getElementById('v-cards').classList.toggle('hidekeys',e.target.checked);});
-  box.addEventListener('click',function(e){var g=e.target.closest('[data-train]');if(g){pick(g.dataset.train);return;}
+  function mark(id,ok){REV[id]=D.grade(REV[id],ok,Date.now());jset('mdl_sadna_review',REV);}
+  box.addEventListener('click',function(e){
+    var g=e.target.closest('[data-train]');if(g){pick(g.dataset.train);return;}
+    var m=e.target.closest('[data-mark]');if(m){mark(m.closest('.card').dataset.id,m.dataset.mark==='ok');render();return;}
+    if(e.target.closest('summary,a,button'))return;
     var c=e.target.closest('.card');if(c)c.classList.toggle('open');});
-  render();
 
+  // ---- 🔁 חזרה מרווחת ----
+  var rroute=document.getElementById('rroute'), rcard=document.getElementById('rcard'), rcur=null, rshow=false;
+  function showReview(){
+    var r=rroute.value||'all', pool=ALL.filter(function(s){return r==='all'||s.route===r;}).map(function(s){return s.id;});
+    var due=D.dueList(pool,REV,Date.now()), known=pool.filter(function(id){return D.mastered(REV[id]);}).length;
+    document.getElementById('rstat').textContent=due.length+' לחזרה עכשיו · '+known+'/'+pool.length+' ידועים';
+    if(!due.length){rcard.innerHTML='<h3>🎉 אין כרטיסים לחזרה כרגע</h3><p class="muted">הכרטיסים הבאים יחזרו לפי לוח הזמנים. אפשר לבחור מסלול אחר.</p>';rcur=null;return;}
+    if(!rcur||due.indexOf(rcur)<0){rcur=due[0];rshow=false;}
+    var s=byId(rcur);
+    rcard.innerHTML='<div class="meta" style="margin-bottom:6px"><span>'+esc(s.sub||s.reg)+'</span>'+stChip(s.id)+'</div><p class="rc-site">'+esc(s.he)+'</p><p class="rc-hook">'+esc(s.hook)+'</p>'+
+      (rshow?'<ul class="keys">'+s.keys2.map(function(k){return '<li>'+esc(k.he)+(k.ev?'<p class="ev">״'+esc(k.ev)+'״</p>':'')+'</li>';}).join('')+'</ul><p><b>'+esc(s.close)+'</b></p>'+
+        '<div class="row" style="display:flex;gap:8px;margin-top:10px"><button class="btn" id="rok" type="button">✅ ידעתי</button><button class="btn ghost" id="rno" type="button">🔁 לחזור</button></div>'
+      :'<p class="muted">אמרו בעל פה 3–5 נקודות מפתח ומשפט סיום.</p><button class="btn" id="rshow" type="button">👀 להציג את התשובה</button>');
+    var b=document.getElementById('rshow');if(b)b.onclick=function(){rshow=true;showReview();};
+    var ok=document.getElementById('rok'),no=document.getElementById('rno');
+    if(ok)ok.onclick=function(){mark(rcur,true);rcur=null;showReview();};
+    if(no)no.onclick=function(){mark(rcur,false);var d=D.dueList(pool,REV,Date.now()).filter(function(x){return x!==rcur;});rcur=d[0]||rcur;rshow=false;showReview();};
+  }
+  rroute.addEventListener('change',function(){rcur=null;showReview();});
+
+  // ---- ❓ חידון ----
+  var qroute=document.getElementById('qroute'), qbox=document.getElementById('qbox'), Q=null;
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function qStart(){
+    var r=qroute.value, seen=jget('mdl_sadna_quizseen',{});
+    var pool=EZ.quiz.filter(function(q){var s=byId(q.site);return s&&(r==='all'||s.route===r);});
+    pool=shuffle(pool.slice()).sort(function(a,b){return (seen[a.id]||0)-(seen[b.id]||0);});
+    Q={items:pool.slice(0,10),i:0,ok:0};qbox.hidden=false;qShow();
+  }
+  function qShow(){
+    if(!Q.items.length){qbox.innerHTML='<p class="muted">אין עדיין שאלות למסלול הזה.</p>';return;}
+    if(Q.i>=Q.items.length){qbox.innerHTML='<h3>סיום: '+Q.ok+'/'+Q.items.length+'</h3><button class="btn" id="qagain" type="button">🔄 עוד סבב</button>';document.getElementById('qagain').onclick=qStart;return;}
+    var it=Q.items[Q.i], s=byId(it.site), order=shuffle(it.options.map(function(_,i){return i;}));
+    qbox.innerHTML='<div class="meta"><span>'+(Q.i+1)+'/'+Q.items.length+'</span><span>'+esc(s?s.he:'')+'</span></div><p class="prompt">'+esc(it.q)+'</p>'+
+      order.map(function(k){return '<button class="qopt" type="button" data-k="'+k+'">'+esc(it.options[k])+'</button>';}).join('')+'<div id="qexp"></div>';
+    qbox.querySelectorAll('.qopt').forEach(function(b){b.onclick=function(){
+      if(qbox.dataset.done==='1')return;qbox.dataset.done='1';
+      var k=+b.dataset.k, ok=k===it.correct;if(ok)Q.ok++;
+      var seen=jget('mdl_sadna_quizseen',{});seen[it.id]=(seen[it.id]||0)+1;jset('mdl_sadna_quizseen',seen);
+      qbox.querySelectorAll('.qopt').forEach(function(x){if(+x.dataset.k===it.correct)x.classList.add('right');else if(x===b)x.classList.add('wrong');});
+      document.getElementById('qexp').innerHTML='<p><b>'+(ok?'✅ נכון!':'❌ לא בדיוק.')+'</b> '+esc(it.why)+'</p><p class="ev">📄 ״'+esc(it.quote)+'״</p><button class="btn" id="qnext" type="button">הבא ⬅️</button>';
+      document.getElementById('qscore').textContent=Q.ok+' נכונות';
+      document.getElementById('qnext').onclick=function(){Q.i++;qbox.dataset.done='';qShow();};
+    };});
+  }
+  document.getElementById('qstart').addEventListener('click',qStart);
+
+  function boot(){
+    [croute,rroute,qroute].forEach(function(el){el.innerHTML=routeOpts(true);});
+    csrc.value=pref.src||'ezer'; if(pref.route)croute.value=pref.route;
+    if(!EZ.sites.length){csrc.value='sadna';}
+    sel.innerHTML=ALL.map(function(s){return '<option value="'+esc(s.id)+'">'+esc(s.he)+' ('+s.t+')</option>';}).join('');
+    render();route();load();
+  }
   // ---- תרגול ----
   var sel=document.getElementById('tsite'),mode=document.getElementById('tmode'),draft=document.getElementById('draft');
-  sel.innerHTML=S.map(function(s){return '<option value="'+s.id+'">'+esc(s.he)+' ('+s.t+')</option>';}).join('');
+
   document.getElementById('checks').innerHTML=D.CHECKS.map(function(c){return '<li data-k="'+c.k+'"><span class="st"></span>'+esc(c.he)+'</li>';}).join('');
   function key(){return 'mdl_sadna_'+sel.value+'_'+mode.value;}
-  function pick(id){sel.value=id;var s=S.find(function(x){return x.id===id;});if(s)mode.value=s.t;load();}
-  function load(){var s=S.find(function(x){return x.id===sel.value;});
+  function pick(id){sel.value=id;var s=byId(id);if(s)mode.value=s.t;load();}
+  function load(){var s=byId(sel.value)||ALL[0];if(!s)return;sel.value=s.id;
     document.getElementById('tprompt').textContent=s.hook;
-    document.getElementById('tprompt2').textContent=s.sub+' · '+s.where;
+    document.getElementById('tprompt2').textContent=(s.sub||'')+(s.where?' · '+s.where:'');
     draft.value=store(key())||'';resetTimer();count();}
   function count(){
     var t=draft.value,n=D.wordCount(t),lim=+mode.value,st=D.wordState(n,lim);
@@ -283,7 +411,7 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
     store(key(),t);
   }
   draft.addEventListener('input',count);sel.addEventListener('change',load);mode.addEventListener('change',load);
-  document.getElementById('rand').addEventListener('click',function(){pick(S[Math.floor(Math.random()*S.length)].id);});
+  document.getElementById('rand').addEventListener('click',function(){pick(ALL[Math.floor(Math.random()*ALL.length)].id);});
 
   var left=900,tid=null,tEl=document.getElementById('timer'),tb=document.getElementById('tstart');
   function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
@@ -296,7 +424,9 @@ textarea{width:100%;min-height:250px;resize:vertical;border-radius:14px;backgrou
   });
   // שעון נעצר כשהאפליקציה ברקע
   document.addEventListener('visibilitychange',function(){if(document.hidden&&tid){clearInterval(tid);tid=null;tb.textContent='▶ המשך';}});
-  load();
+  fetch('sadna/ezer.json').then(function(r){return r.ok?r.json():null;}).then(function(d){
+    if(d){EZ=d;ALL=ALL.concat(d.sites.map(function(s){return Object.assign({src:'ezer',sub:s.routeHe,reg:s.regHe,keys2:s.keys,trap:''},s);}));}
+  }).catch(function(){}).then(boot);
 })();
 </script>
 <script src="tabbar.js"></script>
