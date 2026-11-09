@@ -6,13 +6,13 @@
   "coverage": {
     "groups": 17,
     "primaryGuides": 10,
-    "primaryGuidesSelectedPassagesChecked": 4,
-    "primaryGuidesExtractionToReview": 6,
+    "primaryGuidesSelectedPassagesChecked": 6,
+    "primaryGuidesExtractionToReview": 4,
     "associatedDocuments": 28,
     "sourceCheckedCoordinates": 17,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 10,
+    "selectedPassagesChecked": 12,
     "associatedDocumentsByType": {
       "guide": 10,
       "brochure": 15,
@@ -42,7 +42,7 @@
         "groups": 2,
         "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "haifa_carmel",
@@ -98,7 +98,7 @@
         "groups": 4,
         "sourceCheckedCoordinates": 4,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "valleys",
@@ -252,7 +252,7 @@
           "structured": true
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 31.66389,
@@ -264,6 +264,26 @@
         "purpose": "site_reference_not_entrance"
       },
       "officialSite": "https://www.parks.org.il/reserve-park/גן-לאומי-אשקלון/",
+      "reviewedExtract": true,
+      "practicalNotice": {
+        "text": "בדף מבזקי רט״ג שנבדק ב־9.11.2026 מופיעה הודעה מ־30.6.2026: שביל החומה בתל אשקלון חסום בחלקו עקב סכנת התמוטטות. תחנות ההכנה אינן אישור למעבר; לפני ביקור יש לבדוק את העדכון ולהישמע לשילוט ולצוות האתר.",
+        "source": "https://www.parks.org.il/category/newsflash/",
+        "checkedAt": "2026-11-09"
+      },
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-09",
+        "pages": [
+          5,
+          6,
+          7,
+          8,
+          16
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו רק חמש הנקודות, שלוש התחנות ושלוש השאלות המוצגות מול עמודי קובץ ה־PDF. יתר החילוץ ותנאי הביקור כיום לא אומתו. נתון הצמחייה הוא מסקר 2014–2015. תחנת החומה אינה כלולה בבחירה. הקורס שנבדק אינו מאמת את תשובות הבחירה."
+      },
       "primaryDocumentId": "a755bcb21bd4"
     },
     {
@@ -330,7 +350,7 @@
           "structured": false
         }
       ],
-      "contentStatus": "extraction_to_review",
+      "contentStatus": "selected_passages_checked",
       "fullyAudited": false,
       "coordinate": {
         "lat": 31.5969611,
@@ -346,6 +366,20 @@
         "text": "לפי דף רט״ג שנבדק ב־8.11.2026, הפעמון הדרומי נסגר בימי גשם וב־48 השעות שלאחר סיומו. לפני ביקור יש לבדוק את ההודעה העדכנית.",
         "source": "https://www.parks.org.il/reserve-park/גן-לאומי-בית-גוברין/",
         "checkedAt": "2026-11-08"
+      },
+      "reviewedExtract": true,
+      "contentReview": {
+        "scope": "five_facts_three_stations_three_existing_questions_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-09",
+        "pages": [
+          3,
+          10,
+          14,
+          15
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו רק חמש הנקודות, שלוש התחנות ושלוש השאלות המוצגות מול עמודי קובץ ה־PDF. יתר החילוץ ותנאי הביקור כיום לא אומתו. סיכום התקופה ההלניסטית ב־Drive מזכיר קולומבריום ובורות מים במרשה, אך אינו מאמת את שלוש התשובות המפורטות. תיאור הבור והקולומבריום אינו תיאור של מערות מגורים."
       },
       "primaryDocumentId": "02311ff968b7"
     },

@@ -3,13 +3,13 @@
   "reviewedCoverage": {
     "groups": 17,
     "primaryGuides": 10,
-    "primaryGuidesSelectedPassagesChecked": 4,
-    "primaryGuidesExtractionToReview": 6,
+    "primaryGuidesSelectedPassagesChecked": 6,
+    "primaryGuidesExtractionToReview": 4,
     "associatedDocuments": 28,
     "sourceCheckedCoordinates": 17,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 10,
+    "selectedPassagesChecked": 12,
     "associatedDocumentsByType": {
       "guide": 10,
       "brochure": 15,
@@ -39,7 +39,7 @@
         "groups": 2,
         "sourceCheckedCoordinates": 2,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "haifa_carmel",
@@ -95,7 +95,7 @@
         "groups": 4,
         "sourceCheckedCoordinates": 4,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 1
+        "selectedPassagesChecked": 2
       },
       {
         "id": "valleys",

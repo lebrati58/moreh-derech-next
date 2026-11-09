@@ -1,0 +1,144 @@
+{
+  "id": "a755bcb21bd4",
+  "title": "מדריך למדריך - גן לאומי תל אשקלון",
+  "site": "גן לאומי תל אשקלון – שביל החולות",
+  "review": {
+    "status": "selected_passages_checked",
+    "scope": "listed_items_stations_and_question_answers_only",
+    "method": "manual_read_of_rendered_pdf_pages",
+    "checkedAt": "2026-11-09",
+    "pages": [
+      5,
+      6,
+      7,
+      8,
+      16
+    ],
+    "pageNumbering": "pdf_file_pages"
+  },
+  "items": [
+    {
+      "kind": "fact",
+      "topic": "archaeology",
+      "he": "סוללת העפר של אשקלון מתוארכת במדריך לראשית תקופת הברונזה התיכונה, בערך 2000 לפנה״ס.",
+      "page": 5,
+      "quote": "הברונזה",
+      "sourceItemIndex": 7,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "history",
+      "he": "לפי המדריך, הפטימים בנו את חומת העיר כדי לבלום את הצלבנים.",
+      "page": 6,
+      "quote": "הפטימיים",
+      "sourceItemIndex": 10,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "השיטה המלבינה מתרבה בארץ מניצנים בשורשים; המדריך מציע שייתכן שעצי הגן מקורם בעץ אחד.",
+      "page": 7,
+      "quote": "ניצנים",
+      "sourceItemIndex": 18,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "בישראל השיטה המלבינה נמצאת בקצה תפוצתה; לפי המדריך, לעיתים משתנים כאן מועדי השרת העלים והפריחה שלה.",
+      "page": 7,
+      "quote": "בקצה אזור",
+      "sourceItemIndex": 19,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "kind": "fact",
+      "topic": "geo",
+      "he": "בסקר הצמחייה של 2014–2015 נמצאו בגן 451 מינים, ובהם תשעה מינים אדומים; זהו נתון הסקר המתואר במדריך.",
+      "page": 16,
+      "quote": "451",
+      "sourceItemIndex": 48,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "stations": [
+    {
+      "n": 1,
+      "he": "נקודת התחלה: שדרת השקמים",
+      "page": 5,
+      "sourceStationIndex": 0,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 3,
+      "he": "שיטה מלבינה – בין השיטין",
+      "page": 7,
+      "sourceStationIndex": 2,
+      "reviewStatus": "source_passage_checked"
+    },
+    {
+      "n": 4,
+      "he": "השקמה הגדולה",
+      "page": 8,
+      "sourceStationIndex": 3,
+      "reviewStatus": "source_passage_checked"
+    }
+  ],
+  "questions": [
+    {
+      "level": 1,
+      "q": "מי בנה את החומה שעל הסוללה הכנענית באשקלון, ומה הייתה מטרתה?",
+      "expected": [
+        "המוסלמים הפטימיים",
+        "לבלום את מסעי הכיבוש של הצלבנים"
+      ],
+      "accept": [],
+      "refs": [
+        6
+      ],
+      "sourceQuestionIndex": 0,
+      "evidenceItems": [
+        1
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 1,
+      "q": "כמה מיני צמחים נמצאו בסקר הצמחייה בגן הלאומי?",
+      "expected": [
+        "451"
+      ],
+      "accept": [],
+      "refs": [
+        16
+      ],
+      "sourceQuestionIndex": 2,
+      "evidenceItems": [
+        4
+      ],
+      "reviewStatus": "answer_source_checked"
+    },
+    {
+      "level": 3,
+      "q": "איך תסבירו למבוגרים, ליד סבך השיטה המלבינה, מדוע הסבך צפוף כל כך?",
+      "expected": [
+        "כמעט אין זרעים נובטים בארץ",
+        "התרבות מניצנים בשורשים",
+        "ייתכן שכל העצים בגן מקורם בעץ אחד",
+        "בקצה תחום התפוצה העץ ״משתגע״"
+      ],
+      "accept": [],
+      "refs": [
+        7
+      ],
+      "sourceQuestionIndex": 9,
+      "evidenceItems": [
+        2,
+        3
+      ],
+      "reviewStatus": "answer_source_checked"
+    }
+  ]
+}
