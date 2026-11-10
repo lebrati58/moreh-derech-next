@@ -32,6 +32,12 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 10 novembre 2026 — Essai réversible des fiches
+- `rtg-preview.html` : comparaison Avant / Après sur Tsipori, boutons explicites et réponse OUI / NON dans la conversation. Aucun choix enregistré ou envoyé, aucune bascule globale déclenchée par la page.
+- Ancienne présentation conservée dans `rtg-sites-before.html/.css/.js`, issue de `266b2f8` ; mêmes contenus publics actuels. Les fiches principales ne sont pas modifiées par cet essai.
+- Si Lionel répond NON, rétablir les fichiers de présentation de `266b2f8` (`rtg-sites.html`, `.css`, `.js`, et retirer le lien ajouté à la mini-fiche dans `rtg-app.js`), en versionnant leurs liens pour éviter le cache. Conserver les contenus, coordonnées, banques, scores, tests et fichiers Supabase actuels ; ne pas remettre toute la branche à un ancien commit.
+- Vérifications et publication : commentaire de reprise dans #80.
+
 ### 10 novembre 2026 — Fiches récap RTG plus lisibles
 - Résumé du lieu placé en premier : cinq repères numérotés, grandes lignes de texte sur fond clair, références paginées et citations dépliables. Onglets persistants résumé / guide / exercices ; compteurs des points, stations et questions.
 - Consignes de visite conservées sous le résumé ; limites détaillées du recoupement et liste des sources dans une rubrique dépliable, statut partiel visible dès le titre. Pas de changement pédagogique ou de coordonnées.
