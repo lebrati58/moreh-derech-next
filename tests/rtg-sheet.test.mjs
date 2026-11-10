@@ -9,3 +9,18 @@ test('all structured documents provide bounded sheets with traceable excerpts',(
  const c=JSON.parse(readFileSync(new URL('../public/rtg/catalog.json',import.meta.url),'utf8'));
  for(const d of c.docs.filter(d=>d.fx)){const f=JSON.parse(readFileSync(new URL('../public/rtg/facts/'+d.id+'.json',import.meta.url),'utf8'));const m=build(d,f);assert.ok(m.facts.length<=5);for(const x of m.facts){assert.ok(x.page>0&&x.quote);assert.ok(f.items.some(y=>y.he===x.text&&y.page===x.page&&y.quote===x.quote));}assert.equal(m.questions,(f.questions||[]).length);}
 });
+
+
+test('date emphasis preserves eras, ranges and uncertainty without turning quantities into dates',()=>{
+ const dates=sandbox.MDRtgSheet.dateSpans;
+ for(const [text,expected] of [
+  ['בערך 2000 לפנה״ס',['בערך 2000 לפנה״ס']],
+  ['סביב שנת 200 לספירה',['סביב שנת 200 לספירה']],
+  ['בראשית המאה החמישית לספירה',['בראשית המאה החמישית לספירה']],
+  ['בראשית המאה ה־12 ובמאה ה־19',['בראשית המאה ה־12','במאה ה־19']],
+  ['לשנים 541–618 לספירה',['לשנים 541–618 לספירה']],
+  ['ב־1932 ובסוף מרץ 1948',['ב־1932','מרץ 1948']],
+  ['בראשית שנות ה־90 ובשנת 2006',['בראשית שנות ה־90','בשנת 2006']],
+  ['10800 מטבעות, 7,000 מושבים, 18×10×3 מטרים ו־47 נדבכים',[]]
+ ]){const result=dates(text);assert.deepEqual(Array.from(result,x=>x.text),expected);for(const x of result)assert.equal(text.slice(x.index,x.end),x.text);}
+});
