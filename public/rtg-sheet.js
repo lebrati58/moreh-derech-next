@@ -16,7 +16,8 @@
   const matches=[];
   for(const pattern of expressions)for(const m of String(text).matchAll(new RegExp(pattern,'gu'))){
    const end=m.index+m[0].length;
-   if(/\d/.test(text[m.index-1]||'')||/[\d,]/.test(text[end]||''))continue;
+   if(/\d/.test(text[m.index-1]||'')||/\d/.test(text[end]||'')||(text[end]===','&&/\d/.test(text[end+1]||'')))continue;
+   if(/^\s*(?:מטר|מטבעות|מושבים|נדבכים|גומחות|פרטים|מינים|דונם|דק[׳']|ק[״"]מ)/u.test(text.slice(end)))continue;
    matches.push({index:m.index,end,text:m[0]});
   }
   matches.sort((a,b)=>a.index-b.index||b.end-a.end);
