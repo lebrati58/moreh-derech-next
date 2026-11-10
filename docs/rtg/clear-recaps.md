@@ -9,4 +9,6 @@ Demande : rendre les récapitulatifs des lieux plus clairs sur téléphone. Modi
 - Les conditions pratiques restent accessibles après le contenu. Le détail de la vérification et toutes les sources sont regroupés dans une rubrique dépliable. Le statut partiel, le classement régional provisoire éventuel et la limite « pas une entrée » des coordonnées restent visibles.
 - Accès direct à la fiche regroupée depuis la mini-fiche de la bibliothèque ; impression / PDF par le dialogue du navigateur, sans fichier envoyé à un service tiers.
 
+Les liens des scripts et styles de ces deux pages portent une version afin de ne pas réutiliser les anciens fichiers du navigateur ; le repli hors ligne existant ignore les paramètres.
+
 Aucun fait, exercice, réponse, coordonnée, statut de couverture, contenu de cours, score ou fichier Supabase modifié. Les 41 tests RTG ciblés passent. Les résultats CI, le commit, le déploiement et les contrôles de l'interface publique sont consignés dans [#80](https://github.com/lebrati58/moreh-derech-next/issues/80).
