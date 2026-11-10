@@ -32,6 +32,12 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 10 novembre 2026 — Fiches récap RTG plus lisibles
+- Résumé du lieu placé en premier : cinq repères numérotés, grandes lignes de texte sur fond clair, références paginées et citations dépliables. Onglets persistants résumé / guide / exercices ; compteurs des points, stations et questions.
+- Consignes de visite conservées sous le résumé ; limites détaillées du recoupement et liste des sources dans une rubrique dépliable, statut partiel visible dès le titre. Pas de changement pédagogique ou de coordonnées.
+- Préparation guide avec stations numérotées ; impression/PDF depuis le navigateur. Lien direct vers la fiche du lieu depuis la mini-fiche de la bibliothèque. S'applique aux 21 groupes existants.
+- Tests ciblés RTG : 40/40 ; publication et contrôle public consignés dans #80. Données RTG, banques et Supabase inchangés. [Détails](docs/rtg/clear-recaps.md).
+
 ### 10 novembre 2026 — RTG lot 14 : Mamshit et Hérodion (#80)
 - Mini-fiches : cinq repères, un conseil, trois stations et trois nouveaux exercices par brochure, références aux pages PDF 1–2 lues visuellement. Deux points cartographiques sourcés avec liens Google Maps ; ce ne sont pas des entrées ni des itinéraires validés.
 - Drive : trois réponses d'Hérodion recoupées avec le cours original ; Mamshit seulement avec la copie de la brochure, sans confirmation indépendante du cours. Hérodion reste dans une région provisoire ; liens automatiques Césarée/Ramat Rachel retirés.

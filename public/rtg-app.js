@@ -113,6 +113,7 @@
     const pageLink = f => f.source ? `<a href="${esc(f.source)}" target="_blank" rel="noopener noreferrer">${fr ? 'Source, page' : 'מקור, עמ׳'} ${f.page}</a>` : `${pg(f.page)}`;
     return `<section class="card" aria-label="${fr ? 'Mini-fiche de révision' : 'כרטיס חזרה קצר'}" style="border-color:var(--mint)">
       <h2>🪪 ${fr ? 'Mini-fiche de révision' : 'כרטיס חזרה קצר'} — ${esc(M.title)}</h2>
+      ${d.gs ? `<p><a class="btn" href="rtg-sites.html#/s/${esc(d.gs)}">🪪 ${fr ? 'Ouvrir la fiche récap du lieu' : 'לכרטיס הסיכום של המקום'} ←</a></p>` : ''}
       <span class="bd w">${fr ? 'Extraction à relire — pas encore vérifiée' : 'תמצית שחולצה — טרם אומתה'}</span>
       <p class="note">${fr ? 'Repères sélectionnés dans ce document. Les données pratiques peuvent être anciennes ; vérifiez les conditions actuelles auprès du site officiel.' : 'נקודות שנבחרו מתוך המסמך. פרטים מעשיים עשויים להיות ישנים; יש לבדוק תנאים עדכניים באתר הרשמי.'}</p>
       ${M.facts.length ? `<ol>${M.facts.map(f => `<li class="fact">${esc(f.text)}<small>${pageLink(f)}</small><details><summary>${fr ? 'Voir l’extrait source' : 'הצגת הקטע במקור'}</summary><blockquote>${esc(f.quote)}</blockquote></details></li>`).join('')}</ol>` : `<p class="note">${fr ? 'Aucun repère avec citation et page disponible.' : 'אין עדיין נקודות עם ציטוט ועמוד.'}</p>`}

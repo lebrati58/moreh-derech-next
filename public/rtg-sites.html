@@ -1,8 +1,8 @@
 <!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>מפת מקורות ואתרי רט״ג — Moreh Derech NEXT</title><link rel="stylesheet" href="vendor/leaflet/leaflet.css"><link rel="stylesheet" href="rtg-sites.css"></head><body>
 <header><a href="index.html">⌂ Moreh Derech NEXT</a><a href="rtg.html">📚 ספריית רט״ג</a><a href="map.html">🗺️ מפת המשחק</a></header>
-<main><section class="hero"><p>רט״ג · ללמוד ולהדריך לפי מקום</p><h1>מקום אחד, כל המקורות</h1><p>מדריכים, עלונים ומפות שמשויכים לאתר עצמו. אזכור אקראי במסמך אינו מספיק.</p><p id="totals" role="status">טוענים את המקורות…</p></section>
-<nav aria-label="תצוגה"><a href="#/">🗺️ מפה ואתרים</a><a href="#/coverage">📊 כיסוי וחוסרים</a></nav>
+<main><section class="hero" id="library-hero"><p>רט״ג · ללמוד ולהדריך לפי מקום</p><h1>מקום אחד, כל המקורות</h1><p>מדריכים, עלונים ומפות שמשויכים לאתר עצמו. אזכור אקראי במסמך אינו מספיק.</p><p id="totals" role="status">טוענים את המקורות…</p></section>
+<nav id="site-nav" aria-label="תצוגה"><a href="#/">🗺️ מפה ואתרים</a><a href="#/coverage">📊 כיסוי וחוסרים</a></nav>
 <section id="overview"><div class="filters"><label>חיפוש מקום <input type="search" id="search"></label><label>אזור <select id="region"><option value="">כל האזורים</option></select></label></div><p class="notice">על המפה מוצגות רק נקודות שנבדקו מול מקור מפורסם. אלה נקודות ייחוס של האתר, לא שערי כניסה או מסלולי ניווט מאומתים.</p><div id="map" role="region" aria-label="מפת נקודות ייחוס של אתרי רט״ג"></div><p id="map-status" class="muted"></p><div id="cards" class="cards"></div></section>
 <section id="detail" hidden aria-live="polite"></section><section id="coverage" hidden></section>
-<p class="notice">הכיסוי ראשוני ואינו רשימה מלאה של אתרי ישראל. בדיקת שיוך מסמך או מיקום אינה אימות של כל התוכן. אין כאן נתוני פתיחה, מחיר או כניסה בזמן אמת.</p></main>
+<p class="notice" id="global-limit">הכיסוי ראשוני ואינו רשימה מלאה של אתרי ישראל. בדיקת שיוך מסמך או מיקום אינה אימות של כל התוכן. אין כאן נתוני פתיחה, מחיר או כניסה בזמן אמת.</p></main>
 <script src="vendor/leaflet/leaflet.js"></script><script src="rtg-sheet.js"></script><script src="rtg-sites.js"></script><script>if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script></body></html>
