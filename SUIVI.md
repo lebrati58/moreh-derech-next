@@ -32,6 +32,12 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 10 novembre 2026 — RTG lot 14 : Mamshit et Hérodion (#80)
+- Mini-fiches : cinq repères, un conseil, trois stations et trois nouveaux exercices par brochure, références aux pages PDF 1–2 lues visuellement. Deux points cartographiques sourcés avec liens Google Maps ; ce ne sont pas des entrées ni des itinéraires validés.
+- Drive : trois réponses d'Hérodion recoupées avec le cours original ; Mamshit seulement avec la copie de la brochure, sans confirmation indépendante du cours. Hérodion reste dans une région provisoire ; liens automatiques Césarée/Ramat Rachel retirés.
+- Couverture RTG : 21 lieux, 20 sélections partielles, **0 audit intégral** ; 34/100 sources prioritaires associées (10 guides, 21 brochures, 3 cartes). Restent 56 brochures et 10 cartes ; Jérusalem et désert de Judée sans groupe. **Objectif national du 10 novembre non atteint.**
+- Tests ciblés : 40/40. Résultats complets, publication et déploiement : [#80](https://github.com/lebrati58/moreh-derech-next/issues/80). [Preuves, limites et bilan détaillé](docs/rtg/mamshit-herodium-brochures.md). Aucun changement Supabase ou banque du jeu.
+
 ### 9 novembre 2026 — « חומר עזר למבחן » dans l'atelier, le répertoire et un quiz (branche `claude/chomer-ezer`)
 - ✅ Source : document Word envoyé par Lionel (« חומר עזר למבחן — תקצירים לטבלה / נקודות הרחבה », ~125 p., 243 sites rangés par itinéraire). Pas dans le Drive du cours. **Texte intégral non versionné** (dépôt public, `.gitignore`) : seules des citations courtes entrent dans l'appli ; les tests vérifient les citations quand le texte est présent en local (`content/ezer/chomer-ezer.json`).
 - ✅ `tools/build-ezer.mjs` : `content/ezer/out/*.json` (fiche, faits, questions rédigés depuis le texte de chaque site) → `public/sadna/ezer.json`. Toute citation doit être **mot pour mot** dans le texte du site, sinon écartée (0 écart). 89 passages douteux du document (dates, attributions, contradictions) ont été **retirés des fiches** et s'affichent en « ⚠️ לבדוק » sur 71 fiches.

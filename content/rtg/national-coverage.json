@@ -1,18 +1,18 @@
 {
   "version": 2,
   "reviewedCoverage": {
-    "groups": 19,
+    "groups": 21,
     "primaryGuides": 10,
     "primaryGuidesSelectedPassagesChecked": 10,
     "primaryGuidesExtractionToReview": 0,
-    "associatedDocuments": 32,
-    "sourceCheckedCoordinates": 19,
+    "associatedDocuments": 34,
+    "sourceCheckedCoordinates": 21,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 18,
+    "selectedPassagesChecked": 20,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 19,
+      "brochure": 21,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -76,18 +76,18 @@
       {
         "id": "negev",
         "label": "הנגב הצפוני",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "judea_samaria",
         "label": "הר חברון והשומרון",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "coast",
@@ -147,11 +147,11 @@
       }
     ]
   },
-  "catalogBuilt": "2026-11-09",
+  "catalogBuilt": "2026-11-10",
   "scope": "Existing RTG catalog only; not an exhaustive inventory of Israel",
   "totals": {
     "documents": 727,
-    "documentsWithStructuredContent": 28,
+    "documentsWithStructuredContent": 30,
     "documentsLinkedToGame": 197,
     "registryEntries": 46,
     "auditedSiteEntries": 0,
@@ -191,7 +191,7 @@
     },
     "judea_samaria": {
       "entries": 4,
-      "entriesWithProcessedDocuments": 0
+      "entriesWithProcessedDocuments": 1
     },
     "judean_desert": {
       "entries": 2,
@@ -511,9 +511,11 @@
         "07eb3b98c398",
         "5156a43b39db"
       ],
-      "processedDocumentIds": [],
-      "extractedItemsInLinkedDocuments": 0,
-      "questionsInLinkedDocuments": 0,
+      "processedDocumentIds": [
+        "6c9188fcb4cc"
+      ],
+      "extractedItemsInLinkedDocuments": 6,
+      "questionsInLinkedDocuments": 3,
       "coordinates": {
         "lat": 31.66583,
         "lon": 35.24139,
@@ -704,7 +706,6 @@
       "region": "coast",
       "regionLabel": "מישור החוף",
       "sourceDocumentIds": [
-        "6c9188fcb4cc",
         "56fe96942b3a",
         "1b90f7b74a80",
         "c5274f3a21ad"
@@ -943,26 +944,6 @@
       "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
     },
     {
-      "key": "exam:jerusalem_hills:ramat_rachel",
-      "name": "רמת רחל — הקיבוץ והתל",
-      "region": "jerusalem_hills",
-      "regionLabel": "הרי ירושלים וסובב ירושלים",
-      "sourceDocumentIds": [
-        "6c9188fcb4cc",
-        "8c52605be785"
-      ],
-      "processedDocumentIds": [],
-      "extractedItemsInLinkedDocuments": 0,
-      "questionsInLinkedDocuments": 0,
-      "coordinates": {
-        "lat": 31.73981,
-        "lon": 35.21837,
-        "status": "existing_unverified"
-      },
-      "reviewStatus": "not_audited",
-      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
-    },
-    {
       "key": "exam:lower_galilee:tzippori_synagogue",
       "name": "ציפורי — בית הכנסת ופסיפס 'מהבטחה לגאולה'",
       "region": "lower_galilee",
@@ -1167,6 +1148,25 @@
       "coordinates": {
         "lat": 31.75567,
         "lon": 35.23442,
+        "status": "existing_unverified"
+      },
+      "reviewStatus": "not_audited",
+      "note": "Document associations include mentions. Counts refer to full linked documents, not necessarily this site. No factual validation is inferred."
+    },
+    {
+      "key": "exam:jerusalem_hills:ramat_rachel",
+      "name": "רמת רחל — הקיבוץ והתל",
+      "region": "jerusalem_hills",
+      "regionLabel": "הרי ירושלים וסובב ירושלים",
+      "sourceDocumentIds": [
+        "8c52605be785"
+      ],
+      "processedDocumentIds": [],
+      "extractedItemsInLinkedDocuments": 0,
+      "questionsInLinkedDocuments": 0,
+      "coordinates": {
+        "lat": 31.73981,
+        "lon": 35.21837,
         "status": "existing_unverified"
       },
       "reviewStatus": "not_audited",
@@ -1530,7 +1530,7 @@
       "id": "6c9188fcb4cc",
       "title": "דפדפת גן לאומי הרודיון",
       "type": "brochure",
-      "structured": false,
+      "structured": true,
       "source": "https://static.parks.org.il/wp-content/uploads/2025/03/herodion.pdf",
       "reviewStatus": "not_audited"
     },
@@ -1594,7 +1594,7 @@
       "id": "5e6a5842db94",
       "title": "דפדפת גן לאומי ממשית",
       "type": "brochure",
-      "structured": false,
+      "structured": true,
       "source": "https://static.parks.org.il/wp-content/uploads/2025/03/mamshit.pdf",
       "reviewStatus": "not_audited"
     },

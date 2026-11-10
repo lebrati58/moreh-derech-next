@@ -4,18 +4,18 @@
   "scope": "Ten initial guide sites and explicitly associated brochure groups. Not an exhaustive inventory of Israel.",
   "coordinatePolicy": "Published coordinates checked against the named source, not surveyed entrances or safe navigation routes.",
   "coverage": {
-    "groups": 19,
+    "groups": 21,
     "primaryGuides": 10,
     "primaryGuidesSelectedPassagesChecked": 10,
     "primaryGuidesExtractionToReview": 0,
-    "associatedDocuments": 32,
-    "sourceCheckedCoordinates": 19,
+    "associatedDocuments": 34,
+    "sourceCheckedCoordinates": 21,
     "missingCoordinates": 0,
     "fullyAuditedContent": 0,
-    "selectedPassagesChecked": 18,
+    "selectedPassagesChecked": 20,
     "associatedDocumentsByType": {
       "guide": 10,
-      "brochure": 19,
+      "brochure": 21,
       "map": 3
     },
     "priorityDocumentsTotal": 100,
@@ -79,18 +79,18 @@
       {
         "id": "negev",
         "label": "הנגב הצפוני",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "judea_samaria",
         "label": "הר חברון והשומרון",
-        "groups": 0,
-        "sourceCheckedCoordinates": 0,
+        "groups": 1,
+        "sourceCheckedCoordinates": 1,
         "fullyAuditedContent": 0,
-        "selectedPassagesChecked": 0
+        "selectedPassagesChecked": 1
       },
       {
         "id": "coast",
@@ -1527,6 +1527,146 @@
       "practicalNotice": {
         "text": "נכון לבדיקה מ־10.11.2026, עמוד רט״ג מודיע שהתצפית על פסיפס אורפיאוס סגורה לעבודות בטיחות ותחזוקה ומאגר המים פתוח חלקית. הם אינם תחנות במבחר ההדרכה כאן. הסמן הוא בית הכנסת העתיק, לא המושב ציפורי ולא שער כניסה; יש לבדוק גישה והרשמה לפני נסיעה.",
         "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%a6%d7%99%d7%a4%d7%95%d7%a8%d7%99/",
+        "checkedAt": "2026-11-10"
+      }
+    },
+    {
+      "id": "mamshit",
+      "name": "גן לאומי ממשית",
+      "region": "negev",
+      "regionLabel": "הנגב הצפוני",
+      "regionStatus": "source_checked",
+      "primaryDocumentId": "5e6a5842db94",
+      "sources": [
+        {
+          "id": "5e6a5842db94",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-10",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/mamshit.pdf",
+            "pdfSha256": "5e6a5842db94afb591178937d2e6cd3784e8de9a7cc68179fc1418b429665f63"
+          },
+          "driveComparison": {
+            "status": "selected_text_concordance_only",
+            "checkedAt": "2026-11-10",
+            "scope": "selected_passages_not_file_hash_identity"
+          },
+          "title": "דפדפת גן לאומי ממשית",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/03/mamshit.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_one_tip_three_stations_three_answers_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-10",
+        "pages": [
+          1,
+          2
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו חמש נקודות ידע, עצת הדרכה אחת, שלוש תחנות ושלושה תרגילי חזרה שנוסחו לפי עמודי PDF 1–2 של העלון. אלה תרגילים חדשים המבוססים על המסמך, לא שאלות מבחן מקוריות. קטעי עותק העלון בדרייב תואמים, אך לא נמצא חומר קורס עצמאי שמאמת את שלוש התשובות. יתר העלון ותנאי הגישה לא נבדקו במלואם."
+      },
+      "coordinate": {
+        "lat": 31.025,
+        "lon": 35.064,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Mampsis",
+        "evidence": "31.025; 35.064",
+        "checkedAt": "2026-11-10",
+        "purpose": "site_reference_not_entrance",
+        "label": "העיר העתיקה ממשית — נקודת ייחוס כללית",
+        "referenceKind": "site",
+        "identitySource": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%9e%d7%9e%d7%a9%d7%99%d7%aa/",
+        "identityDocument": {
+          "id": "5e6a5842db94",
+          "page": 2,
+          "section": "מפת האתר ותיאורו"
+        },
+        "identityEvidence": "זהות המקום נבדקה מול העלון הרשמי ועמוד רט״ג; אין אימות כניסה, חניה או מסלול."
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%9e%d7%9e%d7%a9%d7%99%d7%aa/",
+      "practicalNotice": {
+        "text": "הסמן הוא נקודת ייחוס של העיר העתיקה, לא חניון הלילה, לא חוות הגמלים ולא שער כניסה. נכון לבדיקה מ־10.11.2026, עמוד רט״ג מודיע שמרחב הבריחה אינו פעיל עד להודעה חדשה. אין להסיק מתיאור המאגר או הסכרים שמותר להיכנס למים; יש לבדוק גישה והרשמה בעמוד הרשמי.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%9e%d7%9e%d7%a9%d7%99%d7%aa/",
+        "checkedAt": "2026-11-10"
+      }
+    },
+    {
+      "id": "herodium",
+      "name": "פארק (גן לאומי) הרודיון",
+      "region": "judea_samaria",
+      "regionLabel": "הר חברון והשומרון",
+      "regionStatus": "provisional",
+      "primaryDocumentId": "6c9188fcb4cc",
+      "sources": [
+        {
+          "id": "6c9188fcb4cc",
+          "role": "primary_document",
+          "associationStatus": "source_identity_checked",
+          "evidence": {
+            "method": "pdf_title_and_visual_page_checked",
+            "page": 1,
+            "checkedAt": "2026-11-10",
+            "source": "https://static.parks.org.il/wp-content/uploads/2025/03/herodion.pdf",
+            "pdfSha256": "6c9188fcb4ccf1ae7bc5c45ea2382ee510700f3370fe105c4ed4797a55aeb14f"
+          },
+          "driveComparison": {
+            "status": "selected_text_concordance_only",
+            "checkedAt": "2026-11-10",
+            "scope": "selected_passages_not_file_hash_identity"
+          },
+          "title": "דפדפת גן לאומי הרודיון",
+          "type": "brochure",
+          "language": "he",
+          "pages": 2,
+          "url": "https://static.parks.org.il/wp-content/uploads/2025/03/herodion.pdf",
+          "structured": true
+        }
+      ],
+      "contentStatus": "selected_passages_checked",
+      "fullyAudited": false,
+      "contentReview": {
+        "scope": "five_facts_one_tip_three_stations_three_answers_only",
+        "method": "manual_read_of_rendered_official_pdf",
+        "checkedAt": "2026-11-10",
+        "pages": [
+          1,
+          2
+        ],
+        "pageNumbering": "pdf_file_pages",
+        "note": "נבדקו חמש נקודות ידע, עצת הדרכה אחת, שלוש תחנות ושלושה תרגילי חזרה שנוסחו לפי עמודי PDF 1–2 של העלון. אלה תרגילים חדשים, לא שאלות מבחן מקוריות. שלוש התשובות נבדקו גם במסמך הקורס ״סיור 6 – הר חברון – הרודיון״; יתר פרטי העלון והמערכת התת־קרקעית לא אומתו מול הקורס במלואם. השיוך למודול הר חברון והשומרון הוא ראשוני ואינו בדיקת גבול גיאוגרפי. אין כאן מסלול גישה מאומת."
+      },
+      "coordinate": {
+        "lat": 31.66583,
+        "lon": 35.24139,
+        "status": "published_source_checked",
+        "source": "https://en.wikipedia.org/wiki/Herodium",
+        "evidence": "31.66583; 35.24139",
+        "checkedAt": "2026-11-10",
+        "purpose": "site_reference_not_entrance",
+        "label": "ארמון־מבצר ההר — נקודת ייחוס כללית",
+        "referenceKind": "site",
+        "identitySource": "https://www.parks.org.il/reserve-park/%d7%a4%d7%90%d7%a8%d7%a7-%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%94%d7%a8%d7%95%d7%93%d7%99%d7%95%d7%9f/",
+        "identityDocument": {
+          "id": "6c9188fcb4cc",
+          "page": 2,
+          "section": "מפת האתר ותיאורו"
+        },
+        "identityEvidence": "זהות המקום נבדקה מול העלון הרשמי ועמוד רט״ג; אין אימות כניסה, חניה או מסלול."
+      },
+      "officialSite": "https://www.parks.org.il/reserve-park/%d7%a4%d7%90%d7%a8%d7%a7-%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%94%d7%a8%d7%95%d7%93%d7%99%d7%95%d7%9f/",
+      "practicalNotice": {
+        "text": "הסמן מציין את ארמון־מבצר ההר, לא את הרודיון תחתית ולא שער כניסה. לפי עמוד רט״ג שנבדק ב־10.11.2026, הכניסה מ־1.1.26 ברישום מראש בלבד; רוב האתר כולל עליות תלולות ומדרגות שאינן מונגשות. תחנות ההדרכה כאן אינן מאשרות כניסה למחילות, גישה לקבר או מסלול רציף. יש לבדוק את ההנחיות העדכניות לפני נסיעה.",
+        "source": "https://www.parks.org.il/reserve-park/%d7%a4%d7%90%d7%a8%d7%a7-%d7%92%d7%9f-%d7%9c%d7%90%d7%95%d7%9e%d7%99-%d7%94%d7%a8%d7%95%d7%93%d7%99%d7%95%d7%9f/",
         "checkedAt": "2026-11-10"
       }
     }
