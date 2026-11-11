@@ -202,6 +202,15 @@
     multi: ['multiPeriod', 'multiBefore'],
     order: ['first', 'century']
   };
+  // Plusieurs familles à la fois : « date,multi » → union des familles (ordre stable, sans doublon). Inconnu → tout mélangé.
+  function typeList(t) {
+    if (TYPE_GROUPS[t]) return TYPE_GROUPS[t];
+    var out = [];
+    String(t || '').split(',').forEach(function (k) { (TYPE_GROUPS[k] || []).forEach(function (x) { if (out.indexOf(x) < 0) out.push(x); }); });
+    return out.length ? out : TYPE_GROUPS.mix;
+  }
+  // Plusieurs périodes à la fois : « hasmonean,hellenism » ; « all » ou vide = toutes.
+  function periodList(p) { return !p || p === 'all' ? null : String(p).split(',').filter(Boolean); }
   function buildQuestion(ev, events, seed, type, level) { return (QUESTION_TYPES[type || 'date'])(ev, events, seed, level); }
   function questionMs(q) { return (q && q.ms) || DURATION_MS; }
   // Bonne réponse ? (une option pour les questions simples, exactement le bon ensemble pour les questions à choix multiples)
@@ -227,7 +236,7 @@
   function pool(data, opts) {
     opts = opts || {};
     var list = data.events.filter(function (e) {
-      if (opts.period && opts.period !== 'all' && e.period !== opts.period) return false;
+      var ps = periodList(opts.period); if (ps && ps.indexOf(e.period) < 0) return false;
       if (opts.mode === 'exam' && !e.examReady) return false;
       if (opts.ids && opts.ids.indexOf(e.id) < 0) return false;
       return true;
@@ -241,11 +250,11 @@
   }
 
   // Questions d'une partie : chaque événement peut revenir sous un autre type de question (jamais deux fois la même).
-  function maxQuestions(data, opts) { return pool(data, opts).length * (TYPE_GROUPS[opts.types] || TYPE_GROUPS.date).length; }
+  function maxQuestions(data, opts) { return pool(data, opts).length * (opts.types == null ? TYPE_GROUPS.date : typeList(opts.types)).length; }
   function buildRun(data, opts) {
     opts = opts || {};
     if (data.periods) setPeriods(data.periods);
-    var seed = opts.seed || '', types = TYPE_GROUPS[opts.types] || TYPE_GROUPS.date, L = lvl(opts.level);
+    var seed = opts.seed || '', types = opts.types == null ? TYPE_GROUPS.date : typeList(opts.types), L = lvl(opts.level);
     var evs = shuffle(pool(data, opts), rng('pick|' + seed)), optEvents = opts.mode === 'exam' ? data.events.filter(function (e) { return e.examReady; }) : data.events;
     var count = opts.count || evs.length, out = [], used = {};
     for (var round = 0; round < types.length && out.length < count; round++) {
@@ -303,7 +312,7 @@
     DURATION_MS: DURATION_MS, MAX_POINTS: MAX_POINTS, MIN_GAP: MIN_GAP, LEVELS: LEVELS, PERIOD_IDS: PERIOD_IDS,
     CERT_LABEL: CERT_LABEL, SOURCE_LABEL: SOURCE_LABEL,
     formatYear: formatYear, yearLabel: yearLabel, validate: validate, rng: rng, shuffle: shuffle, hash: hash,
-    QUESTION_TYPES: QUESTION_TYPES, TYPE_GROUPS: TYPE_GROUPS, setPeriods: setPeriods, buildQuestion: buildQuestion, buildRun: buildRun, maxQuestions: maxQuestions, questionMs: questionMs,
+    QUESTION_TYPES: QUESTION_TYPES, TYPE_GROUPS: TYPE_GROUPS, typeList: typeList, periodList: periodList, setPeriods: setPeriods, buildQuestion: buildQuestion, buildRun: buildRun, maxQuestions: maxQuestions, questionMs: questionMs,
     isCorrect: isCorrect, multiHint: multiHint, answerLabel: answerLabel, correctLabel: correctLabel, centuryLabel: centuryLabel, MULTI_MS: MULTI_MS, dateOptions: dateOptions, pool: pool, pickEvents: pickEvents,
     scoreAnswer: scoreAnswer, Timer: Timer, buildResult: buildResult
   };

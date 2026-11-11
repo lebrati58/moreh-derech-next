@@ -257,7 +257,7 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await page.waitForSelector('#vQuiz:not([hidden])');
   await page.tap('#qlevels [data-lv="2"]'); await page.tap('#qtypes [data-ty="mix"]');
   // Inverse : « que s'est-il passé en … ? »
-  await page.tap('#qtypes [data-ty="event"]');
+  await page.tap('#qtypes [data-ty="mix"]'); await page.tap('#qtypes [data-ty="event"]'); // sélection multiple : on repart de « tout » puis on choisit une seule famille
   await page.tap('#start');
   await page.waitForSelector('#vPlay:not([hidden]) .ans');
   ok(/^מה קרה בשנת .+\?$/.test(await page.textContent('#qtext')), 'inverse : « מה קרה בשנת …? »');
@@ -270,7 +270,7 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   await shot('03-inverse-correction');
   // Plusieurs réponses
   await page.goto(base + 'history.html#/quiz?mode=practice');
-  await page.tap('#qtypes [data-ty="multi"]');
+  await page.tap('#qtypes [data-ty="mix"]'); await page.tap('#qtypes [data-ty="multi"]'); // sélection multiple : on repart de « tout » puis on choisit une seule famille
   await page.tap('#start');
   await page.waitForSelector('#vPlay:not([hidden]) .ans');
   ok(await page.isVisible('#check') && await page.isDisabled('#check'), 'QCM : bouton « בדיקה » visible, inactif sans sélection');
@@ -295,11 +295,19 @@ const noHScroll = page => page.evaluate(() => document.documentElement.scrollWid
   ok(await page.evaluate(() => { const s = window.MDHistoryApp.state(); return !s.answers[s.i].correct; }), 'QCM : une case en trop = faux');
   // Ordre
   await page.goto(base + 'history.html#/quiz?mode=practice');
-  await page.tap('#qtypes [data-ty="order"]');
+  await page.tap('#qtypes [data-ty="mix"]'); await page.tap('#qtypes [data-ty="order"]'); // sélection multiple : on repart de « tout » puis on choisit une seule famille
   await page.tap('#start');
   await page.waitForSelector('#vPlay:not([hidden]) .ans');
   ok(/(ראשון|אחרון|באיזו מאה)/.test(await page.textContent('#qtext')), 'ordre / siècle : question posée');
   await shot('06-ordre');
+  // sélection multiple : deux familles et deux périodes à la fois
+  await page.goto(base + 'history.html#/quiz'); await page.waitForSelector('#qtypes [data-ty]');
+  await page.tap('#qtypes [data-ty="mix"]'); await page.tap('#qtypes [data-ty="date"]'); await page.tap('#qtypes [data-ty="event"]');
+  ok(await page.locator('#qtypes [aria-pressed=true]').count() === 2, 'types : deux familles cochées ensemble');
+  await page.tap('#qpchips [data-p="all"]'); await page.tap('#qpchips [data-p="persian"]'); await page.tap('#qpchips [data-p="babylon"]');
+  ok(await page.locator('#qpchips [aria-pressed=true]').count() === 2, 'périodes : deux périodes cochées ensemble');
+  await page.tap('#start'); await page.waitForSelector('#qcard');
+  ok(await page.evaluate(() => { const s = window.MDHistoryApp.state(); return s.questions.every(q => ['date', 'event'].includes(q.type)) && s.period === 'babylon,persian'; }), 'partie : seulement les familles et périodes choisies');
   ok(await noHScroll(page), 'types : pas de défilement horizontal');
   ok(!errors.some(e => !e.startsWith('ASSERT')), 'types : aucune erreur JavaScript');
   await ctx.close();

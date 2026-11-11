@@ -255,3 +255,17 @@ test('niveaux de difficulté : leurres plus ou moins proches, chrono, points', a
     const ev = evs.find(x => x.id === q.eventId); for (const o of q.options) if (!o.correct) assert.ok(!(ev.alts || []).includes(o.value), q.id);
   }
 });
+
+test('quiz : plusieurs périodes et plusieurs types à la fois', async () => {
+  const H = await lib(); H.setPeriods(DATA.periods);
+  const two = DATA.periods.slice(3, 5).map(p => p.id), set = new Set(two);
+  const n = DATA.events.filter(e => set.has(e.period)).length;
+  assert.equal(H.pool(DATA, { period: two.join(',') }).length, n, 'pool = union des 2 périodes');
+  const run = H.buildRun(DATA, { period: two.join(','), types: 'date,event', count: 999, seed: 's' });
+  assert.ok(run.length > 0 && run.every(q => set.has(DATA.events.find(e => e.id === q.eventId).period)), 'questions des périodes choisies seulement');
+  assert.deepEqual([...new Set(run.map(q => q.type))].sort(), ['date', 'event'], 'types choisis seulement');
+  assert.equal(H.maxQuestions(DATA, { period: two.join(','), types: 'date,event' }), n * 2);
+  assert.equal(H.typeList('multi,order').join(), 'multiPeriod,multiBefore,first,century');
+  assert.equal(H.typeList('xx'), H.TYPE_GROUPS.mix);
+  assert.equal(H.pool(DATA, { period: 'all' }).length, DATA.events.length);
+});

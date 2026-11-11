@@ -120,11 +120,11 @@
     $('footT').innerHTML = `📚 התאריכים נבדקו מול <a href="${esc(DATA.course.taarichon.url)}" target="_blank" rel="noopener noreferrer">תאריכון הקורס</a> והתקצירים המאורגנים בתיקיית הקורס. ליד כל אירוע כתוב אם התאריך מופיע בחומרי הקורס, אם הוא מקורב או שנוי במחלוקת. אירועים שתאריכם שנוי במחלוקת מופיעים באימון בלבד, לא במבחן. זה כלי חזרה — לא תחליף לחומר הרשמי.`;
     // quiz
     $('qpchips').innerHTML = chips.replace('aria-pressed="true"', 'aria-pressed="false"');
-    $('qpchips').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) { pref.period = b.dataset.p; savePref(); renderSetup(); } });
+    $('qpchips').addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) { pref.period = cleanPeriods(toggleMulti(pref.period, b.dataset.p, 'all', k => PER[k])); savePref(); renderSetup(); } });
     document.querySelectorAll('.mode').forEach(b => b.addEventListener('click', () => { pref.mode = b.dataset.mode; savePref(); renderSetup(); }));
     $('counts').addEventListener('click', e => { const b = e.target.closest('[data-n]'); if (b) { pref.count = Number(b.dataset.n); savePref(); renderSetup(); } });
     $('timed').addEventListener('change', () => { pref.timed = $('timed').checked; savePref(); renderSetup(); });
-    $('qtypes').addEventListener('click', e => { const b = e.target.closest('[data-ty]'); if (b) { pref.types = b.dataset.ty; savePref(); renderSetup(); } });
+    $('qtypes').addEventListener('click', e => { const b = e.target.closest('[data-ty]'); if (b) { pref.types = cleanTypes(toggleMulti(pref.types, b.dataset.ty, 'mix', k => PTYPES.includes(k))); savePref(); renderSetup(); } });
     $('qlevels').addEventListener('click', e => { const b = e.target.closest('[data-lv]'); if (b) { pref.level = Number(b.dataset.lv); savePref(); renderSetup(); } });
     $('start').addEventListener('click', () => startRun({ mode: pref.mode, period: pref.period, count: pref.count, types: pref.types, level: pref.level, timed: pref.mode === 'exam' ? true : pref.timed }));
     $('startReview').addEventListener('click', () => { const m = P ? P.historyStats().mistakes.filter(id => EV[id]) : []; if (m.length) startRun({ mode: 'practice', review: true, period: 'all', ids: m, count: m.length, types: pref.types, timed: pref.timed }); });
@@ -235,12 +235,23 @@
 
   // ======================= quiz : réglages =======================
   function savePref() { store.set(PREF_KEY, pref); }
+  // Sélection multiple : « all »/« mix » = tout ; sinon une liste séparée par des virgules. Toucher une puce l'ajoute ou la retire.
+  function toggleMulti(cur, key, allKey, valid) {
+    if (key === allKey) return allKey;
+    const set = cur === allKey ? [] : String(cur).split(',').filter(k => valid(k));
+    const i = set.indexOf(key); if (i < 0) set.push(key); else set.splice(i, 1);
+    return set.length ? set.join(',') : allKey;
+  }
+  const PTYPES = ['date', 'event', 'multi', 'order'];
+  function cleanPeriods(v) { if (!v || v === 'all') return 'all'; const l = String(v).split(',').filter(k => PER[k]); return l.length === DATA.periods.length || !l.length ? 'all' : DATA.periods.map(p => p.id).filter(id => l.includes(id)).join(','); }
+  function cleanTypes(v) { if (!v || v === 'mix') return 'mix'; const l = String(v).split(',').filter(k => PTYPES.includes(k)); return !l.length || l.length === PTYPES.length ? 'mix' : PTYPES.filter(k => l.includes(k)).join(','); }
+  function periodLabel(v) { if (!v || v === 'all') return 'כל התקופות'; const l = String(v).split(','); return l.length > 2 ? l.length + ' תקופות' : l.map(k => PER[k] ? PER[k].short : k).join(' + '); }
   function renderSetup() {
-    if (pref.period !== 'all' && !PER[pref.period]) pref.period = 'all';
+    pref.period = cleanPeriods(pref.period);
     document.querySelectorAll('.mode').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === pref.mode)));
-    document.querySelectorAll('#qpchips [data-p]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.p === pref.period)));
-    if (!H.TYPE_GROUPS[pref.types]) pref.types = 'mix';
-    document.querySelectorAll('#qtypes [data-ty]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ty === pref.types)));
+    document.querySelectorAll('#qpchips [data-p]').forEach(b => b.setAttribute('aria-pressed', String(pref.period === 'all' ? b.dataset.p === 'all' : pref.period.split(',').includes(b.dataset.p))));
+    pref.types = cleanTypes(pref.types);
+    document.querySelectorAll('#qtypes [data-ty]').forEach(b => b.setAttribute('aria-pressed', String(pref.types === 'mix' ? b.dataset.ty === 'mix' : pref.types.split(',').includes(b.dataset.ty))));
     if (!H.LEVELS[pref.level]) pref.level = 2;
     $('qlevels').innerHTML = [1, 2, 3].map(n => `<button type="button" data-lv="${n}" aria-pressed="${n === pref.level}"><b>${esc(lvTag(n))}</b><small>${esc(LV(n).desc)}</small></button>`).join('');
     const secs = LV(pref.level).ms / 1000, msecs = LV(pref.level).multiMs / 1000; $('timedTxt').textContent = `שעון של ${secs} שניות`;
@@ -254,7 +265,7 @@
     $('rules').innerHTML = (pref.mode === 'exam'
       ? [`⏳ ${secs} שניות לשאלה (${msecs} בשאלות עם כמה תשובות). נגמר הזמן = טעות.`, '🏆 נכון = 100 + 3 × שניות שנותרו + בונוס רצף (עד +100).', '📈 בכל אירוע נספר רק השיא שלכם — משחק חוזר לא מכפיל נקודות.', '🙈 התשובות וההסברים מוצגים בסוף. בזמן השהיה השאלה מוסתרת.'].concat(excluded ? [`⚖️ ${excluded} אירועים שתאריכם שנוי במחלוקת או לא אחיד בחומרי הקורס — רק באימון.`] : [])
       : ['📖 אחרי כל תשובה: הסבר, השנים של כל האפשרויות וקישור לחומר הקורס.', pref.timed !== false ? `⏳ ${secs} שניות לשאלה (אפשר לכבות את השעון).` : '🐢 בלי שעון — לומדים בנחת.', '🎯 ניקוד אימון לא נספר בטבלת הכיתה.']
-    ).concat(pref.level === 1 ? ['🌱 רמה קלה: התשובות השגויות רחוקות לפחות 40 שנה; הניקוד ×0.75.'] : pref.level === 3 ? ['🔥 רמה קשה: שנים ואירועים קרובים מאוד, 20 שניות לשאלה.'] : []).concat(pref.types === 'mix' || pref.types === 'multi' ? ['☑️ בשאלות „אילו…?” יש כמה תשובות נכונות: מסמנים את כולן ולוחצים „בדיקה”.'] : []).map(t => `<li>${esc(t)}</li>`).join('');
+    ).concat(pref.level === 1 ? ['🌱 רמה קלה: התשובות השגויות רחוקות לפחות 40 שנה; הניקוד ×0.75.'] : pref.level === 3 ? ['🔥 רמה קשה: שנים ואירועים קרובים מאוד, 20 שניות לשאלה.'] : []).concat(pref.types === 'mix' || pref.types.split(',').includes('multi') ? ['☑️ בשאלות „אילו…?” יש כמה תשובות נכונות: מסמנים את כולן ולוחצים „בדיקה”.'] : []).map(t => `<li>${esc(t)}</li>`).join('');
     const st = P && P.historyStats ? P.historyStats() : null, mis = st ? st.mistakes.filter(id => EV[id]) : [];
     $('startReview').hidden = !mis.length; $('startReview').textContent = `🔁 לתרגל רק את הטעויות שלי (${mis.length})`;
     $('resume').hidden = !(run && run.phase !== 'done');
@@ -262,7 +273,7 @@
     if (st) {
       $('kpis').innerHTML = `<div><strong>${fmt(st.points)}</strong><span>נק׳ שיא במבחנים</span></div><div><strong>${st.mastered.filter(id => EV[id]).length}/${DATA.events.length}</strong><span>אירועים שידעתי</span></div><div><strong>${mis.length}</strong><span>לחזרה</span></div>`;
       const runs = st.runs.slice(-5).reverse();
-      $('runs').innerHTML = runs.length ? runs.map(r => `<li><span>${r.mode === 'exam' ? '🏆 מבחן' : '📖 אימון'} · ${esc(r.period === 'all' ? 'כל התקופות' : (PER[r.period] ? PER[r.period].short : r.period))} · ${new Date(r.at).toLocaleDateString('he-IL')}</span><b>${r.correct}/${r.total} · ${fmt(r.score)}</b></li>`).join('') : '<li><span>עוד לא שיחקתם. בהצלחה!</span></li>';
+      $('runs').innerHTML = runs.length ? runs.map(r => `<li><span>${r.mode === 'exam' ? '🏆 מבחן' : '📖 אימון'} · ${esc(periodLabel(r.period))} · ${new Date(r.at).toLocaleDateString('he-IL')}</span><b>${r.correct}/${r.total} · ${fmt(r.score)}</b></li>`).join('') : '<li><span>עוד לא שיחקתם. בהצלחה!</span></li>';
     }
   }
 
@@ -270,7 +281,7 @@
   function startRun(cfg) {
     if (cfg.mode !== 'exam' && window.MDComfort && MDComfort.noTimer()) cfg = Object.assign({}, cfg, { timed: false }); // mode Confort : entraînement sans chronomètre
     const seed = uuid();
-    const types = H.TYPE_GROUPS[cfg.types] ? cfg.types : 'mix';
+    const types = cleanTypes(cfg.types);
     const level = H.LEVELS[cfg.level] ? cfg.level : 2;
     const questions = H.buildRun(DATA, { mode: cfg.mode, period: cfg.period, ids: cfg.ids, count: cfg.count, seed, types, level });
     if (!questions.length) return;

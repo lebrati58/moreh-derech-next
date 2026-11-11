@@ -64,6 +64,8 @@ a{color:inherit}button,input{font:inherit;color:inherit}button{cursor:pointer}
 .pchips button .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--pc);margin-inline-end:6px;vertical-align:0}
 .pchips button[aria-pressed=true]{background:var(--pc);color:#10173a;border-color:#fff}
 .pchips button[aria-pressed=true] .dot{background:#10173a}
+#qpchips{flex-wrap:wrap;overflow:visible}
+#qpchips button[aria-pressed=true]::after{content:" ✓";font-weight:900}
 .count{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:14px 2px 6px;color:var(--soft);font-size:13.5px;font-weight:800}
 .count button{border:1px solid var(--line2);background:#1d2a56;border-radius:10px;padding:6px 10px;font-size:13px;font-weight:800;min-height:36px}
 
@@ -289,11 +291,11 @@ body.locked{overflow:hidden}
         <button type="button" class="mode" data-mode="practice" aria-pressed="true"><b>📖 אימון</b><small>אחרי כל שאלה: התשובה, הסבר וקישור לחומר הקורס. לא נספר לטבלה.</small></button>
         <button type="button" class="mode" data-mode="exam" aria-pressed="false"><b>🏆 מבחן</b><small>שעון חובה, הסברים בסוף. השיא שלך בכל אירוע נספר בנקודות של המסע.</small></button>
       </div>
-      <div class="lbl" id="perLbl">תקופה</div>
+      <div class="lbl" id="perLbl">תקופה <small style="font-weight:600;letter-spacing:0;opacity:.8">· אפשר לבחור כמה</small></div>
       <div class="pchips" id="qpchips" role="group" aria-labelledby="perLbl" style="padding-top:0"></div>
       <div class="lbl" id="lvLbl">רמת קושי</div>
       <div class="counts levels" id="qlevels" role="group" aria-labelledby="lvLbl"></div>
-      <div class="lbl" id="tyLbl">סוג שאלות</div>
+      <div class="lbl" id="tyLbl">סוג שאלות <small style="font-weight:600;letter-spacing:0;opacity:.8">· אפשר לבחור כמה</small></div>
       <div class="counts types" id="qtypes" role="group" aria-labelledby="tyLbl">
         <button type="button" data-ty="mix" aria-pressed="true">🔀 הכול מעורב</button>
         <button type="button" data-ty="date" aria-pressed="false">📅 אירוע ← שנה</button>
