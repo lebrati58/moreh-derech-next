@@ -46,6 +46,12 @@ test('סיורים par thème (pas par numéro) et cours de théorie du Drive pa
   for (const q of LESSONS.questions) { assert.ok(q.url === '' || /^https:\/\/(drive|docs)\.google\.com\//.test(q.url), q.id); assert.ok(q.source, q.id); }
   assert.ok(LESSONS.questions.filter(q => q.url).length >= 300, 'cours du Drive avec lien');
   for (const t of LESSONS.topics) assert.equal(t.count, LESSONS.questions.filter(q => q.topic === t.id).length, t.id);
+  // journées de סיור : source à part, pas mêlées aux cours de théorie
+  const days = BANK.filter(q => q.src === 'days');
+  assert.ok(days.length >= 1 && days.every(q => /^siyur_\d{8}$/.test(q.sub)), 'ימי סיור');
+  assert.ok(!lessons.some(q => /^siyur_/.test(q.sub)), 'pas de journée dans les cours');
+  const dg = C.buildGame(BANK, { count: 10, seed: 'd', sources: ['days'] });
+  assert.ok(dg.length >= 3 && dg.every(q => q.id.startsWith('l:siyur_')));
   // filtre par sujet
   const g = C.buildGame(BANK, { count: 20, seed: 'g', sources: ['lessons'], subs: { lessons: ['geology'] } });
   assert.equal(g.length, 20); assert.ok(g.every(q => q.id.startsWith('l:') && /גאולוגיה/.test(q.cat)));

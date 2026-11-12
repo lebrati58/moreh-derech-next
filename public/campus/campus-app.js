@@ -293,8 +293,9 @@
   function hostSetup() {
     var prev = ls.get(HKEY, {}) || {}, s = Object.assign({ count: 15, seconds: 20, sources: C.SOURCES.slice(), subs: null, double: true, auto: true }, prev.settings || {});
     if (!s.subs) { s.subs = { tours: [], lessons: [] }; s.sources = C.SOURCES.slice(); }     // anciens réglages : tout le cours
-    s.subs.tours = s.subs.tours || []; s.subs.lessons = s.subs.lessons || [];
-    var SUBS = { tours: 'אילו סיורים?', lessons: 'אילו שיעורים?' };
+    s.subs.tours = s.subs.tours || []; s.subs.lessons = s.subs.lessons || []; s.subs.days = s.subs.days || [];
+    if (!s.seenDays) { s.seenDays = true; if (s.sources.indexOf('days') < 0) s.sources.push('days'); }   // nouvelle source : cochée une fois
+    var SUBS = { days: 'איזה יום סיור?', tours: 'אילו סיורים?', lessons: 'אילו שיעורים?' };
     app.innerHTML = '<div class="card"><h2>🎤 משחק חדש</h2><p class="sub" id="bankInfo">טוען את בנק השאלות…</p>' +
       '<label class="f">נושאים</label><div class="chips" id="srcs"></div>' +
       Object.keys(SUBS).map(function (k) {
@@ -312,10 +313,12 @@
       var info = document.getElementById('bankInfo'); if (!info) return;
       var cnt = function (src) { return C.countBy(bank, function (q) { return q.src === src; }); };
       // sous-thèmes : nom affiché + nombre de questions, dans l'ordre du cours
-      var subList = { tours: [], lessons: [] };
+      var subList = { days: [], tours: [], lessons: [] };
       Object.keys(subList).forEach(function (k) {
         var n = {}; bank.forEach(function (q) { if (q.src === k) n[q.sub] = (n[q.sub] || 0) + 1; });
-        var order = k === 'tours' ? Object.keys(n).sort(function (a, b) { return (a === 'road67') - (b === 'road67') || a.localeCompare(b); }) : (bank.meta.lessonOrder || []).filter(function (id) { return n[id]; });
+        var order = k === 'tours' ? Object.keys(n).sort(function (a, b) { return (a === 'road67') - (b === 'road67') || a.localeCompare(b); })
+          : k === 'days' ? Object.keys(n).sort().reverse()   // journée la plus récente en premier
+          : (bank.meta.lessonOrder || []).filter(function (id) { return n[id]; });
         subList[k] = order.map(function (id) { return { id: id, n: n[id], label: k === 'tours' ? (bank.meta.tourTitles[id] || id) : bank.meta.lessonLabel[id] || id }; });
         s.subs[k] = s.subs[k].filter(function (id) { return n[id]; });
       });

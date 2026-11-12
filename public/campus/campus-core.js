@@ -11,9 +11,9 @@
   var STREAK_STEP = 50;           // bonus de série : +50 par bonne réponse d'affilée (à partir de la 2e)
   var STREAK_CAP = 250;
   var LATE_MS = 1200;             // une réponse partie à temps peut arriver un peu après la fin du chrono
-  var SOURCES = ['tours', 'lessons', 'history', 'arch'];
+  var SOURCES = ['days', 'tours', 'lessons', 'history', 'arch'];
   var SOURCE_WEIGHT = { tours: 1, lessons: 1.15, history: 0.9, arch: 0.6 };
-  var SOURCE_LABEL = { tours: '🧭 הסיורים', lessons: '📚 שיעורי התיאוריה', history: '⏳ ציר הזמן', arch: '🏛️ אדריכלות קלאסית' };
+  var SOURCE_LABEL = { days: '🚌 ימי סיור', tours: '🧭 הסיורים', lessons: '📚 שיעורי התיאוריה', history: '⏳ ציר הזמן', arch: '🏛️ אדריכלות קלאסית' };
 
   // ---------- hasard reproductible ----------
   function hash(str) { var h = 2166136261; str = String(str); for (var i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
@@ -105,7 +105,8 @@
     ((data && data.questions) || []).forEach(function (q) {
       var t = topics[q.topic];
       if (!t || !Array.isArray(q.options) || !distinct4(q.options) || !(q.correct >= 0 && q.correct < 4)) return;
-      out.push({ id: 'l:' + q.id, src: 'lessons', sub: q.topic, level: [1, 2, 3].indexOf(q.level) >= 0 ? q.level : 2,
+      // les journées de סיור (topic siyur_AAAAMMJJ, questions des transcripts) ont leur propre source « days »
+      out.push({ id: 'l:' + q.id, src: /^siyur_/.test(q.topic) ? 'days' : 'lessons', sub: q.topic, level: [1, 2, 3].indexOf(q.level) >= 0 ? q.level : 2,
         text: clean(q.q), options: q.options.map(clean), correct: q.correct, explanation: clean(q.explanation),
         cat: (t.emoji ? t.emoji + ' ' : '') + clean(t.he), sourceUrl: q.url || '' });
     });
