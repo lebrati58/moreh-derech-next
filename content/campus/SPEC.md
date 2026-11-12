@@ -57,5 +57,5 @@ et corriger jusqu'à 0 erreur.
 
 ## Transcripts de סיור (questions du bus retour)
 - Source sans lien Drive : `{ "id": "t1", "kind": "transcript", "title": "תמליל סיור – <lieu> (<date>)", "url": "" }`. Une source = un lieu.
-- **10 questions maximum par lieu** (le build écarte les suivantes). Choisir les faits essentiels pour l'examen.
+- Pas de limite de questions par lieu ni par journée.
 - Mêmes règles de contenu : uniquement ce que le guide a dit dans le transcript.

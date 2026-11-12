@@ -41,8 +41,6 @@ for (const f of files) {
     if (why.length) { rejected.push(`${f} ${id}: ${why.join(', ')}`); return; }
     seenText.add(key);
     const s = src[q.src];
-    // transcript de סיור : 10 questions max par lieu (une source = un lieu)
-    if (!s.url) { s.n = (s.n || 0) + 1; if (s.n > 10) { rejected.push(`${f} ${id}: plus de 10 questions pour ce lieu`); return; } }
     questions.push({ id, topic: d.topic, level: q.level, q: text, options: opts, correct: q.correct, explanation: clean(q.explanation), source: s.title, url: s.url });
     n++;
   });
