@@ -56,6 +56,7 @@ Relire chaque question contre le texte du document. Puis lancer :
 et corriger jusqu'à 0 erreur.
 
 ## Transcripts de סיור (questions du bus retour)
-- Source sans lien Drive : `{ "id": "t1", "kind": "transcript", "title": "תמליל סיור – <lieu> (<date>)", "url": "" }`. Une source = un lieu.
-- **10 questions maximum par lieu** (le build écarte les suivantes). Choisir les faits essentiels pour l'examen.
-- Mêmes règles de contenu : uniquement ce que le guide a dit dans le transcript.
+- **Un fichier par journée de סיור** : `content/campus/siyur_AAAAMMJJ.json`, `topic` = `siyur_AAAAMMJJ`, `he` = « סיור DD.MM – <lieux de la journée> ».
+- Chaque transcript de la journée est une source sans lien Drive : `{ "id": "t1", "kind": "transcript", "title": "תמליל – <lieu>", "url": "" }` (t1, t2… dans l'ordre de la journée).
+- **10 questions maximum pour toute la journée** (le build écarte les suivantes). Quand un nouveau transcript arrive, re-répartir les 10 entre les lieux.
+- Mêmes règles de contenu : uniquement ce que le guide a dit dans les transcripts.
