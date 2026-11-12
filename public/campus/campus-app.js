@@ -334,9 +334,15 @@
       draw();
       document.getElementById('srcs').onclick = function (e) { var b = e.target.closest('[data-k]'); if (!b) return; var k = b.dataset.k, i = s.sources.indexOf(k); if (i >= 0) { if (s.sources.length > 1) s.sources.splice(i, 1); } else s.sources.push(k); draw(); };
       [].forEach.call(document.querySelectorAll('.subs'), function (box) {
-        box.onclick = function (e) { var b = e.target.closest('[data-sub]'); if (!b) return; var L = s.subs[box.dataset.src], i = L.indexOf(b.dataset.sub); if (i >= 0) L.splice(i, 1); else L.push(b.dataset.sub); draw(); };
+        box.onclick = function (e) {
+          var b = e.target.closest('[data-sub]'); if (!b) return; var L = s.subs[box.dataset.src], i = L.indexOf(b.dataset.sub); if (i >= 0) L.splice(i, 1); else L.push(b.dataset.sub);
+          // choisir un sous-thème = jouer seulement ce qui est choisi : les autres sources sans choix précis sont désactivées
+          var picked = Object.keys(s.subs).filter(function (k) { return s.subs[k].length; });
+          s.sources = picked.length ? picked : C.SOURCES.slice();
+          draw();
+        };
       });
-      [].forEach.call(document.querySelectorAll('[data-none]'), function (b) { b.onclick = function () { s.subs[b.dataset.none] = []; draw(); }; });
+      [].forEach.call(document.querySelectorAll('[data-none]'), function (b) { b.onclick = function () { s.subs[b.dataset.none] = []; var picked = Object.keys(s.subs).filter(function (k) { return s.subs[k].length; }); s.sources = picked.length ? picked : C.SOURCES.slice(); draw(); }; });
       document.getElementById('cnt').onclick = function (e) { var b = e.target.closest('[data-n]'); if (b) { s.count = +b.dataset.n; draw(); } };
       document.getElementById('sec').onclick = function (e) { var b = e.target.closest('[data-s]'); if (b) { s.seconds = +b.dataset.s; draw(); } };
       document.getElementById('open').onclick = function () {

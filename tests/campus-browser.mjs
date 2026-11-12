@@ -60,7 +60,12 @@ ok(await host.locator('#sub-lessons [data-sub="geology"]').count() === 1, 'thèm
 await host.click('#sub-lessons [data-sub="geology"]');
 const geo = await host.evaluate(() => document.getElementById('bankInfo').innerText);
 ok(/\d+ בבחירה/.test(geo), 'sélection géologie : ' + geo);
+// choisir un thème = seulement ce thème (les autres sources s'éteignent), effacer = tout revient
+const geoN = await host.evaluate(() => fetch('campus/lessons.json').then(r => r.json()).then(d => d.questions.filter(q => q.topic === 'geology').length));
+ok(+geo.match(/(\d+) בבחירה/)[1] === geoN, 'géologie seule : ' + geo + ' (attendu ' + geoN + ')');
+ok(await host.locator('#srcs [aria-pressed="true"]').count() === 1, 'une seule source active après choix d\'un thème');
 await host.click('[data-none="lessons"]');
+ok(await host.locator('#srcs [aria-pressed="true"]').count() === 4, 'toutes les sources reviennent après « לנקות את הבחירה »');
 await host.click('#sub-tours [data-sub="03"]'); await host.click('[data-none="tours"]');
 await host.click('[data-n="10"]'); await host.click('[data-s="10"]');
 await host.screenshot({ path: `${OUT}/pc-1-setup.png`, fullPage: true });
