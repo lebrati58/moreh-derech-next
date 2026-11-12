@@ -8,7 +8,7 @@ import { readFile, readdir, writeFile } from 'node:fs/promises';
 const DIR = new URL('../content/campus/', import.meta.url);
 const OUT = new URL('../public/campus/lessons.json', import.meta.url);
 // ordre d'affichage = ordre du cours
-const ORDER = ['intro', 'geology', 'prehistory', 'bronze', 'iron', 'persian', 'hellenistic', 'hasmonean', 'roman', 'byzantine', 'medieval', 'religions', 'heritage'];
+const ORDER = ['intro', 'geology', 'prehistory', 'bronze', 'iron', 'persian', 'hellenistic', 'hasmonean', 'roman', 'byzantine', 'medieval', 'religions', 'heritage', 'har_hazeitim'];
 const clean = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const norm = s => clean(s).replace(/[״"׳'?.,:;!()\-–—]/g, '').toLowerCase();
 
@@ -17,7 +17,12 @@ const topics = [], questions = [], rejected = [], seenText = new Set();
 for (const f of files) {
   const d = JSON.parse(await readFile(new URL(f, DIR), 'utf8'));
   if (!d.topic || !/^[a-z_]{2,20}$/.test(d.topic) || !Array.isArray(d.questions)) { rejected.push(`${f}: fichier mal formé`); continue; }
-  const src = {}; (d.sources || []).forEach(s => { if (s && s.id && /^https:\/\/(drive|docs)\.google\.com\//.test(s.url || '')) src[s.id] = { title: clean(s.title), url: s.url }; });
+  // source = document du Drive (lien obligatoire) ou transcript d'un סיור (kind: "transcript", sans lien)
+  const src = {}; (d.sources || []).forEach(s => {
+    if (!s || !s.id) return;
+    if (/^https:\/\/(drive|docs)\.google\.com\//.test(s.url || '')) src[s.id] = { title: clean(s.title), url: s.url };
+    else if (s.kind === 'transcript' && clean(s.title)) src[s.id] = { title: clean(s.title), url: '' };
+  });
   let n = 0;
   d.questions.forEach((q, i) => {
     const id = clean(q.id) || `${d.topic}-${i + 1}`, why = [];
@@ -27,7 +32,7 @@ for (const f of files) {
     if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4)) why.push('bonne réponse');
     if (![1, 2, 3].includes(q.level)) why.push('niveau');
     if (!text || text.length > 200) why.push('question');
-    if (!src[q.src]) why.push('source Drive');
+    if (!src[q.src]) why.push('source');
     if (opts.some(o => /כל התשובות|אף אחת|אף תשובה|תשובות [אב]['׳]? ו/.test(o))) why.push('réponse « toutes / aucune »');
     const good = opts[q.correct] || '';
     if (good.length >= 4 && norm(text).includes(norm(good))) why.push('réponse dans la question');
@@ -36,6 +41,8 @@ for (const f of files) {
     if (why.length) { rejected.push(`${f} ${id}: ${why.join(', ')}`); return; }
     seenText.add(key);
     const s = src[q.src];
+    // transcript de סיור : 10 questions max par lieu (une source = un lieu)
+    if (!s.url) { s.n = (s.n || 0) + 1; if (s.n > 10) { rejected.push(`${f} ${id}: plus de 10 questions pour ce lieu`); return; } }
     questions.push({ id, topic: d.topic, level: q.level, q: text, options: opts, correct: q.correct, explanation: clean(q.explanation), source: s.title, url: s.url });
     n++;
   });

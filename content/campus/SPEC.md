@@ -54,3 +54,8 @@ Un fichier JSON UTF-8 (écrit avec l'outil Write), exactement :
 Relire chaque question contre le texte du document. Puis lancer :
 `node -e "const d=require(process.argv[1]);let e=0;const ids=new Set(d.sources.map(s=>s.id));for(const q of d.questions){if(q.options.length!==4||new Set(q.options).size!==4||!(q.correct>=0&&q.correct<4)||![1,2,3].includes(q.level)||!ids.has(q.src)||q.q.length>160){e++;console.log('BAD',q.id)}}console.log(d.questions.length,'questions',e,'erreurs')" <fichier>`
 et corriger jusqu'à 0 erreur.
+
+## Transcripts de סיור (questions du bus retour)
+- Source sans lien Drive : `{ "id": "t1", "kind": "transcript", "title": "תמליל סיור – <lieu> (<date>)", "url": "" }`. Une source = un lieu.
+- **10 questions maximum par lieu** (le build écarte les suivantes). Choisir les faits essentiels pour l'examen.
+- Mêmes règles de contenu : uniquement ce que le guide a dit dans le transcript.
