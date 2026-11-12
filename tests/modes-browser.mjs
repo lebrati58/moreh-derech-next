@@ -34,8 +34,8 @@ const closeOnboarding = async pg => { for (let k = 0; k < 3 && await pg.$('.ob-c
 
 // ===================== A. PR #78 : les 4 modes de l'accueil =====================
 const EXPECT = {
-  amateur: ['campus', 'history', 'parta'],
-  explorer: ['campus', 'history', 'roads', 'guided', 'duo', 'parta', 'timeline'],
+  amateur: ['campus', 'history', 'parta', 'caesarea', 'jerusalem', 'chips'],
+  explorer: ['campus', 'history', 'roads', 'guided', 'duo', 'parta', 'timeline', 'caesarea', 'jerusalem', 'chips'],
   doctorant: ['campus', 'history', 'roads', 'guided', 'duo', 'parta', 'arch', 'caesarea', 'jerusalem', 'chips', 'timeline'],
   guide: ['campus', 'history', 'roads', 'guided', 'duo', 'parta', 'exam', 'arch', 'caesarea', 'jerusalem', 'chips', 'guide', 'timeline']
 };
