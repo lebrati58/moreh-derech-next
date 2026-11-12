@@ -42,8 +42,9 @@ test('סיורים par thème (pas par numéro) et cours de théorie du Drive pa
   const topics = new Set(lessons.map(q => q.sub));
   assert.ok(topics.has('geology'), 'géologie présente');
   assert.ok(lessons.filter(q => q.sub === 'geology').length >= 50, 'au moins 50 questions de géologie');
-  // chaque question renvoie à son document du Drive
-  for (const q of LESSONS.questions) { assert.match(q.url, /^https:\/\/(drive|docs)\.google\.com\//, q.id); assert.ok(q.source, q.id); }
+  // chaque question renvoie à son document du Drive, ou à un transcript de סיור (sans lien) — toujours une source nommée
+  for (const q of LESSONS.questions) { assert.ok(q.url === '' || /^https:\/\/(drive|docs)\.google\.com\//.test(q.url), q.id); assert.ok(q.source, q.id); }
+  assert.ok(LESSONS.questions.filter(q => q.url).length >= 300, 'cours du Drive avec lien');
   for (const t of LESSONS.topics) assert.equal(t.count, LESSONS.questions.filter(q => q.topic === t.id).length, t.id);
   // filtre par sujet
   const g = C.buildGame(BANK, { count: 20, seed: 'g', sources: ['lessons'], subs: { lessons: ['geology'] } });
