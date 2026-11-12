@@ -306,7 +306,10 @@
       '<label class="switch"><span>👑 שאלת האלוף בסוף (נקודות כפולות)</span><input type="checkbox" id="dbl"' + (s.double ? ' checked' : '') + '></label>' +
       '<label class="switch"><span>⏩ מעבר אוטומטי בין השאלות</span><input type="checkbox" id="auto"' + (s.auto ? ' checked' : '') + '></label>' +
       '<p class="note">השאלות מסודרות מהקל לקשה. לפני כל שאלה יש כמה שניות קריאה, ורק אז מופיעות התשובות והשעון מתחיל — כך נמדדת מהירות הידיעה, לא מהירות הקריאה. תשובה נכונה: 500–1000 נק׳ לפי המהירות, +50 לכל תשובה ברצף. כל השאלות לקוחות מחומרי הקורס בדרייב.</p>' +
-      '<button class="btn" id="open" type="button" disabled>לפתוח חדר 🚪</button><button class="btn ghost" id="back" type="button">חזרה</button></div>';
+      '<button class="btn ghost" id="back" type="button">חזרה</button></div>' +
+      // 🧺 panier : total de la sélection, détail par thème, et le bouton pour ouvrir la salle — toujours visible en bas
+      '<div class="basket" id="basket" aria-live="polite"><div class="bk-top"><span class="bk-ic" aria-hidden="true">🧺</span><span id="bkTotal">…</span></div>' +
+      '<div class="bk-list" id="bkList"></div><button class="btn" id="open" type="button" disabled>לפתוח חדר 🚪</button></div>';
     document.getElementById('back').onclick = home;
     loadBank().then(function (bank) {
       var info = document.getElementById('bankInfo'); if (!info) return;
@@ -326,22 +329,40 @@
           document.getElementById('box-' + k).hidden = s.sources.indexOf(k) < 0 || !subList[k].length;
           document.getElementById('sub-' + k).innerHTML = subList[k].map(function (x) { return '<button type="button" class="chip" data-sub="' + esc(x.id) + '" aria-pressed="' + (s.subs[k].indexOf(x.id) >= 0) + '">' + esc(x.label) + ' <small>' + x.n + '</small></button>'; }).join('');
         });
-        document.getElementById('cnt').innerHTML = [10, 15, 20, 30, 60, 69].concat(avail > 69 ? [Math.min(100, avail)] : []).filter(function (n, i, a) { return a.indexOf(n) === i; }).map(function (n) { return '<button type="button" class="chip" data-n="' + n + '" aria-pressed="' + (s.count === n) + '">' + n + '</button>'; }).join('');
+        document.getElementById('cnt').innerHTML = [10, 15, 20, 30, 60, 100].filter(function (n) { return n < avail; }).map(function (n) { return '<button type="button" class="chip" data-n="' + n + '" aria-pressed="' + (!s.all && s.count === n) + '">' + n + '</button>'; }).join('') +
+          '<button type="button" class="chip" data-n="all" aria-pressed="' + !!s.all + '">כולן <small>' + avail + '</small></button>';
         document.getElementById('sec').innerHTML = [10, 15, 20, 30].map(function (n) { return '<button type="button" class="chip" data-s="' + n + '" aria-pressed="' + (s.seconds === n) + '">' + n + ' שנ׳</button>'; }).join('');
         info.innerHTML = '<b>' + bank.length + '</b> שאלות בבנק · <b>' + avail + '</b> בבחירה הנוכחית';
+        // panier : détail de la sélection (sous-thème choisi, sinon la source entière)
+        var pool = C.poolFor(bank, s), by = {}, lines = [];
+        pool.forEach(function (q) { var key = (s.subs[q.src] && s.subs[q.src].length) ? q.src + '|' + q.sub : q.src; by[key] = (by[key] || 0) + 1; });
+        Object.keys(by).forEach(function (key) {
+          var p = key.split('|'), lab = p[1] ? ((subList[p[0]] || []).filter(function (x) { return x.id === p[1]; })[0] || { label: p[1] }).label : C.SOURCE_LABEL[p[0]];
+          lines.push('<span class="bk-it">' + esc(lab) + ' <b>' + by[key] + '</b></span>');
+        });
+        var play = Math.min(s.all ? avail : s.count, avail, 100);   // une partie = 100 questions max
+        document.getElementById('bkTotal').innerHTML = '<b>' + avail + '</b> שאלות בבחירה · <b>' + play + '</b> במשחק';
+        document.getElementById('bkList').innerHTML = lines.join('');
         document.getElementById('open').disabled = avail < 3;
       }
       draw();
       document.getElementById('srcs').onclick = function (e) { var b = e.target.closest('[data-k]'); if (!b) return; var k = b.dataset.k, i = s.sources.indexOf(k); if (i >= 0) { if (s.sources.length > 1) s.sources.splice(i, 1); } else s.sources.push(k); draw(); };
       [].forEach.call(document.querySelectorAll('.subs'), function (box) {
-        box.onclick = function (e) { var b = e.target.closest('[data-sub]'); if (!b) return; var L = s.subs[box.dataset.src], i = L.indexOf(b.dataset.sub); if (i >= 0) L.splice(i, 1); else L.push(b.dataset.sub); draw(); };
+        box.onclick = function (e) {
+          var b = e.target.closest('[data-sub]'); if (!b) return; var L = s.subs[box.dataset.src], i = L.indexOf(b.dataset.sub); if (i >= 0) L.splice(i, 1); else L.push(b.dataset.sub);
+          // choisir un sous-thème = jouer seulement ce qui est choisi : les autres sources sans choix précis sont désactivées
+          var picked = Object.keys(s.subs).filter(function (k) { return s.subs[k].length; });
+          s.sources = picked.length ? picked : C.SOURCES.slice();
+          draw();
+        };
       });
-      [].forEach.call(document.querySelectorAll('[data-none]'), function (b) { b.onclick = function () { s.subs[b.dataset.none] = []; draw(); }; });
-      document.getElementById('cnt').onclick = function (e) { var b = e.target.closest('[data-n]'); if (b) { s.count = +b.dataset.n; draw(); } };
+      [].forEach.call(document.querySelectorAll('[data-none]'), function (b) { b.onclick = function () { s.subs[b.dataset.none] = []; var picked = Object.keys(s.subs).filter(function (k) { return s.subs[k].length; }); s.sources = picked.length ? picked : C.SOURCES.slice(); draw(); }; });
+      document.getElementById('cnt').onclick = function (e) { var b = e.target.closest('[data-n]'); if (!b) return; if (b.dataset.n === 'all') s.all = true; else { s.all = false; s.count = +b.dataset.n; } draw(); };
       document.getElementById('sec').onclick = function (e) { var b = e.target.closest('[data-s]'); if (b) { s.seconds = +b.dataset.s; draw(); } };
       document.getElementById('open').onclick = function () {
         s.double = document.getElementById('dbl').checked; s.auto = document.getElementById('auto').checked;
         Object.keys(subList).forEach(function (k) { if (s.subs[k].length === subList[k].length) s.subs[k] = []; });
+        if (s.all) s.count = C.poolFor(bank, s).length;   // « כולן » = toute la sélection
         var qs = newQuestions(bank, s);
         if (!qs.length) { toast('אין מספיק שאלות בבחירה הזאת'); return; }
         hostOpen(s, qs);
