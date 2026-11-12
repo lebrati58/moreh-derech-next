@@ -320,6 +320,7 @@
         s.subs[k] = s.subs[k].filter(function (id) { return n[id]; });
       });
       function draw() {
+        var avail = C.poolFor(bank, s).length;
         document.getElementById('srcs').innerHTML = C.SOURCES.filter(function (k) { return cnt(k); }).map(function (k) { return '<button type="button" class="chip" data-k="' + k + '" aria-pressed="' + (s.sources.indexOf(k) >= 0) + '">' + C.SOURCE_LABEL[k] + ' <small>' + cnt(k) + '</small></button>'; }).join('');
         Object.keys(subList).forEach(function (k) {
           document.getElementById('box-' + k).hidden = s.sources.indexOf(k) < 0 || !subList[k].length;
@@ -327,7 +328,6 @@
         });
         document.getElementById('cnt').innerHTML = [10, 15, 20, 30, 60, 69].concat(avail > 69 ? [Math.min(100, avail)] : []).filter(function (n, i, a) { return a.indexOf(n) === i; }).map(function (n) { return '<button type="button" class="chip" data-n="' + n + '" aria-pressed="' + (s.count === n) + '">' + n + '</button>'; }).join('');
         document.getElementById('sec').innerHTML = [10, 15, 20, 30].map(function (n) { return '<button type="button" class="chip" data-s="' + n + '" aria-pressed="' + (s.seconds === n) + '">' + n + ' שנ׳</button>'; }).join('');
-        var avail = C.poolFor(bank, s).length;
         info.innerHTML = '<b>' + bank.length + '</b> שאלות בבנק · <b>' + avail + '</b> בבחירה הנוכחית';
         document.getElementById('open').disabled = avail < 3;
       }
