@@ -1,0 +1,1058 @@
+{
+  "id": "beni-midterm-2026",
+  "title": "מבחן אמצע – בני",
+  "source": "תמלול תיקון מבחן אמצע שסופק בשיחה, נובמבר 2026",
+  "notice": "השאלות נוסחו מחדש מהתמלול. אפשרויות ההסחה נכתבו לצורך תרגול ואינן מקוריות. תשובות שסומנו corrected שונות מתמלול המורה.",
+  "questions": [
+    {
+      "id": "beni-001",
+      "question": "היכן נמצאה כתובת בית דוד?",
+      "options": [
+        "תל דן",
+        "עיר דוד",
+        "תל גזר",
+        "תל ערד"
+      ],
+      "correct": 0,
+      "explanation": "תמלול: המורה אמר עיר דוד; בפועל כתובת בית דוד נמצאה בתל דן.",
+      "status": "corrected",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-002",
+      "question": "ליד איזה כפר הוקמה ראש פינה?",
+      "options": [
+        "אום ג׳וני",
+        "ג׳עוני",
+        "ספוריה",
+        "מג׳דל"
+      ],
+      "correct": 1,
+      "explanation": "המורה הדגיש: ג׳עוני, לא אום ג׳וני.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-003",
+      "question": "לאיזה קיסר קשורה קשת אקה הומו?",
+      "options": [
+        "טיטוס",
+        "אדריאנוס",
+        "קונסטנטינוס",
+        "נירון"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: אדריאנוס.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-004",
+      "question": "לאיזו תקופה שייכת העיר התחתונה בערד?",
+      "options": [
+        "ברונזה קדומה",
+        "ברונזה תיכונה",
+        "ברזל ב׳",
+        "רומית"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: ברונזה קדומה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-005",
+      "question": "מהי ״ראש כל הממלכות האלה״?",
+      "options": [
+        "מגידו",
+        "חצור",
+        "גזר",
+        "שכם"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: חצור.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-006",
+      "question": "איזה מתקן שימש לדריכת ענבים?",
+      "options": [
+        "גורן",
+        "גת",
+        "בית בד",
+        "יקב מודרני"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: גת.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-007",
+      "question": "איזה סלע מרכיב טבלאות גידוד רבות בחוף?",
+      "options": [
+        "בזלת",
+        "כורכר",
+        "גרניט",
+        "צור"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: כורכר.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-008",
+      "question": "מה הייתה בירת ג׳ונד פלסטין?",
+      "options": [
+        "ירושלים",
+        "רמלה",
+        "עכו",
+        "טבריה"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: רמלה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-009",
+      "question": "איזו עיר פלשתית קשורה לארון הברית בבית דגון?",
+      "options": [
+        "אשדוד",
+        "גת",
+        "עקרון",
+        "עזה"
+      ],
+      "correct": 0,
+      "explanation": "לפי שמואל א׳ ה׳: אשדוד; נוסח השאלה בתמלול משובש.",
+      "status": "reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-010",
+      "question": "איזה אל נעבד בבניאס?",
+      "options": [
+        "פאן",
+        "זאוס",
+        "אפולו",
+        "דגון"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: פאן.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-011",
+      "question": "איזה זוג הרים נמצא בגולן?",
+      "options": [
+        "תבור וגלבוע",
+        "אביטל ובנטל",
+        "מירון וארבל",
+        "כרמל ועיבל"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: אביטל, בנטל.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-012",
+      "question": "מהי תופעה קרסטית?",
+      "options": [
+        "דיונה",
+        "מערת נטיפים",
+        "מכתש סחיפה",
+        "טבלת גידוד"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: מערה / נטיפים.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-013",
+      "question": "מתי נכבשה מצדה בידי הרומאים?",
+      "options": [
+        "66",
+        "70",
+        "73–74",
+        "135"
+      ],
+      "correct": 2,
+      "explanation": "בתמלול: 74; גם 73 התקבלה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-014",
+      "question": "איזה מקור טקסטואלי חשוב לברונזה המאוחרת?",
+      "options": [
+        "כתבי המארות",
+        "מכתבי אל־עמארנה",
+        "כתובת השילוח",
+        "מגילות קומראן"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: מכתבי אל־עמארנה; גם מצבת מרנפתח התקבלה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-015",
+      "question": "לאיזו תקופה שייכות אמות המים של קיסריה?",
+      "options": [
+        "רומית",
+        "פרסית",
+        "צלבנית בלבד",
+        "עות׳מאנית"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: רומית.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-016",
+      "question": "איזה אירוע נוצרי קשור למגידו?",
+      "options": [
+        "הבשורה",
+        "ארמגדון",
+        "הלידה",
+        "הטבילה"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: ארמגדון; הפענוח המקורי משובש.",
+      "status": "reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-017",
+      "question": "מהי לטרינה?",
+      "options": [
+        "בית כנסת",
+        "שירותים ציבוריים",
+        "אמת מים",
+        "מזבח"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: לטרינה בבית שאן או קיסריה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-018",
+      "question": "איזה עמק נראה מתל עזקה מזרחה?",
+      "options": [
+        "עמק האלה",
+        "עמק החולה",
+        "עמק יזרעאל",
+        "עמק חרוד"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: עמק האלה; שם נקודת התצפית משובש.",
+      "status": "reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-019",
+      "question": "באילו אתרים צפוניים יש תיאטרון עתיק?",
+      "options": [
+        "ציפורי ובית שאן",
+        "קיסריה ואשקלון",
+        "מצדה וערד",
+        "דור ואפולוניה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: ציפורי ובית שאן.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-020",
+      "question": "מהי הקורה בבית הבד?",
+      "options": [
+        "קורת לחיצה",
+        "אבן ריחיים",
+        "בור איגום",
+        "סל קלוע"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: קורה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-021",
+      "question": "איזה חודש הוא רמדאן?",
+      "options": [
+        "שביעי",
+        "תשיעי",
+        "עשירי",
+        "שנים־עשר"
+      ],
+      "correct": 1,
+      "explanation": "רמדאן הוא החודש התשיעי.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-022",
+      "question": "מה פירוש סרקופג?",
+      "options": [
+        "אוכל בשר",
+        "בית המתים",
+        "אבן זיכרון",
+        "מקום קדוש"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: אוכל בשר.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-023",
+      "question": "לאיזו תקופה מתוארכים כתבי המארות?",
+      "options": [
+        "ברונזה תיכונה",
+        "ברונזה מאוחרת",
+        "ברזל ב׳",
+        "רומית"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: ברונזה תיכונה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-024",
+      "question": "מהי Tabula Ansata?",
+      "options": [
+        "טבלה בעלת אוזניים/ידיות",
+        "מפת דרכים",
+        "לוח שנה",
+        "מצבת ניצחון"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: טבלת אוזניים.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-025",
+      "question": "מי הקים את מפעל החשמל בנהריים?",
+      "options": [
+        "פנחס רוטנברג",
+        "ארתור רופין",
+        "יהושע חנקין",
+        "משה שרת"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: פנחס רוטנברג.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-026",
+      "question": "מה מקור השם מערת המכפלה במסורת?",
+      "options": [
+        "זוגות קבורים או מערה כפולה",
+        "ארבעה שערים",
+        "שני מזבחות",
+        "מכפלת החומה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: זוגות או שתי מערות.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-027",
+      "question": "מתי התרחשה ההיג׳רה?",
+      "options": [
+        "610",
+        "622",
+        "632",
+        "638"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: 622; המורה קיבל גם 621.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-028",
+      "question": "היכן נמצא מצפה לשלום?",
+      "options": [
+        "גולן",
+        "בקעת הירדן",
+        "גליל מערבי",
+        "הרי יהודה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: רמת הגולן.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-029",
+      "question": "בין אילו אזורים זורם הירמוך?",
+      "options": [
+        "גלעד וגולן",
+        "גליל וכרמל",
+        "יהודה ושומרון",
+        "נגב וערבה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: הרי הגלעד ורמת הגולן.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-030",
+      "question": "מתי נבנו הסוללות והחלקלקות בחצור?",
+      "options": [
+        "ברונזה תיכונה",
+        "ברונזה קדומה",
+        "הלניסטית",
+        "ביזנטית"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: ברונזה תיכונה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-031",
+      "question": "לאיזו מאה מתוארכים חרסי לכיש?",
+      "options": [
+        "עשירית לפנה״ס",
+        "שמינית לפנה״ס",
+        "שישית לפנה״ס",
+        "ראשונה לספירה"
+      ],
+      "correct": 2,
+      "explanation": "בתמלול: מאה שישית לפנה״ס.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-032",
+      "question": "מהו שם קדום של ירושלים?",
+      "options": [
+        "אורו־שלים",
+        "איליה קפיטולינה",
+        "אל־קודס",
+        "ניאפוליס"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: אורו־שלים.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-033",
+      "question": "מי פענח את כתב החרטומים?",
+      "options": [
+        "שמפוליון",
+        "קרטר",
+        "פיטרי",
+        "שיק"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: שמפוליון.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-034",
+      "question": "מתי החלה רכבת העמק לפעול?",
+      "options": [
+        "1898",
+        "1905",
+        "1917",
+        "1925"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: 1904 או 1905 התקבלו.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-035",
+      "question": "לאיזה מסדר שייך סטלה מאריס?",
+      "options": [
+        "פרנציסקני",
+        "כרמליתי",
+        "בנדיקטיני",
+        "דומיניקני"
+      ],
+      "correct": 1,
+      "explanation": "בתמלול: כרמליתי.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-036",
+      "question": "מהו אל־אסראא׳?",
+      "options": [
+        "מסע הלילה",
+        "ההיג׳רה",
+        "הצום",
+        "העלייה לשמיים בלבד"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מסע הלילה של מוחמד.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-037",
+      "question": "לכבוד ביקורו של מי שופרה הדרך לירושלים?",
+      "options": [
+        "פרנץ יוזף",
+        "וילהלם השני",
+        "נפוליאון",
+        "המלכה ויקטוריה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: פרנץ יוזף.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-038",
+      "question": "מי תמך רוחנית במרד בר כוכבא?",
+      "options": [
+        "רבי עקיבא",
+        "רבי יהודה הנשיא",
+        "רבן גמליאל",
+        "הלל"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: רבי עקיבא.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-039",
+      "question": "מה נמצא צפונית לוואדי ערה?",
+      "options": [
+        "רמות מנשה",
+        "רמת כורזים",
+        "הרי יהודה",
+        "עמק החולה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: רמות מנשה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-040",
+      "question": "מהי חקלאות שלחין?",
+      "options": [
+        "חקלאות בהשקיה יזומה",
+        "חקלאות מי גשמים",
+        "מרעה בלבד",
+        "חקלאות ללא מים"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: שלחין.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-041",
+      "question": "באיזה אזור נמצאת ראש פינה?",
+      "options": [
+        "גליל עליון מזרחי / רמת כורזים",
+        "עמק החולה בלבד",
+        "רמות מנשה",
+        "שפלת יהודה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: גליל עליון, גליל עליון מזרחי ורמת כורזים התקבלו.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-042",
+      "question": "מהם Tubuli בבית מרחץ רומי?",
+      "options": [
+        "צינורות חימום",
+        "עמודי תמיכה",
+        "מדרגות",
+        "ארונות קבורה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: צינורות חימום.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-043",
+      "question": "איזה מטמון נמצא מהתקופה הכלקוליתית?",
+      "options": [
+        "נחל משמר",
+        "קומראן",
+        "לכיש",
+        "תל דן"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מטמון נחל משמר.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-044",
+      "question": "לאיזה אתר קשור עפרון החיתי?",
+      "options": [
+        "מערת המכפלה",
+        "תל שילה",
+        "מצדה",
+        "הר הבית"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מערת המכפלה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-045",
+      "question": "באיזו מאה התרחשה שיבת ציון של זרובבל?",
+      "options": [
+        "שישית לפנה״ס",
+        "שמינית לפנה״ס",
+        "רביעית לפנה״ס",
+        "ראשונה לספירה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: המאה השישית לפנה״ס.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-046",
+      "question": "מה היה גורם לפרוץ המרד הגדול?",
+      "options": [
+        "סכסוך יהודים ויוונים בקיסריה",
+        "גזירות אדריאנוס",
+        "מרד בר כוכבא",
+        "הקמת איליה קפיטולינה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: הסכסוך בקיסריה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-047",
+      "question": "לאיזו שושלת השתייך יזיד הראשון?",
+      "options": [
+        "אומיית",
+        "עבאסית",
+        "פאטמית",
+        "איובית"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: בית אומיה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-048",
+      "question": "איזה אתר עבאסי ברמלה?",
+      "options": [
+        "בריכת הקשתות",
+        "בריכת השילוח",
+        "בריכת ממילא",
+        "בריכת בית חסדא"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: בריכת הקשתות.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-049",
+      "question": "איזה יישוב דרוזי נמצא בכרמל?",
+      "options": [
+        "דלית אל־כרמל",
+        "עין קנייא",
+        "בוקעתא",
+        "מג׳דל שמס"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול נשמע ״עין קניה״ אך זה בגולן; התשובה תוקנה.",
+      "status": "corrected",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-050",
+      "question": "מהי בולה?",
+      "options": [
+        "גוש טין חתום לאיטום מסמך",
+        "מטבע כסף",
+        "לוח שיש",
+        "כלי שמן"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: חותם טין לסגירת מכתבים.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-051",
+      "question": "באיזו מאה התרחשה גלות אשור?",
+      "options": [
+        "שמינית לפנה״ס",
+        "שישית לפנה״ס",
+        "רביעית לפנה״ס",
+        "שנייה לספירה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מאה שמינית לפנה״ס.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-052",
+      "question": "איזה יישוב קדם לקיסריה?",
+      "options": [
+        "מגדל סטרטון",
+        "אנטיפטריס",
+        "סבסטיה",
+        "אלותרופוליס"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מגדל סטרטון.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-053",
+      "question": "מהי טכניקת פרסקו?",
+      "options": [
+        "ציור על טיח לח",
+        "ציור על קלף",
+        "פסיפס",
+        "חריטה בסלע"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: ציור על טיח לח.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-054",
+      "question": "מהו היפוקאוסט?",
+      "options": [
+        "חימום מתחת לרצפת בית המרחץ",
+        "בריכת מים קרים",
+        "אולם התעמלות",
+        "מערכת ביוב"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מערכת חימום תת־רצפתית.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-055",
+      "question": "איזו עיר פלשתית מזוהה עם תל מקנה?",
+      "options": [
+        "עקרון",
+        "אשקלון",
+        "אשדוד",
+        "גת"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: עקרון; שם התל שובש.",
+      "status": "reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-056",
+      "question": "מה כוללות מגילות מדבר יהודה?",
+      "options": [
+        "טקסטים מקראיים וכיתתיים",
+        "רק טקסטים רומיים",
+        "רק כתובות יווניות",
+        "רק מסמכים ביזנטיים"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: טקסטים מקראיים וכיתתיים.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-057",
+      "question": "מהו שמה הרומי של בית גוברין?",
+      "options": [
+        "אלותרופוליס",
+        "סקיתופוליס",
+        "ניאפוליס",
+        "קיסריה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: אלותרופוליס.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-058",
+      "question": "באיזה סלע נפוצים מאובנים ימיים?",
+      "options": [
+        "סלע משקע ימי",
+        "בזלת",
+        "גרניט",
+        "סלע יסוד"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: סלע משקע ימי.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-059",
+      "question": "מהו אקוויפר?",
+      "options": [
+        "שכבת סלע אוגרת ומוליכה מים",
+        "סלע אטום לחלוטין",
+        "מפל מלאכותי",
+        "תעלת ניקוז"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: שכבה נקבובית שמים מחלחלים דרכה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-060",
+      "question": "את מי הביס אלכסנדר הגדול?",
+      "options": [
+        "הפרסים",
+        "הרומאים",
+        "הביזנטים",
+        "הצלבנים"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול נזכרים הפרסים; יש שיבוש בקטע התשובה.",
+      "status": "reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-061",
+      "question": "היכן נמצא בית אחיאל?",
+      "options": [
+        "עיר דוד",
+        "תל דן",
+        "מצדה",
+        "תל ערד"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: עיר דוד.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-062",
+      "question": "מה היה תפקיד בית הכנסת לפי כתובת תאודוטוס?",
+      "options": [
+        "קריאה בתורה ולימוד מצוות",
+        "הקרבת קורבנות",
+        "מרוצי סוסים",
+        "מגורי חיילים"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: קריאה בתורה ולימוד מצוות.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-063",
+      "question": "באיזה סדר אדריכלי יש טריגליפים?",
+      "options": [
+        "דורי",
+        "יוני",
+        "קורינתי",
+        "גותי"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: דורי.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-064",
+      "question": "מהם מכתבי אל־עמארנה?",
+      "options": [
+        "מכתבי שליטי כנען לפרעה",
+        "כתבי הסנהדרין",
+        "מגילות מדבר יהודה",
+        "מכתבים צלבניים"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מכתבי מלכי כנען לפרעה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-065",
+      "question": "היכן נמצא לוח גזר?",
+      "options": [
+        "תל גזר",
+        "תל לכיש",
+        "תל דן",
+        "תל ערד"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: תל גזר.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-066",
+      "question": "מהו קונגלומרט?",
+      "options": [
+        "סלע חלוקים מעוגלים מלוכדים",
+        "סלע בזלת",
+        "סלע מלח",
+        "סלע גרניט"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: חלוקים מעוגלים מלוכדים.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-067",
+      "question": "מתי נבנתה החומה הרחבה בירושלים?",
+      "options": [
+        "סוף המאה השמינית לפנה״ס",
+        "המאה הראשונה לספירה",
+        "המאה הרביעית",
+        "המאה השתים עשרה"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: סוף המאה השמינית.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-068",
+      "question": "באיזה סיפור נזכרת בית שמש?",
+      "options": [
+        "נדודי ארון הברית",
+        "יציאת מצרים",
+        "עקדת יצחק",
+        "חלום יעקב"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: נדודי ארון הברית.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-069",
+      "question": "היכן נלחמו דוד וגוליית?",
+      "options": [
+        "עמק האלה",
+        "עמק החולה",
+        "עמק חרוד",
+        "עמק יזרעאל"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: עמק האלה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-070",
+      "question": "מאיזה סלע נוצרת אדמת טרה רוסה?",
+      "options": [
+        "גיר ודולומיט",
+        "בזלת",
+        "גרניט",
+        "כורכר בלבד"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: גיר.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-071",
+      "question": "אילו יישובים היו ממושבי הסנהדרין?",
+      "options": [
+        "אושא וטבריה",
+        "קיסריה ואשקלון",
+        "רמלה ועכו",
+        "מצדה וערד"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: אושא וטבריה.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-072",
+      "question": "באיזו שפה כתובה כתובת תאודוטוס?",
+      "options": [
+        "יוונית",
+        "עברית",
+        "ארמית",
+        "לטינית"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: יוונית.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-073",
+      "question": "לאיזה ח׳ליף מיוחסת בניית מסגד אל־אקצא האומיי?",
+      "options": [
+        "אל־וליד הראשון",
+        "עומר השני",
+        "הארון א־רשיד",
+        "אל־מעתצם"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: אל־וליד.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-074",
+      "question": "מהו קרקס בעולם הרומי?",
+      "options": [
+        "מתקן למרוצי מרכבות",
+        "בית מרחץ",
+        "מקדש",
+        "בית כנסת"
+      ],
+      "correct": 0,
+      "explanation": "בתמלול: מרוצי מרכבות.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    },
+    {
+      "id": "beni-075",
+      "question": "איזה שם נוסף משמש לים המלח?",
+      "options": [
+        "ים המוות",
+        "ים הערבה",
+        "ים המלח",
+        "כל התשובות נכונות"
+      ],
+      "correct": 3,
+      "explanation": "בתמלול: כל התשובות נכונות.",
+      "status": "transcript_reconstructed",
+      "source": "Beni midterm transcript"
+    }
+  ]
+}
