@@ -138,7 +138,7 @@
   // en évitant les questions déjà jouées (avoid). Les réponses sont remélangées.
   function buildGame(bank, opts) {
     opts = opts || {};
-    var n = Math.max(1, Math.min(60, opts.count || 15)), seed = opts.seed || String(Date.now()), rnd = rng('game|' + seed);
+    var n = Math.max(1, Math.min(100, opts.count || 15)), seed = opts.seed || String(Date.now()), rnd = rng('game|' + seed);
     var avoid = {}; (opts.avoid || []).forEach(function (id) { avoid[id] = 1; });
     var pool = shuffle(poolFor(bank, opts), rnd);
     if (!pool.length) return [];
