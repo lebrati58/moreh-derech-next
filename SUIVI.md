@@ -264,6 +264,11 @@ Demande de Lionel : beaucoup plus de questions différentes, pouvoir inverser (�
 - ✅ Questions à plusieurs réponses : une consigne sous la question dit **combien** de réponses sont justes (« ☑️ כאן יש 2 תשובות נכונות — סמנו את כולן ») ; même info dans l'étiquette et sur le bouton « בדיקה (1 מתוך 2 נבחרו) ».
 - ✅ Toutes les années des textes (`yearText`, descriptions, notes) précisent **לפנה״ס / לספירה** (46 corrections dans `history-events.json`, ex. « 132 לספירה (בתאריכון: 131 לספירה) »). Nouveau test : aucune année sans ère dans les données ni dans les questions générées.
 
+### 13 novembre 2026 — Mission d'examen : מבחן אמצע de Benny (חלק ב׳)
+Photo du sujet envoyée par Lionel (3 questions, une au choix, 5 courtes + 1 longue).
+- ✅ 3 missions « 📝 מדף התרגול של המרצה » (`source: prof`), énoncés recopiés tels quels : **js3** הרי יהודה ירושלים → באר שבע (longue : הרודיון), **va3** קריית שמונה → בית שאן (longue : מפעל נהריים), **jd3** אלמוג → נאות הכיכר (longue : קומראן). Ancres ajoutées : באר שבע, קריית שמונה, אלמוג, נאות הכיכר.
+- ⚠️ Sans page dans le cours (signalé dans la mission) : מצודה צלבנית et תצפית en הר חברון, מפעל נהריים, עינות צוקים ; ראש פינה / תל חי / באר שבע ottomane sont dans d'autres fichiers de région.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
