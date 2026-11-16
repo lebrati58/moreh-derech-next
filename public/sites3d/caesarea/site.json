@@ -1220,16 +1220,16 @@
    "to": 6,
    "certainty": "reconstruction",
    "name": {
-    "he": "העיר הצלבנית",
-    "fr": "La ville croisée",
-    "en": "The Crusader town",
-    "ru": "Город крестоносцев"
+    "he": "חומות לואי התשיעי — העיר הצלבנית",
+    "fr": "Remparts de Louis IX — la ville croisée",
+    "en": "Louis IX’s walls — the Crusader town",
+    "ru": "Стены Людовика IX — город крестоносцев"
    },
    "text": {
-    "he": "הצלבנים כבשו את העיר ב-1101; העיר הצלבנית קטנה בהרבה מן הביזנטית. ב-1251 ביצר אותה לואי התשיעי בחומות גבוהות ובחפיר עמוק. העיר נחרבה בידי הממלוכים.",
-    "fr": "Les croisés prirent la ville en 1101 ; la ville croisée est bien plus petite que la byzantine. En 1251, Louis IX la fortifia de hauts murs et d’un fossé profond. Elle fut détruite par les Mamelouks.",
-    "en": "The Crusaders took the city in 1101; the Crusader town was much smaller than the Byzantine one. In 1251 Louis IX fortified it with high walls and a deep moat. The Mamluks destroyed it.",
-    "ru": "Крестоносцы взяли город в 1101 г.; их город намного меньше византийского. В 1251 г. Людовик IX укрепил его высокими стенами и глубоким рвом. Мамлюки его разрушили."
+    "he": "הצלבנים כבשו את העיר ב-1101; העיר הצלבנית קטנה בהרבה מן הביזנטית. החומות שרואים היום הן של לואי התשיעי, מלך צרפת (״לואי הקדוש״): אחרי שחרורו מהשבי במצרים (1250) שהה בארץ עד 1254, וב-1251–1252 ביצר את קיסריה בחומות גבוהות, בחלקלקה (גלסיס) משופעת ובחפיר עמוק. מסופר שהמלך עצמו נשא סלי עפר עם הפועלים. העיר נחרבה בידי בייברס ב-1265.",
+    "fr": "Les croisés prirent la ville en 1101 ; la ville croisée est bien plus petite que la byzantine. Les murailles visibles aujourd’hui sont celles de Louis IX, roi de France (« Saint Louis ») : libéré de captivité en Égypte (1250), il resta en Terre sainte jusqu’en 1254 et fortifia Césarée en 1251–1252 de hauts murs, d’un glacis en pente et d’un fossé profond. On raconte que le roi lui-même portait des paniers de terre avec les ouvriers. Baybars détruisit la ville en 1265.",
+    "en": "The Crusaders took the city in 1101; the Crusader town was much smaller than the Byzantine one. The walls seen today are those of King Louis IX of France (“Saint Louis”): freed from captivity in Egypt (1250), he stayed in the Holy Land until 1254 and in 1251–1252 fortified Caesarea with high walls, a sloping glacis and a deep moat. The king himself is said to have carried baskets of earth with the workers. Baybars destroyed the town in 1265.",
+    "ru": "Крестоносцы взяли город в 1101 г. Нынешние стены — Людовика IX Святого: после плена в Египте (1250) он оставался в Святой земле до 1254 г. и в 1251–1252 гг. укрепил Кесарию высокими стенами, гласисом и глубоким рвом. Бейбарс разрушил город в 1265 г."
    },
    "placementNote": {
     "he": "המתאר שרטוטי: עוגן בפתח הגיחה שבפינה הדרום-מזרחית (OpenStreetMap), חומה מזרחית מקבילה לחוף וחומות צפונית ודרומית עד הים. האורכים כאן קצרים מהמתועד (120 דונם) — זה רק כיוון כללי.",
@@ -1257,6 +1257,11 @@
      "kind": "online",
      "label": "OpenStreetMap node/4746415246",
      "url": "https://www.openstreetmap.org/node/4746415246"
+    },
+    {
+     "kind": "online",
+     "label": "Louis IX — Wikipedia (croisade, séjour en Terre sainte 1250–1254)",
+     "url": "https://fr.wikipedia.org/wiki/Louis_IX"
     }
    ],
    "pri": 3,
@@ -1309,6 +1314,80 @@
      ]
     ]
    }
+  },
+  {
+   "id": "caesarea_louis_gate",
+   "from": 6,
+   "to": 6,
+   "certainty": "reconstruction",
+   "pri": 3,
+   "name": {
+    "he": "השער המזרחי והחפיר של לואי התשיעי",
+    "fr": "La porte est et le fossé de Louis IX",
+    "en": "Louis IX’s east gate and moat",
+    "ru": "Восточные ворота и ров Людовика IX"
+   },
+   "text": {
+    "he": "השער הראשי של העיר הצלבנית, בחומה המזרחית. נכנסים דרך מגדל שער עם כניסה שבורה (פנייה בזווית ישרה, כדי להאט תוקפים). לפני השער חפיר עמוק וחלקלקה משופעת; מעל החפיר גשר עץ שהמגינים הסירו בעת מלחמה. זהו השער שבו עוברים המבקרים גם היום בכניסה לגן הלאומי.",
+    "fr": "La porte principale de la ville croisée, dans le mur est. On entre par une tour-porte à passage coudé (virage à angle droit pour ralentir les assaillants). Devant la porte, un fossé profond et un glacis en pente ; au-dessus du fossé, un pont de bois que les défenseurs retiraient en temps de guerre. C’est encore par cette porte qu’entrent les visiteurs du parc national.",
+    "en": "The main gate of the Crusader town, in the east wall. Entry is through a gate tower with a bent passage (a right-angle turn to slow attackers). In front of the gate, a deep moat and a sloping glacis; over the moat a wooden bridge the defenders removed in wartime. Visitors to the national park still enter through this gate today.",
+    "ru": "Главные ворота города крестоносцев в восточной стене: надвратная башня с коленчатым проходом, перед ней глубокий ров, гласис и деревянный мост, который убирали во время войны. Через эти ворота и сегодня входят посетители."
+   },
+   "dims": {
+    "he": "חפיר ברוחב כ-10 מ׳ ועומק כ-7–9 מ׳ (לפי הדפדפת); החומה גבוהה כ-10 מ׳ מעל קרקעית החפיר.",
+    "fr": "Fossé d’env. 10 m de large et 7–9 m de profondeur (brochure) ; mur d’env. 10 m au-dessus du fond du fossé.",
+    "en": "Moat about 10 m wide and 7–9 m deep (brochure); wall about 10 m above the moat floor.",
+    "ru": "Ров ~10 м шириной и 7–9 м глубиной; стена ~10 м над дном рва."
+   },
+   "placementNote": {
+    "he": "מיקום סכמטי: באמצע החומה המזרחית של המתאר הסכמטי (לא מדידה). הצורה כללית: מגדל שער עם מעבר.",
+    "fr": "Position schématique : au milieu du mur est du contour schématique (pas une mesure). Forme générale : tour-porte avec passage.",
+    "en": "Schematic position: middle of the east wall of the schematic outline (not a measurement). General shape: gate tower with passage.",
+    "ru": "Схематичное положение: середина восточной стены; форма общая."
+   },
+   "shape": {
+    "type": "gate",
+    "at": {
+     "ll": [
+      32.5038455,
+      34.89322
+     ]
+    },
+    "chambers": 1,
+    "W": 18,
+    "L": 16,
+    "h": 13,
+    "bearing": 90,
+    "towers": true,
+    "kind": "kurkar"
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "רשות הטבע והגנים — דפדפת גן לאומי קיסריה",
+     "url": "https://drive.google.com/file/d/1tCvFvM5lKnyi8x6Jzeh-q4je-4a56e85/view"
+    },
+    {
+     "kind": "drive",
+     "label": "סיור 15 — קיסריה (סיכום הקורס)",
+     "url": "https://drive.google.com/file/d/1nwk2048WZtIiPv1y52lEPk4VtU7pbDQA/view"
+    },
+    {
+     "kind": "drive",
+     "label": "קיסריה מריטימה — מדריך (חורחה)",
+     "url": "https://drive.google.com/file/d/10nBEUsWEtqUIRqgI1HEEreXPjFvH4CsE/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/4746415246",
+     "url": "https://www.openstreetmap.org/node/4746415246"
+    },
+    {
+     "kind": "online",
+     "label": "Louis IX — Wikipedia (croisade, séjour en Terre sainte 1250–1254)",
+     "url": "https://fr.wikipedia.org/wiki/Louis_IX"
+    }
+   ]
   },
   {
    "id": "caesarea_bosnian",
