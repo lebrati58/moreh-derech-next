@@ -34,7 +34,7 @@ jobs:
         with: { name: audio, path: audio }
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q faster-whisper==1.1.1
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q faster-whisper==1.1.1 requests
       - name: Transcrire
         run: |
           I=$(printf %02d ${{ matrix.i }}); S=${{ matrix.start }}
