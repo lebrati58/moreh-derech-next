@@ -275,6 +275,13 @@ Photo du sujet envoyée par Lionel (3 questions, une au choix, 5 courtes + 1 lon
 - ✅ Accueil : la carte mène au quiz du 19.11, avec un second lien vers celui du 12.11 (libellé corrigé : 125 questions et non 25).
 - ✅ Testé en navigateur (Chromium, 360×780) : chargement, 64 questions jouées jusqu'au bout, pas de débordement, aucune erreur console. Pas vérifié sur un vrai téléphone.
 
+### 19 novembre 2026 (soir) — Quiz du 19.11 complété depuis les enregistrements de la sortie (Claude)
+- ✅ 23 enregistrements du jour (dossier Drive de Lionel, ≈ 4 h 30) transcrits sur GitHub Actions avec le modèle ivrit.ai (`.github/workflows/transcribe.yml`, `tools/transcribe/`), 32 tranches de 15 min en parallèle. Le texte est chiffré avec une clé publique avant de quitter chaque machine : rien de lisible dans le dépôt, les journaux ni les artefacts. Les transcriptions ne sont pas versionnées.
+- Accès : copies temporaires dans un dossier Drive partagé « lecteur avec le lien », mis à la corbeille juste après (les originaux sont restés privés). ⏳ Lionel peut vider la corbeille : dossier « tmp-transcription-19.11 (à supprimer) ».
+- ✅ `public/return-bus/2026-11-19.json` (+ copie `content/`) : **+208 questions** tirées de ce que la guide a dit (272 au total), 2 nouvelles étapes : « העדות והזרמים הנוצריים » et « טיפים להדרכה ולמבחן ». Chaque question a `source` (lien Drive de l'enregistrement), `sourceRecording`, `sourceTime`, `sourceQuote` (citation exacte, vérifiée par script) et `sourceType` « הקלטה מהסיור (תמלול אוטומטי) » : **tirées d'une transcription automatique, pas relues par un humain.**
+- Écartés : passages inaudibles ou déformés, logistique, et les contradictions (procès de Jésus au mont Sion « au 5e siècle » contre « après la conquête perse » ; accord Israël–Vatican 1964/1967 ; église devenue mosquée à la conquête arabe).
+- ✅ Testé en navigateur (Chromium, 360×780) : les 272 questions jouées jusqu'au bout, pas de débordement, aucune erreur console. Pas vérifié sur un vrai téléphone.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
