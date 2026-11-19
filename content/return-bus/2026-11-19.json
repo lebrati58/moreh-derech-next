@@ -1,0 +1,1008 @@
+{
+  "date": "2026-11-19",
+  "title": "חידון על הדרך – הוויה דולורוזה, כנסיית הקבר וגן הקבר (19.11.2026)",
+  "mode": "return-bus",
+  "status": "ready",
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "stops": [
+    {
+      "id": "gan",
+      "name": "גן הקבר"
+    },
+    {
+      "id": "anna",
+      "name": "סנטה אנה ובריכות הצאן"
+    },
+    {
+      "id": "antonia",
+      "name": "מצודת אנטוניה והליתוסטרוטוס"
+    },
+    {
+      "id": "via",
+      "name": "תחנות 3–9 בוויה דולורוזה"
+    },
+    {
+      "id": "parvis",
+      "name": "רחבת כנסיית הקבר"
+    },
+    {
+      "id": "golgotha",
+      "name": "הגולגולתא (תחנות 10–13)"
+    },
+    {
+      "id": "tomb",
+      "name": "האדיקולה והרוטונדה"
+    },
+    {
+      "id": "lower",
+      "name": "המפלסים התחתונים ומוקדים נוספים"
+    },
+    {
+      "id": "bg",
+      "name": "רקע היסטורי ומושגים"
+    }
+  ],
+  "questions": [
+    {
+      "id": "via-dolorosa-001",
+      "question": "מדוע אזור הגולגולתא היה מחוץ לעיר בימי ישוע?",
+      "options": [
+        "הוא היה בתוך הר הבית",
+        "הוא היה מעבר לנחל קדרון",
+        "הוא היה בתוך מצודת אנטוניה",
+        "הוא היה מחוץ לחומה השנייה"
+      ],
+      "correct": 3,
+      "explanation": "קבורה והוצאה להורג נעשו מחוץ לעיר, והגולגולתא הייתה מחוץ לחומה השנייה.",
+      "level": 1,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-002",
+      "question": "איזו חומה הכניסה את אזור הגולגולתא לתוך העיר?",
+      "options": [
+        "החומה הראשונה החשמונאית",
+        "החומה השנייה של הורדוס",
+        "החומה השלישית של אגריפס הראשון",
+        "החומה העות'מאנית"
+      ],
+      "correct": 2,
+      "explanation": "החומה השלישית (41–44 לסה\"נ) נבנתה כעשור אחרי הצליבה.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-003",
+      "question": "מה היה האזור של כנסיית הקבר לפני שהפך לבית קברות?",
+      "options": [
+        "שוק העיר",
+        "מחצבת אבן גיר",
+        "ארמון חשמונאי",
+        "בריכת מים"
+      ],
+      "correct": 1,
+      "explanation": "מחצבה קדומה שיצאה משימוש והפכה לגן ולבית קברות עם כוכים.",
+      "level": 1,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-004",
+      "question": "מה בנה אדריאנוס מעל אתר הגולגולתא?",
+      "options": [
+        "מקדש לאפרודיטה / יופיטר",
+        "תיאטרון",
+        "בית מרחץ",
+        "מחנה הלגיון העשירי"
+      ],
+      "correct": 0,
+      "explanation": "המקדש האלילי דווקא שימר את זיכרון המקום.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-005",
+      "question": "מי הגיעה לירושלים בשנת 326 וחשפה את מערת הקבר?",
+      "options": [
+        "אגריה הצליינית",
+        "הקיסרית אודוקיה",
+        "המלכה מליסנדה",
+        "הלנה, אמו של קונסטנטינוס"
+      ],
+      "correct": 3,
+      "explanation": "בעקבותיה נבנתה כנסיית הקבר הקונסטנטינית.",
+      "level": 1,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-006",
+      "question": "באיזו שנה נחנכה כנסיית הקבר הקונסטנטינית?",
+      "options": [
+        "135",
+        "614",
+        "335",
+        "1149"
+      ],
+      "correct": 2,
+      "explanation": "הכנסייה הקונסטנטינית נחנכה ב-335 לסה\"נ.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-007",
+      "question": "מה מתארת הצליינית אגריה בסוף המאה ה-4?",
+      "options": [
+        "את 14 התחנות של הוויה דולורוזה",
+        "תהלוכה ביום שישי הטוב מהר הזיתים לגולגולתא, בלי תחנות קבועות",
+        "את בניית האדיקולה",
+        "את הסטטוס קוו"
+      ],
+      "correct": 1,
+      "explanation": "בימיה עדיין לא היה תוואי קבוע של תחנות ברחובות.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-008",
+      "question": "מי הרס את כנסיית הקבר בשנת 1009?",
+      "options": [
+        "הח'ליף הפאטמי אל-חאכם",
+        "צלאח א-דין",
+        "הפרסים",
+        "הקיסר אדריאנוס"
+      ],
+      "correct": 0,
+      "explanation": "הצלבנים שיקמו אותה אחר כך.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-009",
+      "question": "מתי נחנכה הכנסייה הצלבנית, שאיחדה את כל המוקדים תחת גג אחד?",
+      "options": [
+        "1099",
+        "1187",
+        "335",
+        "15 ביולי 1149"
+      ],
+      "correct": 3,
+      "explanation": "50 שנה בדיוק אחרי כיבוש ירושלים בידי הצלבנים.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-010",
+      "question": "איפה התגבש המספור של 14 התחנות?",
+      "options": [
+        "בירושלים הביזנטית",
+        "בקושטא",
+        "באירופה",
+        "ברומא הקיסרית"
+      ],
+      "correct": 2,
+      "explanation": "בהעתקים של דרך הייסורים במנזרים באירופה, וחזר לירושלים רק במאות ה-18–19.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-011",
+      "question": "מה פירוש המילה \"אנסטסיס\"?",
+      "options": [
+        "קבר",
+        "תחייה",
+        "עדות",
+        "בית קטן"
+      ],
+      "correct": 1,
+      "explanation": "זה השם היווני-אורתודוקסי של כנסיית הקבר.",
+      "level": 1,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-012",
+      "question": "מה פירוש \"אדיקולה\"?",
+      "options": [
+        "בית קטן",
+        "תחייה",
+        "רצפת אבנים",
+        "טבור העולם"
+      ],
+      "correct": 0,
+      "explanation": "המבנה במרכז הרוטונדה שמקיף את שרידי מערת הקבורה.",
+      "level": 1,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-013",
+      "question": "מה זה \"מרטיריום\"?",
+      "options": [
+        "חדר קבורה",
+        "מגדל פעמונים",
+        "חצר מוקפת עמודים",
+        "מבנה שמנציח עדות – מות קדוש או אירוע בחיי ישוע"
+      ],
+      "correct": 3,
+      "explanation": "למשל הבזיליקה של קונסטנטינוס.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-014",
+      "question": "באילו שנים גובש הסטטוס קוו בפרמנים עות'מאניים?",
+      "options": [
+        "1517 ו-1917",
+        "1099 ו-1187",
+        "1757 ו-1852",
+        "1878 ו-1948"
+      ],
+      "correct": 2,
+      "explanation": "ואושרר בקונגרס ברלין ב-1878.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-015",
+      "question": "כמה עדות פעילות בכנסיית הקבר?",
+      "options": [
+        "שלוש",
+        "שש",
+        "ארבע",
+        "שמונה"
+      ],
+      "correct": 1,
+      "explanation": "יוונים-אורתודוקסים, קתולים, ארמנים, סורים-אורתודוקסים, קופטים ואתיופים.",
+      "level": 2,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-016",
+      "question": "מה אסור להכניס לחלק גדול מהכנסיות במסלול?",
+      "options": [
+        "נשק",
+        "מצלמה",
+        "בקבוק מים",
+        "תיק גב"
+      ],
+      "correct": 0,
+      "explanation": "ואין מקום מסודר להפקיד אותו.",
+      "level": 1,
+      "stop": "bg",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-017",
+      "question": "מה השם הערבי של שער האריות?",
+      "options": [
+        "באב אל-עמוד",
+        "באב אל-ח'ליל",
+        "באב א-רחמה",
+        "באב סיתנא מרים"
+      ],
+      "correct": 3,
+      "explanation": "שער גבירתנו מרים.",
+      "level": 1,
+      "stop": "anna",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-018",
+      "question": "לפי המסורת, מה קרה במקום של כנסיית סנטה אנה?",
+      "options": [
+        "נצלב ישוע",
+        "נקבר יוסף הרמתי",
+        "נולדה מרים, אם ישוע",
+        "נסקל סטפנוס"
+      ],
+      "correct": 2,
+      "explanation": "להוריה יואכים וחנה.",
+      "level": 1,
+      "stop": "anna",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-019",
+      "question": "מדוע ניצלה כנסיית סנטה אנה מהרס אחרי 1187?",
+      "options": [
+        "היא הוסתרה מתחת לאדמה",
+        "צלאח א-דין הפך אותה למדרסה",
+        "היא נמכרה לצרפת",
+        "היא הפכה לכנסייה יוונית"
+      ],
+      "correct": 1,
+      "explanation": "הכתובת הערבית מעל הכניסה מעידה על כך.",
+      "level": 2,
+      "stop": "anna",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-020",
+      "question": "למי ניתנה כנסיית סנטה אנה ב-1856?",
+      "options": [
+        "לצרפת",
+        "לבריטניה",
+        "לרוסיה",
+        "לאיטליה"
+      ],
+      "correct": 0,
+      "explanation": "כהוקרה על עזרתה במלחמת קרים.",
+      "level": 2,
+      "stop": "anna",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-021",
+      "question": "איזה נס מסופר בבשורה על פי יוחנן ליד בריכת בית חסדא?",
+      "options": [
+        "הפיכת מים ליין",
+        "הליכה על המים",
+        "הקמת אלעזר",
+        "ריפוי המשותק"
+      ],
+      "correct": 3,
+      "explanation": "יוחנן פרק ה'.",
+      "level": 1,
+      "stop": "anna",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-022",
+      "question": "לאיזה אל היה המקדש הרומי ממזרח לבריכות הצאן?",
+      "options": [
+        "יופיטר",
+        "מיתרס",
+        "אסקלפיוס / סראפיס, אל הרפואה",
+        "אפולו"
+      ],
+      "correct": 2,
+      "explanation": "המשכיות של פולחן ריפוי במקום.",
+      "level": 2,
+      "stop": "anna",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-023",
+      "question": "על שם מי קרא הורדוס למצודת אנטוניה?",
+      "options": [
+        "אנטיפטר, אביו",
+        "מרקוס אנטוניוס",
+        "אנטיגונוס",
+        "אנטיוכוס"
+      ],
+      "correct": 1,
+      "explanation": "פטרונו של הורדוס.",
+      "level": 1,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-024",
+      "question": "לפי המחקר המודרני, איפה כנראה נשפט ישוע?",
+      "options": [
+        "בארמון הורדוס, באזור מגדל דוד",
+        "במצודת אנטוניה",
+        "בהר הבית",
+        "בבית חסדא"
+      ],
+      "correct": 0,
+      "explanation": "הנציב שהגיע מקיסריה התאכסן בארמון הורדוס.",
+      "level": 2,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-025",
+      "question": "מי האדריכל ששיקם את קפלת ההלקאה ב-1929?",
+      "options": [
+        "קונרד שיק",
+        "צ'ארלס גורדון",
+        "אלפונס רטיסבון",
+        "אנטוניו ברלוצי"
+      ],
+      "correct": 3,
+      "explanation": "עם ויטראז'ים של פילאטוס, ההלקאה ובר-אבא.",
+      "level": 1,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-026",
+      "question": "מה היה במקור קשת אקה הומו?",
+      "options": [
+        "שער של מצודת אנטוניה",
+        "קשת צלבנית",
+        "חלק משער ניצחון רומי של אדריאנוס",
+        "שער ממלוכי"
+      ],
+      "correct": 2,
+      "explanation": "שער בעל שלושה פתחים בכניסה לפורום של איליה קפיטולינה.",
+      "level": 2,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-027",
+      "question": "מה פירוש \"אקה הומו\"?",
+      "options": [
+        "האדון בכה",
+        "הנה האיש",
+        "רצפת האבנים",
+        "דמות אמת"
+      ],
+      "correct": 1,
+      "explanation": "Ecce Homo.",
+      "level": 1,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-028",
+      "question": "מה פירוש \"ליתוסטרוטוס\"?",
+      "options": [
+        "רצפת האבנים",
+        "בית קטן",
+        "טבור העולם",
+        "הנה האיש"
+      ],
+      "correct": 0,
+      "explanation": "ריצוף רומי מתחת למנזר אחיות ציון.",
+      "level": 1,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-029",
+      "question": "מה הבעיה בקישור \"משחק המלך\" לחיילים שלעגו לישוע?",
+      "options": [
+        "המשחק יווני ולא רומי",
+        "החריטות צלבניות",
+        "הריצוף בכלל ממלוכי",
+        "הריצוף מאוחר לימי ישוע בכמאה שנה"
+      ],
+      "correct": 3,
+      "explanation": "הריצוף הוא מהפורום של אדריאנוס, המאה ה-2.",
+      "level": 3,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-030",
+      "question": "איזו בריכה יש מתחת לליתוסטרוטוס?",
+      "options": [
+        "בריכת השילוח",
+        "בריכת חזקיהו",
+        "בריכת הסטרותיון",
+        "בריכת הסולטן"
+      ],
+      "correct": 2,
+      "explanation": "יוספוס מזכיר אותה בתיאור הסוללות של טיטוס.",
+      "level": 2,
+      "stop": "antonia",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-031",
+      "question": "מה עובר ברחוב הגיא?",
+      "options": [
+        "נחל קדרון",
+        "עמק הטירופיאון הקדום",
+        "הקארדו המערבי",
+        "החומה השנייה"
+      ],
+      "correct": 1,
+      "explanation": "הרחוב מפריד בין גבעת הר הבית לעיר העליונה.",
+      "level": 2,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-032",
+      "question": "מי שיפץ את קפלת תחנה 3 (הנפילה הראשונה)?",
+      "options": [
+        "חיילי צבא אנדרס הפולני",
+        "הצלבנים",
+        "הפרנציסקנים במאה ה-14",
+        "הבריטים ב-1917"
+      ],
+      "correct": 0,
+      "explanation": "במלחמת העולם השנייה.",
+      "level": 2,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-033",
+      "question": "מה מתואר בתחנה 5?",
+      "options": [
+        "ורוניקה מנגבת את פניו",
+        "המפגש עם מרים",
+        "הנפילה השנייה",
+        "שמעון הקירני עוזר לשאת את הצלב"
+      ],
+      "correct": 3,
+      "explanation": "לפי מתי, מרקוס ולוקס.",
+      "level": 1,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-034",
+      "question": "מאיפה בא השם ורוניקה?",
+      "options": [
+        "שם של קדושה רומית",
+        "מילה יוונית לבד",
+        "שיבוש של Vera Icon – דמות אמת",
+        "שם של מלכה"
+      ],
+      "correct": 2,
+      "explanation": "המסורת לא מופיעה בברית החדשה אלא במקורות מימי הביניים.",
+      "level": 2,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-035",
+      "question": "איזה רחוב חוצה את הוויה דולורוזה בתחנה 7?",
+      "options": [
+        "רחוב הגיא",
+        "רחוב חאן א-זית – הקארדו המזרחי",
+        "רחוב דוד",
+        "רחוב הנוצרים"
+      ],
+      "correct": 1,
+      "explanation": "שם עמד שער היציאה מהעיר – שער המשפט.",
+      "level": 2,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-036",
+      "question": "מה מבוסס על לוקס כ\"ג בתחנה 8?",
+      "options": [
+        "ישוע מנחם את בנות ירושלים",
+        "ישוע נופל בפעם השלישית",
+        "הפשטת הבגדים",
+        "ורוניקה"
+      ],
+      "correct": 0,
+      "explanation": "\"בנות ירושלים אל תבכינה עלי\".",
+      "level": 1,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-037",
+      "question": "מה פירוש הכתובת IC XC NIKA?",
+      "options": [
+        "ישוע מלך היהודים",
+        "הנה האיש",
+        "האדון בכה",
+        "ישוע המשיח מנצח"
+      ],
+      "correct": 3,
+      "explanation": "חקוקה בקיר מנזר חרלמבוס בתחנה 8.",
+      "level": 1,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-038",
+      "question": "איפה נמצאת תחנה 9?",
+      "options": [
+        "בתוך האדיקולה",
+        "בשער האריות",
+        "בכניסה למתחם הקופטי והאתיופי דיר א-סולטאן",
+        "ברחבת הכותל"
+      ],
+      "correct": 2,
+      "explanation": "צמוד לגג קפלת הלנה.",
+      "level": 2,
+      "stop": "via",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-039",
+      "question": "אילו משפחות מחזיקות במפתח כנסיית הקבר?",
+      "options": [
+        "שתי משפחות ארמניות",
+        "ג'ודה ונוסייבה, משפחות מוסלמיות",
+        "הפרנציסקנים",
+        "משפחה יוונית אחת"
+      ],
+      "correct": 1,
+      "explanation": "ג'ודה שומרת המפתח, נוסייבה פותחת וסוגרת.",
+      "level": 1,
+      "stop": "parvis",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-040",
+      "question": "מי אטם את הפתח הימני של חזית כנסיית הקבר?",
+      "options": [
+        "צלאח א-דין",
+        "הבריטים",
+        "הפרסים",
+        "העות'מאנים ב-1852"
+      ],
+      "correct": 0,
+      "explanation": "כדי לשלוט בזרם הצליינים ולגבות מס כניסה.",
+      "level": 2,
+      "stop": "parvis",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-041",
+      "question": "מה מסמל סולם העץ שעל אדן החלון בחזית?",
+      "options": [
+        "את עליית ישוע לשמיים",
+        "את סולם יעקב",
+        "את בניית הכנסייה",
+        "את הקפאת המצב – הסטטוס קוו"
+      ],
+      "correct": 3,
+      "explanation": "אסור להזיז אותו בלי הסכמת כל העדות.",
+      "level": 1,
+      "stop": "parvis",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-042",
+      "question": "איזה פסיפס צלבני שרד בקפלה הלטינית בגולגולתא?",
+      "options": [
+        "פסיפס גלגל המזלות",
+        "פסיפס מפת מידבא",
+        "פסיפס עליית ישוע בתקרה",
+        "פסיפס הצלב"
+      ],
+      "correct": 2,
+      "explanation": "שאר הפסיפסים מודרניים.",
+      "level": 2,
+      "stop": "golgotha",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-043",
+      "question": "מה אפשר לגעת בו דרך החור המצופה כסף מתחת למזבח היווני?",
+      "options": [
+        "באבן הגולל",
+        "בסלע הגולגולתא",
+        "בקבר אדם הראשון",
+        "באבן המשיחה"
+      ],
+      "correct": 1,
+      "explanation": "מקום נעיצת הצלב לפי המסורת.",
+      "level": 1,
+      "stop": "golgotha",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-044",
+      "question": "למה מיוחס הסדק בסלע הגולגולתא?",
+      "options": [
+        "לרעידת האדמה בעת מות ישוע",
+        "לרעידת האדמה של 749",
+        "לחציבה הצלבנית",
+        "להפצצה ב-1948"
+      ],
+      "correct": 0,
+      "explanation": "מתי כ\"ז.",
+      "level": 2,
+      "stop": "golgotha",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-045",
+      "question": "למה מופיעה גולגולת בתחתית הצלב בציורים רבים?",
+      "options": [
+        "זה סמל של הצלבנים",
+        "זה סמל של מסדר פרנציסקני",
+        "בגלל שם המקום בלבד, בלי מסורת",
+        "לפי המסורת גולגולת אדם הראשון קבורה במקום"
+      ],
+      "correct": 3,
+      "explanation": "דם הצלוב נטף דרך הסדק אל אדם הראשון.",
+      "level": 2,
+      "stop": "golgotha",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-046",
+      "question": "אילו מלכים צלבנים נקברו מתחת לגולגולתא?",
+      "options": [
+        "ריצ'רד לב הארי ופרידריך השני",
+        "ריימונד וטנקרד",
+        "גודפרי מבויון ובלדווין הראשון",
+        "בלדווין הרביעי ומליסנדה"
+      ],
+      "correct": 2,
+      "explanation": "קבריהם נהרסו ב-1808.",
+      "level": 2,
+      "stop": "golgotha",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-047",
+      "question": "מה יש בקפלת המלאך שבאדיקולה?",
+      "options": [
+        "ספסל הקבורה",
+        "שריד מאבן הגולל",
+        "טבור העולם",
+        "הסולם"
+      ],
+      "correct": 1,
+      "explanation": "האבן שעליה ישב המלאך שבישר על התחייה.",
+      "level": 1,
+      "stop": "tomb",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-048",
+      "question": "מתי נפתח ספסל הקבורה באדיקולה למחקר?",
+      "options": [
+        "2016",
+        "1967",
+        "1808",
+        "1927"
+      ],
+      "correct": 0,
+      "explanation": "ונחשף מתחת לשיש סלע הקבורה המקורי.",
+      "level": 2,
+      "stop": "tomb",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-049",
+      "question": "מה מוכיחה מערת הקבורה בקפלה הסורית מאחורי האדיקולה?",
+      "options": [
+        "שישוע נקבר בה",
+        "שהיא צלבנית",
+        "שהיא מימי הבית הראשון",
+        "שהמקום היה בית קברות יהודי מחוץ לחומה במאה ה-1"
+      ],
+      "correct": 3,
+      "explanation": "זו מערת כוכים יהודית מימי הבית השני.",
+      "level": 3,
+      "stop": "tomb",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-050",
+      "question": "מה מסמן כד האבן במרכז הקתוליקון?",
+      "options": [
+        "את מקום הצליבה",
+        "את קבר אדם",
+        "את טבור העולם",
+        "את מקום מציאת הצלב"
+      ],
+      "correct": 2,
+      "explanation": "Omphalos – המרכז של הבריאה.",
+      "level": 1,
+      "stop": "tomb",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-051",
+      "question": "מה, לפי המסורת, מצאה הלנה בקפלת מציאת הצלב?",
+      "options": [
+        "את אבן הגולל",
+        "את הצלב האמיתי",
+        "את קבר יוסף",
+        "את כתר הקוצים"
+      ],
+      "correct": 1,
+      "explanation": "בשנת 326, בבור המחצבה העמוק ביותר.",
+      "level": 2,
+      "stop": "lower",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-052",
+      "question": "מה חרוט על קירות קפלת מציאת הצלב?",
+      "options": [
+        "אלפי צלבי צליינים מימי הביניים",
+        "שמות מלכי ירושלים",
+        "כתובות יווניות ביזנטיות",
+        "שמות הקיסרים"
+      ],
+      "correct": 0,
+      "explanation": "עדות לצליינות בימי הביניים.",
+      "level": 1,
+      "stop": "lower",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-053",
+      "question": "מה זה דיר א-סולטאן?",
+      "options": [
+        "מסגד ליד כנסיית הקבר",
+        "מנזר יווני",
+        "קפלה פרנציסקנית",
+        "הכפר האתיופי על גג קפלת הלנה"
+      ],
+      "correct": 3,
+      "explanation": "מדגים את המתח בין האתיופים לקופטים.",
+      "level": 2,
+      "stop": "lower",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-054",
+      "question": "מה יש בחצר הרוסית (כנסיית אלכסנדר נבסקי)?",
+      "options": [
+        "קבר הלנה",
+        "מערת הכוכים היהודית",
+        "שרידי שער הניצחון של אדריאנוס ו\"קוף המחט\"",
+        "הסולם של הסטטוס קוו"
+      ],
+      "correct": 2,
+      "explanation": "וגם שרידי קיר המרטיריום הקונסטנטיני.",
+      "level": 3,
+      "stop": "lower",
+      "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+    },
+    {
+      "id": "via-dolorosa-055",
+      "question": "איזו קבוצה מנהלת את גן הקבר?",
+      "options": [
+        "הפרנציסקנים",
+        "אגודה בריטית פרוטסטנטית",
+        "היוונים-אורתודוקסים",
+        "רשות הטבע והגנים"
+      ],
+      "correct": 1,
+      "explanation": "The Garden Tomb Association, מאז 1894.",
+      "level": 1,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-056",
+      "question": "מי זיהה במצוק שמצפון לשער שכם צורה של גולגולת?",
+      "options": [
+        "הגנרל צ'ארלס גורדון",
+        "קונרד שיק",
+        "גבריאל ברקאי",
+        "אנטוניו ברלוצי"
+      ],
+      "correct": 0,
+      "explanation": "ב-1883. מכאן השם \"גולגולתא של גורדון\".",
+      "level": 1,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-057",
+      "question": "מתי התגלתה מערת הקבורה בגן הקבר?",
+      "options": [
+        "1883",
+        "1894",
+        "1948",
+        "1867"
+      ],
+      "correct": 3,
+      "explanation": "למרגלות המצוק, בגן סמוך.",
+      "level": 2,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-058",
+      "question": "מה נמצא בגן מלבד המערה?",
+      "options": [
+        "פסיפס ביזנטי",
+        "מקווה",
+        "בור מים גדול וגת יין",
+        "בית בד"
+      ],
+      "correct": 2,
+      "explanation": "התומכים ראו בהם הוכחה לגן חקלאי, כמו ביוחנן י\"ט 41.",
+      "level": 2,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-059",
+      "question": "למה ארכיאולוגים מפקפקים בתעלה שלפני המערה?",
+      "options": [
+        "היא חצובה בבטון",
+        "כנראה זו שוקת מים מאוחרת, ואבני גולל עגולות היו נדירות",
+        "היא קצרה מדי",
+        "היא מהתקופה הצלבנית"
+      ],
+      "correct": 1,
+      "explanation": "אבני גולל עגולות אופייניות בעיקר לקברי מלכים ואצולה.",
+      "level": 2,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-060",
+      "question": "לפי גבריאל ברקאי, מאיזו תקופה מערת גן הקבר?",
+      "options": [
+        "תקופת הברזל ב' – ימי הבית הראשון",
+        "ימי הבית השני",
+        "התקופה הביזנטית",
+        "התקופה הצלבנית"
+      ],
+      "correct": 0,
+      "explanation": "המאות ה-8–7 לפנה\"ס, ושימוש מחדש בתקופה הביזנטית.",
+      "level": 1,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-061",
+      "question": "למה מערת גן הקבר לא יכולה להיות קבר ישוע?",
+      "options": [
+        "היא בתוך החומות",
+        "אין בה משכבי אבן",
+        "היא מוסלמית",
+        "ישוע נקבר בקבר חדש, והמערה ישנה בכ-700 שנה"
+      ],
+      "correct": 3,
+      "explanation": "לוקס כ\"ג 53: \"קבר... אשר לא הונח בו איש מעולם\".",
+      "level": 3,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-062",
+      "question": "מה טוען היום הצוות של גן הקבר?",
+      "options": [
+        "שזה בוודאות קבר ישוע",
+        "שהאתר מוסלמי",
+        "שהמקום אינו העיקר, אלא האירוע והמשמעות",
+        "שהאתר רק מוזיאון"
+      ],
+      "correct": 2,
+      "explanation": "\"He is not here, for He has risen\".",
+      "level": 2,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-063",
+      "question": "למה פרוטסטנטים במאה ה-19 חיפשו אתר אחר?",
+      "options": [
+        "הכניסה לכנסיית הקבר נאסרה עליהם",
+        "כנסיית הקבר נראתה להם חשוכה, עמוסה ובתוך העיר",
+        "כנסיית הקבר נהרסה",
+        "הבריטים שלטו בעיר"
+      ],
+      "correct": 1,
+      "explanation": "הם חיפשו אתר פתוח, ירוק ומחוץ לחומות.",
+      "level": 2,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    },
+    {
+      "id": "via-dolorosa-064",
+      "question": "באיזה רחוב נמצא גן הקבר?",
+      "options": [
+        "רחוב קונרד שיק",
+        "רחוב הנביאים",
+        "ויה דולורוזה",
+        "רחוב הגיא"
+      ],
+      "correct": 0,
+      "explanation": "מצפון לשער שכם, מחוץ לחומה העות'מאנית.",
+      "level": 1,
+      "stop": "gan",
+      "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+    }
+  ]
+}

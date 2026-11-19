@@ -269,6 +269,12 @@ Photo du sujet envoyée par Lionel (3 questions, une au choix, 5 courtes + 1 lon
 - ✅ 3 missions « 📝 מדף התרגול של המרצה » (`source: prof`), énoncés recopiés tels quels : **js3** הרי יהודה ירושלים → באר שבע (longue : הרודיון), **va3** קריית שמונה → בית שאן (longue : מפעל נהריים), **jd3** אלמוג → נאות הכיכר (longue : קומראן). Ancres ajoutées : באר שבע, קריית שמונה, אלמוג, נאות הכיכר.
 - ⚠️ Sans page dans le cours (signalé dans la mission) : מצודה צלבנית et תצפית en הר חברון, מפעל נהריים, עינות צוקים ; ראש פינה / תל חי / באר שבע ottomane sont dans d'autres fichiers de région.
 
+### 19 novembre 2026 — « חידון חזרה » devient « חידון על הדרך » + quiz Via Dolorosa (Claude)
+- ✅ Renommage dans l'interface : titre et h1 de `return-bus.html`, carte de l'accueil, titres des JSON du 12.11. Le nom de fichier `return-bus` est inchangé (les liens existants marchent toujours).
+- ✅ Nouveau quiz du 19.11 : `public/return-bus/2026-11-19.json` (+ copie dans `content/`), **64 questions** sur 9 étapes (גן הקבר, סנטה אנה, אנטוניה/ליתוסטרוטוס, תחנות 3–9, רחבת הכנסייה, גולגולתא, אדיקולה, emplacements inférieurs, rappels historiques). Chaque question a un champ `source` vers l'un des deux documents du dossier de la sortie : « חוברת הכנה לסיור: הוויה דולורוזה וכנסיית הקבר » et « חוברת הכנה לסיור: גן הקבר » (חנה בנדקובסקי). Fait écarté car les deux documents se contredisent : le siècle d'arrivée des Franciscains (XIIIe ou XIVe).
+- ✅ Accueil : la carte mène au quiz du 19.11, avec un second lien vers celui du 12.11 (libellé corrigé : 125 questions et non 25).
+- ✅ Testé en navigateur (Chromium, 360×780) : chargement, 64 questions jouées jusqu'au bout, pas de débordement, aucune erreur console. Pas vérifié sur un vrai téléphone.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
