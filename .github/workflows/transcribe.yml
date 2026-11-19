@@ -2,11 +2,15 @@ name: Transcription des enregistrements (ivrit.ai)
 # Transcrit les fichiers de tools/transcribe/files.json (liens Drive en lecture).
 # Le texte est chiffré avec tools/transcribe/pub.pem avant de quitter chaque machine :
 # rien de lisible dans les journaux, les artefacts ou le dépôt.
+# Pour relancer : partager les fichiers en « lecteur avec le lien » (copies dans un dossier temporaire),
+# mettre leurs id dans files.json, générer une paire de clés (pub.pem ici, clé privée gardée hors du dépôt),
+# puis pousser sur une branche transcribe/… (ou Actions → Run workflow).
 on:
+  workflow_dispatch:
   push:
+    branches: ['transcribe/**']
     paths:
       - 'tools/transcribe/files.json'
-      - '.github/workflows/transcribe.yml'
 permissions:
   contents: write
 jobs:
