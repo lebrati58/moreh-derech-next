@@ -282,6 +282,15 @@ Photo du sujet envoyée par Lionel (3 questions, une au choix, 5 courtes + 1 lon
 - Écartés : passages inaudibles ou déformés, logistique, et les contradictions (procès de Jésus au mont Sion « au 5e siècle » contre « après la conquête perse » ; accord Israël–Vatican 1964/1967 ; église devenue mosquée à la conquête arabe).
 - ✅ Testé en navigateur (Chromium, 360×780) : les 272 questions jouées jusqu'au bout, pas de débordement, aucune erreur console. Pas vérifié sur un vrai téléphone.
 
+### 19 novembre 2026 (nuit) — 📘 Fiches de révision « דפי חזרה » (Claude)
+- ✅ `fiches.html` (+ `fiches.css`, `fiches.js`) : une fiche par סיור, soit les 22 du cours et les deux sorties à Jérusalem (12.11 et 19.11). Chaque fiche contient le fil rouge en une phrase, les étapes numérotées dans l'ordre du parcours, « ⭐ חובה לדעת », les points par lieu, une frise des dates, les mots à connaître et un truc pour retenir.
+- ✅ Mode **🧠 שינון** : les réponses sont cachées, un tap les révèle. Bouton « ✅ אני יודע/ת » par étape, avec la progression gardée sur le téléphone. Impression/PDF. Bouton « 🎯 לבחון את עצמי » vers le quiz du סיור. Recherche. Lien depuis l'accueil, sous la carte du חידון על הדרך.
+- ✅ Contenu : `content/fiches/*.json` → `tools/build-fiches.mjs` (`npm run build:fiches`) → `public/fiches/`. **Chaque point cite les qid des questions du jeu dont il est tiré** (banque `guided-quiz.json` ou `return-bus/<date>.json`). Le script refuse un qid inconnu, ou un chiffre absent des faits cités, puis remplace les qid par les liens sources (📄). Total : 1 279 points. Rédaction par Claude à partir de la banque, sans relecture humaine.
+- ✅ Corrigé au passage dans le quiz du 12.11 : 3 questions dont la bonne réponse contredisait l'explication (`har-hazeitim-cen-7`, `-8`, `-10`). L'indice de réponse est aligné sur l'explication, la question n'est pas supprimée.
+- ✅ Quiz du 19.11 : `via-dolorosa-rec-041` est retirée (271 questions). Elle disait que la muraille ottomane suit la 2e muraille, ce qui contredit la brochure : la Golgotha était hors de la 2e muraille.
+- Écartés des fiches : la date de fondation de la colonie yéménite de Silwan (1882 ou 1885) et la largeur du קארדו (20 ou 22 m).
+- ✅ Tests : `tests/fiches.test.mjs` (3). Navigateur 360×780 et 1280×860 : 24 fiches ouvertes, aucun débordement, mode שינון, progression gardée après rechargement, lien vers le quiz, aucune erreur console. Pas vérifié sur un vrai téléphone.
+
 ## 3. À faire / idées (par priorité)
 
 0. ⏳ **Jérusalem 3D** — phase 1 en ligne (voir journal du 25/10). Prochaines étapes : plans géoréférencés des murailles antiques, onglet admin des fiches, phase 2 (quiz 3D) seulement avec accord explicite.
