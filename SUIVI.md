@@ -32,6 +32,12 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 21 novembre 2026 — Page cachée « ממילא — מה היה כאן » (branche `claude/mamilla-avant`)
+- `mamilla.html` : outil du guide (hébreu) pour la promenade Mamilla — 8 lieux cliquables dans l'ordre (בריכת ממילא, מערת 614, סן ונסן דה פול, בית שטרן, בית קלארק, קיר האבנים הממוספרות, קו הגבול 1948–1967, שער יפו). Un toucher : la carte Leaflet (locale) va au lieu, la fiche s'ouvre avec l'histoire, « מה להראות », un bouton Google Maps et les sources.
+- Précision affichée pour chaque lieu : exacte (Wikipédia : bassin, porte de Jaffa), approximative (couvent ±100 m ; Stern = point de la photo Wikimedia), ou aucun point vérifié (Clark, mur d'Akasha, grotte sous le parking, ligne de frontière → recherche Google Maps seulement). Dates contradictoires entre sources (Stern 1870/1877, couvent 1885/1886) ramenées à la décennie, avec un ⚠️.
+- Accès discret : « ⋯ » replié tout en bas du menu עוד (`tabbar.js`, 4 langues). `sw.js` : page ajoutée au cache hors ligne, cache `v101`.
+- ✅ test navigateur (412×915) : ouverture d'une fiche, 4 repères, pas de débordement, lien caché invisible avant « ⋯ », aucune erreur JS. 🟡 pas encore vérifié sur un vrai téléphone (les tuiles OSM ne chargent pas dans l'environnement de test).
+
 ### 10 novembre 2026 — Essai réversible des fiches
 - `rtg-preview.html` : comparaison Avant / Après sur Tsipori, boutons explicites et réponse OUI / NON dans la conversation. Aucun choix enregistré ou envoyé, aucune bascule globale déclenchée par la page.
 - Ancienne présentation conservée dans `rtg-sites-before.html/.css/.js`, issue de `266b2f8` ; mêmes contenus publics actuels. Les fiches principales ne sont pas modifiées par cet essai.
