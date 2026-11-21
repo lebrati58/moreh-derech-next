@@ -1,0 +1,4949 @@
+{
+ "date": "2026-11-19",
+ "title": "חידון על הדרך – הוויה דולורוזה, כנסיית הקבר וגן הקבר (19.11.2026)",
+ "mode": "return-bus",
+ "status": "ready",
+ "shuffleQuestions": true,
+ "shuffleOptions": true,
+ "stops": [
+  {
+   "id": "gan",
+   "name": "גן הקבר"
+  },
+  {
+   "id": "anna",
+   "name": "סנטה אנה ובריכות הצאן"
+  },
+  {
+   "id": "antonia",
+   "name": "מצודת אנטוניה והליתוסטרוטוס"
+  },
+  {
+   "id": "via",
+   "name": "תחנות 3–9 בוויה דולורוזה"
+  },
+  {
+   "id": "parvis",
+   "name": "רחבת כנסיית הקבר"
+  },
+  {
+   "id": "golgotha",
+   "name": "הגולגולתא (תחנות 10–13)"
+  },
+  {
+   "id": "tomb",
+   "name": "האדיקולה והרוטונדה"
+  },
+  {
+   "id": "lower",
+   "name": "המפלסים התחתונים ומוקדים נוספים"
+  },
+  {
+   "id": "bg",
+   "name": "רקע היסטורי ומושגים"
+  },
+  {
+   "id": "edot",
+   "name": "העדות והזרמים הנוצריים"
+  },
+  {
+   "id": "hadracha",
+   "name": "טיפים להדרכה ולמבחן"
+  }
+ ],
+ "questions": [
+  {
+   "id": "via-dolorosa-001",
+   "question": "מדוע אזור הגולגולתא היה מחוץ לעיר בימי ישוע?",
+   "options": [
+    "הוא היה בתוך הר הבית",
+    "הוא היה מעבר לנחל קדרון",
+    "הוא היה בתוך מצודת אנטוניה",
+    "הוא היה מחוץ לחומה השנייה"
+   ],
+   "correct": 3,
+   "explanation": "קבורה והוצאה להורג נעשו מחוץ לעיר, והגולגולתא הייתה מחוץ לחומה השנייה.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-002",
+   "question": "איזו חומה הכניסה את אזור הגולגולתא לתוך העיר?",
+   "options": [
+    "החומה הראשונה החשמונאית",
+    "החומה השנייה של הורדוס",
+    "החומה השלישית של אגריפס הראשון",
+    "החומה העות'מאנית"
+   ],
+   "correct": 2,
+   "explanation": "החומה השלישית (41–44 לסה\"נ) נבנתה כעשור אחרי הצליבה.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-003",
+   "question": "מה היה האזור של כנסיית הקבר לפני שהפך לבית קברות?",
+   "options": [
+    "שוק העיר",
+    "מחצבת אבן גיר",
+    "ארמון חשמונאי",
+    "בריכת מים"
+   ],
+   "correct": 1,
+   "explanation": "מחצבה קדומה שיצאה משימוש והפכה לגן ולבית קברות עם כוכים.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-004",
+   "question": "מה בנה אדריאנוס מעל אתר הגולגולתא?",
+   "options": [
+    "מקדש לאפרודיטה / יופיטר",
+    "תיאטרון",
+    "בית מרחץ",
+    "מחנה הלגיון העשירי"
+   ],
+   "correct": 0,
+   "explanation": "המקדש האלילי דווקא שימר את זיכרון המקום.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-005",
+   "question": "מי הגיעה לירושלים בשנת 326 וחשפה את מערת הקבר?",
+   "options": [
+    "אגריה הצליינית",
+    "הקיסרית אודוקיה",
+    "המלכה מליסנדה",
+    "הלנה, אמו של קונסטנטינוס"
+   ],
+   "correct": 3,
+   "explanation": "בעקבותיה נבנתה כנסיית הקבר הקונסטנטינית.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-006",
+   "question": "באיזו שנה נחנכה כנסיית הקבר הקונסטנטינית?",
+   "options": [
+    "135",
+    "614",
+    "335",
+    "1149"
+   ],
+   "correct": 2,
+   "explanation": "הכנסייה הקונסטנטינית נחנכה ב-335 לסה\"נ.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-007",
+   "question": "מה מתארת הצליינית אגריה בסוף המאה ה-4?",
+   "options": [
+    "את 14 התחנות של הוויה דולורוזה",
+    "תהלוכה ביום שישי הטוב מהר הזיתים לגולגולתא, בלי תחנות קבועות",
+    "את בניית האדיקולה",
+    "את הסטטוס קוו"
+   ],
+   "correct": 1,
+   "explanation": "בימיה עדיין לא היה תוואי קבוע של תחנות ברחובות.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-008",
+   "question": "מי הרס את כנסיית הקבר בשנת 1009?",
+   "options": [
+    "הח'ליף הפאטמי אל-חאכם",
+    "צלאח א-דין",
+    "הפרסים",
+    "הקיסר אדריאנוס"
+   ],
+   "correct": 0,
+   "explanation": "הצלבנים שיקמו אותה אחר כך.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-009",
+   "question": "מתי נחנכה הכנסייה הצלבנית, שאיחדה את כל המוקדים תחת גג אחד?",
+   "options": [
+    "1099",
+    "1187",
+    "335",
+    "15 ביולי 1149"
+   ],
+   "correct": 3,
+   "explanation": "50 שנה בדיוק אחרי כיבוש ירושלים בידי הצלבנים.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-010",
+   "question": "איפה התגבש המספור של 14 התחנות?",
+   "options": [
+    "בירושלים הביזנטית",
+    "בקושטא",
+    "באירופה",
+    "ברומא הקיסרית"
+   ],
+   "correct": 2,
+   "explanation": "בהעתקים של דרך הייסורים במנזרים באירופה, וחזר לירושלים רק במאות ה-18–19.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-011",
+   "question": "מה פירוש המילה \"אנסטסיס\"?",
+   "options": [
+    "קבר",
+    "תחייה",
+    "עדות",
+    "בית קטן"
+   ],
+   "correct": 1,
+   "explanation": "זה השם היווני-אורתודוקסי של כנסיית הקבר.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-012",
+   "question": "מה פירוש \"אדיקולה\"?",
+   "options": [
+    "בית קטן",
+    "תחייה",
+    "רצפת אבנים",
+    "טבור העולם"
+   ],
+   "correct": 0,
+   "explanation": "המבנה במרכז הרוטונדה שמקיף את שרידי מערת הקבורה.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-013",
+   "question": "מה זה \"מרטיריום\"?",
+   "options": [
+    "חדר קבורה",
+    "מגדל פעמונים",
+    "חצר מוקפת עמודים",
+    "מבנה שמנציח עדות – מות קדוש או אירוע בחיי ישוע"
+   ],
+   "correct": 3,
+   "explanation": "למשל הבזיליקה של קונסטנטינוס.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-014",
+   "question": "באילו שנים גובש הסטטוס קוו בפרמנים עות'מאניים?",
+   "options": [
+    "1517 ו-1917",
+    "1099 ו-1187",
+    "1757 ו-1852",
+    "1878 ו-1948"
+   ],
+   "correct": 2,
+   "explanation": "ואושרר בקונגרס ברלין ב-1878.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-015",
+   "question": "כמה עדות פעילות בכנסיית הקבר?",
+   "options": [
+    "שלוש",
+    "שש",
+    "ארבע",
+    "שמונה"
+   ],
+   "correct": 1,
+   "explanation": "יוונים-אורתודוקסים, קתולים, ארמנים, סורים-אורתודוקסים, קופטים ואתיופים.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-016",
+   "question": "מה אסור להכניס לחלק גדול מהכנסיות במסלול?",
+   "options": [
+    "נשק",
+    "מצלמה",
+    "בקבוק מים",
+    "תיק גב"
+   ],
+   "correct": 0,
+   "explanation": "ואין מקום מסודר להפקיד אותו.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-017",
+   "question": "מה השם הערבי של שער האריות?",
+   "options": [
+    "באב אל-עמוד",
+    "באב אל-ח'ליל",
+    "באב א-רחמה",
+    "באב סיתנא מרים"
+   ],
+   "correct": 3,
+   "explanation": "שער גבירתנו מרים.",
+   "level": 1,
+   "stop": "anna",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-018",
+   "question": "לפי המסורת, מה קרה במקום של כנסיית סנטה אנה?",
+   "options": [
+    "נצלב ישוע",
+    "נקבר יוסף הרמתי",
+    "נולדה מרים, אם ישוע",
+    "נסקל סטפנוס"
+   ],
+   "correct": 2,
+   "explanation": "להוריה יואכים וחנה.",
+   "level": 1,
+   "stop": "anna",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-019",
+   "question": "מדוע ניצלה כנסיית סנטה אנה מהרס אחרי 1187?",
+   "options": [
+    "היא הוסתרה מתחת לאדמה",
+    "צלאח א-דין הפך אותה למדרסה",
+    "היא נמכרה לצרפת",
+    "היא הפכה לכנסייה יוונית"
+   ],
+   "correct": 1,
+   "explanation": "הכתובת הערבית מעל הכניסה מעידה על כך.",
+   "level": 2,
+   "stop": "anna",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-020",
+   "question": "למי ניתנה כנסיית סנטה אנה ב-1856?",
+   "options": [
+    "לצרפת",
+    "לבריטניה",
+    "לרוסיה",
+    "לאיטליה"
+   ],
+   "correct": 0,
+   "explanation": "כהוקרה על עזרתה במלחמת קרים.",
+   "level": 2,
+   "stop": "anna",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-021",
+   "question": "איזה נס מסופר בבשורה על פי יוחנן ליד בריכת בית חסדא?",
+   "options": [
+    "הפיכת מים ליין",
+    "הליכה על המים",
+    "הקמת אלעזר",
+    "ריפוי המשותק"
+   ],
+   "correct": 3,
+   "explanation": "יוחנן פרק ה'.",
+   "level": 1,
+   "stop": "anna",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-022",
+   "question": "לאיזה אל היה המקדש הרומי ממזרח לבריכות הצאן?",
+   "options": [
+    "יופיטר",
+    "מיתרס",
+    "אסקלפיוס / סראפיס, אל הרפואה",
+    "אפולו"
+   ],
+   "correct": 2,
+   "explanation": "המשכיות של פולחן ריפוי במקום.",
+   "level": 2,
+   "stop": "anna",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-023",
+   "question": "על שם מי קרא הורדוס למצודת אנטוניה?",
+   "options": [
+    "אנטיפטר, אביו",
+    "מרקוס אנטוניוס",
+    "אנטיגונוס",
+    "אנטיוכוס"
+   ],
+   "correct": 1,
+   "explanation": "פטרונו של הורדוס.",
+   "level": 1,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-024",
+   "question": "לפי המחקר המודרני, איפה כנראה נשפט ישוע?",
+   "options": [
+    "בארמון הורדוס, באזור מגדל דוד",
+    "במצודת אנטוניה",
+    "בהר הבית",
+    "בבית חסדא"
+   ],
+   "correct": 0,
+   "explanation": "הנציב שהגיע מקיסריה התאכסן בארמון הורדוס.",
+   "level": 2,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-025",
+   "question": "מי האדריכל ששיקם את קפלת ההלקאה ב-1929?",
+   "options": [
+    "קונרד שיק",
+    "צ'ארלס גורדון",
+    "אלפונס רטיסבון",
+    "אנטוניו ברלוצי"
+   ],
+   "correct": 3,
+   "explanation": "עם ויטראז'ים של פילאטוס, ההלקאה ובר-אבא.",
+   "level": 1,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-026",
+   "question": "מה היה במקור קשת אקה הומו?",
+   "options": [
+    "שער של מצודת אנטוניה",
+    "קשת צלבנית",
+    "חלק משער ניצחון רומי של אדריאנוס",
+    "שער ממלוכי"
+   ],
+   "correct": 2,
+   "explanation": "שער בעל שלושה פתחים בכניסה לפורום של איליה קפיטולינה.",
+   "level": 2,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-027",
+   "question": "מה פירוש \"אקה הומו\"?",
+   "options": [
+    "האדון בכה",
+    "הנה האיש",
+    "רצפת האבנים",
+    "דמות אמת"
+   ],
+   "correct": 1,
+   "explanation": "Ecce Homo.",
+   "level": 1,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-028",
+   "question": "מה פירוש \"ליתוסטרוטוס\"?",
+   "options": [
+    "רצפת האבנים",
+    "בית קטן",
+    "טבור העולם",
+    "הנה האיש"
+   ],
+   "correct": 0,
+   "explanation": "ריצוף רומי מתחת למנזר אחיות ציון.",
+   "level": 1,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-029",
+   "question": "מה הבעיה בקישור \"משחק המלך\" לחיילים שלעגו לישוע?",
+   "options": [
+    "המשחק יווני ולא רומי",
+    "החריטות צלבניות",
+    "הריצוף בכלל ממלוכי",
+    "הריצוף מאוחר לימי ישוע בכמאה שנה"
+   ],
+   "correct": 3,
+   "explanation": "הריצוף הוא מהפורום של אדריאנוס, המאה ה-2.",
+   "level": 3,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-030",
+   "question": "איזו בריכה יש מתחת לליתוסטרוטוס?",
+   "options": [
+    "בריכת השילוח",
+    "בריכת חזקיהו",
+    "בריכת הסטרותיון",
+    "בריכת הסולטן"
+   ],
+   "correct": 2,
+   "explanation": "יוספוס מזכיר אותה בתיאור הסוללות של טיטוס.",
+   "level": 2,
+   "stop": "antonia",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-031",
+   "question": "מה עובר ברחוב הגיא?",
+   "options": [
+    "נחל קדרון",
+    "עמק הטירופיאון הקדום",
+    "הקארדו המערבי",
+    "החומה השנייה"
+   ],
+   "correct": 1,
+   "explanation": "הרחוב מפריד בין גבעת הר הבית לעיר העליונה.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-032",
+   "question": "מי שיפץ את קפלת תחנה 3 (הנפילה הראשונה)?",
+   "options": [
+    "חיילי צבא אנדרס הפולני",
+    "הצלבנים",
+    "הפרנציסקנים במאה ה-14",
+    "הבריטים ב-1917"
+   ],
+   "correct": 0,
+   "explanation": "במלחמת העולם השנייה.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-033",
+   "question": "מה מתואר בתחנה 5?",
+   "options": [
+    "ורוניקה מנגבת את פניו",
+    "המפגש עם מרים",
+    "הנפילה השנייה",
+    "שמעון הקירני עוזר לשאת את הצלב"
+   ],
+   "correct": 3,
+   "explanation": "לפי מתי, מרקוס ולוקס.",
+   "level": 1,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-034",
+   "question": "מאיפה בא השם ורוניקה?",
+   "options": [
+    "שם של קדושה רומית",
+    "מילה יוונית לבד",
+    "שיבוש של Vera Icon – דמות אמת",
+    "שם של מלכה"
+   ],
+   "correct": 2,
+   "explanation": "המסורת לא מופיעה בברית החדשה אלא במקורות מימי הביניים.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-035",
+   "question": "איזה רחוב חוצה את הוויה דולורוזה בתחנה 7?",
+   "options": [
+    "רחוב הגיא",
+    "רחוב חאן א-זית – הקארדו המזרחי",
+    "רחוב דוד",
+    "רחוב הנוצרים"
+   ],
+   "correct": 1,
+   "explanation": "שם עמד שער היציאה מהעיר – שער המשפט.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-036",
+   "question": "מה מבוסס על לוקס כ\"ג בתחנה 8?",
+   "options": [
+    "ישוע מנחם את בנות ירושלים",
+    "ישוע נופל בפעם השלישית",
+    "הפשטת הבגדים",
+    "ורוניקה"
+   ],
+   "correct": 0,
+   "explanation": "\"בנות ירושלים אל תבכינה עלי\".",
+   "level": 1,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-037",
+   "question": "מה פירוש הכתובת IC XC NIKA?",
+   "options": [
+    "ישוע מלך היהודים",
+    "הנה האיש",
+    "האדון בכה",
+    "ישוע המשיח מנצח"
+   ],
+   "correct": 3,
+   "explanation": "חקוקה בקיר מנזר חרלמבוס בתחנה 8.",
+   "level": 1,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-038",
+   "question": "איפה נמצאת תחנה 9?",
+   "options": [
+    "בתוך האדיקולה",
+    "בשער האריות",
+    "בכניסה למתחם הקופטי והאתיופי דיר א-סולטאן",
+    "ברחבת הכותל"
+   ],
+   "correct": 2,
+   "explanation": "צמוד לגג קפלת הלנה.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-039",
+   "question": "אילו משפחות מחזיקות במפתח כנסיית הקבר?",
+   "options": [
+    "שתי משפחות ארמניות",
+    "ג'ודה ונוסייבה, משפחות מוסלמיות",
+    "הפרנציסקנים",
+    "משפחה יוונית אחת"
+   ],
+   "correct": 1,
+   "explanation": "ג'ודה שומרת המפתח, נוסייבה פותחת וסוגרת.",
+   "level": 1,
+   "stop": "parvis",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-040",
+   "question": "מי אטם את הפתח הימני של חזית כנסיית הקבר?",
+   "options": [
+    "צלאח א-דין",
+    "הבריטים",
+    "הפרסים",
+    "העות'מאנים ב-1852"
+   ],
+   "correct": 0,
+   "explanation": "כדי לשלוט בזרם הצליינים ולגבות מס כניסה.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-041",
+   "question": "מה מסמל סולם העץ שעל אדן החלון בחזית?",
+   "options": [
+    "את עליית ישוע לשמיים",
+    "את סולם יעקב",
+    "את בניית הכנסייה",
+    "את הקפאת המצב – הסטטוס קוו"
+   ],
+   "correct": 3,
+   "explanation": "אסור להזיז אותו בלי הסכמת כל העדות.",
+   "level": 1,
+   "stop": "parvis",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-042",
+   "question": "איזה פסיפס צלבני שרד בקפלה הלטינית בגולגולתא?",
+   "options": [
+    "פסיפס גלגל המזלות",
+    "פסיפס מפת מידבא",
+    "פסיפס עליית ישוע בתקרה",
+    "פסיפס הצלב"
+   ],
+   "correct": 2,
+   "explanation": "שאר הפסיפסים מודרניים.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-043",
+   "question": "מה אפשר לגעת בו דרך החור המצופה כסף מתחת למזבח היווני?",
+   "options": [
+    "באבן הגולל",
+    "בסלע הגולגולתא",
+    "בקבר אדם הראשון",
+    "באבן המשיחה"
+   ],
+   "correct": 1,
+   "explanation": "מקום נעיצת הצלב לפי המסורת.",
+   "level": 1,
+   "stop": "golgotha",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-044",
+   "question": "למה מיוחס הסדק בסלע הגולגולתא?",
+   "options": [
+    "לרעידת האדמה בעת מות ישוע",
+    "לרעידת האדמה של 749",
+    "לחציבה הצלבנית",
+    "להפצצה ב-1948"
+   ],
+   "correct": 0,
+   "explanation": "מתי כ\"ז.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-045",
+   "question": "למה מופיעה גולגולת בתחתית הצלב בציורים רבים?",
+   "options": [
+    "זה סמל של הצלבנים",
+    "זה סמל של מסדר פרנציסקני",
+    "בגלל שם המקום בלבד, בלי מסורת",
+    "לפי המסורת גולגולת אדם הראשון קבורה במקום"
+   ],
+   "correct": 3,
+   "explanation": "דם הצלוב נטף דרך הסדק אל אדם הראשון.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-046",
+   "question": "אילו מלכים צלבנים נקברו מתחת לגולגולתא?",
+   "options": [
+    "ריצ'רד לב הארי ופרידריך השני",
+    "ריימונד וטנקרד",
+    "גודפרי מבויון ובלדווין הראשון",
+    "בלדווין הרביעי ומליסנדה"
+   ],
+   "correct": 2,
+   "explanation": "קבריהם נהרסו ב-1808.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-047",
+   "question": "מה יש בקפלת המלאך שבאדיקולה?",
+   "options": [
+    "ספסל הקבורה",
+    "שריד מאבן הגולל",
+    "טבור העולם",
+    "הסולם"
+   ],
+   "correct": 1,
+   "explanation": "האבן שעליה ישב המלאך שבישר על התחייה.",
+   "level": 1,
+   "stop": "tomb",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-048",
+   "question": "מתי נפתח ספסל הקבורה באדיקולה למחקר?",
+   "options": [
+    "2016",
+    "1967",
+    "1808",
+    "1927"
+   ],
+   "correct": 0,
+   "explanation": "ונחשף מתחת לשיש סלע הקבורה המקורי.",
+   "level": 2,
+   "stop": "tomb",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-049",
+   "question": "מה מוכיחה מערת הקבורה בקפלה הסורית מאחורי האדיקולה?",
+   "options": [
+    "שישוע נקבר בה",
+    "שהיא צלבנית",
+    "שהיא מימי הבית הראשון",
+    "שהמקום היה בית קברות יהודי מחוץ לחומה במאה ה-1"
+   ],
+   "correct": 3,
+   "explanation": "זו מערת כוכים יהודית מימי הבית השני.",
+   "level": 3,
+   "stop": "tomb",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-050",
+   "question": "מה מסמן כד האבן במרכז הקתוליקון?",
+   "options": [
+    "את מקום הצליבה",
+    "את קבר אדם",
+    "את טבור העולם",
+    "את מקום מציאת הצלב"
+   ],
+   "correct": 2,
+   "explanation": "Omphalos – המרכז של הבריאה.",
+   "level": 1,
+   "stop": "tomb",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-051",
+   "question": "מה, לפי המסורת, מצאה הלנה בקפלת מציאת הצלב?",
+   "options": [
+    "את אבן הגולל",
+    "את הצלב האמיתי",
+    "את קבר יוסף",
+    "את כתר הקוצים"
+   ],
+   "correct": 1,
+   "explanation": "בשנת 326, בבור המחצבה העמוק ביותר.",
+   "level": 2,
+   "stop": "lower",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-052",
+   "question": "מה חרוט על קירות קפלת מציאת הצלב?",
+   "options": [
+    "אלפי צלבי צליינים מימי הביניים",
+    "שמות מלכי ירושלים",
+    "כתובות יווניות ביזנטיות",
+    "שמות הקיסרים"
+   ],
+   "correct": 0,
+   "explanation": "עדות לצליינות בימי הביניים.",
+   "level": 1,
+   "stop": "lower",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-053",
+   "question": "מה זה דיר א-סולטאן?",
+   "options": [
+    "מסגד ליד כנסיית הקבר",
+    "מנזר יווני",
+    "קפלה פרנציסקנית",
+    "הכפר האתיופי על גג קפלת הלנה"
+   ],
+   "correct": 3,
+   "explanation": "מדגים את המתח בין האתיופים לקופטים.",
+   "level": 2,
+   "stop": "lower",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-054",
+   "question": "מה יש בחצר הרוסית (כנסיית אלכסנדר נבסקי)?",
+   "options": [
+    "קבר הלנה",
+    "מערת הכוכים היהודית",
+    "שרידי שער הניצחון של אדריאנוס ו\"קוף המחט\"",
+    "הסולם של הסטטוס קוו"
+   ],
+   "correct": 2,
+   "explanation": "וגם שרידי קיר המרטיריום הקונסטנטיני.",
+   "level": 3,
+   "stop": "lower",
+   "source": "https://docs.google.com/document/d/1TnVaiuE0SSDsdchnawlK-yCaZqGfQtWXEYGOGv0Upzg/edit"
+  },
+  {
+   "id": "via-dolorosa-055",
+   "question": "איזו קבוצה מנהלת את גן הקבר?",
+   "options": [
+    "הפרנציסקנים",
+    "אגודה בריטית פרוטסטנטית",
+    "היוונים-אורתודוקסים",
+    "רשות הטבע והגנים"
+   ],
+   "correct": 1,
+   "explanation": "The Garden Tomb Association, מאז 1894.",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-056",
+   "question": "מי זיהה במצוק שמצפון לשער שכם צורה של גולגולת?",
+   "options": [
+    "הגנרל צ'ארלס גורדון",
+    "קונרד שיק",
+    "גבריאל ברקאי",
+    "אנטוניו ברלוצי"
+   ],
+   "correct": 0,
+   "explanation": "ב-1883. מכאן השם \"גולגולתא של גורדון\".",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-057",
+   "question": "מתי התגלתה מערת הקבורה בגן הקבר?",
+   "options": [
+    "1883",
+    "1894",
+    "1948",
+    "1867"
+   ],
+   "correct": 3,
+   "explanation": "למרגלות המצוק, בגן סמוך.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-058",
+   "question": "מה נמצא בגן מלבד המערה?",
+   "options": [
+    "פסיפס ביזנטי",
+    "מקווה",
+    "בור מים גדול וגת יין",
+    "בית בד"
+   ],
+   "correct": 2,
+   "explanation": "התומכים ראו בהם הוכחה לגן חקלאי, כמו ביוחנן י\"ט 41.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-059",
+   "question": "למה ארכיאולוגים מפקפקים בתעלה שלפני המערה?",
+   "options": [
+    "היא חצובה בבטון",
+    "כנראה זו שוקת מים מאוחרת, ואבני גולל עגולות היו נדירות",
+    "היא קצרה מדי",
+    "היא מהתקופה הצלבנית"
+   ],
+   "correct": 1,
+   "explanation": "אבני גולל עגולות אופייניות בעיקר לקברי מלכים ואצולה.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-060",
+   "question": "לפי גבריאל ברקאי, מאיזו תקופה מערת גן הקבר?",
+   "options": [
+    "תקופת הברזל ב' – ימי הבית הראשון",
+    "ימי הבית השני",
+    "התקופה הביזנטית",
+    "התקופה הצלבנית"
+   ],
+   "correct": 0,
+   "explanation": "המאות ה-8–7 לפנה\"ס, ושימוש מחדש בתקופה הביזנטית.",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-061",
+   "question": "למה מערת גן הקבר לא יכולה להיות קבר ישוע?",
+   "options": [
+    "היא בתוך החומות",
+    "אין בה משכבי אבן",
+    "היא מוסלמית",
+    "ישוע נקבר בקבר חדש, והמערה ישנה בכ-700 שנה"
+   ],
+   "correct": 3,
+   "explanation": "לוקס כ\"ג 53: \"קבר... אשר לא הונח בו איש מעולם\".",
+   "level": 3,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-062",
+   "question": "מה טוען היום הצוות של גן הקבר?",
+   "options": [
+    "שזה בוודאות קבר ישוע",
+    "שהאתר מוסלמי",
+    "שהמקום אינו העיקר, אלא האירוע והמשמעות",
+    "שהאתר רק מוזיאון"
+   ],
+   "correct": 2,
+   "explanation": "\"He is not here, for He has risen\".",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-063",
+   "question": "למה פרוטסטנטים במאה ה-19 חיפשו אתר אחר?",
+   "options": [
+    "הכניסה לכנסיית הקבר נאסרה עליהם",
+    "כנסיית הקבר נראתה להם חשוכה, עמוסה ובתוך העיר",
+    "כנסיית הקבר נהרסה",
+    "הבריטים שלטו בעיר"
+   ],
+   "correct": 1,
+   "explanation": "הם חיפשו אתר פתוח, ירוק ומחוץ לחומות.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-064",
+   "question": "באיזה רחוב נמצא גן הקבר?",
+   "options": [
+    "רחוב קונרד שיק",
+    "רחוב הנביאים",
+    "ויה דולורוזה",
+    "רחוב הגיא"
+   ],
+   "correct": 0,
+   "explanation": "מצפון לשער שכם, מחוץ לחומה העות'מאנית.",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://docs.google.com/document/d/1DfGG-ZZYm7Ltb1UmNyb68AwxTvSguCHUrdy7ZU_8iH0/edit"
+  },
+  {
+   "id": "via-dolorosa-rec-001",
+   "question": "לפי המדריכה, עד איזו מאה נהגו ללכת בוויה דולורוזה בכיוון ההפוך, מהסוף להתחלה?",
+   "options": [
+    "עד המאה ה-12",
+    "עד המאה ה-16",
+    "עד המאה ה-19",
+    "עד המאה ה-4"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה מספרת שהיא לפעמים הולכת בוויה דולורוזה הפוך, מכנסיית הקבר להתחלה, וכך גם עשו עד המאה ה-16.",
+   "level": 3,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:01:05",
+   "sourceQuote": "ככה גם עשו עד המאה ה-16.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-002",
+   "question": "למה המדריכה מעדיפה לעשות את ההקדמה בחזית כנסיית הקבר מוקדם בבוקר?",
+   "options": [
+    "כי החזית נסגרת בצהריים",
+    "כי בבוקר פועמים הפעמונים",
+    "כי בקיץ אין שם טיפת צל בצהריים",
+    "כי השוק מסביב עוד לא פתוח"
+   ],
+   "correct": 2,
+   "explanation": "מ-11–12 בקיץ אי אפשר לעמוד בחזית כנסיית הקבר, כי חם מאוד ואין טיפת צל.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:01:47",
+   "sourceQuote": "אי אפשר לעמוד בחזית של כנסיית הקבר, כי נורא חם ואין טיפת צל.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-003",
+   "question": "למה כנסיית הקבר עמוסה במיוחד בין 11 ל-13?",
+   "options": [
+    "כי אז מתקיימת התפילה היומית",
+    "כי אז נפתח קבר ישוע לקהל",
+    "כי אז מגיעות קבוצות בתי הספר",
+    "כי קבוצות רבות עוצרות שם להפסקת צהריים"
+   ],
+   "correct": 3,
+   "explanation": "רוב הקבוצות הולכות במסלול ויה דולורוזה–כנסיית הקבר, ורבות מגיעות לאזור להפסקת צהריים לפני הכנסייה או אחריה.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:02:24",
+   "sourceQuote": "או לפני הכנסייה או אחרי הכנסייה. זה אומר שסביב בין 11-12 ל-13,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-004",
+   "question": "לפי המדריכה, מה קובע לפעמים את סדר התחנות בסיור?",
+   "options": [
+    "שיקולים טכניים של ניהול הסיור",
+    "רק הכרונולוגיה של הברית החדשה",
+    "רק בקשת הכנסיות",
+    "רק מספור התחנות הרשמי"
+   ],
+   "correct": 0,
+   "explanation": "היא אומרת שלפעמים השיקול הוא לא הכרונולוגיה של הברית החדשה, אלא דברים טכניים שקשורים להתנהלות הסיור.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:03:00",
+   "sourceQuote": "אלא כל מיני דברים טכניים שקשורים להתנהלות של הסיור.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-005",
+   "question": "מי מדריך את הקבוצות בתוך גן הקבר?",
+   "options": [
+    "מורה הדרך של הקבוצה",
+    "מדריכים של המקום עצמו",
+    "נזירים פרנציסקנים",
+    "רק עובדי רשות העתיקות"
+   ],
+   "correct": 1,
+   "explanation": "בגן הקבר תמיד יש הדרכה מקומית, ומורה הדרך יושב בחדר המדריכים ולא מדריך בעצמו.",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:03:37",
+   "sourceQuote": "תמיד כשאתם תגיעו לכאן יש הדרכה מקומית. יש פה חדר למדריכים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-006",
+   "question": "למה, לפי המדריכה, כדאי לשמוע איך מדריכים בגן הקבר?",
+   "options": [
+    "כדי לדעת מה הקבוצה שלך תשמע שם",
+    "כי זה חומר חובה בבחינה",
+    "כי ההדרכה שם בעברית",
+    "כי מותר לך להחליף אותם"
+   ],
+   "correct": 0,
+   "explanation": "אם תביאו לשם קבוצה משלכם, חשוב שתדעו מה הם שומעים.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:04:08",
+   "sourceQuote": "כי אם אתה הולך להביא לכאן קבוצה שלך,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-007",
+   "question": "מה אומרת המדריכה על כנסיית סנטה אנה ביחס לוויה דולורוזה?",
+   "options": [
+    "היא התחנה הראשונה בוויה דולורוזה",
+    "היא התחנה האחרונה בוויה דולורוזה",
+    "היא לא קשורה לוויה דולורוזה",
+    "בה מתחילה נשיאת הצלב"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה אומרת שהולכים לסנטה אנה, אף שהיא לא קשורה לוויה דולורוזה.",
+   "level": 2,
+   "stop": "anna",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:05:05",
+   "sourceQuote": "נלך לראות את סנט-אנה, שהיא לא קשורה לוויה דולורוזה,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-008",
+   "question": "לפי המדריכה, באיזה נושא הרשת מלאה בשטויות ואין כמעט מקורות אמינים?",
+   "options": [
+    "הארכיאולוגיה של כנסיית הקבר",
+    "הסטטוס קוו",
+    "ההיסטוריה של המבנה",
+    "מפת העיר העתיקה"
+   ],
+   "correct": 1,
+   "explanation": "על היסטוריה וארכיאולוגיה יש חומר רב, גם בוויקיפדיה; על הסטטוס קוו אין, והרשת מלאה בשטויות.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:07:42",
+   "sourceQuote": "לגבי סטטוס קוו, אין.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-009",
+   "question": "איזה ספר מזכירה המדריכה כמקור חשוב על הסטטוס קוו?",
+   "options": [
+    "ספר של מארק טוויין",
+    "ספר של מיכה גודמן",
+    "ספר של הוצאת אריאל",
+    "ספר מעשי השליחים"
+   ],
+   "correct": 2,
+   "explanation": "היא מזכירה את הספר של הוצאת אריאל על הסטטוס קוו כמסמך חשוב, וחוץ ממנו יש הרבה שטויות.",
+   "level": 3,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:07:45",
+   "sourceQuote": "גם הספר של הוצאת אריאל על סטטוס קוו",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-010",
+   "question": "איך נקרא שער יפו בערבית, לפי המדריכה?",
+   "options": [
+    "שער דמשק",
+    "שער יריחו",
+    "שער ציון",
+    "שער חברון"
+   ],
+   "correct": 3,
+   "explanation": "שער יפו נקרא בערבית גם שער חברון, כי הוא מוביל לכיוון דרך חברון.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:10:14",
+   "sourceQuote": "אבל בעצם שער יפו נקרא בערבית גם באב אל-ח'ליף, שער חברון.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-011",
+   "question": "למה שער ציון נקרא בשם הזה?",
+   "options": [
+    "כי הוא מוביל להר ציון",
+    "כי בו נכנסו הצלבנים",
+    "כי הוא פונה לעמק יהושפט",
+    "כי הוא הקרוב לכותל"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, שמות השערים לפי היעד: שער ציון נקרא כך כי הוא מוביל להר ציון.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:10:07",
+   "sourceQuote": "ולדרום השער נקרא שער ציון, כי הוא מוביל להר ציון",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-012",
+   "question": "כשישראלי אומר \"מזרח ירושלים\", למה הוא מתכוון בדרך כלל, לפי המדריכה?",
+   "options": [
+    "לשטח שממזרח לחומה",
+    "לשכונות ממזרח לרחוב יפו",
+    "לשכונות שבהן גרים ערבים",
+    "לעיר העתיקה בלבד"
+   ],
+   "correct": 2,
+   "explanation": "בחברה הישראלית החלוקה היא לפי אוכלוסייה, יהודית וערבית, ולא לפי גיאוגרפיה; למשל בית צפאפא שבמערב העיר נחשבת למזרח ירושלים.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:12:39",
+   "sourceQuote": "כשאני אומרת מזרח ומערב ירושלים, אני מדברת על ערבים ויהודים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-013",
+   "question": "מה זכותו של תושב קבע במזרח ירושלים, לפי המדריכה?",
+   "options": [
+    "להצביע לכנסת ולא לעירייה",
+    "להצביע לעירייה ולא לכנסת",
+    "להצביע לכנסת ולעירייה",
+    "לא להצביע כלל"
+   ],
+   "correct": 1,
+   "explanation": "לתושבי הקבע יש תעודת זהות כחולה, ביטוח לאומי וקופת חולים; הם מצביעים לעירייה ולא לכנסת.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:13:00",
+   "sourceQuote": "לא מצביעים לכנסת.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-014",
+   "question": "לפי איזה קו מבינים רוב התיירים את החלוקה למזרח ומערב ירושלים?",
+   "options": [
+    "לפי חומת העיר העתיקה",
+    "לפי מסילת הרכבת",
+    "לפי גבולות 1948 של האו״ם",
+    "לפי קווי 67'"
+   ],
+   "correct": 3,
+   "explanation": "אף מדינה לא הכירה בסיפוח מזרח ירושלים, ולכן לתיירים הגבול הוא הגבול של 67'.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:16:45",
+   "sourceQuote": "מזרח העיר מערבית זה לפי קווי 67'.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-015",
+   "question": "מתי עזבו השגרירויות את ירושלים, לפי המדריכה?",
+   "options": [
+    "בשנת 1980, אחרי חוק ירושלים",
+    "בשנת 1967, אחרי המלחמה",
+    "בשנת 1949, אחרי הסכמי שביתת הנשק",
+    "בשנת 1993, אחרי הסכמי אוסלו"
+   ],
+   "correct": 0,
+   "explanation": "אחרי חוק ירושלים המאוחדת בירת ישראל, בשנת שמונים, עזבו כל השגרירויות, ובהמשך חלקן חזרו מתוך הכרה במערב ירושלים כבירה.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:16:05",
+   "sourceQuote": "בשנת שמונים כל השגרירויות עזבו,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-016",
+   "question": "איך עלולים תיירים לראות את שכונת גילה, לפי המדריכה?",
+   "options": [
+    "כחלק מהעיר העתיקה",
+    "כהתנחלות",
+    "ככפר פלסטיני",
+    "כחלק מבית לחם"
+   ],
+   "correct": 1,
+   "explanation": "לחברה הישראלית גילה היא שכונה ירושלמית, אבל לתיירים היא עשויה להיחשב התנחלות.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:17:24",
+   "sourceQuote": "מבחינת אולי התארים שלכם זה התנחלות,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-017",
+   "question": "מה ממליצה המדריכה כשתיירים מציעים פתרונות לסכסוך?",
+   "options": [
+    "להציג רק את העמדה הישראלית",
+    "להימנע לגמרי מהנושא",
+    "להראות להם את המורכבות ואת המציאות",
+    "להפנות אותם לוויקיפדיה"
+   ],
+   "correct": 2,
+   "explanation": "היא לא אומרת שאין פתרון ולא רוצה שילכו הביתה בדיכאון, אבל חשוב להראות את המורכבות ואת המציאות.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:18:00",
+   "sourceQuote": "להראות את המורכבות ואת המציאות.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-018",
+   "question": "מה מבקשים הרוסים לגבי חצר אלכסנדר, לפי המדריכה?",
+   "options": [
+    "לרשום אותה על שם מדינת רוסיה",
+    "למסור אותה לפטריארכיה היוונית",
+    "להפוך אותה למוזיאון ישראלי",
+    "להעביר אותה לבעלות העירייה"
+   ],
+   "correct": 0,
+   "explanation": "הרוסים מבקשים לרשום את המקום על שם מדינת רוסיה, אף שהרכוש בבעלות מוסד כנסייתי, וכמה גופים מתחרים עליו.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:18:15",
+   "sourceQuote": "שהרוסים מבקשים לרשום את זה על שם מדינת רוסיה,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-019",
+   "question": "מה המשמעות הפוליטית כשכנסייה פונה לבית משפט ישראלי בעניין בניין בעיר העתיקה?",
+   "options": [
+    "ויתור על רכוש הכנסייה",
+    "הכרה בסמכות בית המשפט הישראלי במזרח ירושלים",
+    "בקשה לאזרחות ישראלית",
+    "דרישה לפטור מארנונה"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, פנייה כזו היא הכרה בסמכות בית המשפט הישראלי במזרח ירושלים, הרבה מעבר לשאלה למי שייך הבניין.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:18:47",
+   "sourceQuote": "הכרה בסמכות של בית המשפט הישראלי במזרח ירושלים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-020",
+   "question": "איפה נמצאים מרכזי הכנסיות (ה\"הדקוורטר\") בירושלים, לפי המדריכה?",
+   "options": [
+    "כולם במערב העיר",
+    "חלקם במזרח וחלקם במערב",
+    "מחוץ לגבולות העיר",
+    "תמיד במזרח העיר"
+   ],
+   "correct": 3,
+   "explanation": "הכנסיות יושבות במזרח העיר, ואין אף כנסייה שהמטה שלה במערב העיר, אף שיש להן הרבה רכוש שם.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:19:08",
+   "sourceQuote": "ההדקוורטר תמיד במזרח העיר, אין אף כנסייה שההדקוורטר שלה במערב העיר.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-021",
+   "question": "איזה חלק מאדמות מערב ירושלים שייך לכנסייה היוונית האורתודוקסית, לפי המדריכה?",
+   "options": [
+    "כ-1%",
+    "כ-50%",
+    "כ-10%",
+    "כ-25%"
+   ],
+   "correct": 2,
+   "explanation": "הכנסייה היוונית יושבת בעיר העתיקה, אבל יש לה 10% מאדמות מערב ירושלים, כולל אזורי טלביה, הכנסת ומוזיאון ישראל.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:19:44",
+   "sourceQuote": "אבל יש לה 10% מהאדמות של מערב ירושלים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-022",
+   "question": "פלסטיני שמשפחתו גרה 80 שנה ברמאללה נשאל מאיפה הוא. מה הוא יענה, לפי המדריכה?",
+   "options": [
+    "את העיר שממנה היגרו אבותיו",
+    "את המקום שבו נולד",
+    "\"אני פלסטיני\" בלבד",
+    "את שם המדינה שבה הוא גר"
+   ],
+   "correct": 0,
+   "explanation": "בחברה הפלסטינית הסנטימנט הוא למרחב הגיאוגרפי המצומצם, ולכן יגיד \"אני מלוד\" או \"מרמלה\" גם אחרי 80 שנה במקום אחר.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:22:02",
+   "sourceQuote": "אם אתה שואל את הזהות, אתה תגיד את העיר שהאנצסטר שלך הגירו משם.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-023",
+   "question": "באיזה שער נכנסו מארק טוויין וחבריו לירושלים ב-1867?",
+   "options": [
+    "שער יפו",
+    "שער שכם",
+    "שער האריות",
+    "שער ציון"
+   ],
+   "correct": 1,
+   "explanation": "הם הגיעו יבשתית, מצור דרך דמשק, וממש אפשר לראות שהם נכנסו דרך שער שכם.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:23:29",
+   "sourceQuote": "ממש אפשר לראות את המסלול, הם מגיעים דרך שער שכם.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-024",
+   "question": "איך נקרא שער שכם בתקופה הצלבנית?",
+   "options": [
+    "שער הרחמים",
+    "שער מרים",
+    "שער דוד",
+    "שער סטפנוס"
+   ],
+   "correct": 3,
+   "explanation": "ליד השער היה מתחם ענק של כנסיית סטפנוס, ולכן בתקופה הצלבנית נקרא שער שכם שער סטפנוס.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:24:14",
+   "sourceQuote": "אז שער סטפנוס היה השער הזה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-025",
+   "question": "מי היה סטפנוס, שעל שמו נקרא מתחם הכנסייה ליד שער שכם?",
+   "options": [
+    "הבישוף הראשון של ירושלים",
+    "הקיסר שבנה את הכנסייה",
+    "המעונה הראשון בספר מעשי השליחים",
+    "מלך צלבני"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, סטפנוס הוא המעונה הראשון שמופיע בספר מעשי השליחים.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:24:06",
+   "sourceQuote": "המרכיח הראשון שמופיע בספר מעשי השטיחים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-026",
+   "question": "מה היה מתחם כנסיית סטפנוס ליד שער שכם?",
+   "options": [
+    "מתחם ביזנטי שהתרחב מאוד בתקופה הצלבנית",
+    "מבצר רומי מימי הורדוס",
+    "מסגד ממלוכי מאוחר",
+    "מנזר מהמאה ה-19"
+   ],
+   "correct": 0,
+   "explanation": "היה שם מתחם עצום כבר בתקופה הביזנטית, שהתרחב בתקופה הצלבנית, עם אכסניה ובית חולים קטן.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/13ytskPa5spqadpsGNWwNXe8prxleRYta/view",
+   "sourceRecording": "Siyur chrétien jeru.m4a",
+   "sourceTime": "00:23:59",
+   "sourceQuote": "אבל עוד יותר התרחב בתקופה הצלבנית של כנסיית סטפנוס.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-027",
+   "question": "מאיזה גודל קבוצה צריך לתאם מראש את הביקור בגן הקבר?",
+   "options": [
+    "מ-50 משתתפים",
+    "מ-10 משתתפים",
+    "מ-5 משתתפים",
+    "תמיד, גם לאדם אחד"
+   ],
+   "correct": 1,
+   "explanation": "קבוצה של פחות מעשרה יכולה להגיע בלי תיאום; יותר מעשרה – לתאם באתר ולא להפתיע.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1gzBPtLuB9uTUX-Ptcvcwe759IodtavvQ/view",
+   "sourceRecording": "Jeru.m4a",
+   "sourceTime": "00:01:20",
+   "sourceQuote": "אבל אם אתם באים ליותר מעשרה,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-028",
+   "question": "מה חשוב לזכור לגבי ההדרכה של המתנדבים בגן הקבר?",
+   "options": [
+    "היא מיועדת במיוחד לישראלים",
+    "היא תמיד בעברית",
+    "היא מדריכה כנוצרים, בהתלהבות דתית",
+    "היא עוסקת רק בארכיאולוגיה"
+   ],
+   "correct": 2,
+   "explanation": "המתנדבים מדריכים בהתלהבות דתית לקהל נוצרי, וזה מראה לכם איך הם מדריכים את הקבוצות שלכם.",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1gzBPtLuB9uTUX-Ptcvcwe759IodtavvQ/view",
+   "sourceRecording": "Jeru.m4a",
+   "sourceTime": "00:02:23",
+   "sourceQuote": "הם מדריכים עם המון קשן והתלהגות דתית לקהל תוצרי.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-029",
+   "question": "מי זיהה לראשונה, בשנת 1842, את 'מקום הגולגולת' שליד גן הקבר?",
+   "options": [
+    "הגנרל הבריטי צ'רלס גורדון",
+    "החוקר הגרמני אוטו תניוס",
+    "הארכיאולוג גבריאל ברקאי",
+    "הצליינית אגריה"
+   ],
+   "correct": 1,
+   "explanation": "לפי ההסבר בגן הקבר, המקום זוהה כבר ב-1842 בידי החוקר הגרמני תניוס, כ-40 שנה לפני שגורדון הגיע לירושלים.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:04:06",
+   "sourceQuote": "it was identified by a German scholar by the name of auto-tenius or tinius",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-030",
+   "question": "מה הטעות הנפוצה של מבקרים רבים בגן הקבר לגבי הגנרל גורדון?",
+   "options": [
+    "שהוא חפר את מערת הקבר",
+    "שהוא קנה את השטח לאגודה",
+    "שהוא הראשון שזיהה את המקום",
+    "שהוא נקבר בגן עצמו"
+   ],
+   "correct": 2,
+   "explanation": "רבים חושבים שגורדון זיהה ראשון את המקום (ואף קראו לו Gordon's Calvary), אבל המקום זוהה 40 שנה לפניו.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:04:13",
+   "sourceQuote": "a lot of people come under the impression that this place was first identified by this famous general from the UK by the name of Charles Gordon",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-031",
+   "question": "איך מציג צוות גן הקבר את מעמד המקום לפי הקהילה הארכיאולוגית?",
+   "options": [
+    "כאחד משני מקומות אפשריים",
+    "כמקום היחיד שהוכח מדעית",
+    "כאחד משבעה מקומות שקולים",
+    "כמקום שזוהה בתקופה הביזנטית"
+   ],
+   "correct": 0,
+   "explanation": "מתוך כשבעה מקומות שהוצעו, רק שניים נחשבים לאפשרויות רציניות, וגן הקבר הוא אחד משני האפשריים.",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:00:59",
+   "sourceQuote": "the garden tomb is identified by the archaeological community as one of two official possibilities",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-032",
+   "question": "מה פירוש המילה הלטינית Sepulchre בשם Holy Sepulchre?",
+   "options": [
+    "תחייה",
+    "גולגולת",
+    "צליבה",
+    "קבר"
+   ],
+   "correct": 3,
+   "explanation": "ספולכר בלטינית זה קבר, ולכן Holy Sepulchre הוא השם המערבי והאנגלי של כנסיית הקבר.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:01:32",
+   "sourceQuote": "ספליקר בלטינית זה קבר. אז הולי ספליקר זה השם המערבי ולפיכך גם באנגלית",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-033",
+   "question": "מה הקשר בין השמות 'גולגותא' ו-'Calvary'?",
+   "options": [
+    "Calvary הוא שם של גבעה אחרת",
+    "Calvary הוא תרגום של גולגותא",
+    "גולגותא הוא תרגום של Calvary",
+    "שני השמות ניתנו במאה ה-19"
+   ],
+   "correct": 1,
+   "explanation": "גולגותא היא מילה ארמית שפירושה גולגולת, ו-Calvary הוא התרגום שלה, הנפוץ באנגלית.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:06:03",
+   "sourceQuote": "but Calvary is a translation of the original word Gollgota",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-034",
+   "question": "מאיזו שפה המילה 'גולגותא' לפי ההסבר בגן הקבר?",
+   "options": [
+    "ארמית",
+    "יוונית",
+    "לטינית",
+    "עברית מקראית"
+   ],
+   "correct": 0,
+   "explanation": "השם גולגותא הוא מילה מהשפה הארמית, ופירושה גולגולת.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:05:38",
+   "sourceQuote": "Now, the name גולגותה, as you heard, is an  ערמית word",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-035",
+   "question": "לפי ההסבר בגן הקבר, איפה הרומאים נהגו להציג את הצלובים?",
+   "options": [
+    "על פסגת גבעה גבוהה",
+    "בחצר המצודה, הרחק מהעם",
+    "בגובה הרחוב, ליד דרכים סואנות",
+    "בתוך העיר, ליד המקדש"
+   ],
+   "correct": 2,
+   "explanation": "הרומאים הציגו את הצליבות מחוץ לעיר, בגובה הרחוב ולצד דרכים סואנות ליד החומות, ולא על ראש גבעה כמו בסרטים.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:08:13",
+   "sourceQuote": "they would have displayed their crucifixions a street level and by the side of the busy roads near the city walls",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-036",
+   "question": "לפי התפיסה בגן הקבר, איפה בערך הייתה הצליבה עצמה?",
+   "options": [
+    "על ראש סלע הגולגולת",
+    "באזור תחנת האוטובוסים של היום",
+    "בתוך המחצבה, ליד הבור",
+    "בתוך העיר העתיקה, ליד שער שכם"
+   ],
+   "correct": 1,
+   "explanation": "לפי ההסבר, הצלב היה לצד הדרך ליד חומות העיר, כנראה באזור תחנת האוטובוסים של היום, וסלע הגולגולת היה כמו רקע.",
+   "level": 3,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1o3LdD-YweyMLTPXf7chAoAJiIGmbrpyI/view",
+   "sourceRecording": "Kever garden.m4a",
+   "sourceTime": "00:02:19",
+   "sourceQuote": "would have been most likely somewhere in the area where the bus terminal is today",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-037",
+   "question": "מה אומרת הברית החדשה על מיקום הצליבה ביחס לגבעה, לפי הסברת המדריכה?",
+   "options": [
+    "שישו נצלב על פסגת הגבעה",
+    "שישו נצלב למרגלות הגבעה",
+    "שהגבעה הייתה בתוך העיר",
+    "לא כתוב במפורש אם למעלה או למטה"
+   ],
+   "correct": 3,
+   "explanation": "כתוב רק שהביאו אותו למקום הגולגותא וצלבו אותו שם, ולכן שתי הפרשנויות אפשריות.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1o3LdD-YweyMLTPXf7chAoAJiIGmbrpyI/view",
+   "sourceRecording": "Kever garden.m4a",
+   "sourceTime": "00:04:54",
+   "sourceQuote": "לא כתוב במפורש אם זה למעלה או למטה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-038",
+   "question": "האם הברית החדשה אומרת שהמקום נראה כמו גולגולת?",
+   "options": [
+    "לא, זה לא נאמר במפורש",
+    "כן, בבשורה על פי מרקוס",
+    "כן, בבשורה על פי יוחנן",
+    "כן, אצל יוסף בן מתתיהו"
+   ],
+   "correct": 0,
+   "explanation": "מדריך הגן ציין שהכתוב אינו אומר במפורש שהמקום נראה כגולגולת; הקשר לצורת הסלע הוא השערה.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1o3LdD-YweyMLTPXf7chAoAJiIGmbrpyI/view",
+   "sourceRecording": "Kever garden.m4a",
+   "sourceTime": "00:03:38",
+   "sourceQuote": "Well, the Bible doesn't specifically say that the place looked like the skull.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-039",
+   "question": "במה שימש השטח של גן הקבר בעת העתיקה, לפי ההסבר?",
+   "options": [
+    "בית קברות רומי",
+    "שוק העיר",
+    "מחצבה",
+    "מחנה צבאי"
+   ],
+   "correct": 2,
+   "explanation": "השטח שימש כמחצבה, אחת משלוש מחצבות בסביבת ירושלים.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1o3LdD-YweyMLTPXf7chAoAJiIGmbrpyI/view",
+   "sourceRecording": "Kever garden.m4a",
+   "sourceTime": "00:00:00",
+   "sourceQuote": "The area was used as a quarry or a מחצבה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-040",
+   "question": "למה בור המים שליד סלע הגולגולת נראה פתוח כמו מערה?",
+   "options": [
+    "כי הוא נחצב כמערת קבורה",
+    "כי חוצבי המחצבה חתכו לתוכו",
+    "כי רעידת אדמה פתחה אותו",
+    "כי הצלבנים הרחיבו אותו"
+   ],
+   "correct": 1,
+   "explanation": "בזמן הוצאת האבנים חצבו ישר לתוך הבור, ולכן הוא חשוף ונראה כמו מערה.",
+   "level": 3,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1o3LdD-YweyMLTPXf7chAoAJiIGmbrpyI/view",
+   "sourceRecording": "Kever garden.m4a",
+   "sourceTime": "00:00:28",
+   "sourceQuote": "They cut right into the cistern, and this is why the cistern is open and exposed like a cave",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-042",
+   "question": "מה הממצא משנת 1924 שמחזק את הזיהוי של המקום כ'גן'?",
+   "options": [
+    "כד אבן",
+    "מטבעות רומיים",
+    "יקב (גת)",
+    "מערכת השקיה"
+   ],
+   "correct": 2,
+   "explanation": "ב-1924 נמצא בשטח יקב, והוא מעיד שהמקום שימש כגן, ובמיוחד ככרם, לפני כאלפיים שנה.",
+   "level": 3,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:03:39",
+   "sourceQuote": "Back in 1924, when people continue their excavations on that side of the property",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-043",
+   "question": "לפי מה תוארכה מערת גן הקבר לתקופת בית ראשון?",
+   "options": [
+    "לפי כתובת עברית על הקיר",
+    "לפי דמיון לקברים בגיא בן הינום",
+    "לפי כלי חרס שנמצאו בתוכה",
+    "לפי מסורת ביזנטית"
+   ],
+   "correct": 1,
+   "explanation": "התיארוך מבוסס על הדמיון של מבנה הקבר לקברים עתיקים בגיא בן הינום, שתוארכו לתקופה ההיא.",
+   "level": 3,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:04:51",
+   "sourceQuote": "Because of the similarity of the structure of this tomb to those who have been found at say in the valley of the sons of Kinoam",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-044",
+   "question": "איך מסבירים בגן הקבר את המילים 'קבר חדש' בבשורה, למרות שהמערה מתקופת בית ראשון?",
+   "options": [
+    "הקבר נחצב מחדש בימי הורדוס",
+    "המילה ביוונית יכולה לציין קבר מחודש",
+    "הבשורה מתכוונת לגן ולא לקבר",
+    "המערה תוארכה מחדש לימי ישו"
+   ],
+   "correct": 1,
+   "explanation": "המילה ביוונית אינה מציינת דבר חדש מהיסוד, אלא יכולה לציין קבר קיים שחודש ושוב היה בשימוש.",
+   "level": 3,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:06:07",
+   "sourceQuote": "מ-scratches, מהיסוד, אלא זה יכול להיות חידוש.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-045",
+   "question": "לפי הבשורה על פי יוחנן, מה היה במקום שבו נצלב ישו?",
+   "options": [
+    "גן ובו קבר חדש",
+    "כיכר ובה שוק",
+    "מקדש רומי",
+    "בריכת מים"
+   ],
+   "correct": 0,
+   "explanation": "יוחנן (פרק 19) אומר שבמקום הצליבה היה גן, ובגן קבר חדש שעוד לא נקבר בו איש.",
+   "level": 1,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:02:19",
+   "sourceQuote": "John says that in the place where he was crucified there was a garden and in the garden a new tomb",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-046",
+   "question": "מה החדר הראשון שנכנסים אליו במערת גן הקבר?",
+   "options": [
+    "חדר הגולל",
+    "חדר המלאך",
+    "חדר הכנה של הגופה",
+    "חדר הגלוסקמאות"
+   ],
+   "correct": 2,
+   "explanation": "החדר הראשון ידוע כחדר ההכנה, שבו המשפחה הכינה את הגופה לקבורה.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:06:41",
+   "sourceQuote": "You go into the first chamber, that is known as the preparation chamber",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-047",
+   "question": "מה מדגישה המדריכה כמטרה העיקרית של המבקר הנוצרי בגן הקבר?",
+   "options": [
+    "למצוא הוכחות ארכיאולוגיות",
+    "החוויה הדתית והרגשית",
+    "להשוות לכנסיית הקבר",
+    "ללמוד על חציבה עתיקה"
+   ],
+   "correct": 1,
+   "explanation": "הזיהוי והארכיאולוגיה הם 'אקסטרה'; המאמין מגיע בשביל החוויה, ולמקומות קדושים יש קודם כל תפקיד חווייתי-רגשי.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:07:36",
+   "sourceQuote": "המאמין הרוצרי שמגיע לכאן מגיע לכאן בשביל החוויה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-048",
+   "question": "מה המדריכה עונה לנוצרי ששואל אותה איזה מקום הוא 'הנכון'?",
+   "options": [
+    "כנסיית הקבר, כי היא העתיקה",
+    "גן הקבר, כי הוא מתאים לבשורות",
+    "אי אפשר לדעת, אז זה לא חשוב",
+    "הלב שלך הוא המקום החשוב ביותר"
+   ],
+   "correct": 3,
+   "explanation": "היא עונה 'הלב שלך': זה המקום החשוב ביותר, ולא מתווכחת על הזיהוי.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:09:53",
+   "sourceQuote": "זה בלב שלך, זה המקום החשוב ביותר.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-049",
+   "question": "למה המדריכה ממליצה גם לקבוצות קתוליות ואורתודוקסיות לבקר בגן הקבר?",
+   "options": [
+    "כי שם מתקיימת מיסה קבועה",
+    "כי שם קל לדמיין איך הדברים נראו בימי ישו",
+    "כי שם נמצא הצלב המקורי",
+    "כי שם אין תור"
+   ],
+   "correct": 1,
+   "explanation": "בגן הקבר יש שרידי גן, קבר וסלע גולגולת, ולכן קל יותר לדמיין את התקופה; בכנסיית הקבר רואים כנסייה.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:08:18",
+   "sourceQuote": "כי אם אתם רוצים לדמיין איך הדברים נראו בתקופתו של אישוע",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-050",
+   "question": "מה מגישים בגן הקבר לקבוצה שהזמינה מראש פינה לטקס ה-Communion?",
+   "options": [
+    "יין עם אלכוהול ולחם",
+    "יין עם אלכוהול ורקיקים דקים",
+    "מיץ ענבים (תירוש) וחתיכות מצה",
+    "מים ולחם אחיד"
+   ],
+   "correct": 2,
+   "explanation": "מכינים מגש עם כוסות קטנות של תירוש בלי אלכוהול וחתיכות מצה.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1zSzoQhioy1EG2IyXrR52Tosxo5X1F6nu/view",
+   "sourceRecording": "Kevwr garden.m4a",
+   "sourceTime": "00:05:59",
+   "sourceQuote": "אבל פה הם נותנים יין תירוש, בלי אלכוהול,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-051",
+   "question": "מי מעביר את טקס ה-Communion בגן הקבר?",
+   "options": [
+    "מישהו מהקבוצה עצמה",
+    "כומר של גן הקבר",
+    "המדריך הישראלי",
+    "כומר קתולי מהעיר העתיקה"
+   ],
+   "correct": 0,
+   "explanation": "אין בגן אנשי דת שמעבירים את הטקס; הקבוצה מביאה איתה את מי שיעביר אותו (פסטור או אחד מהקהילה).",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1zSzoQhioy1EG2IyXrR52Tosxo5X1F6nu/view",
+   "sourceRecording": "Kevwr garden.m4a",
+   "sourceTime": "00:06:33",
+   "sourceQuote": "אין פה אנשים שמעבירים לך את הטקס. זה, אז צריך לבוא עם הקבוצה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-052",
+   "question": "במיסה, במה משתמשים בדרך כלל הקתולים כלחם הקודש, לפי המדריכה?",
+   "options": [
+    "מצה",
+    "לחם רגיל",
+    "רקיקים דקים",
+    "עוגיות דבש"
+   ],
+   "correct": 2,
+   "explanation": "אצל הקתולים לחם הקודש הוא בדרך כלל רקיקים דקים, ואצל האורתודוקסים לחם.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1zSzoQhioy1EG2IyXrR52Tosxo5X1F6nu/view",
+   "sourceRecording": "Kevwr garden.m4a",
+   "sourceTime": "00:04:50",
+   "sourceQuote": "אצל הקתולים, זה הקרקרים הדקים, אצל האורתודוקסים זה יהיה לחם.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-053",
+   "question": "איך קוראות בדרך כלל קהילות פרוטסטנטיות לטקס הלחם והיין?",
+   "options": [
+    "Lord's Supper או Communion",
+    "מיסה",
+    "ליטורגיה אלוהית",
+    "Via Crucis"
+   ],
+   "correct": 0,
+   "explanation": "אצל כנסיות פרוטסטנטיות יקראו לזה Lord's Supper או Communion.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1zSzoQhioy1EG2IyXrR52Tosxo5X1F6nu/view",
+   "sourceRecording": "Kevwr garden.m4a",
+   "sourceTime": "00:05:25",
+   "sourceQuote": "בדרך כלל אצל כנסיות קהילות פרוטסטנטיות יקראו לזה לורד סאפר או קומיוניאן",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-054",
+   "question": "לפי ההסבר בגן הקבר, באיזו שעה ישו כבר היה מת על הצלב?",
+   "options": [
+    "השעה השישית, בצהריים",
+    "השעה התשיעית, שלוש אחר הצהריים",
+    "עם שקיעת החמה",
+    "למחרת בבוקר"
+   ],
+   "correct": 1,
+   "explanation": "ישו הוכה ועונה לפני הצליבה, ולכן כבר בשעה התשיעית (שלוש אחר הצהריים) הוא היה מת, מקרה יוצא דופן.",
+   "level": 3,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1iougwAg84Yx-aWGgJ9jUCwUCiIaKf952/view",
+   "sourceRecording": "Gan kever 2.m4a",
+   "sourceTime": "00:12:05",
+   "sourceQuote": "Jesus Christ reaches the ninth hour, which is three in the afternoon",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-055",
+   "question": "לפי יוחנן, מה הסיבה שישו נקבר דווקא בקבר של יוסף מרמתיים?",
+   "options": [
+    "כי זה היה קבר המשפחה של ישו",
+    "כי הסנהדרין ציוותה על כך",
+    "כי הקבר היה קרוב למקום הצליבה",
+    "כי זה היה הקבר היחיד מחוץ לעיר"
+   ],
+   "correct": 2,
+   "explanation": "יוחנן מסביר שהקרבה של הקבר למקום הצליבה, לפני ערב הפסח, הייתה אחת הסיבות להשתמש בו.",
+   "level": 2,
+   "stop": "gan",
+   "source": "https://drive.google.com/file/d/1-Yw1B-_gD3kw4jpzBnHtOQJFPzuTSpm9/view",
+   "sourceRecording": "Kever gan.m4a",
+   "sourceTime": "00:02:49",
+   "sourceQuote": "the proximity of that property and that tomb in relation to the place of the crucifixion was one of the reasons why that tomb was used",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-056",
+   "question": "לפי המדריכה, איך מזהים נזיר יווני אורתודוקסי בכנסיית הקבר?",
+   "options": [
+    "גלימה שחורה, זקן ארוך, קוקו וכובע דמוי כיפה",
+    "קולר לבן על בגד אפור וראש מגולח",
+    "גלימה לבנה וקפוצ'ון ארוך מאחור",
+    "גלימה חומה וחבל לבן סביב המותניים"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה תיארה נזיר בשמלה שחורה, עם זקן ארוך, שיער ארוך אסוף בקוקו וכובע כמו כיפה.",
+   "level": 1,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:01:13",
+   "sourceQuote": "קוקו מאחורה, ויש לו כובע כזה כמו כיפה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-057",
+   "question": "מי מייצג בארץ את האפיפיור ועומד בראש הכנסייה הקתולית בירושלים?",
+   "options": [
+    "הפטריארך היווני של ירושלים",
+    "הפטריארך הלטיני של ירושלים",
+    "הבישוף האנגליקני של ירושלים",
+    "הקוסטוס של הארמנים"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, הארכיבישוף של ירושלים נקרא הפטריארך הלטיני של ירושלים.",
+   "level": 1,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:02:16",
+   "sourceQuote": "הוא נקרא הפטריארך הלטיני של ירושלים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-058",
+   "question": "מה השפה של רוב המאמינים הקתולים המקומיים בארץ?",
+   "options": [
+    "לטינית",
+    "עברית",
+    "ערבית",
+    "איטלקית"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה אמרה שרוב הקתולים כאן ערבים, אם כי יש גם קהילות דוברות עברית ושפות אחרות.",
+   "level": 1,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:02:39",
+   "sourceQuote": "רוב הקתולים ערבים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-059",
+   "question": "באיזו שפה מתפללים היום רוב הנזירים והנזירות הקתולים, לפי המדריכה?",
+   "options": [
+    "ביוונית, כמו הפטריארכיה",
+    "רק בלטינית, כמו בימי הביניים",
+    "בארמית, שפתו של ישו",
+    "בשפות מדוברות כמו איטלקית, ספרדית וצרפתית"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה הסבירה שמתפללים בשפות מדוברות, ולטינית נשארה בעיקר אצל שמרנים קיצוניים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:03:04",
+   "sourceQuote": "מתפלל בשפות מדוברות. איטלקית. איטלקית, ספרדית, צרפתית, כן.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-060",
+   "question": "כמה סוגים של זרמים פרוטסטנטיים יש בעולם, לפי המדריכה?",
+   "options": [
+    "כ-30,000",
+    "כ-30",
+    "כ-3,000",
+    "כ-300"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אמרה שיש 30 אלף סוגים של פרוטסטנטים, מקבוצות של 100 מיליון ועד קבוצות של 100 איש.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:03:44",
+   "sourceQuote": "יש 30 אלף סוגים של פרוטסטנטים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-061",
+   "question": "היכן ומתי התחילה הרפורמציה הפרוטסטנטית?",
+   "options": [
+    "בצרפת במאה ה-18 עם קלווין",
+    "בגרמניה במאה ה-16 עם מרטין לותר",
+    "באנגליה במאה ה-14",
+    "בהולנד במאה ה-17"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, הפרוטסטנטים הם חלק מתנועה שהתחילה במאה ה-16 בגרמניה עם מרטין לותר.",
+   "level": 1,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:05:54",
+   "sourceQuote": "שהתחילה במאה ה-16 בגרמניה עם מרטין לותר",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-062",
+   "question": "בכנסיות המסורתיות, איש הדת מקבל הסמכה בשרשרת שמגיעה עד התלמידים. היכן, לפי המסורת, קיבלו התלמידים את רוח הקודש?",
+   "options": [
+    "בכנסיית הקבר",
+    "בהר הזיתים",
+    "בחדר הסעודה האחרונה",
+    "בגת שמנים"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה הזכירה שהתלמידים קיבלו את רוח הקודש בחדר הסעודה האחרונה, כפי שלמדו בשבוע הקודם.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:06:52",
+   "sourceQuote": "נכון, בחדר הסעודה האחרונה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-063",
+   "question": "מה מבדיל את הקפוצ'ינים משאר הפרנסיסקנים?",
+   "options": [
+    "הם לובשים גלימה לבנה",
+    "הם לא חוגרים חבל",
+    "הם מגדלים קוקו ארוך",
+    "יש להם קפוצ'ון ארוך יותר"
+   ],
+   "correct": 3,
+   "explanation": "לפי המדריכה, הקפוצ'ינים רצו לחדש את המסדר בהחמרה, ויש להם קפוצ'ון ארוך יותר, שעל שמו הם נקראים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:07:33",
+   "sourceQuote": "ויש להם קפוצ'ון יותר ארוך",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-064",
+   "question": "נזירות פרנסיסקניות לובשות צבעים שונים. מה בכל זאת מאפיין את רובן?",
+   "options": [
+    "החבל",
+    "הצלב האדום",
+    "הקולר הלבן",
+    "הכובע השחור"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אמרה שיש הרבה סוגים של פרנסיסקניות, ושהן גם עם החבל.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:07:55",
+   "sourceQuote": "שהן גם עם החבל,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-065",
+   "question": "בעקבות מי נוצרה הכנסייה האנגליקנית, לפי המדריכה?",
+   "options": [
+    "ז'אן קלווין",
+    "הנרי השמיני",
+    "ג'ון וסלי",
+    "מרטין לותר"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה אמרה: קלווין בעקבות קלווין, לותר בעקבות לותר, והאנגליקנים בעקבות (הנרי) השמיני.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:08:57",
+   "sourceQuote": "האנגליקנים זה בעקבות השמיני.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-066",
+   "question": "כמה כנסיות אורתודוקסיות עצמאיות (פטריארכיות) יש היום, לפי המדריכה?",
+   "options": [
+    "4",
+    "5",
+    "15",
+    "22"
+   ],
+   "correct": 2,
+   "explanation": "היו חמישה ראשים, רומא פרשה ונשארו ארבעה, והיום יש 15, ביניהן הפטריארכיה של ירושלים.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:11:35",
+   "sourceQuote": "של חלקדוניה הצפונית, היום 15.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-067",
+   "question": "איזו כנסייה הוסיפה המדריכה לרשימת הכנסיות שלא קיבלו את ועידת כלקדון, אף שהיא חדשה יחסית?",
+   "options": [
+    "הכנסייה המרונית",
+    "הכנסייה הרוסית",
+    "הכנסייה הרומנית",
+    "הכנסייה האריתראית"
+   ],
+   "correct": 3,
+   "explanation": "אחרי הארמנים, האתיופים והאשורים, המדריכה הוסיפה גם את האריתראים, למרות שהם חדשים יחסית.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:12:05",
+   "sourceQuote": "אני אוסיף גם את האריתראים, למרות שהם חדשים יחסית.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-068",
+   "question": "מי הם \"המזרחיים הקתולים\"?",
+   "options": [
+    "קהילות מזרחיות ששומרות על מנהגיהן אך התאחדו עם רומא וקיבלו את האפיפיור",
+    "אורתודוקסים שמקבלים את האפיפיור רק בחגים",
+    "קתולים לטינים שעברו לגור במזרח",
+    "פרוטסטנטים שאימצו טקסים מזרחיים"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה הסבירה שהם שומרים על מסורת התפילה והלבוש המזרחית, אבל התאחדו עם רומא והם תחת הכנסייה הקתולית.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:13:36",
+   "sourceQuote": "אבל הם התאחדו עם רומא וקיבלו את האפיפיור",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-069",
+   "question": "לפי המדריכה, מדוע בדרך כלל התאחדו קהילות מזרחיות עם רומא?",
+   "options": [
+    "בגלל רדיפה מצד הפרוטסטנטים",
+    "משיקולים פוליטיים וכלכליים",
+    "כדי להתפלל בלטינית",
+    "בגלל ויכוח על תאריך הפסחא"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה אמרה שזה בדרך כלל משיקולים פוליטיים וכלכליים, ולא עניין תיאולוגי.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:13:50",
+   "sourceQuote": "בדרך כלל משיקולים פוליטיים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-070",
+   "question": "כמה מתוך כמיליארד ו-400 מיליון הקתולים בעולם הם מזרחיים קתולים?",
+   "options": [
+    "כמחצית",
+    "כמעט 2 מיליון",
+    "כמעט 20 מיליון",
+    "כמעט 200 מיליון"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, מתוך מיליארד ו-400 מיליון קתולים, כמעט 20 מיליון הם מזרחיים קתולים.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:14:43",
+   "sourceQuote": "כמעט 20 מיליון הם מזרחים קתולים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-071",
+   "question": "מהי העדה הנוצרית הגדולה ביותר בישראל, לפי המדריכה?",
+   "options": [
+    "היוונים האורתודוקסים",
+    "הארמנים",
+    "הקתולים הלטינים",
+    "היוונים הקתולים"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שהעדה הגדולה בישראל היא היוונים הקתולים, שמנהגיהם כמו של האורתודוקסים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:14:53",
+   "sourceQuote": "זה יוונים קתולים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-072",
+   "question": "לאיזו כנסייה השתייכו הנוצרים הראשונים בהודו, שהגיעו בזכות המסחר בתקופה הביזנטית?",
+   "options": [
+    "לכנסייה האשורית",
+    "לכנסייה הקופטית",
+    "לכנסייה הארמנית",
+    "לכנסייה היוונית"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה סיפרה שהם היו שייכים לכנסייה האשורית, שפרשה כבר ב-431.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:15:23",
+   "sourceQuote": "הם היו שייכים לכנסייה האשורית,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-073",
+   "question": "מי הפכו את נוצרי הודו לקתולים?",
+   "options": [
+    "הצרפתים",
+    "הפורטוגזים",
+    "הבריטים",
+    "הספרדים"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, הפורטוגזים הגיעו ואמרו להם שהם לא נוצרים נכונים, והפכו אותם לקתולים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:15:35",
+   "sourceQuote": "ואז הגיעו הפורטוגזים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-074",
+   "question": "איזה ממצא בחפירה מתחת לכנסייה הלותרנית מחזק את ההשערה שהאזור היה מחוץ לעיר?",
+   "options": [
+    "שרידי החומה השנייה",
+    "כתובת רומית על צליבה",
+    "מילוי מתקופת בית שני, כמו מזבלה",
+    "מטבעות מימי ישו"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה אמרה שמצאו שם מילוי מתקופת בית שני, כמו מזבלה, וזה רמז שהמקום מחוץ לעיר; שרידי חומה לא נמצאו.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:19:08",
+   "sourceQuote": "בכנסייה לוטיראנית, מצאו פה שרדים של מילוי בתקופת בית שני.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-075",
+   "question": "מה עשו בוני הכנסייה הקונסטנטינית למערת הקבורה?",
+   "options": [
+    "העבירו את הקבר לקונסטנטינופול",
+    "מילאו אותה באדמה ובנו עליה מזבח",
+    "השאירו אותה שלמה וסגרו אותה באבן",
+    "ניתקו את הקבר מהמערה וחצבו סביבו, כך שנשאר רק הספסל"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה הסבירה שחצבו סביב המערה כדי לנתק את הקבר, ונשאר רק הספסל שעליו שכבה הגופה.",
+   "level": 2,
+   "stop": "tomb",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:20:20",
+   "sourceQuote": "מותקו את הקבר ממערת קבורה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-076",
+   "question": "מה היה הגולגולתא מבחינה פיזית, לפי המדריכה?",
+   "options": [
+    "אבן שבולטת מהקרקע",
+    "הר שלם, כמו בשם הערבי",
+    "מערה תת-קרקעית",
+    "גבעה גבוהה מחוץ לחומה"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה הדגישה שזו לא גבעה ולא הר, אלא אבן שבולטת מהקרקע, אף שבערבית קוראים לה \"ג'בל\".",
+   "level": 1,
+   "stop": "golgotha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:20:42",
+   "sourceQuote": "אבן בולטת מהקרקע.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-077",
+   "question": "מאיפה נכנסו לכנסיית הקבר בתקופה הביזנטית?",
+   "options": [
+    "מצפון, משער שכם",
+    "מהקרדו, ממזרח",
+    "מהחצר הדרומית, כמו היום",
+    "מרחוב הנוצרים, ממערב"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה תיארה שהכניסה לכנסייה הביזנטית הייתה מהקרדו, ממזרח.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:21:21",
+   "sourceQuote": "והכניסה היא מהקרדום.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-078",
+   "question": "קבוצה אומרת שכנסיית הקבר נראית מאכזבת מבחוץ. מה המדריכה ממליצה להשיב?",
+   "options": [
+    "שזו לא הכנסייה המקורית",
+    "שהעות'מאנים הרסו את רובה",
+    "שזה בגלל שלנוצרים כאן אכפת יותר מדי",
+    "שהכנסייה עוד בשיפוץ"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה אומרת לקבוצות שזה לא כי לנוצרים לא אכפת, אלא כי אכפת להם יותר מדי, ואז מסבירה את הסטטוס קוו.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:22:02",
+   "sourceQuote": "זה בגלל שאיכפת להם.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-079",
+   "question": "מתי מופיע לראשונה בכתובים הסיפור על החליף עומר שסירב להתפלל בתוך כנסיית הקבר?",
+   "options": [
+    "בתקופת הכיבוש עצמו",
+    "בתקופה הצלבנית",
+    "רק בתקופה העות'מאנית",
+    "במאה העשירית, כ-300 שנה אחרי הכיבוש"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שאף טקסט מזמן הכיבוש לא מזכיר אותו, והראשון שמזכיר אותו הוא בישוף ממצרים, כ-300 שנה אחר כך.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:23:55",
+   "sourceQuote": "מה שיפה בסיפור הזה, שאנחנו לא מכירים אותו לפני המאה העשירית.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-080",
+   "question": "מדוע לנוצרים היה חשוב לספר את סיפור החליף עומר בכנסיית הקבר?",
+   "options": [
+    "כדי לומר לשליטים המוסלמים: עומר היה סובלני, גם אתם תדאגו לנו",
+    "כדי להוכיח שהכנסייה שייכת להם",
+    "כדי להצדיק את מסעי הצלב",
+    "כדי לקבל פטור ממסים"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, הנוצרים אמרו לשליטים המוסלמים: תראו כמה עומר היה סובלני ודאג לנו, אז גם אתם תדאגו לנו.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:24:22",
+   "sourceQuote": "תראו איזה סובלני היה עומר ואיפה הוא דאג לנו, אז גם אתם תדאגו בנו.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-081",
+   "question": "מאיזו תקופה המגדל (הצריח) של מסגד עומר שמול כנסיית הקבר?",
+   "options": [
+    "איובית",
+    "ממלוכית",
+    "פאטימית",
+    "עות'מאנית"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, בסיס המסגד איובי, המגדל ממלוכי והמבנה של היום עות'מאני.",
+   "level": 3,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:24:59",
+   "sourceQuote": "המגדל שלו ממלוכי, והמבנה היום עצמו הוא עות'מאני.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-082",
+   "question": "מה קרה לכנסיית הקבר בכיבוש הפרסי בשנת 614?",
+   "options": [
+    "נהרסה עד היסוד",
+    "הפכה למסגד",
+    "נפגעה ושופצה, בלי שינוי במבנה",
+    "נמסרה לארמנים"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה אמרה שהכנסייה נפגעה ושיפצו אותה, אבל לא היה שינוי בכנסייה.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:25:46",
+   "sourceQuote": "הכנסייה קצת נפגעת לו ממש רצינית ומשפצים אותה, אבל אין שינוי בכנסייה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-083",
+   "question": "עבור איזו עדה אל-חאכם, שהרס את כנסיית הקבר, הוא דמות מרכזית?",
+   "options": [
+    "השיעים באיראן",
+    "העלאווים",
+    "הצ'רקסים",
+    "הדרוזים"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה ציינה שעבור הדרוזים הוא דמות מרכזית מאוד, וסביבו התפתחה העדה הדרוזית.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:26:16",
+   "sourceQuote": "עבור הדרוזים הוא באמת דמות מאוד מאוד מרכזית",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-084",
+   "question": "איזה קיסר ביזנטי מימן את שיקום כנסיית הקבר ב-1048?",
+   "options": [
+    "קונסטנטין מונומכוס",
+    "הרקליוס",
+    "יוסטיניאנוס",
+    "תאודוסיוס"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, קונסטנטין מונומכוס תרם הרבה כסף לשיפוץ, אף שלא היה השליט בארץ.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:26:42",
+   "sourceQuote": "קונסטנטין מונומחוס תורם פה הרבה מאוד כסף כדי לשפץ את הכנסייה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-085",
+   "question": "מה השתנה בכניסה לכנסייה בשיפוץ של 1048?",
+   "options": [
+    "הכניסה עברה דרך הגולגולתא",
+    "הכניסה עברה לצד הדרומי",
+    "הכניסה עברה לצד המזרחי",
+    "נפתחו שלוש כניסות חדשות"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה אמרה שבשיפוץ הזה הרוטונדה נשארה, נבנו שלוש קפלות במזרח, והכניסה עברה לצד דרום.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:27:07",
+   "sourceQuote": "הכניסה עוברת לצד דרום.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-086",
+   "question": "מי הייתה המלכה כשנחנכה הכנסייה הצלבנית?",
+   "options": [
+    "סיבילה",
+    "הלנה",
+    "מליסנדה",
+    "אלאונורה"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה ציינה שבחנוכה ב-15 ביולי 1149 מליסנדה הייתה המלכה.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:27:35",
+   "sourceQuote": "מליסנדה היא המלכה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-087",
+   "question": "לפי המדריכה, מה מותר לכהן דת קהילתי בכנסיות המזרחיות ואסור לכומר קתולי?",
+   "options": [
+    "להתפלל בשפה המקומית",
+    "לגדל זקן",
+    "לחיות מחוץ למנזר",
+    "להיות נשוי"
+   ],
+   "correct": 3,
+   "explanation": "כהן דת קהילתי בכנסיות המזרחיות יכול להיות נשוי, אבל לא להתקדם בהיררכיה ולהיות בישוף; אצל הקתולים לא.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:29:52",
+   "sourceQuote": "אבל כהן דת קהילתי יכול להיות נשוי. אצל הקתולים לא.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-088",
+   "question": "רואים אישה בלבוש של אשת דת עם קולר לבן. לאיזה עולם היא שייכת כנראה?",
+   "options": [
+    "לכנסיות פרוטסטנטיות כמו לותרנים ואנגליקנים",
+    "לכנסייה היוונית אורתודוקסית",
+    "לנזירות הקתוליות",
+    "לכנסייה הארמנית"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אמרה שלותרניות, אנגליקניות, מתודיסטיות ופרסביטריאניות הולכות עם קולר לבן.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:30:16",
+   "sourceQuote": "לותרניות, אנגליקניות, מתודיסט, פרספיטרל, הן ילכו עם קולר לבן",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-089",
+   "question": "מה בנו הצלבנים במקום שלוש הקפלות שבמזרח הכנסייה?",
+   "options": [
+    "מגדל פעמונים",
+    "אפסיס פנימי עם מזבח ומסדרון שממנו יוצאות קפלות",
+    "חצר פתוחה חדשה",
+    "קיר שסוגר את הקתוליקון"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, הצלבנים עשו אפסיס פנימי עם מזבח, ומאחוריו מסדרון שממנו יוצאות קפלות, כמו באירופה.",
+   "level": 3,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:30:46",
+   "sourceQuote": "ועושים מסדרון מאחורי המזבח, כמו שאנחנו מכירים באירופה,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-090",
+   "question": "מה היה בקפלה האמצעית מבין שלוש הקפלות הצלבניות ליד הכניסה?",
+   "options": [
+    "הקבר של גודפרי",
+    "חדר המפתחות",
+    "בפטיסטריום (אגן טבילה)",
+    "מזבח הגולגולתא"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה הראתה: אחת, שתיים, שלוש, מגדל פעמונים, ובאמצעית יש את הבפטיסטריום הצלבני.",
+   "level": 3,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:31:42",
+   "sourceQuote": "וכה באמצעית יש את הפטיסטריום הצלבני.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-091",
+   "question": "מה בנו הצלבנים כדי שאפשר יהיה להגיע ישר לגולגולתא?",
+   "options": [
+    "מעלית בתוך העמודים",
+    "מנהרה מתחת לרחבה",
+    "גשר מהרוטונדה",
+    "גלריה על הגולגולתא עם כניסה מבחוץ במדרגות"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה סיפרה שהצלבנים בנו גלריה על הגולגולתא וכניסה אליה מבחוץ: עולים במדרגות ונכנסים ישר לקומה השנייה.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:32:08",
+   "sourceQuote": "וכניסה לגלריה מבחוץ.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-092",
+   "question": "איך המדריכה מציגה לקבוצה אמריקאית את גיל הכנסייה, בחיוך?",
+   "options": [
+    "\"זו כנסייה חדשה, רק מהמאה ה-12\"",
+    "\"אף אחד לא יודע בן כמה היא\"",
+    "\"זו כנסייה מהמאה ה-19\"",
+    "\"זו הכנסייה הכי עתיקה בעולם\""
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אומרת לאמריקאים שהכנסייה חדשה, בסך הכול מהמאה ה-12, כי מאז בגדול היא לא השתנתה.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:32:46",
+   "sourceQuote": "היא בסך הכול כנסייה מהמאה ה-12.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-093",
+   "question": "מה גרם לשיפוץ היווני של כנסיית הקבר בשנת 1810?",
+   "options": [
+    "רעידת אדמה",
+    "שריפה בשנת 1808",
+    "הפצצה",
+    "קריסת הכיפה"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, בעקבות שריפה בכנסייה ב-1808 קיבלו היוונים אישור לשפץ ובנו מבנה חדש מעל הקבר.",
+   "level": 2,
+   "stop": "tomb",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:33:07",
+   "sourceQuote": "בעקבות צריכה שהייתה בכנסייה ב-1808,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-094",
+   "question": "מה עשו היוונים בשיפוץ של 1810, שבגללו הנכנס לכנסייה לא רואה את כל החלל?",
+   "options": [
+    "הוסיפו איקונוסטזיס בכניסה",
+    "סגרו את הכניסה הדרומית",
+    "בנו קיר בין העמודים ויצרו חלל סגור",
+    "הנמיכו את התקרה"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה הסבירה שהיוונים שמו קיר בין העמודים, וכך מי שנכנס רואה קיר במקום את החלל.",
+   "level": 2,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:33:37",
+   "sourceQuote": "מה שהם עשו זה הם שמו פה קיר בין העבודים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-095",
+   "question": "מה עשו הצלבנים לכיפה הגדולה שמעל הרוטונדה?",
+   "options": [
+    "הוסיפו לה מגדל פעמונים",
+    "הרסו אותה והשאירו את הרוטונדה פתוחה",
+    "ציפו אותה בזהב",
+    "הפכו אותה לחרוט"
+   ],
+   "correct": 3,
+   "explanation": "לפי המדריכה, הכיפה הייתה במקור עגולה, הצלבנים הפכו אותה לחרוט, וב-1869 החזירו אותה להיות עגולה.",
+   "level": 3,
+   "stop": "tomb",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:34:39",
+   "sourceQuote": "הצלבנים הפכו אותה לחרוט",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-096",
+   "question": "עד איזו שנה התפללו הקתולים בלטינית, לפי המדריכה?",
+   "options": [
+    "1965",
+    "1852",
+    "1948",
+    "1517"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אמרה שהקתולים שהגיעו מאירופה בתקופה הצלבנית התפללו בלטינית, ועד 1965 מתפללים בלטינית.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:35:44",
+   "sourceQuote": "עד 1965 מתפללים לטינים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-097",
+   "question": "איך השלטון המוסלמי הגדיר את כנסיית הקבר?",
+   "options": [
+    "כרכוש פרטי של משפחה מוסלמית",
+    "כהקדש: שייך לאלוהים, אסור למכור או לשנות ייעוד, ויש מי שמנהל",
+    "כמסגד שמותר לנוצרים לבקר בו",
+    "כרכוש של הפטריארך היווני"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה הסבירה שהכנסייה נחשבה הקדש, שלא שייך לאף אחד, והשלטון המוסלמי ניהל אותו והזמין את הנוצרים להשתמש בו.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:36:27",
+   "sourceQuote": "הכנסייה היא כמו מקום קדוש, היא דזן הקדש,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-098",
+   "question": "איזו מעצמה עמדה מאחורי הקתולים בוויכוחים על הזכויות בכנסייה?",
+   "options": [
+    "יוון",
+    "רוסיה",
+    "צרפת",
+    "בריטניה"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה אמרה שמאחורי הקתולים עמדו הצרפתים, ומאחורי האורתודוקסים, אחרי ביזנטיון, עמדו הרוסים.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:37:53",
+   "sourceQuote": "כי למשל, מאחורי הקתולים לומדים הצרפתים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-099",
+   "question": "למה סולקו האתיופים מתוך כנסיית הקבר במאה ה-16?",
+   "options": [
+    "הם סירבו לחלוק את האדיקולה",
+    "הם עברו לבית לחם",
+    "הם תמכו בצלבנים",
+    "הם לא יכלו לשלם מסים"
+   ],
+   "correct": 3,
+   "explanation": "לפי המדריכה, האתיופים לא יכלו לשלם מסים, במאה ה-16 זרקו אותם מהכנסייה, והם מתפללים על הגג.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:38:25",
+   "sourceQuote": "האתיופים לא יכלו לשלם מיסים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-100",
+   "question": "מי צייר באמצע המאה ה-19 מפה של חלוקת כנסיית הקבר בשביל העות'מאנים?",
+   "options": [
+    "קונרד שיק",
+    "צ'ארלס וורן",
+    "שמואל ברקוביץ'",
+    "אדוארד רובינסון"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה סיפרה שקונרד שיק, קרטוגרף מחונן, צייר את המפה כדי שהעות'מאנים יבינו את החלוקה.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:39:09",
+   "sourceQuote": "צייר אותה בשביל המוסלמים, בשביל העותומנים קונרן שיק,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-101",
+   "question": "מה מסמן הצבע השחור במפת החלוקה של כנסיית הקבר?",
+   "options": [
+    "אזורים של הקופטים",
+    "אזורים משותפים ליוונים, לקתולים ולארמנים",
+    "אזורים שנהרסו",
+    "אזורים של השלטון המוסלמי"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה הסבירה שהאזורים השחורים משותפים לשלוש הקהילות: יוונים, קתולים וארמנים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:40:54",
+   "sourceQuote": "ויש לנו אזורים בפנסייה השחורים, שהם משותפים לשלוש קהילות ביחד.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-102",
+   "question": "במפת החלוקה, איזה צבע מסמן את האזורים של הארמנים?",
+   "options": [
+    "סגול",
+    "כחול",
+    "צהוב",
+    "שחור"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, הכחול של האורתודוקסים, הסגול של הקתולים והצהוב של הארמנים.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:40:32",
+   "sourceQuote": "הסגול של הקתולים, אבל הצהוב של הארמנים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-103",
+   "question": "צליין אורתודוקסי מרומניה מגיע לכנסיית הקבר. עם מי הוא מתפלל?",
+   "options": [
+    "יש לו קפלה רומנית משלו בכנסייה",
+    "עם הארמנים",
+    "עם הפרנסיסקנים",
+    "עם הפטריארך היווני אורתודוקסי של ירושלים"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה הסבירה שרומני שמגיע מתפלל עם הפטריארך היווני אורתודוקסי של ירושלים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:41:09",
+   "sourceQuote": "עם הפטריארך היווני האורתודוקסי של ירושלים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-104",
+   "question": "מי מייצג את הקתולים בכנסיית הקבר מאז המאה ה-14?",
+   "options": [
+    "הפרנסיסקנים",
+    "הבנדיקטינים",
+    "הדומיניקנים",
+    "הכרמליתים"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, הפרנסיסקנים מייצגים את הקתולים מהמאה ה-14, וכל קתולי שרוצה להתפלל מתאם איתם.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:41:11",
+   "sourceQuote": "קתולים, מי מייצג פה את הקתולים מהמאה ה-14?",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-105",
+   "question": "מה פסקו השלטונות העות'מאניים בעניין הסולם שהארמנים הניחו על המרפסת המשותפת?",
+   "options": [
+    "שרק היוונים ישתמשו בו",
+    "שהסולם יישאר, אבל אסור להשתמש בו",
+    "להעביר אותו לחלון אחר",
+    "להוריד אותו מיד"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה סיפרה שהיוונים התנגדו כי המרפסת משותפת, והעות'מאנים קבעו פשרה: הסולם יישאר אבל אסור להשתמש בו.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:45:57",
+   "sourceQuote": "אבל אסור להשתמש בו. זאת אומרת, זו הפשרה,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-106",
+   "question": "מאיזו שנה מוכר לנו הסולם בחזית מציורים?",
+   "options": [
+    "1948",
+    "1517",
+    "1834",
+    "1187"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, הסולם מופיע כבר בציורים מ-1834, כלומר הונח לפני כן, בתחילת המאה ה-19.",
+   "level": 3,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:45:33",
+   "sourceQuote": "‫אנחנו מכירים את זה כבר בציורים ‫מ-1834",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-107",
+   "question": "איזו דוגמה נותנת המדריכה לתייר אמריקאי כדי להסביר למה נלחמים על סולם?",
+   "options": [
+    "משחק פוטבול",
+    "ויכוח על חניה במשרד",
+    "תור בסופרמרקט",
+    "שכן שמשאיר רהיט גדול בחדר המדרגות המשותף"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה משווה לשכן ששם רהיט ענק בחדר המדרגות: זה המרחב המשותף שלך, ואתה לא מוותר עליו.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:48:08",
+   "sourceQuote": "אז בינתיים הוא שם אותו בחדר מדרגות.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-108",
+   "question": "לאיזה קהל הכי קל להסביר את המאבק על הסולם, לפי המדריכה?",
+   "options": [
+    "לקהילות יהודיות ליברליות מארצות הברית",
+    "לתיירים מסין",
+    "לקבוצות מוסלמיות מטורקיה",
+    "לצליינים קתולים מאיטליה"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אמרה שהכי קל להסביר לקהילות יהודיות ליברליות מארה\"ב, כי הן מבינות מיד בזכות הוויכוח בכותל.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:49:01",
+   "sourceQuote": "קהילות יהודיות מארצות הברית, בעיקר ליברליות.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-109",
+   "question": "איזה אירוע שימש תירוץ למתיחות שהובילה למלחמת קרים?",
+   "options": [
+    "שריפה באדיקולה",
+    "גניבת כוכב קתולי ממערת בית לחם",
+    "הריסת הסולם",
+    "ריב על מפתח כנסיית הקבר"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה סיפרה על כוכב קתולי שנגנב על ידי האורתודוקסים במערה בבית לחם, ומשם המתח הוביל למלחמה.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:50:10",
+   "sourceQuote": "כוכב קתולי שנבונה על ידי האורתודוקסי במערה בבית נחם,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-110",
+   "question": "במלחמת קרים, מי עזרו לעות'מאנים ונגד מי?",
+   "options": [
+    "היוונים, נגד הארמנים",
+    "הרוסים, נגד הצרפתים",
+    "האנגלים והצרפתים, נגד הרוסים",
+    "הגרמנים, נגד האנגלים"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, במלחמת קרים האנגלים והצרפתים עזרו לעות'מאנים נגד הרוסים.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:50:19",
+   "sourceQuote": "והצרפתים עזרו לעותומנים נגד הרוסים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-111",
+   "question": "מה בדיוק קבע הסולטן העות'מאני במסמך של 1852?",
+   "options": [
+    "רשימה מפורטת של זכויות כל עדה",
+    "העברת הכנסייה לפרנסיסקנים",
+    "הסכם שכל העדות חתמו עליו",
+    "הקפאת המצב הקיים, בלי רשימת זכויות"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה הדגישה שזה לא הסכם ולא רשימת זכויות, אלא הקפאת המצב הקיים.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:51:07",
+   "sourceQuote": "זה הקפאת מצב קיים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-112",
+   "question": "מי התחייבו בשנת 1948 לשמור על הסטטוס קוו בכנסיית הקבר?",
+   "options": [
+    "הירדנים",
+    "הבריטים",
+    "הוותיקן",
+    "מדינת ישראל"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה מנתה את המתחייבים: המעצמות, הבריטים עם המנדט, הירדנים ב-1948 ומדינת ישראל.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:51:42",
+   "sourceQuote": "הירדנים ב-1948 מתחייבים לשמור על המצב הקיים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-113",
+   "question": "באיזו שעה יוצאת כל יום התהלוכה הקתולית שעוברת באזור האורתודוקסי?",
+   "options": [
+    "ב-12 בצהריים",
+    "ב-4 אחר הצהריים",
+    "ב-8 בבוקר",
+    "ב-7 בערב"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, כל יום ב-16:00 יש תהלוכה קתולית שעוברת באזור האורתודוקסי, כי קיבלו את הזכות לפני 500 שנה.",
+   "level": 2,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:52:26",
+   "sourceQuote": "תראו שיש תהלוכה של הקתולים שמתחילה באזור הקתולי,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-114",
+   "question": "מה ממליצה המדריכה למדריך חכם בתזמון הביקור בכנסיית הקבר?",
+   "options": [
+    "להגיע מוקדם בבוקר, לפני כולם",
+    "להגיע רק בימי ראשון",
+    "לתזמן את ההגעה לסביבות 13:00 או 16:00 כדי לראות את הטקסים היומיים",
+    "להימנע מימי שישי"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה מתזמנת להגיע בסביבות 16:00 (התהלוכה) או 13:00 (פיזור הקטורת), כדי שהקבוצה תראה את הטקס היומי.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:53:03",
+   "sourceQuote": "אני מתזמנת להיות פה בסביבות, אם אני",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-115",
+   "question": "למי זכות הניקיון ברחבה (החצר המשותפת) של כנסיית הקבר?",
+   "options": [
+    "למשפחה המוסלמית",
+    "לשלוש העדות בתורנות",
+    "רק לקתולים",
+    "רק ליוונים"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שאולי יש זכויות תפילה לאחרים בחצר, אבל זכויות הניקיון רק ליוונים.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:53:35",
+   "sourceQuote": "הניקיון פה, אמרתי, רק ליוונים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-116",
+   "question": "איזה מקור מ-1929 ממליצה המדריכה לקרוא על הזכויות בכנסיית הקבר?",
+   "options": [
+    "דו\"ח של קצין בריטי (דו\"ח קאסט)",
+    "פרמאן של הסולטן",
+    "מפה של קונרד שיק",
+    "הסכם בין ישראל לוותיקן"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה המליצה לקרוא את הדו\"ח שכתב קצין בריטי ב-1929, דו\"ח קאסט.",
+   "level": 3,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:53:55",
+   "sourceQuote": "אם תקראו את הדו״ח שעשה קצין בריטי ב-1929,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-117",
+   "question": "למה חזית כנסיית הקבר נשארה צלבנית כמעט בלי שינויים?",
+   "options": [
+    "כי היא נבנתה מאבן חזקה במיוחד",
+    "כי היא משותפת, ולכן קשה לשפץ ומשפצים רק כשצריך",
+    "כי היא שופצה בשלמות ב-1810",
+    "כי הצלבנים אסרו לשנות אותה"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה הסבירה שככל שמקום משותף יותר, קשה יותר לשפץ, ולכן קיבלנו חזית צלבנית.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:55:55",
+   "sourceQuote": "ולכן אנחנו קיבלנו חזית צלבנית.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-118",
+   "question": "מה תפקיד משטרת ישראל, היחידה למקומות קדושים, בכנסיית הקבר?",
+   "options": [
+    "להחזיק את המפתחות",
+    "לקבוע את לוח הזמנים של התפילות",
+    "להחזיר את הסטטוס קוו על כנו כשיש מתח בין העדות",
+    "לגבות מסים מהעדות"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, מדינת ישראל מחויבת לסטטוס קוו, ולכן כשיש מתח האחריות שלה להחזיר אותו על כנו.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:56:52",
+   "sourceQuote": "האחריות היא שלנו להחזיר את הסטטוס קוו על כדנו.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-119",
+   "question": "מה קורה בכנסיית הקבר לשעות הטקסים בקיץ, ולמה?",
+   "options": [
+    "אין שינוי, כי הטקסים לפי השמש",
+    "הטקסים מתבטלים בגלל החום",
+    "הכול מתקדם בשעה, כי מתאימים לשעון קיץ",
+    "הכול שעה יותר מאוחר, כי בסטטוס קוו לא היה שעון קיץ"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שאין שם שעון קיץ כי לא היה כזה בזמן הסטטוס קוו, ולכן בקיץ הכול שעה יותר מאוחר.",
+   "level": 3,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:58:22",
+   "sourceQuote": "ולכן בקיץ כל הדברים שאני עכשיו תיארתי הם שעה יותר מאוחר.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-120",
+   "question": "מה חסר בכנסיית הקבר, בניגוד לחוק הישראלי, בגלל הסטטוס קוו?",
+   "options": [
+    "יציאת חירום",
+    "שירותים",
+    "תאורה חשמלית",
+    "שילוט בעברית"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אמרה שאין בכנסייה יציאת חירום, וזה נגד החוק הישראלי, אבל לא מצליחים למצוא פתרון.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1y0HHtJfPBBp6KVyVo68inDM8hgaQivnM/view",
+   "sourceRecording": "Knissiat akever.m4a",
+   "sourceTime": "00:58:11",
+   "sourceQuote": "לגמרי נגד החוק הישראלי. לא מצליחים למצוא פה פתרון ליציאת קרוב.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-121",
+   "question": "לאיזה אירוע מוקדשת תחנה 10 בוויה דולורוזה, בקפלה הפרנקית שליד הגולגולתא?",
+   "options": [
+    "המסמור על הצלב",
+    "הנפילה הראשונה",
+    "ההורדה מהצלב",
+    "הסרת הבגדים"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שהקפלה שמאחורינו היא תחנה 10, המוקדשת להסרת הבגדים מישוע.",
+   "level": 1,
+   "stop": "golgotha",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:02:16",
+   "sourceQuote": "תחנה עשירית, הסרת הבגדים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-122",
+   "question": "במבחן בכתב, מה המדריכה ממליצה לכתוב כמקום של תחנה 13 (ההורדה מהצלב)?",
+   "options": [
+    "אבן המשיכה בלבד",
+    "פתח הקבר באדיקולה",
+    "הפסל של מרים",
+    "קפלת האדם הראשון"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה סיכמה עם כל הקורסים לכתוב 'הפסל של מרים', ובסוגריים גם אבן המשיכה, כי אפשר לציין את התחנה בשני מקומות.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:04:36",
+   "sourceQuote": "תגידו כולם הפסד של מרים. ככה אני סוגרת עם כל הקורסים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-123",
+   "question": "איך נקרא פסל מרים בגולגולתא, שלידו הפרנציסקנים מציינים את ההורדה מהצלב?",
+   "options": [
+    "מרים האם הסובלת",
+    "מרים מלכת השמיים",
+    "מרים הנרדמת",
+    "מרים המגדלית"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, יש בגולגולתא פסל של מרים האם הסובלת, ושם מציינים את ההורדה מהצלב.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:03:54",
+   "sourceQuote": "מרים האם הסובלת.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-124",
+   "question": "באילו שפות כתוב השלט 'ישוע הנצרתי מלך היהודים' על הצלב שמעל סלע הגולגולתא?",
+   "options": [
+    "ארמית, יוונית ולטינית",
+    "עברית, ערבית ולטינית",
+    "עברית, יוונית ולטינית",
+    "יוונית, ארמנית וערבית"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה תיארה צלב גדול ועליו השלט בשלוש שפות: עברית, יוונית ולטינית.",
+   "level": 1,
+   "stop": "golgotha",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:00:49",
+   "sourceQuote": "יהושע הנצרתי, מלך היהודים, בעברית, ביוונית ובלטינית.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-125",
+   "question": "למי היה שייך בעבר החלק של הגולגולתא שמחזיקים בו היום היוונים?",
+   "options": [
+    "לקופטים",
+    "לאתיופים",
+    "לקתולים",
+    "לארמנים"
+   ],
+   "correct": 3,
+   "explanation": "לפי המדריכה, החלק היה פעם של הארמנים, והשליטים המוסלמים העבירו אותו ליוונים משיקולים פוליטיים, והארמנים כועסים עד היום.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:05:46",
+   "sourceQuote": "שהוא היה פעם של הארמנים ואז השותפים המוסלמים לקחו את זה מהארמנים משיקולים פוליטיים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-126",
+   "question": "מי יצר את רוב הפסיפסים בחלק הקתולי של הגולגולתא, לפני כמאה שנה?",
+   "options": [
+    "אנטוניו ברלוצי",
+    "האמנים הצלבנים",
+    "אמנים ביזנטיים",
+    "נזירים ארמנים"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה אמרה שהפסיפסים בחלק הקתולי נעשו בידי אנטוניו ברלוצי לפני כמאה שנה, בחיקוי לסגנון הצלבני, חוץ מפסיפס צלבני שבור אחד.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:05:57",
+   "sourceQuote": "הפסיפסים הם פסיפסים שנעשו על ידי אנטוניו ברלוצי ידידנו לפני מאה שנים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-127",
+   "question": "איזה סיפור מקראי קשרו צליינים נוצרים גם מבחינה גאוגרפית למקום הגולגולתא?",
+   "options": [
+    "חלום יעקב",
+    "משיחת דוד",
+    "בריחת אליהו",
+    "עקידת יצחק"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה הסבירה שהעקידה היא פרפיגורציה לצליבה, ושבחוויה הצליינית תיארו את מקום עקידת יצחק כמקום הגולגולתא.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:06:59",
+   "sourceQuote": "תיארו את מקום עקידת יצחק כמקום גולגותה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-128",
+   "question": "מה פירוש המילה 'צליין', לפי המדריכה?",
+   "options": [
+    "מי שנושא צלב",
+    "מי שבא להתפלל",
+    "מי שמצלם אתרים",
+    "נזיר שגר במנזר"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה אמרה שצליין הוא מתפלל, מי שבא להתפלל.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:06:56",
+   "sourceQuote": "מתפלל. מי שבא להתפלל",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-129",
+   "question": "מה הרעיון התיאולוגי במסורת שהאדם הראשון קבור מתחת לסלע הצליבה?",
+   "options": [
+    "למטה החטא, ומעליו התיקון",
+    "שם נברא האדם הראשון",
+    "שם הוקרב הקורבן הראשון",
+    "שם נקבר גם יוסף הרמתי"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, המסורת באה להראות שלמטה יש את החטא של האדם הראשון ומעליו את התיקון, כלומר הכפרה של ישוע.",
+   "level": 2,
+   "stop": "golgotha",
+   "source": "https://drive.google.com/file/d/1AE2LbTR6k0L6AIOW23fbCNKVPSdpBqUx/view",
+   "sourceRecording": "Knossiat a kever.m4a",
+   "sourceTime": "00:08:39",
+   "sourceQuote": "למטה יש לנו את החטא ומעל את התיקון",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-130",
+   "question": "מי הדמות המבוגרת בפסיפס שליד אבן המשיכה, שתרמה את קברה לקבורת ישוע?",
+   "options": [
+    "ניקודמוס",
+    "יוחנן התלמיד",
+    "יוסף הרמתי",
+    "פטרוס השליח"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה זיהתה בפסיפס אדם מבוגר: יוסף הרמתי, שתרם את הקבר שלו.",
+   "level": 1,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1UBXM1eOeByB4Ls6-2V3R-2GFOrQbag0Z/view",
+   "sourceRecording": "Knissiat kever even.m4a",
+   "sourceTime": "00:00:50",
+   "sourceQuote": "יש לנו אדם מבוגר שזה יוסף הרמתי שתרם את הקבר שלו,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-131",
+   "question": "בפסיפס ההורדה מהצלב ליד אבן המשיכה, מי הדמות בירוק שמופיעה בלי הילה?",
+   "options": [
+    "יוחנן המטביל",
+    "החייל הרומי",
+    "יוסף הרמתי",
+    "ניקודמוס"
+   ],
+   "correct": 3,
+   "explanation": "לפי המדריכה, הבחור בירוק שעוזר להוריד את ישוע מהצלב הוא ניקודמוס, שעזר לקבור אותו, ומשום מה הוא בלי הילה.",
+   "level": 3,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1UBXM1eOeByB4Ls6-2V3R-2GFOrQbag0Z/view",
+   "sourceRecording": "Knissiat kever even.m4a",
+   "sourceTime": "00:01:00",
+   "sourceQuote": "הוא משום מה בלי הילה אבל הוא ניקודמוס שעזר לקבור אותו",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-132",
+   "question": "מה עושים מבקרים רבים באבן המשיכה?",
+   "options": [
+    "מנשקים אותה ומדליקים עליה נרות",
+    "שופכים עליה בושם וסופגים אותו במטפחת",
+    "כותבים עליה את שמם",
+    "מניחים עליה פתקים ואבנים קטנות"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה הסבירה שהמבקרים שופכים בושם וסופגים אותו במטפחות ובמזכרות, וכך לוקחים את הקדושה הביתה.",
+   "level": 1,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1UBXM1eOeByB4Ls6-2V3R-2GFOrQbag0Z/view",
+   "sourceRecording": "Knissiat kever even.m4a",
+   "sourceTime": "00:02:09",
+   "sourceQuote": "שמים מטפחת וסופגים את הקדושה עם הבושם",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-133",
+   "question": "למה אי אפשר לשפץ את הקפלה הסורית שמאחורי האדיקולה?",
+   "options": [
+    "כי היא נשרפה ואסורה בכניסה",
+    "כי היא אתר עתיקות סגור",
+    "כי הארמנים והסורים לא מסכימים",
+    "כי העירייה אוסרת לשפץ אותה"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, יש אי הסכמה בין הארמנים לסורים, ולכן אי אפשר לשפץ את הקפלה.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1ObulPQt5mCYvNv-AKZsKidoTiVVSSJP5/view",
+   "sourceRecording": "Yossef aramati.m4a",
+   "sourceTime": "00:00:45",
+   "sourceQuote": "יש שם אי הסכמה בין שתי קהילות, הארמנים והסיריאנים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-134",
+   "question": "מדוע הקירות בקפלה הסורית שחורים מפיח?",
+   "options": [
+    "בגלל שרפה גדולה בכנסייה",
+    "בגלל שנים רבות של הדלקת נרות",
+    "בגלל שיפוץ שלא הושלם",
+    "בגלל שרפה שהציתו פורעים"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה הדגישה שלא הייתה שם שרפה מיוחדת: המקום שחור כי במשך שנים רבות הדליקו בו נרות.",
+   "level": 2,
+   "stop": "tomb",
+   "source": "https://drive.google.com/file/d/1ObulPQt5mCYvNv-AKZsKidoTiVVSSJP5/view",
+   "sourceRecording": "Yossef aramati.m4a",
+   "sourceTime": "00:01:46",
+   "sourceQuote": "השרפה, המקום פשוט שרוף, כי הרבה שנים הדליקו שם נרות.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-135",
+   "question": "מה אפשר לעשות בקפלה הקופטית שמאחורי האדיקולה?",
+   "options": [
+    "לגעת בצד השני של הקבר",
+    "לראות את ספסל הקבורה",
+    "לגעת בסלע הגולגולתא",
+    "להדליק את האש הקדושה"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, מי שלא יכול להיכנס לקבר יכול לגעת בצד השני שלו, בקפלה של הקופטים.",
+   "level": 2,
+   "stop": "tomb",
+   "source": "https://drive.google.com/file/d/1ObulPQt5mCYvNv-AKZsKidoTiVVSSJP5/view",
+   "sourceRecording": "Yossef aramati.m4a",
+   "sourceTime": "00:00:13",
+   "sourceQuote": "אז אתה יכול גם לגעת בצד השני של הקבר שאצל הקופטים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-136",
+   "question": "בטקס שבת האור, כמה נרות יש בכל צרור שהמאמינים מחזיקים, ולמה?",
+   "options": [
+    "12, כמספר השליחים",
+    "40, כימי הצום",
+    "14, כמספר התחנות",
+    "33, כגיל ישוע בצליבה"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שמחזיקים צרור של 33 נרות, כגילו של ישוע כשנצלב.",
+   "level": 1,
+   "stop": "tomb",
+   "source": "https://drive.google.com/file/d/1rYQuQbKX76t-eFBpuv9bgJlU3fxPg3sF/view",
+   "sourceRecording": "Knissit kever.m4a",
+   "sourceTime": "00:00:47",
+   "sourceQuote": "33 נרות כגילו של ישוע כשהוא נצלב.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-137",
+   "question": "מה נעשה באש הקדושה אחרי הטקס בכנסיית הקבר?",
+   "options": [
+    "מכבים אותה בתוך הקבר",
+    "שומרים אותה רק ברובע הנוצרי",
+    "מטיסים אותה לבירות העולם האורתודוקסי",
+    "שולחים אותה לאפיפיור ברומא"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, לוקחים את האש לנמל התעופה בן גוריון, ומטוסים מביאים אותה לבירות העולם האורתודוקסי לחגיגת התחייה בחצות.",
+   "level": 2,
+   "stop": "tomb",
+   "source": "https://drive.google.com/file/d/1rYQuQbKX76t-eFBpuv9bgJlU3fxPg3sF/view",
+   "sourceRecording": "Knissit kever.m4a",
+   "sourceTime": "00:01:08",
+   "sourceQuote": "ויש מטוסים שלוקחים את האש לבירות העולם האורתודוקסי",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-138",
+   "question": "מדוע הקתולים לא משתתפים בטקס האש הקדושה, לפי המדריכה?",
+   "options": [
+    "האפיפיור פסל את הטקס אחרי שמלך מוחרם השתתף בו",
+    "הסטטוס קוו העביר את הטקס לארמנים",
+    "הטקס התחיל רק בתקופה העות'מאנית",
+    "הקתולים גורשו מהכנסייה במאה ה-19"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה סיפרה שמלך ירושלים צלבני הוחרם בידי האפיפיור, והאפיפיור קבע שהטקס שהשתתף בו הוא תרמית. מאז, כבר 700 שנה, הקתולים לא משתתפים.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1rYQuQbKX76t-eFBpuv9bgJlU3fxPg3sF/view",
+   "sourceRecording": "Knissit kever.m4a",
+   "sourceTime": "00:02:17",
+   "sourceQuote": "הוא כבר היה מוחרם על ידי האפיפיור",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-139",
+   "question": "איך נקרא הקיר המעוטר באיקונות שמפריד בין הקתוליקון לבין המזבח?",
+   "options": [
+    "אמבולטוריום",
+    "טימפנון",
+    "איקונוסטזיס",
+    "אפסיס"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה הראתה את הקיר בקתוליקון האורתודוקסי, האיקונוסטזיס, ומאחוריו המזבח.",
+   "level": 1,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1rYQuQbKX76t-eFBpuv9bgJlU3fxPg3sF/view",
+   "sourceRecording": "Knissit kever.m4a",
+   "sourceTime": "00:03:47",
+   "sourceQuote": "איקונוסטזיס, ומאחוריו נראה את המזבח.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-140",
+   "question": "מה מיוחד בנברשת הגדולה שהוחזרה לקתוליקון לפני המלחמה?",
+   "options": [
+    "נבנתה בידי הצלבנים",
+    "תרומה מרוסיה שכמעט נפלה ברעידת 1927",
+    "נשלחה מרומא לחנוכת הכנסייה",
+    "נמצאה בחפירות האיטלקים"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, זו נברשת מהמאה ה-18 שהתקבלה כתרומה מרוסיה, וכמעט נפלה ברעידת האדמה של 1927.",
+   "level": 3,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1rYQuQbKX76t-eFBpuv9bgJlU3fxPg3sF/view",
+   "sourceRecording": "Knissit kever.m4a",
+   "sourceTime": "00:04:41",
+   "sourceQuote": "וזה כמעט נפל ב-1927 כהייתה רעידת אדמה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-141",
+   "question": "מה מצאה המשלחת האיטלקית בחפירות האחרונות בכנסייה, ולמה זה הלהיב אותה?",
+   "options": [
+    "מטבעות, כי הם מתארכים את הקבר",
+    "כתובת, כי היא מזכירה את הצליבה",
+    "עצמות, כי הן מוכיחות שהיה שם קבר",
+    "זרעים וגרעינים, כי כתוב שהיה במקום גן"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שהחוקרים מאוניברסיטה ברומא מצאו זרעים וגרעינים, שמחזקים את הזיהוי, כי בברית החדשה כתוב שבמקום היה גן.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1rYQuQbKX76t-eFBpuv9bgJlU3fxPg3sF/view",
+   "sourceRecording": "Knissit kever.m4a",
+   "sourceTime": "00:08:07",
+   "sourceQuote": "הם מצאו פה זרעים וגרעינים ומאוד מאוד התרגשו",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-142",
+   "question": "במה שונה התפילה של הקתולים בכנסיית הקבר מזו של העדות האחרות?",
+   "options": [
+    "רק הקתולים מתפללים בישיבה",
+    "רק הקתולים משתמשים בכלי נגינה",
+    "רק הקתולים מתפללים בלטינית",
+    "רק הקתולים מדליקים נרות שמן"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, הקתולים מנגנים בעוגב, והכנסיות האחרות משתמשות רק בקול האנושי.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/16QeAzDvx_CW_dHpUQyqR9AMM8ixeY-hD/view",
+   "sourceRecording": "Organ.m4a",
+   "sourceTime": "00:00:40",
+   "sourceQuote": "הכנסיות אחרות לא משתמשות בכלי נגינה, אלא רק ב-Human Voice,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-143",
+   "question": "מדוע מחצבה היא מקום טוב לחצוב בו מערות קבורה?",
+   "options": [
+    "כי האבן בה רכה במיוחד",
+    "כי היא רחוקה מהעיר",
+    "כי יש בה קיר סלע אנכי לחצוב בו",
+    "כי היא מוסתרת מעין"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה הסבירה שאי אפשר לחצוב קבר בשטח מישורי או מתון, וצריך קיר סלע, ולכן מחצבה מתאימה לקבורה.",
+   "level": 3,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1cj0FrFsmQjIyhmIQBnwxC9NZSCvbZp4m/view",
+   "sourceRecording": "2eme ss sol.m4a",
+   "sourceTime": "00:00:02",
+   "sourceQuote": "כדי לחצוב בסלע אתה צריך שיהיה לך איזשהו קיר.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-144",
+   "question": "מתי התחילו לספר שהלנה מצאה את שרידי הצלב?",
+   "options": [
+    "כ-80 שנה אחרי ביקורה",
+    "בזמן ביקורה עצמו",
+    "בתקופה הצלבנית",
+    "רק במאה ה-19"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, הסיפור על מציאת הצלב בידי הלנה התחיל להופיע בערך 80 שנה אחרי שהייתה בארץ.",
+   "level": 3,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1cj0FrFsmQjIyhmIQBnwxC9NZSCvbZp4m/view",
+   "sourceRecording": "2eme ss sol.m4a",
+   "sourceTime": "00:01:25",
+   "sourceQuote": "80 שנה אחרי שהיא הייתה בארץ.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-145",
+   "question": "לאיזו מסורת מוקדש מנזר המצלבה בירושלים?",
+   "options": [
+    "המקום שבו נקברה הלנה",
+    "המקום שבו נמצא הצלב",
+    "המקום שבו נשבר הצלב",
+    "המקום שבו צמח עץ הצלב"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אמרה שמנזר המצלבה מוקדש למקום שבו צמח העץ שממנו עשו אחר כך את הצלב.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1cj0FrFsmQjIyhmIQBnwxC9NZSCvbZp4m/view",
+   "sourceRecording": "2eme ss sol.m4a",
+   "sourceTime": "00:01:53",
+   "sourceQuote": "והוא מוקדש למקום שבו צמח העץ שממנו עשו אחר כך את הצלב",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-146",
+   "question": "באיזו שנה התנצרה הממלכה הארמנית, לפי הציור בקפלה הארמנית?",
+   "options": [
+    "326",
+    "301",
+    "451",
+    "1009"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה אמרה שבשנת 301 הממלכה הארמנית מתנצרת ומלך ארמניה נטבל בידי גרגורי המאיר.",
+   "level": 1,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1wDNEaQkqV4lGFk28E_Csa8rQtYYIt9ec/view",
+   "sourceRecording": "Voice 261119_123408.m4a",
+   "sourceTime": "00:01:34",
+   "sourceQuote": "ובשנת 301 הממלכה הארמנית מתנצרת",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-147",
+   "question": "מדוע לא השתתפו הארמנים בוועידת כלקדון בשנת 451?",
+   "options": [
+    "כי לא הוזמנו לוועידה",
+    "כי היו עסוקים במלחמה בפרסים",
+    "כי עדיין לא התנצרו",
+    "כי חרמו את הקיסר"
+   ],
+   "correct": 1,
+   "explanation": "לפי המדריכה, הארמנים לא השתתפו בוועידת כלקדון כי נלחמו אז בפרסים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1wDNEaQkqV4lGFk28E_Csa8rQtYYIt9ec/view",
+   "sourceRecording": "Voice 261119_123408.m4a",
+   "sourceTime": "00:02:22",
+   "sourceQuote": "בשנת 451 הארמנים לא השתתפו בוועידת חלקדון, כי הם היו עסוקים במלחמה בפרסים,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-148",
+   "question": "לזכר מי מוקדש הפסיפס בקפלה הארמנית שמתחת לכנסייה?",
+   "options": [
+    "מלכי ארמניה הראשונים",
+    "המתרגמים שהמציאו את האלפבית",
+    "קורבנות רצח העם הארמני",
+    "הפטריארכים הארמנים"
+   ],
+   "correct": 2,
+   "explanation": "המדריכה אמרה שרבים מהקהילה הם צאצאי ניצולי רצח העם, ולכן הפסיפס מוקדש לקורבנות רצח העם הארמני. הוא נראה ישן כי עשוי בסגנון ביזנטי.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1wDNEaQkqV4lGFk28E_Csa8rQtYYIt9ec/view",
+   "sourceRecording": "Voice 261119_123408.m4a",
+   "sourceTime": "00:02:46",
+   "sourceQuote": "ולכן הפסיפס הזה מוקדש לקורבנות רצח העם הארמני.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-149",
+   "question": "מה זה 'חצ'קר' שהארמנים משאירים במקום קדוש?",
+   "options": [
+    "צלב אבן",
+    "נר שמן",
+    "איקונה מצוירת",
+    "כתובת חרוטה"
+   ],
+   "correct": 0,
+   "explanation": "המדריכה הראתה צלבי אבן ארמניים (חצ'קרים) על כל קירות הקפלה, חלקם בני 500 שנה.",
+   "level": 1,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1wDNEaQkqV4lGFk28E_Csa8rQtYYIt9ec/view",
+   "sourceRecording": "Voice 261119_123408.m4a",
+   "sourceTime": "00:03:24",
+   "sourceQuote": "צלב אבן. אז יש לכם פה חדשקר מפואר,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-150",
+   "question": "מה נמצא ממש מעל הקפלה הארמנית שבמפלס התחתון של הכנסייה?",
+   "options": [
+    "הרחבה של כנסיית הקבר",
+    "החצר של האתיופים",
+    "קפלת הגולגולתא",
+    "הכנסייה הרוסית"
+   ],
+   "correct": 1,
+   "explanation": "המדריכה אמרה שממש מעלינו נמצאת החצר של האתיופים, שבה מסיימים את היום.",
+   "level": 2,
+   "stop": "lower",
+   "source": "https://drive.google.com/file/d/1wDNEaQkqV4lGFk28E_Csa8rQtYYIt9ec/view",
+   "sourceRecording": "Voice 261119_123408.m4a",
+   "sourceTime": "00:00:50",
+   "sourceQuote": "זה בעצם החצר של האתיופים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-151",
+   "question": "מדוע ברור שחישוב שנת 1 לספירה, שנעשה במאה השישית, מעט שגוי?",
+   "options": [
+    "כי הורדוס מת כחמש שנים קודם",
+    "כי הלנה הגיעה לפני כן",
+    "כי הצליבה הייתה בשנת 1",
+    "כי אוגוסטוס מת לפני כן"
+   ],
+   "correct": 0,
+   "explanation": "לפי המדריכה, ידוע שהורדוס מת כחמש שנים לפני השנה שחושבה, ולכן החישוב בוודאות טעה.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1aVVDpNQ232h_drmlIxZAM8lSNHrHpRWn/view",
+   "sourceRecording": "Kever.m4a",
+   "sourceTime": "00:01:49",
+   "sourceQuote": "הוא בטוח טעם, כי אנחנו יודעים שהורדוס מת חמש שנים קודם.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-152",
+   "question": "לפי המדריכה, איך ביקרו צליינים באתרים לפני המאה ה-14–15?",
+   "options": [
+    "לפי סדר האירועים בסיפור",
+    "לפי סדר השטח, אתר אחרי אתר",
+    "רק בימי שישי ובחגים",
+    "רק בליווי חיילים רומים"
+   ],
+   "correct": 1,
+   "explanation": "הצליינים \"דגמו\" את האתרים לפי השטח ולא הלכו לפי סדר הסיפור.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:01:50",
+   "sourceQuote": "אנחנו לא הולכים לפי הסיפור, אנחנו הולכים לפי השטח",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-153",
+   "question": "איפה ציינו בתקופה הביזנטית את המשפט מול פילטוס?",
+   "options": [
+    "בכנסיית סנטה אנה",
+    "בכנסיית ציון הקדושה",
+    "בכנסיית הגיאה סופיה ליד הר הבית",
+    "בכנסיית הקבר"
+   ],
+   "correct": 2,
+   "explanation": "בתקופה הביזנטית ציינו את המשפט בכנסיית הגיאה סופיה (החוכמה הקדושה) ליד הר הבית.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:03:26",
+   "sourceQuote": "ממש ליד הר הבית, כנסיית אלגיאוסופיה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-154",
+   "question": "מהו השם הארמי של מקום המשפט של ישוע בברית החדשה?",
+   "options": [
+    "פרטוריום",
+    "ליתוסטרוטוס",
+    "גולגולתא",
+    "גבתא"
+   ],
+   "correct": 3,
+   "explanation": "שלושה שמות: בית הממשל (פרטוריום), ליתוסטרוטוס ביוונית, ובארמית גבתא.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:03:47",
+   "sourceQuote": "אתם אומרים את זה ביוונית, ליטוסטרטוס, ובערמית גבקה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-155",
+   "question": "לאן עבר מקום המשפט אחרי שהכנסייה ליד הר הבית נהרסה בכיבוש הפרסי?",
+   "options": [
+    "להר ציון",
+    "להר הזיתים",
+    "לשער שכם",
+    "לבריכות הצאן"
+   ],
+   "correct": 0,
+   "explanation": "בכיבוש הפרסי נהרסה כנסיית הגיאה סופיה ומסורת המשפט עברה להר ציון.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:05:08",
+   "sourceQuote": "והזיזו את מקום המשפט לפה, להר ציון.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-156",
+   "question": "איך ראו את עצמם מלכי ירושלים הצלבנים?",
+   "options": [
+    "כיורשי הקיסר קונסטנטינוס",
+    "כמחדשי מלכות דוד ושלמה",
+    "כשליחי האפיפיור בלבד",
+    "כממשיכי שלטון הורדוס"
+   ],
+   "correct": 1,
+   "explanation": "המלכים הצלבנים ראו את עצמם מחדשים את מלכות דוד ושלמה.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:07:05",
+   "sourceQuote": "הם ראו את עצמם מחדשים מלכות דוד ושלמה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-157",
+   "question": "איך קראו הצלבנים למבנה שמדרום להר הבית (המסגד הגדול), שבו ישבו הטמפלרים?",
+   "options": [
+    "טמפלום דומיני",
+    "ציון הקדושה",
+    "טמפלום סלומוניס",
+    "אנסטסיס"
+   ],
+   "correct": 2,
+   "explanation": "הם חשבו שהמבנה הוא ארמון שלמה וקראו לו טמפלום סלומוניס; את כיפת הסלע הפכו לכנסייה בשם טמפלום דומיני.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:07:39",
+   "sourceQuote": "ולכן הם קוראים לו טמפלום סלומי.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-158",
+   "question": "מה היה מעמדו של הר הבית אצל הנוצרים בתקופה הביזנטית לעומת התקופה הצלבנית?",
+   "options": [
+    "חשוב בשתיהן באותה מידה",
+    "חשוב בביזנטית, נזנח בצלבנית",
+    "נזנח בשתי התקופות",
+    "התעלמו ממנו בביזנטית, חשוב מאוד בצלבנית"
+   ],
+   "correct": 3,
+   "explanation": "בתקופה הביזנטית התעלמו מהר הבית, ובתקופה הצלבנית הוא חזר להיות חשוב מאוד.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:08:09",
+   "sourceQuote": "בתקופה ביזנטית, מה המקום של הר הבית אצל נוצרים, מתעלמים, מתעלמים, בתקופה צלבנית הוא חוזר להיות מאוד חשוב.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-159",
+   "question": "אילו נזירים שירתו בהר הבית בתקופה הצלבנית, וגם בכנסיית הקבר?",
+   "options": [
+    "האוגוסטינים",
+    "הפרנציסקנים",
+    "הבנדיקטינים",
+    "הכרמליתים"
+   ],
+   "correct": 0,
+   "explanation": "הנזירים האוגוסטינים שירתו בהר הבית, ואלה אותם נזירים ששירתו בכנסיית הקבר.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:08:09",
+   "sourceQuote": "הנזירים האוגוסטינים שמשרתים פה, שזה אגב אותם נזירים שמשרתים בכנסיית הקבר",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-160",
+   "question": "אחרי תבוסת הצלבנים, דרך איזה שער נכנסו הנוצרים לעיר?",
+   "options": [
+    "שער יפו",
+    "שער שכם",
+    "שער האריות",
+    "שער ציון"
+   ],
+   "correct": 2,
+   "explanation": "לא אפשרו לנוצרים להיכנס משער שכם, והם נכנסו מהשער המזרחי, שער האריות, וצעדו מערבה לכנסיית הקבר.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:09:15",
+   "sourceQuote": "נוצרים צריכים להיכנס מהשער המזרחי, שער האריות.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-161",
+   "question": "צליין מאירופה במאה ה-15: איפה הייתה התחנה המסודרת הראשונה שלו, עם מנזר לינה?",
+   "options": [
+    "ביפו",
+    "ברמלה",
+    "בבית לחם",
+    "בעכו"
+   ],
+   "correct": 1,
+   "explanation": "ביפו לא היה נמל ולא היה כלום; התחנה הראשונה הייתה ברמלה, בירת המחוז, במנזר פרנציסקני.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:10:51",
+   "sourceQuote": "מגיע להמלה, יש לו כבר מנזר פרנסיסטקני,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-162",
+   "question": "מי הדריך את הצליינים בירושלים במאות ה-14–15?",
+   "options": [
+    "כמרים יוונים אורתודוקסים",
+    "אבירים טמפלרים",
+    "נזירים אוגוסטינים",
+    "נזירים פרנציסקנים"
+   ],
+   "correct": 3,
+   "explanation": "המדריך היה הנזיר הפרנציסקני, והוא הראה להם מסורות לאורך הדרך.",
+   "level": 1,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:11:52",
+   "sourceQuote": "והמדריך הפרנציסקני מדריך אותם.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-163",
+   "question": "במה שונה הוויה דולורוזה מהקמינו, לפי המדריכה?",
+   "options": [
+    "בקמינו היעד הוא המטרה, כאן המסלול הוא המטרה",
+    "בקמינו המסלול הוא המטרה, כאן היעד",
+    "שניהם נועדו רק לכמרים",
+    "בשניהם אין שום חשיבות למסלול"
+   ],
+   "correct": 0,
+   "explanation": "בקמינו אין חשיבות לדרך והיעד הוא המטרה; בוויה דולורוזה המטרה היא המסלול עצמו.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:16:07",
+   "sourceQuote": "פה המטרה היא המסלול.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-164",
+   "question": "איפה התחיל רעיון התחנות שבו משחזרים את דרך ישוע בעיר בבית?",
+   "options": [
+    "בירושלים",
+    "באיטליה",
+    "בספרד",
+    "ברוסיה"
+   ],
+   "correct": 2,
+   "explanation": "הרעיון התחיל בספרד, עבר לגרמניה, לבלגיה ולמקומות אחרים, ומשם יובא חזרה לירושלים.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:17:54",
+   "sourceQuote": "זה התחיל בספרד, ומייד את רוצה לתת את זה בגרמניה ובבלגיה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-165",
+   "question": "כמה תחנות היו במסלולי התחנות שנבנו באירופה?",
+   "options": [
+    "תמיד 14 בדיוק",
+    "מספר משתנה: 4, 20 ואפילו 50",
+    "תמיד 7, כמו ימי השבוע",
+    "תמיד 12, כמו השליחים"
+   ],
+   "correct": 1,
+   "explanation": "היו מקומות עם ארבע תחנות, עם 20 ועם 50; זה היה תלוי בכל מקום.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:18:17",
+   "sourceQuote": "שם מקומות שהיו 20 תחנות, ומקומות שהיו 50 תחנות.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-166",
+   "question": "מה היחס בין התחנות לבין המקומות, לפי המדריכה?",
+   "options": [
+    "קודם נמצא האתר ואז נקשר אליו סיפור",
+    "התחנות סומנו לפי חפירות ארכיאולוגיות",
+    "התחנות נקבעו על ידי הרומאים",
+    "קודם היה הסיפור ואז הדביקו לו אתר"
+   ],
+   "correct": 3,
+   "explanation": "התחנות \"יושבות על סיפור\": קודם היה הסיפור ואז הדביקו לו את האתר.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:21:15",
+   "sourceQuote": "אלא שקודם כל היה הסיפור ואז הדפיקו לו את האתר.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-167",
+   "question": "מתי מתחילות להופיע בחו״ל תחנות הוויה דולורוזה?",
+   "options": [
+    "במאה ה-15",
+    "במאה ה-4",
+    "במאה ה-12",
+    "במאה ה-19"
+   ],
+   "correct": 0,
+   "explanation": "במאה ה-15 מתחילות להופיע בחו״ל התחנות האלה, ומאז ואילך.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:21:50",
+   "sourceQuote": "במאה ה-15 מתחילים להופיע בחו״ל, התחנות האלה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-168",
+   "question": "איזו מסורת נוספת יש לאורתודוקסים באזור הוויה דולורוזה?",
+   "options": [
+    "מקום הנפילה השלישית",
+    "בית כלא שבו עצרו את ישוע לפני המשפט",
+    "המקום שבו פגש את ורוניקה",
+    "קבר מרים"
+   ],
+   "correct": 1,
+   "explanation": "יש להם מסורת על בית כלא שבו עצרו את ישוע לפני המשפט; היום זה מנזר יווני אורתודוקסי.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:22:59",
+   "sourceQuote": "שבכלל יש פה איזו כותנת מאסר, שככה עיצרו את ישוע לפני שהביאו אותו למשפט",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-169",
+   "question": "במבחן, בהדרכת קבוצה אורתודוקסית, באיזו תחנה לא עוצרים?",
+   "options": [
+    "תחנת המשפט",
+    "תחנת הצליבה",
+    "תחנת ורוניקה",
+    "תחנת הקבורה"
+   ],
+   "correct": 2,
+   "explanation": "אורתודוקסים לא עוצרים בתחנות שלא מופיעות בברית החדשה, כמו תחנת ורוניקה, שנחשבת המצאה קתולית.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:23:25",
+   "sourceQuote": "לא להרוג את התחנה של ורוניקה, כי זו המצאה של הקתולים, כן?",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-170",
+   "question": "במבחן בכתב, איך כדאי לענות על השאלה איזו קבוצה הולכת בוויה דולורוזה?",
+   "options": [
+    "לכתוב \"זה מורכב\"",
+    "לכתוב שכל הקבוצות עושות אותו דבר",
+    "לא לענות על השאלה",
+    "לתת תשובה פשוטה וברורה לכל קבוצה"
+   ],
+   "correct": 3,
+   "explanation": "המדריכה אומרת שהתשובה \"זה מורכב\" במבחן בכתב אינה טובה; צריך תשובה פשוטה.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:24:25",
+   "sourceQuote": "התשובה במבחן, בכתב, זה מורכב, היא לא טובה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-171",
+   "question": "במבחן, איך מומלץ לקרוא לדרך כשמדריכים קבוצה אורתודוקסית?",
+   "options": [
+    "הדרך לצליבה",
+    "ויה דולורוזה",
+    "דרך הייסורים הקתולית",
+    "דרך הצליינים"
+   ],
+   "correct": 0,
+   "explanation": "הולכים איתם במסלול, אבל לא קוראים לו בשם הקתולי ויה דולורוזה אלא \"דרך לצליבה\".",
+   "level": 3,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:24:45",
+   "sourceQuote": "לכו איתה במסלול, אבל אל תקראו לזה בשם הקתול ליה דולורוזה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-172",
+   "question": "במבחן, לאן מומלץ לקחת קבוצה פרוטסטנטית?",
+   "options": [
+    "לוויה דולורוזה עם כל התחנות",
+    "לכנסיית הקבר בלבד",
+    "לגן הקבר",
+    "לכנסיית ציון הקדושה"
+   ],
+   "correct": 2,
+   "explanation": "במבחן לא לוקחים קבוצה פרוטסטנטית לוויה דולורוזה ולא לכנסיית הקבר, אלא לגן הקבר, כדי שיהיה פשוט.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:25:46",
+   "sourceQuote": "קחו אותה לגמרי כפר,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-173",
+   "question": "ומה קורה בפועל (לא במבחן) עם רוב הקבוצות הפרוטסטנטיות?",
+   "options": [
+    "הן אף פעם לא נכנסות לעיר העתיקה",
+    "רובן מבקרות בכנסיית הקבר",
+    "רובן הולכות רק בוויה דולורוזה",
+    "רובן מבקרות רק בהר ציון"
+   ],
+   "correct": 1,
+   "explanation": "בפועל רוב הפרוטסטנטים מבקרים בכנסיית הקבר, מסיבות שונות; מדריך שאומר שהם לא הולכים לשם טועה.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:26:29",
+   "sourceQuote": "רוב הפרודסטנטים יבקרו בכנסיית הטבן.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-174",
+   "question": "איזה כלי חינוכי יצרו קבוצות פרוטסטנטיות במאה ה-19?",
+   "options": [
+    "מסלולי תחנות בכנסיות",
+    "תהלוכות ביום שישי",
+    "מוזיאונים לשרידי קדושים",
+    "\"מיני הולילנד\": דגמים של המקומות הקדושים"
+   ],
+   "correct": 3,
+   "explanation": "במקום ויה דולורוזה, יצרו מיני הולילנד כדי ללמוד על המקומות הקדושים, כמו \"מיני ישראל\".",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:29:33",
+   "sourceQuote": "אצל קבוצות פרוטוסטנטים במהמאה ה-19,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-175",
+   "question": "מה עושה המדריך כשקבוצה עושה את הוויה דולורוזה כטקס דתי של תפילה ותנועה?",
+   "options": [
+    "לא מפריע ולא מסביר",
+    "מסביר בכל תחנה",
+    "מוביל את התפילה",
+    "מקצר את המסלול"
+   ],
+   "correct": 0,
+   "explanation": "זה טקס בהובלת איש דת; המדריכה לא מפריעה להם ולא מסבירה.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:30:46",
+   "sourceQuote": "אם זה תפילה ותנועה, אני לא מקרקת.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-176",
+   "question": "מתי יוצאת תהלוכת הפרנציסקנים מהתחנה הראשונה לכנסיית הקבר?",
+   "options": [
+    "כל יום ראשון בבוקר",
+    "רק בחג הפסחא",
+    "כל יום שישי בשעה שלוש",
+    "כל ערב בשש"
+   ],
+   "correct": 2,
+   "explanation": "כל יום שישי בשעה שלוש, שעת מותו של ישוע, יוצאת תהלוכת הפרנציסקנים ואפשר להצטרף אליה.",
+   "level": 1,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:31:30",
+   "sourceQuote": "פי שלוש זה השעה של הסביבה, של הפתירה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-177",
+   "question": "למה אי אפשר לעבור עם קבוצה מתחנה לתחנה ולהתפלל בתוך כנסיית הקבר?",
+   "options": [
+    "בגלל רעש של תיירים",
+    "בגלל הסטטוס קוו",
+    "כי התחנות האחרונות סגורות",
+    "כי אסור לדבר בכנסייה"
+   ],
+   "correct": 1,
+   "explanation": "בגלל הסטטוס קוו; לכן עושים את התחנות האחרונות מול דלת הכנסייה ואז נכנסים.",
+   "level": 2,
+   "stop": "parvis",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:32:18",
+   "sourceQuote": "אז בכל מקרה תצטרכי להריץ את התחנות האחרונות מול הדלת של הכנסייה ואז להיכנס.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-178",
+   "question": "מי הקים את המנזר שבו נכללת הקשת, לצד המנזר הפרנציסקני?",
+   "options": [
+    "הבנדיקטינים",
+    "היוונים האורתודוקסים",
+    "הלותרנים",
+    "אחיות ציון"
+   ],
+   "correct": 3,
+   "explanation": "באותו זמן הוקם בשטח הסמוך מנזר אחיות ציון, והן שילבו את הקשת בתוך הכנסייה שלהן.",
+   "level": 2,
+   "stop": "antonia",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:37:41",
+   "sourceQuote": "ומקימים פה מנזר לאחיות, אחיות ציון,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-179",
+   "question": "איך מתאר יוספוס את הבריכה שמתחת למנזר אחיות ציון?",
+   "options": [
+    "כחלק מחפיר שהקיף את מצודת אנטוניה",
+    "כמקווה של הכוהנים",
+    "כבריכה מקורה בתוך המצודה",
+    "כמאגר מים של הורדוס אנטיפס"
+   ],
+   "correct": 0,
+   "explanation": "אצל יוספוס הבריכה מוזכרת כחלק מחפיר שהקיף את מצודת אנטוניה.",
+   "level": 3,
+   "stop": "antonia",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:38:42",
+   "sourceQuote": "ואצל יוספוס היא מוזכרת כחלק מחפיר שהקיף את מצודת האלגוריה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-180",
+   "question": "למה הריצוף שמעל הבריכה לא יכול להיות מתקופת מצודת אנטוניה?",
+   "options": [
+    "כי הוא עשוי שיש",
+    "כי יש עליו כתובת ערבית",
+    "כי הבריכה הייתה חפיר פתוח כשהמצודה עמדה",
+    "כי הוא נבנה בידי הצלבנים"
+   ],
+   "correct": 2,
+   "explanation": "חפיר מקורה אינו מגן; הבריכה הייתה פתוחה כשהמצודה עמדה, ולכן הקירוי והריצוף מעליה מאוחרים יותר.",
+   "level": 3,
+   "stop": "antonia",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:40:41",
+   "sourceQuote": "ברגע שמבינים שהבריכה הזאת היא חלק מהחפיר, אין סיכוי שהיא הייתה מרוצפת מעל, נכון?",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-181",
+   "question": "לפי המדריכה, מה העצה החשובה ביותר למדריך?",
+   "options": [
+    "לומר תמיד את כל המידע הארכיאולוגי",
+    "להתאים את ההדרכה לקבוצה",
+    "לדבר רק על הטקסט הדתי",
+    "לקצר כל הסבר לחמש דקות"
+   ],
+   "correct": 1,
+   "explanation": "הטיפ הכי חשוב הוא להתאים את ההדרכה לקבוצה; בלי התאמה לצרכים שלה, מאבדים אותה.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:42:53",
+   "sourceQuote": "הטייח הכי חשוב זה להתאים את ההדרכה לקבוצה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-182",
+   "question": "של מי השטח של התחנה הראשונה, ומה יש בו היום?",
+   "options": [
+    "של הפרנציסקנים, ויש בו כנסייה",
+    "של אחיות ציון, ויש בו מנזר",
+    "של הפטריארכיה היוונית, ויש בו מוזיאון",
+    "רכוש וקף מוסלמי, ויש בו בית ספר"
+   ],
+   "correct": 3,
+   "explanation": "אזור התחנה הראשונה הוא רכוש וקף מוסלמי, ויש שם היום בית ספר; לא רואים שם שום דבר נוצרי.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:43:13",
+   "sourceQuote": "כל האזור הזה של התחנה הראשונה זה רכוש וואקף,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-183",
+   "question": "באילו שפות מקפידים הפרנציסקנים להציג כל דבר במתחם שלהם?",
+   "options": [
+    "בעברית ובערבית",
+    "בלטינית ובאיטלקית",
+    "ביוונית ובארמית",
+    "באנגלית בלבד"
+   ],
+   "correct": 0,
+   "explanation": "הפרנציסקנים מקפידים שכל דבר יהיה בעברית ובערבית, השפות המקומיות.",
+   "level": 2,
+   "stop": "antonia",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:44:53",
+   "sourceQuote": "שכל דבר שעושים הם בעברית ובערבית, שזה השפות המקומיות.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-184",
+   "question": "מהו הסטודיום ביבליקום פרנציסקנום שליד תחנה 2?",
+   "options": [
+    "מנזר של אחיות ציון",
+    "בית ספר יסודי של הוקף",
+    "מוסד אקדמי פרנציסקני הקשור לרומא",
+    "מוזיאון של הכנסייה היוונית"
+   ],
+   "correct": 2,
+   "explanation": "זה מוסד אקדמי של הפרנציסקנים הקשור לרומא, עם לימודי תואר שני ושלישי בתיאולוגיה, במקרא ובארכיאולוגיה.",
+   "level": 2,
+   "stop": "antonia",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:45:45",
+   "sourceQuote": "וזה מוסד אקדמי שקשור לרומא,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-185",
+   "question": "באיזה ספר בשורה פילטוס שולח את ישוע להורדוס אנטיפס?",
+   "options": [
+    "מתי",
+    "לוקס",
+    "מרקוס",
+    "יוחנן"
+   ],
+   "correct": 1,
+   "explanation": "כל טקסט מספר משהו אחר: אצל מתי אשתו של פילטוס מספרת על חלום, ואצל לוקס הוא שולח את ישוע להורדוס אנטיפס.",
+   "level": 3,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:46:34",
+   "sourceQuote": "בלוקה אז הוא שולח אותו להורדוס אנטיפס,",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-186",
+   "question": "לפי הכנסייה הקתולית והפרוטסטנטים היום, את מי יש להאשים במות ישוע?",
+   "options": [
+    "את היהודים שעמדו שם",
+    "את הכוהנים בלבד",
+    "את החיילים הרומים",
+    "את כל בני האדם, בגלל נטייתם לחטוא"
+   ],
+   "correct": 3,
+   "explanation": "ישוע הלך אל הצליבה מרצונו, ואם יש להאשים מישהו, זה את כל בני האדם על נטייתם לחטוא.",
+   "level": 2,
+   "stop": "bg",
+   "source": "https://drive.google.com/file/d/1roRV0GJLKDP0thgU_B4UuTitjPtZaRfN/view",
+   "sourceRecording": "Via de lerosa.m4a",
+   "sourceTime": "00:49:23",
+   "sourceQuote": "זה את כל בני אדם על נטייתם לחטוא.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-187",
+   "question": "מי הם הארמנים הקתולים, שהשטח של התחנות השלישית והרביעית שייך להם?",
+   "options": [
+    "ארמנים שעברו לכנסייה היוונית-אורתודוקסית",
+    "קתולים לטינים שאימצו את השפה הארמנית",
+    "ארמנים שהתאחדו עם הקתולים ושומרים על המסורת הארמנית",
+    "ארמנים שהצטרפו לכנסייה הפרוטסטנטית"
+   ],
+   "correct": 2,
+   "explanation": "לפי המדריכה, אלה ארמנים שהיו חלק מהכנסייה הארמנית, התאחדו עם הקתולים ושומרים על המסורת הארמנית בליטורגיה.",
+   "level": 3,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:00:00",
+   "sourceQuote": "קבוצה של ארמנים שהיו חלק מהתנסייה הארמנית והתאחדו עם הקתולים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-188",
+   "question": "כמה פעמים נופל ישוע לפי תחנות הוויה דולורוזה?",
+   "options": [
+    "פעם אחת",
+    "שלוש פעמים",
+    "פעמיים",
+    "ארבע פעמים"
+   ],
+   "correct": 1,
+   "explanation": "התחנה השלישית מוקדשת לנפילה הראשונה, וישוע ייפול שלוש פעמים לאורך הדרך.",
+   "level": 1,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:00:00",
+   "sourceQuote": "ישוע נופלת בפעם הראשונה הוא ייפול שלוש פעמים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-189",
+   "question": "למי מוקדשת התחנה הרביעית בוויה דולורוזה?",
+   "options": [
+    "לאמו של ישוע",
+    "לשמעון מקירנה",
+    "לוורוניקה",
+    "לבנות ירושלים"
+   ],
+   "correct": 0,
+   "explanation": "התחנה הרביעית מוקדשת לאמו של ישוע, שרואה אותו בדרכו.",
+   "level": 1,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:00:00",
+   "sourceQuote": "התחנה הרביעית מוקדשת לאימא שלו",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-190",
+   "question": "הנפילה של ישוע לא מופיעה בברית החדשה. למה בכל זאת מדגישים אותה, לפי המדריכה?",
+   "options": [
+    "כדי לסמן את גבולות העיר העתיקה",
+    "כדי להסביר את מספר הכנסיות במסלול",
+    "כדי להזכיר נבואה מספר דניאל",
+    "כדי להראות את הסבל ואת האנושיות שלו"
+   ],
+   "correct": 3,
+   "explanation": "הנפילה מראה את הסבל והאנושיות של ישוע: גם הוא נופל, ולכן ברור שגם בני אדם נופלים.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:00:49",
+   "sourceQuote": "זה להראות את הסבל, להראות את האנושיות שלו",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-191",
+   "question": "לפי המדריכה, למה מרים הופכת לדמות כל כך משמעותית במסורת הנוצרית?",
+   "options": [
+    "היא כתבה את אחת הבשורות בברית החדשה",
+    "היא אם שמבינה אותנו, ואפשר להתפלל אליה כמתווכת",
+    "היא ייסדה את הכנסייה הראשונה בירושלים",
+    "היא הובילה את הצליינים הראשונים בוויה דולורוזה"
+   ],
+   "correct": 1,
+   "explanation": "אנשים מזדהים איתה כאם, מתפללים אליה, והיא נתפסת כמתווכת שמבינה אותם.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:01:33",
+   "sourceQuote": "כי אנשים יכולים להתפלל אליה, היא המתווכת, היא מבינה אותנו, היא אימא",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-192",
+   "question": "למי שייכת היום האכסניה האוסטרית בוויה דולורוזה?",
+   "options": [
+    "למדינת אוסטריה",
+    "למסדר הפרנציסקני",
+    "לכנסייה האוסטרית – הדיוקסיה של וינה",
+    "לפטריארכיה היוונית-אורתודוקסית"
+   ],
+   "correct": 2,
+   "explanation": "האכסניה שייכת היום לא למדינת אוסטריה אלא לכנסייה האוסטרית, לדיוקסיה של וינה.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:01:55",
+   "sourceQuote": "שייך היום לא למדינה אוסטריה אלא לכנסייה האוסטרית, לדייסיס של וינה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-193",
+   "question": "איזה שליט התארח באכסניה האוסטרית ב-1869, אחרי חנוכת תעלת סואץ?",
+   "options": [
+    "הקיסר פרנץ יוזף",
+    "הקייזר וילהלם השני",
+    "נפוליאון השלישי",
+    "הצאר אלכסנדר השני"
+   ],
+   "correct": 0,
+   "explanation": "פרנץ יוזף התארח באכסניה ב-1869, אחרי שהיה בחנוכת תעלת סואץ.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:02:27",
+   "sourceQuote": "זה התארח גם בפרנס יוזף, שהגיע לכאן ב-1869",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-194",
+   "question": "מה קרה לאכסניה האוסטרית בשנות ה-80?",
+   "options": [
+    "היא נמכרה לפטריארכיה הארמנית",
+    "היא נהרסה ונבנתה מחדש כמנזר",
+    "היא הפכה למוזיאון של הוויה דולורוזה",
+    "משרד הבריאות סגר את בית החולים והיא חזרה להיות אכסניה"
+   ],
+   "correct": 3,
+   "explanation": "המבנה שימש בית חולים עד שנות ה-80, ואז משרד הבריאות הישראלי סגר אותו והוא חזר להיות אכסניה.",
+   "level": 3,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:04:02",
+   "sourceQuote": "זה משמש בית חולים עד שנות ה-80, ואז משרד הבריאות הישראלי סוגר את הבית חולים",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-195",
+   "question": "איזו המלצה נותנת המדריכה לביקור באכסניה האוסטרית?",
+   "options": [
+    "להיכנס לכנסייה התת-קרקעית בחינם",
+    "לעלות לגג תמורת 5 ש״ח וליהנות מהתצפית",
+    "לראות את אבן הסף של שער העיר",
+    "לבקר בה עם קבוצה בכיסאות גלגלים"
+   ],
+   "correct": 1,
+   "explanation": "תמורת חמישה שקלים אפשר לעלות לגג וליהנות מתצפית יפה מאוד; המקום אינו נגיש בגלל המדרגות.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:04:16",
+   "sourceQuote": "ותמורת חמישה שקלים אפשר לעלות לגב וליהנות מהתצפית",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-196",
+   "question": "באיזו כנסייה, לפי המדריכה, כמעט לא מקפידים על כיסוי ראש לנשים?",
+   "options": [
+    "בכנסייה הקתולית",
+    "בכנסייה הרוסית-אורתודוקסית",
+    "בכנסייה היוונית-אורתודוקסית",
+    "בכנסייה האתיופית"
+   ],
+   "correct": 0,
+   "explanation": "בכנסייה הקתולית לא מקפידים על כך (אולי אצל המבוגרות), ובכנסיות האורתודוקסיות מקפידים יותר.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1KGha0SRpTbchmTw5iK-GW6PDKRnPdLGa/view",
+   "sourceRecording": "3 et 4.m4a",
+   "sourceTime": "00:03:16",
+   "sourceQuote": "לא מקפידים על זה בכנסייה הקתולית, אולי אצל המבוגרות",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-197",
+   "question": "איזה מסר אנושי מציעה המדריכה להעביר בתחנה של שמעון?",
+   "options": [
+    "שמעון הפך לקדוש חשוב בכנסייה",
+    "צריך לשאת את הצלב לבד עד הסוף",
+    "גם ישוע קיבל עזרה, וצריך לדעת לקבל עזרה",
+    "מי שעוזר לאחר זוכה בכנסייה לזכרו"
+   ],
+   "correct": 2,
+   "explanation": "לדבריה החשוב כאן הוא לא שמעון אלא ישוע שקיבל עזרה, ולדעת לקבל עזרה קשה יותר מלתת.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1cG4KqM6kDbC9zdUXwDexpoOq8BdIrAbw/view",
+   "sourceRecording": "5.m4a",
+   "sourceTime": "00:00:37",
+   "sourceQuote": "אלא לקבל, לדעת לקבל עזרה. אפילו ישוע מקבל עזרה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-198",
+   "question": "מה מספרים הצליינים על האבן שמנשקים בתחנה החמישית?",
+   "options": [
+    "שעליה נפל ישוע בפעם השנייה",
+    "שהיא אבן הסף של שער העיר",
+    "שעליה עמדה ורוניקה עם המטפחת",
+    "שעליה נשען ישוע כשהלך עם הצלב"
+   ],
+   "correct": 3,
+   "explanation": "צליינים מספרים כבר מאות שנים שעל האבן הזאת נשען ישוע כשהלך עם הצלב, והיא קודמת למבנה הפרנציסקני.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1cG4KqM6kDbC9zdUXwDexpoOq8BdIrAbw/view",
+   "sourceRecording": "5.m4a",
+   "sourceTime": "00:01:13",
+   "sourceQuote": "שעליה יהושע נשען שהוא הלך פה עם הצלב",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-199",
+   "question": "ממתי מוכר הסיפור על ורוניקה והמטפחת?",
+   "options": [
+    "מהברית החדשה",
+    "מהמאה ה-7",
+    "מהמאה ה-4, מימי הלנה",
+    "מהמאה ה-19"
+   ],
+   "correct": 1,
+   "explanation": "הסיפור לא מופיע בברית החדשה ולא בראשית הנצרות; הוא מופיע פתאום במאה השביעית.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1NLLOBF0T763a3usLvdFsNDtsQNiJf2hk/view",
+   "sourceRecording": "6.m4a",
+   "sourceTime": "00:00:36",
+   "sourceQuote": "הסיפור הזה לא מוכר בכלל עד המאה השביעית",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-200",
+   "question": "במה שונה דמות ישוע במטפחת של ורוניקה מזו שבמטפחת של המלך אבגר?",
+   "options": [
+    "בוורוניקה הוא מצויר כתינוק",
+    "באבגר רואים את הצלב על כתפו",
+    "בוורוניקה הוא מדמם ועם כתר קוצים",
+    "באבגר הוא עונד כתר זהב"
+   ],
+   "correct": 2,
+   "explanation": "מטפחת אבגר לא קשורה לצליבה, ולכן אין בה דם וכתר קוצים; אצל ורוניקה תמיד רואים את כתר הקוצים.",
+   "level": 3,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1NLLOBF0T763a3usLvdFsNDtsQNiJf2hk/view",
+   "sourceRecording": "6.m4a",
+   "sourceTime": "00:02:10",
+   "sourceQuote": "אז הוא לא מדמם ואין לו כתר קוצים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-201",
+   "question": "מה ממליצה המדריכה לעשות בתחנה השישית כשהרחוב צפוף מאוד?",
+   "options": [
+    "להיכנס לקפלה הקטנה מתחת לאדמה ולשבת שם כמה דקות",
+    "להמשיך מיד לתחנה הבאה בלי לעצור",
+    "לעלות לגג הכנסייה מעל התחנה",
+    "להסביר בחנות הסמוכה ליד הטליתות"
+   ],
+   "correct": 0,
+   "explanation": "כשהדלת פתוחה, אפשר להיכנס לקפלה התת-קרקעית הקרירה והשקטה ולהסביר שם – זה בהחלט שווה.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1NLLOBF0T763a3usLvdFsNDtsQNiJf2hk/view",
+   "sourceRecording": "6.m4a",
+   "sourceTime": "00:03:02",
+   "sourceQuote": "אז נכנסים לתוך הקפלה ויושבים שם חמש דקות, זה בהחלט שווה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-202",
+   "question": "אילו סמלים מופיעים על הטליתות שנמכרות לנוצרים בוויה דולורוזה?",
+   "options": [
+    "צלב, יונה וכתר קוצים",
+    "ציצית, שופר ולוחות הברית",
+    "עוגן, אלפא ואומגה",
+    "מנורה, מגן דוד ודג"
+   ],
+   "correct": 3,
+   "explanation": "על הטליתות המיועדות לנוצרים יש מנורה, מגן דוד ודג – בעיקר אוונגליסטים שמזדהים עם השורשים היהודיים.",
+   "level": 2,
+   "stop": "edot",
+   "source": "https://drive.google.com/file/d/1NLLOBF0T763a3usLvdFsNDtsQNiJf2hk/view",
+   "sourceRecording": "6.m4a",
+   "sourceTime": "00:03:20",
+   "sourceQuote": "יש עליהן מנורה מגן דוד ודג",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-203",
+   "question": "איזה דיוק חשוב למורה דרך כשמדברים על נוצרים שעונדים טלית?",
+   "options": [
+    "כל הנוצרים היום הם צאצאי יהודים",
+    "נוצרים היום לא היו פעם יהודים – הם גויים שקיבלו את האמונה",
+    "האוונגליסטים חוזרים ליהדות",
+    "רק הקתולים מזדהים עם השורשים היהודיים"
+   ],
+   "correct": 1,
+   "explanation": "לדברי המדריכה צריך לדייק: הנוצרים היום באים מקהילת הגויים שקיבלו את האמונה, ולא היו פעם יהודים.",
+   "level": 2,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1NLLOBF0T763a3usLvdFsNDtsQNiJf2hk/view",
+   "sourceRecording": "6.m4a",
+   "sourceTime": "00:04:06",
+   "sourceQuote": "אז לדייק, נוצרים היום הם לא היו פעם יהודים.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-204",
+   "question": "מה מנציחה התחנה השביעית, מלבד הנפילה השנייה?",
+   "options": [
+    "את היציאה מהעיר והכרזת האשמה נגד ישוע",
+    "את המפגש של ישוע עם אמו",
+    "את ניגוב פניו בידי ורוניקה",
+    "את פשיטת בגדיו"
+   ],
+   "correct": 0,
+   "explanation": "הפרנציסקנים דמיינו כאן את שער העיר, ושם, לפי המסורת, הכריזו במה מאשימים אותו.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/13FwPCTiIEGP1hW8TqOQi5KL1qGu_QmsI/view",
+   "sourceRecording": "7.m4a",
+   "sourceTime": "00:00:48",
+   "sourceQuote": "אבל גם את ההודאה במה מאשימים אותו, בהרשעה",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-205",
+   "question": "מה דעת הארכיאולוגים על ״אבן הסף״ שהרוסים זיהו באכסניה של אלכסנדר נבסקי?",
+   "options": [
+    "שזה השער שממנו יצא ישוע לגולגולתא",
+    "שזה שער מהתקופה הצלבנית",
+    "שזה לא היה שער עיר – השער קטן מדי",
+    "שזה שער מימי בית ראשון"
+   ],
+   "correct": 2,
+   "explanation": "אין ארכיאולוג שחושב שזה היה שער עיר: השער קטן מדי והבריחים פשוטים מדי.",
+   "level": 3,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/13FwPCTiIEGP1hW8TqOQi5KL1qGu_QmsI/view",
+   "sourceRecording": "7.m4a",
+   "sourceTime": "00:01:44",
+   "sourceQuote": "אין אף ארכיאולוג שחושב שזה היה שער עיר",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-206",
+   "question": "למה כמעט לא נשאר כלום מאתר ההנצחה של התחנה השמינית, מלבד בסיס עמוד?",
+   "options": [
+    "הוא נהרס ברעידת אדמה במאה ה-20",
+    "היוונים קנו את השטח במאה ה-19 ובנו שם מנזר",
+    "הפרנציסקנים העבירו אותו לכנסיית הקבר",
+    "הוא הפך לחנות במאה ה-16"
+   ],
+   "correct": 1,
+   "explanation": "כנראה הייתה שם קפלה מסודרת יותר, אבל במאה ה-19 היוונים קנו את כל השטח ובנו מנזר.",
+   "level": 3,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1SV0IwL9CMRkdhkMA0HCsiU4lFtorujsI/view",
+   "sourceRecording": "8.m4a",
+   "sourceTime": "00:00:34",
+   "sourceQuote": "אבל במהלך המאה ה-19 היוונים קנו את כל השטח הזה ובנו פה מנזר.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-207",
+   "question": "תיירים שואלים: ״גם ישוע עלה וירד עם הצלב בדרך הזאת?״ מה התשובה הבסיסית?",
+   "options": [
+    "לא – לא היו בתים, זה היה מחוץ לעיר",
+    "כן – הדרך הייתה תלולה גם אז",
+    "כן – הוא עבר דרך אותן סמטאות",
+    "לא – הוא עבר בדרך בתוך מנהרה"
+   ],
+   "correct": 0,
+   "explanation": "התשובה הבסיסית לכל קבוצה: לא, כי לא היו בניינים – המקום היה מחוץ לעיר.",
+   "level": 1,
+   "stop": "hadracha",
+   "source": "https://drive.google.com/file/d/1KEObtYyiuHV0V_ddrSjwYsyt6hXTQTgz/view",
+   "sourceRecording": "8.1.m4a",
+   "sourceTime": "00:00:40",
+   "sourceQuote": "התשובה תהיה לא, כי לא היו בתים, זה היה מחוץ לעיר.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  },
+  {
+   "id": "via-dolorosa-rec-208",
+   "question": "לפי המדריכה, למה מיקום חלק מהתחנות בוויה דולורוזה נראה מקרי?",
+   "options": [
+    "כי כל תחנה נקבעה לפי ממצא ארכיאולוגי",
+    "כי השלטון העות'מאני קבע את המיקומים",
+    "אין רציונל מתוכנן, כי לא יודעים איפה האירועים קרו",
+    "כי התחנות מסודרות לפי סדר הבשורות"
+   ],
+   "correct": 2,
+   "explanation": "המסלול התפתח בהדרגה ואין לו רציונל ספציפי, כי לא יודעים איפה הדברים קרו; אין טקסט של מי שתכנן.",
+   "level": 2,
+   "stop": "via",
+   "source": "https://drive.google.com/file/d/1bS34suff-hO5viCSMzICC7CDdnQQaF9a/view",
+   "sourceRecording": "Copte.m4a",
+   "sourceTime": "00:00:36",
+   "sourceQuote": "אין פה איזה משהו עם איזה רציונל ספציפי, כי אנחנו לא יודעים איפה זה קרה.",
+   "sourceType": "הקלטה מהסיור (תמלול אוטומטי)"
+  }
+ ]
+}

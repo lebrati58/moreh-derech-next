@@ -1,0 +1,66 @@
+name: Transcription des enregistrements (ivrit.ai)
+# Transcrit les fichiers de tools/transcribe/files.json (liens Drive en lecture).
+# Le texte est chiffré avec tools/transcribe/pub.pem avant de quitter chaque machine :
+# rien de lisible dans les journaux, les artefacts ou le dépôt.
+# Pour relancer : partager les fichiers en « lecteur avec le lien » (copies dans un dossier temporaire),
+# mettre leurs id dans files.json, générer une paire de clés (pub.pem ici, clé privée gardée hors du dépôt),
+# puis pousser sur une branche transcribe/… (ou Actions → Run workflow).
+on:
+  workflow_dispatch:
+  push:
+    branches: ['transcribe/**']
+    paths:
+      - 'tools/transcribe/files.json'
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.p.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - id: p
+        run: echo "matrix=$(python3 tools/transcribe/plan.py tools/transcribe/files.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with: { name: audio, path: audio, retention-days: 1 }
+  chunk:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: audio, path: audio }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q faster-whisper==1.1.1 requests
+      - name: Transcrire
+        run: |
+          I=$(printf %02d ${{ matrix.i }}); S=${{ matrix.start }}
+          ffmpeg -v error -ss $S -t ${{ matrix.len }} -i audio/$I.m4a -ac 1 -ar 16000 c.wav
+          python3 tools/transcribe/run.py c.wav $S out.txt
+          N=$(printf %06d ${S%.*}); mkdir enc
+          openssl rand -out k.bin 32
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in out.txt -out enc/$I-$N.txt.enc -pass file:k.bin
+          openssl pkeyutl -encrypt -pubin -inkey tools/transcribe/pub.pem -in k.bin -out enc/$I-$N.key.enc
+          rm -f k.bin out.txt; echo "lignes: $(ls enc)"
+      - uses: actions/upload-artifact@v4
+        with: { name: 'enc-${{ matrix.i }}-${{ strategy.job-index }}', path: enc }
+  collect:
+    needs: chunk
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { pattern: 'enc-*', path: dl, merge-multiple: true }
+      - run: |
+          mkdir -p tools/transcribe/out && cp dl/* tools/transcribe/out/ && ls tools/transcribe/out | wc -l
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/transcribe/out && git commit -m "data: transcriptions chiffrées" && git push

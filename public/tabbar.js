@@ -9,19 +9,19 @@
     he: { exam: 'אתגר המבחן', examSub: 'מתכננים יום טיול וכותבים הדרכות', home: 'בית', map: 'מפה', journey: 'המסע', klass: 'הכיתה', more: 'עוד', moreTitle: 'עוד', close: 'סגירה',
       rtg: 'ספריית רט״ג', rtgSub: 'מדריכים, עלונים ומפות של רשות הטבע והגנים', lib: 'ספריית הסיורים', libSub: 'כל 22 הסיורים והמסמכים', comm: 'קטעי דרך של הקהילה', commSub: 'מסלולים שתלמידים שיתפו',
       doc: 'הוספת מסמך לסיור', docSub: 'PDF או Word לסיור קיים', create: 'יצירת מסלול חדש', createSub: 'קטע דרך עם שאלות משלכם',
-      inst: 'התקנה ושיתוף האפליקציה', instSub: 'קישור ישיר להתקנה בטלפון — לשלוח לחברים', guide: 'חידון חי לקבוצה', guideSub: 'להפעלה באוטובוס · מדריכים ותלמידי הקורס', fb: 'רעיון, בעיה או טעות?', fbSub: 'ההודעה מגיעה ישירות לצוות' },
+      inst: 'התקנה ושיתוף האפליקציה', instSub: 'קישור ישיר להתקנה בטלפון — לשלוח לחברים', guide: 'חידון חי לקבוצה', guideSub: 'להפעלה באוטובוס · מדריכים ותלמידי הקורס', fb: 'רעיון, בעיה או טעות?', fbSub: 'ההודעה מגיעה ישירות לצוות', secret: 'ממילא — מה היה כאן', secretSub: 'מקומות מדויקים ומקורות · למדריך' },
     fr: { exam: 'Défi de l’examen', examSub: 'Journée, sites et interventions', home: 'Accueil', map: 'Carte', journey: 'Parcours', klass: 'Classe', more: 'Plus', moreTitle: 'Plus', close: 'Fermer',
       rtg: 'Bibliothèque RTG', rtgSub: 'Guides, brochures et cartes de l’Autorité des parcs', lib: 'Bibliothèque des sorties', libSub: 'Les 22 סיורים et leurs documents', comm: 'Parcours de la communauté', commSub: 'Trajets partagés par les élèves',
       doc: 'Ajouter un document', docSub: 'PDF ou Word pour une sortie', create: 'Créer un parcours', createSub: 'Un trajet avec vos propres questions',
-      inst: 'Installer et partager l’appli', instSub: 'Lien direct d’installation — à envoyer aux amis', guide: 'Quiz en direct', guideSub: 'Lancer pour un groupe · guides et élèves du cours', fb: 'Une idée, un bug, une erreur ?', fbSub: 'Le message arrive directement à l’équipe' },
+      inst: 'Installer et partager l’appli', instSub: 'Lien direct d’installation — à envoyer aux amis', guide: 'Quiz en direct', guideSub: 'Lancer pour un groupe · guides et élèves du cours', fb: 'Une idée, un bug, une erreur ?', fbSub: 'Le message arrive directement à l’équipe', secret: 'Mamilla — ce qu’il y avait avant', secretSub: 'Lieux précis et sources · pour le guide' },
     en: { exam: 'Exam challenge', examSub: 'Plan a day, write guiding units', home: 'Home', map: 'Map', journey: 'Journey', klass: 'Class', more: 'More', moreTitle: 'More', close: 'Close',
       rtg: 'INPA library', rtgSub: 'Guides, brochures and maps from the Parks Authority', lib: 'Tour library', libSub: 'All 22 tours and their documents', comm: 'Community routes', commSub: 'Routes shared by students',
       doc: 'Add a document', docSub: 'PDF or Word for a tour', create: 'Create a route', createSub: 'A road segment with your own questions',
-      inst: 'Install and share the app', instSub: 'Direct install link — send it to friends', guide: 'Live group quiz', guideSub: 'Run it on the bus · guides and course students', fb: 'Idea, bug or mistake?', fbSub: 'Your message goes straight to the team' },
+      inst: 'Install and share the app', instSub: 'Direct install link — send it to friends', guide: 'Live group quiz', guideSub: 'Run it on the bus · guides and course students', fb: 'Idea, bug or mistake?', fbSub: 'Your message goes straight to the team', secret: 'Mamilla — what stood here', secretSub: 'Exact places and sources · for the guide' },
     ru: { exam: 'Экзамен', examSub: 'План дня и тексты экскурсий', home: 'Главная', map: 'Карта', journey: 'Мой путь', klass: 'Класс', more: 'Ещё', moreTitle: 'Ещё', close: 'Закрыть',
       rtg: 'Библиотека УПП', rtgSub: 'Путеводители, буклеты и карты Управления парков', lib: 'Библиотека экскурсий', libSub: 'Все 22 экскурсии и документы', comm: 'Маршруты сообщества', commSub: 'Маршруты от учеников',
       doc: 'Добавить документ', docSub: 'PDF или Word для экскурсии', create: 'Создать маршрут', createSub: 'Участок дороги со своими вопросами',
-      inst: 'Установить и поделиться', instSub: 'Прямая ссылка для установки', guide: 'Живая викторина', guideSub: 'Для группы · гиды и ученики курса', fb: 'Идея, ошибка или проблема?', fbSub: 'Сообщение сразу получит команда' }
+      inst: 'Установить и поделиться', instSub: 'Прямая ссылка для установки', guide: 'Живая викторина', guideSub: 'Для группы · гиды и ученики курса', fb: 'Идея, ошибка или проблема?', fbSub: 'Сообщение сразу получит команда', secret: 'Мамилла — что здесь было', secretSub: 'Точные места и источники · для гида' }
   };
 
   var TABS = [
@@ -57,6 +57,7 @@
     '.md-sheet-item .si{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#22306a;font-size:20px}' +
     '.md-sheet-item small{display:block;font-weight:600;color:#b5c3ee;font-size:12.5px;margin-top:2px}' +
     '.md-sheet hr{border:0;border-top:1px solid #2e3f7a;margin:6px 4px}' +
+    '.md-secret summary{list-style:none;cursor:pointer;text-align:center;color:#56679e;font-size:18px;line-height:1;padding:6px;margin-top:4px;border-radius:10px}.md-secret summary::-webkit-details-marker{display:none}.md-secret summary:focus-visible{outline:2px solid #94f5de}' +
     'body.md-has-tabbar{padding-bottom:calc(70px + env(safe-area-inset-bottom))}';
 
   function lang() {
@@ -83,11 +84,13 @@
     bar.innerHTML = TABS.map(function (x) {
       return '<a class="md-tab" href="' + x.href + '"' + (current === x.k ? ' aria-current="page"' : '') + '><span class="ti" aria-hidden="true">' + x.icon + '</span>' + esc(t[x.k]) + '</a>';
     }).join('') + '<button type="button" class="md-tab" id="mdMore" aria-haspopup="dialog"' + (current === 'more' ? ' aria-current="page"' : '') + '><span class="ti" aria-hidden="true">☰</span>' + esc(t.more) + '</button>';
+    // Entrée discrète : repliée sous « ⋯ » en bas du menu (outil de Lionel pour guider, pas un jeu).
+    var secret = '<details class="md-secret"><summary aria-label="' + esc(t.secret) + '">⋯</summary><a class="md-sheet-item" href="mamilla.html"><span class="si" aria-hidden="true">🧱</span><span>' + esc(t.secret) + '<small>' + esc(t.secretSub) + '</small></span></a></details>';
     var fb = window.MDLFeedback ? '<hr><button type="button" class="md-sheet-item" data-feedback><span class="si" aria-hidden="true">💡</span><span>' + esc(t.fb) + '<small>' + esc(t.fbSub) + '</small></span></button>' : '';
     bg.innerHTML = '<div class="md-sheet" role="dialog" aria-modal="true" aria-label="' + esc(t.moreTitle) + '"><div class="md-sheet-head"><b>' + esc(t.moreTitle) + '</b><button type="button" class="md-sheet-x" aria-label="' + esc(t.close) + '">✕</button></div>' +
       MORE.map(function (x, i) {
         return (x.k === 'guide' ? '<hr>' : '') + '<a class="md-sheet-item" href="' + x.href + '"><span class="si" aria-hidden="true">' + x.icon + '</span><span>' + esc(t[x.k]) + '<small>' + esc(t[x.k + 'Sub']) + '</small></span></a>';
-      }).join('') + fb + '</div>';
+      }).join('') + fb + secret + '</div>';
     document.getElementById('mdMore').addEventListener('click', open);
   }
   function open() { bg.hidden = false; var x = bg.querySelector('.md-sheet-x'); if (x) x.focus(); }

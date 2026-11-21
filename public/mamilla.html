@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#081027">
+<meta name="robots" content="noindex">
+<title>ממילא — מה היה כאן לפני הקניון | MOREH DERECH NEXT</title>
+<link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<style>
+:root{color-scheme:dark;--bg:#081027;--panel:#111a3d;--panel-2:#1a2553;--line:#3f5290;--ink:#f4f6ff;--muted:#a9b8df;--gold:#ffd66e;--teal:#6ff0d4;--warn:#ffb36b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Arial Hebrew',Arial,sans-serif;line-height:1.5}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+header{padding:calc(env(safe-area-inset-top,0px) + 14px) 14px 8px;max-width:760px;margin:auto}
+.eyebrow{font-size:12px;font-weight:900;letter-spacing:1px;color:var(--gold)}
+h1{font-size:24px;margin:4px 0 6px;line-height:1.2}
+.lead{margin:0;color:var(--muted);font-size:14px}
+#map{position:sticky;top:0;z-index:5;height:38vh;min-height:230px;max-height:380px;border-block:1px solid var(--line);background:#0b1433}
+.leaflet-container{font-family:inherit}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--muted);padding:8px 14px 0;max-width:760px;margin:auto}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.d-exact{background:var(--teal)}.d-approx{background:var(--warn)}.d-none{background:#6c7aa8}
+main{max-width:760px;margin:auto;padding:8px 12px 30px}
+.place{scroll-margin-top:calc(min(38vh,380px) + 12px);background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:10px 0;overflow:hidden}
+.place.on{border-color:var(--gold);box-shadow:0 0 0 2px #ffd66e55}
+.head{display:flex;align-items:center;gap:10px;width:100%;min-height:62px;padding:10px 12px;border:0;background:none;color:inherit;text-align:start;font:inherit;cursor:pointer}
+.num{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--panel-2);border:2px solid var(--gold);color:var(--gold);font-weight:900;font-size:17px}
+.head b{display:block;font-size:17px;line-height:1.25}
+.head small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.body{padding:0 14px 14px}
+.body[hidden]{display:none}
+.prec{display:inline-block;font-size:12px;font-weight:800;border-radius:8px;padding:3px 8px;margin:0 0 8px}
+.p-exact{background:#163b3a;color:var(--teal)}.p-approx{background:#3d2a14;color:var(--warn)}.p-none{background:#232c52;color:#c3cdf0}
+ul{margin:4px 0 8px;padding-inline-start:20px}li{margin:5px 0}
+.look{background:#0d1638;border-inline-start:3px solid var(--teal);border-radius:8px;padding:8px 10px;font-size:14px;margin:8px 0}
+.warn{background:#2a1d10;border-inline-start:3px solid var(--warn);border-radius:8px;padding:8px 10px;font-size:13.5px;margin:8px 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+.btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:9px 13px;border-radius:12px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink);text-decoration:none;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit}
+.btn.main{background:var(--gold);color:#1b2147;border-color:var(--gold)}
+.src{font-size:12.5px;color:var(--muted)}
+.src a{color:#cfe0ff}
+.foot{font-size:12.5px;color:var(--muted);margin-top:18px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ירושלים · ממילא · לשימוש המדריך</div>
+  <h1>מה היה כאן לפני הקניון</h1>
+  <p class="lead">לוחצים על מקום כשמדברים עליו: המפה זזה אליו, ומתחת מופיעים הסיפור, מה להראות ומקורות.</p>
+</header>
+<div id="map" role="region" aria-label="מפת המקומות"></div>
+<div class="legend" aria-hidden="true">
+  <span><i class="dot d-exact"></i>מיקום מדויק</span>
+  <span><i class="dot d-approx"></i>מיקום בקירוב</span>
+  <span><i class="dot d-none"></i>אין נקודה מאומתת (חיפוש בלבד)</span>
+</div>
+<main id="list"></main>
+<p class="foot" style="max-width:760px;margin:0 auto 30px;padding:0 14px">כל עובדה כאן מלווה במקור. כשהמקורות סותרים זה את זה — כתוב על כך, והעובדה השנויה במחלוקת לא מוצגת כוודאית. הנקודות על המפה הן מקורבות לצורך הצבעה בשטח, לא מדידה.</p>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script>
+(function () {
+  'use strict';
+  var GM = function (q) { return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q); };
+  var S = {
+    wMamilla: ['ויקיפדיה (אנגלית): Mamilla', 'https://en.wikipedia.org/wiki/Mamilla'],
+    wPool: ['ויקיפדיה (אנגלית): Mamilla Pool', 'https://en.wikipedia.org/wiki/Mamilla_Pool'],
+    wMall: ['ויקיפדיה (אנגלית): Mamilla Mall', 'https://en.wikipedia.org/wiki/Mamilla_Mall'],
+    wStern: ['ויקיפדיה (אנגלית): Stern House', 'https://en.wikipedia.org/wiki/Stern_House'],
+    wGate: ['ויקיפדיה (אנגלית): Jaffa Gate', 'https://en.wikipedia.org/wiki/Jaffa_Gate'],
+    wChapel: ['ויקיפדיה (אנגלית): Chapel of Saint Vincent de Paul', 'https://en.wikipedia.org/wiki/Chapel_of_Saint_Vincent_de_Paul,_Jerusalem'],
+    wDC: ['ויקיפדיה (אנגלית): Daughters of Charity', 'https://en.wikipedia.org/wiki/Daughters_of_Charity_of_Saint_Vincent_de_Paul'],
+    wWasson: ['ויקיפדיה (אנגלית): Thomas C. Wasson', 'https://en.wikipedia.org/wiki/Thomas_C._Wasson'],
+    pts: ['Pro Terra Sancta — Dar Mamilla', 'https://darmamillaguesthouse.proterrasancta.org/darmamillaguesthouse/en/?p=777'],
+    bar: ['Biblical Archaeology Review 22:2 (1996), רוני רייך', 'https://old.biblicalarchaeology.org/node/121680'],
+    bai: ['Bible and Interpretation — הכיבוש הפרסי (614)', 'https://bibleinterp.arizona.edu/node/2487'],
+    toi: ['Times of Israel — Mamilla rose from the rubble', 'https://www.timesofisrael.com/mamilla-the-jerusalem-border-neighborhood-that-rose-from-the-rubble/amp/'],
+    jpost: ['Jerusalem Post — Down the storied streets of Mamilla', 'https://www.jpost.com/in-jerusalem/down-the-storied-streets-of-mamilla-396543'],
+    jfc: ['ארכיון הסרטים הישראלי — יומן גבע 488 (1971)', 'https://jfc.org.il/en/news_journal/60863-2/101601-2'],
+    eretz: ['מוזיאון ארץ ישראל — Remembering the Mamila Quarter', 'https://www.eretzmuseum.org.il/en/exhibitions/remembering-the-mamila-quarter/'],
+    frus: ['משרד החוץ האמריקאי — FRUS 1948', 'https://history.state.gov/historicaldocuments/frus1948v05p2/d320'],
+    inn: ['Israel National News — Hotel Fast / Jaffa Gate', 'https://www.israelnationalnews.com/news/200124'],
+    rem: ['Real Estate Magazine — Building by numbers', 'https://realestatemagazine.ca/building-by-numbers-in-jerusalem'],
+    inbal: ['Inbal Hotel — La Mamilla history', 'https://www.inbalhotel.com/?p=4885']
+  };
+
+  var P = [
+    { id: 'pool', name: 'בריכת ממילא', sub: 'תקופה רומית · ביזנטית', lat: 31.77778, lon: 35.22056, prec: 'exact', precTxt: 'מיקום מדויק · ויקיפדיה',
+      before: [
+        'מאגר מים עתיק שכנראה נבנה בימי הורדוס, בנפח של כ-30,000 מ״ק. תעלה תת-קרקעית חיברה אותו לבריכת חזקיהו שבתוך העיר.',
+        'בשנת 614, בכיבוש הפרסי, נטבחו נוצרים ליד הבריכה. הכרוניקן הביזנטי אסטרטגיוס מייחס את הטבח לנקמת היהודים — זו גרסה של מקור נוצרי אחד, וכך יש להציג אותה.'
+      ],
+      look: 'לא על המדרחוב — מצביעים מערבה, לכיוון גן העצמאות.', src: ['wPool', 'wMamilla'] },
+    { id: 'cave', name: 'מערת הקבורה והקפלה הביזנטית', sub: 'שנת 614 · נתגלתה ב-1989–1991', prec: 'none', precTxt: 'אין נקודה מדויקת — היום מתחת לחניון ממילא', q: 'Mamilla Mall parking Jerusalem',
+      before: [
+        'עבודות הבנייה של החניון חשפו מערה טבעית, כ-12 מ׳ אורך ו-3 מ׳ רוחב, מלאה בעצמות של מאות אנשים, רובם צעירים, משני המינים.',
+        'לפני המערה עמדה קפלה קטנה עם רצפת פסיפס, ובאפסיס שרידי ציור של מלאך פורש ידיים.',
+        'החופר, הארכאולוג רוני רייך, המשיך בעבודה למרות הטרדה של מפגינים חרדים. לדעתו אלה קורבנות 614.'
+      ],
+      look: 'אין מה לראות — הקפלה מכוסה בחניון. מספרים כשעומדים מעל.', src: ['bar', 'bai', 'wMamilla'] },
+    { id: 'convent', name: 'מנזר סן ונסן דה פול', sub: 'סוף המאה ה-19 · נשאר במקומו', lat: 31.7783, lon: 35.2239, prec: 'approx', precTxt: 'מיקום בקירוב (כ-100 מ׳) · ויקיפדיה',
+      before: [
+        'נוסד בשנות ה-80 של המאה ה-19 על ידי האחיות של מסדר בנות הצדקה, בתחילה לטיפול בחולי צרעת.',
+        'זה היה הבניין הראשון ברחוב ממילא. האחיות בנו שורת חנויות בחזית ומימנו מדמי השכירות את המנזר — ההתחלה של הרחוב המסחרי.',
+        'תוכנית 1972 קבעה להרוס כמעט את כל השכונה חוץ ממנו.'
+      ],
+      warn: 'שנת הייסוד: מקור אחד כותב 1885 ואחר 1886 — לכן כתוב רק „שנות ה-80”.',
+      look: 'החזית הניאו-רומנסקית מהמדרחוב, בלי להיכנס.', src: ['wDC', 'pts', 'wChapel', 'wMamilla'] },
+    { id: 'stern', name: 'בית שטרן — בית הרצל', sub: 'שנות ה-70 של המאה ה-19 · פורק והורכב מחדש', lat: 31.777568, lon: 35.224393, prec: 'approx', precTxt: 'נקודת התצלום הגאוגרפי בוויקישיתוף — לא בהכרח מיקום הבית היום', q2: 'Steimatzky Mamilla Jerusalem',
+      before: [
+        'נבנה בשביל משפחת יהודה שטרן, מהגרים מגרמניה. עמד ברחוב ממילא 18, ליד שער יפו.',
+        'ב-1898 הגיע הרצל בדיוק בזמן ביקור הקיסר וילהלם השני. פמליית הקיסר תפסה את החדר שלו במלון, והמלונאי ליפמן, שריחם עליו, השכיב אותו במסדרון. מיכאל שטרן, בנו של יהודה, הזמין אותו לביתו — 4 לילות.',
+        'החדר של הרצל הפך למוזיאון קטן.',
+        '1971: יומן גבע מדווח שהבית ניצל מהריסה אחרי מחאה של משפחת שטרן. 1990: צו של בית המשפט העליון עיכב את ההריסה.',
+        'בסוף פורק אבן אחר אבן, אוחסן כעשר שנים והורכב מחדש בסמוך — מכאן המספרים על האבנים.'
+      ],
+      warn: 'שנת הבנייה: ויקיפדיה כותבת 1877, ג׳רוזלם פוסט כותב 1870 — לכן „שנות ה-70”.',
+      look: 'המספרים הצבועים על האבנים סביב הפתחים.', src: ['wStern', 'jfc', 'wMall', 'jpost'] },
+    { id: 'clark', name: 'בית קלארק', sub: '1898 · עומד במקומו', prec: 'none', precTxt: 'אין נקודה מאומתת — חיפוש לפי מסעדת לוצ׳יאנה', q: 'Luciana Mamilla Jerusalem',
+      before: [
+        'נבנה ב-1898 על ידי הרברט אדגר קלארק, שהגיע לארץ בגיל 9 עם קבוצת פרוטסטנטים אדוקים שהקימה את המושבה האמריקאית ביפו.',
+        'קלארק ניהל את הסניף המקומי של תומס קוק, וארגן את רוב הסידורים לביקור של הרצל ושל הקיסר באותו שבוע. ב-1905–1907 היה סגן הקונסול האמריקאי.',
+        'שלוש קומות, גג משונן, אבן אדומה ולבנה בסגנון ממלוכי, ורצפות המרפסות משיש קררה.'
+      ],
+      warn: 'ויקיפדיה: הבניין עומד במקומו המקורי ושופץ. מקור אחר כותב „שוחזר”. כדאי לומר „שופץ במקומו”.',
+      look: 'שורות האבן האדומה, הקשתות והמרפסות — בלי להיכנס למסעדה.', src: ['toi', 'jpost', 'wMall', 'inbal'] },
+    { id: 'wall', name: 'הקיר עם האבנים הממוספרות מול אקשה', sub: 'פירוק והרכבה מחדש', prec: 'none', precTxt: 'אין נקודה מאומתת — חיפוש לפי הכתובת שדרות אלרוב ממילא 17', q: '17 Alrov Mamilla Avenue Jerusalem',
+      before: [
+        'בזמן ההריסה הקפידו הפועלים לא לשבור את אבני הבנייה, כי רבות מהן נועדו להרכבה מחדש של אותם בניינים במדרחוב החדש.',
+        'מתוך הבניינים ההיסטוריים, כחצי תריסר מציגים את האבנים הממוספרות.'
+      ],
+      warn: 'הקיר הזה מול הכניסה לספא מתואר במקור יחיד (מדריך תיירות). לבדוק במקום לפני שמראים לקבוצה.',
+      look: 'הקודים הצבועים על האבנים והחיבורים ביניהן.', src: ['rem'] },
+    { id: 'border', name: 'קו הגבול 1948–1967', sub: 'מלחמה, שטח הפקר, פינוי', prec: 'none', precTxt: 'אין קו מדויק — הרבע המזרחי של השכונה, לכיוון החומה', q: 'Mamilla Jerusalem',
+      before: [
+        '2 בדצמבר 1947, אחרי החלטת החלוקה: מתפרעים הציתו חנויות יהודיות וקולנוע בבעלות ערבית.',
+        '1948: השכונה הפכה לשדה קרב, ותושבים יהודים וערבים ברחו.',
+        '22 במאי 1948: הקונסול הכללי האמריקאי תומס וסון נפצע מירי צלף בדרכו חזרה מישיבה של ועדת ההפוגה של האו״ם, ומת למחרת. היורה לא זוהה, והעדויות סותרות.',
+        'אחרי הסכם שביתת הנשק: שלושה רבעים מהשכונה בצד הישראלי, והרבע המזרחי שטח הפקר. חומת בטון עבה חצתה את השכונה; מהחומות ירו צלפים ירדנים ואף זרקו אבנים.',
+        'התושבים היו בעיקר עולים מכורדיסטן, ונכנסו מוסכים ותעשייה קלה.',
+        'חברת קרתא פינתה כ-700 משפחות, רובן של עולים מארצות ערב. הטינה הזינה את תנועת הפנתרים השחורים בשנות ה-70. הפינוי הסתיים ב-1988.'
+      ],
+      look: 'בתחילת שנות ה-80 צילמה מירי דוידוביץ׳ את השכונה הנטושה בין הפינוי להריסה (תערוכה במוזיאון ארץ ישראל).', src: ['wMamilla', 'wWasson', 'frus', 'eretz'] },
+    { id: 'gate', name: 'שער יפו', sub: 'סוף המסלול', lat: 31.776528, lon: 35.227694, prec: 'exact', precTxt: 'מיקום מדויק · ויקיפדיה',
+      before: [
+        'רק ב-1898 נפרצה החומה ליד שער יפו כדי שכרכרות יוכלו להיכנס לעיר. הפרצה הזאת היא הכביש של היום.',
+        '1908: העות׳מאנים הקימו מגדל שעון מעל השער. הבריטים הסירו אותו כעשור אחר כך.'
+      ],
+      look: 'הפרצה בחומה ליד השער הישן — שם עוברים הרכבים.', src: ['inn', 'wGate', 'wMamilla'] }
+  ];
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var COL = { exact: '#6ff0d4', approx: '#ffb36b' };
+
+  var map = null, markers = {};
+  try {
+    if (window.L) {
+      map = L.map('map', { zoomControl: true, attributionControl: true }).setView([31.7774, 35.2245], 16);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>' }).addTo(map);
+      P.forEach(function (p, i) {
+        if (p.lat == null) return;
+        var ic = L.divIcon({ className: 'pin-ic', html: '<span style="background:' + COL[p.prec] + '">' + (i + 1) + '</span>', iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -14] });
+        var m = L.marker([p.lat, p.lon], { icon: ic, title: p.name, keyboard: true }).addTo(map);
+        m.bindPopup('<b>' + esc(p.name) + '</b><br><small>' + esc(p.precTxt) + '</small>');
+        m.on('click', function () { select(p.id, true); });
+        markers[p.id] = m;
+      });
+    }
+  } catch (e) { map = null; }
+  if (!map) document.getElementById('map').innerHTML = '<p style="padding:14px">המפה לא נטענה (אין חיבור?). הקישורים לגוגל מפות עדיין עובדים.</p>';
+
+  var list = document.getElementById('list');
+  list.innerHTML = P.map(function (p, i) {
+    var link = p.lat != null ? GM(p.lat + ',' + p.lon) : GM(p.q);
+    var acts = '<a class="btn main" href="' + link + '" target="_blank" rel="noopener">📍 ' + (p.lat != null ? 'פתיחה בגוגל מפות' : 'חיפוש בגוגל מפות') + '</a>' +
+      (p.q2 ? '<a class="btn" href="' + GM(p.q2) + '" target="_blank" rel="noopener">🔎 הבית היום (סטימצקי)</a>' : '');
+    return '<section class="place" id="pl-' + p.id + '">' +
+      '<button type="button" class="head" data-id="' + p.id + '" aria-expanded="false" aria-controls="b-' + p.id + '"><span class="num">' + (i + 1) + '</span><span><b>' + esc(p.name) + '</b><small>' + esc(p.sub) + '</small></span></button>' +
+      '<div class="body" id="b-' + p.id + '" hidden>' +
+        '<span class="prec p-' + p.prec + '">' + esc(p.precTxt) + '</span>' +
+        '<ul>' + p.before.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+        (p.warn ? '<div class="warn">⚠️ ' + esc(p.warn) + '</div>' : '') +
+        '<div class="look"><b>מה להראות:</b> ' + esc(p.look) + '</div>' +
+        '<div class="acts">' + acts + '</div>' +
+        '<div class="src">מקורות: ' + p.src.map(function (k) { return '<a href="' + S[k][1] + '" target="_blank" rel="noopener">' + esc(S[k][0]) + '</a>'; }).join(' · ') + '</div>' +
+      '</div></section>';
+  }).join('');
+
+  function select(id, fromMap) {
+    P.forEach(function (p) {
+      var sec = document.getElementById('pl-' + p.id), b = document.getElementById('b-' + p.id), h = sec.querySelector('.head');
+      var on = p.id === id && (fromMap || b.hidden);
+      sec.classList.toggle('on', on); b.hidden = !on; h.setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+    var p = P.filter(function (x) { return x.id === id; })[0];
+    if (map && p && p.lat != null) { map.flyTo([p.lat, p.lon], 18, { duration: .6 }); markers[id].openPopup(); }
+    else if (map) map.closePopup();
+    if (fromMap) document.getElementById('pl-' + id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  list.addEventListener('click', function (e) { var h = e.target.closest('.head'); if (h) select(h.getAttribute('data-id'), false); });
+})();
+</script>
+<style>.pin-ic span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:2px solid #fff;color:#081027;font-weight:900;font-size:14px;box-shadow:0 2px 6px #000a}</style>
+<script src="tabbar.js"></script>
+</body>
+</html>

@@ -32,6 +32,12 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 21 novembre 2026 — Page cachée « ממילא — מה היה כאן » (branche `claude/mamilla-avant`)
+- `mamilla.html` : outil du guide (hébreu) pour la promenade Mamilla — 8 lieux cliquables dans l'ordre (בריכת ממילא, מערת 614, סן ונסן דה פול, בית שטרן, בית קלארק, קיר האבנים הממוספרות, קו הגבול 1948–1967, שער יפו). Un toucher : la carte Leaflet (locale) va au lieu, la fiche s'ouvre avec l'histoire, « מה להראות », un bouton Google Maps et les sources.
+- Précision affichée pour chaque lieu : exacte (Wikipédia : bassin, porte de Jaffa), approximative (couvent ±100 m ; Stern = point de la photo Wikimedia), ou aucun point vérifié (Clark, mur d'Akasha, grotte sous le parking, ligne de frontière → recherche Google Maps seulement). Dates contradictoires entre sources (Stern 1870/1877, couvent 1885/1886) ramenées à la décennie, avec un ⚠️.
+- Accès discret : « ⋯ » replié tout en bas du menu עוד (`tabbar.js`, 4 langues). `sw.js` : page ajoutée au cache hors ligne, cache `v101`.
+- ✅ test navigateur (412×915) : ouverture d'une fiche, 4 repères, pas de débordement, lien caché invisible avant « ⋯ », aucune erreur JS. 🟡 pas encore vérifié sur un vrai téléphone (les tuiles OSM ne chargent pas dans l'environnement de test).
+
 ### 10 novembre 2026 — Essai réversible des fiches
 - `rtg-preview.html` : comparaison Avant / Après sur Tsipori, boutons explicites et réponse OUI / NON dans la conversation. Aucun choix enregistré ou envoyé, aucune bascule globale déclenchée par la page.
 - Ancienne présentation conservée dans `rtg-sites-before.html/.css/.js`, issue de `266b2f8` ; mêmes contenus publics actuels. Les fiches principales ne sont pas modifiées par cet essai.
@@ -268,6 +274,28 @@ Demande de Lionel : beaucoup plus de questions différentes, pouvoir inverser (�
 Photo du sujet envoyée par Lionel (3 questions, une au choix, 5 courtes + 1 longue).
 - ✅ 3 missions « 📝 מדף התרגול של המרצה » (`source: prof`), énoncés recopiés tels quels : **js3** הרי יהודה ירושלים → באר שבע (longue : הרודיון), **va3** קריית שמונה → בית שאן (longue : מפעל נהריים), **jd3** אלמוג → נאות הכיכר (longue : קומראן). Ancres ajoutées : באר שבע, קריית שמונה, אלמוג, נאות הכיכר.
 - ⚠️ Sans page dans le cours (signalé dans la mission) : מצודה צלבנית et תצפית en הר חברון, מפעל נהריים, עינות צוקים ; ראש פינה / תל חי / באר שבע ottomane sont dans d'autres fichiers de région.
+
+### 19 novembre 2026 — « חידון חזרה » devient « חידון על הדרך » + quiz Via Dolorosa (Claude)
+- ✅ Renommage dans l'interface : titre et h1 de `return-bus.html`, carte de l'accueil, titres des JSON du 12.11. Le nom de fichier `return-bus` est inchangé (les liens existants marchent toujours).
+- ✅ Nouveau quiz du 19.11 : `public/return-bus/2026-11-19.json` (+ copie dans `content/`), **64 questions** sur 9 étapes (גן הקבר, סנטה אנה, אנטוניה/ליתוסטרוטוס, תחנות 3–9, רחבת הכנסייה, גולגולתא, אדיקולה, emplacements inférieurs, rappels historiques). Chaque question a un champ `source` vers l'un des deux documents du dossier de la sortie : « חוברת הכנה לסיור: הוויה דולורוזה וכנסיית הקבר » et « חוברת הכנה לסיור: גן הקבר » (חנה בנדקובסקי). Fait écarté car les deux documents se contredisent : le siècle d'arrivée des Franciscains (XIIIe ou XIVe).
+- ✅ Accueil : la carte mène au quiz du 19.11, avec un second lien vers celui du 12.11 (libellé corrigé : 125 questions et non 25).
+- ✅ Testé en navigateur (Chromium, 360×780) : chargement, 64 questions jouées jusqu'au bout, pas de débordement, aucune erreur console. Pas vérifié sur un vrai téléphone.
+
+### 19 novembre 2026 (soir) — Quiz du 19.11 complété depuis les enregistrements de la sortie (Claude)
+- ✅ 23 enregistrements du jour (dossier Drive de Lionel, ≈ 4 h 30) transcrits sur GitHub Actions avec le modèle ivrit.ai (`.github/workflows/transcribe.yml`, `tools/transcribe/`), 32 tranches de 15 min en parallèle. Le texte est chiffré avec une clé publique avant de quitter chaque machine : rien de lisible dans le dépôt, les journaux ni les artefacts. Les transcriptions ne sont pas versionnées.
+- Accès : copies temporaires dans un dossier Drive partagé « lecteur avec le lien », mis à la corbeille juste après (les originaux sont restés privés). ⏳ Lionel peut vider la corbeille : dossier « tmp-transcription-19.11 (à supprimer) ».
+- ✅ `public/return-bus/2026-11-19.json` (+ copie `content/`) : **+208 questions** tirées de ce que la guide a dit (272 au total), 2 nouvelles étapes : « העדות והזרמים הנוצריים » et « טיפים להדרכה ולמבחן ». Chaque question a `source` (lien Drive de l'enregistrement), `sourceRecording`, `sourceTime`, `sourceQuote` (citation exacte, vérifiée par script) et `sourceType` « הקלטה מהסיור (תמלול אוטומטי) » : **tirées d'une transcription automatique, pas relues par un humain.**
+- Écartés : passages inaudibles ou déformés, logistique, et les contradictions (procès de Jésus au mont Sion « au 5e siècle » contre « après la conquête perse » ; accord Israël–Vatican 1964/1967 ; église devenue mosquée à la conquête arabe).
+- ✅ Testé en navigateur (Chromium, 360×780) : les 272 questions jouées jusqu'au bout, pas de débordement, aucune erreur console. Pas vérifié sur un vrai téléphone.
+
+### 19 novembre 2026 (nuit) — 📘 Fiches de révision « דפי חזרה » (Claude)
+- ✅ `fiches.html` (+ `fiches.css`, `fiches.js`) : une fiche par סיור, soit les 22 du cours et les deux sorties à Jérusalem (12.11 et 19.11). Chaque fiche contient le fil rouge en une phrase, les étapes numérotées dans l'ordre du parcours, « ⭐ חובה לדעת », les points par lieu, une frise des dates, les mots à connaître et un truc pour retenir.
+- ✅ Mode **🧠 שינון** : les réponses sont cachées, un tap les révèle. Bouton « ✅ אני יודע/ת » par étape, avec la progression gardée sur le téléphone. Impression/PDF. Bouton « 🎯 לבחון את עצמי » vers le quiz du סיור. Recherche. Lien depuis l'accueil, sous la carte du חידון על הדרך.
+- ✅ Contenu : `content/fiches/*.json` → `tools/build-fiches.mjs` (`npm run build:fiches`) → `public/fiches/`. **Chaque point cite les qid des questions du jeu dont il est tiré** (banque `guided-quiz.json` ou `return-bus/<date>.json`). Le script refuse un qid inconnu, ou un chiffre absent des faits cités, puis remplace les qid par les liens sources (📄). Total : 1 279 points. Rédaction par Claude à partir de la banque, sans relecture humaine.
+- ✅ Corrigé au passage dans le quiz du 12.11 : 3 questions dont la bonne réponse contredisait l'explication (`har-hazeitim-cen-7`, `-8`, `-10`). L'indice de réponse est aligné sur l'explication, la question n'est pas supprimée.
+- ✅ Quiz du 19.11 : `via-dolorosa-rec-041` est retirée (271 questions). Elle disait que la muraille ottomane suit la 2e muraille, ce qui contredit la brochure : la Golgotha était hors de la 2e muraille.
+- Écartés des fiches : la date de fondation de la colonie yéménite de Silwan (1882 ou 1885) et la largeur du קארדו (20 ou 22 m).
+- ✅ Tests : `tests/fiches.test.mjs` (3). Navigateur 360×780 et 1280×860 : 24 fiches ouvertes, aucun débordement, mode שינון, progression gardée après rechargement, lien vers le quiz, aucune erreur console. Pas vérifié sur un vrai téléphone.
 
 ## 3. À faire / idées (par priorité)
 

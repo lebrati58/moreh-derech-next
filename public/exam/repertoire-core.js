@@ -71,6 +71,36 @@
     return { pct, found, missed, total: K.length };
   }
 
+  // ---------- Conditions réelles : le nom du site est écrit de mémoire, reconnu seulement à la remise ----------
+  const nameTokens = t => String(t || '').replace(NIQQUD, '').replace(/[״"׳'`]/g, '').split(/[^א-ת0-9]+/).filter(w => w.length >= 2 || /^\d+$/.test(w)).map(w => forms(w));
+  const sameRoot = (a, b) => near(a, b) || (a.length >= 4 && b.length >= 4 && Math.abs(a.length - b.length) <= 1 && a.slice(0, 3) === b.slice(0, 3) && a.slice(0, -1) === b.slice(0, -1));
+  // Reconnaît un lieu écrit librement (« השער בתל שבע » → תל באר שבע) : chaque mot du nom pèse 1/(nombre de lieux qui l'ont),
+  // on garde le lieu dont les mots retrouvés pèsent le plus (≥ 0,5). Aucun lieu reconnu → null (l'unité est notée comme telle).
+  function matchPlace(text, places) {
+    const T0 = nameTokens(text).flat(), T = T0.concat(T0.filter(t => t.length === 3 && /^[והבלמשכ]/.test(t)).map(t => t.slice(1)));   // « בתל » → « תל »
+    if (!T.length) return null;
+    const words = p => [...new Set(nameTokens([p.short, p.he].concat(p.aliases || []).join(' ')).map(f => f[f.length - 1]).filter(w => !STOP.has(w)))];
+    const W = (places || []).map(p => ({ p, w: words(p) })), freq = {};
+    W.forEach(x => x.w.forEach(w => { freq[w] = (freq[w] || 0) + 1; }));
+    let best = null;
+    W.forEach(({ p, w }) => {
+      const hit = w.filter(x => T.some(t => sameRoot(x, t)));
+      const score = hit.reduce((a, x) => a + 1 / freq[x], 0), ratio = w.length ? hit.length / w.length : 0;
+      if (score >= 0.5 && (!best || score > best.score + 1e-9 || (Math.abs(score - best.score) < 1e-9 && ratio > best.ratio))) best = { id: p.id, score, ratio };
+    });
+    return best ? best.id : null;
+  }
+  // Faits du cours couverts par une réécriture, et nombres écrits qui n'apparaissent nulle part dans le cours
+  function factCoverage(facts, attempt) {
+    const A = keywords(attempt).flatMap(x => x.f), has = k => k.f.some(f => A.some(a => near(f, a)));
+    const covered = [], missed = [];
+    (facts || []).forEach(f => { const K = keywords(f.he).filter(k => !/^\d+$/.test(k.n)); if (!K.length) return; (K.filter(has).length / K.length >= 0.5 ? covered : missed).push(f); });
+    const nums = s => (String(s || '').match(/\d+(?:[.,]\d+)?/g) || []).map(n => n.replace(',', '.'));
+    const known = new Set((facts || []).flatMap(f => nums(f.he).concat(nums(f.q))));
+    const stray = [...new Set(nums(attempt))].filter(n => !known.has(n) && !(+n <= 10));
+    return { covered, missed, stray };
+  }
+
   // ---------- Révision espacée ----------
   const startOfDay = t => { const d = new Date(t); d.setHours(0, 0, 0, 0); return d.getTime(); };
   function schedule(card, pct, now) {
@@ -130,7 +160,7 @@
     return { part: cur, left: Math.max(0, Math.round(cur.to - elapsedMin)), parts };
   }
 
-  const api = { CATS, CAT, STEPS, MASTER, PASS, MASTERY, fitsCat, candidates, catOfSlot, keywords, compare, schedule, isDue, state, key, dueList, stats, missionPrep, mastery, paceBudget, pace };
+  const api = { matchPlace, factCoverage, CATS, CAT, STEPS, MASTER, PASS, MASTERY, fitsCat, candidates, catOfSlot, keywords, compare, schedule, isDue, state, key, dueList, stats, missionPrep, mastery, paceBudget, pace };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.MDRepertoire = api;
 })(typeof window !== 'undefined' ? window : globalThis);

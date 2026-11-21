@@ -222,6 +222,10 @@
    "course": [
     "03"
    ],
+   "aliases": [
+    "תל שבע",
+    "באר שבע המקראית"
+   ],
    "lat": 31.24472,
    "lon": 34.84083,
    "coordSource": "wiki",
@@ -694,6 +698,11 @@
     "phone": null,
     "group": null
    },
+   "aliases": [
+    "תל ערד",
+    "העיר הכנענית בערד",
+    "הבית הערדי"
+   ],
    "lat": 31.28083,
    "lon": 35.125,
    "coordSource": "wiki",
@@ -833,6 +842,10 @@
     "phone": null,
     "group": null
    },
+   "aliases": [
+    "המצודה בערד",
+    "המצודה הישראלית בערד"
+   ],
    "lat": 31.28083,
    "lon": 35.125,
    "coordSource": "wiki",
@@ -964,6 +977,11 @@
     "phone": null,
     "group": null
    },
+   "aliases": [
+    "העיר העתיקה של באר שבע",
+    "גן אלנבי",
+    "הסראיה"
+   ],
    "lat": 31.25311,
    "lon": 34.78671,
    "coordSource": "wiki",
@@ -1183,6 +1201,10 @@
     "phone": null,
     "group": null
    },
+   "aliases": [
+    "תחנת הרכבת העות׳מאנית",
+    "פארק הקטר"
+   ],
    "lat": 31.24537,
    "lon": 34.78488,
    "coordSource": "wiki",
