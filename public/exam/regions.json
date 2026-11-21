@@ -98,8 +98,7 @@
       "file": "judean-desert.json",
       "missions": [
         "jd1",
-        "jd2",
-        "jd3"
+        "jd2"
       ]
     },
     {
@@ -127,8 +126,7 @@
       "file": "judea-samaria.json",
       "missions": [
         "js1",
-        "js2",
-        "js3"
+        "js2"
       ]
     },
     {
@@ -155,8 +153,7 @@
       "file": "valleys.json",
       "missions": [
         "va1",
-        "va2",
-        "va3"
+        "va2"
       ]
     },
     {
