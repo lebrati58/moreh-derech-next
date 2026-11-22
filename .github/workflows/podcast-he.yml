@@ -1,0 +1,36 @@
+name: podcast-he
+# Podcast Mamilla en hébreu : l'environnement de travail n'a pas accès à Hugging Face, ce job si.
+on:
+  push:
+    branches: [claude/podcast-he]
+    paths: ['tools/podcast/**', '.github/workflows/podcast-he.yml']
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q phonikud-tts
+      - name: Modèles
+        run: |
+          mkdir -p m
+          wget -q -O m/phonikud.onnx https://huggingface.co/thewh1teagle/phonikud-onnx/resolve/main/phonikud-1.0.int8.onnx
+          wget -q -O m/shaul.onnx https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/shaul.onnx
+          wget -q -O m/model.onnx https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/model.onnx
+          wget -q -O m/model.config.json https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/model.config.json
+      - run: python tools/podcast/gen_he.py
+      - name: Assemblage MP3
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null || true
+          sr=$(ffprobe -v error -show_entries stream=sample_rate -of csv=p=0 parts/000_D.wav)
+          ffmpeg -v error -y -f lavfi -t 0.45 -i anullsrc=r=$sr:cl=mono sil.wav
+          : > list.txt; for f in parts/*.wav; do echo "file '$PWD/$f'" >> list.txt; echo "file '$PWD/sil.wav'" >> list.txt; done
+          ffmpeg -v error -y -f concat -safe 0 -i list.txt -af "loudnorm=I=-16:TP=-1.5:LRA=11" -ar 44100 -ac 1 -c:a libmp3lame -b:a 96k mamilla_podcast_he.mp3
+          ffprobe -v error -show_entries format=duration -of csv=p=0 mamilla_podcast_he.mp3
+      - uses: actions/upload-artifact@v4
+        with: { name: podcast-he, path: 'mamilla_podcast_he.mp3', retention-days: 7 }
+      - uses: actions/upload-artifact@v4
+        with: { name: podcast-he-parts, path: 'parts/', retention-days: 3 }
