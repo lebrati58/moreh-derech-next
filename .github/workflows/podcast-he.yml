@@ -5,6 +5,8 @@ on:
     branches: [claude/podcast-he]
     paths: ['tools/podcast/**', '.github/workflows/podcast-he.yml']
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,6 +23,7 @@ jobs:
           wget -q -O m/shaul.onnx https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/shaul.onnx
           wget -q -O m/model.onnx https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/model.onnx
           wget -q -O m/model.config.json https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/model.config.json
+      - run: mkdir -p tools/podcast/out && python tools/podcast/nikud_he.py
       - run: python tools/podcast/gen_he.py
       - name: Assemblage MP3
         run: |
@@ -34,3 +37,8 @@ jobs:
         with: { name: podcast-he, path: 'mamilla_podcast_he.mp3', retention-days: 7 }
       - uses: actions/upload-artifact@v4
         with: { name: podcast-he-parts, path: 'parts/', retention-days: 3 }
+      - name: Dépôt sur la branche (texte vocalisé + MP3)
+        run: |
+          cp mamilla_podcast_he.mp3 tools/podcast/out/
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add tools/podcast/out && git commit -m "Podcast hébreu : texte vocalisé + MP3 [skip ci]" && git push
