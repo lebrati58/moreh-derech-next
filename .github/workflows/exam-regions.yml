@@ -19,7 +19,15 @@ jobs:
         run: echo "::notice title=exam-log::$(grep -E '🟢|🟡|❌|⚠️' exam-build.log | head -60 | gzip -9 | base64 -w0)"
       - name: Cache géo (annotations ≤ 4096 car., max 10 par étape ; le reste se reconstruit en local depuis ce cache)
         run: gzip -9c content/exam/geo-cache.json | base64 -w0 | fold -w 4000 | nl -nln -w1 -s'|' | head -10 | while IFS= read -r l; do echo "::notice title=exam-geo::$l"; done
+      # Garde-fou (23/11/2026) : le build ne remet pas les faits « חומר עזר » ni les sujets ajoutés à la main.
+      # En novembre, son commit sur une branche ancienne a effacé ~1 400 lignes et bloqué la publication.
+      # Si les tests de l'examen échouent, on ne commit rien (le résultat reste dans les annotations).
+      - name: Vérifier avant de commiter
+        id: guard
+        continue-on-error: true
+        run: node --test tests/ezer.test.mjs tests/repertoire.test.mjs tests/exam.test.mjs
       - name: Commit
+        if: steps.guard.outcome == 'success'
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

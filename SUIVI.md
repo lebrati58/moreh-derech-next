@@ -32,6 +32,13 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 23 novembre 2026 — Publication bloquée : faits « חומר עזר » de l'examen à restaurer (branche `claude/fix-exam-ezer`)
+- ⚠️ Depuis le 21/11 au soir, **rien n'est publié** : le test `ezer.test.mjs` échoue (5 faits « ezer » au lieu de ≥ 50).
+- Cause : la fusion de « Césarée 3D » (#92) contenait un commit du robot `exam-regions.yml` (« data(exam): coordonnées + trajets des régions ») fait sur une base ancienne. Il a effacé ~1 400 lignes dans `public/exam/*.json` : faits tirés de « חומר עזר למבחן » et sujets `jd3`, `js3`, `va3` de `regions.json`.
+- Correction proposée : `public/exam/` remis à l'identique de `c7e2def` (juste avant #92, avec le travail « conditions réelles » de #74). Rien d'autre de #92 n'est touché (Césarée 3D gardée).
+- Garde-fou : `exam-regions.yml` ne commite plus si `ezer`, `repertoire` ou `exam` échouent. `sw.js` : cache `v104`.
+- ✅ tests `ezer` + `repertoire` + `exam` : 27/27 en local. ⏳ en attente du « yallah » de Lionel.
+
 ### 23 novembre 2026 — Nettoyage de l'accueil (branche `claude/accueil-propre`)
 - Rien n'est supprimé : tous les liens de l'accueil sont toujours là, seulement rangés.
 - Le bloc ajouté en vrac en haut (quiz du bus + דפי חזרה, styles en ligne, hébreu seulement) est remplacé par une rubrique **« אחרי הסיור »** sous le défi du jour. Le dernier quiz du bus est en grand, les précédents en petites pastilles. Titre et nombre de questions sont lus dans `return-bus/<date>.json`.
