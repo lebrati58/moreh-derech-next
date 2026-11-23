@@ -32,6 +32,15 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 23 novembre 2026 — Nettoyage de l'accueil (branche `claude/accueil-propre`)
+- Rien n'est supprimé : tous les liens de l'accueil sont toujours là, seulement rangés.
+- Le bloc ajouté en vrac en haut (quiz du bus + דפי חזרה, styles en ligne, hébreu seulement) est remplacé par une rubrique **« אחרי הסיור »** sous le défi du jour. Le dernier quiz du bus est en grand, les précédents en petites pastilles. Titre et nombre de questions sont lus dans `return-bus/<date>.json`.
+  - **Nouveau quiz du bus : ajouter sa date en tête de la liste `BUS` dans `index.html`.** Un test (`fiches.test.mjs`) échoue si un fichier `return-bus/*.json` n'y est pas.
+- Le sélecteur de mode (Amateur / Explorateur / Doctorant / Guide) est replié en une barre « תצוגה: … ▾ » avec le bouton ♿ à côté ; on l'ouvre pour changer de mode. Les titres de rubriques suivent leurs blocs par `data-group`.
+- « מבחן אמצע – בני » et « דפי חזרה » : deux petites tuiles côte à côte dans « הכנה למבחן », traduites dans les 4 langues (la flèche de Beni pointait à l'envers).
+- `sw.js` : cache `v103`. `tests/modes-browser.mjs` ouvre la barre avant de choisir un mode.
+- ✅ test navigateur (Pixel 7, S24, ordinateur) : `e2e:modes` 104/104, `e2e:journey`, `access-browser`, sans débordement ni erreur JS. 🟡 pas encore vérifié sur un vrai téléphone.
+
 ### 21 novembre 2026 — Page cachée « ממילא — מה היה כאן » (branche `claude/mamilla-avant`)
 - `mamilla.html` : outil du guide (hébreu) pour la promenade Mamilla — 8 lieux cliquables dans l'ordre (בריכת ממילא, מערת 614, סן ונסן דה פול, בית שטרן, בית קלארק, קיר האבנים הממוספרות, קו הגבול 1948–1967, שער יפו). Un toucher : la carte Leaflet (locale) va au lieu, la fiche s'ouvre avec l'histoire, « מה להראות », un bouton Google Maps et les sources.
 - Précision affichée pour chaque lieu : exacte (Wikipédia : bassin, porte de Jaffa), approximative (couvent ±100 m ; Stern = point de la photo Wikimedia), ou aucun point vérifié (Clark, mur d'Akasha, grotte sous le parking, ligne de frontière → recherche Google Maps seulement). Dates contradictoires entre sources (Stern 1870/1877, couvent 1885/1886) ramenées à la décennie, avec un ⚠️.

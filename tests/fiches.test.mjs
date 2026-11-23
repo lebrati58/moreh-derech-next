@@ -31,3 +31,11 @@ test('un chiffre inventé est refusé', () => {
   const { errors } = buildFiche({ id: 't', title: 't', mustKnow: [1, 2, 3].map(() => ({ t: 'נבנה בשנת 1188', q: ['A'] })), stops: [{ name: 'n', points: [{ t: 'ok', q: ['A'] }] }] }, bank);
   assert.ok(errors.some(e => e.includes('1188')));
 });
+
+test('accueil : chaque quiz du bus (return-bus/*.json) est listé, le plus récent en premier', () => {
+  const html = readFileSync(new URL('../public/index.html', import.meta.url), 'utf8');
+  const m = html.match(/var BUS=\[([^\]]*)\]/); assert.ok(m, 'liste BUS présente dans index.html');
+  const listed = [...m[1].matchAll(/'(\d{4}-\d{2}-\d{2})'/g)].map(x => x[1]);
+  const files = readdirSync(new URL('../public/return-bus/', import.meta.url)).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map(f => f.slice(0, 10)).sort().reverse();
+  assert.deepEqual(listed, files);
+});

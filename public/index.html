@@ -66,6 +66,15 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
 .mini .mi{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;font-size:20px;background:#22306a}
 .mini b{display:block;font-size:15px;font-weight:900;line-height:1.2}.mini small{display:block;color:#a9b8e3;font-size:12px;margin-top:2px;line-height:1.3}
 .mini:focus-visible,.map-banner:focus-visible,.qt-daily:focus-visible,.qt-journey:focus-visible{outline:2px solid #94f5de;outline-offset:2px}
+/* après le סיור */
+.sec .sec-t{font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit}
+.bus{border-radius:20px;overflow:hidden;background:linear-gradient(115deg,#0f6f7a,#173b55 70%);border:1px solid #67c5ba;box-shadow:0 5px 0 #050b1c}
+.bus-main{display:flex;align-items:center;gap:12px;padding:14px 15px;color:#fff;text-decoration:none}
+.bus-main .mb-ico{background:#94f5de33}.bus-main .tx{flex:1;min-width:0}.bus-main b{display:block;font-size:18px;font-weight:1000;line-height:1.2}.bus-main small{display:block;color:#d6f9f2;font-size:13px;margin-top:3px;line-height:1.35}
+.bus-old{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 15px 11px;border-top:1px solid #ffffff26;background:#00000030;color:#bceee5;font-size:13px;font-weight:700}.bus-old[hidden]{display:none}
+.bus-list{display:contents}.bus-main small .bus-tt{display:block}.bus-old a{unicode-bidi:isolate}.bus-old a{color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid #67c5ba;border-radius:100px;padding:6px 11px;background:#0b2a3a}
+.bus-main:focus-visible,.bus-old a:focus-visible{outline:2px solid #ffd878;outline-offset:-2px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
 /* 3D */
 .j3d{display:flex;align-items:center;gap:12px;padding:10px 13px;border-radius:17px;text-decoration:none;color:#fff;background:linear-gradient(110deg,#8a5a12,#b8862a 45%,#5b37b8);border:1px solid #ffe3a080}
 .j3d .mi{flex:none;font-size:24px}.j3d .tx{flex:1;min-width:0}.j3d b{display:block;font-size:15.5px;font-weight:1000}.j3d small{display:block;color:#fff3d6;font-size:12px}
@@ -77,7 +86,7 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
 .s3d-arrow:disabled{opacity:.25;cursor:default}
 /* lien guide */
 .guide-link{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px auto 0;padding:10px 14px;border-radius:12px;color:#aebce6;text-decoration:none;font-size:13.5px;font-weight:700;border:1px dashed #3d5190;max-width:100%}
-@media(max-width:360px){.duo{grid-template-columns:1fr}.go{padding:10px 12px;font-size:14px}}
+@media(max-width:360px){.duo,.pair{grid-template-columns:1fr}.go{padding:10px 12px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 <link rel="icon" type="image/webp" href="assets/moreh-derech-next-driver.webp">
@@ -89,7 +98,6 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
   <div class="top-right"><button type="button" class="top-pill install" id="installBtn" hidden>📲 <span id="installTxt">התקנה</span></button><div class="top-lang"><button type="button" class="top-pill" id="langTop" aria-haspopup="true" aria-expanded="false" aria-label="Language / שפה"><span id="langFlag">🇮🇱</span> <span id="langCode">עב</span> ▾</button><div class="lang-menu" id="langMenu" hidden><button type="button" data-lang="he">🇮🇱 עברית</button><button type="button" data-lang="fr">🇫🇷 Français</button><button type="button" data-lang="en">🇬🇧 English</button><button type="button" data-lang="ru">🇷🇺 Русский</button></div></div></div>
 </header>
 <main>
-<section class="card" style="margin:12px 0;padding:16px;border-radius:18px;background:#173b55;border:1px solid #67c5ba"><a href="return-bus.html?date=2026-11-19" style="display:block;color:#fff;text-decoration:none;font-weight:900;font-size:19px">🚌 חידון על הדרך <span style="font-size:14px;color:#bceee5">271 שאלות · הוויה דולורוזה, כנסיית הקבר וגן הקבר · 19.11</span> ←</a><a href="return-bus.html?date=2026-11-12" style="display:block;margin-top:10px;color:#bceee5;text-decoration:none;font-weight:700;font-size:16px">🚌 חידון על הדרך · הר הזיתים · 12.11 · 125 שאלות ←</a><a href="fiches.html" style="display:block;margin-top:12px;padding-top:12px;border-top:1px solid #3d6f86;color:#fff;text-decoration:none;font-weight:900;font-size:18px">📘 דפי חזרה <span style="font-size:14px;color:#bceee5">כל סיור בדף אחד, ברור וקל ללמידה</span> ←</a></section>
   <h1 class="sr">Moreh Derech NEXT</h1>
 
   <!-- 1. Aujourd'hui -->
@@ -98,8 +106,15 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
     <a class="qt-journey" href="journey.html"><span aria-hidden="true">📈</span><span class="tx"><span data-t="qJourney">המסע שלי</span><small id="journeySub" data-t="qJourneySub">כוכבים, טעויות לתיקון ורצף ימים</small></span><span class="arrow arrow-f" aria-hidden="true">→</span></a>
   </section>
 
-  <!-- 2. Jouer -->
-  <h2 class="sec" data-t="secPlay">לשחק</h2>
+  <!-- 2. Après le סיור : quiz du bus (liste BUS plus bas) -->
+  <h2 class="sec" data-group="trip"><span data-t="secTrip" class="sec-t">אחרי הסיור</span></h2>
+  <section class="bus" id="busBox" aria-labelledby="busT">
+    <a class="bus-main" id="busMain" href="return-bus.html"><span class="mb-ico" aria-hidden="true">🚌</span><span class="tx"><b id="busT" data-t="busT">חידון על הדרך</b><small id="busSub"></small></span><span class="go" data-t="playNow">לשחק ▶</span></a>
+    <div class="bus-old" id="busOld" hidden><span data-t="busOld">חידונים קודמים:</span><span class="bus-list" id="busList"></span></div>
+  </section>
+
+  <!-- 3. Jouer -->
+  <h2 class="sec" data-group="play" data-t="secPlay">לשחק</h2>
   <a class="campus" href="campus.html"><span class="ic" aria-hidden="true">🏆</span><span class="tx"><b data-t="campusT">אלוף הקורס — משחק קבוצתי חי</b><small data-t="campusDesc">כל הכיתה יחד · שעון · מהירות = נקודות · פודיום</small></span><span class="go" data-t="campusGo">יאללה ▶</span></a>
   <section class="hist" aria-labelledby="histT">
     <a class="qt-history" href="history.html#/quiz"><span class="ic" aria-hidden="true">⏳</span><span class="tx"><b id="histT" data-t="qHistory">חידון תאריכים ואירועים</b><small id="historySub" data-t="qHistorySub">124 אירועים · עם שעון</small></span><span class="go" data-t="playNow">לשחק ▶</span></a>
@@ -113,12 +128,15 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
   </div>
 
   <!-- 3. Préparer l'examen (case séparée) -->
-  <h2 class="sec" data-t="secExam">הכנה למבחן</h2>
+  <h2 class="sec" data-group="exam" data-t="secExam">הכנה למבחן</h2>
   <section class="exam-box parta-box">
     <a class="exam-main" href="parta.html"><span class="mb-ico" aria-hidden="true">🎓</span><span class="tx"><b data-t="paT">מבחן חלק א׳ — לפי נושאים</b><small data-t="paDesc">שאלות אמריקאיות עם הסבר ומקור · 22 נושאי הבחינה</small></span><span class="go" aria-hidden="true"><span class="arrow-f">→</span></span></a>
     <div class="exam-modes"><a href="parta.html#/"><span aria-hidden="true">🎲</span> <span data-t="paMix">מעורב</span></a><a href="parta.html#/"><span aria-hidden="true">📚</span> <span data-t="paTopic">לפי נושא</span></a><a href="parta.html#/"><span aria-hidden="true">🔁</span> <span data-t="paFix">תיקון טעויות</span></a></div>
   </section>
-  <a class="map-banner" href="beni-midterm.html"><span class="mb-ico" aria-hidden="true">📝</span><span class="tx"><b>מבחן אמצע – בני</b><small>40 שאלות אמריקאיות מתוך 75 שאלות ששוחזרו מתמלול המורה · תיקון בסוף</small></span><span class="go" aria-hidden="true">→</span></a>
+  <div class="pair">
+    <a class="mini" href="fiches.html"><span class="mi" aria-hidden="true">📘</span><span><b data-t="fichT">דפי חזרה</b><small data-t="fichDesc">כל סיור בדף אחד</small></span></a>
+    <a class="mini" href="beni-midterm.html"><span class="mi" aria-hidden="true">📝</span><span><b data-t="beniT">מבחן אמצע – בני</b><small data-t="beniDesc">40 שאלות · תיקון בסוף</small></span></a>
+  </div>
   <section class="exam-box">
     <a class="exam-main" href="exam.html"><span class="mb-ico" aria-hidden="true">🎓</span><span class="tx"><b data-t="examT">אתגר המבחן</b><small data-t="examDesc">מתכננים יום טיול וכותבים הדרכות · 3 מצבים</small></span><span class="go" aria-hidden="true"><span class="arrow-f">→</span></span></a>
     <div class="exam-modes four"><a href="exam.html#/m/g1/guided"><span aria-hidden="true">🧭</span> <span data-t="exGuided">אימון מודרך</span></a><a href="exam.html#/m/g1/errors"><span aria-hidden="true">🔎</span> <span data-t="exErr">מצא את הטעות</span></a><a href="exam.html#/m/g1/exam"><span aria-hidden="true">⏱️</span> <span data-t="exSim">סימולציה</span></a><a href="sadna.html"><span aria-hidden="true">✍️</span> <span data-t="exSadna">סדנת 180·400</span></a></div>
@@ -129,7 +147,7 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
   </section>
 
   <!-- 3. Explorer en 3D -->
-  <h2 class="sec"><span data-t="secExplore" style="font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit">תלת-ממד</span><span id="s3dCount"></span></h2>
+  <h2 class="sec" data-group="explore"><span data-t="secExplore" style="font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit">תלת-ממד</span><span id="s3dCount"></span></h2>
   <a class="j3d" href="world3d.html?site=caesarea" style="margin-bottom:8px"><span class="mi" aria-hidden="true">🎮</span><span class="tx"><b data-t="w3dTitle">קיסריה — עולם תלת-ממד</b><small data-t="w3dDesc">הולכים בתיאטרון · היום ובימי פילטוס · משימות</small></span><span class="arrow arrow-f" aria-hidden="true">→</span></a>
   <a class="j3d" href="jerusalem3d.html?period=5"><span class="mi" aria-hidden="true">🏛️</span><span class="tx"><b data-t="j3dTitle">ירושלים בתלת-ממד</b><small data-t="j3dDesc">העיר העתיקה לאורך התקופות</small></span><span class="arrow arrow-f" aria-hidden="true">→</span></a>
   <div class="s3d-row">
@@ -145,10 +163,10 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
 (function(){
   'use strict';
   var L={
-    he:{campusT:'אלוף הקורס — משחק קבוצתי חי',campusDesc:'כל הכיתה יחד · שעון · מהירות = נקודות · פודיום',campusGo:'יאללה ▶',paT:'מבחן חלק א׳ — לפי נושאים',paDesc:'שאלות אמריקאיות עם הסבר ומקור · 22 נושאי הבחינה',paMix:'מעורב',paTopic:'לפי נושא',paFix:'תיקון טעויות',w3dTitle:'קיסריה — עולם תלת-ממד',w3dDesc:'הולכים בתיאטרון · היום ובימי פילטוס · משימות',archT:'אדריכלות קלאסית בתלת-ממד',archDesc:'14 דגמים · סטילובט, קארדו, היפוקאוסט, בית בד…',arExp:'חקירה',arPlay:'משחק זיהוי',arOpen:'שאלות פתוחות',roads:'סיפורי דרך על המפה',roadsDesc:'מה המורה אמר בדרך · לימוד ומבחן',secExam:'הכנה למבחן',exGuided:'אימון מודרך',exErr:'מצא את הטעות',exSadna:'סדנת 180·400',exSim:'סימולציה',qHistory:'חידון תאריכים ואירועים',qHistorySub:'124 אירועים · עם שעון',qTimeline:'ציר הזמן לפי תקופות',hDone:' אירועים · 🏆 ',qDaily:'אתגר היום',qDailySub:'5 שאלות · אותן שאלות לכל הכיתה',playNow:'לשחק ▶',qJourney:'המסע שלי',qJourneySub:'כוכבים, טעויות לתיקון ורצף ימים',secPlay:'לשחק',guided:'סיור מודרך על המפה',examT:'אתגר המבחן',examDesc:'מתכננים יום טיול וכותבים הדרכות · 3 מצבים',mapDesc:'{tours} סיורים · {q} שאלות · בוחרים מקום',solo:'משחק עצמאי',soloDesc:'GPS פותח שאלות בדרך',stories:'סיפורי דרך',storiesDesc:'לקרוא, בלי שאלות',secExplore:'לחקור בתלת-ממד',j3dTitle:'ירושלים בתלת‑ממד',j3dDesc:'העיר העתיקה · בית המקדש, חומות ושערים',sites:'{n} אתרים',prev:'הקודם',next:'הבא',guideLink:'להפעיל חידון חי לקבוצה (מדריכים ותלמידי הקורס)',done:'✅ היום: ',st:' ברצף',fix:' טעויות לתיקון'},
-    fr:{campusT:'Champion du cours — jeu de groupe en direct',campusDesc:'Toute la classe ensemble · chrono · la vitesse rapporte · podium',campusGo:'Jouer ▶',paT:'Examen partie A — par thème',paDesc:'QCM avec explication et source · 22 thèmes de l’examen',paMix:'Mélangé',paTopic:'Par thème',paFix:'Corriger mes erreurs',w3dTitle:'Césarée — monde 3D',w3dDesc:'Marcher dans le théâtre · aujourd’hui et au temps de Pilate · missions',archT:'Architecture classique en 3D',archDesc:'14 maquettes · stylobate, cardo, hypocauste, pressoir…',arExp:'Explorer',arPlay:'Jeu d’identification',arOpen:'Questions ouvertes',roads:'Récits de route sur la carte',roadsDesc:'Ce que le prof a dit en route · étude et examen',secExam:'Préparer l’examen',exGuided:'Entraînement',exErr:'Trouve l’erreur',exSadna:'Atelier 180·400',exSim:'Examen blanc',qHistory:'Quiz dates et événements',qHistorySub:'124 événements · chronométré',qTimeline:'Voir la frise par période',hDone:' événements réussis · 🏆 ',qDaily:'Défi du jour',qDailySub:'5 questions · les mêmes pour toute la classe',playNow:'Jouer ▶',qJourney:'Mon parcours',qJourneySub:'Étoiles, erreurs à revoir et jours d’affilée',secPlay:'Jouer',guided:'Visite guidée sur la carte',examT:'Défi de l’examen',examDesc:'Préparer une journée et rédiger les interventions · 3 modes',mapDesc:'{tours} sorties · {q} questions · choisir un lieu',solo:'Solo',soloDesc:'Le GPS ouvre les questions',stories:'Anecdotes',storiesDesc:'Lire, sans quiz',secExplore:'Explorer en 3D',j3dTitle:'Jérusalem en 3D',j3dDesc:'La Vieille Ville · Temple, murailles et portes',sites:'{n} sites',prev:'Précédent',next:'Suivant',guideLink:'Lancer un quiz en direct pour un groupe (guides et élèves du cours)',done:'✅ Aujourd’hui : ',st:' d’affilée',fix:' erreurs à revoir'},
-    en:{campusT:'Course champion — live group game',campusDesc:'The whole class together · timer · speed = points · podium',campusGo:'Play ▶',paT:'Part A exam — by topic',paDesc:'Multiple choice with explanation and source · 22 exam topics',paMix:'Mixed',paTopic:'By topic',paFix:'Fix mistakes',w3dTitle:'Caesarea — 3D world',w3dDesc:'Walk the theatre · today and in Pilate’s time · missions',archT:'Classical architecture in 3D',archDesc:'14 models · stylobate, cardo, hypocaust, oil press…',arExp:'Explore',arPlay:'Identify game',arOpen:'Open questions',roads:'Road stories on the map',roadsDesc:'What the teacher said on the road · study and exam',secExam:'Exam prep',exGuided:'Guided',exErr:'Spot the error',exSadna:'180·400 workshop',exSim:'Mock exam',qHistory:'Dates & events quiz',qHistorySub:'124 events · timed',qTimeline:'See the timeline by period',hDone:' events known · 🏆 ',qDaily:'Daily challenge',qDailySub:'5 questions · the same for the whole class',playNow:'Play ▶',qJourney:'My journey',qJourneySub:'Stars, mistakes to fix and day streak',secPlay:'Play',guided:'Guided tour on the map',examT:'Exam challenge',examDesc:'Plan a day and write guiding units · 3 modes',mapDesc:'{tours} tours · {q} questions · pick a place',solo:'Solo',soloDesc:'GPS opens questions',stories:'Stories',storiesDesc:'Read, no quiz',secExplore:'Explore in 3D',j3dTitle:'Jerusalem in 3D',j3dDesc:'The Old City · Temple, walls and gates',sites:'{n} sites',prev:'Previous',next:'Next',guideLink:'Run a live quiz for a group (guides and course students)',done:'✅ Today: ',st:' in a row',fix:' mistakes to fix'},
-    ru:{campusT:'Чемпион курса — живая игра для группы',campusDesc:'Весь класс вместе · таймер · скорость = очки · пьедестал',campusGo:'Играть ▶',paT:'Экзамен часть А — по темам',paDesc:'Тесты с объяснением и источником · 22 темы экзамена',paMix:'Вперемешку',paTopic:'По темам',paFix:'Исправить ошибки',w3dTitle:'Кесария — 3D-мир',w3dDesc:'Прогулка по театру · сегодня и при Пилате · задания',archT:'Классическая архитектура в 3D',archDesc:'14 моделей · стилобат, кардо, гипокауст, маслодавильня…',arExp:'Изучать',arPlay:'Игра-опознание',arOpen:'Открытые вопросы',roads:'Рассказы о дороге на карте',roadsDesc:'Что говорил преподаватель в пути · учёба и экзамен',secExam:'Подготовка к экзамену',exGuided:'Тренировка',exErr:'Найди ошибку',exSadna:'Мастерская 180·400',exSim:'Пробный экзамен',qHistory:'Викторина: даты и события',qHistorySub:'124 событий · на время',qTimeline:'Лента времени по эпохам',hDone:' событий освоено · 🏆 ',qDaily:'Вызов дня',qDailySub:'5 вопросов · одинаковые для всего класса',playNow:'Играть ▶',qJourney:'Мой путь',qJourneySub:'Звёзды, ошибки для повторения и серия дней',secPlay:'Играть',guided:'Экскурсия по карте',examT:'Экзамен-челлендж',examDesc:'Спланировать день и написать экскурсии · 3 режима',mapDesc:'{tours} экскурсий · {q} вопросов · выберите место',solo:'Соло',soloDesc:'GPS открывает вопросы',stories:'Истории',storiesDesc:'Читать, без вопросов',secExplore:'Исследовать в 3D',j3dTitle:'Иерусалим в 3D',j3dDesc:'Старый город · Храм, стены и ворота',sites:'{n} мест',prev:'Назад',next:'Далее',guideLink:'Запустить живую викторину для группы (гиды и ученики курса)',done:'✅ Сегодня: ',st:' подряд',fix:' ошибок исправить'}
+    he:{secTrip:'אחרי הסיור',busT:'חידון על הדרך',busOld:'חידונים קודמים:',busN:'{n} שאלות',fichT:'דפי חזרה',fichDesc:'כל סיור בדף אחד',beniT:'מבחן אמצע – בני',beniDesc:'40 שאלות · תיקון בסוף',campusT:'אלוף הקורס — משחק קבוצתי חי',campusDesc:'כל הכיתה יחד · שעון · מהירות = נקודות · פודיום',campusGo:'יאללה ▶',paT:'מבחן חלק א׳ — לפי נושאים',paDesc:'שאלות אמריקאיות עם הסבר ומקור · 22 נושאי הבחינה',paMix:'מעורב',paTopic:'לפי נושא',paFix:'תיקון טעויות',w3dTitle:'קיסריה — עולם תלת-ממד',w3dDesc:'הולכים בתיאטרון · היום ובימי פילטוס · משימות',archT:'אדריכלות קלאסית בתלת-ממד',archDesc:'14 דגמים · סטילובט, קארדו, היפוקאוסט, בית בד…',arExp:'חקירה',arPlay:'משחק זיהוי',arOpen:'שאלות פתוחות',roads:'סיפורי דרך על המפה',roadsDesc:'מה המורה אמר בדרך · לימוד ומבחן',secExam:'הכנה למבחן',exGuided:'אימון מודרך',exErr:'מצא את הטעות',exSadna:'סדנת 180·400',exSim:'סימולציה',qHistory:'חידון תאריכים ואירועים',qHistorySub:'124 אירועים · עם שעון',qTimeline:'ציר הזמן לפי תקופות',hDone:' אירועים · 🏆 ',qDaily:'אתגר היום',qDailySub:'5 שאלות · אותן שאלות לכל הכיתה',playNow:'לשחק ▶',qJourney:'המסע שלי',qJourneySub:'כוכבים, טעויות לתיקון ורצף ימים',secPlay:'לשחק',guided:'סיור מודרך על המפה',examT:'אתגר המבחן',examDesc:'מתכננים יום טיול וכותבים הדרכות · 3 מצבים',mapDesc:'{tours} סיורים · {q} שאלות · בוחרים מקום',solo:'משחק עצמאי',soloDesc:'GPS פותח שאלות בדרך',stories:'סיפורי דרך',storiesDesc:'לקרוא, בלי שאלות',secExplore:'לחקור בתלת-ממד',j3dTitle:'ירושלים בתלת‑ממד',j3dDesc:'העיר העתיקה · בית המקדש, חומות ושערים',sites:'{n} אתרים',prev:'הקודם',next:'הבא',guideLink:'להפעיל חידון חי לקבוצה (מדריכים ותלמידי הקורס)',done:'✅ היום: ',st:' ברצף',fix:' טעויות לתיקון'},
+    fr:{secTrip:'Après la sortie',busT:'Quiz du bus',busOld:'Quiz précédents :',busN:'{n} questions',fichT:'Fiches de révision',fichDesc:'Chaque sortie sur une page',beniT:'Partiel – Beni',beniDesc:'40 QCM · correction à la fin',campusT:'Champion du cours — jeu de groupe en direct',campusDesc:'Toute la classe ensemble · chrono · la vitesse rapporte · podium',campusGo:'Jouer ▶',paT:'Examen partie A — par thème',paDesc:'QCM avec explication et source · 22 thèmes de l’examen',paMix:'Mélangé',paTopic:'Par thème',paFix:'Corriger mes erreurs',w3dTitle:'Césarée — monde 3D',w3dDesc:'Marcher dans le théâtre · aujourd’hui et au temps de Pilate · missions',archT:'Architecture classique en 3D',archDesc:'14 maquettes · stylobate, cardo, hypocauste, pressoir…',arExp:'Explorer',arPlay:'Jeu d’identification',arOpen:'Questions ouvertes',roads:'Récits de route sur la carte',roadsDesc:'Ce que le prof a dit en route · étude et examen',secExam:'Préparer l’examen',exGuided:'Entraînement',exErr:'Trouve l’erreur',exSadna:'Atelier 180·400',exSim:'Examen blanc',qHistory:'Quiz dates et événements',qHistorySub:'124 événements · chronométré',qTimeline:'Voir la frise par période',hDone:' événements réussis · 🏆 ',qDaily:'Défi du jour',qDailySub:'5 questions · les mêmes pour toute la classe',playNow:'Jouer ▶',qJourney:'Mon parcours',qJourneySub:'Étoiles, erreurs à revoir et jours d’affilée',secPlay:'Jouer',guided:'Visite guidée sur la carte',examT:'Défi de l’examen',examDesc:'Préparer une journée et rédiger les interventions · 3 modes',mapDesc:'{tours} sorties · {q} questions · choisir un lieu',solo:'Solo',soloDesc:'Le GPS ouvre les questions',stories:'Anecdotes',storiesDesc:'Lire, sans quiz',secExplore:'Explorer en 3D',j3dTitle:'Jérusalem en 3D',j3dDesc:'La Vieille Ville · Temple, murailles et portes',sites:'{n} sites',prev:'Précédent',next:'Suivant',guideLink:'Lancer un quiz en direct pour un groupe (guides et élèves du cours)',done:'✅ Aujourd’hui : ',st:' d’affilée',fix:' erreurs à revoir'},
+    en:{secTrip:'After the tour',busT:'Bus quiz',busOld:'Earlier quizzes:',busN:'{n} questions',fichT:'Review sheets',fichDesc:'Each tour on one page',beniT:'Midterm – Beni',beniDesc:'40 questions · corrected at the end',campusT:'Course champion — live group game',campusDesc:'The whole class together · timer · speed = points · podium',campusGo:'Play ▶',paT:'Part A exam — by topic',paDesc:'Multiple choice with explanation and source · 22 exam topics',paMix:'Mixed',paTopic:'By topic',paFix:'Fix mistakes',w3dTitle:'Caesarea — 3D world',w3dDesc:'Walk the theatre · today and in Pilate’s time · missions',archT:'Classical architecture in 3D',archDesc:'14 models · stylobate, cardo, hypocaust, oil press…',arExp:'Explore',arPlay:'Identify game',arOpen:'Open questions',roads:'Road stories on the map',roadsDesc:'What the teacher said on the road · study and exam',secExam:'Exam prep',exGuided:'Guided',exErr:'Spot the error',exSadna:'180·400 workshop',exSim:'Mock exam',qHistory:'Dates & events quiz',qHistorySub:'124 events · timed',qTimeline:'See the timeline by period',hDone:' events known · 🏆 ',qDaily:'Daily challenge',qDailySub:'5 questions · the same for the whole class',playNow:'Play ▶',qJourney:'My journey',qJourneySub:'Stars, mistakes to fix and day streak',secPlay:'Play',guided:'Guided tour on the map',examT:'Exam challenge',examDesc:'Plan a day and write guiding units · 3 modes',mapDesc:'{tours} tours · {q} questions · pick a place',solo:'Solo',soloDesc:'GPS opens questions',stories:'Stories',storiesDesc:'Read, no quiz',secExplore:'Explore in 3D',j3dTitle:'Jerusalem in 3D',j3dDesc:'The Old City · Temple, walls and gates',sites:'{n} sites',prev:'Previous',next:'Next',guideLink:'Run a live quiz for a group (guides and course students)',done:'✅ Today: ',st:' in a row',fix:' mistakes to fix'},
+    ru:{secTrip:'После экскурсии',busT:'Викторина в автобусе',busOld:'Прошлые викторины:',busN:'{n} вопросов',fichT:'Листы для повторения',fichDesc:'Каждая экскурсия на одной странице',beniT:'Промежуточный тест – Бени',beniDesc:'40 вопросов · проверка в конце',campusT:'Чемпион курса — живая игра для группы',campusDesc:'Весь класс вместе · таймер · скорость = очки · пьедестал',campusGo:'Играть ▶',paT:'Экзамен часть А — по темам',paDesc:'Тесты с объяснением и источником · 22 темы экзамена',paMix:'Вперемешку',paTopic:'По темам',paFix:'Исправить ошибки',w3dTitle:'Кесария — 3D-мир',w3dDesc:'Прогулка по театру · сегодня и при Пилате · задания',archT:'Классическая архитектура в 3D',archDesc:'14 моделей · стилобат, кардо, гипокауст, маслодавильня…',arExp:'Изучать',arPlay:'Игра-опознание',arOpen:'Открытые вопросы',roads:'Рассказы о дороге на карте',roadsDesc:'Что говорил преподаватель в пути · учёба и экзамен',secExam:'Подготовка к экзамену',exGuided:'Тренировка',exErr:'Найди ошибку',exSadna:'Мастерская 180·400',exSim:'Пробный экзамен',qHistory:'Викторина: даты и события',qHistorySub:'124 событий · на время',qTimeline:'Лента времени по эпохам',hDone:' событий освоено · 🏆 ',qDaily:'Вызов дня',qDailySub:'5 вопросов · одинаковые для всего класса',playNow:'Играть ▶',qJourney:'Мой путь',qJourneySub:'Звёзды, ошибки для повторения и серия дней',secPlay:'Играть',guided:'Экскурсия по карте',examT:'Экзамен-челлендж',examDesc:'Спланировать день и написать экскурсии · 3 режима',mapDesc:'{tours} экскурсий · {q} вопросов · выберите место',solo:'Соло',soloDesc:'GPS открывает вопросы',stories:'Истории',storiesDesc:'Читать, без вопросов',secExplore:'Исследовать в 3D',j3dTitle:'Иерусалим в 3D',j3dDesc:'Старый город · Храм, стены и ворота',sites:'{n} мест',prev:'Назад',next:'Далее',guideLink:'Запустить живую викторину для группы (гиды и ученики курса)',done:'✅ Сегодня: ',st:' подряд',fix:' ошибок исправить'}
   };
   var stats={tours:'22',q:'…'};
   var lang='he';try{lang=localStorage.getItem('mdl_mode_lang')||localStorage.getItem('mdl_lang')||'he';}catch(e){}
@@ -165,7 +183,7 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
     document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=(L[lang][el.dataset.t]||'').replace('{tours}',stats.tours).replace('{q}',stats.q);});
     document.querySelectorAll('[data-lang]').forEach(function(el){el.setAttribute('aria-pressed',String(el.dataset.lang===lang));});
     var FL={he:['🇮🇱','עב'],fr:['🇫🇷','FR'],en:['🇬🇧','EN'],ru:['🇷🇺','RU']};document.getElementById('langFlag').textContent=FL[lang][0];document.getElementById('langCode').textContent=FL[lang][1];
-    renderS3d();
+    renderS3d();renderBus();
     if(window.MDInstallText)window.MDInstallText();
     liveStatus();
     try{window.dispatchEvent(new Event('md-lang'));}catch(e){}
@@ -194,6 +212,17 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
     if(r||s){document.getElementById('dailySub').textContent=(r?S.done+r.right+'/'+r.total:S.qDailySub)+(s?' · 🔥 '+s+S.st:'');}
     if(d||m){document.getElementById('journeySub').textContent=(d?'🔥 '+d+S.st:'')+(d&&m?' · ':'')+(m?'🔁 '+m+S.fix:'');}
     if(P.historyStats){var h=P.historyStats(),k=h.mastered.length;if(k)document.getElementById('historySub').textContent='✅ '+k+'/'+(h.total||124)+S.hDone+h.points;}}
+  // ----- quiz du bus : ajouter la date du nouveau fichier return-bus/AAAA-MM-JJ.json EN TÊTE de cette liste -----
+  var BUS=['2026-11-19','2026-11-12'],busData={};
+  function dm(d){var p=d.split('-');return +p[2]+'.'+ +p[1];}
+  function busTitle(d){var t=(busData[d]&&busData[d].title)||'';return t.replace(/^[^–-]*[–-]\s*/,'').replace(/\s*\(.*\)\s*$/,'');}
+  function renderBus(){var T=L[lang],d=BUS[0],x=busData[d];
+    document.getElementById('busMain').href='return-bus.html?date='+d;
+    var sub=document.getElementById('busSub'),tt=document.createElement('bdi'),mt=document.createElement('span');sub.textContent='';tt.dir='rtl';tt.lang='he';tt.className='bus-tt';tt.textContent=busTitle(d);mt.textContent=dm(d)+(x?' · '+T.busN.replace('{n}',x.n):'');sub.appendChild(tt);sub.appendChild(mt);
+    var o=document.getElementById('busOld'),ls=document.getElementById('busList');ls.textContent='';
+    BUS.slice(1).forEach(function(k){var a=document.createElement('a');a.href='return-bus.html?date='+k;a.dir='rtl';a.textContent=(busTitle(k)?busTitle(k).split(/[,،]/)[0]+' · ':'')+dm(k);ls.appendChild(a);});
+    o.hidden=BUS.length<2;}
+  BUS.forEach(function(d){fetch('return-bus/'+d+'.json').then(function(r){return r.json();}).then(function(j){busData[d]={title:j.title||'',n:(j.questions||[]).length};renderBus();}).catch(function(){});});
   render();
   window.addEventListener('load',liveStatus);
   Promise.all([fetch('guided-quiz.json',{cache:'no-cache'}).then(function(r){return r.json();}),fetch('siyurim-catalog.json',{cache:'no-cache'}).then(function(r){return r.json();})]).then(function(r){stats={tours:String(r[1].tours.length),q:String(r[0].questions.length)};render();}).catch(function(){});
@@ -207,7 +236,14 @@ html[dir=rtl] .arrow-f{display:inline-block;transform:scaleX(-1)}
 <script src="onboarding.js"></script>
 <!-- Progressive home modes: only hide navigation, never delete content or progress. -->
 <style>
-.mode-picker{margin:8px 0 18px;padding:14px;border:1px solid #6e87ce;border-radius:18px;background:#15254e}
+.mode-picker{margin:4px 0 12px;padding:6px;border:1px solid #3d5190;border-radius:16px;background:#121d40}
+.mode-bar{display:flex;flex-wrap:wrap;gap:6px}
+.mode-toggle{flex:1 1 170px;min-width:0;display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 12px;border:0;border-radius:11px;background:transparent;color:#e6ecff;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;text-align:start}
+.mode-toggle .k{color:#9fb1e0;font-weight:700;font-size:13px}.mode-toggle .v{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mode-toggle .car{transition:transform .2s}
+.mode-picker.open .mode-toggle .car{transform:rotate(180deg)}
+.mode-panel{padding:8px 6px 4px}.mode-panel[hidden]{display:none}
+.mode-picker .mode-comfort{width:auto;margin:0;flex:1 0 auto;justify-content:center;gap:8px;min-height:44px;padding:6px 12px;border-style:solid;border-color:#3d5190}
+.mode-toggle:focus-visible{outline:2px solid #ffd878;outline-offset:2px}
 .mode-picker .mode-title{display:block;font-size:14px;font-weight:900;color:#dbe8ff;margin-bottom:9px}
 .mode-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .mode-options button{min-height:52px;border:1px solid #7186b8;border-radius:12px;background:#23345d;color:#fff;font-family:inherit;font-weight:800;font-size:14px;line-height:1.25;padding:6px 8px;cursor:pointer}
@@ -225,23 +261,25 @@ html:not(.ob-touring) .mode-hidden{display:none!important}
 'use strict';
 var KEY='mdl_home_mode_v1',MODES=['amateur','explorer','doctorant','guide'];
 var names={
- he:{title:'בחרו את הדרך שלכם',note:'אפשר לשנות מצב בכל רגע. כל התוכן וההתקדמות נשמרים.',modes:['🎯 חובב · חידונים','🧭 חוקר · מפות','🏛️ דוקטורנט · תלת־ממד','🎓 מורה דרך · הכול'],comfort:'♿ מצב נוחות',on:'פועל',off:'כבוי'},
- fr:{title:'Choisis ton expérience',note:'Change de mode à tout moment. Rien ne sera perdu.',modes:['🎯 Amateur · Quiz','🧭 Explorateur · Cartes','🏛️ Doctorant · 3D','🎓 Guide · Tout'],comfort:'♿ Mode Confort',on:'activé',off:'désactivé'},
- en:{title:'Choose your experience',note:'Switch anytime. Your progress and content stay intact.',modes:['🎯 Amateur · Quizzes','🧭 Explorer · Maps','🏛️ Scholar · 3D','🎓 Tour guide · All'],comfort:'♿ Comfort mode',on:'on',off:'off'},
- ru:{title:'Выберите режим',note:'Меняйте режим когда угодно. Прогресс сохранится.',modes:['🎯 Любитель · Тесты','🧭 Исследователь · Карты','🏛️ Эксперт · 3D','🎓 Гид · Всё'],comfort:'♿ Режим комфорта',on:'вкл.',off:'выкл.'}
+ he:{title:'בחרו את הדרך שלכם',cur:'תצוגה:',note:'אפשר לשנות מצב בכל רגע. כל התוכן וההתקדמות נשמרים.',modes:['🎯 חובב · חידונים','🧭 חוקר · מפות','🏛️ דוקטורנט · תלת־ממד','🎓 מורה דרך · הכול'],comfort:'♿ מצב נוחות',on:'פועל',off:'כבוי'},
+ fr:{title:'Choisis ton expérience',cur:'Affichage :',note:'Change de mode à tout moment. Rien ne sera perdu.',modes:['🎯 Amateur · Quiz','🧭 Explorateur · Cartes','🏛️ Doctorant · 3D','🎓 Guide · Tout'],comfort:'♿ Mode Confort',on:'activé',off:'désactivé'},
+ en:{title:'Choose your experience',cur:'View:',note:'Switch anytime. Your progress and content stay intact.',modes:['🎯 Amateur · Quizzes','🧭 Explorer · Maps','🏛️ Scholar · 3D','🎓 Tour guide · All'],comfort:'♿ Comfort mode',on:'on',off:'off'},
+ ru:{title:'Выберите режим',cur:'Вид:',note:'Меняйте режим когда угодно. Прогресс сохранится.',modes:['🎯 Любитель · Тесты','🧭 Исследователь · Карты','🏛️ Эксперт · 3D','🎓 Гид · Всё'],comfort:'♿ Режим комфорта',on:'вкл.',off:'выкл.'}
 };
 var main=document.querySelector('main'),daily=main&&main.querySelector('.today');
 if(!main||!daily)return;
 function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 var box=document.createElement('section');box.className='mode-picker';box.setAttribute('aria-labelledby','modeTitle');
-box.innerHTML='<span class="mode-title" id="modeTitle"></span><div class="mode-options" role="group" aria-labelledby="modeTitle"></div><p class="mode-note"></p><button type="button" class="mode-comfort" id="modeComfort" aria-pressed="false"><span class="lb"></span><span class="st"></span></button>';
+box.innerHTML='<div class="mode-bar"><button type="button" class="mode-toggle" id="modeToggle" aria-expanded="false" aria-controls="modePanel"><span class="k"></span><span class="v"></span><span class="car" aria-hidden="true">▾</span></button><button type="button" class="mode-comfort" id="modeComfort" aria-pressed="false"><span class="lb"></span><span class="st"></span></button></div><div class="mode-panel" id="modePanel" hidden><span class="mode-title" id="modeTitle"></span><div class="mode-options" role="group" aria-labelledby="modeTitle"></div><p class="mode-note"></p></div>';
 main.insertBefore(box,daily);
-var buttons=box.querySelector('.mode-options'),comfortBtn=box.querySelector('#modeComfort');
+var buttons=box.querySelector('.mode-options'),comfortBtn=box.querySelector('#modeComfort'),toggle=box.querySelector('#modeToggle'),panel=box.querySelector('#modePanel');
+function openPanel(o){panel.hidden=!o;box.classList.toggle('open',o);toggle.setAttribute('aria-expanded',String(o));}
+toggle.addEventListener('click',function(){openPanel(panel.hidden);});
 MODES.forEach(function(mode){
- var b=document.createElement('button');b.type='button';b.dataset.mode=mode;b.addEventListener('click',function(){setMode(mode,true);});buttons.appendChild(b);
+ var b=document.createElement('button');b.type='button';b.dataset.mode=mode;b.addEventListener('click',function(){setMode(mode,true);openPanel(false);});buttons.appendChild(b);
 });
 comfortBtn.addEventListener('click',function(){if(window.MDComfort)window.MDComfort.open(comfortBtn);});
-var heads=Array.from(main.querySelectorAll('h2.sec'));
+var heads=Array.from(main.querySelectorAll('h2.sec[data-group]'));
 var items={
  campus:main.querySelector('a.campus'),
  history:main.querySelector('section.hist'),
@@ -258,7 +296,7 @@ var items={
  timeline:main.querySelector('a.hist-tl')
 };
 // Chaque titre de rubrique suit ses blocs : jamais de bloc sous le mauvais titre, jamais de titre vide.
-var groups=[['campus','history','roads','guided','duo'],['parta','exam','arch'],['caesarea','jerusalem','chips']];
+var groups={trip:null,play:['campus','history','roads','guided','duo'],exam:['parta','exam','arch'],explore:['caesarea','jerusalem','chips']};
 var visible={
  // La 3D (Jérusalem, Césarée, les 20 sites) reste visible dans tous les modes : demande de Lionel (12/11).
  amateur:['campus','history','parta','caesarea','jerusalem','chips'],
@@ -272,8 +310,9 @@ function setMode(mode,save){
  current=mode;
  if(save){try{localStorage.setItem(KEY,mode);}catch(e){}}
  Object.keys(items).forEach(function(k){if(items[k])items[k].classList.toggle('mode-hidden',visible[mode].indexOf(k)===-1);});
- heads.forEach(function(h,i){var g=groups[i];if(!h||!g)return;h.classList.toggle('mode-hidden',!g.some(function(k){return visible[mode].indexOf(k)!==-1;}));});
+ heads.forEach(function(h){var g=groups[h.dataset.group];if(!g)return;h.classList.toggle('mode-hidden',!g.some(function(k){return visible[mode].indexOf(k)!==-1;}));});
  buttons.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});
+ if(box.dataset.ready)translate();
  document.documentElement.dataset.homeMode=mode;
 }
 function lang(){var l=document.documentElement.lang||'he';return names[l]?l:'he';}
@@ -282,6 +321,7 @@ function translate(){
  box.querySelector('.mode-title').textContent=t.title;
  box.querySelector('.mode-note').textContent=t.note;
  buttons.querySelectorAll('button').forEach(function(b,i){b.textContent=t.modes[i];});
+ toggle.querySelector('.k').textContent=t.cur;toggle.querySelector('.v').textContent=t.modes[MODES.indexOf(current)].split(' · ')[0];toggle.title=t.title;
  var on=!!(window.MDComfort&&window.MDComfort.get().on);
  comfortBtn.querySelector('.lb').textContent=t.comfort;comfortBtn.querySelector('.st').textContent=on?t.on:t.off;comfortBtn.setAttribute('aria-pressed',String(on));
 }
@@ -290,7 +330,7 @@ function translate(){
 var saved=get(KEY),returning=!!(get('mdl_onboarded_v3')||get('mdl_onboarded_v2')||get('mdl_onboarded')||get('mdl_player_v1')||get('mdl_mode_lang')||get('mdl_guide_name'));
 if(!saved){try{for(var j=0;j<localStorage.length;j++){var k=localStorage.key(j);if(/^mdl_(progress|daily|history|journey|mistakes)/.test(k)){returning=true;break;}}}catch(e){}}
 setMode(saved&&visible[saved]?saved:returning?'guide':'amateur',false);
-translate();
+box.dataset.ready='1';translate();
 window.addEventListener('md-lang',translate);
 window.addEventListener('md-comfort',translate);
 window.MDHomeMode={get:function(){return current;},set:function(m){setMode(m,true);}};
