@@ -26,6 +26,7 @@ jobs:
       - run: mkdir -p tools/podcast/out && python tools/podcast/gen_he_m.py A && python tools/podcast/gen_he_m.py B
       - name: Assemblage MP3 (narrateur)
         run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
           for v in A B; do
             sr=$(ffprobe -v error -show_entries stream=sample_rate -of csv=p=0 parts_$v/000.wav)
             ffmpeg -v error -y -f lavfi -t 0.7 -i anullsrc=r=$sr:cl=mono sil.wav
