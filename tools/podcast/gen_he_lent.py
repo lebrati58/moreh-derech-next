@@ -12,21 +12,16 @@ if os.path.exists('tools/podcast/forcer.txt'):
     for l in open('tools/podcast/forcer.txt', encoding='utf-8'):
         if '=' in l: k, v = l.rstrip('\n').split('=', 1); force[k.strip()] = v.strip()
 def strip_p(w): return re.sub(r'[^א-ת׳\']', '', NIK.sub('', w))
-paras = [p.strip() for p in open('tools/podcast/mamilla_he_nikud_m.txt', encoding='utf-8').read().split('\n\n') if p.strip()]
+paras = [p.strip() for p in open('tools/podcast/mamilla_he_tts.txt', encoding='utf-8').read().split('\n\n') if p.strip()]
 log, chunks, sr0 = [], [], 22050
 for pi, p in enumerate(paras):
     p = p.replace('—', ',').replace('…', ',')
     for s in [x for x in re.split(r'(?<=[.?!:])\s+', p) if x.strip()]:
-        auto = ph.add_diacritics(NIK.sub('', s))
-        words = auto.split(' ')
-        for i, w in enumerate(words):
-            k = strip_p(w)
-            if k in force: words[i] = re.sub(r'[א-ת][֑-ׇ]*(?:[א-ת][֑-ׇ]*)*', force[k], w, count=1)
-        text = ' '.join(words)
+        text = s  # texte vocalisé à la main + marques de lecture (tools/podcast/marks.py)
         phon = phonemize(text)
         a, sr = voice.create(phon, is_phonemes=True, length_scale=1.25)
         sr0 = sr; chunks += [a, np.zeros(int(sr * 0.45), dtype=a.dtype)]
-        log.append({'p': pi, 'mine': s, 'auto': text, 'ipa': phon, 'ipa_mine': phonemize(s)})
+        log.append({'p': pi, 'mine': s, 'auto': text, 'ipa': phon, 'ipa_mine': ''})
     chunks.append(np.zeros(int(sr0 * 0.6), dtype=chunks[0].dtype))
 sf.write('narrateur_lent.wav', np.concatenate(chunks), sr0)
 os.makedirs('tools/podcast/out', exist_ok=True)
