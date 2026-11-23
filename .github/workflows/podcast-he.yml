@@ -23,22 +23,17 @@ jobs:
           wget -q -O m/shaul.onnx https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/shaul.onnx
           wget -q -O m/model.onnx https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/model.onnx
           wget -q -O m/model.config.json https://huggingface.co/thewh1teagle/phonikud-tts-checkpoints/resolve/main/model.config.json
-      - run: mkdir -p tools/podcast/out && python tools/podcast/nikud_he.py
-      - run: python tools/podcast/gen_he.py
-      - name: Assemblage MP3
+      - run: mkdir -p tools/podcast/out && python tools/podcast/gen_he_m.py A && python tools/podcast/gen_he_m.py B
+      - name: Assemblage MP3 (narrateur)
         run: |
-          sudo apt-get install -y -qq ffmpeg >/dev/null || true
-          sr=$(ffprobe -v error -show_entries stream=sample_rate -of csv=p=0 parts/000_D.wav)
-          ffmpeg -v error -y -f lavfi -t 0.45 -i anullsrc=r=$sr:cl=mono sil.wav
-          : > list.txt; for f in parts/*.wav; do echo "file '$PWD/$f'" >> list.txt; echo "file '$PWD/sil.wav'" >> list.txt; done
-          ffmpeg -v error -y -f concat -safe 0 -i list.txt -af "loudnorm=I=-16:TP=-1.5:LRA=11" -ar 44100 -ac 1 -c:a libmp3lame -b:a 96k mamilla_podcast_he.mp3
-          ffprobe -v error -show_entries format=duration -of csv=p=0 mamilla_podcast_he.mp3
-      - uses: actions/upload-artifact@v4
-        with: { name: podcast-he, path: 'mamilla_podcast_he.mp3', retention-days: 7 }
-      - uses: actions/upload-artifact@v4
-        with: { name: podcast-he-parts, path: 'parts/', retention-days: 3 }
-      - name: Dépôt sur la branche (texte vocalisé + MP3)
+          for v in A B; do
+            sr=$(ffprobe -v error -show_entries stream=sample_rate -of csv=p=0 parts_$v/000.wav)
+            ffmpeg -v error -y -f lavfi -t 0.7 -i anullsrc=r=$sr:cl=mono sil.wav
+            : > list.txt; for f in parts_$v/*.wav; do echo "file '$PWD/$f'" >> list.txt; echo "file '$PWD/sil.wav'" >> list.txt; done
+            ffmpeg -v error -y -f concat -safe 0 -i list.txt -af "loudnorm=I=-16:TP=-1.5:LRA=11" -ar 44100 -ac 1 -c:a libmp3lame -b:a 96k tools/podcast/out/mamilla_podcast_he_narrateur_$v.mp3
+            ffprobe -v error -show_entries format=duration -of csv=p=0 tools/podcast/out/mamilla_podcast_he_narrateur_$v.mp3
+          done
+      - name: Dépôt sur la branche
         run: |
-          cp mamilla_podcast_he.mp3 tools/podcast/out/
           git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
-          git add tools/podcast/out && git commit -m "Podcast hébreu : texte vocalisé + MP3 [skip ci]" && git push
+          git add tools/podcast/out && git commit -m "Podcast hébreu narrateur (A : nikoud du texte, B : nikoud Phonikud) [skip ci]" && git push
