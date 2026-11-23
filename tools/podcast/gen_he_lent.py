@@ -15,14 +15,16 @@ def strip_p(w): return re.sub(r'[^א-ת׳\']', '', NIK.sub('', w))
 paras = [p.strip() for p in open('tools/podcast/mamilla_he_tts.txt', encoding='utf-8').read().split('\n\n') if p.strip()]
 log, chunks, sr0 = [], [], 22050
 for pi, p in enumerate(paras):
+    keta = []
     p = p.replace('—', ',').replace('…', ',')
     for s in [x for x in re.split(r'(?<=[.?!:])\s+', p) if x.strip()]:
         text = s  # texte vocalisé à la main + marques de lecture (tools/podcast/marks.py)
         phon = phonemize(text)
         a, sr = voice.create(phon, is_phonemes=True, length_scale=1.25)
-        sr0 = sr; chunks += [a, np.zeros(int(sr * 0.45), dtype=a.dtype)]
+        sr0 = sr; pad = np.zeros(int(sr * 0.45), dtype=a.dtype); chunks += [a, pad]; keta += [a, pad]
         log.append({'p': pi, 'mine': s, 'auto': text, 'ipa': phon, 'ipa_mine': ''})
     chunks.append(np.zeros(int(sr0 * 0.6), dtype=chunks[0].dtype))
+    os.makedirs('ketaim', exist_ok=True); sf.write(f'ketaim/keta_{pi:02d}.wav', np.concatenate(keta), sr0)
 sf.write('narrateur_lent.wav', np.concatenate(chunks), sr0)
 os.makedirs('tools/podcast/out', exist_ok=True)
 json.dump({'special': list(lexicon.NON_STANDARD_DIAC), 'log': log}, open('tools/podcast/out/phonemes_lent.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
