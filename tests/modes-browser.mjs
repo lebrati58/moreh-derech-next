@@ -29,6 +29,8 @@ async function context(dev, init = {}) {
   return ctx;
 }
 async function open(ctx, path, wait = 1200) { const pg = await ctx.newPage(); pg.on('pageerror', e => errs.push(path + ': ' + e.message)); await pg.goto(base + path); await pg.waitForTimeout(wait); return pg; }
+// le sélecteur de mode est replié dans une barre : on l'ouvre avant de choisir
+const pick = async (pg, mode) => { if (await pg.$('#modePanel[hidden]')) await pg.click('#modeToggle'); await pg.click(`.mode-options [data-mode=${mode}]`); };
 const overflow = pg => pg.evaluate(() => document.documentElement.scrollWidth - innerWidth);
 const closeOnboarding = async pg => { for (let k = 0; k < 3 && await pg.$('.ob-card'); k++) { const x = await pg.$('.ob-x') || await pg.$('#obBack'); if (x) await x.click(); await pg.waitForTimeout(350); } };
 
@@ -62,7 +64,7 @@ for (const dev of ['s24', 'desktop']) {
     let s = await pg.evaluate(state);
     check(s.title === LABEL[lang][0] && s.btn.includes(LABEL[lang][1]) && s.dir === (lang === 'he' ? 'rtl' : 'ltr'), `${dev} ${lang} : sélecteur traduit (« ${s.title} »)`);
     for (const mode of ['amateur', 'explorer', 'doctorant', 'guide']) {
-      await pg.click(`.mode-options [data-mode=${mode}]`); await pg.waitForTimeout(120);
+      await pick(pg, mode); await pg.waitForTimeout(120);
       s = await pg.evaluate(state);
       const same = s.shown.slice().sort().join() === EXPECT[mode].slice().sort().join();
       check(same && s.coherent && s.pressed === mode && (await overflow(pg)) <= 0, `${dev} ${lang} ${mode} : ${s.shown.length} blocs, titres cohérents, sans débordement`);
@@ -72,7 +74,7 @@ for (const dev of ['s24', 'desktop']) {
   }
   check((await pg.evaluate(state)).font === '800', `${dev} : police des boutons de mode appliquée (gras 800)`);
   // le choix est gardé, la langue aussi
-  await pg.click('.mode-options [data-mode=explorer]'); await pg.reload(); await pg.waitForTimeout(1000); await closeOnboarding(pg);
+  await pick(pg, 'explorer'); await pg.reload(); await pg.waitForTimeout(1000); await closeOnboarding(pg);
   const s = await pg.evaluate(state);
   check(s.pressed === 'explorer' && s.title === LABEL.ru[0], `${dev} : après rechargement, mode Explorateur et langue russe gardés`);
   // la page du jeu reste accessible même si son bloc est caché sur l'accueil (rien n'est supprimé)
@@ -126,7 +128,7 @@ for (const dev of ['s24', 'desktop']) {
   check((await overflow(pg)) <= 0, `${dev} : accueil à 150 % sans débordement horizontal`);
   await pg.screenshot({ path: `${OUT}/${dev}-confort-accueil.png`, fullPage: dev === 's24' });
   // indépendant du niveau : changer de mode ne touche pas au Confort, et inversement
-  await pg.click('.mode-options [data-mode=doctorant]');
+  await pick(pg, 'doctorant');
   check(await pg.evaluate(() => MDComfort.get().on && document.documentElement.dataset.homeMode === 'doctorant'), `${dev} : mode Doctorant + Confort ensemble`);
   // la visite guidée reste juste avec le zoom
   await pg.evaluate(() => { localStorage.removeItem('mdl_guide_never'); sessionStorage.clear(); });
