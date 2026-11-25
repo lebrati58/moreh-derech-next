@@ -162,7 +162,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 @media(min-width:900px){.sheet{inset-inline-start:16px;inset-inline-end:auto;margin:0;width:420px;bottom:16px;border-radius:26px;border-bottom:1px solid #5f6fc0;max-height:calc(100dvh - 190px)}.sheet.peek{transform:translateY(calc(100% + 16px - var(--peek,250px)))}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 .layers{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none;margin-inline:-12px;padding-inline:12px;padding-bottom:2px}.layers::-webkit-scrollbar{display:none}
-.lyr{flex:none;display:flex;align-items:center;gap:5px;height:34px;padding:0 11px;border-radius:30px;border:1px solid var(--line);background:#152150cc;font-size:13px;font-weight:800;white-space:nowrap;color:#aeb9e6;opacity:.85}
+.lyr{flex:none;display:flex;align-items:center;gap:5px;height:34px;padding:0 11px;border-radius:30px;border:1px solid #4a5a9c;background:#152150f0;font-size:13px;font-weight:800;white-space:nowrap;color:#e3e9ff}
 .lyr[aria-pressed=true]{background:var(--c,#fff);color:#0f1740;border-color:#fff;opacity:1}
 .pin.exam{border-radius:12px;transform:rotate(0);--c:#9be3ff}.pin.exam span{transform:none;font-size:17px}.pin.exam.on{transform:scale(1.22)}
 .pin.rtg{--c:#5fd18b;border-radius:50%;transform:rotate(0)}.pin.rtg span{transform:none;font-size:17px}.pin.rtg.on{transform:scale(1.22)}
@@ -173,8 +173,11 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 .pin.tanakh .jn{position:absolute;top:-9px;inset-inline-end:-9px;min-width:20px;height:20px;border-radius:10px;background:var(--jc,#fff);color:#0f1740;font:900 11px/20px inherit;text-align:center;border:2px solid #0a1230;transform:none}
 .tk-bar{display:flex;gap:6px;margin-top:6px;overflow-x:auto;scrollbar-width:none;margin-inline:-12px;padding-inline:12px;padding-bottom:2px}.tk-bar::-webkit-scrollbar{display:none}.tk-bar[hidden]{display:none}
 .tk-bar .lbl{flex:none;align-self:center;font-size:12px;font-weight:800;color:var(--sc,#e8c27a)}
-.tk-bar button{flex:none;height:30px;padding:0 10px;border-radius:30px;border:1px solid #6b5a33;background:#1d1a2ecc;color:#f2e3bd;font:inherit;font-size:12.5px;font-weight:800;white-space:nowrap;cursor:pointer}
+.tk-bar button{flex:none;height:30px;padding:0 10px;border-radius:30px;border:1px solid #8a7444;background:#1d1a2ef2;color:#fff3d6;font:inherit;font-size:12.5px;font-weight:800;white-space:nowrap;cursor:pointer}
 .tk-bar button[aria-pressed=true]{background:var(--c,#e8c27a);color:#1b1530;border-color:#fff}
+.sc-tabs button{border-color:#5f6fc0;background:#152150f2;color:#e3e9ff}
+/* ordinateur : textes plus grands et plus nets */
+@media(min-width:900px){.lyr{height:40px;padding:0 14px;font-size:15.5px}.tk-bar{gap:8px;margin-top:8px}.tk-bar .lbl{font-size:14.5px}.tk-bar button{height:36px;padding:0 14px;font-size:15px}.count-pill{font-size:15px;padding:10px 16px}}
 .tk-ref{margin-top:8px;padding:10px 12px;border-radius:12px;background:#0f1840;border:1px solid var(--line);border-inline-start:4px solid #e8c27a}
 .tk-ref b{display:block;color:#f2d995;font-size:13px}.tk-ref p{margin:3px 0 0;font-size:14.5px;line-height:1.45}
 .tk-ref details{margin-top:5px}.tk-ref summary{cursor:pointer;color:var(--muted);font-size:12.5px;font-weight:800}.tk-ref q{display:block;margin-top:4px;font-family:'Frank Ruhl Libre','David Libre',serif;font-size:17px;line-height:1.7;quotes:none;color:#fff3d6}
@@ -212,6 +215,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
   </div>
   <div class="chips" id="chips" role="group" aria-label="סינון" hidden></div>
   <div class="layers" id="layers" role="group" aria-label="מה מציגים במפה"></div>
+  <div class="tk-bar sc-tabs" id="scTabs" role="tablist" aria-label="סינון לפי ספר: באיזה טקסט" hidden></div>
   <div class="tk-bar" id="tkBooks" role="group" aria-label="תנ״ך: סינון לפי ספר" hidden></div>
   <div class="tk-bar" id="tkJourneys" role="group" aria-label="תנ״ך: מסעות" hidden></div>
   <div class="tk-bar" id="qrBooks" role="group" aria-label="קוראן: סינון לפי סורה" style="--sc:#7fd6b0" hidden></div>
@@ -240,7 +244,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 <script src="community.js"></script>
 <script src="tour-data.js"></script>
 <script src="progress.js"></script>
-<script type="module" src="israel-timeline.js"></script>
+<script type="module" src="israel-timeline.js?v=2"></script>
 <script>
 (function(){
 'use strict';
@@ -272,7 +276,7 @@ var examSites=null,rtgPlaces=null,examLoading=null,rtgLoading=null,signs=[];
 var SC={tanakh:{p:'tk',file:'tanakh/places.json',icon:'📖',c:'#e8c27a',name:'תנ״ך',bookLbl:'📖 ספר:',count:'מקומות בתנ״ך'},
   quran:{p:'qr',file:'quran/places.json',icon:'🕌',c:'#7fd6b0',name:'קוראן',bookLbl:'🕌 סורה:',count:'מקומות בקוראן ובתולדות האסלאם'},
   nt:{p:'nt',file:'nt/places.json',icon:'✝️',c:'#b9a6ff',name:'הברית החדשה',bookLbl:'✝️ ספר:',count:'מקומות בברית החדשה ובתולדות הנצרות'}};
-var SCK=Object.keys(SC);SCK.forEach(function(k){var s=SC[k];s.id=k;s.d=null;s.places=null;s.loading=null;s.book='all';s.journey=null;s.layer=null;});
+var SCK=Object.keys(SC),scFocus=null;SCK.forEach(function(k){var s=SC[k];s.id=k;s.d=null;s.places=null;s.loading=null;s.book='all';s.journey=null;s.layer=null;});
 function on(k){return !!layers[k];}
 
 function regionColor(r){return 'var(--r-'+(r||'road')+')';}
@@ -324,7 +328,7 @@ function find(id){for(var i=0;i<tours.length;i++)if(tours[i].id===id)return tour
 /* ----- calques ----- */
 function buildLayers(){
   $('layers').innerHTML=LAYERS.map(function(l){return '<button type="button" class="lyr" data-layer="'+l.id+'" aria-pressed="'+on(l.id)+'" style="--c:'+l.c+'">'+l.icon+' '+l.label+'</button>';}).join('');
-  $('layers').addEventListener('click',function(e){var b=e.target.closest('[data-layer]');if(!b)return;var k=b.dataset.layer;layers[k]=!layers[k];
+  $('layers').addEventListener('click',function(e){var b=e.target.closest('[data-layer]');if(!b)return;var k=b.dataset.layer;layers[k]=!layers[k];if(SC[k]&&layers[k])scFocus=k;
     b.setAttribute('aria-pressed',String(!!layers[k]));store.set('mdl_map_layers',JSON.stringify(Object.keys(layers).filter(on)));
     if(current&&current.kind&&!on(current.kind))closeSheet();
     ensureLayers();render(true);});
@@ -357,7 +361,13 @@ function scBuild(s){var B=$(s.p+'Books'),J=$(s.p+'Journeys');
   J.addEventListener('click',function(e){var b=e.target.closest('[data-j]');if(!b)return;setJourney(s,s.journey===b.dataset.j?null:b.dataset.j,true);});
   syncSc();
 }
-function syncSc(){SCK.forEach(function(k){var s=SC[k],show=on(k)&&!!s.d;$(s.p+'Books').hidden=!show;$(s.p+'Journeys').hidden=!show||!(s.d.journeys||[]).length;if(!on(k)&&s.journey)setJourney(s,null);});syncTop&&syncTop();}
+function syncSc(){
+  // quand plusieurs textes sont allumés, un seul montre ses filtres (les onglets choisissent lequel)
+  var act=SCK.filter(function(k){return on(k)&&SC[k].d;});if(act.indexOf(scFocus)<0)scFocus=act[act.length-1]||null;
+  var T=$('scTabs');T.hidden=act.length<2;
+  T.innerHTML=act.length<2?'':'<span class="lbl">סינון:</span>'+act.map(function(k){return '<button type="button" role="tab" data-sct="'+k+'" aria-selected="'+(k===scFocus)+'" aria-pressed="'+(k===scFocus)+'" style="--c:'+SC[k].c+'">'+SC[k].icon+' '+esc(SC[k].name)+'</button>';}).join('');
+  SCK.forEach(function(k){var s=SC[k],show=on(k)&&!!s.d&&k===scFocus;$(s.p+'Books').hidden=!show;$(s.p+'Journeys').hidden=!show||!(s.d.journeys||[]).length;if(!on(k)&&s.journey)setJourney(s,null);});syncTop&&syncTop();}
+$('scTabs').addEventListener('click',function(e){var b=e.target.closest('[data-sct]');if(!b)return;scFocus=b.dataset.sct;syncSc();});
 function journey(s,id){return s.d&&(s.d.journeys||[]).filter(function(j){return j.id===id;})[0];}
 function anyJourney(){return SCK.some(function(k){return on(k)&&SC[k].journey;});}
 function scStopNums(p){var s=p.sc,j=journey(s,s.journey);if(!j)return '';var n=[];j.stops.forEach(function(x,i){if(x.p===p.p.id)n.push(i+1);});return n.join('·');}
@@ -458,7 +468,7 @@ function drawMarkers(fit){
   var showRoad=roadLayer&&vis.some(function(t){return t.road;});
   if(roadLayer){if(showRoad)roadLayer.addTo(map);else map.removeLayer(roadLayer);if(showRoad)road.geometry.forEach(function(p){pts.push(p);});}
   var placedStops=vis.reduce(function(n,t){return n+t.placed.length;},0);
-  var parts=[];if(on('quiz'))parts.push(vis.filter(function(t){return !t.road;}).length+' סיורים · '+placedStops+' נקודות');if(on('exam'))parts.push(ex.length+' אתרי מבחן');if(on('rtg'))parts.push(rtAll+' אתרי רט״ג');SCK.forEach(function(k){if(on(k))parts.push(scN[k]+' '+SC[k].count);});
+  var parts=[];if(on('quiz'))parts.push(vis.filter(function(t){return !t.road;}).length+' סיורים · '+placedStops+' נקודות');if(on('exam'))parts.push(ex.length+' אתרי מבחן');if(on('rtg'))parts.push(rtAll+' אתרי רט״ג');SCK.forEach(function(k){if(on(k))parts.push(SC[k].icon+' '+scN[k]);});
   $('countPill').textContent=parts.join(' · ')||'בחרו שכבה למעלה';
   if(fit&&pts.length&&!current&&!anyJourney())map.flyToBounds(L.latLngBounds(pts).pad(.08),viewPad({maxZoom:12,duration:.5}));
 }
