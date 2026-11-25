@@ -1,47 +1,33 @@
 ✓ masjid_haram ← מסגד אל-חראם (21.422, 39.826) · 4/4 réf.
-✗ mecca he:כיבוש מכה@630 (630 · כיבוש מכה) : article Wikipédia introuvable
+✗ mecca he:כיבוש מכה@630 (630 · כיבוש מכה) : « כיבוש מכה » introuvable ; « כיבוש מכה (630) » introuvable ; « פתח מכה » introuvable ; « כיבוש מכה בידי המוסלמים » introuvable — articles proches : כיבוש (sans coord.) | כיבוש ירושלים בידי דוד (sans coord.) | עמים ילידים ביבשת אמריקה (sans coord.) | כיבוש קונסטנטינופול @41.030,28.935 | אבו סופיאן (sans coord.) | שריף (אסלאם) (sans coord.)
 ✓ mecca ← מכה (21.41667, 39.81667) · 2/3 réf.
-✗ hira he:מערת חירא@610 (610 · מערת חירא) : article Wikipédia introuvable
-   suggestions hira : ג'בל א-נור @21.458,39.861 | מוחמד (sans coord.)
-⚠ hira non placé (he:מערת חירא | he:ג'בל אל-נור)
+✓ hira ← ג'בל א-נור (21.45806, 39.86139) · 1/1 réf.
 ✓ aqsa ← מסגד אל-אקצא (31.77617, 35.23583) · 1/1 réf.
 ✓ dome_rock ← כיפת הסלע (31.77806, 35.23528) · 1/1 réf.
-✗ jerusalem_637 he:המצור על ירושלים (637)@637 (637 · המצור על ירושלים (637)) : article Wikipédia introuvable
-⚠ jerusalem_637 : aucune référence vérifiée, lieu écarté
+✓ jerusalem_637 ← העיר העתיקה (31.77667, 35.23417) · 1/1 réf.
 ✓ arafat ← הר ערפאת (21.35483, 39.98389) · 1/1 réf.
-   suggestions muzdalifa : 
-⚠ muzdalifa non placé (he:מוזדלפה | he:מזדלפה)
+✓ muzdalifa ← מוזדליפה (21.3925, 39.93778) · 1/1 réf.
 ✓ medina ← אל-מדינה (24.47, 39.61) · 4/4 réf.
-✗ prophet_mosque he:מסגד הנביא@632 (632 · מסגד הנביא) : année 632 absente de l'introduction de « מסגד הנביא »
-⚠ prophet_mosque : aucune référence vérifiée, lieu écarté
+✓ prophet_mosque ← מסגד הנביא (24.46833, 39.61083) · 1/1 réf.
 ✓ badr ← קרב בדר (23.73333, 38.76667) · 1/1 réf.
    suggestions hunayn : חנין (sans coord.) | מחוננות (sans coord.) | דב חנין (sans coord.) | אבא יוסי בן חנן (sans coord.) | חנן מאישקיא (sans coord.) | אבן חן (sans coord.) | תל חנן @32.770,35.045 | חנן בן ארי (sans coord.)
-⚠ hunayn non placé (he:קרב חנין | he:חנין (ערב))
-   suggestions egypt : מצרים (sans coord.) | נשיא מצרים (sans coord.) | ממלכת מצרים (sans coord.) | יחסי הממלכה המאוחדת – מצרים (sans coord.) | יחסי ישראל–מצרים (sans coord.) | מצרים העליונה (sans coord.) | יחסי מצרים–סוריה (sans coord.) | יחסי מצרים–שווייץ (sans coord.)
-⚠ egypt non placé (he:מצרים)
+⚠ hunayn non placé (he:קרב חנין | he:קרב חונין | he:חנין (ערב))
+✓ egypt ← מצרים (27, 29) · 4/4 réf.
 ✓ sinai ← ג'בל מוסא (28.53972, 33.97333) · 5/5 réf.
    suggestions madyan : מדין (sans coord.) | עורך דין (sans coord.) | פסק דין (sans coord.) | מבקר המדינה (sans coord.) | אב בית דין (sans coord.) | חנוך בן מדין (sans coord.) | מדע המדינה (sans coord.) | מדינה פלסטינית (sans coord.)
 ⚠ madyan non placé (he:מדיין | he:מדין)
-   suggestions judi : ג'ודי דנץ' (sans coord.) | ג'ודית שיינדלין (sans coord.) | ג'ודי אורבך (sans coord.) | ג'ודי צ'ו (sans coord.) | בית כאחיל @31.570,35.066 | אל ג'ולסון (sans coord.) | זוטרופוליס (sans coord.) | עולם האנרגיה (אפקוט) @28.375,-81.548
-⚠ judi non placé (he:הר ג'ודי | he:ג'ודי)
+   suggestions judi : ג'ודי דנץ' (sans coord.) | ג'ודית שיינדלין (sans coord.) | ג'ודי אורבך (sans coord.) | בית כאחיל @31.570,35.066 | ג'ודי צ'ו (sans coord.) | אל ג'ולסון (sans coord.) | זוטרופוליס (sans coord.) | עולם האנרגיה (אפקוט) @28.375,-81.548
+⚠ judi non placé (he:הר ג'ודי | he:הר ג׳ודי | he:ג'ודי דאג | he:ג'ודי)
 ✓ babylon ← בבל (32.53639, 44.42083) · 1/1 réf.
-   suggestions hijr : 
-⚠ hijr non placé (he:מדאין סאלח | he:חגרה)
-   suggestions saba : שבא (sans coord.) | שלמה שבא (sans coord.) | איה שבא (sans coord.) | מלכת שבא (sans coord.) | מלון מלכת שבא @29.551,34.962 | שלמה גרוניך ומקהלת שבא (sans coord.) | רב בר שבא (sans coord.) | מבצע שבא (sans coord.)
-⚠ saba non placé (he:ממלכת שבא | he:שבא | he:מארב)
+✓ hijr ← מדאאן סאלח (26.81417, 37.9475) · 1/1 réf.
+✓ saba ← שבא (15.45, 45.33333) · 2/2 réf.
 ✓ karbala ← כרבלא (32.61667, 44.03333) · 1/1 réf.
 ✓ damascus ← המסגד האומיי (33.51194, 36.30667) · 1/1 réf.
-✗ baghdad he:בגדאד@762 (762 · בגדאד) : année 762 absente de l'introduction de « בגדאד »
-⚠ baghdad : aucune référence vérifiée, lieu écarté
-✗ cordoba he:המסגד-קתדרלה של קורדובה@785 (785 · המסגד-קתדרלה של קורדובה) : article Wikipédia introuvable
-   suggestions cordoba : הקתדרלה של קורדובה @37.879,-4.779 | קורדובה (ספרד) @37.890,-4.780 | אמירות קורדובה (sans coord.) | אדריכלות מורית (sans coord.) | ארמון אלחפריה @41.656,-0.897 | שנות ה-80 של המאה ה-8 (sans coord.) | מקסורה (sans coord.) | עבד א-רחמן הראשון (sans coord.)
-⚠ cordoba non placé (he:המסגד-קתדרלה של קורדובה | he:המסגד של קורדובה | he:קורדובה)
+✓ baghdad ← בגדאד (33.33333, 44.43333) · 1/1 réf.
+✗ cordoba he:הקתדרלה של קורדובה@785 (785 · הקתדרלה של קורדובה) : année 785 absente de l'introduction de « הקתדרלה של קורדובה » ; « המסגד-קתדרלה של קורדובה » introuvable ; année 785 absente de l'introduction de « אמירות קורדובה » — articles proches : הקתדרלה של קורדובה @37.879,-4.779 | קורדובה (ספרד) @37.890,-4.780 | הרובע היהודי של קורדובה @37.879,-4.782 | קורדובה (פרובינציה) @-32.000,-64.000 | קתדרלת סנטיאגו דה קומפוסטלה @42.881,-8.544 | פלמה דה מיורקה @39.567,2.650
+⚠ cordoba : aucune référence vérifiée, lieu écarté
 ✓ hattin ← קרני חיטין (32.80449, 35.46144) · 1/1 réf.
 ✓ constantinople ← איה סופיה (41.00833, 28.98) · 1/1 réf.
-⚠ parcours musa : étape egypt non placée, ignorée
 ⚠ parcours musa : étape madyan non placée, ignorée
-⚠ parcours musa : étape egypt non placée, ignorée
-⚠ parcours hajj : étape muzdalifa non placée, ignorée
-✗ parcours battles mecca he:כיבוש מכה@630 : article Wikipédia introuvable
+✗ parcours battles mecca he:כיבוש מכה@630 : « כיבוש מכה » introuvable ; « כיבוש מכה (630) » introuvable ; « פתח מכה » introuvable ; « כיבוש מכה בידי המוסלמים » introuvable
 ⚠ parcours battles : étape hunayn non placée, ignorée
-⚠ parcours caliphates : étape baghdad non placée, ignorée
