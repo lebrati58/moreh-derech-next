@@ -32,6 +32,14 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 25 novembre 2026 — Carte : lisibilité sur ordinateur (branche `claude/map-lisible`)
+- Retour de Lionel (photo de l'écran d'ordinateur) : on lit mal les textes de la carte.
+- Ordinateur (≥ 900 px) : boutons de calques, filtres et pastille de compte plus grands ; contraste renforcé partout (boutons non actifs en blanc bleuté au lieu de gris transparent).
+- Quand plusieurs textes (📖 תנ״ך, 🕌 קוראן, ✝️ ברית חדשה) sont allumés, **un seul** affiche ses filtres ; une rangée « סינון: » permet de choisir lequel (avant : jusqu'à 6 rangées de filtres sur la carte). Rien n'est supprimé.
+- Pastille de compte raccourcie pour les textes (« 📖 50 · 🕌 21 · ✝️ 49 »).
+- Frise (`israel-timeline.js?v=2`) : cartes plus larges et texte plus grand sur ordinateur ; les hachures « date traditionnelle » ne passent plus sous le texte (bande en bas de la carte). `sw.js` : cache `v110`.
+- ✅ testé en navigateur (1440×900 + Pixel 7, tuiles simulées) : onglets, filtres, parcours, pas d'erreur ni de débordement. 🟡 pas vu sur un vrai téléphone.
+
 ### 25 novembre 2026 — Carte : mode clair ☀️ (branche `claude/map-clair`)
 - Demande de Lionel : une carte plus claire. Bouton ☀️/🌙 au-dessus de 🇮🇱 : en mode clair, les tuiles OpenStreetMap gardent leurs vraies couleurs (le filtre sombre `osm-dark` est retiré) ; le choix est mémorisé (`mdl_map_light`). Le mode sombre reste celui par défaut ; le bandeau et les fiches ne changent pas.
 - Le bouton reste au-dessus de 🇮🇱 quand la frise historique est affichée (`body.itl-on`). `sw.js` : cache `v109`. Test ajouté dans `tests/map.test.mjs`.

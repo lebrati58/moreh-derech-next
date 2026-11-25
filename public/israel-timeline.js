@@ -38,7 +38,8 @@ body.list-view .itl,body.itl-sheet .itl{display:none}
 .itl .bar span{font-size:11px;font-weight:800;line-height:1.15;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .itl .ev:first-child .bar{border-start-start-radius:12px;border-end-start-radius:12px}
 .itl .ev:last-child .bar{border-start-end-radius:12px;border-end-end-radius:12px;border-inline-end:0}
-.itl .ev.trad .bar{background-image:repeating-linear-gradient(135deg,#ffffff33 0 6px,transparent 6px 12px)}
+.itl .ev.trad .bar{background-image:repeating-linear-gradient(135deg,#0b123059 0 5px,transparent 5px 10px);background-size:100% 6px;background-repeat:no-repeat;background-position:bottom}
+@media(min-width:900px){.itl .ev{width:150px}.itl .bar{height:60px}.itl .bar b{font-size:14.5px}.itl .bar span{font-size:12.5px}.itl .era{font-size:12px;height:16px}}
 .itl .ev[aria-pressed=true] .bar{transform:translateY(-6px);box-shadow:0 0 0 3px #fff,0 8px 18px #000a;border-radius:10px;z-index:1;position:relative}
 .itl .ev[aria-pressed=true]::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#fff;z-index:2}
 .itl .ev:focus-visible .bar{outline:3px solid #fff;outline-offset:2px}
