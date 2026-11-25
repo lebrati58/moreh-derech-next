@@ -16,3 +16,13 @@ test('worship.json : lieux nommés, typés, dans la zone, sans doublon', { skip:
     assert.ok(!ids.has(p.id), p.id); ids.add(p.id);
   }
 });
+
+test('page : barre ⛪🕌🕍🚪, chargement de worship.json, période « aujourd’hui » seulement, cache hors ligne', () => {
+  const app = readFileSync(new URL('../public/jerusalem3d/app.js', import.meta.url), 'utf8');
+  const html = readFileSync(new URL('../public/jerusalem3d.html', import.meta.url), 'utf8');
+  assert.ok(html.includes('id="poiBar"'));
+  assert.ok(app.includes("fetch('jerusalem3d/worship.json'"));
+  assert.ok(/function poiShown\(\) \{ return POI && period === 12/.test(app), 'uniquement à la période 12');
+  const sw = readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8');
+  assert.ok(sw.includes("'./jerusalem3d/worship.json'"));
+});

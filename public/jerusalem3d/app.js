@@ -813,7 +813,7 @@ function loop() {
 const POI_I = { church: '⛪', mosque: '🕌', synagogue: '🕍', gate: '🚪' }, POI_C = { church: '#8fb8ff', mosque: '#5fd18b', synagogue: '#ffd878', gate: '#f0a35e' };
 let POI = null, poiOn = (() => { try { return JSON.parse(store.get('mdl_j3d_poi', '')) || null; } catch { return null; } })() || { church: true, mosque: true, synagogue: true, gate: true };
 fetch('jerusalem3d/worship.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(d => { if (!d || !d.places) return; POI = d; renderPoiBar(); if (DATA) { if (mode2d) draw2d(); else rebuildScene(); } }).catch(() => {});
-const poiName = q => (lang === 'he' ? q.n.he : q.n[lang]) || q.n.he || q.n.en || q.n.name;
+const poiName = q => String((lang === 'he' ? q.n.he : q.n[lang]) || q.n.he || q.n.en || q.n.name).replace(/^[\s.,;:·-]+|[\s.,;:·-]+$/g, '');
 function poiShown() { return POI && period === 12 && !compare ? POI.places.filter(q => poiOn[q.k]) : []; }
 function renderPoiBar() {
   const bar = $('poiBar'); if (!bar) return;

@@ -32,6 +32,11 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 25 novembre 2026 — Jérusalem 3D : églises, mosquées, synagogues et portes (branche `claude/j3d-lieux-de-culte`)
+- `tools/build-jerusalem3d-worship.mjs` (robot `.github/workflows/jerusalem3d-worship.yml`, quand l'outil change) → `public/jerusalem3d/worship.json` depuis **OpenStreetMap** (ODbL) : Vieille Ville, mont Sion, Cité de David, Kidron, bas du mont des Oliviers. 66 églises, 22 mosquées, 30 synagogues, 14 portes en plus des 8 portes de la ville déjà modélisées (surtout les portes de l'esplanade : שער השלשלת, שער הברזל…). Lieux sans nom écartés ; Dôme du Rocher, Al-Aqsa et Saint-Sépulcre non dupliqués.
+- Affichage **seulement à la période 12 « היום »** (OSM ne donne pas la date de construction). Barre ⛪ 🕌 🕍 🚪 avec compteurs (filtre mémorisé), petits piliers colorés + étiquettes en 3D, points sur le plan 2D, fiche avec noms (he/en/ar), confession, liens OSM / Wikipédia / Wikidata.
+- `sw.js` : cache `v107` + `worship.json`. Tests : `tests/jerusalem3d-worship.test.mjs` (données + page), `e2e:jerusalem3d` OK. 🟡 pas vu sur un vrai téléphone.
+
 ### 25 novembre 2026 — Carte : calque « 📖 תנ״ך » (branche `claude/tanakh-layer`)
 - Demande de Lionel : intégrer la carte de Avichai Mishneot (avimish10.github.io/tanach-map) en vue spéciale, totalement dédoublée. **Non repris** : le dépôt n'a aucune licence et son contenu vient des fiches payantes « תנ״ך ישראלי » (autorisation donnée à Avichai seul, sous conditions). Lionel a choisi notre propre calque.
 - Rien n'est copié de cette carte. Source unique `content/tanakh/places.src.json` : 51 lieux, ~100 références, 5 parcours (אברם, ארון הברית, שמשון, דוד בורח מפני שאול, אליהו), résumés courts écrits pour l'app.
