@@ -22,7 +22,7 @@ export function hasNameAr(text, stems) {
 // Anglais : mot entier, sans casse, possessif admis.
 const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 export function hasNameEn(text, names) {
-  const t = String(text || '');
+  const t = String(text || '').replace(/[’‘]/g, "'");
   return names.some(n => new RegExp('(?:^|[^A-Za-z])' + reEsc(n).split(' ').join('\\s+') + "(?:'s)?(?![A-Za-z])", 'i').test(t));
 }
 

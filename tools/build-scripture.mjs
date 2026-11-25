@@ -41,16 +41,32 @@ async function wiki(title, full) {
     const c = (p.coordinates || []).find(x => x.primary) || (p.coordinates || [])[0];
     return { title: p.title, url: p.fullurl, qid: p.pageprops && p.pageprops.wikibase_item, coord: c ? { lat: c.lat, lon: c.lon } : null, extract: (p.extract || '').replace(/\s+/g, ' ').trim() };
   })();
+  // article sans coordonnées : on prend celles de son élément Wikidata (P625), s'il en a
+  if (out && !out.coord && out.qid) {
+    const wd = await getJSON('https://www.wikidata.org/w/api.php?' + new URLSearchParams({ action: 'wbgetclaims', format: 'json', entity: out.qid, property: 'P625' }));
+    const v = wd && wd.claims && wd.claims.P625 && wd.claims.P625[0] && wd.claims.P625[0].mainsnak.datavalue && wd.claims.P625[0].mainsnak.datavalue.value;
+    if (v) { out.coord = { lat: v.latitude, lon: v.longitude }; out.coordFrom = 'wikidata'; }
+  }
   wikiCache.set(k, out);
   return out;
 }
+async function searchTitles(q) {
+  const sj = await getJSON('https://he.wikipedia.org/w/api.php?' + new URLSearchParams({ format: 'json', formatversion: '2', action: 'query', generator: 'search', gsrsearch: q, gsrlimit: '8', prop: 'coordinates' }));
+  return ((sj && sj.query && sj.query.pages) || []).sort((a, b) => a.index - b.index).map(x => x.title + (x.coordinates ? ' @' + x.coordinates[0].lat.toFixed(3) + ',' + x.coordinates[0].lon.toFixed(3) : ' (sans coord.)'));
+}
 
 // Événement : l'année doit figurer dans l'introduction de l'article.
-async function verifyHistory(h, year) {
-  const w = await wiki(h.slice(3), true);
+// « h » est le titre principal ; « alt » d'autres titres possibles (le premier qui contient l'année l'emporte).
+async function verifyHistory(h, year, alt = []) {
+  let w = null, why = [];
+  for (const t of [h, ...alt]) {
+    const x = await wiki(t.slice(3), true);
+    if (!x) { why.push(`« ${t.slice(3)} » introuvable`); continue; }
+    if (!hasYear(x.extract, year)) { why.push(`année ${year} absente de l'introduction de « ${x.title} »`); continue; }
+    w = x; break;
+  }
   const label = year + ' · ' + (w ? w.title : h.slice(3));
-  if (!w) return { ok: false, label, why: 'article Wikipédia introuvable' };
-  if (!hasYear(w.extract, year)) return { ok: false, label, why: `année ${year} absente de l'introduction de « ${w.title} »` };
+  if (!w) { const sug = await searchTitles(h.slice(3)); return { ok: false, label, why: why.join(' ; ') + (sug.length ? ' — articles proches : ' + sug.slice(0, 6).join(' | ') : '') }; }
   return { ok: true, label, verse: yearSentence(w.extract, year), lang: 'he', version: 'ויקיפדיה: ' + w.title, license: 'CC BY-SA 4.0', url: w.url, book: 'history', year };
 }
 
@@ -127,7 +143,7 @@ async function verifyNT(ref, place) {
 }
 
 const verifyVerse = CORPUS === 'quran' ? verifyQuran : verifyNT;
-const verify = (ref, place) => ref.h ? verifyHistory(ref.h, ref.year) : verifyVerse(ref.r, place);
+const verify = (ref, place) => ref.h ? verifyHistory(ref.h, ref.year, ref.alt) : verifyVerse(ref.r, place);
 const refKey = ref => ref.h ? ref.h + '@' + ref.year : ref.r;
 
 // ---------- construction ----------
@@ -153,13 +169,12 @@ for (const pl of src.places) {
     else { out.rejected.push({ place: pl.id, r: refKey(r), why: v.why }); say(`✗ ${pl.id} ${refKey(r)} (${v.label}) : ${v.why}`); }
   }
   if (!inBox) {
-    const sj = await getJSON('https://he.wikipedia.org/w/api.php?' + new URLSearchParams({ format: 'json', formatversion: '2', action: 'query', generator: 'search', gsrsearch: pl.he, gsrlimit: '8', prop: 'coordinates' }));
-    const sug = ((sj && sj.query && sj.query.pages) || []).sort((a, b) => a.index - b.index).map(x => x.title + (x.coordinates ? ' @' + x.coordinates[0].lat.toFixed(3) + ',' + x.coordinates[0].lon.toFixed(3) : ' (sans coord.)'));
+    const sug = await searchTitles(pl.he);
     say(`   suggestions ${pl.id} : ${sug.join(' | ')}`);
     out.unplaced.push({ id: pl.id, he: pl.he, wiki: w && w.title, why: !w ? 'article introuvable' : !w.coord ? 'article sans coordonnées' : 'hors du cadre' }); say(`⚠ ${pl.id} non placé (${pl.wiki.join(' | ')})`); continue;
   }
   if (!refs.length) { say(`⚠ ${pl.id} : aucune référence vérifiée, lieu écarté`); continue; }
-  const o = { id: pl.id, he: pl.he, kind: pl.kind, lat: +w.coord.lat.toFixed(5), lon: +w.coord.lon.toFixed(5), wiki: { title: w.title, url: w.url, qid: w.qid, extract: w.extract }, refs };
+  const o = { id: pl.id, he: pl.he, kind: pl.kind, lat: +w.coord.lat.toFixed(5), lon: +w.coord.lon.toFixed(5), wiki: { title: w.title, url: w.url, qid: w.qid, extract: w.extract, coordFrom: w.coordFrom || 'wikipedia' }, refs };
   if (pl.note) o.note = pl.note;
   out.places.push(o); byId[pl.id] = o;
   say(`✓ ${pl.id} ← ${w.title} (${o.lat}, ${o.lon}) · ${refs.length}/${pl.refs.length} réf.`);
@@ -169,7 +184,7 @@ for (const j of src.journeys) {
   for (const s of j.stops) {
     const pl = src.places.find(x => x.id === s.p); const placed = byId[s.p];
     if (!pl || !placed) { say(`⚠ parcours ${j.id} : étape ${s.p} non placée, ignorée`); continue; }
-    const ref = s.h ? { h: s.h, year: (pl.refs.find(x => x.h === s.h) || {}).year } : { r: s.r };
+    const ref = s.h ? Object.assign({}, pl.refs.find(x => x.h === s.h) || { h: s.h }) : { r: s.r };
     if (s.h && !ref.year) { say(`✗ parcours ${j.id} ${s.p} : événement ${s.h} absent des références du lieu`); continue; }
     const v = await verify(ref, pl);
     if (!v.ok) { out.rejected.push({ journey: j.id, place: s.p, r: refKey(ref), why: v.why }); say(`✗ parcours ${j.id} ${s.p} ${refKey(ref)} : ${v.why}`); continue; }
