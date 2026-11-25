@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "מורה דרך LIVE — חידון חי לסיור באוטובוס",
   "scripts": {
-    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/access.test.mjs tests/journey.test.mjs tests/jerusalem3d.test.mjs tests/sites3d.test.mjs tests/history.test.mjs tests/exam.test.mjs tests/repertoire.test.mjs tests/tours.test.mjs tests/architecture.test.mjs tests/hadracha.test.mjs tests/world3d.test.mjs tests/campus.test.mjs tests/sadna.test.mjs tests/rishui.test.mjs tests/comfort.test.mjs tests/ezer.test.mjs tests/fiches.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/game.test.mjs tests/content.test.mjs tests/v2.test.mjs tests/v3.test.mjs tests/v4.test.mjs tests/map.test.mjs tests/tanakh.test.mjs tests/community.test.mjs tests/feedback.test.mjs tests/contest.test.mjs tests/access.test.mjs tests/journey.test.mjs tests/jerusalem3d.test.mjs tests/sites3d.test.mjs tests/history.test.mjs tests/exam.test.mjs tests/repertoire.test.mjs tests/tours.test.mjs tests/architecture.test.mjs tests/hadracha.test.mjs tests/world3d.test.mjs tests/campus.test.mjs tests/sadna.test.mjs tests/rishui.test.mjs tests/comfort.test.mjs tests/ezer.test.mjs tests/fiches.test.mjs",
     "build:sql": "node tools/build-route-sql.mjs",
     "build:fiches": "node tools/build-fiches.mjs",
     "test:fiches": "node --test tests/fiches.test.mjs",
@@ -48,7 +48,9 @@
     "test:campus": "node --test tests/campus.test.mjs",
     "e2e:campus": "node tests/campus-browser.mjs screens-campus",
     "test:security": "node --test tests/security-community.test.mjs",
-    "test:pglite": "MDL_PGLITE=1 node --loader ./tests/pglite-loader.mjs --test --test-concurrency=1 tests/*.test.mjs"
+    "test:pglite": "MDL_PGLITE=1 node --loader ./tests/pglite-loader.mjs --test --test-concurrency=1 tests/*.test.mjs",
+    "test:tanakh": "node --test tests/tanakh.test.mjs",
+    "build:tanakh": "node tools/build-tanakh.mjs"
   },
   "license": "UNLICENSED",
   "devDependencies": {
