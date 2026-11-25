@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-25T12:19:26.104Z",
+ "generatedAt": "2026-11-25T12:32:13.607Z",
  "corpus": "nt",
  "name": "הברית החדשה",
  "method": "Lieux : coordonnées Wikipédia/Wikidata (P625). Versets : récupérés et vérifiés (le nom du lieu doit y figurer). Événements : l'année doit figurer dans l'introduction de l'article Wikipédia.",
@@ -1690,7 +1690,7 @@
   {
    "place": "constantinople",
    "r": "he:קונסטנטינופול@330",
-   "why": "année 330 absente de l'introduction de « קונסטנטינופול » ; année 330 absente de l'introduction de « קונסטנטינוס » ; année 330 absente de l'introduction de « קונסטנטינוס » ; année 330 absente de l'introduction de « האימפריה הביזנטית » ; année 330 absente de l'introduction de « איסטנבול » — articles proches : קונסטנטינופול @41.012,28.976 | כיבוש קונסטנטינופול @41.030,28.935 | הפטריארך האקומני של קונסטנטינופול (sans coord.) | ועידת קונסטנטינופול הראשונה (sans coord.) | היפודרום קונסטנטינופול @41.006,28.976 | אוניברסיטת קונסטנטינופול @41.012,28.976"
+   "why": "année 330 absente de l'introduction de « קונסטנטינופול » ; année 330 absente de l'introduction de « קונסטנטינוס » ; année 330 absente de l'introduction de « קונסטנטינוס » ; année 330 absente de l'introduction de « האימפריה הביזנטית » ; année 330 absente de l'introduction de « איסטנבול »"
   },
   {
    "place": "constantinople",
