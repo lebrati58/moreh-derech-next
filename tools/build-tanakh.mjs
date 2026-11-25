@@ -43,7 +43,7 @@ async function verify(ref, stems, books) {
   const label = books[book] + ' ' + gem(ch) + ', ' + gem(v);
   if (!c || !c.verses[v - 1]) return { ok: false, label, why: 'verset introuvable' };
   const text = c.verses[v - 1];
-  if (hasName(text, stems)) return { ok: true, label, text: String(text).replace(/<[^>]*>/g, '').replace(/\{[^}]*\}/g, '').replace(/\s+/g, ' ').trim(), version: c.title, license: c.license, source: c.source };
+  if (hasName(text, stems)) return { ok: true, label, text: String(text).replace(/<[^>]*>/g, '').replace(/&[a-z#0-9]+;/gi, ' ').replace(/\{[^}]*\}/g, '').replace(/\s+/g, ' ').trim(), version: c.title, license: c.license, source: c.source };
   const near = c.verses.map((t, i) => i + 1).filter(i => hasName(c.verses[i - 1], stems)).sort((a, b) => Math.abs(a - v) - Math.abs(b - v)).slice(0, 3);
   return { ok: false, label, why: 'nom absent du verset' + (near.length ? ' ; présent aux versets ' + near.join(', ') : ' ; absent du chapitre') };
 }

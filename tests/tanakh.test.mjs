@@ -40,8 +40,16 @@ test('données publiées : coordonnées sourcées et chaque verset contient le n
     assert.ok(p.lat > 29.4 && p.lat < 33.45 && p.lon > 34.2 && p.lon < 35.95, p.id + ' dans le cadre');
     assert.ok(p.wiki && /^https:\/\/he\.wikipedia\.org\//.test(p.wiki.url), p.id + ' : lien Wikipédia');
     assert.ok(p.refs.length, p.id);
-    for (const r of p.refs) { assert.ok(r.verse && hasName(r.verse, s.match), p.id + ' ' + r.r + ' : nom absent du verset'); assert.ok(r.version, p.id + ' ' + r.r + ' : version Sefaria'); }
+    for (const r of p.refs) { assert.ok(r.verse && hasName(r.verse, s.match), p.id + ' ' + r.r + ' : nom absent du verset'); assert.ok(r.version, p.id + ' ' + r.r + ' : version Sefaria'); assert.ok(!/[&<>{}]/.test(r.verse), p.id + ' ' + r.r + ' : balise ou entité HTML dans le verset'); }
   }
   const placed = new Set(d.places.map(p => p.id));
   for (const j of d.journeys) { assert.ok(j.stops.length >= 2, j.id); for (const s of j.stops) assert.ok(placed.has(s.p), j.id + ' → ' + s.p); }
+});
+
+test('carte : calque תנ״ך branché et données dans le cache hors ligne', () => {
+  const map = readFileSync(new URL('../public/map.html', import.meta.url), 'utf8');
+  assert.ok(map.includes("{id:'tanakh',icon:'📖'"), 'bouton du calque');
+  assert.ok(map.includes("MDTours.getJSON('tanakh/places.json')"), 'chargement à la première activation');
+  assert.ok(/id="tkBooks"/.test(map) && /id="tkJourneys"/.test(map), 'filtres livre et parcours');
+  assert.ok(readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8').includes("'./tanakh/places.json'"));
 });

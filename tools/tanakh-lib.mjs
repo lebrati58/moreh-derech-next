@@ -1,5 +1,5 @@
 // Fonctions pures du calque « תנ״ך » (partagées par tools/build-tanakh.mjs et tests/tanakh.test.mjs).
-export const strip = s => String(s || '').replace(/<[^>]*>/g, ' ').replace(/\{[^}]*\}/g, ' ').replace(/־/g, ' ')
+export const strip = s => String(s || '').replace(/<[^>]*>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ').replace(/\{[^}]*\}/g, ' ').replace(/־/g, ' ')
   .replace(/[֑-ׇ]/g, '').replace(/[^א-ת\s.,;:!?׃]/g, '').replace(/[.,;:!?׃]/g, ' ').replace(/\s+/g, ' ').trim();
 // lettres finales ramenées à leur forme normale (חברון → חברונה)
 const fin = s => s.replace(/ך/g, 'כ').replace(/ם/g, 'מ').replace(/ן/g, 'נ').replace(/ף/g, 'פ').replace(/ץ/g, 'צ');
