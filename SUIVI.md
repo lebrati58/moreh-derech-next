@@ -32,6 +32,11 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 25 novembre 2026 — Carte : mode clair ☀️ (branche `claude/map-clair`)
+- Demande de Lionel : une carte plus claire. Bouton ☀️/🌙 au-dessus de 🇮🇱 : en mode clair, les tuiles OpenStreetMap gardent leurs vraies couleurs (le filtre sombre `osm-dark` est retiré) ; le choix est mémorisé (`mdl_map_light`). Le mode sombre reste celui par défaut ; le bandeau et les fiches ne changent pas.
+- Le bouton reste au-dessus de 🇮🇱 quand la frise historique est affichée (`body.itl-on`). `sw.js` : cache `v109`. Test ajouté dans `tests/map.test.mjs`.
+- ✅ testé en navigateur (Pixel 7 + ordinateur, tuiles simulées car pas d'Internet ici) : bascule, mémorisation après rechargement, pas de chevauchement ni d'erreur. 🟡 pas vu sur un vrai téléphone.
+
 ### 25 novembre 2026 — Carte : calques « 🕌 קוראן » et « ✝️ ברית חדשה » (branche `claude/scripture-layers`)
 - Demande de Lionel : la même chose que le calque 📖 תנ״ך pour l'islam (Coran) et le christianisme, **y compris hors d'Israël** et avec les grands événements historiques (ex. l'édit de Milan, 313, placé à Milan).
 - Sources uniques : `content/quran/places.src.json` (25 lieux, 6 parcours : אל-אסראא, ההג׳רה, משה, החג׳, מערכות הנביא, בירות הח׳ליפות) et `content/nt/places.src.json` (48 lieux, 10 parcours : la naissance, le baptême, la montée à Jérusalem, la Passion, Philippe, Pierre, les voyages de Paul, Constantin). Résumés hébreux écrits pour l'app.

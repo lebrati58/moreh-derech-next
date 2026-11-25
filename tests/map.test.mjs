@@ -93,3 +93,10 @@ test('frise de la carte : chaque événement pointe sur un lieu déjà vérifié
   const src = readFileSync(new URL('../tools/israel-timeline.src.json', import.meta.url), 'utf8');
   assert.doesNotMatch(src, /"lat"|"lon"/);
 });
+
+test('carte : bouton ☀️/🌙 pour une carte claire, choix mémorisé', () => {
+  const map = readFileSync(new URL('../public/map.html', import.meta.url), 'utf8');
+  assert.ok(map.includes('id="lightBtn"'), 'bouton');
+  assert.ok(map.includes('body.map-light .osm-dark{filter:none}'), 'tuiles en vraies couleurs');
+  assert.ok(map.includes("store.set('mdl_map_light'"), 'choix mémorisé');
+});
