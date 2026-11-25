@@ -49,7 +49,7 @@ test('données publiées : coordonnées sourcées et chaque verset contient le n
 test('carte : calque תנ״ך branché et données dans le cache hors ligne', () => {
   const map = readFileSync(new URL('../public/map.html', import.meta.url), 'utf8');
   assert.ok(map.includes("{id:'tanakh',icon:'📖'"), 'bouton du calque');
-  assert.ok(map.includes("MDTours.getJSON('tanakh/places.json')"), 'chargement à la première activation');
+  assert.ok(map.includes("file:'tanakh/places.json'") && map.includes('MDTours.getJSON(s.file)'), 'chargement à la première activation');
   assert.ok(/id="tkBooks"/.test(map) && /id="tkJourneys"/.test(map), 'filtres livre et parcours');
   assert.ok(readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8').includes("'./tanakh/places.json'"));
 });
