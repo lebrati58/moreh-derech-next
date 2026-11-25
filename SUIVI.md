@@ -32,6 +32,13 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 25 novembre 2026 — Carte : calques « 🕌 קוראן » et « ✝️ ברית חדשה » (branche `claude/scripture-layers`)
+- Demande de Lionel : la même chose que le calque 📖 תנ״ך pour l'islam (Coran) et le christianisme, **y compris hors d'Israël** et avec les grands événements historiques (ex. l'édit de Milan, 313, placé à Milan).
+- Sources uniques : `content/quran/places.src.json` (25 lieux, 6 parcours : אל-אסראא, ההג׳רה, משה, החג׳, מערכות הנביא, בירות הח׳ליפות) et `content/nt/places.src.json` (48 lieux, 10 parcours : la naissance, le baptême, la montée à Jérusalem, la Passion, Philippe, Pierre, les voyages de Paul, Constantin). Résumés hébreux écrits pour l'app.
+- `tools/build-scripture.mjs quran|nt` (robot `.github/workflows/scripture.yml`, sur toute branche quand une source change) : coordonnées Wikipédia/Wikidata ; **chaque verset récupéré et vérifié** (Coran : texte Tanzil en arabe via api.alquran.cloud ; Nouveau Testament : Delitzsch en hébreu si getbible.net le fournit, sinon World English Bible, domaine public) ; **chaque événement** (« h ») : l'année doit figurer dans l'introduction de l'article Wikipédia hébreu. Le robot ne commite que si `tests/scripture.test.mjs` passe.
+- `map.html` : le code du calque תנ״ך est devenu générique (`SC` : תנ״ך, קוראן, ברית חדשה) — même bouton, mêmes filtres par livre/sourate (+ « 🕰️ היסטוריה ») et par parcours, fiche avec verset en arabe, hébreu ou anglais, note sur les identifications discutées. `sw.js` : cache `v108` + `quran/places.json`, `nt/places.json` (⚠️ ne fusionner qu'après le passage du robot, sinon le cache hors ligne échoue).
+- Pour ajouter un lieu, un verset ou un événement : éditer la liste source et pousser ; le robot vérifie et reconstruit.
+
 ### 25 novembre 2026 — Jérusalem 3D : églises, mosquées, synagogues et portes (branche `claude/j3d-lieux-de-culte`)
 - `tools/build-jerusalem3d-worship.mjs` (robot `.github/workflows/jerusalem3d-worship.yml`, quand l'outil change) → `public/jerusalem3d/worship.json` depuis **OpenStreetMap** (ODbL) : Vieille Ville, mont Sion, Cité de David, Kidron, bas du mont des Oliviers. 66 églises, 22 mosquées, 30 synagogues, 14 portes en plus des 8 portes de la ville déjà modélisées (surtout les portes de l'esplanade : שער השלשלת, שער הברזל…). Lieux sans nom écartés ; Dôme du Rocher, Al-Aqsa et Saint-Sépulcre non dupliqués.
 - Affichage **seulement à la période 12 « היום »** (OSM ne donne pas la date de construction). Barre ⛪ 🕌 🕍 🚪 avec compteurs (filtre mémorisé), petits piliers colorés + étiquettes en 3D, points sur le plan 2D, fiche avec noms (he/en/ar), confession, liens OSM / Wikipédia / Wikidata.

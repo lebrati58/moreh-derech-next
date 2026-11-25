@@ -1,0 +1,44 @@
+name: Calques קוראן et ברית חדשה (Wikipédia + textes vérifiés)
+# Construit public/quran/places.json et public/nt/places.json : coordonnées Wikipédia/Wikidata,
+# vérification de chaque verset (Tanzil ; Delitzsch ou World English Bible) et de l'année de chaque événement (Wikipédia).
+# Se lance quand une liste source ou l'outil change (sur n'importe quelle branche), ou à la main.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - content/quran/places.src.json
+      - content/nt/places.src.json
+      - tools/build-scripture.mjs
+      - tools/scripture-lib.mjs
+permissions:
+  contents: write
+concurrency:
+  group: scripture-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-scripture.mjs quran
+      - run: node tools/build-scripture.mjs nt
+      - name: Journal en annotations
+        if: always()
+        run: |
+          for c in quran nt; do [ -f tools/$c-build.log ] && grep -E "✗|⚠|ℹ|suggestions|Lieux placés" tools/$c-build.log | head -60 | while IFS= read -r l; do echo "::notice title=$c::$l"; done; done || true
+      # Garde-fou : on ne commite que si les tests des calques passent.
+      - name: Vérifier
+        id: guard
+        continue-on-error: true
+        run: node --test tests/scripture.test.mjs
+      - name: Commit
+        if: steps.guard.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/quran/places.json public/nt/places.json && git add -f tools/quran-build.log tools/nt-build.log
+          git diff --cached --quiet || git commit -m "data(scripture): lieux, versets et événements vérifiés (Wikipédia, Tanzil, Bible)"
+          git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"

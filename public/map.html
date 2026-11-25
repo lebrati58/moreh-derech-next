@@ -168,13 +168,15 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 .pin.tanakh{--c:#e8c27a;border-radius:50%;transform:rotate(0)}.pin.tanakh span{transform:none;font-size:17px}.pin.tanakh.on{transform:scale(1.22)}
 .pin.tanakh .jn{position:absolute;top:-9px;inset-inline-end:-9px;min-width:20px;height:20px;border-radius:10px;background:var(--jc,#fff);color:#0f1740;font:900 11px/20px inherit;text-align:center;border:2px solid #0a1230;transform:none}
 .tk-bar{display:flex;gap:6px;margin-top:6px;overflow-x:auto;scrollbar-width:none;margin-inline:-12px;padding-inline:12px;padding-bottom:2px}.tk-bar::-webkit-scrollbar{display:none}.tk-bar[hidden]{display:none}
-.tk-bar .lbl{flex:none;align-self:center;font-size:12px;font-weight:800;color:#e8c27a}
+.tk-bar .lbl{flex:none;align-self:center;font-size:12px;font-weight:800;color:var(--sc,#e8c27a)}
 .tk-bar button{flex:none;height:30px;padding:0 10px;border-radius:30px;border:1px solid #6b5a33;background:#1d1a2ecc;color:#f2e3bd;font:inherit;font-size:12.5px;font-weight:800;white-space:nowrap;cursor:pointer}
 .tk-bar button[aria-pressed=true]{background:var(--c,#e8c27a);color:#1b1530;border-color:#fff}
 .tk-ref{margin-top:8px;padding:10px 12px;border-radius:12px;background:#0f1840;border:1px solid var(--line);border-inline-start:4px solid #e8c27a}
 .tk-ref b{display:block;color:#f2d995;font-size:13px}.tk-ref p{margin:3px 0 0;font-size:14.5px;line-height:1.45}
 .tk-ref details{margin-top:5px}.tk-ref summary{cursor:pointer;color:var(--muted);font-size:12.5px;font-weight:800}.tk-ref q{display:block;margin-top:4px;font-family:'Frank Ruhl Libre','David Libre',serif;font-size:17px;line-height:1.7;quotes:none;color:#fff3d6}
-.tk-book{margin-top:14px;font-size:13px;font-weight:900;color:#e8c27a;letter-spacing:.3px}
+.tk-book{margin-top:14px;font-size:13px;font-weight:900;color:var(--sc,#e8c27a);letter-spacing:.3px}
+.tk-ref q[lang=ar]{font-family:'Amiri','Noto Naskh Arabic','Scheherazade New',serif;font-size:19px;line-height:1.9}.tk-ref q[lang=en]{font-family:inherit;font-size:14.5px;line-height:1.5;font-style:italic}
+.tk-ref .src{display:inline-block;margin-top:4px;font-size:12px;color:var(--muted)}
 .j3d-sign{display:flex;align-items:center;justify-content:center;width:34px;height:20px;border-radius:999px;background:linear-gradient(135deg,#ffd878,#f0b44c);color:#1c1f45;text-decoration:none;border:1.5px solid #fff6c9;box-shadow:0 2px 6px #0008;font-family:inherit;opacity:.95}
 .j3d-sign b{color:#1c1f45!important;font-size:11px;font-weight:900;line-height:1}
 </style>
@@ -208,6 +210,10 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
   <div class="layers" id="layers" role="group" aria-label="מה מציגים במפה"></div>
   <div class="tk-bar" id="tkBooks" role="group" aria-label="תנ״ך: סינון לפי ספר" hidden></div>
   <div class="tk-bar" id="tkJourneys" role="group" aria-label="תנ״ך: מסעות" hidden></div>
+  <div class="tk-bar" id="qrBooks" role="group" aria-label="קוראן: סינון לפי סורה" style="--sc:#7fd6b0" hidden></div>
+  <div class="tk-bar" id="qrJourneys" role="group" aria-label="קוראן: מסעות" style="--sc:#7fd6b0" hidden></div>
+  <div class="tk-bar" id="ntBooks" role="group" aria-label="הברית החדשה: סינון לפי ספר" style="--sc:#b9a6ff" hidden></div>
+  <div class="tk-bar" id="ntJourneys" role="group" aria-label="הברית החדשה: מסעות" style="--sc:#b9a6ff" hidden></div>
 </header>
 
 <div id="map" role="application" aria-label="מפת ישראל עם אתרי הסיורים" dir="ltr"></div>
@@ -253,11 +259,15 @@ var LEVELS=[{n:1,icon:'🌱',label:'קל'},{n:2,icon:'⭐',label:'בינוני'}
 
 var catalog,places,counts,road,tours=[],filter={q:'',region:'all',theme:'all'},current=null,openStop=null,map,cluster,focusLayer,markers=[],roadLayer=null;
 /* ----- calques : une seule carte, on coche ce qu'on veut voir (le choix est mémorisé) ----- */
-var LAYERS=[{id:'quiz',icon:'🎯',label:'חידונים',c:'#ffd878'},{id:'exam',icon:'📝',label:'מבחן',c:'#9be3ff'},{id:'rtg',icon:'🌿',label:'רט״ג',c:'#5fd18b'},{id:'tanakh',icon:'📖',label:'תנ״ך',c:'#e8c27a'},{id:'d3',icon:'🏛️',label:'3D',c:'#f0b44c'},{id:'road',icon:'🛣️',label:'67',c:'#ffffff'}];
+var LAYERS=[{id:'quiz',icon:'🎯',label:'חידונים',c:'#ffd878'},{id:'exam',icon:'📝',label:'מבחן',c:'#9be3ff'},{id:'rtg',icon:'🌿',label:'רט״ג',c:'#5fd18b'},{id:'tanakh',icon:'📖',label:'תנ״ך',c:'#e8c27a'},{id:'quran',icon:'🕌',label:'קוראן',c:'#7fd6b0'},{id:'nt',icon:'✝️',label:'ברית חדשה',c:'#b9a6ff'},{id:'d3',icon:'🏛️',label:'3D',c:'#f0b44c'},{id:'road',icon:'🛣️',label:'67',c:'#ffffff'}];
 var layers={};try{(JSON.parse(store.get('mdl_map_layers')||'null')||['quiz']).forEach(function(k){layers[k]=true;});}catch(e){layers={quiz:true};}
 if(params.get('layers'))params.get('layers').split(',').forEach(function(k){layers[k]=true;});
 var examSites=null,rtgPlaces=null,examLoading=null,rtgLoading=null,signs=[];
-var tk=null,tkPlaces=null,tkLoading=null,tkBook='all',tkJourney=null,tkLayer=null;
+/* calques des textes : תנ״ך, קוראן, ברית חדשה — même mécanique (lieux, filtre par livre, un parcours à la fois) */
+var SC={tanakh:{p:'tk',file:'tanakh/places.json',icon:'📖',c:'#e8c27a',name:'תנ״ך',bookLbl:'📖 ספר:',count:'מקומות בתנ״ך'},
+  quran:{p:'qr',file:'quran/places.json',icon:'🕌',c:'#7fd6b0',name:'קוראן',bookLbl:'🕌 סורה:',count:'מקומות בקוראן ובתולדות האסלאם'},
+  nt:{p:'nt',file:'nt/places.json',icon:'✝️',c:'#b9a6ff',name:'הברית החדשה',bookLbl:'✝️ ספר:',count:'מקומות בברית החדשה ובתולדות הנצרות'}};
+var SCK=Object.keys(SC);SCK.forEach(function(k){var s=SC[k];s.id=k;s.d=null;s.places=null;s.loading=null;s.book='all';s.journey=null;s.layer=null;});
 function on(k){return !!layers[k];}
 
 function regionColor(r){return 'var(--r-'+(r||'road')+')';}
@@ -325,38 +335,43 @@ function ensureLayers(){
     rtgPlaces=(j.places||[]).map(function(p){return {kind:'rtg',key:p.key,id:'rtg:'+p.key,p:p,title:p.short||p.he,lat:p.lat,lon:p.lon,fx:p.docs.some(function(d){return d.fx;}),
       placed:[{name:p.short||p.he,lat:p.lat,lon:p.lon}],search:norm(p.he+' '+(p.short||'')+' '+(p.regionHe||p.tourHe||'')+' '+p.docs.map(function(d){return d.t;}).join(' '))};});
     render(false);}).catch(function(){rtgPlaces=[];});}
-  if(on('tanakh')&&!tkPlaces&&!tkLoading){tkLoading=MDTours.getJSON('tanakh/places.json').then(function(j){tk=j;
-    tkPlaces=(j.places||[]).map(function(p){return {kind:'tanakh',key:'tk:'+p.id,id:'tk:'+p.id,p:p,title:p.he,lat:p.lat,lon:p.lon,books:p.refs.map(function(r){return r.book;}),
+  SCK.forEach(function(k){scLoad(SC[k]);});
+  syncSc();
+}
+/* ----- calques des textes : filtre par livre, un parcours à la fois ----- */
+function scLoad(s){if(!on(s.id)||s.places||s.loading)return;
+  s.loading=MDTours.getJSON(s.file).then(function(j){s.d=j;
+    s.places=(j.places||[]).map(function(p){return {kind:s.id,sc:s,key:s.p+':'+p.id,id:s.p+':'+p.id,p:p,title:p.he,lat:p.lat,lon:p.lon,books:p.refs.map(function(r){return r.book;}),
       placed:[{name:p.he,lat:p.lat,lon:p.lon}],search:norm(p.he+' '+(p.wiki&&p.wiki.title||'')+' '+p.refs.map(function(r){return r.label+' '+r.he;}).join(' '))};});
-    buildTk();render(false);}).catch(function(){tkPlaces=[];});}
-  syncTk();
+    scBuild(s);render(false);}).catch(function(){s.places=[];});}
+function scBooks(s){return Object.keys(s.d.books).filter(function(b){return s.places.some(function(p){return p.books.indexOf(b)>=0;});});}
+function scBuild(s){var B=$(s.p+'Books'),J=$(s.p+'Journeys');
+  B.innerHTML='<span class="lbl">'+s.bookLbl+'</span><button type="button" data-b="all" aria-pressed="true">הכול</button>'+scBooks(s).map(function(b){return '<button type="button" data-b="'+esc(b)+'" aria-pressed="false">'+esc(s.d.books[b])+'</button>';}).join('');
+  J.innerHTML='<span class="lbl">🧭 מסע:</span>'+(s.d.journeys||[]).map(function(j){return '<button type="button" data-j="'+esc(j.id)+'" aria-pressed="false" style="--c:'+esc(j.color)+'">'+esc(j.he)+'</button>';}).join('');
+  B.addEventListener('click',function(e){var b=e.target.closest('[data-b]');if(!b)return;s.book=b.dataset.b;B.querySelectorAll('[data-b]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});render(true);});
+  J.addEventListener('click',function(e){var b=e.target.closest('[data-j]');if(!b)return;setJourney(s,s.journey===b.dataset.j?null:b.dataset.j,true);});
+  syncSc();
 }
-/* ----- calque תנ״ך : filtre par livre, un parcours à la fois ----- */
-function tkBooksOrder(){return Object.keys(tk.books).filter(function(b){return tkPlaces.some(function(p){return p.books.indexOf(b)>=0;});});}
-function buildTk(){
-  $('tkBooks').innerHTML='<span class="lbl">📖 ספר:</span><button type="button" data-tkb="all" aria-pressed="true">הכול</button>'+tkBooksOrder().map(function(b){return '<button type="button" data-tkb="'+esc(b)+'" aria-pressed="false">'+esc(tk.books[b])+'</button>';}).join('');
-  $('tkJourneys').innerHTML='<span class="lbl">🧭 מסע:</span>'+(tk.journeys||[]).map(function(j){return '<button type="button" data-tkj="'+esc(j.id)+'" aria-pressed="false" style="--c:'+esc(j.color)+'">'+esc(j.he)+'</button>';}).join('');
-  $('tkBooks').addEventListener('click',function(e){var b=e.target.closest('[data-tkb]');if(!b)return;tkBook=b.dataset.tkb;$('tkBooks').querySelectorAll('[data-tkb]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});render(true);});
-  $('tkJourneys').addEventListener('click',function(e){var b=e.target.closest('[data-tkj]');if(!b)return;setJourney(tkJourney===b.dataset.tkj?null:b.dataset.tkj,true);});
-  syncTk();
-}
-function syncTk(){var show=on('tanakh')&&!!tk;$('tkBooks').hidden=!show;$('tkJourneys').hidden=!show||!(tk.journeys||[]).length;if(!on('tanakh')&&tkJourney)setJourney(null);syncTop&&syncTop();}
-function journey(id){return tk&&(tk.journeys||[]).filter(function(j){return j.id===id;})[0];}
-function tkStopNums(p){var j=journey(tkJourney);if(!j)return '';var n=[];j.stops.forEach(function(s,i){if(s.p===p.p.id)n.push(i+1);});return n.join('·');}
-function setJourney(id,fit){tkJourney=id;$('tkJourneys').querySelectorAll('[data-tkj]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.tkj===id));});
-  if(tkLayer){map.removeLayer(tkLayer);tkLayer=null;}
-  var j=journey(id);
-  if(j&&map){var ll=j.stops.map(function(s){var p=tkPlaces.filter(function(x){return x.p.id===s.p;})[0];return p?[p.lat,p.lon]:null;}).filter(Boolean);
-    tkLayer=L.layerGroup([L.polyline(ll,{color:'#0a1230',weight:8,opacity:.6}),L.polyline(ll,{color:j.color,weight:4,dashArray:'9 8',opacity:.95})]).addTo(map);
+function syncSc(){SCK.forEach(function(k){var s=SC[k],show=on(k)&&!!s.d;$(s.p+'Books').hidden=!show;$(s.p+'Journeys').hidden=!show||!(s.d.journeys||[]).length;if(!on(k)&&s.journey)setJourney(s,null);});syncTop&&syncTop();}
+function journey(s,id){return s.d&&(s.d.journeys||[]).filter(function(j){return j.id===id;})[0];}
+function anyJourney(){return SCK.some(function(k){return on(k)&&SC[k].journey;});}
+function scStopNums(p){var s=p.sc,j=journey(s,s.journey);if(!j)return '';var n=[];j.stops.forEach(function(x,i){if(x.p===p.p.id)n.push(i+1);});return n.join('·');}
+function setJourney(s,id,fit){s.journey=id;$(s.p+'Journeys').querySelectorAll('[data-j]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.j===id));});
+  if(s.layer){map.removeLayer(s.layer);s.layer=null;}
+  var j=journey(s,id);
+  if(j&&map){var ll=j.stops.map(function(x){var p=s.places.filter(function(y){return y.p.id===x.p;})[0];return p?[p.lat,p.lon]:null;}).filter(Boolean);
+    s.layer=L.layerGroup([L.polyline(ll,{color:'#0a1230',weight:8,opacity:.6}),L.polyline(ll,{color:j.color,weight:4,dashArray:'9 8',opacity:.95})]).addTo(map);
     if(fit)map.flyToBounds(L.latLngBounds(ll).pad(.25),viewPad({maxZoom:11,duration:.5}));}
   restyle();}
-function visTk(){return on('tanakh')&&tkPlaces?tkPlaces.filter(function(s){var j=journey(tkJourney);
-  if(j&&!j.stops.some(function(x){return x.p===s.p.id;}))return false;
-  if(tkBook!=='all'&&s.books.indexOf(tkBook)<0)return false;return !filter.q||s.search.indexOf(filter.q)>=0;}):[];}
+function visSc(s){return on(s.id)&&s.places?s.places.filter(function(x){var j=journey(s,s.journey);
+  if(j&&!j.stops.some(function(y){return y.p===x.p.id;}))return false;
+  if(s.book!=='all'&&x.books.indexOf(s.book)<0)return false;return !filter.q||x.search.indexOf(filter.q)>=0;}):[];}
+function scAll(){return [].concat.apply([],SCK.map(function(k){return SC[k].places||[];}));}
+function scIcon(p){return ((p.sc.d.kinds||{})[p.p.kind]||{}).icon||p.sc.icon;}
 function visExam(){return on('exam')&&examSites?examSites.filter(function(s){return !filter.q||s.search.indexOf(filter.q)>=0;}):[];}
 function visRtg(){return on('rtg')&&rtgPlaces?rtgPlaces.filter(function(s){return !filter.q||s.search.indexOf(filter.q)>=0;}):[];}
 function findRtg(key){return (rtgPlaces||[]).filter(function(x){return x.key===key;})[0]||null;}
-function findPlace(key){var all=(examSites||[]).concat(rtgPlaces||[]).concat(tkPlaces||[]);for(var i=0;i<all.length;i++)if(all[i].key===key||all[i].id===key)return all[i];return null;}
+function findPlace(key){var all=(examSites||[]).concat(rtgPlaces||[]).concat(scAll());for(var i=0;i<all.length;i++)if(all[i].key===key||all[i].id===key)return all[i];return null;}
 
 /* ----- filtres ----- */
 function buildChips(){
@@ -423,21 +438,20 @@ function drawMarkers(fit){
     var m=L.marker([p.lat,p.lon],{icon:L.divIcon({className:'',html:'<div class="pinwrap"><div class="'+cls+'"><span>'+(p.kind==='exam'?'📝':'🌿')+'</span></div>'+badge+'</div>',iconSize:[38,38],iconAnchor:[19,36]}),title:p.title,keyboard:true,riseOnHover:true});
     m.on('click',function(){openPlace(p);});m._tour=p.id;markers.push(m);pts.push([p.lat,p.lon]);
     if(isCur){m.setZIndexOffset(1000);focusLayer.addLayer(m);}else rest.push(m);});
-  var tkv=visTk();
-  tkv.forEach(function(p){
-    var isCur=current&&current.id===p.id,cls='pin tanakh'+(current?(isCur?' on':' dim'):''),num=tkStopNums(p),jc=num?journey(tkJourney).color:'';
-    var m=L.marker([p.lat,p.lon],{icon:L.divIcon({className:'',html:'<div class="pinwrap"><div class="'+cls+'"><span>'+((tk.kinds[p.p.kind]||{}).icon||'📖')+'</span>'+(num?'<b class="jn" style="--jc:'+esc(jc)+'">'+num+'</b>':'')+'</div></div>',iconSize:[38,38],iconAnchor:[19,36]}),title:p.title,keyboard:true,riseOnHover:true});
+  var scN={};SCK.forEach(function(k){var sv=visSc(SC[k]);scN[k]=sv.length;sv.forEach(function(p){
+    var isCur=current&&current.id===p.id,cls='pin tanakh'+(current?(isCur?' on':' dim'):''),num=scStopNums(p),jc=num?journey(p.sc,p.sc.journey).color:'';
+    var m=L.marker([p.lat,p.lon],{icon:L.divIcon({className:'',html:'<div class="pinwrap"><div class="'+cls+'" style="--c:'+p.sc.c+'"><span>'+scIcon(p)+'</span>'+(num?'<b class="jn" style="--jc:'+esc(jc)+'">'+num+'</b>':'')+'</div></div>',iconSize:[38,38],iconAnchor:[19,36]}),title:p.title,keyboard:true,riseOnHover:true});
     m.on('click',function(){openPlace(p);});m._tour=p.id;markers.push(m);pts.push([p.lat,p.lon]);
     // pendant un parcours, ses étapes restent hors des regroupements
-    if(isCur||num){m.setZIndexOffset(isCur?1000:500);focusLayer.addLayer(m);}else rest.push(m);});
+    if(isCur||num){m.setZIndexOffset(isCur?1000:500);focusLayer.addLayer(m);}else rest.push(m);});});
   cluster.addLayers(rest);
   syncSigns();
   var showRoad=roadLayer&&vis.some(function(t){return t.road;});
   if(roadLayer){if(showRoad)roadLayer.addTo(map);else map.removeLayer(roadLayer);if(showRoad)road.geometry.forEach(function(p){pts.push(p);});}
   var placedStops=vis.reduce(function(n,t){return n+t.placed.length;},0);
-  var parts=[];if(on('quiz'))parts.push(vis.filter(function(t){return !t.road;}).length+' סיורים · '+placedStops+' נקודות');if(on('exam'))parts.push(ex.length+' אתרי מבחן');if(on('rtg'))parts.push(rtAll+' אתרי רט״ג');if(on('tanakh'))parts.push(tkv.length+' מקומות בתנ״ך');
+  var parts=[];if(on('quiz'))parts.push(vis.filter(function(t){return !t.road;}).length+' סיורים · '+placedStops+' נקודות');if(on('exam'))parts.push(ex.length+' אתרי מבחן');if(on('rtg'))parts.push(rtAll+' אתרי רט״ג');SCK.forEach(function(k){if(on(k))parts.push(scN[k]+' '+SC[k].count);});
   $('countPill').textContent=parts.join(' · ')||'בחרו שכבה למעלה';
-  if(fit&&pts.length&&!current&&!(tkJourney&&on('tanakh')))map.flyToBounds(L.latLngBounds(pts).pad(.08),viewPad({maxZoom:12,duration:.5}));
+  if(fit&&pts.length&&!current&&!anyJourney())map.flyToBounds(L.latLngBounds(pts).pad(.08),viewPad({maxZoom:12,duration:.5}));
 }
 // progression de l'élève (progress.js) : 3 ⭐ = סיור en or, 1–2 ⭐ = badge, commencé = anneau
 function prog(t){var P=window.MDProgress;if(!P||t.community||t.road||t.kind)return {stars:0,started:false};return {stars:P.stars(t.id),started:P.started(t.id)};}
@@ -475,10 +489,10 @@ function render(fit){
   var ex=visExam(),rt=visRtg(),h='',exK={};ex.forEach(function(p){exK[p.key]=1;});rt=rt.filter(function(p){return !exK[p.key];});
   if(ex.length)h+='<div class="sec-title">📝 אתרי אתגר המבחן</div>'+ex.map(function(p){return '<button type="button" class="tcard" data-place="'+esc(p.id)+'"><span class="tnum" style="--c:#9be3ff">📝</span><span class="tbody"><b>'+esc(p.title)+'</b><small>'+esc(p.regionHe)+(p.site.periods?' · '+esc(p.site.periods.slice(0,2).join(' · ')):'')+'</small></span></button>';}).join('');
   if(rt.length)h+='<div class="sec-title">🌿 אתרים עם מסמכי רט״ג</div>'+rt.map(function(p){return '<button type="button" class="tcard" data-place="'+esc(p.id)+'"><span class="tnum" style="--c:#5fd18b">🌿</span><span class="tbody"><b>'+esc(p.title)+'</b><small>'+p.p.docs.length+' מסמכים'+(p.fx?' · יש חידון':'')+'</small></span></button>';}).join('');
-  var tkv=visTk();
-  if(tkv.length)h+='<div class="sec-title">📖 מקומות בתנ״ך</div>'+tkv.map(function(p){return '<button type="button" class="tcard" data-place="'+esc(p.id)+'"><span class="tnum" style="--c:#e8c27a">'+((tk.kinds[p.p.kind]||{}).icon||'📖')+'</span><span class="tbody"><b>'+esc(p.title)+'</b><small>'+esc(p.p.refs.map(function(r){return r.label;}).join(' · '))+'</small></span></button>';}).join('');
+  var scTot=0;SCK.forEach(function(k){var s=SC[k],sv=visSc(s);scTot+=sv.length;
+    if(sv.length)h+='<div class="sec-title">'+s.icon+' '+esc(s.count)+'</div>'+sv.map(function(p){return '<button type="button" class="tcard" data-place="'+esc(p.id)+'"><span class="tnum" style="--c:'+s.c+'">'+scIcon(p)+'</span><span class="tbody"><b>'+esc(p.title)+'</b><small>'+esc(p.p.refs.map(function(r){return r.label;}).join(' · '))+'</small></span></button>';}).join('');});
   $('cards').insertAdjacentHTML('beforeend',h);
-  if(!vis.length&&!ex.length&&!rt.length&&!tkv.length)$('cards').innerHTML='<p class="empty">'+(Object.keys(layers).some(on)?'לא נמצא דבר. נסו מילה אחרת או בטלו את הסינון.':'בחרו למעלה מה להציג: חידונים, מבחן, רט״ג…')+'</p>';
+  if(!vis.length&&!ex.length&&!rt.length&&!scTot)$('cards').innerHTML='<p class="empty">'+(Object.keys(layers).some(on)?'לא נמצא דבר. נסו מילה אחרת או בטלו את הסינון.':'בחרו למעלה מה להציג: חידונים, מבחן, רט״ג…')+'</p>';
   if(map)drawMarkers(fit);
 }
 $('cards').addEventListener('click',function(e){var b=e.target.closest('[data-tour]');if(b)return openTour(b.dataset.tour);var p=e.target.closest('[data-place]');if(p)openPlaceKey(p.dataset.place);});
@@ -513,7 +527,7 @@ function focusTour(t,stop){
   if(pts.length)map.flyToBounds(L.latLngBounds(pts),pad);
 }
 /* ----- fiche d'un site du מבחן ou d'un site רט״ג ----- */
-function openPlaceKey(key,opt){var p=findPlace(key);if(p)openPlace(p,opt);else{var w=function(){var q=findPlace(key);if(q)openPlace(q,opt);};(examLoading||Promise.resolve()).then(function(){return rtgLoading;}).then(function(){return tkLoading;}).then(w);}}
+function openPlaceKey(key,opt){var p=findPlace(key);if(p)openPlace(p,opt);else{var w=function(){var q=findPlace(key);if(q)openPlace(q,opt);};(examLoading||Promise.resolve()).then(function(){return rtgLoading;}).then(function(){return Promise.all(SCK.map(function(k){return SC[k].loading;}));}).then(w);}}
 function openPlace(p,opt){
   opt=opt||{};var first=!current;current=p;openStop=null;
   renderPlaceSheet(p);measure();setSheet(window.innerWidth>=900?'full':'peek');
@@ -524,7 +538,7 @@ function openPlace(p,opt){
 }
 function docLink(d){return '<a class="'+(d.ty==='guide'?'g':'')+'" href="rtg.html#/d/'+esc(d.id)+'">'+(d.ty==='guide'?'📗':'📄')+' '+esc(d.t)+'<small>'+esc({guide:'מדריך למדריך',brochure:'עלון',map:'מפה',activity:'פעילות',article:'מאמר',other:'מסמך'}[d.ty]||'מסמך')+(d.pages?' · עמ׳ '+d.pages.join(', '):'')+(d.fx?' · ✔ נוסחה כרטיסייה וחידון':'')+'</small></a>';}
 function renderPlaceSheet(p){
-  if(p.kind==='tanakh')return renderTkSheet(p);
+  if(p.sc)return renderScSheet(p);
   var isEx=p.kind==='exam',color=isEx?'#9be3ff':'#5fd18b';
   $('sheetHead').innerHTML='<span class="tnum" style="--c:'+color+'">'+(isEx?'📝':'🌿')+'</span><div style="min-width:0"><div class="sub">'+(isEx?'אתגר המבחן · '+esc(p.regionHe):(p.p.regionHe?'רט״ג · '+esc(p.p.regionHe):'רט״ג · '+esc(p.p.tourHe||'')))+'</div><h2 id="sheetTitle">'+esc(isEx?p.site.he:p.p.he)+'</h2></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
   var h='<div class="cta-zone">';
@@ -552,22 +566,27 @@ function renderPlaceSheet(p){
   $('sheetBody').innerHTML=h;
   $('closeSheet').addEventListener('click',function(){closeSheet();});
 }
-function renderTkSheet(p){
-  var P=p.p,k=tk.kinds[P.kind]||{};
-  $('sheetHead').innerHTML='<span class="tnum" style="--c:#e8c27a">'+(k.icon||'📖')+'</span><div style="min-width:0"><div class="sub">תנ״ך · '+esc(k.he||'')+'</div><h2 id="sheetTitle">'+esc(P.he)+'</h2><div class="sub">'+P.refs.length+' '+(P.refs.length===1?'פסוק':'פסוקים')+'</div></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
-  var h='<div class="cta-zone">',js=(tk.journeys||[]).filter(function(j){return j.stops.some(function(s){return s.p===P.id;});});
-  js.forEach(function(j){h+='<button type="button" class="play'+(tkJourney===j.id?'':' alt')+'" data-tkgo="'+esc(j.id)+'">🧭 '+(tkJourney===j.id?'המסע מוצג: ':'להציג את המסע: ')+esc(j.he)+'</button>';});
+function renderScSheet(p){
+  var s=p.sc,D=s.d,P=p.p,k=(D.kinds||{})[P.kind]||{},nv=P.refs.filter(function(r){return r.book!=='history';}).length,nh=P.refs.length-nv;
+  var cnt=[];if(nv)cnt.push(nv+' '+(nv===1?'פסוק':'פסוקים'));if(nh)cnt.push(nh+' '+(nh===1?'אירוע':'אירועים'));
+  $('sheetHead').innerHTML='<span class="tnum" style="--c:'+s.c+'">'+(k.icon||s.icon)+'</span><div style="min-width:0"><div class="sub">'+esc(s.name)+' · '+esc(k.he||'')+'</div><h2 id="sheetTitle">'+esc(P.he)+'</h2><div class="sub">'+cnt.join(' · ')+'</div></div><button type="button" class="close" id="closeSheet" aria-label="סגירה">✕</button>';
+  var h='<div class="cta-zone">',js=(D.journeys||[]).filter(function(j){return j.stops.some(function(x){return x.p===P.id;});});
+  js.forEach(function(j){h+='<button type="button" class="play'+(s.journey===j.id?'':' alt')+'" data-scgo="'+esc(j.id)+'">🧭 '+(s.journey===j.id?'המסע מוצג: ':'להציג את המסע: ')+esc(j.he)+'</button>';});
   h+='</div>';
-  var order=Object.keys(tk.books),last='';
-  P.refs.slice().sort(function(a,b){return order.indexOf(a.book)-order.indexOf(b.book);}).forEach(function(r){
-    if(r.book!==last){h+='<div class="tk-book">'+esc(tk.books[r.book])+'</div>';last=r.book;}
-    h+='<div class="tk-ref"><b>'+esc(r.label)+'</b><p>'+esc(r.he)+'</p><details><summary>הפסוק</summary><q lang="he">'+esc(r.verse)+'</q></details></div>';});
+  if(P.note)h+='<p class="notice">ℹ️ '+esc(P.note)+'</p>';
+  var order=Object.keys(D.books),last='';
+  P.refs.slice().sort(function(a,b){return order.indexOf(a.book)-order.indexOf(b.book)||(a.year||0)-(b.year||0);}).forEach(function(r){
+    if(r.book!==last){h+='<div class="tk-book" style="--sc:'+s.c+'">'+esc(D.books[r.book]||r.book)+'</div>';last=r.book;}
+    var lang=r.lang||'he',sum=r.book==='history'?'מה כתוב בוויקיפדיה':lang==='ar'?'הפסוק בערבית':lang==='en'?'הפסוק (תרגום אנגלי)':'הפסוק';
+    h+='<div class="tk-ref" style="border-inline-start-color:'+s.c+'"><b>'+esc(r.label)+'</b><p>'+esc(r.he)+'</p><details><summary>'+sum+'</summary><q lang="'+esc(lang)+'" dir="'+(lang==='en'?'ltr':'rtl')+'">'+esc(r.verse)+'</q>'+
+      '<span class="src">'+esc(r.version||'')+(r.url?' · <a href="'+esc(r.url)+'" target="_blank" rel="noopener">מקור ↗</a>':'')+'</span></details></div>';});
   if(P.wiki){h+='<div class="sec-title">🗺️ זיהוי המקום</div><p class="notice">'+(P.wiki.extract?esc(P.wiki.extract)+' ':'')+'<a href="'+esc(P.wiki.url)+'" target="_blank" rel="noopener">ויקיפדיה: '+esc(P.wiki.title)+' ↗</a></p>';}
-  var vers={};P.refs.forEach(function(r){vers[r.version+(r.license?' · '+r.license:'')]=1;});
-  h+='<p class="foot">כל פסוק נבדק אוטומטית: שם המקום מופיע בו. נוסח הפסוקים: ספריא ('+esc(Object.keys(vers).join(' ; '))+'). המיקום והזיהוי: ויקיפדיה/ויקינתונים — יש זיהויים שנויים במחלוקת. הסיכומים נכתבו לאפליקציה.</p>';
+  var foot=D.footHe;if(!foot){var vers={};P.refs.forEach(function(r){vers[r.version+(r.license?' · '+r.license:'')]=1;});
+    foot='כל פסוק נבדק אוטומטית: שם המקום מופיע בו. נוסח הפסוקים: ספריא ('+Object.keys(vers).join(' ; ')+'). המיקום והזיהוי: ויקיפדיה/ויקינתונים — יש זיהויים שנויים במחלוקת. הסיכומים נכתבו לאפליקציה.';}
+  h+='<p class="foot">'+esc(foot)+'</p>';
   $('sheetBody').innerHTML=h;
   $('closeSheet').addEventListener('click',function(){closeSheet();});
-  $('sheetBody').querySelectorAll('[data-tkgo]').forEach(function(b){b.addEventListener('click',function(){var id=b.dataset.tkgo;setJourney(tkJourney===id?null:id,true);renderTkSheet(p);});});
+  $('sheetBody').querySelectorAll('[data-scgo]').forEach(function(b){b.addEventListener('click',function(){var id=b.dataset.scgo;setJourney(s,s.journey===id?null:id,true);renderScSheet(p);});});
 }
 function closeSheet(fromPop){
   if(!current)return;current=null;openStop=null;setSheet('closed');restyle();
