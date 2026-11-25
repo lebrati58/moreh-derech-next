@@ -7,5 +7,7 @@
   "assets": {
     "directory": "./public",
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // Workers Builds lance « npx wrangler preview », qui exige ce bloc (il peut rester vide).
+  "previews": {}
 }
