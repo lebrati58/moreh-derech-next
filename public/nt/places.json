@@ -1,0 +1,1781 @@
+{
+ "generatedAt": "2026-11-25T12:11:47.108Z",
+ "corpus": "nt",
+ "name": "הברית החדשה",
+ "method": "Lieux : coordonnées Wikipédia/Wikidata (P625). Versets : récupérés et vérifiés (le nom du lieu doit y figurer). Événements : l'année doit figurer dans l'introduction de l'article Wikipédia.",
+ "license": "Résumés de lieux : Wikipédia en hébreu, CC BY-SA 4.0. Coordonnées : Wikidata (CC0). Textes : version et licence indiquées pour chaque référence.",
+ "footHe": "כל פסוק נבדק אוטומטית: שם המקום מופיע בו. כל אירוע היסטורי נבדק: השנה מופיעה בפתיח של הערך בוויקיפדיה. נוסח הפסוקים: תרגום דליטש לעברית או World English Bible (נחלת הכלל), לפי מה שזמין. המיקום והזיהוי: ויקיפדיה/ויקינתונים — יש זיהויים שנויים במחלוקת. הסיכומים נכתבו לאפליקציה.",
+ "books": {
+  "Matthew": "מתי",
+  "Mark": "מרקוס",
+  "Luke": "לוקס",
+  "John": "יוחנן",
+  "Acts": "מעשי השליחים",
+  "history": "🕰️ היסטוריה"
+ },
+ "kinds": {
+  "city": {
+   "he": "עיר ויישוב",
+   "icon": "🏘️"
+  },
+  "holy": {
+   "he": "מקום קדוש",
+   "icon": "⛪"
+  },
+  "mount": {
+   "he": "הר",
+   "icon": "⛰️"
+  },
+  "water": {
+   "he": "מים: נהר, ים ובריכה",
+   "icon": "💧"
+  },
+  "land": {
+   "he": "ארץ",
+   "icon": "🗺️"
+  },
+  "council": {
+   "he": "ועידה ואירוע",
+   "icon": "📜"
+  }
+ },
+ "places": [
+  {
+   "id": "nazareth",
+   "he": "נצרת",
+   "kind": "city",
+   "lat": 32.70189,
+   "lon": 35.29499,
+   "wiki": {
+    "title": "נצרת",
+    "url": "https://he.wikipedia.org/wiki/%D7%A0%D7%A6%D7%A8%D7%AA",
+    "qid": "Q430776",
+    "extract": "נָצְרַת (בערבית: أَلنَّاصِرَة, תעתיק מדויק: אלנָּאצִרַה, תעתיק חופשי: א-נָּאסִירַה; בלטינית: Nazara, נהגה ונכתב בערבית ספרותית; נְּיצְרַת וכן נְּסִּרְאַתַּ וכן נשּׁראתּ או נְּשִּׂרְאַתַּ) היא עיר עתיקה במחוז הצפון שבמדינת ישראל, והיא העיר הערבית השנייה בגודלה בישראל אחרי העיר הבדואית רהט. מתגוררים בנצרת כ-76,773 תושבים, רובם ככולם מהמגזר הערבי – כ-74% מאוכלוסיית העיר נצרת מהווים כיום רוב מכריע של ערבים-מוסלמים, לצד מיעוט משמעותי של כ-25% ערבים נוצרים בקרב תושביה."
+   },
+   "refs": [
+    {
+     "r": "Luke 1:26",
+     "label": "לוקס א, כו",
+     "he": "המלאך גבריאל נשלח לעיר בגליל ששמה נצרת, אל מרים.",
+     "verse": "Now in the sixth month, the angel Gabriel was sent from God to a city of Galilee, named Nazareth,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    },
+    {
+     "r": "Luke 2:4",
+     "label": "לוקס ב, ד",
+     "he": "יוסף עולה מנצרת אל בית לחם, עיר דוד, למפקד.",
+     "verse": "Joseph also went up from Galilee, out of the city of Nazareth, into Judea, to David’s city, which is called Bethlehem, because he was of the house and family of David;",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    },
+    {
+     "r": "Matthew 2:23",
+     "label": "מתי ב, כג",
+     "he": "בשובם ממצרים משתקעת המשפחה בעיר בשם נצרת.",
+     "verse": "and came and lived in a city called Nazareth; that it might be fulfilled which was spoken through the prophets: “He will be called a Nazarene.”",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Luke 4:16",
+     "label": "לוקס ד, טז",
+     "he": "ישו בא לנצרת, שם גדל, וקורא בבית הכנסת בשבת.",
+     "verse": "He came to Nazareth, where he had been brought up. He entered, as was his custom, into the synagogue on the Sabbath day, and stood up to read.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    }
+   ]
+  },
+  {
+   "id": "bethlehem",
+   "he": "בית לחם",
+   "kind": "city",
+   "lat": 31.70306,
+   "lon": 35.19556,
+   "wiki": {
+    "title": "בית לחם",
+    "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%9C%D7%97%D7%9D",
+    "qid": "Q5776",
+    "extract": "בֵּית לֶחֶם (בערבית: بَيْت لَحم, בַּיְת לַחְם) היא עיר בהרי יהודה, כ-10 ק\"מ דרומית לירושלים. העיר נמצאת בשטח A שבשליטת הרשות הפלסטינית."
+   },
+   "refs": [
+    {
+     "r": "Matthew 2:1",
+     "label": "מתי ב, א",
+     "he": "ישו נולד בבית לחם שביהודה, בימי המלך הורדוס.",
+     "verse": "Now when Jesus was born in Bethlehem of Judea in the days of King Herod, behold, wise men from the east came to Jerusalem, saying,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Luke 2:4",
+     "label": "לוקס ב, ד",
+     "he": "יוסף עולה מנצרת אל בית לחם, עיר דוד.",
+     "verse": "Joseph also went up from Galilee, out of the city of Nazareth, into Judea, to David’s city, which is called Bethlehem, because he was of the house and family of David;",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    }
+   ]
+  },
+  {
+   "id": "jordan",
+   "he": "הירדן — מקום הטבילה",
+   "kind": "water",
+   "lat": 31.83709,
+   "lon": 35.5465,
+   "wiki": {
+    "title": "קסר אל-יהוד",
+    "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A1%D7%A8_%D7%90%D7%9C-%D7%99%D7%94%D7%95%D7%93",
+    "qid": "Q1574073",
+    "extract": "קסר אל-יהוד (בערבית: قصر اليهود, תעתיק מדויק: קצר אליהוד; מילולית: \"ארמון היהודים\") הוא המקום שבו, על פי המסורת היהודית, חצו בני ישראל את נהר הירדן בכניסתם לארץ כנען. בבית עברה השוכנת מול קסר אל-יהוד, על הגדה המזרחית של נהר הירדן, הטביל, על פי המסורת הנוצרית, יוחנן המטביל את ישו ואת מאמיניו, ואתר הטבילה נחשב כשלישי בקדושתו בעולם הנוצרי, לאחר כנסיית המולד בבית לחם וכנסיית הקבר הקדוש בירושלים."
+   },
+   "refs": [
+    {
+     "r": "Matthew 3:13",
+     "label": "מתי ג, יג",
+     "he": "ישו בא מהגליל אל הירדן כדי להיטבל בידי יוחנן.",
+     "verse": "Then Jesus came from Galilee to the Jordan to John, to be baptized by him.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Mark 1:9",
+     "label": "מרקוס א, ט",
+     "he": "ישו מנצרת שבגליל נטבל בידי יוחנן בירדן.",
+     "verse": "In those days, Jesus came from Nazareth of Galilee, and was baptized by John in the Jordan.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Mark"
+    },
+    {
+     "r": "John 1:28",
+     "label": "יוחנן א, כח",
+     "he": "הדברים קרו בבית עניה שבעבר הירדן, שם הטביל יוחנן.",
+     "verse": "These things were done in Bethany beyond the Jordan, where John was baptizing.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ],
+   "note": "נקודת הטבילה המסורתית: קאסר אל-יהוד, ליד יריחו."
+  },
+  {
+   "id": "cana",
+   "he": "קנה הגלילית",
+   "kind": "city",
+   "lat": 32.74666,
+   "lon": 35.34219,
+   "wiki": {
+    "title": "כפר כנא",
+    "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A4%D7%A8_%D7%9B%D7%A0%D7%90",
+    "qid": "Q2633158",
+    "extract": "כפר כַּנָּא (בערבית: كفر كنا) היא מועצה מקומית ערבית בגליל התחתון, הנמצאת מצפון לערים נוף הגליל ונצרת. הוכרזה כמועצה מקומית בשנת 1968."
+   },
+   "refs": [
+    {
+     "r": "John 2:1",
+     "label": "יוחנן ב, א",
+     "he": "חתונה בקנה שבגליל, ואם ישו שם: הנס הראשון, המים הופכים ליין.",
+     "verse": "The third day, there was a marriage in Cana of Galilee. Jesus’ mother was there.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    },
+    {
+     "r": "John 4:46",
+     "label": "יוחנן ד, מו",
+     "he": "ישו שב לקנה שבגליל, המקום שבו הפך את המים ליין.",
+     "verse": "Jesus came therefore again to Cana of Galilee, where he made the water into wine. There was a certain nobleman whose son was sick at Capernaum.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ],
+   "note": "הזיהוי המסורתי הוא כפר כנא; יש המזהים את המקום בחרבת קנה."
+  },
+  {
+   "id": "capernaum",
+   "he": "כפר נחום",
+   "kind": "city",
+   "lat": 32.88111,
+   "lon": 35.575,
+   "wiki": {
+    "title": "כפר נחום",
+    "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A4%D7%A8_%D7%A0%D7%97%D7%95%D7%9D",
+    "qid": "Q59174",
+    "extract": "כפר נחום (בלטינית: Capernaum) היה יישוב בחופה הצפוני של הכנרת, לא הרחק מכורזים, בבקעת עין שבע, שהתקיים מהתקופה החשמונאית ועד התקופה הביזנטית בארץ ישראל[דרוש מקור]. האתר משמש בימינו כגן לאומי, המשתרע על-פני שטח של 1,728 דונם."
+   },
+   "refs": [
+    {
+     "r": "Matthew 4:13",
+     "label": "מתי ד, יג",
+     "he": "ישו עוזב את נצרת ומתיישב בכפר נחום שלחוף הים.",
+     "verse": "Leaving Nazareth, he came and lived in Capernaum, which is by the sea, in the region of Zebulun and Naphtali,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Mark 1:21",
+     "label": "מרקוס א, כא",
+     "he": "ישו ותלמידיו נכנסים לכפר נחום, והוא מלמד בבית הכנסת בשבת.",
+     "verse": "They went into Capernaum, and immediately on the Sabbath day he entered into the synagogue and taught.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Mark"
+    },
+    {
+     "r": "Mark 2:1",
+     "label": "מרקוס ב, א",
+     "he": "ישו חוזר לכפר נחום, והשמועה יוצאת שהוא בבית.",
+     "verse": "When he entered again into Capernaum after some days, it was heard that he was in the house.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Mark"
+    },
+    {
+     "r": "John 6:59",
+     "label": "יוחנן ו, נט",
+     "he": "את הדברים האלה אמר ישו בבית הכנסת בכפר נחום.",
+     "verse": "He said these things in the synagogue, as he taught in Capernaum.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ]
+  },
+  {
+   "id": "bethsaida",
+   "he": "בית צידה",
+   "kind": "city",
+   "lat": 32.90995,
+   "lon": 35.63054,
+   "wiki": {
+    "title": "תל בית צידה",
+    "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%91%D7%99%D7%AA_%D7%A6%D7%99%D7%93%D7%94",
+    "qid": "Q501773",
+    "extract": "תל בית ציְדה שוכן בבקעת בית צידה בתוך שטח פארק הירדן בצפון-מזרחה של הכנרת. בשטח התל, שהיה ידוע פשוט כ\"א-תל\", התגלו בין היתר שרידים של עיר עתיקה המזוהה כ\"בית צידה\" ההלניסטית."
+   },
+   "refs": [
+    {
+     "r": "John 1:44",
+     "label": "יוחנן א, מד",
+     "he": "פיליפוס היה מבית צידה, עירם של אנדראס ופטרוס.",
+     "verse": "Now Philip was from Bethsaida, of the city of Andrew and Peter.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    },
+    {
+     "r": "Mark 8:22",
+     "label": "מרקוס ח, כב",
+     "he": "בבית צידה מביאים אל ישו אדם עיוור.",
+     "verse": "He came to Bethsaida. They brought a blind man to him, and begged him to touch him.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Mark"
+    }
+   ]
+  },
+  {
+   "id": "chorazin",
+   "he": "כורזים",
+   "kind": "city",
+   "lat": 32.91139,
+   "lon": 35.56389,
+   "wiki": {
+    "title": "כורזים",
+    "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%95%D7%A8%D7%96%D7%99%D7%9D",
+    "qid": "Q2456076",
+    "extract": "כורזים הוא יישוב קדום, שעמד על תילו מתחילת המאה הראשונה לספירה ועד המאה השמינית. הוא מוזכר בתלמוד ובברית החדשה."
+   },
+   "refs": [
+    {
+     "r": "Matthew 11:21",
+     "label": "מתי יא, כא",
+     "he": "ישו מוכיח: „אוי לך כורזין, אוי לך בית צידה”.",
+     "verse": "“Woe to you, Chorazin! Woe to you, Bethsaida! For if the mighty works had been done in Tyre and Sidon which were done in you, they would have repented long ago in sackcloth and ashes.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    }
+   ]
+  },
+  {
+   "id": "magdala",
+   "he": "מגדלא",
+   "kind": "city",
+   "lat": 32.83917,
+   "lon": 35.5075,
+   "wiki": {
+    "title": "מגדלא",
+    "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%92%D7%93%D7%9C%D7%90",
+    "qid": "Q4880851",
+    "extract": "מִגְדָלָא (נכתב גם כמגדלה), הידועה גם בשמות טריכיי, טריכאי וטריכיאה (ביוונית: ταριχαιαι, בלטינית: Tarichaeae), הייתה עיר קדומה בגליל, ששכנה לחוף הצפוני מערבי של הכנרת, בדרום בקעת גינוסר, סמוך ליישוב מגדל של היום, המשמר את שמה. עד להקמת העיר טבריה בשנת 20 לספירה, הייתה מגדלא המרכז העירוני היחיד בחוף המערבי של הכנרת."
+   },
+   "refs": [
+    {
+     "r": "Matthew 15:39",
+     "label": "מתי טו, לט",
+     "he": "ישו עולה בסירה ובא אל גבול מגדלא (בכתבי יד אחרים: מגדן).",
+     "verse": "Then he sent away the multitudes, got into the boat, and came into the borders of Magdala.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    }
+   ]
+  },
+  {
+   "id": "sea_galilee",
+   "he": "הכנרת (ים הגליל)",
+   "kind": "water",
+   "lat": 32.81891,
+   "lon": 35.59003,
+   "wiki": {
+    "title": "הכנרת",
+    "url": "https://he.wikipedia.org/wiki/%D7%94%D7%9B%D7%A0%D7%A8%D7%AA",
+    "qid": "Q126982",
+    "extract": "הכִּנֶּרֶת היא ימה בצפון מזרחה של ישראל ואגם המים המתוקים הגדול בארץ ישראל. בעבר סיפקה הכנרת כרבע מצריכת המים בישראל, אך בעקבות ירידת מפלס המים כתוצאה משנות בצורת שפקדו את ישראל, פחתה שאיבת המים מהאגם ומתקני ההתפלה היו לספק המים העיקרי."
+   },
+   "refs": [
+    {
+     "r": "Matthew 4:18",
+     "label": "מתי ד, יח",
+     "he": "ליד ים הגליל ישו רואה את שמעון (פטרוס) ואת אנדראס, דייגים.",
+     "verse": "Walking by the sea of Galilee, he saw two brothers: Simon, who is called Peter, and Andrew, his brother, casting a net into the sea; for they were fishermen.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "John 21:1",
+     "label": "יוחנן כא, א",
+     "he": "ישו נגלה שוב לתלמידים ליד ים טבריה.",
+     "verse": "After these things, Jesus revealed himself again to the disciples at the sea of Tiberias. He revealed himself this way.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ]
+  },
+  {
+   "id": "tiberias",
+   "he": "טבריה",
+   "kind": "city",
+   "lat": 32.78753,
+   "lon": 35.52437,
+   "wiki": {
+    "title": "טבריה",
+    "url": "https://he.wikipedia.org/wiki/%D7%98%D7%91%D7%A8%D7%99%D7%94",
+    "qid": "Q151920",
+    "extract": "טְבֶרְיָה (בערבית: طبريا, תעתיק: טַבָּרִיַא; ביוונית עתיקה: Τιβεριάς, תעתיק: טיבריאס, במלרע; בלשון המשנה והתלמוד: טִבַרְיַא) היא עיר במחוז הצפון בישראל, בגליל התחתון ובארץ כינרות. טבריה שוכנת לחופה המערבי של הכנרת והיא העיר היחידה הממוקמת לחופי ימה זו."
+   },
+   "refs": [
+    {
+     "r": "John 6:23",
+     "label": "יוחנן ו, כג",
+     "he": "סירות מטבריה מגיעות סמוך למקום שבו אכלו את הלחם.",
+     "verse": "However boats from Tiberias came near to the place where they ate the bread after the Lord had given thanks.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ]
+  },
+  {
+   "id": "jacob_well",
+   "he": "באר יעקב (סוכר)",
+   "kind": "holy",
+   "lat": 31.94409,
+   "lon": 34.8402,
+   "wiki": {
+    "title": "באר יעקב",
+    "url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%A8_%D7%99%D7%A2%D7%A7%D7%91",
+    "qid": "Q2640170",
+    "extract": "בְּאֵר יַעֲקֹב היא עיר בשפלה הדרומית בישראל בקרבת הערים נס ציונה, רמלה, לוד וראשון לציון, ובנוסף, סמוכה לבסיס הצבאי צריפין. היא הוכרזה כמועצה מקומית בשנת 1949."
+   },
+   "refs": [
+    {
+     "r": "John 4:5",
+     "label": "יוחנן ד, ה",
+     "he": "ישו בא לעיר בשומרון בשם סוכר, ליד השדה שנתן יעקב ליוסף.",
+     "verse": "So he came to a city of Samaria, called Sychar, near the parcel of ground that Jacob gave to his son, Joseph.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ]
+  },
+  {
+   "id": "jericho",
+   "he": "יריחו",
+   "kind": "city",
+   "lat": 31.85611,
+   "lon": 35.46306,
+   "wiki": {
+    "title": "יריחו",
+    "url": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%97%D7%95",
+    "qid": "Q5687",
+    "extract": "יְרִיחוֹ (בערבית: ‏‏Ⓘ‏; תעתיק מדויק: אַרִיחַא) היא עיר ברשות הפלסטינית בבקעת יריחו בדרום בקעת הירדן, כ-10 ק\"מ מצפון לים המלח. גובה העיר – כ-250 מטר מתחת לגובה פני הים – הופך אותה לעיר המיושבת הנמוכה ביותר בעולם."
+   },
+   "refs": [
+    {
+     "r": "Luke 19:1",
+     "label": "לוקס יט, א",
+     "he": "ישו נכנס ליריחו ועובר בה: סיפור זכי, ראש המוכסים.",
+     "verse": "He entered and was passing through Jericho.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    },
+    {
+     "r": "Mark 10:46",
+     "label": "מרקוס י, מו",
+     "he": "ביציאה מיריחו קורא אליו העיוור בר-טימי.",
+     "verse": "They came to Jericho. As he went out from Jericho, with his disciples and a great multitude, the son of Timaeus, Bartimaeus, a blind beggar, was sitting by the road.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Mark"
+    }
+   ]
+  },
+  {
+   "id": "bethany",
+   "he": "בית עניה (אל-עיזריה)",
+   "kind": "city",
+   "lat": 31.76414,
+   "lon": 35.28098,
+   "wiki": {
+    "title": "אלעיזריה",
+    "url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%A2%D7%99%D7%96%D7%A8%D7%99%D7%94",
+    "qid": "Q2181579",
+    "extract": "אלעיזריה (בערבית: العيزرية), הידועה גם כבית עניה, היא עיירה פלסטינית הנמצאת בשטח B, ממזרח לירושלים ומצפון לאבו דיס. לפי מפקד האוכלוסין שנערך ב-2017, בעיירה מתגוררים כ-21,175 תושבים, רובם המכריע מוסלמים וקיים מיעוט של נזירים ונזירות נוצרים המתגוררים במוסדות דת בעיירה."
+   },
+   "refs": [
+    {
+     "r": "John 11:1",
+     "label": "יוחנן יא, א",
+     "he": "אלעזר מבית עניה, כפרן של מרים ומרתה, חולה.",
+     "verse": "Now a certain man was sick, Lazarus from Bethany, of the village of Mary and her sister, Martha.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    },
+    {
+     "r": "John 12:1",
+     "label": "יוחנן יב, א",
+     "he": "שישה ימים לפני הפסח בא ישו לבית עניה.",
+     "verse": "Then six days before the Passover, Jesus came to Bethany, where Lazarus was, who had been dead, whom he raised from the dead.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    },
+    {
+     "r": "Luke 19:29",
+     "label": "לוקס יט, כט",
+     "he": "בהתקרבו לבית פגי ולבית עניה שולח ישו שני תלמידים להביא עייר.",
+     "verse": "When he came near to Bethsphage and Bethany, at the mountain that is called Olivet, he sent two of his disciples,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    }
+   ]
+  },
+  {
+   "id": "bethphage",
+   "he": "בית פגי",
+   "kind": "city",
+   "lat": 31.77722,
+   "lon": 35.25078,
+   "wiki": {
+    "title": "בית פגי",
+    "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%A4%D7%92%D7%99",
+    "qid": "Q2193088",
+    "extract": "בֵּית פַּגֵּי (בלטינית: Bethfage; ביוונית: Βηθφαγὴ) הוא שמם של מנזר וכנסייה פרנציסקניים בפסגת הר הזיתים, הקשורים בכפר המזוהה עם מספר מסורות הקשורות בישו בברית החדשה."
+   },
+   "refs": [
+    {
+     "r": "Matthew 21:1",
+     "label": "מתי כא, א",
+     "he": "בהתקרבם לירושלים מגיעים לבית פגי שבהר הזיתים.",
+     "verse": "When they came near to Jerusalem, and came to Bethsphage, to the Mount of Olives, then Jesus sent two disciples,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Luke 19:29",
+     "label": "לוקס יט, כט",
+     "he": "ליד בית פגי ובית עניה שולח ישו להביא עייר לכניסה לירושלים.",
+     "verse": "When he came near to Bethsphage and Bethany, at the mountain that is called Olivet, he sent two of his disciples,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    }
+   ]
+  },
+  {
+   "id": "olives",
+   "he": "הר הזיתים",
+   "kind": "mount",
+   "lat": 31.78333,
+   "lon": 35.25083,
+   "wiki": {
+    "title": "הר הזיתים",
+    "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%94%D7%96%D7%99%D7%AA%D7%99%D7%9D",
+    "qid": "Q205976",
+    "extract": "הר הזיתים (בערבית: الطور ההר או جبل الزيتون הר הזיתים) הוא רכס הר שנמצא ממזרח לעיר העתיקה של ירושלים. מקור שמו של ההר בכרמי הזיתים שכיסוהו בעבר."
+   },
+   "refs": [
+    {
+     "r": "Matthew 24:3",
+     "label": "מתי כד, ג",
+     "he": "ישו יושב על הר הזיתים, והתלמידים שואלים על אחרית הימים.",
+     "verse": "As he sat on the Mount of Olives, the disciples came to him privately, saying, “Tell us, when will these things be? What is the sign of your coming, and of the end of the age?”",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Luke 19:29",
+     "label": "לוקס יט, כט",
+     "he": "ההכנות לכניסה לירושלים נעשות בהר הנקרא הר הזיתים.",
+     "verse": "When he came near to Bethsphage and Bethany, at the mountain that is called Olivet, he sent two of his disciples,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    },
+    {
+     "r": "Luke 22:39",
+     "label": "לוקס כב, לט",
+     "he": "בליל המאסר יוצא ישו כמנהגו אל הר הזיתים.",
+     "verse": "He came out, and went, as his custom was, to the Mount of Olives. His disciples also followed him.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    },
+    {
+     "r": "Acts 1:12",
+     "label": "מעשי השליחים א, יב",
+     "he": "אחרי העלייה השמימה שבים השליחים לירושלים מן ההר הנקרא הר הזיתים.",
+     "verse": "Then they returned to Jerusalem from the mountain called Olivet, which is near Jerusalem, a Sabbath day’s journey away.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "gethsemane",
+   "he": "גת שמנים",
+   "kind": "holy",
+   "lat": 31.77928,
+   "lon": 35.23947,
+   "wiki": {
+    "title": "גת שמנים",
+    "url": "https://he.wikipedia.org/wiki/%D7%92%D7%AA_%D7%A9%D7%9E%D7%A0%D7%99%D7%9D",
+    "qid": "Q205333",
+    "extract": "גת שמנים (ביוונית: Γεθσημανή, גֶתְסֵמַנֵה; בסורית: ܓ݁ܶܕ݁ܣܺܡܰܢ, גֶּדּ־סִמַן) הוא הגן בו, על פי המסורת הנוצרית והמתואר בברית החדשה, התפלל ישו בלילה שלפני צליבתו את תפילתו האחרונה והתייסר, קודם להסגרתו לידי הרומאים על ידי יהודה איש קריות. הגן נמצא במורדות הר הזיתים בירושלים, ומשקיף על נחל קדרון שלמרגלותיו ועל הר הבית שלמולו."
+   },
+   "refs": [
+    {
+     "r": "Matthew 26:36",
+     "label": "מתי כו, לו",
+     "he": "ישו בא עם תלמידיו למקום הנקרא גת שמנים ומתפלל.",
+     "verse": "Then Jesus came with them to a place called Gethsemane, and said to his disciples, “Sit here, while I go there and pray.”",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Mark 14:32",
+     "label": "מרקוס יד, לב",
+     "he": "בגת שמנים אומר ישו לתלמידיו: „שבו כאן בזמן שאתפלל”.",
+     "verse": "They came to a place which was named Gethsemane. He said to his disciples, “Sit here, while I pray.”",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Mark"
+    }
+   ]
+  },
+  {
+   "id": "jerusalem",
+   "he": "ירושלים",
+   "kind": "city",
+   "lat": 31.77667,
+   "lon": 35.23417,
+   "wiki": {
+    "title": "העיר העתיקה",
+    "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A2%D7%99%D7%A8_%D7%94%D7%A2%D7%AA%D7%99%D7%A7%D7%94",
+    "qid": "Q213274",
+    "extract": "העיר העתיקה בירושלים (בערבית: البلدة القديمة في القدس, אל-בִּלִדַת אל-קָדִימָה פִי אל-קוּדְס; בארמנית: Երուսաղեմի հին քաղաք, יֶרוּסָאגֵֿמִי הִין קָאגָֿאק), היא האזור העירוני העתיק של ירושלים. שטחה המוקף על ידי חומות ירושלים, הוא כ-850 דונם."
+   },
+   "refs": [
+    {
+     "r": "Luke 2:41",
+     "label": "לוקס ב, מא",
+     "he": "הורי ישו עולים מדי שנה לירושלים לחג הפסח.",
+     "verse": "His parents went every year to Jerusalem at the feast of the Passover.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    },
+    {
+     "r": "Matthew 21:10",
+     "label": "מתי כא, י",
+     "he": "כשישו נכנס לירושלים, כל העיר נרעשת.",
+     "verse": "When he had come into Jerusalem, all the city was stirred up, saying, “Who is this?”",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Acts 2:5",
+     "label": "מעשי השליחים ב, ה",
+     "he": "בחג השבועות שוהים בירושלים יהודים יראי שמיים מכל העמים.",
+     "verse": "Now there were dwelling in Jerusalem Jews, devout men, from every nation under the sky.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "Acts 21:15",
+     "label": "מעשי השליחים כא, טו",
+     "he": "פאולוס ומלוויו עולים לירושלים בסוף מסעו.",
+     "verse": "After these days we took up our baggage and went up to Jerusalem.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "he:המצור על ירושלים (1099)@1099",
+     "label": "1099 · המצור על ירושלים (1099)",
+     "he": "הצלבנים כובשים את ירושלים במסע הצלב הראשון.",
+     "verse": "המצור על ירושלים בשנת 1099 הוא מצור שערכו הצלבנים על ירושלים במסגרת מסע הצלב הראשון.",
+     "lang": "he",
+     "version": "ויקיפדיה: המצור על ירושלים (1099)",
+     "license": "CC BY-SA 4.0",
+     "url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A6%D7%95%D7%A8_%D7%A2%D7%9C_%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D_(1099)",
+     "book": "history",
+     "year": 1099
+    }
+   ]
+  },
+  {
+   "id": "bethesda",
+   "he": "בריכת בית חסדא",
+   "kind": "water",
+   "lat": 31.78139,
+   "lon": 35.23583,
+   "wiki": {
+    "title": "בריכות הצאן",
+    "url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%99%D7%9B%D7%95%D7%AA_%D7%94%D7%A6%D7%90%D7%9F",
+    "qid": "Q831297",
+    "extract": "\"בריכות הצאן\", הידועות גם בשם \"בריכות בית חסדא\" הן שתי בריכות שנחפרו באפיקו של נחל בית זיתא בירושלים. מיקומן היום הוא באזור החומה הצפון מזרחית של העיר העתיקה, ברובע המוסלמי צפונית לדרך שער האריות."
+   },
+   "refs": [
+    {
+     "r": "John 5:2",
+     "label": "יוחנן ה, ב",
+     "he": "בירושלים, ליד שער הצאן, בריכה הנקראת בעברית בית חסדא.",
+     "verse": "Now in Jerusalem by the sheep gate, there is a pool, which is called in Hebrew, “Bethesda”, having five porches.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ]
+  },
+  {
+   "id": "siloam",
+   "he": "בריכת השילוח",
+   "kind": "water",
+   "lat": 31.77056,
+   "lon": 35.235,
+   "wiki": {
+    "title": "בריכת השילוח",
+    "url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%99%D7%9B%D7%AA_%D7%94%D7%A9%D7%99%D7%9C%D7%95%D7%97",
+    "qid": "Q1483483",
+    "extract": "בְּרֵכַת הַשִּׁילוֹחַ (הַשִּׁלֹחַ) היא בריכה הנמצאת בקצה הדרומי של הגן הלאומי \"עיר דוד\" בירושלים. הבריכה ממוקמת בקצהו הדרומי-מזרחי של הגיא המרכזי, סמוך למקום מפגשו עם נחל קדרון."
+   },
+   "refs": [
+    {
+     "r": "John 9:7",
+     "label": "יוחנן ט, ז",
+     "he": "ישו אומר לעיוור: „לך רחץ בבריכת השילוח”.",
+     "verse": "and said to him, “Go, wash in the pool of Siloam” (which means “Sent”). So he went away, washed, and came back seeing.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    }
+   ]
+  },
+  {
+   "id": "golgotha",
+   "he": "גולגותא — כנסיית הקבר",
+   "kind": "holy",
+   "lat": 31.77844,
+   "lon": 35.22975,
+   "wiki": {
+    "title": "כנסיית הקבר",
+    "url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A0%D7%A1%D7%99%D7%99%D7%AA_%D7%94%D7%A7%D7%91%D7%A8",
+    "qid": "Q187702",
+    "extract": "כנסיית הקבר (נקראת גם כנסיית הקבר הקדוש – בלטינית: Sanctum Sepulchrum; או כנסיית התחייה – ביוונית: Ναός της Αναστάσεως, בערבית: كنيسة القيامة) היא כנסייה גדולה, הניצבת במקום אותו רואות מרבית המסורות הנוצריות כמקום צליבתו, קבורתו ותחייתו של ישו. היא נקראת על שם קברו הריק של ישו."
+   },
+   "refs": [
+    {
+     "r": "John 19:17",
+     "label": "יוחנן יט, יז",
+     "he": "ישו נושא את צלבו אל מקום הגולגולת, הנקרא בעברית גלגלתא.",
+     "verse": "He went out, bearing his cross, to the place called “The Place of a Skull”, which is called in Hebrew, “Golgotha”,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "John"
+    },
+    {
+     "r": "Matthew 27:33",
+     "label": "מתי כז, לג",
+     "he": "הם מגיעים למקום הנקרא גלגלתא.",
+     "verse": "When they came to a place called “Golgotha”, that is to say, “The place of a skull,”",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    }
+   ],
+   "note": "המסורת מזהה את המקום בכנסיית הקבר; יש זיהויים אחרים, כמו קבר הגן."
+  },
+  {
+   "id": "emmaus",
+   "he": "אמאוס",
+   "kind": "city",
+   "lat": 31.8393,
+   "lon": 34.98946,
+   "wiki": {
+    "title": "אמאוס ניקופוליס",
+    "url": "https://he.wikipedia.org/wiki/%D7%90%D7%9E%D7%90%D7%95%D7%A1_%D7%A0%D7%99%D7%A7%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%A1",
+    "qid": "Q847246",
+    "extract": "אמאוס ניקופוליס (ביוונית: Εμμαούς Νικὀπολις; בלטינית: Emmaus Nicopolis; בערבית: عِمواس) הייתה עיר מחוז רומית-ביזנטית בשפלה, בשוליו המזרחיים של עמק איילון, בסמוך ממזרח למחלף לטרון. שמה המקורי של העיר היה \"חמת\", על שם מעיינות המרפא החמים שבה, ושם זה שובש בתקופה הרומית לשם היווני \"אמאוס\"."
+   },
+   "refs": [
+    {
+     "r": "Luke 24:13",
+     "label": "לוקס כד, יג",
+     "he": "שני תלמידים הולכים לכפר בשם אמאוס, וישו נגלה אליהם בדרך.",
+     "verse": "Behold, two of them were going that very day to a village named Emmaus, which was sixty stadia from Jerusalem.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Luke"
+    }
+   ],
+   "note": "למקום כמה זיהויים: לטרון (ניקופוליס), אבו גוש, קובייבה ועוד."
+  },
+  {
+   "id": "samaria",
+   "he": "שומרון (סבסטיה)",
+   "kind": "city",
+   "lat": 32.27579,
+   "lon": 35.19384,
+   "wiki": {
+    "title": "סבסטיה",
+    "url": "https://he.wikipedia.org/wiki/%D7%A1%D7%91%D7%A1%D7%98%D7%99%D7%94",
+    "qid": "Q2918480",
+    "extract": "סבסטיה (בערבית: سبسطية) הוא כפר פלסטיני בהרי השומרון, סמוך לעיר שכם, בנפת שכם אשר בתחום הרשות הפלסטינית. סבסטיה שוכנת בסמוך לחורבות העיר הקדומה שומרון, ששימשה בירת ממלכת ישראל במאות התשיעית והשמינית לפנה\"ס."
+   },
+   "refs": [
+    {
+     "r": "Acts 8:5",
+     "label": "מעשי השליחים ח, ה",
+     "he": "פיליפוס יורד לעיר שומרון ומבשר שם.",
+     "verse": "Philip went down to the city of Samaria, and proclaimed to them the Christ.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "gaza",
+   "he": "עזה",
+   "kind": "city",
+   "lat": 31.5075,
+   "lon": 34.45972,
+   "wiki": {
+    "title": "עזה",
+    "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%96%D7%94",
+    "qid": "Q47492",
+    "extract": "עַזָּה (כיום בערבית: غزة, תעתיק מדויק: עַ'זַּה, תעתיק חופשי: רַ'זַּה, גַֿזַּה; בימי קדם: באכדית: ḫa-za-ti או az-za-ti, באשורית: ḫa-az-zu-tu, ביוונית: Γαζα או Κάδυτις – קדיטיס) היא העיר הגדולה ביותר ברצועת עזה, עם אוכלוסייה של 590,481 אנשים נכון לשנת 2017. מאז חודשיה האחרונים של 2023, במהלך מלחמת חרבות ברזל, חלקים נרחבים מהעיר חרבו וחלק מתושביה ברחו לדרום הרצועה."
+   },
+   "refs": [
+    {
+     "r": "Acts 8:26",
+     "label": "מעשי השליחים ח, כו",
+     "he": "מלאך שולח את פיליפוס אל הדרך היורדת מירושלים לעזה.",
+     "verse": "But an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "azotus",
+   "he": "אשדוד",
+   "kind": "city",
+   "lat": 31.78028,
+   "lon": 34.62222,
+   "wiki": {
+    "title": "אשדוד ים",
+    "url": "https://he.wikipedia.org/wiki/%D7%90%D7%A9%D7%93%D7%95%D7%93_%D7%99%D7%9D",
+    "qid": "Q1068119",
+    "extract": "אַשְׁדּוֹד יָם הייתה עיר נמל לחוף הים התיכון, שייסודה בתקופת הברזל. שרידיה ממוקמים באתר ארכאולוגי גדול בחוף הים הדרומי של אשדוד המודרנית."
+   },
+   "refs": [
+    {
+     "r": "Acts 8:40",
+     "label": "מעשי השליחים ח, מ",
+     "he": "פיליפוס נמצא באשדוד ומבשר בכל הערים עד קיסריה.",
+     "verse": "But Philip was found at Azotus. Passing through, he preached the Good News to all the cities, until he came to Caesarea.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "caesarea",
+   "he": "קיסריה",
+   "kind": "city",
+   "lat": 32.5011,
+   "lon": 34.8923,
+   "wiki": {
+    "title": "קיסריה",
+    "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%A1%D7%A8%D7%99%D7%94",
+    "qid": "Q319242",
+    "extract": "קיסריה היא עיר נמל שהוקמה בשנים 25–13 לפנה\"ס. העיר הייתה המרכז המנהלי הרומי ביהודה מאז כינון פרובינקיה יודיאה (לאחר הדחת ארכלאוס בשנת 6 לספירה)."
+   },
+   "refs": [
+    {
+     "r": "Acts 8:40",
+     "label": "מעשי השליחים ח, מ",
+     "he": "פיליפוס מבשר בדרך עד שהוא מגיע לקיסריה.",
+     "verse": "But Philip was found at Azotus. Passing through, he preached the Good News to all the cities, until he came to Caesarea.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "Acts 10:1",
+     "label": "מעשי השליחים י, א",
+     "he": "בקיסריה יושב קורנליוס, שר מאה רומי.",
+     "verse": "Now there was a certain man in Caesarea, Cornelius by name, a centurion of what was called the Italian Regiment,",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "Acts 10:24",
+     "label": "מעשי השליחים י, כד",
+     "he": "פטרוס נכנס לקיסריה, וקורנליוס מחכה לו.",
+     "verse": "On the next day they entered into Caesarea. Cornelius was waiting for them, having called together his relatives and his near friends.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "Acts 21:8",
+     "label": "מעשי השליחים כא, ח",
+     "he": "פאולוס ומלוויו באים לקיסריה, לבית פיליפוס.",
+     "verse": "On the next day, we, who were Paul’s companions, departed, and came to Caesarea. We entered into the house of Philip the evangelist, who was one of the seven, and stayed with him.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "Acts 23:33",
+     "label": "מעשי השליחים כג, לג",
+     "he": "הפרשים מביאים את פאולוס לקיסריה, אל הנציב.",
+     "verse": "When they came to Caesarea and delivered the letter to the governor, they also presented Paul to him.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "Acts 25:4",
+     "label": "מעשי השליחים כה, ד",
+     "he": "פסטוס עונה שפאולוס יישאר במשמר בקיסריה.",
+     "verse": "However Festus answered that Paul should be kept in custody at Caesarea, and that he himself was about to depart shortly.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "joppa",
+   "he": "יפו",
+   "kind": "city",
+   "lat": 32.05222,
+   "lon": 34.75306,
+   "wiki": {
+    "title": "יפו",
+    "url": "https://he.wikipedia.org/wiki/%D7%99%D7%A4%D7%95",
+    "qid": "Q180294",
+    "extract": "יָפוֹ (‏‏Ⓘ‏, בערבית: يَافَا, \"יאפא\") היא עיר נמל עתיקה בארץ ישראל, לחוף הים התיכון. יפו התקיימה כעיר עצמאית במשך אלפי שנים עד שאוחדה ב-1949 עם תל אביב, ומאז היא מהווה את אחד מרובעי תל אביב-יפו."
+   },
+   "refs": [
+    {
+     "r": "Acts 9:36",
+     "label": "מעשי השליחים ט, לו",
+     "he": "ביפו הייתה תלמידה בשם טביתא.",
+     "verse": "Now there was at Joppa a certain disciple named Tabitha, which when translated, means Dorcas. This woman was full of good works and acts of mercy which she did.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    },
+    {
+     "r": "Acts 9:43",
+     "label": "מעשי השליחים ט, מג",
+     "he": "פטרוס נשאר ימים רבים ביפו, אצל שמעון הבורסי.",
+     "verse": "He stayed many days in Joppa with a tanner named Simon.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "lydda",
+   "he": "לוד",
+   "kind": "city",
+   "lat": 31.95135,
+   "lon": 34.88829,
+   "wiki": {
+    "title": "לוד",
+    "url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%93",
+    "qid": "Q207540",
+    "extract": "לוֹד (לֹד, בערבית: اللد, תעתיק: אל-לִד) היא עיר מעורבת במחוז המרכז בישראל ואחת הערים העתיקות בעולם. מצפון ללוד נמצאים היישובים זיתן ואחיעזר, בדרומה העיר רמלה, ממזרחה גנתון, בן שמן ואחיסמך וממערבה דהמש וניר צבי."
+   },
+   "refs": [
+    {
+     "r": "Acts 9:32",
+     "label": "מעשי השליחים ט, לב",
+     "he": "פטרוס יורד אל הקדושים היושבים בלוד.",
+     "verse": "As Peter went throughout all those parts, he came down also to the saints who lived at Lydda.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "antipatris",
+   "he": "אנטיפטריס (תל אפק)",
+   "kind": "city",
+   "lat": 32.105,
+   "lon": 34.93042,
+   "wiki": {
+    "title": "תל אפק (אנטיפטריס)",
+    "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%90%D7%A4%D7%A7_(%D7%90%D7%A0%D7%98%D7%99%D7%A4%D7%98%D7%A8%D7%99%D7%A1)",
+    "qid": "Q682612",
+    "extract": "תֵּל אֲפֵק הוא אתר ארכאולוגי השוכן סמוך למקורות נחל הירקון, ממזרח לפתח תקווה וממערב לראש העין, ובתחומי הגן הלאומי ירקון (שנקרא גם \"פארק אפק\", על שם אתר זה). האתר היה מיושב למן התקופה הכלקוליתית בארץ ישראל ברציפות כ-5,000 שנה."
+   },
+   "refs": [
+    {
+     "r": "Acts 23:31",
+     "label": "מעשי השליחים כג, לא",
+     "he": "החיילים מביאים את פאולוס בלילה לאנטיפטריס.",
+     "verse": "So the soldiers, carrying out their orders, took Paul and brought him by night to Antipatris.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "ptolemais",
+   "he": "עכו (תלמאיס)",
+   "kind": "city",
+   "lat": 32.9281,
+   "lon": 35.08437,
+   "wiki": {
+    "title": "עכו",
+    "url": "https://he.wikipedia.org/wiki/%D7%A2%D7%9B%D7%95",
+    "qid": "Q126084",
+    "extract": "עַכּוֹ (בערבית: عكا – עכּא; ביוונית: Πτολεμαΐς – פְּטוֹלֶמַאיס) היא עיר מעורבת במחוז הצפון שבישראל, הגובלת בדרום-דרום מערב בחופיו הצפוניים של מפרץ עכו ובמערב בים התיכון. עכו היא אחת מערי הנמל העתיקות בעולם, ודברי ימיה המתועדים מתחילים בתקופת הברונזה הקדומה."
+   },
+   "refs": [
+    {
+     "r": "Acts 21:7",
+     "label": "מעשי השליחים כא, ז",
+     "he": "מצור מגיעים פאולוס ומלוויו לעכו (תלמאיס).",
+     "verse": "When we had finished the voyage from Tyre, we arrived at Ptolemais. We greeted the brothers, and stayed with them one day.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "tyre",
+   "he": "צור",
+   "kind": "city",
+   "lat": 33.26667,
+   "lon": 35.2,
+   "wiki": {
+    "title": "צור (לבנון)",
+    "url": "https://he.wikipedia.org/wiki/%D7%A6%D7%95%D7%A8_(%D7%9C%D7%91%D7%A0%D7%95%D7%9F)",
+    "qid": "Q82070",
+    "extract": "צוֹר (או בכתיב חסר: צֹר; מפיניקית: 𐤑𐤓, צר; ביוונית: Τύρος – טִירוֹס; בצרפתית: Tyr, טִיר; בערבית: صُور, בתעתיק מדויק: צוּר, נהגה: סוּר) היא עיר עתיקה, מהערים הפיניקיות המרכזיות ביותר, והעיר הרביעית בגודלה בלבנון (אחרי ביירות, טריפולי וצידון). אוכלוסייתה מונה כ־160 אלף בני אדם (ועם פרווריה כ־175 אלף), מרביתם מוסלמים שיעים ומיעוטם מוסלמים סונים ונוצרים בני עדות שונות."
+   },
+   "refs": [
+    {
+     "r": "Matthew 15:21",
+     "label": "מתי טו, כא",
+     "he": "ישו יוצא אל גלילות צור וצידון.",
+     "verse": "Jesus went out from there, and withdrew into the region of Tyre and Sidon.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Acts 21:3",
+     "label": "מעשי השליחים כא, ג",
+     "he": "הספינה של פאולוס עוגנת בצור.",
+     "verse": "When we had come in sight of Cyprus, leaving it on the left hand, we sailed to Syria, and landed at Tyre, for there the ship was to unload her cargo.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "sidon",
+   "he": "צידון",
+   "kind": "city",
+   "lat": 33.56083,
+   "lon": 35.37194,
+   "wiki": {
+    "title": "צידון",
+    "url": "https://he.wikipedia.org/wiki/%D7%A6%D7%99%D7%93%D7%95%D7%9F",
+    "qid": "Q163490",
+    "extract": "צִידוֹן (בפיניקית: 𐤑𐤃𐤍 – צדן; בסורית: ܨܝܕܘܢ – צידון; בערבית: صَيْدُونْ – צַיְד֫וּן, או בגרסה הנפוצה יותר בימינו صيدﺍ – צַ֫יְדָא או צֵ֫ידָא) היא העיר השלישית בגודלה בלבנון (אחרי ביירות וטריפולי). העיר הייתה אחת הערים הפיניקיות המרכזיות ביותר."
+   },
+   "refs": [
+    {
+     "r": "Matthew 15:21",
+     "label": "מתי טו, כא",
+     "he": "ישו יוצא אל גלילות צור וצידון.",
+     "verse": "Jesus went out from there, and withdrew into the region of Tyre and Sidon.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Matthew"
+    },
+    {
+     "r": "Acts 27:3",
+     "label": "מעשי השליחים כז, ג",
+     "he": "בדרך לרומא עוגנת הספינה של פאולוס בצידון.",
+     "verse": "The next day, we touched at Sidon. Julius treated Paul kindly, and gave him permission to go to his friends and refresh himself.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "damascus",
+   "he": "דמשק",
+   "kind": "city",
+   "lat": 33.51306,
+   "lon": 36.29194,
+   "wiki": {
+    "title": "דמשק",
+    "url": "https://he.wikipedia.org/wiki/%D7%93%D7%9E%D7%A9%D7%A7",
+    "qid": "Q3766",
+    "extract": "דַּמֶּשֶׂק (בערבית: دمشق, בתעתיק מדויק: דִמַ֫שְׁק, נהגה בשי\"ן ימנית: dimashq; בסורית: ܕܰܪܡܣܘܩ) היא בירתה של סוריה ואחת הערים העתיקות בעולם. העיר ממוקמת בדרום-מערב סוריה, מרחק לא רב מגבול ישראל, ירדן ולבנון."
+   },
+   "refs": [
+    {
+     "r": "Acts 9:3",
+     "label": "מעשי השליחים ט, ג",
+     "he": "בהתקרבו לדמשק מאיר על שאול (פאולוס) אור מן השמיים.",
+     "verse": "As he traveled, he got close to Damascus, and suddenly a light from the sky shone around him.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "antioch",
+   "he": "אנטיוכיה",
+   "kind": "city",
+   "lat": 36.2025,
+   "lon": 36.16056,
+   "wiki": {
+    "title": "אנטקיה",
+    "url": "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%98%D7%A7%D7%99%D7%94",
+    "qid": "Q80561",
+    "extract": "אַנְטַקְיָה (בטורקית: Antakya) היא בירת הנפה המטרופוליטנית (Büyükşehir – \"עיר גדולה\") האטיי במחוז הים התיכון בדרום טורקיה. העיר שוכנת על גדות נהר האורונטס בעמק אמיק ובקרבת שפכו לים התיכון."
+   },
+   "refs": [
+    {
+     "r": "Acts 11:26",
+     "label": "מעשי השליחים יא, כו",
+     "he": "באנטיוכיה נקראו התלמידים לראשונה „נוצרים”.",
+     "verse": "When he had found him, he brought him to Antioch. For a whole year they were gathered together with the assembly, and taught many people. The disciples were first called Christians in Antioch.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "ephesus",
+   "he": "אפסוס",
+   "kind": "city",
+   "lat": 37.94058,
+   "lon": 27.33939,
+   "wiki": {
+    "title": "אפסוס",
+    "url": "https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%A1%D7%95%D7%A1",
+    "qid": "Q47611",
+    "extract": "אֵפֶסוֹס (בטורקית: Efes, ביוונית: Έφεσος) הייתה אחת מהערים הגדולות והחשובות של היוונים האיוניים בלידיה שבאנטוליה (כיום בטורקיה). העיר נוסדה בידי יוונים מאתונה סמוך לשפך נהר הקייסטר (Cayster) שעל הים האגאי."
+   },
+   "refs": [
+    {
+     "r": "Acts 19:1",
+     "label": "מעשי השליחים יט, א",
+     "he": "פאולוס מגיע לאפסוס ומוצא שם תלמידים.",
+     "verse": "While Apollos was at Corinth, Paul, having passed through the upper country, came to Ephesus, and found certain disciples.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "athens",
+   "he": "אתונה",
+   "kind": "city",
+   "lat": 38,
+   "lon": 23.71667,
+   "wiki": {
+    "title": "אתונה",
+    "url": "https://he.wikipedia.org/wiki/%D7%90%D7%AA%D7%95%D7%A0%D7%94",
+    "qid": "Q1524",
+    "extract": "אתונה (ביוונית: Αθήνα, אַתִ'ינַה; ‏‏Ⓘ‏) היא עיר הבירה של יוון, בירת נפת אתונה (Νομαρχίας Αθηνών) ומחוז אטיקה (Περιφέρειας Αττικής), וכן העיר הגדולה במדינה. מעבר להיותה מרכזה השלטוני של יוון, מהווה אתונה רבתי את מרכזה הכלכלי, הפיננסי, התעשייתי והתרבותי של המדינה."
+   },
+   "refs": [
+    {
+     "r": "Acts 17:16",
+     "label": "מעשי השליחים יז, טז",
+     "he": "פאולוס מחכה באתונה, וליבו נסער לראות עיר מלאה פסלים.",
+     "verse": "Now while Paul waited for them at Athens, his spirit was provoked within him as he saw the city full of idols.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "malta",
+   "he": "מלטה",
+   "kind": "land",
+   "lat": 35.88374,
+   "lon": 14.44993,
+   "wiki": {
+    "title": "מלטה (אי)",
+    "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%9C%D7%98%D7%94_(%D7%90%D7%99)",
+    "qid": "Q193896",
+    "extract": "מלטה (במלטית: Malta) הוא האי הגדול מבין שלושת האיים הגדולים המהווים את הארכיפלג המלטזי. למטרות סטטיסטיות מכונה הארכיפלג המלטזי ולטה כדי להבחין בין האי הראשי הנקרא מלטה לבין המדינה כולה."
+   },
+   "refs": [
+    {
+     "r": "Acts 28:1",
+     "label": "מעשי השליחים כח, א",
+     "he": "אחרי שבר הספינה מגלים הניצולים שהאי נקרא מלטה.",
+     "verse": "When we had escaped, then they learned that the island was called Malta.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "syracuse",
+   "he": "סירקוזה",
+   "kind": "city",
+   "lat": 37.06917,
+   "lon": 15.2875,
+   "wiki": {
+    "title": "סירקוזה",
+    "url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%A8%D7%A7%D7%95%D7%96%D7%94",
+    "qid": "Q13670",
+    "extract": "סִירָקוּזָה (באיטלקית: ‏‏Ⓘ‏, בסיציליאנית: Sarausa; מוכרת בהיסטוריה בשם סִירָקוּסַאי) היא עיר נמל בדרום-מזרח סיציליה שבאיטליה, ומשמשת כבירת נפת סירקוזה (Provincia di Siracusa). בעיר מתגוררים כ-121,600 תושבים לפי נתוני שנת 2018."
+   },
+   "refs": [
+    {
+     "r": "Acts 28:12",
+     "label": "מעשי השליחים כח, יב",
+     "he": "הספינה עוגנת בסירקוזה שבסיציליה שלושה ימים.",
+     "verse": "Touching at Syracuse, we stayed there three days.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "rome",
+   "he": "רומא",
+   "kind": "city",
+   "lat": 41.89306,
+   "lon": 12.48278,
+   "wiki": {
+    "title": "רומא",
+    "url": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%9E%D7%90",
+    "qid": "Q220",
+    "extract": "רוֹמָא (באיטלקית ולטינית: ‏‏Ⓘ‏, נקראת גם רוֹמי בעברית) היא בירת איטליה, ואחת הערים העתיקות, החשובות והמשפיעות ביותר בעולם, ובפרט באירופה ובארצות המערב, שם היא נחשבת יחד עם אתונה לערש הציוויליזציה. העיר משתרעת על פני שתי גדות הנהר טיבר באזור לאציו שבמרכז איטליה."
+   },
+   "refs": [
+    {
+     "r": "Acts 28:16",
+     "label": "מעשי השליחים כח, טז",
+     "he": "פאולוס מגיע לרומא ומורשה לגור לבדו, עם חייל השומר עליו.",
+     "verse": "When we entered into Rome, the centurion delivered the prisoners to the captain of the guard, but Paul was allowed to stay by himself with the soldier who guarded him.",
+     "lang": "en",
+     "version": "World English Bible (bible-api.com)",
+     "license": "Public Domain",
+     "book": "Acts"
+    }
+   ]
+  },
+  {
+   "id": "milvian",
+   "he": "גשר מילוויוס (רומא)",
+   "kind": "council",
+   "lat": 41.93556,
+   "lon": 12.46694,
+   "wiki": {
+    "title": "קרב גשר מילביוס",
+    "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%91_%D7%92%D7%A9%D7%A8_%D7%9E%D7%99%D7%9C%D7%91%D7%99%D7%95%D7%A1",
+    "qid": "Q339321",
+    "extract": "קרב גשר מילביוס (בלטינית: Proelium pontis Milvii) הוא קרב אשר התרחש ב-28 באוקטובר שנת 312, בצפון העיר רומא, בין קונסטנטינוס (337-272), ובין מקסנטיוס (312-278) קיסר רומא. הקרב מפורסם עקב ההתגלות לה זכה קונסטנטינוס בטרם הקרב, אשר לפי מקורות נוצריים החל לקבל בעקבותיה על עצמו את הדת הנוצרית ובעקבות זאת יזם את חקיקת צו מילאנו."
+   },
+   "refs": [
+    {
+     "r": "he:קרב גשר מילוויוס@312",
+     "label": "312 · קרב גשר מילביוס",
+     "he": "קונסטנטינוס מנצח את מקסנטיוס; לפי המסורת ראה סימן של צלב לפני הקרב.",
+     "verse": "קרב גשר מילביוס (בלטינית: Proelium pontis Milvii) הוא קרב אשר התרחש ב-28 באוקטובר שנת 312, בצפון העיר רומא, בין קונסטנטינוס (337-272), ובין מקסנטיוס (312-278) קיסר רומא.",
+     "lang": "he",
+     "version": "ויקיפדיה: קרב גשר מילביוס",
+     "license": "CC BY-SA 4.0",
+     "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%91_%D7%92%D7%A9%D7%A8_%D7%9E%D7%99%D7%9C%D7%91%D7%99%D7%95%D7%A1",
+     "book": "history",
+     "year": 312
+    }
+   ]
+  },
+  {
+   "id": "milan",
+   "he": "מילאנו",
+   "kind": "council",
+   "lat": 45.46667,
+   "lon": 9.16667,
+   "wiki": {
+    "title": "מילאנו",
+    "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9C%D7%90%D7%A0%D7%95",
+    "qid": "Q490",
+    "extract": "מילאנו (באיטלקית: ‏‏Ⓘ‏; במילאנזית: Milán; בלטינית: Mediolanum) היא עיר ראשית בצפון איטליה ובירת מחוז לומברדיה. מבחינת גודל האוכלוסייה, מילאנו היא העיר השנייה באיטליה לאחר רומא."
+   },
+   "refs": [
+    {
+     "r": "he:צו מילאנו@313",
+     "label": "313 · צו מילאנו",
+     "he": "קונסטנטינוס וליקיניוס מתירים את הנצרות ואת כל הדתות באימפריה הרומית.",
+     "verse": "צו המדליוני או האדיקט של מילאנו (בלטינית: Edictum Mediolanensium), המכונה \"צו הסובלנות של גלריוס וקונסטנטינוס\", הוא כתב הכרזת סובלנות דתית שפורסם באימפריה הרומית בשנת 313 תחת שמם של הקיסר המערבי קונסטנטינוס והקיסר המזרחי ליקיניוס, בעת שהותם במילאנו.",
+     "lang": "he",
+     "version": "ויקיפדיה: צו מילאנו",
+     "license": "CC BY-SA 4.0",
+     "url": "https://he.wikipedia.org/wiki/%D7%A6%D7%95_%D7%9E%D7%99%D7%9C%D7%90%D7%A0%D7%95",
+     "book": "history",
+     "year": 313
+    }
+   ]
+  },
+  {
+   "id": "st_peter",
+   "he": "בזיליקת פטרוס הקדוש (הוותיקן)",
+   "kind": "holy",
+   "lat": 41.90222,
+   "lon": 12.45342,
+   "wiki": {
+    "title": "בזיליקת פטרוס הקדוש",
+    "url": "https://he.wikipedia.org/wiki/%D7%91%D7%96%D7%99%D7%9C%D7%99%D7%A7%D7%AA_%D7%A4%D7%98%D7%A8%D7%95%D7%A1_%D7%94%D7%A7%D7%93%D7%95%D7%A9",
+    "qid": "Q12512",
+    "extract": "הבזיליקה האפיפיורית של פטרוס הקדוש בוותיקן (באיטלקית: Basilica Papale di San Pietro in Vaticano) היא המבנה המרכזי של קריית הוותיקן. בזיליקת פטרוס הקדוש היא מבנה הדת הנוצרי הגדול בעולם, ויכול להכיל בתוכו עד כ-60,000 איש."
+   },
+   "refs": [
+    {
+     "r": "he:קרל הגדול@800",
+     "label": "800 · קרל הגדול",
+     "he": "האפיפיור מכתיר ברומא את קרל הגדול לקיסר.",
+     "verse": "הוכתר לקיסר הרומאים (Imperator Augustus Romanorum) ברומא ב-25 בדצמבר 800 על ידי האפיפיור לאו השלישי, ועקב כך נחשב בדיעבד לקיסר הראשון של האימפריה הרומית הקדושה, כשהוא מחזיק בתארים \"מלך הפרנקים\" ו\"הקיסר אוגוסטוס\" במקביל, אם כי אימפריה זו הוקמה זמן רב אחרי מותו.",
+     "lang": "he",
+     "version": "ויקיפדיה: קרל הגדול",
+     "license": "CC BY-SA 4.0",
+     "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%9C_%D7%94%D7%92%D7%93%D7%95%D7%9C",
+     "book": "history",
+     "year": 800
+    }
+   ]
+  },
+  {
+   "id": "clermont",
+   "he": "קלרמון",
+   "kind": "council",
+   "lat": 45.78309,
+   "lon": 3.08235,
+   "wiki": {
+    "title": "קלרמון-פראן",
+    "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%9C%D7%A8%D7%9E%D7%95%D7%9F-%D7%A4%D7%A8%D7%90%D7%9F",
+    "qid": "Q42168",
+    "extract": "קלרמון-פראן (בדיאלקט האוברני של אוקסיטנית: Clermont-Ferrand / Clermont d'Auvèrnhe) היא עיר וקומונה בחבל אוברן-רון-אלפ שבצרפת. עד שנת 2016 העיר שימשה כבירת חבל אוברן."
+   },
+   "refs": [
+    {
+     "r": "he:ועידת קלרמון@1095",
+     "label": "1095 · ועידת קלרמון",
+     "he": "האפיפיור אורבנוס השני קורא למסע הצלב הראשון.",
+     "verse": "ועידת קלרמון הייתה סינוד שנערך בעיר קלרמון בחבל אוברן שבצרפת, בין 18 ל-28 בנובמבר 1095.",
+     "lang": "he",
+     "version": "ויקיפדיה: ועידת קלרמון",
+     "license": "CC BY-SA 4.0",
+     "url": "https://he.wikipedia.org/wiki/%D7%95%D7%A2%D7%99%D7%93%D7%AA_%D7%A7%D7%9C%D7%A8%D7%9E%D7%95%D7%9F",
+     "book": "history",
+     "year": 1095
+    }
+   ]
+  },
+  {
+   "id": "wittenberg",
+   "he": "ויטנברג",
+   "kind": "council",
+   "lat": 51.8671,
+   "lon": 12.6484,
+   "wiki": {
+    "title": "ויטנברג",
+    "url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%98%D7%A0%D7%91%D7%A8%D7%92",
+    "qid": "Q6837",
+    "extract": "ויטנברג (בגרמנית: Wittenberg; רשמית: Lutherstadt Wittenberg לאמור עירו של מרטין לותר), היא עיר במדינת סקסוניה-אנהלט שבגרמניה, על נהר אלבה. העיר מונה כ-50,000 נפש."
+   },
+   "refs": [
+    {
+     "r": "he:95 התזות@1517",
+     "label": "1517 · 95 התזות",
+     "he": "מרטין לותר מפרסם את 95 התזות: תחילת הרפורמציה הפרוטסטנטית.",
+     "verse": "את המסה הכתובה בלטינית תלה לותר ב-31 באוקטובר 1517 על דלתות כנסיית הטירה בוויטנברג, ועותקי המסמך הופצו בגרמנית.",
+     "lang": "he",
+     "version": "ויקיפדיה: 95 התזות",
+     "license": "CC BY-SA 4.0",
+     "url": "https://he.wikipedia.org/wiki/95_%D7%94%D7%AA%D7%96%D7%95%D7%AA",
+     "book": "history",
+     "year": 1517
+    }
+   ]
+  }
+ ],
+ "unplaced": [
+  {
+   "id": "egypt",
+   "he": "מצרים",
+   "wiki": "מצרים",
+   "why": "article sans coordonnées"
+  },
+  {
+   "id": "nain",
+   "he": "נאין",
+   "wiki": null,
+   "why": "article introuvable"
+  },
+  {
+   "id": "caesarea_philippi",
+   "he": "קיסריה של פיליפוס (בניאס)",
+   "wiki": "בניאס",
+   "why": "article sans coordonnées"
+  },
+  {
+   "id": "corinth",
+   "he": "קורינתוס",
+   "wiki": "קורינתוס",
+   "why": "article sans coordonnées"
+  }
+ ],
+ "rejected": [
+  {
+   "place": "jacob_well",
+   "r": "John 4:6",
+   "why": "nom absent du verset ; présent aux versets 5"
+  },
+  {
+   "place": "golgotha",
+   "r": "he:כנסיית הקבר@335",
+   "why": "année 335 absente de l'introduction de « כנסיית הקבר »"
+  },
+  {
+   "place": "nicaea",
+   "r": "he:ועידת ניקאה הראשונה@325",
+   "why": "article Wikipédia introuvable"
+  },
+  {
+   "place": "constantinople",
+   "r": "he:איה סופיה@537",
+   "why": "année 537 absente de l'introduction de « איה סופיה »"
+  },
+  {
+   "place": "constantinople",
+   "r": "he:הפילוג הגדול@1054",
+   "why": "année 1054 absente de l'introduction de « הפילוג הגדול »"
+  },
+  {
+   "journey": "constantine",
+   "place": "golgotha",
+   "r": "he:כנסיית הקבר@335",
+   "why": "année 335 absente de l'introduction de « כנסיית הקבר »"
+  }
+ ],
+ "journeys": [
+  {
+   "id": "birth",
+   "he": "הלידה והבריחה למצרים",
+   "color": "#ffd878",
+   "stops": [
+    {
+     "p": "nazareth",
+     "r": "Luke 2:4",
+     "label": "לוקס ב, ד"
+    },
+    {
+     "p": "bethlehem",
+     "r": "Luke 2:4",
+     "label": "לוקס ב, ד"
+    },
+    {
+     "p": "nazareth",
+     "r": "Matthew 2:23",
+     "label": "מתי ב, כג"
+    }
+   ]
+  },
+  {
+   "id": "baptism",
+   "he": "מהטבילה לכפר נחום",
+   "color": "#9be3ff",
+   "stops": [
+    {
+     "p": "nazareth",
+     "r": "Mark 1:9",
+     "label": "מרקוס א, ט"
+    },
+    {
+     "p": "jordan",
+     "r": "Mark 1:9",
+     "label": "מרקוס א, ט"
+    },
+    {
+     "p": "capernaum",
+     "r": "Mark 1:21",
+     "label": "מרקוס א, כא"
+    }
+   ]
+  },
+  {
+   "id": "last",
+   "he": "העלייה לירושלים",
+   "color": "#f0b44c",
+   "stops": [
+    {
+     "p": "jericho",
+     "r": "Luke 19:1",
+     "label": "לוקס יט, א"
+    },
+    {
+     "p": "bethany",
+     "r": "Luke 19:29",
+     "label": "לוקס יט, כט"
+    },
+    {
+     "p": "bethphage",
+     "r": "Luke 19:29",
+     "label": "לוקס יט, כט"
+    },
+    {
+     "p": "olives",
+     "r": "Luke 19:29",
+     "label": "לוקס יט, כט"
+    },
+    {
+     "p": "jerusalem",
+     "r": "Matthew 21:10",
+     "label": "מתי כא, י"
+    }
+   ]
+  },
+  {
+   "id": "passion",
+   "he": "הלילה האחרון והצליבה",
+   "color": "#ff8f8f",
+   "stops": [
+    {
+     "p": "olives",
+     "r": "Luke 22:39",
+     "label": "לוקס כב, לט"
+    },
+    {
+     "p": "gethsemane",
+     "r": "Matthew 26:36",
+     "label": "מתי כו, לו"
+    },
+    {
+     "p": "golgotha",
+     "r": "John 19:17",
+     "label": "יוחנן יט, יז"
+    }
+   ]
+  },
+  {
+   "id": "philip",
+   "he": "מסעות פיליפוס",
+   "color": "#7fd6b0",
+   "stops": [
+    {
+     "p": "samaria",
+     "r": "Acts 8:5",
+     "label": "מעשי השליחים ח, ה"
+    },
+    {
+     "p": "gaza",
+     "r": "Acts 8:26",
+     "label": "מעשי השליחים ח, כו"
+    },
+    {
+     "p": "azotus",
+     "r": "Acts 8:40",
+     "label": "מעשי השליחים ח, מ"
+    },
+    {
+     "p": "caesarea",
+     "r": "Acts 8:40",
+     "label": "מעשי השליחים ח, מ"
+    }
+   ]
+  },
+  {
+   "id": "peter",
+   "he": "פטרוס: לוד, יפו וקיסריה",
+   "color": "#b9a6ff",
+   "stops": [
+    {
+     "p": "lydda",
+     "r": "Acts 9:32",
+     "label": "מעשי השליחים ט, לב"
+    },
+    {
+     "p": "joppa",
+     "r": "Acts 9:43",
+     "label": "מעשי השליחים ט, מג"
+    },
+    {
+     "p": "caesarea",
+     "r": "Acts 10:24",
+     "label": "מעשי השליחים י, כד"
+    }
+   ]
+  },
+  {
+   "id": "paul_greece",
+   "he": "פאולוס ביוון ובאסיה הקטנה",
+   "color": "#ffa8d8",
+   "stops": [
+    {
+     "p": "antioch",
+     "r": "Acts 11:26",
+     "label": "מעשי השליחים יא, כו"
+    },
+    {
+     "p": "athens",
+     "r": "Acts 17:16",
+     "label": "מעשי השליחים יז, טז"
+    },
+    {
+     "p": "ephesus",
+     "r": "Acts 19:1",
+     "label": "מעשי השליחים יט, א"
+    }
+   ]
+  },
+  {
+   "id": "paul_jerusalem",
+   "he": "פאולוס: מצור לירושלים ולקיסריה",
+   "color": "#c7f07a",
+   "stops": [
+    {
+     "p": "tyre",
+     "r": "Acts 21:3",
+     "label": "מעשי השליחים כא, ג"
+    },
+    {
+     "p": "ptolemais",
+     "r": "Acts 21:7",
+     "label": "מעשי השליחים כא, ז"
+    },
+    {
+     "p": "caesarea",
+     "r": "Acts 21:8",
+     "label": "מעשי השליחים כא, ח"
+    },
+    {
+     "p": "jerusalem",
+     "r": "Acts 21:15",
+     "label": "מעשי השליחים כא, טו"
+    },
+    {
+     "p": "antipatris",
+     "r": "Acts 23:31",
+     "label": "מעשי השליחים כג, לא"
+    },
+    {
+     "p": "caesarea",
+     "r": "Acts 23:33",
+     "label": "מעשי השליחים כג, לג"
+    }
+   ]
+  },
+  {
+   "id": "paul_rome",
+   "he": "פאולוס בדרך לרומא",
+   "color": "#ffb36b",
+   "stops": [
+    {
+     "p": "caesarea",
+     "r": "Acts 25:4",
+     "label": "מעשי השליחים כה, ד"
+    },
+    {
+     "p": "sidon",
+     "r": "Acts 27:3",
+     "label": "מעשי השליחים כז, ג"
+    },
+    {
+     "p": "malta",
+     "r": "Acts 28:1",
+     "label": "מעשי השליחים כח, א"
+    },
+    {
+     "p": "syracuse",
+     "r": "Acts 28:12",
+     "label": "מעשי השליחים כח, יב"
+    },
+    {
+     "p": "rome",
+     "r": "Acts 28:16",
+     "label": "מעשי השליחים כח, טז"
+    }
+   ]
+  },
+  {
+   "id": "constantine",
+   "he": "קונסטנטינוס והנצרות",
+   "color": "#e8c27a",
+   "stops": [
+    {
+     "p": "milvian",
+     "r": "he:קרב גשר מילוויוס@312",
+     "label": "312 · קרב גשר מילביוס"
+    },
+    {
+     "p": "milan",
+     "r": "he:צו מילאנו@313",
+     "label": "313 · צו מילאנו"
+    }
+   ]
+  }
+ ]
+}
