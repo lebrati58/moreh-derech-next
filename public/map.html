@@ -64,6 +64,10 @@ a{color:inherit}
 #map{position:fixed;inset:0;z-index:1;background:#0b1433}
 .leaflet-container{font-family:inherit;background:#0b1433}
 .osm-dark{filter:invert(1) hue-rotate(200deg) brightness(.95) contrast(.9) saturate(.6)}
+/* mode clair : la carte OpenStreetMap dans ses vraies couleurs (le choix est mémorisé) */
+body.map-light #map,body.map-light .leaflet-container{background:#f2efe9}body.map-light .osm-dark{filter:none}
+.map-fab.light-fab{bottom:calc(var(--sheet-gap,0px) + 74px + var(--safe-b))}
+body.itl-on .map-fab.light-fab{bottom:calc(var(--itl-h,0px) + 70px + var(--safe-b,0px))}
 .leaflet-control-attribution{font-size:10px;background:#0b1433cc!important;color:#c0cbea}
 .leaflet-control-attribution a{color:#9fe9da}
 .leaflet-bottom{bottom:var(--sheet-gap,0px);transition:bottom .25s}
@@ -219,6 +223,7 @@ body.sheet-full .scrim{opacity:1;pointer-events:auto}
 <div id="map" role="application" aria-label="מפת ישראל עם אתרי הסיורים" dir="ltr"></div>
 <section id="list" aria-label="רשימת הסיורים"><div class="cards" id="cards"></div></section>
 <button type="button" class="map-fab" id="fit" aria-label="כל הארץ" title="כל הארץ">🇮🇱</button>
+<button type="button" class="map-fab light-fab" id="lightBtn" aria-pressed="false" aria-label="מפה בהירה" title="מפה בהירה">☀️</button>
 <div class="count-pill" id="countPill" aria-live="polite"></div>
 
 <div class="scrim" id="scrim"></div>
@@ -418,6 +423,10 @@ function initMap(){
     L.polyline(road.geometry,{color:'#050a1f',weight:11,opacity:.8,interactive:false}),
     L.polyline(road.geometry,{color:'#ffffff',weight:6,dashArray:'2 10',lineCap:'round'}).on('click',function(){openTour('road67');}),
     L.marker(road.geometry[Math.floor(road.geometry.length/2)],{icon:L.divIcon({className:'',html:'<div class="road-label">🛣️ 67</div>',iconSize:[60,26],iconAnchor:[30,13]}),title:'מסלול 67',keyboard:true}).on('click',function(){openTour('road67');})]);}
+  // ☀️ / 🌙 : carte claire ou sombre
+  var setLight=function(v){document.body.classList.toggle('map-light',v);var b=$('lightBtn');b.setAttribute('aria-pressed',String(v));b.textContent=v?'🌙':'☀️';b.setAttribute('aria-label',v?'מפה כהה':'מפה בהירה');b.title=b.getAttribute('aria-label');store.set('mdl_map_light',v?'1':'0');};
+  setLight(store.get('mdl_map_light')==='1');
+  $('lightBtn').addEventListener('click',function(){setLight(!document.body.classList.contains('map-light'));});
   $('fit').addEventListener('click',function(){closeSheet();map.flyToBounds(ISRAEL,viewPad({duration:.6}));});
   map.on('click',function(){if(current)setSheet('peek');else if(sheetState!=='closed')setSheet('closed');});
 }
