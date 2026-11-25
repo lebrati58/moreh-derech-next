@@ -25,6 +25,7 @@ const dist = (a, b2) => Math.hypot((a[0] - b2[0]) * 110574, (a[1] - b2[1]) * 946
 const anchorLL = id => { const a = GEO.anchors[id]; return a ? [a.lat, a.lon] : null; };
 // déjà dans la 3D : grands édifices (par repère) et portes ottomanes (fiches de type « gate »)
 const BIG = ['dome_of_the_rock', 'al_aqsa', 'holy_sepulchre'].map(anchorLL).filter(Boolean);
+const BIG_RX = /Dome of the Rock|כיפת הסלע|قبة الصخرة|Al-?Aqsa Mosque|^Al-?Aqsa$|מסגד אל-?אקצא|المسجد الأقصى|Holy Sepulchre|כנסיית הקבר|القيامة/i;
 const GATES = M.monuments.filter(m => m.shape && m.shape.type === 'gate' && m.anchor).map(m => anchorLL(m.anchor)).filter(Boolean);
 
 const kindOf = t => {
@@ -42,7 +43,10 @@ for (const el of j.elements) {
   if (!k || lat == null) { skipped.other++; continue; }
   const nm = { he: t['name:he'] || '', en: t['name:en'] || '', fr: t['name:fr'] || '', ru: t['name:ru'] || '', ar: t['name:ar'] || '', name: t.name || '' };
   if (!nm.he && !nm.en && !nm.name) { skipped.noname++; continue; }
-  if (k !== 'gate' && BIG.some(a => dist(a, [lat, lon]) < 45)) { skipped.big++; continue; }
+  if (lat < BOX.s || lat > BOX.n || lon < BOX.w || lon > BOX.e) { skipped.other++; continue; } // grand polygone dont le centre sort de la zone
+  // les 3 grands édifices déjà modélisés (nom + proximité) ; leurs voisins (dôme de la Chaîne…) restent
+  const all = Object.values(nm).join(' ');
+  if (k !== 'gate' && BIG_RX.test(all) && BIG.some(a => dist(a, [lat, lon]) < 70)) { skipped.big++; continue; }
   if (k === 'gate' && GATES.some(a => dist(a, [lat, lon]) < 40)) { skipped.big++; continue; }
   // même lieu décrit deux fois (bâtiment + point) : on garde la version la plus complète
   const key = k + ':' + (t.wikidata || (nm.he || nm.en || nm.name).toLowerCase());
