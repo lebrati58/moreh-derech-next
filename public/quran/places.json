@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-25T12:15:50.481Z",
+ "generatedAt": "2026-11-25T12:18:55.586Z",
  "corpus": "quran",
  "name": "קוראן",
  "method": "Lieux : coordonnées Wikipédia/Wikidata (P625). Versets : récupérés et vérifiés (le nom du lieu doit y figurer). Événements : l'année doit figurer dans l'introduction de l'article Wikipédia.",
@@ -151,6 +151,18 @@
      "license": "CC BY 3.0 — tanzil.net",
      "url": "https://quran.com/48/24",
      "book": "48"
+    },
+    {
+     "r": "he:כיבוש מכה@630",
+     "label": "630 · אבו סופיאן",
+     "he": "מוחמד וצבאו נכנסים למכה כמעט בלי קרב, והאלילים בכעבה מנותצים.",
+     "verse": "עם זאת, לאחר כיבוש מכה על ידי מוחמד בשנת 630, היה אבו סופיאן בין הראשונים שקיבלו עליהם את מנהיגותו.",
+     "lang": "he",
+     "version": "ויקיפדיה: אבו סופיאן",
+     "license": "CC BY-SA 4.0",
+     "url": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%95_%D7%A1%D7%95%D7%A4%D7%99%D7%90%D7%9F",
+     "book": "history",
+     "year": 630
     }
    ]
   },
@@ -825,20 +837,9 @@
  ],
  "rejected": [
   {
-   "place": "mecca",
-   "r": "he:כיבוש מכה@630",
-   "why": "« כיבוש מכה » introuvable ; « כיבוש מכה (630) » introuvable ; « פתח מכה » introuvable ; « כיבוש מכה בידי המוסלמים » introuvable — articles proches : כיבוש (sans coord.) | כיבוש ירושלים בידי דוד (sans coord.) | עמים ילידים ביבשת אמריקה (sans coord.) | כיבוש קונסטנטינופול @41.030,28.935 | אבו סופיאן (sans coord.) | שריף (אסלאם) (sans coord.)"
-  },
-  {
    "place": "cordoba",
    "r": "he:הקתדרלה של קורדובה@785",
-   "why": "année 785 absente de l'introduction de « הקתדרלה של קורדובה » ; « המסגד-קתדרלה של קורדובה » introuvable ; année 785 absente de l'introduction de « אמירות קורדובה » — articles proches : הקתדרלה של קורדובה @37.879,-4.779 | קורדובה (ספרד) @37.890,-4.780 | הרובע היהודי של קורדובה @37.879,-4.782 | קורדובה (פרובינציה) @-32.000,-64.000 | קתדרלת סנטיאגו דה קומפוסטלה @42.881,-8.544 | פלמה דה מיורקה @39.567,2.650"
-  },
-  {
-   "journey": "battles",
-   "place": "mecca",
-   "r": "he:כיבוש מכה@630",
-   "why": "« כיבוש מכה » introuvable ; « כיבוש מכה (630) » introuvable ; « פתח מכה » introuvable ; « כיבוש מכה בידי המוסלמים » introuvable"
+   "why": "année 785 absente de l'introduction de « הקתדרלה של קורדובה » ; année 785 absente de l'introduction de « עבד א-רחמן הראשון » ; « עבד אל-רחמן הראשון » introuvable ; année 785 absente de l'introduction de « אמירות קורדובה » — articles proches : הקתדרלה של קורדובה @37.879,-4.779 | קורדובה (ספרד) @37.890,-4.780 | הרובע היהודי של קורדובה @37.879,-4.782 | קורדובה (פרובינציה) @-32.000,-64.000 | קתדרלת סנטיאגו דה קומפוסטלה @42.881,-8.544 | פלמה דה מיורקה @39.567,2.650"
   }
  ],
  "journeys": [
@@ -939,6 +940,11 @@
      "p": "medina",
      "r": "33:13",
      "label": "סורה 33 (אל-אחזאב), פסוק 13"
+    },
+    {
+     "p": "mecca",
+     "r": "he:כיבוש מכה@630",
+     "label": "630 · אבו סופיאן"
     }
    ]
   },
