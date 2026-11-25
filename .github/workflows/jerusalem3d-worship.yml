@@ -1,0 +1,36 @@
+name: Jérusalem 3D — lieux de culte et portes (OpenStreetMap)
+# Régénère public/jerusalem3d/worship.json quand l'outil change (toute branche), ou à la main.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/build-jerusalem3d-worship.mjs
+permissions:
+  contents: write
+concurrency:
+  group: j3d-worship-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-jerusalem3d-worship.mjs | tee /tmp/worship.log
+      - name: Résumé
+        if: always()
+        run: tail -3 /tmp/worship.log | while IFS= read -r l; do echo "::notice title=worship::$l"; done
+      - name: Vérifier
+        id: guard
+        continue-on-error: true
+        run: node --test tests/jerusalem3d-worship.test.mjs
+      - name: Commit
+        if: steps.guard.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/jerusalem3d/worship.json
+          git diff --cached --quiet || git commit -m "data(j3d): lieux de culte et portes (OpenStreetMap)"
+          git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"

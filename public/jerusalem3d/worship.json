@@ -1,0 +1,1767 @@
+{
+ "generatedAt": "2026-11-25T11:28:42.230Z",
+ "license": "© OpenStreetMap contributors, ODbL",
+ "box": {
+  "s": 31.769,
+  "n": 31.7855,
+  "w": 35.2245,
+  "e": 35.2425
+ },
+ "note": "Lieux de culte et portes ACTUELS d’OpenStreetMap ; la date de construction n’est pas connue ici : affichés à la période « aujourd’hui ».",
+ "counts": {
+  "church": 66,
+  "mosque": 22,
+  "synagogue": 30,
+  "gate": 14
+ },
+ "places": [
+  {
+   "id": "w376137590",
+   "k": "church",
+   "lat": 31.771275,
+   "lon": 35.232074,
+   "n": {
+    "he": ".כנסית התרנגול",
+    "en": "St. Peter of Gallicantu",
+    "ar": "كنيسة القديس بطرس في غاليكانتو",
+    "name": "كنيسة القديس بطرس في غاليكانتو"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q1861408",
+   "wp": "en:Church of St. Peter in Gallicantu"
+  },
+  {
+   "id": "n329348517",
+   "k": "church",
+   "lat": 31.784021,
+   "lon": 35.230204,
+   "n": {
+    "he": "גן הקבר",
+    "en": "Garden Tomb",
+    "fr": "Calvaire de Gordon",
+    "ar": "بستان قبر السيد المسيح",
+    "name": "بستان قبر السيد المسيح"
+   },
+   "wd": "Q1494672"
+  },
+  {
+   "id": "w280345343",
+   "k": "church",
+   "lat": 31.777985,
+   "lon": 35.241912,
+   "n": {
+    "he": "דומינוס פלוויט",
+    "en": "Dominus Flevit Church",
+    "ru": "Церковь Доминус Флевит",
+    "name": "Dominus Flevit Church"
+   },
+   "denom": "catholic",
+   "wd": "Q1238436",
+   "wp": "en:Dominus Flevit Church"
+  },
+  {
+   "id": "n3021810660",
+   "k": "church",
+   "lat": 31.778642,
+   "lon": 35.229936,
+   "n": {
+    "he": "הכלא של ישוע",
+    "en": "Greek orthodox church",
+    "ru": "Темница Христова",
+    "ar": "سجن المسيح",
+    "name": "Εξωκλησι Παναγιου Ταφου"
+   },
+   "denom": "greek_orthodox"
+  },
+  {
+   "id": "w158476956",
+   "k": "church",
+   "lat": 31.781923,
+   "lon": 35.2262,
+   "n": {
+    "he": "המנזר הסלזיאני",
+    "en": "Salesians Sisters",
+    "name": "המנזר הסלזיאני"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "n3021823969",
+   "k": "church",
+   "lat": 31.778375,
+   "lon": 35.229873,
+   "n": {
+    "he": "הקפלה היוונית האורתודוקסית",
+    "en": "Greek Orthodox Chapel",
+    "ru": "Греко-православный придел",
+    "ar": "مصلى الأرثوذكسية اليونانية",
+    "name": "مصلى الأرثوذكسية اليونانية"
+   },
+   "denom": "greek_orthodox"
+  },
+  {
+   "id": "n3021823970",
+   "k": "church",
+   "lat": 31.778333,
+   "lon": 35.229878,
+   "n": {
+    "he": "הקפלה הלטינית",
+    "en": "Latin Chapel",
+    "ru": "Латинский придел",
+    "ar": "مصلى اللاتينية",
+    "name": "مصلى اللاتينية"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "n2710872422",
+   "k": "church",
+   "lat": 31.778643,
+   "lon": 35.22951,
+   "n": {
+    "he": "הקפלה הפרנציסקנית של ההתגלות",
+    "en": "Franciscan Chapel of the Apparition",
+    "ru": "Францисканский придел Явления",
+    "ar": "مصلى الفرنسيسكان من الوحي",
+    "name": "Sacellum Apparitionis"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "n3021822682",
+   "k": "church",
+   "lat": 31.778419,
+   "lon": 35.229875,
+   "n": {
+    "he": "הקפלה של אדם",
+    "en": "Chapel of Adam",
+    "fr": "Chapelle d'Adam",
+    "ru": "придел Адамовой Главы",
+    "ar": "مصلى ادم",
+    "name": "Παρεκκλήσι του Αδάμ"
+   },
+   "denom": "greek_orthodox"
+  },
+  {
+   "id": "n5794128192",
+   "k": "church",
+   "lat": 31.778244,
+   "lon": 35.229712,
+   "n": {
+    "he": "הקפלה של ארבעים הקדושים",
+    "en": "Chapel of the Forty Martyrs",
+    "ru": "капелла 40 мучеников Севастийских",
+    "ar": "كنيسة الأربعين شهيدًا",
+    "name": "كنيسة الأربعين شهيدًا"
+   }
+  },
+  {
+   "id": "n5794128190",
+   "k": "church",
+   "lat": 31.778084,
+   "lon": 35.22973,
+   "n": {
+    "he": "הקפלה של יעקב הקדוש",
+    "en": "Chapel of St. James",
+    "ru": "капелла Святого Иакова",
+    "ar": "كنيسة القديس يعقوب",
+    "name": "كنيسة القديس يعقوب"
+   }
+  },
+  {
+   "id": "n2710872413",
+   "k": "church",
+   "lat": 31.778613,
+   "lon": 35.229988,
+   "n": {
+    "he": "הקפלה של לונגינוס",
+    "en": "Longinus Chapel",
+    "fr": "Chapelle de Saint Longin",
+    "ru": "придел Лонгина",
+    "ar": "مصلى لونجينوس",
+    "name": "Παρεκκλήσι του Αγίου Λογγίνου"
+   },
+   "denom": "greek_orthodox"
+  },
+  {
+   "id": "n5794128191",
+   "k": "church",
+   "lat": 31.778161,
+   "lon": 35.229721,
+   "n": {
+    "he": "הקפלה של מרים המגדלית",
+    "en": "Chapel of Mary Magdalene",
+    "ru": "капелла Марии Магдалины",
+    "ar": "كنيسة مريم المجدلية",
+    "name": "كنيسة مريم المجدلية"
+   }
+  },
+  {
+   "id": "n2710872404",
+   "k": "church",
+   "lat": 31.778506,
+   "lon": 35.230225,
+   "n": {
+    "he": "הקפלה של סנט הלנה",
+    "en": "Saint Helena Chapel",
+    "ru": "капелла Святой Елены",
+    "ar": "مصلى القديسة هيلانة",
+    "name": "Սուրբ Հելենա մատուռը"
+   },
+   "denom": "armenian_apostolic",
+   "wd": "Q5073076"
+  },
+  {
+   "id": "n5794128189",
+   "k": "church",
+   "lat": 31.778115,
+   "lon": 35.22945,
+   "n": {
+    "he": "הקפלה של קדוש טקלה",
+    "en": "Chapel of Saint Thekla",
+    "ru": "капелла Святой Фёклы",
+    "ar": "كنيسة القديسة تقلا",
+    "name": "كنيسة القديسة تقلا"
+   }
+  },
+  {
+   "id": "w256278896",
+   "k": "church",
+   "lat": 31.771915,
+   "lon": 35.229266,
+   "n": {
+    "he": "חדר הסעודה האחרונה",
+    "en": "Cenacle",
+    "fr": "Cénacle",
+    "ru": "Сионская горница",
+    "ar": "علية صهيون",
+    "name": "علية صهيون"
+   },
+   "wd": "Q318972",
+   "wp": "en:Cenacle"
+  },
+  {
+   "id": "w137729566",
+   "k": "church",
+   "lat": 31.778236,
+   "lon": 35.234874,
+   "n": {
+    "he": "כיפת העליה",
+    "en": "Dome of the Ascension",
+    "fr": "Dôme de l'Ascension",
+    "ru": "Купол Вознесения",
+    "ar": "قبة المعراج",
+    "name": "قبة المعراج"
+   },
+   "wd": "Q2568172",
+   "wp": "ar:قبة المعراج"
+  },
+  {
+   "id": "n4057349707",
+   "k": "church",
+   "lat": 31.776425,
+   "lon": 35.229411,
+   "n": {
+    "he": "כנסיה מרונית",
+    "en": "Maronite Church",
+    "ru": "Маронитская церковь",
+    "ar": "الكنيسة المارونية",
+    "name": "ܥܕܬܐ ܡܪܘܢܝܬܐ"
+   },
+   "denom": "maronite",
+   "wd": "Q1718866",
+   "wp": "en:Maronite Catholic Patriarchal Exarchate of Jerusalem and Palestine"
+  },
+  {
+   "id": "w612045244",
+   "k": "church",
+   "lat": 31.778124,
+   "lon": 35.230766,
+   "n": {
+    "he": "כנסיית אלכסמדר נבסקי",
+    "en": "Alexander Nevsky Church",
+    "ru": "церковь Святого Александра Невского",
+    "ar": "كنيسة الكسندر نيفسكي",
+    "name": "כנסיית אלכסמדר נבסקי"
+   },
+   "denom": "russian_orthodox",
+   "wd": "Q16715750",
+   "wp": "de:Alexander-Newski-Kirche (Jerusalem)"
+  },
+  {
+   "id": "w277705915",
+   "k": "church",
+   "lat": 31.779939,
+   "lon": 35.232452,
+   "n": {
+    "he": "כנסיית גבירתנו הדואבת",
+    "en": "Church of Our Lady of the Spasm",
+    "name": "Սուրբ Աստվածածին եկեղեցի"
+   },
+   "denom": "armenian_catholic",
+   "wd": "Q999100",
+   "wp": "he:כנסיית גבירתנו הדואבת"
+  },
+  {
+   "id": "w290677052",
+   "k": "church",
+   "lat": 31.773318,
+   "lon": 35.230176,
+   "n": {
+    "he": "כנסיית המלאכים",
+    "en": "Armenian Orthodox Church of the Archangels",
+    "name": "Հրեշտակապետաց Եկեղեցի"
+   },
+   "denom": "armenian_orthodox"
+  },
+  {
+   "id": "w126755060",
+   "k": "church",
+   "lat": 31.776026,
+   "lon": 35.229217,
+   "n": {
+    "he": "כנסיית המשיח",
+    "en": "Christ Church",
+    "ru": "церковь Христа",
+    "ar": "كنيسة المسيح",
+    "name": "כנסיית המשיח"
+   },
+   "denom": "anglican",
+   "wd": "Q1087352"
+  },
+  {
+   "id": "w137729554",
+   "k": "church",
+   "lat": 31.779305,
+   "lon": 35.239765,
+   "n": {
+    "he": "כנסיית כל העמים",
+    "en": "Church of All Nations",
+    "fr": "Église de Toutes-les-Nations",
+    "ru": "Церковь Всех Языков",
+    "ar": "كنيسة كل الأمم",
+    "name": "كنيسة كل الأمم"
+   },
+   "denom": "catholic",
+   "wd": "Q1331689",
+   "wp": "en:Church of All Nations"
+  },
+  {
+   "id": "w280347366",
+   "k": "church",
+   "lat": 31.7789,
+   "lon": 35.240855,
+   "n": {
+    "he": "כנסיית מריה מגדלנה",
+    "en": "Church of Mary Magdalene",
+    "ru": "Церковь Святой Марии Магдалины",
+    "ar": "كنيسة مريم المجدلية",
+    "name": "כנסיית מריה מגדלנה"
+   },
+   "denom": "russian_orthodox",
+   "wd": "Q333594",
+   "wp": "en:Church of Maria Magdalene"
+  },
+  {
+   "id": "w290733222",
+   "k": "church",
+   "lat": 31.775574,
+   "lon": 35.232952,
+   "n": {
+    "he": "כנסיית מרים של הגרמנים",
+    "en": "Church of Saint Mary of the Germans",
+    "fr": "Église de Sainte-Marie-des-Germains",
+    "name": "כנסיית מרים של הגרמנים"
+   },
+   "denom": "catholic",
+   "wd": "Q1445362",
+   "wp": "en:Church of Saint Mary of the Germans"
+  },
+  {
+   "id": "w280346237",
+   "k": "church",
+   "lat": 31.780098,
+   "lon": 35.238519,
+   "n": {
+    "he": "כנסיית סטפנוס הקדוש",
+    "en": "Saint Stephen's Church",
+    "ru": "Церковь Св. Стефана",
+    "ar": "كنيسة القديس استفانوس",
+    "name": "كنيسة القديس استفانوس"
+   },
+   "denom": "greek_orthodox"
+  },
+  {
+   "id": "n2710783601",
+   "k": "church",
+   "lat": 31.774795,
+   "lon": 35.229087,
+   "n": {
+    "he": "כנסיית סנט טורוס",
+    "en": "St. Toros Church",
+    "ru": "церковь Святого Тороса",
+    "name": "Սուրբ Թորոս եկեղեցի"
+   },
+   "denom": "armenian_apostolic",
+   "wd": "Q5155277",
+   "wp": "hy:Սուրբ Թորոս եկեղեցի"
+  },
+  {
+   "id": "n563992070",
+   "k": "church",
+   "lat": 31.776002,
+   "lon": 35.230593,
+   "n": {
+    "he": "כנסיית סנט מארק",
+    "en": "Syriac Church of Saint Mark",
+    "fr": "Monastère Mor Marqos",
+    "ar": "دير مار مرقس",
+    "name": "ܥܕܬܐ ܕܡܪܝ ܪܩܘܣ"
+   },
+   "denom": "syriac_orthodox",
+   "wd": "Q1901918",
+   "wp": "ar:دير مار مرقس (القدس)"
+  },
+  {
+   "id": "w126864879",
+   "k": "church",
+   "lat": 31.781385,
+   "lon": 35.236427,
+   "n": {
+    "he": "כנסיית סנטה אנה",
+    "en": "Saint Anne Church",
+    "fr": "Église Sainte-Anne de Jérusalem",
+    "ru": "Церковь Св. Анны",
+    "ar": "كنيسة القديسة حنة",
+    "name": "Église Sainte-Anne de Jérusalem / כנסיית סנטה אנה"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q1551966",
+   "wp": "ar:كنيسة القديسة حنة"
+  },
+  {
+   "id": "w29268902",
+   "k": "church",
+   "lat": 31.777892,
+   "lon": 35.230559,
+   "n": {
+    "he": "כנסית הגואל",
+    "en": "Lutheran Church of the Redeemer",
+    "fr": "Église du Rédempteur",
+    "ru": "Церковь Христа Искупителя",
+    "ar": "الكنيسة اللوثرية",
+    "name": "الكنيسة اللوثرية"
+   },
+   "denom": "lutheran",
+   "wd": "Q1355780"
+  },
+  {
+   "id": "w690894834",
+   "k": "church",
+   "lat": 31.778465,
+   "lon": 35.229534,
+   "n": {
+    "he": "לת המלאך",
+    "en": "Chapel of Angel",
+    "ru": "Придел Ангела",
+    "ar": "كنيسة الملاك",
+    "name": "Παρεκκλήσι του Αγγέλου"
+   },
+   "denom": "armenian,_coptic_orthodox,_ethiopian_orthodox,_greek_orthodox,_roman_catholic"
+  },
+  {
+   "id": "w106249447",
+   "k": "church",
+   "lat": 31.779005,
+   "lon": 35.227394,
+   "n": {
+    "he": "מנזר סן סלוודור",
+    "en": "Saint Saviours Church",
+    "ar": "كنيسة القديس المخلص",
+    "name": "كنيسة القديس المخلص"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q997715",
+   "wp": "en:Monastery of Saint Saviour"
+  },
+  {
+   "id": "r1515591",
+   "k": "church",
+   "lat": 31.779272,
+   "lon": 35.227512,
+   "n": {
+    "he": "מנזר סן סלוודור",
+    "en": "Monastery of Saint Saviour",
+    "ar": "دير المخلص المقدس",
+    "name": "دير المخلص المقدس"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "w321360436",
+   "k": "church",
+   "lat": 31.784691,
+   "lon": 35.229859,
+   "n": {
+    "he": "מנזר סנט אטיין",
+    "en": "St. Stephen's Basilica (Dominican)",
+    "fr": "Basilique Saint-Étienne",
+    "ar": "كنيسة الدومنيكان",
+    "name": "كنيسة الدومنيكان"
+   },
+   "wd": "Q1431922",
+   "wp": "he:מנזר סנט אטיין"
+  },
+  {
+   "id": "w280346242",
+   "k": "church",
+   "lat": 31.780158,
+   "lon": 35.239806,
+   "n": {
+    "he": "מערת הבגידה",
+    "en": "Grotto of Gethsemane",
+    "fr": "Grotte de Gethsémani",
+    "ar": "مغارة جثسيماني",
+    "name": "Grotto of Gethsemane"
+   },
+   "denom": "catholic",
+   "wd": "Q7001164"
+  },
+  {
+   "id": "n679219193",
+   "k": "church",
+   "lat": 31.783227,
+   "lon": 35.224826,
+   "n": {
+    "he": "סנט פול",
+    "en": "St. Paul",
+    "name": "St. Paul"
+   },
+   "denom": "anglican",
+   "wd": "Q16133344"
+  },
+  {
+   "id": "n2710872409",
+   "k": "church",
+   "lat": 31.778495,
+   "lon": 35.230411,
+   "n": {
+    "he": "פלת סנט ורטן",
+    "en": "Saint Vartan Chapel",
+    "ru": "придел Святого Вардана",
+    "ar": "كنيسة القديس فارتان",
+    "name": "Սուրբ Վարդան մատուռը"
+   },
+   "denom": "armenian_apostolic"
+  },
+  {
+   "id": "n3703608914",
+   "k": "church",
+   "lat": 31.777541,
+   "lon": 35.230666,
+   "n": {
+    "he": "קאפלת יוחנן",
+    "en": "Johanniterkapelle",
+    "name": "Johanniterkapelle"
+   },
+   "denom": "lutheran"
+  },
+  {
+   "id": "n2710872418",
+   "k": "church",
+   "lat": 31.778461,
+   "lon": 35.229413,
+   "n": {
+    "he": "קאפלת יעקב הסורית",
+    "en": "Syrian Jacobite Chapel",
+    "ru": "Сиро-Яковитский придел",
+    "ar": "مصلى السوري يعقوبي",
+    "name": "مصلى السوري يعقوبي"
+   },
+   "denom": "syriac_orthodox"
+  },
+  {
+   "id": "w280346241",
+   "k": "church",
+   "lat": 31.780409,
+   "lon": 35.239647,
+   "n": {
+    "he": "קבר מרים",
+    "en": "Tomb of the Virgin Mary",
+    "ar": "قبر السيدة العذراء مريم",
+    "name": "قبر السيدة العذراء مريم"
+   },
+   "denom": "armenian_apostolic",
+   "wd": "Q968028",
+   "wp": "en:Tomb of the Virgin Mary"
+  },
+  {
+   "id": "n2710872400",
+   "k": "church",
+   "lat": 31.778445,
+   "lon": 35.230399,
+   "n": {
+    "he": "קפלה של ההמצאה של הצלב",
+    "en": "Chapel of the Finding of the Cross",
+    "ru": "придел Обретения Креста Господня",
+    "name": "Sacellum Inventionis S. Crucis"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "n2710872417",
+   "k": "church",
+   "lat": 31.778435,
+   "lon": 35.229993,
+   "n": {
+    "he": "קפלה של לעג",
+    "en": "Derision Chapel",
+    "fr": "Chapelle de la Dérision",
+    "ru": "придел Бичевания",
+    "ar": "مصلى اكليل الشوك",
+    "name": "مصلى اكليل الشوك"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "w265410575",
+   "k": "church",
+   "lat": 31.774533,
+   "lon": 35.229083,
+   "n": {
+    "he": "קתדרלת יעקב הקדוש",
+    "en": "Saint James Cathedral",
+    "ru": "Собор Св. Иакова",
+    "ar": "كاتدرائية الأرمن",
+    "name": "Սուրբ Հակոբյանց վանք"
+   },
+   "denom": "armenian_apostolic",
+   "wd": "Q1679598"
+  },
+  {
+   "id": "n3021822681",
+   "k": "church",
+   "lat": 31.778512,
+   "lon": 35.229831,
+   "n": {
+    "he": "קתוליקון",
+    "en": "Catholicon",
+    "ru": "Кафоликон",
+    "ar": "كاثوليكي",
+    "name": "Καθολικόν"
+   },
+   "denom": "greek_orthodox"
+  },
+  {
+   "id": "w161058936",
+   "k": "church",
+   "lat": 31.772363,
+   "lon": 35.229338,
+   "n": {
+    "name": "Armenian Monastery of Saint Saviour (Jerusalem)"
+   },
+   "denom": "armenian_apostolic",
+   "wd": "Q113149057"
+  },
+  {
+   "id": "n673445099",
+   "k": "church",
+   "lat": 31.783131,
+   "lon": 35.24076,
+   "n": {
+    "name": "Bridgettine Sisters Chapel"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "w1394461451",
+   "k": "church",
+   "lat": 31.777362,
+   "lon": 35.228346,
+   "n": {
+    "name": "Cathedral of the Annunciation of the Virgin (Melkite)"
+   },
+   "denom": "greek_catholic"
+  },
+  {
+   "id": "n1699969440",
+   "k": "church",
+   "lat": 31.777914,
+   "lon": 35.225107,
+   "n": {
+    "en": "Chapelle Saint Vincent de Paul",
+    "fr": "Chapelle Saint Vincent de Paul",
+    "name": "Chapelle Saint Vincent de Paul"
+   },
+   "denom": "catholic",
+   "wd": "Q14375629",
+   "wp": "fr:Chapelle Saint-Vincent-de-Paul (Jérusalem)"
+  },
+  {
+   "id": "w166965387",
+   "k": "church",
+   "lat": 31.777015,
+   "lon": 35.229665,
+   "n": {
+    "en": "Church of Saint John the Baptist",
+    "name": "Church of Saint John the Baptist"
+   },
+   "denom": "greek_orthodox",
+   "wd": "Q1405083"
+  },
+  {
+   "id": "n9351109889",
+   "k": "church",
+   "lat": 31.779307,
+   "lon": 35.231318,
+   "n": {
+    "name": "Church of Saint Veronica"
+   }
+  },
+  {
+   "id": "w744674226",
+   "k": "church",
+   "lat": 31.780387,
+   "lon": 35.23373,
+   "n": {
+    "en": "Church of the Condemnation",
+    "name": "Church of the Condemnation"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q1761639"
+  },
+  {
+   "id": "w744674450",
+   "k": "church",
+   "lat": 31.780467,
+   "lon": 35.234198,
+   "n": {
+    "en": "Church of the Flagellation",
+    "name": "Church of the Flagellation"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q1499131"
+  },
+  {
+   "id": "w744676490",
+   "k": "church",
+   "lat": 31.780303,
+   "lon": 35.233239,
+   "n": {
+    "en": "Ecce Homo Basilica",
+    "name": "Ecce Homo Basilica"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q1280187",
+   "wp": "en:Ecce Homo (church)"
+  },
+  {
+   "id": "n10732544528",
+   "k": "church",
+   "lat": 31.779416,
+   "lon": 35.230396,
+   "n": {
+    "name": "Ethiopian Patriarchate"
+   },
+   "denom": "ethiopian_orthodox"
+  },
+  {
+   "id": "w1392256448",
+   "k": "church",
+   "lat": 31.779031,
+   "lon": 35.22824,
+   "n": {
+    "name": "Holy Archangels Serbian Church"
+   },
+   "denom": "serbian_orthodox"
+  },
+  {
+   "id": "w158437707",
+   "k": "church",
+   "lat": 31.780499,
+   "lon": 35.226454,
+   "n": {
+    "en": "Monastery of Notre Dame",
+    "ar": "دير نوتردام",
+    "name": "Monastery of Notre Dame"
+   },
+   "denom": "roman_catholic"
+  },
+  {
+   "id": "w744679915",
+   "k": "church",
+   "lat": 31.780243,
+   "lon": 35.232958,
+   "n": {
+    "en": "Praitorion (Prison of Christ)",
+    "fr": "Prétoire (Prison du Christ)",
+    "name": "Praitorion (Prison of Christ)"
+   },
+   "denom": "greek_orthodox"
+  },
+  {
+   "id": "n679212724",
+   "k": "church",
+   "lat": 31.785248,
+   "lon": 35.225702,
+   "n": {
+    "en": "Romanian Orthodox Church from Jerusalem",
+    "name": "Romanian Orthodox Church from Jerusalem"
+   },
+   "denom": "romanian_orthodox",
+   "wd": "Q47466408"
+  },
+  {
+   "id": "w290692945",
+   "k": "church",
+   "lat": 31.776414,
+   "lon": 35.229523,
+   "n": {
+    "name": "Saint Maron Convent"
+   },
+   "denom": "maronite",
+   "wd": "Q65062500",
+   "wp": "en:Maronite Convent, Jerusalem"
+  },
+  {
+   "id": "n1908958184",
+   "k": "church",
+   "lat": 31.784868,
+   "lon": 35.228567,
+   "n": {
+    "en": "St Thomas Syriac Catholic Church",
+    "name": "St Thomas Syriac Catholic Church"
+   },
+   "denom": "syriac_catholic"
+  },
+  {
+   "id": "n1606190053",
+   "k": "church",
+   "lat": 31.771608,
+   "lon": 35.239652,
+   "n": {
+    "en": "Mamre / Abraham’s house monastery",
+    "ar": "دير بيت سيدنا إبراهيم",
+    "name": "دير بيت سيدنا إبراهيم"
+   }
+  },
+  {
+   "id": "n685534929",
+   "k": "church",
+   "lat": 31.780954,
+   "lon": 35.234447,
+   "n": {
+    "en": "Apostle Peter's Prison",
+    "ru": "Тюрьма, в которой содержали Апостола Петра",
+    "ar": "سجن الرسول بيتر",
+    "name": "سجن الرسول بيتر"
+   }
+  },
+  {
+   "id": "w1392261827",
+   "k": "church",
+   "lat": 31.777694,
+   "lon": 35.227008,
+   "n": {
+    "en": "Co-Cathedral of the Most Holy Name of Jesus",
+    "fr": "Co-Cathédrale du Très Saint Nom de Jésus",
+    "ar": "كاتدرائية مشتركة لاسم يسوع الأقدس",
+    "name": "كاتدرائية مشتركة لاسم يسوع الأقدس"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q1781724",
+   "wp": "en:Co-Cathedral of the Most Holy Name of Jesus"
+  },
+  {
+   "id": "n6992244482",
+   "k": "church",
+   "lat": 31.772135,
+   "lon": 35.228888,
+   "n": {
+    "en": "Dormition Church",
+    "fr": "Basilique de la Dormition de la Vierge-Marie",
+    "ar": "كنيسة الرقاد",
+    "name": "كنيسة الرقاد"
+   },
+   "denom": "roman_catholic",
+   "wd": "Q18620590"
+  },
+  {
+   "id": "n4410141990",
+   "k": "church",
+   "lat": 31.780845,
+   "lon": 35.236694,
+   "n": {
+    "en": "House and birthplace of Virgin Mary",
+    "fr": "Maison natale de la Vierge Marie",
+    "ru": "Церковь св. Иоакима и Анны (место рождения Богородицы)",
+    "ar": "منزل ومكان ولادة مريم العذراء",
+    "name": "منزل ومكان ولادة مريم العذراء"
+   },
+   "denom": "greek_orthodox",
+   "wd": "Q3320239"
+  },
+  {
+   "id": "n2710817403",
+   "k": "church",
+   "lat": 31.775979,
+   "lon": 35.230671,
+   "n": {
+    "en": "Assyrian Church",
+    "fr": "Église Assyrienne",
+    "ar": "الكنيسة الآشورية",
+    "name": "ܥܕܬܐ ܕܐܬܘܖ̈ܝܐ"
+   },
+   "denom": "assyrian"
+  },
+  {
+   "id": "w291836716",
+   "k": "gate",
+   "lat": 31.779992,
+   "lon": 35.233737,
+   "n": {
+    "he": "שער בני גאנם",
+    "en": "Gate of Bani Ghanem",
+    "ru": "Ворота Бани Ганима",
+    "ar": "باب الغوانمة",
+    "name": "باب الغوانمة"
+   },
+   "wd": "Q25450229"
+  },
+  {
+   "id": "w291836690",
+   "k": "gate",
+   "lat": 31.778406,
+   "lon": 35.234113,
+   "n": {
+    "he": "שער הברזל",
+    "en": "Iron Gate",
+    "ru": "Железные ворота",
+    "ar": "باب الحديد",
+    "name": "باب الحديد"
+   }
+  },
+  {
+   "id": "n2915690864",
+   "k": "gate",
+   "lat": 31.775433,
+   "lon": 35.235675,
+   "n": {
+    "he": "שער החפירות",
+    "name": "שער החפירות"
+   }
+  },
+  {
+   "id": "w291836695",
+   "k": "gate",
+   "lat": 31.780094,
+   "lon": 35.235154,
+   "n": {
+    "he": "שער החשוך",
+    "en": "Gate of Darkness",
+    "ru": "Ворота Тьмы",
+    "ar": "باب الأيتام",
+    "name": "باب الأيتام"
+   }
+  },
+  {
+   "id": "w291836686",
+   "k": "gate",
+   "lat": 31.777829,
+   "lon": 35.234237,
+   "n": {
+    "he": "שער הטהרה",
+    "en": "Ablution Gate",
+    "ru": "Ворота Омовения",
+    "ar": "باب المطهرة",
+    "name": "باب المطهرة"
+   }
+  },
+  {
+   "id": "w291836692",
+   "k": "gate",
+   "lat": 31.77638,
+   "lon": 35.234514,
+   "n": {
+    "he": "שער הלל / המוגרבים",
+    "en": "Mughrabi Gate",
+    "fr": "Porte des Maghrébins",
+    "ru": "Ворота Муграби",
+    "ar": "باب المغاربة",
+    "name": "باب المغاربة"
+   }
+  },
+  {
+   "id": "w508175929",
+   "k": "gate",
+   "lat": 31.778201,
+   "lon": 35.237271,
+   "n": {
+    "he": "שער המזרח",
+    "en": "Gate of the East",
+    "ru": "Восточные ворота",
+    "ar": "بوابة الشرق",
+    "name": "שער המזרח • بوابة الشرق"
+   }
+  },
+  {
+   "id": "w291836689",
+   "k": "gate",
+   "lat": 31.779131,
+   "lon": 35.233955,
+   "n": {
+    "he": "שער המשגיח",
+    "en": "Gate of the Watchman",
+    "ru": "Ворота Совета",
+    "ar": "باب المجلس",
+    "name": "باب المجلس"
+   },
+   "wd": "Q16765255",
+   "wp": "en:Inspector's Gate"
+  },
+  {
+   "id": "w291836685",
+   "k": "gate",
+   "lat": 31.780139,
+   "lon": 35.235639,
+   "n": {
+    "he": "שער הסליחה",
+    "en": "Gate of Remission",
+    "fr": "Porte de la Rémission",
+    "ru": "Ворота Отпущения",
+    "ar": "باب الحوطة",
+    "name": "باب الحوطة"
+   }
+  },
+  {
+   "id": "w620130982",
+   "k": "gate",
+   "lat": 31.779775,
+   "lon": 35.233809,
+   "n": {
+    "he": "שער הצאן",
+    "en": "Council Gate",
+    "ar": "بوابة الأغنام",
+    "name": "بوابة الأغنام"
+   }
+  },
+  {
+   "id": "w291836688",
+   "k": "gate",
+   "lat": 31.78025,
+   "lon": 35.236945,
+   "n": {
+    "he": "שער השבטים",
+    "en": "Gate of the Tribes",
+    "ru": "Ворота Колен",
+    "ar": "باب الاسباط",
+    "name": "باب الاسباط"
+   }
+  },
+  {
+   "id": "w291836687",
+   "k": "gate",
+   "lat": 31.777293,
+   "lon": 35.234339,
+   "n": {
+    "he": "שער השלשלת",
+    "en": "Gate of the Chain",
+    "ru": "Ворота Цепи",
+    "ar": "باب السلسلة",
+    "name": "باب السلسلة"
+   }
+  },
+  {
+   "id": "w291836677",
+   "k": "gate",
+   "lat": 31.777991,
+   "lon": 35.234202,
+   "n": {
+    "he": "שער סוחרי הכותנה",
+    "en": "Cotton Merchant's Gate",
+    "ru": "Ворота Торговцев хлопком",
+    "ar": "باب القطانين",
+    "name": "باب القطانين"
+   }
+  },
+  {
+   "id": "n2710817408",
+   "k": "gate",
+   "lat": 31.780256,
+   "lon": 35.233346,
+   "n": {
+    "en": "Ecce Homo Arch",
+    "ru": "Арка «Се человек»",
+    "ar": "قوس إيك هومو",
+    "name": "قوس إيك هومو"
+   },
+   "wd": "Q1280187",
+   "wp": "en:Ecce Homo (church)"
+  },
+  {
+   "id": "n5859026119",
+   "k": "mosque",
+   "lat": 31.776645,
+   "lon": 35.236388,
+   "n": {
+    "he": "הכניסה המערבית",
+    "en": "Al-Marwani Mosque",
+    "ru": "Мечеть Марвана",
+    "ar": "المصلى المرواني",
+    "name": "הכניסה המערבית"
+   },
+   "wd": "Q2657964"
+  },
+  {
+   "id": "w291836681",
+   "k": "mosque",
+   "lat": 31.778761,
+   "lon": 35.234838,
+   "n": {
+    "he": "כיפת הלוחות",
+    "en": "Dome of the Tablets",
+    "fr": "Dôme des Esprits",
+    "ru": "Купол Скрижалей",
+    "ar": "قبة من أقراص",
+    "name": "قبة من أقراص"
+   },
+   "wd": "Q12115878",
+   "wp": "en:Dome of the Spirits"
+  },
+  {
+   "id": "w291836680",
+   "k": "mosque",
+   "lat": 31.778205,
+   "lon": 35.235034,
+   "n": {
+    "he": "כיפת הנביא",
+    "en": "Dome of the Prophet",
+    "ru": "Купол Пророка",
+    "ar": "قبة النبي",
+    "name": "قبة النبي"
+   },
+   "wd": "Q3408723",
+   "wp": "ar:قبة النبي"
+  },
+  {
+   "id": "w45099263",
+   "k": "mosque",
+   "lat": 31.778079,
+   "lon": 35.235736,
+   "n": {
+    "he": "כיפת השלשלת",
+    "en": "Dome of the Chain",
+    "fr": "Dôme de la Chaîne",
+    "ru": "Купол Цепи",
+    "ar": "قبة السلسلة",
+    "name": "قبة السلسلة כיפת השרשרת"
+   },
+   "wd": "Q2141548",
+   "wp": "ar:قبة السلسلة"
+  },
+  {
+   "id": "w291836713",
+   "k": "mosque",
+   "lat": 31.778398,
+   "lon": 35.234772,
+   "n": {
+    "he": "כיפת חברון",
+    "en": "Dome of al-Khalili",
+    "ru": "Купол Халили",
+    "ar": "فبة الخلیلی",
+    "name": "כיפת חברון"
+   },
+   "wd": "Q5290021",
+   "wp": "en:Dome of al-Khalili"
+  },
+  {
+   "id": "w291836719",
+   "k": "mosque",
+   "lat": 31.776299,
+   "lon": 35.235083,
+   "n": {
+    "he": "כיפת יוסף",
+    "en": "Dome of Yusuf",
+    "ru": "Купол Юсуфа",
+    "ar": "قبة يوسف",
+    "name": "قبة يوسف"
+   },
+   "wd": "Q5290020"
+  },
+  {
+   "id": "w291836718",
+   "k": "mosque",
+   "lat": 31.777252,
+   "lon": 35.234607,
+   "n": {
+    "he": "כיפת משה",
+    "en": "Dome of Musa",
+    "ru": "Купол Мусы",
+    "ar": "قبة موسى",
+    "name": "قبة موسى"
+   }
+  },
+  {
+   "id": "w291836678",
+   "k": "mosque",
+   "lat": 31.779758,
+   "lon": 35.234802,
+   "n": {
+    "he": "כיפת שלמה",
+    "en": "Dome of Solomon",
+    "ru": "Купол Сулеймана",
+    "ar": "قبة سليمان",
+    "name": "قبة سليمان"
+   }
+  },
+  {
+   "id": "w291836679",
+   "k": "mosque",
+   "lat": 31.779787,
+   "lon": 35.235271,
+   "n": {
+    "he": "כיפת שלמה פאשה",
+    "en": "Dome of Suleiman Pasha",
+    "ru": "Купол Сулеймана-Паши",
+    "ar": "قبة سليمان باشا",
+    "name": "כיפת שלמה פאשה"
+   }
+  },
+  {
+   "id": "w291836694",
+   "k": "mosque",
+   "lat": 31.779395,
+   "lon": 35.23708,
+   "n": {
+    "he": "כסא שלמה",
+    "en": "Throne of Solomon",
+    "ru": "Трон Соломона",
+    "ar": "عرش سليمان",
+    "name": "عرش سليمان"
+   },
+   "wd": "Q7798360",
+   "wp": "en:Throne of Solomon"
+  },
+  {
+   "id": "n893970934",
+   "k": "mosque",
+   "lat": 31.783613,
+   "lon": 35.231636,
+   "n": {
+    "he": "מסגד אל אחמר",
+    "en": "Al-Ahmar Mosque",
+    "ar": "مسجد الاحمر",
+    "name": "מסגד אל אחמר"
+   }
+  },
+  {
+   "id": "n291872774",
+   "k": "mosque",
+   "lat": 31.776174,
+   "lon": 35.229411,
+   "n": {
+    "he": "מסגד יעקובי",
+    "en": "Al-Yaqoubi Mosque",
+    "ar": "مسجد اليعقوبي",
+    "name": "مسجد اليعقوبي"
+   },
+   "wd": "Q28221849"
+  },
+  {
+   "id": "n1606190086",
+   "k": "mosque",
+   "lat": 31.770736,
+   "lon": 35.234327,
+   "n": {
+    "he": "מסגד סילוואן הישן",
+    "en": "Old mosque silwan",
+    "ar": "لجامع القديم سلوان",
+    "name": "מסגד סילוואן הישן"
+   },
+   "wd": "Q20050747"
+  },
+  {
+   "id": "w217774544",
+   "k": "mosque",
+   "lat": 31.785159,
+   "lon": 35.228559,
+   "n": {
+    "he": "מסגד סעד וסעיד",
+    "en": "Sa'd wa Su'ayd Mosque",
+    "ar": "مسجد سعد وسعيد",
+    "name": "مسجد سعد وسعيد"
+   }
+  },
+  {
+   "id": "w290821793",
+   "k": "mosque",
+   "lat": 31.777875,
+   "lon": 35.229652,
+   "n": {
+    "he": "מסגד עומר",
+    "en": "Mosque of Omar",
+    "fr": "Mosquée d'Omar",
+    "ru": "Мечеть Омара",
+    "ar": "مسجد عمر",
+    "name": "مسجد عمر"
+   },
+   "wd": "Q2151217",
+   "wp": "en:Mosque of Omar (Jerusalem)"
+  },
+  {
+   "id": "n5861210088",
+   "k": "mosque",
+   "lat": 31.781641,
+   "lon": 35.230738,
+   "n": {
+    "he": "מסגד שייח לולו",
+    "en": "Sheikh Loulou Mosque",
+    "name": "מסגד שייח לולו"
+   }
+  },
+  {
+   "id": "w298277800",
+   "k": "mosque",
+   "lat": 31.779223,
+   "lon": 35.22596,
+   "n": {
+    "name": "Al Huda"
+   }
+  },
+  {
+   "id": "w291836733",
+   "k": "mosque",
+   "lat": 31.777779,
+   "lon": 35.234475,
+   "n": {
+    "ar": "سبيل قايتباي",
+    "name": "Fountain of Qayt Bay"
+   },
+   "wd": "Q5474810"
+  },
+  {
+   "id": "n5904398567",
+   "k": "mosque",
+   "lat": 31.78213,
+   "lon": 35.234338,
+   "n": {
+    "ar": "الشيج مكي",
+    "name": "الشيج مكي"
+   }
+  },
+  {
+   "id": "n5835976784",
+   "k": "mosque",
+   "lat": 31.780866,
+   "lon": 35.230516,
+   "n": {
+    "ar": "مسجد الهصطفى",
+    "name": "مسجد الهصطفى"
+   }
+  },
+  {
+   "id": "n685482623",
+   "k": "mosque",
+   "lat": 31.785236,
+   "lon": 35.228625,
+   "n": {
+    "en": "Sa'd wa Su'ayd Mosque",
+    "ar": "مسجد سعد وسعيد",
+    "name": "مسجد سعد وسعيد"
+   }
+  },
+  {
+   "id": "n2417519374",
+   "k": "mosque",
+   "lat": 31.774096,
+   "lon": 35.240614,
+   "n": {
+    "en": "Mohammed Al-Fateh Mosque",
+    "ar": "مسجد محمد الفاتح",
+    "name": "مسجد محمد الفاتح"
+   }
+  },
+  {
+   "id": "n4905156125",
+   "k": "synagogue",
+   "lat": 31.771695,
+   "lon": 35.229362,
+   "n": {
+    "he": "אוהל ארון ברית ה'",
+    "name": "אוהל ארון ברית ה'"
+   },
+   "denom": "orthodox"
+  },
+  {
+   "id": "w499223566",
+   "k": "synagogue",
+   "lat": 31.777439,
+   "lon": 35.233344,
+   "n": {
+    "he": "אוהל יצחק",
+    "en": "Ohel Yitzchak Synagogue",
+    "ar": "كنيس أوهيل يتسحاق",
+    "name": "אוהל יצחק"
+   },
+   "denom": "orthodox",
+   "wd": "Q2920443",
+   "wp": "he:בית הכנסת אוהל יצחק"
+  },
+  {
+   "id": "n4905156127",
+   "k": "synagogue",
+   "lat": 31.771196,
+   "lon": 35.229424,
+   "n": {
+    "he": "אולם ההתוועדויות",
+    "name": "אולם ההתוועדויות"
+   },
+   "denom": "orthodox"
+  },
+  {
+   "id": "w499210296",
+   "k": "synagogue",
+   "lat": 31.777048,
+   "lon": 35.234222,
+   "n": {
+    "he": "אולמות התפילה המקורים",
+    "en": "Wilson's Arch prayer hall",
+    "name": "אולמות התפילה המקורים"
+   },
+   "denom": "orthodox",
+   "wd": "Q8022908",
+   "wp": "en:Wilson's Arch (Jerusalem)"
+  },
+  {
+   "id": "w29265134",
+   "k": "synagogue",
+   "lat": 31.774625,
+   "lon": 35.231551,
+   "n": {
+    "he": "ארבעת בתי הכנסת הספרדיים",
+    "en": "Four Sephardic Synagogues",
+    "name": "ארבעת בתי הכנסת הספרדיים"
+   },
+   "denom": "orthodox",
+   "wd": "Q608169",
+   "wp": "he:בתי הכנסת הספרדיים"
+  },
+  {
+   "id": "n4905159139",
+   "k": "synagogue",
+   "lat": 31.774649,
+   "lon": 35.231602,
+   "n": {
+    "he": "בית הכנסת האמצעי",
+    "en": "Middle Synagogue",
+    "name": "בית הכנסת האמצעי"
+   },
+   "denom": "jewish_orthodox",
+   "wd": "Q25416667"
+  },
+  {
+   "id": "w45081545",
+   "k": "synagogue",
+   "lat": 31.775328,
+   "lon": 35.23134,
+   "n": {
+    "he": "בית הכנסת החורבה",
+    "en": "Hurva Synagogue",
+    "fr": "Synagogue Hourva",
+    "ar": "كنيس هورفا",
+    "name": "בית הכנסת החורבה"
+   },
+   "wd": "Q1151525",
+   "wp": "he:בית הכנסת החורבה"
+  },
+  {
+   "id": "w195100862",
+   "k": "synagogue",
+   "lat": 31.775381,
+   "lon": 35.232321,
+   "n": {
+    "he": "בית הכנסת תפארת ישראל",
+    "en": "Tiferet Yisrael Synagogue",
+    "ar": "كنيس تيفريت يسرائيل",
+    "name": "בית הכנסת תפארת ישראל"
+   },
+   "wd": "Q966792",
+   "wp": "he:בית הכנסת תפארת ישראל"
+  },
+  {
+   "id": "n4905159136",
+   "k": "synagogue",
+   "lat": 31.774743,
+   "lon": 35.231633,
+   "n": {
+    "he": "בית כנסת איסטנבולי",
+    "en": "Istanbuli Synagogue",
+    "name": "בית כנסת איסטנבולי"
+   },
+   "denom": "jewish_orthodox",
+   "wd": "Q109301199",
+   "wp": "en:Istanbuli Synagogue"
+  },
+  {
+   "id": "n4905159137",
+   "k": "synagogue",
+   "lat": 31.774679,
+   "lon": 35.231444,
+   "n": {
+    "he": "בית כנסת אליהו הנביא",
+    "en": "Eliyahu haNavi Synagogue",
+    "name": "בית כנסת אליהו הנביא"
+   },
+   "denom": "orthodox",
+   "wd": "Q92147984"
+  },
+  {
+   "id": "w290730186",
+   "k": "synagogue",
+   "lat": 31.775141,
+   "lon": 35.231188,
+   "n": {
+    "he": "בית כנסת הרמב\"ן",
+    "en": "Ramban Synagogue",
+    "fr": "Synagogue Ramban",
+    "name": "בית כנסת הרמב\"ן"
+   },
+   "wd": "Q932935",
+   "wp": "he:בית כנסת הרמב\"ן (הרובע היהודי)"
+  },
+  {
+   "id": "n4905159138",
+   "k": "synagogue",
+   "lat": 31.774597,
+   "lon": 35.231494,
+   "n": {
+    "he": "בית כנסת יוחנן בן-זכאי",
+    "en": "Yohanan ben Zakkai Synagogue",
+    "name": "בית כנסת יוחנן בן-זכאי"
+   },
+   "denom": "jewish_orthodox",
+   "wd": "Q25416669",
+   "wp": "he:בית הכנסת יוחנן בן זכאי"
+  },
+  {
+   "id": "w817206833",
+   "k": "synagogue",
+   "lat": 31.776828,
+   "lon": 35.234433,
+   "n": {
+    "he": "הכותל המערבי",
+    "en": "Western Wall",
+    "fr": "Mur des Lamentations",
+    "ru": "Стена Плача",
+    "ar": "البراق",
+    "name": "הכותל המערבי"
+   },
+   "wd": "Q134821",
+   "wp": "en:Western Wall"
+  },
+  {
+   "id": "n2954804553",
+   "k": "synagogue",
+   "lat": 31.778585,
+   "lon": 35.234068,
+   "n": {
+    "he": "הכותל הקטן",
+    "en": "Small Kotel",
+    "ru": "Малый Котель",
+    "ar": "البراق الصغير",
+    "name": "הכותל הקטן"
+   },
+   "wd": "Q1333489",
+   "wp": "en:Little Western Wall"
+  },
+  {
+   "id": "w1071118807",
+   "k": "synagogue",
+   "lat": 31.779418,
+   "lon": 35.232454,
+   "n": {
+    "he": "חזון יחזקאל",
+    "en": "Hazon Yekhezkel",
+    "name": "חזון יחזקאל"
+   }
+  },
+  {
+   "id": "r3863218",
+   "k": "synagogue",
+   "lat": 31.775157,
+   "lon": 35.232349,
+   "n": {
+    "he": "ישיבת הכותל",
+    "en": "Yeshivat HaKotel",
+    "name": "ישיבת הכותל"
+   },
+   "wd": "Q8052881",
+   "wp": "he:ישיבת הכותל"
+  },
+  {
+   "id": "w620317533",
+   "k": "synagogue",
+   "lat": 31.777233,
+   "lon": 35.229566,
+   "n": {
+    "he": "ישיבת לנתיבות ישראל",
+    "ar": "كنيس نافوت ديفيد",
+    "name": "ישיבת לנתיבות ישראל"
+   }
+  },
+  {
+   "id": "w161058963",
+   "k": "synagogue",
+   "lat": 31.771668,
+   "lon": 35.229834,
+   "n": {
+    "he": "ישיבת נפש החיים",
+    "en": "Diaspora Yeshiva Toras Yisrael",
+    "name": "ישיבת נפש החיים"
+   },
+   "denom": "jewish;orthodox"
+  },
+  {
+   "id": "w337612156",
+   "k": "synagogue",
+   "lat": 31.779711,
+   "lon": 35.232407,
+   "n": {
+    "he": "ישיבת עטרת כוהנים",
+    "en": "Ateret Cohanim Yeshiva",
+    "ar": "المدرسة عطيرت كوهانيم",
+    "name": "ישיבת עטרת כוהנים"
+   },
+   "denom": "orthodox",
+   "wd": "Q754552",
+   "wp": "en:Ateret Cohanim"
+  },
+  {
+   "id": "w499210295",
+   "k": "synagogue",
+   "lat": 31.777486,
+   "lon": 35.232889,
+   "n": {
+    "he": "ישיבת שובו בנים",
+    "en": "Shuvu Banim Yeshiva",
+    "ar": "شوفو بونيم",
+    "name": "ישיבת שובו בנים"
+   },
+   "denom": "orthodox",
+   "wd": "Q7505763",
+   "wp": "he:ישיבת שובו בנים"
+  },
+  {
+   "id": "w499223568",
+   "k": "synagogue",
+   "lat": 31.777929,
+   "lon": 35.232471,
+   "n": {
+    "he": "כולל",
+    "name": "כולל"
+   }
+  },
+  {
+   "id": "w158476960",
+   "k": "synagogue",
+   "lat": 31.783382,
+   "lon": 35.226363,
+   "n": {
+    "he": "מגן ישראל",
+    "name": "מגן ישראל"
+   }
+  },
+  {
+   "id": "w499223567",
+   "k": "synagogue",
+   "lat": 31.777973,
+   "lon": 35.23239,
+   "n": {
+    "he": "ספריית הכולל",
+    "name": "ספריית הכולל"
+   }
+  },
+  {
+   "id": "w158476904",
+   "k": "synagogue",
+   "lat": 31.783121,
+   "lon": 35.226622,
+   "n": {
+    "he": "עולי רגל",
+    "en": "Oley Regel",
+    "name": "עולי רגל"
+   }
+  },
+  {
+   "id": "n4905269168",
+   "k": "synagogue",
+   "lat": 31.776716,
+   "lon": 35.234225,
+   "n": {
+    "he": "עזרת גברים",
+    "en": "Western Wall men's section",
+    "ar": "منطقة البراق للرجال",
+    "name": "עזרת גברים"
+   },
+   "denom": "orthodox"
+  },
+  {
+   "id": "n4905269169",
+   "k": "synagogue",
+   "lat": 31.776538,
+   "lon": 35.234265,
+   "n": {
+    "he": "עזרת נשים",
+    "en": "Western Wall women's section",
+    "ar": "منطقة البراق للنساء",
+    "name": "עזרת נשים"
+   },
+   "denom": "orthodox"
+  },
+  {
+   "id": "w161058945",
+   "k": "synagogue",
+   "lat": 31.771555,
+   "lon": 35.229265,
+   "n": {
+    "he": "קבר דוד",
+    "en": "David's Tomb",
+    "ar": "مقام النبي داود",
+    "name": "David's Tomb"
+   },
+   "denom": "orthodox",
+   "wd": "Q1177668",
+   "wp": "en:David's Tomb"
+  },
+  {
+   "id": "w158476928",
+   "k": "synagogue",
+   "lat": 31.782451,
+   "lon": 35.226613,
+   "n": {
+    "he": "שבת אחים",
+    "name": "שבת אחים"
+   }
+  },
+  {
+   "id": "w158476949",
+   "k": "synagogue",
+   "lat": 31.781567,
+   "lon": 35.225885,
+   "n": {
+    "he": "תקוות שמעון",
+    "en": "Tikvat Shimon",
+    "name": "תקוות שמעון"
+   }
+  },
+  {
+   "id": "w290723473",
+   "k": "synagogue",
+   "lat": 31.775198,
+   "lon": 35.2309,
+   "n": {
+    "name": "Chabad Welcome Center"
+   }
+  }
+ ]
+}
