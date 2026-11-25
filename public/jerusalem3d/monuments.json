@@ -2571,6 +2571,11 @@
      "kind": "online",
      "label": "Walls of Jerusalem (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -2580,6 +2585,12 @@
     "fr": "Autre source : reconstruite en 1202–1212, rasée en 1219 par al-Mu'azzam Isa.",
     "en": "Other source: rebuilt 1202–1212, razed in 1219 by al-Mu'azzam Isa.",
     "ru": "Другой источник: восстановлена в 1202–1212, снесена в 1219 г. аль-Муаззамом Исой."
+   },
+   "events": {
+    "he": "לפי מצגת חומות ירושלים: במאה ה-13 בנה אל־מַלִכּ אל־מֻעַט׳ם עיסא חומה שכללה גם את הר ציון. אחרי 7 שנים, ב-1219, הרס אותה בעצמו.",
+    "fr": "D’après la présentation « Les murailles de Jérusalem » : au XIIIe siècle, al-Malik al-Mu’azzam Isa bâtit une muraille qui englobait aussi le mont Sion. Sept ans plus tard, en 1219, il la fit lui-même raser.",
+    "en": "According to the “Walls of Jerusalem” presentation: in the 13th century al-Malik al-Mu’azzam Isa built a wall that also enclosed Mount Zion. Seven years later, in 1219, he had it torn down himself.",
+    "ru": "По презентации «Стены Иерусалима»: в XIII в. аль-Малик аль-Муаззам Иса построил стену, охватывавшую и гору Сион. Через 7 лет, в 1219 г., он сам её снёс."
    }
   },
   {
@@ -2951,6 +2962,11 @@
      "kind": "online",
      "label": "Walls of Jerusalem (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -2973,6 +2989,76 @@
     "fr": "Les Cananéens · Bronze moyen",
     "en": "The Canaanites · Middle Bronze Age",
     "ru": "Ханаанеи · средний бронзовый век"
+   }
+  },
+  {
+   "id": "jerusalem_wall_solomon",
+   "from": 2,
+   "to": 2,
+   "certainty": "hypothesis",
+   "anchor": null,
+   "shape": {
+    "type": "wallline",
+    "parts": [
+     {
+      "via": [
+       "a:givati",
+       "off:al_aqsa,-52,12",
+       "off:temple_mount,-41,60",
+       "off:temple_mount,-59,-33",
+       "off:antonia,30,74",
+       "a:golden_gate",
+       "tm:SE",
+       "a:ophel",
+       "a:gihon_spring",
+       "a:hezekiah_tunnel",
+       "a:siloam_pool",
+       "a:givati"
+      ]
+     }
+    ],
+    "h": 10,
+    "color": "#3d6ea8"
+   },
+   "name": {
+    "he": "חומת שלמה",
+    "fr": "Muraille de Salomon",
+    "en": "Wall of Solomon",
+    "ru": "Стена Соломона"
+   },
+   "text": {
+    "he": "לפי השרטוט המשוער של דן בהט: במאה ה-10 לפנה״ס התרחבה העיר מעיר דוד צפונה, אל העופל ואל הר הבית. החומה הקיפה את שלושתם, לפני ההתרחבות אל הגבעה המערבית בימי חזקיהו.",
+    "fr": "D’après le croquis de Dan Bahat : au Xe siècle av. J.-C., la ville s’étend de la Cité de David vers le nord, à l’Ophel et au mont du Temple. La muraille entoure les trois, avant l’extension vers la colline occidentale sous Ézéchias.",
+    "en": "According to Dan Bahat’s sketch: in the 10th century BCE the city grew north from the City of David to the Ophel and the Temple Mount. The wall enclosed all three, before the expansion onto the Western Hill under Hezekiah.",
+    "ru": "По схеме Дана Бахата: в X в. до н. э. город расширился от Города Давида на север, к Офелю и Храмовой горе. Стена охватывала все три части — до расширения на Западный холм при Езекии."
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
+    }
+   ],
+   "questions": [],
+   "quiz3d": null,
+   "wall": true,
+   "builder": {
+    "he": "שלמה · המאה ה-10 לפנה״ס",
+    "fr": "Salomon · Xe s. av. J.-C.",
+    "en": "Solomon · 10th c. BCE",
+    "ru": "Соломон · X в. до н. э."
+   },
+   "events": {
+    "he": "586 לפנה״ס: החומות נחרבו בידי נבוכדנצר השני מלך בבל.",
+    "fr": "586 av. J.-C. : les murailles sont détruites par Nabuchodonosor II, roi de Babylone.",
+    "en": "586 BCE: the walls were destroyed by Nebuchadnezzar II, king of Babylon.",
+    "ru": "586 г. до н. э.: стены разрушены вавилонским царём Навуходоносором II."
+   },
+   "placementNote": {
+    "he": "קו סכמטי: ישרים בין נקודות מוכרות (שרידים או אתרים מזוהים). התוואי המדויק בין הנקודות אינו ידוע. החלק שסביב הר הבית סומן לפי השרטוט המשוער במצגת, שכוילה על קו החומה של היום; במזרח מוצג קו החומה המזרחית של היום כקירוב. הר הבית של אותה תקופה היה קטן מהרחבה של היום.",
+    "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu. La partie autour du mont du Temple suit le croquis de la présentation, calé sur le tracé actuel des murailles ; à l’est, la muraille orientale actuelle sert d’approximation. Le mont du Temple de cette époque était plus petit que l’esplanade actuelle.",
+    "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown. The part around the Temple Mount follows the presentation’s sketch, aligned on today’s wall line; on the east, today’s eastern wall is used as an approximation. The Temple Mount of that time was smaller than today’s platform.",
+    "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна. Участок вокруг Храмовой горы проведён по схеме из презентации, совмещённой с нынешней линией стен; на востоке приближённо показана нынешняя восточная стена. Храмовая гора того времени была меньше нынешней площади."
    }
   },
   {
@@ -3046,6 +3132,11 @@
      "kind": "online",
      "label": "Broad Wall (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Broad_Wall_(Jerusalem)"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -3068,6 +3159,12 @@
     "fr": "Rois de Juda (Ézéchias) · fin du VIIIe s. av. J.-C.",
     "en": "Kings of Judah (Hezekiah) · late 8th c. BCE",
     "ru": "Цари Иудеи (Езекия) · конец VIII в. до н. э."
+   },
+   "events": {
+    "he": "586 לפנה״ס: החומות נחרבו בידי נבוכדנצר השני מלך בבל.",
+    "fr": "586 av. J.-C. : les murailles sont détruites par Nabuchodonosor II, roi de Babylone.",
+    "en": "586 BCE: the walls were destroyed by Nebuchadnezzar II, king of Babylon.",
+    "ru": "586 г. до н. э.: стены разрушены вавилонским царём Навуходоносором II."
    }
   },
   {
@@ -3081,12 +3178,18 @@
     "parts": [
      {
       "via": [
+       "a:givati",
+       "off:al_aqsa,-52,12",
+       "off:temple_mount,-41,60",
+       "off:temple_mount,-59,-33",
+       "off:antonia,30,74",
+       "a:golden_gate",
+       "tm:SE",
        "a:ophel",
        "a:gihon_spring",
        "a:hezekiah_tunnel",
        "a:siloam_pool",
-       "a:givati",
-       "a:ophel"
+       "a:givati"
       ]
      }
     ],
@@ -3094,10 +3197,10 @@
     "color": "#8a6fb8"
    },
    "name": {
-    "he": "חומת נחמיה (עיר דוד)",
-    "fr": "Muraille de Néhémie (Cité de David)",
-    "en": "Nehemiah's wall (City of David)",
-    "ru": "Стена Неемии (Город Давида)"
+    "he": "חומת נחמיה",
+    "fr": "Muraille de Néhémie",
+    "en": "Nehemiah's wall",
+    "ru": "Стена Неемии"
    },
    "text": {
     "he": "בימי שיבת ציון חזרה העיר להצטמצם לשלוחת עיר דוד. אילת מזר ייחסה לנחמיה חומה שנמצאה בשטח G.",
@@ -3115,22 +3218,27 @@
      "kind": "drive",
      "label": "סיור ירושלים 1 — בית ראשון (סיכום איתי)",
      "url": "https://drive.google.com/file/d/1ulITxno64PL1zSi36p5olnMkiv18ufZm/view"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
    "quiz3d": null,
    "wall": true,
    "otherView": {
-    "he": "מקורות אחרים: אין עדות ארכיאולוגית ודאית לבניית חומה בתקופה זו.",
-    "fr": "Autre source : aucune preuve archéologique sûre d'une muraille à cette époque.",
-    "en": "Other source: no certain archaeological evidence of wall building in this period.",
-    "ru": "Другой источник: достоверных археологических свидетельств строительства стен нет."
+    "he": "מקורות אחרים: אין עדות ארכיאולוגית ודאית לבניית חומה בתקופה זו. לפי מצגת חומות ירושלים: לפי השרטוט של אפרים שטרן, חומת נחמיה הקיפה את עיר דוד, את העופל ואת הר הבית, שעליו עמד המקדש השני.",
+    "fr": "Autre source : aucune preuve archéologique sûre d'une muraille à cette époque. D’après la présentation « Les murailles de Jérusalem » : selon le croquis d’Ephraim Stern, la muraille de Néhémie entourait la Cité de David, l’Ophel et le mont du Temple, où se dressait le Second Temple.",
+    "en": "Other source: no certain archaeological evidence of wall building in this period. According to the “Walls of Jerusalem” presentation: in Ephraim Stern’s sketch, Nehemiah’s wall enclosed the City of David, the Ophel and the Temple Mount, where the Second Temple stood.",
+    "ru": "Другой источник: достоверных археологических свидетельств строительства стен нет. По презентации «Стены Иерусалима»: по схеме Эфраима Штерна, стена Неемии окружала Город Давида, Офель и Храмовую гору, где стоял Второй Храм."
    },
    "placementNote": {
-    "he": "קו סכמטי: ישרים בין נקודות מוכרות (שרידים או אתרים מזוהים). התוואי המדויק בין הנקודות אינו ידוע.",
-    "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu.",
-    "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown.",
-    "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна."
+    "he": "קו סכמטי: ישרים בין נקודות מוכרות (שרידים או אתרים מזוהים). התוואי המדויק בין הנקודות אינו ידוע. החלק שסביב הר הבית סומן לפי השרטוט המשוער במצגת, שכוילה על קו החומה של היום; במזרח מוצג קו החומה המזרחית של היום כקירוב. הר הבית של אותה תקופה היה קטן מהרחבה של היום.",
+    "fr": "Tracé schématique : segments droits entre des points connus (vestiges ou sites identifiés). Le tracé exact entre ces points n'est pas connu. La partie autour du mont du Temple suit le croquis de la présentation, calé sur le tracé actuel des murailles ; à l’est, la muraille orientale actuelle sert d’approximation. Le mont du Temple de cette époque était plus petit que l’esplanade actuelle.",
+    "en": "Schematic line: straight segments between known points (remains or identified sites). The exact course between them is unknown. The part around the Temple Mount follows the presentation’s sketch, aligned on today’s wall line; on the east, today’s eastern wall is used as an approximation. The Temple Mount of that time was smaller than today’s platform.",
+    "ru": "Схематичная линия: прямые отрезки между известными точками (остатки или опознанные места). Точная трасса между ними неизвестна. Участок вокруг Храмовой горы проведён по схеме из презентации, совмещённой с нынешней линией стен; на востоке приближённо показана нынешняя восточная стена. Храмовая гора того времени была меньше нынешней площади."
    },
    "builder": {
     "he": "נחמיה (לפי אילת מזר) · המאה ה-5 לפנה״ס",
@@ -3231,6 +3339,11 @@
      "kind": "online",
      "label": "The Walls of Mount Zion (Archaeology, 2008)",
      "url": "https://archive.archaeology.org/0811/trenches/mtzion.html"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -3247,6 +3360,12 @@
     "fr": "Les Hasmonéens · fin IIe – début Ier s. av. J.-C.",
     "en": "The Hasmoneans · late 2nd – early 1st c. BCE",
     "ru": "Хасмонеи · конец II – начало I в. до н. э."
+   },
+   "events": {
+    "he": "70 לסה״נ: החומות נחרבו בידי טיטוס.",
+    "fr": "70 apr. J.-C. : les murailles sont détruites par Titus.",
+    "en": "70 CE: the walls were destroyed by Titus.",
+    "ru": "70 г. н. э.: стены разрушены Титом."
    }
   },
   {
@@ -3293,6 +3412,11 @@
      "kind": "primary",
      "label": "יוסף בן מתתיהו, מלחמת היהודים 5.142–155",
      "url": "https://lexundria.com/j_bj/5.136-5.183/wst"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -3315,6 +3439,12 @@
     "fr": "Attribuée à Hérode (Josèphe ne le dit pas) · Ier s. av. J.-C.",
     "en": "Attributed to Herod (Josephus does not say) · 1st c. BCE",
     "ru": "Приписывается Ироду (Иосиф не указывает) · I в. до н. э."
+   },
+   "events": {
+    "he": "70 לסה״נ: החומות נחרבו בידי טיטוס.",
+    "fr": "70 apr. J.-C. : les murailles sont détruites par Titus.",
+    "en": "70 CE: the walls were destroyed by Titus.",
+    "ru": "70 г. н. э.: стены разрушены Титом."
    }
   },
   {
@@ -3434,6 +3564,11 @@
      "kind": "online",
      "label": "The Third Wall of Jerusalem (BAS, Russian Compound)",
      "url": "https://www.biblicalarchaeology.org/daily/news/third-wall-of-jerusalem/"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -3456,6 +3591,12 @@
     "fr": "Agrippa Ier, achevée par les insurgés · 41–44 / 66 apr. J.-C.",
     "en": "Agrippa I, completed by the rebels · 41–44 / 66 CE",
     "ru": "Агриппа I, достроена повстанцами · 41–44 / 66 н. э."
+   },
+   "events": {
+    "he": "70 לסה״נ: החומות נחרבו בידי טיטוס.",
+    "fr": "70 apr. J.-C. : les murailles sont détruites par Titus.",
+    "en": "70 CE: the walls were destroyed by Titus.",
+    "ru": "70 г. н. э.: стены разрушены Титом."
    }
   },
   {
@@ -3502,6 +3643,11 @@
      "kind": "online",
      "label": "Walls of Jerusalem (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -3518,6 +3664,12 @@
     "fr": "Agrippa Ier, achevée par les insurgés · 41–44 / 66 apr. J.-C.",
     "en": "Agrippa I, completed by the rebels · 41–44 / 66 CE",
     "ru": "Агриппа I, достроена повстанцами · 41–44 / 66 н. э."
+   },
+   "events": {
+    "he": "70 לסה״נ: החומות נחרבו בידי טיטוס.",
+    "fr": "70 apr. J.-C. : les murailles sont détruites par Titus.",
+    "en": "70 CE: the walls were destroyed by Titus.",
+    "ru": "70 г. н. э.: стены разрушены Титом."
    }
   },
   {
@@ -3558,22 +3710,33 @@
      "kind": "online",
      "label": "Walls of Jerusalem (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
    "quiz3d": null,
    "wall": true,
    "otherView": {
-    "he": "מקורות אחרים: חומה נבנתה כנראה בימי דיוקלטיאנוס (289–כ-300). תוואייה המדויק אינו ידוע; מוצג קו החומה של היום כקירוב.",
-    "fr": "Autre source : une muraille fut probablement bâtie sous Dioclétien (289–vers 300). Tracé exact inconnu ; la ligne actuelle sert d'approximation.",
-    "en": "Other source: a wall was probably built under Diocletian (289–c. 300). Exact course unknown; today's line is shown as an approximation.",
-    "ru": "Другой источник: стена, вероятно, построена при Диоклетиане (289–ок. 300). Точная трасса неизвестна; показана нынешняя линия как приближение."
+    "he": "מקורות אחרים: חומה נבנתה כנראה בימי דיוקלטיאנוס (289–כ-300). תוואייה המדויק אינו ידוע; מוצג קו החומה של היום כקירוב. לפי מצגת חומות ירושלים: חומת דיוקלטיאנוס (המאה ה-3) עברה בקו החומה של היום.",
+    "fr": "Autre source : une muraille fut probablement bâtie sous Dioclétien (289–vers 300). Tracé exact inconnu ; la ligne actuelle sert d'approximation. D’après la présentation « Les murailles de Jérusalem » : la muraille de Dioclétien (IIIe s.) suivait le tracé actuel.",
+    "en": "Other source: a wall was probably built under Diocletian (289–c. 300). Exact course unknown; today's line is shown as an approximation. According to the “Walls of Jerusalem” presentation: Diocletian’s wall (3rd c.) followed today’s line.",
+    "ru": "Другой источник: стена, вероятно, построена при Диоклетиане (289–ок. 300). Точная трасса неизвестна; показана нынешняя линия как приближение. По презентации «Стены Иерусалима»: стена Диоклетиана (III в.) шла по нынешней линии."
    },
    "builder": {
     "he": "אדריאנוס ייסד את איליה בלי חומה · תוואי משוער",
     "fr": "Hadrien fonde Aelia sans muraille · tracé hypothétique",
     "en": "Hadrian founded Aelia without a wall · hypothetical line",
     "ru": "Адриан основал Элию без стены · гипотетическая линия"
+   },
+   "events": {
+    "he": "1033: החומות נחרבו ברעידת אדמה קשה שפקדה את ירושלים.",
+    "fr": "1033 : les murailles sont détruites par un violent séisme qui frappe Jérusalem.",
+    "en": "1033: the walls were destroyed by a severe earthquake that struck Jerusalem.",
+    "ru": "1033: стены разрушены сильным землетрясением, поразившим Иерусалим."
    }
   },
   {
@@ -3637,6 +3800,11 @@
      "kind": "online",
      "label": "Walls of Jerusalem (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
@@ -3659,6 +3827,12 @@
     "fr": "L’impératrice Eudocie · Ve s.",
     "en": "Empress Eudocia · 5th c.",
     "ru": "Императрица Евдокия · V в."
+   },
+   "events": {
+    "he": "1033: החומות נחרבו ברעידת אדמה קשה שפקדה את ירושלים.",
+    "fr": "1033 : les murailles sont détruites par un violent séisme qui frappe Jérusalem.",
+    "en": "1033: the walls were destroyed by a severe earthquake that struck Jerusalem.",
+    "ru": "1033: стены разрушены сильным землетрясением, поразившим Иерусалим."
    }
   },
   {
@@ -3699,16 +3873,21 @@
      "kind": "online",
      "label": "Walls of Jerusalem (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],
    "quiz3d": null,
    "wall": true,
    "otherView": {
-    "he": "מקורות אחרים: אחרי רעידת האדמה של 1033 נבנתה בקו מצומצם יותר, שהשאיר בחוץ את הר ציון ואת עיר דוד.",
-    "fr": "Autre source : après le séisme de 1033, rebâtie sur une ligne plus courte laissant dehors le mont Sion et la Cité de David.",
-    "en": "Other source: after the 1033 earthquake it was rebuilt on a shorter line, leaving out Mount Zion and the City of David.",
-    "ru": "Другой источник: после землетрясения 1033 г. перестроена по более короткой линии, без Сиона и Города Давида."
+    "he": "מקורות אחרים: אחרי רעידת האדמה של 1033 נבנתה בקו מצומצם יותר, שהשאיר בחוץ את הר ציון ואת עיר דוד. לפי מצגת חומות ירושלים: החומה נבנתה בימי הח׳ליפים הפאטימים א־טאהר ואל־מֻסתנצר.",
+    "fr": "Autre source : après le séisme de 1033, rebâtie sur une ligne plus courte laissant dehors le mont Sion et la Cité de David. D’après la présentation « Les murailles de Jérusalem » : la muraille fut bâtie sous les califes fatimides az-Zahir et al-Mustansir.",
+    "en": "Other source: after the 1033 earthquake it was rebuilt on a shorter line, leaving out Mount Zion and the City of David. According to the “Walls of Jerusalem” presentation: the wall was built under the Fatimid caliphs az-Zahir and al-Mustansir.",
+    "ru": "Другой источник: после землетрясения 1033 г. перестроена по более короткой линии, без Сиона и Города Давида. По презентации «Стены Иерусалима»: стена построена при фатимидских халифах аз-Захире и аль-Мустансире."
    },
    "placementNote": {
     "he": "מוצג קו החומה של היום, שנבנה על תוואי זה.",
@@ -3721,6 +3900,12 @@
     "fr": "Les Fatimides, puis les Ayyoubides · XIe s.",
     "en": "The Fatimids, then the Ayyubids · 11th c.",
     "ru": "Фатимиды, затем Айюбиды · XI в."
+   },
+   "events": {
+    "he": "1187: החומה נפרצה בידי צלאח א־דין האיובי והוצאה מכלל שימוש.",
+    "fr": "1187 : la muraille est percée par Saladin l’Ayyoubide et mise hors d’usage.",
+    "en": "1187: the wall was breached by Saladin the Ayyubid and put out of use.",
+    "ru": "1187: стена пробита Салах ад-Дином Айюбидом и выведена из строя."
    }
   },
   {
@@ -3766,6 +3951,11 @@
      "kind": "online",
      "label": "Walls of Jerusalem (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Walls_of_Jerusalem"
+    },
+    {
+     "kind": "online",
+     "label": "מצגת חומות ירושלים — אפרת נקש (שרטוטים משוערים לפי דן בהט, אטלס כרטא 2000, ואפרים שטרן 1992)",
+     "url": "https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub"
     }
    ],
    "questions": [],

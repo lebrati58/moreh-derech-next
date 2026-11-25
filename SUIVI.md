@@ -32,6 +32,15 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 25 novembre 2026 — Jérusalem 3D : apports de la « מצגת חומות ירושלים » (branche `claude/jerusalem3d-chomot`)
+- Source : présentation publique d'Efrat Nakash (archéologue), croquis d'après Dan Bahat (Atlas Carta 2000) et Ephraim Stern (1992) : https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub — ajoutée en source « en ligne » aux fiches touchées.
+- Calage : la muraille ottomane vectorielle de la diapositive 6 a été superposée à la muraille OSM (écart médian 2,7 m ; 7 portes sur 8 à moins de 8 m). **Au sud de la Vieille Ville, le croquis est schématique** (Siloé décalée d'environ 150 m) : les tracés existants, qui passent par des vestiges localisés, sont gardés. Aucune coordonnée tirée du dessin n'est stockée (règle du test).
+- ➕ **Muraille de Salomon** (`jerusalem_wall_solomon`, période 2, hypothèse) : Cité de David + Ophel + mont du Temple. Autour du mont du Temple : repères + décalages ≤ 80 m relevés sur le croquis calé ; à l'est, la muraille orientale actuelle.
+- ✏️ **Néhémie** (période 3) : le tracé englobe aussi le mont du Temple (Stern) ; nom sans « (עיר דוד) » ; avis noté dans « מקורות אחרים ».
+- ✏️ Événements ajoutés : 586 av. (Nabuchodonosor) sur Salomon et Ézéchias ; 70 (Titus) sur les 1re, 2e et 3e murailles ; 1033 (séisme) sur Aelia/Dioclétien et Eudocie ; 1187 (Saladin) sur la fatimide ; muraille d'al-Mu'azzam Isa avec le mont Sion (≈ 7 ans, rasée en 1219) sur la fiche « עיר ללא חומה ». Bâtisseurs fatimides : az-Zahir et al-Mustansir.
+- Période 10 : toujours **aucune ligne** (muraille debout 7 ans sur plus de 300 ; choix verrouillé par le test).
+- `sw.js` : cache `v105`. ✅ `jerusalem3d.test.mjs` 7/7, `e2e:jerusalem3d` OK, captures plan 2D des périodes 2, 3, 10. 🟡 pas vu sur un vrai téléphone.
+
 ### 23 novembre 2026 — Publication bloquée : faits « חומר עזר » de l'examen à restaurer (branche `claude/fix-exam-ezer`)
 - ⚠️ Depuis le 21/11 au soir, **rien n'est publié** : le test `ezer.test.mjs` échoue (5 faits « ezer » au lieu de ≥ 50).
 - Cause : la fusion de « Césarée 3D » (#92) contenait un commit du robot `exam-regions.yml` (« data(exam): coordonnées + trajets des régions ») fait sur une base ancienne. Il a effacé ~1 400 lignes dans `public/exam/*.json` : faits tirés de « חומר עזר למבחן » et sujets `jd3`, `js3`, `va3` de `regions.json`.
