@@ -76,7 +76,12 @@ for (const pl of src.places) {
     if (v.ok) refs.push({ r: r.r, label: v.label, he: r.he, verse: v.text, version: v.version, license: v.license, book: parseRef(r.r).book });
     else { out.rejected.push({ place: pl.id, r: r.r, why: v.why }); say(`✗ ${pl.id} ${r.r} (${v.label}) : ${v.why}`); }
   }
-  if (!inBox) { out.unplaced.push({ id: pl.id, he: pl.he, wiki: w && w.title, why: !w ? 'article introuvable' : !w.coord ? 'article sans coordonnées' : 'hors du cadre' }); say(`⚠ ${pl.id} non placé (${pl.wiki.join(' | ')})`); continue; }
+  if (!inBox) {
+    // aide : articles proches (recherche Wikipédia) avec leurs coordonnées, à vérifier avant de les ajouter à la liste source
+    const sj = await getJSON('https://he.wikipedia.org/w/api.php?' + new URLSearchParams({ format: 'json', formatversion: '2', action: 'query', generator: 'search', gsrsearch: pl.he, gsrlimit: '8', prop: 'coordinates' }));
+    const sug = ((sj && sj.query && sj.query.pages) || []).sort((a, b) => a.index - b.index).map(x => x.title + (x.coordinates ? ' @' + x.coordinates[0].lat.toFixed(3) + ',' + x.coordinates[0].lon.toFixed(3) : ' (sans coord.)'));
+    say(`   suggestions ${pl.id} : ${sug.join(' | ')}`);
+    out.unplaced.push({ id: pl.id, he: pl.he, wiki: w && w.title, why: !w ? 'article introuvable' : !w.coord ? 'article sans coordonnées' : 'hors du cadre' }); say(`⚠ ${pl.id} non placé (${pl.wiki.join(' | ')})`); continue; }
   if (!refs.length) { say(`⚠ ${pl.id} : aucune référence vérifiée, lieu écarté`); continue; }
   const o = { id: pl.id, he: pl.he, kind: pl.kind, lat: +w.coord.lat.toFixed(5), lon: +w.coord.lon.toFixed(5), wiki: { title: w.title, url: w.url, qid: w.qid, extract: w.extract }, refs };
   out.places.push(o); byId[pl.id] = o;
