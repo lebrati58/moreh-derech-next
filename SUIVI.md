@@ -32,6 +32,14 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 25 novembre 2026 — Carte : calque « 📖 תנ״ך » (branche `claude/tanakh-layer`)
+- Demande de Lionel : intégrer la carte de Avichai Mishneot (avimish10.github.io/tanach-map) en vue spéciale, totalement dédoublée. **Non repris** : le dépôt n'a aucune licence et son contenu vient des fiches payantes « תנ״ך ישראלי » (autorisation donnée à Avichai seul, sous conditions). Lionel a choisi notre propre calque.
+- Rien n'est copié de cette carte. Source unique `content/tanakh/places.src.json` : 51 lieux, ~100 références, 5 parcours (אברם, ארון הברית, שמשון, דוד בורח מפני שאול, אליהו), résumés courts écrits pour l'app.
+- `tools/build-tanakh.mjs` (robot `.github/workflows/tanakh.yml`, sur toute branche quand la source change) : coordonnées Wikipédia/Wikidata ; **chaque verset récupéré sur Sefaria** (« Miqra according to the Masorah », CC-BY-SA) et écarté si le nom du lieu n'y figure pas. Résultat : 50/51 lieux placés (מעון : pas d'article avec coordonnées), 0 référence écartée. Le robot ne commite que si `tests/tanakh.test.mjs` passe.
+- `map.html` : bouton 📖 תנ״ך ; filtres par livre et par parcours (ligne pointillée + étapes numérotées) ; fiche avec références groupées par livre, verset dépliable, identification Wikipédia, sources et licence. `sw.js` : cache `v106` + `tanakh/places.json`.
+- Pour ajouter un lieu ou un parcours : éditer `content/tanakh/places.src.json` et pousser ; le robot vérifie et reconstruit.
+- ✅ testé en navigateur (Pixel, sans fond de carte car pas d'Internet ici) : 50 épingles, filtre שופטים = 13 lieux, parcours de David 7 étapes, fiche de גת. 🟡 pas vu sur un vrai téléphone.
+
 ### 25 novembre 2026 — Jérusalem 3D : apports de la « מצגת חומות ירושלים » (branche `claude/jerusalem3d-chomot`)
 - Source : présentation publique d'Efrat Nakash (archéologue), croquis d'après Dan Bahat (Atlas Carta 2000) et Ephraim Stern (1992) : https://docs.google.com/presentation/d/1692dQ6be9GsXgXOUKr47uwRKb6bKt4jJCaT3guk_np0/pub — ajoutée en source « en ligne » aux fiches touchées.
 - Calage : la muraille ottomane vectorielle de la diapositive 6 a été superposée à la muraille OSM (écart médian 2,7 m ; 7 portes sur 8 à moins de 8 m). **Au sud de la Vieille Ville, le croquis est schématique** (Siloé décalée d'environ 150 m) : les tracés existants, qui passent par des vestiges localisés, sont gardés. Aucune coordonnée tirée du dessin n'est stockée (règle du test).

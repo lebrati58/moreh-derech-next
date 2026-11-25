@@ -1,0 +1,41 @@
+name: Calque תנ״ך (Wikipédia + Sefaria)
+# Construit public/tanakh/places.json : coordonnées Wikipédia/Wikidata et vérification de chaque verset sur Sefaria.
+# Se lance quand la liste source ou l'outil change (sur n'importe quelle branche), ou à la main.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - content/tanakh/places.src.json
+      - tools/build-tanakh.mjs
+      - tools/tanakh-lib.mjs
+permissions:
+  contents: write
+concurrency:
+  group: tanakh-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-tanakh.mjs
+      - name: Journal en annotations
+        if: always()
+        run: |
+          [ -f tools/tanakh-build.log ] && grep -E "✗|⚠|suggestions|Lieux placés" tools/tanakh-build.log | head -80 | while IFS= read -r l; do echo "::notice title=tanakh::$l"; done || true
+      # Garde-fou : on ne commite que si les tests du calque passent.
+      - name: Vérifier
+        id: guard
+        continue-on-error: true
+        run: node --test tests/tanakh.test.mjs
+      - name: Commit
+        if: steps.guard.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/tanakh/places.json && git add -f tools/tanakh-build.log
+          git diff --cached --quiet || git commit -m "data(tanakh): lieux et versets vérifiés (Wikipédia + Sefaria)"
+          git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"
