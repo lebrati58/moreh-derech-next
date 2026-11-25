@@ -58,7 +58,7 @@ ok((await page.locator('#countPill').textContent()).startsWith('22 סיורים'
 ok(await page.locator('.j3d-sign').count() === 0 && await page.locator('.road-label').count() === 0, 'carte lisible : ni panneaux 3D ni route 67 tant que leurs calques sont décochés');
 await shot('02-map');
 // Calques : une seule carte, on coche ce qu'on veut voir
-ok(await page.locator('#layers [data-layer]').count() === 5, 'barre des calques : חידונים, מבחן, רט״ג, 3D, 67');
+ok(await page.locator('#layers [data-layer]').count() === 6, 'barre des calques : חידונים, מבחן, רט״ג, תנ״ך, 3D, 67');
 await page.click('[data-layer="exam"]'); await page.waitForFunction(() => /אתרי מבחן/.test(document.getElementById('countPill').textContent) && !/0 אתרי מבחן/.test(document.getElementById('countPill').textContent));
 const nEx = Number((await page.locator('#countPill').textContent()).match(/(\d+) אתרי מבחן/)[1]);
 ok(nEx >= 40, `calque מבחן : ${nEx} sites de l'examen (13 régions) ajoutés`);
