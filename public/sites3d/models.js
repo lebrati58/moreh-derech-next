@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { box, columns, merlons, archWall } from '../jerusalem3d/models.js';
-import { stone } from '../jerusalem3d/materials.js';
+import { stone, lead } from '../jerusalem3d/materials.js';
 
 function mesh(geo, mat, cast = true) { const m = new THREE.Mesh(geo, mat); m.castShadow = cast; m.receiveShadow = true; return m; }
 const V2 = (x, y) => new THREE.Vector2(x, y);
@@ -454,4 +454,63 @@ export function sigma({ R = 22, depth = 6, h = 5, kind = 'basalt', ruin = false,
   const pl = new THREE.Mesh(new THREE.CircleGeometry(R, 40, 0, Math.PI).rotateX(-Math.PI / 2), stone('paving', { tint: '#bfb8aa' })); pl.position.y = 0.25; g.add(pl);
   g.userData.parts = [{ he: 'פסיפס טיכה', fr: 'Mosaïque de Tyché', en: 'Tyche mosaic', p: [0, 2, -(R + depth / 2)] }];
   return g;
+}
+
+// ÉGLISE (sites « נצרות בגליל ») : volume schématique posé sur l'emprise réelle (OSM) — nef, bas-côtés, toit à deux pans,
+// abside à +x, clochers à la façade (−x), coupole ou lanterne. Construit selon x (longueur L) ; le moteur l'oriente sur l'axe du bâtiment.
+// Les proportions sont indicatives (volume schématique), pas des relevés.
+function gableRoof(L, W, h, mat) {
+  const s = new THREE.Shape(); s.moveTo(-W / 2, 0); s.lineTo(W / 2, 0); s.lineTo(0, h); s.lineTo(-W / 2, 0);
+  const g = new THREE.ExtrudeGeometry(s, { depth: L, bevelEnabled: false }); g.rotateY(Math.PI / 2); g.translate(-L / 2, 0, 0); return mesh(g, mat);
+}
+function domeGeo(r, squash = 1, cone = 0) {
+  const P = []; for (let i = 0; i <= 24; i++) { const a = i / 24 * Math.PI / 2; P.push(cone ? V2(Math.max(0.001, r * (1 - i / 24)), (i / 24) * r * cone) : V2(Math.max(0.001, Math.cos(a) * r), Math.sin(a) * r * squash)); }
+  return new THREE.LatheGeometry(P, 32);
+}
+function cross(h, mat) { const g = new THREE.Group(); g.add(box(0.35, h, 0.35, mat)); g.add(box(0.35, 0.35, h * 0.55, mat, 0, h * 0.62, 0)); return g; }
+export function church({ L = 30, W = 16, H = 12, kind = 'limestone', tint = '#f1e7d2', roof = '#a85a3a', towers = 0, towerH = 0, dome = null, apse = true, aisles = true, windows = true } = {}) {
+  const g = new THREE.Group(), m = stone(kind, { tint }), rm = stone('ashlar', { tint: roof }), dark = new THREE.MeshStandardMaterial({ color: '#2b2a33', roughness: 0.6 }),
+    metal = new THREE.MeshStandardMaterial({ color: '#c9a64a', metalness: 0.6, roughness: 0.35 });
+  const apL = apse ? Math.min(W * 0.32, L * 0.15) : 0, bodyL = L - apL, x0 = -apL / 2; // abside comprise dans la longueur réelle
+  const nave = aisles ? W * 0.5 : W, side = (W - nave) / 2, hs = H * 0.62;
+  g.add(box(bodyL, H, nave, m, x0, 0, 0));
+  const rN = gableRoof(bodyL + 0.6, nave + 1, Math.max(2, nave * 0.32), rm); rN.position.set(x0, H, 0); g.add(rN);
+  if (aisles) for (const s of [-1, 1]) {
+    g.add(box(bodyL, hs, side, m, x0, 0, s * (nave + side) / 2));
+    const t = 0.32, r = mesh(new THREE.BoxGeometry(bodyL + 0.4, 0.45, (side + 0.8) / Math.cos(t)), rm); r.rotation.x = s * t; r.position.set(x0, hs + Math.tan(t) * (side + 0.8) / 2 + 0.1, s * (nave + side) / 2); g.add(r); // toit en appentis
+  }
+  if (apse) { const a = mesh(new THREE.CylinderGeometry(nave / 2, nave / 2, H * 0.85, 24, 1, false, 0, Math.PI), m); a.position.set(x0 + bodyL / 2, H * 0.425, 0); a.rotation.y = Math.PI; g.add(a);
+    const ad = mesh(domeGeo(nave / 2, 0.55), rm); ad.scale.z = 1; ad.position.set(x0 + bodyL / 2, H * 0.85, 0); g.add(ad); }
+  if (windows) { // fenêtres en arc (fentes sombres) le long de la nef haute et des bas-côtés
+    const n = Math.max(3, Math.floor(bodyL / 4.5)), wh = H * 0.22;
+    for (let i = 0; i < n; i++) { const x = x0 - bodyL / 2 + (i + 0.5) * bodyL / n;
+      for (const s of [-1, 1]) { g.add(box(0.9, wh, 0.2, dark, x, H * 0.66, s * (nave / 2 + 0.05))); if (aisles) g.add(box(0.8, hs * 0.35, 0.2, dark, x, hs * 0.35, s * (W / 2 + 0.05))); } }
+    const ro = mesh(new THREE.CircleGeometry(Math.min(nave * 0.16, 2.6), 24), dark); ro.position.set(x0 - bodyL / 2 - 0.06, H * 0.68, 0); ro.rotation.y = -Math.PI / 2; g.add(ro); // rosace de façade
+    g.add(box(0.2, H * 0.32, Math.min(3, nave * 0.25), dark, x0 - bodyL / 2 - 0.08, 0, 0)); // portail
+  }
+  if (towers) { const tw = Math.max(3.5, Math.min(W * 0.22, 7)), th = towerH || H * 1.55, zs = towers === 1 ? [W / 2 - tw / 2] : [-(W / 2 - tw / 2), W / 2 - tw / 2];
+    for (const z of zs) { const tx = x0 - bodyL / 2 + tw / 2; g.add(box(tw, th, tw, m, tx, 0, z));
+      for (const s of [-1, 1]) { g.add(box(0.2, tw * 0.45, tw * 0.3, dark, tx + s * (tw / 2 + 0.05), th - tw * 0.75, z)); g.add(box(tw * 0.3, tw * 0.45, 0.2, dark, tx, th - tw * 0.75, z + s * (tw / 2 + 0.05))); }
+      const cap = mesh(new THREE.ConeGeometry(tw * 0.72, tw * 1.1, 4), rm); cap.rotation.y = Math.PI / 4; cap.position.set(tx, th + tw * 0.55, z); g.add(cap);
+      const c = cross(2.2, metal); c.position.set(tx, th + tw * 1.1, z); g.add(c); } }
+  if (dome) { const r = dome.r || nave * 0.45, dx = dome.x ?? (x0 + bodyL * 0.15), base = H + Math.max(2, nave * 0.32) * 0.5, drum = dome.drum ?? r * 0.6;
+    g.add(mesh(new THREE.CylinderGeometry(r, r, drum, 32), m).translateX(dx).translateY(base + drum / 2));
+    const dm = mesh(domeGeo(r, dome.squash || 0.95, dome.cone || 0), dome.gold ? metal : lead()); dm.position.set(dx, base + drum, 0); g.add(dm);
+    const top = base + drum + (dome.cone ? r * dome.cone : r * (dome.squash || 0.95));
+    if (dome.lantern) { g.add(mesh(new THREE.CylinderGeometry(r * 0.16, r * 0.2, r * 0.6, 16), m).translateX(dx).translateY(top + r * 0.3)); }
+    const c = cross(2.6, metal); c.position.set(dx, top + (dome.lantern ? r * 0.6 : 0), 0); g.add(c); }
+  else if (!towers) { const c = cross(2, metal); c.position.set(x0 - bodyL / 2 + 0.5, H + Math.max(2, nave * 0.32), 0); g.add(c); }
+  return g;
+}
+
+// VÉGÉTATION d'ambiance (pins, oliviers) : instanciée, posée sur le relief ; ce n'est pas une donnée.
+export function trees(points, kind = 'pine') {
+  const g = new THREE.Group(), n = points.length; if (!n) return g;
+  const trunkM = new THREE.MeshStandardMaterial({ color: '#6b5139', roughness: 1 }), leafM = new THREE.MeshStandardMaterial({ color: kind === 'olive' ? '#8a9a6a' : '#3f6b3a', roughness: 0.95 });
+  const trunk = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.18, 0.28, 2.4, 6), trunkM, n),
+    leaf = new THREE.InstancedMesh(kind === 'olive' ? new THREE.IcosahedronGeometry(2.1, 0) : new THREE.ConeGeometry(2.2, 6.5, 7), leafM, n);
+  const M = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3(), p = new THREE.Vector3();
+  points.forEach(([x, y, z, k], i) => { s.set(k, k, k); p.set(x, y + 1.2 * k, z); M.compose(p, q, s); trunk.setMatrixAt(i, M);
+    p.set(x, y + (kind === 'olive' ? 3 : 4.8) * k, z); if (kind === 'olive') s.set(k * 1.2, k * 0.8, k * 1.2); M.compose(p, q, s); leaf.setMatrixAt(i, M); });
+  trunk.castShadow = leaf.castShadow = true; leaf.receiveShadow = true; g.add(trunk, leaf); g.userData.decor = true; return g;
 }

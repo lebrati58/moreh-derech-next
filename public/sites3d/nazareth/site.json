@@ -21,9 +21,9 @@
   "elev": 40
  },
  "terrain": {
-  "lo": "#a39478",
-  "mid": "#cdbf9f",
-  "hi": "#e8dfca"
+  "lo": "#857f62",
+  "mid": "#aaa17f",
+  "hi": "#cdc3a3"
  },
  "otherSites": {
   "masada": {
@@ -359,10 +359,21 @@
     "ru": "По Луке 1:26–38, ангел Гавриил возвестил Марии в её доме в Назарете; католическая традиция помещает это в жилую пещеру. Базилика, крупнейшая на Ближнем Востоке, двухъярусная: внизу грот Благовещения (Verbum Caro Hic Factum Est), наверху приходская церковь под куполом в виде перевёрнутой лилии, лепестки которой образуют букву M. Во дворе и на стенах — Мадонны от общин всего мира."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "basilica",
-    "h": 22,
-    "solid": true
+    "h": 18,
+    "dome": {
+     "r": 9,
+     "cone": 2.1,
+     "lantern": true,
+     "drum": 4
+    }
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -472,10 +483,15 @@
     "ru": "Год постройки: 1750 по брошюре курса, 1763 по карте (OpenStreetMap)."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "gabriel",
-    "h": 10,
-    "solid": true
+    "h": 9
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -657,10 +673,15 @@
     "ru": "Церковь св. Иосифа — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "stjoseph",
-    "h": 12,
-    "solid": true
+    "h": 12
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -694,6 +715,12 @@
     "h": 9,
     "solid": true
    },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
+   },
    "sources": [
     {
      "kind": "online",
@@ -721,10 +748,15 @@
     "ru": "Салезианская церковь (Иисус-отрок) — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "salesian",
-    "h": 14,
-    "solid": true
+    "h": 14
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -753,10 +785,15 @@
     "ru": "Церковь Mensa Christi — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "mensa",
-    "h": 8,
-    "solid": true
+    "h": 8
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -785,10 +822,15 @@
     "ru": "Англиканская церковь (Христа) — англиканская. Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "anglican",
-    "h": 10,
-    "solid": true
+    "h": 10
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -817,10 +859,15 @@
     "ru": "Старая маронитская церковь — маронитская. Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "maronite",
-    "h": 8,
-    "solid": true
+    "h": 8
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -849,10 +896,15 @@
     "ru": "Греко-католическая церковь св. Иосифа — греко-католическая (мелькитская). Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "melkite",
-    "h": 9,
-    "solid": true
+    "h": 9
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -863,5 +915,12 @@
    ],
    "osmOnly": true
   }
- ]
+ ],
+ "vegetation": {
+  "n": 900,
+  "kinds": [
+   "olive"
+  ],
+  "clump": true
+ }
 }
