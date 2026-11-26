@@ -512,5 +512,85 @@
     "en:Bar'am National Park"
    ]
   }
+ },
+ "tabor": {
+  "box": {
+   "s": 32.6805,
+   "n": 32.6935,
+   "w": 35.3795,
+   "e": 35.4025
+  },
+  "step": [
+   0.00027,
+   0.00032
+  ],
+  "anchors": {
+   "basilica": [
+    "en:Church of the Transfiguration (Mount Tabor)",
+    "he:כנסיית ההשתנות"
+   ],
+   "tabor": [
+    "en:Mount Tabor",
+    "he:הר תבור"
+   ]
+  }
+ },
+ "kafrkanna": {
+  "box": {
+   "s": 32.7415,
+   "n": 32.7515,
+   "w": 35.3355,
+   "e": 35.3485
+  },
+  "step": [
+   0.00018,
+   0.00021
+  ],
+  "anchors": {
+   "wedding": [
+    "en:Wedding Church",
+    "en:Franciscan Wedding Church",
+    "he:כנסיית החתונה"
+   ],
+   "kafrkanna": [
+    "en:Kafr Kanna",
+    "he:כפר כנא"
+   ]
+  }
+ },
+ "nazareth": {
+  "box": {
+   "s": 32.6815,
+   "n": 32.7105,
+   "w": 35.2855,
+   "e": 35.3115
+  },
+  "step": [
+   0.00036,
+   0.00042
+  ],
+  "anchors": {
+   "annunciation": [
+    "en:Basilica of the Annunciation",
+    "he:כנסיית הבשורה"
+   ],
+   "gabriel": [
+    "en:Church of St. Gabriel",
+    "en:Greek Orthodox Church of the Annunciation",
+    "he:כנסיית גבריאל הקדוש"
+   ],
+   "synagogue": [
+    "en:Synagogue Church",
+    "he:כנסיית בית הכנסת"
+   ],
+   "well": [
+    "en:Mary's Well",
+    "he:מעיין מרים"
+   ],
+   "precipice": [
+    "en:Mount Precipice",
+    "he:הר הקפיצה"
+   ]
+  }
  }
 }
