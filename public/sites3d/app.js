@@ -390,7 +390,7 @@ function buildContext() {
   if (!B.length) return null;
   const geo = new THREE.BoxGeometry(1, 1, 1); geo.translate(0, 0.5, 0);
   const mat = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.9 }), m = new THREE.InstancedMesh(geo, mat, B.length);
-  const M = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), sc = new THREE.Vector3(), ps = new THREE.Vector3(), col = new THREE.Color(), pal = ['#efe8da', '#e6dccb', '#f3efe6', '#ddd4c2', '#e9e0d0', '#d9cfbd'];
+  const M = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), sc = new THREE.Vector3(), ps = new THREE.Vector3(), col = new THREE.Color(), pal = ['#c9c3b6', '#bdb6a8', '#d1cbbf', '#b8b2a6', '#c4bdb0', '#aea89c'];
   B.forEach(([x, z, L, W, cap, h], i) => {
     const hw = Math.max(L, W) / 2, gy = Math.min(ground(x, z), ground(x + hw, z), ground(x - hw, z), ground(x, z + hw), ground(x, z - hw));
     e.set(0, -(cap - 90) * Math.PI / 180, 0); q.setFromEuler(e); sc.set(L, h + (ground(x, z) - gy), W); ps.set(x, gy - 0.4, z); M.compose(ps, q, sc); m.setMatrixAt(i, M);
