@@ -500,5 +500,12 @@
    ]
   }
  ],
- "sea": true
+ "sea": true,
+ "vegetation": {
+  "n": 300,
+  "kinds": [
+   "olive"
+  ],
+  "clump": true
+ }
 }

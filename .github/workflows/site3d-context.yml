@@ -1,0 +1,36 @@
+name: Sites 3D — bâtiments d'aujourd'hui (OpenStreetMap)
+# Construit public/sites3d/<site>/context.json (décor de la période « היום ») pour tous les sites 3D.
+# Se lance quand l'outil change (sur n'importe quelle branche), ou à la main.
+on:
+  workflow_dispatch:
+    inputs:
+      sites:
+        description: 'all ou liste séparée par des virgules'
+        default: 'all'
+  push:
+    paths:
+      - tools/build-site3d-context.mjs
+permissions:
+  contents: write
+concurrency:
+  group: site3d-context-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-site3d-context.mjs ${{ inputs.sites || 'all' }}
+      - name: Vérifier
+        run: node --test tests/sites3d.test.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/sites3d/*/context.json
+          git diff --cached --quiet || git commit -m "data(sites3d): bâtiments d'aujourd'hui (OpenStreetMap)"
+          git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"

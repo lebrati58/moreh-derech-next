@@ -31,3 +31,16 @@ for s in LIVE:
   f = os.path.join(ROOT, "sites3d", s, "site.json"); d = json.load(open(f))
   d["otherSites"] = {k: SITES[k] for k in LIVE}
   json.dump(d, open(f, "w"), ensure_ascii=False, indent=1)
+
+# végétation d'ambiance (décor, pas une donnée) selon la région ; les sites du désert n'en ont pas
+VEG = {"tzippori": (1200, ["olive", "pine"]), "megiddo": (900, ["olive"]), "beitshearim": (1200, ["olive", "pine"]), "beitalpha": (600, ["olive"]), "gamla": (600, ["olive"]),
+       "banias": (1500, ["olive", "pine"]), "nimrod": (900, ["olive", "pine"]), "baram": (1300, ["olive", "pine"]), "beitshean": (500, ["olive"]),
+       "beitguvrin": (1500, ["olive", "pine"]), "lachish": (600, ["olive"]), "qeiyafa": (700, ["olive", "pine"]), "shiloh": (800, ["olive"]),
+       "caesarea": (300, ["olive"]), "apollonia": (300, ["olive"]), "atlit": (400, ["olive", "pine"]),
+       "tabor": (2600, ["olive", "pine"]), "nazareth": (900, ["olive"]), "kafrkanna": (700, ["olive"])}
+for s in sorted(os.listdir(os.path.join(ROOT, "sites3d"))):
+  f = os.path.join(ROOT, "sites3d", s, "site.json")
+  if not os.path.isfile(f) or s not in VEG: continue
+  d = json.load(open(f)); n, kinds = VEG[s]; d["vegetation"] = {"n": n, "kinds": kinds, "clump": True}
+  json.dump(d, open(f, "w"), ensure_ascii=False, indent=1)
+print("végétation :", len(VEG), "sites")

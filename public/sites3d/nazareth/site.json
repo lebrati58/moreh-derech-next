@@ -116,18 +116,6 @@
    "en": "Khirbet Qeiyafa",
    "ru": "Хирбет-Кейафа"
   },
-  "susya": {
-   "he": "סוסיא",
-   "fr": "Soussia",
-   "en": "Susya",
-   "ru": "Сусия"
-  },
-  "shiloh": {
-   "he": "תל שילה",
-   "fr": "Tel Shiloh",
-   "en": "Tel Shiloh",
-   "ru": "Тель Шило"
-  },
   "beitshearim": {
    "he": "בית שערים",
    "fr": "Beit Shearim",
@@ -152,17 +140,17 @@
    "en": "Beit Alpha",
    "ru": "Бейт-Альфа"
   },
-  "atlit": {
-   "he": "עתלית",
-   "fr": "Atlit",
-   "en": "Atlit",
-   "ru": "Атлит"
-  },
   "baram": {
    "he": "ברעם",
    "fr": "Baram",
    "en": "Bar'am",
    "ru": "Барам"
+  },
+  "nazareth": {
+   "he": "נצרת",
+   "fr": "Nazareth",
+   "en": "Nazareth",
+   "ru": "Назарет"
   },
   "tabor": {
    "he": "הר תבור",
@@ -175,12 +163,6 @@
    "fr": "Kafr Kanna",
    "en": "Kafr Kanna",
    "ru": "Кафр-Кана"
-  },
-  "nazareth": {
-   "he": "נצרת",
-   "fr": "Nazareth",
-   "en": "Nazareth",
-   "ru": "Назарет"
   }
  },
  "certainty": {

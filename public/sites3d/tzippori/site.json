@@ -687,5 +687,13 @@
     }
    ]
   }
- ]
+ ],
+ "vegetation": {
+  "n": 1200,
+  "kinds": [
+   "olive",
+   "pine"
+  ],
+  "clump": true
+ }
 }
