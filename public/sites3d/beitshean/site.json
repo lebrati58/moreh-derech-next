@@ -141,6 +141,24 @@
    "fr": "Baram",
    "en": "Bar'am",
    "ru": "Барам"
+  },
+  "nazareth": {
+   "he": "נצרת",
+   "fr": "Nazareth",
+   "en": "Nazareth",
+   "ru": "Назарет"
+  },
+  "tabor": {
+   "he": "הר תבור",
+   "fr": "Mont Thabor",
+   "en": "Mount Tabor",
+   "ru": "Гора Фавор"
+  },
+  "kafrkanna": {
+   "he": "כפר כנא",
+   "fr": "Kafr Kanna",
+   "en": "Kafr Kanna",
+   "ru": "Кафр-Кана"
   }
  },
  "certainty": {

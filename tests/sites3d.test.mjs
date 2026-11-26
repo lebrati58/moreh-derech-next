@@ -29,7 +29,10 @@ for (const s of SITES) {
       if (m.certainty !== 'attested' || m.schematic) assert.ok(m.placementNote || m.debate || m.otherView, m.id + ' : reconstruction/hypothèse expliquée');
     }
     // au moins une source du cours (Drive) pour Césarée et Beit Shean (sorties 15 et 19)
-    if (s !== 'masada') assert.ok(d.monuments.filter(m => m.sources.some(x => x.kind === 'drive')).length >= d.monuments.length * 0.7, 'majorité de fiches sourcées par le cours');
+    // les fiches « osmOnly » (bâtiment présent sur la carte, que le cours ne décrit pas : nom et confession seulement) ne comptent pas
+    const course = d.monuments.filter(m => !m.osmOnly);
+    for (const m of d.monuments.filter(m => m.osmOnly)) assert.ok(m.sources.every(x => /openstreetmap\.org/.test(x.url)), m.id + ' : fiche osmOnly = source OpenStreetMap seule');
+    if (s !== 'masada') assert.ok(course.filter(m => m.sources.some(x => x.kind === 'drive')).length >= course.length * 0.7, 'majorité de fiches sourcées par le cours');
   });
 
   test(`${s} : chaque référence OpenStreetMap existe dans geo.json (positions réelles, rien d'inventé)`, async () => {

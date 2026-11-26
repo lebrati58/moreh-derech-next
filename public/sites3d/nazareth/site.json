@@ -1,0 +1,867 @@
+{
+ "site": "nazareth",
+ "title": {
+  "he": "נצרת",
+  "fr": "Nazareth",
+  "en": "Nazareth",
+  "ru": "Назарет"
+ },
+ "defaultPeriod": 5,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#efe2c6",
+ "home": {
+  "at": {
+   "off": "o:basilica",
+   "dx": 0,
+   "dz": 150
+  },
+  "dist": 950,
+  "from": 170,
+  "elev": 40
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "susya": {
+   "he": "סוסיא",
+   "fr": "Soussia",
+   "en": "Susya",
+   "ru": "Сусия"
+  },
+  "shiloh": {
+   "he": "תל שילה",
+   "fr": "Tel Shiloh",
+   "en": "Tel Shiloh",
+   "ru": "Тель Шило"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "atlit": {
+   "he": "עתלית",
+   "fr": "Atlit",
+   "en": "Atlit",
+   "ru": "Атлит"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  },
+  "tabor": {
+   "he": "הר תבור",
+   "fr": "Mont Thabor",
+   "en": "Mount Tabor",
+   "ru": "Гора Фавор"
+  },
+  "kafrkanna": {
+   "he": "כפר כנא",
+   "fr": "Kafr Kanna",
+   "en": "Kafr Kanna",
+   "ru": "Кафр-Кана"
+  },
+  "nazareth": {
+   "he": "נצרת",
+   "fr": "Nazareth",
+   "en": "Nazareth",
+   "ru": "Назарет"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "basilica": {
+   "osm": "way/97417380"
+  },
+  "village": {
+   "osm": "node/6938018364"
+  },
+  "gabriel": {
+   "osm": "way/1157250968"
+  },
+  "well": {
+   "osm": "way/190451672"
+  },
+  "market": {
+   "osm": "way/190426497"
+  },
+  "stjoseph": {
+   "osm": "way/97418891"
+  },
+  "convent": {
+   "osm": "way/97417853"
+  },
+  "salesian": {
+   "osm": "way/190429363"
+  },
+  "mensa": {
+   "osm": "way/190452677"
+  },
+  "anglican": {
+   "osm": "way/1157250969"
+  },
+  "maronite": {
+   "osm": "way/236068503"
+  },
+  "melkite": {
+   "osm": "way/683519592"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "כפר יהודי בימי בית שני",
+    "fr": "Village juif au Second Temple",
+    "en": "Jewish village, Second Temple",
+    "ru": "Еврейская деревня эпохи Второго Храма"
+   },
+   "dates": {
+    "he": "המאה ה-1",
+    "fr": "Ier s.",
+    "en": "1st c.",
+    "ru": "I в."
+   },
+   "era": "herodian"
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "רומית מאוחרת וביזנטית",
+    "fr": "Romaine tardive et byzantine",
+    "en": "Late Roman and Byzantine",
+    "ru": "Позднеримская и византийская"
+   },
+   "dates": {
+    "he": "המאות ה-3–7",
+    "fr": "IIIe–VIIe s.",
+    "en": "3rd–7th c.",
+    "ru": "III–VII вв."
+   },
+   "era": "byzantine"
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "צלבנים",
+    "fr": "Croisés",
+    "en": "Crusaders",
+    "ru": "Крестоносцы"
+   },
+   "dates": {
+    "he": "המאה ה-12 – 1263",
+    "fr": "XIIe s. – 1263",
+    "en": "12th c. – 1263",
+    "ru": "XII в. – 1263"
+   },
+   "era": "crusader"
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "עות׳מאנית — דאהר אל-עומר",
+    "fr": "Ottomane — Dahir al-Umar",
+    "en": "Ottoman — Dahir al-Umar",
+    "ru": "Османская — Дахир аль-Умар"
+   },
+   "dates": {
+    "he": "המאות ה-18–19",
+    "fr": "XVIIIe–XIXe s.",
+    "en": "18th–19th c.",
+    "ru": "XVIII–XIX вв."
+   },
+   "era": "ottoman"
+  },
+  {
+   "n": 5,
+   "name": {
+    "he": "נצרת היום",
+    "fr": "Nazareth aujourd’hui",
+    "en": "Nazareth today",
+    "ru": "Назарет сегодня"
+   },
+   "dates": {
+    "he": "מאז 1969",
+    "fr": "depuis 1969",
+    "en": "since 1969",
+    "ru": "с 1969 г."
+   },
+   "era": "today"
+  }
+ ],
+ "monuments": [
+  {
+   "id": "nz_basilica",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "כנסיית הבשורה",
+    "fr": "La basilique de l’Annonciation",
+    "en": "The Basilica of the Annunciation",
+    "ru": "Базилика Благовещения"
+   },
+   "builder": {
+    "he": "ג׳ובאני מוציו, נחנכה ב-1969",
+    "fr": "Giovanni Muzio, consacrée en 1969",
+    "en": "Giovanni Muzio, consecrated 1969",
+    "ru": "Джованни Муцио, освящена в 1969"
+   },
+   "text": {
+    "he": "לפי לוקס א׳ 26–38 בישר המלאך גבריאל למרים בביתה בנצרת; המסורת הקתולית ממקמת זאת במערת מגורים. הבזיליקה, הגדולה במזרח התיכון, דו-קומתית: למטה מערת הבשורה עם הכתובת Verbum Caro Hic Factum Est, ולמעלה הכנסייה הקהילתית מתחת לכיפה בצורת שושן הפוך שעליו יוצרים את האות M. בחצר ובקירות — מדונות שנשלחו מקהילות מכל העולם.",
+    "fr": "Selon Luc 1,26–38, l’ange Gabriel annonça à Marie, chez elle à Nazareth ; la tradition catholique situe la scène dans une grotte d’habitation. La basilique, la plus grande du Proche-Orient, a deux étages : en bas la grotte de l’Annonciation (Verbum Caro Hic Factum Est), en haut l’église paroissiale sous une coupole en lys renversé dont les pétales dessinent un M. Dans la cour et sur les murs, des Madones offertes par des communautés du monde entier.",
+    "en": "According to Luke 1:26–38, the angel Gabriel announced to Mary at her home in Nazareth; Catholic tradition places it in a dwelling cave. The basilica, the largest in the Middle East, has two storeys: below, the Grotto of the Annunciation (Verbum Caro Hic Factum Est); above, the parish church under a dome shaped like an inverted lily whose petals form an M. In the court and on the walls, Madonnas sent by communities worldwide.",
+    "ru": "По Луке 1:26–38, ангел Гавриил возвестил Марии в её доме в Назарете; католическая традиция помещает это в жилую пещеру. Базилика, крупнейшая на Ближнем Востоке, двухъярусная: внизу грот Благовещения (Verbum Caro Hic Factum Est), наверху приходская церковь под куполом в виде перевёрнутой лилии, лепестки которой образуют букву M. Во дворе и на стенах — Мадонны от общин всего мира."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "basilica",
+    "h": 22,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/97417380",
+     "url": "https://www.openstreetmap.org/way/97417380"
+    }
+   ]
+  },
+  {
+   "id": "nz_basilica_old",
+   "from": 2,
+   "to": 4,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הכנסיות הקדומות במקום הבשורה",
+    "fr": "Les églises anciennes de l’Annonciation",
+    "en": "The earlier churches of the Annunciation",
+    "ru": "Древние церкви Благовещения"
+   },
+   "text": {
+    "he": "בחפירות (בלארמינו בגאטי) נחשפו שרידי בית כנסת יהודי-נוצרי מהמאות ה-3–4 עם כתובת יוונית ״XE MAPIA״ (שלום לך מרים), כנסייה ביזנטית מהמאה ה-5, וקתדרלה צלבנית מפוארת מהמאה ה-12 שהחריב בייברס ב-1263.",
+    "fr": "Les fouilles (Bellarmino Bagatti) ont révélé une synagogue judéo-chrétienne des IIIe–IVe s. avec le graffiti grec « XE MAPIA » (Je te salue Marie), une église byzantine du Ve s. et une somptueuse cathédrale croisée du XIIe s., détruite par Baybars en 1263.",
+    "en": "Excavations (Bellarmino Bagatti) revealed a Jewish-Christian synagogue of the 3rd–4th c. with the Greek graffito “XE MAPIA” (Hail Mary), a 5th-c. Byzantine church and a splendid 12th-c. Crusader cathedral destroyed by Baybars in 1263.",
+    "ru": "Раскопки (Беллармино Багатти) открыли иудео-христианскую синагогу III–IV вв. с греческой надписью «XE MAPIA» (Радуйся, Мария), византийскую церковь V в. и роскошный собор крестоносцев XII в., разрушенный Бейбарсом в 1263 г."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:basilica",
+    "h": 9
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "nz_village",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הכפר נצרת הקדום",
+    "fr": "L’ancien village de Nazareth",
+    "en": "The ancient village of Nazareth",
+    "ru": "Древняя деревня Назарет"
+   },
+   "text": {
+    "he": "כפר חקלאי יהודי קטן (כ-200–400 תושבים) בבקעה מוגנת בגובה 350–400 מ׳, הרחק מן הדרכים הראשיות. אינו נזכר בתנ״ך, אצל יוסף בן מתתיהו או במשנה — ומכאן שאלת נתנאל: ״המנצרת יכול לצאת דבר טוב?״ (יוחנן א׳ 46). בחפירות: בורות מים, ממגורות, מחילות מסתור ומערות מגורים מהמאה ה-1. אחרי חורבן הבית ישבה כאן משמרת הכהונה ״הפצץ״.",
+    "fr": "Petit village agricole juif (env. 200–400 habitants) dans un bassin abrité à 350–400 m, loin des grandes routes. Absent de la Bible hébraïque, de Josèphe et de la Mishna — d’où la question de Nathanaël : « Que peut-il sortir de bon de Nazareth ? » (Jean 1,46). Fouilles : citernes, silos, galeries-cachettes et grottes d’habitation du Ier s. Après la destruction du Temple, la classe sacerdotale « Hapitsets » s’y installa.",
+    "en": "A small Jewish farming village (about 200–400 people) in a sheltered basin at 350–400 m, away from the main roads. Not mentioned in the Hebrew Bible, Josephus or the Mishnah — hence Nathanael’s question: “Can anything good come out of Nazareth?” (John 1:46). Excavations: cisterns, silos, hiding tunnels and dwelling caves of the 1st c. After the Temple’s destruction the priestly course “Hapitzetz” settled here.",
+    "ru": "Небольшая еврейская земледельческая деревня (около 200–400 жителей) в защищённой котловине на высоте 350–400 м, вдали от главных дорог. Не упоминается в Танахе, у Иосифа Флавия и в Мишне — отсюда вопрос Нафанаила: «Из Назарета может ли быть что доброе?» (Иоанн 1:46). Раскопки: цистерны, зернохранилища, тайные ходы и жилые пещеры I в. После разрушения Храма здесь поселилась священническая чреда «Ха-Пицец»."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:village",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap node/6938018364",
+     "url": "https://www.openstreetmap.org/node/6938018364"
+    }
+   ]
+  },
+  {
+   "id": "nz_gabriel",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "כנסיית הבשורה היוונית-אורתודוקסית (גבריאל הקדוש)",
+    "fr": "L’église grecque-orthodoxe de l’Annonciation (Saint-Gabriel)",
+    "en": "The Greek Orthodox Church of the Annunciation (St Gabriel)",
+    "ru": "Греческая православная церковь Благовещения (св. Гавриила)"
+   },
+   "text": {
+    "he": "לפי ״הפרוטו-אוונגליון של יעקב״ (המאה ה-2) שמעה מרים לראשונה את קול המלאך כששאבה מים מן המעיין. הכנסייה בנויה מעל נביעת המעיין הקדום של נצרת, בימי דאהר אל-עומר. איקונוסטאזיס מעץ מגולף ומוזהב; במדרגות יורדים לקפלה מקומרת מהתקופה הצלבנית, שבה נובעים המים מבאר אבן.",
+    "fr": "Selon le Protévangile de Jacques (IIe s.), Marie entendit d’abord la voix de l’ange en puisant à la source. L’église, bâtie au temps de Dahir al-Umar, couvre la source antique de Nazareth. Iconostase en bois sculpté et doré ; un escalier descend à une chapelle voûtée croisée où l’eau jaillit d’un puits de pierre.",
+    "en": "According to the Protoevangelium of James (2nd c.), Mary first heard the angel’s voice while drawing water at the spring. The church, built in Dahir al-Umar’s time, stands over Nazareth’s ancient spring. A carved, gilded wooden iconostasis; steps lead down to a vaulted Crusader chapel where the water rises from a stone well.",
+    "ru": "По Протоевангелию Иакова (II в.), Мария впервые услышала голос ангела, черпая воду у источника. Церковь, построенная при Дахире аль-Умаре, стоит над древним источником Назарета. Резной позолоченный иконостас; ступени ведут в сводчатую капеллу крестоносцев, где вода поднимается из каменного колодца."
+   },
+   "otherView": {
+    "he": "שנת הבנייה: בחוברת הקורס 1750, ובמפה (OpenStreetMap) 1763.",
+    "fr": "Date de construction : 1750 selon la brochure du cours, 1763 selon la carte (OpenStreetMap).",
+    "en": "Building date: 1750 in the course booklet, 1763 on the map (OpenStreetMap).",
+    "ru": "Год постройки: 1750 по брошюре курса, 1763 по карте (OpenStreetMap)."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "gabriel",
+    "h": 10,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/1157250968",
+     "url": "https://www.openstreetmap.org/way/1157250968"
+    }
+   ]
+  },
+  {
+   "id": "nz_well",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "מעיין מרים",
+    "fr": "La fontaine de Marie",
+    "en": "Mary’s Well",
+    "ru": "Источник Марии"
+   },
+   "text": {
+    "he": "המעיין היחיד של נצרת הקדומה. מימיו זורמים בצינור תת-קרקעי מכנסיית גבריאל אל מבנה ״מעיין מרים״ (הסביל), כ-150 מ׳ דרומה בכיכר המעיין.",
+    "fr": "La seule source de l’antique Nazareth. Son eau coule par un conduit souterrain depuis l’église Saint-Gabriel jusqu’à la « fontaine de Marie » (le sabil), à environ 150 m au sud, sur la place.",
+    "en": "The only spring of ancient Nazareth. Its water flows through an underground channel from St Gabriel’s church to the “Mary’s Well” building (the sabil), about 150 m south on the square.",
+    "ru": "Единственный источник древнего Назарета. Вода течёт по подземному каналу от церкви св. Гавриила к «Источнику Марии» (сабиль) примерно в 150 м к югу, на площади."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "well",
+    "h": 4,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/190451672",
+     "url": "https://www.openstreetmap.org/way/190451672"
+    }
+   ]
+  },
+  {
+   "id": "nz_synagogue",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "pri": 2,
+   "name": {
+    "he": "כנסיית בית הכנסת",
+    "fr": "L’église de la Synagogue",
+    "en": "The Synagogue Church",
+    "ru": "Церковь-синагога"
+   },
+   "text": {
+    "he": "כנסייה קטנה בלב השוק (יוונית-קתולית / מלכיתית): אולם צלבני מקומר מהמאה ה-12, מתחת למפלס הרחוב. לפי המסורת עמד כאן בית הכנסת שבו קרא ישוע את ההפטרה מישעיהו ס״א (לוקס ד׳ 16–30). בסיור עוברים לידה מבחוץ בלבד.",
+    "fr": "Petite église au cœur du souk (grecque-catholique / melkite) : une salle croisée voûtée du XIIe s., sous le niveau de la rue. Selon la tradition, ici se trouvait la synagogue où Jésus lut Isaïe 61 (Luc 4,16–30). Pendant la visite, on passe seulement devant.",
+    "en": "A small church in the heart of the market (Greek Catholic / Melkite): a vaulted 12th-c. Crusader hall below street level. Tradition places here the synagogue where Jesus read Isaiah 61 (Luke 4:16–30). On the tour we only pass by outside.",
+    "ru": "Небольшая церковь в сердце рынка (греко-католическая / мелькитская): сводчатый зал крестоносцев XII в. ниже уровня улицы. По преданию, здесь была синагога, где Иисус читал Исаию 61 (Лука 4:16–30). В экскурсии проходим мимо, снаружи."
+   },
+   "debate": {
+    "he": "אין ודאות ארכיאולוגית שזה בית הכנסת של המאה ה-1.",
+    "fr": "Aucune certitude archéologique qu’il s’agisse de la synagogue du Ier s.",
+    "en": "No archaeological certainty that this is the 1st-c. synagogue.",
+    "ru": "Нет археологической уверенности, что это синагога I в."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "a:synagogue",
+    "h": 7
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "nz_market",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "pri": 1,
+   "name": {
+    "he": "השוק והעיר העתיקה",
+    "fr": "Le souk et la vieille ville",
+    "en": "The market and the old city",
+    "ru": "Рынок и старый город"
+   },
+   "text": {
+    "he": "השוק הוקם במאה ה-18, בימי דאהר אל-עומר, והיה המרכז המסחרי של נצרת והכפרים. סמטאות מרוצפות, קשתות אבן, בעלי מלאכה, ובתי אבן דו-קומתיים מהמאה ה-19 עם חלונות מקושתים ורעפי מרסיי אדומים — עדות לפריחה ולהשפעה אירופית.",
+    "fr": "Le souk fut créé au XVIIIe s., sous Dahir al-Umar, centre commercial de Nazareth et des villages. Ruelles pavées, arcs de pierre, artisans, et maisons de pierre à étage du XIXe s. aux fenêtres en arc et tuiles rouges de Marseille — signe de prospérité et d’influence européenne.",
+    "en": "The market was founded in the 18th c. under Dahir al-Umar, the trading centre of Nazareth and the villages. Paved alleys, stone arches, craftsmen, and two-storey 19th-c. stone houses with arched windows and red Marseille tiles — a sign of prosperity and European influence.",
+    "ru": "Рынок основан в XVIII в. при Дахире аль-Умаре — торговый центр Назарета и деревень. Мощёные переулки, каменные арки, ремесленники, двухэтажные каменные дома XIX в. с арочными окнами и красной марсельской черепицей — знак процветания и европейского влияния."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "o:market",
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/190426497",
+     "url": "https://www.openstreetmap.org/way/190426497"
+    }
+   ]
+  },
+  {
+   "id": "nz_precipice",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "הר הקפיצה",
+    "fr": "Le mont du Précipice",
+    "en": "Mount Precipice",
+    "ru": "Гора Низвержения"
+   },
+   "text": {
+    "he": "מצוק בגובה כ-397 מ׳ בדרום נצרת, הצונח לעמק יזרעאל; תצפית על העמק, התבור, גבעת המורה, הגלבוע והכרמל. לפי לוקס ד׳ 16–30, אחרי דבריו בבית הכנסת הוליכו אנשי העיר את ישוע ״עד גב ההר… להשליכו ממנו״.",
+    "fr": "Falaise d’environ 397 m au sud de Nazareth, plongeant vers la vallée de Jezreël ; vue sur la vallée, le Thabor, la colline de Moré, le Gilboa et le Carmel. Selon Luc 4,16–30, après son discours à la synagogue, les habitants menèrent Jésus « jusqu’au sommet de la montagne… pour le précipiter ».",
+    "en": "A cliff about 397 m high south of Nazareth, dropping to the Jezreel Valley; views of the valley, Tabor, the Hill of Moreh, Gilboa and Carmel. According to Luke 4:16–30, after his words in the synagogue the townspeople led Jesus “to the brow of the hill… to throw him down”.",
+    "ru": "Обрыв высотой около 397 м к югу от Назарета над Изреельской долиной; вид на долину, Фавор, холм Море, Гилбоа и Кармель. По Луке 4:16–30, после слов в синагоге горожане повели Иисуса «на вершину горы… чтобы свергнуть Его»."
+   },
+   "debate": {
+    "he": "הכתוב אינו מתאר קפיצה: ״והוא עבר בתוכם וילך לדרכו״ (לוקס ד׳ 30). נצרת הקדומה שכנה כ-2–2.5 ק״מ צפונה ולא ״על״ ההר הזה. השם בא מעולי הרגל הצלבנים, Saltus Domini (״קפיצת האדון״).",
+    "fr": "Le texte ne décrit aucun saut : « Mais lui, passant au milieu d’eux, s’en alla » (Luc 4,30). L’antique Nazareth était à 2–2,5 km au nord, pas « sur » cette montagne. Le nom vient des pèlerins croisés : Saltus Domini (« le saut du Seigneur »).",
+    "en": "The text describes no leap: “But he, passing through the midst of them, went his way” (Luke 4:30). Ancient Nazareth lay 2–2.5 km north, not “on” this hill. The name comes from Crusader-era pilgrims: Saltus Domini (“the Lord’s leap”).",
+    "ru": "В тексте нет прыжка: «Но Он, пройдя посреди них, удалился» (Лука 4:30). Древний Назарет лежал в 2–2,5 км к северу, а не «на» этой горе. Название — от паломников эпохи крестоносцев: Saltus Domini («прыжок Господень»)."
+   },
+   "shape": {
+    "type": "marker",
+    "at": "a:precipice",
+    "h": 12
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "nz_stjoseph",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "כנסיית יוסף הקדוש",
+    "fr": "L’église Saint-Joseph",
+    "en": "St Joseph’s Church",
+    "ru": "Церковь св. Иосифа"
+   },
+   "text": {
+    "he": "כנסיית יוסף הקדוש — קתולית. מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’église Saint-Joseph — catholique. Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "St Joseph’s Church — Catholic. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Церковь св. Иосифа — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "stjoseph",
+    "h": 12,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/97418891",
+     "url": "https://www.openstreetmap.org/way/97418891"
+    }
+   ],
+   "osmOnly": true
+  },
+  {
+   "id": "nz_convent",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "המנזר הפרנציסקני",
+    "fr": "Le couvent franciscain",
+    "en": "The Franciscan convent",
+    "ru": "Францисканский монастырь"
+   },
+   "text": {
+    "he": "המנזר הפרנציסקני — קתולית. מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "Le couvent franciscain — catholique. Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "The Franciscan convent — Catholic. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Францисканский монастырь — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "convent",
+    "h": 9,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/97417853",
+     "url": "https://www.openstreetmap.org/way/97417853"
+    }
+   ],
+   "osmOnly": true
+  },
+  {
+   "id": "nz_salesian",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "הכנסייה הסלזיאנית (ישוע הנער)",
+    "fr": "L’église salésienne (Jésus adolescent)",
+    "en": "The Salesian church (Jesus the Adolescent)",
+    "ru": "Салезианская церковь (Иисус-отрок)"
+   },
+   "text": {
+    "he": "הכנסייה הסלזיאנית (ישוע הנער) — קתולית. מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’église salésienne (Jésus adolescent) — catholique. Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "The Salesian church (Jesus the Adolescent) — Catholic. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Салезианская церковь (Иисус-отрок) — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "salesian",
+    "h": 14,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/190429363",
+     "url": "https://www.openstreetmap.org/way/190429363"
+    }
+   ],
+   "osmOnly": true
+  },
+  {
+   "id": "nz_mensa",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "כנסיית מנסה כריסטי",
+    "fr": "L’église Mensa Christi",
+    "en": "The Mensa Christi Church",
+    "ru": "Церковь Mensa Christi"
+   },
+   "text": {
+    "he": "כנסיית מנסה כריסטי — קתולית. מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’église Mensa Christi — catholique. Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "The Mensa Christi Church — Catholic. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Церковь Mensa Christi — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "mensa",
+    "h": 8,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/190452677",
+     "url": "https://www.openstreetmap.org/way/190452677"
+    }
+   ],
+   "osmOnly": true
+  },
+  {
+   "id": "nz_anglican",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "הכנסייה האנגליקנית (כנסיית המשיח)",
+    "fr": "L’église anglicane (Christ Church)",
+    "en": "The Anglican church (Christ Church)",
+    "ru": "Англиканская церковь (Христа)"
+   },
+   "text": {
+    "he": "הכנסייה האנגליקנית (כנסיית המשיח) — אנגליקנית. מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’église anglicane (Christ Church) — anglicane. Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "The Anglican church (Christ Church) — Anglican. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Англиканская церковь (Христа) — англиканская. Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "anglican",
+    "h": 10,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/1157250969",
+     "url": "https://www.openstreetmap.org/way/1157250969"
+    }
+   ],
+   "osmOnly": true
+  },
+  {
+   "id": "nz_maronite",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "הכנסייה המרונית הישנה",
+    "fr": "L’ancienne église maronite",
+    "en": "The old Maronite church",
+    "ru": "Старая маронитская церковь"
+   },
+   "text": {
+    "he": "הכנסייה המרונית הישנה — מרונית. מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’ancienne église maronite — maronite. Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "The old Maronite church — Maronite. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Старая маронитская церковь — маронитская. Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "maronite",
+    "h": 8,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/236068503",
+     "url": "https://www.openstreetmap.org/way/236068503"
+    }
+   ],
+   "osmOnly": true
+  },
+  {
+   "id": "nz_melkite",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "כנסיית יוסף הקדוש היוונית-קתולית",
+    "fr": "L’église grecque-catholique Saint-Joseph",
+    "en": "St Joseph Greek Catholic Church",
+    "ru": "Греко-католическая церковь св. Иосифа"
+   },
+   "text": {
+    "he": "כנסיית יוסף הקדוש היוונית-קתולית — יוונית-קתולית (מלכיתית). מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’église grecque-catholique Saint-Joseph — grecque-catholique (melkite). Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "St Joseph Greek Catholic Church — Greek Catholic (Melkite). On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Греко-католическая церковь св. Иосифа — греко-католическая (мелькитская). Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "melkite",
+    "h": 9,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/683519592",
+     "url": "https://www.openstreetmap.org/way/683519592"
+    }
+   ],
+   "osmOnly": true
+  }
+ ]
+}
