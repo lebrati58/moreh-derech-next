@@ -32,6 +32,14 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 26 novembre 2026 — Sites 3D « נצרות בגליל » : הר תבור, כפר כנא, נצרת (branche `claude/3d-notsrut-galil`)
+- Demande de Lionel : les églises et tout ce qui concerne la נצרות dans le nord, en 3D. Choix de Lionel : **une scène par site**. Source : « חוברת הכנה לסיור נצרות בגליל » (Drive du cours).
+- `tools/site3d-sites.json` : cadres `tabor`, `kafrkanna`, `nazareth` ; `geo.json` construit par le robot `site3d.yml` (Wikipédia, OpenStreetMap, SRTM 30 m), rien saisi à la main.
+- `tools/site3d-data/notsrut_galil.py` : fiches en 4 langues — Thabor 9 (basilique de Barluzzi, églises anciennes et « trois tentes », forteresse ayyoubide, Transfiguration + débat Hermon, Josèphe, Débora…), Nazareth 15 (basilique de l'Annonciation, églises anciennes, village du Ier s., Saint-Gabriel, fontaine de Marie, église de la Synagogue, souk, mont du Précipice + débat « pas de saut »), Kafr Kanna 6 (église des Noces, crypte et mosaïque araméenne, église orthodoxe, débat Khirbet Qana).
+- Les églises absentes de la brochure (Saint-Joseph, Mensa Christi, salésienne, anglicane, maronite, melkite, Saint-Barthélemy…) sont posées avec **nom et confession seulement** (`osmOnly`, source OpenStreetMap) ; `tests/sites3d.test.mjs` ne les compte pas dans la règle « 70 % de fiches sourcées par le cours ». Deux dates contradictoires (brochure / OSM) sont affichées en « autre avis ».
+- Intégration (`integrate.py`) : carte (panneaux 3D), accueil, liens « autres sites » — 23 sites.
+- ✅ `sites3d.test.mjs` 48/48 ; `e2e:sites3d` sur les 3 sites (monuments placés, tailles, étiquettes). 🟡 pas vu sur un vrai téléphone. ⏳ Suite : les sites du lac (כפר נחום, טבחה, הר האושר, כורסי, מגדלא) dès que les documents du cours sont trouvés ; modèles plus détaillés (tours de la basilique du Thabor, coupole de l'Annonciation).
+
 ### 25 novembre 2026 — Carte : lisibilité sur ordinateur (branche `claude/map-lisible`)
 - Retour de Lionel (photo de l'écran d'ordinateur) : on lit mal les textes de la carte.
 - Ordinateur (≥ 900 px) : boutons de calques, filtres et pastille de compte plus grands ; contraste renforcé partout (boutons non actifs en blanc bleuté au lieu de gris transparent).

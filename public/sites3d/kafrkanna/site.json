@@ -1,0 +1,507 @@
+{
+ "site": "kafrkanna",
+ "title": {
+  "he": "כפר כנא",
+  "fr": "Kafr Kanna",
+  "en": "Kafr Kanna",
+  "ru": "Кафр-Кана"
+ },
+ "defaultPeriod": 3,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#efe2c6",
+ "home": {
+  "at": {
+   "off": "o:wedding",
+   "dx": 0,
+   "dz": 0
+  },
+  "dist": 520,
+  "from": 200,
+  "elev": 32
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "susya": {
+   "he": "סוסיא",
+   "fr": "Soussia",
+   "en": "Susya",
+   "ru": "Сусия"
+  },
+  "shiloh": {
+   "he": "תל שילה",
+   "fr": "Tel Shiloh",
+   "en": "Tel Shiloh",
+   "ru": "Тель Шило"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "atlit": {
+   "he": "עתלית",
+   "fr": "Atlit",
+   "en": "Atlit",
+   "ru": "Атлит"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  },
+  "tabor": {
+   "he": "הר תבור",
+   "fr": "Mont Thabor",
+   "en": "Mount Tabor",
+   "ru": "Гора Фавор"
+  },
+  "kafrkanna": {
+   "he": "כפר כנא",
+   "fr": "Kafr Kanna",
+   "en": "Kafr Kanna",
+   "ru": "Кафр-Кана"
+  },
+  "nazareth": {
+   "he": "נצרת",
+   "fr": "Nazareth",
+   "en": "Nazareth",
+   "ru": "Назарет"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "wedding": {
+   "osm": "way/1157245651"
+  },
+  "orthodox": {
+   "osm": "way/1157245642"
+  },
+  "bartholomew": {
+   "osm": "way/1157245643"
+  },
+  "melkite": {
+   "osm": "way/687841110"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "קנה — יישוב יהודי",
+    "fr": "Cana — village juif",
+    "en": "Cana — Jewish village",
+    "ru": "Кана — еврейское селение"
+   },
+   "dates": {
+    "he": "בית שני, משנה ותלמוד (המאות ה-1–4)",
+    "fr": "Second Temple, Mishna et Talmud (Ier–IVe s.)",
+    "en": "Second Temple, Mishnah and Talmud (1st–4th c.)",
+    "ru": "Второй Храм, Мишна и Талмуд (I–IV вв.)"
+   },
+   "era": "roman"
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "ביזנטית",
+    "fr": "Byzantine",
+    "en": "Byzantine",
+    "ru": "Византийская"
+   },
+   "dates": {
+    "he": "המאה ה-6",
+    "fr": "VIe s.",
+    "en": "6th c.",
+    "ru": "VI в."
+   },
+   "era": "byzantine"
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "כפר כנא היום",
+    "fr": "Kafr Kanna aujourd’hui",
+    "en": "Kafr Kanna today",
+    "ru": "Кафр-Кана сегодня"
+   },
+   "dates": {
+    "he": "מאז 1879",
+    "fr": "depuis 1879",
+    "en": "since 1879",
+    "ru": "с 1879 г."
+   },
+   "era": "today"
+  }
+ ],
+ "monuments": [
+  {
+   "id": "kk_wedding",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "כנסיית החתונה",
+    "fr": "L’église des Noces",
+    "en": "The Wedding Church",
+    "ru": "Церковь Брака"
+   },
+   "builder": {
+    "he": "הפרנציסקנים, 1879 (הורחבה ב-1905)",
+    "fr": "Les franciscains, 1879 (agrandie en 1905)",
+    "en": "The Franciscans, 1879 (enlarged 1905)",
+    "ru": "Францисканцы, 1879 (расширена в 1905)"
+   },
+   "text": {
+    "he": "לפי יוחנן ב׳ 1–11 הוזמנו ישוע, אמו ותלמידיו לחתונה בקנה. כשאזל היין מילאו המשרתים מים בשישה כדי אבן לטהרה, והמים נהפכו ליין משובח — ״ראשית האותות״. בעיני הנוצרים: מעבר מן הברית הישנה לחדשה, ונישואין כסקרמנט; זוגות מכל העולם מחדשים כאן את נדריהם.",
+    "fr": "Selon Jean 2,1–11, Jésus, sa mère et ses disciples sont invités à des noces à Cana. Le vin manque ; les serviteurs remplissent d’eau six jarres de pierre de purification, et l’eau devient un vin excellent — « le premier des signes ». Pour les chrétiens : passage de l’ancienne à la nouvelle alliance, et le mariage comme sacrement ; des couples du monde entier viennent y renouveler leurs vœux.",
+    "en": "According to John 2:1–11, Jesus, his mother and disciples are invited to a wedding at Cana. The wine runs out; the servants fill six stone purification jars with water, and it becomes fine wine — “the first of the signs”. For Christians: the passage from the old covenant to the new, and marriage as a sacrament; couples from around the world renew their vows here.",
+    "ru": "По Иоанну 2:1–11, Иисус, его мать и ученики приглашены на свадьбу в Кане. Вино кончается; слуги наполняют водой шесть каменных сосудов для очищения, и вода становится лучшим вином — «начало чудес». Для христиан: переход от Ветхого завета к Новому и брак как таинство; пары со всего мира обновляют здесь обеты."
+   },
+   "otherView": {
+    "he": "שנת הבנייה: בחוברת הקורס 1879, ובמפה (OpenStreetMap) 1881.",
+    "fr": "Date de construction : 1879 selon la brochure, 1881 selon la carte (OpenStreetMap).",
+    "en": "Building date: 1879 in the booklet, 1881 on the map (OpenStreetMap).",
+    "ru": "Год постройки: 1879 по брошюре, 1881 по карте (OpenStreetMap)."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "wedding",
+    "h": 14,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/1157245651",
+     "url": "https://www.openstreetmap.org/way/1157245651"
+    }
+   ]
+  },
+  {
+   "id": "kk_crypt",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "הקריפטה: פסיפס יוסה בר תנחום",
+    "fr": "La crypte : la mosaïque de Yossa bar Tanhoum",
+    "en": "The crypt: the Yosa bar Tanhum mosaic",
+    "ru": "Крипта: мозаика Йосы бар Танхума"
+   },
+   "text": {
+    "he": "מתחת לרצפת הכנסייה רצפת פסיפס מהמאות ה-3–4 עם כתובת הקדשה בארמית: ״דכיר לטב יוסה בר תנחום בר בוטה ובנוי דעבדין הדין טבלה תהי להון ברכתה אמן״ — עדות לקהילה יהודית מבוססת, אולי בית כנסת. עוד בקריפטה: שרידי כנסייה ביזנטית מהמאה ה-6, קברי פיר וכלי אבן גדולים.",
+    "fr": "Sous le sol de l’église, un pavement de mosaïque des IIIe–IVe s. porte une dédicace araméenne : « Qu’on se souvienne en bien de Yossa fils de Tanhoum fils de Bouta et de ses fils, qui ont fait cette mosaïque ; que la bénédiction soit sur eux, amen » — trace d’une communauté juive aisée, peut-être une synagogue. Aussi : restes d’une église byzantine du VIe s., tombes à puits et grandes jarres de pierre.",
+    "en": "Beneath the church floor, a 3rd–4th-c. mosaic pavement bears an Aramaic dedication: “Remembered for good be Yosa son of Tanhum son of Buta and his sons, who made this mosaic; may blessing be upon them, amen” — evidence of a prosperous Jewish community, perhaps a synagogue. Also: remains of a 6th-c. Byzantine church, shaft tombs and large stone jars.",
+    "ru": "Под полом церкви — мозаика III–IV вв. с арамейским посвящением: «Да будет помянут добром Йоса, сын Танхума, сына Буты, и его сыновья, сделавшие эту мозаику; да будет над ними благословение, аминь» — свидетельство зажиточной еврейской общины, возможно синагоги. Также: остатки византийской церкви VI в., шахтные гробницы и большие каменные сосуды."
+   },
+   "shape": {
+    "type": "marker",
+    "at": {
+     "off": "o:wedding",
+     "dx": 0,
+     "dz": 18
+    },
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "kk_orthodox",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "הכנסייה היוונית-אורתודוקסית (הנס הראשון)",
+    "fr": "L’église grecque-orthodoxe (le premier miracle)",
+    "en": "The Greek Orthodox church (the first miracle)",
+    "ru": "Греческая православная церковь (первое чудо)"
+   },
+   "text": {
+    "he": "סמוך לכנסייה הפרנציסקנית; מוצגים בה כדי אבן עתיקים המשמשים כיום כאגני טבילה. בסיור הקורס לא נכנסים אליה.",
+    "fr": "Voisine de l’église franciscaine ; on y montre des jarres de pierre anciennes servant aujourd’hui de fonts baptismaux. La visite du cours n’y entre pas.",
+    "en": "Next to the Franciscan church; ancient stone jars shown there now serve as baptismal fonts. The course tour does not go in.",
+    "ru": "Рядом с францисканской церковью; древние каменные сосуды служат в ней купелями. Экскурсия курса туда не заходит."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "orthodox",
+    "h": 11,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/1157245642",
+     "url": "https://www.openstreetmap.org/way/1157245642"
+    }
+   ]
+  },
+  {
+   "id": "kk_identity",
+   "from": 1,
+   "to": 3,
+   "certainty": "attested",
+   "pri": 2,
+   "name": {
+    "he": "איפה הייתה ״קנה אשר בגליל״?",
+    "fr": "Où était « Cana de Galilée » ?",
+    "en": "Where was “Cana of Galilee”?",
+    "ru": "Где была «Кана Галилейская»?"
+   },
+   "text": {
+    "he": "בימי בית שני, המשנה והתלמוד היה באזור יישוב יהודי בשם ״קנה״, שיוסף בן מתתיהו פעל ממנו בגליל. כפר כנא שוכן כ-6 ק״מ צפון-מזרחית לנצרת, במורדות רכס יוטבת, בשולי בקעת בית נטופה.",
+    "fr": "Au Second Temple, à l’époque de la Mishna et du Talmud, un village juif nommé « Cana » existait dans la région ; Josèphe y avait sa base en Galilée. Kafr Kanna est à environ 6 km au nord-est de Nazareth, sur les pentes de la chaîne de Yotvat, au bord de la vallée de Beit Netofa.",
+    "en": "In the Second Temple, Mishnah and Talmud periods a Jewish village called “Cana” existed in the area; Josephus used it as a base in Galilee. Kafr Kanna lies about 6 km north-east of Nazareth, on the slopes of the Yotvat ridge at the edge of the Beit Netofa Valley.",
+    "ru": "Во времена Второго Храма, Мишны и Талмуда в этом районе было еврейское селение «Кана»; Иосиф Флавий действовал оттуда в Галилее. Кафр-Кана — примерно в 6 км к северо-востоку от Назарета, на склонах хребта Йотват у долины Бейт-Нетофа."
+   },
+   "debate": {
+    "he": "הזיהוי המסורתי-הכנסייתי עם כפר כנא רציף מהתקופה הצלבנית; ארכיאולוגים רבים מזהים את קנה של הברית החדשה בחורבת קנה, בצפון בקעת בית נטופה, ששמרה את השם המקורי.",
+    "fr": "L’identification ecclésiale à Kafr Kanna est continue depuis les croisades ; beaucoup d’archéologues placent la Cana du Nouveau Testament à Khirbet Qana, au nord de la vallée de Beit Netofa, qui a gardé le nom.",
+    "en": "The church tradition at Kafr Kanna is continuous from the Crusades; many archaeologists place New Testament Cana at Khirbet Qana, north of the Beit Netofa Valley, which kept the original name.",
+    "ru": "Церковная традиция связывает Кану с Кафр-Каной непрерывно со времён крестоносцев; многие археологи помещают новозаветную Кану в Хирбет-Кану к северу от долины Бейт-Нетофа, сохранившую имя."
+   },
+   "placementNote": {
+    "he": "אין סימון — רקע.",
+    "fr": "Pas de repère — contexte.",
+    "en": "No marker — background.",
+    "ru": "Без метки — контекст."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "kk_bartholomew",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "כנסיית ברתולומאוס השליח",
+    "fr": "L’église de l’apôtre Barthélemy",
+    "en": "St Bartholomew the Apostle Church",
+    "ru": "Церковь апостола Варфоломея"
+   },
+   "text": {
+    "he": "כנסיית ברתולומאוס השליח — קתולית. מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’église de l’apôtre Barthélemy — catholique. Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "St Bartholomew the Apostle Church — Catholic. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Церковь апостола Варфоломея — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "bartholomew",
+    "h": 7,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/1157245643",
+     "url": "https://www.openstreetmap.org/way/1157245643"
+    }
+   ],
+   "osmOnly": true
+  },
+  {
+   "id": "kk_melkite",
+   "from": 3,
+   "to": 3,
+   "certainty": "attested",
+   "name": {
+    "he": "הכנסייה היוונית-קתולית",
+    "fr": "L’église grecque-catholique",
+    "en": "The Greek Catholic church",
+    "ru": "Греко-католическая церковь"
+   },
+   "text": {
+    "he": "הכנסייה היוונית-קתולית — יוונית-קתולית (מלכיתית). מופיעה במפה (OpenStreetMap); אין עליה פרק בחוברת הקורס.",
+    "fr": "L’église grecque-catholique — grecque-catholique (melkite). Présente sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "The Greek Catholic church — Greek Catholic (Melkite). On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Греко-католическая церковь — греко-католическая (мелькитская). Есть на карте (OpenStreetMap); в брошюре курса не описана."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "melkite",
+    "h": 9,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/687841110",
+     "url": "https://www.openstreetmap.org/way/687841110"
+    }
+   ],
+   "osmOnly": true
+  }
+ ]
+}

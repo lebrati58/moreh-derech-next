@@ -4,7 +4,7 @@ import json, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from common import SITES
 ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "public")
-LIVE = ["masada", "caesarea", "beitshean", "herodium", "megiddo", "tzippori", "gamla", "arad", "beersheba", "qumran", "banias", "nimrod", "beitguvrin", "lachish", "qeiyafa", "beitshearim", "apollonia", "eingedi", "beitalpha", "baram"]
+LIVE = ["masada", "caesarea", "beitshean", "herodium", "megiddo", "tzippori", "gamla", "arad", "beersheba", "qumran", "banias", "nimrod", "beitguvrin", "lachish", "qeiyafa", "beitshearim", "apollonia", "eingedi", "beitalpha", "baram", "nazareth", "tabor", "kafrkanna"]
 ANCHOR = {"masada": "masada", "caesarea": "caesarea", "beitshean": "tel", "beersheba": "tel"}
 
 def anchor(s):

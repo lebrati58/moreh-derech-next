@@ -1,0 +1,641 @@
+{
+ "site": "tabor",
+ "title": {
+  "he": "הר תבור",
+  "fr": "Mont Thabor",
+  "en": "Mount Tabor",
+  "ru": "Гора Фавор"
+ },
+ "defaultPeriod": 5,
+ "cubitMeters": 0.5,
+ "stone": "limestone",
+ "tint": "#efe2c6",
+ "home": {
+  "at": {
+   "off": "o:basilica",
+   "dx": 0,
+   "dz": 0
+  },
+  "dist": 420,
+  "from": 160,
+  "elev": 38
+ },
+ "terrain": {
+  "lo": "#a39478",
+  "mid": "#cdbf9f",
+  "hi": "#e8dfca"
+ },
+ "otherSites": {
+  "masada": {
+   "he": "מצדה",
+   "fr": "Massada",
+   "en": "Masada",
+   "ru": "Масада"
+  },
+  "caesarea": {
+   "he": "קיסריה",
+   "fr": "Césarée",
+   "en": "Caesarea",
+   "ru": "Кесария"
+  },
+  "beitshean": {
+   "he": "בית שאן",
+   "fr": "Beit Shean",
+   "en": "Beit She'an",
+   "ru": "Бейт-Шеан"
+  },
+  "herodium": {
+   "he": "הרודיון",
+   "fr": "Hérodion",
+   "en": "Herodium",
+   "ru": "Иродион"
+  },
+  "megiddo": {
+   "he": "תל מגידו",
+   "fr": "Tel Megiddo",
+   "en": "Tel Megiddo",
+   "ru": "Тель Мегиддо"
+  },
+  "tzippori": {
+   "he": "ציפורי",
+   "fr": "Tsippori",
+   "en": "Sepphoris",
+   "ru": "Ципори"
+  },
+  "gamla": {
+   "he": "גמלא",
+   "fr": "Gamla",
+   "en": "Gamla",
+   "ru": "Гамла"
+  },
+  "arad": {
+   "he": "תל ערד",
+   "fr": "Tel Arad",
+   "en": "Tel Arad",
+   "ru": "Тель Арад"
+  },
+  "beersheba": {
+   "he": "תל באר שבע",
+   "fr": "Tel Beer-Sheva",
+   "en": "Tel Be'er Sheva",
+   "ru": "Тель Беэр-Шева"
+  },
+  "qumran": {
+   "he": "קומראן",
+   "fr": "Qumrân",
+   "en": "Qumran",
+   "ru": "Кумран"
+  },
+  "banias": {
+   "he": "בניאס",
+   "fr": "Banias",
+   "en": "Banias",
+   "ru": "Баниас"
+  },
+  "nimrod": {
+   "he": "מבצר נמרוד",
+   "fr": "Forteresse de Nimrod",
+   "en": "Nimrod Fortress",
+   "ru": "Крепость Нимрод"
+  },
+  "beitguvrin": {
+   "he": "בית גוברין ומרשה",
+   "fr": "Beit Guvrin et Marésha",
+   "en": "Beit Guvrin & Maresha",
+   "ru": "Бейт-Гуврин и Мареша"
+  },
+  "lachish": {
+   "he": "תל לכיש",
+   "fr": "Tel Lakhish",
+   "en": "Tel Lachish",
+   "ru": "Тель Лахиш"
+  },
+  "qeiyafa": {
+   "he": "חורבת קייאפה",
+   "fr": "Khirbet Qeiyafa",
+   "en": "Khirbet Qeiyafa",
+   "ru": "Хирбет-Кейафа"
+  },
+  "susya": {
+   "he": "סוסיא",
+   "fr": "Soussia",
+   "en": "Susya",
+   "ru": "Сусия"
+  },
+  "shiloh": {
+   "he": "תל שילה",
+   "fr": "Tel Shiloh",
+   "en": "Tel Shiloh",
+   "ru": "Тель Шило"
+  },
+  "beitshearim": {
+   "he": "בית שערים",
+   "fr": "Beit Shearim",
+   "en": "Beit She'arim",
+   "ru": "Бейт-Шеарим"
+  },
+  "apollonia": {
+   "he": "אפולוניה",
+   "fr": "Apollonia",
+   "en": "Apollonia",
+   "ru": "Аполлония"
+  },
+  "eingedi": {
+   "he": "עין גדי",
+   "fr": "Ein Gedi",
+   "en": "Ein Gedi",
+   "ru": "Эйн-Геди"
+  },
+  "beitalpha": {
+   "he": "בית אלפא",
+   "fr": "Beit Alpha",
+   "en": "Beit Alpha",
+   "ru": "Бейт-Альфа"
+  },
+  "atlit": {
+   "he": "עתלית",
+   "fr": "Atlit",
+   "en": "Atlit",
+   "ru": "Атлит"
+  },
+  "baram": {
+   "he": "ברעם",
+   "fr": "Baram",
+   "en": "Bar'am",
+   "ru": "Барам"
+  },
+  "tabor": {
+   "he": "הר תבור",
+   "fr": "Mont Thabor",
+   "en": "Mount Tabor",
+   "ru": "Гора Фавор"
+  },
+  "kafrkanna": {
+   "he": "כפר כנא",
+   "fr": "Kafr Kanna",
+   "en": "Kafr Kanna",
+   "ru": "Кафр-Кана"
+  },
+  "nazareth": {
+   "he": "נצרת",
+   "fr": "Nazareth",
+   "en": "Nazareth",
+   "ru": "Назарет"
+  }
+ },
+ "certainty": {
+  "attested": {
+   "color": "#3fbf8a",
+   "name": {
+    "he": "מתועד בשטח",
+    "fr": "Attesté",
+    "en": "Attested",
+    "ru": "Подтверждено"
+   }
+  },
+  "reconstruction": {
+   "color": "#f0b44c",
+   "name": {
+    "he": "שחזור מבוסס",
+    "fr": "Reconstruction argumentée",
+    "en": "Reasoned reconstruction",
+    "ru": "Обоснованная реконструкция"
+   }
+  },
+  "hypothesis": {
+   "color": "#e0607e",
+   "name": {
+    "he": "השערה",
+    "fr": "Hypothèse",
+    "en": "Hypothesis",
+    "ru": "Гипотеза"
+   }
+  }
+ },
+ "osm": {
+  "basilica": {
+   "osm": "way/255793567"
+  },
+  "convent": {
+   "osm": "way/255793568"
+  },
+  "orthodox": {
+   "osm": "way/255793985"
+  },
+  "gate": {
+   "osm": "way/255793557"
+  }
+ },
+ "periods": [
+  {
+   "n": 1,
+   "name": {
+    "he": "התקופה המקראית",
+    "fr": "Époque biblique",
+    "en": "Biblical period",
+    "ru": "Библейский период"
+   },
+   "dates": {
+    "he": "ימי השופטים",
+    "fr": "époque des Juges",
+    "en": "period of the Judges",
+    "ru": "эпоха Судей"
+   },
+   "era": "iron"
+  },
+  {
+   "n": 2,
+   "name": {
+    "he": "רומית — המרד הגדול",
+    "fr": "Romaine — la Grande Révolte",
+    "en": "Roman — the Great Revolt",
+    "ru": "Римская — Великое восстание"
+   },
+   "dates": {
+    "he": "55 לפנה״ס – 67",
+    "fr": "55 av. – 67 apr. J.-C.",
+    "en": "55 BCE – 67 CE",
+    "ru": "55 до н. э. – 67 н. э."
+   },
+   "era": "roman"
+  },
+  {
+   "n": 3,
+   "name": {
+    "he": "ביזנטית",
+    "fr": "Byzantine",
+    "en": "Byzantine",
+    "ru": "Византийская"
+   },
+   "dates": {
+    "he": "המאות ה-4–6",
+    "fr": "IVe–VIe s.",
+    "en": "4th–6th c.",
+    "ru": "IV–VI вв."
+   },
+   "era": "byzantine"
+  },
+  {
+   "n": 4,
+   "name": {
+    "he": "צלבנים ואיובים",
+    "fr": "Croisés et Ayyoubides",
+    "en": "Crusaders and Ayyubids",
+    "ru": "Крестоносцы и Айюбиды"
+   },
+   "dates": {
+    "he": "המאה ה-12 – 1218",
+    "fr": "XIIe s. – 1218",
+    "en": "12th c. – 1218",
+    "ru": "XII в. – 1218"
+   },
+   "era": "crusader"
+  },
+  {
+   "n": 5,
+   "name": {
+    "he": "הר תבור היום",
+    "fr": "Le mont Thabor aujourd’hui",
+    "en": "Mount Tabor today",
+    "ru": "Гора Фавор сегодня"
+   },
+   "dates": {
+    "he": "מאז 1924",
+    "fr": "depuis 1924",
+    "en": "since 1924",
+    "ru": "с 1924 г."
+   },
+   "era": "today"
+  }
+ ],
+ "monuments": [
+  {
+   "id": "tb_basilica",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 3,
+   "name": {
+    "he": "כנסיית ההשתנות",
+    "fr": "La basilique de la Transfiguration",
+    "en": "The Church of the Transfiguration",
+    "ru": "Базилика Преображения"
+   },
+   "builder": {
+    "he": "אנטוניו ברלוצי, 1924",
+    "fr": "Antonio Barluzzi, 1924",
+    "en": "Antonio Barluzzi, 1924",
+    "ru": "Антонио Барлуцци, 1924"
+   },
+   "text": {
+    "he": "הכנסייה הפרנציסקנית נבנתה ב-1924 בסגנון סורי-רומנסקי קדום. שני המגדלים בחזית מייצגים את קפלת משה (בצפון) ואת קפלת אליהו (בדרום). שלושה מפלסים: אולם התווך היורד (החיים הארציים), המזבח המוגבה והאפסיס המוזהב. בפסיפס האפסיס ישוע עם משה ואליהו ומתחתם שלושת התלמידים; זכוכית אלבסטר מכניסה אור טבעי.",
+    "fr": "L’église franciscaine fut bâtie en 1924 dans un style syro-roman ancien. Les deux tours de la façade figurent la chapelle de Moïse (au nord) et celle d’Élie (au sud). Trois niveaux : la nef qui descend (la vie terrestre), l’autel surélevé et l’abside dorée. La mosaïque de l’abside montre Jésus avec Moïse et Élie, et dessous les trois disciples ; un vitrage d’albâtre laisse entrer la lumière.",
+    "en": "The Franciscan church was built in 1924 in an early Syrian-Romanesque style. The two façade towers stand for the chapel of Moses (north) and of Elijah (south). Three levels: the descending nave (earthly life), the raised altar and the golden apse. The apse mosaic shows Jesus with Moses and Elijah, the three disciples below; alabaster glass lets in natural light.",
+    "ru": "Францисканская церковь построена в 1924 г. в раннем сиро-романском стиле. Две башни фасада — капеллы Моисея (север) и Илии (юг). Три уровня: нисходящий неф (земная жизнь), приподнятый алтарь и золотая апсида. На мозаике апсиды Иисус с Моисеем и Илией, ниже три ученика; алебастровое стекло пропускает свет."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "basilica",
+    "h": 16,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/255793567",
+     "url": "https://www.openstreetmap.org/way/255793567"
+    }
+   ]
+  },
+  {
+   "id": "tb_early",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "שרידי הכנסיות הקדומות ושלוש הסוכות",
+    "fr": "Les églises anciennes et les trois tentes",
+    "en": "The earlier churches and the three tabernacles",
+    "ru": "Древние церкви и три кущи"
+   },
+   "text": {
+    "he": "במתחם שרידי כנסיות מהתקופה הביזנטית (המאות ה-5–6) ומהתקופה הצלבנית (המאה ה-12). בחזית הכנסייה של היום נחשפו שרידי שלוש קפלות קדומות — ״שלוש הסוכות״ שביקש פטרוס להקים לישוע, למשה ולאליהו.",
+    "fr": "L’enclos garde des restes d’églises byzantines (Ve–VIe s.) et croisées (XIIe s.). Devant l’église actuelle, on a dégagé trois chapelles anciennes — les « trois tentes » que Pierre voulait dresser pour Jésus, Moïse et Élie.",
+    "en": "The compound keeps remains of Byzantine (5th–6th c.) and Crusader (12th c.) churches. In front of today’s church, three early chapels were uncovered — the “three tabernacles” Peter wished to build for Jesus, Moses and Elijah.",
+    "ru": "В ограде остатки византийских (V–VI вв.) и крестоносных (XII в.) церквей. Перед нынешней церковью открыты три древние капеллы — «три кущи», которые Пётр хотел поставить Иисусу, Моисею и Илие."
+   },
+   "placementNote": {
+    "he": "הסימון לפני חזית הכנסייה; המיקום המדויק של כל שריד אינו במפה.",
+    "fr": "Repère devant la façade ; la position exacte de chaque vestige n’est pas cartographiée.",
+    "en": "Marker in front of the façade; each remain’s exact spot is not mapped.",
+    "ru": "Метка перед фасадом; точное место каждого остатка не нанесено на карту."
+   },
+   "shape": {
+    "type": "marker",
+    "at": {
+     "off": "o:basilica",
+     "dx": -40,
+     "dz": 0
+    },
+    "h": 6
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "tb_convent",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "המנזר הפרנציסקני",
+    "fr": "Le couvent franciscain",
+    "en": "The Franciscan convent",
+    "ru": "Францисканский монастырь"
+   },
+   "text": {
+    "he": "מבנה המנזר של הפרנציסקנים, שומרי הכנסייה, צמוד למתחם.",
+    "fr": "Le couvent des franciscains, gardiens de l’église, jouxte l’enclos.",
+    "en": "The convent of the Franciscans, keepers of the church, adjoins the compound.",
+    "ru": "Монастырь францисканцев, хранителей церкви, примыкает к ограде."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "convent",
+    "h": 8,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/255793568",
+     "url": "https://www.openstreetmap.org/way/255793568"
+    },
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "tb_orthodox",
+   "from": 5,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "המנזר היווני-אורתודוקסי",
+    "fr": "Le monastère grec-orthodoxe",
+    "en": "The Greek Orthodox monastery",
+    "ru": "Греческий православный монастырь"
+   },
+   "text": {
+    "he": "מנזר יווני-אורתודוקסי בצפון הפסגה. מופיע במפה (OpenStreetMap); אין עליו פרק בחוברת הקורס.",
+    "fr": "Monastère grec-orthodoxe au nord du sommet. Présent sur la carte (OpenStreetMap) ; la brochure du cours n’en parle pas.",
+    "en": "A Greek Orthodox monastery on the north of the summit. On the map (OpenStreetMap); the course booklet does not cover it.",
+    "ru": "Греческий православный монастырь на севере вершины. Есть на карте (OpenStreetMap); в брошюре курса не описан."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "orthodox",
+    "h": 9,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/255793985",
+     "url": "https://www.openstreetmap.org/way/255793985"
+    }
+   ]
+  },
+  {
+   "id": "tb_fortress",
+   "from": 4,
+   "to": 5,
+   "certainty": "attested",
+   "keep": true,
+   "pri": 2,
+   "name": {
+    "he": "המבצר האיובי ושער הרוחות",
+    "fr": "La forteresse ayyoubide et la porte des Vents",
+    "en": "The Ayyubid fortress and the Gate of the Winds",
+    "ru": "Айюбидская крепость и Ворота ветров"
+   },
+   "text": {
+    "he": "הצלבנים הקימו על ההר מנזר בנדיקטיני מבוצר. אחרי קרני חיטין (1187) נכבש ההר, וב-1212 בנה אל-מלכ אל-עאדל, שליט דמשק האיובי, מצודה אדירה על הפסגה כדי לאיים על הצלבנים בעכו. האיובים עצמם פירקו אותה ב-1218, מחשש שתיפול לידי הצלבנים במסע הצלב החמישי.",
+    "fr": "Les croisés élevèrent sur le mont un monastère bénédictin fortifié. Après Hattin (1187), le mont fut pris ; en 1212, al-Malik al-Adil, souverain ayyoubide de Damas, y bâtit une puissante citadelle pour menacer les croisés d’Acre. Les Ayyoubides la démantelèrent eux-mêmes en 1218, de peur qu’elle ne tombe lors de la cinquième croisade.",
+    "en": "The Crusaders built a fortified Benedictine monastery on the mountain. After Hattin (1187) it was taken, and in 1212 al-Malik al-Adil, the Ayyubid ruler of Damascus, built a mighty citadel on the summit to threaten the Crusaders in Acre. The Ayyubids themselves dismantled it in 1218, fearing it would fall in the Fifth Crusade.",
+    "ru": "Крестоносцы построили на горе укреплённый бенедиктинский монастырь. После Хаттина (1187) гору взяли, и в 1212 г. айюбидский правитель Дамаска аль-Малик аль-Адиль возвёл на вершине мощную цитадель, чтобы угрожать крестоносцам в Акко. Сами Айюбиды разобрали её в 1218 г., опасаясь её потери в Пятом крестовом походе."
+   },
+   "placementNote": {
+    "he": "הסימון בשער הנקרא במפה ״שער הרוחות״, בכניסה לפסגה; שיוכו למבצר אינו מופיע בחוברת.",
+    "fr": "Repère à la porte nommée « porte des Vents » sur la carte, à l’entrée du sommet ; la brochure ne la rattache pas à la forteresse.",
+    "en": "Marker at the gate named “Gate of the Winds” on the map, at the summit entrance; the booklet does not link it to the fortress.",
+    "ru": "Метка у ворот, названных на карте «Воротами ветров», у входа на вершину; брошюра не связывает их с крепостью."
+   },
+   "shape": {
+    "type": "footprint",
+    "osm": "gate",
+    "h": 7,
+    "solid": true
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    },
+    {
+     "kind": "online",
+     "label": "OpenStreetMap way/255793557",
+     "url": "https://www.openstreetmap.org/way/255793557"
+    }
+   ]
+  },
+  {
+   "id": "tb_transfiguration",
+   "from": 3,
+   "to": 5,
+   "certainty": "attested",
+   "pri": 3,
+   "name": {
+    "he": "ההשתנות",
+    "fr": "La Transfiguration",
+    "en": "The Transfiguration",
+    "ru": "Преображение"
+   },
+   "text": {
+    "he": "בשלוש הבשורות הסינופטיות (מתי י״ז, מרקוס ט׳, לוקס ט׳) עולה ישוע ל״הר גבוה״ עם פטרוס, יעקב ויוחנן. פניו מאירות כשמש, משה ואליהו מופיעים לצידו, ומן הענן נשמע: ״זה בני אהובי… אליו תשמעון״. בעיני הנוצרים זהו אישור אלוהותו, והמשך התורה והנביאים.",
+    "fr": "Dans les trois Évangiles synoptiques (Matthieu 17, Marc 9, Luc 9), Jésus monte sur « une haute montagne » avec Pierre, Jacques et Jean. Son visage brille comme le soleil, Moïse et Élie apparaissent, et une voix sort de la nuée : « Celui-ci est mon Fils bien-aimé… écoutez-le. » Pour les chrétiens, c’est la confirmation de sa divinité, accomplissement de la Loi et des Prophètes.",
+    "en": "In the three Synoptic Gospels (Matthew 17, Mark 9, Luke 9), Jesus goes up “a high mountain” with Peter, James and John. His face shines like the sun, Moses and Elijah appear, and a voice from the cloud says: “This is my beloved Son… listen to him.” For Christians it confirms his divinity as the fulfilment of the Law and the Prophets.",
+    "ru": "В трёх синоптических Евангелиях (Матфей 17, Марк 9, Лука 9) Иисус восходит на «гору высокую» с Петром, Иаковом и Иоанном. Лицо его сияет как солнце, являются Моисей и Илия, из облака звучит: «Сей есть Сын Мой возлюбленный… Его слушайте». Для христиан это подтверждение его божественности, завершение Закона и Пророков."
+   },
+   "debate": {
+    "he": "הברית החדשה אינה נוקבת בשם ההר. הזיהוי עם התבור מתגבש מהמאה ה-4 (אוריגנס, קירילוס מירושלים); חוקרים רבים מציעים את החרמון, הסמוך לקיסריה של פיליפוס.",
+    "fr": "Le Nouveau Testament ne nomme pas la montagne. L’identification au Thabor se fixe au IVe s. (Origène, Cyrille de Jérusalem) ; beaucoup de chercheurs proposent l’Hermon, proche de Césarée de Philippe.",
+    "en": "The New Testament does not name the mountain. The Tabor identification takes shape from the 4th c. (Origen, Cyril of Jerusalem); many scholars suggest Mount Hermon, near Caesarea Philippi.",
+    "ru": "Новый Завет не называет гору. Отождествление с Фавором складывается с IV в. (Ориген, Кирилл Иерусалимский); многие исследователи предлагают Хермон у Кесарии Филипповой."
+   },
+   "placementNote": {
+    "he": "אין סימון — רקע.",
+    "fr": "Pas de repère — contexte.",
+    "en": "No marker — background.",
+    "ru": "Без метки — контекст."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "tb_revolt",
+   "from": 2,
+   "to": 2,
+   "certainty": "attested",
+   "name": {
+    "he": "גביניוס ויוסף בן מתתיהו",
+    "fr": "Gabinius et Flavius Josèphe",
+    "en": "Gabinius and Josephus",
+    "ru": "Габиний и Иосиф Флавий"
+   },
+   "text": {
+    "he": "ב-55 לפנה״ס ניצח כאן גביניוס את אלכסנדר בן אריסטובולוס. במרד הגדול (67) ביצר יוסף בן מתתיהו את הפסגה בחומה של כ-4 ק״מ תוך 40 יום; המגינים נכנעו לפלקידוס כשאזלו המים.",
+    "fr": "En 55 av. J.-C., Gabinius y vainquit Alexandre fils d’Aristobule. Pendant la Grande Révolte (67), Josèphe entoura le sommet d’un mur d’environ 4 km en 40 jours ; les défenseurs se rendirent à Placidus faute d’eau.",
+    "en": "In 55 BCE Gabinius defeated Alexander son of Aristobulus here. In the Great Revolt (67), Josephus walled the summit with about 4 km of wall in 40 days; the defenders surrendered to Placidus when the water ran out.",
+    "ru": "В 55 г. до н. э. здесь Габиний победил Александра, сына Аристобула. В Великом восстании (67 г.) Иосиф Флавий за 40 дней обнёс вершину стеной около 4 км; защитники сдались Плакиду, когда кончилась вода."
+   },
+   "placementNote": {
+    "he": "תוואי החומה אינו במפה.",
+    "fr": "Le tracé du mur n’est pas cartographié.",
+    "en": "The wall’s line is not mapped.",
+    "ru": "Линия стены не нанесена на карту."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "tb_bible",
+   "from": 1,
+   "to": 1,
+   "certainty": "attested",
+   "name": {
+    "he": "גבול השבטים ודבורה וברק",
+    "fr": "Frontière des tribus, Débora et Barak",
+    "en": "Tribal border, Deborah and Barak",
+    "ru": "Граница колен, Девора и Варак"
+   },
+   "text": {
+    "he": "ההר הוא נקודת גבול בין זבולון, יששכר ונפתלי (יהושע י״ט). ברק בן אבינועם ריכז עליו את לוחמי זבולון ונפתלי לפני הקרב בסיסרא (שופטים ד׳). ״תבור וחרמון בשמך ירננו״ (תהילים פ״ט).",
+    "fr": "Le mont marque la frontière de Zabulon, Issachar et Nephtali (Josué 19). Barak fils d’Abinoam y rassembla les guerriers de Zabulon et Nephtali avant de combattre Sisera (Juges 4). « Le Thabor et l’Hermon chantent ton nom » (Psaume 89).",
+    "en": "The mountain marks the border of Zebulun, Issachar and Naphtali (Joshua 19). Barak son of Abinoam gathered the men of Zebulun and Naphtali on it before fighting Sisera (Judges 4). “Tabor and Hermon rejoice in your name” (Psalm 89).",
+    "ru": "Гора — граница Завулона, Иссахара и Неффалима (Иисус Навин 19). Варак, сын Авиноама, собрал на ней воинов Завулона и Неффалима перед битвой с Сисарой (Судьи 4). «Фавор и Ермон о имени Твоём радуются» (Псалом 89)."
+   },
+   "placementNote": {
+    "he": "אין סימון — רקע.",
+    "fr": "Pas de repère — contexte.",
+    "en": "No marker — background.",
+    "ru": "Без метки — контекст."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  },
+  {
+   "id": "tb_geo",
+   "from": 1,
+   "to": 5,
+   "certainty": "attested",
+   "name": {
+    "he": "ההר — הורסט מבודד",
+    "fr": "La montagne — un horst isolé",
+    "en": "The mountain — an isolated horst",
+    "ru": "Гора — изолированный горст"
+   },
+   "text": {
+    "he": "588 מ׳ מעל פני הים, כ-400 מ׳ מעל סביבתו, בגבול הגליל התחתון ועמק יזרעאל. גוש מורם (הורסט) בצורת כיפה, מגיר ודולומיט מתקופות הקנומן והטורון, תחום בהעתקים; בידודו הפך אותו לתצפית השולטת על דרכי המסחר.",
+    "fr": "588 m d’altitude, environ 400 m au-dessus des environs, entre la Basse Galilée et la vallée de Jezreël. Un bloc soulevé (horst) en dôme, de calcaire et dolomie du Cénomanien et du Turonien, bordé de failles ; son isolement en fit un observatoire dominant les routes.",
+    "en": "588 m above sea level, about 400 m above its surroundings, between Lower Galilee and the Jezreel Valley. A dome-shaped uplifted block (horst) of Cenomanian–Turonian limestone and dolomite bounded by faults; its isolation made it a lookout over the trade routes.",
+    "ru": "588 м над уровнем моря, около 400 м над окрестностями, между Нижней Галилеей и Изреельской долиной. Куполообразный поднятый блок (горст) из известняка и доломита сеномана и турона, ограниченный разломами; изоляция сделала его наблюдательным пунктом над торговыми путями."
+   },
+   "placementNote": {
+    "he": "אין סימון — רקע.",
+    "fr": "Pas de repère — contexte.",
+    "en": "No marker — background.",
+    "ru": "Без метки — контекст."
+   },
+   "sources": [
+    {
+     "kind": "drive",
+     "label": "חוברת הכנה לסיור נצרות בגליל (חומר הקורס)",
+     "url": "https://drive.google.com/file/d/1ysk7kVBFUQnzaL3gRyEN43XbPVMB6j6nvcH502XRGmY/view"
+    }
+   ]
+  }
+ ]
+}
