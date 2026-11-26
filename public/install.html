@@ -45,14 +45,14 @@ small.note{display:block;color:#8f9fca;font-size:12.5px;line-height:1.5;margin-t
 
   <!-- כבר מותקן -->
   <section class="card" id="sDone" hidden>
-    <p class="ok">✅ האפליקציה כבר מותקנת בטלפון הזה</p>
+    <p class="ok" id="okTxt">✅ האפליקציה כבר מותקנת בטלפון הזה</p>
     <a class="big" href="index.html">▶ לפתוח את האפליקציה</a>
   </section>
 
   <!-- אנדרואיד / כרום: התקנה בלחיצה -->
   <section class="card" id="sOne" hidden>
     <button type="button" class="big" id="bInstall">📲 להתקין עכשיו</button>
-    <small class="note">החלון של הטלפון יבקש אישור — לוחצים „התקנה”.</small>
+    <small class="note" id="oneNote">החלון של הטלפון יבקש אישור — לוחצים „התקנה”.</small>
   </section>
 
   <!-- דפדפן בתוך אפליקציה (וואטסאפ, אינסטגרם…) -->
@@ -77,7 +77,16 @@ small.note{display:block;color:#8f9fca;font-size:12.5px;line-height:1.5;margin-t
   </section>
 
   <!-- מחשב -->
+  <section class="card" id="sPc" hidden>
+    <h2>💻 התקנה במחשב</h2>
+    <ol id="pcChrome" hidden><li>בשורת הכתובת, בקצה, לוחצים על סמל ההתקנה <span class="k">⊕</span> (מסך קטן עם חץ)</li><li>לוחצים <b>„התקנה”</b></li><li>האפליקציה נפתחת בחלון משלה, ומופיעה בתפריט „התחל” ובשולחן העבודה</li></ol>
+    <ol id="pcEdge" hidden><li>בשורת הכתובת לוחצים על הסמל <span class="k">⊕</span> „אפליקציה זמינה”</li><li>או: תפריט <span class="k">⋯</span> ← <b>„אפליקציות”</b> ← <b>„התקנת אתר זה כאפליקציה”</b></li><li>האפליקציה נפתחת בחלון משלה, ומופיעה בתפריט „התחל”</li></ol>
+    <ol id="pcSafari" hidden><li>ב-Safari (מק): תפריט <b>„קובץ”</b> ← <b>„הוספה ל-Dock”</b></li><li>האפליקציה מופיעה ב-Dock ונפתחת בחלון משלה</li></ol>
+    <p id="pcFirefox" hidden>Firefox לא יודע להתקין אפליקציות כאלה. פותחים את הקישור ב-<b>Chrome</b> או ב-<b>Edge</b> ומתקינים משם.</p>
+    <small class="note" id="pcMore">לא רואים את הסמל? בתפריט הדפדפן מחפשים „התקנה” או „Install”.</small>
+  </section>
   <section class="card" id="sDesk" hidden>
+    <h2>📱 גם בטלפון</h2>
     <div class="qr"><canvas id="qr" width="132" height="132" aria-label="קוד QR להתקנה"></canvas>
       <p><b>סורקים במצלמת הטלפון</b> — הדף הזה ייפתח בטלפון, ומשם מתקינים בלחיצה.</p></div>
   </section>
@@ -107,17 +116,24 @@ small.note{display:block;color:#8f9fca;font-size:12.5px;line-height:1.5;margin-t
   var chromeIntent = 'intent://' + url.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end';
   $('bChrome').href = chromeIntent; $('bChrome2').href = chromeIntent;
 
+  if (!ios && !android && !inApp) $('okTxt').textContent = '✅ האפליקציה כבר מותקנת במחשב הזה';
   if (standalone) { show('sDone'); $('bOpen').hidden = true; }
   else if (inApp) { show('sInApp'); if (android) $('bChrome').hidden = false; }
   else if (ios) show('sIos');
   else if (android) show('sAndroid');           // remplacé par le bouton dès que le navigateur propose l'installation
-  else show('sDesk');
+  else { // ordinateur : installation sur le PC + QR pour le téléphone
+    var edge = /Edg\//.test(ua), firefox = /Firefox\//.test(ua), safari = /Safari\//.test(ua) && !/Chrome|Chromium|Edg\//.test(ua);
+    $(edge ? 'pcEdge' : firefox ? 'pcFirefox' : safari ? 'pcSafari' : 'pcChrome').hidden = false;
+    if (firefox || safari) $('pcMore').hidden = true;
+    $('oneNote').textContent = 'המחשב יבקש אישור — לוחצים „התקנה”. האפליקציה תיפתח בחלון משלה ותופיע בתפריט „התחל”.';
+    show('sPc'); show('sDesk');
+  }
 
   addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault(); deferred = e;
     if (standalone || inApp) return;
     show('sOne'); $('sAndroid').hidden = true;
-    if (!android && !ios) { $('sDesk').hidden = false; }
+    if (!android && !ios) { $('sDesk').hidden = false; $('sPc').hidden = true; } // le bouton suffit sur l'ordinateur
   });
   $('bInstall').onclick = function () {
     if (!deferred) return;
@@ -132,7 +148,7 @@ small.note{display:block;color:#8f9fca;font-size:12.5px;line-height:1.5;margin-t
     var n = q.getModuleCount(), cv = $('qr'), c = cv.getContext('2d'), cell = Math.floor(cv.width / (n + 2)), off = Math.floor((cv.width - cell * n) / 2);
     c.fillStyle = '#fff'; c.fillRect(0, 0, cv.width, cv.height); c.fillStyle = '#081027';
     for (var r = 0; r < n; r++) for (var k = 0; k < n; k++) if (q.isDark(r, k)) c.fillRect(off + k * cell, off + r * cell, cell, cell);
-  } catch (e) { $('sDesk').hidden = true; }
+  } catch (e) { $('qr').hidden = true; }
 
   // partage
   var msg = '📲 מורה דרך NEXT — האפליקציה להכנה למבחן מורי הדרך (סיורים, מפה, תאריכים, תלת-ממד). מתקינים בלחיצה:';

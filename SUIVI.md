@@ -39,6 +39,10 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 - Les églises absentes de la brochure (Saint-Joseph, Mensa Christi, salésienne, anglicane, maronite, melkite, Saint-Barthélemy…) sont posées avec **nom et confession seulement** (`osmOnly`, source OpenStreetMap) ; `tests/sites3d.test.mjs` ne les compte pas dans la règle « 70 % de fiches sourcées par le cours ». Deux dates contradictoires (brochure / OSM) sont affichées en « autre avis ».
 - Intégration (`integrate.py`) : carte (panneaux 3D), accueil, liens « autres sites » — 23 sites.
 - ✅ `sites3d.test.mjs` 48/48 ; `e2e:sites3d` sur les 3 sites (monuments placés, tailles, étiquettes). 🟡 pas vu sur un vrai téléphone. ⏳ Suite : les sites du lac (כפר נחום, טבחה, הר האושר, כורסי, מגדלא) dès que les documents du cours sont trouvés ; modèles plus détaillés (tours de la basilique du Thabor, coupole de l'Annonciation).
+### 26 novembre 2026 — Installer l'app sur ordinateur (branche `claude/app-pc`)
+- Demande de Lionel : pouvoir installer Moreh Derech comme application sur PC. Le site était déjà une application web installable (manifeste + service worker), mais `install.html` ne proposait sur ordinateur qu'un QR vers le téléphone.
+- `install.html` : nouvelle carte « 💻 התקנה במחשב » avec les étapes selon le navigateur (Chrome, Edge, Safari sur Mac ; Firefox : ouvrir dans Chrome/Edge). Quand Chrome/Edge propose l'installation, le bouton « להתקין עכשיו » la lance directement. Le QR reste (« 📱 גם בטלפון »). Message « déjà installée במחשב הזה » sur ordinateur. `sw.js` : cache `v111`.
+- `tests/install-browser.mjs` : cas Chrome et Edge sur ordinateur ajoutés. ✅ testé en navigateur (tout OK). 🟡 pas essayé sur un vrai PC.
 
 ### 25 novembre 2026 — Carte : lisibilité sur ordinateur (branche `claude/map-lisible`)
 - Retour de Lionel (photo de l'écran d'ordinateur) : on lit mal les textes de la carte.

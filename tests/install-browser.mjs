@@ -10,23 +10,32 @@ const br = await chromium.launch({ executablePath: process.env.CHROME || '/opt/p
 const UAS = { android: 'Mozilla/5.0 (Linux; Android 14; SM-S921B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36',
   iphone: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1',
   whatsapp: 'Mozilla/5.0 (Linux; Android 14; SM-S921B; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/130.0 Mobile Safari/537.36 WhatsApp/2.24',
-  desktop: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36' };
+  desktop: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
+  edge: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 Edg/130.0' };
 const errs = []; let bad = 0;
 for (const [k, ua] of Object.entries(UAS)) {
-  const mob = k !== 'desktop';
+  const mob = k !== 'desktop' && k !== 'edge';
   const ctx = await br.newContext({ userAgent: ua, viewport: mob ? { width: 360, height: 780 } : { width: 1100, height: 760 }, deviceScaleFactor: 2, isMobile: mob, hasTouch: mob, locale: 'he-IL' });
   const pg = await ctx.newPage(); pg.on('pageerror', e => errs.push(k + ' ' + e.message));
   await pg.goto(base + 'install.html'); await pg.waitForTimeout(800);
   const vis = await pg.evaluate(() => [...document.querySelectorAll('section[id]')].filter(s => !s.hidden).map(s => s.id));
-  const exp = { android: 'sAndroid', iphone: 'sIos', whatsapp: 'sInApp', desktop: 'sDesk' }[k];
-  const ok = vis.includes(exp); if (!ok) bad++; console.log(ok ? '✅' : '❌', k, vis.join(','));
+  const exp = { android: 'sAndroid', iphone: 'sIos', whatsapp: 'sInApp', desktop: 'sDesk', edge: 'sPc' }[k];
+  const ok = vis.includes(exp) && (mob || vis.includes('sPc')); if (!ok) bad++; console.log(ok ? '✅' : '❌', k, vis.join(','));
   if (k === 'android') { // simulation de la fenêtre d'installation de Chrome
     await pg.evaluate(() => { const e = new Event('beforeinstallprompt'); e.prompt = () => { window.__prompted = 1; }; e.userChoice = Promise.resolve({ outcome: 'accepted' }); dispatchEvent(e); });
     await pg.waitForTimeout(200); const one = await pg.isVisible('#bInstall'); console.log(one ? '✅' : '❌', 'android : bouton « להתקין עכשיו »'); if (!one) bad++;
     await pg.screenshot({ path: `${OUT}/install-android.png`, fullPage: true });
     await pg.click('#bInstall'); await pg.waitForTimeout(300); const p = await pg.evaluate(() => window.__prompted === 1 && !document.getElementById('sDone').hidden);
     console.log(p ? '✅' : '❌', 'android : la fenêtre d’installation s’ouvre, puis « déjà installée »'); if (!p) bad++;
-  } else await pg.screenshot({ path: `${OUT}/install-${k}.png`, fullPage: true });
+  } else if (k === 'desktop') { // ordinateur : consignes Chrome, puis bouton direct quand Chrome propose l'installation
+    const st = await pg.isVisible('#pcChrome'); console.log(st ? '✅' : '❌', 'ordinateur : consignes Chrome'); if (!st) bad++;
+    await pg.screenshot({ path: `${OUT}/install-${k}.png`, fullPage: true });
+    await pg.evaluate(() => { const e = new Event('beforeinstallprompt'); e.prompt = () => { window.__prompted = 1; }; e.userChoice = Promise.resolve({ outcome: 'accepted' }); dispatchEvent(e); });
+    await pg.waitForTimeout(200); const one = await pg.isVisible('#bInstall') && !(await pg.isVisible('#sPc'));
+    console.log(one ? '✅' : '❌', 'ordinateur : bouton « להתקין עכשיו »'); if (!one) bad++;
+    await pg.click('#bInstall'); await pg.waitForTimeout(300); const ok2 = await pg.evaluate(() => window.__prompted === 1 && /במחשב/.test(document.getElementById('okTxt').textContent));
+    console.log(ok2 ? '✅' : '❌', 'ordinateur : installée « במחשב הזה »'); if (!ok2) bad++;
+  } else { if (k === 'edge') { const e2 = await pg.isVisible('#pcEdge'); console.log(e2 ? '✅' : '❌', 'Edge : consignes Edge'); if (!e2) bad++; } await pg.screenshot({ path: `${OUT}/install-${k}.png`, fullPage: true }); }
   const qr = k === 'desktop' ? await pg.evaluate(() => { const c = document.getElementById('qr').getContext('2d').getImageData(20, 20, 90, 90).data; let d = 0; for (let i = 0; i < c.length; i += 4) if (c[i] < 50) d++; return d; }) : 1;
   if (!qr) { bad++; console.log('❌ QR vide'); } else if (k === 'desktop') console.log('✅ QR dessiné');
   const hs = await pg.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1); if (!hs) { bad++; console.log('❌', k, 'défilement horizontal'); }
