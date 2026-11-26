@@ -17,7 +17,7 @@ const DEF_H = { house: 6, detached: 6, residential: 9, apartments: 15, church: 1
 async function overpass(q) {
   for (let round = 0; round < 3; round++) for (const ep of OVERPASS) {
     try {
-      const r = await fetch(ep, { method: 'POST', body: 'data=' + encodeURIComponent(q), headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' } });
+      const r = await fetch(ep, { signal: AbortSignal.timeout(150000), method: 'POST', body: 'data=' + encodeURIComponent(q), headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' } });
       if (r.ok) return await r.json();
       console.log('  Overpass', ep, 'HTTP', r.status);
     } catch (e) { console.log('  Overpass', ep, e.message); }
