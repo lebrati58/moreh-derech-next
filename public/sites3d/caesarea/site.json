@@ -1908,5 +1908,12 @@
     }
    ]
   }
- ]
+ ],
+ "vegetation": {
+  "n": 300,
+  "kinds": [
+   "olive"
+  ],
+  "clump": true
+ }
 }

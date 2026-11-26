@@ -32,6 +32,20 @@ Légende : ✅ fait et testé · 🟡 fait, pas encore vérifié en conditions r
 
 ## 2. Journal des sessions
 
+### 26 novembre 2026 — Sites 3D : bâtiments d'aujourd'hui et végétation sur tous les sites (même branche)
+- Demande de Lionel : « fais ça partout ».
+- `tools/build-site3d-context.mjs` (robot `.github/workflows/site3d-context.yml`, une tâche par site) → `public/sites3d/<site>/context.json` : tous les bâtiments OpenStreetMap du cadre (hors ruines et monuments), réduits à leur rectangle orienté ; hauteur = tag `height`, sinon étages × 3,2 m, sinon **estimée** selon le type (champ dédié). 23 sites (Nazareth 4 473 bâtiments, Beit Shean 884…, Nimrod 0). Atlit, Shilo, Soussia : pas de `site.json`, ignorés.
+- `app.js` : ces bâtiments sont affichés **seulement à la période « aujourd'hui »**, en boîtes instanciées gris-beige (pour que les monuments restent lisibles), sauf ceux déjà modélisés comme monuments.
+- Végétation d'ambiance sur 19 sites selon la région (`integrate.py`, VEG) ; aucune dans les sites du désert (Massada, Qumrân, Ein Gedi, Arad, Beer-Sheva, Hérodion) ; jamais sur les bâtiments ni à moins de 60 m d'un repère du site.
+- `app.js?v=3`. ✅ `sites3d.test.mjs` 48/48, `e2e:sites3d` sur les 23 sites. 🟡 pas vu sur un vrai téléphone (à surveiller : Nazareth, 4 473 boîtes).
+
+### 26 novembre 2026 — Sites 3D : rendu des églises et de la Galilée (branche `claude/3d-rendu-eglises`)
+- Retour de Lionel : « le rendu 3D est pourri » (les églises étaient de simples blocs).
+- `sites3d/models.js` : nouveau modèle `church` — nef, bas-côtés en appentis, toit de tuiles à deux pans, abside, fenêtres, rosace, portail, clochers à flèche, coupole ou lanterne conique, croix. `app.js` : type `church` posé sur l'emprise OSM réelle, orienté sur l'axe principal du bâtiment (abside vers l'est par défaut). Proportions schématiques, signalées dans chaque fiche (`placementNote`).
+- Végétation d'ambiance (`DATA.vegetation` : pins, oliviers, clairières, graine fixe, jamais sur les bâtiments) et couleurs de relief de la Galilée pour הר תבור, נצרת, כפר כנא.
+- Thabor : deux clochers (décrits dans la brochure) ; Annonciation : lanterne conique ; les autres églises : nef + abside sans détail inventé.
+- `app.js?v=2`, `models.js?v=2`, `sw.js` cache `v112`. ✅ `sites3d.test.mjs` 48/48, `e2e:sites3d` (Thabor, Kafr Kanna, Nazareth + Tsippori, Massada, Beit Shean), captures ordinateur. 🟡 pas vu sur un vrai téléphone.
+
 ### 26 novembre 2026 — Sites 3D « נצרות בגליל » : הר תבור, כפר כנא, נצרת (branche `claude/3d-notsrut-galil`)
 - Demande de Lionel : les églises et tout ce qui concerne la נצרות dans le nord, en 3D. Choix de Lionel : **une scène par site**. Source : « חוברת הכנה לסיור נצרות בגליל » (Drive du cours).
 - `tools/site3d-sites.json` : cadres `tabor`, `kafrkanna`, `nazareth` ; `geo.json` construit par le robot `site3d.yml` (Wikipédia, OpenStreetMap, SRTM 30 m), rien saisi à la main.

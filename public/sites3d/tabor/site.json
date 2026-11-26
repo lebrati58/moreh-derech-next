@@ -21,9 +21,9 @@
   "elev": 38
  },
  "terrain": {
-  "lo": "#a39478",
-  "mid": "#cdbf9f",
-  "hi": "#e8dfca"
+  "lo": "#6f7a4a",
+  "mid": "#98995f",
+  "hi": "#bdb488"
  },
  "otherSites": {
   "masada": {
@@ -116,18 +116,6 @@
    "en": "Khirbet Qeiyafa",
    "ru": "Хирбет-Кейафа"
   },
-  "susya": {
-   "he": "סוסיא",
-   "fr": "Soussia",
-   "en": "Susya",
-   "ru": "Сусия"
-  },
-  "shiloh": {
-   "he": "תל שילה",
-   "fr": "Tel Shiloh",
-   "en": "Tel Shiloh",
-   "ru": "Тель Шило"
-  },
   "beitshearim": {
    "he": "בית שערים",
    "fr": "Beit Shearim",
@@ -152,17 +140,17 @@
    "en": "Beit Alpha",
    "ru": "Бейт-Альфа"
   },
-  "atlit": {
-   "he": "עתלית",
-   "fr": "Atlit",
-   "en": "Atlit",
-   "ru": "Атлит"
-  },
   "baram": {
    "he": "ברעם",
    "fr": "Baram",
    "en": "Bar'am",
    "ru": "Барам"
+  },
+  "nazareth": {
+   "he": "נצרת",
+   "fr": "Nazareth",
+   "en": "Nazareth",
+   "ru": "Назарет"
   },
   "tabor": {
    "he": "הר תבור",
@@ -175,12 +163,6 @@
    "fr": "Kafr Kanna",
    "en": "Kafr Kanna",
    "ru": "Кафр-Кана"
-  },
-  "nazareth": {
-   "he": "נצרת",
-   "fr": "Nazareth",
-   "en": "Nazareth",
-   "ru": "Назарет"
   }
  },
  "certainty": {
@@ -335,10 +317,17 @@
     "ru": "Францисканская церковь построена в 1924 г. в раннем сиро-романском стиле. Две башни фасада — капеллы Моисея (север) и Илии (юг). Три уровня: нисходящий неф (земная жизнь), приподнятый алтарь и золотая апсида. На мозаике апсиды Иисус с Моисеем и Илией, ниже три ученика; алебастровое стекло пропускает свет."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "basilica",
-    "h": 16,
-    "solid": true
+    "h": 13,
+    "towers": 2,
+    "towerH": 21
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -449,10 +438,15 @@
     "ru": "Греческий православный монастырь на севере вершины. Есть на карте (OpenStreetMap); в брошюре курса не описан."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "orthodox",
-    "h": 9,
-    "solid": true
+    "h": 9
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -637,5 +631,13 @@
     }
    ]
   }
- ]
+ ],
+ "vegetation": {
+  "n": 2600,
+  "kinds": [
+   "olive",
+   "pine"
+  ],
+  "clump": true
+ }
 }

@@ -1,0 +1,37 @@
+name: Sites 3D — bâtiments d'aujourd'hui (OpenStreetMap)
+# Construit public/sites3d/<site>/context.json (décor de la période « היום ») : une tâche par site, en parallèle.
+# Se lance quand l'outil change (sur n'importe quelle branche), ou à la main.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/build-site3d-context.mjs
+permissions:
+  contents: write
+concurrency:
+  group: site3d-context-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        site: ["masada", "caesarea", "beitshean", "herodium", "megiddo", "tzippori", "gamla", "arad", "beersheba", "qumran", "banias", "nimrod", "beitguvrin", "lachish", "qeiyafa", "susya", "shiloh", "beitshearim", "apollonia", "eingedi", "beitalpha", "atlit", "baram", "tabor", "kafrkanna", "nazareth"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/build-site3d-context.mjs ${{ matrix.site }}
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          f=public/sites3d/${{ matrix.site }}/context.json
+          [ -f "$f" ] || exit 0
+          git add "$f"; git diff --cached --quiet && exit 0
+          git commit -q -m "data(sites3d): bâtiments d'aujourd'hui — ${{ matrix.site }} (OpenStreetMap)"
+          for i in 1 2 3 4 5 6; do git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0; sleep $((i*7)); done; exit 1

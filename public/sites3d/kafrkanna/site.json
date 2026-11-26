@@ -16,14 +16,14 @@
    "dx": 0,
    "dz": 0
   },
-  "dist": 520,
+  "dist": 380,
   "from": 200,
-  "elev": 32
+  "elev": 34
  },
  "terrain": {
-  "lo": "#a39478",
-  "mid": "#cdbf9f",
-  "hi": "#e8dfca"
+  "lo": "#7d7d55",
+  "mid": "#a3a072",
+  "hi": "#c8bf98"
  },
  "otherSites": {
   "masada": {
@@ -116,18 +116,6 @@
    "en": "Khirbet Qeiyafa",
    "ru": "Хирбет-Кейафа"
   },
-  "susya": {
-   "he": "סוסיא",
-   "fr": "Soussia",
-   "en": "Susya",
-   "ru": "Сусия"
-  },
-  "shiloh": {
-   "he": "תל שילה",
-   "fr": "Tel Shiloh",
-   "en": "Tel Shiloh",
-   "ru": "Тель Шило"
-  },
   "beitshearim": {
    "he": "בית שערים",
    "fr": "Beit Shearim",
@@ -152,17 +140,17 @@
    "en": "Beit Alpha",
    "ru": "Бейт-Альфа"
   },
-  "atlit": {
-   "he": "עתלית",
-   "fr": "Atlit",
-   "en": "Atlit",
-   "ru": "Атлит"
-  },
   "baram": {
    "he": "ברעם",
    "fr": "Baram",
    "en": "Bar'am",
    "ru": "Барам"
+  },
+  "nazareth": {
+   "he": "נצרת",
+   "fr": "Nazareth",
+   "en": "Nazareth",
+   "ru": "Назарет"
   },
   "tabor": {
    "he": "הר תבור",
@@ -175,12 +163,6 @@
    "fr": "Kafr Kanna",
    "en": "Kafr Kanna",
    "ru": "Кафр-Кана"
-  },
-  "nazareth": {
-   "he": "נצרת",
-   "fr": "Nazareth",
-   "en": "Nazareth",
-   "ru": "Назарет"
   }
  },
  "certainty": {
@@ -309,10 +291,15 @@
     "ru": "Год постройки: 1879 по брошюре, 1881 по карте (OpenStreetMap)."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "wedding",
-    "h": 14,
-    "solid": true
+    "h": 12
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -383,10 +370,15 @@
     "ru": "Рядом с францисканской церковью; древние каменные сосуды служат в ней купелями. Экскурсия курса туда не заходит."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "orthodox",
-    "h": 11,
-    "solid": true
+    "h": 10
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -457,10 +449,15 @@
     "ru": "Церковь апостола Варфоломея — католическая. Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "bartholomew",
-    "h": 7,
-    "solid": true
+    "h": 7
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -489,10 +486,15 @@
     "ru": "Греко-католическая церковь — греко-католическая (мелькитская). Есть на карте (OpenStreetMap); в брошюре курса не описана."
    },
    "shape": {
-    "type": "footprint",
+    "type": "church",
     "osm": "melkite",
-    "h": 9,
-    "solid": true
+    "h": 9
+   },
+   "placementNote": {
+    "he": "התוכנית והמיקום: OpenStreetMap. הגובה, הגג והפרטים — שחזור סכמטי.",
+    "fr": "Plan et position : OpenStreetMap. Hauteur, toit et détails : volume schématique.",
+    "en": "Plan and position: OpenStreetMap. Height, roof and details: schematic volume.",
+    "ru": "План и место: OpenStreetMap. Высота, крыша и детали — схематично."
    },
    "sources": [
     {
@@ -503,5 +505,12 @@
    ],
    "osmOnly": true
   }
- ]
+ ],
+ "vegetation": {
+  "n": 700,
+  "kinds": [
+   "olive"
+  ],
+  "clump": true
+ }
 }

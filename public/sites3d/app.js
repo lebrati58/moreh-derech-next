@@ -12,7 +12,7 @@ import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
 import * as JM from '../jerusalem3d/models.js';
-import * as SM from './models.js';
+import * as SM from './models.js?v=2';
 import { stone, flat, groundMaterial } from '../jerusalem3d/materials.js';
 
 const $ = id => document.getElementById(id);
@@ -218,10 +218,25 @@ function buildTerrain() {
   const n = g.attributes.normal; for (let i = 0; i < n.count; i++) { const slope = 1 - n.getY(i), k = 1 + slope * 0.5; col[i * 3] = Math.min(1, col[i * 3] * k); col[i * 3 + 1] = Math.min(1, col[i * 3 + 1] * k * 0.98); col[i * 3 + 2] = Math.min(1, col[i * 3 + 2] * k * 0.95); }
   g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
   terrainMesh = new THREE.Mesh(g, groundMaterial()); terrainMesh.receiveShadow = true; scene.add(terrainMesh);
+  if (DATA.vegetation) scene.add(buildTrees(DATA.vegetation, d, Sth, E));
   if (seaY != null) { // la mer (Césarée) : plan d'eau au niveau 0
     const sea = new THREE.Mesh(new THREE.PlaneGeometry(40000, 40000).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#2f7fb6', roughness: 0.18, metalness: 0.25, transparent: true, opacity: 0.93 }));
     sea.position.y = seaY; sea.receiveShadow = true; scene.add(sea);
   }
+}
+// végétation d'ambiance (DATA.vegetation = { n, kinds }) : semée au hasard (graine fixe) dans la zone mesurée, loin des bâtiments
+function buildTrees(v, d, Sth, E) {
+  let seed = v.seed || 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+  const [x0, z0] = toXZ(d.north, d.west), [x1, z1] = toXZ(Sth, E), keep = (GEO.shapes || []).filter(s => s.tags && (s.tags.building || s.tags.amenity || s.tags.historic) && s.pts.length > 2).map(s => { const P = xzPts(s), c = centroid(P); return [c[0], c[1], Math.max(...P.map(p => Math.hypot(p[0] - c[0], p[1] - c[1]))) + 10]; });
+  Object.values(GEO.anchors || {}).forEach(an => { const [ax, az] = toXZ(an.lat, an.lon); keep.push([ax, az, v.clearAnchor ?? 60]); }); // pas d'arbres sur les repères du site
+  const kinds = v.kinds || ['pine'], out = kinds.map(() => []), n = v.n || 1500;
+  for (let i = 0; i < n * 3 && out.reduce((a, b) => a + b.length, 0) < n; i++) {
+    const x = x0 + rnd() * (x1 - x0), z = z0 + rnd() * (z1 - z0), kk = Math.floor(rnd() * kinds.length), sc = 0.7 + rnd() * 0.6;
+    if (keep.some(([cx, cz, r]) => Math.hypot(x - cx, z - cz) < r)) continue;
+    if (v.clump && Math.sin(x * 0.006 + seed % 7) * Math.sin(z * 0.007) < -0.25) continue; // clairières
+    out[kk].push([x, ground(x, z), z, sc]);
+  }
+  const g = new THREE.Group(); kinds.forEach((k, i) => g.add(SM.trees(out[i], k))); return g;
 }
 function homeView(anim) {
   const h = DATA.home || {}, c = wpt(h.at) || [0, 0], dist = h.dist || 900, el = (h.elev || 35) * Math.PI / 180, [bx, bz] = bearingVec(h.from ?? 200);
@@ -294,6 +309,16 @@ function buildModel(m, sh) {
         b.position.set((x1 + x2) / 2, (y1 + y2) / 2 + 0.6, (z1 + z2) / 2); b.rotation.order = 'YZX'; b.rotation.y = -Math.atan2(z2 - z1, x2 - x1); b.rotation.z = Math.atan2(y2 - y1, len); g.add(b); } });
       const P = L[0], p = P[Math.floor(P.length / 2)]; return [g, [p[0], ground(...p) + 8, p[1]]]; }
     case 'street': { const L = lines(sh); if (!L.length) return null; const g = new THREE.Group(); L.forEach(P => g.add(JM.cardo(P, ground))); const P = L[0], p = P[Math.floor(P.length / 2)]; return [g, [p[0], ground(...p) + 12, p[1]]]; }
+    case 'church': { // église schématique sur l'emprise réelle (OSM) : axe = axe principal du bâtiment, abside vers le cap « apse » (est par défaut)
+      const P = biggest(sh.osm); if (!P) return null; const F = fit(P), am = (F.a[0] + F.a[1]) / 2, bm = (F.b[0] + F.b[1]) / 2;
+      let ax = F.u, len = F.a[1] - F.a[0], wid = F.b[1] - F.b[0]; if (wid > len * 1.15) { ax = F.p; [len, wid] = [wid, len]; }
+      const ad = bearingVec(sh.apse ?? 90), sg = ax[0] * ad[0] + ax[1] * ad[1] >= 0 ? 1 : -1, dx = ax[0] * sg, dz = ax[1] * sg;
+      const cx = F.c[0] + F.u[0] * am + F.p[0] * bm, cz = F.c[1] + F.u[1] * am + F.p[1] * bm, H = sh.h || Math.max(7, Math.min(18, wid * 0.7)), k = sh.scale || 0.96;
+      const g = SM.church({ L: len * k, W: wid * k, H, kind: K, tint: sh.tint || '#f1e7d2', roof: sh.roof || '#a85a3a', towers: sh.towers || 0, towerH: sh.towerH, dome: sh.dome || null, apse: sh.apseOn !== false, aisles: wid > 12 && sh.aisles !== false });
+      const gy = Math.min(...P.map(p => ground(...p))); g.position.set(cx, gy - 0.3, cz); g.rotation.y = Math.atan2(-dz, dx);
+      const top = H + (sh.towers ? (sh.towerH || H * 1.55) - H : 0) + (sh.dome ? (sh.dome.r || 6) * 2.2 : 4);
+      return [g, [cx, gy + top + 6, cz]];
+    }
     case 'footprint': { // emprise réelle (OSM), murs extrudés
       const S = osmShapes(sh.osm).map(xzPts).filter(P => P.length > 2); if (!S.length) return null; const g = new THREE.Group();
       S.forEach(P => { const c = centroid(P), gy = Math.min(...P.map(p => ground(...p)));
@@ -353,8 +378,33 @@ function setupPoly() {
   if (wanted()) loadPalette().then(() => POLY.set(true));
 }
 function rebuildScene() { rebuildScene0(); setupPoly(); applyPoly(); }
+// bâtiments d'aujourd'hui (context.json, OpenStreetMap) : décor de la dernière période (« היום »), boîtes instanciées
+let CTX = null, ctxMesh = null;
+function isToday() { const p = (DATA.periods || []).find(x => x.n === period); return !!p && (p.era === 'today' || p.n === DATA.periods.at(-1).n && /היום|today/i.test((p.name && (p.name.he + p.name.en)) || '')); }
+function pip(x, z, P) { let c = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { const [xi, zi] = P[i], [xj, zj] = P[j]; if ((zi > z) !== (zj > z) && x < (xj - xi) * (z - zi) / (zj - zi) + xi) c = !c; } return c; }
+function buildContext() {
+  if (!CTX || !CTX.b || !CTX.b.length) return null;
+  const used = new Set(), polys = [];
+  Object.values(DATA.osm || {}).forEach(sel => [].concat(sel.osm || []).forEach(o => { used.add(o); const sh = (GEO.shapes || []).find(x => x.osm === o); if (sh && sh.pts.length > 2) polys.push(xzPts(sh)); }));
+  const B = CTX.b.filter(r => !used.has('way/' + r[7])).map(r => { const [x, z] = toXZ(r[0], r[1]); return [x, z, ...r.slice(2)]; }).filter(([x, z]) => !polys.some(P => pip(x, z, P)));
+  if (!B.length) return null;
+  const geo = new THREE.BoxGeometry(1, 1, 1); geo.translate(0, 0.5, 0);
+  const mat = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.9 }), m = new THREE.InstancedMesh(geo, mat, B.length);
+  const M = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), sc = new THREE.Vector3(), ps = new THREE.Vector3(), col = new THREE.Color(), pal = ['#c9c3b6', '#bdb6a8', '#d1cbbf', '#b8b2a6', '#c4bdb0', '#aea89c'];
+  B.forEach(([x, z, L, W, cap, h], i) => {
+    const hw = Math.max(L, W) / 2, gy = Math.min(ground(x, z), ground(x + hw, z), ground(x - hw, z), ground(x, z + hw), ground(x, z - hw));
+    e.set(0, -(cap - 90) * Math.PI / 180, 0); q.setFromEuler(e); sc.set(L, h + (ground(x, z) - gy), W); ps.set(x, gy - 0.4, z); M.compose(ps, q, sc); m.setMatrixAt(i, M);
+    m.setColorAt(i, col.set(pal[(i * 7) % pal.length]));
+  });
+  m.castShadow = true; m.receiveShadow = true; m.userData.decor = true; return m;
+}
+function syncContext() {
+  if (!scene) return; const show = !!CTX && isToday();
+  if (show && !ctxMesh) { ctxMesh = buildContext(); if (ctxMesh) scene.add(ctxMesh); }
+  if (ctxMesh) ctxMesh.visible = show;
+}
 function rebuildScene0() {
-  if (!world) return; clearWorld();
+  if (!world) return; clearWorld(); syncContext();
   for (const m of DATA.monuments) {
     if (!inPeriod(m) || !m.shape) continue; const now = isNow(m) || (m.keep && m.from <= period);
     let r = null; try { r = buildModel(m, m.shape); } catch (e) { console.warn('modèle', m.id, e); }
@@ -397,6 +447,7 @@ window.MDSite3D = {
   try {
     const [d, g] = await Promise.all([fetch(`sites3d/${SITE}/site.json`).then(r => { if (!r.ok) throw new Error('site'); return r.json(); }), fetch(`sites3d/${SITE}/geo.json`).then(r => r.ok ? r.json() : null).catch(() => null)]);
     DATA = d; GEO = g;
+    fetch(`sites3d/${SITE}/context.json`).then(r => r.ok ? r.json() : null).then(c => { CTX = c; syncContext(); }).catch(() => {});
   } catch (e) { $('msg').textContent = t('loadErr'); return; }
   period = Number(QS.get('period') || store.get('mdl_s3d_period_' + SITE, DATA.defaultPeriod || DATA.periods[0].n)); if (!DATA.periods.some(p => p.n === period)) period = DATA.defaultPeriod || DATA.periods[0].n;
   if (!GEO || !GEO.dem) { applyUI(); $('msg').textContent = t('geoMissing'); return; }

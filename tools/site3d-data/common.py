@@ -17,10 +17,11 @@ SITES = {
   "apollonia": L("אפולוניה", "Apollonia", "Apollonia", "Аполлония"), "eingedi": L("עין גדי", "Ein Gedi", "Ein Gedi", "Эйн-Геди"), "beitalpha": L("בית אלפא", "Beit Alpha", "Beit Alpha", "Бейт-Альфа"),
   "atlit": L("עתלית", "Atlit", "Atlit", "Атлит"), "baram": L("ברעם", "Baram", "Bar'am", "Барам"),
   "tabor": L("הר תבור", "Mont Thabor", "Mount Tabor", "Гора Фавор"), "kafrkanna": L("כפר כנא", "Kafr Kanna", "Kafr Kanna", "Кафр-Кана"), "nazareth": L("נצרת", "Nazareth", "Nazareth", "Назарет")}
-def write(site, title, periods, M, osmrefs, home, default, stone="ashlar", tint="#ffffff", terrain=None, sea=False):
+def write(site, title, periods, M, osmrefs, home, default, stone="ashlar", tint="#ffffff", terrain=None, sea=False, vegetation=None):
   out = {"site": site, "title": title, "defaultPeriod": default, "cubitMeters": 0.5, "stone": stone, "tint": tint, "home": home,
          "terrain": terrain or {"lo": "#a39478", "mid": "#cdbf9f", "hi": "#e8dfca"}, "otherSites": SITES, "certainty": CERT, "osm": osmrefs, "periods": periods, "monuments": M}
   if sea: out["sea"] = True
+  if vegetation: out["vegetation"] = vegetation
   root = os.path.join(os.path.dirname(__file__), "..", "..", "public", "sites3d", site)
   json.dump(out, open(os.path.join(root, "site.json"), "w"), ensure_ascii=False, indent=1)
   print(site, len(M), "fiches")
